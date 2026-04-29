@@ -213,7 +213,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
     </div>
     <p class="rq-section-label">Difficulty?</p>
         <div class="rq-stars">
-      <button class="rq-star sel" id="rqs-1" onclick="setRQDiff(1)">⭐</button>
+      <button class="rq-star" id="rqs-1" onclick="setRQDiff(1)">⭐</button>
       <button class="rq-star" id="rqs-2" onclick="setRQDiff(2)">⭐⭐</button>
       <button class="rq-star" id="rqs-3" onclick="setRQDiff(3)">⭐⭐⭐</button>
     </div>
@@ -572,7 +572,7 @@ const RQ = [
 {paper:'p3',q:'Approximately how many people were killed during the Night of the Long Knives?',a:'400',d:'hard'},
 {paper:'p3',q:'What was the name of the middle-class youth group who opposed Nazi culture?',a:'The Swing Youth',d:'medium'},
 // ── Germany Unit 4 – additions ──
-{paper:'p3',q:'Hitler stated he wanted to create a _______ Year Reich.',a:'Thousand',d:'easy'},
+{paper:'p3',q:'How long did Hitler say he wanted the Nazi regime to last?',a:'A Thousand Year Reich',d:'easy'},
 {paper:'p3',q:'At what age did boys join the Hitler Youth?',a:'14',d:'hard'},
 {paper:'p3',q:'How could a woman receive a gold Mother\'s Cross?',a:'By having 8 children',d:'easy'},
 {paper:'p3',q:'What subject did German children do for 4 hours a day?',a:'PE',d:'easy'},
@@ -769,14 +769,22 @@ const RQ = [
 ];
 
 // ── Rapid Fire state ──
-let rqPapers = {p1:false, p2a:false, p2b:false, p3:false};
-let rqDiff = 1;
+let rqPapers = {p1:true, p2a:true, p2b:true, p3:true};
+let rqDiffs = {1:false, 2:true, 3:false};
 
 function showRapidSetup() {
   showScreen('s-rapid');
   document.getElementById('rq-setup').style.display = 'block';
   document.getElementById('rq-out').style.display = 'none';
   document.getElementById('rq-err').style.display = 'none';
+  ['p1','p2a','p2b','p3'].forEach(p => {
+    const btn = document.getElementById('rqp-' + p);
+    if (rqPapers[p]) btn.classList.add('on-' + p);
+    else btn.classList.remove('on-' + p);
+  });
+  [1,2,3].forEach(i => {
+    document.getElementById('rqs-' + i).classList.toggle('sel', rqDiffs[i]);
+  });
 }
 
 function toggleRQPaper(p) {
@@ -790,10 +798,8 @@ function toggleRQPaper(p) {
 }
 
 function setRQDiff(n) {
-  rqDiff = n;
-  [1,2,3].forEach(i => {
-    document.getElementById('rqs-' + i).classList.toggle('sel', i === n);
-  });
+  rqDiffs[n] = !rqDiffs[n];
+  document.getElementById('rqs-' + n).classList.toggle('sel', rqDiffs[n]);
 }
 
 function generateRQ() {
@@ -803,25 +809,19 @@ function generateRQ() {
     document.getElementById('rq-err').textContent = 'Please select at least one paper.';
     return;
   }
-  const allowed = rqDiff === 1 ? ['easy'] : rqDiff === 2 ? ['easy','medium'] : ['easy','medium','hard'];
+  const allowed = [];
+  if (rqDiffs[1]) allowed.push('easy');
+  if (rqDiffs[2]) allowed.push('medium');
+  if (rqDiffs[3]) allowed.push('hard');
+  if (!allowed.length) {
+    document.getElementById('rq-err').style.display = 'block';
+    document.getElementById('rq-err').textContent = 'Please select at least one difficulty level.';
+    return;
+  }
   let pool = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d));
   if (pool.length < 10) {
     document.getElementById('rq-err').style.display = 'block';
-    document.getElementById('rq-err').textContent = 'Not enough questions match these filters. Try adding more papers or increasing difficulty.';
-    return;
-  }
-  document.getElementById('rq-err').style.display = 'none';
-  const ten = shuffle(pool).slice(0, 10);
-  const grid = document.getElementById('rq-grid');
-  grid.innerHTML = ten.map((q, i) => `
-    <div class="rq-card" id="rqc${i}" onclick="revealRQ(${i})">
-      <div class="rq-q">${i+1}. ${q.q} <span style="font-size:.65rem;opacity:.5">${q.d==='easy'?'⭐':q.d==='medium'?'⭐⭐':'⭐⭐⭐'}</span></div>
-      <div class="rq-a">${q.a}</div>
-      <div class="rq-tap">Tap to reveal</div>
-    </div>`).join('');
-  document.getElementById('rq-setup').style.display = 'none';
-  document.getElementById('rq-out').style.display = 'block';
-}
+    document.getElementById('rq-err').textContent = 'Not enough questions match the
 
 function revealRQ(i) {
   document.getElementById('rqc' + i).classList.add('revealed');
