@@ -128,7 +128,8 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 .rq-tap{font-size:.68rem;color:#bbb;margin-top:.4rem}
 .rq-card.revealed .rq-tap{display:none}
 .rq-btn-row{display:flex;gap:8px;flex-wrap:wrap}
-</style>
+.rq-btn-row .btn-sm{background:#eeede8;color:#1a1a18;border-color:#ddddd8}
+.rq-btn-row .btn-sm:hover{background:#e0dfd9}</style>
 </head>
 <body>
 <div class="app">
@@ -146,6 +147,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
   </div>
 <!-- RAPID FIRE entry point -->
    <div class="rq-section">
+    <p class="rq-section-label">Or try:</p>
     <button class="btn-go" style="background:#1a1a18;margin-bottom:0" onclick="showRapidSetup()">⚡ Rapid Fire — 10 quick-fire questions</button>
   </div>
 </div>
@@ -211,20 +213,22 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
       <button class="rq-pill" id="rqp-p2b" onclick="toggleRQPaper('p2b')">👑 Elizabeth I</button>
       <button class="rq-pill" id="rqp-p3" onclick="toggleRQPaper('p3')">🏛️ Weimar &amp; Nazi</button>
     </div>
-    <p class="rq-section-label">Difficulty (choose one or more)?</p>
+    <p class="rq-section-label">Difficulty? (choose one or more)</p>
         <div class="rq-stars">
       <button class="rq-star" id="rqs-1" onclick="setRQDiff(1)">⭐</button>
       <button class="rq-star" id="rqs-2" onclick="setRQDiff(2)">⭐⭐</button>
       <button class="rq-star" id="rqs-3" onclick="setRQDiff(3)">⭐⭐⭐</button>
     </div>
-    <button class="btn-go" style="background:#5a5a58" onclick="generateRQ()">Generate 10 questions</button>
+    <button class="btn-go" style="background:#eeede8;color:#1a1a18" onclick="generateRQ()">⚡ Let's go</button>
+    <p id="rq-counter" style="font-size:.75rem;color:#6b6b68;text-align:center;margin-top:-.75rem;margin-bottom:.5rem"></p>
     <div id="rq-err" class="empty" style="display:none">Not enough questions match these filters. Try adding more papers or increasing difficulty.</div>
   </div>
   <div id="rq-out" style="display:none">
     <div class="rq-grid" id="rq-grid"></div>
     <div class="rq-btn-row">
-      <button class="btn-sm" onclick="generateRQ()">🔄 New 10 questions</button>
-      <button class="btn-sm" onclick="document.getElementById('rq-setup').style.display='block';document.getElementById('rq-out').style.display='none'">⚙️ Change settings</button>
+      <button class="btn-sm" onclick="generateRQ()">🔄 New questions</button>
+      <button class="btn-sm" onclick="revealAll()">👁 Reveal all</button>
+      <button class="btn-sm" onclick="document.getElementById('rq-setup').style.display='block';document.getElementById('rq-out').style.display='none'">⚙️ Settings</button>
     </div>
   </div>
 </div>
@@ -785,6 +789,7 @@ function showRapidSetup() {
   [1,2,3].forEach(i => {
     document.getElementById('rqs-' + i).classList.toggle('sel', rqDiffs[i]);
   });
+  updateRQCounter();
 }
 
 function toggleRQPaper(p) {
@@ -795,11 +800,24 @@ function toggleRQPaper(p) {
   } else {
     btn.classList.remove('on-' + p);
   }
+  updateRQCounter();
 }
 
 function setRQDiff(n) {
   rqDiffs[n] = !rqDiffs[n];
   document.getElementById('rqs-' + n).classList.toggle('sel', rqDiffs[n]);
+  updateRQCounter();
+}
+
+function updateRQCounter() {
+  const activePapers = Object.keys(rqPapers).filter(p => rqPapers[p]);
+  const allowed = [];
+  if (rqDiffs[1]) allowed.push('easy');
+  if (rqDiffs[2]) allowed.push('medium');
+  if (rqDiffs[3]) allowed.push('hard');
+  const count = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d)).length;
+  const counter = document.getElementById('rq-counter');
+  if (counter) counter.textContent = count > 0 ? count + ' questions available' : '';
 }
 
 function generateRQ() {
@@ -827,6 +845,8 @@ function generateRQ() {
   document.getElementById('rq-err').style.display = 'none';
   const ten = shuffle(pool).slice(0, 10);
   const grid = document.getElementById('rq-grid');
+  const counter = document.getElementById('rq-counter');
+  if (counter) counter.textContent = pool.length + ' questions available';
   const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
   grid.innerHTML = ten.map((q, i) => `
     <div class="rq-card" id="rqc${i}" onclick="revealRQ(${i})" style="border-left:4px solid ${colours[q.paper]}">
@@ -840,6 +860,13 @@ function generateRQ() {
 
 function revealRQ(i) {
   document.getElementById('rqc' + i).classList.add('revealed');
+}
+
+function revealAll() {
+  for (let i = 0; i < 10; i++) {
+    const card = document.getElementById('rqc' + i);
+    if (card) card.classList.add('revealed');
+  }
 }
 // ═══════════════════════════════════════════
 // EXAM PRACTICE
