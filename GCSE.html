@@ -163,42 +163,6 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
     <button class="mode-btn" id="mb-exam" onclick="setMode('exam')"><span class="icon">✏️</span>Exam practice</button>
   </div>
 
-  <!-- SCREEN 3: RAPID FIRE -->
-<div class="screen" id="s-rapid">
-  <div class="mode-header">
-    <button class="back-btn" onclick="showScreen('s-pick')">&#8592; Home</button>
-    <span style="font-size:.85rem;font-weight:600;color:#5a5a58">⚡ Rapid Fire Quiz</span>
-  </div>
-
-  <!-- SETTINGS PANEL -->
-  <div id="rq-setup">
-    <p class="rq-section-label">Which papers?</p>
-    <div class="rq-paper-pills">
-      <button class="rq-pill" id="rqp-p1" onclick="toggleRQPaper('p1')">🚢 Migration</button>
-      <button class="rq-pill" id="rqp-p2a" onclick="toggleRQPaper('p2a')">🚀 Cold War</button>
-      <button class="rq-pill" id="rqp-p2b" onclick="toggleRQPaper('p2b')">👑 Elizabeth I</button>
-      <button class="rq-pill" id="rqp-p3" onclick="toggleRQPaper('p3')">🏛️ Weimar &amp; Nazi</button>
-    </div>
-    <p class="rq-section-label">Difficulty?</p>
-    <div class="rq-stars">
-      <button class="rq-star sel" id="rqs-1" onclick="setRQDiff(1)">⭐ Easy only</button>
-      <button class="rq-star" id="rqs-2" onclick="setRQDiff(2)">⭐⭐ Easy &amp; Medium</button>
-      <button class="rq-star" id="rqs-3" onclick="setRQDiff(3)">⭐⭐⭐ All</button>
-    </div>
-    <button class="btn-go" style="background:#5a5a58" onclick="generateRQ()">Generate 10 questions</button>
-    <div id="rq-err" class="empty" style="display:none">Not enough questions match these filters. Try adding more papers or increasing difficulty.</div>
-  </div>
-
-  <!-- QUESTION GRID -->
-  <div id="rq-out" style="display:none">
-    <div class="rq-grid" id="rq-grid"></div>
-    <div class="rq-btn-row">
-      <button class="btn-sm" onclick="generateRQ()">🔄 New 10 questions</button>
-      <button class="btn-sm" onclick="document.getElementById('rq-setup').style.display='block';document.getElementById('rq-out').style.display='none'">⚙️ Change settings</button>
-    </div>
-  </div>
-</div>
-
   <!-- KNOWLEDGE -->
   <div id="mode-knowledge" style="display:none">
     <div class="filter-row">
@@ -233,6 +197,37 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
     <div id="e-out"></div>
   </div>
 </div>
+
+<!-- SCREEN 3: RAPID FIRE -->
+<div class="screen" id="s-rapid">
+  <div class="mode-header">
+    <button class="back-btn" onclick="showScreen('s-pick')">&#8592; Home</button>
+    <span style="font-size:.85rem;font-weight:600;color:#5a5a58">⚡ Rapid Fire Quiz</span>
+  </div>
+  <div id="rq-setup">
+    <p class="rq-section-label">Which papers?</p>
+    <div class="rq-paper-pills">
+      <button class="rq-pill" id="rqp-p1" onclick="toggleRQPaper('p1')">🚢 Migration</button>
+      <button class="rq-pill" id="rqp-p2a" onclick="toggleRQPaper('p2a')">🚀 Cold War</button>
+      <button class="rq-pill" id="rqp-p2b" onclick="toggleRQPaper('p2b')">👑 Elizabeth I</button>
+      <button class="rq-pill" id="rqp-p3" onclick="toggleRQPaper('p3')">🏛️ Weimar &amp; Nazi</button>
+    </div>
+    <p class="rq-section-label">Difficulty?</p>
+    <div class="rq-stars">
+      <button class="rq-star sel" id="rqs-1" onclick="setRQDiff(1)">⭐ Easy only</button>
+      <button class="rq-star" id="rqs-2" onclick="setRQDiff(2)">⭐⭐ Easy &amp; Medium</button>
+      <button class="rq-star" id="rqs-3" onclick="setRQDiff(3)">⭐⭐⭐ All</button>
+    </div>
+    <button class="btn-go" style="background:#5a5a58" onclick="generateRQ()">Generate 10 questions</button>
+    <div id="rq-err" class="empty" style="display:none">Not enough questions match these filters. Try adding more papers or increasing difficulty.</div>
+  </div>
+  <div id="rq-out" style="display:none">
+    <div class="rq-grid" id="rq-grid"></div>
+    <div class="rq-btn-row">
+      <button class="btn-sm" onclick="generateRQ()">🔄 New 10 questions</button>
+      <button class="btn-sm" onclick="document.getElementById('rq-setup').style.display='block';document.getElementById('rq-out').style.display='none'">⚙️ Change settings</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -798,10 +793,6 @@ const KC = [
 {paper:'p1',unit:'Unit 4 – Modern',heading:'EU migration',
  hints:['Maastricht','Poland','Brexit','3million','Freedom'],
  facts:['1992: Maastricht Treaty created the EU and free movement of people across all member states','2004: EU expansion brought large numbers of Polish and Eastern European workers to Britain','One of the largest waves of migration in British history – approximately 3 million EU citizens settled in Britain','Net migration from EU averaged ~150,000/year in the decade before Brexit','Brexit 2016: free movement ended – government policy reversed the entire framework for EU migration']},
-
-{paper:'p1',unit:'Unit 4 – Modern',heading:'Windrush Generation',
- hints:['Nationality','Transport','NHS','Relations','Scandal'],
- facts:['1948 British Nationality Act gave all Commonwealth subjects the right to settle in Britain','London Transport and NHS actively recruited in the Caribbean – adverts in local newspapers; average pay four times higher than in the Caribbean','By 1960s: 12% of London Transport employees from ethnic minorities; by 2003: 30% of NHS doctors and 44% of nurses were migrants','1965: Race Relations Act – first law banning racial discrimination; 1976: Race Relations Act strengthened protections','2012: Windrush scandal – legal Caribbean migrants wrongly detained, denied healthcare, threatened with deportation']},
 
 {paper:'p1',unit:'Unit 4 – Modern',heading:'Black migrants in Bristol – 20th century',
  hints:['Windrush','Boycott','Lawrence','Riots','StPauls'],
