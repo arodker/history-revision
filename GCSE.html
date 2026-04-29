@@ -4,12 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GCSE History Revision – Mossbourne Federation</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',system-ui,sans-serif;background:#f8f7f4;color:#1a1a18;min-height:100vh}
+body{font-family:Arial,Helvetica,sans-serif;background:#f8f7f4;color:#1a1a18;min-height:100vh}
 .app{max-width:720px;margin:0 auto;padding:1.5rem 1rem 4rem}
-h1{font-family:'DM Serif Display',serif;font-size:1.55rem;font-weight:400;margin-bottom:.2rem}
+h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;margin-bottom:.2rem}
 .subtitle{font-size:.82rem;color:#6b6b68;margin-bottom:1.75rem}
 
 /* SCREENS */
@@ -428,7 +427,7 @@ function checkAns(btn) {
   } else {
     quizBad++;
     btn.classList.add('wrong');
-    fb.textContent = 'Not quite — correct answer highlighted.';
+    fb.textContent = 'Not quite , correct answer highlighted.';
     fb.className = 'quiz-fb fb-w';
     document.querySelectorAll('.opt').forEach(b => {
       if (b.dataset.val === correct) b.classList.add('show-c');
@@ -723,7 +722,7 @@ const KC = [
 
 {paper:'p3',unit:'Unit 2 – Hitler\'s Rise',heading:'Hitler becomes Chancellor January 1933',
  hints:['Corporal','13million','Papen','Controlled','30January'],
- facts:['Even with 230 seats Hindenburg despised Hitler as a "jumped-up little corporal" and refused to make him Chancellor','April 1932: Hindenburg re-elected President; Hitler came second with 13 million votes but still denied the chancellorship','Von Papen (May 1932) then Von Schleicher (November 1932) both failed as Chancellors; Hindenburg ran out of alternatives','Von Papen convinced Hindenburg he could "control" Hitler as Chancellor with himself as Vice-Chancellor – a fatal miscalculation','30 January 1933: Hitler appointed Chancellor; Von Papen told a friend "We have hired Hitler"']},
+ facts:['Even with 230 seats Hindenburg despised Hitler as a "jumped-up little corporal" and refused to make him Chancellor','April 1932: Hindenburg re-elected President; Hitler came second with 13 million votes but still denied the chancellorship','Von Papen (May 1932) then Von Schleicher (November 1932) both failed as Chancellors; Hindenburg ran out of alternatives','Von Papen convinced Hindenburg he could "control" Hitler as Chancellor with himself as Vice-Chancellor – a fatal miscalculation','30 January 1933: Hitler appointed Chancellor; Von Papen told a friend "Mouse in my pocket"']},
 
 // ── PAPER 3 · Unit 3 Nazi Control ───────────
 {paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Reichstag Fire and Enabling Act 1933',
@@ -858,7 +857,7 @@ const KC = [
 ];
 const EQ = [
 // ════════════════════════════════════════════
-// PAPER 1 — MIGRATION
+// PAPER 1 , MIGRATION
 // 2-mark: Notting Hill only
 // 4-mark: similarity/difference
 // 12-mark: 13 thematic questions
@@ -1158,7 +1157,7 @@ const EQ = [
  ]},
 
 // ════════════════════════════════════════════
-// PAPER 2A — COLD WAR
+// PAPER 2A , COLD WAR
 // 4-mark: consequence only
 // 8-mark: narrative and importance
 // ════════════════════════════════════════════
@@ -1380,7 +1379,7 @@ const EQ = [
  ]},
 
 // ════════════════════════════════════════════
-// PAPER 2B — ELIZABETH I
+// PAPER 2B , ELIZABETH I
 // 2-mark: describe one feature (all three units)
 // 12-mark: all 14 explain why
 // 16-mark: all 18 how far agree
@@ -1794,7 +1793,7 @@ const EQ = [
  ]},
 
 // ════════════════════════════════════════════
-// PAPER 3 — WEIMAR AND NAZI GERMANY
+// PAPER 3 , WEIMAR AND NAZI GERMANY
 // 12-mark explain why only
 // ════════════════════════════════════════════
 {paper:'p3',type:'12mark',skill:'Explain why',
@@ -1850,7 +1849,7 @@ const EQ = [
  content:[
   {h:'Para 1 – Nazi electoral success created pressure on Hindenburg',pts:['July 1932: Nazis won 230 seats – largest party in Reichstag; democratic logic pointed to Hitler being given power','13 million votes for Hitler in April 1932 presidential election; Hindenburg had run out of arguments for ignoring the largest party indefinitely','However Nazi support was actually falling by November 1932 (196 seats) – Hitler\'s appointment was not inevitable from electoral success alone']},
   {h:'Para 2 – Failure of alternatives left Hindenburg with no options',pts:['Von Papen (May 1932) could not control Reichstag; forced to resign after six months','Von Schleicher (November 1932) asked Hindenburg for permission to create a military dictatorship – Hindenburg refused','By January 1933 Hindenburg had genuinely run out of viable alternatives; Hitler was the only politician who could command a Reichstag majority']},
-  {h:'Para 3 – Von Papen\'s fatal miscalculation handed Hitler the chancellorship',pts:['Von Papen convinced Hindenburg that Hitler could be "controlled" with himself as Vice-Chancellor and a majority of non-Nazi ministers','"We have hired Hitler" – Von Papen believed he could use Hitler\'s popularity while retaining real power','30 January 1933: Hitler appointed Chancellor; Von Papen\'s catastrophic miscalculation became clear within 18 months']}
+  {h:'Para 3 – Von Papen\'s fatal miscalculation handed Hitler the chancellorship',pts:['Von Papen convinced Hindenburg that Hitler could be "controlled" with himself as Vice-Chancellor and a majority of non-Nazi ministers','"Mouse in my pocket" – Von Papen believed he could use Hitler\'s popularity while retaining real power','30 January 1933: Hitler appointed Chancellor; Von Papen\'s catastrophic miscalculation became clear within 18 months']}
  ]},
 
 {paper:'p3',type:'12mark',skill:'Explain why',
@@ -1976,7 +1975,7 @@ const DATES = [
 {paper:'p3',date:'1925',event:'Hindenburg elected President; Locarno Pact – Germany accepts Versailles borders; France leaves the Ruhr'},
 {paper:'p3',date:'1929',event:'Wall Street Crash – US loans recalled; German unemployment reaches 6 million by 1933'},
 {paper:'p3',date:'Jul 1932',event:'Nazis win 230 seats – become largest party in the Reichstag'},
-{paper:'p3',date:'Jan 1933',event:'Hitler appointed Chancellor – Von Papen\'s fatal miscalculation; "we have hired Hitler"'},
+{paper:'p3',date:'Jan 1933',event:'Hitler appointed Chancellor – Von Papen\'s fatal miscalculation; "Mouse in my pocket"'},
 {paper:'p3',date:'Feb 1933',event:'Reichstag Fire – 4,000 Communists arrested; Communists banned from 81 seats; Nazis get 2/3 majority'},
 {paper:'p3',date:'Mar 1933',event:'Enabling Act – Hitler gains power to make laws without the Reichstag; democracy legally abolished'},
 {paper:'p3',date:'Jun 1934',event:'Night of the Long Knives – Röhm and ~400 others murdered; army\'s loyalty secured'},
