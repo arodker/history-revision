@@ -111,10 +111,10 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 .rq-section-label{font-size:.72rem;font-weight:700;color:#6b6b68;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
 .rq-paper-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.9rem}
 .rq-pill{padding:6px 12px;font-size:.78rem;font-weight:600;border:1.5px solid #ddddd8;border-radius:20px;cursor:pointer;background:#fff;color:#6b6b68;font-family:inherit;transition:all .15s}
-.rq-pill.on-p1{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
-.rq-pill.on-p2a{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
-.rq-pill.on-p2b{background:#FAEEDA;color:#854F0B;border-color:#BA7517}
-.rq-pill.on-p3{background:#FBEAF0;color:#993556;border-color:#D4537E}
+.rq-pill.on-p1{background:#FEF9E7;color:#9A6B00;border-color:#F0B429}
+.rq-pill.on-p2a{background:#FBEAF0;color:#993556;border-color:#D4537E}
+.rq-pill.on-p2b{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
+.rq-pill.on-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .rq-stars{display:flex;gap:6px;margin-bottom:1rem}
 .rq-star{padding:6px 14px;font-size:.82rem;font-weight:600;border:1.5px solid #ddddd8;border-radius:20px;cursor:pointer;background:#fff;color:#6b6b68;font-family:inherit;transition:all .15s}
 .rq-star.sel{background:#1a1a18;color:#fff;border-color:#1a1a18}
@@ -204,14 +204,14 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
     <span style="font-size:.85rem;font-weight:600;color:#5a5a58">⚡ Rapid Fire Quiz</span>
   </div>
   <div id="rq-setup">
-    <p class="rq-section-label">Which papers?</p>
+    <p class="rq-section-label">Which papers? (tap to remove from quiz)</p>
     <div class="rq-paper-pills">
       <button class="rq-pill" id="rqp-p1" onclick="toggleRQPaper('p1')">🚢 Migration</button>
       <button class="rq-pill" id="rqp-p2a" onclick="toggleRQPaper('p2a')">🚀 Cold War</button>
       <button class="rq-pill" id="rqp-p2b" onclick="toggleRQPaper('p2b')">👑 Elizabeth I</button>
       <button class="rq-pill" id="rqp-p3" onclick="toggleRQPaper('p3')">🏛️ Weimar &amp; Nazi</button>
     </div>
-    <p class="rq-section-label">Difficulty?</p>
+    <p class="rq-section-label">Difficulty (choose one or more)?</p>
         <div class="rq-stars">
       <button class="rq-star" id="rqs-1" onclick="setRQDiff(1)">⭐</button>
       <button class="rq-star" id="rqs-2" onclick="setRQDiff(2)">⭐⭐</button>
