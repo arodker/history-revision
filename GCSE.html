@@ -145,11 +145,9 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
     <button class="paper-btn pb-p3" onclick="pickPaper('p3')"><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
   </div>
 <!-- RAPID FIRE entry point -->
-  <div class="rq-section">
-    <p class="rq-section-label">⚡ Rapid Fire Quiz</p>
-    <button class="btn-go" style="background:#5a5a58;margin-bottom:0" onclick="showRapidSetup()">10 quick-fire questions</button>
+   <div class="rq-section">
+    <button class="btn-go" style="background:linear-gradient(135deg,#f59e0b,#ef4444);font-size:1rem;letter-spacing:.01em;margin-bottom:0" onclick="showRapidSetup()">⚡ Rapid Fire — 10 quick-fire questions</button>
   </div>
-</div>
 
 <!-- SCREEN 2: MODE + CONTENT -->
 <div class="screen" id="s-main">
@@ -213,10 +211,10 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
       <button class="rq-pill" id="rqp-p3" onclick="toggleRQPaper('p3')">🏛️ Weimar &amp; Nazi</button>
     </div>
     <p class="rq-section-label">Difficulty?</p>
-    <div class="rq-stars">
-      <button class="rq-star sel" id="rqs-1" onclick="setRQDiff(1)">⭐ Easy only</button>
-      <button class="rq-star" id="rqs-2" onclick="setRQDiff(2)">⭐⭐ Easy &amp; Medium</button>
-      <button class="rq-star" id="rqs-3" onclick="setRQDiff(3)">⭐⭐⭐ All</button>
+        <div class="rq-stars">
+      <button class="rq-star sel" id="rqs-1" onclick="setRQDiff(1)">⭐</button>
+      <button class="rq-star" id="rqs-2" onclick="setRQDiff(2)">⭐⭐</button>
+      <button class="rq-star" id="rqs-3" onclick="setRQDiff(3)">⭐⭐⭐</button>
     </div>
     <button class="btn-go" style="background:#5a5a58" onclick="generateRQ()">Generate 10 questions</button>
     <div id="rq-err" class="empty" style="display:none">Not enough questions match these filters. Try adding more papers or increasing difficulty.</div>
@@ -575,7 +573,7 @@ function generateRQ() {
   const grid = document.getElementById('rq-grid');
   grid.innerHTML = ten.map((q, i) => `
     <div class="rq-card" id="rqc${i}" onclick="revealRQ(${i})">
-      <div class="rq-q">${i+1}. ${q.q}</div>
+      <div class="rq-q">${i+1}. ${q.q} <span style="font-size:.65rem;opacity:.5">${q.d==='easy'?'⭐':q.d==='medium'?'⭐⭐':'⭐⭐⭐'}</span></div>
       <div class="rq-a">${q.a}</div>
       <div class="rq-tap">Tap to reveal</div>
     </div>`).join('');
