@@ -148,18 +148,19 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 <!-- RAPID FIRE entry point -->
    <div class="rq-section">
     <p class="rq-section-label">Or try:</p>
-    <button class="btn-go" style="background:#1a1a18;margin-bottom:0" onclick="showRapidSetup()">⚡ Rapid Fire — 10 quick-fire questions</button>
+    <button class="btn-go" style="background:#1a1a18;margin-bottom:.75rem" onclick="showRapidSetup()">⚡ Rapid Fire — 10 quick-fire questions</button>
+    <button class="btn-go" id="home-flag-btn" style="background:#eeede8;color:#1a1a18;display:none;margin-bottom:0" onclick="goToFlagged()">🚩 Review flagged cards (<span id="home-flag-num">0</span>)</button>
   </div>
 </div>
 
 <!-- SCREEN 2: MODE + CONTENT -->
 <div class="screen" id="s-main">
   <div class="mode-header">
-    <button class="back-btn" onclick="goBack()">&#8592; Papers</button>
+    <button class="back-btn" onclick="goBack()">🏠 Home</button>
     <span class="paper-badge" id="paper-badge"></span>
   </div>
   <div class="mode-grid">
-    <button class="mode-btn" id="mb-knowledge" onclick="setMode('knowledge')"><span class="icon">🧠</span>Knowledge recall</button>
+    <button class="mode-btn" id="mb-knowledge" onclick="setMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder</button>
     <button class="mode-btn" id="mb-dates" onclick="setMode('dates')"><span class="icon">📅</span>Key dates quiz</button>
     <button class="mode-btn" id="mb-exam" onclick="setMode('exam')"><span class="icon">✏️</span>Exam practice</button>
   </div>
@@ -170,7 +171,12 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
       <select id="k-unit" onchange="updateCardSelect()"><option value="all">All units</option></select>
       <select id="k-card"><option value="random">Random card</option></select>
     </div>
-    <button class="btn-go" id="k-go" onclick="drawKnowledge()">Get a topic to recall</button>
+    <button class="btn-go" id="k-go" onclick="drawKnowledge()">Select a topic</button>
+    <div id="k-flag-bar" style="display:none;gap:8px;align-items:center;margin-bottom:.75rem">
+      <span id="k-flag-count" style="font-size:.82rem;color:#6b6b68">🚩 <span id="k-flag-num">0</span> flagged</span>
+      <button class="btn-sm" onclick="reviewFlagged()">Review flagged cards</button>
+      <button class="btn-sm" onclick="clearFlagged()">Clear flags</button>
+    </div>
     <div id="k-out"></div>
   </div>
 
@@ -299,6 +305,7 @@ function setMode(m) {
   document.getElementById('d-out').innerHTML = '';
   document.getElementById('e-out').innerHTML = '';
   document.getElementById('d-go').style.display = 'block';
+  updateFlagBar();
 }
 
 // ═══════════════════════════════════════════
@@ -342,7 +349,85 @@ function boldHints(text, hints) {
   });
   return out;
 }
+  
+let flaggedCards = [];
 
+function flagCard(paper, heading) {
+  const already = flaggedCards.find(c => c.paper === paper && c.heading === heading);
+  if (!already) {
+    flaggedCards.push({paper, heading});
+    updateFlagBar();
+  }
+}
+
+function updateFlagBar() {
+  const bar = document.getElementById('k-flag-bar');
+  const num = document.getElementById('k-flag-num');
+  const homeBtn = document.getElementById('home-flag-btn');
+  const homeNum = document.getElementById('home-flag-num');
+  if (flaggedCards.length > 0) {
+    bar.style.display = 'flex';
+    num.textContent = flaggedCards.length;
+    if (homeBtn) { homeBtn.style.display = 'block'; homeNum.textContent = flaggedCards.length; }
+  } else {
+    bar.style.display = 'none';
+    if (homeBtn) homeBtn.style.display = 'none';
+  }
+}
+
+function reviewFlagged() {
+  if (!flaggedCards.length) return;
+  const card = flaggedCards[Math.floor(Math.random() * flaggedCards.length)];
+  const pool = KC.filter(c => c.paper === card.paper && c.heading === card.heading);
+  if (!pool.length) return;
+  drawSpecificCard(pool[0]);
+}
+
+function clearFlagged() {
+  flaggedCards = [];
+  updateFlagBar();
+}
+
+function goToFlagged() {
+  if (!flaggedCards.length) return;
+  pickPaper(flaggedCards[0].paper);
+  reviewFlagged();
+}
+  
+function drawSpecificCard(card) {
+  const hintsHtml = card.hints.map(h =>
+    `<div class="hint-item"><span class="hint-kw">hint</span>${h}</div>`
+  ).join('');
+  const factsHtml = '<ul>' + card.facts.map(f =>
+    `<li>${boldHints(f, card.hints)}</li>`
+  ).join('') + '</ul>';
+  document.getElementById('k-out').innerHTML = `
+    <div class="card">
+      <div class="stripe s-${card.paper}"></div>
+      <div class="inner">
+        <div class="meta">
+          <span class="tag t-${card.paper}">${card.unit}</span>
+          <span class="tag t-grey">🚩 Flagged</span>
+        </div>
+        <div class="card-heading">${card.heading}</div>
+        <p style="font-size:.82rem;color:#6b6b68;margin-bottom:.75rem">${['Can you recall 3–5 key points about this topic?','What are the key dates for this topic?','Can you name the key people involved?','What were the causes and consequences?','How would you explain this to someone who hadn\'t studied it?'][Math.floor(Math.random()*5)]}</p>
+        <div class="btn-row">
+          <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
+          <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='Reveal key content'?'Hide content':'Reveal key content'">Reveal key content</button>
+          <button class="btn-sm" onclick="unflagCard('${card.paper}','${card.heading}')">🚩 Remove flag</button>
+        </div>
+        <div class="reveal" id="kh">${hintsHtml}</div>
+        <div class="reveal" id="kf">${factsHtml}</div>
+      </div>
+    </div>`;
+}
+
+function unflagCard(paper, heading) {
+  flaggedCards = flaggedCards.filter(c => !(c.paper === paper && c.heading === heading));
+  updateFlagBar();
+  reviewFlagged();
+}
+  
 function drawKnowledge() {
   const unit = document.getElementById('k-unit').value;
   const cardSel = document.getElementById('k-card').value;
@@ -373,10 +458,11 @@ function drawKnowledge() {
           <span class="tag t-${card.paper}">${card.unit}</span>
         </div>
         <div class="card-heading">${card.heading}</div>
-        <p style="font-size:.82rem;color:#6b6b68;margin-bottom:.75rem">Can you recall 3–5 key points about this topic?</p>
+        <p style="font-size:.82rem;color:#6b6b68;margin-bottom:.75rem">What can you remember? Use the hints if you need a prompt...</p>
         <div class="btn-row">
-          <button class="btn-sm" onclick="tog('kh')">Show hints</button>
-          <button class="btn-sm" onclick="tog('kf')">Reveal key content</button>
+          <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
+          <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='Reveal key content'?'Hide content':'Reveal key content'">Reveal key content</button>
+          <button class="btn-sm" onclick="flagCard('${card.paper}','${card.heading}')">🚩 Flag to review</button>
         </div>
         <div class="reveal" id="kh">${hintsHtml}</div>
         <div class="reveal" id="kf">${factsHtml}</div>
@@ -914,8 +1000,9 @@ function drawExam() {
           <span class="tag t-grey">${typeLabel}</span>
         </div>
         <div class="card-q">${q.q}</div>
-        <div class="btn-row">
+       <div class="btn-row">
           <button class="btn-sm" onclick="tog('er')">Show indicative content</button>
+          <button class="btn-sm" onclick="drawExam()">Next question →</button>
         </div>
         <div class="reveal" id="er">${contentHtml}</div>
       </div>
@@ -974,7 +1061,7 @@ function checkAns(btn) {
   } else {
     quizBad++;
     btn.classList.add('wrong');
-    fb.textContent = 'Not quite , correct answer highlighted.';
+    fb.textContent = 'Not quite - correct answer highlighted.';
     fb.className = 'quiz-fb fb-w';
     document.querySelectorAll('.opt').forEach(b => {
       if (b.dataset.val === correct) b.classList.add('show-c');
@@ -993,7 +1080,7 @@ function showQuizEnd() {
       <div class="end-score">${quizOK}/${total}</div>
       <div class="end-sub">${pct}% correct</div>
       <div class="end-grade ${cls}">${grade}</div><br>
-      <button class="btn-sm" style="margin:0 auto;display:block" onclick="document.getElementById('d-out').innerHTML=''">Try again</button>
+      <button class="btn-sm" style="margin:0 auto;display:block" onclick="document.getElementById('d-out').innerHTML='';document.getElementById('d-go').textContent='Start key dates quiz'">Try again</button>
     </div>`;
   const go = document.getElementById('d-go');
   go.style.display = 'block';
