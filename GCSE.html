@@ -133,7 +133,10 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 </head>
 <body>
 <div class="app">
-<h1>GCSE History Revision</h1>
+<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.2rem">
+  <h1 style="margin-bottom:0">GCSE History Revision</h1>
+  <a href="index.html" style="font-size:.78rem;font-weight:600;padding:6px 12px;border:1px solid #ddddd8;border-radius:8px;background:#fff;color:#6b6b68;text-decoration:none">← Back</a>
+</div>
 <p class="subtitle">Mr Rodker's Revision Hub &mdash; Edexcel GCSE</p>
 
 <!-- SCREEN 1: PAPER PICKER -->
@@ -174,7 +177,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
     <button class="btn-go" id="k-go" onclick="drawKnowledge()">Select a topic</button>
     <div id="k-flag-bar" style="display:none;gap:8px;align-items:center;margin-bottom:.75rem">
       <span id="k-flag-count" style="font-size:.82rem;color:#6b6b68">🚩 <span id="k-flag-num">0</span> flagged</span>
-      <button class="btn-sm" onclick="reviewFlagged()">Review flagged cards</button>
+      <button class="btn-sm" onclick="showFlaggedScreen()">Review flagged cards</button>
       <button class="btn-sm" onclick="clearFlagged()">Clear flags</button>
     </div>
     <div id="k-out"></div>
@@ -238,6 +241,15 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
     </div>
   </div>
 </div>
+<!-- SCREEN 4: FLAGGED CARDS -->
+<div class="screen" id="s-flagged">
+  <div class="mode-header">
+    <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
+    <span style="font-size:.85rem;font-weight:600;color:#5a5a58">🚩 Flagged for review</span>
+  </div>
+  <div id="flagged-out"></div>
+</div>
+
 </div>
 
 <script>
@@ -352,11 +364,17 @@ function boldHints(text, hints) {
   
 let flaggedCards = [];
 
-function flagCard(paper, heading) {
+function flagCard(btn) {
+  const card = btn.closest('.card');
+  const paper = card.dataset.paper;
+  const heading = card.dataset.heading;
   const already = flaggedCards.find(c => c.paper === paper && c.heading === heading);
   if (!already) {
     flaggedCards.push({paper, heading});
     updateFlagBar();
+    btn.textContent = '🚩 Flagged';
+    btn.disabled = true;
+    btn.style.opacity = '.5';
   }
 }
 
@@ -376,22 +394,54 @@ function updateFlagBar() {
 }
 
 function reviewFlagged() {
+  showFlaggedScreen();
+}
+  
+function goToFlagged() {
   if (!flaggedCards.length) return;
-  const card = flaggedCards[Math.floor(Math.random() * flaggedCards.length)];
-  const pool = KC.filter(c => c.paper === card.paper && c.heading === card.heading);
-  if (!pool.length) return;
-  drawSpecificCard(pool[0]);
+  showFlaggedScreen();
+}
+
+function showFlaggedScreen() {
+  showScreen('s-flagged');
+  const out = document.getElementById('flagged-out');
+  if (!flaggedCards.length) {
+    out.innerHTML = '<div class="empty">No flagged cards. Flag topics from the knowledge recall screen.</div><div style="text-align:center;margin-top:1rem"><button class="btn-sm" onclick="showScreen(\'s-pick\')">🏠 Home</button></div>';D
+    return;
+  }
+  out.innerHTML = flaggedCards.map(fc => {
+    const card = KC.find(c => c.paper === fc.paper && c.heading === fc.heading);
+    if (!card) return '';
+    const hintsHtml = card.hints.map(h =>
+      `<div class="hint-item"><span class="hint-kw">hint</span>${h}</div>`
+    ).join('');
+    const factsHtml = '<ul>' + card.facts.map(f =>
+      `<li>${boldHints(f, card.hints)}</li>`
+    ).join('') + '</ul>';
+    const uid = card.paper + '_' + card.heading.replace(/\W/g,'');
+    return `
+      <div class="card" data-paper="${card.paper}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
+        <div class="stripe s-${card.paper}"></div>
+        <div class="inner">
+          <div class="meta">
+            <span class="tag t-${card.paper}">${card.unit}</span>
+          </div>
+          <div class="card-heading">${card.heading}</div>
+          <div class="btn-row">
+            <button class="btn-sm" onclick="tog('fh_${uid}');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
+            <button class="btn-sm" onclick="tog('ff_${uid}');this.textContent=this.textContent==='Reveal key content'?'Hide content':'Reveal key content'">Reveal key content</button>
+            <button class="btn-sm" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11" onclick="unflagCard(this)">✅ Done</button>
+          </div>
+          <div class="reveal" id="fh_${uid}">${hintsHtml}</div>
+          <div class="reveal" id="ff_${uid}">${factsHtml}</div>
+        </div>
+      </div>`;
+  }).join('');
 }
 
 function clearFlagged() {
   flaggedCards = [];
   updateFlagBar();
-}
-
-function goToFlagged() {
-  if (!flaggedCards.length) return;
-  pickPaper(flaggedCards[0].paper);
-  reviewFlagged();
 }
   
 function drawSpecificCard(card) {
@@ -422,10 +472,13 @@ function drawSpecificCard(card) {
     </div>`;
 }
 
-function unflagCard(paper, heading) {
+function unflagCard(btn) {
+  const card = btn.closest('.card');
+  const paper = card.dataset.paper;
+  const heading = card.dataset.heading;
   flaggedCards = flaggedCards.filter(c => !(c.paper === paper && c.heading === heading));
   updateFlagBar();
-  reviewFlagged();
+  showFlaggedScreen();
 }
   
 function drawKnowledge() {
@@ -462,7 +515,7 @@ function drawKnowledge() {
         <div class="btn-row">
           <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
           <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='Reveal key content'?'Hide content':'Reveal key content'">Reveal key content</button>
-          <button class="btn-sm" onclick="flagCard('${card.paper}','${card.heading}')">🚩 Flag to review</button>
+          <button class="btn-sm" id="k-flag-btn" onclick="flagCard(this)">🚩 Flag to review</button>
         </div>
         <div class="reveal" id="kh">${hintsHtml}</div>
         <div class="reveal" id="kf">${factsHtml}</div>
