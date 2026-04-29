@@ -821,9 +821,18 @@ function generateRQ() {
   let pool = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d));
   if (pool.length < 10) {
     document.getElementById('rq-err').style.display = 'block';
-    document.getElementById('rq-err').textContent = 'Not enough questions match the
-
-function revealRQ(i) {
+    document.getElementById('rq-err').textContent = 'Not enough questions match these filters. Try adding more papers or increasing difficulty.';
+    return;
+  }
+  document.getElementById('rq-err').style.display = 'none';
+  const ten = shuffle(pool).slice(0, 10);
+  const grid = document.getElementById('rq-grid');
+  const colours = {p1:'#1D9E75',p2a:'#378ADD',p2b:'#BA7517',p3:'#D4537E'};
+  grid.innerHTML = ten.map((q, i) => `
+    <div class="rq-card" id="rqc${i}" onclick="revealRQ(${i})" style="border-left:4px solid ${colours[q.paper]}">
+      <div class="rq-q">${i+1}. ${q.q} <span style="font-size:.65rem;opacity:.5">${q.d==='easy'?'⭐':q.d==='medium'?'⭐⭐':'⭐⭐⭐'}</span></div>
+      <div class="rq-a">${q.a}</div>
+      <div class="rq-tap">Tap to reveal
   document.getElementById('rqc' + i).classList.add('revealed');
 }
 // ═══════════════════════════════════════════
