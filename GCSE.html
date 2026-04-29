@@ -105,6 +105,29 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 .end-sub{font-size:.9rem;color:#6b6b68;margin:.3rem 0 1.2rem}
 .end-grade{font-size:.9rem;font-weight:600;padding:8px 20px;border-radius:20px;display:inline-block;margin-bottom:1.2rem}
 .grade-a{background:#EAF3DE;color:#3B6D11}.grade-b{background:#FAEEDA;color:#854F0B}.grade-c{background:#FCEBEB;color:#A32D2D}
+
+/* RAPID FIRE QUIZ */
+.rq-section{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #e8e7e2}
+.rq-section-label{font-size:.72rem;font-weight:700;color:#6b6b68;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+.rq-paper-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.9rem}
+.rq-pill{padding:6px 12px;font-size:.78rem;font-weight:600;border:1.5px solid #ddddd8;border-radius:20px;cursor:pointer;background:#fff;color:#6b6b68;font-family:inherit;transition:all .15s}
+.rq-pill.on-p1{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
+.rq-pill.on-p2a{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
+.rq-pill.on-p2b{background:#FAEEDA;color:#854F0B;border-color:#BA7517}
+.rq-pill.on-p3{background:#FBEAF0;color:#993556;border-color:#D4537E}
+.rq-stars{display:flex;gap:6px;margin-bottom:1rem}
+.rq-star{padding:6px 14px;font-size:.82rem;font-weight:600;border:1.5px solid #ddddd8;border-radius:20px;cursor:pointer;background:#fff;color:#6b6b68;font-family:inherit;transition:all .15s}
+.rq-star.sel{background:#1a1a18;color:#fff;border-color:#1a1a18}
+.rq-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.rq-card{background:#fff;border:1.5px solid #e8e7e2;border-radius:12px;padding:.85rem;cursor:pointer;min-height:90px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .15s}
+.rq-card:hover{border-color:#aaa}
+.rq-card.revealed{border-color:#3B6D11;cursor:default}
+.rq-q{font-size:.78rem;line-height:1.5;color:#1a1a18;font-weight:500}
+.rq-a{display:none;margin-top:.55rem;padding:.45rem .55rem;background:#EAF3DE;border-radius:7px;font-size:.78rem;font-weight:700;color:#3B6D11;line-height:1.4}
+.rq-card.revealed .rq-a{display:block}
+.rq-tap{font-size:.68rem;color:#bbb;margin-top:.4rem}
+.rq-card.revealed .rq-tap{display:none}
+.rq-btn-row{display:flex;gap:8px;flex-wrap:wrap}
 </style>
 </head>
 <body>
@@ -121,6 +144,11 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
     <button class="paper-btn pb-p2b" onclick="pickPaper('p2b')"><span class="plabel">Paper 2b</span>👑 Early Elizabethan England</button>
     <button class="paper-btn pb-p3" onclick="pickPaper('p3')"><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
   </div>
+<!-- RAPID FIRE entry point -->
+  <div class="rq-section">
+    <p class="rq-section-label">⚡ Rapid Fire Quiz</p>
+    <button class="btn-go" style="background:#5a5a58;margin-bottom:0" onclick="showRapidSetup()">10 quick-fire questions</button>
+  </div>
 </div>
 
 <!-- SCREEN 2: MODE + CONTENT -->
@@ -134,6 +162,42 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
     <button class="mode-btn" id="mb-dates" onclick="setMode('dates')"><span class="icon">📅</span>Key dates quiz</button>
     <button class="mode-btn" id="mb-exam" onclick="setMode('exam')"><span class="icon">✏️</span>Exam practice</button>
   </div>
+
+  <!-- SCREEN 3: RAPID FIRE -->
+<div class="screen" id="s-rapid">
+  <div class="mode-header">
+    <button class="back-btn" onclick="showScreen('s-pick')">&#8592; Home</button>
+    <span style="font-size:.85rem;font-weight:600;color:#5a5a58">⚡ Rapid Fire Quiz</span>
+  </div>
+
+  <!-- SETTINGS PANEL -->
+  <div id="rq-setup">
+    <p class="rq-section-label">Which papers?</p>
+    <div class="rq-paper-pills">
+      <button class="rq-pill" id="rqp-p1" onclick="toggleRQPaper('p1')">🚢 Migration</button>
+      <button class="rq-pill" id="rqp-p2a" onclick="toggleRQPaper('p2a')">🚀 Cold War</button>
+      <button class="rq-pill" id="rqp-p2b" onclick="toggleRQPaper('p2b')">👑 Elizabeth I</button>
+      <button class="rq-pill" id="rqp-p3" onclick="toggleRQPaper('p3')">🏛️ Weimar &amp; Nazi</button>
+    </div>
+    <p class="rq-section-label">Difficulty?</p>
+    <div class="rq-stars">
+      <button class="rq-star sel" id="rqs-1" onclick="setRQDiff(1)">⭐ Easy only</button>
+      <button class="rq-star" id="rqs-2" onclick="setRQDiff(2)">⭐⭐ Easy &amp; Medium</button>
+      <button class="rq-star" id="rqs-3" onclick="setRQDiff(3)">⭐⭐⭐ All</button>
+    </div>
+    <button class="btn-go" style="background:#5a5a58" onclick="generateRQ()">Generate 10 questions</button>
+    <div id="rq-err" class="empty" style="display:none">Not enough questions match these filters. Try adding more papers or increasing difficulty.</div>
+  </div>
+
+  <!-- QUESTION GRID -->
+  <div id="rq-out" style="display:none">
+    <div class="rq-grid" id="rq-grid"></div>
+    <div class="rq-btn-row">
+      <button class="btn-sm" onclick="generateRQ()">🔄 New 10 questions</button>
+      <button class="btn-sm" onclick="document.getElementById('rq-setup').style.display='block';document.getElementById('rq-out').style.display='none'">⚙️ Change settings</button>
+    </div>
+  </div>
+</div>
 
   <!-- KNOWLEDGE -->
   <div id="mode-knowledge" style="display:none">
@@ -320,7 +384,213 @@ function drawKnowledge() {
       </div>
     </div>`;
 }
+// ═══════════════════════════════════════════
+// RAPID FIRE DATA (sample — expand with full PDF data)
+// difficulty: 'easy' | 'medium' | 'hard'
+// ═══════════════════════════════════════════
+const RQ = [
+// ── Germany Unit 1 ──
+{paper:'p3',q:'When did Kaiser Wilhelm II abdicate?',a:'9 November 1918',d:'medium'},
+{paper:'p3',q:'When was the WWI armistice signed?',a:'11 November 1918',d:'medium'},
+{paper:'p3',q:'What does "Dolchstoss" mean?',a:'Stab in the back',d:'medium'},
+{paper:'p3',q:'What clause of the Weimar Constitution allowed the President to bypass the Reichstag?',a:'Article 48',d:'easy'},
+{paper:'p3',q:'How much reparations did Germany have to pay in the Treaty of Versailles?',a:'£6.6 billion',d:'easy'},
+{paper:'p3',q:'Which area of Germany was demilitarised in the Treaty of Versailles?',a:'The Rhineland',d:'easy'},
+{paper:'p3',q:'How many men were allowed in the German army under the Treaty of Versailles?',a:'100,000',d:'easy'},
+{paper:'p3',q:'Which far-left group tried to seize power in Germany in January 1919?',a:'The Spartacists',d:'easy'},
+{paper:'p3',q:'Who led the Spartacist Revolt?',a:'Rosa Luxemburg and Karl Liebknecht',d:'medium'},
+{paper:'p3',q:'What tactic did Ebert use to defeat the Spartacists?',a:'The Freikorps',d:'medium'},
+{paper:'p3',q:'In which year did Hyperinflation occur in Germany?',a:'1923',d:'easy'},
+{paper:'p3',q:'What did Stresemann introduce to end hyperinflation?',a:'The Rentenmark',d:'easy'},
+{paper:'p3',q:'What did the Dawes and Young Plans provide Germany?',a:'American loans',d:'easy'},
+{paper:'p3',q:'What treaty of 1925 confirmed the Versailles borders and led to France leaving the Ruhr?',a:'The Locarno Pact',d:'medium'},
+{paper:'p3',q:'Which popular war-hero became President of Weimar Germany in 1925?',a:'Paul von Hindenburg',d:'easy'},
+// ── Germany Unit 2 ──
+{paper:'p3',q:'When did Hitler become leader of the Nazi Party?',a:'1921',d:'medium'},
+{paper:'p3',q:'What was the official name of the Brownshirts?',a:'SA (Sturmabteilung)',d:'easy'},
+{paper:'p3',q:'Which Italian leader\'s March on Rome inspired the Munich Putsch?',a:'Mussolini',d:'medium'},
+{paper:'p3',q:'When was the Munich Putsch?',a:'9 November 1923',d:'hard'},
+{paper:'p3',q:'What did Hitler write in prison in 1924?',a:'Mein Kampf',d:'easy'},
+{paper:'p3',q:'How many seats did the Nazis win in the 1928 election?',a:'12',d:'medium'},
+{paper:'p3',q:'How many Germans were unemployed at the height of the Great Depression?',a:'6 million',d:'easy'},
+{paper:'p3',q:'How many seats did the Nazis win in the July 1932 election?',a:'230',d:'medium'},
+{paper:'p3',q:'When did Hitler become Chancellor of Germany?',a:'January 1933',d:'medium'},
+// ── Germany Unit 3 ──
+{paper:'p3',q:'When was the Reichstag Fire?',a:'27 February 1933',d:'medium'},
+{paper:'p3',q:'What law in March 1933 gave Hitler the power to make any law he pleased?',a:'The Enabling Act',d:'easy'},
+{paper:'p3',q:'Who was killed during the Night of the Long Knives?',a:'Ernst Röhm',d:'easy'},
+{paper:'p3',q:'Whose death in August 1934 allowed Hitler to become Führer?',a:'Hindenburg',d:'easy'},
+{paper:'p3',q:'What was the Nazi secret police called?',a:'The Gestapo',d:'easy'},
+{paper:'p3',q:'What was the first concentration camp opened in 1933?',a:'Dachau',d:'medium'},
+{paper:'p3',q:'Who led the Confessing Church in opposition to the Nazis?',a:'Pastor Niemöller',d:'medium'},
+{paper:'p3',q:'What was the name of working-class youth who opposed the Hitler Youth?',a:'Edelweiss Pirates',d:'medium'},
+// ── Germany Unit 4 ──
+{paper:'p3',q:'What were the 3 Ks Nazis wanted women\'s lives to centre around?',a:'Kinder, Kirche, Küche (children, church, kitchen)',d:'easy'},
+{paper:'p3',q:'What loan would a couple receive if they married in Nazi Germany?',a:'1,000 marks',d:'medium'},
+{paper:'p3',q:'When did the Hitler Youth become compulsory?',a:'1936',d:'hard'},
+{paper:'p3',q:'What organisation did unemployed Germans have to join for 6 months?',a:'RAD (National Labour Service)',d:'medium'},
+{paper:'p3',q:'Which two groups were excluded from the Nazi unemployment figures?',a:'Women and Jews',d:'easy'},
+{paper:'p3',q:'When did the Nazis introduce conscription?',a:'1935',d:'medium'},
+{paper:'p3',q:'Which laws removed German citizenship from Jews in 1935?',a:'The Nuremberg Laws',d:'easy'},
+{paper:'p3',q:'When was Kristallnacht?',a:'9–10 November 1938',d:'medium'},
+{paper:'p3',q:'What does Kristallnacht mean in English?',a:'Night of Broken Glass',d:'easy'},
+// ── Cold War Unit 1 ──
+{paper:'p2a',q:'Who was the Soviet leader at Yalta?',a:'Stalin',d:'easy'},
+{paper:'p2a',q:'Who was the American President at Potsdam?',a:'Truman',d:'easy'},
+{paper:'p2a',q:'What did Churchill call the border between communist and capitalist Europe?',a:'The Iron Curtain',d:'medium'},
+{paper:'p2a',q:'How much Marshall Aid was sent to Western Europe?',a:'$13 billion',d:'medium'},
+{paper:'p2a',q:'What was the official name for the policy of containment?',a:'The Truman Doctrine',d:'easy'},
+{paper:'p2a',q:'What did the capitalist allies introduce to Trizonia in June 1948?',a:'The Deutschmark',d:'easy'},
+{paper:'p2a',q:'How did the capitalist allies overcome the Berlin Blockade?',a:'The Berlin Airlift',d:'easy'},
+{paper:'p2a',q:'What Cold War alliance was formed in 1949?',a:'NATO',d:'medium'},
+{paper:'p2a',q:'What Cold War alliance was formed in 1955?',a:'The Warsaw Pact',d:'medium'},
+{paper:'p2a',q:'What does MAD stand for?',a:'Mutually Assured Destruction',d:'medium'},
+{paper:'p2a',q:'Who led the Hungarian Uprising in 1956?',a:'Imre Nagy',d:'easy'},
+{paper:'p2a',q:'How many Hungarians were killed during the Hungarian Uprising?',a:'3,000',d:'medium'},
+// ── Cold War Unit 2 ──
+{paper:'p2a',q:'What was Khrushchev\'s Berlin Ultimatum in 1958?',a:'The West had 6 months to leave West Berlin',d:'medium'},
+{paper:'p2a',q:'What prompted Khrushchev to walk out of the Paris Summit in 1960?',a:'The U2 spy plane incident',d:'medium'},
+{paper:'p2a',q:'When was the Berlin Wall built?',a:'August 1961',d:'medium'},
+{paper:'p2a',q:'Who became leader of Cuba following the Cuban Revolution?',a:'Fidel Castro',d:'easy'},
+{paper:'p2a',q:'How many Cuban exiles invaded the Bay of Pigs in 1961?',a:'1,400',d:'medium'},
+{paper:'p2a',q:'When were the 13 days of the Cuban Missile Crisis?',a:'October 1962',d:'medium'},
+{paper:'p2a',q:'Who was said to have "blinked" during the Cuban Missile Crisis?',a:'Khrushchev',d:'easy'},
+{paper:'p2a',q:'What communication link was established between Washington and Moscow in 1963?',a:'The Hotline',d:'easy'},
+{paper:'p2a',q:'Who called for "socialism with a human face" in 1968?',a:'Alexander Dubček',d:'easy'},
+{paper:'p2a',q:'How many Warsaw Pact troops invaded Czechoslovakia in 1968?',a:'500,000',d:'medium'},
+// ── Cold War Unit 3 ──
+{paper:'p2a',q:'In what year was SALT 1 agreed?',a:'1972',d:'hard'},
+{paper:'p2a',q:'What détente agreement was reached by 33 countries in 1975?',a:'The Helsinki Accords',d:'easy'},
+{paper:'p2a',q:'When did the USSR invade Afghanistan?',a:'24 December 1979',d:'hard'},
+{paper:'p2a',q:'What did Reagan call the USSR?',a:'The Evil Empire',d:'easy'},
+{paper:'p2a',q:'What new weapon did the USA announce in 1983?',a:'SDI – Star Wars',d:'medium'},
+{paper:'p2a',q:'Who became Soviet leader in 1985?',a:'Gorbachev',d:'easy'},
+{paper:'p2a',q:'What were the two parts of Gorbachev\'s New Thinking?',a:'Perestroika and Glasnost',d:'easy'},
+{paper:'p2a',q:'What did Gorbachev replace the Brezhnev Doctrine with?',a:'The Sinatra Doctrine',d:'medium'},
+{paper:'p2a',q:'When did the Berlin Wall fall?',a:'9 November 1989',d:'medium'},
+{paper:'p2a',q:'When did Gorbachev dissolve the USSR?',a:'Christmas Day 1991',d:'medium'},
+// ── Elizabeth Unit 1 ──
+{paper:'p2b',q:'How much debt did Elizabeth inherit in 1558?',a:'£227,000',d:'medium'},
+{paper:'p2b',q:'What was Elizabeth\'s title in the Church of England?',a:'Supreme Governor',d:'easy'},
+{paper:'p2b',q:'What was the fine for recusancy in 1559?',a:'1 shilling',d:'easy'},
+{paper:'p2b',q:'Which two members of the Privy Council were Puritan?',a:'Walsingham and Dudley',d:'medium'},
+{paper:'p2b',q:'What did Puritans force Elizabeth to remove from churches?',a:'Crucifixes',d:'easy'},
+{paper:'p2b',q:'What Latin phrase described Elizabeth\'s religious approach?',a:'Via Media (middle way)',d:'medium'},
+{paper:'p2b',q:'In what year did Mary Queen of Scots arrive in England?',a:'1568',d:'medium'},
+// ── Elizabeth Unit 2 ──
+{paper:'p2b',q:'In what year was the Revolt of the Northern Earls?',a:'1569',d:'medium'},
+{paper:'p2b',q:'When did the Pope excommunicate Elizabeth?',a:'1570',d:'medium'},
+{paper:'p2b',q:'Who was Elizabeth\'s spymaster?',a:'Walsingham',d:'medium'},
+{paper:'p2b',q:'During which plot was Mary Queen of Scots directly implicated?',a:'The Babington Plot',d:'easy'},
+{paper:'p2b',q:'When was Mary Queen of Scots executed?',a:'1587',d:'medium'},
+{paper:'p2b',q:'What treaty led to direct English involvement in the Netherlands?',a:'The Treaty of Nonsuch',d:'medium'},
+{paper:'p2b',q:'What was sent against the Armada whilst they were anchored in Calais?',a:'Fireships',d:'easy'},
+{paper:'p2b',q:'What was the decisive battle during the Spanish Armada?',a:'The Battle of Gravelines',d:'medium'},
+// ── Elizabeth Unit 3 ──
+{paper:'p2b',q:'What map revolutionised navigation in 1569?',a:'The Mercator Map',d:'medium'},
+{paper:'p2b',q:'How much Spanish gold did Drake steal on his circumnavigation?',a:'£400,000',d:'medium'},
+{paper:'p2b',q:'On what island did Raleigh attempt to found his Virginia colony?',a:'Roanoke',d:'medium'},
+{paper:'p2b',q:'What process saw communal land enclosed by gentry for sheep farming?',a:'Enclosure',d:'medium'},
+{paper:'p2b',q:'What was the punishment for vagrancy on the first offence in the 1572 Vagabonds Act?',a:'Whipped and a hole drilled through the ear',d:'hard'},
+{paper:'p2b',q:'What percentage of men were literate by the end of Elizabeth\'s reign?',a:'30%',d:'hard'},
+{paper:'p2b',q:'How much did a standing ticket in the theatre cost?',a:'1 penny',d:'medium'},
+// ── Migration Medieval ──
+{paper:'p1',q:'What was the name of the Viking army that arrived in England in 865?',a:'The Great Heathen Army',d:'medium'},
+{paper:'p1',q:'What name was given to the Viking-settled lands in northern and eastern England?',a:'The Danelaw',d:'medium'},
+{paper:'p1',q:'Which northern English city had the largest Viking influence?',a:'Jorvik (York)',d:'easy'},
+{paper:'p1',q:'In what year did the Normans conquer England?',a:'1066',d:'easy'},
+{paper:'p1',q:'What became the official language after the Norman Conquest?',a:'Norman French',d:'easy'},
+{paper:'p1',q:'What word meant charging interest on loans and was banned for Christians?',a:'Usury',d:'easy'},
+{paper:'p1',q:'In what year were Jews expelled from England?',a:'1290',d:'medium'},
+{paper:'p1',q:'What was the name of the Hansa merchants\' trading base in London?',a:'The Steelyard',d:'medium'},
+// ── Migration Early Modern ──
+{paper:'p1',q:'What were French Protestants who sought refuge in England called?',a:'Huguenots',d:'easy'},
+{paper:'p1',q:'What area of London did Huguenot migrants settle in?',a:'Spitalfields',d:'medium'},
+{paper:'p1',q:'In what year were Jews allowed to return to England?',a:'1656',d:'medium'},
+{paper:'p1',q:'What town invited Flemish strangers to migrate to boost its economy in 1561?',a:'Sandwich',d:'medium'},
+{paper:'p1',q:'Where did the government attempt to deport the Palatine migrants?',a:'Ireland',d:'medium'},
+// ── Migration Industrial ──
+{paper:'p1',q:'In what decade did over 100,000 Ashkenazi Jews arrive in Britain?',a:'1880s',d:'easy'},
+{paper:'p1',q:'What were Ashkenazi Jewish migrants to Britain mostly fleeing?',a:'Russian pogroms',d:'easy'},
+{paper:'p1',q:'What extreme Protestant organisation opposed Irish Catholic migration?',a:'The Orange Order',d:'medium'},
+{paper:'p1',q:'What name was given to workers who dug canals and built railways?',a:'Navvies',d:'easy'},
+{paper:'p1',q:'Which group of migrants were blamed for the Jack the Ripper murders?',a:'Ashkenazi Jews',d:'medium'},
+{paper:'p1',q:'What opened in 1869 that increased migration from Asia?',a:'The Suez Canal',d:'hard'},
+// ── Migration Modern ──
+{paper:'p1',q:'Who was given British citizenship in the 1948 British Nationality Act?',a:'All Commonwealth subjects',d:'easy'},
+{paper:'p1',q:'Which politician gave the racist "Rivers of Blood" speech in 1968?',a:'Enoch Powell',d:'medium'},
+{paper:'p1',q:'What was the informal name for barriers preventing black migrants gaining jobs or housing?',a:'The Colour Bar',d:'medium'},
+{paper:'p1',q:'Roy Hackett and Paul Stephenson led which protest in 1963?',a:'The Bristol Bus Boycott',d:'medium'},
+{paper:'p1',q:'What is the name of Belgrave Road in Leicester due to Asian cultural influence?',a:'The Golden Mile',d:'medium'},
+// ── Notting Hill ──
+{paper:'p1',q:'How much higher were wages in the UK compared to the Caribbean after WWII?',a:'Four times higher',d:'hard'},
+{paper:'p1',q:'How did Peter Rachman exploit Caribbean migrants in Notting Hill?',a:'Slum landlord — charged high rents, refused repairs, used threats',d:'medium'},
+{paper:'p1',q:'What was a shebeen in Notting Hill?',a:'An unofficial unlicensed club',d:'easy'},
+{paper:'p1',q:'In what year were the Notting Hill riots?',a:'1958',d:'easy'},
+{paper:'p1',q:'Who founded the Caribbean Carnival in Notting Hill?',a:'Claudia Jones',d:'easy'},
+{paper:'p1',q:'Who was the owner of the Mangrove restaurant?',a:'Frank Crichlow',d:'medium'},
+{paper:'p1',q:'What was the verdict of the Mangrove Nine trial?',a:'All acquitted',d:'medium'},
+{paper:'p1',q:'In 1950s Notting Hill, 97% of police officers were what?',a:'White and male',d:'easy'},
+];
 
+// ── Rapid Fire state ──
+let rqPapers = {p1:false, p2a:false, p2b:false, p3:false};
+let rqDiff = 1;
+
+function showRapidSetup() {
+  showScreen('s-rapid');
+  document.getElementById('rq-setup').style.display = 'block';
+  document.getElementById('rq-out').style.display = 'none';
+  document.getElementById('rq-err').style.display = 'none';
+}
+
+function toggleRQPaper(p) {
+  rqPapers[p] = !rqPapers[p];
+  const btn = document.getElementById('rqp-' + p);
+  if (rqPapers[p]) {
+    btn.classList.add('on-' + p);
+  } else {
+    btn.classList.remove('on-' + p);
+  }
+}
+
+function setRQDiff(n) {
+  rqDiff = n;
+  [1,2,3].forEach(i => {
+    document.getElementById('rqs-' + i).classList.toggle('sel', i === n);
+  });
+}
+
+function generateRQ() {
+  const activePapers = Object.keys(rqPapers).filter(p => rqPapers[p]);
+  if (!activePapers.length) {
+    document.getElementById('rq-err').style.display = 'block';
+    document.getElementById('rq-err').textContent = 'Please select at least one paper.';
+    return;
+  }
+  const allowed = rqDiff === 1 ? ['easy'] : rqDiff === 2 ? ['easy','medium'] : ['easy','medium','hard'];
+  let pool = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d));
+  if (pool.length < 10) {
+    document.getElementById('rq-err').style.display = 'block';
+    document.getElementById('rq-err').textContent = 'Not enough questions match these filters. Try adding more papers or increasing difficulty.';
+    return;
+  }
+  document.getElementById('rq-err').style.display = 'none';
+  const ten = shuffle(pool).slice(0, 10);
+  const grid = document.getElementById('rq-grid');
+  grid.innerHTML = ten.map((q, i) => `
+    <div class="rq-card" id="rqc${i}" onclick="revealRQ(${i})">
+      <div class="rq-q">${i+1}. ${q.q}</div>
+      <div class="rq-a">${q.a}</div>
+      <div class="rq-tap">Tap to reveal</div>
+    </div>`).join('');
+  document.getElementById('rq-setup').style.display = 'none';
+  document.getElementById('rq-out').style.display = 'block';
+}
+
+function revealRQ(i) {
+  document.getElementById('rqc' + i).classList.add('revealed');
+}
 // ═══════════════════════════════════════════
 // EXAM PRACTICE
 // ═══════════════════════════════════════════
@@ -454,9 +724,13 @@ function showQuizEnd() {
 }
 const KC = [
 // ── PAPER 1 · Unit 1 Medieval ───────────────
-{paper:'p1',unit:'Unit 1 – Medieval',heading:'Viking migration to England',
- hints:['865','Danelaw','Jorvik','Things','Thursday'],
- facts:['865: Great Heathen Army invaded England seeking land and revenge for the murder of Ragnar Lodbrok','878: Treaty of Alfred and Guthrum created the Danelaw – Viking legal autonomy across north and east England','York (Jorvik) grew from ~1,000 (850) to ~15,000 (950) – goods from Baltic, Byzantium and Islamic world traded there','Vikings introduced "things" – community assemblies voting on laws; an early form of jury system','Old Norse shaped English permanently: Thursday = Thor\'s Day; place names ending -by and -thorpe are Viking settlements']},
+{paper:'p1',unit:'Unit 1 – Medieval',heading:'Viking raids and settlement',
+ hints:['865','Danelaw','Alfred','Assimilation','Guthrum'],
+ facts:['793: first Viking raid on Lindisfarne monastery – shocked Christian Europe; raids intensified throughout early 9th century','865: Great Heathen Army invaded seeking land and revenge for murder of Ragnar Lodbrok; led by Ivar the Boneless','878: King Alfred defeated Vikings at Battle of Edington; Treaty of Alfred and Guthrum created the Danelaw – Viking legal autonomy across north and east England','Viking settlers assimilated over time: intermarriage with English was common; many converted to Christianity including Guthrum; adopted English customs while shaping English culture','Cnut became King of England 1016 – ruled as Christian Viking king maintaining English laws; showed how complete Viking assimilation had become']},
+
+{paper:'p1',unit:'Unit 1 – Medieval',heading:'Jorvik – Viking York',
+ hints:['Jorvik','15000','Coppergate','Amber','Christianity'],
+ facts:['York (Jorvik) grew from a small Roman city of ~1,000 people (850) to ~15,000 by 950 – one of the largest cities in northern Europe','Became a major international trading hub: amber from the Baltic, silk from Byzantium, spices from the Islamic world, furs from Scandinavia all traded in Jorvik','Coppergate excavations (1976–81) revealed remarkable evidence: leather shoes, wooden bowls, amber jewellery, silk caps – showing a sophisticated urban economy','Jorvik had specialist craftworkers: metalworkers, comb-makers (from animal bone and antler), leatherworkers, weavers – a diverse skilled economy','There is evidence of assimilation between Norse Pagan religion and Christianity in Jorvik - two religions blending together']},
 
 {paper:'p1',unit:'Unit 1 – Medieval',heading:'Norman Conquest 1066',
  hints:['Hastings','Feudal','84castles','French','Monarchy'],
@@ -504,6 +778,10 @@ const KC = [
  hints:['Somerset','Loyalists','Deported','Equiano','Ornaments'],
  facts:['1772: Somerset Case ruled slavery illegal in Britain – made Britain a refuge for enslaved Africans seeking freedom','American War of Independence 1780s: Black Loyalists who fought for Britain were given homes in Britain','400 black migrants deported from London to Sierra Leone 1792 – despite earlier promises of freedom','Black abolitionists Equiano and Sancho wrote autobiographies that helped persuade Parliament to abolish the slave trade (1807)','Some wealthy families kept African children as household "ornaments" – reflecting deep racial attitudes of the period']},
 
+{paper:'p1',unit:'Unit 3 – 18th & 19th Centuries',heading:'Liverpool as a case study in migration',
+ hints:['Irish','Lascars','Docklands','Orange','20percent'],
+ facts:['Liverpool was Britain\'s busiest port and became a major centre of migrant settlement throughout the 18th and 19th centuries','Irish community: Irish Famine (1845–46) drove mass migration; by the 1850s Irish made up over 20percent of Liverpool\'s population – the highest concentration in any English city','Irish migrants settled in courts and cellars near the docks; faced intense Orange Order hostility; Catholic-Protestant tensions led to regular street violence throughout the 19th century','Lascars: South Asian and East African sailors employed by the East India Company regularly landed in Liverpool; many settled around the docklands; faced exploitation and inferior conditions','Liverpool became a genuinely multi-ethnic city by the late 19th century – but migrant communities faced poverty, disease and hostility in a city shaped by the slave trade and empire']},
+
 // ── PAPER 1 · Unit 4 Modern ─────────────────
 {paper:'p1',unit:'Unit 4 – Modern',heading:'WWI/WWII troops and refugees',
  hints:['Belgian','Kindertransport','Polish','Resettlement','Rebuild'],
@@ -524,6 +802,23 @@ const KC = [
 {paper:'p1',unit:'Unit 4 – Modern',heading:'Windrush Generation',
  hints:['Nationality','Transport','NHS','Relations','Scandal'],
  facts:['1948 British Nationality Act gave all Commonwealth subjects the right to settle in Britain','London Transport and NHS actively recruited in the Caribbean – adverts in local newspapers; average pay four times higher than in the Caribbean','By 1960s: 12% of London Transport employees from ethnic minorities; by 2003: 30% of NHS doctors and 44% of nurses were migrants','1965: Race Relations Act – first law banning racial discrimination; 1976: Race Relations Act strengthened protections','2012: Windrush scandal – legal Caribbean migrants wrongly detained, denied healthcare, threatened with deportation']},
+
+{paper:'p1',unit:'Unit 4 – Modern',heading:'Black migrants in Bristol – 20th century',
+ hints:['Windrush','Boycott','Lawrence','Riots','StPauls'],
+ facts:['Caribbean migrants arrived in Bristol from late 1940s onwards; settled in St Pauls district; faced colour bar in housing, pubs and employment – Bristol Omnibus Company refused to employ black or Asian drivers or conductors','Bristol Bus Boycott 1963: led by Paul Stephenson and the West Indian Development Council; four-month boycott of Bristol buses forced the company to end its colour bar – directly influenced the 1965 Race Relations Act','Boycott was a key moment in British civil rights: showed that organised community action could challenge institutional racism through non-violent protest','1980: St Pauls riots broke out after police raid on the Black and White Café; two nights of unrest; showed deep tensions between Bristol\'s black community and police','1981: Scarman Report into Brixton riots (London) also reflected conditions in St Pauls – recommended community policing reforms; showed systemic problems nationally, not just locally']},
+
+{paper:'p1',unit:'Unit 4 – Modern',heading:'20th Century legislation for migrants',
+ hints:['Aliens','Nationality','Commonwealth','Relations','Equality'],
+ facts:['1905 Aliens Act: Britain\'s first immigration restriction law – specifically targeted Ashkenazi Jewish migrants fleeing Russian pogroms; introduced immigration officers and right of refusal','1948 British Nationality Act: gave all Commonwealth subjects the legal right to settle in Britain – enabled the Windrush Generation; a deliberate government policy to recruit labour','1962 Commonwealth Immigrants Act: restricted Commonwealth immigration for the first time – required employment vouchers; a major reversal of the 1948 open-door policy','1968 Commonwealth Immigrants Act: rushed through in three days specifically to prevent Kenyan Asians (British passport holders) from settling – widely condemned as racist','Race Relations Acts 1965, 1976 and 2010: banned racial discrimination progressively – 1965 in public places, 1976 in employment and housing, 2010 Equality Act created comprehensive legal framework']},
+
+{paper:'p1',unit:'Unit 4 – Modern',heading:'Anti-immigration politicians and movements',
+ hints:['Mosley','Powell','National','Lewisham','Rivers'],
+ facts:['Oswald Mosley: led British Union of Fascists in the 1930s (Battle of Cable Street 1936); returned with Union Movement after WWII; "Keep Britain White" slogan; received 8% of vote in Notting Hill 1959','Enoch Powell: Conservative MP; gave "Rivers of Blood" speech April 1968 – predicted racial violence if immigration continued; dismissed from Shadow Cabinet by Heath but 74% of British public agreed with him','National Front: founded 1967; grew rapidly in the 1970s; combined racism, antisemitism and anti-immigration politics; regular marches through immigrant communities','Battle of Lewisham 1977: National Front march through South London was blocked by anti-racist protesters; police protected National Front marchers; 214 arrests; showed public opposition to far right']},
+
+{paper:'p1',unit:'Unit 4 – Modern',heading:'Asian community in Leicester',
+ hints:['Amin','Belgrave','Golden','Diwali','Integration'],
+ facts:['1972: Idi Amin gave Ugandan Asians 90 days to leave Uganda; ~27,000 settled in Britain; Leicester City Council placed adverts in Ugandan newspapers discouraging them from coming to Leicester specifically','Despite official hostility, many Ugandan Asians settled in Leicester – they were educated, entrepreneurial and had business experience; brought capital and skills','Belgrave Road in Leicester became the "Golden Mile" – Asian-owned shops, restaurants, jewellers and textile businesses created a prosperous and distinctive commercial district','Leicester now hosts the largest Diwali celebrations outside of India and Nepal – more than 35,000 people gather on Belgrave Road for the lights ceremony each year','Leicester is often cited as an example of successful multicultural integration: by 2011 it was one of the first British cities where white British were a minority; multiple communities have political representation']},
+
 
 // ── PAPER 1 · Unit 5 Notting Hill ───────────
 {paper:'p1',unit:'Unit 5 – Notting Hill',heading:'Arrival and settlement in Notting Hill',
@@ -596,7 +891,37 @@ const KC = [
  facts:['Hungary was a communist satellite state ruled by harsh Stalinist dictator Rákosi; food shortages, secret police and lack of freedom drove protests','1956: Khrushchev replaced Rákosi with the popular Imre Nagy who began reforms – releasing prisoners, relaxing censorship, freedom of speech','Nagy went too far by announcing Hungary would leave the Warsaw Pact – Khrushchev sent 1,000 tanks into Budapest; 3,000 killed and 20,000 fled to the West','3,000 killed; 20,000 fled to the West; Nagy arrested and later executed; Kadar installed as new hardline leader','West condemned the invasion but did nothing – showed NATO would not intervene inside the Soviet sphere']},
 
 // ── PAPER 2A · Unit 2 Crises 1958–70 ────────
-,
+{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'2nd Berlin Crisis – causes',
+ hints:['Drain','NATO','Ultimatum','Brain','1955'],
+ facts:['Brain drain: between 1949–61 approximately 3 million East Germans fled to the West via West Berlin – many were skilled professionals (doctors, engineers, lawyers) whose loss weakened the GDR economy severely','1955: West Germany joined NATO – Khrushchev saw this as a direct threat; a rearmed West Germany inside the Western military alliance was alarming to Soviet security','Khrushchev issued the Berlin Ultimatum November 1958: gave the Western powers six months to leave West Berlin and make it a "free city"; if not, he would hand control of access routes to East Germany','The Ultimatum was rejected by the West – Berlin remained a flashpoint; Khrushchev extended the deadline several times but the crisis continued to escalate','The brain drain was the most urgent problem for Khrushchev: by 1961 East Germany was losing around 30,000 people a month – the socialist state was bleeding to death through its own open border']},
+
+{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'2nd Berlin Crisis – summits and U2',
+ hints:['Paris','Vienna','U2','Eisenhower','Lied'],
+ facts:['Paris Summit May 1960: Khrushchev walked out after an American U2 spy plane (piloted by Gary Powers) was shot down over the USSR; Eisenhower initially denied the flight then admitted it when the USSR produced Powers and the wreckage','Eisenhower\'s lie destroyed the Paris Summit before it began; Khrushchev used it as propaganda proof that the USA could not be trusted; set back diplomacy significantly','Vienna Summit June 1961: Kennedy and Khrushchev met for the first time; Khrushchev pressed his Berlin Ultimatum; he judged Kennedy as weak and inexperienced – this misjudgement contributed to placing missiles in Cuba later','Kennedy stood firm on Berlin at Vienna but was shaken by Khrushchev\'s aggression; returned to Washington and requested a $3.25bn increase in defence spending','The failed summits showed diplomacy could not resolve the Berlin crisis; a more decisive action was needed – the Wall was Khrushchev\'s solution']},
+
+{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'2nd Berlin Crisis – consequences',
+ hints:['Wall','140','Berliner','Symbol','August'],
+ facts:['13 August 1961: East German soldiers began building the Berlin Wall overnight; barbed wire first, then concrete; it eventually stretched 155km around West Berlin','The Wall ended the brain drain immediately – emigration stopped almost overnight; Khrushchev had solved his most urgent problem','Over 140 people were killed trying to cross the Wall between 1961 and 1989; Peter Fechter (1962) bled to death in the "death strip" as guards watched – a powerful propaganda image for the West','June 1963: President Kennedy visited West Berlin; his speech declared "Ich bin ein Berliner" – American commitment to West Berlin; 450,000 people gathered; the visit was a major propaganda victory for the West','The Wall became the defining symbol of the Cold War – physical proof that communism could only survive by imprisoning its own people; it stood until 9 November 1989']},
+
+{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Cuban Revolution and Bay of Pigs',
+ hints:['Castro','Batista','Nationalised','1400','Humiliated'],
+ facts:['1959: Fidel Castro overthrew pro-American dictator Fulgencio Batista in the Cuban Revolution; Castro nationalised all American-owned land and businesses – US companies lost approximately $1 billion in assets','USA imposed a trade embargo on Cuba; Castro turned to the USSR for support; Khrushchev agreed to buy Cuban sugar and provide economic and military assistance – Cuba became a communist state 90 miles from the USA','April 1961: Bay of Pigs invasion – CIA trained approximately 1,400 Cuban exiles (Brigade 2506) to invade Cuba and overthrow Castro; Kennedy cancelled planned US air support at the last minute','The invasion was a catastrophic failure: all 1,400 men were captured or killed within three days; Kennedy was publicly humiliated; the CIA\'s involvement was obvious despite denials','Bay of Pigs had two crucial consequences: it pushed Cuba and the USSR even closer together, and it convinced Khrushchev that Kennedy was weak – a misjudgement that led directly to the missile crisis']},
+
+{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Cuban Missile Crisis – 13 days',
+ hints:['Spyplane','Blockade','13days','Dobrynin','DEFCON'],
+ facts:['14 October 1962: US U2 spy plane photographed Soviet nuclear missile sites under construction in Cuba; CIA analysts estimated they would be operational within two weeks','Kennedy was briefed on 16 October; formed ExComm (Executive Committee) of senior advisers; debated options – air strike, invasion, blockade, or diplomacy; chose a naval "quarantine" (blockade)','22 October: Kennedy announced the blockade on live television; put US forces on DEFCON 3; Soviet ships were sailing toward the blockade line with nuclear materials on board','Soviet submarines accompanying the ships carried nuclear torpedoes; submarine B-59 nearly fired one when depth-charged by US destroyers – officer Vasili Arkhipov refused to authorise launch','Thirteen days of intense diplomacy through back-channels (including Soviet ambassador Dobrynin); Khrushchev and Kennedy exchanged letters; world came closer to nuclear war than at any other point']},
+
+{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Cuban Missile Crisis – consequences',
+ hints:['Hotline','Test','Khrushchev','Turkey','Détente'],
+ facts:['Resolution: Khrushchev agreed to remove Soviet missiles from Cuba; Kennedy publicly pledged not to invade Cuba and secretly agreed to remove US Jupiter missiles from Turkey within six months','Kennedy appeared to "win" – Khrushchev appeared to have backed down; this damaged Khrushchev\'s authority within the USSR and he was removed from power in October 1964','June 1963: Moscow-Washington Hotline established – a direct telephone link between the two leaders to prevent future accidental nuclear war; a direct consequence of the dangerous lack of communication during the crisis','August 1963: Partial Test Ban Treaty signed – banned nuclear weapons testing in the atmosphere, underwater and in space; first arms control agreement of the Cold War','The crisis planted seeds of détente: both superpowers had looked into the nuclear abyss; recognised that MAD required communication and restraint; relationship cautiously improved throughout the 1960s']},
+
+{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Prague Spring – Dubček and reforms',
+ hints:['Dubček','Human','Tito','Censorship','Writers'],
+ facts:['January 1968: Alexander Dubček became First Secretary of the Czechoslovak Communist Party; he had grown up in the USSR but was committed to genuine reform','Dubček announced "Socialism with a human face" – a programme of liberalisation: relaxed censorship, allowed criticism of the government, permitted foreign travel, released political prisoners','Czech writers, intellectuals and students enthusiastically supported the reforms; newspapers published openly critical articles; a genuine political spring emerged in Prague','Dubček invited Marshal Tito of Yugoslavia (who had broken from Moscow in 1948 and ran an independent communist state) to Prague – Brezhnev saw this as a dangerous signal that Czechoslovakia might seek independence','By summer 1968: Brezhnev was receiving alarming reports from other satellite state leaders who feared the Czech example would inspire similar demands in their own countries; he decided to act']},
+
+{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Prague Spring – invasion and Brezhnev Doctrine',
+ hints:['500000','70killed','Brezhnev','Albania','Husák'],
+ facts:['Night of 20–21 August 1968: 500,000 Warsaw Pact troops (from USSR, Poland, Hungary, Bulgaria and East Germany) invaded Czechoslovakia; Dubček was arrested and taken to Moscow','70 civilians were killed in the invasion; Czechoslovak people responded with passive resistance – moving road signs, arguing with soldiers – but had no military means to resist','Dubček was forced to sign the Moscow Protocol agreeing to end all reforms; he was replaced by the hardline Gustáv Husák; the "normalisation" of Czechoslovakia began','Brezhnev Doctrine announced: if any communist country threatened the socialist bloc as a whole, other communist nations had a duty to intervene; this formalised Soviet right to invade any satellite state','Albania left the Warsaw Pact in protest and aligned with China; the West condemned the invasion but took no military action – showed once again that the Soviet sphere of influence was inviolable']},
 
 // ── PAPER 2A · Unit 3 End of Cold War ───────
 {paper:'p2a',unit:'Unit 3 – End of Cold War 1970–91',heading:'Détente and SALT 1970s',
@@ -676,7 +1001,15 @@ const KC = [
 
 {paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Virginia colony 1585 and 1587',
  hints:['Raleigh','Tiger','Wingina','Roanoke','Croatoan'],
- facts:['Sir Walter Raleigh organised and financed two attempts at a colony in Virginia in the 1580s','1585: 108 settlers on Roanoke Island; supply ship The Tiger ran aground – seawater destroyed most food stores immediately','Too many soldiers and merchants; not enough farmers; colonists depended on Algonquian people for food from the start','Relations broke down; Ralph Lane led pre-emptive attack and killed chief Wingina – ended any chance of cooperation','1590: returned to find colony vanished; only "Croatoan" carved in a tree; colonists never seen again']},
+ facts:['Sir Walter Raleigh organised and financed two attempts at a colony in Virginia in the 1580s','1585: 108 settlers on Roanoke Island; supply ship The Tiger ran aground – seawater destroyed most food stores immediately','Too many soldiers and merchants; not enough farmers; colonists depended on Algonquian people for food from the start','Relations broke down as disease (invisible bullets) spread from English to natives; Ralph Lane led pre-emptive attack and killed chief Wingina – ended any chance of cooperation', 'supply ships cannot leave England as all ships are needed to defend against Spanish Armada','1590: returned to find colony vanished; only "Croatoan" carved in a tree; colonists never seen again']},
+
+{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Causes of poverty in Elizabethan England',
+ hints:['Population','Enclosure','Harvest','Debasement','Malthusian'],
+ facts:['Population growth: England\'s population grew from approximately 3 million to 4 million during Elizabeth\'s reign – increased demand for food drove up prices while more people competed for the same number of jobs, driving down wages; a classic Malthusian crisis','Enclosure: wealthy landowners enclosed common land to farm sheep for the highly profitable wool trade; poor families lost access to land they had used to grow food and graze animals for generations – many became landless','Harvest failures: the "little ice age" brought lower temperatures and more frequent harvest failures throughout the second half of the 16th century; bad harvests in the 1590s caused near-famine conditions in some areas','Debasement of the currency: Henry VIII and Edward VI had reduced the silver content of coins to fund wars; this caused inflation that continued throughout Elizabeth\'s reign – prices rose faster than wages could keep pace'],},
+
+{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Attitudes and legislation towards the poor',
+ hints:['Deserving','Vagabonds','Correction','Attitudes','Statute'],
+ facts:['Elizabethan society divided the poor into the "deserving poor" (the elderly, sick or disabled who genuinely could not work) and the "undeserving poor" (able-bodied people without work, assumed to be lazy or criminal)','1563 Statute of Artificers: set wages and regulated employment; first attempt at an organised approach to work and poverty rather than simply punishing vagabonds','1572 Vagabonds Act: vagabonds over 14 to be whipped and burned through the right ear for the first offence; further offences could mean execution; reflected the punitive Attitudes of the period','1576 Act for the Relief of the Poor: established Houses of Correction to teach the poor skills; local officials required to find work for the unemployed; wealthy required to contribute to a poor relief fund – a more constructive approach','1601 Poor Law: consolidated all previous legislation into one comprehensive system; distinguished deserving from undeserving poor in law; established parish as the unit of poor relief – the foundation of English poor relief for the next two centuries'],},
 
 // ── PAPER 3 · Unit 1 Weimar Republic ────────
 {paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'Treaty of Versailles 1919',
@@ -730,8 +1063,12 @@ const KC = [
  facts:['27 February 1933: Reichstag burned; Dutch Communist van der Lubbe blamed; Article 48 emergency declared; 4,000 Communists arrested that night','Communists banned from their 81 seats – gave Nazis the crucial 2/3 majority needed to change the Constitution legally','March 1933: Enabling Act passed – gave Hitler power to make any law without the Reichstag; democracy legally abolished','Hitler immediately banned all other parties (July 1933), trade unions and local government','Germany became a one-party state within months of Hitler taking the chancellorship']},
 
 {paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Night of the Long Knives 1934',
- hints:['Röhm','SA3m','30June','Oath','Führer'],
- facts:['Ernst Röhm led the SA – 3 million members; publicly called for SA to replace the regular army; threatened Hitler\'s relationship with the military','Hitler\'s conservative allies (army, businesspeople) feared the SA; army made clear their loyalty depended on SA being removed','30 June 1934: SS murdered Röhm and approximately 400 others including rival politicians and former allies','Army swore personal oath of allegiance to Hitler in return','2 August 1934: Hindenburg died; Hitler combined President and Chancellor into the title of "Führer" – dictatorship complete']},
+ hints:['Röhm','3 million','30June','400'],
+ facts:['Ernst Röhm led the SA – 3 million members; publicly called for SA to replace the regular army; threatened Hitler\'s relationship with the military','Hitler feared that Röhm was the only person in Nazi party influential enough to rival him.','Röhm was often critical of Hitler, called him Adie, and wanted a more left-wing revolution.' 'Hitler\'s conservative allies (army, businesspeople) feared the SA; army made clear their loyalty depended on SA being removed','30 June 1934: SS murdered Röhm and approximately 400 others including rival politicians and former allies.','Hitler personally arrests Röhm who is taken to a cell and shot.','Hitler has removed internal rivals within the Nazi party - no one else will dare challenge him now!']},
+
+{paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Hindenburg\'s death and the oath of allegiance',
+ hints:['Führer','Oath','August','Personal','Constitution'],
+ facts:['2 August 1934: President Paul von Hindenburg died of lung cancer aged 86; Hitler immediately combined the offices of Chancellor and President into the new title of "Führer und Reichskanzler" (Leader and Reich Chancellor)','Hitler held a rigged referendum and ensured it was approved with 90% in favour','The Reichswehr (German army) immediately swore a new personal oath of loyalty – not to Germany as before, but to Adolf Hitler personally.','Now Hitler was complete dictator of Germany.'],},
 
 {paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Police state – Gestapo and SS',
  hints:['Gestapo','SS300000','Dachau','Judges','SD'],
@@ -760,99 +1097,19 @@ const KC = [
 
 {paper:'p3',unit:'Unit 4 – Life in Nazi Germany',heading:'Employment and living standards',
  hints:['6million','RAD','Autobahn','Conscription','Statistics'],
- facts:['January 1933: 6 million unemployed; by 1939: officially 500,000 – one of the Nazis most powerful propaganda claims','RAD (National Labour Service) set up 1933: compulsory 6 months from 1935; built roads, planted trees; pay was very low','Autobahn motorway programme employed thousands in construction; showcased German engineering','Rearmament: conscription 1935; army grew from 100,000 to 1.3 million by 1939; weapons factories created millions of jobs','Statistics were manipulated – women, Jews and concentration camp prisoners excluded from unemployment count']},
+ facts:['January 1933: 6 million unemployed; by 1939: officially 500,000 – one of the Nazis most powerful propaganda claims','RAD (National Labour Service) set up 1933: compulsory 6 months from 1935; built roads, planted trees; pay was very low','Autobahn motorway programme employed thousands in construction; showcased German engineering','Rearmament: conscription 1935; army grew from 100,000 to 1.36 million by 1939; weapons factories created millions of jobs','Statistics were manipulated – women, Jews and concentration camp prisoners excluded from unemployment count']},
 
-{paper:'p3',unit:'Unit 4 – Life in Nazi Germany',heading:'Jewish persecution and Kristallnacht',
- hints:['Boycott','Nuremberg','Kristallnacht','Fined','Escalation'],
- facts:['April 1933: national boycott of Jewish shops; SA stood outside to intimidate customers; Jews banned from professions','1935: Nuremberg Laws – stripped Jews of citizenship; banned from marrying non-Jews; classified as a separate race','9–10 November 1938: Kristallnacht – thousands of synagogues and Jewish businesses destroyed; over 100 Jews killed; 30,000 arrested and sent to camps','Jews then fined 1 billion marks for "the damage" – showed complete powerlessness of Jews under Nazi rule','Clear escalation 1933→1935→1938; Kristallnacht marked the shift from economic and legal persecution to organised physical violence']},
-// ── NEW CARDS ─────────────────────────────────
-
-// PAPER 1 · Unit 1 – Medieval (Viking split)
-{paper:'p1',unit:'Unit 1 – Medieval',heading:'Viking raids and settlement',
- hints:['865','Danelaw','Alfred','Assimilation','Guthrum'],
- facts:['793: first Viking raid on Lindisfarne monastery – shocked Christian Europe; raids intensified throughout early 9th century','865: Great Heathen Army invaded seeking land and revenge for murder of Ragnar Lodbrok; led by Ivar the Boneless','878: King Alfred defeated Vikings at Battle of Edington; Treaty of Alfred and Guthrum created the Danelaw – Viking legal autonomy across north and east England','Viking settlers assimilated over time: intermarriage with English was common; many converted to Christianity; adopted English customs while shaping English culture','Cnut became King of England 1016 – ruled as Christian Viking king maintaining English laws; showed how complete Viking assimilation had become']},
-
-{paper:'p1',unit:'Unit 1 – Medieval',heading:'Jorvik – Viking York',
- hints:['Jorvik','15000','Coppergate','Amber','Hedgehog'],
- facts:['York (Jorvik) grew from a small Roman city of ~1,000 people (850) to ~15,000 by 950 – one of the largest cities in northern Europe','Became a major international trading hub: amber from the Baltic, silk from Byzantium, spices from the Islamic world, furs from Scandinavia all traded in Jorvik','Coppergate excavations (1976–81) revealed remarkable evidence: leather shoes, wooden bowls, amber jewellery, silk caps – showing a sophisticated urban economy','Jorvik had specialist craftworkers: metalworkers, comb-makers (from animal bone and antler), leatherworkers, weavers – a diverse skilled economy','A hedgehog skull was found at Coppergate – evidence of the exotic food culture Vikings brought; Jorvik gave York its name from Old Norse "Jórvík"']},
-
-// PAPER 1 · Unit 3 – 18th & 19th Centuries (Liverpool case study)
-{paper:'p1',unit:'Unit 3 – 18th & 19th Centuries',heading:'Liverpool as a case study in migration',
- hints:['Irish','Lascars','Docklands','Orange','20percent'],
- facts:['Liverpool was Britain\'s busiest port and became a major centre of migrant settlement throughout the 18th and 19th centuries','Irish community: Irish Famine (1845–46) drove mass migration; by the 1850s Irish made up over 20percent of Liverpool\'s population – the highest concentration in any English city','Irish migrants settled in courts and cellars near the docks; faced intense Orange Order hostility; Catholic-Protestant tensions led to regular street violence throughout the 19th century','Lascars: South Asian and East African sailors employed by the East India Company regularly landed in Liverpool; many settled around the docklands; faced exploitation and inferior conditions','Liverpool became a genuinely multi-ethnic city by the late 19th century – but migrant communities faced poverty, disease and hostility in a city shaped by the slave trade and empire']},
-
-// PAPER 1 · Unit 4 – Modern (new cards)
-{paper:'p1',unit:'Unit 4 – Modern',heading:'Key legislation on migration and race',
- hints:['Aliens','Nationality','Commonwealth','Relations','Equality'],
- facts:['1905 Aliens Act: Britain\'s first immigration restriction law – specifically targeted Ashkenazi Jewish migrants fleeing Russian pogroms; introduced immigration officers and right of refusal','1948 British Nationality Act: gave all Commonwealth subjects the legal right to settle in Britain – enabled the Windrush Generation; a deliberate government policy to recruit labour','1962 Commonwealth Immigrants Act: restricted Commonwealth immigration for the first time – required employment vouchers; a major reversal of the 1948 open-door policy','1968 Commonwealth Immigrants Act: rushed through in three days specifically to prevent Kenyan Asians (British passport holders) from settling – widely condemned as racist','Race Relations Acts 1965, 1976 and 2010: banned racial discrimination progressively – 1965 in public places, 1976 in employment and housing, 2010 Equality Act created comprehensive legal framework']},
-
-{paper:'p1',unit:'Unit 4 – Modern',heading:'Anti-immigration politicians and movements',
- hints:['Mosley','Powell','National','Lewisham','Rivers'],
- facts:['Oswald Mosley: led British Union of Fascists in the 1930s (Battle of Cable Street 1936); returned with Union Movement after WWII; "Keep Britain White" slogan; received 8% of vote in North Kensington 1959','Enoch Powell: Conservative MP; gave "Rivers of Blood" speech April 1968 – predicted racial violence if immigration continued; dismissed from Shadow Cabinet by Heath but 74% of British public agreed with him','National Front: founded 1967; grew rapidly in the 1970s; combined racism, antisemitism and anti-immigration politics; regular marches through immigrant communities','Battle of Lewisham 1977: National Front march through South London was blocked by anti-racist protesters; police protected National Front marchers; 214 arrests; showed public opposition to far right','Anti-Nazi League (founded 1977) and Rock Against Racism mobilised young people against the National Front; helped reduce NF electoral support by the late 1970s']},
-
-{paper:'p1',unit:'Unit 4 – Modern',heading:'Black migrants in Bristol – 20th century',
- hints:['Windrush','Boycott','Lawrence','Riots','StPauls'],
- facts:['Caribbean migrants arrived in Bristol from late 1940s onwards; settled in St Pauls district; faced colour bar in housing, pubs and employment – Bristol Omnibus Company refused to employ black or Asian drivers or conductors','Bristol Bus Boycott 1963: led by Paul Stephenson and the West Indian Development Council; four-month boycott of Bristol buses forced the company to end its colour bar – directly influenced the 1965 Race Relations Act','Boycott was a key moment in British civil rights: showed that organised community action could challenge institutional racism through non-violent protest','1980: St Pauls riots broke out after police raid on the Black and White Café; two nights of unrest; showed deep tensions between Bristol\'s black community and police','1981: Scarman Report into Brixton riots (London) also reflected conditions in St Pauls – recommended community policing reforms; showed systemic problems nationally, not just locally']},
-
-{paper:'p1',unit:'Unit 4 – Modern',heading:'Asian community in Leicester',
- hints:['Amin','Belgrave','Golden','Diwali','Integration'],
- facts:['1972: Idi Amin gave Ugandan Asians 90 days to leave Uganda; ~27,000 settled in Britain; Leicester City Council placed adverts in Ugandan newspapers discouraging them from coming to Leicester specifically','Despite official hostility, many Ugandan Asians settled in Leicester – they were educated, entrepreneurial and had business experience; brought capital and skills','Belgrave Road in Leicester became the "Golden Mile" – Asian-owned shops, restaurants, jewellers and textile businesses created a prosperous and distinctive commercial district','Leicester now hosts the largest Diwali celebrations outside of India and Nepal – more than 35,000 people gather on Belgrave Road for the lights ceremony each year','Leicester is often cited as an example of successful multicultural integration: by 2011 it was one of the first British cities where white British were a minority; multiple communities have political representation']},
-
-// PAPER 2A · Unit 2 – Crises 1958–70 (split Berlin, Cuba, Prague)
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'2nd Berlin Crisis – causes',
- hints:['Drain','NATO','Ultimatum','Brain','1955'],
- facts:['Brain drain: between 1949–61 approximately 3 million East Germans fled to the West via West Berlin – many were skilled professionals (doctors, engineers, lawyers) whose loss weakened the GDR economy severely','1955: West Germany joined NATO – Khrushchev saw this as a direct threat; a rearmed West Germany inside the Western military alliance was alarming to Soviet security','Khrushchev issued the Berlin Ultimatum November 1958: gave the Western powers six months to leave West Berlin and make it a "free city"; if not, he would hand control of access routes to East Germany','The Ultimatum was rejected by the West – Berlin remained a flashpoint; Khrushchev extended the deadline several times but the crisis continued to escalate','The brain drain was the most urgent problem for Khrushchev: by 1961 East Germany was losing around 30,000 people a month – the socialist state was bleeding to death through its own open border']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'2nd Berlin Crisis – summits and U2',
- hints:['Paris','Vienna','U2','Eisenhower','Lied'],
- facts:['Paris Summit May 1960: Khrushchev walked out after an American U2 spy plane (piloted by Gary Powers) was shot down over the USSR; Eisenhower initially denied the flight then admitted it when the USSR produced Powers and the wreckage','Eisenhower\'s lie destroyed the Paris Summit before it began; Khrushchev used it as propaganda proof that the USA could not be trusted; set back diplomacy significantly','Vienna Summit June 1961: Kennedy and Khrushchev met for the first time; Khrushchev pressed his Berlin Ultimatum; he judged Kennedy as weak and inexperienced – this misjudgement contributed to placing missiles in Cuba later','Kennedy stood firm on Berlin at Vienna but was shaken by Khrushchev\'s aggression; returned to Washington and requested a $3.25bn increase in defence spending','The failed summits showed diplomacy could not resolve the Berlin crisis; a more decisive action was needed – the Wall was Khrushchev\'s solution']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'2nd Berlin Crisis – consequences',
- hints:['Wall','140','Berliner','Symbol','August'],
- facts:['13 August 1961: East German soldiers began building the Berlin Wall overnight; barbed wire first, then concrete; it eventually stretched 155km around West Berlin','The Wall ended the brain drain immediately – emigration stopped almost overnight; Khrushchev had solved his most urgent problem','Over 140 people were killed trying to cross the Wall between 1961 and 1989; Peter Fechter (1962) bled to death in the "death strip" as guards watched – a powerful propaganda image for the West','June 1963: President Kennedy visited West Berlin; his speech declared "Ich bin ein Berliner" – American commitment to West Berlin; 450,000 people gathered; the visit was a major propaganda victory for the West','The Wall became the defining symbol of the Cold War – physical proof that communism could only survive by imprisoning its own people; it stood until 9 November 1989']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Cuban Revolution and Bay of Pigs',
- hints:['Castro','Batista','Nationalised','1400','Humiliated'],
- facts:['1959: Fidel Castro overthrew pro-American dictator Fulgencio Batista in the Cuban Revolution; Castro nationalised all American-owned land and businesses – US companies lost approximately $1 billion in assets','USA imposed a trade embargo on Cuba; Castro turned to the USSR for support; Khrushchev agreed to buy Cuban sugar and provide economic and military assistance – Cuba became a communist state 90 miles from the USA','April 1961: Bay of Pigs invasion – CIA trained approximately 1,400 Cuban exiles (Brigade 2506) to invade Cuba and overthrow Castro; Kennedy cancelled planned US air support at the last minute','The invasion was a catastrophic failure: all 1,400 men were captured or killed within three days; Kennedy was publicly humiliated; the CIA\'s involvement was obvious despite denials','Bay of Pigs had two crucial consequences: it pushed Cuba and the USSR even closer together, and it convinced Khrushchev that Kennedy was weak – a misjudgement that led directly to the missile crisis']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Cuban Missile Crisis – 13 days',
- hints:['Spyplane','Blockade','13days','Dobrynin','DEFCON'],
- facts:['14 October 1962: US U2 spy plane photographed Soviet nuclear missile sites under construction in Cuba; CIA analysts estimated they would be operational within two weeks','Kennedy was briefed on 16 October; formed ExComm (Executive Committee) of senior advisers; debated options – air strike, invasion, blockade, or diplomacy; chose a naval "quarantine" (blockade)','22 October: Kennedy announced the blockade on live television; put US forces on DEFCON 3; Soviet ships were sailing toward the blockade line with nuclear materials on board','Soviet submarines accompanying the ships carried nuclear torpedoes; submarine B-59 nearly fired one when depth-charged by US destroyers – officer Vasili Arkhipov refused to authorise launch','Thirteen days of intense diplomacy through back-channels (including Soviet ambassador Dobrynin); Khrushchev and Kennedy exchanged letters; world came closer to nuclear war than at any other point']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Cuban Missile Crisis – consequences',
- hints:['Hotline','Test','Khrushchev','Turkey','Détente'],
- facts:['Resolution: Khrushchev agreed to remove Soviet missiles from Cuba; Kennedy publicly pledged not to invade Cuba and secretly agreed to remove US Jupiter missiles from Turkey within six months','Kennedy appeared to "win" – Khrushchev appeared to have backed down; this damaged Khrushchev\'s authority within the USSR and he was removed from power in October 1964','June 1963: Moscow-Washington Hotline established – a direct telephone link between the two leaders to prevent future accidental nuclear war; a direct consequence of the dangerous lack of communication during the crisis','August 1963: Partial Test Ban Treaty signed – banned nuclear weapons testing in the atmosphere, underwater and in space; first arms control agreement of the Cold War','The crisis planted seeds of détente: both superpowers had looked into the nuclear abyss; recognised that MAD required communication and restraint; relationship cautiously improved throughout the 1960s']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Prague Spring – Dubček and reforms',
- hints:['Dubček','Human','Tito','Censorship','Writers'],
- facts:['January 1968: Alexander Dubček became First Secretary of the Czechoslovak Communist Party; he had grown up in the USSR but was committed to genuine reform','Dubček announced "Socialism with a human face" – a programme of liberalisation: relaxed censorship, allowed criticism of the government, permitted foreign travel, released political prisoners','Czech writers, intellectuals and students enthusiastically supported the reforms; newspapers published openly critical articles; a genuine political spring emerged in Prague','Dubček invited Marshal Tito of Yugoslavia (who had broken from Moscow in 1948 and ran an independent communist state) to Prague – Brezhnev saw this as a dangerous signal that Czechoslovakia might seek independence','By summer 1968: Brezhnev was receiving alarming reports from other satellite state leaders who feared the Czech example would inspire similar demands in their own countries; he decided to act']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Prague Spring – invasion and Brezhnev Doctrine',
- hints:['500000','70killed','Brezhnev','Albania','Husák'],
- facts:['Night of 20–21 August 1968: 500,000 Warsaw Pact troops (from USSR, Poland, Hungary, Bulgaria and East Germany) invaded Czechoslovakia; Dubček was arrested and taken to Moscow','70 civilians were killed in the invasion; Czechoslovak people responded with passive resistance – moving road signs, arguing with soldiers – but had no military means to resist','Dubček was forced to sign the Moscow Protocol agreeing to end all reforms; he was replaced by the hardline Gustáv Husák; the "normalisation" of Czechoslovakia began','Brezhnev Doctrine announced: if any communist country threatened the socialist bloc as a whole, other communist nations had a duty to intervene; this formalised Soviet right to invade any satellite state','Albania left the Warsaw Pact in protest and aligned with China; the West condemned the invasion but took no military action – showed once again that the Soviet sphere of influence was inviolable']},
-
-// PAPER 3 · Unit 3 – Nazi Control (new cards)
-{paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Nazi racial ideology',
- hints:['Aryan','Hierarchy','Eugenics','T4','Sterilisation'],
- facts:['Nazi racial ideology was based on Social Darwinism: the idea that races competed for survival and the "Aryan" (Nordic/Germanic) race was superior to all others','Racial hierarchy: Aryans at the top; Slavs regarded as "Untermenschen" (sub-human); Jews at the bottom – seen not just as inferior but as an active threat seeking to destroy Aryan civilisation','1933: Law for the Prevention of Hereditarily Diseased Offspring – compulsory sterilisation of people with mental illness, physical disability or hereditary conditions; approximately 400,000 people were forcibly sterilised by 1945','T4 Programme (1939): systematic murder of disabled people deemed "unworthy of life"; approximately 200,000 people were killed; used the same gas chamber technology later applied in the Holocaust','Racial hygiene was taught as science in all German schools from 1933; students measured skulls, learned racial categories and were taught to identify and avoid "racial inferiors"']},
-
-// PAPER 3 · Unit 4 – Life in Nazi Germany (split cards)
 {paper:'p3',unit:'Unit 4 – Life in Nazi Germany',heading:'Policies towards workers – DAF and KdF',
  hints:['DAF','KdF','Volkswagen','Beauty','Wages'],
  facts:['May 1933: trade unions were banned and replaced by the Deutsche Arbeitsfront (DAF – German Labour Front); workers could no longer strike or negotiate wages; DAF controlled all workplace relations','Kraft durch Freude (KdF – Strength through Joy): set up 1933 to organise leisure time for workers; ran concerts, theatre trips, sports facilities and holidays; by 1939 had 43 million members','KdF offered cruises to Norway and the Mediterranean – previously only available to the wealthy; designed to show workers that Nazism improved their lives and to keep them occupied outside work hours','Volkswagen (People\'s Car) scheme: workers saved 5 marks per week from their wages for a KdF-Wagen (later the VW Beetle); 336,000 workers saved; not a single car was ever delivered – the money funded rearmament instead','Schönheit der Arbeit (Beauty of Labour): scheme to improve workplace conditions – better lighting, canteens, washing facilities; more propaganda than reality but some genuine improvements were made']},
 
-{paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Hindenburg\'s death and the oath of allegiance',
- hints:['Führer','Oath','August','Personal','Constitution'],
- facts:['2 August 1934: President Paul von Hindenburg died of lung cancer aged 86; Hitler immediately combined the offices of Chancellor and President into the new title of "Führer und Reichskanzler" (Leader and Reich Chancellor)','Hitler did not hold a referendum on this change until August 19 – and ensured it was approved with 89.9% in favour; however the process was technically illegal even under the Enabling Act','The Reichswehr (German army) immediately swore a new personal oath of loyalty – not to Germany or the constitution as before, but to Adolf Hitler personally: "I swear before God this sacred oath, to the Führer of the German Reich and people, Adolf Hitler"','The Personal oath was crucial: it meant that any officer who disobeyed Hitler\'s orders was not just committing insubordination but breaking a sacred oath to God – this made military resistance psychologically and morally extremely difficult throughout the Nazi period','Von Papen, who had naively believed he could control Hitler, resigned as Vice-Chancellor in protest; Hitler had achieved complete legal and military authority in just 18 months from becoming Chancellor'],},
+{paper:'p3',unit:'Unit 4 – Life in Nazi Germany',heading:'Nazi racial ideology',
+ hints:['Aryan','Hierarchy','Eugenics','T4','Sterilisation'],
+ facts:['Nazi racial ideology was based on Social Darwinism: the idea that races competed for survival and the "Aryan" (Nordic/Germanic) race was superior to all others','Racial hierarchy: Aryans at the top; Slavs regarded as "Untermenschen" (sub-human); Jews at the bottom – seen not just as inferior but as an active threat seeking to destroy Aryan civilisation','1933: Law for the Prevention of Hereditarily Diseased Offspring – compulsory sterilisation of people with mental illness, physical disability or hereditary conditions; approximately 400,000 people were forcibly sterilised by 1945','T4 Programme (1939): systematic murder of disabled people deemed "unworthy of life"; approximately 200,000 people were killed; used the same gas chamber technology later applied in the Holocaust','Racial hygiene was taught as science in all German schools from 1933; students measured skulls, learned racial categories and were taught to identify and avoid "racial inferiors"']},
 
-// PAPER 2B · Unit 3 – Elizabethan Society (split poverty card)
-{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Causes of poverty in Elizabethan England',
- hints:['Population','Enclosure','Harvest','Debasement','Malthus'],
- facts:['Population growth: England\'s population grew from approximately 3 million to 4 million during Elizabeth\'s reign – increased demand for food drove up prices while more people competed for the same number of jobs, driving down wages; a classic Malthusian crisis','Enclosure: wealthy landowners enclosed common land to farm sheep for the highly profitable wool trade; poor families lost access to land they had used to grow food and graze animals for generations – many became landless','Harvest failures: the "little ice age" brought lower temperatures and more frequent harvest failures throughout the second half of the 16th century; bad harvests in the 1590s caused near-famine conditions in some areas','Debasement of the currency: Henry VIII and Edward VI had reduced the silver content of coins to fund wars; this caused inflation that continued throughout Elizabeth\'s reign – prices rose faster than wages could keep pace','These causes combined: population growth, enclosure, harvest failures and inflation all struck at once, creating a structural poverty crisis that legislation alone could never solve']},
-
-{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Attitudes and legislation towards the poor',
- hints:['Deserving','Vagabonds','Correction','Attitudes','Statute'],
- facts:['Elizabethan society divided the poor into the "deserving poor" (the elderly, sick or disabled who genuinely could not work) and the "undeserving poor" (able-bodied people without work, assumed to be lazy or criminal)','1563 Statute of Artificers: set wages and regulated employment; first attempt at an organised approach to work and poverty rather than simply punishing vagabonds','1572 Vagabonds Act: vagabonds over 14 to be whipped and burned through the right ear for the first offence; further offences could mean execution; reflected the punitive Attitudes of the period','1576 Act for the Relief of the Poor: established Houses of Correction to teach the poor skills; local officials required to find work for the unemployed; wealthy required to contribute to a poor relief fund – a more constructive approach','1601 Poor Law: consolidated all previous legislation into one comprehensive system; distinguished deserving from undeserving poor in law; established parish as the unit of poor relief – the foundation of English poor relief for the next two centuries'],},
+{paper:'p3',unit:'Unit 4 – Life in Nazi Germany',heading:'Jewish persecution and Kristallnacht',
+ hints:['Boycott','Nuremberg','Kristallnacht','Fined','Escalation'],
+ facts:['April 1933: national boycott of Jewish shops; SA stood outside to intimidate customers; Jews banned from professions','1935: Nuremberg Laws – stripped Jews of citizenship; banned from marrying non-Jews; classified as a separate race','9–10 November 1938: Kristallnacht – thousands of synagogues and Jewish businesses destroyed; over 100 Jews killed; 30,000 arrested and sent to camps','Jews then fined 1 billion marks for "the damage" – showed complete powerlessness of Jews under Nazi rule','ordinary Germans and their families took part in Kristallnacht - not just SS or Nazi thugs. Shows power of 5 years of propaganda.','Clear escalation 1933→1935→1938; Kristallnacht marked the shift from economic and legal persecution to organised physical violence']},
 
 ];
 const EQ = [
