@@ -484,9 +484,9 @@ function flagCard(btn) {
   if (!already) {
     flaggedCards.push({paper, heading});
     updateFlagBar();
-    btn.textContent = '🚩 Flagged';
-    btn.disabled = true;
-    btn.style.opacity = '.5';
+    btn.outerHTML = `<button class="btn-sm" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11" onclick="unflagCard(this)">🚩 Remove flag</button>`;
+const learntBtn = card.querySelector('#k-learnt-btn');
+if (learntBtn) learntBtn.remove();
   }
 }
   
@@ -518,7 +518,8 @@ function unflagCard(btn) {
   if (document.getElementById('s-flagged').classList.contains('active')) {
     showFlaggedScreen();
   } else {
-    btn.outerHTML = `<button class="btn-sm" id="k-flag-btn" onclick="flagCard(this)">🚩 Flag to review</button>`;
+    btn.outerHTML = `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>
+  <button class="btn-sm" id="k-learnt-btn" onclick="markLearntBtn(this)">✅ Learnt</button>`;
   }
 }
   
@@ -642,7 +643,7 @@ function renderKCard(entry) {
           <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
           <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='Reveal key content'?'Hide content':'Reveal key content'">Reveal key content</button>
           ${alreadyFlagged ?
-            `<button class="btn-sm" onclick="unflagLearntBtn(this)">✅ Learnt</button>` :
+            `<button class="btn-sm" id="k-learnt-btn" onclick="markLearntBtn(this)">✅ Learnt</button>` :
             `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>`}
           <button class="btn-sm" id="k-learnt-btn" onclick="markLearntBtn(this)">✅ Learnt</button>
         </div>
