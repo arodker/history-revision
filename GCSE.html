@@ -333,7 +333,7 @@ function setMode(m) {
     document.getElementById('mode-' + mode).style.display = mode === m ? 'block' : 'none';
   });
   // reset outputs when switching
-  document.getElementById('k-out').innerHTML = '';
+  if (m !== 'knowledge') document.getElementById('k-out').innerHTML = '';
   document.getElementById('d-out').innerHTML = '';
   document.getElementById('e-out').innerHTML = '';
   document.getElementById('d-go').style.display = 'block';
@@ -441,9 +441,7 @@ function boldHints(text, hints) {
   });
   return out;
 }
-
-let learntCards = new Set();
-  
+ 
 function markLearnt() {
   const entry = kPool[kIdx];
   learntCards.add(entry.card.paper + '|' + entry.card.heading);
@@ -476,6 +474,18 @@ function flagCard(btn) {
   }
 }
   
+function updateProgressBar() {
+  const wrap = document.getElementById('k-progress-wrap');
+  const bar = document.getElementById('k-progress-bar');
+  const text = document.getElementById('k-progress-text');
+  if (!kPoolTotal || kPoolTotal === 0) { wrap.style.display = 'none'; return; }
+  wrap.style.display = 'block';
+  const done = kPoolTotal - kPool.length;
+  const pct = Math.round((done / kPoolTotal) * 100);
+  bar.style.width = pct + '%';
+  text.textContent = `${done} of ${kPoolTotal} learnt`;
+}
+
 function showFlaggedButton() {
   if (flaggedCards.length > 0) {
     document.getElementById('k-out').innerHTML +=
