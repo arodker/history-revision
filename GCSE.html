@@ -412,14 +412,15 @@ function updateNavUI() {
 }
 
 function drawRandomCard() {
-  buildKPool();
   if (!kPool.length) {
     document.getElementById('k-out').innerHTML = '<div class="empty">No cards match these filters.</div>';
+    updateNavUI();
     return;
   }
   kIdx = Math.floor(Math.random() * kPool.length);
   renderKCard(kPool[kIdx]);
   updateNavUI();
+  updateProgressBar();
 }
 
 function stepCard(dir) {
@@ -463,8 +464,16 @@ function markLearnt() {
   learntCards.add(entry.card.paper + '|' + entry.card.heading);
   kPool.splice(kIdx, 1);
   if (kPool.length === 0) {
-    document.getElementById('k-out').innerHTML = '<div class="empty">All cards learnt! 🎉</div>';
-    showFlaggedButton();
+    const flagBtn = flaggedCards.length > 0
+      ? `<button class="btn-go" onclick="showFlaggedScreen()" style="margin-top:.75rem">🚩 Review ${flaggedCards.length} flagged cards</button>`
+      : '';
+    document.getElementById('k-out').innerHTML = `
+      <div style="text-align:center;padding:2rem">
+        <div style="font-size:1.1rem;font-weight:600;margin-bottom:.5rem">🎉 All cards learnt!</div>
+        <div style="font-size:.85rem;color:#6b6b68;margin-bottom:1.5rem">Great work — every card in this set is done.</div>
+        ${flagBtn}
+        <button class="btn-sm" onclick="resetLearnt()" style="margin-top:.75rem;display:block;width:100%">🔄 Reset and start again</button>
+      </div>`;
     updateNavUI();
     updateProgressBar();
     return;
@@ -474,6 +483,17 @@ function markLearnt() {
   updateNavUI();
   updateProgressBar();
 }  
+
+function resetLearnt() {
+  learntCards = new Set();
+  buildKPool();
+  kPoolTotal = kPool.length;
+  kIdx = 0;
+  updateNavUI();
+  updateProgressBar();
+  if (kPool.length) renderKCard(kPool[0]);
+}
+  
 let flaggedCards = [];
 
 function flagCard(btn) {
@@ -1134,14 +1154,21 @@ function generateRQ() {
 }
 
 function revealRQ(i) {
-  document.getElementById('rqc' + i).classList.add('revealed');
+  document.getElementById('rqc' + i).classList.toggle('revealed');
 }
 
 function revealAll() {
+  const allRevealed = Array.from({length:10}, (_,i) => document.getElementById('rqc'+i))
+    .filter(Boolean).every(c => c.classList.contains('revealed'));
   for (let i = 0; i < 10; i++) {
     const card = document.getElementById('rqc' + i);
-    if (card) card.classList.add('revealed');
+    if (card) {
+      if (allRevealed) card.classList.remove('revealed');
+      else card.classList.add('revealed');
+    }
   }
+  const btn = document.getElementById('rq-reveal-all');
+  if (btn) btn.textContent = allRevealed ? '👁️ Reveal all' : '🙈 Hide all';
 }
 // ═══════════════════════════════════════════
 // EXAM PRACTICE
@@ -1190,7 +1217,7 @@ function drawExam() {
         </div>
         <div class="card-q">${q.q}</div>
        <div class="btn-row">
-          <button class="btn-sm" onclick="tog('er')">Show indicative content</button>
+          <button class="btn-sm" onclick="tog('er');this.textContent=this.textContent==='🔍 Show indicative content'?'🔍 Hide indicative content':'🔍 Show indicative content'">🔍 Show indicative content</button>
           <button class="btn-sm" onclick="drawExam()">Next question →</button>
         </div>
         <div class="reveal" id="er">${contentHtml}</div>
