@@ -171,10 +171,15 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
   <!-- KNOWLEDGE -->
   <div id="mode-knowledge" style="display:none">
     <div class="filter-row">
-      <select id="k-unit" onchange="updateCardSelect()"><option value="all">All units</option></select>
-      <select id="k-card"><option value="random">Random card</option></select>
-    </div>
-    <button class="btn-go" id="k-go" onclick="drawKnowledge()">Select a topic</button>
+  <select id="k-unit" onchange="onUnitChange()"><option value="all">All units</option></select>
+<select id="k-card" onchange="jumpToCard()"></select>
+</div>
+<button class="btn-go" id="k-go" onclick="drawRandomCard()">🔀 Random card</button>
+<div style="display:flex;gap:8px;margin-bottom:.75rem;margin-top:-.5rem">
+  <button class="btn-sm" onclick="stepCard(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
+  <span id="k-card-num" style="flex:0 0 auto;align-self:center;font-size:.78rem;color:#6b6b68;white-space:nowrap;min-width:50px;text-align:center"></span>
+  <button class="btn-sm" onclick="stepCard(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
+</div>
     <div id="k-flag-bar" style="display:none;gap:8px;align-items:center;margin-bottom:.75rem">
       <span id="k-flag-count" style="font-size:.82rem;color:#6b6b68">🚩 <span id="k-flag-num">0</span> flagged</span>
       <button class="btn-sm" onclick="showFlaggedScreen()">Review flagged cards</button>
@@ -288,7 +293,8 @@ function pickPaper(p) {
   const sel = document.getElementById('k-unit');
   sel.innerHTML = '<option value="all">All units</option>' +
     info.units.map(u => `<option value="${u}">${u}</option>`).join('');
-  updateCardSelect();
+  buildKPool();
+  updateNavUI();
   const esel = document.getElementById('e-type');
   esel.innerHTML = info.qtypes.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
   showScreen('s-main');
@@ -344,14 +350,67 @@ function paperTagClass(p) {
 // ═══════════════════════════════════════════
 // KNOWLEDGE RECALL
 // ═══════════════════════════════════════════
-function updateCardSelect() {
+let kPool = [];
+let kIdx = 0;
+
+function buildKPool() {
   const unit = document.getElementById('k-unit').value;
-  let pool = KC.filter(c => c.paper === currentPaper);
-  if (unit !== 'all') pool = pool.filter(c => c.unit === unit);
-  const sel = document.getElementById('k-card');
-  sel.innerHTML = '<option value="random">Random card</option>' +
-    pool.map((c, i) => `<option value="${i}_${c.heading}">${c.heading}</option>`).join('');
+  let all = KC.filter(c => c.paper === currentPaper);
+  const units = P[currentPaper].units;
+  all.sort((a, b) => {
+    const ui = units.indexOf(a.unit);
+    const vi = units.indexOf(b.unit);
+    if (ui !== vi) return ui - vi;
+    return KC.indexOf(a) - KC.indexOf(b);
+  });
+  if (unit !== 'all') all = all.filter(c => c.unit === unit);
+  const unitCounts = {};
+  kPool = all.map(c => {
+    const uIdx = units.indexOf(c.unit) + 1;
+    unitCounts[uIdx] = (unitCounts[uIdx] || 0) + 1;
+    return { card: c, num: `${uIdx}.${unitCounts[uIdx]}` };
+  });
+  const cardSel = document.getElementById('k-card');
+  if (cardSel) {
+    cardSel.innerHTML = kPool.map((entry, i) =>
+      `<option value="${i}">${entry.num} – ${entry.card.heading}</option>`
+    ).join('');
+  }
 }
+
+function onUnitChange() {
+  buildKPool();
+  kIdx = 0;
+  document.getElementById('k-out').innerHTML = '';
+  updateNavUI();
+}
+
+function updateNavUI() {
+  const numEl = document.getElementById('k-card-num');
+  numEl.textContent = kPool.length ? kPool[kIdx].num : '';
+  const cardSel = document.getElementById('k-card');
+  if (cardSel) cardSel.value = kIdx;
+}
+
+function drawRandomCard() {
+  buildKPool();
+  if (!kPool.length) {
+    document.getElementById('k-out').innerHTML = '<div class="empty">No cards match these filters.</div>';
+    return;
+  }
+  kIdx = Math.floor(Math.random() * kPool.length);
+  renderKCard(kPool[kIdx]);
+  updateNavUI();
+}
+
+function stepCard(dir) {
+  if (!kPool.length) { drawRandomCard(); return; }
+  kIdx = (kIdx + dir + kPool.length) % kPool.length;
+  renderKCard(kPool[kIdx]);
+  updateNavUI();
+}
+
+function updateCardSelect() {} // kept for compatibility
 
 function boldHints(text, hints) {
   let out = text;
@@ -487,34 +546,9 @@ function drawSpecificCard(card) {
     </div>`;
 }
 
-function flagCard(btn) {
-  const card = btn.closest('.card');
-  const paper = card.dataset.paper;
-  const heading = card.dataset.heading;
-  const already = flaggedCards.find(c => c.paper === paper && c.heading === heading);
-  if (!already) {
-    flaggedCards.push({paper, heading});
-    updateFlagBar();
-    btn.outerHTML = `<button class="btn-sm" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11" onclick="unflagCard(this)">✅ Remove flag</button>`;
-  }
-}
-  
-function drawKnowledge() {
-  const unit = document.getElementById('k-unit').value;
-  const cardSel = document.getElementById('k-card').value;
-  let pool = KC.filter(c => c.paper === currentPaper);
-  if (unit !== 'all') pool = pool.filter(c => c.unit === unit);
-  if (!pool.length) {
-    document.getElementById('k-out').innerHTML = '<div class="empty">No cards match these filters.</div>';
-    return;
-  }
-  let card;
-  if (cardSel === 'random') {
-    card = rand(pool);
-  } else {
-    const heading = cardSel.split('_').slice(1).join('_');
-    card = pool.find(c => c.heading === heading) || rand(pool);
-  }
+function renderKCard(entry) {
+  const card = entry.card;
+  const num = entry.num;
   const hintsHtml = card.hints.map(h =>
     `<div class="hint-item"><span class="hint-kw">hint</span>${h}</div>`
   ).join('');
@@ -529,6 +563,7 @@ function drawKnowledge() {
       <div class="stripe s-${card.paper}"></div>
       <div class="inner">
         <div class="meta">
+          <span class="tag t-grey">${num}</span>
           <span class="tag t-${card.paper}">${card.unit}</span>
         </div>
         <div class="card-heading">${card.heading}</div>
@@ -536,14 +571,22 @@ function drawKnowledge() {
         <div class="btn-row">
           <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
           <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='Reveal key content'?'Hide content':'Reveal key content'">Reveal key content</button>
-          ${alreadyFlagged ? 
-            `<button class="btn-sm" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11" onclick="unflagCard(this)">✅ Remove flag</button>` : 
-            `<button class="btn-sm" id="k-flag-btn" onclick="flagCard(this)">🚩 Flag to review</button>`}
+          ${alreadyFlagged ?
+            `<button class="btn-sm" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11" onclick="unflagCard(this)">✅ Remove flag</button>` :
+            `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>`}
         </div>
         <div class="reveal" id="kh">${hintsHtml}</div>
         <div class="reveal" id="kf">${factsHtml}</div>
       </div>
     </div>`;
+}
+
+function jumpToCard() {
+  const i = parseInt(document.getElementById('k-card').value);
+  if (isNaN(i)) return;
+  kIdx = i;
+  renderKCard(kPool[kIdx]);
+  updateNavUI();
 }
 // ═══════════════════════════════════════════
 // RAPID FIRE DATA (sample — expand with full PDF data)
@@ -1300,7 +1343,7 @@ const KC = [
 
 {paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Satellite states and Iron Curtain',
  hints:['Buffer','Cominform','Comecon','Curtain','Churchill'],
- facts:['Stalin created a "buffer zone" of communist satellite states – Poland, Czechoslovakia, Hungary, Romania, Bulgaria – to protect USSR from future invasion','1946: Churchill\'s "Iron Curtain" speech described the division of Europe into capitalist west and communist east','1947: Cominform set up to direct and control satellite state leaders','1949: Comecon set up to control satellite economies – mirror image of the Marshall Plan','Satellite states had no genuine independence – leaders took orders from Moscow']},
+ facts:['Stalin created a \"buffer zone\" of communist satellite states – Poland, Czechoslovakia, Hungary, Romania, Bulgaria – to protect USSR from future invasion; Latvia, Lithuania and Estonia were absorbed directly into the USSR','1946: Churchill\'s \"Iron Curtain\" speech described the division of Europe into capitalist west and communist east – the phrase defined the Cold War geography for the next 45 years','1947: Cominform (Communist Information Bureau) set up to coordinate and control the policies of all communist parties in the satellite states – ensured leaders followed Moscow\'s instructions and suppressed any independent thinking','1949: Comecon (Council for Mutual Economic Assistance) set up to control satellite economies – forced satellite states to trade with the USSR on unfavourable terms rather than benefiting from Marshall Aid; kept Eastern Europe economically dependent on Moscow','Yugoslavia was the exception – Tito resisted Stalin and maintained genuine independence; expelled from Cominform 1948; showed it was possible to be communist without Soviet control']},
 
 {paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Long and Novikov Telegrams 1946',
  hints:['Kennan','Novikov','Containment','Paranoia','Enemy'],
@@ -1314,17 +1357,17 @@ const KC = [
  hints:['Trizonia','Blockade','Airlift','NoAtom','Divided'],
  facts:['West combined zones into Trizonia 1947 and introduced Deutschmark 1948 – both infuriated Stalin who saw this as rebuilding Germany as an anti-Soviet power','June 1948: Stalin closed all road and rail links to West Berlin – attempted to force the West to abandon the city','Truman ordered Berlin Airlift: 4,000 tonnes of food and fuel flown in daily for 10 months; planes landed every 3 minutes at peak','Stalin could not shoot down planes without starting a full war – he had no atomic bomb yet','May 1949: Stalin lifted the blockade; Germany permanently divided into FRG (West) and GDR (East)']},
 
-{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'NATO 1949',
- hints:['April','Capitalist','Article5','12members','Isolationism'],
- facts:['NATO formed April 1949 as a direct response to Soviet expansion and the Berlin Blockade','12 founding members including USA, UK, France and Canada; Article 5 – attack on one member is attack on all','First peacetime military alliance in US history – a major shift from traditional American isolationism','Formalised the division of Europe into two armed camps; the Cold War was now military as well as ideological','Warsaw Pact formed 1955 as communist military alliance in direct response – mirroring NATO']},
+{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'NATO and the Warsaw Pact',
+ hints:['April','Article5','Isolationism','Warsaw','1955'],
+ facts:['NATO formed April 1949 as a direct response to Soviet expansion and the Berlin Blockade – 12 founding members including USA, UK, France and Canada','Article 5: an attack on one member is an attack on all – committed the USA to defending Western Europe militarily','First peacetime military alliance in US history – a major break from traditional American isolationism; American military bases spread across Western Europe','1955: West Germany joined NATO – a rearmed Germany inside the Western military alliance alarmed Moscow enormously; seen as direct preparation for war against the USSR','Warsaw Pact formed May 1955 as the communist military alliance in direct response; commanded by the Soviet Union; included all satellite states; Europe was now divided into two permanently armed blocs facing each other across the Iron Curtain']},
 
-{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Warsaw Pact and arms race',
- hints:['1955','Hbomb','ICBMs','MAD','Nuclear'],
- facts:['1949: USSR developed atomic bomb – arms race began immediately','1952: USA created Hydrogen Bomb – 1,000 times more powerful than atomic bomb; USSR developed H-bomb 1953','1957: both sides developed ICBMs (Intercontinental Ballistic Missiles) – nuclear weapons could be launched across continents','MAD (Mutually Assured Destruction): if war broke out both sides would be destroyed – neither could "win" a nuclear war','1955: Warsaw Pact formed as communist military alliance – Europe now split into two permanently armed blocs']},
+{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Arms race and space race 1949–57',
+ hints:['Hbomb','ICBMs','MAD','Sputnik','Laika'],
+ facts:['1949: USSR developed atomic bomb – ending the US nuclear monopoly; arms race began immediately','1952: USA developed Hydrogen Bomb – 1,000 times more powerful than the atomic bomb; USSR followed in 1953; the destructive capacity of both sides now exceeded anything previously imaginable','1957: both sides developed ICBMs (Intercontinental Ballistic Missiles) – nuclear weapons could now be launched across continents within minutes; MAD (Mutually Assured Destruction) meant neither side could win a nuclear war','1957: USSR launched Sputnik – the first artificial satellite; Americans were shocked that Soviet rocket technology could reach space and therefore potentially strike the US mainland','Space race became a key arena of Cold War competition – safer than military conflict but equally important as propaganda; 1957: USSR sent Laika the dog into orbit; 1961: Yuri Gagarin became the first human in space, a major victory for communism']},
 
 {paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Hungarian Uprising 1956',
  hints:['Rákosi','Nagy','1000tanks','20000','West'],
- facts:['Hungary was a communist satellite state ruled by harsh Stalinist dictator Rákosi; food shortages, secret police and lack of freedom drove protests','1956: Khrushchev replaced Rákosi with the popular Imre Nagy who began reforms – releasing prisoners, relaxing censorship, freedom of speech','Nagy went too far by announcing Hungary would leave the Warsaw Pact – Khrushchev sent 1,000 tanks into Budapest; 3,000 killed and 20,000 fled to the West','3,000 killed; 20,000 fled to the West; Nagy arrested and later executed; Kadar installed as new hardline leader','West condemned the invasion but did nothing – showed NATO would not intervene inside the Soviet sphere']},
+ facts:['Hungary was a communist satellite state ruled by harsh Stalinist dictator Rákosi; food shortages, secret police and lack of freedom drove protests','1956: Khrushchev wanted to Destalinise so replaced Rákosi with the popular Imre Nagy who began reforms – releasing prisoners, relaxing censorship, freedom of speech','Nagy went too far by announcing Hungary would leave the Warsaw Pact – Khrushchev sent 1,000 tanks into Budapest; 3,000 killed and 20,000 fled to the West','3,000 killed; 20,000 fled to the West; Nagy arrested and later executed; Kadar installed as new hardline leader','West condemned the invasion but did nothing – showed NATO would not intervene inside the Soviet sphere']},
 
 // ── PAPER 2A · Unit 2 Crises 1958–70 ────────
 {paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'2nd Berlin Crisis – causes',
@@ -1385,9 +1428,21 @@ const KC = [
  facts:['Gorbachev\'s reforms had unleashed forces he could not control: republics including Latvia, Lithuania and Estonia demanded independence','August 1991: Gang of Eight hardline communists arrested Gorbachev in an attempted coup to restore old-style communist rule','Boris Yeltsin led resistance from the Russian parliament building; army refused to fire on civilians; coup collapsed after three days','After the coup\'s failure Gorbachev had no authority left; holding the USSR together by force risked civil war','Christmas Day 1991: Gorbachev resigned and dissolved the USSR; 15 independent republics emerged; Cold War officially ended']},
 
 // ── PAPER 2B · Unit 1 Queen & Religion ──────
-{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Elizabeth\'s problems on accession 1558',
- hints:['Debt','Patriarchal','Illegitimate','Calais','Marriage'],
- facts:['Crown was £227,000 in debt – took 20 years to clear; unable to fight wars or fund government effectively','England was deeply patriarchal – many believed women could not rule, control men or lead armies; sister Mary I had reinforced this fear','Catholics believed Elizabeth was illegitimate (Pope had not sanctioned Henry VIII\'s divorce) and Mary Queen of Scots was the true queen','At war with France; Calais lost 1558 – national humiliation; peace made 1559 but debt and humiliation remained','Marriage dilemma: foreign prince risked xenophobic reaction; English husband would create noble rivalries']},
+{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Elizabethan society and government 1558',
+ hints:['Hierarchy','Nobles','Privy','Prerogative','Parliament'],
+ facts:['England was a hierarchical rural society – nobles (dukes and earls) owned vast land and could raise armies; gentry held local power as JPs; merchants were represented in Parliament; peasants were powerless','Elizabeth was the monarch but did not rule alone – she relied on key institutions','Privy Council: 19 key advisors including William Cecil, Robert Dudley and Francis Walsingham – the inner circle of government','Parliament: had to approve all taxation; Elizabeth called it as rarely as possible','Royal prerogative: foreign policy, religion, succession and marriage were Elizabeth\'s alone – Parliament could advise but not decide']},
+
+{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Personal challenges facing Elizabeth 1558',
+ hints:['Illegitimate','Patriarchal','Marriage','Debt','Calais'],
+ facts:['Legitimacy: Catholics believed Henry VIII\'s divorce was invalid – making Elizabeth illegitimate; Mary Queen of Scots had a stronger Catholic claim',''Gender: England was deeply patriarchal; many believed women could not govern or lead armies; Bloody Mary had reinforced fears about female rule; Protestant reformer John Knox published his \"First Blast of the Trumpet\" in 1558 declaring female rule against God\'s will – \"the blind leading those who can see\"',,','Marriage dilemma: a foreign husband risked foreign interference and English resentment; an English husband would create noble rivalries – but remaining unmarried left no heir','Finance: Elizabeth inherited £227,000 of debt from Mary I; forced to sell crown lands for quick income, reducing future revenue','At war with France; Calais lost 1558 – national humiliation; peace made 1559 but the weakness it exposed remained']},
+
+{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Foreign challenges facing Elizabeth 1558',
+ hints:['Philip','Auld','Mary','France','Netherlands'],
+ facts:['Spain: most powerful country in the world; Philip II had proposed to Elizabeth – she refused; controlled the Netherlands and New World gold; reluctant to act against Elizabeth only because he feared creating a French empire under Mary QoS','France: England\'s traditional enemy; the Auld Alliance between France and Scotland meant a hostile Franco-Scottish alliance on England\'s northern border','Mary QoS was in France as wife of the French king Francis II – a Catholic claimant to Elizabeth\'s throne backed by the most powerful Catholic dynasty in Europe, the Guise family','Scotland itself had a strong Protestant movement led by John Knox; Scotland became Protestant in 1559 while Mary was still in France – creating an unstable northern neighbour','Elizabeth\'s foreign policy priority was to prevent France and Spain ever combining against her – she exploited their rivalry throughout her reign']},
+
+{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Religious challenges facing Elizabeth 1558',
+ hints:['Henry','Edward','Mary','Turmoil','ViMedia'],
+ facts:['Henry VIII broke from Rome in 1534 for personal reasons – remained personally Catholic; persecuted both extreme Protestants and Catholics simultaneously','Edward VI (r.1547–53) made England austerely Protestant; but died after 6 years before reforms were embedded outside London and the South East','Mary I (r.1553–58) burned ~300 Protestants at the stake and drove over 800 Puritans abroad; deep scars remained and the country was bitterly divided','Elizabeth inherited Catholic bishops from Mary who were likely to obstruct any Protestant settlement; the majority of English people, especially in the North and West, remained Catholic','Elizabeth\'s answer was the \"Via Media\" – a deliberate middle way; she sought unity over doctrinal purity, knowing another religious upheaval could provoke rebellion or foreign invasion']},
 
 {paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Religious Settlement 1558–59',
  hints:['Supremacy','Uniformity','Shilling','Vestments','Crucifix'],
@@ -1414,18 +1469,26 @@ const KC = [
  hints:['Ridolfi','Throckmorton','Babington','Walsingham','Executed'],
  facts:['All three plots aimed to kill Elizabeth and place Mary Queen of Scots on the throne; all uncovered by Walsingham\'s spy network','Ridolfi 1571: needed Spanish troops that never came; Duke of Norfolk executed; Elizabeth refused to execute Mary','Throckmorton 1583: involved French invasion; failed; Bond of Association 1584 – Privy Council pledged to kill anyone who conspired to benefit from Elizabeth\'s death','Babington 1586: Walsingham allowed it to run until he had Mary\'s written approval of plans to assassinate Elizabeth','Mary executed February 1587; Elizabeth signed death warrant but claimed to be horrified when carried out']},
 
-{paper:'p2b',unit:'Unit 2 – Challenges 1569–88',heading:'Anglo-Spanish relations and Drake',
- hints:['Philip','Drake','Knighted','Dutch','Joinville'],
- facts:['Strong Anglo-Spanish relations at start: Philip II (previously married to Mary I) proposed to Elizabeth 1559 – she refused','Drake attacked Spanish ships throughout 1570s–80s secretly backed by Elizabeth; stole £400,000 during circumnavigation 1577–80','Elizabeth knighted Drake on deck of Golden Hind 1580 – Philip saw this as open endorsement of piracy','Elizabeth secretly funded and armed Dutch Protestant rebels against Spanish rule throughout the 1560s–80s','1584: Treaty of Joinville – Philip allied with French Catholics to destroy Protestantism; Elizabeth was a direct target']},
+{paper:'p2b',unit:'Unit 2 – Challenges 1569–88',heading:'Causes of war with Spain and the Dutch Revolt',
+ hints:['Philip','Joinville','Drake','Nonsuch','Privateers'],
+ facts:['Religious rivalry: Philip II wanted England returned to Catholicism; the 1570 papal excommunication made it a Catholic duty to remove Elizabeth; 1584 Treaty of Joinville saw Spain and France pledge to destroy Protestantism','Political rivalry: as English power grew Spain felt threatened; French religious civil war from 1562 removed France as a counterweight, making Spain Elizabeth\'s main rival','Commercial rivalry: Drake raided Spanish treasure ships throughout the 1570s–80s secretly backed by Elizabeth; stole £400,000 on his circumnavigation; Elizabeth\'s 1580 knighting of Drake on the deck of the Golden Hind was seen by Philip as open endorsement of piracy','Dutch Revolt: the Netherlands were Catholic Spain\'s Protestant subjects; from 1566 they rebelled; Elizabeth secretly funded them to keep Spain distracted and prevent a Spanish-controlled channel coast','1584: William of Orange assassinated; revolt in danger of collapse; Elizabeth signed Treaty of Nonsuch 1585 – committed 7,400 troops and £126,000/year; England and Spain were now officially at war']},
+
+{paper:'p2b',unit:'Unit 2 – Challenges 1569–88',heading:'Early years of war with Spain – Drake and Dudley',
+ hints:['Leicester','Ostend','Cadiz','Barrels','Beard'],
+ facts:['Leicester (Robert Dudley) sent to the Netherlands with 7,400 troops after Treaty of Nonsuch 1585; he lacked sufficient men, money and supplies to take on Parma\'s superior army directly','Leicester faced betrayals from his own commanders and was unable to stop Parma\'s advance; his one significant success was preventing Parma capturing the deep-water port of Ostend – crucial because without it Parma\'s troops could not board the Armada quickly','1587: Drake sent to disrupt Spanish Armada preparations at Cadiz – chose a moonless night, slipped into the harbour and destroyed 30 Spanish ships; he also damaged supply barrels, meaning Spanish food and water would rot on the voyage','Drake\'s raid on Cadiz – the \"singeing of the King of Spain\'s beard\" – bought England approximately 12 months to prepare for the Armada','Drake then raided Portugal and captured a Spanish treasure ship worth £140,000 on the way home – the raid was a strategic, propaganda and financial success']},
 
 {paper:'p2b',unit:'Unit 2 – Challenges 1569–88',heading:'Spanish Armada 1588',
  hints:['Nonsuch','Fireships','Gravelines','Storms','Tilbury'],
  facts:['1585: Treaty of Nonsuch – Elizabeth pledged 7,400 troops to Dutch rebels; England and Spain officially at war; Drake raided Cadiz 1587','1588: Medina-Sidonia sent with 130 ships and 27,000 men to collect Parma\'s 30,000 troops from Netherlands then invade England','Drake sent fireships into the Armada at Calais – Spanish captains panicked and scattered, breaking the defensive formation','English navy defeated the disordered fleet at Battle of Gravelines; storms off Ireland and Scotland then destroyed over half the 130 ships','Parma\'s army was trapped by Dutch flyboats – plan was unworkable from the start; Elizabeth\'s Tilbury speech used as Protestant propaganda victory']},
 
 // ── PAPER 2B · Unit 3 Elizabethan Society ───
-{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Education and entertainment',
- hints:['Grammar','Literacy','Theatre','Bear','Penny'],
- facts:['72 new grammar schools in Elizabeth\'s reign; fees based on income; male literacy rose from 20% to 30%','Girls did not attend school; female literacy remained at 10% throughout the reign','Nobility enjoyed hunting, hawking, real tennis; working class enjoyed bear-baiting, cock-fighting, gambling','Theatre open to all: 1 penny for standing in the pit; permanent theatres (The Theatre, The Rose) built in London from 1570s','Education was not open to all – designed to fit the station you were born into']},
+{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Education in Elizabethan England',
+ hints:['Grammar','Literacy','Nobility','Latin','Apprentice'],
+ facts:['72 new grammar schools founded in Elizabeth\'s reign; fees based on parents\' income; some poor boys with promise attended free, funded by wealthy donors','Sons of nobility learned Latin, Greek, History, Philosophy and Government at schools like Eton – preparing them for roles in government; daughters of nobility also received a broad education','Male literacy rose from 20% to 30% during the reign; female literacy remained at 10% – girls of the gentry attended dame schools learning domestic skills, not academic subjects','Working-class children did not attend school; they learned farming or craft skills from their families, or entered apprenticeships from an early age','Education reinforced the social hierarchy – it was designed to prepare children for the station they were born into, not to enable social mobility']},
+
+{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Leisure in Elizabethan England',
+ hints:['Theatre','Bear','Penny','Hunting','Puritans'],
+ facts:['Nobility enjoyed hunting on horseback, hawking, real tennis, fencing and fishing; employed household musicians; imported luxury goods like tobacco from the New World','Working class enjoyed football (often deadly, no rules), gambling on bear-baiting and cock-fighting, hunting rabbit, and listening to music at fairs, markets and church','Theatre developed rapidly under Elizabeth: Protestantism encouraged secular plays; the first permanent theatre (The Red Lion) opened in 1576, followed by the Rose (1586) and the Globe (1599)','Theatre was open to all classes: 1 penny for a standing place in the pit (noisy, close to the stage); the wealthy paid for seats in the galleries; all plays had to be approved by the Queen\'s official from 1572','Puritans strongly opposed the theatre as sinful and satanic; their opposition grew throughout the reign but they failed to close the theatres during Elizabeth\'s lifetime']},
 
 {paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Poverty and poor relief',
  hints:['Population','Enclosure','Vagabonds','Correction','Deserving'],
@@ -1448,13 +1511,17 @@ const KC = [
  facts:['Elizabethan society divided the poor into the "deserving poor" (the elderly, sick or disabled who genuinely could not work) and the "undeserving poor" (able-bodied people without work, assumed to be lazy or criminal)','1563 Statute of Artificers: set wages and regulated employment; first attempt at an organised approach to work and poverty rather than simply punishing vagabonds','1572 Vagabonds Act: vagabonds over 14 to be whipped and burned through the right ear for the first offence; further offences could mean execution; reflected the punitive Attitudes of the period','1576 Act for the Relief of the Poor: established Houses of Correction to teach the poor skills; local officials required to find work for the unemployed; wealthy required to contribute to a poor relief fund – a more constructive approach','1601 Poor Law: consolidated all previous legislation into one comprehensive system; distinguished deserving from undeserving poor in law; established parish as the unit of poor relief – the foundation of English poor relief for the next two centuries'],},
 
 // ── PAPER 3 · Unit 1 Weimar Republic ────────
+{paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'WWI and the German Revolution 1918',
+ hints:['Blockade','750000','Abdication','Armistice','Dolchstoss'],
+ facts:['British naval blockade caused mass starvation – 750,000 civilian deaths; 2 million soldiers killed; government debts tripled; collapse of law and order across Germany by late 1918','Kaiser Wilhelm II lost control and was forced to abdicate 9 November 1918; Friedrich Ebert (Social Democrat) declared the Weimar Republic the same day','Armistice signed 11 November 1918 – no Allied soldier had set foot on German soil; many Germans genuinely refused to believe they were losing the war','\"Dolchstoss\" – stab-in-the-back myth: right-wing nationalists blamed the new Weimar politicians for betraying an undefeated army; completely false but enormously damaging','Weimar politicians became known as the \"November Criminals\" – hated for signing the armistice and later the Treaty of Versailles; Matthias Erzberger, who signed the armistice, was assassinated by a right-wing extremist in 1921']},
+
+{paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'Structure of the Weimar Republic 1919',
+ hints:['Ebert','President','Reichstag','Proportional','Article48'],
+ facts:['Ebert emerged as dominant politician by February 1919 by reassuring the army and industrialists that communism would not take hold – his defeat of the Spartacists helped consolidate his position','President: head of state, elected every 7 years, chose the Chancellor – a powerful position above day-to-day politics','Chancellor: led the government and made day-to-day decisions, but needed Reichstag support to govern','Reichstag: directly elected parliament that voted on all legislation; proportional representation meant every small party won seats – created 9 unstable coalition governments between 1919 and 1923','Article 48: allowed the President to pass laws without the Reichstag in a national emergency – designed as a safeguard but became a dangerous loophole; used 66 times in 1932 alone']},
+
 {paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'Treaty of Versailles 1919',
  hints:['Reparations','Land','Army','Guilt','Dolchstoss'],
  facts:['June 1919: Weimar government had no say in negotiations – forced to accept terms dictated by Britain, France and USA','£6.6 billion reparations; lost 13% of land (Alsace-Lorraine to France; Polish Corridor created); overseas colonies lost','Army limited to 100,000 men; no submarines or air force; Rhineland demilitarised','Article 231 – war guilt clause: Germany forced to accept 100% responsibility; used to justify reparations','Combined with the Dolchstoss myth, the Treaty made the Weimar Republic deeply unpopular from its very first days']},
-
-{paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'Origins of the Weimar Republic 1918–19',
- hints:['Kaiser','Armistice','Dolchstoss','Coalitions','Article48'],
- facts:['WWI: 2 million Germans died; 4 million injured; government debts tripled; 750,000 civilians starved','9 November 1918: Kaiser abdicated; Ebert declared republic; armistice signed 2 days later on 11 November','Weimar politicians blamed for "Dolchstoss" (stab-in-the-back) – called "November Criminals"; myth false but extremely damaging','Proportional representation created unstable coalitions – 9 different coalition governments in the first 4 years','Article 48: President could pass laws without Reichstag in emergencies – later exploited by Hitler']},
 
 {paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'Spartacists and Kapp Putsch 1919–20',
  hints:['Luxemburg','Freikorps','Kapp','Strike','376'],
