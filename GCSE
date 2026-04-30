@@ -295,6 +295,7 @@ function pickPaper(p) {
     info.units.map(u => `<option value="${u}">${u}</option>`).join('');
   buildKPool();
   updateNavUI();
+  if (kPool.length) { kIdx = 0; renderKCard(kPool[0]); }
   const esel = document.getElementById('e-type');
   esel.innerHTML = info.qtypes.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
   showScreen('s-main');
@@ -382,8 +383,8 @@ function buildKPool() {
 function onUnitChange() {
   buildKPool();
   kIdx = 0;
-  document.getElementById('k-out').innerHTML = '';
   updateNavUI();
+  if (kPool.length) renderKCard(kPool[0]);
 }
 
 function updateNavUI() {
@@ -550,9 +551,9 @@ function drawSpecificCard(card) {
 function renderKCard(entry) {
   const card = entry.card;
   const num = entry.num;
-  const hintsHtml = card.hints.map(h =>
-    `<div class="hint-item"><span class="hint-kw">hint</span>${h}</div>`
-  ).join('');
+  const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0">` +
+  card.hints.map(h => `<span class="tag t-${card.paper}">${h}</span>`).join('') +
+  `</div>`;
   const factsHtml = '<ul>' + card.facts.map(f =>
     `<li>${boldHints(f, card.hints)}</li>`
   ).join('') + '</ul>';
