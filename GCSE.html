@@ -174,7 +174,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
   <select id="k-unit" onchange="onUnitChange()"><option value="all">All units</option></select>
 <select id="k-card" onchange="jumpToCard()"></select>
 </div>
-<button class="btn-go" id="k-go" onclick="drawRandomCard()">🔀 Random card</button>
+<button class="btn-go" id="k-go" onclick="drawCard()">🔀 Random card</button>
 <div style="display:flex;gap:8px;margin-bottom:.75rem;margin-top:-.5rem">
   <button class="btn-sm" onclick="stepCard(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
   <span id="k-card-num" style="flex:0 0 auto;align-self:center;font-size:.78rem;color:#6b6b68;white-space:nowrap;min-width:50px;text-align:center"></span>
@@ -1434,7 +1434,7 @@ const KC = [
 
 {paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Personal challenges facing Elizabeth 1558',
  hints:['Illegitimate','Patriarchal','Marriage','Debt','Calais'],
- facts:['Legitimacy: Catholics believed Henry VIII\'s divorce was invalid – making Elizabeth illegitimate; Mary Queen of Scots had a stronger Catholic claim',''Gender: England was deeply patriarchal; many believed women could not govern or lead armies; Bloody Mary had reinforced fears about female rule; Protestant reformer John Knox published his \"First Blast of the Trumpet\" in 1558 declaring female rule against God\'s will – \"the blind leading those who can see\"',,','Marriage dilemma: a foreign husband risked foreign interference and English resentment; an English husband would create noble rivalries – but remaining unmarried left no heir','Finance: Elizabeth inherited £227,000 of debt from Mary I; forced to sell crown lands for quick income, reducing future revenue','At war with France; Calais lost 1558 – national humiliation; peace made 1559 but the weakness it exposed remained']},
+ facts:['Legitimacy: Catholics believed Henry VIII\'s divorce was invalid – making Elizabeth illegitimate; Mary Queen of Scots had a stronger Catholic claim','Gender: England was deeply patriarchal; many believed women could not govern or lead armies; Bloody Mary had reinforced fears about female rule; Protestant reformer John Knox published his \"First Blast of the Trumpet\" in 1558 declaring female rule against God\'s will – \"the blind leading those who can see\"','Marriage dilemma: a foreign husband risked foreign interference and English resentment; an English husband would create noble rivalries – but remaining unmarried left no heir','Finance: Elizabeth inherited £227,000 of debt from Mary I; forced to sell crown lands for quick income, reducing future revenue','At war with France; Calais lost 1558 – national humiliation; peace made 1559 but the weakness it exposed remained']},
 
 {paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Foreign challenges facing Elizabeth 1558',
  hints:['Philip','Auld','Mary','France','Netherlands'],
