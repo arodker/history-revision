@@ -135,7 +135,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 <div class="app">
 <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.2rem">
   <h1 style="margin-bottom:0">GCSE History Revision</h1>
-  <a href="index.html" style="font-size:.78rem;font-weight:600;padding:6px 12px;border:1px solid #ddddd8;border-radius:8px;background:#fff;color:#6b6b68;text-decoration:none">← Back</a>
+  <a href="index.html" id="hub-link" style="font-size:.78rem;font-weight:600;padding:6px 12px;border:1px solid #ddddd8;border-radius:8px;background:#fff;color:#6b6b68;text-decoration:none">← Hub</a>
 </div>
 <p class="subtitle">Mr Rodker's Revision Hub &mdash; Edexcel GCSE</p>
 
@@ -305,6 +305,8 @@ function goBack() {
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  const hubLink = document.getElementById('hub-link');
+  if (hubLink) hubLink.style.display = id === 's-pick' ? 'inline-block' : 'none';
 }
 
 function setMode(m) {
