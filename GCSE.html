@@ -180,7 +180,15 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
   <span id="k-card-num" style="flex:0 0 auto;align-self:center;font-size:.78rem;color:#6b6b68;white-space:nowrap;min-width:50px;text-align:center"></span>
   <button class="btn-sm" onclick="stepCard(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
 </div>
-    <div id="k-flag-bar" style="display:none;gap:8px;align-items:center;margin-bottom:.75rem">
+    <div id="k-progress-wrap" style="margin-bottom:.75rem;display:none">
+  <div style="font-size:.75rem;color:#6b6b68;margin-bottom:4px">
+    <span id="k-progress-text"></span>
+  </div>
+  <div style="background:#e5e5e3;border-radius:99px;height:6px">
+    <div id="k-progress-bar" style="height:6px;border-radius:99px;background:#4a7c59;transition:width .3s"></div>
+  </div>
+</div>
+<div id="k-flag-bar" style="display:none;gap:8px;align-items:center;margin-bottom:.75rem">
       <span id="k-flag-count" style="font-size:.82rem;color:#6b6b68">🚩 <span id="k-flag-num">0</span> flagged</span>
       <button class="btn-sm" onclick="showFlaggedScreen()">Review flagged cards</button>
       <button class="btn-sm" onclick="clearFlagged()">Clear flags</button>
@@ -293,11 +301,14 @@ function pickPaper(p) {
   const sel = document.getElementById('k-unit');
   sel.innerHTML = '<option value="all">All units</option>' +
     info.units.map(u => `<option value="${u}">${u}</option>`).join('');
-  buildKPool();
-  updateNavUI();
-  if (kPool.length) { kIdx = 0; renderKCard(kPool[0]); }
   const esel = document.getElementById('e-type');
   esel.innerHTML = info.qtypes.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
+  learntCards = new Set();
+  buildKPool();
+  kPoolTotal = kPool.length;
+  updateNavUI();
+  updateProgressBar();
+  if (kPool.length) { kIdx = 0; renderKCard(kPool[0]); }
   showScreen('s-main');
   setMode('knowledge');
 }
@@ -354,6 +365,8 @@ function paperTagClass(p) {
 // ═══════════════════════════════════════════
 let kPool = [];
 let kIdx = 0;
+let kPoolTotal = 0;
+let learntCards = new Set();
 
 function buildKPool() {
   const unit = document.getElementById('k-unit').value;
@@ -378,12 +391,16 @@ function buildKPool() {
       `<option value="${i}">${entry.num} – ${entry.card.heading}</option>`
     ).join('');
   }
+  kPoolTotal = kPool.length;
 }
 
 function onUnitChange() {
+  learntCards = new Set();
   buildKPool();
+  kPoolTotal = kPool.length;
   kIdx = 0;
   updateNavUI();
+  updateProgressBar();
   if (kPool.length) renderKCard(kPool[0]);
 }
 
@@ -424,7 +441,25 @@ function boldHints(text, hints) {
   });
   return out;
 }
+
+let learntCards = new Set();
   
+function markLearnt() {
+  const entry = kPool[kIdx];
+  learntCards.add(entry.card.paper + '|' + entry.card.heading);
+  kPool.splice(kIdx, 1);
+  if (kPool.length === 0) {
+    document.getElementById('k-out').innerHTML = '<div class="empty">All cards learnt! 🎉</div>';
+    showFlaggedButton();
+    updateNavUI();
+    updateProgressBar();
+    return;
+  }
+  kIdx = kIdx % kPool.length;
+  renderKCard(kPool[kIdx]);
+  updateNavUI();
+  updateProgressBar();
+}  
 let flaggedCards = [];
 
 function flagCard(btn) {
@@ -440,7 +475,14 @@ function flagCard(btn) {
     btn.style.opacity = '.5';
   }
 }
-
+  
+function showFlaggedButton() {
+  if (flaggedCards.length > 0) {
+    document.getElementById('k-out').innerHTML +=
+      `<button class="btn-go" onclick="showFlaggedScreen()" style="margin-top:1rem">Review ${flaggedCards.length} flagged cards</button>`;
+  }
+}
+  
 function unflagCard(btn) {
   const card = btn.closest('.card');
   const paper = card.dataset.paper;
@@ -576,6 +618,7 @@ function renderKCard(entry) {
           ${alreadyFlagged ?
             `<button class="btn-sm" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11" onclick="unflagCard(this)">✅ Remove flag</button>` :
             `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>`}
+          <button class="btn-sm" onclick="markLearnt()" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11">✓ Learnt</button>
         </div>
         <div class="reveal" id="kh">${hintsHtml}</div>
         <div class="reveal" id="kf">${factsHtml}</div>
