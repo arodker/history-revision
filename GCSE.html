@@ -174,7 +174,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
   <select id="k-unit" onchange="onUnitChange()"><option value="all">All units</option></select>
 <select id="k-card" onchange="jumpToCard()"></select>
 </div>
-<button class="btn-go" id="k-go" onclick="drawCard()">🔀 Random card</button>
+<button class="btn-go" id="k-go" onclick="drawRandomCard()">🔀 Random card</button>
 <div style="display:flex;gap:8px;margin-bottom:.75rem;margin-top:-.5rem">
   <button class="btn-sm" onclick="stepCard(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
   <span id="k-card-num" style="flex:0 0 auto;align-self:center;font-size:.78rem;color:#6b6b68;white-space:nowrap;min-width:50px;text-align:center"></span>
@@ -326,6 +326,7 @@ function setMode(m) {
   document.getElementById('e-out').innerHTML = '';
   document.getElementById('d-go').style.display = 'block';
   updateFlagBar();
+  if (m === 'knowledge') { buildKPool(); updateNavUI(); }
 }
 
 // ═══════════════════════════════════════════
