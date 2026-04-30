@@ -441,7 +441,23 @@ function boldHints(text, hints) {
   });
   return out;
 }
- 
+
+function markLearntBtn(btn) {
+  btn.style.background = '#EAF3DE';
+  btn.style.color = '#3B6D11';
+  btn.style.borderColor = '#3B6D11';
+  btn.disabled = true;
+  setTimeout(markLearnt, 400);
+}
+
+function unflagLearntBtn(btn) {
+  btn.style.background = '#EAF3DE';
+  btn.style.color = '#3B6D11';
+  btn.style.borderColor = '#3B6D11';
+  btn.disabled = true;
+  setTimeout(() => unflagCard(btn), 400);
+}
+  
 function markLearnt() {
   const entry = kPool[kIdx];
   learntCards.add(entry.card.paper + '|' + entry.card.heading);
@@ -626,9 +642,9 @@ function renderKCard(entry) {
           <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
           <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='Reveal key content'?'Hide content':'Reveal key content'">Reveal key content</button>
           ${alreadyFlagged ?
-            `<button class="btn-sm" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11" onclick="unflagCard(this)">✅ Remove flag</button>` :
+            `<button class="btn-sm" onclick="unflagLearntBtn(this)">✅ Learnt</button>` :
             `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>`}
-          <button class="btn-sm" onclick="markLearnt()" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11">✓ Learnt</button>
+          <button class="btn-sm" id="k-learnt-btn" onclick="markLearntBtn(this)">✅ Learnt</button>
         </div>
         <div class="reveal" id="kh">${hintsHtml}</div>
         <div class="reveal" id="kf">${factsHtml}</div>
