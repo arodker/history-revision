@@ -416,10 +416,13 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 <!-- SCREEN 4: FLAGGED CARDS -->
 <div class="screen" id="s-flagged">
   <div class="mode-header">
-    <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
-    <button class="back-btn" onclick="showScreen('s-hub')">← Back</button>
+    <div style="display:flex;gap:6px">
+      <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
+      <button class="back-btn" onclick="showScreen('s-hub')">← Back</button>
+    </div>
     <span style="font-size:.85rem;font-weight:600;color:var(--muted)">🚩 Flagged for review</span>
   </div>
+  <button onclick="clearFlagged();showFlaggedScreen()" style="width:100%;text-align:left;padding:8px 12px;margin-bottom:.75rem;font-size:.82rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:#A32D2D;cursor:pointer;font-family:inherit">🗑️ Clear all flagged cards</button>
   <div id="flagged-out"></div>
 </div>
 
@@ -551,7 +554,7 @@ function setMode(m) {
   document.getElementById('e-out').innerHTML = '';
   document.getElementById('d-go').style.display = 'block';
   updateFlagBar();
-  if (m === 'knowledge') { buildKPool(); updateNavUI(); }
+  if (m === 'knowledge') { if (!kPool.length && !learntCards.size) buildKPool(); updateNavUI(); }
   if (m === 'exam') updateExamDirectory();
   if (m === 'dates') {
     const hardBtn = document.getElementById('d-hard');
@@ -720,72 +723,64 @@ function unflagLearntBtn(btn) {
   setTimeout(() => unflagCard(btn), 400);
 }
   
+function showKBComplete() {
+  const totalLearnt = learntCards.size;
+  const unitVal = document.getElementById('k-unit').value;
+  const flaggedThisUnit = flaggedCards.filter(fc =>
+    KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
+      (unitVal === 'all' || unitVal === '' || c.unit === unitVal))
+  ).length;
+  const celebrations = [
+    'Outstanding work! Every card nailed. \u{1F4AA}',
+    'Unit complete \u2014 your future self will thank you. \u{1F3C6}',
+    'That\u2019s the whole unit done. Impressive. \u2B50',
+    'All cards learnt. You\u2019re on a roll. \u{1F525}',
+    'Exam board won\u2019t know what hit them. \u{1F3AF}',
+    'Unit complete! Keep this momentum going. \u{1F680}',
+    'Every card done. That\u2019s how it\u2019s done. \u{1F44F}',
+  ];
+  const msg = celebrations[Math.floor(Math.random() * celebrations.length)];
+  document.getElementById('k-out').innerHTML = `
+    <div style="text-align:center;padding:2rem">
+      <div style="font-size:2.5rem;margin-bottom:.5rem">\u{1F389}</div>
+      <div style="font-size:1.2rem;font-weight:700;margin-bottom:.4rem">Unit complete!</div>
+      <div style="font-size:.88rem;color:var(--muted);margin-bottom:1.5rem">${msg}</div>
+      <div style="display:flex;justify-content:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
+          <div style="font-size:1.5rem;font-weight:700;color:#4a7c59">${totalLearnt}</div>
+          <div style="font-size:.7rem;color:var(--muted);margin-top:2px">cards learnt</div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
+          <div style="font-size:1.5rem;font-weight:700;color:#D4537E">${sessionFlaggedCount}</div>
+          <div style="font-size:.7rem;color:var(--muted);margin-top:2px">flagged for review</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        ${flaggedThisUnit > 0 ? `<button class="btn-sm" onclick="showFlaggedScreen()" style="width:100%">\u{1F6A9} Review ${flaggedThisUnit} flagged cards</button>` : ''}
+        <button class="btn-sm" onclick="showScreen('s-hub')" style="width:100%">\u{1F4DA} Pick a new unit</button>
+        <button class="btn-sm" onclick="resetLearnt()" style="width:100%">\u{1F504} Reset and start again</button>
+      </div>
+    </div>`;
+  document.getElementById('k-progress-wrap').style.display = 'none';
+  document.getElementById('k-flag-bar').style.display = 'none';
+  const kGoRow = document.getElementById('k-go') && document.getElementById('k-go').parentElement;
+  if (kGoRow) kGoRow.style.display = 'none';
+  document.querySelector('#mode-knowledge .filter-row').style.display = 'none';
+  sessionStartTime = null;
+  sessionFlaggedCount = 0;
+  updateNavUI();
+}
+
 function markLearnt() {
   const entry = kPool[kIdx];
   learntCards.add(entry.card.paper + '|' + entry.card.heading);
   kPool.splice(kIdx, 1);
-  if (kPool.length === 0) {
-    // Session summary
-    const elapsed = sessionStartTime ? Math.round((Date.now() - sessionStartTime) / 1000) : 0;
-    const mins = Math.floor(elapsed / 60);
-    const secs = elapsed % 60;
-    const timeStr = mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
-    const totalLearnt = learntCards.size;
-    const flagBtn = flaggedCards.length > 0
-      ? `<button class="btn-go" onclick="showFlaggedScreen()" style="margin-top:.75rem;background:#F0B429;color:#fff">🚩 Review ${flaggedCards.length} flagged cards</button>`
-      : '';
-    const flaggedThisUnit = flaggedCards.filter(fc =>
-      KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
-        (document.getElementById('k-unit').value === 'all' || c.unit === document.getElementById('k-unit').value))
-    ).length;
-    const celebrations = [
-      'Outstanding work! Every card nailed. 💪',
-      'Unit complete \u2014 your future self will thank you. 🏆',
-      'That\u2019s the whole unit done. Impressive. ⭐',
-      'All cards learnt. You\u2019re on a roll. 🔥',
-      'Exam board won\u2019t know what hit them. 🎯',
-      'Unit complete! Keep this momentum going. 🚀',
-      'Every card done. That\u2019s how it\u2019s done. 👏',
-    ];
-    const msg = celebrations[Math.floor(Math.random() * celebrations.length)];
-    document.getElementById('k-out').innerHTML = `
-      <div style="text-align:center;padding:2rem">
-        <div style="font-size:2.5rem;margin-bottom:.5rem">🎉</div>
-        <div style="font-size:1.2rem;font-weight:700;margin-bottom:.4rem">Unit complete!</div>
-        <div style="font-size:.88rem;color:var(--muted);margin-bottom:1.5rem">${msg}</div>
-        <div style="display:flex;justify-content:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap">
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
-            <div style="font-size:1.5rem;font-weight:700;color:#4a7c59">${totalLearnt}</div>
-            <div style="font-size:.7rem;color:var(--muted);margin-top:2px">cards learnt</div>
-          </div>
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
-            <div style="font-size:1.5rem;font-weight:700;color:#D4537E">${sessionFlaggedCount}</div>
-            <div style="font-size:.7rem;color:var(--muted);margin-top:2px">flagged for review</div>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          ${flaggedThisUnit > 0 ? `<button class="btn-sm" onclick="showFlaggedScreen()" style="width:100%">🚩 Review ${flaggedThisUnit} flagged cards</button>` : ''}
-          <button class="btn-sm" onclick="showScreen('s-hub')" style="width:100%">📚 Pick a new unit</button>
-          <button class="btn-sm" onclick="resetLearnt()" style="width:100%">🔄 Reset and start again</button>
-        </div>
-      </div>`;
-    // Hide progress bar, controls, dropdowns
-    document.getElementById('k-progress-wrap').style.display = 'none';
-    document.getElementById('k-flag-bar').style.display = 'none';
-    const kGoRow = document.getElementById('k-go') && document.getElementById('k-go').parentElement;
-    if (kGoRow) kGoRow.style.display = 'none';
-    document.querySelector('#mode-knowledge .filter-row').style.display = 'none';
-    document.getElementById('k-card-num').parentElement.style.display = 'none';
-    sessionStartTime = null;
-    sessionFlaggedCount = 0;
-    updateNavUI();
-    return;
-  }
+  if (kPool.length === 0) { showKBComplete(); return; }
   kIdx = kIdx % kPool.length;
   renderKCard(kPool[kIdx]);
   updateNavUI();
   updateProgressBar();
-}  
+}
 
 function resetLearnt() {
   learntCards = new Set();
@@ -828,8 +823,11 @@ function flagCard(btn) {
       if (kIdx >= kPool.length) kIdx = Math.max(0, kPool.length - 1);
       updateProgressBar();
     }
-    // Auto-advance after 0.9 seconds
-    setTimeout(() => { if (kPool.length) { renderKCard(kPool[kIdx]); updateNavUI(); } }, 900);
+    // Auto-advance after 0.9 seconds — or show end screen if pool empty
+    setTimeout(() => {
+      if (kPool.length === 0) { showKBComplete(); return; }
+      renderKCard(kPool[kIdx]); updateNavUI();
+    }, 900);
   }
 }
   
@@ -909,9 +907,9 @@ function showFlaggedScreen() {
   out.innerHTML = flaggedCards.map(fc => {
     const card = KC.find(c => c.paper === fc.paper && c.heading === fc.heading);
     if (!card) return '';
-    const hintsHtml = card.hints.map(h =>
-      `<div class="hint-item"><span class="hint-kw">hint</span>${h}</div>`
-    ).join('');
+    const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0">` +
+      card.hints.map(h => `<span class="tag t-${card.paper}">${h}</span>`).join('') +
+      `</div>`;
     const factsHtml = '<ul>' + card.facts.map(f =>
       `<li>${boldHints(f, card.hints)}</li>`
     ).join('') + '</ul>';
@@ -925,9 +923,9 @@ function showFlaggedScreen() {
           </div>
           <div class="card-heading">${card.heading}</div>
           <div class="btn-row">
-            <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
-<button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
-            <button class="btn-sm" onclick="unflagCard(this)">🚩 Unflag</button>
+            <button class="btn-sm" onclick="tog('fh_${uid}');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
+            <button class="btn-sm" onclick="tog('ff_${uid}');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
+            <button class="btn-sm" onclick="unflagCard(this)">✅ Learnt</button>
           </div>
           <div class="reveal" id="fh_${uid}">${hintsHtml}</div>
           <div class="reveal" id="ff_${uid}">${factsHtml}</div>
