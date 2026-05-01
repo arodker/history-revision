@@ -488,7 +488,7 @@ function pickPaper(p) {
   learntCards = new Set();
   examHistory = [];
   examHistoryIdx = -1;
-  buildKPool();
+  ();
   kPoolTotal = kPool.length;
   document.getElementById('k-out').innerHTML = '';
   updateNavUI();
@@ -610,41 +610,49 @@ let sessionFlaggedCount = 0;
 function buildKPool() {
   const unit = document.getElementById('k-unit').value;
   const cardSel = document.getElementById('k-card');
+
   if (!unit) {
     kPool = [];
     kPoolTotal = 0;
     if (cardSel) cardSel.innerHTML = '<option value="">— select a topic —</option>';
     return;
   }
+
   let all = KC.filter(c => c.paper === currentPaper);
   const units = P[currentPaper].units;
+
   all.sort((a, b) => {
     const ui = units.indexOf(a.unit);
     const vi = units.indexOf(b.unit);
     if (ui !== vi) return ui - vi;
     return KC.indexOf(a) - KC.indexOf(b);
   });
+
   if (unit !== 'all') all = all.filter(c => c.unit === unit);
+
   const unitCounts = {};
-  // All cards for dropdown (including flagged)
+
   const allEntries = all.map(c => {
     const uIdx = units.indexOf(c.unit) + 1;
     unitCounts[uIdx] = (unitCounts[uIdx] || 0) + 1;
     return { card: c, num: `${uIdx}.${unitCounts[uIdx]}` };
-  // Pool for sequential flow includes ALL cards
-kPool = allEntries;
+  });
 
-if (cardSel) {
-  cardSel.innerHTML = '<option value="">— select a topic —</option>' +
-    allEntries.map((entry, i) => {
-      const key = entry.card.paper + '|' + entry.card.heading;
-      const isFlagged = flaggedCards.has(key);
-      return `<option value="dd-${i}">${entry.num} – ${entry.card.heading}${isFlagged ? ' 🚩' : ''}</option>`;
-    }).join('');
-  cardSel._allEntries = allEntries;
+  // ✅ Correct: pool includes ALL cards
+  kPool = allEntries;
+  kIdx = 0;
+  kPoolTotal = allEntries.length;
+
+  if (cardSel) {
+    cardSel.innerHTML = '<option value="">— select a topic —</option>' +
+      allEntries.map((entry, i) => {
+        const key = entry.card.paper + '|' + entry.card.heading;
+        const isFlagged = flaggedCards.has(key);
+        return `<option value="dd-${i}">${entry.num} – ${entry.card.heading}${isFlagged ? ' 🚩' : ''}</option>`;
+      }).join('');
+    cardSel._allEntries = allEntries;
+  }
 }
-
-kPoolTotal = allEntries.length;
 
 function onUnitChange() {
   learntCards = new Set();
@@ -732,7 +740,7 @@ function unflagLearntBtn(btn) {
 function showKBComplete() {
   const totalLearnt = learntCards.size;
   const unitVal = document.getElementById('k-unit').value;
-  const flaggedThisUnit = flaggedCards.filter(fc =>
+  const flaggedThisUnit = flaggedCards.delete(fc =>
     KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
       (unitVal === 'all' || unitVal === '' || c.unit === unitVal))
   ).length;
@@ -812,29 +820,32 @@ let flaggedCards = new Set(JSON.parse(localStorage.getItem('gcse_flagged') || '[
 
 function flagCard(btn) {
   const card = btn.closest('.card');
-  const paper = card.dataset.paper;
-  const heading = card.dataset.heading;
-  const already = flaggedCards.find(c => c.paper === paper && c.heading === heading);
-  if (!already) {
-    flaggedCards.push({paper, heading});
+  const key = card.dataset.paper + '|' + card.dataset.heading;
+
+  // add to flagged set (if not already)
+  if (!flaggedCards.has(key)) {
+    flaggedCards.add(key);
     sessionFlaggedCount++;
-    updateFlagBar();
-    btn.outerHTML = `<button class="btn-sm" style="background:#FEF9E7;color:#9A6B00;border-color:#F0B429" disabled>🚩 Flagged</button>`;
-    const learntBtn = card.querySelector('#k-learnt-btn');
-    if (learntBtn) learntBtn.remove();
-    // Remove from kPool immediately so it doesn't come back
-    const poolIdx = kPool.findIndex(e => e.card.paper === paper && e.card.heading === heading);
-    if (poolIdx !== -1) {
-      kPool.splice(poolIdx, 1);
-      if (kIdx >= kPool.length) kIdx = Math.max(0, kPool.length - 1);
-      updateProgressBar();
-    }
-    // Auto-advance after 0.9 seconds — or show end screen if pool empty
-    setTimeout(() => {
-      if (kPool.length === 0) { showKBComplete(); return; }
-      renderKCard(kPool[kIdx]); updateNavUI();
-    }, 900);
+    localStorage.setItem('gcse_flagged', JSON.stringify([...flaggedCards]));
   }
+
+  // update button immediately
+  btn.outerHTML = `<button class="btn-sm" style="background:#FEF9E7;color:#9A6B00;border-color:#F0B429" disabled>🚩 Flagged</button>`;
+
+  // remove from current session pool
+  kPool.splice(kIdx, 1);
+
+  if (kIdx >= kPool.length) kIdx = 0;
+
+  // ✅ delayed auto-advance (clean version)
+  setTimeout(() => {
+    if (kPool.length === 0) {
+      showKBComplete();
+      return;
+    }
+    renderKCard(kPool[kIdx]);
+    updateNavUI();
+  }, 800);
 }
   
 function updateProgressBar() {
@@ -846,7 +857,7 @@ function updateProgressBar() {
   const done = kPoolTotal - kPool.length;
   const pct = Math.round((done / kPoolTotal) * 100);
   bar.style.width = pct + '%';
-  const flagCount = flaggedCards.filter(fc =>
+  const flagCount = flaggedCards.delete(fc =>
     KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
       (document.getElementById('k-unit').value === 'all' || document.getElementById('k-unit').value === '' || c.unit === document.getElementById('k-unit').value))
   ).length;
@@ -854,9 +865,9 @@ function updateProgressBar() {
 }
 
 function showFlaggedButton() {
-  if (flaggedCards.length > 0) {
+  if (flaggedCards.size > 0) {
     document.getElementById('k-out').innerHTML +=
-      `<button class="btn-go" onclick="showFlaggedScreen()" style="margin-top:1rem">Review ${flaggedCards.length} flagged cards</button>`;
+      `<button class="btn-go" onclick="showFlaggedScreen()" style="margin-top:1rem">Review ${flaggedCards.size} flagged cards</button>`;
   }
 }
   
@@ -864,7 +875,7 @@ function unflagCard(btn) {
   const card = btn.closest('.card');
   const paper = card.dataset.paper;
   const heading = card.dataset.heading;
-  flaggedCards = flaggedCards.filter(c => !(c.paper === paper && c.heading === heading));
+  flaggedCards = flaggedCards.delete(c => !(c.paper === paper && c.heading === heading));
   updateFlagBar();
   if (document.getElementById('s-flagged').classList.contains('active')) {
     showFlaggedScreen();
@@ -882,11 +893,11 @@ function updateFlagBar() {
   const homeNum = document.getElementById('home-flag-num');
   const hubFlagBtn = document.getElementById('hub-flag-btn');
   const hubFlagNum = document.getElementById('hub-flag-num');
-  if (flaggedCards.length > 0) {
+  if (flaggedCards.size > 0) {
     bar.style.display = 'flex';
-    num.textContent = flaggedCards.length;
-    if (homeBtn) { homeBtn.style.display = 'block'; homeNum.textContent = flaggedCards.length; }
-    if (hubFlagBtn) { hubFlagBtn.style.display = 'block'; hubFlagNum.textContent = flaggedCards.length; }
+    num.textContent = flaggedCards.size;
+    if (homeBtn) { homeBtn.style.display = 'block'; homeNum.textContent = flaggedCards.size; }
+    if (hubFlagBtn) { hubFlagBtn.style.display = 'block'; hubFlagNum.textContent = flaggedCards.size; }
   } else {
     bar.style.display = 'none';
     if (homeBtn) homeBtn.style.display = 'none';
@@ -899,14 +910,14 @@ function reviewFlagged() {
 }
   
 function goToFlagged() {
-  if (!flaggedCards.length) return;
+  if (!flaggedCards.size) return;
   showFlaggedScreen();
 }
 
 function showFlaggedScreen() {
   showScreen('s-flagged');
   const out = document.getElementById('flagged-out');
-  if (!flaggedCards.length) {
+  if (!flaggedCards.size) {
     out.innerHTML = '<div class="empty" style="padding:2rem;text-align:center">🎉 All flagged cards reviewed! Head back and keep going.</div><div style="text-align:center;margin-top:1rem"><button class="btn-sm" onclick="showScreen(\'s-pick\')">🏠 Home</button></div>';
     return;
   }
@@ -941,7 +952,7 @@ function showFlaggedScreen() {
 }
 
 function clearFlagged() {
-  flaggedCards = [];
+  flaggedCards = new Set();;
   updateFlagBar();
 }
   
@@ -982,7 +993,7 @@ function renderKCard(entry, isInterleaved) {
   const factsHtml = '<ul>' + card.facts.map(f =>
     `<li>${boldHints(f, card.hints)}</li>`
   ).join('') + '</ul>';
-  const alreadyFlagged = flaggedCards.find(c => c.paper === card.paper && c.heading === card.heading);
+  const alreadyFlagged = flaggedCards.has(key)(c => c.paper === card.paper && c.heading === card.heading);
   const interleavedBadge = isInterleaved ? `<span class="tag t-grey" style="background:#FEF9E7;color:#9A6B00;border:1px solid #F0B429">🚩 Flagged review</span>` : '';
   document.getElementById('k-out').innerHTML = `
     <div class="card" data-paper="${card.paper}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
