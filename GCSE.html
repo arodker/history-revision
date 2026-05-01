@@ -56,6 +56,10 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 /* FILTERS */
 .filter-row{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
 select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:8px;background:#fff;color:var(--text);cursor:pointer;flex:1;min-width:140px;font-family:inherit}
+select.sel-p1{background:#FEF9E7;color:#9A6B00;border-color:#F0B429}
+select.sel-p2a{background:#FBEAF0;color:#993556;border-color:#D4537E}
+select.sel-p2b{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
+select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
 /* GO BUTTON */
 .btn-go{width:100%;padding:13px;font-size:.95rem;font-weight:600;border:none;border-radius:10px;cursor:pointer;margin-bottom:1.25rem;transition:opacity .15s;color:#fff;font-family:inherit}
@@ -145,7 +149,59 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 .rq-btn-row{display:flex;gap:8px;flex-wrap:wrap}
 .rq-btn-row .btn-sm{background:var(--subtle);color:var(--text);border-color:var(--border2)}
 .rq-btn-row .btn-sm:hover{background:var(--border)}
+/* EXAM FULLSCREEN */
+.fs-blurred{filter:blur(6px);user-select:none;pointer-events:none}
+
+.fs-timer{font-size:1.6rem;font-weight:700;text-align:center;margin-bottom:.5rem;font-variant-numeric:tabular-nums;transition:color .3s}
+.fs-timer.warn{color:#D4537E}
+.fs-bar{height:6px;border-radius:3px;background:var(--border);margin-bottom:1.5rem;overflow:hidden}
+.fs-bar-fill{height:100%;border-radius:3px;background:#4a7c59;transition:width 1s linear,background .3s}
+.fs-q{font-size:1.05rem;font-weight:600;line-height:1.5;margin-bottom:1rem}
+.fs-hints{font-size:.85rem;color:var(--muted);margin-bottom:1.5rem}
+
 /* PRINT MODE */
+@media print {
+  /* Mixed Retrieval print */
+  #s-rapid .mode-header,
+  #rq-setup,
+  .rq-btn-row,
+  .rq-tap { display:none !important; }
+  #rq-out { display:block !important; }
+  .rq-grid { display:block !important; }
+  .rq-card {
+    break-inside:avoid;
+    border:1px solid #ccc !important;
+    border-radius:4px !important;
+    margin-bottom:.4rem !important;
+    padding:.4rem .6rem !important;
+    min-height:unset !important;
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:baseline !important;
+    gap:.75rem !important;
+  }
+  .rq-card .rq-q { font-size:.85rem !important; flex:1; }
+  .rq-card .rq-a {
+    display:block !important;
+    background:none !important;
+    border-radius:0 !important;
+    padding:0 !important;
+    font-size:.85rem !important;
+    color:#333 !important;
+    font-weight:600 !important;
+    flex:1;
+    border-left:1px solid #ccc;
+    padding-left:.75rem !important;
+  }
+  .rq-card .rq-q span { display:none !important; } /* hide difficulty stars */
+}
+@media print {
+  /* Dates mode: hide quiz, show clean list */
+  #mode-dates #d-out,
+  #mode-dates #d-go,
+  #mode-dates #d-hard { display:none !important; }
+  #mode-dates #d-print-list { display:block !important; }
+}
 @media print {
   #dark-toggle, #hub-link, .mode-grid, .back-btn, .paper-grid, .rq-section,
   .btn-row, .btn-go, .btn-sm, .filter-row, #k-progress-wrap, #k-flag-bar,
@@ -166,18 +222,16 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 </head>
 <body>
 <div class="app">
-<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.2rem">
-  <h1 style="margin-bottom:0">GCSE History Revision</h1>
-  <div style="display:flex;gap:6px;align-items:center">
-    <button id="print-btn" onclick="window.print()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;display:none" title="Print">🖨️</button>
-    <button id="dark-toggle" onclick="toggleDark()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit" title="Toggle dark mode">🌙</button>
-    <a href="index.html" id="hub-link" style="font-size:.78rem;font-weight:600;padding:6px 12px;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);text-decoration:none">← Hub</a>
-  </div>
+<div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;margin-bottom:.5rem">
+  <button id="print-btn" onclick="window.print()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;display:none" title="Print">🖨️</button>
+  <button id="dark-toggle" onclick="toggleDark()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit" title="Toggle dark mode">🌙</button>
+  <a href="index.html" id="hub-link" style="font-size:.78rem;font-weight:600;padding:6px 12px;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);text-decoration:none">← Hub</a>
 </div>
-<p class="subtitle">Mr Rodker's Revision Hub &mdash; Edexcel GCSE</p>
 
 <!-- SCREEN 1: PAPER PICKER -->
 <div class="screen active" id="s-pick">
+  <h1 style="margin-bottom:.2rem">GCSE History Revision</h1>
+  <p class="subtitle">Mr Rodker’s Revision Hub — Edexcel GCSE</p>
   <p style="font-size:.85rem;color:var(--muted);margin-bottom:.9rem">Which paper are you revising?</p>
   <div class="paper-grid">
     <button class="paper-btn pb-p1" onclick="pickPaper('p1')"><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
@@ -187,7 +241,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
   </div>
   <div class="rq-section">
     <p class="rq-section-label">Or try:</p>
-    <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Rapid Fire — 10 retrieval questions</button>
+    <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
     <button class="btn-go" id="home-flag-btn" style="background:var(--subtle);color:var(--text);display:none;margin-bottom:0" onclick="goToFlagged()">🚩 Review flagged cards (<span id="home-flag-num">0</span>)</button>
   </div>
 </div>
@@ -195,14 +249,14 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 <!-- SCREEN 2: PAPER HUB (mode selector) -->
 <div class="screen" id="s-hub">
   <div class="mode-header">
-    <button class="back-btn" onclick="showScreen('s-pick')">← Home</button>
+    <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
     <span class="paper-badge" id="hub-paper-badge"></span>
   </div>
   <div class="mode-grid" style="grid-template-columns:1fr 1fr;margin-bottom:.75rem">
     <button class="mode-btn" onclick="enterMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Learn key content card by card</span></button>
-<button class="mode-btn" style="opacity:.45;cursor:not-allowed" disabled><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Coming soon</span></button>
-<button class="mode-btn" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Test your chronology</span></button>
-<button class="mode-btn" onclick="enterMode('exam')"><span class="icon">✏️</span>Exam Practice<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Practise exam questions</span></button>
+    <button class="mode-btn" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Test your chronology</span></button>
+    <button class="mode-btn" onclick="enterMode('exam')"><span class="icon">✏️</span>Exam Practice<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Practise exam questions</span></button>
+    <button class="mode-btn" style="opacity:.45;cursor:not-allowed" disabled><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Coming soon</span></button>
   </div>
   <button class="btn-go" id="hub-flag-btn" style="background:var(--subtle);color:var(--text);display:none" onclick="goToFlagged()">🚩 Review flagged cards (<span id="hub-flag-num">0</span>)</button>
 </div>
@@ -227,12 +281,13 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
       <select id="k-unit" onchange="onUnitChange()"><option value="">— select a unit —</option><option value="all">All units</option></select>
       <select id="k-card" onchange="jumpToCard()"><option value="">— select a topic —</option></select>
     </div>
-    <button class="btn-sm" id="k-go" onclick="drawRandomCard()" style="width:100%;margin-bottom:.75rem;font-size:.8rem">🎲 Random card</button>
+
     <div style="display:flex;gap:8px;margin-bottom:.75rem">
       <button class="btn-sm" onclick="stepCard(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
-      <span id="k-card-num" style="flex:0 0 auto;align-self:center;font-size:.78rem;color:var(--muted);white-space:nowrap;min-width:50px;text-align:center"></span>
+      <button class="btn-sm" id="k-go" onclick="drawRandomCard()" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">🔀 Shuffle</button>
       <button class="btn-sm" onclick="stepCard(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
     </div>
+    <span id="k-card-num" style="display:none"></span>
     <div id="k-progress-wrap" style="margin-bottom:.75rem;display:none">
       <div style="font-size:.75rem;color:var(--muted);margin-bottom:4px">
         <span id="k-progress-text"></span>
@@ -251,7 +306,9 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
   <!-- DATES -->
   <div id="mode-dates" style="display:none">
     <button class="btn-go" id="d-go" onclick="startQuiz()">Start key dates quiz</button>
+    <button class="btn-sm" id="d-hard" onclick="startQuiz(true)" style="width:100%;margin-top:-.5rem;margin-bottom:.75rem;display:none">🎯 Hardest dates only</button>
     <div id="d-out"></div>
+    <div id="d-print-list" style="display:none"></div>
   </div>
 
   <!-- EXAM -->
@@ -259,7 +316,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
     <div id="e-out" style="margin-bottom:.75rem"></div>
     <div style="margin-bottom:.75rem">
       <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Question type</label>
-      <select id="e-type" onchange="updateExamDirectory()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--input-bg);color:var(--text)">
+      <select id="e-type" onchange="updateExamDirectory()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px">
         <option value="all">All question types</option>
         <option value="2mark">2-mark describe</option>
         <option value="4mark">4-mark similarity/difference</option>
@@ -270,12 +327,14 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
         <option value="16mark">16-mark debate</option>
       </select>
       <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-top:.5rem;margin-bottom:4px">Question</label>
-      <select id="e-directory" onchange="loadSelectedExam()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--input-bg);color:var(--text)">
+      <select id="e-directory" onchange="loadSelectedExam()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px">
         <option value="">— select a question —</option>
       </select>
     </div>
     <div style="display:flex;gap:8px;margin-bottom:.75rem">
-      <button class="btn-go" id="e-random" onclick="drawExam()" style="flex:1">🎲 Random question</button>
+      <button class="btn-sm" onclick="stepExam(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
+      <button class="btn-sm" id="e-random" onclick="drawExam()" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">🔀 Shuffle</button>
+      <button class="btn-sm" onclick="stepExam(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
     </div>
   </div>
 </div>
@@ -283,8 +342,8 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 <!-- SCREEN 3: RAPID FIRE -->
 <div class="screen" id="s-rapid">
   <div class="mode-header">
-    <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
-    <span style="font-size:.85rem;font-weight:600;color:#5a5a58">⚡ Rapid Fire Quiz</span>
+    <button class="btn-go" onclick="showScreen('s-pick')" style="background:#555;padding:6px 14px;font-size:.82rem;width:auto;margin-bottom:0">🏠 Home</button>
+    <span style="font-size:.85rem;font-weight:600;color:var(--muted)">🎯 Mixed Retrieval Quiz</span>
   </div>
   <div id="rq-setup">
     <p class="rq-section-label">Which papers? (tap to remove from quiz)</p>
@@ -294,22 +353,63 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
       <button class="rq-pill" id="rqp-p2b" onclick="toggleRQPaper('p2b')">👑 Elizabeth I</button>
       <button class="rq-pill" id="rqp-p3" onclick="toggleRQPaper('p3')">🏛️ Weimar &amp; Nazi</button>
     </div>
-    <p class="rq-section-label">Difficulty? (choose one or more)</p>
-        <div class="rq-stars">
+    <p class="rq-section-label">Maximum difficulty?</p>
+    <div class="rq-stars">
       <button class="rq-star" id="rqs-1" onclick="setRQDiff(1)">⭐</button>
       <button class="rq-star" id="rqs-2" onclick="setRQDiff(2)">⭐⭐</button>
       <button class="rq-star" id="rqs-3" onclick="setRQDiff(3)">⭐⭐⭐</button>
     </div>
+    <p class="rq-section-label">Mode?</p>
+    <div style="display:flex;gap:8px;margin-bottom:1rem">
+      <button class="rq-star sel" id="rq-mode-grid" onclick="setRQMode('grid')" style="flex:1;border-radius:8px;padding:8px">All at once</button>
+      <button class="rq-star" id="rq-mode-one" onclick="setRQMode('one')" style="flex:1;border-radius:8px;padding:8px">One at a time</button>
+    </div>
     <button class="btn-go" id="rq-go" style="background:var(--subtle);color:var(--muted);cursor:not-allowed" onclick="generateRQ()">🎯 Let's go</button>
     <p id="rq-counter" style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:-.75rem;margin-bottom:.5rem"></p>
     <div id="rq-err" class="empty" style="display:none">Not enough questions match these filters. Try adding more papers or increasing difficulty.</div>
+    <button id="rq-resume-btn" class="btn-sm" onclick="resumeRQ()" style="width:100%;margin-top:.5rem;display:none">↩️ Resume unfinished quiz</button>
   </div>
+  <!-- Grid mode output -->
   <div id="rq-out" style="display:none">
     <div class="rq-grid" id="rq-grid"></div>
     <div class="rq-btn-row">
-      <button class="btn-sm" onclick="generateRQ()">🔄 New questions</button>
+      <button class="btn-sm" onclick="rqInProgress=false;generateRQ()">🔄 New questions</button>
       <button class="btn-sm" onclick="revealAll()">👁 Reveal all</button>
-      <button class="btn-sm" onclick="document.getElementById('rq-setup').style.display='block';document.getElementById('rq-out').style.display='none'">⚙️ Settings</button>
+      <button class="btn-sm" onclick="rqBackToSetup()">⚙️ Settings</button>
+    </div>
+  </div>
+  <!-- One at a time mode output -->
+  <div id="rq-one" style="display:none">
+    <div class="quiz-prog"><div class="quiz-fill" id="rq-one-prog" style="width:0%;background:#555"></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
+      <span id="rq-one-hdr" style="font-size:.8rem;color:var(--muted)"></span>
+      <div class="sc-row"><span id="rq-one-streak" style="font-size:.8rem;color:#F0B429;font-weight:600"></span><span class="sc sc-c" id="rq-one-ok">✓ 0</span><span class="sc sc-w" id="rq-one-bad">✗ 0</span></div>
+    </div>
+    <div class="rq-card" id="rq-one-card" style="position:relative;overflow:hidden;min-height:unset;cursor:default;padding:1rem">
+      <div id="rq-one-stripe" style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#ddd"></div>
+      <div style="padding-left:.75rem">
+      <div style="font-size:1rem;font-weight:600;line-height:1.5;margin-bottom:1rem" id="rq-one-q"></div>
+      <div id="rq-one-reveal" style="display:none;border-top:1px solid var(--border);padding-top:.75rem;margin-top:.25rem">
+        <div style="font-size:1.05rem;font-weight:700;color:#3B6D11;margin-bottom:.75rem" id="rq-one-a"></div>
+        <div style="font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem">Self mark:</div>
+        <div style="display:flex;gap:8px">
+          <button class="btn-sm" onclick="rqOneAnswer(true)" style="flex:1;font-size:1.1rem;background:#EAF3DE;color:#3B6D11;border-color:#3B6D11">✓</button>
+          <button class="btn-sm" onclick="rqOneAnswer(false)" style="flex:1;font-size:1.1rem;background:#FCEBEB;color:#A32D2D;border-color:#A32D2D">✗</button>
+        </div>
+      </div>
+      <button id="rq-one-tap" onclick="rqOneReveal()" class="btn-sm" style="width:100%;margin-top:.5rem">👁 Reveal answer</button>
+      </div>
+    </div>
+    <div id="rq-one-end" style="display:none;text-align:center;padding:1.5rem">
+      <div style="font-size:2rem;margin-bottom:.5rem">🎯</div>
+      <div style="font-size:1.1rem;font-weight:700;margin-bottom:.25rem" id="rq-one-score"></div>
+      <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem" id="rq-one-msg"></div>
+      <div id="rq-one-missed-list" style="text-align:left;margin-bottom:1rem"></div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <button class="btn-sm" onclick="generateRQ()" style="width:100%">🔄 New questions</button>
+        <button class="btn-sm" onclick="rqRetryMissed()" id="rq-retry-btn" style="width:100%;display:none">↩️ Retry missed</button>
+        <button class="btn-sm" onclick="rqBackToSetup()" style="width:100%">⚙️ Settings</button>
+      </div>
     </div>
   </div>
 </div>
@@ -324,6 +424,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 </div>
 
 </div>
+
 
 <script>
 // ═══════════════════════════════════════════
@@ -372,7 +473,7 @@ function pickPaper(p) {
   const info = P[p];
   document.getElementById('paper-badge').textContent = info.label;
   document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
-  ['k-go','d-go','e-random'].forEach(id => {
+  ['d-go'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.className = 'btn-go ' + info.go;
   });
@@ -383,6 +484,7 @@ function pickPaper(p) {
   esel.innerHTML = info.qtypes.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
   learntCards = new Set();
   examHistory = [];
+  examHistoryIdx = -1;
   buildKPool();
   kPoolTotal = kPool.length;
   document.getElementById('k-out').innerHTML = '';
@@ -394,6 +496,11 @@ function pickPaper(p) {
   document.querySelectorAll('.mode-btn').forEach(btn => {
     btn.classList.remove('stripe-p1','stripe-p2a','stripe-p2b','stripe-p3');
     btn.classList.add('stripe-' + p);
+  });
+  // Apply paper colour to all selects
+  document.querySelectorAll('select').forEach(sel => {
+    sel.classList.remove('sel-p1','sel-p2a','sel-p2b','sel-p3');
+    sel.classList.add('sel-' + p);
   });
   document.getElementById('hub-paper-badge').textContent = info.label;
   document.getElementById('hub-paper-badge').className = 'paper-badge ' + info.badge;
@@ -433,7 +540,7 @@ function setMode(m) {
   const titleEl = document.getElementById('mode-title');
   if (titleEl) titleEl.textContent = titles[m] || '';
   const printBtn = document.getElementById('print-btn');
-  if (printBtn) printBtn.style.display = (m === 'knowledge' || m === 'exam') ? 'inline-block' : 'none';
+  if (printBtn) printBtn.style.display = (m === 'knowledge' || m === 'exam' || m === 'dates') ? 'inline-block' : 'none';
   ['knowledge','dates','exam'].forEach(mode => {
     const modeEl = document.getElementById('mode-' + mode);
     if (modeEl) modeEl.style.display = mode === m ? 'block' : 'none';
@@ -446,6 +553,21 @@ function setMode(m) {
   updateFlagBar();
   if (m === 'knowledge') { buildKPool(); updateNavUI(); }
   if (m === 'exam') updateExamDirectory();
+  if (m === 'dates') {
+    const hardBtn = document.getElementById('d-hard');
+    if (hardBtn) {
+      const hardCount = JSON.parse(localStorage.getItem('gcse_hard_dates_' + currentPaper) || '[]').length;
+      hardBtn.style.display = hardCount > 0 ? 'block' : 'none';
+      hardBtn.textContent = `🎯 Hardest dates only (${hardCount})`;
+    }
+    // Build print list of all dates for this paper
+    const printList = document.getElementById('d-print-list');
+    if (printList) {
+      const dates = DATES.filter(d => d.paper === currentPaper);
+      printList.innerHTML = `<h2 style="margin-bottom:.75rem">${P[currentPaper].label} — Key Dates</h2>` +
+        dates.map(d => `<div style="display:flex;gap:1rem;padding:.4rem 0;border-bottom:1px solid var(--border)"><strong style="min-width:80px">${d.date}</strong><span>${d.event}</span></div>`).join('');
+    }
+  }
 }
 
 // ═══════════════════════════════════════════
@@ -474,6 +596,8 @@ let kPool = [];
 let kIdx = 0;
 let kPoolTotal = 0;
 let learntCards = new Set();
+let sessionStartTime = null;
+let sessionFlaggedCount = 0;
 
 function buildKPool() {
   const unit = document.getElementById('k-unit').value;
@@ -494,22 +618,28 @@ function buildKPool() {
   });
   if (unit !== 'all') all = all.filter(c => c.unit === unit);
   const unitCounts = {};
-  kPool = all.map(c => {
+  // All cards for dropdown (including flagged)
+  const allEntries = all.map(c => {
     const uIdx = units.indexOf(c.unit) + 1;
     unitCounts[uIdx] = (unitCounts[uIdx] || 0) + 1;
     return { card: c, num: `${uIdx}.${unitCounts[uIdx]}` };
   });
+  // Pool for sequential flow excludes flagged cards
+  kPool = allEntries.filter(e => !flaggedCards.find(fc => fc.paper === e.card.paper && fc.heading === e.card.heading));
   if (cardSel) {
     cardSel.innerHTML = '<option value="">— select a topic —</option>' +
-      kPool.map((entry, i) =>
-        `<option value="${i}">${entry.num} – ${entry.card.heading}</option>`
-      ).join('');
+      allEntries.map((entry, i) => {
+        const isFlagged = flaggedCards.find(fc => fc.paper === entry.card.paper && fc.heading === entry.card.heading);
+        return `<option value="dd-${i}">${entry.num} – ${entry.card.heading}${isFlagged ? ' 🚩' : ''}</option>`;
+      }).join('');
+    cardSel._allEntries = allEntries;
   }
-  kPoolTotal = kPool.length;
+  kPoolTotal = allEntries.length;
 }
 
 function onUnitChange() {
   learntCards = new Set();
+  showKBControls();
   buildKPool();
   kPoolTotal = kPool.length;
   kIdx = 0;
@@ -520,20 +650,32 @@ function onUnitChange() {
 }
 
 function updateNavUI() {
-  const numEl = document.getElementById('k-card-num');
-  numEl.textContent = kPool.length ? kPool[kIdx].num : '';
   const cardSel = document.getElementById('k-card');
-  if (cardSel && kPool.length) cardSel.value = kIdx;
+  if (cardSel && kPool.length) {
+    const current = kPool[kIdx];
+    const allEntries = cardSel._allEntries || [];
+    const ddIdx = allEntries.findIndex(e => e.card.paper === current.card.paper && e.card.heading === current.card.heading);
+    if (ddIdx !== -1) cardSel.value = 'dd-' + ddIdx;
+  }
 }
 
 function drawRandomCard() {
+  // If no unit selected, build pool from all units then draw random
   if (!kPool.length) {
     const unit = document.getElementById('k-unit').value;
-    document.getElementById('k-out').innerHTML = unit
-      ? '<div class="empty">No cards match these filters.</div>'
-      : '<div class="empty">Please select a unit first.</div>';
-    updateNavUI();
-    return;
+    if (!unit) {
+      document.getElementById('k-unit').value = 'all';
+      learntCards = new Set();
+      showKBControls();
+      buildKPool();
+      kPoolTotal = kPool.length;
+      updateProgressBar();
+      // fall through to random draw below
+    } else {
+      document.getElementById('k-out').innerHTML = '<div class="empty">No cards match these filters.</div>';
+      updateNavUI();
+      return;
+    }
   }
   kIdx = Math.floor(Math.random() * kPool.length);
   renderKCard(kPool[kIdx]);
@@ -543,6 +685,7 @@ function drawRandomCard() {
 
 function stepCard(dir) {
   if (!kPool.length) { drawRandomCard(); return; }
+
   kIdx = (kIdx + dir + kPool.length) % kPool.length;
   renderKCard(kPool[kIdx]);
   updateNavUI();
@@ -582,18 +725,60 @@ function markLearnt() {
   learntCards.add(entry.card.paper + '|' + entry.card.heading);
   kPool.splice(kIdx, 1);
   if (kPool.length === 0) {
+    // Session summary
+    const elapsed = sessionStartTime ? Math.round((Date.now() - sessionStartTime) / 1000) : 0;
+    const mins = Math.floor(elapsed / 60);
+    const secs = elapsed % 60;
+    const timeStr = mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
+    const totalLearnt = learntCards.size;
     const flagBtn = flaggedCards.length > 0
-      ? `<button class="btn-go" onclick="showFlaggedScreen()" style="margin-top:.75rem">🚩 Review ${flaggedCards.length} flagged cards</button>`
+      ? `<button class="btn-go" onclick="showFlaggedScreen()" style="margin-top:.75rem;background:#F0B429;color:#fff">🚩 Review ${flaggedCards.length} flagged cards</button>`
       : '';
+    const flaggedThisUnit = flaggedCards.filter(fc =>
+      KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
+        (document.getElementById('k-unit').value === 'all' || c.unit === document.getElementById('k-unit').value))
+    ).length;
+    const celebrations = [
+      'Outstanding work! Every card nailed. 💪',
+      'Unit complete \u2014 your future self will thank you. 🏆',
+      'That\u2019s the whole unit done. Impressive. ⭐',
+      'All cards learnt. You\u2019re on a roll. 🔥',
+      'Exam board won\u2019t know what hit them. 🎯',
+      'Unit complete! Keep this momentum going. 🚀',
+      'Every card done. That\u2019s how it\u2019s done. 👏',
+    ];
+    const msg = celebrations[Math.floor(Math.random() * celebrations.length)];
     document.getElementById('k-out').innerHTML = `
       <div style="text-align:center;padding:2rem">
-        <div style="font-size:1.1rem;font-weight:600;margin-bottom:.5rem">🎉 All cards learnt!</div>
-        <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.5rem">Great work — every card in this set is done.</div>
-        ${flagBtn}
-        <button class="btn-sm" onclick="resetLearnt()" style="margin-top:.75rem;display:block;width:100%">🔄 Reset and start again</button>
+        <div style="font-size:2.5rem;margin-bottom:.5rem">🎉</div>
+        <div style="font-size:1.2rem;font-weight:700;margin-bottom:.4rem">Unit complete!</div>
+        <div style="font-size:.88rem;color:var(--muted);margin-bottom:1.5rem">${msg}</div>
+        <div style="display:flex;justify-content:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap">
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
+            <div style="font-size:1.5rem;font-weight:700;color:#4a7c59">${totalLearnt}</div>
+            <div style="font-size:.7rem;color:var(--muted);margin-top:2px">cards learnt</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
+            <div style="font-size:1.5rem;font-weight:700;color:#D4537E">${sessionFlaggedCount}</div>
+            <div style="font-size:.7rem;color:var(--muted);margin-top:2px">flagged for review</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          ${flaggedThisUnit > 0 ? `<button class="btn-sm" onclick="showFlaggedScreen()" style="width:100%">🚩 Review ${flaggedThisUnit} flagged cards</button>` : ''}
+          <button class="btn-sm" onclick="showScreen('s-hub')" style="width:100%">📚 Pick a new unit</button>
+          <button class="btn-sm" onclick="resetLearnt()" style="width:100%">🔄 Reset and start again</button>
+        </div>
       </div>`;
+    // Hide progress bar, controls, dropdowns
+    document.getElementById('k-progress-wrap').style.display = 'none';
+    document.getElementById('k-flag-bar').style.display = 'none';
+    const kGoRow = document.getElementById('k-go') && document.getElementById('k-go').parentElement;
+    if (kGoRow) kGoRow.style.display = 'none';
+    document.querySelector('#mode-knowledge .filter-row').style.display = 'none';
+    document.getElementById('k-card-num').parentElement.style.display = 'none';
+    sessionStartTime = null;
+    sessionFlaggedCount = 0;
     updateNavUI();
-    updateProgressBar();
     return;
   }
   kIdx = kIdx % kPool.length;
@@ -604,12 +789,22 @@ function markLearnt() {
 
 function resetLearnt() {
   learntCards = new Set();
+  sessionStartTime = null;
+  sessionFlaggedCount = 0;
+  showKBControls();
   buildKPool();
   kPoolTotal = kPool.length;
   kIdx = 0;
   updateNavUI();
   updateProgressBar();
   if (kPool.length) renderKCard(kPool[0]);
+}
+
+function showKBControls() {
+  document.getElementById('k-progress-wrap').style.display = 'block';
+  document.querySelector('#mode-knowledge .filter-row').style.display = 'flex';
+  const navRow = document.getElementById('k-go') && document.getElementById('k-go').parentElement;
+  if (navRow) navRow.style.display = 'flex';
 }
   
 let flaggedCards = JSON.parse(localStorage.getItem('gcse_flagged') || '[]');
@@ -621,10 +816,20 @@ function flagCard(btn) {
   const already = flaggedCards.find(c => c.paper === paper && c.heading === heading);
   if (!already) {
     flaggedCards.push({paper, heading});
+    sessionFlaggedCount++;
     updateFlagBar();
-    btn.outerHTML = `<button class="btn-sm" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11" onclick="unflagCard(this)">🚩 Remove flag</button>`;
-const learntBtn = card.querySelector('#k-learnt-btn');
-if (learntBtn) learntBtn.remove();
+    btn.outerHTML = `<button class="btn-sm" style="background:#FEF9E7;color:#9A6B00;border-color:#F0B429" disabled>🚩 Flagged</button>`;
+    const learntBtn = card.querySelector('#k-learnt-btn');
+    if (learntBtn) learntBtn.remove();
+    // Remove from kPool immediately so it doesn't come back
+    const poolIdx = kPool.findIndex(e => e.card.paper === paper && e.card.heading === heading);
+    if (poolIdx !== -1) {
+      kPool.splice(poolIdx, 1);
+      if (kIdx >= kPool.length) kIdx = Math.max(0, kPool.length - 1);
+      updateProgressBar();
+    }
+    // Auto-advance after 0.9 seconds
+    setTimeout(() => { if (kPool.length) { renderKCard(kPool[kIdx]); updateNavUI(); } }, 900);
   }
 }
   
@@ -637,7 +842,11 @@ function updateProgressBar() {
   const done = kPoolTotal - kPool.length;
   const pct = Math.round((done / kPoolTotal) * 100);
   bar.style.width = pct + '%';
-  text.textContent = `${done} of ${kPoolTotal} learnt`;
+  const flagCount = flaggedCards.filter(fc =>
+    KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
+      (document.getElementById('k-unit').value === 'all' || document.getElementById('k-unit').value === '' || c.unit === document.getElementById('k-unit').value))
+  ).length;
+  text.textContent = `${learntCards.size} of ${kPoolTotal} learnt` + (flagCount > 0 ? ` · 🚩 ${flagCount} flagged` : '');
 }
 
 function showFlaggedButton() {
@@ -759,7 +968,8 @@ function drawSpecificCard(card) {
     </div>`;
 }
 
-function renderKCard(entry) {
+function renderKCard(entry, isInterleaved) {
+  if (!sessionStartTime) sessionStartTime = Date.now();
   const card = entry.card;
   const num = entry.num;
   const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0">` +
@@ -769,12 +979,13 @@ function renderKCard(entry) {
     `<li>${boldHints(f, card.hints)}</li>`
   ).join('') + '</ul>';
   const alreadyFlagged = flaggedCards.find(c => c.paper === card.paper && c.heading === card.heading);
+  const interleavedBadge = isInterleaved ? `<span class="tag t-grey" style="background:#FEF9E7;color:#9A6B00;border:1px solid #F0B429">🚩 Flagged review</span>` : '';
   document.getElementById('k-out').innerHTML = `
     <div class="card" data-paper="${card.paper}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
       <div class="stripe s-${card.paper}"></div>
       <div class="inner">
         <div class="meta">
-          <span class="tag t-grey">${num}</span>
+          ${interleavedBadge}<span class="tag t-grey">${num}</span>
           <span class="tag t-${card.paper}">${card.unit}</span>
         </div>
         <div class="card-heading">${card.heading}</div>
@@ -796,12 +1007,25 @@ function renderKCard(entry) {
 
 function jumpToCard() {
   const val = document.getElementById('k-card').value;
-  if (val === '' || val === null) return;
-  const i = parseInt(val);
-  if (isNaN(i)) return;
-  kIdx = i;
-  renderKCard(kPool[kIdx]);
-  updateNavUI();
+  if (!val || val === '') return;
+  const cardSel = document.getElementById('k-card');
+  const allEntries = cardSel._allEntries;
+  if (val.startsWith('dd-') && allEntries) {
+    const i = parseInt(val.replace('dd-', ''));
+    if (isNaN(i)) return;
+    const entry = allEntries[i];
+    if (!entry) return;
+    // Find in kPool or render directly (for flagged cards)
+    const poolIdx = kPool.findIndex(e => e.card.paper === entry.card.paper && e.card.heading === entry.card.heading);
+    if (poolIdx !== -1) {
+      kIdx = poolIdx;
+      renderKCard(kPool[kIdx]);
+    } else {
+      // Flagged card - render directly without affecting kIdx
+      renderKCard(entry);
+    }
+    updateNavUI();
+  }
 }
 // ═══════════════════════════════════════════
 // RAPID FIRE DATA (sample — expand with full PDF data)
@@ -1192,24 +1416,130 @@ const RQ = [
 {paper:'p1',q:'Name a Black-owned business in Notting Hill.',a:'The Mangrove / El Rio / Metro Club',d:'easy'},
 ];
 
-// ── Rapid Fire state ──
+// ── Mixed Retrieval Quiz state ──
 let rqPapers = {p1:true, p2a:true, p2b:true, p3:true};
-let rqDiffs = {1:false, 2:false, 3:false};
+let rqDiff = 2; // single value: 1=easy only, 2=easy+medium, 3=all
+let rqMode = 'grid'; // 'grid' or 'one'
+let rqOnePool = [], rqOneIdx = 0, rqOneOK = 0, rqOneBad = 0, rqOneMissed = [], rqOneStreak = 0;
+let rqInProgress = false; // tracks if a quiz is mid-session
+let rqInProgressMode = 'grid';
+
+function setRQMode(m) {
+  rqMode = m;
+  document.getElementById('rq-mode-grid').classList.toggle('sel', m === 'grid');
+  document.getElementById('rq-mode-one').classList.toggle('sel', m === 'one');
+}
+
+function rqBackToSetup() {
+  document.getElementById('rq-setup').style.display = 'block';
+  document.getElementById('rq-out').style.display = 'none';
+  document.getElementById('rq-one').style.display = 'none';
+  document.getElementById('rq-one-end').style.display = 'none';
+  document.getElementById('rq-one-card').style.display = 'block';
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) printBtn.style.display = 'none';
+}
+
+function rqOneReveal() {
+  document.getElementById('rq-one-reveal').style.display = 'block';
+  document.getElementById('rq-one-tap').style.display = 'none';
+}
+
+function rqOneAnswer(correct) {
+  if (correct) {
+    rqOneOK++;
+    rqOneStreak++;
+  } else {
+    rqOneBad++;
+    rqOneStreak = 0;
+    rqOneMissed.push(rqOnePool[rqOneIdx]);
+  }
+  rqOneIdx++;
+  rqOneNext();
+}
+
+function rqOneNext() {
+  if (rqOneIdx >= rqOnePool.length) { rqOneEnd(); return; }
+  const q = rqOnePool[rqOneIdx];
+  const total = rqOnePool.length;
+  const pct = Math.round((rqOneIdx / total) * 100);
+  document.getElementById('rq-one-prog').style.width = pct + '%';
+  document.getElementById('rq-one-hdr').textContent = `Question ${rqOneIdx + 1} of ${total}`;
+  document.getElementById('rq-one-ok').textContent = `✓ ${rqOneOK}`;
+  document.getElementById('rq-one-bad').textContent = `✗ ${rqOneBad}`;
+  const streakEl = document.getElementById('rq-one-streak');
+  if (streakEl) streakEl.textContent = rqOneStreak >= 3 ? `🔥 ${rqOneStreak}` : '';
+  document.getElementById('rq-one-q').textContent = q.q;
+  const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
+  const stripe = document.getElementById('rq-one-stripe');
+  if (stripe) stripe.style.background = colours[q.paper] || '#ddd';
+  document.getElementById('rq-one-a').textContent = q.a;
+  document.getElementById('rq-one-reveal').style.display = 'none';
+  document.getElementById('rq-one-tap').style.display = 'block';
+}
+
+function rqOneEnd() {
+  rqInProgress = false;
+  document.getElementById('rq-one-card').style.display = 'none';
+  const total = rqOnePool.length;
+  const pct = Math.round((rqOneOK / total) * 100);
+  document.getElementById('rq-one-score').textContent = `${rqOneOK} of ${total} correct`;
+  const rqMsg = pct === 100 ? 'Perfect score! Every question nailed. 🏆'
+    : pct >= 80 ? 'Excellent — almost perfect! 🎯'
+    : pct >= 60 ? 'Good effort, keep at the tricky ones. ⭐'
+    : pct >= 40 ? 'A solid start — retry the missed ones. 📚'
+    : 'Keep drilling — it gets easier. 💪';
+  document.getElementById('rq-one-msg').textContent = rqMsg;
+  const missedList = document.getElementById('rq-one-missed-list');
+  if (rqOneMissed.length) {
+    missedList.innerHTML = '<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem">Missed:</div>' +
+      rqOneMissed.map(q => `<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.4rem .6rem;margin-bottom:.3rem;font-size:.82rem"><strong>${q.q}</strong><br><span style="color:var(--muted)">${q.a}</span></div>`).join('');
+    document.getElementById('rq-retry-btn').style.display = 'block';
+  } else {
+    missedList.innerHTML = '';
+    document.getElementById('rq-retry-btn').style.display = 'none';
+  }
+  document.getElementById('rq-one-end').style.display = 'block';
+}
+
+function rqRetryMissed() {
+  rqOnePool = shuffle([...rqOneMissed]);
+  rqOneIdx = 0; rqOneOK = 0; rqOneBad = 0; rqOneMissed = []; rqOneStreak = 0;
+  document.getElementById('rq-one-end').style.display = 'none';
+  document.getElementById('rq-one-card').style.display = 'block';
+  rqOneNext();
+}
 
 function showRapidSetup() {
   showScreen('s-rapid');
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) printBtn.style.display = 'none';
   document.getElementById('rq-setup').style.display = 'block';
   document.getElementById('rq-out').style.display = 'none';
+  document.getElementById('rq-one').style.display = 'none';
   document.getElementById('rq-err').style.display = 'none';
+  // Show resume button if quiz in progress
+  const resumeBtn = document.getElementById('rq-resume-btn');
+  if (resumeBtn) resumeBtn.style.display = rqInProgress ? 'block' : 'none';
   ['p1','p2a','p2b','p3'].forEach(p => {
     const btn = document.getElementById('rqp-' + p);
     if (rqPapers[p]) btn.classList.add('on-' + p);
     else btn.classList.remove('on-' + p);
   });
   [1,2,3].forEach(i => {
-    document.getElementById('rqs-' + i).classList.toggle('sel', rqDiffs[i]);
+    document.getElementById('rqs-' + i).classList.toggle('sel', i === rqDiff);
   });
   updateRQCounter();
+}
+
+function resumeRQ() {
+  document.getElementById('rq-setup').style.display = 'none';
+  document.getElementById('rq-out').style.display = rqInProgressMode === 'grid' ? 'block' : 'none';
+  document.getElementById('rq-one').style.display = rqInProgressMode === 'one' ? 'block' : 'none';
+  if (rqInProgressMode === 'grid') {
+    const pb = document.getElementById('print-btn');
+    if (pb) pb.style.display = 'inline-block';
+  }
 }
 
 function toggleRQPaper(p) {
@@ -1224,24 +1554,23 @@ function toggleRQPaper(p) {
 }
 
 function setRQDiff(n) {
-  rqDiffs[n] = !rqDiffs[n];
-  document.getElementById('rqs-' + n).classList.toggle('sel', rqDiffs[n]);
+  rqDiff = n;
+  [1,2,3].forEach(i => document.getElementById('rqs-' + i).classList.toggle('sel', i === n));
   updateRQCounter();
 }
 
 function updateRQCounter() {
   const activePapers = Object.keys(rqPapers).filter(p => rqPapers[p]);
-  const allowed = [];
-  if (rqDiffs[1]) allowed.push('easy');
-  if (rqDiffs[2]) allowed.push('medium');
-  if (rqDiffs[3]) allowed.push('hard');
+  const allowed = ['easy'];
+  if (rqDiff >= 2) allowed.push('medium');
+  if (rqDiff >= 3) allowed.push('hard');
   const count = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d)).length;
   const counter = document.getElementById('rq-counter');
   if (counter) counter.textContent = count >= 10 ? count + ' questions available' : count > 0 ? count + ' questions (need at least 10)' : '';
   const goBtn = document.getElementById('rq-go');
   if (goBtn) {
     const ready = count >= 10;
-    goBtn.style.background = ready ? '#1a1a18' : 'var(--subtle)';
+    goBtn.style.background = ready ? '#555' : 'var(--subtle)';
     goBtn.style.color = ready ? '#fff' : 'var(--muted)';
     goBtn.style.cursor = ready ? 'pointer' : 'not-allowed';
   }
@@ -1254,15 +1583,9 @@ function generateRQ() {
     document.getElementById('rq-err').textContent = 'Please select at least one paper.';
     return;
   }
-  const allowed = [];
-  if (rqDiffs[1]) allowed.push('easy');
-  if (rqDiffs[2]) allowed.push('medium');
-  if (rqDiffs[3]) allowed.push('hard');
-  if (!allowed.length) {
-    document.getElementById('rq-err').style.display = 'block';
-    document.getElementById('rq-err').textContent = 'Please select at least one difficulty level.';
-    return;
-  }
+  const allowed = ['easy'];
+  if (rqDiff >= 2) allowed.push('medium');
+  if (rqDiff >= 3) allowed.push('hard');
   let pool = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d));
   if (pool.length < 10) {
     document.getElementById('rq-err').style.display = 'block';
@@ -1277,12 +1600,25 @@ function generateRQ() {
   const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
   grid.innerHTML = ten.map((q, i) => `
     <div class="rq-card" id="rqc${i}" onclick="revealRQ(${i})" style="border-left:4px solid ${colours[q.paper]}">
-      <div class="rq-q">${i+1}. ${q.q} <span style="font-size:.65rem;opacity:.5">${q.d==='easy'?'⭐':q.d==='medium'?'⭐⭐':'⭐⭐⭐'}</span></div>
+      <div class="rq-q">${i+1}. ${q.q}</div>
       <div class="rq-a">${q.a}</div>
       <div class="rq-tap">Tap to reveal</div>
     </div>`).join('');
   document.getElementById('rq-setup').style.display = 'none';
+  if (rqMode === 'one') { rqInProgress = true; rqInProgressMode = 'one'; }
+  if (rqMode === 'one') {
+    rqOnePool = shuffle(pool).slice(0, 10);
+    rqOneIdx = 0; rqOneOK = 0; rqOneBad = 0; rqOneMissed = []; rqOneStreak = 0;
+    document.getElementById('rq-one').style.display = 'block';
+    document.getElementById('rq-out').style.display = 'none';
+    document.getElementById('rq-one-end').style.display = 'none';
+    document.getElementById('rq-one-card').style.display = 'block';
+    rqOneNext();
+    return;
+  }
   document.getElementById('rq-out').style.display = 'block';
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) printBtn.style.display = 'inline-block';
 }
 
 function revealRQ(i) {
@@ -1306,6 +1642,104 @@ function revealAll() {
 // EXAM PRACTICE
 // ═══════════════════════════════════════════
 let examHistory = [];
+let examHistoryIdx = -1;
+let fsInterval = null;
+let fsTotal = 0;
+let fsElapsed = 0;
+
+function enterFullscreen(q) {
+  const timings = {
+    '2mark': 2, '4mark': 5, '4mark-consequence': 5,
+    '8mark-importance': 12, '8mark-narrative': 15,
+    '12mark': 15, '16mark': 25
+  };
+  const mins = timings[q.type] || 10;
+  fsTotal = mins * 60;
+  fsElapsed = 0;
+
+  const typeLabel = {
+    '2mark':'2-mark describe','4mark':'4-mark similarity/difference',
+    '4mark-consequence':'4-mark consequence','8mark-narrative':'8-mark narrative',
+    '8mark-importance':'8-mark importance','12mark':'12-mark explain why','16mark':'16-mark debate'
+  }[q.type] || q.type;
+
+  document.getElementById('fs-type').textContent = typeLabel + ' · ' + mins + ' minutes';
+  const qText = q.q.replace(/\nHints:.*/,'').trim();
+  document.getElementById('fs-q').textContent = qText;
+  document.getElementById('fs-q-blur').textContent = qText;
+
+  const hintsEl = document.getElementById('fs-hints');
+  hintsEl.innerHTML = (q.hints && q.hints.length) ? '<strong>You may use:</strong> ' + q.hints.join(' · ') : '';
+
+  updateFsTimer();
+  // Paper colours for start button
+  const paperStyles = {
+    p1:  {bg:'#FEF9E7', color:'#9A6B00', border:'#F0B429'},
+    p2a: {bg:'#FBEAF0', color:'#993556', border:'#D4537E'},
+    p2b: {bg:'#E1F5EE', color:'#0F6E56', border:'#1D9E75'},
+    p3:  {bg:'#E6F1FB', color:'#185FA5', border:'#378ADD'},
+  };
+  const ps = paperStyles[q.paper] || {bg:'var(--subtle)', color:'var(--text)', border:'var(--border2)'};
+  const startBtn = document.getElementById('fs-start-btn');
+  if (startBtn) {
+    startBtn.style.background = ps.bg;
+    startBtn.style.color = ps.color;
+    startBtn.style.borderColor = ps.border;
+  }
+  document.getElementById('fs-pre').style.display = 'block';
+  document.getElementById('fs-active').style.display = 'none';
+  const fsEl = document.getElementById('exam-fullscreen');
+  fsEl.style.display = 'block';
+  fsEl.style.visibility = 'visible';
+  document.body.style.overflow = 'hidden';
+}
+
+function startFsClock() {
+  document.getElementById('fs-pre').style.display = 'none';
+  document.getElementById('fs-active').style.display = 'block';
+  if (fsInterval) clearInterval(fsInterval);
+  fsInterval = setInterval(() => {
+    fsElapsed++;
+    updateFsTimer();
+    if (fsElapsed >= fsTotal) {
+      clearInterval(fsInterval);
+      fsInterval = null;
+    }
+  }, 1000);
+}
+
+function updateFsTimer() {
+  const remaining = Math.max(0, fsTotal - fsElapsed);
+  const m = Math.floor(remaining / 60);
+  const s = remaining % 60;
+  const timerEl = document.getElementById('fs-timer');
+  timerEl.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  timerEl.classList.toggle('warn', remaining < 60);
+  const pct = fsTotal > 0 ? Math.max(0, (fsTotal - fsElapsed) / fsTotal * 100) : 100;
+  const fill = document.getElementById('fs-bar-fill');
+  fill.style.width = pct + '%';
+  fill.style.background = remaining < 60 ? '#D4537E' : remaining < fsTotal * 0.25 ? '#F0B429' : '#4a7c59';
+}
+
+// Wire exit button safely after DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+  const exitBtn = document.getElementById('fs-exit-btn');
+  if (exitBtn) exitBtn.addEventListener('click', exitFullscreen);
+  const startBtn = document.getElementById('fs-start-btn');
+  if (startBtn) startBtn.addEventListener('click', startFsClock);
+});
+
+function exitFullscreen() {
+  if (fsInterval) { clearInterval(fsInterval); fsInterval = null; }
+  const el = document.getElementById('exam-fullscreen');
+  el.style.display = 'none';
+  el.style.visibility = 'hidden';
+  document.body.style.overflow = '';
+  // Reset for next use
+  document.getElementById('fs-pre').style.display = 'block';
+  document.getElementById('fs-active').style.display = 'none';
+  fsElapsed = 0;
+}
 // ═══════════════════════════════════════════
 function drawExam() {
   const type = document.getElementById('e-type').value;
@@ -1316,10 +1750,13 @@ function drawExam() {
     return;
   }
   // Avoid repeats — filter out seen questions, reset if all seen
-  let unseen = pool.filter(q => !examHistory.includes(q.q));
+  let unseen = pool.filter(q => !examHistory.map(h=>h.q).includes(q.q));
   if (!unseen.length) { examHistory = []; unseen = pool; }
   const q = rand(unseen);
-  examHistory.push(q.q);
+  // Trim forward history if we shuffled from mid-point
+  if (examHistoryIdx < examHistory.length - 1) examHistory = examHistory.slice(0, examHistoryIdx + 1);
+  examHistory.push(q);
+  examHistoryIdx = examHistory.length - 1;
   drawExamCard(q);
 }
 
@@ -1343,10 +1780,24 @@ function loadSelectedExam() {
   const idx = sel.value;
   if (idx === '') { drawExam(); return; }
   const q = sel._pool[parseInt(idx)];
-  if (q) drawExamCard(q);
+  if (q) {
+    if (examHistoryIdx < examHistory.length - 1) examHistory = examHistory.slice(0, examHistoryIdx + 1);
+    examHistory.push(q);
+    examHistoryIdx = examHistory.length - 1;
+    drawExamCard(q);
+  }
+}
+
+let currentExamQ = null;
+function stepExam(dir) {
+  const newIdx = examHistoryIdx + dir;
+  if (newIdx < 0 || newIdx >= examHistory.length) return;
+  examHistoryIdx = newIdx;
+  drawExamCard(examHistory[examHistoryIdx]);
 }
 
 function drawExamCard(q) {
+  currentExamQ = q;
   const typeLabel = {
     '2mark': '2-mark describe',
     '4mark': '4-mark similarity/difference',
@@ -1377,14 +1828,17 @@ function drawExamCard(q) {
     <div class="card">
       <div class="stripe s-${q.paper}"></div>
       <div class="inner">
-        <div class="meta">
-          <span class="tag t-grey">${typeLabel}</span>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem">
+          <div class="meta" style="margin-bottom:0">
+            <span class="tag t-grey">${typeLabel}</span>
+          </div>
+          <button class="btn-sm" onclick="enterFullscreen(currentExamQ)" style="font-size:.72rem;padding:4px 8px;white-space:nowrap">⏱ Try it timed</button>
         </div>
         <div class="card-q" style="font-weight:600">${q.q}</div>
         ${q.hints && q.hints.length ? `<div style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem"><span style="font-style:italic">You may use:</span><ul style="margin:.35rem 0 0 1rem;padding:0">${q.hints.map(h => `<li style="font-weight:400">${h}</li>`).join('')}</ul></div>` : ''}
        <div class="btn-row">
           <button class="btn-sm" onclick="tog('er');this.textContent=this.textContent==='🔍 Show indicative content'?'🔍 Hide indicative content':'🔍 Show indicative content'">🔍 Show indicative content</button>
-          <button class="btn-sm" onclick="drawExam()">Next question →</button>
+
         </div>
         <div class="reveal" id="er">${contentHtml}</div>
       </div>
@@ -1394,15 +1848,34 @@ function drawExamCard(q) {
 // ═══════════════════════════════════════════
 // KEY DATES QUIZ
 // ═══════════════════════════════════════════
-function startQuiz() {
-  const pool = DATES.filter(d => d.paper === currentPaper);
-  if (!pool.length) {
+// ── Dates quiz state ──
+let quizStreak = 0;
+let quizMissed = []; // dates got wrong this session
+let quizHardMode = false;
+
+function getHardDates() {
+  return JSON.parse(localStorage.getItem('gcse_hard_dates_' + currentPaper) || '[]');
+}
+function saveHardDates(arr) {
+  localStorage.setItem('gcse_hard_dates_' + currentPaper, JSON.stringify(arr));
+}
+
+function startQuiz(hardMode) {
+  const all = DATES.filter(d => d.paper === currentPaper);
+  if (!all.length) {
     document.getElementById('d-out').innerHTML = '<div class="empty">No dates for this paper.</div>';
     return;
   }
+  quizHardMode = !!hardMode;
+  let pool = hardMode
+    ? all.filter(d => getHardDates().includes(d.event))
+    : all;
+  if (!pool.length) pool = all; // fallback if no hard dates yet
   quizPool = shuffle([...pool]).slice(0, Math.min(pool.length, 15));
-  quizIdx = 0; quizOK = 0; quizBad = 0;
+  quizIdx = 0; quizOK = 0; quizBad = 0; quizStreak = 0; quizMissed = [];
   document.getElementById('d-go').style.display = 'none';
+  const hardBtn = document.getElementById('d-hard');
+  if (hardBtn) hardBtn.style.display = 'none';
   renderQ();
 }
 
@@ -1416,11 +1889,12 @@ function renderQ() {
   const optsHtml = opts.map((o, i) =>
     `<button class="opt" id="opt${i}" data-val="${esc(o)}" data-correct="${esc(item.event)}" onclick="checkAns(this)">${o}</button>`
   ).join('');
+  const streakHtml = quizStreak >= 3 ? `<span style="font-size:.8rem;color:#F0B429;font-weight:600">🔥 ${quizStreak}</span>` : '';
   document.getElementById('d-out').innerHTML = `
     <div class="quiz-prog"><div class="quiz-fill ${P[currentPaper].fill}" style="width:${pct}%"></div></div>
     <div class="quiz-hdr">
       <span class="quiz-hdr-l">Question ${quizIdx + 1} of ${total}</span>
-      <div class="sc-row"><span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div>
+      <div class="sc-row">${streakHtml}<span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div>
     </div>
     <div class="quiz-card">
       <div class="quiz-date">${item.date}</div>
@@ -1433,21 +1907,32 @@ function renderQ() {
 function checkAns(btn) {
   const chosen = btn.dataset.val;
   const correct = btn.dataset.correct;
+  const item = quizPool[quizIdx];
   document.querySelectorAll('.opt').forEach(b => b.disabled = true);
   const fb = document.getElementById('qfb');
   if (chosen === correct) {
     quizOK++;
+    quizStreak++;
     btn.classList.add('correct');
     fb.textContent = 'Correct!';
     fb.className = 'quiz-fb fb-c';
+    // Remove from hard dates if got right
+    const hard = getHardDates().filter(e => e !== item.event);
+    saveHardDates(hard);
   } else {
     quizBad++;
+    quizStreak = 0;
+    quizMissed.push(item);
     btn.classList.add('wrong');
-    fb.textContent = 'Not quite - correct answer highlighted.';
+    fb.textContent = 'Not quite — correct answer highlighted.';
     fb.className = 'quiz-fb fb-w';
     document.querySelectorAll('.opt').forEach(b => {
       if (b.dataset.val === correct) b.classList.add('show-c');
     });
+    // Add to hard dates
+    const hard = getHardDates();
+    if (!hard.includes(item.event)) hard.push(item.event);
+    saveHardDates(hard);
   }
   fb.style.display = 'block';
   setTimeout(() => { quizIdx++; renderQ(); }, 1700);
@@ -1456,13 +1941,44 @@ function checkAns(btn) {
 function showQuizEnd() {
   const total = quizPool.length;
   const pct = Math.round((quizOK / total) * 100);
-  const [grade, cls] = pct >= 80 ? ['Excellent work!', 'grade-a'] : pct >= 60 ? ['Good effort', 'grade-b'] : ['Keep revising', 'grade-c'];
+  const celebrations_dates = [
+    'History is all about timing — and yours is excellent. 🏆',
+    'Top marks! Every date nailed. 🎯',
+    'Outstanding! You clearly know your chronology. ⭐',
+  ];
+  const [grade, cls] = pct === 100
+    ? [celebrations_dates[Math.floor(Math.random()*celebrations_dates.length)], 'grade-a']
+    : pct >= 80 ? ['Excellent work — nearly there! 🏆', 'grade-a']
+    : pct >= 60 ? ['Good effort, keep drilling the tricky ones. ⭐', 'grade-b']
+    : pct >= 40 ? ['A solid start — use hardest dates mode to focus. 📚', 'grade-c']
+    : ['Keep at it — chronology takes practice. 💪', 'grade-c'];
+  const hardCount = getHardDates().length;
+
+  // Missed dates review
+  const missedHtml = quizMissed.length ? `
+    <div style="margin:.75rem 0;text-align:left">
+      <div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem">Review — dates to learn:</div>
+      ${quizMissed.map(d => `
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.5rem .75rem;margin-bottom:.4rem;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem">
+          <span style="font-size:.85rem;font-weight:700">${d.date}</span>
+          <span style="font-size:.8rem;color:var(--muted);flex:1;text-align:right">${d.event}</span>
+        </div>`).join('')}
+    </div>` : '';
+
+  const hardBtn = hardCount > 0 && !quizHardMode
+    ? `<button class="btn-sm" onclick="startQuiz(true)" style="width:100%;margin-top:.25rem">🎯 Hardest dates only (${hardCount})</button>`
+    : '';
+
   document.getElementById('d-out').innerHTML = `
     <div class="quiz-end">
       <div class="end-score">${quizOK}/${total}</div>
       <div class="end-sub">${pct}% correct</div>
-      <div class="end-grade ${cls}">${grade}</div><br>
-      <button class="btn-sm" style="margin:0 auto;display:block" onclick="document.getElementById('d-out').innerHTML='';document.getElementById('d-go').textContent='Start key dates quiz'">Try again</button>
+      <div class="end-grade ${cls}">${grade}</div>
+      ${missedHtml}
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:.5rem">
+        <button class="btn-sm" style="width:100%" onclick="startQuiz()">🔄 New quiz</button>
+        ${hardBtn}
+      </div>
     </div>`;
   const go = document.getElementById('d-go');
   go.style.display = 'block';
@@ -3021,5 +3537,31 @@ const DATES = [
 {paper:'p3',date:'Nov 1938',event:'Kristallnacht – thousands of synagogues and businesses destroyed; over 100 Jews killed; 30,000 arrested'},
 ];
 </script>
+<!-- EXAM FULLSCREEN OVERLAY -->
+<div id="exam-fullscreen" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;padding:2rem 1.5rem;overflow-y:auto">
+  <span id="fs-type" style="display:block;font-size:.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem"></span>
+  <div class="fs-timer" id="fs-timer">00:00</div>
+  <div class="fs-bar"><div class="fs-bar-fill" id="fs-bar-fill" style="width:100%"></div></div>
+
+  <!-- Pre-start state: blurred question + ready button -->
+  <div id="fs-pre">
+    <div class="fs-q fs-blurred" id="fs-q-blur" style="margin-top:1rem"></div>
+    <div style="text-align:center;margin-top:1.5rem">
+      <div style="font-size:.8rem;color:var(--muted);margin-bottom:.75rem">Question hidden — press to begin</div>
+      <button id="fs-start-btn" style="padding:10px 28px;font-size:.85rem;font-weight:600;border:1.5px solid;border-radius:10px;cursor:pointer;font-family:inherit">I'm ready</button>
+    </div>
+  </div>
+
+  <!-- Active state: clear question -->
+  <div id="fs-active" style="display:none">
+    <div class="fs-q" id="fs-q" style="margin-top:1rem"></div>
+    <div class="fs-hints" id="fs-hints" style="margin-top:.5rem"></div>
+  </div>
+
+  <!-- Always-visible exit at bottom -->
+  <div style="text-align:center;margin-top:2rem">
+    <button id="fs-exit-btn" style="padding:10px 24px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">✕ Exit fullscreen</button>
+  </div>
+</div>
 </body>
 </html>
