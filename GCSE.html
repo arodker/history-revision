@@ -604,7 +604,6 @@ function paperTagClass(p) {
 let kPool = [];
 let kIdx = 0;
 let kPoolTotal = 0;
-let learntCards = new Set();
 let sessionStartTime = null;
 let sessionFlaggedCount = 0;
 
@@ -632,19 +631,20 @@ function buildKPool() {
     const uIdx = units.indexOf(c.unit) + 1;
     unitCounts[uIdx] = (unitCounts[uIdx] || 0) + 1;
     return { card: c, num: `${uIdx}.${unitCounts[uIdx]}` };
-  });
-  // Pool for sequential flow excludes flagged cards
-  kPool = allEntries.filter(e => !flaggedCards.find(fc => fc.paper === e.card.paper && fc.heading === e.card.heading));
-  if (cardSel) {
-    cardSel.innerHTML = '<option value="">— select a topic —</option>' +
-      allEntries.map((entry, i) => {
-        const isFlagged = flaggedCards.find(fc => fc.paper === entry.card.paper && fc.heading === entry.card.heading);
-        return `<option value="dd-${i}">${entry.num} – ${entry.card.heading}${isFlagged ? ' 🚩' : ''}</option>`;
-      }).join('');
-    cardSel._allEntries = allEntries;
-  }
-  kPoolTotal = allEntries.length;
+  // Pool for sequential flow includes ALL cards
+kPool = allEntries;
+
+if (cardSel) {
+  cardSel.innerHTML = '<option value="">— select a topic —</option>' +
+    allEntries.map((entry, i) => {
+      const key = entry.card.paper + '|' + entry.card.heading;
+      const isFlagged = flaggedCards.has(key);
+      return `<option value="dd-${i}">${entry.num} – ${entry.card.heading}${isFlagged ? ' 🚩' : ''}</option>`;
+    }).join('');
+  cardSel._allEntries = allEntries;
 }
+
+kPoolTotal = allEntries.length;
 
 function onUnitChange() {
   learntCards = new Set();
@@ -808,7 +808,7 @@ function showKBControls() {
   if (navRow) navRow.style.display = 'flex';
 }
   
-let flaggedCards = JSON.parse(localStorage.getItem('gcse_flagged') || '[]');
+let flaggedCards = new Set(JSON.parse(localStorage.getItem('gcse_flagged') || '[]'));
 
 function flagCard(btn) {
   const card = btn.closest('.card');
@@ -875,7 +875,7 @@ function unflagCard(btn) {
 }
   
 function updateFlagBar() {
-  localStorage.setItem('gcse_flagged', JSON.stringify(flaggedCards));
+  localStorage.setItem('gcse_flagged', JSON.stringify([...flaggedCards]));
   const bar = document.getElementById('k-flag-bar');
   const num = document.getElementById('k-flag-num');
   const homeBtn = document.getElementById('home-flag-btn');
