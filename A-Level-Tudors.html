@@ -3,600 +3,1498 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mr Rodker's Revision Hub – A Level Tudors</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&display=swap" rel="stylesheet">
+<title>A Level Tudors – Mr Rodker's Revision Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Source Serif 4',Georgia,serif;background:#faf9f6;color:#1c1a16;min-height:100vh}
-.app{max-width:740px;margin:0 auto;padding:1.5rem 1rem 4rem}
-h1{font-family:'Playfair Display',serif;font-size:1.65rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.15rem}
-.subtitle{font-size:.79rem;color:#7a7060;margin-bottom:1.75rem;letter-spacing:.04em;text-transform:uppercase}
-.screen{display:none}.screen.active{display:block}
-.reign-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1rem}
-.reign-btn{padding:1.3rem .85rem;border:1.5px solid transparent;border-radius:14px;cursor:pointer;font-family:'Playfair Display',serif;font-weight:400;font-size:.93rem;text-align:left;transition:all .15s;line-height:1.3}
-.reign-btn .rlabel{font-family:'Source Serif 4',serif;font-size:.67rem;font-weight:700;opacity:.7;display:block;margin-bottom:.35rem;text-transform:uppercase;letter-spacing:.06em}
-.rb-edward{background:#EEF3FB;color:#1B4B9A;border-color:#6B9DE8}
-.rb-mary{background:#FBF0EE;color:#9A1B1B;border-color:#E87A6B}
-.rb-elizabeth{background:#EEF8F2;color:#1B6B3A;border-color:#6BE8A0}
-.rb-edward:hover{background:#dce8f7}.rb-mary:hover{background:#f7dede}.rb-elizabeth:hover{background:#d9f2e5}
-.home-extra{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #e4e3dc}
-.home-extra-label{font-size:.7rem;font-weight:700;color:#7a7060;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
-.mode-header{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
-.back-btn{padding:6px 12px;font-size:.78rem;font-weight:700;border:1px solid #ddddd4;border-radius:8px;background:#fff;color:#7a7060;cursor:pointer;font-family:inherit}
-.back-btn:hover{background:#f4f3ef}
-.reign-badge{font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:20px;font-family:'Source Serif 4',serif}
-.bg-edward{background:#EEF3FB;color:#1B4B9A}.bg-mary{background:#FBF0EE;color:#9A1B1B}.bg-elizabeth{background:#EEF8F2;color:#1B6B3A}
-.mode-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.25rem}
-.mode-btn{padding:1.15rem .75rem;border:1.5px solid #ddddd4;border-radius:12px;cursor:pointer;font-family:inherit;font-size:.82rem;font-weight:700;text-align:center;background:#fff;color:#1c1a16;transition:all .15s}
-.mode-btn .icon{font-size:1.35rem;display:block;margin-bottom:.4rem}
-.mode-btn:hover{border-color:#aaa9a0;background:#faf9f6}
-.mode-btn.sel{border-color:#1c1a16;background:#1c1a16;color:#fff}
-.filter-row{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
-select{padding:8px 10px;font-size:.8rem;border:1px solid #ddddd4;border-radius:8px;background:#fff;color:#1c1a16;cursor:pointer;flex:1;min-width:140px;font-family:inherit}
-.btn-go{width:100%;padding:12px;font-size:.92rem;font-weight:700;border:none;border-radius:10px;cursor:pointer;margin-bottom:1.2rem;transition:opacity .15s;color:#fff;font-family:inherit}
-.btn-go:hover{opacity:.9}
-.go-edward{background:#2A6BC8}.go-mary{background:#C82A2A}.go-elizabeth{background:#2A8C4A}.go-dark{background:#1c1a16}
-.card{background:#fff;border:1px solid #e4e3dc;border-radius:14px;padding:1.25rem;margin-bottom:.75rem;position:relative;overflow:hidden}
-.stripe{position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px}
-.s-edward{background:#6B9DE8}.s-mary{background:#E87A6B}.s-elizabeth{background:#6BE8A0}
-.inner{padding-left:.5rem}
-.meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.6rem}
-.tag{font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.03em}
-.t-grey{background:#eeede5;color:#6a6860}
-.t-edward{background:#EEF3FB;color:#1B4B9A}.t-mary{background:#FBF0EE;color:#9A1B1B}.t-elizabeth{background:#EEF8F2;color:#1B6B3A}
-.card-heading{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;margin-bottom:.5rem;line-height:1.35}
-.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:.9rem}
-.btn-sm{padding:7px 13px;font-size:.78rem;font-weight:700;border:1px solid #ddddd4;border-radius:8px;background:#fff;color:#1c1a16;cursor:pointer;transition:background .12s;font-family:inherit}
-.btn-sm:hover{background:#f4f3ef}
-.reveal{display:none;border-top:1px solid #eeede5;margin-top:.9rem;padding-top:.9rem}
-.reveal.open{display:block}
-.reveal ul{padding-left:1.1rem}
-.reveal li{font-size:.84rem;line-height:1.65;color:#1c1a16;margin-bottom:.2rem}
-.hint-chips{display:flex;flex-wrap:wrap;gap:5px;padding:.4rem 0}
-.empty{padding:2rem;text-align:center;color:#aaa8a0;font-size:.85rem;border:1px dashed #ddddd4;border-radius:12px;font-style:italic}
-.quiz-prog{height:3px;background:#e4e3dc;border-radius:2px;margin-bottom:1rem;overflow:hidden}
-.quiz-fill{height:100%;border-radius:2px;transition:width .3s}
-.fill-edward{background:#2A6BC8}.fill-mary{background:#C82A2A}.fill-elizabeth{background:#2A8C4A}
-.quiz-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
-.quiz-hdr-l{font-size:.78rem;color:#7a7060}
-.sc-row{display:flex;gap:6px}
-.sc{font-size:.78rem;font-weight:700;padding:4px 10px;border-radius:20px}
-.sc-c{background:#e8f5e0;color:#2E6B0E}.sc-w{background:#fce8e8;color:#9A1B1B}
-.quiz-card{background:#fff;border:1px solid #e4e3dc;border-radius:14px;padding:1.5rem;text-align:center;margin-bottom:.75rem}
-.quiz-date{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:400;margin-bottom:.3rem;letter-spacing:-.02em}
-.quiz-prompt{font-size:.8rem;color:#7a7060;margin-bottom:1.2rem}
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.opt{padding:10px 8px;font-size:.79rem;font-weight:600;border:1.5px solid #ddddd4;border-radius:9px;background:#fff;color:#1c1a16;cursor:pointer;text-align:left;line-height:1.4;transition:all .15s;font-family:inherit}
-.opt:hover:not(:disabled){background:#f4f3ef;border-color:#aaa}
-.opt:disabled{cursor:default}
-.opt.correct{background:#e8f5e0!important;border-color:#2E6B0E!important;color:#2E6B0E!important}
-.opt.wrong{background:#fce8e8!important;border-color:#9A1B1B!important;color:#9A1B1B!important}
-.opt.show-c{background:#e8f5e0!important;border-color:#2E6B0E!important;color:#2E6B0E!important;opacity:.8}
-.quiz-fb{font-size:.84rem;font-weight:700;padding:8px;border-radius:8px;margin-top:.75rem;display:none;text-align:center}
-.fb-c{background:#e8f5e0;color:#2E6B0E}.fb-w{background:#fce8e8;color:#9A1B1B}
-.quiz-end{text-align:center;padding:2rem 1rem}
-.end-score{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:400}
-.end-sub{font-size:.88rem;color:#7a7060;margin:.3rem 0 1.2rem;font-style:italic}
-.end-grade{font-size:.88rem;font-weight:700;padding:7px 18px;border-radius:20px;display:inline-block;margin-bottom:1.2rem}
-.grade-a{background:#e8f5e0;color:#2E6B0E}.grade-b{background:#fff4df;color:#7a4e00}.grade-c{background:#fce8e8;color:#9A1B1B}
-.rq-section-label{font-size:.7rem;font-weight:700;color:#7a7060;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
-.rq-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.9rem}
-.rq-pill{padding:6px 12px;font-size:.76rem;font-weight:700;border:1.5px solid #ddddd4;border-radius:20px;cursor:pointer;background:#fff;color:#7a7060;font-family:inherit;transition:all .15s}
-.rq-pill.on-edward{background:#EEF3FB;color:#1B4B9A;border-color:#6B9DE8}
-.rq-pill.on-mary{background:#FBF0EE;color:#9A1B1B;border-color:#E87A6B}
-.rq-pill.on-elizabeth{background:#EEF8F2;color:#1B6B3A;border-color:#6BE8A0}
-.rq-pill.on{background:#1c1a16;color:#fff;border-color:#1c1a16}
-.rq-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
-.rq-card{background:#fff;border:1.5px solid #e4e3dc;border-radius:12px;padding:.85rem;cursor:pointer;min-height:90px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .15s}
-.rq-card:hover{border-color:#aaa}
-.rq-card.revealed{border-color:#2E6B0E;cursor:default}
-.rq-q{font-size:.77rem;line-height:1.5;color:#1c1a16;font-weight:600}
-.rq-a{display:none;margin-top:.5rem;padding:.4rem .5rem;background:#e8f5e0;border-radius:7px;font-size:.77rem;font-weight:700;color:#2E6B0E;line-height:1.4}
-.rq-card.revealed .rq-a{display:block}
-.rq-tap{font-size:.66rem;color:#ccc;margin-top:.4rem}
-.rq-card.revealed .rq-tap{display:none}
-.rq-dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:4px;flex-shrink:0;vertical-align:middle}
-.dot-edward{background:#6B9DE8}.dot-mary{background:#E87A6B}.dot-elizabeth{background:#6BE8A0}
-.rq-btn-row{display:flex;gap:8px;flex-wrap:wrap}
-.rq-btn-row .btn-sm{background:#eeede5;color:#1c1a16;border-color:#ddddd4}
-.prog-wrap{margin-bottom:.75rem;display:none}
-.prog-text{font-size:.73rem;color:#7a7060;margin-bottom:4px}
-.prog-bg{background:#e5e4dc;border-radius:99px;height:5px}
-.prog-fill{height:5px;border-radius:99px;background:#2A8C4A;transition:width .3s}
-.flag-bar{display:none;gap:8px;align-items:center;margin-bottom:.75rem}
-.exam-route-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.25rem}
-.exam-route-btn{padding:1.3rem 1rem;border:1.5px solid #ddddd4;border-radius:12px;cursor:pointer;font-family:inherit;font-size:.85rem;font-weight:700;text-align:left;background:#fff;color:#1c1a16;transition:all .15s;line-height:1.4}
-.exam-route-btn .er-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:.3rem;opacity:.6}
-.exam-route-btn:hover{border-color:#aaa9a0;background:#faf9f6}
-.exam-route-btn.disabled{opacity:.35;cursor:default;pointer-events:none}
-.erb-source{border-color:#B87020;color:#7a4e00}.erb-source:hover{background:#fffbf5}
-.erb-essay{border-color:#1B6B3A;color:#1B6B3A}.erb-essay:hover{background:#f0faf4}
-.source-set-card{background:#fff;border:1px solid #e4e3dc;border-radius:14px;overflow:hidden;margin-bottom:.75rem}
-.source-set-header{padding:1rem 1.25rem;border-bottom:1px solid #e4e3dc;background:#faf9f6}
-.source-set-q{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;line-height:1.4;color:#1c1a16;margin-bottom:.5rem}
-.source-set-meta{font-size:.74rem;color:#7a7060}
-.source-body{padding:1rem 1.25rem}
-.source-item{border:1px solid #e4e3dc;border-radius:9px;padding:.85rem 1rem;margin-bottom:.75rem;background:#fff}
-.source-item-hdr{font-size:.76rem;font-weight:700;color:#1c1a16;margin-bottom:.2rem}
-.source-item-prov{font-size:.72rem;color:#7a7060;margin-bottom:.55rem;font-style:italic}
-.source-item-text{font-size:.82rem;line-height:1.7;color:#1c1a16}
-.approach-box{background:#faf9f6;border:1px solid #e4e3dc;border-radius:9px;padding:.85rem 1rem;margin-top:.75rem;display:none}
-.approach-box.open{display:block}
-.approach-title{font-size:.68rem;font-weight:700;color:#7a7060;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
-.approach-list{list-style:none;padding:0}
-.approach-list li{font-size:.8rem;line-height:1.6;color:#1c1a16;padding:.25rem 0;border-bottom:1px solid #e4e3dc;display:flex;gap:.5rem}
-.approach-list li:last-child{border-bottom:none}
-.approach-list li::before{content:'→';color:#7a7060;flex-shrink:0;font-weight:700}
-.essay-card{background:#fff;border:1px solid #e4e3dc;border-radius:14px;padding:1.25rem;margin-bottom:.75rem}
-.essay-q{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;line-height:1.45;margin-bottom:.6rem}
-.essay-meta{font-size:.74rem;color:#7a7060;margin-bottom:.75rem}
-.essay-structure{background:#EEF8F2;border-radius:8px;padding:.85rem 1rem;margin-top:.75rem;display:none}
-.essay-structure.open{display:block}
-.essay-structure-title{font-size:.68rem;font-weight:700;color:#1B6B3A;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
-.essay-structure table{width:100%;border-collapse:collapse;font-size:.8rem}
-.essay-structure td{padding:.35rem .5rem;border-bottom:1px solid #d4edde;vertical-align:top}
-.essay-structure td:first-child{font-weight:700;color:#1B6B3A;white-space:nowrap;padding-right:.75rem}
-.essay-structure tr:last-child td{border-bottom:none}
-.checklist-tag{font-size:.67rem;font-weight:700;padding:2px 7px;border-radius:5px;background:#FEF9E7;color:#7a4e00;border:1px solid #F0B429;display:inline-block;margin-bottom:.5rem}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: #faf9f6;
+  color: #1c1a16;
+  min-height: 100vh;
+}
+.app {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 5rem;
+}
+
+/* ── Typography ── */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  margin-bottom: .15rem;
+}
+.subtitle {
+  font-size: .78rem;
+  color: #7a7060;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 1.75rem;
+}
+
+/* ── Screens ── */
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* ── Reign Colours ── */
+/* Mid Tudor Crisis – purple, Edward – blue, Mary – red, Elizabeth – green */
+.mtc-bg        { background: #F3EEFB; }
+.mtc-col       { color: #5B1B9A; }
+.mtc-bdr       { border-color: #A96BE8; }
+.edward-bg     { background: #EEF3FB; }
+.edward-col    { color: #1B4B9A; }
+.edward-bdr    { border-color: #6B9DE8; }
+.mary-bg       { background: #FBF0EE; }
+.mary-col      { color: #9A1B1B; }
+.mary-bdr      { border-color: #E87A6B; }
+.elizabeth-bg  { background: #EEF8F2; }
+.elizabeth-col { color: #1B6B3A; }
+.elizabeth-bdr { border-color: #6BE8A0; }
+
+/* ── Reign Picker ── */
+.reign-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+}
+.reign-btn {
+  padding: 1.4rem 1rem;
+  border: 1.5px solid transparent;
+  border-radius: 14px;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-size: .95rem;
+  text-align: left;
+  line-height: 1.35;
+  transition: opacity .15s;
+}
+.reign-btn:hover { opacity: .85; }
+.reign-btn .rlabel {
+  font-family: 'Source Serif 4', serif;
+  font-size: .67rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  display: block;
+  margin-bottom: .3rem;
+  opacity: .65;
+}
+.reign-btn .reign-dots { margin-top: .4rem; display: flex; gap: 5px; }
+.reign-dot-sm {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.rb-mtc       { background: #F3EEFB; color: #5B1B9A; border-color: #A96BE8; }
+.rb-elizabeth { background: #EEF8F2; color: #1B6B3A; border-color: #6BE8A0; }
+
+/* ── Home extras ── */
+.home-divider {
+  border: none;
+  border-top: 1px solid #e4e3dc;
+  margin: 1.2rem 0;
+}
+.home-label {
+  font-size: .7rem;
+  font-weight: 700;
+  color: #7a7060;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: .6rem;
+}
+
+/* ── Mode header (back btn + badge) ── */
+.mode-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+.back-btn {
+  padding: 6px 12px;
+  font-size: .78rem;
+  font-weight: 700;
+  border: 1px solid #ddddd4;
+  border-radius: 8px;
+  background: #fff;
+  color: #7a7060;
+  cursor: pointer;
+  font-family: inherit;
+}
+.back-btn:hover { background: #f4f3ef; }
+
+.reign-badge {
+  font-family: 'Source Serif 4', serif;
+  font-size: .78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+/* ── Mode picker tabs ── */
+.mode-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+.mode-btn {
+  padding: 1.1rem .75rem;
+  border: 1.5px solid #ddddd4;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: .82rem;
+  font-weight: 700;
+  text-align: center;
+  background: #fff;
+  color: #1c1a16;
+  transition: all .15s;
+}
+.mode-btn .icon { font-size: 1.3rem; display: block; margin-bottom: .35rem; }
+.mode-btn:hover { border-color: #aaa9a0; background: #faf9f6; }
+.mode-btn.sel   { border-color: #1c1a16; background: #1c1a16; color: #fff; }
+
+/* ── Generic buttons ── */
+.btn-go {
+  width: 100%;
+  padding: 12px;
+  font-size: .92rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-family: inherit;
+  transition: opacity .15s;
+}
+.btn-go:hover { opacity: .88; }
+.btn-go.dark         { background: #1c1a16; }
+.btn-go.mtc-go       { background: #7B3FC8; }
+.btn-go.edward-go    { background: #2A6BC8; }
+.btn-go.mary-go      { background: #C82A2A; }
+.btn-go.elizabeth-go { background: #2A8C4A; }
+
+.btn-sm {
+  padding: 7px 13px;
+  font-size: .78rem;
+  font-weight: 700;
+  border: 1px solid #ddddd4;
+  border-radius: 8px;
+  background: #fff;
+  color: #1c1a16;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .12s;
+}
+.btn-sm:hover { background: #f4f3ef; }
+.btn-sm.muted { background: #eeede5; border-color: #ddddd4; }
+.btn-sm.green { background: #e8f5e0; color: #2E6B0E; border-color: #2E6B0E; }
+
+/* ── Tags ── */
+.tag {
+  font-size: .67rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+  letter-spacing: .03em;
+  display: inline-block;
+}
+.tag-grey      { background: #eeede5; color: #6a6860; }
+.tag-mtc       { background: #F3EEFB; color: #5B1B9A; }
+.tag-edward    { background: #EEF3FB; color: #1B4B9A; }
+.tag-mary      { background: #FBF0EE; color: #9A1B1B; }
+.tag-elizabeth { background: #EEF8F2; color: #1B6B3A; }
+.tag-amber     { background: #FEF9E7; color: #7a4e00; border: 1px solid #F0B429; }
+
+/* ── Cards ── */
+.card {
+  background: #fff;
+  border: 1px solid #e4e3dc;
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: .75rem;
+  position: relative;
+  overflow: hidden;
+}
+.card-stripe {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  border-radius: 4px 0 0 4px;
+}
+.card-inner { padding-left: .5rem; }
+.card-meta  { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: .6rem; }
+.card-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin-bottom: .5rem;
+  line-height: 1.35;
+}
+.card-prompt {
+  font-size: .81rem;
+  color: #7a7060;
+  font-style: italic;
+  margin-bottom: .75rem;
+}
+.btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: .9rem; }
+
+/* ── Reveal panels ── */
+.reveal {
+  display: none;
+  border-top: 1px solid #eeede5;
+  margin-top: .9rem;
+  padding-top: .9rem;
+}
+.reveal.open { display: block; }
+.reveal ul   { padding-left: 1.1rem; }
+.reveal li   { font-size: .84rem; line-height: 1.65; margin-bottom: .2rem; }
+.hint-chips  { display: flex; flex-wrap: wrap; gap: 5px; padding: .4rem 0; }
+
+/* ── Exam route picker ── */
+.exam-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+.exam-route-btn {
+  padding: 1.2rem 1rem;
+  border: 1.5px solid #ddddd4;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: .84rem;
+  font-weight: 700;
+  text-align: left;
+  background: #fff;
+  color: #1c1a16;
+  line-height: 1.4;
+  transition: all .15s;
+}
+.exam-route-btn .er-label {
+  font-size: .67rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  display: block;
+  margin-bottom: .3rem;
+  opacity: .55;
+}
+.exam-route-btn:hover:not(.disabled) { border-color: #aaa; background: #faf9f6; }
+.exam-route-btn.source { border-color: #B87020; color: #7a4e00; }
+.exam-route-btn.essay  { border-color: #1B6B3A; color: #1B6B3A; }
+.exam-route-btn.disabled { opacity: .35; cursor: default; pointer-events: none; }
+
+/* ── Source sets ── */
+.source-set-card {
+  background: #fff;
+  border: 1px solid #e4e3dc;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: .75rem;
+}
+.source-set-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e4e3dc;
+  background: #faf9f6;
+}
+.source-set-q {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: .4rem;
+}
+.source-set-meta { font-size: .74rem; color: #7a7060; }
+.source-body     { padding: 1rem 1.25rem; }
+.source-item {
+  border: 1px solid #e4e3dc;
+  border-radius: 9px;
+  padding: .85rem 1rem;
+  margin-bottom: .75rem;
+  background: #fff;
+}
+.source-item-hdr  { font-size: .76rem; font-weight: 700; margin-bottom: .2rem; }
+.source-item-prov { font-size: .72rem; color: #7a7060; font-style: italic; margin-bottom: .55rem; }
+.source-item-text { font-size: .82rem; line-height: 1.7; }
+.approach-box {
+  background: #faf9f6;
+  border: 1px solid #e4e3dc;
+  border-radius: 9px;
+  padding: .85rem 1rem;
+  margin-top: .75rem;
+  display: none;
+}
+.approach-box.open { display: block; }
+.approach-title {
+  font-size: .68rem;
+  font-weight: 700;
+  color: #7a7060;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: .5rem;
+}
+.approach-list { list-style: none; padding: 0; }
+.approach-list li {
+  font-size: .8rem;
+  line-height: 1.6;
+  padding: .25rem 0;
+  border-bottom: 1px solid #e4e3dc;
+  display: flex;
+  gap: .5rem;
+}
+.approach-list li:last-child { border-bottom: none; }
+.approach-list li::before { content: '→'; color: #7a7060; flex-shrink: 0; font-weight: 700; }
+
+/* ── Essay cards ── */
+.essay-card {
+  background: #fff;
+  border: 1px solid #e4e3dc;
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: .75rem;
+}
+.essay-q {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.45;
+  margin-bottom: .6rem;
+}
+.essay-meta { font-size: .74rem; color: #7a7060; margin-bottom: .75rem; }
+.essay-struct {
+  background: #EEF8F2;
+  border-radius: 8px;
+  padding: .85rem 1rem;
+  margin-top: .75rem;
+  display: none;
+}
+.essay-struct.open { display: block; }
+.essay-struct-title {
+  font-size: .68rem;
+  font-weight: 700;
+  color: #1B6B3A;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: .6rem;
+}
+.essay-struct table { width: 100%; border-collapse: collapse; font-size: .8rem; }
+.essay-struct td { padding: .35rem .5rem; border-bottom: 1px solid #d4edde; vertical-align: top; }
+.essay-struct td:first-child { font-weight: 700; color: #1B6B3A; white-space: nowrap; padding-right: .75rem; }
+.essay-struct tr:last-child td { border-bottom: none; }
+
+/* ── Date quiz ── */
+.quiz-prog { height: 3px; background: #e4e3dc; border-radius: 2px; margin-bottom: 1rem; overflow: hidden; }
+.quiz-fill { height: 100%; border-radius: 2px; transition: width .3s; }
+.fill-mtc       { background: #7B3FC8; }
+.fill-edward    { background: #2A6BC8; }
+.fill-mary      { background: #C82A2A; }
+.fill-elizabeth { background: #2A8C4A; }
+
+.quiz-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; }
+.quiz-hdr-l { font-size: .78rem; color: #7a7060; }
+.sc-row { display: flex; gap: 6px; }
+.sc { font-size: .78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; }
+.sc-c { background: #e8f5e0; color: #2E6B0E; }
+.sc-w { background: #fce8e8; color: #9A1B1B; }
+
+.quiz-card {
+  background: #fff;
+  border: 1px solid #e4e3dc;
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: .75rem;
+}
+.quiz-date {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin-bottom: .3rem;
+  letter-spacing: -.02em;
+}
+.quiz-prompt { font-size: .8rem; color: #7a7060; margin-bottom: 1.2rem; }
+.opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.opt {
+  padding: 10px 8px;
+  font-size: .79rem;
+  font-weight: 600;
+  border: 1.5px solid #ddddd4;
+  border-radius: 9px;
+  background: #fff;
+  color: #1c1a16;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.4;
+  font-family: inherit;
+  transition: all .15s;
+}
+.opt:hover:not(:disabled) { background: #f4f3ef; border-color: #aaa; }
+.opt:disabled { cursor: default; }
+.opt.correct { background: #e8f5e0 !important; border-color: #2E6B0E !important; color: #2E6B0E !important; }
+.opt.wrong   { background: #fce8e8 !important; border-color: #9A1B1B !important; color: #9A1B1B !important; }
+.opt.show-c  { background: #e8f5e0 !important; border-color: #2E6B0E !important; color: #2E6B0E !important; opacity: .8; }
+.quiz-fb {
+  font-size: .84rem;
+  font-weight: 700;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: .75rem;
+  display: none;
+  text-align: center;
+}
+.fb-c { background: #e8f5e0; color: #2E6B0E; }
+.fb-w { background: #fce8e8; color: #9A1B1B; }
+
+.quiz-end { text-align: center; padding: 2rem 1rem; }
+.end-score {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+.end-sub { font-size: .88rem; color: #7a7060; margin: .3rem 0 1.2rem; font-style: italic; }
+.end-grade { font-size: .88rem; font-weight: 700; padding: 7px 18px; border-radius: 20px; display: inline-block; margin-bottom: 1.2rem; }
+.grade-a { background: #e8f5e0; color: #2E6B0E; }
+.grade-b { background: #fff4df; color: #7a4e00; }
+.grade-c { background: #fce8e8; color: #9A1B1B; }
+
+/* ── Rapid fire ── */
+.rq-label { font-size: .7rem; font-weight: 700; color: #7a7060; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .6rem; }
+.pill-row  { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: .9rem; }
+.pill {
+  padding: 6px 12px;
+  font-size: .76rem;
+  font-weight: 700;
+  border: 1.5px solid #ddddd4;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #fff;
+  color: #7a7060;
+  font-family: inherit;
+  transition: all .15s;
+}
+.pill.on-edward    { background: #EEF3FB; color: #1B4B9A; border-color: #6B9DE8; }
+.pill.on-mary      { background: #FBF0EE; color: #9A1B1B; border-color: #E87A6B; }
+.pill.on-elizabeth { background: #EEF8F2; color: #1B6B3A; border-color: #6BE8A0; }
+.pill.on           { background: #1c1a16; color: #fff; border-color: #1c1a16; }
+
+/* ── Count selector (rapid fire) ── */
+.count-row { display: flex; gap: 8px; margin-bottom: .9rem; }
+.count-btn {
+  flex: 1;
+  padding: 10px 8px;
+  font-size: .88rem;
+  font-weight: 700;
+  border: 1.5px solid #ddddd4;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #fff;
+  color: #1c1a16;
+  font-family: inherit;
+  text-align: center;
+  transition: all .15s;
+}
+.count-btn:hover { border-color: #aaa; background: #f4f3ef; }
+.count-btn.sel   { background: #1c1a16; color: #fff; border-color: #1c1a16; }
+
+.rq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1rem; }
+.rq-card {
+  background: #fff;
+  border: 1.5px solid #e4e3dc;
+  border-radius: 12px;
+  padding: .85rem;
+  cursor: pointer;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color .15s;
+}
+.rq-card:hover   { border-color: #aaa; }
+.rq-card.revealed { border-color: #2E6B0E; cursor: default; }
+.rq-q { font-size: .77rem; line-height: 1.5; font-weight: 600; }
+.rq-a {
+  display: none;
+  margin-top: .5rem;
+  padding: .4rem .5rem;
+  background: #e8f5e0;
+  border-radius: 7px;
+  font-size: .77rem;
+  font-weight: 700;
+  color: #2E6B0E;
+  line-height: 1.4;
+}
+.rq-card.revealed .rq-a  { display: block; }
+.rq-tap { font-size: .66rem; color: #ccc; margin-top: .4rem; }
+.rq-card.revealed .rq-tap { display: none; }
+.rq-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.dot-edward    { background: #6B9DE8; }
+.dot-mary      { background: #E87A6B; }
+.dot-elizabeth { background: #6BE8A0; }
+
+/* ── Progress bar ── */
+.prog-wrap { margin-bottom: .75rem; display: none; }
+.prog-text { font-size: .73rem; color: #7a7060; margin-bottom: 4px; }
+.prog-bg   { background: #e5e4dc; border-radius: 99px; height: 5px; }
+.prog-fill { height: 5px; border-radius: 99px; background: #2A8C4A; transition: width .3s; }
+
+/* ── Flag bar ── */
+.flag-bar { display: none; gap: 8px; align-items: center; margin-bottom: .75rem; }
+
+/* ── Misc ── */
+.empty {
+  padding: 2rem;
+  text-align: center;
+  color: #aaa8a0;
+  font-size: .85rem;
+  border: 1px dashed #ddddd4;
+  border-radius: 12px;
+  font-style: italic;
+}
+.filter-row { display: flex; gap: 8px; margin-bottom: 1rem; flex-wrap: wrap; }
+select {
+  padding: 8px 10px;
+  font-size: .8rem;
+  border: 1px solid #ddddd4;
+  border-radius: 8px;
+  background: #fff;
+  color: #1c1a16;
+  cursor: pointer;
+  flex: 1;
+  min-width: 140px;
+  font-family: inherit;
+}
+.nav-row { display: flex; gap: 8px; margin-bottom: .75rem; margin-top: -.4rem; }
+.nav-row .btn-sm { flex: 1; padding: 9px; text-align: center; font-size: .84rem; }
+.nav-num { flex: 0 0 auto; align-self: center; font-size: .76rem; color: #7a7060; white-space: nowrap; min-width: 50px; text-align: center; }
+
 </style>
 </head>
 <body>
 <div class="app">
-<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.2rem">
-  <h1>A Level History</h1>
-  <a href="index.html" style="font-size:.74rem;font-weight:700;padding:6px 12px;border:1px solid #ddddd4;border-radius:8px;background:#fff;color:#7a7060;text-decoration:none;font-family:inherit">← Hub</a>
-</div>
-<p class="subtitle">Mr Rodker's Revision Hub &mdash; OCR Y107 · England 1547–1603</p>
 
-<div class="screen active" id="s-pick">
-  <p style="font-size:.85rem;color:#7a7060;margin-bottom:.9rem;font-style:italic">Choose a reign to revise:</p>
-  <div class="reign-grid">
-    <button class="reign-btn rb-edward" onclick="pickReign('edward')"><span class="rlabel">1547–53</span>👑 Edward VI</button>
-    <button class="reign-btn rb-mary" onclick="pickReign('mary')"><span class="rlabel">1553–58</span>🔥 Mary I</button>
-    <button class="reign-btn rb-elizabeth" onclick="pickReign('elizabeth')"><span class="rlabel">1558–1603</span>⚜️ Elizabeth I</button>
+  <!-- ── Header ── -->
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.2rem">
+    <h1>A Level History</h1>
+    <a href="index.html" style="font-size:.74rem;font-weight:700;padding:6px 12px;border:1px solid #ddddd4;border-radius:8px;background:#fff;color:#7a7060;text-decoration:none;font-family:inherit">← Hub</a>
   </div>
-  <div class="home-extra">
-    <p class="home-extra-label">Or try Rapid Fire — all reigns mixed:</p>
-    <button class="btn-go go-dark" onclick="showRapidSetup()">⚡ Rapid Fire</button>
-    <button class="btn-go" id="home-flag-btn" style="background:#eeede5;color:#1c1a16;display:none;margin-bottom:0" onclick="goToFlagged()">🚩 Review flagged cards (<span id="home-flag-num">0</span>)</button>
-  </div>
-</div>
+  <p class="subtitle">Mr Rodker's Revision Hub &mdash; OCR Y107 · England 1547–1603</p>
 
-<div class="screen" id="s-main">
-  <div class="mode-header">
-    <button class="back-btn" onclick="goBack()">🏠 Home</button>
-    <span class="reign-badge" id="reign-badge"></span>
-  </div>
-  <div class="mode-grid">
-    <button class="mode-btn" id="mb-knowledge" onclick="setMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder</button>
-    <button class="mode-btn" id="mb-dates" onclick="setMode('dates')"><span class="icon">📅</span>Key Dates</button>
-    <button class="mode-btn" id="mb-exam" onclick="setMode('exam')"><span class="icon">✏️</span>Exam Practice</button>
-  </div>
-
-  <div id="mode-knowledge" style="display:none">
-    <div class="filter-row">
-      <select id="k-unit" onchange="onUnitChange()"><option value="all">All units</option></select>
-      <select id="k-card" onchange="jumpToCard()"></select>
-    </div>
-    <button class="btn-go" id="k-go" onclick="drawRandomCard()">🔀 Random card</button>
-    <div style="display:flex;gap:8px;margin-bottom:.75rem;margin-top:-.5rem">
-      <button class="btn-sm" onclick="stepCard(-1)" style="flex:1;padding:9px;font-size:.84rem;font-weight:700;text-align:center">← Prev</button>
-      <span id="k-card-num" style="flex:0 0 auto;align-self:center;font-size:.76rem;color:#7a7060;white-space:nowrap;min-width:50px;text-align:center"></span>
-      <button class="btn-sm" onclick="stepCard(1)" style="flex:1;padding:9px;font-size:.84rem;font-weight:700;text-align:center">Next →</button>
-    </div>
-    <div class="prog-wrap" id="k-prog-wrap">
-      <div class="prog-text"><span id="k-prog-text"></span></div>
-      <div class="prog-bg"><div class="prog-fill" id="k-prog-bar"></div></div>
-    </div>
-    <div class="flag-bar" id="k-flag-bar">
-      <span style="font-size:.8rem;color:#7a7060">🚩 <span id="k-flag-num">0</span> flagged</span>
-      <button class="btn-sm" onclick="showFlaggedScreen()">Review flagged</button>
-      <button class="btn-sm" onclick="clearFlagged()">Clear</button>
-    </div>
-    <div id="k-out"></div>
-  </div>
-
-  <div id="mode-dates" style="display:none">
-    <button class="btn-go" id="d-go" onclick="startDateQuiz()">📅 Start key dates quiz</button>
-    <div id="d-out"></div>
-  </div>
-
-  <div id="mode-exam" style="display:none">
-    <div id="exam-route-pick">
-      <p style="font-size:.84rem;color:#7a7060;margin-bottom:.9rem;font-style:italic" id="exam-route-intro"></p>
-      <div class="exam-route-grid" id="exam-route-grid"></div>
-    </div>
-    <div id="exam-source-mode" style="display:none">
-      <div style="display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap">
-        <button class="btn-go" id="source-go" style="margin-bottom:0;flex:1" onclick="drawSourceSet()">🔀 New source set</button>
-        <button class="btn-sm" onclick="stepSourceSet(-1)" style="padding:10px 14px">←</button>
-        <button class="btn-sm" onclick="stepSourceSet(1)" style="padding:10px 14px">→</button>
-      </div>
-      <div id="source-out"></div>
-      <button class="btn-sm" style="margin-top:.5rem" onclick="backToExamRoutes()">← Back</button>
-    </div>
-    <div id="exam-essay-mode" style="display:none">
-      <button class="btn-go go-elizabeth" onclick="drawEssayQ()">🔀 Random 20-marker</button>
-      <div id="essay-out"></div>
-      <button class="btn-sm" style="margin-top:.5rem" onclick="backToExamRoutes()">← Back</button>
-    </div>
-  </div>
-</div>
-
-<div class="screen" id="s-rapid">
-  <div class="mode-header">
-    <button class="back-btn" onclick="showScreen('s-pick')">← Home</button>
-    <span style="font-size:.84rem;font-weight:700;color:#5a584e">⚡ Rapid Fire</span>
-  </div>
-  <div id="rq-setup">
-    <p class="rq-section-label">Which reigns?</p>
-    <div class="rq-pills">
-      <button class="rq-pill on-edward" id="rqp-edward" onclick="toggleRQPill('edward')">👑 Edward VI</button>
-      <button class="rq-pill on-mary" id="rqp-mary" onclick="toggleRQPill('mary')">🔥 Mary I</button>
-      <button class="rq-pill on-elizabeth" id="rqp-elizabeth" onclick="toggleRQPill('elizabeth')">⚜️ Elizabeth I</button>
-    </div>
-    <p class="rq-section-label">Which topics?</p>
-    <div class="rq-pills" id="rq-topic-pills"></div>
-    <button class="btn-go go-dark" onclick="generateRQ()">⚡ Generate questions</button>
-  </div>
-  <div id="rq-out" style="display:none">
-    <div class="rq-grid" id="rq-grid"></div>
-    <div class="rq-btn-row">
-      <button class="btn-sm" onclick="generateRQ()">🔄 New questions</button>
-      <button class="btn-sm" onclick="revealAll()">👁 Reveal all</button>
-      <button class="btn-sm" onclick="document.getElementById('rq-setup').style.display='block';document.getElementById('rq-out').style.display='none'">⚙️ Settings</button>
-    </div>
-  </div>
-</div>
-
-<div class="screen" id="s-flagged">
-  <div class="mode-header">
-    <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
-    <span style="font-size:.84rem;font-weight:700;color:#5a584e">🚩 Flagged for review</span>
-  </div>
-  <div id="flagged-out"></div>
-</div>
-
-</div>
-<script>
-const R={
-  edward:{label:'Edward VI (1547–53)',badge:'bg-edward',go:'go-edward',fill:'fill-edward',
-    units:['Unit 1 – Stability of the Monarchy','Unit 2 – Religious Change','Unit 3 – Rebellion and Unrest'],
-    hasSource:true,hasEssay:false},
-  mary:{label:'Mary I (1553–58)',badge:'bg-mary',go:'go-mary',fill:'fill-mary',
-    units:['Unit 1 – Stability of the Monarchy','Unit 2 – Religious Change','Unit 3 – Rebellion and Unrest'],
-    hasSource:true,hasEssay:false},
-  elizabeth:{label:'Elizabeth I (1558–1603)',badge:'bg-elizabeth',go:'go-elizabeth',fill:'fill-elizabeth',
-    units:['Unit 4 – Elizabeth I and Religion','Unit 5 – Government and Parliament','Unit 6 – Financial, Economic and Social Affairs','Unit 7 – Later Years 1588–1603'],
-    hasSource:false,hasEssay:true}
-};
-let currentReign='elizabeth';
-
-function pickReign(r){
-  currentReign=r;
-  const info=R[r];
-  document.getElementById('reign-badge').textContent=info.label;
-  document.getElementById('reign-badge').className='reign-badge '+info.badge;
-  ['k-go','d-go'].forEach(id=>{const el=document.getElementById(id);if(el)el.className='btn-go '+info.go;});
-  const sel=document.getElementById('k-unit');
-  sel.innerHTML='<option value="all">All units</option>'+info.units.map(u=>`<option value="${u}">${u}</option>`).join('');
-  buildExamRoutes(r);
-  learntCards=new Set();buildKPool();kPoolTotal=kPool.length;
-  updateNavUI();updateProgressBar();
-  if(kPool.length)renderKCard(kPool[0]);
-  showScreen('s-main');setMode('knowledge');
-}
-
-function buildExamRoutes(r){
-  const info=R[r];
-  const grid=document.getElementById('exam-route-grid');
-  const intro=document.getElementById('exam-route-intro');
-  intro.textContent='Choose your exam practice route:';
-  let html='';
-  if(info.hasSource){
-    html+=`<button class="exam-route-btn erb-source" onclick="showSourceMode()"><span class="er-label">Question 1 · 30 marks</span>📜 Source Analysis<br><small style="font-size:.74rem;opacity:.7">Four primary sources on Edward &amp; Mary</small></button>`;
-    html+=`<button class="exam-route-btn disabled"><span class="er-label">Question 2 · 20 marks</span>✏️ Essay<br><small style="font-size:.74rem;opacity:.7">Not applicable for this reign</small></button>`;
-  } else {
-    html+=`<button class="exam-route-btn disabled"><span class="er-label">Question 1 · 30 marks</span>📜 Source Analysis<br><small style="font-size:.74rem;opacity:.7">Source Q is Edward &amp; Mary only</small></button>`;
-    html+=`<button class="exam-route-btn erb-essay" onclick="showEssayMode()"><span class="er-label">Question 2 · 20 marks</span>✏️ Essay Questions<br><small style="font-size:.74rem;opacity:.7">25 past &amp; practice 20-markers</small></button>`;
-  }
-  grid.innerHTML=html;
-}
-
-function goBack(){showScreen('s-pick');document.getElementById('d-out').innerHTML='';document.getElementById('k-out').innerHTML='';}
-function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
-function setMode(m){
-  ['knowledge','dates','exam'].forEach(mode=>{
-    document.getElementById('mb-'+mode).classList.toggle('sel',mode===m);
-    document.getElementById('mode-'+mode).style.display=mode===m?'block':'none';
-  });
-  document.getElementById('k-out').innerHTML='';document.getElementById('d-out').innerHTML='';
-  if(document.getElementById('d-go'))document.getElementById('d-go').style.display='block';
-  if(m==='exam')backToExamRoutes();
-  updateFlagBar();
-  if(m==='knowledge'){buildKPool();updateNavUI();}
-}
-function showSourceMode(){
-  document.getElementById('exam-route-pick').style.display='none';
-  document.getElementById('exam-source-mode').style.display='block';
-  document.getElementById('exam-essay-mode').style.display='none';
-  buildSourcePool();drawSourceSet();
-}
-function showEssayMode(){
-  document.getElementById('exam-route-pick').style.display='none';
-  document.getElementById('exam-source-mode').style.display='none';
-  document.getElementById('exam-essay-mode').style.display='block';
-  drawEssayQ();
-}
-function backToExamRoutes(){
-  document.getElementById('exam-route-pick').style.display='block';
-  document.getElementById('exam-source-mode').style.display='none';
-  document.getElementById('exam-essay-mode').style.display='none';
-}
-function showRapidSetup(){
-  showScreen('s-rapid');
-  rqReigns=new Set(['edward','mary','elizabeth']);
-  ['edward','mary','elizabeth'].forEach(r=>{document.getElementById('rqp-'+r).className='rq-pill on-'+r;});
-  rqTopics=new Set(ALL_TOPICS);buildTopicPills();
-}
-
-function rand(arr){return arr[Math.floor(Math.random()*arr.length)];}
-function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
-function tog(id){const el=document.getElementById(id);if(el)el.classList.toggle('open');}
-function boldHints(text,hints){let out=text;hints.forEach(h=>{const esc=h.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');out=out.replace(new RegExp('('+esc+')','gi'),'<strong>$1</strong>');});return out;}
-
-let kPool=[],kIdx=0,kPoolTotal=0,learntCards=new Set(),flaggedCards=[];
-
-function buildKPool(){
-  const unit=document.getElementById('k-unit').value;
-  let all=KC.filter(c=>c.reign===currentReign);
-  const units=R[currentReign].units;
-  all.sort((a,b)=>{const ui=units.indexOf(a.unit),vi=units.indexOf(b.unit);if(ui!==vi)return ui-vi;return KC.indexOf(a)-KC.indexOf(b);});
-  if(unit!=='all')all=all.filter(c=>c.unit===unit);
-  const uc={};
-  kPool=all.map(c=>{const uIdx=units.indexOf(c.unit)+1;uc[uIdx]=(uc[uIdx]||0)+1;return{card:c,num:`${uIdx}.${uc[uIdx]}`};});
-  const cs=document.getElementById('k-card');
-  if(cs)cs.innerHTML=kPool.map((e,i)=>`<option value="${i}">${e.num} – ${e.card.heading}</option>`).join('');
-  kPoolTotal=kPool.length;
-}
-function onUnitChange(){learntCards=new Set();buildKPool();kPoolTotal=kPool.length;kIdx=0;updateNavUI();updateProgressBar();if(kPool.length)renderKCard(kPool[0]);}
-function updateNavUI(){document.getElementById('k-card-num').textContent=kPool.length?kPool[kIdx].num:'';const s=document.getElementById('k-card');if(s)s.value=kIdx;}
-function drawRandomCard(){buildKPool();if(!kPool.length){document.getElementById('k-out').innerHTML='<div class="empty">No cards match.</div>';return;}kIdx=Math.floor(Math.random()*kPool.length);renderKCard(kPool[kIdx]);updateNavUI();}
-function stepCard(dir){if(!kPool.length){drawRandomCard();return;}kIdx=(kIdx+dir+kPool.length)%kPool.length;renderKCard(kPool[kIdx]);updateNavUI();}
-function jumpToCard(){const i=parseInt(document.getElementById('k-card').value);if(isNaN(i))return;kIdx=i;renderKCard(kPool[kIdx]);updateNavUI();}
-function markLearnt(){const e=kPool[kIdx];learntCards.add(e.card.reign+'|'+e.card.heading);kPool.splice(kIdx,1);if(!kPool.length){document.getElementById('k-out').innerHTML='<div class="empty">All cards learnt! 🎉</div>';updateNavUI();updateProgressBar();return;}kIdx=kIdx%kPool.length;renderKCard(kPool[kIdx]);updateNavUI();updateProgressBar();}
-function updateProgressBar(){const wrap=document.getElementById('k-prog-wrap'),learnt=kPoolTotal-kPool.length;if(kPoolTotal&&learnt>0){wrap.style.display='block';document.getElementById('k-prog-text').textContent=`${learnt} of ${kPoolTotal} cards learnt`;document.getElementById('k-prog-bar').style.width=((learnt/kPoolTotal)*100)+'%';}else{wrap.style.display='none';}}
-function flagCard(btn){const card=btn.closest('.card'),reign=card.dataset.reign,heading=card.dataset.heading;if(!flaggedCards.find(c=>c.reign===reign&&c.heading===heading)){flaggedCards.push({reign,heading});updateFlagBar();btn.textContent='🚩 Flagged';btn.disabled=true;btn.style.opacity='.5';}}
-function unflagCard(btn){const card=btn.closest('.card');flaggedCards=flaggedCards.filter(c=>!(c.reign===card.dataset.reign&&c.heading===card.dataset.heading));updateFlagBar();if(document.getElementById('s-flagged').classList.contains('active'))showFlaggedScreen();else btn.outerHTML=`<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>`;}
-function clearFlagged(){flaggedCards=[];updateFlagBar();}
-function updateFlagBar(){const bar=document.getElementById('k-flag-bar'),homeBtn=document.getElementById('home-flag-btn');if(flaggedCards.length){bar.style.display='flex';document.getElementById('k-flag-num').textContent=flaggedCards.length;if(homeBtn){homeBtn.style.display='block';document.getElementById('home-flag-num').textContent=flaggedCards.length;}}else{bar.style.display='none';if(homeBtn)homeBtn.style.display='none';}}
-function goToFlagged(){if(flaggedCards.length)showFlaggedScreen();}
-function showFlaggedScreen(){
-  showScreen('s-flagged');
-  const out=document.getElementById('flagged-out');
-  if(!flaggedCards.length){out.innerHTML='<div class="empty">No flagged cards yet.</div>';return;}
-  out.innerHTML=flaggedCards.map(fc=>{
-    const card=KC.find(c=>c.reign===fc.reign&&c.heading===fc.heading);if(!card)return'';
-    const uid=card.reign+'_'+card.heading.replace(/\W/g,'');
-    const hintsHtml=`<div class="hint-chips">${card.hints.map(h=>`<span class="tag t-${card.reign}">${h}</span>`).join('')}</div>`;
-    const factsHtml='<ul>'+card.facts.map(f=>`<li>${boldHints(f,card.hints)}</li>`).join('')+'</ul>';
-    return`<div class="card" data-reign="${card.reign}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
-      <div class="stripe s-${card.reign}"></div>
-      <div class="inner">
-        <div class="meta"><span class="tag t-${card.reign}">${card.unit}</span></div>
-        <div class="card-heading">${card.heading}</div>
-        <div class="btn-row">
-          <button class="btn-sm" onclick="tog('fh_${uid}');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
-          <button class="btn-sm" onclick="tog('ff_${uid}');this.textContent=this.textContent==='Reveal content'?'Hide content':'Reveal content'">Reveal content</button>
-          <button class="btn-sm" style="background:#e8f5e0;color:#2E6B0E;border-color:#2E6B0E" onclick="unflagCard(this)">✅ Done</button>
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SCREEN 1: HOME / REIGN PICKER             -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="screen active" id="s-home">
+    <p style="font-size:.85rem;color:#7a7060;margin-bottom:.9rem;font-style:italic">Choose a section to revise:</p>
+    <div class="reign-grid">
+      <button class="reign-btn rb-mtc" onclick="pickReign('mtc')">
+        <span class="rlabel">1547–1558</span>
+        ⚔️ Mid Tudor Crisis
+        <div class="reign-dots">
+          <span class="reign-dot-sm" style="background:#6B9DE8"></span>
+          <span class="reign-dot-sm" style="background:#E87A6B"></span>
         </div>
-        <div class="reveal" id="fh_${uid}">${hintsHtml}</div>
-        <div class="reveal" id="ff_${uid}">${factsHtml}</div>
-      </div></div>`;
+      </button>
+      <button class="reign-btn rb-elizabeth" onclick="pickReign('elizabeth')">
+        <span class="rlabel">1558–1603</span>
+        ⚜️ Elizabeth I
+      </button>
+    </div>
+
+    <hr class="home-divider">
+    <p class="home-label">Or jump straight to:</p>
+    <button class="btn-go dark" onclick="showRapid()">⚡ Rapid Fire — all reigns mixed</button>
+    <button class="btn-go" id="home-flag-btn" style="background:#eeede5;color:#1c1a16;display:none"
+            onclick="goFlagged()">🚩 Flagged cards (<span id="home-flag-num">0</span>)</button>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SCREEN 2: REIGN → 3 MODE TABS             -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="screen" id="s-main">
+    <div class="mode-header">
+      <button class="back-btn" onclick="goHome()">🏠 Home</button>
+      <span class="reign-badge" id="reign-badge"></span>
+    </div>
+
+    <div class="mode-grid">
+      <button class="mode-btn" id="mb-knowledge" onclick="setMode('knowledge')">
+        <span class="icon">🧠</span>Knowledge Builder
+      </button>
+      <button class="mode-btn" id="mb-dates" onclick="setMode('dates')">
+        <span class="icon">📅</span>Key Dates
+      </button>
+      <button class="mode-btn" id="mb-exam" onclick="setMode('exam')">
+        <span class="icon">✏️</span>Exam Practice
+      </button>
+    </div>
+
+    <!-- Knowledge Builder panel -->
+    <div id="panel-knowledge" style="display:none">
+      <div class="filter-row">
+        <select id="k-unit" onchange="onUnitChange()"><option value="all">All units</option></select>
+        <select id="k-card-sel" onchange="jumpToCard()"></select>
+      </div>
+      <button class="btn-go" id="k-random-btn" onclick="drawRandom()">🔀 Random card</button>
+      <div class="nav-row">
+        <button class="btn-sm" onclick="stepCard(-1)">← Prev</button>
+        <span class="nav-num" id="k-card-num"></span>
+        <button class="btn-sm" onclick="stepCard(1)">Next →</button>
+      </div>
+      <div class="prog-wrap" id="k-prog-wrap">
+        <div class="prog-text" id="k-prog-text"></div>
+        <div class="prog-bg"><div class="prog-fill" id="k-prog-fill"></div></div>
+      </div>
+      <div class="flag-bar" id="k-flag-bar">
+        <span style="font-size:.8rem;color:#7a7060">🚩 <span id="k-flag-num">0</span> flagged</span>
+        <button class="btn-sm muted" onclick="showFlagged()">Review</button>
+        <button class="btn-sm muted" onclick="clearFlagged()">Clear</button>
+      </div>
+      <div id="k-out"></div>
+    </div>
+
+    <!-- Key Dates panel -->
+    <div id="panel-dates" style="display:none">
+      <button class="btn-go" id="d-start-btn" onclick="startDateQuiz()">📅 Start key dates quiz</button>
+      <div id="d-out"></div>
+    </div>
+
+    <!-- Exam Practice panel -->
+    <div id="panel-exam" style="display:none">
+      <div id="exam-pick">
+        <p style="font-size:.84rem;color:#7a7060;margin-bottom:.9rem;font-style:italic" id="exam-intro"></p>
+        <div class="exam-grid" id="exam-grid"></div>
+      </div>
+      <div id="exam-source" style="display:none">
+        <div style="display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap">
+          <button class="btn-go" style="margin-bottom:0;flex:1;background:#7a5c3a" onclick="drawSource()">🔀 New source set</button>
+          <button class="btn-sm" onclick="stepSource(-1)" style="padding:10px 14px">←</button>
+          <button class="btn-sm" onclick="stepSource(1)"  style="padding:10px 14px">→</button>
+        </div>
+        <div id="source-out"></div>
+        <button class="btn-sm muted" style="margin-top:.5rem" onclick="backToExam()">← Back</button>
+      </div>
+      <div id="exam-essay" style="display:none">
+        <button class="btn-go elizabeth-go" onclick="drawEssay()">🔀 Random 20-marker</button>
+        <div id="essay-out"></div>
+        <button class="btn-sm muted" style="margin-top:.5rem" onclick="backToExam()">← Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SCREEN 3: RAPID FIRE                      -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="screen" id="s-rapid">
+    <div class="mode-header">
+      <button class="back-btn" onclick="showScreen('s-home')">← Home</button>
+      <span style="font-size:.84rem;font-weight:700;color:#5a584e">⚡ Rapid Fire</span>
+    </div>
+    <div id="rq-setup">
+      <p class="rq-label">Which reigns?</p>
+      <div class="pill-row">
+        <button class="pill on-edward"    id="rqp-edward"    onclick="toggleReign('edward')">👑 Edward VI</button>
+        <button class="pill on-mary"      id="rqp-mary"      onclick="toggleReign('mary')">🔥 Mary I</button>
+        <button class="pill on-elizabeth" id="rqp-elizabeth" onclick="toggleReign('elizabeth')">⚜️ Elizabeth I</button>
+      </div>
+      <p class="rq-label">How many questions?</p>
+      <div class="count-row">
+        <button class="count-btn" id="cnt-5"  onclick="setCount(5)">5</button>
+        <button class="count-btn sel" id="cnt-10" onclick="setCount(10)">10</button>
+        <button class="count-btn" id="cnt-15" onclick="setCount(15)">15</button>
+      </div>
+      <button class="btn-go dark" onclick="generateRQ()">⚡ Generate questions</button>
+    </div>
+    <div id="rq-out" style="display:none">
+      <div class="rq-grid" id="rq-grid"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn-sm muted" onclick="generateRQ()">🔄 New set</button>
+        <button class="btn-sm muted" onclick="revealAll()">👁 Reveal all</button>
+        <button class="btn-sm muted" onclick="backToRQSetup()">⚙️ Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SCREEN 4: FLAGGED CARDS                   -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="screen" id="s-flagged">
+    <div class="mode-header">
+      <button class="back-btn" onclick="showScreen('s-home')">🏠 Home</button>
+      <span style="font-size:.84rem;font-weight:700;color:#5a584e">🚩 Flagged for review</span>
+    </div>
+    <div id="flagged-out"></div>
+  </div>
+
+</div><!-- /app -->
+
+<script>
+
+// ═══════════════════════════════════════════════════════
+// REIGN CONFIG
+// ═══════════════════════════════════════════════════════
+const REIGNS = {
+  mtc: {
+    label: 'Mid Tudor Crisis (1547–58)',
+    badge: 'mtc-bg mtc-col',
+    go:    'mtc-go',
+    fill:  'fill-mtc',
+    units: [
+      'Unit 1 – Stability of the Monarchy',
+      'Unit 2 – Religious Change',
+      'Unit 3 – Rebellion and Unrest'
+    ],
+    hasSource: true,
+    hasEssay:  false
+  },
+  elizabeth: {
+    label: 'Elizabeth I (1558–1603)',
+    badge: 'elizabeth-bg elizabeth-col',
+    go:    'elizabeth-go',
+    fill:  'fill-elizabeth',
+    units: [
+      'Unit 4 – Elizabeth I and Religion',
+      'Unit 5 – Government and Parliament',
+      'Unit 6 – Financial, Economic and Social Affairs',
+      'Unit 7 – Later Years 1588–1603'
+    ],
+    hasSource: false,
+    hasEssay:  true
+  }
+};
+
+let currentReign = 'elizabeth';
+
+// ═══════════════════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════════════════
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function pickReign(r) {
+  currentReign = r;
+  const info = REIGNS[r];
+
+  // Badge
+  const badge = document.getElementById('reign-badge');
+  badge.textContent = info.label;
+  badge.className = 'reign-badge ' + info.badge;
+
+  // Unit dropdown
+  const unitSel = document.getElementById('k-unit');
+  unitSel.innerHTML = '<option value="all">All units</option>' +
+    info.units.map(u => `<option value="${u}">${u}</option>`).join('');
+
+  // Random card button colour
+  document.getElementById('k-random-btn').className = 'btn-go ' + info.go;
+
+  // Date quiz button colour
+  document.getElementById('d-start-btn').className = 'btn-go ' + info.go;
+
+  // Exam routes
+  buildExamRoutes(r);
+
+  // Reset knowledge state
+  flaggedCards = [];
+  learntCards  = new Set();
+  buildKPool();
+  kPoolTotal = kPool.length;
+  updateNavUI();
+  updateProgress();
+  if (kPool.length) renderKCard(kPool[0]);
+
+  showScreen('s-main');
+  setMode('knowledge');
+}
+
+function goHome() {
+  showScreen('s-home');
+  document.getElementById('k-out').innerHTML = '';
+  document.getElementById('d-out').innerHTML = '';
+}
+
+function setMode(m) {
+  ['knowledge', 'dates', 'exam'].forEach(mode => {
+    document.getElementById('mb-' + mode).classList.toggle('sel', mode === m);
+    document.getElementById('panel-' + mode).style.display = mode === m ? 'block' : 'none';
+  });
+  document.getElementById('k-out').innerHTML = '';
+  document.getElementById('d-out').innerHTML = '';
+  document.getElementById('d-start-btn').style.display = 'block';
+  if (m === 'exam')      backToExam();
+  if (m === 'knowledge') { buildKPool(); updateNavUI(); }
+  updateFlagBar();
+}
+
+function buildExamRoutes(r) {
+  const info = REIGNS[r];
+  document.getElementById('exam-intro').textContent = 'Choose your exam practice route:';
+  const grid = document.getElementById('exam-grid');
+  let html = '';
+
+  if (info.hasSource) {
+    html += `<button class="exam-route-btn source" onclick="showSourceMode()">
+      <span class="er-label">Question 1 · 30 marks</span>
+      📜 Source Analysis<br>
+      <small style="font-size:.73rem;opacity:.65">Four primary sources — Edward &amp; Mary</small>
+    </button>`;
+    html += `<button class="exam-route-btn disabled">
+      <span class="er-label">Question 2 · 20 marks</span>
+      ✏️ Essay<br>
+      <small style="font-size:.73rem;opacity:.65">Not applicable for this reign</small>
+    </button>`;
+  } else {
+    html += `<button class="exam-route-btn disabled">
+      <span class="er-label">Question 1 · 30 marks</span>
+      📜 Source Analysis<br>
+      <small style="font-size:.73rem;opacity:.65">Source Q is Edward &amp; Mary only</small>
+    </button>`;
+    html += `<button class="exam-route-btn essay" onclick="showEssayMode()">
+      <span class="er-label">Question 2 · 20 marks</span>
+      ✏️ Essay Questions<br>
+      <small style="font-size:.73rem;opacity:.65">Past &amp; practice 20-markers</small>
+    </button>`;
+  }
+  grid.innerHTML = html;
+}
+
+function backToExam() {
+  document.getElementById('exam-pick').style.display   = 'block';
+  document.getElementById('exam-source').style.display = 'none';
+  document.getElementById('exam-essay').style.display  = 'none';
+}
+function showSourceMode() {
+  document.getElementById('exam-pick').style.display   = 'none';
+  document.getElementById('exam-source').style.display = 'block';
+  document.getElementById('exam-essay').style.display  = 'none';
+  buildSourcePool();
+  drawSource();
+}
+function showEssayMode() {
+  document.getElementById('exam-pick').style.display   = 'none';
+  document.getElementById('exam-source').style.display = 'none';
+  document.getElementById('exam-essay').style.display  = 'block';
+  drawEssay();
+}
+
+function showRapid() {
+  rqReigns = new Set(['edward','mary','elizabeth']);
+  ['edward','mary','elizabeth'].forEach(r => {
+    document.getElementById('rqp-' + r).className = 'pill on-' + r;
+  });
+  rqCount = 10;
+  setCount(10);
+  document.getElementById('rq-setup').style.display = 'block';
+  document.getElementById('rq-out').style.display   = 'none';
+  showScreen('s-rapid');
+}
+function backToRQSetup() {
+  document.getElementById('rq-setup').style.display = 'block';
+  document.getElementById('rq-out').style.display   = 'none';
+}
+
+// ═══════════════════════════════════════════════════════
+// UTILITIES
+// ═══════════════════════════════════════════════════════
+const rand = arr => arr[Math.floor(Math.random() * arr.length)];
+const shuffle = a => {
+  const b = [...a];
+  for (let i = b.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [b[i], b[j]] = [b[j], b[i]];
+  }
+  return b;
+};
+const tog = id => {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle('open');
+};
+const boldHints = (text, hints) => {
+  let out = text;
+  hints.forEach(h => {
+    const esc = h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    out = out.replace(new RegExp(`(${esc})`, 'gi'), '<strong>$1</strong>');
+  });
+  return out;
+};
+
+// ═══════════════════════════════════════════════════════
+// KNOWLEDGE BUILDER
+// ═══════════════════════════════════════════════════════
+let kPool = [], kIdx = 0, kPoolTotal = 0;
+let learntCards = new Set();
+let flaggedCards = [];
+
+function buildKPool() {
+  const unit  = document.getElementById('k-unit').value;
+  const units = REIGNS[currentReign].units;
+  // MTC covers both edward and mary cards
+  let all = currentReign === 'mtc'
+    ? KC.filter(c => c.reign === 'edward' || c.reign === 'mary')
+    : KC.filter(c => c.reign === currentReign);
+  all.sort((a, b) => {
+    const ui = units.indexOf(a.unit), vi = units.indexOf(b.unit);
+    if (ui !== vi) return ui - vi;
+    return KC.indexOf(a) - KC.indexOf(b);
+  });
+  if (unit !== 'all') all = all.filter(c => c.unit === unit);
+  const uc = {};
+  kPool = all.map(c => {
+    const uIdx = units.indexOf(c.unit) + 1;
+    uc[uIdx] = (uc[uIdx] || 0) + 1;
+    return { card: c, num: `${uIdx}.${uc[uIdx]}` };
+  });
+  const sel = document.getElementById('k-card-sel');
+  sel.innerHTML = kPool.map((e, i) =>
+    `<option value="${i}">${e.num} – ${e.card.heading}</option>`).join('');
+  kPoolTotal = kPool.length;
+}
+
+function updateNavUI() {
+  document.getElementById('k-card-num').textContent = kPool.length ? kPool[kIdx].num : '';
+  const sel = document.getElementById('k-card-sel');
+  if (sel) sel.value = kIdx;
+}
+
+function updateProgress() {
+  const wrap  = document.getElementById('k-prog-wrap');
+  const learnt = kPoolTotal - kPool.length;
+  if (kPoolTotal && learnt > 0) {
+    wrap.style.display = 'block';
+    document.getElementById('k-prog-text').textContent = `${learnt} of ${kPoolTotal} cards learnt`;
+    document.getElementById('k-prog-fill').style.width = ((learnt / kPoolTotal) * 100) + '%';
+  } else {
+    wrap.style.display = 'none';
+  }
+}
+
+function updateFlagBar() {
+  const bar     = document.getElementById('k-flag-bar');
+  const homeBtn = document.getElementById('home-flag-btn');
+  if (flaggedCards.length) {
+    bar.style.display = 'flex';
+    document.getElementById('k-flag-num').textContent = flaggedCards.length;
+    if (homeBtn) {
+      homeBtn.style.display = 'block';
+      document.getElementById('home-flag-num').textContent = flaggedCards.length;
+    }
+  } else {
+    bar.style.display = 'none';
+    if (homeBtn) homeBtn.style.display = 'none';
+  }
+}
+
+function drawRandom() {
+  buildKPool();
+  if (!kPool.length) { document.getElementById('k-out').innerHTML = '<div class="empty">No cards match.</div>'; return; }
+  kIdx = Math.floor(Math.random() * kPool.length);
+  renderKCard(kPool[kIdx]);
+  updateNavUI();
+}
+
+function stepCard(dir) {
+  if (!kPool.length) { drawRandom(); return; }
+  kIdx = (kIdx + dir + kPool.length) % kPool.length;
+  renderKCard(kPool[kIdx]);
+  updateNavUI();
+}
+
+function jumpToCard() {
+  const i = parseInt(document.getElementById('k-card-sel').value);
+  if (isNaN(i)) return;
+  kIdx = i;
+  renderKCard(kPool[kIdx]);
+  updateNavUI();
+}
+
+function onUnitChange() {
+  learntCards = new Set();
+  buildKPool();
+  kPoolTotal = kPool.length;
+  kIdx = 0;
+  updateNavUI();
+  updateProgress();
+  if (kPool.length) renderKCard(kPool[0]);
+}
+
+function markLearnt() {
+  const e = kPool[kIdx];
+  learntCards.add(e.card.reign + '|' + e.card.heading);
+  kPool.splice(kIdx, 1);
+  if (!kPool.length) {
+    document.getElementById('k-out').innerHTML = '<div class="empty">All cards learnt! 🎉</div>';
+    updateNavUI(); updateProgress(); return;
+  }
+  kIdx = kIdx % kPool.length;
+  renderKCard(kPool[kIdx]);
+  updateNavUI();
+  updateProgress();
+}
+
+function flagCard(btn) {
+  const card    = btn.closest('.card');
+  const reign   = card.dataset.reign;
+  const heading = card.dataset.heading;
+  if (!flaggedCards.find(c => c.reign === reign && c.heading === heading)) {
+    flaggedCards.push({ reign, heading });
+    updateFlagBar();
+    btn.textContent = '🚩 Flagged';
+    btn.disabled = true;
+    btn.style.opacity = '.5';
+  }
+}
+
+function unflagCard(btn) {
+  const card = btn.closest('.card');
+  flaggedCards = flaggedCards.filter(c =>
+    !(c.reign === card.dataset.reign && c.heading === card.dataset.heading));
+  updateFlagBar();
+  if (document.getElementById('s-flagged').classList.contains('active')) showFlagged();
+  else btn.outerHTML = `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>`;
+}
+
+function clearFlagged() { flaggedCards = []; updateFlagBar(); }
+function goFlagged()    { if (flaggedCards.length) showFlagged(); }
+
+function showFlagged() {
+  showScreen('s-flagged');
+  const out = document.getElementById('flagged-out');
+  if (!flaggedCards.length) { out.innerHTML = '<div class="empty">No flagged cards yet.</div>'; return; }
+  out.innerHTML = flaggedCards.map(fc => {
+    const card = KC.find(c => c.reign === fc.reign && c.heading === fc.heading);
+    if (!card) return '';
+    return renderCardHTML(card, null, true);
   }).join('');
 }
-function renderKCard(entry){
-  const card=entry.card,num=entry.num,uid='kc_'+Math.random().toString(36).slice(2,7);
-  const hintsHtml=`<div class="hint-chips">${card.hints.map(h=>`<span class="tag t-${card.reign}">${h}</span>`).join('')}</div>`;
-  const factsHtml='<ul>'+card.facts.map(f=>`<li>${boldHints(f,card.hints)}</li>`).join('')+'</ul>';
-  const prompts=['Can you recall 3–5 key points about this topic?','What are the key dates for this topic?','Can you name the key figures involved?','What were the causes and consequences?','How would you explain this in a paragraph?'];
-  const alreadyFlagged=flaggedCards.find(c=>c.reign===card.reign&&c.heading===card.heading);
-  const checklistTag=card.checklist?`<span class="checklist-tag">📋 ${card.checklist}</span><br>`:'' ;
-  document.getElementById('k-out').innerHTML=`
-    <div class="card" data-reign="${card.reign}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
-      <div class="stripe s-${card.reign}"></div>
-      <div class="inner">
-        <div class="meta"><span class="tag t-grey">${num}</span><span class="tag t-${card.reign}">${card.unit}</span></div>
-        ${checklistTag}
-        <div class="card-heading">${card.heading}</div>
-        <p style="font-size:.81rem;color:#7a7060;margin-bottom:.75rem;font-style:italic">${prompts[Math.floor(Math.random()*5)]}</p>
-        <div class="btn-row">
-          <button class="btn-sm" onclick="tog('${uid}h');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
-          <button class="btn-sm" onclick="tog('${uid}f');this.textContent=this.textContent==='Reveal content'?'Hide content':'Reveal content'">Reveal content</button>
-          ${alreadyFlagged?`<button class="btn-sm" style="background:#e8f5e0;color:#2E6B0E;border-color:#2E6B0E" onclick="unflagCard(this)">✅ Remove flag</button>`:`<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>`}
-          <button class="btn-sm" onclick="markLearnt()" style="background:#e8f5e0;color:#2E6B0E;border-color:#2E6B0E">✓ Learnt</button>
+
+function renderKCard(entry) {
+  document.getElementById('k-out').innerHTML = renderCardHTML(entry.card, entry.num, false);
+}
+
+function renderCardHTML(card, num, isFlagged) {
+  const uid = 'kc_' + Math.random().toString(36).slice(2, 7);
+  const hintsHTML = `<div class="hint-chips">${
+    card.hints.map(h => `<span class="tag tag-${card.reign}">${h}</span>`).join('')
+  }</div>`;
+  const factsHTML = '<ul>' + card.facts.map(f =>
+    `<li>${boldHints(f, card.hints)}</li>`).join('') + '</ul>';
+  const prompts = [
+    'Can you recall 3–5 key points about this topic?',
+    'What are the key dates for this topic?',
+    'Can you name the key figures involved?',
+    'What were the causes and consequences?',
+    'How would you explain this in a paragraph?'
+  ];
+  const alreadyFlagged = flaggedCards.find(c => c.reign === card.reign && c.heading === card.heading);
+  const checklistTag = card.checklist
+    ? `<span class="tag tag-amber" style="margin-bottom:.4rem">📋 ${card.checklist}</span><br>` : '';
+
+  return `<div class="card" data-reign="${card.reign}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
+    <div class="card-stripe" style="background:${
+      card.reign==='edward'?'#6B9DE8':card.reign==='mary'?'#E87A6B':'#6BE8A0'
+    }"></div>
+    <div class="card-inner">
+      <div class="card-meta">
+        ${num ? `<span class="tag tag-grey">${num}</span>` : ''}
+        <span class="tag tag-${card.reign}">${card.unit}</span>
+      </div>
+      ${checklistTag}
+      <div class="card-heading">${card.heading}</div>
+      ${!isFlagged ? `<p class="card-prompt">${prompts[Math.floor(Math.random()*5)]}</p>` : ''}
+      <div class="btn-row">
+        <button class="btn-sm" onclick="tog('${uid}h');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
+        <button class="btn-sm" onclick="tog('${uid}f');this.textContent=this.textContent==='Reveal content'?'Hide content':'Reveal content'">Reveal content</button>
+        ${isFlagged
+          ? `<button class="btn-sm green" onclick="unflagCard(this)">✅ Done</button>`
+          : alreadyFlagged
+            ? `<button class="btn-sm green" onclick="unflagCard(this)">✅ Remove flag</button>`
+            : `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>`
+        }
+        ${!isFlagged ? `<button class="btn-sm green" onclick="markLearnt()">✓ Learnt</button>` : ''}
+      </div>
+      <div class="reveal" id="${uid}h">${hintsHTML}</div>
+      <div class="reveal" id="${uid}f">${factsHTML}</div>
+    </div>
+  </div>`;
+}
+
+// ═══════════════════════════════════════════════════════
+// DATE QUIZ
+// ═══════════════════════════════════════════════════════
+let quizPool = [], quizIdx = 0, quizOK = 0, quizBad = 0;
+
+function startDateQuiz() {
+  // MTC includes both edward and mary dates
+  const pool = currentReign === 'mtc'
+    ? DATES.filter(d => d.reign === 'edward' || d.reign === 'mary')
+    : DATES.filter(d => d.reign === currentReign);
+  if (!pool.length) { document.getElementById('d-out').innerHTML = '<div class="empty">No dates available.</div>'; return; }
+  quizPool = shuffle(pool);
+  quizIdx = 0; quizOK = 0; quizBad = 0;
+  document.getElementById('d-start-btn').style.display = 'none';
+  renderDateQ();
+}
+
+function renderDateQ() {
+  const info = REIGNS[currentReign];
+  const pct  = Math.round((quizIdx / quizPool.length) * 100);
+  if (quizIdx >= quizPool.length) {
+    const score = Math.round((quizOK / quizPool.length) * 100);
+    const grade = score >= 80 ? 'grade-a' : score >= 50 ? 'grade-b' : 'grade-c';
+    const label = score >= 80 ? 'Strong — well done!' : score >= 50 ? 'Getting there' : 'Keep revising';
+    document.getElementById('d-out').innerHTML = `<div class="quiz-end">
+      <div class="end-score">${quizOK}/${quizPool.length}</div>
+      <div class="end-sub">${score}% correct</div>
+      <div class="end-grade ${grade}">${label}</div>
+      <button class="btn-go ${info.go}" onclick="startDateQuiz()">Try again</button>
+      <button class="btn-go" style="background:#eeede5;color:#1c1a16"
+        onclick="document.getElementById('d-start-btn').style.display='block';document.getElementById('d-out').innerHTML=''">← Back</button>
+    </div>`;
+    return;
+  }
+  const q       = quizPool[quizIdx];
+  const distract = shuffle(DATES.filter(d => d.date !== q.date)).slice(0, 3);
+  const opts     = shuffle([q, ...distract]);
+  const uid      = 'dq' + quizIdx;
+  document.getElementById('d-out').innerHTML = `
+    <div class="quiz-prog"><div class="quiz-fill ${info.fill}" style="width:${pct}%"></div></div>
+    <div class="quiz-hdr">
+      <span class="quiz-hdr-l">Question ${quizIdx + 1} of ${quizPool.length}</span>
+      <div class="sc-row"><span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-date">${q.date}</div>
+      <div class="quiz-prompt">What happened on this date?</div>
+      <div class="opts">${opts.map((o, i) =>
+        `<button class="opt" id="${uid}_${i}"
+          onclick="checkDate(this,'${uid}','${o===q?'c':'w'}','${uid}_${opts.findIndex(x=>x===q)}')"
+         >${o.event}</button>`
+      ).join('')}</div>
+      <div class="quiz-fb" id="${uid}_fb"></div>
+    </div>`;
+}
+
+function checkDate(btn, uid, res, cid) {
+  document.querySelectorAll(`[id^="${uid}_"]`).forEach(b => { if (b.tagName === 'BUTTON') b.disabled = true; });
+  const cb = document.getElementById(cid);
+  if (cb) cb.classList.add('show-c');
+  if (res === 'c') { btn.classList.add('correct'); quizOK++; }
+  else { btn.classList.add('wrong'); if (cb) cb.classList.add('correct'); quizBad++; }
+  const fb = document.getElementById(uid + '_fb');
+  if (fb) { fb.style.display = 'block'; fb.className = 'quiz-fb ' + (res==='c'?'fb-c':'fb-w'); fb.textContent = res==='c' ? '✓ Correct!' : '✗ Incorrect'; }
+  setTimeout(() => { quizIdx++; renderDateQ(); }, 1500);
+}
+
+// ═══════════════════════════════════════════════════════
+// RAPID FIRE
+// ═══════════════════════════════════════════════════════
+let rqReigns = new Set(['edward','mary','elizabeth']);
+let rqCount  = 10;
+
+function setCount(n) {
+  rqCount = n;
+  [5, 10, 15].forEach(c => {
+    document.getElementById('cnt-' + c).classList.toggle('sel', c === n);
+  });
+}
+
+function toggleReign(r) {
+  if (rqReigns.has(r)) { if (rqReigns.size > 1) rqReigns.delete(r); }
+  else rqReigns.add(r);
+  document.getElementById('rqp-' + r).className = 'pill ' + (rqReigns.has(r) ? 'on-' + r : '');
+}
+
+function generateRQ() {
+  const pool = shuffle(RQ.filter(q => rqReigns.has(q.reign))).slice(0, rqCount);
+  document.getElementById('rq-setup').style.display = 'none';
+  document.getElementById('rq-out').style.display   = 'block';
+  document.getElementById('rq-grid').innerHTML = pool.map((q, i) =>
+    `<div class="rq-card" id="rqc${i}" onclick="revealRQ(${i})">
+      <div class="rq-q"><span class="rq-dot dot-${q.reign}"></span>${q.q}</div>
+      <div class="rq-a">${q.a}</div>
+      <div class="rq-tap">Tap to reveal</div>
+    </div>`
+  ).join('');
+}
+
+function revealRQ(i) { document.getElementById('rqc' + i).classList.add('revealed'); }
+function revealAll()  { document.querySelectorAll('.rq-card').forEach(c => c.classList.add('revealed')); }
+
+// ═══════════════════════════════════════════════════════
+// SOURCE SETS
+// ═══════════════════════════════════════════════════════
+let sourcePool = [], sourceIdx = 0;
+
+function buildSourcePool() {
+  // Source sets tagged as 'edward' or 'mary' — both shown under MTC
+  sourcePool = currentReign === 'mtc'
+    ? SOURCE_SETS.filter(s => s.reign === 'edward' || s.reign === 'mary')
+    : SOURCE_SETS.filter(s => s.reign === currentReign);
+  sourceIdx = 0;
+}
+
+function drawSource() {
+  if (!sourcePool.length) buildSourcePool();
+  if (!sourcePool.length) { document.getElementById('source-out').innerHTML = '<div class="empty">No source sets for this reign.</div>'; return; }
+  sourceIdx = Math.floor(Math.random() * sourcePool.length);
+  renderSourceSet(sourcePool[sourceIdx]);
+}
+
+function stepSource(dir) {
+  if (!sourcePool.length) buildSourcePool();
+  sourceIdx = (sourceIdx + dir + sourcePool.length) % sourcePool.length;
+  renderSourceSet(sourcePool[sourceIdx]);
+}
+
+function renderSourceSet(ss) {
+  const uid = 'ss_' + Math.random().toString(36).slice(2, 6);
+  const sourcesHTML = ss.sources.map((s, i) => {
+    const sid = `${uid}_s${i}`;
+    const approachHTML = s.approach ? `
+      <div class="approach-box" id="${sid}_ap">
+        <div class="approach-title">Provenance considerations</div>
+        <ul class="approach-list">${s.approach.map(a => `<li>${a}</li>`).join('')}</ul>
+      </div>
+      <button class="btn-sm muted" style="margin-top:.5rem;font-size:.74rem"
+        onclick="tog('${sid}_ap');this.textContent=this.textContent.includes('Show')?'Hide provenance notes':'Show provenance notes'">
+        Show provenance notes
+      </button>` : '';
+    return `<div class="source-item">
+      <div class="source-item-hdr">Source ${String.fromCharCode(65 + i)}</div>
+      <div class="source-item-prov">${s.prov}</div>
+      <div class="source-item-text">${s.text}</div>
+      ${approachHTML}
+    </div>`;
+  }).join('');
+
+  document.getElementById('source-out').innerHTML = `
+    <div class="source-set-card">
+      <div class="source-set-header">
+        <div class="source-set-q">${ss.question}</div>
+        <div class="source-set-meta">30 marks · Edward &amp; Mary Source Analysis</div>
+      </div>
+      <div class="source-body">
+        ${sourcesHTML}
+        <div class="approach-box open">
+          <div class="approach-title">Structure reminder</div>
+          <ul class="approach-list">
+            <li>Introduction: which sources agree / disagree on the surface? State your thesis.</li>
+            <li>For each source: Agree or disagree? → 2 source details → Contextual knowledge → Provenance (Nature, Origin, Purpose) → Mini-conclusion on value.</li>
+            <li>Conclusion: as a set of 4, do they support the view?</li>
+            <li>You cannot reach L4+ using only provenance <strong>or</strong> only knowledge — you must use both.</li>
+          </ul>
         </div>
-        <div class="reveal" id="${uid}h">${hintsHtml}</div>
-        <div class="reveal" id="${uid}f">${factsHtml}</div>
       </div>
     </div>`;
 }
 
-let quizPool=[],quizIdx=0,quizOK=0,quizBad=0;
-function startDateQuiz(){const pool=DATES.filter(d=>d.reign===currentReign);if(!pool.length){document.getElementById('d-out').innerHTML='<div class="empty">No dates available.</div>';return;}quizPool=shuffle(pool);quizIdx=0;quizOK=0;quizBad=0;document.getElementById('d-go').style.display='none';renderDateQ();}
-function renderDateQ(){
-  const info=R[currentReign],pct=Math.round((quizIdx/quizPool.length)*100);
-  if(quizIdx>=quizPool.length){const score=Math.round((quizOK/quizPool.length)*100),grade=score>=80?'grade-a':score>=50?'grade-b':'grade-c',gLabel=score>=80?'Strong — well done!':score>=50?'Getting there':'Keep revising';
-    document.getElementById('d-out').innerHTML=`<div class="quiz-end"><div class="end-score">${quizOK}/${quizPool.length}</div><div class="end-sub">${score}% correct</div><div class="end-grade ${grade}">${gLabel}</div><button class="btn-go ${info.go}" onclick="startDateQuiz()">Try again</button><button class="btn-go" style="background:#eeede5;color:#1c1a16" onclick="document.getElementById('d-go').style.display='block';document.getElementById('d-out').innerHTML=''">← Back</button></div>`;return;}
-  const q=quizPool[quizIdx],distract=shuffle(DATES.filter(d=>d.date!==q.date)).slice(0,3),opts=shuffle([q,...distract]),uid='dq'+quizIdx;
-  document.getElementById('d-out').innerHTML=`<div class="quiz-prog"><div class="quiz-fill ${info.fill}" style="width:${pct}%"></div></div><div class="quiz-hdr"><span class="quiz-hdr-l">Question ${quizIdx+1} of ${quizPool.length}</span><div class="sc-row"><span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div></div><div class="quiz-card"><div class="quiz-date">${q.date}</div><div class="quiz-prompt">What happened on this date?</div><div class="opts">${opts.map((o,i)=>`<button class="opt" id="${uid}_${i}" onclick="checkDateAns(this,'${uid}','${o===q?'c':'w'}','${uid}_${opts.findIndex(x=>x===q)}')">${o.event}</button>`).join('')}</div><div class="quiz-fb" id="${uid}_fb"></div></div>`;
-}
-function checkDateAns(btn,uid,res,cid){document.querySelectorAll(`[id^="${uid}_"]`).forEach(b=>{if(b.tagName==='BUTTON')b.disabled=true;});const cb=document.getElementById(cid);if(cb)cb.classList.add('show-c');if(res==='c'){btn.classList.add('correct');quizOK++;}else{btn.classList.add('wrong');if(cb)cb.classList.add('correct');quizBad++;}const fb=document.getElementById(uid+'_fb');if(fb){fb.style.display='block';fb.className='quiz-fb '+(res==='c'?'fb-c':'fb-w');fb.textContent=res==='c'?'✓ Correct!':'✗ Incorrect';}setTimeout(()=>{quizIdx++;renderDateQ();},1500);}
-
-let rqReigns=new Set(['edward','mary','elizabeth']),rqTopics=new Set();
-const ALL_TOPICS=['Stability','Religion','Rebellion / Unrest','Government','Finance & Economy','Later Years'];
-function buildTopicPills(){ALL_TOPICS.forEach(t=>rqTopics.add(t));document.getElementById('rq-topic-pills').innerHTML=ALL_TOPICS.map(t=>`<button class="rq-pill on" id="rqt-${t.replace(/\W/g,'')}" onclick="toggleRQTopic('${t}')">${t}</button>`).join('');}
-function toggleRQPill(r){if(rqReigns.has(r)){if(rqReigns.size>1)rqReigns.delete(r);}else rqReigns.add(r);document.getElementById('rqp-'+r).className='rq-pill'+(rqReigns.has(r)?' on-'+r:'');}
-function toggleRQTopic(t){if(rqTopics.has(t)){if(rqTopics.size>1)rqTopics.delete(t);}else rqTopics.add(t);document.getElementById('rqt-'+t.replace(/\W/g,'')).className='rq-pill'+(rqTopics.has(t)?' on':'');}
-function generateRQ(){let pool=RQ.filter(q=>rqReigns.has(q.reign)&&[...rqTopics].some(t=>q.topic.includes(t.split('/')[0].trim())));if(!pool.length)pool=RQ.filter(q=>rqReigns.has(q.reign));pool=shuffle(pool).slice(0,10);document.getElementById('rq-setup').style.display='none';document.getElementById('rq-out').style.display='block';document.getElementById('rq-grid').innerHTML=pool.map((q,i)=>`<div class="rq-card" id="rqc${i}" onclick="revealRQ(${i})"><div class="rq-q"><span class="rq-dot dot-${q.reign}"></span>${q.q}</div><div class="rq-a">${q.a}</div><div class="rq-tap">Tap to reveal</div></div>`).join('');}
-function revealRQ(i){document.getElementById('rqc'+i).classList.add('revealed');}
-function revealAll(){document.querySelectorAll('.rq-card').forEach(c=>c.classList.add('revealed'));}
-
-let sourcePool=[],sourceIdx=0;
-function buildSourcePool(){sourcePool=SOURCE_SETS.filter(s=>s.reign===currentReign);sourceIdx=0;}
-function drawSourceSet(){if(!sourcePool.length)buildSourcePool();if(!sourcePool.length){document.getElementById('source-out').innerHTML='<div class="empty">No source sets for this reign.</div>';return;}sourceIdx=Math.floor(Math.random()*sourcePool.length);renderSourceSet(sourcePool[sourceIdx]);}
-function stepSourceSet(dir){if(!sourcePool.length)buildSourcePool();sourceIdx=(sourceIdx+dir+sourcePool.length)%sourcePool.length;renderSourceSet(sourcePool[sourceIdx]);}
-function renderSourceSet(ss){
-  const uid='ss_'+Math.random().toString(36).slice(2,6);
-  const sourcesHtml=ss.sources.map((s,i)=>{
-    const sid=`${uid}_s${i}`;
-    const approachHtml=s.approach?`<div class="approach-box" id="${sid}_ap"><div class="approach-title">Provenance considerations</div><ul class="approach-list">${s.approach.map(a=>`<li>${a}</li>`).join('')}</ul></div><button class="btn-sm" style="margin-top:.5rem;font-size:.74rem" onclick="tog('${sid}_ap');this.textContent=this.textContent.includes('Show')?'Hide provenance notes':'Show provenance notes'">Show provenance notes</button>`:'';
-    return`<div class="source-item"><div class="source-item-hdr">Source ${String.fromCharCode(65+i)}</div><div class="source-item-prov">${s.prov}</div><div class="source-item-text">${s.text}</div>${approachHtml}</div>`;
-  }).join('');
-  document.getElementById('source-out').innerHTML=`<div class="source-set-card"><div class="source-set-header"><div class="source-set-q">${ss.question}</div><div class="source-set-meta">30 marks · Edward &amp; Mary Source Analysis</div></div><div class="source-body">${sourcesHtml}<div class="approach-box open" style="margin-top:.75rem"><div class="approach-title">Structure reminder</div><ul class="approach-list"><li>Introduction: which sources agree/disagree on the surface? State your thesis.</li><li>For each source: Agree or disagree? → 2 source details → Contextual knowledge → Provenance (Nature, Origin, Purpose) → Mini-conclusion on value.</li><li>Conclusion: as a set of 4, do they support the view?</li><li>You cannot reach L4+ using only provenance <strong>or</strong> only knowledge — you must use both.</li></ul></div></div></div>`;
-}
-function drawEssayQ(){
-  const q=rand(ESSAY_QS),uid='eq_'+Math.random().toString(36).slice(2,6);
-  document.getElementById('essay-out').innerHTML=`<div class="essay-card"><div class="essay-q">${q.q}</div><div class="essay-meta">${q.year} · ${q.topic}</div><div class="btn-row"><button class="btn-sm" onclick="tog('${uid}_str');this.textContent=this.textContent.includes('Show')?'Hide essay structure':'Show essay structure'">Show essay structure</button></div><div class="essay-structure" id="${uid}_str"><div class="essay-structure-title">Structure: Factor – Yes – But – So (×3)</div><table><tr><td>Intro</td><td>Deconstruct question. Set criteria for analysis. State thesis.</td></tr><tr><td>Factor 1</td><td><strong>Yes</strong> — specific knowledge supporting this factor. <strong>But</strong> — limitations with specific knowledge. <strong>So</strong> — mini-judgement with relative significance.</td></tr><tr><td>Factor 2</td><td>Repeat Factor–Yes–But–So.</td></tr><tr><td>Factor 3</td><td>Repeat Factor–Yes–But–So.</td></tr><tr><td>Conclusion</td><td>Sum up argument. Should not surprise the reader. Link back to thesis.</td></tr></table></div></div>`;
+// ═══════════════════════════════════════════════════════
+// ESSAY QUESTIONS
+// ═══════════════════════════════════════════════════════
+function drawEssay() {
+  const q   = rand(ESSAY_QS);
+  const uid = 'eq_' + Math.random().toString(36).slice(2, 6);
+  document.getElementById('essay-out').innerHTML = `
+    <div class="essay-card">
+      <div class="essay-q">${q.q}</div>
+      <div class="essay-meta">${q.year} · ${q.topic}</div>
+      <div class="btn-row">
+        <button class="btn-sm" onclick="tog('${uid}_str');this.textContent=this.textContent.includes('Show')?'Hide essay structure':'Show essay structure'">
+          Show essay structure
+        </button>
+      </div>
+      <div class="essay-struct" id="${uid}_str">
+        <div class="essay-struct-title">Structure: Factor – Yes – But – So (×3)</div>
+        <table>
+          <tr><td>Intro</td><td>Deconstruct question. Set criteria for analysis. State thesis.</td></tr>
+          <tr><td>Factor 1</td><td><strong>Yes</strong> — specific knowledge showing this factor answers the question. <strong>But</strong> — limitations with specific knowledge. <strong>So</strong> — mini-judgement with relative significance.</td></tr>
+          <tr><td>Factor 2</td><td>Repeat Factor–Yes–But–So.</td></tr>
+          <tr><td>Factor 3</td><td>Repeat Factor–Yes–But–So.</td></tr>
+          <tr><td>Conclusion</td><td>Sum up argument. Should not surprise the reader. Link back to thesis.</td></tr>
+        </table>
+      </div>
+    </div>`;
 }
 
-// ═══ KNOWLEDGE CARDS — all bullet points from Y12 Revision Guide ═══
-const KC=[
-{reign:'edward',unit:'Unit 1 – Stability of the Monarchy',heading:'1.1 – Issues of Edward VI\'s age',
-checklist:'Issues of Edward\'s age and Mary\'s gender',
-hints:['minority','regency council','reformists','conservatives','dry stamp'],
-facts:['Henry VIII issued his Third Act of Succession in 1543, confirming that if Edward died without heirs the throne would pass to Mary and then Elizabeth.','The religious and factional struggles of the latter years of Henry\'s reign left a divided council between the reformists and the conservatives.','When Edward became King in January 1547 there were serious concerns about his age — he was only nine. It was feared that a regent might seize power, that Edward could not control faction, and that the image of monarchy as a strong, divine power would be challenged by a child.','Henry, fearing the negative influence of a single regent, instructed in his will that a Regency Council of 16 members should be formed, balanced between reformists such as Seymour and conservatives led by Gardiner and Norfolk.','In the last year of Henry\'s life, Gardiner and Norfolk\'s fall from grace in 1546 meant the Council was no longer balanced — it was weighted in favour of the reformists.','Following Henry\'s death, Seymour and Paget conspired using the dry stamp and the "unfulfilled gifts" clause of Henry\'s will. Seymour was made Duke of Somerset, Lord Protector and predominant figure on the Regency Council.']},
+// ═══════════════════════════════════════════════════════
+// DATA — populated in next steps
+// ═══════════════════════════════════════════════════════
+const KC = [
 
-{reign:'edward',unit:'Unit 1 – Stability of the Monarchy',heading:'1.2 – Edwardian faction and Somerset\'s fall',
-checklist:'Faction under Somerset and Northumberland',
-hints:['Anti-Somerset faction','general summons','Windsor Castle','Warwick','Lord President'],
-facts:['Factions on the Council were initially defined by religion: reformists and conservatives. Key reformers included Somerset and John Dudley (Warwick); key conservatives included Thomas Wriothesley.','Somerset\'s arrogant and dominating leadership created a new Anti-Somerset faction — a combination of reformers and conservatives including Warwick, Wriothesley and Paget.','They feared Somerset\'s apparent sympathy for the commoners and enclosure — they believed this had encouraged the unrest of 1549.','Feeling threatened, Somerset issued a general summons on 5th October 1549 for all loyal subjects to defend the King and himself against the Council. This was seen as inciting revolt.','On the 6th Somerset retreated to Windsor Castle but was forced to surrender when Edward turned against him. Somerset was arrested.','Warwick (now Duke of Northumberland) became Lord President of the Council in 1550. He released Somerset but had him executed for treason in 1552 — the evidence suggests the charges were fabricated to remove him as a rival.']},
+// ═══════════════════════════════════════════════════════
+// UNIT 1 – STABILITY OF THE MONARCHY
+// ═══════════════════════════════════════════════════════
 
-{reign:'edward',unit:'Unit 1 – Stability of the Monarchy',heading:'1.3 – The Devise for the Succession, 1553',
-checklist:'The succession of 1553 (Lady Jane Grey)',
-hints:['Devise for the Succession','Lady Jane Grey','East Anglia','Northumberland'],
-facts:['In early 1553 Edward VI\'s health began to decline. Mary was a committed Catholic — Edward was concerned she would reverse his Protestant changes.','The Devise for the Succession named the future male children of Jane Grey as Edward\'s heir. When Edward\'s illness progressed rapidly, he crossed out "male heirs" and named Jane Grey directly.','Edward died on 6th July 1553. His death was kept quiet for 2 days whilst nobles were pressured to sign the Devise.','Mary acted quickly — she had a significant power base in East Anglia and proclaimed herself Queen. The Council proclaimed Jane on the 10th, after Mary\'s proclamation on the 9th.','Mary raised a large force. Northumberland\'s army deserted him on the way — Councillors who had been forced to support the Devise broke ranks.','Mary triumphed. Northumberland, Lady Jane Grey and Guildford Dudley were later executed.']},
+{
+  reign: 'edward',
+  unit: 'Unit 1 – Stability of the Monarchy',
+  heading: 'Issues of Edward\'s age',
+  checklist: 'Issues of Edward\'s age and Mary\'s gender',
+  hints: ['minority','Regency Council','reformists','conservatives','dry stamp'],
+  facts: [
+    'Henry had issued his Third Act of Succession in 1543. This confirmed that if Edward died without heirs the throne would pass to Mary and then Elizabeth.',
+    'The religious and factional struggles of the latter years of Henry\'s reign had left a divided council between the reformists and the conservatives.',
+    'When Edward became King in January 1547 there were serious concerns about his age. He was only nine when he came to the throne. It was feared that a regent might be appointed, that Edward wouldn\'t be able to control faction within the Council, and that the image of monarchy as a strong, divine power would be challenged by the image of a child.',
+    'Previous minorities had ended badly. In 1483 Richard III had seized power during his nephew\'s minority, and the young princes disappeared in the Tower.',
+    'Henry, fearing the negative influence of a single regent, instructed in his will that a Regency Council of 16 members should be formed, balanced between the reformists such as Seymour and conservatives led by Gardiner and Norfolk.',
+    'However in the last year of Henry\'s life Gardiner and Norfolk\'s fall from grace in 1546 meant the Council was no longer balanced, but weighted in favour of the reformists.',
+    'Following Henry\'s death Seymour and Paget conspired using the dry stamp and the \'unfulfilled gifts\' clause of Henry\'s will to increase their power. Seymour was made Duke of Somerset, Lord Protector and predominant figure on the new Regency Council.',
+  ]
+},
 
-{reign:'edward',unit:'Unit 2 – Religious Change',heading:'2.1 – Edward\'s religious changes',
-checklist:'Edward VI\'s religious policies',
-hints:['Cranmer','Book of Common Prayer','chantries','iconoclasm','42 Articles'],
-facts:['Despite Henry\'s Break from Rome, Henry never truly embraced Protestantism. The 1539 Act of Six Articles confirmed Catholic practices including Transubstantiation.','Stage 1 — Destruction, 1547: Royal injunctions encouraged iconoclasm. Repeal of the Six Articles. Dissolution of the Chantries. Repeal of the Treason Act — no longer treason to preach dissenting views.','Stage 2 — Limbo, 1548–49: Cranmer published the First Book of Common Prayer — a compromise between old and new, deliberately vague on Holy Communion. The Act of Uniformity enforced it nationwide. This Prayer Book prompted the Western Rebellion.','Stage 3 — Formulation, 1550–53: Northumberland\'s rise increased the pace. A new ordinal replaced Catholic bishops. The Second Book of Common Prayer (1552) was explicitly Calvinist — Communion became purely symbolic. The 42 Articles were submitted to Parliament in 1552 but Edward\'s death meant they were never passed.','By 1553, de jure England was a Protestant country.']},
+{
+  reign: 'edward',
+  unit: 'Unit 1 – Stability of the Monarchy',
+  heading: 'The Regency Council',
+  checklist: 'Issues of Edward\'s age and Mary\'s gender',
+  hints: ['Lord Protector','faction','Thomas Seymour','Anti-Somerset faction','conservatives'],
+  facts: [
+    'Faction in government is not inevitably a destabilising force for monarchs. Other Tudor monarchs encouraged faction to ensure their ministers competed for their loyalty.',
+    'However, faction in the reign of a minor was more dangerous as there was no authority to control it. Factional disputes could spill over into rebellion or civil war.',
+    'Factions on the Council were initially defined in terms of religion: reformists and conservatives. Key reformers included Somerset and John Dudley, Earl of Warwick. Key conservatives included Thomas Wriothesley, Earl of Southampton.',
+    'The reformist faction, led by Somerset, dominated the Regency Council by 1547. He gave positions to supporters like his brother Thomas Seymour, who he later executed for treason.',
+    'As Lord Protector he was able to use the position to increase his personal wealth and power, which resulted in criticism from opponents and even former supporters.',
+  ]
+},
 
-{reign:'edward',unit:'Unit 2 – Religious Change',heading:'2.2 – Were Edward\'s changes successful?',
-checklist:'Extent of de facto change under Edward',
-hints:['de jure','de facto','visitations','Hooper','popular opposition'],
-facts:['Just because de jure England was Protestant does not mean de facto this was true nationally.','Edward\'s rule lasted six years — in an age when ideas spread slowly this was a small amount of time to upend 1,000 years of Catholic worship.','Bishop Hooper\'s visitations around Gloucester diocese found that of 311 clergymen, 171 were unable to repeat the Ten Commandments and 40 could not find the Lord\'s Prayer.','The repeated efforts to remove icons and the visitations prove the changes were hard to enforce.','Evidence from people\'s wills shows little support for the changes except in London, south-east and East Anglia — the areas closest to the centre of power.','The rapid restoration of Catholicism under Mary might suggest traditional religion still retained its popularity. There was open rebellion against Protestantism in the West Country.']},
+{
+  reign: 'edward',
+  unit: 'Unit 1 – Stability of the Monarchy',
+  heading: 'Somerset\'s fall',
+  checklist: 'Faction under Somerset and Northumberland',
+  hints: ['Anti-Somerset faction','general summons','Windsor Castle','Paget','1549'],
+  facts: [
+    'Somerset\'s arrogant and dominating leadership created a new faction: the Anti-Somerset faction. This was a combination of reformers and conservatives including Warwick, Wriothesley and Paget, the man who had helped Somerset\'s rise to power.',
+    'They also feared Somerset\'s apparent sympathy for the commoners and the problem of enclosure. They believed this sympathy had encouraged the unrest of the summer of 1549.',
+    'Edward himself disliked Somerset\'s control as he was allowed no influence at all.',
+    'The unrest of 1549 weakened Somerset\'s hold of power as many in the Council blamed his policies. Several, including Paget, wrote to Somerset criticising his leadership.',
+    'Feeling threatened, Somerset took possession of Edward and on the 5th October issued a general summons for all loyal subjects to defend the King and himself against the Council. This was seen as inciting revolt.',
+    'On the 6th Somerset retreated to Windsor Castle but was forced to surrender to the Council when the King turned against him, declaring he was being kept a prisoner by Somerset. Somerset was arrested.',
+  ]
+},
 
-{reign:'edward',unit:'Unit 3 – Rebellion and Unrest',heading:'3.1 – Socioeconomic unrest: the Great Price Rise',
-checklist:'Inflation, poverty, enclosure, and their links to unrest',
-hints:['Malthusian crisis','debasement','enclosure','commonwealth men','Vagrancy Act'],
-facts:['Inflation accelerated in the 1540s — food prices had doubled since the start of the century.','Population rise (Malthusian Crisis): from 1525–1551 the population rose from 2.3 to 3 million. Agricultural productivity could not keep pace — food prices rose and a Malthusian crisis developed.','Debasement: Henry VIII began reducing the precious metal in coinage to fund wars. This reduced confidence and prices rose to compensate. Somerset continued debasement to fund the Scottish war.','Enclosure: gentry transformed land from agriculture to livestock farming for the wool market. This produced less food, increased unemployment, and controversially enclosed common land.','Commonwealth Men — writers like Robert Crowley and Thomas Lever — blamed the Great Price Rise on enclosure and greedy gentlemen, adding to complaints of rack renting and regrating.','The Vagrancy Act of 1547 condemned vagrants to two years slavery for the first offence, lifetime slavery for a second. Somerset commissioned John Hales to investigate enclosures in 1548.']},
+{
+  reign: 'edward',
+  unit: 'Unit 1 – Stability of the Monarchy',
+  heading: 'The rise of Northumberland',
+  checklist: 'Faction under Somerset and Northumberland',
+  hints: ['Duke of Northumberland','Lord President','conservatives','Somerset\'s execution','1552'],
+  facts: [
+    'Following Somerset\'s fall there was a power vacuum. Warwick\'s role in the defeat of Kett\'s rebellion made him a likely candidate to lead the Council, however he was opposed by the conservatives including the Earls of Arundel and Southampton.',
+    'To secure power, Warwick, now the Duke of Northumberland, allied himself with the reformist faction and committed himself to further religious reform. He became Lord President of the Council in 1550.',
+    'He also released Somerset and restored him to the Council in the hope he would use his influence to support his new power. However, this proved unsuccessful and Somerset was executed for treason in 1552.',
+    'The evidence suggests the accusations of treason against Somerset were fabricated to remove him as a potential rival for Northumberland.',
+  ]
+},
 
-{reign:'edward',unit:'Unit 3 – Rebellion and Unrest',heading:'3.2 – 1549 and Kett\'s Rebellion',
-checklist:'Causes, events, and significance of Kett\'s Rebellion',
-hints:['Mousehold Heath','Flowerdew','Warwick','Dussindale','16,000'],
-facts:['1549 was a year of serious unrest across the country — described as the "year of the many-headed monster". Risings occurred in over half the counties of England.','The lack of a strong royal presence in the minority meant central government appeared weak and more susceptible to rebellion.','Causes of Kett\'s Rebellion: the unrest began when a mob attacked the enclosures of John Flowerdew. Flowerdew redirected the protest to Robert Kett. Rebels\' demands concerned enclosure and high rents. In Norwich, 6% owned 60% of the land.','Events: 16,000 rebels met in July 1549; they marched on Norwich and camped at Mousehold Heath; they then stormed Norwich. Kett ran a well-ordered camp — justice was administered to show they could maintain order.','Government sent 14,000 troops. Warwick came and massacred the rebels at Dussindale — 3,000 were killed; 49 leaders were executed for treason.','Reasons for failure: Warwick had 12,000 well-trained troops from the Scottish war; Kett abandoned his well-defended camp at Mousehold Heath to meet Warwick at Dussindale.']},
+{
+  reign: 'edward',
+  unit: 'Unit 1 – Stability of the Monarchy',
+  heading: 'The Devise for the Succession',
+  checklist: 'The succession of 1553 (Lady Jane Grey)',
+  hints: ['Devise for the Succession','Jane Grey','East Anglia','Guildford Dudley','Nine Days\' Queen'],
+  facts: [
+    'In early 1553 Edward VI\'s health began to decline causing anxiety about the succession. Edward himself was concerned for the survival of the radical Protestant changes he so valued.',
+    'Mary was a committed Catholic and had maintained her faith throughout Edward\'s reign. Even Edward\'s personal appeals could not move her.',
+    'Northumberland was concerned for his own power. He knew that his role in government would lead to his fall from power when Mary came to the throne.',
+    'The Devise for the Succession was written naming the future male children of Jane Grey as Edward\'s heir. To preserve his power, Northumberland married his son Guildford Dudley to Jane Grey, hoping to control the heir. However, Edward\'s illness progressed rapidly before Jane Grey had children. In his own hand Edward crossed out \'male heirs\' and named Jane Grey as his heir before his death.',
+    'Edward died on 6th July 1553. His death was kept quiet for 2 days whilst prominent nobles were pressured to sign the Devise.',
+    'Mary acted quickly. She had a significant power base in East Anglia and quickly dispatched riders to proclaim herself Queen. The Council proclaimed Jane on the 10th, after Mary\'s proclamation on the 9th.',
+    'Mary raised a large force of supporters. Northumberland left London to face Mary but on the way many of his army deserted him and the Councillors who had been forced to support the Devise broke ranks. Northumberland retreated to Cambridge and accepted Mary was queen on the 19th.',
+    'Mary triumphantly entered London to rousing support. She released Gardiner and Norfolk from jail and showed leniency towards many who opposed her. However, Northumberland, Lady Jane Grey and Guildford Dudley were all later executed.',
+  ]
+},
 
-{reign:'edward',unit:'Unit 3 – Rebellion and Unrest',heading:'3.3 – 1549 and the Western Rebellion',
-checklist:'Causes, events, and significance of the Western Rebellion',
-hints:['Prayer Book Rebellion','William Body','Lord John Russell','Sampford Courtenay','3,000'],
-facts:['Causes: a prelude was the murder of William Body in 1548 — he had been tasked to supervise iconoclasm in Cornwall which was extremely unpopular.','There was large opposition to the First Book of Common Prayer in 1549. Many wanted the return of old Latin services — partly because Cornishmen were more familiar with Latin than English.','The demands were almost entirely concerned with halting religious change. However evidence suggests early demands excluded by the clergy included demands about high taxes and rents. At Bodmin rebels chanted "Kill all the gentlemen!".','Events: rebels gathered at Sampford Courtenay; gentry were attacked at St Michael\'s Mount, Bodmin and Trematon Castle; rebels marched on Exeter and besieged the city. A government force of 8,000 led by Lord John Russell defeated the rebels. Over 3,000 were executed.','Failure: unlike Kett\'s Rebellion, the Western Rebellion had no clear leadership and different sections attacked different targets.','How threatening? 1549 saw the most widespread unrest of the Tudor period — over 25 counties saw significant unrest. However at no point did the rebels attempt to march on London, and their demands were written politely to Somerset.']},
+{
+  reign: 'mary',
+  unit: 'Unit 1 – Stability of the Monarchy',
+  heading: 'Issues of Mary\'s gender',
+  checklist: 'Issues of Edward\'s age and Mary\'s gender',
+  hints: ['female rule','John Knox','Matilda','xenophobia','suitor'],
+  facts: [
+    'Mary was the first Queen to rule England in her own right.',
+    'In the 12th century, Matilda, daughter of Henry I, was named as heir to the throne. Following Henry\'s death there was a civil war as many nobles refused to accept Matilda.',
+    'Henry VIII\'s determination to gain a male heir shows the anxieties of leaving the realm to a female ruler.',
+    'Many believed female rulers would not be able to control powerful men in their government, lead soldiers into battle or display the power and strength that a monarch needed to epitomise.',
+    'Radical Protestants viewed female rulers as unnatural. John Knox wrote The First Blast of the Trumpet Against the Monstrous Regiment of Women in 1558, comparing female rulers to the \'blind leading those who can see\'.',
+    'However, the willingness of Edward and Northumberland to make Jane Grey queen suggests issues of gender were seen as less important compared to religion.',
+  ]
+},
 
-// MARY I
-{reign:'mary',unit:'Unit 1 – Stability of the Monarchy',heading:'1.3 – The Devise for the Succession, 1553',
-checklist:'The succession of 1553 (Lady Jane Grey)',
-hints:['Devise for the Succession','Lady Jane Grey','East Anglia','Northumberland'],
-facts:['In early 1553 Edward VI\'s health began to decline. Mary was a committed Catholic — Edward was concerned she would reverse his Protestant changes.','The Devise for the Succession was written naming the future male children of Jane Grey as Edward\'s heir. When Edward\'s illness progressed, he crossed out "male heirs" and named Jane Grey directly.','Edward died on 6th July 1553. His death was kept quiet for 2 days whilst nobles were pressured to sign the Devise.','Mary acted quickly — she had a significant power base in East Anglia and proclaimed herself Queen. The Council proclaimed Jane on the 10th, after Mary\'s proclamation on the 9th.','Mary raised a large force. Northumberland\'s army deserted him on the way. Mary triumphed. Northumberland, Lady Jane Grey and Guildford Dudley were later executed.']},
+{
+  reign: 'mary',
+  unit: 'Unit 1 – Stability of the Monarchy',
+  heading: 'Mary\'s marriage',
+  checklist: 'Marriage of Mary and Philip',
+  hints: ['Philip of Spain','Edward Courtenay','marriage treaty','xenophobia','phantom pregnancy'],
+  facts: [
+    'Mary needed to marry to create an heir to ensure the longevity of her Catholic restoration. However, issues were raised about the suitor.',
+    'If Mary married an English noble this would lead to division and faction within court and Council. If Mary married a foreign prince this could lead to an unpopular influx of foreigners and England\'s entanglement in foreign wars.',
+    'Two major candidates emerged: Edward Courtenay, Earl of Devon, championed by Stephen Gardiner; and Philip of Spain, championed by Paget and Mary\'s personal choice. Philip would bring powerful diplomatic alliances as his father Charles V was Holy Roman Emperor and King of Spain. However, it risked a xenophobic popular reaction.',
+    'Fearing a negative reaction, a treaty was agreed by the Spanish representatives and Parliament to avoid instability. It was agreed that: Philip would be named King but have no power in his own right; no Spaniards would be granted offices or lands in England; after Mary\'s death Philip would have no claim to the throne; England would not be entangled in Spain\'s wars.',
+    'Despite reassurances, Wyatt\'s rebellion broke out in January 1554, ostensibly in reaction to the marriage to Philip.',
+    'Ultimately, the marriage ended unhappily. After Mary\'s phantom pregnancy, Philip rarely spent any time in England. When Mary died Philip commented he felt \'a reasonable regret\'.',
+  ]
+},
 
-{reign:'mary',unit:'Unit 1 – Stability of the Monarchy',heading:'1.4/1.5 – Mary\'s gender and Marian faction',
-checklist:'Issues of Edward\'s age and Mary\'s gender; Faction under Mary',
-hints:['John Knox','Philip of Spain','Gardiner','Paget','Cardinal Pole','inner council'],
-facts:['Mary was the first Queen to rule England in her own right. Many believed female rulers could not control powerful men, lead soldiers or display the power a monarch needed.','John Knox wrote The First Blast of the Trumpet Against the Monstrous Regiment of Women (1558) comparing female rulers to "blind leading those who can see".','Two major suitors: Edward Courtenay (championed by Gardiner) and Philip of Spain (championed by Paget and Mary\'s personal choice). A marriage treaty carefully protected English interests — Philip had no independent power; England would not be entangled in Spain\'s wars; Philip had no claim after Mary\'s death.','Mary\'s Council was dominated by three figures: Stephen Gardiner (long-standing committed Catholic, cautious), William Paget (exceptional administrator), and Cardinal Pole (zealous, returned from exile 1554).','Casual councillors were excluded from key committees in 1554; an inner council was established in 1555. Philip\'s departure in 1555 and Gardiner\'s death allowed Paget to dominate.','Gardiner and Pole disputed the pace of restoration: Gardiner stressed caution, Pole favoured dramatic change backed by persecution. For the majority of Mary\'s reign the Council worked effectively.']},
+{
+  reign: 'mary',
+  unit: 'Unit 1 – Stability of the Monarchy',
+  heading: 'Marian faction',
+  checklist: 'Faction under Mary',
+  hints: ['Gardiner','Paget','Cardinal Pole','inner council','casual councillors'],
+  facts: [
+    'One of the key criticisms of female rulers was that they would not be able to control the male ministers in their government, leading to damaging factional struggles and the collapse of government.',
+    'Mary was keen to ensure an efficient and streamlined administration and so made adjustments to the Council. \'Casual councillors\' were excluded from key committees in 1554. In 1555 Mary established an \'inner council\' so only her most valued advisors were present.',
+    'Mary\'s Council was dominated by three key figures: Stephen Gardiner, Bishop of Winchester, a long standing committed Catholic and cautious realist; William Paget, an eminent political survivor and exceptional administrator who was not committed to religious change; Cardinal Reginald Pole, a fiercely zealous Catholic who had gone into exile during the reign of Henry VIII.',
+    'One key division in the Council was over Mary\'s potential suitors. Gardiner championed the Earl of Devon; Paget championed Philip, knowing he was Mary\'s preferred choice.',
+    'Pole\'s return in 1554 brought dispute between Gardiner and Pole over the pace and methods of the restoration of Catholicism. Gardiner stressed caution and persuasion whereas Pole favoured dramatic change backed up by persecution.',
+    'However these struggles were minor and short lived. Gardiner\'s death in 1555 ensured Pole\'s methods won out. For the majority of Mary\'s reign the Council worked effectively and carried out her wishes.',
+  ]
+},
 
-{reign:'mary',unit:'Unit 2 – Religious Change',heading:'2.3 – Mary\'s religious changes',
-checklist:'Mary I\'s religious policies',
-hints:['1st Act of Repeal','heresy laws','ex-monastic land','Cardinal Pole','12 Decrees'],
-facts:['Mary\'s religious aims: undo religious changes since 1529; restore Papal authority; secure Catholicism long-term by marrying and having children; ensure Catholic religion is abided by across the country.','Parliament in October 1553 refused to repeal the Act of Supremacy, suggesting anti-papal feeling. However it passed the 1st Act of Repeal which restored the religious situation of 1547.','Mary used the royal prerogative to get rid of the Second Act of Uniformity and restore the Catholic Mass. Royal Injunctions of 1554 restored traditional Catholic practices: Holy Days, processions and ceremonies.','In April 1554, MPs refused to restore the heresy laws until Mary gave assurances ex-monastic land would not be restored. In November she accepted — the heresy laws were then revived.','Over the next 3 years, 284 Protestants were burnt at the stake, including Archbishop Cranmer and Bishops Hooper, Ridley and Latimer.','The Second Act of Repeal (November 1554) repealed all religious legislation approved since 1529, protecting property rights of those who had bought church land since 1536.','1556 — the 12 Decrees intended to improve clerical discipline, banning absenteeism, pluralism and simony.']},
+{
+  reign: 'mary',
+  unit: 'Unit 1 – Stability of the Monarchy',
+  heading: 'Succession in 1558',
+  checklist: 'Succession in 1558',
+  hints: ['Elizabeth','Calais','Philip','Mary Queen of Scots','Henry II of France'],
+  facts: [
+    'Mary died on 17th November 1558. Cardinal Pole died on the same day, leaving the Church of England without an Archbishop of Canterbury.',
+    'Mary had failed to produce an heir. Her phantom pregnancy in 1555 had raised hopes that were quickly dashed, and Philip had largely abandoned England after 1555.',
+    'England had also suffered the humiliation of losing Calais in 1558, the last English territory in France, as a consequence of Mary\'s decision to join Spain\'s war against France.',
+    'The succession passed peacefully to Elizabeth. Philip of Spain, despite having the power to press a claim, chose not to. He recognised Elizabeth as Queen, preferring a Protestant England to a France-aligned Catholic one.',
+    'However many Catholics viewed Elizabeth as illegitimate, due to the Pope\'s refusal to grant Henry VIII\'s divorce from Catherine of Aragon. Instead they believed Mary, Queen of Scots was the true Queen of England. Mary was a Catholic monarch, married to the French Dauphin Francis. King Henry II of France presented Mary as the true queen of England, a figure unifying Scotland, France and England against Elizabeth.',
+    'Elizabeth therefore inherited not just a country divided by religion, weakened by war and debt, but an immediate Catholic challenge to the legitimacy of her rule.',
+  ]
+},
 
-{reign:'mary',unit:'Unit 2 – Religious Change',heading:'2.4 – Were Mary\'s changes successful?',
-checklist:'Extent of de facto change under Mary; Attitudes to Marian policies including persecution',
-hints:['Marian exiles','284','Foxe','Gardiner','de facto'],
-facts:['Mary was initially welcomed with great enthusiasm — bells were rung, parliament opened with a sung mass, Oxford chalices reappeared and altars and crosses were set up in churches.','During the early months of 1554 c.800 Protestants began to leave England for Germany and Switzerland (Marian exiles). They helped develop an underground Protestant propaganda movement, keeping Cranmer\'s Prayer Book and Foxe\'s Book of Martyrs in circulation.','284 people were burnt at the stake (51 were women). They mostly took place in the south-east, London, Canterbury and Colchester — Protestant strongholds.','Gardiner opposed the burnings, believing them to be counter-productive. His death in 1555 meant they continued under Pole\'s direction. Large numbers attended the burnings but there is not much evidence the burnings converted the audience.','To what extent was England Catholic by Mary\'s death in 1558? Edward\'s short reign meant much of the country, especially the North, had always remained Catholic. Mary\'s five-year reign was insufficient to enact lasting change. Over 800 clergy were deprived for failing to return to Catholic practices.','By not producing an heir, Catholicism did not triumph. The time it took Elizabeth to establish Protestantism suggests the Marian regime had been successful in restoring Catholic practice.']},
+];   // end KC — more cards added in next steps
+const DATES       = [];   // Key dates       — added next
+const RQ          = [];   // Rapid fire Qs   — added next
+const SOURCE_SETS = [];   // Source sets     — added next
+const ESSAY_QS    = [];   // Essay questions — added next
 
-{reign:'mary',unit:'Unit 3 – Rebellion and Unrest',heading:'3.4 – Wyatt\'s Rebellion, 1554',
-checklist:'Causes, events and significance of Wyatt\'s Rebellion',
-hints:['cloth trade','Kent','Guildhall speech','Duke of Norfolk','xenophobia'],
-facts:['Causes — Mary\'s marriage to Philip of Spain: concerns over a foreign marriage, patronage going to the Spanish, and England being dragged into Habsburg wars. The timing — immediately after Mary proposed the marriage in Parliament — supports this.','However xenophobia may have been a tool to rally mass support. The rebellion began in Kent — a more Protestant area with trading links to Protestant Northern Europe. Part of the plot was to replace Mary with Elizabeth to defend Protestantism.','Many leaders had lost positions at court due to their faith — an attempt to regain old power. Collapse of the cloth trade in the 1550s created unemployment in Kent.','Events: only Wyatt in Kent rose — he raised 3,000 men. A government force led by the Duke of Norfolk deserted and joined Wyatt\'s men, declaring "We are all Englishmen!". Wyatt reached the gates of London.','Mary gave an impassioned speech at the Guildhall which secured Londoners\' support — they refused to open the city gates. The rebellion was defeated.','Reasons for failure: discovery of the plot forced the rebels to rise in winter, meaning fewer peasants were willing to join. Mary\'s strength and leadership ensured defeat.']},
+// ── Init ──
+// (no init needed — data arrays populated in next steps)
 
-// ELIZABETH I
-{reign:'elizabeth',unit:'Unit 4 – Elizabeth I and Religion',heading:'4.1 – The Elizabethan Religious Settlement, 1559',
-checklist:'The Religious Situation in 1558; The Elizabethan Religious Settlement',
-hints:['Act of Supremacy','Act of Uniformity','Supreme Governor','via media','recusancy'],
-facts:['The Act of Supremacy (1559) re-established Elizabeth as Supreme Governor of the Church of England — not Supreme Head, a concession to those who thought a woman could not be head of the church.','The Act of Uniformity (1559) restored the 1552 Book of Common Prayer with modifications — the Black Rubric (denying transubstantiation) was removed, making Communion deliberately ambiguous.','The fine for recusancy was set at 1 shilling per Sunday — very low, suggesting Elizabeth was not trying to force Catholicism into the open.','Elizabeth adopted a via media (middle way) — deliberately ambiguous on doctrine to allow both Protestants and moderate Catholics to conform.','Almost all bishops refused to accept the settlement and were replaced by Protestant-inclined clergymen. Two Catholic bishops were arrested during the Parliament of 1559.']},
-
-{reign:'elizabeth',unit:'Unit 4 – Elizabeth I and Religion',heading:'4.2 – The Puritan challenge',
-checklist:'The identity and aims of the Puritans; Puritan threat from inside the church; Puritan threat from parliament/popular appeals/Separatism; Elizabeth\'s archbishops',
-hints:['Vestiarian Controversy','Cartwright','Admonition','Grindal','prophesyings','Whitgift','Marprelate Tracts'],
-facts:['Puritans wished to strip the Church of remaining Catholic elements including elaborate vestments, episcopacy (church hierarchy) and ceremonial practices.','The Vestiarian Controversy, 1566: Archbishop Parker ordered clergy to wear vestments. 37 London clergymen refused. Bullinger from Zürich advised Puritans to accept the compromise.','Thomas Cartwright (Cambridge, 1570) argued bishops should be abolished — he lost his chair. Field and Wilcox\'s Admonition to Parliament (1572) demanded radical reform. The Marprelate Tracts (1588) used satirical attacks on bishops but alienated moderates.','Edmund Grindal was placed under house arrest for refusing to clamp down on prophesyings — informal clergy meetings discussing scripture.','Archbishop Whitgift\'s Three Articles (1583) required clergy to subscribe to royal supremacy and the Prayer Book — Puritan clergy who refused were suspended.','Robert Browne led a separatist church movement in Norwich in 1581. William Strickland was suspended from Parliament (1571) for attempting to alter the Prayer Book.']},
-
-{reign:'elizabeth',unit:'Unit 4 – Elizabeth I and Religion',heading:'4.3 – Catholic threat before 1568',
-checklist:'Catholic threat before 1568; Roles of the Papacy, Spanish and French',
-hints:['Philip of Spain','recusancy','northern Catholics','Marian exiles','Pius IV'],
-facts:['Philip of Spain persuaded Pope Pius IV not to excommunicate Elizabeth in 1563 — Philip hoped to maintain good relations with England.','The initial Catholic threat was limited: most English Catholics were in the North and prepared to conform outwardly rather than risk rebellion. Roughly one third of English nobles were recusants.','The Marian exiles returned with more radical Protestant ideas, while moderate Catholics were given time to conform.','The Dutch Revolt from the 1560s dominated Spanish attention, limiting Philip\'s ability to threaten Elizabeth directly.','The main external threats came from France and Scotland — the Guise family supported Mary Queen of Scots\' claim. The Treaty of Edinburgh (1560) temporarily neutralised the Scottish threat.']},
-
-{reign:'elizabeth',unit:'Unit 4 – Elizabeth I and Religion',heading:'4.4 – Mary Queen of Scots, Rising of the North, Plots',
-checklist:'Mary Queen of Scots, Rising of the North, Plots; Government reaction to the Catholic threat; Problems facing the Catholics',
-hints:['Ridolfi Plot','Babington Plot','Walsingham','Bond of Association','1569','1587'],
-facts:['Mary Queen of Scots fled to England in 1568 after losing power in Scotland. Elizabeth imprisoned her for 19 years — she was a focal point for Catholic plots.','Rising of the North (1569): Catholic rebellion led by the Earls of Northumberland and Westmoreland. Elizabeth raised 14,000 soldiers; around 450 rebels were hanged. The rebellion failed.','Pope Pius V excommunicated Elizabeth in 1570 (Regnans in Excelsis) — all Catholics encouraged to remove her from power.','Ridolfi Plot (1571): plan to assassinate Elizabeth; Duke of Norfolk executed. Possessing the Papal Bull was made treasonable. Throckmorton Plot (1583): exposed by Walsingham\'s spy network; led to the Bond of Association (1584).','Babington Plot (1586): Walsingham obtained Mary\'s written approval of assassination plans. Mary was executed in February 1587.','Government response: converting someone to Catholicism was treason in 1581; sheltering a priest was treason in 1585; recusancy fines raised to £20/month in 1581. In total 133 seminary priests and Jesuits were executed.']},
-
-{reign:'elizabeth',unit:'Unit 5 – Government and Parliament',heading:'5.1 – Key figures at Court and on the Privy Council',
-checklist:'Key figures at Court and on the Privy Council; Elizabeth\'s use and management of faction',
-hints:['Cecil','Walsingham','Leicester','Hatton','faction'],
-facts:['William Cecil served as Secretary of State 1558–72, then Lord Burghley — Elizabeth\'s most trusted and longest-serving minister.','Walsingham became Secretary of State in 1573 and ran an elaborate spy network that uncovered the Catholic plots.','The Privy Council had 19 members at the start of Elizabeth\'s reign. Elizabeth managed factional rivalries deliberately — Leicester and the Howards (Norfolk/Sussex) wore different coloured ribbons to signal their opposition.','Christopher Hatton "danced his way to favour" and became Lord Chancellor despite no legal training.','Elizabeth deliberately balanced factions, never allowing one councillor to dominate as Northumberland had under Edward VI.','Walsingham and Leicester campaigned for intervention in the Dutch Revolt from 1575; Cecil and others counselled caution. Walsingham witnessed the St Bartholomew\'s Day Massacre in France in 1572.']},
-
-{reign:'elizabeth',unit:'Unit 5 – Government and Parliament',heading:'5.2 – Elizabeth, Parliament and the succession question',
-checklist:'Nature of parliament in the 16th century; Parliament\'s relationship with the queen; Attitudes of Elizabeth, Parliament, and the Privy Council to marriage; The role of gender; Impact of marriage and succession on domestic and foreign affairs',
-hints:['prorogation','Wentworth','taxation','marriage','succession'],
-facts:['Elizabeth called Parliament only 10 times in her reign. Parliament\'s chief function was to grant taxation — Elizabeth needed parliamentary approval for all extraordinary revenue.','Parliament repeatedly pressured Elizabeth to marry and settle the succession. In 1566 Elizabeth accepted 1/3 of the subsidy rather than discuss marriage — a deliberate compromise.','Peter Wentworth was imprisoned in the Tower (1576) for arguing for free speech in Parliament — Elizabeth defended her right to control parliamentary debate.','William Strickland was suspended from Parliament (1571) for attempting to introduce a bill to alter the Prayer Book.','The royal prerogative — matters by custom only the monarch could decide — included the succession and choice of husband. Parliament could vote on taxation and legislation but not these royal matters.','Elizabeth prorogued (suspended) Parliament to prevent bills she disliked from being passed.']},
-
-{reign:'elizabeth',unit:'Unit 6 – Financial, Economic and Social Affairs',heading:'6.1 – Financial and economic situation in 1558',
-checklist:'Financial and economic situation in 1558; Ordinary and Extraordinary income; Methods of raising finance; Parliamentary taxation',
-hints:['£227,000','Gresham','recoinage','surplus','First Fruits and Tenths'],
-facts:['Elizabeth inherited a debt of £227,000 in 1558, with 14% interest owed to the Antwerp Exchange.','Ordinary income: feudal revenues, First Fruits and Tenths (church taxes). Extraordinary income required Parliament: subsidies, Fifteenths and Tenths (tax on movable goods in the countryside and towns).','Sir Thomas Gresham founded the Royal Exchange in London, reducing dependence on Antwerp.','Recoinage was completed by 1561 — Elizabeth replaced the debased coinage left by Henry VIII and Edward VI, stabilising the currency.','Elizabeth paid off her debts by 1576 and had accumulated a surplus of £300,000 by 1584.','The Book of Orders in 1586 banned hoarding of grain. Elizabeth encouraged Wednesday and Friday as fish days to support the fishing industry and naval skills.']},
-
-{reign:'elizabeth',unit:'Unit 6 – Financial, Economic and Social Affairs',heading:'6.2 – Development of overseas trade',
-checklist:'Development of overseas trade; Purveyance and monopolies; Impact of war on finances',
-hints:['Muscovy Company','Levant Company','Drake','Hawkins','East India Company'],
-facts:['At Elizabeth\'s accession, cloth accounted for 75% of exports and the Hanseatic League dominated much of English trade.','The Muscovy Company (founded under Mary I) traded with Russia. The Levant Company (1581) operated in the Eastern Mediterranean. The East India Company was founded in 1600.','John Hawkins began the transatlantic slave trade in 1562.','Francis Drake\'s circumnavigation (1577–80) seized £400,000 of Spanish treasure. Elizabeth knighted him on the Golden Hind.','Two attempts to colonise Roanoke island (Virginia) under Walter Raleigh (1585, 1587) both failed.','The Treaty of Nonsuch (1585) obligated Elizabeth to spend £126,000 a year on the Dutch Revolt. Elizabeth spent £4.5 million on the war after 1585 — consuming her surplus.']},
-
-{reign:'elizabeth',unit:'Unit 6 – Financial, Economic and Social Affairs',heading:'6.3 – Changing attitudes and legislation to the poor',
-checklist:'Changing attitudes and legislation to the poor',
-hints:['vagrants','Houses of Correction','Statute of Artificers','Elizabethan Poor Law','1601'],
-facts:['The Great Price Rise created high levels of poverty and vagrancy.','The Statute of Artificers (1563): tied young people into 7-year apprenticeships and regulated wages.','The building in London that became the pre-cursor to the House of Correction was Bridewell. Norwich innovated the use of a compulsory levy for the poor.','Houses of Correction were ordered to be built across England in 1576 for the able-bodied poor.','The Elizabethan Poor Law was passed in 1601, formalising a national framework: the deserving poor received relief; able-bodied vagrants faced punishment.']},
-
-{reign:'elizabeth',unit:'Unit 7 – Later Years 1588–1603',heading:'7.1 – Defence of the royal prerogative in Parliament',
-checklist:'Defence of the royal prerogative in Parliament',
-hints:['monopolies','Wentworth','1597','1601','Golden Speech'],
-facts:['Monopolies — exclusive trading licences granted to favourites — became a major grievance. MPs protested in 1597 and 1601.','Peter Wentworth wrote a 1591 pamphlet pushing Parliament\'s right to discuss the succession.','Elizabeth delivered her "Golden Speech" to Parliament in 1601, promising to review monopolies.','Parliament granted Elizabeth a double subsidy in 1589 and a triple subsidy in 1593 — reflecting the financial pressures of war.','Elizabeth defended the royal prerogative throughout — Parliament could vote on taxation but not on matters the monarch considered exclusively royal, such as the succession or choice of ministers.']},
-
-{reign:'elizabeth',unit:'Unit 7 – Later Years 1588–1603',heading:'7.2 – Domestic effects of the war with Spain',
-checklist:'Domestic effects of the war with Spain',
-hints:['Spanish Armada','Tilbury','fireships','Gravelines','Treaty of Nonsuch'],
-facts:['The Treaty of Nonsuch (1585) committed England to support the Dutch Revolt — England sent soldiers under the Earl of Leicester.','The Spanish Armada of 1588: Philip II launched 130 ships. The English used fireships at Calais to scatter the Armada. The Battle of Gravelines (August 1588) inflicted significant Spanish losses. Storms destroyed much of the remaining Armada off Scotland and Ireland.','Elizabeth gave her Tilbury speech: "I have the body of a weak and feeble woman, but I have the heart and stomach of a king."','The war continued until 1604. Elizabeth spent £4.5 million on war after 1585, consuming her surplus and creating debts.']},
-
-{reign:'elizabeth',unit:'Unit 7 – Later Years 1588–1603',heading:'7.3 – Economic and social problems; faction and Essex\'s rebellion',
-checklist:'Economic and social problems; The Irish rebellion; Faction and Essex\'s rebellion; Elizabeth\'s image and reputation',
-hints:['Essex','Irish rebellion','monopolies','Tyrone','1601','Golden Speech'],
-facts:['Robert Devereux, Earl of Essex became Elizabeth\'s favourite in the 1590s. He sacked Cadiz in 1596 but his campaign in Ireland (1599) against the Earl of Tyrone was a disaster.','Essex returned to England without permission, burst into Elizabeth\'s bedchamber, and was subsequently tried and executed for treason in 1601.','The Irish rebellion of Hugh O\'Neill, Earl of Tyrone, lasted from 1593–1603 and cost enormous sums to suppress.','Faction in the later years: Essex clashed with the Cecil faction. Essex\'s rebellion failed — Elizabeth signed his death warrant without hesitation.','Elizabeth\'s Golden Speech (1601) promised to review monopolies — widely praised as demonstrating her skill in managing Parliament and public opinion.','Historians debate Elizabeth\'s later years: she successfully managed war, the Irish rebellion and factional threats, but left behind debts, a succession crisis, and unresolved monopolies.']},
-];
-
-// RAPID FIRE
-const RQ=[
-{reign:'edward',topic:'Stability',q:'In what year did Edward VI become King?',a:'1547'},
-{reign:'edward',topic:'Stability',q:'How old was Edward VI when he became King?',a:'9'},
-{reign:'edward',topic:'Stability',q:'What were the names of the factions on the Privy Council at the end of Henry VIII\'s reign?',a:'Reformists and Conservatives'},
-{reign:'edward',topic:'Stability',q:'How many earls did Henry state should be co-equal in the regency council?',a:'16'},
-{reign:'edward',topic:'Stability',q:'With whom did Edward Seymour conspire to become Lord Protector?',a:'William Paget'},
-{reign:'edward',topic:'Stability',q:'What did Somerset and Paget use to alter Henry VIII\'s will?',a:'Dry Stamp'},
-{reign:'edward',topic:'Stability',q:'Who was the leading conservative figure in the Anti-Somerset Faction?',a:'Thomas Wriothesley'},
-{reign:'edward',topic:'Stability',q:'Who was the leading reformist in the Anti-Somerset Faction?',a:'John Dudley / Warwick'},
+</script>
+</body>
+</html>
