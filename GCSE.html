@@ -3,13 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>if(localStorage.getItem('gcse_dark')=='1')document.documentElement.classList.add('dark');</script>
 <title>Mr Rodker's Revision Hub - GCSE</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#f8f7f4;color:#1a1a18;min-height:100vh}
+:root{
+  --bg:#f8f7f4;--surface:#fff;--card:#fafaf8;--border:#e8e7e2;--border2:#ddddd8;
+  --text:#1a1a18;--muted:#6b6b68;--muted2:#5f5e5a;--subtle:#eeede8;
+  --tag-bg:#eeede8;--tag-col:#5f5e5a;--input-bg:#fff;
+}
+:root.dark body{
+  --bg:#1a1a1e;--surface:#26262b;--card:#2e2e34;--border:#3a3a42;--border2:#3a3a42;
+  --text:#e8e8e6;--muted:#9a9a96;--muted2:#8a8a86;--subtle:#2e2e34;
+  --tag-bg:#2e2e34;--tag-col:#aaa;--input-bg:#2e2e34;
+}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .2s,color .2s}
 .app{max-width:720px;margin:0 auto;padding:1.5rem 1rem 4rem}
 h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;margin-bottom:.2rem}
-.subtitle{font-size:.82rem;color:#6b6b68;margin-bottom:1.75rem}
+.subtitle{font-size:.82rem;color:var(--muted);margin-bottom:1.75rem}
 
 /* SCREENS */
 .screen{display:none}.screen.active{display:block}
@@ -27,20 +38,24 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 
 /* MODE PICKER */
 .mode-header{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
-.back-btn{padding:6px 12px;font-size:.8rem;font-weight:500;border:1px solid #ddddd8;border-radius:8px;background:#fff;color:#6b6b68;cursor:pointer;font-family:inherit}
-.back-btn:hover{background:#f4f3ef}
+.back-btn{padding:6px 12px;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
+.back-btn:hover{background:var(--subtle)}
 .paper-badge{font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:20px}
 .bg-p1{background:#FEF9E7;color:#9A6B00}.bg-p2a{background:#FBEAF0;color:#993556}
 .bg-p2b{background:#E1F5EE;color:#0F6E56}.bg-p3{background:#E6F1FB;color:#185FA5}
 .mode-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.25rem}
-.mode-btn{padding:1.2rem .75rem;border:1.5px solid #ddddd8;border-radius:12px;cursor:pointer;font-family:inherit;font-size:.85rem;font-weight:600;text-align:center;background:#fff;color:#1a1a18;transition:all .15s}
+.mode-btn{padding:1.2rem .75rem;border:1.5px solid var(--border2);border-top:1.5px solid var(--border2);border-radius:12px;cursor:pointer;font-family:inherit;font-size:.85rem;font-weight:600;text-align:center;background:var(--surface);color:var(--text);transition:all .15s;border-left-width:4px}
 .mode-btn .icon{font-size:1.4rem;display:block;margin-bottom:.4rem}
-.mode-btn:hover{border-color:#aaa;background:#fafaf8}
-.mode-btn.sel{border-color:#1a1a18;background:#1a1a18;color:#fff}
+.mode-btn:hover{border-color:#aaa;background:var(--subtle)}
+.mode-btn.sel{border-color:#555;background:#555;color:#fff}
+.mode-btn.stripe-p1{border-left-color:#F0B429}
+.mode-btn.stripe-p2a{border-left-color:#D4537E}
+.mode-btn.stripe-p2b{border-left-color:#1D9E75}
+.mode-btn.stripe-p3{border-left-color:#378ADD}
 
 /* FILTERS */
 .filter-row{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
-select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:8px;background:#fff;color:#1a1a18;cursor:pointer;flex:1;min-width:140px;font-family:inherit}
+select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:8px;background:#fff;color:var(--text);cursor:pointer;flex:1;min-width:140px;font-family:inherit}
 
 /* GO BUTTON */
 .btn-go{width:100%;padding:13px;font-size:.95rem;font-weight:600;border:none;border-radius:10px;cursor:pointer;margin-bottom:1.25rem;transition:opacity .15s;color:#fff;font-family:inherit}
@@ -49,51 +64,51 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 .c-p2b{background:#1D9E75}.c-p3{background:#378ADD}
 
 /* CARD */
-.card{background:#fff;border:1px solid #e8e7e2;border-radius:14px;padding:1.25rem;margin-bottom:.75rem;position:relative;overflow:hidden}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:.75rem;position:relative;overflow:hidden}
 .stripe{position:absolute;left:0;top:0;bottom:0;width:4px}
 .s-p1{background:#F0B429}.s-p2a{background:#D4537E}.s-p2b{background:#1D9E75}.s-p3{background:#378ADD}
 .inner{padding-left:.5rem}
 .meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.6rem}
 .tag{font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px}
-.t-grey{background:#eeede8;color:#5f5e5a}
+.t-grey{background:var(--tag-bg);color:var(--tag-col)}
 .t-p1{background:#FEF9E7;color:#9A6B00}.t-p2a{background:#FBEAF0;color:#993556}
 .t-p2b{background:#E1F5EE;color:#0F6E56}.t-p3{background:#E6F1FB;color:#185FA5}
 .card-heading{font-family:'DM Serif Display',serif;font-size:1.05rem;font-weight:400;margin-bottom:.5rem;line-height:1.3}
 .card-q{font-size:.88rem;line-height:1.65;white-space:pre-wrap}
 .btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:.9rem}
-.btn-sm{padding:7px 14px;font-size:.8rem;font-weight:500;border:1px solid #ddddd8;border-radius:8px;background:#fff;color:#1a1a18;cursor:pointer;transition:background .12s;font-family:inherit}
-.btn-sm:hover{background:#f4f3ef}
+.btn-sm{padding:7px 14px;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer;transition:background .12s;font-family:inherit}
+.btn-sm:hover{background:var(--subtle)}
 
 /* REVEAL */
-.reveal{display:none;border-top:1px solid #eeede8;margin-top:.9rem;padding-top:.9rem}
+.reveal{display:none;border-top:1px solid var(--subtle);margin-top:.9rem;padding-top:.9rem}
 .reveal.open{display:block}
-.rhead{font-size:.7rem;font-weight:700;color:#6b6b68;text-transform:uppercase;letter-spacing:.06em;margin:.7rem 0 .3rem}
+.rhead{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:.7rem 0 .3rem}
 .rhead:first-child{margin-top:0}
 .rhead.agree{color:#3B6D11}.rhead.disagree{color:#A32D2D}
 .reveal ul{padding-left:1.1rem}
-.reveal li{font-size:.84rem;line-height:1.6;color:#1a1a18;margin-bottom:.2rem}
-.hint-item{font-size:.82rem;color:#5f5e5a;padding:4px 0;border-bottom:1px solid #eeede8}
+.reveal li{font-size:.84rem;line-height:1.6;color:var(--text);margin-bottom:.2rem}
+.hint-item{font-size:.82rem;color:var(--muted2);padding:4px 0;border-bottom:1px solid var(--subtle)}
 .hint-item:last-child{border-bottom:none}
 .hint-kw{font-size:.7rem;font-weight:700;color:#bbb;text-transform:uppercase;letter-spacing:.04em;margin-right:5px}
 
 /* EMPTY */
-.empty{padding:2rem;text-align:center;color:#aaa;font-size:.85rem;border:1px dashed #ddddd8;border-radius:12px}
+.empty{padding:2rem;text-align:center;color:var(--muted);font-size:.85rem;border:1px dashed var(--border2);border-radius:12px}
 
 /* QUIZ */
-.quiz-prog{height:4px;background:#eeede8;border-radius:2px;margin-bottom:1rem;overflow:hidden}
+.quiz-prog{height:4px;background:var(--subtle);border-radius:2px;margin-bottom:1rem;overflow:hidden}
 .quiz-fill{height:100%;border-radius:2px;transition:width .3s}
 .fill-p1{background:#F0B429}.fill-p2a{background:#D4537E}.fill-p2b{background:#1D9E75}.fill-p3{background:#378ADD}
 .quiz-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
-.quiz-hdr-l{font-size:.8rem;color:#6b6b68}
+.quiz-hdr-l{font-size:.8rem;color:var(--muted)}
 .sc-row{display:flex;gap:6px}
 .sc{font-size:.8rem;font-weight:600;padding:4px 10px;border-radius:20px}
 .sc-c{background:#EAF3DE;color:#3B6D11}.sc-w{background:#FCEBEB;color:#A32D2D}
-.quiz-card{background:#fff;border:1px solid #e8e7e2;border-radius:14px;padding:1.5rem;text-align:center;margin-bottom:.75rem}
+.quiz-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;margin-bottom:.75rem}
 .quiz-date{font-family:'DM Serif Display',serif;font-size:2.8rem;font-weight:400;margin-bottom:.3rem}
-.quiz-prompt{font-size:.82rem;color:#6b6b68;margin-bottom:1.2rem}
+.quiz-prompt{font-size:.82rem;color:var(--muted);margin-bottom:1.2rem}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.opt{padding:10px 8px;font-size:.8rem;font-weight:500;border:1.5px solid #ddddd8;border-radius:9px;background:#fff;color:#1a1a18;cursor:pointer;text-align:left;line-height:1.4;transition:all .15s;font-family:inherit}
-.opt:hover:not(:disabled){background:#f4f3ef;border-color:#aaa}
+.opt{padding:10px 8px;font-size:.8rem;font-weight:500;border:1.5px solid var(--border2);border-radius:9px;background:var(--card);color:var(--text);cursor:pointer;text-align:left;line-height:1.4;transition:all .15s;font-family:inherit}
+.opt:hover:not(:disabled){background:var(--subtle);border-color:#aaa}
 .opt:disabled{cursor:default}
 .opt.correct{background:#EAF3DE!important;border-color:#3B6D11!important;color:#3B6D11!important}
 .opt.wrong{background:#FCEBEB!important;border-color:#A32D2D!important;color:#A32D2D!important}
@@ -102,98 +117,135 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 .fb-c{background:#EAF3DE;color:#3B6D11}.fb-w{background:#FCEBEB;color:#A32D2D}
 .quiz-end{text-align:center;padding:2rem 1rem}
 .end-score{font-family:'DM Serif Display',serif;font-size:3.5rem;font-weight:400}
-.end-sub{font-size:.9rem;color:#6b6b68;margin:.3rem 0 1.2rem}
+.end-sub{font-size:.9rem;color:var(--muted);margin:.3rem 0 1.2rem}
 .end-grade{font-size:.9rem;font-weight:600;padding:8px 20px;border-radius:20px;display:inline-block;margin-bottom:1.2rem}
 .grade-a{background:#EAF3DE;color:#3B6D11}.grade-b{background:#FAEEDA;color:#854F0B}.grade-c{background:#FCEBEB;color:#A32D2D}
 
 /* RAPID FIRE QUIZ */
 .rq-section{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #e8e7e2}
-.rq-section-label{font-size:.72rem;font-weight:700;color:#6b6b68;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+.rq-section-label{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
 .rq-paper-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.9rem}
-.rq-pill{padding:6px 12px;font-size:.78rem;font-weight:600;border:1.5px solid #ddddd8;border-radius:20px;cursor:pointer;background:#fff;color:#6b6b68;font-family:inherit;transition:all .15s}
+.rq-pill{padding:6px 12px;font-size:.78rem;font-weight:600;border:1.5px solid var(--border2);border-radius:20px;cursor:pointer;background:var(--surface);color:var(--muted);font-family:inherit;transition:all .15s}
 .rq-pill.on-p1{background:#FEF9E7;color:#9A6B00;border-color:#F0B429}
 .rq-pill.on-p2a{background:#FBEAF0;color:#993556;border-color:#D4537E}
 .rq-pill.on-p2b{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
 .rq-pill.on-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .rq-stars{display:flex;gap:6px;margin-bottom:1rem}
-.rq-star{padding:6px 14px;font-size:.82rem;font-weight:600;border:1.5px solid #ddddd8;border-radius:20px;cursor:pointer;background:#fff;color:#6b6b68;font-family:inherit;transition:all .15s}
-.rq-star.sel{background:#1a1a18;color:#fff;border-color:#1a1a18}
+.rq-star{padding:6px 14px;font-size:.82rem;font-weight:600;border:1.5px solid var(--border2);border-radius:20px;cursor:pointer;background:var(--surface);color:var(--muted);font-family:inherit;transition:all .15s}
+.rq-star.sel{background:#555;color:#fff;border-color:#555}
 .rq-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
-.rq-card{background:#fff;border:1.5px solid #e8e7e2;border-radius:12px;padding:.85rem;cursor:pointer;min-height:90px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .15s}
-.rq-card:hover{border-color:#aaa}
+.rq-card{background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:.85rem;cursor:pointer;min-height:90px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .15s}
+.rq-card:hover{border-color:var(--muted)}
 .rq-card.revealed{border-color:#3B6D11;cursor:default}
-.rq-q{font-size:.78rem;line-height:1.5;color:#1a1a18;font-weight:500}
+.rq-q{font-size:.78rem;line-height:1.5;color:var(--text);font-weight:500}
 .rq-a{display:none;margin-top:.55rem;padding:.45rem .55rem;background:#EAF3DE;border-radius:7px;font-size:.78rem;font-weight:700;color:#3B6D11;line-height:1.4}
 .rq-card.revealed .rq-a{display:block}
 .rq-tap{font-size:.68rem;color:#bbb;margin-top:.4rem}
 .rq-card.revealed .rq-tap{display:none}
 .rq-btn-row{display:flex;gap:8px;flex-wrap:wrap}
-.rq-btn-row .btn-sm{background:#eeede8;color:#1a1a18;border-color:#ddddd8}
-.rq-btn-row .btn-sm:hover{background:#e0dfd9}</style>
+.rq-btn-row .btn-sm{background:var(--subtle);color:var(--text);border-color:var(--border2)}
+.rq-btn-row .btn-sm:hover{background:var(--border)}
+/* PRINT MODE */
+@media print {
+  #dark-toggle, #hub-link, .mode-grid, .back-btn, .paper-grid, .rq-section,
+  .btn-row, .btn-go, .btn-sm, .filter-row, #k-progress-wrap, #k-flag-bar,
+  #k-card, #k-go, .mode-header, .screen:not(#s-main), #mode-dates, #mode-exam {
+    display:none !important;
+  }
+  body { background:#fff !important; color:#000 !important; }
+  .app { max-width:100%; padding:.5rem; }
+  .card { break-inside:avoid; border:1px solid #ccc; margin-bottom:.75rem; box-shadow:none; }
+  .reveal { display:block !important; }
+  .card-heading { font-size:1.1rem; font-weight:700; }
+  .reveal li { font-size:.85rem; }
+  .stripe { display:none; }
+  .inner { padding-left:0; }
+  h1 { font-size:1.2rem; margin-bottom:.2rem; }
+}
+</style>
 </head>
 <body>
 <div class="app">
 <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.2rem">
   <h1 style="margin-bottom:0">GCSE History Revision</h1>
-  <a href="index.html" id="hub-link" style="font-size:.78rem;font-weight:600;padding:6px 12px;border:1px solid #ddddd8;border-radius:8px;background:#fff;color:#6b6b68;text-decoration:none">← Hub</a>
+  <div style="display:flex;gap:6px;align-items:center">
+    <button id="print-btn" onclick="window.print()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;display:none" title="Print">🖨️</button>
+    <button id="dark-toggle" onclick="toggleDark()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit" title="Toggle dark mode">🌙</button>
+    <a href="index.html" id="hub-link" style="font-size:.78rem;font-weight:600;padding:6px 12px;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);text-decoration:none">← Hub</a>
+  </div>
 </div>
 <p class="subtitle">Mr Rodker's Revision Hub &mdash; Edexcel GCSE</p>
 
 <!-- SCREEN 1: PAPER PICKER -->
 <div class="screen active" id="s-pick">
-  <p style="font-size:.85rem;color:#6b6b68;margin-bottom:.9rem">Which paper are you revising?</p>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:.9rem">Which paper are you revising?</p>
   <div class="paper-grid">
     <button class="paper-btn pb-p1" onclick="pickPaper('p1')"><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
     <button class="paper-btn pb-p2a" onclick="pickPaper('p2a')"><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
     <button class="paper-btn pb-p2b" onclick="pickPaper('p2b')"><span class="plabel">Paper 2b</span>👑 Early Elizabethan England</button>
     <button class="paper-btn pb-p3" onclick="pickPaper('p3')"><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
   </div>
-<!-- RAPID FIRE entry point -->
-   <div class="rq-section">
+  <div class="rq-section">
     <p class="rq-section-label">Or try:</p>
-    <button class="btn-go" style="background:#1a1a18;margin-bottom:.75rem" onclick="showRapidSetup()">⚡ Rapid Fire — 10 retrieval questions</button>
-    <button class="btn-go" id="home-flag-btn" style="background:#eeede8;color:#1a1a18;display:none;margin-bottom:0" onclick="goToFlagged()">🚩 Review flagged cards (<span id="home-flag-num">0</span>)</button>
+    <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Rapid Fire — 10 retrieval questions</button>
+    <button class="btn-go" id="home-flag-btn" style="background:var(--subtle);color:var(--text);display:none;margin-bottom:0" onclick="goToFlagged()">🚩 Review flagged cards (<span id="home-flag-num">0</span>)</button>
   </div>
 </div>
 
-<!-- SCREEN 2: MODE + CONTENT -->
-<div class="screen" id="s-main">
+<!-- SCREEN 2: PAPER HUB (mode selector) -->
+<div class="screen" id="s-hub">
   <div class="mode-header">
-    <button class="back-btn" onclick="goBack()">🏠 Home</button>
-    <span class="paper-badge" id="paper-badge"></span>
+    <button class="back-btn" onclick="showScreen('s-pick')">← Home</button>
+    <span class="paper-badge" id="hub-paper-badge"></span>
   </div>
-  <div class="mode-grid">
-    <button class="mode-btn" id="mb-knowledge" onclick="setMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder</button>
-    <button class="mode-btn" id="mb-dates" onclick="setMode('dates')"><span class="icon">📅</span>Key dates quiz</button>
-    <button class="mode-btn" id="mb-exam" onclick="setMode('exam')"><span class="icon">✏️</span>Exam practice</button>
+  <div class="mode-grid" style="grid-template-columns:1fr 1fr;margin-bottom:.75rem">
+    <button class="mode-btn" onclick="enterMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Learn key content card by card</span></button>
+    <button class="mode-btn" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Test your chronology</span></button>
+    <button class="mode-btn" onclick="enterMode('exam')"><span class="icon">✏️</span>Exam Practice<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Practise exam questions</span></button>
+    <button class="mode-btn" style="opacity:.45;cursor:not-allowed" disabled><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Coming soon</span></button>
+  </div>
+  <button class="btn-go" id="hub-flag-btn" style="background:var(--subtle);color:var(--text);display:none" onclick="goToFlagged()">🚩 Review flagged cards (<span id="hub-flag-num">0</span>)</button>
+</div>
+
+<!-- SCREEN 3: MODE CONTENT -->
+<div class="screen" id="s-main">
+  <div class="mode-header" style="margin-bottom:1rem">
+    <div style="display:flex;gap:6px">
+      <button class="back-btn" onclick="showScreen('s-hub')">← Back</button>
+      <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="paper-badge" id="paper-badge"></span>
+      <span id="mode-title" style="font-size:.8rem;font-weight:600;color:var(--muted)"></span>
+    </div>
   </div>
 
   <!-- KNOWLEDGE -->
   <div id="mode-knowledge" style="display:none">
+    <div id="k-out" style="margin-bottom:.75rem"></div>
     <div class="filter-row">
-  <select id="k-unit" onchange="onUnitChange()"><option value="all">All units</option></select>
-<select id="k-card" onchange="jumpToCard()"></select>
-</div>
-<button class="btn-sm" id="k-go" onclick="drawRandomCard()" style="width:100%;margin-bottom:.5rem;opacity:.7;font-size:.8rem">🎲 Random card</button>
-<div style="display:flex;gap:8px;margin-bottom:.75rem;margin-top:-.5rem">
-  <button class="btn-sm" onclick="stepCard(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
-  <span id="k-card-num" style="flex:0 0 auto;align-self:center;font-size:.78rem;color:#6b6b68;white-space:nowrap;min-width:50px;text-align:center"></span>
-  <button class="btn-sm" onclick="stepCard(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
-</div>
+      <select id="k-unit" onchange="onUnitChange()"><option value="">— select a unit —</option><option value="all">All units</option></select>
+      <select id="k-card" onchange="jumpToCard()"><option value="">— select a topic —</option></select>
+    </div>
+    <button class="btn-sm" id="k-go" onclick="drawRandomCard()" style="width:100%;margin-bottom:.75rem;font-size:.8rem">🎲 Random card</button>
+    <div style="display:flex;gap:8px;margin-bottom:.75rem">
+      <button class="btn-sm" onclick="stepCard(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
+      <span id="k-card-num" style="flex:0 0 auto;align-self:center;font-size:.78rem;color:var(--muted);white-space:nowrap;min-width:50px;text-align:center"></span>
+      <button class="btn-sm" onclick="stepCard(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
+    </div>
     <div id="k-progress-wrap" style="margin-bottom:.75rem;display:none">
-  <div style="font-size:.75rem;color:#6b6b68;margin-bottom:4px">
-    <span id="k-progress-text"></span>
-  </div>
-  <div style="background:#e5e5e3;border-radius:99px;height:6px">
-    <div id="k-progress-bar" style="height:6px;border-radius:99px;background:#4a7c59;transition:width .3s"></div>
-  </div>
-</div>
-<div id="k-flag-bar" style="display:none;gap:8px;align-items:center;margin-bottom:.75rem">
-      <span id="k-flag-count" style="font-size:.82rem;color:#6b6b68">🚩 <span id="k-flag-num">0</span> flagged</span>
+      <div style="font-size:.75rem;color:var(--muted);margin-bottom:4px">
+        <span id="k-progress-text"></span>
+      </div>
+      <div style="background:#e5e5e3;border-radius:99px;height:6px">
+        <div id="k-progress-bar" style="height:6px;border-radius:99px;background:#4a7c59;transition:width .3s"></div>
+      </div>
+    </div>
+    <div id="k-flag-bar" style="display:none;gap:8px;align-items:center;margin-bottom:.75rem">
+      <span id="k-flag-count" style="font-size:.82rem;color:var(--muted)">🚩 <span id="k-flag-num">0</span> flagged</span>
       <button class="btn-sm" onclick="showFlaggedScreen()">Review flagged cards</button>
       <button class="btn-sm" onclick="clearFlagged()">Clear flags</button>
     </div>
-    <div id="k-out"></div>
   </div>
 
   <!-- DATES -->
@@ -204,9 +256,10 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 
   <!-- EXAM -->
   <div id="mode-exam" style="display:none">
+    <div id="e-out" style="margin-bottom:.75rem"></div>
     <div style="margin-bottom:.75rem">
-      <label style="font-size:.75rem;font-weight:600;color:#444;display:block;margin-bottom:4px">Question type</label>
-      <select id="e-type" onchange="updateExamDirectory()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid #d0d0cc;background:#fff">
+      <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Question type</label>
+      <select id="e-type" onchange="updateExamDirectory()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--input-bg);color:var(--text)">
         <option value="all">All question types</option>
         <option value="2mark">2-mark describe</option>
         <option value="4mark">4-mark similarity/difference</option>
@@ -216,23 +269,21 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
         <option value="12mark">12-mark explain why</option>
         <option value="16mark">16-mark debate</option>
       </select>
-      <label style="font-size:.75rem;font-weight:600;color:#444;display:block;margin-top:.5rem;margin-bottom:4px">Question</label>
-      <select id="e-directory" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid #d0d0cc;background:#fff">
+      <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-top:.5rem;margin-bottom:4px">Question</label>
+      <select id="e-directory" onchange="loadSelectedExam()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--input-bg);color:var(--text)">
         <option value="">— select a question —</option>
       </select>
     </div>
     <div style="display:flex;gap:8px;margin-bottom:.75rem">
-      <button class="btn-go" id="e-go" onclick="loadSelectedExam()" style="flex:3">Load question</button>
-      <button class="btn-go" id="e-random" onclick="drawExam()" style="flex:1">🎲</button>
+      <button class="btn-go" id="e-random" onclick="drawExam()" style="flex:1">🎲 Random question</button>
     </div>
-    <div id="e-out"></div>
   </div>
 </div>
 
 <!-- SCREEN 3: RAPID FIRE -->
 <div class="screen" id="s-rapid">
   <div class="mode-header">
-    <button class="back-btn" onclick="showScreen('s-pick')">&#8592; Home</button>
+    <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
     <span style="font-size:.85rem;font-weight:600;color:#5a5a58">⚡ Rapid Fire Quiz</span>
   </div>
   <div id="rq-setup">
@@ -249,8 +300,8 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
       <button class="rq-star" id="rqs-2" onclick="setRQDiff(2)">⭐⭐</button>
       <button class="rq-star" id="rqs-3" onclick="setRQDiff(3)">⭐⭐⭐</button>
     </div>
-    <button class="btn-go" style="background:#eeede8;color:#1a1a18" onclick="generateRQ()">⚡ Let's go</button>
-    <p id="rq-counter" style="font-size:.75rem;color:#6b6b68;text-align:center;margin-top:-.75rem;margin-bottom:.5rem"></p>
+    <button class="btn-go" id="rq-go" style="background:var(--subtle);color:var(--muted);cursor:not-allowed" onclick="generateRQ()">🎯 Let's go</button>
+    <p id="rq-counter" style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:-.75rem;margin-bottom:.5rem"></p>
     <div id="rq-err" class="empty" style="display:none">Not enough questions match these filters. Try adding more papers or increasing difficulty.</div>
   </div>
   <div id="rq-out" style="display:none">
@@ -266,7 +317,8 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 <div class="screen" id="s-flagged">
   <div class="mode-header">
     <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
-    <span style="font-size:.85rem;font-weight:600;color:#5a5a58">🚩 Flagged for review</span>
+    <button class="back-btn" onclick="showScreen('s-hub')">← Back</button>
+    <span style="font-size:.85rem;font-weight:600;color:var(--muted)">🚩 Flagged for review</span>
   </div>
   <div id="flagged-out"></div>
 </div>
@@ -274,6 +326,23 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 </div>
 
 <script>
+// ═══════════════════════════════════════════
+// DARK MODE
+// ═══════════════════════════════════════════
+function toggleDark() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('gcse_dark', isDark ? '1' : '0');
+  document.getElementById('dark-toggle').textContent = isDark ? '☀️' : '🌙';
+}
+// Apply on load
+(function() {
+  if (localStorage.getItem('gcse_dark') === '1') {
+    document.documentElement.classList.add('dark');
+    const btn = document.getElementById('dark-toggle');
+    if (btn) btn.textContent = '☀️';
+  }
+})();
+
 // ═══════════════════════════════════════════
 // PAPER CONFIG
 // ═══════════════════════════════════════════
@@ -303,28 +372,38 @@ function pickPaper(p) {
   const info = P[p];
   document.getElementById('paper-badge').textContent = info.label;
   document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
-  ['k-go','d-go','e-go','e-random'].forEach(id => {
+  ['k-go','d-go','e-random'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.className = 'btn-go ' + info.go;
   });
   const sel = document.getElementById('k-unit');
-  sel.innerHTML = '<option value="all">All units</option>' +
+  sel.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>' +
     info.units.map(u => `<option value="${u}">${u}</option>`).join('');
   const esel = document.getElementById('e-type');
   esel.innerHTML = info.qtypes.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
   learntCards = new Set();
+  examHistory = [];
   buildKPool();
   kPoolTotal = kPool.length;
+  document.getElementById('k-out').innerHTML = '';
   updateNavUI();
   updateProgressBar();
-  if (kPool.length) { kIdx = 0; renderKCard(kPool[0]); }
   updateExamDirectory();
-  showScreen('s-main');
-  setMode('knowledge');
+  // Update hub badge
+  // Apply paper stripe to mode buttons
+  document.querySelectorAll('.mode-btn').forEach(btn => {
+    btn.classList.remove('stripe-p1','stripe-p2a','stripe-p2b','stripe-p3');
+    btn.classList.add('stripe-' + p);
+  });
+  document.getElementById('hub-paper-badge').textContent = info.label;
+  document.getElementById('hub-paper-badge').className = 'paper-badge ' + info.badge;
+  document.getElementById('paper-badge').textContent = info.label;
+  document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
+  showScreen('s-hub');
 }
 
 function goBack() {
-  showScreen('s-pick');
+  showScreen('s-hub');
   document.getElementById('d-out').innerHTML = '';
   document.getElementById('k-out').innerHTML = '';
   document.getElementById('e-out').innerHTML = '';
@@ -335,12 +414,29 @@ function showScreen(id) {
   document.getElementById(id).classList.add('active');
   const hubLink = document.getElementById('hub-link');
   if (hubLink) hubLink.style.display = id === 's-pick' ? 'inline-block' : 'none';
+  // print btn handled by setMode; hide when leaving s-main
+  if (id !== 's-main') {
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) printBtn.style.display = 'none';
+  }
+  // update flagged button on hub
+  updateFlagBar();
+}
+
+function enterMode(m) {
+  showScreen('s-main');
+  setMode(m);
 }
 
 function setMode(m) {
+  const titles = {knowledge:'🧠 Knowledge Builder', dates:'📅 Key Dates Quiz', exam:'✏️ Exam Practice'};
+  const titleEl = document.getElementById('mode-title');
+  if (titleEl) titleEl.textContent = titles[m] || '';
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) printBtn.style.display = (m === 'knowledge' || m === 'exam') ? 'inline-block' : 'none';
   ['knowledge','dates','exam'].forEach(mode => {
-    document.getElementById('mb-' + mode).classList.toggle('sel', mode === m);
-    document.getElementById('mode-' + mode).style.display = mode === m ? 'block' : 'none';
+    const modeEl = document.getElementById('mode-' + mode);
+    if (modeEl) modeEl.style.display = mode === m ? 'block' : 'none';
   });
   // reset outputs when switching
   if (m !== 'knowledge') document.getElementById('k-out').innerHTML = '';
@@ -381,6 +477,13 @@ let learntCards = new Set();
 
 function buildKPool() {
   const unit = document.getElementById('k-unit').value;
+  const cardSel = document.getElementById('k-card');
+  if (!unit) {
+    kPool = [];
+    kPoolTotal = 0;
+    if (cardSel) cardSel.innerHTML = '<option value="">— select a topic —</option>';
+    return;
+  }
   let all = KC.filter(c => c.paper === currentPaper);
   const units = P[currentPaper].units;
   all.sort((a, b) => {
@@ -396,11 +499,11 @@ function buildKPool() {
     unitCounts[uIdx] = (unitCounts[uIdx] || 0) + 1;
     return { card: c, num: `${uIdx}.${unitCounts[uIdx]}` };
   });
-  const cardSel = document.getElementById('k-card');
   if (cardSel) {
-    cardSel.innerHTML = kPool.map((entry, i) =>
-      `<option value="${i}">${entry.num} – ${entry.card.heading}</option>`
-    ).join('');
+    cardSel.innerHTML = '<option value="">— select a topic —</option>' +
+      kPool.map((entry, i) =>
+        `<option value="${i}">${entry.num} – ${entry.card.heading}</option>`
+      ).join('');
   }
   kPoolTotal = kPool.length;
 }
@@ -410,6 +513,7 @@ function onUnitChange() {
   buildKPool();
   kPoolTotal = kPool.length;
   kIdx = 0;
+  document.getElementById('k-out').innerHTML = '';
   updateNavUI();
   updateProgressBar();
   if (kPool.length) renderKCard(kPool[0]);
@@ -419,12 +523,15 @@ function updateNavUI() {
   const numEl = document.getElementById('k-card-num');
   numEl.textContent = kPool.length ? kPool[kIdx].num : '';
   const cardSel = document.getElementById('k-card');
-  if (cardSel) cardSel.value = kIdx;
+  if (cardSel && kPool.length) cardSel.value = kIdx;
 }
 
 function drawRandomCard() {
   if (!kPool.length) {
-    document.getElementById('k-out').innerHTML = '<div class="empty">No cards match these filters.</div>';
+    const unit = document.getElementById('k-unit').value;
+    document.getElementById('k-out').innerHTML = unit
+      ? '<div class="empty">No cards match these filters.</div>'
+      : '<div class="empty">Please select a unit first.</div>';
     updateNavUI();
     return;
   }
@@ -481,7 +588,7 @@ function markLearnt() {
     document.getElementById('k-out').innerHTML = `
       <div style="text-align:center;padding:2rem">
         <div style="font-size:1.1rem;font-weight:600;margin-bottom:.5rem">🎉 All cards learnt!</div>
-        <div style="font-size:.85rem;color:#6b6b68;margin-bottom:1.5rem">Great work — every card in this set is done.</div>
+        <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.5rem">Great work — every card in this set is done.</div>
         ${flagBtn}
         <button class="btn-sm" onclick="resetLearnt()" style="margin-top:.75rem;display:block;width:100%">🔄 Reset and start again</button>
       </div>`;
@@ -505,7 +612,7 @@ function resetLearnt() {
   if (kPool.length) renderKCard(kPool[0]);
 }
   
-let flaggedCards = [];
+let flaggedCards = JSON.parse(localStorage.getItem('gcse_flagged') || '[]');
 
 function flagCard(btn) {
   const card = btn.closest('.card');
@@ -555,17 +662,22 @@ function unflagCard(btn) {
 }
   
 function updateFlagBar() {
+  localStorage.setItem('gcse_flagged', JSON.stringify(flaggedCards));
   const bar = document.getElementById('k-flag-bar');
   const num = document.getElementById('k-flag-num');
   const homeBtn = document.getElementById('home-flag-btn');
   const homeNum = document.getElementById('home-flag-num');
+  const hubFlagBtn = document.getElementById('hub-flag-btn');
+  const hubFlagNum = document.getElementById('hub-flag-num');
   if (flaggedCards.length > 0) {
     bar.style.display = 'flex';
     num.textContent = flaggedCards.length;
     if (homeBtn) { homeBtn.style.display = 'block'; homeNum.textContent = flaggedCards.length; }
+    if (hubFlagBtn) { hubFlagBtn.style.display = 'block'; hubFlagNum.textContent = flaggedCards.length; }
   } else {
     bar.style.display = 'none';
     if (homeBtn) homeBtn.style.display = 'none';
+    if (hubFlagBtn) hubFlagBtn.style.display = 'none';
   }
 }
 
@@ -582,7 +694,7 @@ function showFlaggedScreen() {
   showScreen('s-flagged');
   const out = document.getElementById('flagged-out');
   if (!flaggedCards.length) {
-    out.innerHTML = '<div class="empty">No flagged cards. Flag topics from the knowledge recall screen.</div><div style="text-align:center;margin-top:1rem"><button class="btn-sm" onclick="showScreen(\'s-pick\')">🏠 Home</button></div>';D
+    out.innerHTML = '<div class="empty" style="padding:2rem;text-align:center">🎉 All flagged cards reviewed! Head back and keep going.</div><div style="text-align:center;margin-top:1rem"><button class="btn-sm" onclick="showScreen(\'s-pick\')">🏠 Home</button></div>';
     return;
   }
   out.innerHTML = flaggedCards.map(fc => {
@@ -606,7 +718,7 @@ function showFlaggedScreen() {
           <div class="btn-row">
             <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
 <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
-            <button class="btn-sm" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11" onclick="unflagCard(this)">✅ Done</button>
+            <button class="btn-sm" onclick="unflagCard(this)">🚩 Unflag</button>
           </div>
           <div class="reveal" id="fh_${uid}">${hintsHtml}</div>
           <div class="reveal" id="ff_${uid}">${factsHtml}</div>
@@ -666,7 +778,7 @@ function renderKCard(entry) {
           <span class="tag t-${card.paper}">${card.unit}</span>
         </div>
         <div class="card-heading">${card.heading}</div>
-        <p style="font-size:.78rem;color:#6b6b68;margin-bottom:.75rem">Show hints for a nudge · Reveal key content to check your knowledge · Flag cards to revisit · Mark as learnt to track progress</p>
+        <p style="font-size:.78rem;color:var(--muted);margin-bottom:.75rem">Show hints for a nudge · Reveal key content to check your knowledge · Flag cards to revisit · Mark as learnt to track progress</p>
 
         <div class="btn-row">
           <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
@@ -683,7 +795,9 @@ function renderKCard(entry) {
 }
 
 function jumpToCard() {
-  const i = parseInt(document.getElementById('k-card').value);
+  const val = document.getElementById('k-card').value;
+  if (val === '' || val === null) return;
+  const i = parseInt(val);
   if (isNaN(i)) return;
   kIdx = i;
   renderKCard(kPool[kIdx]);
@@ -1123,7 +1237,14 @@ function updateRQCounter() {
   if (rqDiffs[3]) allowed.push('hard');
   const count = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d)).length;
   const counter = document.getElementById('rq-counter');
-  if (counter) counter.textContent = count > 0 ? count + ' questions available' : '';
+  if (counter) counter.textContent = count >= 10 ? count + ' questions available' : count > 0 ? count + ' questions (need at least 10)' : '';
+  const goBtn = document.getElementById('rq-go');
+  if (goBtn) {
+    const ready = count >= 10;
+    goBtn.style.background = ready ? '#1a1a18' : 'var(--subtle)';
+    goBtn.style.color = ready ? '#fff' : 'var(--muted)';
+    goBtn.style.cursor = ready ? 'pointer' : 'not-allowed';
+  }
 }
 
 function generateRQ() {
@@ -1184,6 +1305,8 @@ function revealAll() {
 // ═══════════════════════════════════════════
 // EXAM PRACTICE
 // ═══════════════════════════════════════════
+let examHistory = [];
+// ═══════════════════════════════════════════
 function drawExam() {
   const type = document.getElementById('e-type').value;
   let pool = EQ.filter(q => q.paper === currentPaper);
@@ -1192,7 +1315,11 @@ function drawExam() {
     document.getElementById('e-out').innerHTML = '<div class="empty">No questions match these filters.</div>';
     return;
   }
-  const q = rand(pool);
+  // Avoid repeats — filter out seen questions, reset if all seen
+  let unseen = pool.filter(q => !examHistory.includes(q.q));
+  if (!unseen.length) { examHistory = []; unseen = pool; }
+  const q = rand(unseen);
+  examHistory.push(q.q);
   drawExamCard(q);
 }
 
@@ -1254,7 +1381,7 @@ function drawExamCard(q) {
           <span class="tag t-grey">${typeLabel}</span>
         </div>
         <div class="card-q" style="font-weight:600">${q.q}</div>
-        ${q.hints && q.hints.length ? `<div style="font-size:.82rem;color:#444;margin-bottom:.75rem"><span style="font-style:italic">You may use:</span><ul style="margin:.35rem 0 0 1rem;padding:0">${q.hints.map(h => `<li style="font-weight:400">${h}</li>`).join('')}</ul></div>` : ''}
+        ${q.hints && q.hints.length ? `<div style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem"><span style="font-style:italic">You may use:</span><ul style="margin:.35rem 0 0 1rem;padding:0">${q.hints.map(h => `<li style="font-weight:400">${h}</li>`).join('')}</ul></div>` : ''}
        <div class="btn-row">
           <button class="btn-sm" onclick="tog('er');this.textContent=this.textContent==='🔍 Show indicative content'?'🔍 Hide indicative content':'🔍 Show indicative content'">🔍 Show indicative content</button>
           <button class="btn-sm" onclick="drawExam()">Next question →</button>
