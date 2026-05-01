@@ -485,7 +485,6 @@ function pickPaper(p) {
     info.units.map(u => `<option value="${u}">${u}</option>`).join('');
   const esel = document.getElementById('e-type');
   esel.innerHTML = info.qtypes.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
-  learntCards = new Set();
   examHistory = [];
   examHistoryIdx = -1;
   ();
@@ -738,7 +737,7 @@ function unflagLearntBtn(btn) {
 }
   
 function showKBComplete() {
-  const totalLearnt = learntCards.size;
+  const totalLearnt = sessionLearntCount;
   const unitVal = document.getElementById('k-unit').value;
   const flaggedThisUnit = flaggedCards.delete(fc =>
     KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
@@ -787,7 +786,6 @@ function showKBComplete() {
 
 function markLearnt() {
   const entry = kPool[kIdx];
-  learntCards.add(entry.card.paper + '|' + entry.card.heading);
   kPool.splice(kIdx, 1);
   if (kPool.length === 0) { showKBComplete(); return; }
   kIdx = kIdx % kPool.length;
@@ -797,7 +795,6 @@ function markLearnt() {
 }
 
 function resetLearnt() {
-  learntCards = new Set();
   sessionStartTime = null;
   sessionFlaggedCount = 0;
   showKBControls();
@@ -861,7 +858,7 @@ function updateProgressBar() {
     KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
       (document.getElementById('k-unit').value === 'all' || document.getElementById('k-unit').value === '' || c.unit === document.getElementById('k-unit').value))
   ).length;
-  text.textContent = `${learntCards.size} of ${kPoolTotal} learnt` + (flagCount > 0 ? ` · 🚩 ${flagCount} flagged` : '');
+  text.textContent = `${sessionLearntCount} of ${kPoolTotal} learnt` + (flagCount > 0 ? ` · 🚩 ${flagCount} flagged` : '');
 }
 
 function showFlaggedButton() {
@@ -993,7 +990,8 @@ function renderKCard(entry, isInterleaved) {
   const factsHtml = '<ul>' + card.facts.map(f =>
     `<li>${boldHints(f, card.hints)}</li>`
   ).join('') + '</ul>';
-  const alreadyFlagged = flaggedCards.has(key)(c => c.paper === card.paper && c.heading === card.heading);
+  const key = card.paper + '|' + card.heading;
+const alreadyFlagged = flaggedCards.has(key);
   const interleavedBadge = isInterleaved ? `<span class="tag t-grey" style="background:#FEF9E7;color:#9A6B00;border:1px solid #F0B429">🚩 Flagged review</span>` : '';
   document.getElementById('k-out').innerHTML = `
     <div class="card" data-paper="${card.paper}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
