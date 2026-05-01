@@ -584,7 +584,7 @@ function showFlaggedScreen() {
   showScreen('s-flagged');
   const out = document.getElementById('flagged-out');
   if (!flaggedCards.length) {
-    out.innerHTML = '<div class="empty">No flagged cards. Flag topics from the knowledge recall screen.</div><div style="text-align:center;margin-top:1rem"><button class="btn-sm" onclick="showScreen(\'s-pick\')">🏠 Home</button></div>';D
+    out.innerHTML = '<div class="empty">No flagged cards. Flag topics from the knowledge recall screen.</div><div style="text-align:center;margin-top:1rem"><button class="btn-sm" onclick="showScreen(\'s-pick\')">🏠 Home</button></div>';
     return;
   }
   out.innerHTML = flaggedCards.map(fc => {
