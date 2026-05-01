@@ -1227,6 +1227,19 @@ function loadSelectedExam() {
   const q = sel._pool[parseInt(idx)];
   if (q) drawExamCard(q);
 }
+
+function drawExamCard(q) {
+  const typeLabel = {
+    '2mark':'2-mark describe',
+    '4mark':'4-mark similarity/difference',
+    '4mark-consequence':'4-mark consequence',
+    '8mark-narrative':'8-mark narrative',
+    '8mark-importance':'8-mark importance',
+    '12mark':'12-mark explain why',
+    '16mark':'16-mark debate'
+  }[q.type] || q.type;
+  let contentHtml = '';
+  if (q.type === '16mark') {
   
   let contentHtml = '';
   if (q.type === '16mark') {
