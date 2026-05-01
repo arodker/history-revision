@@ -554,7 +554,13 @@ function setMode(m) {
   document.getElementById('e-out').innerHTML = '';
   document.getElementById('d-go').style.display = 'block';
   updateFlagBar();
-  if (m === 'knowledge') { if (!kPool.length && !learntCards.size) buildKPool(); updateNavUI(); }
+  if (m === 'knowledge') {
+  if (!kPool.length) {
+    learntCards = new Set();   // reset session
+    buildKPool();              // rebuild pool
+  }
+  updateNavUI();
+}
   if (m === 'exam') updateExamDirectory();
   if (m === 'dates') {
     const hardBtn = document.getElementById('d-hard');
