@@ -555,7 +555,6 @@ function setMode(m) {
   updateFlagBar();
   if (m === 'knowledge') {
   if (!kPool.length) {
-    learntCards = new Set();   // reset session
     buildKPool();              // rebuild pool
   }
   updateNavUI();
@@ -654,7 +653,6 @@ function buildKPool() {
 }
 
 function onUnitChange() {
-  learntCards = new Set();
   showKBControls();
   buildKPool();
   kPoolTotal = kPool.length;
@@ -681,7 +679,6 @@ function drawRandomCard() {
     const unit = document.getElementById('k-unit').value;
     if (!unit) {
       document.getElementById('k-unit').value = 'all';
-      learntCards = new Set();
       showKBControls();
       buildKPool();
       kPoolTotal = kPool.length;
