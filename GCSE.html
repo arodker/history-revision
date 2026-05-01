@@ -1238,10 +1238,7 @@ function drawExamCard(q) {
     '12mark':'12-mark explain why',
     '16mark':'16-mark debate'
   }[q.type] || q.type;
-  let contentHtml = '';
-  if (q.type === '16mark') {
-  
-  let contentHtml = '';
+    let contentHtml = '';
   if (q.type === '16mark') {
     const agreeItems = q.content.filter(p => p.agree === true);
     const disagreeItems = q.content.filter(p => p.agree === false);
