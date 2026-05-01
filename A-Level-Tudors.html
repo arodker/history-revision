@@ -197,6 +197,8 @@ h1 {
 .btn-sm:hover { background: #f4f3ef; }
 .btn-sm.muted { background: #eeede5; border-color: #ddddd4; }
 .btn-sm.green { background: #e8f5e0; color: #2E6B0E; border-color: #2E6B0E; }
+.btn-sm.learnt-btn { background: #fff; color: #2E6B0E; border-color: #2E6B0E; }
+.btn-sm.learnt-btn:hover { background: #e8f5e0; }
 
 /* ── Tags ── */
 .tag {
@@ -647,15 +649,15 @@ select {
     <!-- Knowledge Builder panel -->
     <div id="panel-knowledge" style="display:none">
       <div class="filter-row">
-        <select id="k-unit" onchange="onUnitChange()"><option value="all">All units</option></select>
-        <select id="k-card-sel" onchange="jumpToCard()"></select>
+        <select id="k-unit" onchange="onUnitChange()" style="font-weight:700;font-size:.85rem"><option value="all">All units</option></select>
+        <select id="k-card-sel" onchange="jumpToCard()" style="font-weight:700;font-size:.85rem"></select>
       </div>
-      <button class="btn-go" id="k-random-btn" onclick="drawRandom()">🔀 Random card</button>
       <div class="nav-row">
         <button class="btn-sm" onclick="stepCard(-1)">← Prev</button>
         <span class="nav-num" id="k-card-num"></span>
         <button class="btn-sm" onclick="stepCard(1)">Next →</button>
       </div>
+      <button class="btn-sm muted" id="k-random-btn" onclick="drawRandom()" style="width:100%;text-align:center;padding:8px;margin-bottom:.75rem;font-size:.78rem">🔀 Random card</button>
       <div class="prog-wrap" id="k-prog-wrap">
         <div class="prog-text" id="k-prog-text"></div>
         <div class="prog-bg"><div class="prog-fill" id="k-prog-fill"></div></div>
@@ -665,7 +667,7 @@ select {
         <button class="btn-sm muted" onclick="showFlagged()">Review</button>
         <button class="btn-sm muted" onclick="clearFlagged()">Clear</button>
       </div>
-      <div id="k-out"></div>
+      <div id="k-out"><div class="empty">Select a unit or card above, or press Random.</div></div>
     </div>
 
     <!-- Key Dates panel -->
@@ -802,8 +804,8 @@ function pickReign(r) {
   unitSel.innerHTML = '<option value="all">All units</option>' +
     info.units.map(u => `<option value="${u}">${u}</option>`).join('');
 
-  // Random card button colour
-  document.getElementById('k-random-btn').className = 'btn-go ' + info.go;
+  // Random card button — now btn-sm, no colour class needed
+  document.getElementById('k-random-btn').className = 'btn-sm muted';
 
   // Date quiz button colour
   document.getElementById('d-start-btn').className = 'btn-go ' + info.go;
@@ -839,7 +841,7 @@ function setMode(m) {
   document.getElementById('d-out').innerHTML = '';
   document.getElementById('d-start-btn').style.display = 'block';
   if (m === 'exam')      backToExam();
-  if (m === 'knowledge') { buildKPool(); updateNavUI(); }
+  if (m === 'knowledge') { buildKPool(); updateNavUI(); if (kPool.length) renderKCard(kPool[kIdx]); }
   updateFlagBar();
 }
 
@@ -947,7 +949,7 @@ function buildKPool() {
   const units = REIGNS[currentReign].units;
   // MTC covers both edward and mary cards
   let all = currentReign === 'mtc'
-    ? KC.filter(c => c.reign === 'edward' || c.reign === 'mary')
+    ? KC.filter(c => c.reign === 'edward' || c.reign === 'mary' || c.reign === 'mtc')
     : KC.filter(c => c.reign === currentReign);
   all.sort((a, b) => {
     const ui = units.indexOf(a.unit), vi = units.indexOf(b.unit);
@@ -1108,14 +1110,13 @@ function renderCardHTML(card, num, isFlagged) {
 
   return `<div class="card" data-reign="${card.reign}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
     <div class="card-stripe" style="background:${
-      card.reign==='edward'?'#6B9DE8':card.reign==='mary'?'#E87A6B':'#6BE8A0'
+      card.reign==='edward'?'#6B9DE8':card.reign==='mary'?'#E87A6B':card.reign==='mtc'?'#A96BE8':'#6BE8A0'
     }"></div>
     <div class="card-inner">
       <div class="card-meta">
         ${num ? `<span class="tag tag-grey">${num}</span>` : ''}
         <span class="tag tag-${card.reign}">${card.unit}</span>
       </div>
-      ${checklistTag}
       <div class="card-heading">${card.heading}</div>
       ${!isFlagged ? `<p class="card-prompt">${prompts[Math.floor(Math.random()*5)]}</p>` : ''}
       <div class="btn-row">
@@ -1127,7 +1128,7 @@ function renderCardHTML(card, num, isFlagged) {
             ? `<button class="btn-sm green" onclick="unflagCard(this)">✅ Remove flag</button>`
             : `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>`
         }
-        ${!isFlagged ? `<button class="btn-sm green" onclick="markLearnt()">✓ Learnt</button>` : ''}
+        ${!isFlagged ? `<button class="btn-sm learnt-btn" onclick="markLearnt()">✓ Learnt</button>` : ''}
       </div>
       <div class="reveal" id="${uid}h">${hintsHTML}</div>
       <div class="reveal" id="${uid}f">${factsHTML}</div>
@@ -1405,7 +1406,7 @@ const KC = [
 },
 
 {
-  reign: 'edward',
+  reign: 'mtc',
   unit: 'Unit 1 – Stability of the Monarchy',
   heading: 'The Devise for the Succession',
   checklist: 'The succession of 1553 (Lady Jane Grey)',
