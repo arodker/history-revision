@@ -169,15 +169,12 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
   </div>
 
   <!-- KNOWLEDGE -->
- <div style="margin-bottom:.75rem">
-  <label style="font-size:.75rem;font-weight:600;color:#444;display:block;margin-bottom:4px">Unit</label>
-  <select id="k-unit" onchange="onUnitChange()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid #d0d0cc;background:#fff">
-    <option value="all">All units</option>
-  </select>
-  <label style="font-size:.75rem;font-weight:600;color:#444;display:block;margin-top:.5rem;margin-bottom:4px">Card</label>
-  <select id="k-card" onchange="jumpToCard()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid #d0d0cc;background:#fff"></select>
+  <div id="mode-knowledge" style="display:none">
+    <div class="filter-row">
+  <select id="k-unit" onchange="onUnitChange()"><option value="all">All units</option></select>
+<select id="k-card" onchange="jumpToCard()"></select>
 </div>
-<button class="btn-sm" id="k-go" onclick="drawRandomCard()" style="width:100%;margin-bottom:.5rem;opacity:.7;font-size:.8rem">🔀 Random card</button>
+<button class="btn-sm" id="k-go" onclick="drawRandomCard()" style="width:100%;margin-bottom:.5rem;opacity:.7;font-size:.8rem">🎲 Random card</button>
 <div style="display:flex;gap:8px;margin-bottom:.75rem;margin-top:-.5rem">
   <button class="btn-sm" onclick="stepCard(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
   <span id="k-card-num" style="flex:0 0 auto;align-self:center;font-size:.78rem;color:#6b6b68;white-space:nowrap;min-width:50px;text-align:center"></span>
@@ -207,29 +204,29 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 
   <!-- EXAM -->
   <div id="mode-exam" style="display:none">
-  <div style="margin-bottom:.75rem">
-    <label style="font-size:.75rem;font-weight:600;color:#444;display:block;margin-bottom:4px">Question type</label>
-    <select id="e-type" onchange="updateExamDirectory()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid #d0d0cc;background:#fff">
-      <option value="all">All question types</option>
-      <option value="2mark">2-mark describe</option>
-      <option value="4mark">4-mark similarity/difference</option>
-      <option value="4mark-consequence">4-mark consequence</option>
-      <option value="8mark-narrative">8-mark narrative</option>
-      <option value="8mark-importance">8-mark importance</option>
-      <option value="12mark">12-mark explain why</option>
-      <option value="16mark">16-mark debate</option>
-    </select>
-    <label style="font-size:.75rem;font-weight:600;color:#444;display:block;margin-top:.5rem;margin-bottom:4px">Question</label>
-    <select id="e-directory" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid #d0d0cc;background:#fff">
-      <option value="">— select a question —</option>
-    </select>
+    <div style="margin-bottom:.75rem">
+      <label style="font-size:.75rem;font-weight:600;color:#444;display:block;margin-bottom:4px">Question type</label>
+      <select id="e-type" onchange="updateExamDirectory()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid #d0d0cc;background:#fff">
+        <option value="all">All question types</option>
+        <option value="2mark">2-mark describe</option>
+        <option value="4mark">4-mark similarity/difference</option>
+        <option value="4mark-consequence">4-mark consequence</option>
+        <option value="8mark-narrative">8-mark narrative</option>
+        <option value="8mark-importance">8-mark importance</option>
+        <option value="12mark">12-mark explain why</option>
+        <option value="16mark">16-mark debate</option>
+      </select>
+      <label style="font-size:.75rem;font-weight:600;color:#444;display:block;margin-top:.5rem;margin-bottom:4px">Question</label>
+      <select id="e-directory" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid #d0d0cc;background:#fff">
+        <option value="">— select a question —</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:.75rem">
+      <button class="btn-go" id="e-go" onclick="loadSelectedExam()" style="flex:3">Load question</button>
+      <button class="btn-go" id="e-random" onclick="drawExam()" style="flex:1">🎲</button>
+    </div>
+    <div id="e-out"></div>
   </div>
-  <div style="display:flex;gap:8px;margin-bottom:.75rem">
-    <button class="btn-go" id="e-go" onclick="loadSelectedExam()" style="flex:1">Load question</button>
-    <button class="btn-sm" onclick="drawExam()" style="opacity:.7;font-size:.8rem;padding:9px 12px">🎲 Random</button>
-  </div>
-  <div id="e-out"></div>
-</div>
 </div>
 
 <!-- SCREEN 3: RAPID FIRE -->
@@ -306,8 +303,9 @@ function pickPaper(p) {
   const info = P[p];
   document.getElementById('paper-badge').textContent = info.label;
   document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
-  ['k-go','d-go','e-go'].forEach(id => {
-    document.getElementById(id).className = 'btn-go ' + info.go;
+  ['k-go','d-go','e-go','e-random'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.className = 'btn-go ' + info.go;
   });
   const sel = document.getElementById('k-unit');
   sel.innerHTML = '<option value="all">All units</option>' +
@@ -321,7 +319,7 @@ function pickPaper(p) {
   updateProgressBar();
   if (kPool.length) { kIdx = 0; renderKCard(kPool[0]); }
   updateExamDirectory();
-showScreen('s-main');
+  showScreen('s-main');
   setMode('knowledge');
 }
 
@@ -351,7 +349,7 @@ function setMode(m) {
   document.getElementById('d-go').style.display = 'block';
   updateFlagBar();
   if (m === 'knowledge') { buildKPool(); updateNavUI(); }
-if (m === 'exam') updateExamDirectory();
+  if (m === 'exam') updateExamDirectory();
 }
 
 // ═══════════════════════════════════════════
@@ -584,7 +582,7 @@ function showFlaggedScreen() {
   showScreen('s-flagged');
   const out = document.getElementById('flagged-out');
   if (!flaggedCards.length) {
-    out.innerHTML = '<div class="empty">No flagged cards. Flag topics from the knowledge recall screen.</div><div style="text-align:center;margin-top:1rem"><button class="btn-sm" onclick="showScreen(\'s-pick\')">🏠 Home</button></div>';
+    out.innerHTML = '<div class="empty">No flagged cards. Flag topics from the knowledge recall screen.</div><div style="text-align:center;margin-top:1rem"><button class="btn-sm" onclick="showScreen(\'s-pick\')">🏠 Home</button></div>';D
     return;
   }
   out.innerHTML = flaggedCards.map(fc => {
@@ -1195,15 +1193,8 @@ function drawExam() {
     return;
   }
   const q = rand(pool);
-  const typeLabel = {
-    '2mark': '2-mark describe',
-    '4mark': '4-mark similarity/difference',
-    '4mark-consequence': '4-mark consequence',
-    '8mark-narrative': '8-mark narrative',
-    '8mark-importance': '8-mark importance',
-    '12mark': '12-mark explain why',
-    '16mark': '16-mark debate'
-  }[q.type] || q.type;
+  drawExamCard(q);
+}
 
 function updateExamDirectory() {
   const type = document.getElementById('e-type').value;
@@ -1230,15 +1221,16 @@ function loadSelectedExam() {
 
 function drawExamCard(q) {
   const typeLabel = {
-    '2mark':'2-mark describe',
-    '4mark':'4-mark similarity/difference',
-    '4mark-consequence':'4-mark consequence',
-    '8mark-narrative':'8-mark narrative',
-    '8mark-importance':'8-mark importance',
-    '12mark':'12-mark explain why',
-    '16mark':'16-mark debate'
+    '2mark': '2-mark describe',
+    '4mark': '4-mark similarity/difference',
+    '4mark-consequence': '4-mark consequence',
+    '8mark-narrative': '8-mark narrative',
+    '8mark-importance': '8-mark importance',
+    '12mark': '12-mark explain why',
+    '16mark': '16-mark debate'
   }[q.type] || q.type;
-    let contentHtml = '';
+
+  let contentHtml = '';
   if (q.type === '16mark') {
     const agreeItems = q.content.filter(p => p.agree === true);
     const disagreeItems = q.content.filter(p => p.agree === false);
@@ -1262,7 +1254,7 @@ function drawExamCard(q) {
           <span class="tag t-grey">${typeLabel}</span>
         </div>
         <div class="card-q" style="font-weight:600">${q.q}</div>
-${q.hints && q.hints.length ? `<div style="font-size:.82rem;color:#444;margin-bottom:.75rem"><span style="font-style:italic">You may use:</span><ul style="margin:.35rem 0 0 1rem;padding:0">${q.hints.map(h => `<li style="font-weight:400">${h}</li>`).join('')}</ul></div>` : ''}
+        ${q.hints && q.hints.length ? `<div style="font-size:.82rem;color:#444;margin-bottom:.75rem"><span style="font-style:italic">You may use:</span><ul style="margin:.35rem 0 0 1rem;padding:0">${q.hints.map(h => `<li style="font-weight:400">${h}</li>`).join('')}</ul></div>` : ''}
        <div class="btn-row">
           <button class="btn-sm" onclick="tog('er');this.textContent=this.textContent==='🔍 Show indicative content'?'🔍 Hide indicative content':'🔍 Show indicative content'">🔍 Show indicative content</button>
           <button class="btn-sm" onclick="drawExam()">Next question →</button>
