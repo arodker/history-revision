@@ -169,12 +169,15 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
   </div>
 
   <!-- KNOWLEDGE -->
-  <div id="mode-knowledge" style="display:none">
-    <div class="filter-row">
-  <select id="k-unit" onchange="onUnitChange()"><option value="all">All units</option></select>
-<select id="k-card" onchange="jumpToCard()"></select>
+ <div style="margin-bottom:.75rem">
+  <label style="font-size:.75rem;font-weight:600;color:#444;display:block;margin-bottom:4px">Unit</label>
+  <select id="k-unit" onchange="onUnitChange()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid #d0d0cc;background:#fff">
+    <option value="all">All units</option>
+  </select>
+  <label style="font-size:.75rem;font-weight:600;color:#444;display:block;margin-top:.5rem;margin-bottom:4px">Card</label>
+  <select id="k-card" onchange="jumpToCard()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid #d0d0cc;background:#fff"></select>
 </div>
-<button class="btn-go" id="k-go" onclick="drawRandomCard()">🔀 Random card</button>
+<button class="btn-sm" id="k-go" onclick="drawRandomCard()" style="width:100%;margin-bottom:.5rem;opacity:.7;font-size:.8rem">🔀 Random card</button>
 <div style="display:flex;gap:8px;margin-bottom:.75rem;margin-top:-.5rem">
   <button class="btn-sm" onclick="stepCard(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
   <span id="k-card-num" style="flex:0 0 auto;align-self:center;font-size:.78rem;color:#6b6b68;white-space:nowrap;min-width:50px;text-align:center"></span>
@@ -204,21 +207,29 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:
 
   <!-- EXAM -->
   <div id="mode-exam" style="display:none">
-    <div class="filter-row">
-      <select id="e-type">
-        <option value="all">All question types</option>
-        <option value="2mark">2-mark describe</option>
-        <option value="4mark">4-mark similarity/difference</option>
-        <option value="4mark-consequence">4-mark consequence</option>
-        <option value="8mark-narrative">8-mark narrative</option>
-        <option value="8mark-importance">8-mark importance</option>
-        <option value="12mark">12-mark explain why</option>
-        <option value="16mark">16-mark debate</option>
-      </select>
-    </div>
-    <button class="btn-go" id="e-go" onclick="drawExam()">Get a random question</button>
-    <div id="e-out"></div>
+  <div style="margin-bottom:.75rem">
+    <label style="font-size:.75rem;font-weight:600;color:#444;display:block;margin-bottom:4px">Question type</label>
+    <select id="e-type" onchange="updateExamDirectory()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid #d0d0cc;background:#fff">
+      <option value="all">All question types</option>
+      <option value="2mark">2-mark describe</option>
+      <option value="4mark">4-mark similarity/difference</option>
+      <option value="4mark-consequence">4-mark consequence</option>
+      <option value="8mark-narrative">8-mark narrative</option>
+      <option value="8mark-importance">8-mark importance</option>
+      <option value="12mark">12-mark explain why</option>
+      <option value="16mark">16-mark debate</option>
+    </select>
+    <label style="font-size:.75rem;font-weight:600;color:#444;display:block;margin-top:.5rem;margin-bottom:4px">Question</label>
+    <select id="e-directory" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid #d0d0cc;background:#fff">
+      <option value="">— select a question —</option>
+    </select>
   </div>
+  <div style="display:flex;gap:8px;margin-bottom:.75rem">
+    <button class="btn-go" id="e-go" onclick="loadSelectedExam()" style="flex:1">Load question</button>
+    <button class="btn-sm" onclick="drawExam()" style="opacity:.7;font-size:.8rem;padding:9px 12px">🎲 Random</button>
+  </div>
+  <div id="e-out"></div>
+</div>
 </div>
 
 <!-- SCREEN 3: RAPID FIRE -->
@@ -309,7 +320,8 @@ function pickPaper(p) {
   updateNavUI();
   updateProgressBar();
   if (kPool.length) { kIdx = 0; renderKCard(kPool[0]); }
-  showScreen('s-main');
+  updateExamDirectory();
+showScreen('s-main');
   setMode('knowledge');
 }
 
@@ -339,6 +351,7 @@ function setMode(m) {
   document.getElementById('d-go').style.display = 'block';
   updateFlagBar();
   if (m === 'knowledge') { buildKPool(); updateNavUI(); }
+if (m === 'exam') updateExamDirectory();
 }
 
 // ═══════════════════════════════════════════
@@ -1192,6 +1205,29 @@ function drawExam() {
     '16mark': '16-mark debate'
   }[q.type] || q.type;
 
+function updateExamDirectory() {
+  const type = document.getElementById('e-type').value;
+  let pool = EQ.filter(q => q.paper === currentPaper);
+  if (type !== 'all') pool = pool.filter(q => q.type === type);
+  const typeShort = {
+    '2mark':'[2m]','4mark':'[4m]','4mark-consequence':'[4m]',
+    '8mark-narrative':'[8m]','8mark-importance':'[8m]',
+    '12mark':'[12m]','16mark':'[16m]'
+  };
+  const sel = document.getElementById('e-directory');
+  sel.innerHTML = '<option value="">— select a question —</option>' +
+    pool.map((q, i) => `<option value="${i}">${typeShort[q.type]||''} ${q.q.substring(0,60)}…</option>`).join('');
+  sel._pool = pool;
+}
+
+function loadSelectedExam() {
+  const sel = document.getElementById('e-directory');
+  const idx = sel.value;
+  if (idx === '') { drawExam(); return; }
+  const q = sel._pool[parseInt(idx)];
+  if (q) drawExamCard(q);
+}
+  
   let contentHtml = '';
   if (q.type === '16mark') {
     const agreeItems = q.content.filter(p => p.agree === true);
@@ -1215,7 +1251,8 @@ function drawExam() {
         <div class="meta">
           <span class="tag t-grey">${typeLabel}</span>
         </div>
-        <div class="card-q">${q.q}</div>
+        <div class="card-q" style="font-weight:600">${q.q}</div>
+${q.hints && q.hints.length ? `<div style="font-size:.82rem;color:#444;margin-bottom:.75rem"><span style="font-style:italic">You may use:</span><ul style="margin:.35rem 0 0 1rem;padding:0">${q.hints.map(h => `<li style="font-weight:400">${h}</li>`).join('')}</ul></div>` : ''}
        <div class="btn-row">
           <button class="btn-sm" onclick="tog('er');this.textContent=this.textContent==='🔍 Show indicative content'?'🔍 Hide indicative content':'🔍 Show indicative content'">🔍 Show indicative content</button>
           <button class="btn-sm" onclick="drawExam()">Next question →</button>
