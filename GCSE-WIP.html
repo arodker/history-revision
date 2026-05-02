@@ -1447,23 +1447,27 @@ let DATES = []; // loaded from data/dates.json
 // ═══════════════════════════════════════════
 // LOAD EXTERNAL DATA
 // ═══════════════════════════════════════════
-Promise.all([
-  fetch('data/eq.json').then(r => { if (!r.ok) throw new Error('eq.json: ' + r.status); return r.json(); }),
-  fetch('data/rq.json').then(r => { if (!r.ok) throw new Error('rq.json: ' + r.status); return r.json(); }),
-  fetch('data/dates.json').then(r => { if (!r.ok) throw new Error('dates.json: ' + r.status); return r.json(); }),
-]).then(([eq, rq, dates]) => {
-  EQ = eq;
-  RQ = rq;
-  DATES = dates;
-  // Refresh any visible modes
-  const examMode = document.getElementById('mode-exam');
-  if (examMode && examMode.style.display !== 'none') updateExamDirectory();
-  console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length);
-}).catch(err => {
-  console.error('Data load failed:', err);
-  const eOut = document.getElementById('e-out');
-  if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load data files. Make sure data/eq.json, rq.json and dates.json are in your repository.</div>';
-});
+// Only fetch if running on a server (not local file://)
+if (window.location.protocol !== 'file:') {
+  Promise.all([
+    fetch('data/eq.json').then(r => { if (!r.ok) throw new Error('eq.json: ' + r.status); return r.json(); }),
+    fetch('data/rq.json').then(r => { if (!r.ok) throw new Error('rq.json: ' + r.status); return r.json(); }),
+    fetch('data/dates.json').then(r => { if (!r.ok) throw new Error('dates.json: ' + r.status); return r.json(); }),
+  ]).then(([eq, rq, dates]) => {
+    EQ = eq;
+    RQ = rq;
+    DATES = dates;
+    const examMode = document.getElementById('mode-exam');
+    if (examMode && examMode.style.display !== 'none') updateExamDirectory();
+    console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length);
+  }).catch(err => {
+    console.error('Data load failed:', err);
+    const eOut = document.getElementById('e-out');
+    if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load data files. Make sure data/eq.json, rq.json and dates.json are in your repository.</div>';
+  });
+} else {
+  console.warn('Running as local file — external data not loaded. Open via GitHub Pages for full functionality.');
+}
 
 </script>
 <!-- EXAM FULLSCREEN OVERLAY -->
