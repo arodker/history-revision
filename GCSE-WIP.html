@@ -2020,7 +2020,118 @@ if (window.location.protocol !== 'file:') {
 } else {
   console.warn('Running as local file — external data not loaded.');
 }
+<!-- PATCHED SECTIONS ONLY: insert into your GCSE (18).html -->
 
+<script>
+// ═══════════════════════════════════════════
+// RESTORED FUNCTIONS (FROM v17)
+// ═══════════════════════════════════════════
+
+function updateExamDirectory() {
+  if (!EQ || !EQ.length) return; // prevent race condition
+
+  const type = document.getElementById('e-type').value;
+  let pool = EQ.filter(q => q.paper === currentPaper);
+  if (type !== 'all') pool = pool.filter(q => q.type === type);
+
+  const typeShort = {
+    '2mark':'[2m]',
+    '4mark':'[4m]',
+    '4mark-consequence':'[4m]',
+    '8mark-narrative':'[8m]',
+    '8mark-importance':'[8m]',
+    '12mark':'[12m]',
+    '16mark':'[16m]'
+  };
+
+  const sel = document.getElementById('e-directory');
+  if (!sel) return;
+
+  sel.innerHTML = '<option value="">— select a question —</option>' +
+    pool.map((q, i) =>
+      `<option value="${i}">${typeShort[q.type] || ''} ${q.name || q.q.substring(0,55)}</option>`
+    ).join('');
+
+  sel._pool = pool;
+}
+
+function showRapidSetup() {
+  showScreen('s-rapid');
+
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) printBtn.style.display = 'none';
+
+  document.getElementById('rq-setup').style.display = 'block';
+  document.getElementById('rq-out').style.display = 'none';
+  document.getElementById('rq-one').style.display = 'none';
+  document.getElementById('rq-err').style.display = 'none';
+
+  const resumeBtn = document.getElementById('rq-resume-btn');
+  if (resumeBtn) resumeBtn.style.display = rqInProgress ? 'block' : 'none';
+
+  ['p1','p2a','p2b','p3'].forEach(p => {
+    const btn = document.getElementById('rqp-' + p);
+    if (!btn) return;
+    if (rqPapers[p]) btn.classList.add('on-' + p);
+    else btn.classList.remove('on-' + p);
+  });
+
+  [1,2,3].forEach(i => {
+    const el = document.getElementById('rqs-' + i);
+    if (el) el.classList.toggle('sel', i === rqDiff);
+  });
+
+  updateRQCounter();
+}
+
+// ═══════════════════════════════════════════
+// FIXED DATA LOADING
+// ═══════════════════════════════════════════
+
+Promise.all([
+  fetch('data/eq.json').then(r => { if (!r.ok) throw new Error('eq.json: ' + r.status); return r.json(); }),
+  fetch('data/rq.json').then(r => { if (!r.ok) throw new Error('rq.json: ' + r.status); return r.json(); }),
+  fetch('data/dates.json').then(r => { if (!r.ok) throw new Error('dates.json: ' + r.status); return r.json(); }),
+]).then(([eq, rq, dates]) => {
+  EQ = eq;
+  RQ = rq;
+  DATES = dates;
+
+  console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length);
+
+  // SAFE refresh after data loads
+  updateExamDirectory();
+
+  const examMode = document.getElementById('mode-exam');
+  if (examMode && examMode.style.display !== 'none') {
+    updateExamDirectory();
+  }
+
+}).catch(err => {
+  console.error('Data load failed:', err);
+  const eOut = document.getElementById('e-out');
+  if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load data files.</div>';
+});
+
+// ═══════════════════════════════════════════
+// OPTIONAL HARDENING (RECOMMENDED)
+// ═══════════════════════════════════════════
+
+function pickPaper(p) {
+  currentPaper = p;
+
+  const info = P[p];
+
+  const esel = document.getElementById('e-type');
+  if (esel) {
+    esel.innerHTML = info.qtypes.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
+  }
+
+  // Only update directory if data is ready
+  if (EQ && EQ.length) updateExamDirectory();
+
+  showScreen('s-hub');
+}
 </script>
 <!-- EXAM FULLSCREEN OVERLAY -->
 <div id="exam-fullscreen" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;padding:2rem 1.5rem;overflow-y:auto">
