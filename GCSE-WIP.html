@@ -493,7 +493,7 @@ function pickPaper(p) {
   document.getElementById('k-out').innerHTML = '';
   updateNavUI();
   updateProgressBar();
-  updateExamDirectory();
+  if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
   // Update hub badge
   // Apply paper stripe to mode buttons
   document.querySelectorAll('.mode-btn').forEach(btn => {
@@ -555,7 +555,7 @@ function setMode(m) {
   document.getElementById('d-go').style.display = 'block';
   updateFlagBar();
   if (m === 'knowledge') { if (!kPool.length && !learntCards.size) buildKPool(); updateNavUI(); }
-  if (m === 'exam') updateExamDirectory();
+  if (m === 'exam') if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
   if (m === 'dates') {
     const hardBtn = document.getElementById('d-hard');
     if (hardBtn) {
@@ -1469,7 +1469,7 @@ function pickPaper(p) {
   document.getElementById('k-out').innerHTML = '';
   updateNavUI();
   updateProgressBar();
-  updateExamDirectory();
+  if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
   // Update hub badge
   // Apply paper stripe to mode buttons
   document.querySelectorAll('.mode-btn').forEach(btn => {
@@ -1531,7 +1531,7 @@ function setMode(m) {
   document.getElementById('d-go').style.display = 'block';
   updateFlagBar();
   if (m === 'knowledge') { if (!kPool.length && !learntCards.size) buildKPool(); updateNavUI(); }
-  if (m === 'exam') updateExamDirectory();
+  if (m === 'exam') if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
   if (m === 'dates') {
     const hardBtn = document.getElementById('d-hard');
     if (hardBtn) {
@@ -2010,7 +2010,7 @@ if (window.location.protocol !== 'file:') {
     RQ = rq;
     DATES = dates;
     const examMode = document.getElementById('mode-exam');
-    if (examMode && examMode.style.display !== 'none') updateExamDirectory();
+    if (examMode && examMode.style.display !== 'none') if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
     console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length);
   }).catch(err => {
     console.error('Data load failed:', err);
@@ -2100,11 +2100,11 @@ Promise.all([
   console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length);
 
   // SAFE refresh after data loads
-  updateExamDirectory();
+  if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
 
   const examMode = document.getElementById('mode-exam');
   if (examMode && examMode.style.display !== 'none') {
-    updateExamDirectory();
+    if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
   }
 
 }).catch(err => {
