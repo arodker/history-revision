@@ -254,9 +254,9 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   </div>
   <div class="mode-grid" style="grid-template-columns:1fr 1fr;margin-bottom:.75rem">
     <button class="mode-btn" onclick="enterMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Learn key content card by card</span></button>
+    <button class="mode-btn" style="opacity:.45;cursor:not-allowed" disabled><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Coming soon</span></button>
     <button class="mode-btn" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Test your chronology</span></button>
     <button class="mode-btn" onclick="enterMode('exam')"><span class="icon">✏️</span>Exam Practice<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Practise exam questions</span></button>
-    <button class="mode-btn" style="opacity:.45;cursor:not-allowed" disabled><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Coming soon</span></button>
   </div>
   <button class="btn-go" id="hub-flag-btn" style="background:var(--subtle);color:var(--text);display:none" onclick="goToFlagged()">🚩 Review flagged cards (<span id="hub-flag-num">0</span>)</button>
 </div>
@@ -416,10 +416,13 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 <!-- SCREEN 4: FLAGGED CARDS -->
 <div class="screen" id="s-flagged">
   <div class="mode-header">
-    <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
-    <button class="back-btn" onclick="showScreen('s-hub')">← Back</button>
+    <div style="display:flex;gap:6px">
+      <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
+      <button class="back-btn" onclick="showScreen('s-hub')">← Back</button>
+    </div>
     <span style="font-size:.85rem;font-weight:600;color:var(--muted)">🚩 Flagged for review</span>
   </div>
+  <button onclick="clearFlagged();showFlaggedScreen()" style="width:100%;text-align:left;padding:8px 12px;margin-bottom:.75rem;font-size:.82rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:#A32D2D;cursor:pointer;font-family:inherit">🗑️ Clear all flagged cards</button>
   <div id="flagged-out"></div>
 </div>
 
@@ -551,7 +554,7 @@ function setMode(m) {
   document.getElementById('e-out').innerHTML = '';
   document.getElementById('d-go').style.display = 'block';
   updateFlagBar();
-  if (m === 'knowledge') { buildKPool(); updateNavUI(); }
+  if (m === 'knowledge') { if (!kPool.length && !learntCards.size) buildKPool(); updateNavUI(); }
   if (m === 'exam') updateExamDirectory();
   if (m === 'dates') {
     const hardBtn = document.getElementById('d-hard');
@@ -720,72 +723,64 @@ function unflagLearntBtn(btn) {
   setTimeout(() => unflagCard(btn), 400);
 }
   
+function showKBComplete() {
+  const totalLearnt = learntCards.size;
+  const unitVal = document.getElementById('k-unit').value;
+  const flaggedThisUnit = flaggedCards.filter(fc =>
+    KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
+      (unitVal === 'all' || unitVal === '' || c.unit === unitVal))
+  ).length;
+  const celebrations = [
+    'Outstanding work! Every card nailed. \u{1F4AA}',
+    'Unit complete \u2014 your future self will thank you. \u{1F3C6}',
+    'That\u2019s the whole unit done. Impressive. \u2B50',
+    'All cards learnt. You\u2019re on a roll. \u{1F525}',
+    'Exam board won\u2019t know what hit them. \u{1F3AF}',
+    'Unit complete! Keep this momentum going. \u{1F680}',
+    'Every card done. That\u2019s how it\u2019s done. \u{1F44F}',
+  ];
+  const msg = celebrations[Math.floor(Math.random() * celebrations.length)];
+  document.getElementById('k-out').innerHTML = `
+    <div style="text-align:center;padding:2rem">
+      <div style="font-size:2.5rem;margin-bottom:.5rem">\u{1F389}</div>
+      <div style="font-size:1.2rem;font-weight:700;margin-bottom:.4rem">Unit complete!</div>
+      <div style="font-size:.88rem;color:var(--muted);margin-bottom:1.5rem">${msg}</div>
+      <div style="display:flex;justify-content:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
+          <div style="font-size:1.5rem;font-weight:700;color:#4a7c59">${totalLearnt}</div>
+          <div style="font-size:.7rem;color:var(--muted);margin-top:2px">cards learnt</div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
+          <div style="font-size:1.5rem;font-weight:700;color:#D4537E">${sessionFlaggedCount}</div>
+          <div style="font-size:.7rem;color:var(--muted);margin-top:2px">flagged for review</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        ${flaggedThisUnit > 0 ? `<button class="btn-sm" onclick="showFlaggedScreen()" style="width:100%">\u{1F6A9} Review ${flaggedThisUnit} flagged cards</button>` : ''}
+        <button class="btn-sm" onclick="showScreen('s-hub')" style="width:100%">\u{1F4DA} Pick a new unit</button>
+        <button class="btn-sm" onclick="resetLearnt()" style="width:100%">\u{1F504} Reset and start again</button>
+      </div>
+    </div>`;
+  document.getElementById('k-progress-wrap').style.display = 'none';
+  document.getElementById('k-flag-bar').style.display = 'none';
+  const kGoRow = document.getElementById('k-go') && document.getElementById('k-go').parentElement;
+  if (kGoRow) kGoRow.style.display = 'none';
+  document.querySelector('#mode-knowledge .filter-row').style.display = 'none';
+  sessionStartTime = null;
+  sessionFlaggedCount = 0;
+  updateNavUI();
+}
+
 function markLearnt() {
   const entry = kPool[kIdx];
   learntCards.add(entry.card.paper + '|' + entry.card.heading);
   kPool.splice(kIdx, 1);
-  if (kPool.length === 0) {
-    // Session summary
-    const elapsed = sessionStartTime ? Math.round((Date.now() - sessionStartTime) / 1000) : 0;
-    const mins = Math.floor(elapsed / 60);
-    const secs = elapsed % 60;
-    const timeStr = mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
-    const totalLearnt = learntCards.size;
-    const flagBtn = flaggedCards.length > 0
-      ? `<button class="btn-go" onclick="showFlaggedScreen()" style="margin-top:.75rem;background:#F0B429;color:#fff">🚩 Review ${flaggedCards.length} flagged cards</button>`
-      : '';
-    const flaggedThisUnit = flaggedCards.filter(fc =>
-      KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
-        (document.getElementById('k-unit').value === 'all' || c.unit === document.getElementById('k-unit').value))
-    ).length;
-    const celebrations = [
-      'Outstanding work! Every card nailed. 💪',
-      'Unit complete \u2014 your future self will thank you. 🏆',
-      'That\u2019s the whole unit done. Impressive. ⭐',
-      'All cards learnt. You\u2019re on a roll. 🔥',
-      'Exam board won\u2019t know what hit them. 🎯',
-      'Unit complete! Keep this momentum going. 🚀',
-      'Every card done. That\u2019s how it\u2019s done. 👏',
-    ];
-    const msg = celebrations[Math.floor(Math.random() * celebrations.length)];
-    document.getElementById('k-out').innerHTML = `
-      <div style="text-align:center;padding:2rem">
-        <div style="font-size:2.5rem;margin-bottom:.5rem">🎉</div>
-        <div style="font-size:1.2rem;font-weight:700;margin-bottom:.4rem">Unit complete!</div>
-        <div style="font-size:.88rem;color:var(--muted);margin-bottom:1.5rem">${msg}</div>
-        <div style="display:flex;justify-content:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap">
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
-            <div style="font-size:1.5rem;font-weight:700;color:#4a7c59">${totalLearnt}</div>
-            <div style="font-size:.7rem;color:var(--muted);margin-top:2px">cards learnt</div>
-          </div>
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
-            <div style="font-size:1.5rem;font-weight:700;color:#D4537E">${sessionFlaggedCount}</div>
-            <div style="font-size:.7rem;color:var(--muted);margin-top:2px">flagged for review</div>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          ${flaggedThisUnit > 0 ? `<button class="btn-sm" onclick="showFlaggedScreen()" style="width:100%">🚩 Review ${flaggedThisUnit} flagged cards</button>` : ''}
-          <button class="btn-sm" onclick="showScreen('s-hub')" style="width:100%">📚 Pick a new unit</button>
-          <button class="btn-sm" onclick="resetLearnt()" style="width:100%">🔄 Reset and start again</button>
-        </div>
-      </div>`;
-    // Hide progress bar, controls, dropdowns
-    document.getElementById('k-progress-wrap').style.display = 'none';
-    document.getElementById('k-flag-bar').style.display = 'none';
-    const kGoRow = document.getElementById('k-go') && document.getElementById('k-go').parentElement;
-    if (kGoRow) kGoRow.style.display = 'none';
-    document.querySelector('#mode-knowledge .filter-row').style.display = 'none';
-    document.getElementById('k-card-num').parentElement.style.display = 'none';
-    sessionStartTime = null;
-    sessionFlaggedCount = 0;
-    updateNavUI();
-    return;
-  }
+  if (kPool.length === 0) { showKBComplete(); return; }
   kIdx = kIdx % kPool.length;
   renderKCard(kPool[kIdx]);
   updateNavUI();
   updateProgressBar();
-}  
+}
 
 function resetLearnt() {
   learntCards = new Set();
@@ -828,8 +823,11 @@ function flagCard(btn) {
       if (kIdx >= kPool.length) kIdx = Math.max(0, kPool.length - 1);
       updateProgressBar();
     }
-    // Auto-advance after 0.9 seconds
-    setTimeout(() => { if (kPool.length) { renderKCard(kPool[kIdx]); updateNavUI(); } }, 900);
+    // Auto-advance after 0.9 seconds — or show end screen if pool empty
+    setTimeout(() => {
+      if (kPool.length === 0) { showKBComplete(); return; }
+      renderKCard(kPool[kIdx]); updateNavUI();
+    }, 900);
   }
 }
   
@@ -909,9 +907,9 @@ function showFlaggedScreen() {
   out.innerHTML = flaggedCards.map(fc => {
     const card = KC.find(c => c.paper === fc.paper && c.heading === fc.heading);
     if (!card) return '';
-    const hintsHtml = card.hints.map(h =>
-      `<div class="hint-item"><span class="hint-kw">hint</span>${h}</div>`
-    ).join('');
+    const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0">` +
+      card.hints.map(h => `<span class="tag t-${card.paper}">${h}</span>`).join('') +
+      `</div>`;
     const factsHtml = '<ul>' + card.facts.map(f =>
       `<li>${boldHints(f, card.hints)}</li>`
     ).join('') + '</ul>';
@@ -925,9 +923,9 @@ function showFlaggedScreen() {
           </div>
           <div class="card-heading">${card.heading}</div>
           <div class="btn-row">
-            <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
-<button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
-            <button class="btn-sm" onclick="unflagCard(this)">🚩 Unflag</button>
+            <button class="btn-sm" onclick="tog('fh_${uid}');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
+            <button class="btn-sm" onclick="tog('ff_${uid}');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
+            <button class="btn-sm" onclick="unflagCard(this)">✅ Learnt</button>
           </div>
           <div class="reveal" id="fh_${uid}">${hintsHtml}</div>
           <div class="reveal" id="ff_${uid}">${factsHtml}</div>
@@ -1765,13 +1763,13 @@ function updateExamDirectory() {
   let pool = EQ.filter(q => q.paper === currentPaper);
   if (type !== 'all') pool = pool.filter(q => q.type === type);
   const typeShort = {
-    '2mark':'[2m]','4mark':'[4m]','4mark-consequence':'[4m]',
+    '4mark':'[4m]','4mark-consequence':'[4m]',
     '8mark-narrative':'[8m]','8mark-importance':'[8m]',
     '12mark':'[12m]','16mark':'[16m]'
   };
   const sel = document.getElementById('e-directory');
   sel.innerHTML = '<option value="">— select a question —</option>' +
-    pool.map((q, i) => `<option value="${i}">${typeShort[q.type]||''} ${q.q.substring(0,60)}…</option>`).join('');
+    pool.map((q, i) => `<option value="${i}">${typeShort[q.type]||''} ${q.name || q.q.substring(0,55)}</option>`).join('');
   sel._pool = pool;
 }
 
@@ -2394,1062 +2392,7 @@ const KC = [
  facts:['April 1933: national boycott of Jewish shops; SA stood outside to intimidate customers; Jews banned from professions','1935: Nuremberg Laws – stripped Jews of citizenship; banned from marrying non-Jews; classified as a separate race','9–10 November 1938: Kristallnacht – thousands of synagogues and Jewish businesses destroyed; over 100 Jews killed; 30,000 arrested and sent to camps','Jews then fined 1 billion marks for "the damage" – showed complete powerlessness of Jews under Nazi rule','ordinary Germans and their families took part in Kristallnacht - not just SS or Nazi thugs. Shows power of 5 years of propaganda.','Clear escalation 1933→1935→1938; Kristallnacht marked the shift from economic and legal persecution to organised physical violence']},
 
 ];
-const EQ = [
-// ════════════════════════════════════════════
-// PAPER 1 , MIGRATION
-// 2-mark: Notting Hill only
-// 4-mark: similarity/difference
-// 12-mark: 13 thematic questions
-// 16-mark: 12 thematic questions
-// ════════════════════════════════════════════
-
-// ── P1 · 2-mark Notting Hill ─────────────────
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of housing in Notting Hill for Caribbean migrants in the 1950s. (2 marks)',
- content:[{h:'Points',pts:['Colour bar by landlords meant Caribbean migrants were refused housing elsewhere and forced into run-down multi-occupancy houses (HMOs) in Notting Hill','Slum landlord Peter Rachman bought cheap properties, packed in tenants, charged high rents, refused repairs and used threats – black tenants had no legal protection until 1965']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the role of Peter Rachman in Notting Hill. (2 marks)',
- content:[{h:'Points',pts:['Rachman bought run-down properties cheaply, charged high rents, refused all repairs and used intimidation to remove those who complained','He specifically targeted black tenants who had no alternative housing due to the colour bar and no legal protection against his exploitation']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of pardner schemes in Notting Hill. (2 marks)',
- content:[{h:'Points',pts:['Pardner schemes were informal community savings groups where Caribbean migrants contributed regularly to a shared pot and took turns receiving the full sum','Sam King (ex-RAF) organised these schemes, allowing migrants to save deposits for homes when they had little access to mainstream banks or credit']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of shebeens in Notting Hill. (2 marks)',
- content:[{h:'Points',pts:['Shebeens were unlicensed clubs operating in basements; they developed because pubs, clubs and bars routinely refused entry to black customers','They were important social spaces where Caribbean migrants could gather, listen to music and maintain community bonds in an otherwise hostile environment']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of policing in Notting Hill in the 1950s. (2 marks)',
- content:[{h:'Points',pts:['97% of police were white men in the 1950s; no laws against racial discrimination existed; police routinely raided black-owned businesses without evidence','Police often ignored violent racist attacks by Teddy Boys on black residents and failed to prosecute perpetrators']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the 1958 Notting Hill riots. (2 marks)',
- content:[{h:'Points',pts:['A white mob of around 400 attacked black homes with petrol bombs, iron bars and clubs; the violence lasted five nights in August 1958','Police refused to link the violence to racism; one third of arrests were of black people who had defended themselves']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the murder of Kelso Cochrane (1959). (2 marks)',
- content:[{h:'Points',pts:['Kelso Cochrane, a 32-year-old Antiguan carpenter, was killed by a gang of white youths in May 1959; the community believed police failed to investigate properly due to racism','His funeral was attended by 1,200 mourners – both black and white – showing community solidarity']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the West Indian Gazette. (2 marks)',
- content:[{h:'Points',pts:['Founded by Claudia Jones in 1958, the West Indian Gazette was the first major newspaper for Black Britons; it gave the Caribbean community a political voice','It campaigned against colour bars, racial discrimination and restrictive immigration laws']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Caribbean Carnival organised by Claudia Jones. (2 marks)',
- content:[{h:'Points',pts:['Jones organised the first Caribbean Carnival in 1959 at St Pancras Town Hall as a direct response to the 1958 riots – celebrating Caribbean heritage, Calypso music and dance','After Jones\' death the event became the Notting Hill Carnival in 1966; it is now the largest street festival in Europe']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the British Black Panthers in Notting Hill. (2 marks)',
- content:[{h:'Points',pts:['The British Black Panthers focused on Black pride, self-defence against police brutality, housing and education; they were inspired by the US Black Panthers and Malcolm X','The BBP led the 1970 protest march against police harassment of the Mangrove restaurant that led to the arrest and trial of the Mangrove Nine']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Mangrove restaurant. (2 marks)',
- content:[{h:'Points',pts:['The Mangrove restaurant on All Saints Road, owned by Frank Crichlow, was a hub for community meetings, legal advice and social support for the Caribbean community','It was raided nine times in 18 months without justification, making it a symbol of police harassment of the Black community in Notting Hill']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Mangrove Nine trial (1971). (2 marks)',
- content:[{h:'Points',pts:['The Mangrove Nine were found not guilty of the main charges; the judge explicitly stated that racial hatred had influenced police actions – the first official recognition of institutional racism in British policing','The Nine demanded an all-black jury citing Magna Carta right to a "jury of peers" – this was denied but the verdict was still a landmark']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Notting Hill Housing Trust. (2 marks)',
- content:[{h:'Points',pts:['Founded by Bruce Kenrick in 1963 as a direct response to the colour bar and exploitation by slum landlords; it provided fair housing for over 1,000 black residents','It was established because black migrants had no legal protection against discrimination in housing and no access to fair private renting']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of Portobello Road Market\'s role in Notting Hill. (2 marks)',
- content:[{h:'Points',pts:['Portobello Road Market hosted Caribbean food stalls selling ingredients unavailable elsewhere – it became a hub of Caribbean identity and community life in Notting Hill','The Market gave Caribbean migrants a public space to maintain cultural traditions in a city where most social spaces excluded them through the colour bar']}]},
-
-{paper:'p1',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of Oswald Mosley\'s Union Movement in Notting Hill. (2 marks)',
- content:[{h:'Points',pts:['Mosley\'s Union Movement ran the "Keep Britain White" campaign in 1959; he received 8% of the vote in North Kensington in the 1959 general election','The government allowed the Union Movement and the White Defence League to hold public rallies rather than banning them']}]},
-
-// ── P1 · 4-mark similarity/difference ────────
-{paper:'p1',type:'4mark',skill:'Similarity/Difference',
- q:'Explain one similarity in the impact of migrants between the Vikings in York in the medieval period and the Huguenots in London in the early modern period. (4 marks)',
- content:[{h:'Points',pts:['Both groups significantly boosted the local economy of the cities they settled in','Viking York grew from ~1,000 to ~15,000 people; became an international trading hub for goods from across Europe and beyond','Huguenots transformed Spitalfields into a major textile centre – cloth exports rose twenty-fold over the 17th century']}]},
-
-{paper:'p1',type:'4mark',skill:'Similarity/Difference',
- q:'Explain one difference in the experience of Ashkenazi Jews in London in the 18th and 19th centuries and Norman migrants in England in the medieval period. (4 marks)',
- content:[{h:'Points',pts:['Normans were welcomed and elevated to the ruling elite; Ashkenazi Jews faced widespread hostility','William I rewarded Normans with land and positions at the top of the Feudal System','Ashkenazi Jews were falsely blamed for the Jack the Ripper murders in 1888; the 1905 Aliens Act specifically targeted their immigration']}]},
-
-{paper:'p1',type:'4mark',skill:'Similarity/Difference',
- q:'Explain one similarity in the treatment of Caribbean migrants in the modern period and Irish migrants in the 18th and 19th centuries. (4 marks)',
- content:[{h:'Points',pts:['Both groups faced economic scapegoating – accused of stealing jobs and lowering wages','Irish migrants: accused of taking work from English workers; Orange Order violence in Liverpool and Glasgow','Caribbean migrants: 1958 Notting Hill riots; "No Blacks, No Dogs, No Irish" signs; blamed for housing shortages']}]},
-
-{paper:'p1',type:'4mark',skill:'Similarity/Difference',
- q:'Explain one similarity in the reasons why Huguenots came to England in the early modern period and Jewish migrants came in the 18th and 19th centuries. (4 marks)',
- content:[{h:'Points',pts:['Both groups came to England fleeing religious persecution on the continent','Huguenots fled the St Bartholomew\'s Day Massacre (1572) and ongoing Catholic persecution of Protestants in France','Ashkenazi Jewish migrants fled violent anti-Semetic pogroms in Russia in the 1880s.']}]},
-
-{paper:'p1',type:'4mark',skill:'Similarity/Difference',
- q:'Explain one difference in the experience of Huguenots in England in the early modern period and Palatines in the 18th and 19th centuries. (4 marks)',
- content:[{h:'Points',pts:['Huguenots were welcomed because they were skilled workers who transformed the cloth industry; Palatines were seen as a burden because they lacked specialist skills','Huguenots helped found the Bank of England and started the paper industry – their economic contribution was clear','3,000 Palatines were deported to Ireland in 1709 when their numbers overwhelmed resources – reception depended on economic usefulness, not Protestant faith alone']}]},
-
-{paper:'p1',type:'4mark',skill:'Similarity/Difference',
- q:'Explain one similarity in the experience of Flemish and Walloon communities in the 16th century and the experience of black migrants in Bristol in the 20th Century. (4 marks)',
- content:[{h:'Points',pts:['Both groups faced resistance in accessing jobs; Flemish migrants in Sandwich faced conflict when they tried to take what were seen as \'English jobs\'.','Black migrants in Bristol faced the colour bar, for example Guy Bailey was denied a job on the Bristol Bus Company (1963).']}]},
-{paper:'p1',type:'4mark',skill:'Similarity/Difference',
- q:'Explain one difference in the impact of Flemish weavers in Sandwich in the early modern period and Ashkenazi Jews in Whitechapel in the 18th and 19th centuries. (4 marks)',
- content:[{h:'Points',pts:['Flemish weavers were invited by local councils and transformed the local economy; Ashkenazi Jews arrived as refugees and faced widespread hostility','Sandwich harbour traffic tripled in a decade after Flemish weavers arrived; Colchester rose from 53rd to 13th richest town in England','Ashkenazi Jews were falsely blamed for the Jack the Ripper murders (1888) and specifically targeted by the Aliens Act (1905)']}]},
-  
-{paper:'p1',type:'4mark',skill:'Similarity/Difference',
- q:'Explain one similarity in the experience of Jewish migrants in the medieval period and Ashkenazi Jewish migrants in the 18th and 19th centuries. (4 marks)',
- content:[{h:'Points',pts:['Both groups faced hostility driven by economic resentment and religious prejudice','Medieval Jews: blood libel myth (1144); forced to wear yellow badge; eventually expelled 1290','Ashkenazi Jews: falsely blamed for Jack the Ripper murders 1888; targeted by the Aliens Act 1905; hostility from English workers in the East End']}]},
-
-// ── P1 · 12-mark ─────────────────────────────
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why migration to England increased in the years c.800–c.1500. (12 marks)\nHints: Norman Conquest / Cloth Trade',
- content:[
-  {h:'Para 1 – War and conquest',pts:['865: Great Heathen Army invaded; Viking settlement followed across north and east England','1066: Norman Conquest – William\'s victory drove mass migration of knights, churchmen and administrators to govern England','Conquest created demand for a whole new ruling class – migration was a direct consequence of military victory']},
-  {h:'Para 2 – Trade',pts:['Vikings: York grew from ~1,000 to ~15,000; international trading hub pulling merchants from across Europe','1303: Edward I granted Hansa merchants lower taxes at the Steelyard – trade pulled German merchants to London','1351: Edward III invited Flemish weavers – Colchester rose from 53rd to 13th richest town in England']},
-  {h:'Para 3 – Government action',pts:['William invited Jewish moneylenders in 1070 to fund the crown; 8% of royal income from Jewish loans by 13th century','Edward III personally invited Flemish weavers expelled from France to develop the English cloth industry','Kings consistently used migration as an economic tool – royal invitation was a recurring driver throughout the period']}
- ]},
-
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why the legal status of migrants changed in the period c.800–c.1500. (12 marks)\nHints: Usury Laws / Denization',
- content:[
-  {h:'Para 1 – Jewish legal status tied to economic usefulness',pts:['1070: Jews invited and protected as King\'s "special property" – protection tied directly to their value as moneylenders; 8% of royal income from Jewish loans by 13th century','1275: Statute of Jewry banned Usury Laws after Church allowed Christians to lend – Jews lost their economic role','1290: Edward I expelled all Jews – once economically useless, legal protection vanished']},
-  {h:'Para 2 – Hansa and Flemish merchants gained legal rights through trade value',pts:['1303: Hansa merchants granted lower taxes and formal right to operate the Steelyard – legal status rose because of trade benefit to the crown','Flemish weavers given Denization – formal legal status granting right to own property and trade in England','Legal status improved when migrants brought clear economic benefit']},
-  {h:'Para 3 – Religion shaped legal deterioration',pts:['Blood libel myth (1144) spread religious hostility; increasingly used to justify legal restrictions on Jews','1200s: Church pressure led to the tabula (yellow badge) – legal marking of Jews as separate and inferior','Religious prejudice, not just economics, drove legal deterioration for Jewish migrants throughout the period']}
- ]},
-
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why migration led to change in England in the period c.800–c.1500. (12 marks)\nHints: Built Environment / Feudal System',
- content:[
-  {h:'Para 1 – Power and government',pts:['Normans introduced the Feudal System – completely restructured English society with Normans at the top','Norman French was the official language for ~200 years; shaped law, government and administration at every level','Current British monarchy descends from William the Conqueror – the most lasting political change of the medieval period']},
-  {h:'Para 2 – Built environment',pts:['Normans built 84 castles to enforce rule physically across England; thousands of churches, cathedrals and monasteries built','Viking York: grew from a small town to a major city of ~15,000; new streets, markets and workshops created','Many Norman and Viking buildings still stand today – migration permanently transformed the Built Environment']},
-  {h:'Para 3 – Trade and industry',pts:['Hansa and Flemish merchants transformed the English cloth trade – Colchester rose from 53rd to 13th richest town','Viking trading networks connected England to Baltic, Byzantine and Islamic markets for the first time','Jewish moneylenders financed crown projects including castle-building – enabled major economic activity']}
- ]},
-
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why migration to England increased in the period c.1500–c.1700. (12 marks)\nHints: Protestant Reformation / Oliver Cromwell',
- content:[
-  {h:'Para 1 – Religion',pts:['Protestant Reformation made England a natural sanctuary for persecuted European Protestants','1572: St Bartholomew\'s Day Massacre killed 30,000 Huguenots – thousands fled to Protestant England','England was seen as a place of religious safety; Protestant identity became a pull factor throughout this period']},
-  {h:'Para 2 – Government action',pts:['1656: Oliver Cromwell, persuaded by Rabbi Manasseh ben Israel, allowed Jews to return to England to escape persecution','Local councils in Sandwich and Canterbury actively invited Flemish and Walloon weavers in the 1560s–70s','Government repeatedly used migration as an economic tool – inviting skilled workers to boost specific industries']},
-  {h:'Para 3 – Trade',pts:['Flemish and Walloon weavers invited specifically to develop the cloth trade – Sandwich harbour traffic tripled','Huguenots transformed Spitalfields into a major textile centre – cloth exports rose twenty-fold over the century','England\'s growing commercial economy pulled skilled workers from across Protestant Europe']}
- ]},
-
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why migration brought change to England in the period c.1500–c.1900. (12 marks)\nHints: Navvies / Huguenots in Spitalfields',
- content:[
-  {h:'Para 1 – Trade and industry',pts:['Huguenots transformed Spitalfields – cloth exports rose twenty-fold; helped found the Bank of England 1694','Irish Navvies built over 20,000 miles of British railway – fundamental to industrial infrastructure','Ashkenazi Jews established the clothing industry in Whitechapel – major contribution to East London\'s economy']},
-  {h:'Para 2 – Built environment',pts:['Irish Navvies physically transformed Britain – canals, railways and roads built by migrant labour','Huguenots built churches and workshops in Spitalfields and Canterbury – many still standing today','Dutch engineers drained the Fens in the 1620s–30s – transformed agricultural land across East Anglia']},
-  {h:'Para 3 – Culture and language',pts:['Huguenots brought silk weaving, lace-making and new design traditions – transformed English textile culture','Irish communities shaped the culture of Liverpool and Manchester – Scouse accent partly from Irish speech patterns','Jewish communities established synagogues, schools and cultural institutions in Whitechapel']}
- ]},
-
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why there was hostility to migrants in the period c.1500–c.1900. (12 marks)\nHints: Orange Order / Palatines',
- content:[
-  {h:'Para 1 – Competition for jobs',pts:['1517: Evil May Day – London apprentices attacked foreign merchants and craftsmen; accused them of stealing work','Flemish weavers in Sandwich faced formal work restrictions by 1569; Huguenot weavers faced riots in 1675, 1681 and 1683','English guilds consistently lobbied against migrant workers whom they blamed for undercutting wages']},
-  {h:'Para 2 – Religious prejudice',pts:['Orange Order violently opposed Catholic Irish migrants in Liverpool and Glasgow throughout the 19th century','Irish Catholics faced deep Protestant hostility – accused of spreading disease and criminal behaviour','Palatines rejected despite being Protestant refugees – seen as an economic burden, not an asset']},
-  {h:'Para 3 – Government action',pts:['3,000 Palatines deported to Ireland in 1709 despite being Protestant refugees – government responded to public pressure','1905 Aliens Act specifically targeted Ashkenazi Jewish migrants – Britain\'s first immigration restriction law','Government action shows hostility was not just popular sentiment but became official policy']}
- ]},
-
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why migration to Britain has increased since the year 1900. (12 marks)\nHints: World Wars / European Union',
- content:[
-  {h:'Para 1 – War',pts:['WWI and WWII: millions of colonial soldiers from India, Africa and Caribbean served Britain; created personal connections and expectation of belonging','Post-WWII: Britain needed over 1 million workers to rebuild; actively recruited in Caribbean for London Transport and NHS','Kindertransport 1938–39: ~8,000 Jewish children evacuated from Nazi Germany to British families']},
-  {h:'Para 2 – Government action',pts:['1948 British Nationality Act gave all Commonwealth subjects the legal right to settle in Britain','1992 Maastricht Treaty created free movement of people across EU – approximately 3 million EU citizens settled before Brexit','1951 UN Refugee Convention signed by Britain – legal obligation to protect asylum seekers drove arrivals from conflict zones']},
-  {h:'Para 3 – Trade and economics',pts:['Post-WWII economic boom created demand for workers in NHS, transport and manufacturing','2004 EU expansion: Polish and Eastern European workers came seeking better wages – one of the largest migration waves in British history','Economic pull factors consistently underpinned migration increases throughout the century']}
- ]},
-
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why attitudes to migration changed in the years c.1900–present. (12 marks)\nHints: Enoch Powell / Multiculturalism',
- content:[
-  {h:'Para 1 – Hostility and political opposition',pts:['1905 Aliens Act showed hostile attitudes had been turning into government policy from the start of the period','1958 Notting Hill riots: white mob of ~400 attacked black homes for five nights; police arrested black defenders','1968: Enoch Powell\'s "Rivers of Blood" speech – 74% of British public agreed; showed racism in mainstream politics']},
-  {h:'Para 2 – Legal change and growing tolerance',pts:['1965 and 1976 Race Relations Acts banned racial discrimination – attitudes enshrined in law began to shift','1971 Mangrove Nine verdict: first official recognition of institutional racism – showed attitudes could be challenged and changed','2010 Equality Act strengthened protections – legal framework reflected increasingly tolerant official attitudes']},
-  {h:'Para 3 – Multiculturalism',pts:['Notting Hill Carnival grew from 1966 into the largest street festival in Europe – Caribbean culture became part of British identity','By 2003: 30% of NHS doctors and 44% of nurses were migrants – migration normalised as essential to public services','Britain moved from a society with no race laws in 1950 to one with comprehensive equality legislation by 2010']}
- ]},
-
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why migration has led to changes in Britain in the period c.1700–present. (12 marks)\nHints: Culture and language / New religions',
- content:[
-  {h:'Para 1 – Culture and language',pts:['Irish communities shaped the culture of Liverpool and Manchester; Scouse accent partly from Irish speech patterns','Notting Hill Carnival (1966) grew from Caribbean community – now largest street festival in Europe','South Asian, Caribbean and African communities transformed British food, music and urban culture throughout the 20th century']},
-  {h:'Para 2 – New religions',pts:['Jewish communities established synagogues across Britain from the 17th century; Bevis Marks synagogue (1701) still stands','South Asian migration brought Hinduism, Sikhism and Islam – Leicester now hosts the largest Diwali celebrations outside Asia','New religious communities built mosques, temples and gurdwaras – transformed the built environment of British cities']},
-  {h:'Para 3 – Trade and industry',pts:['Irish Navvies built over 20,000 miles of British railway – transformed the industrial landscape of Britain','By 2003: 30% of NHS doctors and 44% of nurses were migrants – migration became structurally essential to the British economy','Huguenots founded the Bank of England 1694; Jewish financiers developed London as a financial centre']}
- ]},
-
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why there was hostility to migrants in the period c.800–c.1700. (12 marks)\nHints: Anti-Semitism / Competition for jobs',
- content:[
-  {h:'Para 1 – Anti-Semitism',pts:['1144: blood libel myth falsely accused Jews of ritual child murder – spread religious hatred for centuries','1189–90: anti-Jewish riots across England; ~150 Jews died at York Castle','1290: Edward I expelled all Jews – centuries of Anti-Semitism translated into official government action']},
-  {h:'Para 2 – Competition for jobs',pts:['1517: Evil May Day – London apprentices attacked foreign merchants; accused them of stealing work and lowering wages','Flemish weavers in Sandwich faced formal work restrictions by 1569; English guilds lobbied against migrant Competition for jobs','Huguenot weavers faced riots in 1675, 1681 and 1683 from English weavers fearing job losses']},
-  {h:'Para 3 – Government action reflecting popular hostility',pts:['1275: Statute of Jewry restricted Jewish lending – government responding to both religious and economic hostility','1290: Expulsion of Jews showed government willing to act on popular anti-Semitic pressure','1709: 3,000 Palatines deported to Ireland – government responded to public hostility toward migrants seen as a burden']}
- ]},
-
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why migrants came to Britain in the period c.1700–c.1900. (12 marks)\nHints: Irish Famine / Pogroms',
- content:[
-  {h:'Para 1 – War and conflict',pts:['Irish Famine 1845–46: potato blight killed ~1 million; ~2 million fled to Britain – catastrophe as a push factor','Wars in the Rhineland drove ~13,000 Palatine refugees to London in 1709','American War of Independence 1780s: Black Loyalists given homes in Britain after fighting for the crown']},
-  {h:'Para 2 – Religious persecution',pts:['Russian Pogroms from the 1880s drove ~150,000 Ashkenazi Jews to Britain – religious persecution as a push factor','Palatines fled religious wars in the Rhineland; came to Protestant England as a religious sanctuary','1708 Foreign Protestants Naturalisation Act established England as a Protestant refuge – religious pull factor']},
-  {h:'Para 3 – Trade and economics',pts:['Irish Navvies came for work on canals and railways – economic pull of Britain\'s industrial boom','Lascars and Ayahs came with the expansion of the East India Company – empire created economic networks pulling South Asians to Britain','Economic opportunity in industrial cities consistently pulled migrants from Ireland, Europe and beyond']}
- ]},
-
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why migration led to change in Britain in the years c.1900–present. (12 marks)\nHints: Equality legislation / Built environment',
- content:[
-  {h:'Para 1 – Power and government',pts:['1965 and 1976 Race Relations Acts; 2010 Equality Act – migration directly drove the development of Britain\'s entire Equality legislation framework','1971 Mangrove Nine verdict: first official recognition of institutional racism – changed how policing was scrutinised','Migration forced the British state to confront and legislate against racism in ways it never had before']},
-  {h:'Para 2 – Built environment',pts:['South Asian communities built mosques, temples and gurdwaras across British cities – transformed the urban Built environment','Notting Hill Housing Trust (1963) established to house black residents – community-driven change to housing provision','Belgrave Road in Leicester became the "Golden Mile" – entire districts physically transformed by migrant communities']},
-  {h:'Para 3 – Culture and language',pts:['Notting Hill Carnival (1966): largest street festival in Europe – Caribbean culture became part of British national identity','South Asian food, music and fashion transformed everyday British life','By 2003: 30% of NHS doctors and 44% of nurses were migrants – migration changed what Britain looked like professionally']}
- ]},
-
-{paper:'p1',type:'12mark',skill:'Explain why',
- q:'Explain why the experience of migrants in Britain changed in the years c.1900–present. (12 marks)\nHints: Race Relations Act / Windrush scandal',
- content:[
-  {h:'Para 1 – Hostility from authorities early in the period',pts:['1905 Aliens Act restricted Jewish immigration – state actively hostile to migrants at the start of the period','1958 Notting Hill riots: police arrested black defenders rather than white attackers – institutional racism clear','In the 1950s: 97% of police were white men; no laws against discrimination; authorities provided no protection']},
-  {h:'Para 2 – Legal change improved experience',pts:['1965 Race Relations Act: first law banning racial discrimination in public life','1971 Mangrove Nine verdict: first official recognition of institutional racism – legal accountability began','2010 Equality Act: comprehensive legal protection; experience of migrants legally transformed from 1905']},
-  {h:'Para 3 – Experience remained difficult despite legal change',pts:['2012 Windrush Scandal – legal Caribbean migrants wrongly detained, denied healthcare; shows legal change had limits','1999 Macpherson Report: Metropolitan Police still institutionally racist – attitudes slower to change than laws','Experience improved but was never fully equal – legal progress outpaced real social change throughout the period']}
- ]},
-
-// ── P1 · 16-mark ─────────────────────────────
-{paper:'p1',type:'16mark',skill:'How far do you agree',
- q:'"In the years c.800–c.1500, the most important impact made by migrants in England was the development of trade." How far do you agree?\nHints: Viking city of York / Norman castles and churches',
- content:[
-  {h:'Agree – trade development was the most important impact',agree:true,pts:['Viking city of York grew from ~1,000 to ~15,000 people – transformed into an international trading hub with goods from Baltic, Byzantium and Islamic world','Hansa merchants and Flemish weavers transformed the English cloth trade – Colchester rose from 53rd to 13th richest town','Jewish moneylenders financed crown projects; 8% of royal income from Jewish loans by 13th century – migrants funded economic growth']},
-  {h:'Disagree A – power and government more significant',agree:false,pts:['Normans introduced the Feudal System – completely restructured English society; Normans at top, English at bottom','Norman French was the official language for ~200 years; shaped law, government and administration at every level','Norman castles and churches transformed England politically and spiritually – 84 castles built to enforce rule; architecture still visible today']},
-  {h:'Disagree B – built environment was equally lasting',agree:false,pts:['Norman castles and churches permanently altered the English landscape; many still stand today','Viking settlements created many of England\'s modern cities – Leicester, Derby, York all grew from Viking foundations','The physical legacy of migration – castles, cathedrals, city layouts – lasted longer than any individual trading network']}
- ]},
-
-{paper:'p1',type:'16mark',skill:'How far do you agree',
- q:'"Migrants to England in the period c.800–c.1500 had a positive experience." How far do you agree?\nHints: Anti-Semitism / Hansa Merchants',
- content:[
-  {h:'Agree – some groups had clearly positive experiences',agree:true,pts:['Normans: elevated to top of Feudal System; given English land and top government positions – unambiguously positive','Hansa Merchants granted lower taxes and right to operate the Steelyard 1303 – legally protected and commercially prosperous','Flemish weavers generally accepted when economy was strong; Denization gave them legal status and property rights']},
-  {h:'Disagree A – Jewish experience was deeply negative',agree:false,pts:['1144: blood libel myth; 1189–90 Anti-Semitism led to riots across England; ~150 Jews died at York Castle','1200s: forced to wear tabula (yellow badge); 1275: Statute of Jewry removed their economic role','1290: Edward I expelled over 3,000 Jews – 220 years of residence offered no protection when they were no longer economically useful']},
-  {h:'Disagree B – even welcomed migrants faced hostility from the population',agree:false,pts:['Craft guilds routinely resented Flemish and Hansa merchants – riots and formal work restrictions against foreign workers','After 1066: Normans deeply resented by English for land seizures and harsh rule','1381: Peasants\' Revolt – ~150 migrants murdered; economic resentment against migrants was a constant theme']}
- ]},
-
-{paper:'p1',type:'16mark',skill:'How far do you agree',
- q:'"Safety from religious persecution was the main reason why migrants came to England in the period c.1500–c.1700." How far do you agree?\nHints: Huguenot migrants / Cloth industry',
- content:[
-  {h:'Agree – religious persecution drove major migration',agree:true,pts:['1572: St Bartholomew\'s Day Massacre killed 30,000 Huguenot migrants – direct religious persecution caused mass flight to Protestant England','England became a Protestant sanctuary after the Reformation – attracted persecuted Protestants from France, Netherlands and the Rhineland','1656: Cromwell allowed Jews to return specifically to escape European anti-Semitic persecution – religious safety was the explicit reason']},
-  {h:'Disagree A – economic pull factors equally important',agree:false,pts:['Flemish and Walloon weavers in Sandwich invited for their skills in the 1560s–70s – economic invitation, not religious refuge','Huguenots partly drawn by high wages and the thriving Cloth industry in Spitalfields alongside religious safety','Cloth exports rose twenty-fold over the 17th century – economic opportunity attracted and sustained migrant communities']},
-  {h:'Disagree B – government policy shaped migration independently',agree:false,pts:['1681: Charles II granted all Huguenots Denizen status – government policy made England attractive and legally safe','1708: Foreign Protestants Naturalisation Act gave full citizenship – parliament actively created the legal framework for Protestant migration','3,000 Palatines deported to Ireland 1709 despite being Protestant refugees – shows government could also restrict regardless of religion']}
- ]},
-
-{paper:'p1',type:'16mark',skill:'How far do you agree',
- q:'"The experiences of migrants in England, in the period c.1500–c.1700, were positive." How far do you agree?\nHints: Evil May Day (1517) / Walloons in Canterbury',
- content:[
-  {h:'Agree – some migrants had positive experiences',agree:true,pts:['Walloons in Canterbury were allocated 100 empty homes; authorities supported integration; silk weaving and lace-making skills were welcomed and shared','Huguenots: Denizen status 1681 gave legal protection; helped found the Bank of England 1694; became economically prosperous in Spitalfields','Jews allowed to return 1656; Bevis Marks synagogue built 1701; community could practise faith and engage in commerce']},
-  {h:'Disagree A – popular hostility was widespread',agree:false,pts:['1517: Evil May Day – London apprentices attacked foreign merchants and craftsmen; riots targeted migrants across the capital','Flemish weavers in Sandwich faced formal work restrictions by 1569; Huguenot weavers faced riots in 1675, 1681 and 1683','Economic competition consistently translated into popular hostility toward migrants throughout the period']},
-  {h:'Disagree B – legal protection was limited and conditional',agree:false,pts:['Legal status depended entirely on economic usefulness – when migrants were seen as a burden, they were deported','3,000 Palatines deported to Ireland 1709 despite being Protestant refugees – protection was never guaranteed','Jews still banned from university, army, law and Parliament even after being allowed to return – "toleration" had clear limits']}
- ]},
-
-{paper:'p1',type:'16mark',skill:'How far do you agree',
- q:'"The growth of the British empire was the main reason for migration to Britain in the period c.1700–c.1900." How far do you agree?\nHints: Lascars / Civil Liberties',
- content:[
-  {h:'Agree – empire was a major driver',agree:true,pts:['East India Company expansion created demand for Lascars (Indian sailors) and Ayahs (nannies/servants) employed by colonial officials','Suez Canal opened 1869 – halved travel times between Britain and India; empire\'s trade routes brought South Asians to Britain','Black Loyalists came to Britain after the American War of Independence (1780s) – direct consequence of empire and imperial conflict']},
-  {h:'Disagree A – persecution and conflict more important',agree:false,pts:['Irish Famine 1845–46: ~2 million fled – catastrophic push factor with nothing to do with empire','Russian pogroms from 1880s drove ~150,000 Ashkenazi Jews to Britain – persecution in Eastern Europe, not British imperial expansion','Wars in the Rhineland drove ~13,000 Palatine refugees to London in 1709 – European conflict as push factor']},
-  {h:'Disagree B – Civil Liberties and legal frameworks also drove migration',agree:false,pts:['1772 Somerset Case ruled slavery illegal in Britain – making Britain a refuge for enslaved Africans seeking freedom','1829 Catholic Emancipation Act improved legal status of Irish Catholics in Britain – legal change as pull factor','1708 Foreign Protestants Naturalisation Act created a formal legal framework for Protestant migration – government policy, not empire']}
- ]},
-
-{paper:'p1',type:'16mark',skill:'How far do you agree',
- q:'"In the period c.1900–present, migrants were treated with hostility by the British authorities." How far do you agree?\nHints: Metropolitan Police / 1948 British Nationality Act',
- content:[
-  {h:'Agree – clear examples of state hostility',agree:true,pts:['1905 Aliens Act restricted Jewish immigration – Britain\'s first immigration law explicitly targeting Ashkenazi Jews','1958 Notting Hill riots: Metropolitan Police arrested black defenders rather than white attackers; 97% of officers were white men','2012: Windrush scandal – legal Caribbean migrants wrongly detained, denied healthcare; 1999 Macpherson Report found Metropolitan Police institutionally racist']},
-  {h:'Disagree A – positive government action',agree:false,pts:['1948 British Nationality Act actively facilitated mass Commonwealth migration; 1965 and 1976 Race Relations Acts banned discrimination','2010 Equality Act strengthened legal protections; 2022: Rishi Sunak became first Prime Minister of Asian heritage','1971 Mangrove Nine verdict – legal system delivered justice; first official recognition of institutional racism']},
-  {h:'Disagree B – community action drove change',agree:false,pts:['1963: Bristol Bus Boycott ended employment colour bar in Bristol and helped lead to the Race Relations Act 1965','Claudia Jones, West Indian Gazette and Mangrove Nine showed communities could challenge and change hostile attitudes','Windrush Generation helped rebuild Britain – by 1960s 12% of London Transport employees from ethnic minorities; by 2003 30% of NHS doctors were migrants']}
- ]},
-
-{paper:'p1',type:'16mark',skill:'How far do you agree',
- q:'"The biggest impact of migration in the years c.1900–present was on British culture." How far do you agree?\nHints: Music / The NHS',
- content:[
-  {h:'Agree – cultural impact was the biggest',agree:true,pts:['Notting Hill Carnival (1966): Caribbean Music and culture transformed British public life – largest street festival in Europe','South Asian food, music and fashion reshaped everyday British culture; curry became the nation\'s most popular dish','Caribbean Music influenced British pop and rock from the 1950s onwards – reggae, ska and later grime all have Caribbean migrant roots']},
-  {h:'Disagree A – impact on The NHS and public services more significant',agree:false,pts:['By 2003: 30% of NHS doctors and 44% of nurses were migrants – The NHS could not function without migrant workers','London Transport recruited extensively in the Caribbean after WWII; by 1960s 12% of employees were from ethnic minorities','Migrant workers were structurally essential to Britain\'s public services – this is a deeper and more lasting impact than cultural change']},
-  {h:'Disagree B – legal and political impact equally significant',agree:false,pts:['Migration directly caused 1965 Race Relations Act, 1976 Race Relations Act and 2010 Equality Act – transformed Britain\'s entire legal framework','1971 Mangrove Nine verdict changed how institutional racism was scrutinised in policing','Britain\'s identity as a multicultural society with comprehensive equality law is a direct and lasting political consequence of migration']}
- ]},
-
-{paper:'p1',type:'16mark',skill:'How far do you agree',
- q:'"The main reason migrants came to England in the years c.800–c.1500 was for economic gain." How far do you agree?\nHints: Norman Conquest / Jewish moneylenders',
- content:[
-  {h:'Agree – economic gain drove migration',agree:true,pts:['Vikings: York became an international trading hub – economic opportunity pulled merchants and settlers from Scandinavia','Hansa merchants came for lower taxes and access to English wool trade – purely economic motivation','Flemish weavers invited by Edward III in 1351 because English cloth industry was profitable – economic pull from both sides']},
-  {h:'Disagree A – conquest and war drove the largest migration waves',agree:false,pts:['865: Great Heathen Army invaded England – conquest, not economic gain, drove initial Viking settlement','Norman Conquest 1066: William\'s knights came as conquerors given land as reward – power and conquest, not economic migration','Jewish moneylenders were invited by William in 1070 to serve royal financial needs – government direction, not individual economic choice']},
-  {h:'Disagree B – government invitation and royal policy were decisive',agree:false,pts:['Kings invited Jewish moneylenders, Hansa merchants and Flemish weavers – migration was shaped by royal command','Edward III personally invited Flemish weavers after they were expelled from France – government action determined who came','Most medieval migration was directed by rulers for political purposes; "economic gain" as a personal motivation applied mainly to merchants']}
- ]},
-
-{paper:'p1',type:'16mark',skill:'How far do you agree',
- q:'"The most important impact of migration in the period c.1500–c.1700 was on the built environment." How far do you agree?\nHints: Spitalfields / Dutch in the Fens',
- content:[
-  {h:'Agree – built environment impact was most important',agree:true,pts:['Huguenots physically transformed Spitalfields – workshops, homes and churches built; many still standing today','Dutch engineers drained the Fens in the 1620s–30s – transformed hundreds of thousands of acres of agricultural land across East Anglia','Walloons in Canterbury built churches and community institutions; Flemish weavers transformed Sandwich into a trading town']},
-  {h:'Disagree A – economic impact was more significant',agree:false,pts:['Huguenots transformed Spitalfields into a major textile centre – cloth exports rose twenty-fold over the century','Helped found the Bank of England 1694; started the English paper industry – 200 paper mills by 1714','Economic transformation outlasted any individual building – the financial institutions Huguenots helped create still exist today']},
-  {h:'Disagree B – cultural impact was equally lasting',agree:false,pts:['Huguenots brought silk weaving, lace-making and new design traditions – transformed English textile culture and taste','Jewish community established Bevis Marks synagogue 1701 – new religious and cultural institutions shaped British identity','The cultural practices and institutions migrants brought persisted long after the physical buildings they constructed']}
- ]},
-
-{paper:'p1',type:'16mark',skill:'How far do you agree',
- q:'"Migrants in the period c.1700–c.1900 were treated primarily with hostility." How far do you agree?\nHints: Aliens Act / Irish Famine',
- content:[
-  {h:'Agree – hostility was widespread',agree:true,pts:['Orange Order violently opposed Catholic Irish migrants in Liverpool and Glasgow throughout the 19th century – organised institutional hostility','1888: Ashkenazi Jews falsely blamed for Jack the Ripper murders by popular press – media-driven hostility with real consequences','1905 Aliens Act specifically targeted Ashkenazi Jewish migrants – hostility had become official government policy by the end of the period']},
-  {h:'Disagree A – government provided some protection',agree:false,pts:['1708 Foreign Protestants Naturalisation Act gave full citizenship to Protestant migrants – official welcome for religious refugees','1772 Somerset Case ruled slavery illegal in Britain – gave enslaved Africans legal protection and made Britain a refuge','1829 Catholic Emancipation Act improved the legal status of Irish Catholics in Britain']},
-  {h:'Disagree B – some communities were welcomed and integrated successfully',agree:false,pts:['Jewish financiers developed London as a financial centre after the Irish Famine; community established synagogues and schools','Irish Navvies were recruited specifically because their labour was needed – economic necessity created toleration if not welcome','By the end of the period, Irish and Jewish communities had established permanent cultural and commercial presences in British cities']}
- ]},
-
-{paper:'p1',type:'16mark',skill:'How far do you agree',
- q:'"The biggest impact of migration in the period c.1700–c.1900 was on the British economy." How far do you agree?\nHints: Navvies / Ashkenazi Jews',
- content:[
-  {h:'Agree – economic impact was the biggest',agree:true,pts:['Irish Navvies built over 20,000 miles of British railway – the entire industrial transport network was built by migrant labour','Ashkenazi Jews established the clothing industry in Whitechapel – major contribution to East London\'s economy and manufacturing','Huguenots had already founded the Bank of England 1694; Jewish financiers developed London as a global financial centre']}  ,
-  {h:'Disagree A – cultural impact was equally significant',agree:false,pts:['Irish communities shaped the culture of Liverpool and Manchester; Scouse accent partly from Irish speech patterns','Jewish communities established synagogues, schools and cultural institutions that permanently changed British urban life','New religious communities (Catholic Irish, Jewish) built churches and synagogues that transformed British cities']}  ,
-  {h:'Disagree B – political impact was most lasting',agree:false,pts:['Migration drove the 1905 Aliens Act – Britain\'s first immigration restriction law; a fundamental shift in government policy','Catholic Irish migration contributed to the Irish Question and the eventual partition of Ireland in 1921','The political conflicts migration caused – Orange Order violence, parliamentary debates about restriction – shaped British politics for decades']}
- ]},
-
-{paper:'p1',type:'16mark',skill:'How far do you agree',
- q:'"The main reason migration to Britain increased in the years c.1900–present was because of government policy." How far do you agree?\nHints: British Nationality Act / Maastricht Treaty',
- content:[
-  {h:'Agree – government policy was the main driver',agree:true,pts:['1948 British Nationality Act gave all Commonwealth subjects the legal right to settle in Britain – a single policy decision enabled mass migration','1992 Maastricht Treaty created free movement of people across EU – approximately 3 million EU citizens settled before Brexit','Government actively recruited in the Caribbean for London Transport and NHS after WWII – policy-driven recruitment']}  ,
-  {h:'Disagree A – war and conflict were equally important',agree:false,pts:['WWI and WWII: millions of colonial soldiers served Britain; personal connections created expectation of belonging independent of government policy','Kindertransport 1938–39: ~8,000 Jewish children evacuated – driven by crisis, not planned government policy','Modern conflicts in Afghanistan, Syria and Somalia drove asylum seekers regardless of government policy preferences']},
-  {h:'Disagree B – economic factors drove migration independently',agree:false,pts:['Post-WWII economic boom created labour shortages that pulled migrants regardless of formal government invitation','2004 EU expansion: Polish workers came seeking better wages – economic pull, not government recruitment','Economic opportunity consistently drew migrants even when government policy was restrictive – e.g. illegal migration continued despite the 1905 Aliens Act']}
- ]},
-
-// ════════════════════════════════════════════
-// PAPER 2A , COLD WAR
-// 4-mark: consequence only
-// 8-mark: narrative and importance
-// ════════════════════════════════════════════
-
-// ── P2a · 4-mark consequences ────────────────
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the Yalta Conference (1945) for the development of the Cold War. (4 marks)',
- content:[{h:'Points',pts:['Stalin broke his promise of free elections in Eastern Europe almost immediately – installed communist governments in Poland, Czechoslovakia, Hungary, Romania and Bulgaria','This betrayal dramatically increased Western distrust of the USSR; by Potsdam (July 1945) the Grand Alliance had effectively collapsed']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the Potsdam Conference (1945). (4 marks)',
- content:[{h:'Points',pts:['Truman dropped the atomic bomb on Japan without telling Stalin – Stalin saw this as a direct threat to the USSR and immediately accelerated Soviet nuclear research','Combined with Stalin already having broken his Yalta promises, the conference ended with very few agreements; two superpowers now openly distrusted each other']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of Stalin\'s creation of satellite states. (4 marks)',
- content:[{h:'Points',pts:['Western powers were alarmed by Soviet expansion across Eastern Europe – seen as evidence Stalin wanted to spread communism globally','Directly caused the Truman Doctrine (1947): $400m to fight communism in Greece and Turkey; USA committed to containing Soviet expansion worldwide']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the Marshall Plan (1948). (4 marks)',
- content:[{h:'Points',pts:['Stalin called it "Dollar Imperialism"; rejected Marshall Aid for all satellite states; set up Cominform (1947) and Comecon (1949) in direct response','Accelerated the division of Europe into two competing blocs and made diplomatic cooperation far less likely']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the Berlin Blockade (1948–49). (4 marks)',
- content:[{h:'Points',pts:['When Stalin lifted the blockade in May 1949 it was clear the USA and USSR could not cooperate over Germany','Germany was permanently divided into the Federal Republic of Germany (West, capitalist) and the German Democratic Republic (East, communist) – a division that lasted until 1990']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the formation of NATO (1949). (4 marks)',
- content:[{h:'Points',pts:['NATO formalised the division of Europe into two armed camps; the Cold War became military as well as ideological','Warsaw Pact formed in 1955 as communist military alliance in direct response – Europe was now split into two permanently armed blocs']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the arms race between the USA and USSR. (4 marks)',
- content:[{h:'Points',pts:['MAD (Mutually Assured Destruction) meant neither side could win a nuclear war, so neither fired – paradoxically reduced the chance of direct conflict','The arms race was hugely expensive: 40% of Soviet economy spent on nuclear weapons by 1970s – economic strain contributed to détente and eventually Soviet collapse']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the Hungarian Uprising (1956). (4 marks)',
- content:[{h:'Points',pts:['1,000 tanks sent; 3,000 killed; 20,000 fled to the West; Nagy arrested and later executed – demonstrated the USSR would use overwhelming force to maintain control','West condemned the invasion but did nothing – showed NATO would not intervene militarily inside the Soviet sphere of influence']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the building of the Berlin Wall (1961). (4 marks)',
- content:[{h:'Points',pts:['Short term: ended the "brain drain" of 3 million East Germans who had fled West via Berlin since 1949; stabilised the East German economy','Long term: became the defining propaganda symbol of the Cold War; Kennedy\'s "Ich bin ein Berliner" speech (1963) used it to show the inhumanity of communism']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the Bay of Pigs invasion (1961). (4 marks)',
- content:[{h:'Points',pts:['Total failure of the 1,400 CIA-trained Cuban exile invasion – Kennedy was humiliated on the world stage','Bay of Pigs pushed Cuba and the USSR closer together; Castro invited Soviet military protection which led directly to Soviet missiles being placed in Cuba']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the Cuban Missile Crisis (1962). (4 marks)',
- content:[{h:'Points',pts:['Both sides recognised how close they had come to nuclear war and took steps to prevent accidents','Hotline established between Moscow and Washington (1963); Test Ban Treaty (1963) banned atmospheric nuclear tests – beginning cautious movement toward détente']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the invasion of Czechoslovakia (1968). (4 marks)',
- content:[{h:'Points',pts:['500,000 Warsaw Pact troops crushed the Prague Spring; Dubček arrested; Husák installed – showed USSR would use overwhelming force to prevent reform','West condemned the invasion but took no action – demonstrated Soviet sphere of influence was effectively inviolable']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the Soviet invasion of Afghanistan (1979). (4 marks)',
- content:[{h:'Points',pts:['Carter scrapped SALT 2 and issued the Carter Doctrine – USA would protect Persian Gulf by force; détente officially ended','Reagan elected 1980 on promise to "win" the Cold War; increased military spending by $1 trillion; called USSR an "Evil Empire" – Second Cold War began']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of Reagan\'s Strategic Defence Initiative, SDI (1983). (4 marks)',
- content:[{h:'Points',pts:['SDI threatened to make Soviet nuclear arsenal obsolete; terrified Soviet planners even though the technology was not ready','Forced the USSR to consider whether they could afford to continue the arms race; contributed to Gorbachev coming to power in 1985 and seeking negotiations']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of Gorbachev\'s Sinatra Doctrine (1988). (4 marks)',
- content:[{h:'Points',pts:['Without the threat of Soviet invasion, communist governments across Eastern Europe became immediately vulnerable to popular pressure for change','Poland was the first to abandon communism in June 1989; when Gorbachev did not send tanks, every other satellite state followed rapidly; Berlin Wall fell 9 November 1989']}]},
-
-{paper:'p2a',type:'4mark-consequence',skill:'Consequence',
- q:'Explain one consequence of the fall of the Berlin Wall (1989). (4 marks)',
- content:[{h:'Points',pts:['The Wall\'s fall triggered a rapid domino effect – all satellite states had abandoned communism by end of 1989; Germany reunited 1990; Warsaw Pact dissolved 1991','At the Malta Summit (1989) Bush and Gorbachev declared the Cold War at an end; Gorbachev resigned Christmas Day 1991; USSR dissolved']}]},
-
-// ── P2a · 8-mark narratives ───────────────────
-{paper:'p2a',type:'8mark-narrative',skill:'Narrative account',
- q:'Write a narrative account analysing the key events of the collapse of the Grand Alliance 1945–47. (8 marks)\nHints: Yalta / Potsdam',
- content:[
-  {h:'Beginning',pts:['Feb 1945 Yalta: Stalin promised free elections in Eastern Europe but immediately began installing communist governments','Roosevelt died before Potsdam; replaced by anti-Communist Truman – the diplomatic dynamic changed completely']},
-  {h:'Middle',pts:['July 1945 Potsdam: Truman dropped atomic bomb on Japan without telling Stalin – seen as direct threat; very few agreements reached','1946: Long Telegram and Novikov Telegram both told their governments to treat the other side as an enemy – attitudes hardened formally']},
-  {h:'End',pts:['1947: Truman Doctrine ($400m to Greece and Turkey); Marshall Plan ($13bn to rebuild Western Europe)','Stalin\'s response: Cominform and Comecon – two competing blocs were now formally established; Grand Alliance completely collapsed']}
- ]},
-
-{paper:'p2a',type:'8mark-narrative',skill:'Narrative account',
- q:'Write a narrative account analysing the key events of the Berlin Blockade crisis 1948–49. (8 marks)\nHints: Trizonia / Airlift',
- content:[
-  {h:'Beginning',pts:['West combined zones into Trizonia (1947) and introduced the Deutschmark (1948) – both infuriated Stalin who saw this as rebuilding Germany against the USSR']},
-  {h:'Middle',pts:['June 1948: Stalin closed all road and rail links to West Berlin – attempted to force the West to abandon the city','Truman ordered Berlin Airlift: 4,000 tonnes of food and fuel flown in daily for 10 months; Stalin could not shoot down planes without starting full war – had no atomic bomb yet']},
-  {h:'End',pts:['May 1949: Stalin lifted the blockade – a propaganda defeat; Germany permanently divided into FRG and GDR','NATO formed April 1949 as a direct response – two armed camps now faced each other across Europe']}
- ]},
-
-{paper:'p2a',type:'8mark-narrative',skill:'Narrative account',
- q:'Write a narrative account analysing the key events of the Hungarian Uprising (1956). (8 marks)\nHints: Rákosi replaced / Nagy\'s reforms',
- content:[
-  {h:'Beginning',pts:['Hungary was a harshly-ruled communist satellite state; food shortages, secret police and lack of freedom drove protests in 1956','Khrushchev replaced Stalinist leader Rákosi with the popular Imre Nagy who began reforms – freedom of speech, releasing prisoners, relaxing censorship']},
-  {h:'Middle',pts:['Nagy went too far by announcing Hungary would leave the Warsaw Pact – Khrushchev sent 1,000 tanks into Budapest','3,000 killed; 20,000 fled to the West; Western radio had encouraged the rising but the West did nothing to help']},
-  {h:'End',pts:['Nagy arrested and later executed; hardline Kadar installed as new leader','West condemned the invasion but did not intervene – showed NATO would not act militarily inside the Soviet sphere of influence']}
- ]},
-
-{paper:'p2a',type:'8mark-narrative',skill:'Narrative account',
- q:'Write a narrative account analysing the key events of the 2nd Berlin Crisis 1958–63. (8 marks)\nHints: Berlin Ultimatum / building of the Wall',
- content:[
-  {h:'Beginning',pts:['1949–58: 3 million East Germans fled West via Berlin – a "brain drain" deeply embarrassing for communism','1958: Khrushchev issued Berlin Ultimatum giving West 6 months to leave West Berlin; summits in Paris (1960) and Vienna (1961) both failed to resolve the crisis']},
-  {h:'Middle',pts:['13 August 1961: East German soldiers built barbed wire fence around West Berlin overnight – eventually the concrete Berlin Wall','Over 140 people killed trying to cross; East and West Berliners divided from families for 28 years']},
-  {h:'End',pts:['Short term: ended the brain drain and stabilised East Germany','1963: Kennedy\'s "Ich bin ein Berliner" speech declared US commitment to West Berlin – major propaganda victory for the West']}
- ]},
-
-{paper:'p2a',type:'8mark-narrative',skill:'Narrative account',
- q:'Write a narrative account analysing the key events of the Cuban Missile Crisis (1962). (8 marks)\nHints: Bay of Pigs / naval blockade',
- content:[
-  {h:'Beginning',pts:['1959: Castro overthrew Batista; 1961: Bay of Pigs (1,400 CIA-trained exiles) was a total failure and pushed Cuba and USSR closer together','Khrushchev placed Soviet nuclear missiles in Cuba – 90 miles from USA; October 1962: US spy plane photographed the sites, two weeks from operational']},
-  {h:'Middle',pts:['Kennedy announced naval blockade on live TV; for 13 days Soviet ships sailed toward the blockade – world closest to nuclear war in history','Telegrams flew between Kennedy and Khrushchev; Soviet submarines nearby carried nuclear torpedoes with authority to fire']},
-  {h:'End',pts:['Khrushchev removed missiles from Cuba; USA secretly removed missiles from Turkey and pledged not to invade Cuba','Hotline (1963) and Test Ban Treaty (1963) followed; Khrushchev forced from power 1964']}
- ]},
-
-{paper:'p2a',type:'8mark-narrative',skill:'Narrative account',
- q:'Write a narrative account analysing the key events of the Prague Spring (1968). (8 marks)\nHints: Dubček\'s reforms / invasion',
- content:[
-  {h:'Beginning',pts:['Czechoslovakia had been a communist satellite state since 1948; poor economy, secret police and political repression caused growing discontent','1968: Dubček became leader; wanted "Socialism with a human face" – releasing prisoners, allowing foreign travel, relaxing censorship']},
-  {h:'Middle',pts:['Brezhnev alarmed when Dubček invited Yugoslavia\'s independent leader Tito – feared reforms would spread to other satellite states','August 1968: 500,000 Warsaw Pact troops invaded Czechoslovakia; 70 killed; Dubček arrested; replaced by hardline Husák']},
-  {h:'End',pts:['West condemned the invasion but took no action','Albania left the Warsaw Pact in protest; showed Soviet control required the constant threat of overwhelming military force']}
- ]},
-
-{paper:'p2a',type:'8mark-narrative',skill:'Narrative account',
- q:'Write a narrative account analysing the key events of détente in the 1970s. (8 marks)\nHints: SALT 1 / Helsinki Accords',
- content:[
-  {h:'Beginning',pts:['By 1970s both sides had reasons to ease tensions: 40% of Soviet economy on nuclear weapons; USA had costly Vietnam War; risk of MAD']},
-  {h:'Middle',pts:['1972: SALT 1 signed by Nixon and Brezhnev – first nuclear arms limitation treaty; restricted ICBMs and SLBMs','1975: Helsinki Accords signed by 35 nations; Apollo-Soyuz mission – US and Soviet spacecraft docked in orbit; symbolised end of space race']},
-  {h:'End',pts:['1979: SALT 2 negotiations but USSR invaded Afghanistan on Christmas Eve – Carter cancelled treaty; détente over','Reagan elected 1980; called USSR "Evil Empire"; Second Cold War began']}
- ]},
-
-{paper:'p2a',type:'8mark-narrative',skill:'Narrative account',
- q:'Write a narrative account analysing the key events of the Second Cold War 1979–85. (8 marks)\nHints: Afghanistan / Reagan',
- content:[
-  {h:'Beginning',pts:['Christmas Eve 1979: USSR invaded Afghanistan; Carter scrapped SALT 2; issued Carter Doctrine; sent arms to the Mujahideen – détente over']},
-  {h:'Middle',pts:['1980: Reagan elected; $1 trillion military spending increase; Reagan Doctrine – funding anti-communist groups worldwide','1980: USA boycotted Moscow Olympics (60 countries joined); USSR boycotted LA Olympics 1984']},
-  {h:'End',pts:['1983: SDI/"Star Wars" announced – terrified the USSR and forced them to seek negotiations','By 1985 the USSR desperately needed to reduce military spending; created the conditions for Gorbachev\'s election and New Thinking']}
- ]},
-
-{paper:'p2a',type:'8mark-narrative',skill:'Narrative account',
- q:'Write a narrative account analysing the end of communist rule in Eastern Europe 1985–91. (8 marks)\nHints: Sinatra Doctrine / fall of the Berlin Wall',
- content:[
-  {h:'Beginning',pts:['1985: Gorbachev became Soviet leader; introduced Perestroika and Glasnost; "we can\'t go on living like this"','1988: Sinatra Doctrine – satellite states could "go their own way"; Brezhnev Doctrine withdrawn']},
-  {h:'Middle',pts:['June 1989: Poland first to abandon communism; Gorbachev did not send tanks; all other satellite states followed rapidly','9 November 1989: Berlin Wall fell; by end of 1989 every satellite state had abandoned communism']},
-  {h:'End',pts:['Germany reunited 1990; Warsaw Pact dissolved 1991','August 1991: Gang of Eight coup failed after 3 days; Gorbachev resigned Christmas Day 1991; USSR dissolved; Cold War officially ended']}
- ]},
-
-// ── P2a · 8-mark importance ───────────────────
-{paper:'p2a',type:'8mark-importance',skill:'Importance',
- q:'Explain the importance of the Truman Doctrine (1947) for the development of the Cold War. (8 marks)',
- content:[
-  {h:'Para 1',pts:['$400m to anti-communist fighters in Greece and Turkey – committed USA to containing communism anywhere in the world','Transformed ideological disagreement into formal global rivalry; containment became official US strategy for the next four decades']},
-  {h:'Para 2',pts:['Stalin established Cominform (1947) and Comecon (1949) as direct mirror responses to the Truman Doctrine and Marshall Plan','Accelerated the division of the world into two competing blocs; made diplomatic cooperation far less likely']}
- ]},
-
-{paper:'p2a',type:'8mark-importance',skill:'Importance',
- q:'Explain the importance of the Berlin Blockade (1948–49) for the development of the Cold War. (8 marks)',
- content:[
-  {h:'Para 1',pts:['Showed USA and USSR could not cooperate over Germany; led directly to permanent division into FRG and GDR in 1949','Berlin remained the divided heart of Cold War tension until 1989 – the blockade made that division permanent']},
-  {h:'Para 2',pts:['Convinced Western powers they needed permanent military alliance; NATO formed April 1949 as a direct response','Formalised the division of Europe into two armed camps; the Cold War became military as well as ideological; Warsaw Pact followed 1955']}
- ]},
-
-{paper:'p2a',type:'8mark-importance',skill:'Importance',
- q:'Explain the importance of the arms race for relations between the USA and USSR. (8 marks)',
- content:[
-  {h:'Para 1',pts:['1949: USSR atomic bomb; 1952: US H-bomb (1,000× more powerful); 1953: USSR H-bomb; 1957: both had ICBMs','MAD meant neither side could win a nuclear war – paradoxically prevented direct conflict between superpowers throughout the Cold War']},
-  {h:'Para 2',pts:['Arms race hugely expensive: 40% of Soviet economy on nuclear weapons by 1970s','Economic strain drove détente (1972), Gorbachev\'s election (1985) and Soviet collapse (1991) – the arms race ultimately helped end the Cold War']}
- ]},
-
-{paper:'p2a',type:'8mark-importance',skill:'Importance',
- q:'Explain the importance of the Hungarian Uprising (1956) for Soviet control of Eastern Europe. (8 marks)',
- content:[
-  {h:'Para 1',pts:['1,000 tanks; 3,000 killed; 20,000 fled to the West; Nagy later executed – established that the USSR would use overwhelming force to prevent satellite states leaving','De-Stalinisation had clear limits – reforms were tolerated only within the communist bloc; leaving the Warsaw Pact was absolutely not permitted']},
-  {h:'Para 2',pts:['West condemned invasion but did nothing – showed Truman Doctrine applied only outside Soviet sphere; NATO was not a guarantee for Eastern Europeans','Confirmed that satellite states had no real independence – their fate depended entirely on Soviet willingness to allow reform']}
- ]},
-
-{paper:'p2a',type:'8mark-importance',skill:'Importance',
- q:'Explain the importance of the Berlin Wall (1961) for the development of the Cold War. (8 marks)',
- content:[
-  {h:'Para 1',pts:['Ended the "brain drain" of 3 million East Germans who had fled West since 1949; stabilised the East German economy in the short term','Khrushchev had secured his most immediate objective – preventing the collapse of the GDR through emigration']},
-  {h:'Para 2',pts:['Long term: became the defining symbol of Cold War division; Kennedy\'s "Ich bin ein Berliner" (1963) gave the West powerful propaganda','Demonstrated to the world that communism could only survive by physically imprisoning its own people – massive long-term damage to Soviet reputation']}
- ]},
-
-{paper:'p2a',type:'8mark-importance',skill:'Importance',
- q:'Explain the importance of the Cuban Missile Crisis (1962) for superpower relations. (8 marks)',
- content:[
-  {h:'Para 1',pts:['For 13 days world closest to nuclear war in history; both sides realised they had come dangerously close to catastrophe','Hotline (1963) and Test Ban Treaty (1963) followed immediately – first arms control agreements of the Cold War']},
-  {h:'Para 2',pts:['Khrushchev forced to remove missiles publicly; seen to have "blinked"; forced from power 1964','Crisis began slow movement toward détente – contributed to the 1970s period of negotiation between Nixon and Brezhnev']}
- ]},
-
-{paper:'p2a',type:'8mark-importance',skill:'Importance',
- q:'Explain the importance of the Prague Spring (1968) for Soviet control of Eastern Europe. (8 marks)',
- content:[
-  {h:'Para 1',pts:['500,000 troops showed USSR would use overwhelming force to prevent even moderate reform that threatened the communist bloc','Dubček\'s "Socialism with a human face" was crushed – showed that reform within the system was simply not permitted']},
-  {h:'Para 2',pts:['Albania left the Warsaw Pact in protest and aligned with China – first fracture in the communist bloc','West condemned invasion but did nothing – confirmed that Soviet sphere was inviolable; this context was crucial for why détente eventually became necessary']}
- ]},
-
-{paper:'p2a',type:'8mark-importance',skill:'Importance',
- q:'Explain the importance of SALT 1 (1972) for relations between the USA and USSR. (8 marks)',
- content:[
-  {h:'Para 1',pts:['First nuclear arms limitation treaty between superpowers – showed both sides were willing to negotiate rather than simply threaten','Restricted ICBMs and SLBMs; 40% of Soviet economy on nuclear weapons – both sides had strong economic reasons to limit the arms race']},
-  {h:'Para 2',pts:['Part of broader détente: Helsinki Accords (1975), Apollo-Soyuz mission (1975) – genuine improvement in superpower relations','However SALT 2 abandoned after Afghanistan (1979) – shows how fragile détente was; a single crisis could destroy years of diplomatic progress']}
- ]},
-
-{paper:'p2a',type:'8mark-importance',skill:'Importance',
- q:'Explain the importance of the Soviet invasion of Afghanistan (1979) for the Cold War. (8 marks)',
- content:[
-  {h:'Para 1',pts:['Carter scrapped SALT 2 and issued Carter Doctrine; sent arms to Mujahideen – détente officially ended after less than a decade','Reagan elected 1980; $1 trillion military spending increase; called USSR "Evil Empire" – Second Cold War began immediately']},
-  {h:'Para 2',pts:['10-year war costing $8 billion per year became a massive economic drain on the USSR – "the Soviet Vietnam"','Combined with the cost of the arms race and SDI, Afghanistan was a key factor in the economic crisis that brought Gorbachev to power']}
- ]},
-
-{paper:'p2a',type:'8mark-importance',skill:'Importance',
- q:'Explain the importance of Gorbachev\'s New Thinking for Soviet control of Eastern Europe. (8 marks)',
- content:[
-  {h:'Para 1',pts:['Sinatra Doctrine (1988) withdrew the threat of Soviet invasion – without this, communist governments were immediately vulnerable to popular pressure','Poland led in June 1989; Gorbachev did not send tanks; every other satellite state followed within months; Berlin Wall fell 9 November 1989']},
-  {h:'Para 2',pts:['By end of 1989 all satellite states had abandoned communism; Germany reunited 1990; Warsaw Pact dissolved 1991','Gorbachev\'s reforms were intended to save the USSR by reforming it – instead they fatally undermined Soviet authority across all of Eastern Europe']}
- ]},
-
-{paper:'p2a',type:'8mark-importance',skill:'Importance',
- q:'Explain the importance of the fall of the Berlin Wall (1989) for the end of the Cold War. (8 marks)',
- content:[
-  {h:'Para 1',pts:['9 November 1989: the defining physical symbol of Cold War division fell – visually announced the end of communist Europe','Triggered rapid domino effect: all satellite states abandoned communism by end of 1989; Germany reunited 1990; Warsaw Pact dissolved 1991']},
-  {h:'Para 2',pts:['Malta Summit (1989): Bush and Gorbachev declared Cold War at an end','August 1991: coup failed; Gorbachev resigned Christmas Day 1991; USSR dissolved; 15 independent republics emerged']}
- ]},
-
-// ════════════════════════════════════════════
-// PAPER 2B , ELIZABETH I
-// 2-mark: describe one feature (all three units)
-// 12-mark: all 14 explain why
-// 16-mark: all 18 how far agree
-// ════════════════════════════════════════════
-
-// ── P2b · 2-mark Unit 1 ──────────────────────
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of Elizabeth\'s financial problems when she became queen in 1558. (2 marks)',
- content:[{h:'Points',pts:['The crown was £227,000 in debt when Elizabeth came to the throne – it took 20 years to clear and made it extremely difficult to fight wars or fund government','This debt meant Elizabeth had to rely heavily on Parliament for taxation and could not act independently in foreign policy without risking financial collapse']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the religious divisions Elizabeth faced in 1558. (2 marks)',
- content:[{h:'Points',pts:['England was deeply divided between Catholics and Protestants; her sister Mary I had burned 300 Protestants while Catholics hoped for the return of the Pope\'s authority','Catholics believed Elizabeth was illegitimate because the Pope had not sanctioned Henry VIII\'s divorce, meaning Mary Queen of Scots had a rival claim to the throne']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of Elizabeth\'s Privy Council. (2 marks)',
- content:[{h:'Points',pts:['Elizabeth\'s most important advisors were William Cecil, Robert Dudley and Francis Walsingham; they met regularly to advise her on government, foreign policy and religious matters','The Privy Council had real power – Walsingham ran a nationwide spy network and Cecil controlled government administration; their advice shaped Elizabeth\'s major decisions']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of England\'s foreign policy problems in 1558. (2 marks)',
- content:[{h:'Points',pts:['England was at war with France in 1558 and had just lost Calais – its last French territory – which was a national humiliation and cost England its military foothold in Europe','England also faced the threat of Scotland under Mary Queen of Scots who had the Auld Alliance with France, meaning Elizabeth risked a Catholic invasion from both north and south']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Act of Supremacy (1559). (2 marks)',
- content:[{h:'Points',pts:['The Act of Supremacy made Elizabeth "Supreme Governor" of the Church of England – she chose "Governor" rather than "Head" as it was less offensive to Catholics','The Act removed all papal authority from England; anyone who denied Elizabeth\'s supremacy could be charged with treason']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Act of Uniformity (1559). (2 marks)',
- content:[{h:'Points',pts:['The Act of Uniformity required all churches to use identical Protestant services; Catholic images and vestments were still allowed – this "Via Media" was designed to satisfy both Protestants and moderate Catholics','Recusants who did not attend a licensed church were fined just 1 shilling – much lighter than Mary I\'s approach of burning Protestant heretics']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Vestment Controversy. (2 marks)',
- content:[{h:'Points',pts:['Puritans refused to wear vestments in church, arguing they were Catholic symbols; the Archbishop of Canterbury had to insist they must be worn','The controversy showed the limits of Puritan power – they could not override Church authority even with supporters in the Privy Council and Parliament']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Crucifix Controversy. (2 marks)',
- content:[{h:'Points',pts:['Puritans campaigned to have crucifixes removed from all churches, arguing they were Catholic idols with no place in a Protestant church','Unlike the Vestment Controversy, the Puritans succeeded – crucifixes were removed from all churches; a small but real Puritan victory']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Puritan challenge to the Religious Settlement. (2 marks)',
- content:[{h:'Points',pts:['Puritans were extreme Protestants who wanted to remove all Catholic elements from the Church; they had powerful supporters including two Privy Councillors (Dudley and Walsingham) and MPs who pushed for change in Parliament','Unlike Catholics, Puritans had no alternative monarch to replace Elizabeth – their challenge was to the details of the Settlement, not to her right to rule']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the threat posed by Catholics to Elizabeth in the years 1558–69. (2 marks)',
- content:[{h:'Points',pts:['One third of nobles were Catholic but most paid the 1 shilling recusancy fine rather than rebel – the risk of rebellion was too high','Spain and France were powerful Catholic nations who could support English Catholics, but both were distracted throughout the 1560s by their own conflicts']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the papal excommunication of Elizabeth (1570). (2 marks)',
- content:[{h:'Points',pts:['Pope Pius V issued the papal bull Regnans in Excelsis in 1570, excommunicating Elizabeth and encouraging all Catholics in England and Europe to remove her from power','Parliament responded by making it treason to own a copy of the excommunication decree – showing how seriously Elizabeth\'s government viewed the threat']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of Mary Queen of Scots as a threat to Elizabeth. (2 marks)',
- content:[{h:'Points',pts:['Catholics believed Elizabeth was illegitimate and Mary was the true queen of England; even Protestants knew Mary was Elizabeth\'s heir if she had no children – simply by existing she was a focal point for opposition','Mary\'s mother was from the powerful Guise family; she had grown up in France; Scotland\'s Auld Alliance with France meant she could potentially trigger a French-backed Catholic invasion']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Treaty of Edinburgh (1560). (2 marks)',
- content:[{h:'Points',pts:['The Treaty of Edinburgh was signed by Scottish Protestant lords who had received help from Elizabeth; they renounced Mary Queen of Scots\' claim to the English throne','Mary refused to ratify the Treaty of Edinburgh – keeping her claim to the English throne legally alive and remaining a persistent threat throughout Elizabeth\'s reign']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the York Conference (1568). (2 marks)',
- content:[{h:'Points',pts:['When Mary Queen of Scots fled to England in 1568 seeking help, Elizabeth held a conference at York to examine the charges that Mary had murdered her husband Lord Darnley','Elizabeth decided Mary was guilty and had her imprisoned in northern England rather than helping her or returning her to Scotland']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Revolt of the Northern Earls (1569). (2 marks)',
- content:[{h:'Points',pts:['The Earls of Northumberland and Westmoreland raised armies, marched on Durham Cathedral and celebrated Catholic Mass; they planned to free Mary Queen of Scots and place her on the throne','Elizabeth raised an army of 14,000 soldiers; when no other Catholic nobles joined and their expected Spanish support failed to arrive, the Earls fled; Elizabeth hanged approximately 450 rebels']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Ridolfi Plot (1571). (2 marks)',
- content:[{h:'Points',pts:['The Ridolfi Plot aimed to assassinate Elizabeth and place Mary Queen of Scots on the throne with the help of Spanish troops sent by Philip II','The plot was uncovered by Walsingham\'s spy network; the Duke of Norfolk was executed; Elizabeth refused Parliament\'s demands that Mary also be executed']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Bond of Association (1584). (2 marks)',
- content:[{h:'Points',pts:['The Bond of Association was agreed by Elizabeth\'s Privy Council after the Throckmorton Plot; it pledged that they would kill anyone who conspired to benefit from Elizabeth\'s death','It was specifically designed to ensure that Mary Queen of Scots would be killed if there was another Catholic plot – making her execution after the Babington Plot legally and politically possible']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of Walsingham\'s spy network. (2 marks)',
- content:[{h:'Points',pts:['Francis Walsingham built a highly effective intelligence network that uncovered all three major Catholic plots against Elizabeth – Ridolfi (1571), Throckmorton (1583) and Babington (1586)','In the Babington Plot, Walsingham allowed the conspiracy to continue after discovering it specifically to gather undeniable written evidence of Mary Queen of Scots\' direct involvement']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Babington Plot (1586). (2 marks)',
- content:[{h:'Points',pts:['Anthony Babington planned to assassinate Elizabeth and place Mary Queen of Scots on the throne; Walsingham allowed the plot to continue until he had clear written evidence of Mary\'s direct approval','Mary was tried for treason and found guilty; Elizabeth signed the death warrant and Mary was executed in February 1587']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of Drake\'s circumnavigation of the globe (1577–80). (2 marks)',
- content:[{h:'Points',pts:['Drake became only the second crew to circumnavigate the globe between 1577 and 1580; during the voyage he raided £400,000 of Spanish treasure from Spanish ships and colonies','Elizabeth knighted Drake in 1580 on the deck of the Golden Hind despite Philip II\'s furious protests – Philip saw this as open endorsement of piracy']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of Drake\'s raid on Cadiz (1587). (2 marks)',
- content:[{h:'Points',pts:['In 1587 Drake sailed to Cadiz and destroyed around 30 Spanish ships and damaged many others, then led the Spanish navy on a chase and stole £140,000 worth of supplies','Known as "the singeing of the King of Spain\'s beard", the raid delayed the Armada by a year and gave England crucial time to prepare its defences']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Dutch Revolt. (2 marks)',
- content:[{h:'Points',pts:['Protestant Dutch had been rebelling against Spanish Catholic rule since the 1560s; Elizabeth had secretly funded and armed them; in 1585 she signed the Treaty of Nonsuch pledging 7,400 troops and £126,000 per year','The Dutch Revolt was central to Anglo-Spanish deterioration because it forced Elizabeth to choose between supporting Protestantism in Europe and maintaining peace with Spain']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Treaty of Joinville (1584). (2 marks)',
- content:[{h:'Points',pts:['In 1584 Philip II of Spain signed the Treaty of Joinville with French Catholics, pledging to work together to destroy Protestantism across Europe','The Treaty made Elizabeth a direct target – Spain and France were now officially committed to removing the Protestant queen of England']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Spanish Armada of 1588. (2 marks)',
- content:[{h:'Points',pts:['The Duke of Medina-Sidonia was sent with 130 ships and 27,000 men to the Netherlands to collect the Duke of Parma\'s 30,000 troops; the plan was then to invade England','Drake sent fireships into the tightly-anchored Armada at Calais – Spanish captains panicked and scattered, breaking the defensive formation that had protected them up the Channel']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Battle of Gravelines (1588). (2 marks)',
- content:[{h:'Points',pts:['The English navy attacked the scattered Armada at Gravelines the morning after the fireships; Drake\'s faster and more manoeuvrable galleons inflicted significant damage on the disordered Spanish fleet','After Gravelines, storms off Ireland and Scotland destroyed over half of the 130 Spanish ships; Parma\'s army had been trapped by Dutch flyboats and could never link up with the Armada']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of Elizabeth\'s Tilbury speech (1588). (2 marks)',
- content:[{h:'Points',pts:['Elizabeth delivered her Tilbury speech to rally English troops against the Spanish invasion threat; she declared "I may have the body of a weak and feeble woman but I have the heart and stomach of a king"','England\'s victory over the Armada was used as a Protestant propaganda triumph; a medal declared "God blew, and they were scattered"']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of grammar schools in Elizabethan England. (2 marks)',
- content:[{h:'Points',pts:['72 new grammar schools were introduced during Elizabeth\'s reign; fees were based on parents\' income and some middle-class boys could attend; male literacy rose from 20% to 30%','Girls did not attend school at all; female literacy remained at 10% throughout the reign – education was designed to fit the social station you were born into']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of Elizabethan attitudes to blood sports. (2 marks)',
- content:[{h:'Points',pts:['Bear-baiting, bull-baiting and cock-fighting were popular across all social classes throughout Elizabeth\'s reign; Elizabeth herself enjoyed these spectacles and they were not considered cruel by Elizabethan standards','Public executions and the pillory also drew large crowds as forms of public entertainment']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of theatre in Elizabethan England. (2 marks)',
- content:[{h:'Points',pts:['From the 1570s permanent theatres such as The Theatre and The Rose were built in London; for just 1 penny anyone could stand in the pit and watch a performance – theatre was open to all social classes','Theatre was a genuinely new form of entertainment that brought drama, comedy and ideas to ordinary Londoners']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of enclosure in Elizabethan England. (2 marks)',
- content:[{h:'Points',pts:['Enclosure was when wealthy landowners took common land away from poor people and fenced it off to farm sheep for the profitable wool trade','This left many poor people landless; they drifted to towns looking for work and swelled the numbers of vagabonds – one of the main causes of increased poverty during Elizabeth\'s reign']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Vagabonds Act (1572). (2 marks)',
- content:[{h:'Points',pts:['The Vagabonds Act of 1572 stated that vagabonds over the age of 14 were to be whipped and burned through the right ear for their first offence; further offences could mean execution','The Act reflected Elizabethan attitudes that the "undeserving poor" – those who could work but did not – were criminals who deserved punishment rather than help']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Houses of Correction (1576). (2 marks)',
- content:[{h:'Points',pts:['From 1576, Houses of Correction were built where the poor were taught skills to find work – a more constructive approach than the purely punitive Vagabonds Act of 1572','Local officials were required to find work for the poor and wealthy people had to contribute to a fund distributed to the deserving poor – the first organised approach to poor relief']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the Malthusian Crisis during Elizabeth\'s reign. (2 marks)',
- content:[{h:'Points',pts:['During Elizabeth\'s reign the population grew from 3 million to 4 million; this pushed up food prices and increased competition for jobs, driving down wages – the combination caused widespread poverty','The "little ice age" meant temperatures dropped and harvests were more likely to fail, making food shortages more frequent and severe']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of Elizabethan attitudes towards the poor. (2 marks)',
- content:[{h:'Points',pts:['Elizabethan society divided the poor into the "deserving poor" (the old or physically disabled who could not work) and the "undeserving poor" (those who were able-bodied but unemployed)','Elizabethans blamed the undeserving poor for laziness and criminality; there were exaggerated rumours about vagabonds committing crimes and spreading disease']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of Elizabethan voyages of exploration. (2 marks)',
- content:[{h:'Points',pts:['New technology made long voyages possible: the Mercator map (1569) gave a more accurate picture of the world\'s geography; astrolabes used stars to determine a ship\'s location; improved galleon designs made ocean voyages safer','1562: John Hawkins created the Triangular Slave Trade bringing great wealth to England; Elizabeth personally invested in his expeditions']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the failure of the first Virginia colony (1585). (2 marks)',
- content:[{h:'Points',pts:['108 settlers arrived at Roanoke Island in 1585 but the supply ship The Tiger ran aground on landing, causing seawater to destroy most of the precious food stores – leaving the colonists dependent on the Algonquian people','Relations with the Algonquian people broke down; Ralph Lane led a pre-emptive attack killing chief Wingina – ending any chance of the cooperation essential to the colony\'s survival']}]},
-
-{paper:'p2b',type:'2mark',skill:'Describe one feature',
- q:'Describe one feature of the mystery of the lost Roanoke colony. (2 marks)',
- content:[{h:'Points',pts:['A second expedition of colonists arrived in 1587 but supply ships were forced to return to England; the Armada crisis of 1588 prevented them returning until 1590','When ships returned in 1590 the colony had completely vanished; the only clue was the word "Croatoan" carved into a tree – the colonists were never seen again']}]},
-
-// ── P2b · 12-mark (all 14) ───────────────────
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why Elizabeth faced challenges when she became queen in 1558. (12 marks)\nHints: Religion / France',
- content:[
-  {h:'Para 1 – Religious division',pts:['England deeply divided between Catholics and Protestants; 1/3 of nobles were Catholic and did not accept Elizabeth\'s legitimacy','Catholics believed Elizabeth was illegitimate – Pope had not sanctioned Henry VIII\'s divorce; Mary Queen of Scots had a rival claim','Any religious settlement risked offending either powerful Catholic nobles or influential Puritan MPs']},
-  {h:'Para 2 – Foreign threat and debt',pts:['£227,000 crown debt; at war with France; Calais lost 1558 – national humiliation','Scotland had Auld Alliance with France and was ruled by Catholic Mary QoS – threat of invasion from north and south simultaneously','Elizabeth had no army or money to defend against these threats effectively']},
-  {h:'Para 3 – Patriarchal attitudes and marriage',pts:['Deeply patriarchal society – many believed women could not rule or lead armies; sister Mary I had reinforced this fear','Expected to marry but foreign husband risked xenophobic reaction; English husband would create noble rivalries','Elizabeth\'s refusal to commit to marriage became a recurring political problem with MPs and Privy Councillors']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why the Religious Settlement was disliked by some in England. (12 marks)\nHints: Royal Supremacy / Vestments',
- content:[
-  {h:'Para 1 – Catholic opposition to Royal Supremacy',pts:['Catholics could not accept Elizabeth as "Supreme Governor" – only the Pope had authority to lead the Church in Catholic belief','1/3 of nobles were Catholic; most paid recusancy fine of 1 shilling rather than rebel – but they did not accept the Settlement as legitimate','Pope Pius V\'s excommunication (1570) later turned this dislike into active religious duty to overthrow Elizabeth']},
-  {h:'Para 2 – Puritan opposition to vestments',pts:['Puritans wanted to remove all Catholic elements from the Church; the Via Media still allowed vestments and Catholic imagery','Vestment Controversy: clergy refused to wear vestments; Archbishop had to insist by authority – caused public religious conflict within the Church','Puritans had Privy Council support (Dudley, Walsingham) and MPs – could push for change through legitimate channels']},
-  {h:'Para 3 – Settlement satisfied neither side fully',pts:['Deliberately ambiguous Via Media tried to be acceptable to both sides but fully satisfied neither','Ongoing challenges from Catholics (wanting the Pope restored) and Puritans (wanting further reform) throughout the entire reign','Required constant vigilance to maintain – not a settled peace but a managed tension']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why the Catholics were a threat to the Religious Settlement. (12 marks)\nHints: Excommunication / Northern Earls',
- content:[
-  {h:'Para 1 – Papal excommunication 1570',pts:['Pope Pius V excommunicated Elizabeth – all Catholics religiously obliged to remove her from power; gave foreign powers justification for invasion','Parliament made owning the excommunication decree treason – shows government took this very seriously','Ridolfi Plot (1571) followed directly from the excommunication – excommunication directly enabled the plots']},
-  {h:'Para 2 – Revolt of the Northern Earls 1569',pts:['Earls raised armies, marched on Durham Cathedral, celebrated Catholic Mass; aimed to free Mary Queen of Scots','No other nobles joined; Spanish troops never arrived; Elizabeth raised 14,000 soldiers; ~450 rebels hanged','Showed Catholic nobles were capable of armed rebellion even if this particular revolt failed']},
-  {h:'Para 3 – Catholic plots threatened Elizabeth\'s life',pts:['Ridolfi (1571), Throckmorton (1583) and Babington (1586) all aimed to assassinate Elizabeth and place Mary on the throne','Each plot had potential foreign backing from Spain or France – the threat was international, not just domestic','Walsingham had to run an entire spy network to contain the threat; this was not a minor or manageable problem']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why the Puritans were a threat to the Religious Settlement. (12 marks)\nHints: Vestment Controversy / Parliament',
- content:[
-  {h:'Para 1 – Influential supporters within government',pts:['Two Privy Councillors (Dudley and Walsingham) were Puritan sympathisers – influence at the heart of government','Significant representation in Parliament – pushed for changes to the Settlement through legitimate political channels','Unlike Catholics, Puritans worked from within the English establishment and did not need foreign backing']},
-  {h:'Para 2 – Vestment and Crucifix controversies',pts:['Vestment Controversy caused damaging public disputes within the Church; Archbishop had to impose compliance by authority','Crucifix Controversy: Puritans succeeded in getting crucifixes removed from all churches – a real change to the Settlement','Showed Puritans could cause serious difficulties and could occasionally win concessions from the Settlement']},
-  {h:'Para 3 – Puritan challenge continued throughout the reign',pts:['Puritans challenged the Settlement repeatedly – Vestment Controversy, Crucifix Controversy, Parliamentary campaigns throughout the 1560s–80s','They forced Elizabeth to defend her Settlement publicly again and again – a persistent drain on political energy','By the 1580s some Puritans were establishing Presbyterian structures outside the Settlement – a genuinely separatist challenge']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why Mary, Queen of Scots was a threat to Elizabeth I. (12 marks)\nHints: Elizabeth\'s legitimacy / Links with France',
- content:[
-  {h:'Para 1 – Legitimacy challenge',pts:['Catholics believed Elizabeth was illegitimate and Mary was the true queen of England; even Protestants knew Mary was heir if Elizabeth had no children','Simply by existing with a rival claim to the throne she was a focal point around which all Catholic opposition could organise','Anchor for all three major plots: Ridolfi (1571), Throckmorton (1583), Babington (1586) – all centred on placing Mary on the throne']},
-  {h:'Para 2 – French connections and foreign threat',pts:['Mary\'s mother from powerful Guise family; grew up in France as wife of the French king; Scotland had Auld Alliance with France','Potential for French-backed invasion: Catholic invasion force could come from both north (Scotland) and south (France) simultaneously','Treaty of Edinburgh 1560 renounced her claim but she refused to ratify it – kept the legal threat alive']},
-  {h:'Para 3 – Her presence inside England from 1568 made her an immediate danger',pts:['Arrival in England transformed a distant dynastic threat into an immediate and present danger','Elizabeth imprisoned her rather than helping her or returning her – 18 years of Catholic conspiracy followed','Once Mary was executed in 1587 the Catholic plot threat largely ended – confirms she was the central element of the whole problem']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why the Revolt of the Northern Earls began in 1569. (12 marks)\nHints: Mary Queen of Scots / Catholicism',
- content:[
-  {h:'Para 1 – Arrival of Mary Queen of Scots gave the revolt a political objective',pts:['Mary\'s arrival and imprisonment in northern England (1568) gave the revolt its specific aim – freeing her and placing her on the throne','Without Mary as an alternative monarch the revolt would have had no clear political goal','Planned to free Mary and marry her to the Duke of Norfolk – a political coup using religious language as justification']},
-  {h:'Para 2 – Catholic faith of the northern nobility',pts:['Northern earls and their followers were predominantly Catholic; resented the Protestant Settlement imposed from the south','The north had remained more Catholic than the south; religion gave the revolt its popular support among ordinary people','Marched under banner of the Five Wounds of Christ; celebrated Catholic Mass in Durham Cathedral']},
-  {h:'Para 3 – Political grievances drove the earls personally',pts:['Earls resented being marginalised by Elizabeth\'s Protestant advisers, particularly William Cecil','Their traditional families had ruled northern England but had been replaced by Elizabeth\'s Council of the North – loss of status and power','Revolt driven by both religious conviction and aristocratic resentment – the two reinforced each other']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why the Revolt of the Northern Earls failed in 1569. (12 marks)\nHints: Lack of support / Leadership',
- content:[
-  {h:'Para 1 – Lack of noble support',pts:['Called on all Catholic nobles to join – none came; most calculated the risk of rebellion was too high','Could afford to pay the 1 shilling recusancy fine; potential loss of land and life made rebellion unattractive','Without wider noble support the revolt simply lacked the numbers to challenge Elizabeth effectively']},
-  {h:'Para 2 – Weak leadership and planning',pts:['Earls were hesitant and poorly organised; captured Hartlepool and waited for Spanish support that never arrived','No clear military plan beyond waiting for foreign help; when Spanish troops failed to come, momentum collapsed','Elizabeth raised 14,000 soldiers – far outnumbering the rebel forces; Earls fled rather than fight']},
-  {h:'Para 3 – Elizabeth\'s decisive response crushed the revolt',pts:['Elizabeth raised a large army immediately and moved decisively – hanged ~450 rebels as a deterrent','Moved Mary Queen of Scots to Coventry, further from the Catholic north – removed the focal point for future northern plots','The revolt actually strengthened Elizabeth\'s position by demonstrating her capacity to crush rebellion decisively']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why Mary, Queen of Scots was executed in 1587. (12 marks)\nHints: Babington Plot / Privy Council pressure',
- content:[
-  {h:'Para 1 – Babington Plot provided undeniable evidence',pts:['Walsingham allowed the Babington Plot to run until he had Mary\'s written approval of plans to assassinate Elizabeth','With Mary\'s own handwriting proving her complicity in a murder plot, there was an overwhelming legal case for her execution','Bond of Association (1584) pledged the Privy Council to kill anyone who conspired to benefit from Elizabeth\'s death – execution was now automatic']},
-  {h:'Para 2 – Privy Council pressure was decisive',pts:['Walsingham and Cecil had long argued Elizabeth could never be safe while Mary lived','Privy Council put enormous pressure on Elizabeth to sign the death warrant; she delayed for months but eventually did','When she signed, Davison was given the warrant; Privy Council rushed it through without waiting for final royal command – they acted on their own initiative']},
-  {h:'Para 3 – Mary\'s ongoing threat made her continued existence impossible',pts:['Mary had been linked to three plots over 18 years – Ridolfi, Throckmorton and Babington','Every Catholic conspiracy since 1568 had centred on her; as long as she lived she was the focal point for opposition','Her execution ended the immediate Catholic plot threat – her existence as an alternative monarch was the underlying cause of all the danger']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why England and Spain went to war in 1585. (12 marks)\nHints: The Dutch Revolt / Drake',
- content:[
-  {h:'Para 1 – Dutch Revolt and Treaty of Nonsuch',pts:['Elizabeth had secretly funded Dutch Protestant rebels against Spanish Catholic rule since the 1560s','1584: Dutch leader William of Orange assassinated; Elizabeth could no longer avoid direct involvement','1585: Treaty of Nonsuch – pledged 7,400 troops and £126,000/year; England and Spain officially at war']},
-  {h:'Para 2 – Drake\'s raids and commercial rivalry',pts:['Drake raided Spanish ships and colonies throughout 1570s–80s secretly backed by Elizabeth; stole £400,000 during circumnavigation 1577–80','Elizabeth knighted Drake in 1580 – Philip saw this as open endorsement of piracy and an act of war','English merchants were competing with Spain in the New World; commercial and military rivalry were inseparable']},
-  {h:'Para 3 – Religious and dynastic rivalry made war inevitable',pts:['1584: Treaty of Joinville – Philip allied with French Catholics to destroy Protestantism; Elizabeth was a direct target','Mary Queen of Scots\' execution 1587 removed the Catholic alternative to Elizabeth; Philip now believed invasion was the only option','Drake\'s 1587 raid on Cadiz delayed the Armada by a year – but war was already inevitable by this point']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why the Spanish Armada was defeated in 1588. (12 marks)\nHints: Fireships / Storms',
- content:[
-  {h:'Para 1 – English tactics',pts:['Drake sent fireships into the tightly-anchored Armada at Calais – Spanish captains panicked and scattered, breaking the defensive formation','Battle of Gravelines: English galleons faster and more manoeuvrable; inflicted significant damage on the disordered Spanish fleet','Drake\'s 1587 raid on Cadiz had already delayed the Armada by a year and destroyed valuable supplies']},
-  {h:'Para 2 – Storms caused enormous destruction',pts:['After Gravelines, wind blew the Armada north around Scotland and Ireland; over half of the 130 ships were destroyed by storms','Spanish captains unfamiliar with northern waters; Philip\'s rigid orders gave Medina-Sidonia no flexibility to adapt','Medal issued after the defeat read "God blew, and they were scattered" – contemporaries credited weather']},
-  {h:'Para 3 – The Spanish plan was unworkable from the start',pts:['Duke of Parma\'s 30,000 troops trapped in Netherlands by Dutch flyboats controlling shallow coastal waters – could never link up with the Armada','Plan required impossible coordination across the sea with no direct communication between Medina-Sidonia and Parma','Even without English tactics or storms, the Armada could never have achieved its objective – defeat was built into the plan']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why life changed for ordinary people in the reign of Elizabeth. (12 marks)\nHints: Theatre / Poor relief',
- content:[
-  {h:'Para 1 – Theatre and entertainment',pts:['Permanent theatres built in London from 1570s; 1 penny for standing room – theatre became accessible to all social classes','Brought drama, comedy and ideas to ordinary Londoners in a genuinely new way','Entertainment diversified beyond traditional bear-baiting and cock-fighting; cultural life in London expanded significantly']},
-  {h:'Para 2 – Poor relief legislation',pts:['1572 Vagabonds Act punished vagabonds; 1576 Act for Relief of the Poor was more constructive – Houses of Correction, organised funding','First time government took organised responsibility for the poor rather than leaving it to the Church','Recognising poverty as a social problem requiring a response, not just a moral failing to be punished']},
-  {h:'Para 3 – Education expanded access to learning',pts:['72 new grammar schools during Elizabeth\'s reign; male literacy rose from 20% to 30%','Some middle-class boys could now access education that had previously been restricted to the wealthy and clergy','However girls were entirely excluded and rural poor had no access – change was real but limited in scope']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why poverty increased in the reign of Elizabeth. (12 marks)\nHints: Enclosure / Population rise',
- content:[
-  {h:'Para 1 – Population growth drove up prices and pushed down wages',pts:['Population rose from 3 million to 4 million – food prices rose as demand increased; more people competing for the same jobs drove wages down','Little ice age: temperatures dropped; harvests more likely to fail; food shortages more frequent','Real purchasing power of ordinary people\'s wages fell throughout the reign']},
-  {h:'Para 2 – Enclosure deprived the poor of land',pts:['Wealthy landowners enclosed common land to farm sheep for the profitable wool trade; poor people lost land they depended on for food','Many became landless and drifted to towns looking for work – swelled urban poor and numbers of vagabonds','Debasement of the currency by Henry VIII had created inflation that continued throughout Elizabeth\'s reign']},
-  {h:'Para 3 – Poor relief was inadequate to address the problem',pts:['Traditional poor relief through Catholic monasteries had been removed by Henry VIII\'s dissolution – replaced by nothing for decades','1572 Vagabonds Act focused on punishment rather than addressing the causes of poverty','1576 Houses of Correction were a step forward but could only help limited numbers; underlying causes were never tackled']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why voyages of exploration increased during the reign of Elizabeth. (12 marks)\nHints: Fame / Slave Trade',
- content:[
-  {h:'Para 1 – Fame and royal patronage',pts:['Drake\'s circumnavigation (1577–80) brought enormous prestige; Elizabeth knighted him on deck of Golden Hind – exploration became socially desirable','Elizabeth\'s own patronage gave voyages royal endorsement; explorers became national heroes','The prospect of fame was a powerful incentive in a society where reputation and honour mattered enormously']},
-  {h:'Para 2 – Profit from the Slave Trade and raiding',pts:['1562: Hawkins created the Triangular Slave Trade – Elizabeth personally invested; vast profits possible','Drake stole £400,000 of Spanish treasure during his circumnavigation – profit and fame were inseparable motivations','Financial backing from Elizabeth and London merchants was driven by economic calculation']},
-  {h:'Para 3 – New technology made long voyages possible',pts:['Mercator map (1569): more accurate world geography; astrolabes used stars to navigate more precisely at sea','Improved galleon designs made longer ocean voyages safer and more survivable','These advances meant voyages that had previously been impossible became achievable for Elizabethan sailors']}
- ]},
-
-{paper:'p2b',type:'12mark',skill:'Explain why',
- q:'Explain why the colonisation of Virginia failed in the 1580s. (12 marks)\nHints: Algonquian people / The Tiger',
- content:[
-  {h:'Para 1 – Loss of The Tiger created immediate crisis',pts:['Supply ship The Tiger ran aground on arrival 1585; seawater destroyed most food stores – colonists immediately dependent on Algonquians','1587 expedition: colonists arrived too late to plant crops; supply ships forced to return to England','Armada crisis 1588 prevented supply ships returning until 1590 – by which time the colony had vanished']},
-  {h:'Para 2 – Conflict with the Algonquian people destroyed any chance of survival',pts:['Relations broke down as colonists tried to take food by force when supplies ran low','Algonquians blamed English for spreading disease ("invisible bullets") – created mutual hostility','Ralph Lane\'s pre-emptive attack and killing of chief Wingina ended any possibility of cooperation essential to survival']},
-  {h:'Para 3 – Poor planning made failure likely from the start',pts:['Roanoke Island had a shallow harbour unsuitable for large supply ships – a logistically poor choice','Too many soldiers and merchants; not enough farmers with skills to be self-sufficient','England\'s first generation of colonisation; inexperience meant fundamental mistakes were almost inevitable']}
- ]},
-
-// ── P2b · 16-mark (all 18) ───────────────────
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"Elizabeth\'s greatest challenge when she became queen in 1558 was the threat of foreign invasion." How far do you agree?\nHints: Religious turmoil / Mary Queen of Scots',
- content:[
-  {h:'Agree – foreign threat was severe',agree:true,pts:['At war with France; Calais lost; £227,000 debt made it impossible to fund effective military response','Scotland had Auld Alliance with France and was ruled by Catholic Mary QoS; potential Catholic invasion from north and south simultaneously','If France and Spain had united against Protestant England the consequences could have been catastrophic']},
-  {h:'Disagree A – religious division equally serious',agree:false,pts:['Catholics believed Elizabeth was illegitimate – challenged her basic right to rule, not just her security','1/3 of nobles were Catholic; any religious settlement risked alienating powerful domestic allies; Religious turmoil created internal instability','Religious division gave foreign powers a domestic foothold to exploit – the two threats were inseparable']},
-  {h:'Disagree B – financial weakness was the root problem',agree:false,pts:['£227,000 debt made every other challenge worse – could not fight wars, fund diplomacy or rebuild the army','Without money no other problem could be solved; Parliament\'s control of taxation limited Elizabeth\'s independence','Debt was the foundation of all her other difficulties – Mary Queen of Scots was dangerous partly because England was too weak to respond']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"Elizabeth effectively settled the problem of religion in England in 1559." How far do you agree?\nHints: Act of Uniformity / Vestment Controversy',
- content:[
-  {h:'Agree – Settlement brought real stability',agree:true,pts:['Via Media satisfied most people: Protestants got Protestant services; Catholics could pay 1 shilling fine and practice privately','Act of Uniformity avoided religious civil wars like those in France (1560s) – England remained relatively stable','Archbishop held the line against Puritan pressure in the Vestment Controversy; the Settlement remained broadly intact']},
-  {h:'Disagree A – Puritan challenge continued throughout the reign',agree:false,pts:['Vestment Controversy caused damaging public disputes within the Church; Crucifix Controversy showed the Settlement could be altered under pressure','Puritans repeatedly used Parliament and Privy Council connections to push for further Reformation','By the 1580s some Puritans were establishing Presbyterian structures outside the Settlement – a genuinely separatist challenge']},
-  {h:'Disagree B – Catholic threat remained unresolved',agree:false,pts:['Pope\'s excommunication 1570 turned every English Catholic into a potential traitor – the Settlement could not prevent this','Ridolfi, Throckmorton and Babington plots showed Catholic opposition continued throughout the reign','Required Walsingham\'s entire intelligence network to maintain – not truly settled if it needed this constant enforcement']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"The Catholics posed the greatest threat to Elizabeth\'s Religious Settlement." How far do you agree?\nHints: Excommunication / The Puritans',
- content:[
-  {h:'Agree – Catholics posed the greater external threat',agree:true,pts:['Pope\'s excommunication 1570 gave Catholic threat an international dimension – all Catholics religiously obliged to remove Elizabeth','Ridolfi, Throckmorton and Babington plots all threatened Elizabeth\'s life with potential foreign military backing','Spanish Armada 1588 was a direct Catholic military invasion – could not have been mounted by English Catholics alone']},
-  {h:'Disagree A – Puritans threatened from within government',agree:false,pts:['Two Privy Councillors (Dudley and Walsingham) were Puritan supporters; Puritans had significant influence in Parliament','Vestment Controversy caused public disputes; Crucifix Controversy showed they could win concessions from the Settlement','Unlike Catholics, Puritans were already inside the power structure – they could not be excluded without weakening Elizabeth\'s own government']},
-  {h:'Disagree B – Catholic threat was limited in practice',agree:false,pts:['Most Catholic nobles paid recusancy fine rather than rebel – threat was more potential than actual throughout','Spain and France were always distracted when Catholic plots needed their support','Walsingham uncovered every Catholic plot before it could succeed – consistently ineffective in practice despite appearing dangerous']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"The Catholic threat to Elizabeth increased mainly because of the threat of invasion." How far do you agree?\nHints: Excommunication / Mary Queen of Scots',
- content:[
-  {h:'Agree – foreign invasion threat escalated the danger',agree:true,pts:['Pope\'s excommunication 1570 provided Spain and France with religious justification for invasion – transformed domestic discontent into international threat','Spanish Armada 1588 was the culmination – a direct invasion attempt backed by the most powerful Catholic monarch in Europe','Without possibility of foreign military support, English Catholics alone lacked the numbers to pose a serious armed threat']},
-  {h:'Disagree A – Mary Queen of Scots was equally important',agree:false,pts:['Mary\'s presence in England from 1568 made her the anchor for every Catholic conspiracy for 18 years','Ridolfi, Throckmorton and Babington plots were all possible because Mary Queen of Scots existed as an alternative monarch – not primarily because of invasion plans','Mary\'s execution 1587 largely ended the Catholic plot threat; confirms she was the central domestic element']},
-  {h:'Disagree B – domestic plots were serious in themselves',agree:false,pts:['Bond of Association 1584: Privy Council so worried about domestic plots they pledged to kill Mary if another plot occurred','Babington Plot had Mary\'s direct written involvement and required Walsingham\'s full intelligence network to control – a genuine domestic conspiracy','Catholic plots from English Catholics alone required enormous effort to contain – not simply a foreign invasion threat']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"The Puritans were never a serious threat to Elizabeth\'s Religious Settlement." How far do you agree?\nHints: Support in Privy Council / Crucifix Controversy',
- content:[
-  {h:'Agree – Puritan threat was limited',agree:true,pts:['No alternative monarch to replace Elizabeth – challenge was to the Settlement\'s details, not her right to rule','Vestment Controversy ended with Archbishop insisting vestments remain; Elizabeth could resist Puritan pressure when she chose','A small and divided group; even with Privy Council support they could not force fundamental changes to the Settlement']},
-  {h:'Disagree A – Puritans had real political influence',agree:false,pts:['Two Privy Councillors were Puritan supporters – influence at the very heart of government; could shape policy from within','Puritan MPs used Parliament repeatedly to push for further Reformation against Elizabeth\'s explicit wishes','Crucifix Controversy showed they could win real concessions – crucifixes removed from all churches; real change to the Settlement achieved']},
-  {h:'Disagree B – Puritan challenge was sustained throughout the reign',agree:false,pts:['Challenged the Settlement not once but repeatedly – Vestment Controversy, Crucifix Controversy, Parliamentary campaigns throughout the entire reign','Forced Elizabeth to defend her Settlement publicly again and again – not a trivial or occasional nuisance','By the 1580s some Puritans were establishing Presbyterian structures outside the Settlement – a genuinely separatist challenge that went beyond protests']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"The decline in Anglo-Spanish relations 1569–85 was mainly due to Elizabeth\'s actions." How far do you agree?\nHints: The Dutch Revolt / Drake',
- content:[
-  {h:'Agree – Elizabeth\'s actions drove deterioration',agree:true,pts:['Secretly funded and armed Dutch rebels against Philip\'s rule throughout the 1570s; Treaty of Nonsuch 1585 made this open and official','Knighted Drake in 1580 after theft of £400,000 of Spanish treasure – open endorsement of acts Philip regarded as acts of war','Mary Queen of Scots\' execution 1587 removed the Catholic alternative to Elizabeth; Philip decided invasion was the only option']},
-  {h:'Disagree A – Philip\'s own actions also caused deterioration',agree:false,pts:['1584: Treaty of Joinville with French Catholics pledging to destroy Protestantism – Elizabeth was a direct target before Drake\'s raids escalated','Philip supported the Ridolfi Plot 1571 – actively sought to overthrow Elizabeth long before war was declared','Philip\'s brutal suppression of The Dutch Revolt drove Protestant refugees to England and made English support for Dutch rebels popular and rational']},
-  {h:'Disagree B – religious rivalry was the root cause of deterioration',agree:false,pts:['Spain and England were natural rivals: largest Catholic power vs leading Protestant power; Pope\'s excommunication 1570 made this official','Commercial rivalry in the New World was structural – not caused by any individual\'s actions but by competing imperial ambitions','Deterioration was gradual and mutual; both sides made choices that worsened relations throughout the period']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"The Armada was defeated mainly because of the weather rather than English actions." How far do you agree?\nHints: Storms / Poor communication',
- content:[
-  {h:'Agree – weather was decisive',agree:true,pts:['Storms off Ireland and Scotland destroyed over half of the 130 ships – far more destruction than English guns caused','Spanish captains unfamiliar with northern waters; Philip\'s rigid orders gave Medina-Sidonia no flexibility when conditions changed drastically','Medal read "God blew, and they were scattered" – Elizabethan contemporaries themselves credited weather']},
-  {h:'Disagree A – English tactics were crucial',agree:false,pts:['Fireships at Calais broke the Spanish crescent formation – without this the Armada might have regrouped successfully','Battle of Gravelines: faster English galleons inflicted significant damage on the disordered Spanish fleet','Drake\'s 1587 raid on Cadiz delayed the Armada by a year and gave England crucial time to prepare its defences']},
-  {h:'Disagree B – the Spanish plan was unworkable from the start',agree:false,pts:['Parma\'s 30,000 troops trapped in Netherlands by Dutch flyboats – could never get out to link up with the Armada regardless of Poor communication between commanders','Plan required impossible coordination across the sea with no direct communication','Even without English tactics or storms the Armada could not have achieved its objective – defeat was built into the plan itself']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"Mary Queen of Scots was executed mainly because of pressure from Elizabeth\'s Privy Council." How far do you agree?\nHints: Walsingham / Bond of Association',
- content:[
-  {h:'Agree – Privy Council was the decisive factor',agree:true,pts:['Walsingham spent years building the legal case against Mary; allowed Babington Plot to run specifically to obtain written evidence of her guilt','Bond of Association 1584 pledged the Privy Council to kill anyone who conspired to benefit from Elizabeth\'s death – made execution automatic','When Elizabeth signed the warrant, Privy Council rushed it through without waiting for final royal confirmation – they acted on their own initiative']},
-  {h:'Disagree A – Mary\'s own actions made execution unavoidable',agree:false,pts:['Mary\'s direct written approval of plans to assassinate Elizabeth gave undeniable evidence; very hard for Elizabeth to refuse to act after this','Linked to three separate plots over 18 years – Ridolfi, Throckmorton, Babington; her continued existence made every conspiracy possible','Walsingham could only get the evidence by allowing the plot to run – but Mary\'s own decision to write approving assassination provided it']},
-  {h:'Disagree B – Elizabeth was more willing than she claimed',agree:false,pts:['Elizabeth had resisted executing Mary after two previous plots – by 1586 she had effectively run out of arguments','Elizabeth signed the death warrant – the signature was her decision, not the Privy Council\'s, regardless of what happened afterwards','Her theatrical display of horror at the execution may have been politically motivated to distance herself from Catholic backlash rather than genuine surprise']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"The plots and revolts against Elizabeth were never a serious threat." How far do you agree?\nHints: Revolt of the Northern Earls / Walsingham',
- content:[
-  {h:'Agree – plots were consistently ineffective',agree:true,pts:['Revolt of Northern Earls 1569 collapsed when no other Catholic nobles joined; Elizabeth raised 14,000 soldiers; crushed easily','Walsingham\'s intelligence network uncovered every plot before it could succeed; allowed Babington Plot to run to gather maximum evidence','If the government defeated every threat over 15 years, they were a persistent nuisance rather than a genuine danger to Elizabeth\'s throne']},
-  {h:'Disagree A – plots were serious in intent and potential',agree:false,pts:['Babington Plot had Mary\'s direct written involvement and potential Spanish backing – if Walsingham had not intercepted communications it might have succeeded','Even the Northern Earls raised a real army and marched on Durham – only their misjudgement about foreign and noble support prevented a serious challenge','Bond of Association 1584 – a formal collective pledge to kill Mary – was not a proportionate response to a trivial danger']},
-  {h:'Disagree B – Mary\'s existence made the threat ongoing and structural',agree:false,pts:['Mary Queen of Scots\' existence as an alternative monarch meant Catholic opposition always had a focal point to organise around','Once Mary was executed 1587 the Catholic plot threat largely ended – confirms the threat was real and serious while she was alive','Three plots in 15 years required Walsingham\'s entire intelligence network to contain – the profile of a sustained and serious threat']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"The plots and revolts against Elizabeth failed mainly because of a lack of foreign support." How far do you agree?\nHints: Revolt of the Northern Earls / Walsingham',
- content:[
-  {h:'Agree – lack of foreign support was crucial',agree:true,pts:['Northern Earls revolt 1569: captured Hartlepool waiting for Spanish troops that never arrived; when they did not come, the revolt collapsed','Ridolfi Plot 1571 depended on Philip II sending Spanish troops; he ultimately held back; English conspirators were exposed without military backing','Without foreign military support, English Catholics alone did not have the numbers or resources to overthrow Elizabeth']},
-  {h:'Disagree A – Walsingham\'s intelligence was equally important',agree:false,pts:['Walsingham intercepted Mary\'s communications and allowed Babington Plot to run until he had irrefutable evidence','Throckmorton Plot was uncovered before Spain could be mobilised – plots failed because they were detected, not only because foreign support was unavailable','Even with foreign backing, Walsingham\'s network would likely have known in advance and allowed England to prepare a response']},
-  {h:'Disagree B – domestic Catholic weakness was also a fundamental problem',agree:false,pts:['Most English Catholic nobles refused to rebel even when plots were active – personal risk too high regardless of foreign backing','Revolt of Northern Earls failed because no other nobles joined – domestic base for Catholic rebellion was too narrow','Plots required both foreign assistance AND successful domestic organisation – they failed on both counts, not just one']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"Religion was the main reason for the Revolt of the Northern Earls." How far do you agree?\nHints: Mary Queen of Scots / Council of the North',
- content:[
-  {h:'Agree – religion was central to the revolt',agree:true,pts:['Marched under banner of the Five Wounds of Christ; tore up Protestant prayer books in Durham Cathedral; celebrated Catholic Mass','Stated aim was to restore Catholicism and remove the Protestant Settlement imposed from the south','The north had remained more Catholic than the south; religion gave the revolt its popular support among ordinary people']},
-  {h:'Disagree A – political grievances drove the earls personally',agree:false,pts:['Earls resented being marginalised by Elizabeth\'s Protestant advisers, particularly William Cecil','Traditional families had ruled northern England but had been replaced by Elizabeth\'s Council of the North – loss of status and power','Revolt was as much about restoring aristocratic influence as restoring Catholicism – the two were inseparable for the earls']},
-  {h:'Disagree B – Mary Queen of Scots was the catalyst that made rebellion possible',agree:false,pts:['Mary\'s arrival and imprisonment in the north gave the revolt its specific political objective – placing her on the throne','Without Mary as an alternative monarch the revolt would have had no clear aim beyond opposing the Settlement','Revolt planned to free Mary and marry her to the Duke of Norfolk – a political coup that used religious language as justification']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"There was a significant improvement in access to education in Elizabeth\'s reign." How far do you agree?\nHints: Grammar schools / Female education',
- content:[
-  {h:'Agree – grammar school expansion was significant',agree:true,pts:['72 new grammar schools during Elizabeth\'s reign – real expansion in formal education provision','Fees based on income allowed some middle-class boys to attend alongside nobility','Male literacy rose from 20% to 30% – a measurable improvement in educational outcomes during the reign']},
-  {h:'Disagree A – the poor and rural people remained excluded',agree:false,pts:['Grammar schools charged fees the poor could not afford; rural majority had virtually no access to formal schooling','Education was designed to fit the station you were born into – not to create social mobility','For the majority of Elizabeth\'s subjects, access to education did not change at all during the reign']},
-  {h:'Disagree B – women were completely excluded from improvement',agree:false,pts:['Girls did not attend school at all; Female education – female literacy remained at 10% throughout the entire reign with no improvement whatsoever','Noble women were educated privately but this was available to only a tiny fraction of the female population','To say access "significantly improved" ignores the fact that half the population – all women – saw no change at all']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"Entertainment in Elizabethan England continued to be based on violence." How far do you agree?\nHints: Bear-baiting / Theatre',
- content:[
-  {h:'Agree – violent entertainment remained popular',agree:true,pts:['Bear-baiting, bull-baiting and cock-fighting were popular across all social classes throughout the reign; Elizabeth herself enjoyed these spectacles','Public executions and the pillory drew large crowds as entertainment; these were not declining in popularity','The aristocracy continued to hunt as a central social activity; violent entertainments showed no signs of dying out']},
-  {h:'Disagree A – Theatre was a genuinely new non-violent entertainment',agree:false,pts:['Permanent theatres from 1570s (The Theatre, The Rose) attracted thousands for 1 penny; Shakespeare\'s plays offered drama and comedy based on language','Theatre shows Elizabethan entertainment was diversifying – not simply continuing old violent traditions','For the first time ordinary Londoners had access to a rich cultural experience that did not involve violence or blood']},
-  {h:'Disagree B – court entertainment had always been non-violent',agree:false,pts:['Nobility enjoyed hunting, hawking, real tennis, music, dancing – a rich range of non-violent pastimes at court','Elizabeth\'s court was renowned for music, poetry and dancing; she herself was an accomplished musician','To say entertainment "continued to be based on violence" ignores the rich non-violent cultural life that existed at every level of society']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"Life for ordinary people improved during Elizabeth\'s reign." How far do you agree?\nHints: Inflation / Education',
- content:[
-  {h:'Agree – some genuine improvements occurred',agree:true,pts:['72 new grammar schools; male literacy rose 20% to 30%; theatre open to all for 1 penny – real improvements in cultural access','1576 Houses of Correction built; organised poor relief created; first government responsibility for the poor','For some – particularly in London and among artisan classes – cultural life and access to services genuinely improved']},
-  {h:'Disagree A – Inflation and poverty increased for most ordinary people',agree:false,pts:['Population rose from 3 to 4 million – food prices rose, wages fell due to Inflation; the Malthusian Crisis made life materially harder','Enclosure deprived rural poor of common land essential to their subsistence throughout the reign','For the rural poor – the majority of the population – life was measurably harder at the end of the reign than at the start']},
-  {h:'Disagree B – improvements were narrow in scope and reach',agree:false,pts:['Theatre in London benefited urban Londoners; rural majority had no access to these cultural gains','Educational improvements benefited middle-class boys; girls were entirely excluded; the poor could not afford fees','Poor relief legislation helped limited numbers; the scale of poverty far exceeded what any Elizabethan law could address']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"Attitudes towards the poor barely changed during Elizabeth\'s reign." How far do you agree?\nHints: 1576 Act for the Relief of the Poor / Vagabonds',
- content:[
-  {h:'Agree – core attitudes remained unchanged',agree:true,pts:['Distinction between "deserving" and "undeserving" poor persisted completely unchanged throughout the reign','1572 Vagabonds Act: whipping and ear-burning – harsh punitive approach reflecting belief that poverty was a moral failing','Exaggerated rumours about criminal Vagabonds persisted throughout the reign; popular attitudes never fundamentally changed']},
-  {h:'Disagree A – legislation showed changing official thinking',agree:false,pts:['1576 Act for the Relief of the Poor: Houses of Correction built; local officials required to find work for poor; wealthy required to fund relief','A shift from pure punishment toward practical support – recognising poverty as a social problem requiring organised response','The 1576 Act was a genuine departure from the purely punitive approach of the 1572 Vagabonds Act']},
-  {h:'Disagree B – attitudes varied by group and changed gradually',agree:false,pts:['The deserving/undeserving distinction itself showed some compassion – old and disabled recognised as genuinely needing help','Elizabethan poor law developed across several pieces of legislation (1563, 1572, 1576) – shows evolving thinking, not static attitudes','To say attitudes "barely changed" is too absolute; the 1576 Act\'s constructive approach was a genuine change from earlier Tudor thinking']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"Poverty increased during Elizabeth\'s reign mainly because of changes in agriculture." How far do you agree?\nHints: Enclosure / Population rise',
- content:[
-  {h:'Agree – agricultural change was a major cause',agree:true,pts:['Enclosure drove families off common land they had depended on for subsistence – creating a large class of landless labourers','Shift from arable to sheep farming reduced demand for agricultural labour – same land now employed far fewer people','For rural England specifically, Enclosure was probably the most direct driver of increased poverty']},
-  {h:'Disagree A – Population rise was equally important',agree:false,pts:['Population rise from 3 to 4 million increased competition for jobs and food; employers could lower wages; prices rose','Population rise affected urban workers with no connection to agricultural land – enclosure alone cannot explain their poverty','Little ice age: harvest failures independent of enclosure made food prices more volatile and poverty more severe']},
-  {h:'Disagree B – financial factors were also significant causes',agree:false,pts:['Debasement of the currency by Henry VIII created inflation that persisted throughout Elizabeth\'s reign','This eroded the real purchasing power of wages for urban workers entirely independent of any agricultural change','Several overlapping causes combined: attributing poverty "mainly" to agriculture is an oversimplification of a complex problem']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"Voyages of exploration increased in Elizabeth\'s reign mainly because of the opportunity for fame." How far do you agree?\nHints: Drake / Mercator map',
- content:[
-  {h:'Agree – fame was a genuine motivating factor',agree:true,pts:['Drake\'s circumnavigation brought enormous national prestige; Elizabeth knighted him on deck of the Golden Hind – exploration became socially desirable','Elizabeth\'s patronage gave exploration royal endorsement; accounts of Drake\'s exploits were widely read and celebrated','Fame and national glory were powerful incentives in a society where reputation and honour mattered enormously']},
-  {h:'Disagree A – profit was more important than fame',agree:false,pts:['Elizabeth personally invested in Hawkins\' Triangular Slave Trade expeditions – economic calculation drove royal backing','Drake stole £400,000 of Spanish treasure during his circumnavigation – profit and fame were inseparable motivations','Without the prospect of profit, London merchants would not have funded the voyages that made exploration possible']},
-  {h:'Disagree B – new technology made voyages newly possible',agree:false,pts:['Mercator map 1569, astrolabes and improved galleons meant voyages that had been impossible before became achievable','Without these technological advances, desire for fame or profit could not have produced results','Technology enabled the age of exploration – desire for fame was the motivation but the Mercator map and new ship designs were the enabler']}
- ]},
-
-{paper:'p2b',type:'16mark',skill:'How far do you agree',
- q:'"The failure of the Virginia colony in the 1580s was mainly due to Native American resistance." How far do you agree?\nHints: Wingina / Poor planning',
- content:[
-  {h:'Agree – conflict with Native Americans was significant',agree:true,pts:['Relations with Algonquian chief Wingina broke down as colonists tried to take food by force when supplies ran low','Algonquians blamed English for spreading disease ("invisible bullets"); created mutual hostility and suspicion','Ralph Lane\'s pre-emptive attack killing Wingina ended any possibility of the cooperation essential to survival']},
-  {h:'Disagree A – poor planning was more important than Native American resistance',agree:false,pts:['Loss of The Tiger on arrival in 1585 left colony immediately vulnerable – before any serious conflict with Native Americans had occurred','Too many soldiers and merchants; not enough farmers with practical skills to be self-sufficient – Poor planning from the outset','Roanoke Island chosen with a shallow harbour unsuitable for large supply ships – a fundamental logistical error']},
-  {h:'Disagree B – bad timing and external events were decisive',agree:false,pts:['1587 expedition: colonists arrived too late in the year to plant crops; supply ships forced to return to England immediately','Armada crisis 1588 prevented any supply ships returning until 1590 – by which time the colony had vanished','The 1587 colony\'s failure owed almost nothing to Native American resistance – it was caused by supply failure and bad timing']}
- ]},
-
-// ════════════════════════════════════════════
-// PAPER 3 , WEIMAR AND NAZI GERMANY
-// 12-mark explain why only
-// ════════════════════════════════════════════
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why the Weimar Republic was unpopular in the period 1919–23. (12 marks)\nHints: Treaty of Versailles / Hyperinflation',
- content:[
-  {h:'Para 1 – Treaty of Versailles and Dolchstoss',pts:['June 1919: forced to accept £6.6bn reparations, loss of 13% of land, army limited to 100,000, 100% war guilt – all blamed on Weimar politicians','Called "November Criminals" – accused of stabbing the undefeated army in the back by signing the armistice 11 November 1918','Treaty gave extremist parties a permanent grievance to exploit – the founding political wound of the Weimar period']},
-  {h:'Para 2 – Political violence from left and right',pts:['January 1919: Spartacist revolt – Luxemburg led 100,000 workers; Ebert used right-wing Freikorps to crush it','1920: Kapp Putsch – Freikorps seized Berlin; army refused to act; only workers\' general strike saved democracy','376 politicians assassinated in these early years; government threatened from both left and right simultaneously']},
-  {h:'Para 3 – Hyperinflation 1923',pts:['France invaded the Ruhr 1923; government printed money to pay striking workers – bread rose from 1 mark (1919) to 200 billion marks (November 1923)','Middle classes lost savings permanently; working class could not keep up with prices','Made abstract political resentment into lived economic catastrophe; directly fuelled extremism and the Munich Putsch']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why the Weimar Republic became more stable in the years 1924–29. (12 marks)\nHints: Dawes Plan / Hindenburg',
- content:[
-  {h:'Para 1 – Economic recovery under Stresemann',pts:['November 1923: Rentenmark introduced – halted hyperinflation; tied to land value not printed money','1924: Dawes Plan – reparations cut to £50m/year; $200m US loans secured to stabilise economy','1929: Young Plan – reparations cut to £2bn extended to 1988; extremist support fell from 40% (1924) to 28% (1928)']},
-  {h:'Para 2 – International rehabilitation',pts:['1925: Locarno Pact – Germany accepted Versailles borders; France left the Ruhr; diplomatic success restored national confidence','1926: Germany joined the League of Nations – accepted back into the international community as a legitimate state','These achievements undermined the nationalist argument that Weimar had failed Germany internationally']},
-  {h:'Para 3 – Hindenburg\'s election gave conservatives confidence in the Republic',pts:['1925: war-hero Hindenburg elected President – conservatives who had opposed the Republic now more willing to support it','Traditional conservatives who might have backed the Nazis instead supported Hindenburg and Weimar\'s stability','This removed a key political constituency from the extremists and made the Weimar system appear more legitimate']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why life improved for some Germans in the years 1924–29. (12 marks)\nHints: Women\'s rights / Culture',
- content:[
-  {h:'Para 1 – Economic improvement',pts:['Rentenmark ended hyperinflation; Dawes Plan secured $200m US loans; wages rose 25%; unemployment fell','100,000 new houses built; war veterans received pensions; real improvement in material conditions for those in work','For those with jobs the mid-1920s saw genuine improvement after years of hyperinflation and political violence']},
-  {h:'Para 2 – Women\'s rights expanded significantly',pts:['Women gained equal voting rights to men in the Weimar constitution; began working in traditionally male jobs','Wore modern fashions (flappers); more independent social activities; Women\'s rights were more advanced than in most of Europe','Represented a real transformation from pre-war Imperial Germany for many women, especially in cities']},
-  {h:'Para 3 – Cultural flourishing',pts:['Weimar Germany became the centre of modern European Culture; Bauhaus school developed modern affordable design','Fritz Lang\'s Metropolis (1927) and Otto Dix\'s art showed German culture at the cutting edge of European modernity','Berlin became one of the most culturally exciting cities in the world – however prosperity was built entirely on US loans']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why Hitler attempted the Munich Putsch in 1923. (12 marks)\nHints: Mussolini / Ludendorff',
- content:[
-  {h:'Para 1 – Economic crisis created the opportunity',pts:['Hyperinflation had made Weimar deeply unpopular by 1923; government appeared helpless; bread cost billions of marks','France\'s Ruhr invasion added national humiliation to economic chaos; the moment seemed perfect for radical action','Nazi Party had grown to 20,000 members – Hitler felt he had sufficient support to act']},
-  {h:'Para 2 – Mussolini\'s example and Ludendorff\'s support gave Hitler confidence',pts:['October 1922: Mussolini\'s March on Rome – fascists marched on Italian capital; King made Mussolini Prime Minister; Hitler hoped to replicate this','War-hero General Ludendorff\'s support gave the coup military credibility and public appeal','Hitler believed Ludendorff\'s involvement would persuade the army to follow rather than fire on their former commander']},
-  {h:'Para 3 – Hitler overestimated his support',pts:['Nazi Party had grown to 20,000 members','SA led by Ernst Rohm were becoming a powerful force in Munich','Hitler, incorrectly, believed that the Bavarian leader Gustav Von Kahr would support his revolution.']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why the Nazis were unable to gain large amounts of support in the years 1924–28. (12 marks)\nHints: Party banned / Stresemann\'s recovery',
- content:[
-  {h:'Para 1 – Aftermath of Munich Putsch weakened the party',pts:['Nazi Party banned after Putsch; Hitler served 9 months; on release had to rebuild party from scratch','Without the party organisation, momentum from the 1923 crisis was lost; the most promising window of opportunity had closed','Hitler switched to electoral strategy but building a national electoral machine from scratch took years']},
-  {h:'Para 2 – Stresemann\'s economic recovery removed the conditions for extremism',pts:['Rentenmark (1923), Dawes Plan (1924) and Locarno Pact (1925) gradually stabilised Germany','As economy improved and international standing recovered, extremist parties lost their appeal','Extremist support fell from 40% (1924) to 28% (1928) – Stresemann\'s success directly undermined the Nazis\' core message']},
-  {h:'Para 3 – Hindenburg\'s election gave conservatives confidence in Weimar',pts:['1925: election of war-hero Hindenburg as President gave conservatives who had opposed the Republic reason to support it','Traditional conservatives who might have backed the Nazis instead supported Hindenburg and Weimar\'s stability','In 1928 Nazis won only 12 Reichstag seats – in a period of relative prosperity there was simply no market for extreme solutions']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why support for the Nazi Party increased in the years 1929–32. (12 marks)\nHints: Wall Street Crash / Fear of communism',
- content:[
-  {h:'Para 1 – Wall Street Crash and unemployment',pts:['October 1929: Wall Street Crash; US banks recalled loans; businesses went bankrupt; unemployment reached 6 million by 1933','Brüning nicknamed "hunger chancellor" – Weimar appeared completely helpless; people were desperate for radical change','Nazi Reichstag seats grew from 12 (1928) to 230 (July 1932) – almost entirely because of the economic crisis']},
-  {h:'Para 2 – Fear of communism and business funding',pts:['Wealthy businesspeople feared economic chaos would bring Communist revolution; bankrolled the Nazis – funded propaganda, rallies and SA expansion','Nazi electoral success was partly built on class Fear of communism; the Nazis became the shield against the KPD for those with property to lose','SA projected disciplined image of organised strength that contrasted with the chaos of Weimar politics']},
-  {h:'Para 3 – Hitler\'s personal appeal and targeted propaganda',pts:['Hitler\'s charismatic speeches tailored to different audiences: "Arbeit und Brot" for workers; price guarantees for farmers; national restoration for middle class','Goebbels ran sophisticated propaganda using radio, posters and rallies – Nazis far more effective at political communication than other parties','Promised to tear up the Treaty of Versailles – exploited 10 years of built-up resentment at national humiliation']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why Hitler became Chancellor in January 1933. (12 marks)\nHints: Von Papen / Elections of 1932',
- content:[
-  {h:'Para 1 – Nazi electoral success created pressure on Hindenburg',pts:['July 1932: Nazis won 230 seats – largest party in Reichstag; democratic logic pointed to Hitler being given power','13 million votes for Hitler in April 1932 presidential election; Hindenburg had run out of arguments for ignoring the largest party indefinitely','However Nazi support was actually falling by November 1932 (196 seats) – Hitler\'s appointment was not inevitable from electoral success alone']},
-  {h:'Para 2 – Failure of alternatives left Hindenburg with no options',pts:['Von Papen (May 1932) could not control Reichstag; forced to resign after six months','Von Schleicher (November 1932) asked Hindenburg for permission to create a military dictatorship – Hindenburg refused','By January 1933 Hindenburg had genuinely run out of viable alternatives; Hitler was the only politician who could command a Reichstag majority']},
-  {h:'Para 3 – Von Papen\'s fatal miscalculation handed Hitler the chancellorship',pts:['Von Papen convinced Hindenburg that Hitler could be "controlled" with himself as Vice-Chancellor and a majority of non-Nazi ministers','"Mouse in my pocket" – Von Papen believed he could use Hitler\'s popularity while retaining real power','30 January 1933: Hitler appointed Chancellor; Von Papen\'s catastrophic miscalculation became clear within 18 months']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why Hitler was able to create a dictatorship in the years 1933–34. (12 marks)\nHints: Reichstag Fire / Enabling Act',
- content:[
-  {h:'Para 1 – Reichstag Fire provided the legal pretext',pts:['27 February 1933: Reichstag burned; Dutch Communist blamed; 4,000 Communists arrested that night; Communists banned from their 81 seats','This gave Nazis the crucial 2/3 majority required to change the Constitution legally','March 1933: Enabling Act – gave Hitler power to pass any law without the Reichstag; democracy legally abolished']},
-  {h:'Para 2 – Banning all opposition destroyed any legal resistance',pts:['All other parties banned July 1933; trade unions banned; local government abolished – Germany became a one-party state within months','Police state established: Gestapo, SS and Dachau (1933) created overwhelming atmosphere of terror','No legitimate political opposition left through which resistance could be organised']},
-  {h:'Para 3 – Night of the Long Knives and Hindenburg\'s death completed the process',pts:['30 June 1934: Röhm and ~400 others murdered; army\'s loyalty secured – they agreed to swear personal oath to Hitler in return','2 August 1934: Hindenburg died; Hitler combined Chancellor and President into title of "Führer"','Process took just 18 months – from Chancellor to complete dictator – using legal mechanisms throughout']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why the Nazis were able to control the German people in the years 1933–39. (12 marks)\nHints: Propaganda / The Gestapo',
- content:[
-  {h:'Para 1 – Police state and terror',pts:['Gestapo created such fear that citizens informed on neighbours, parents and friends – self-policing made resistance almost impossible to organise','SS: 300,000 members; above the law; ran Dachau (1933); could arrest, interrogate or execute without trial','Punishment for dissent so severe that most people chose compliance even if they privately disagreed']},
-  {h:'Para 2 – Propaganda and censorship',pts:['Goebbels: 45 minutes of Nazi content before every film; radios blocked foreign broadcasts; Nuremberg rallies with 200,000 people','Censorship removed all alternative viewpoints: newspapers closed; books burned; art and culture "Nazified"','Combination of positive Propaganda and negative censorship created an information environment where opposition was invisible']},
-  {h:'Para 3 – Genuine support from economic success',pts:['Unemployment fell from 6 million (1933) to 500,000 (1939) – many Germans had genuine material reason to support the regime','Hitler Youth (compulsory 1936) and League of German Maidens indoctrinated an entire generation','Fear, propaganda and economic improvement combined – most Germans either genuinely supported or passively accepted Nazi rule']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why some groups opposed the Nazis in the years 1933–39. (12 marks)\nHints: Pastor Niemöller / Youth groups',
- content:[
-  {h:'Para 1 – Church opposition challenged Nazi control of religion',pts:['1933: Concordat signed with Pope Pius XI neutralised Catholic opposition – but many individual priests still spoke out','Confessing Church set up 1934 by Pastor Niemöller to oppose the Reich Church; 6,000 priests joined; ~800 sent to concentration camps','Church had its own institutional identity and moral authority that was difficult for the Nazis to completely suppress']},
-  {h:'Para 2 – Youth groups resisted Nazi conformity',pts:['Swing Youth: teenagers from wealthy families listened to banned American jazz – cultural resistance to Nazi conformity','Edelweiss Pirates: attacked Hitler Youth members, went on hikes, told anti-Nazi jokes – more active resistance','Only 25% of young people attended Nazi Youth groups voluntarily before made compulsory 1936 – broader resistance than is sometimes assumed']},
-  {h:'Para 3 – Workers and political opponents continued quiet resistance',pts:['Social Democrats continued underground newspapers; workers sometimes damaged machinery or stayed off sick','Some army officers opposed Hitler\'s leadership – culminating in the July 1944 assassination attempt','Police state was too efficient and terror too severe for organised resistance to grow – opposition remained fragmented throughout']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why women\'s lives changed under the Nazis in the years 1933–39. (12 marks)\nHints: The "3 Ks" / Mother\'s Cross',
- content:[
-  {h:'Para 1 – Ideology of the 3 Ks reversed Weimar gains',pts:['Nazis believed in Kinder, Kirche, Küche – hated the "new women" of 1920s Weimar who had entered male jobs','Professional women removed: banned from teaching, medicine, law and civil service; girls banned from grammar schools from 1937','The 3 Ks represented a dramatic reversal for professional women who had gained independence during the Weimar period']},
-  {h:'Para 2 – Financial incentives changed women\'s decisions',pts:['Marriage loan of 1,000 marks if wife gave up work; a quarter cancelled per child – powerful economic incentive','Mother\'s Cross medal: bronze for 4 children, silver for 6, gold for 8 – motherhood elevated as patriotic service','These policies shaped the decisions of many women who might otherwise have continued working']},
-  {h:'Para 3 – Economic necessity eventually reversed Nazi gender ideology',pts:['By late 1930s rearmament required more workers; 1937 marriage loans cancelled; women directed back into factories','The regime\'s own economic needs forced it to reverse its gender ideology – women returned to work in large numbers','Shows the limits of ideology when it conflicted with the demands of military rearmament and economic production']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why the Nazis tried to control young people in the years 1933–39. (12 marks)\nHints: Schools / Hitler Youth',
- content:[
-  {h:'Para 1 – Future loyalty required indoctrination from childhood',pts:['Hitler wanted a "1,000 Year Reich" – children of Germany would carry his ideas long after he died','Boys trained in Hitler Youth for military service – over 1 million trained to shoot guns; physically and mentally prepared for war','Girls in League of German Maidens trained to be wives and mothers – producing the next generation of soldiers and workers']},
-  {h:'Para 2 – Control of Schools ensured Nazi ideas shaped a generation',pts:['All teachers required to join the Nazi Teachers\' League; curriculum rewritten; "Heil Hitler" at start of every lesson','Anti-Semitism and racial hygiene taught as science; history emphasised German greatness and Nazi ideology','Control of Schools meant an entire generation understood Germany\'s history and its enemies through a Nazi lens']},
-  {h:'Para 3 – Hitler Youth organisations extended Nazi control beyond school',pts:['1933: all youth groups banned except Nazi ones; Hitler Youth and League of German Maidens became compulsory in 1936','Only 25% attended voluntarily before 1936 – many needed to be compelled; genuine enthusiasm was more limited than it appeared','Compulsory membership ensured Nazi indoctrination continued outside school hours and away from parental influence']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why unemployment decreased in Germany in the years 1933–39. (12 marks)\nHints: Rearmament / RAD',
- content:[
-  {h:'Para 1 – Rearmament was the most important factor',pts:['Conscription introduced 1935; army grew from 100,000 to 1.3 million by 1939 – hundreds of thousands of direct military jobs','Weapons factories, aircraft plants, shipyards – Rearmament created millions of industrial jobs across Germany','Secretly at first then openly from 1935; Hitler broke the Versailles military restrictions deliberately and publicly']},
-  {h:'Para 2 – RAD and public works provided employment',pts:['RAD (National Labour Service): set up 1933; compulsory 6 months from 1935; built roads, planted trees; pay very low','Autobahn programme employed thousands in construction; also a propaganda showcase for German engineering achievement','These programmes genuinely reduced unemployment numbers, though conditions and pay were poor']},
-  {h:'Para 3 – Statistics were manipulated to exaggerate the scale of recovery',pts:['Official fall from 6 million to 500,000 overstated the reality – women, Jews and concentration camp prisoners excluded from the count','KdF promised Volkswagen cars to workers who saved; money collected but cars never delivered','Real reduction in unemployment was genuine but the RAD statistics exaggerated how complete and beneficial the recovery was']}
- ]},
-
-{paper:'p3',type:'12mark',skill:'Explain why',
- q:'Explain why the lives of Jewish people in Germany changed in the years 1933–39. (12 marks)\nHints: Nuremberg Laws / Kristallnacht',
- content:[
-  {h:'Para 1 – Early discrimination from 1933 showed anti-Semitism was central to Nazism',pts:['April 1933: national boycott of Jewish shops; SA stood outside to intimidate customers; Jews banned from professions','This immediate discrimination showed anti-Semitism was central to Nazism from the very start – not a later development','Propaganda reinforced anti-Semitic stereotypes; books by Jewish authors publicly burned']},
-  {h:'Para 2 – Nuremberg Laws 1935 removed legal status',pts:['Stripped Jews of German citizenship; banned from marrying non-Jews; classified as a separate race','Gave legal backing to discrimination that had previously been informal; Jews were now a legally defined inferior category','Clear escalation from social and economic discrimination to full legal persecution – a fundamental change']},
-  {h:'Para 3 – Kristallnacht 1938 marked the shift to organised violence',pts:['9–10 November 1938: thousands of synagogues and Jewish businesses destroyed; over 100 killed; 30,000 arrested and sent to camps','Jews fined 1 billion marks for "the damage" – showed complete powerlessness of Jews in Nazi Germany by 1938','Marked shift from legal persecution to organised state violence; a major step on the road to the Holocaust']}
- ]},
-]
+let EQ = []; // loaded from data/eq.json
 
 const DATES = [
 // ── Paper 1 ──────────────────────────────────
@@ -3536,6 +2479,30 @@ const DATES = [
 {paper:'p3',date:'1937',event:'Marriage loans are cancelled - rearmament means more men in the army. Women encouraged into factories.'},
 {paper:'p3',date:'Nov 1938',event:'Kristallnacht – thousands of synagogues and businesses destroyed; over 100 Jews killed; 30,000 arrested'},
 ];
+
+// ═══════════════════════════════════════════
+// LOAD EXTERNAL DATA
+// ═══════════════════════════════════════════
+fetch('data/eq.json')
+  .then(r => {
+    if (!r.ok) throw new Error('Could not load eq.json: ' + r.status);
+    return r.json();
+  })
+  .then(data => {
+    EQ = data;
+    // If exam mode is currently visible, refresh the directory
+    const examMode = document.getElementById('mode-exam');
+    if (examMode && examMode.style.display !== 'none') {
+      updateExamDirectory();
+    }
+    console.log('EQ loaded:', EQ.length, 'questions');
+  })
+  .catch(err => {
+    console.error('EQ load failed:', err);
+    const eOut = document.getElementById('e-out');
+    if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load exam questions. Make sure data/eq.json is in your repository.</div>';
+  });
+
 </script>
 <!-- EXAM FULLSCREEN OVERLAY -->
 <div id="exam-fullscreen" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;padding:2rem 1.5rem;overflow-y:auto">
