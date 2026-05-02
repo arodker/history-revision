@@ -2113,25 +2113,6 @@ Promise.all([
   if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load data files.</div>';
 });
 
-// ═══════════════════════════════════════════
-// OPTIONAL HARDENING (RECOMMENDED)
-// ═══════════════════════════════════════════
-
-function pickPaper(p) {
-  currentPaper = p;
-
-  const info = P[p];
-
-  const esel = document.getElementById('e-type');
-  if (esel) {
-    esel.innerHTML = info.qtypes.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
-  }
-
-  // Only update directory if data is ready
-  if (EQ && EQ.length) updateExamDirectory();
-
-  showScreen('s-hub');
-}
 </script>
 <!-- EXAM FULLSCREEN OVERLAY -->
 <div id="exam-fullscreen" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;padding:2rem 1.5rem;overflow-y:auto">
