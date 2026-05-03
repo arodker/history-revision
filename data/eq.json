@@ -166,7 +166,7 @@
       }
     ],
     "name": "Medieval causes",
-    "": [
+    "hints": [
       "Norman Conquest (1066)",
       "Cloth trade"
     ]
@@ -649,7 +649,11 @@
         ]
       }
     ],
-    "name": "Medieval impact"
+    "name": "Medieval impact",
+    "hints": [
+      "Viking city of York",
+      "Norman castles"
+    ]
   },
   {
     "paper": "p1",
@@ -685,7 +689,11 @@
         ]
       }
     ],
-    "name": "Medieval experience"
+    "name": "Medieval experience",
+    "hints": [
+      "Expulsion of Jewish communities (1290)",
+      "Norman Conquest (1066)"
+    ]
   },
   {
     "paper": "p1",
@@ -721,7 +729,11 @@
         ]
       }
     ],
-    "name": "Early Modern causes"
+    "name": "Early Modern causes",
+    "hints": [
+      "Huguenot migrants",
+      "Flemish and Walloon communities"
+    ]
   },
   {
     "paper": "p1",
@@ -757,7 +769,11 @@
         ]
       }
     ],
-    "name": "Early Modern experience"
+    "name": "Early Modern experience",
+    "hints": [
+      "Restrictions on Jewish migrants",
+      "Huguenots"
+    ]
   },
   {
     "paper": "p1",
@@ -793,7 +809,11 @@
         ]
       }
     ],
-    "name": "18th & 19th causes"
+    "name": "18th & 19th causes",
+    "hints": [
+      "Lascars",
+      "Civil liberties"
+    ]
   },
   {
     "paper": "p1",
@@ -829,7 +849,11 @@
         ]
       }
     ],
-    "name": "Modern experience"
+    "name": "Modern experience",
+    "hints": [
+      "The Metropolitan Police",
+      "Rivers of Blood (1968)"
+    ]
   },
   {
     "paper": "p1",
@@ -865,7 +889,11 @@
         ]
       }
     ],
-    "name": "Modern impact"
+    "name": "Modern impact",
+    "hints": [
+      "The NHS",
+      "Multiculturalism"
+    ]
   },
   {
     "paper": "p1",
@@ -901,7 +929,11 @@
         ]
       }
     ],
-    "name": "Medieval causes"
+    "name": "Medieval causes",
+    "hints": [
+      "Great Heathen Army (865)",
+      "Jewish moneylenders"
+    ]
   },
   {
     "paper": "p1",
@@ -937,7 +969,11 @@
         ]
       }
     ],
-    "name": "Early Modern impact"
+    "name": "Early Modern impact",
+    "hints": [
+      "Sandwich and Canterbury",
+      "Draining of the fens"
+    ]
   },
   {
     "paper": "p1",
@@ -973,7 +1009,11 @@
         ]
       }
     ],
-    "name": "18th & 19th experience"
+    "name": "18th & 19th experience",
+    "hints": [
+      "Aliens Act (1905)",
+      "Irish migrants in Liverpool"
+    ]
   },
   {
     "paper": "p1",
@@ -1009,7 +1049,11 @@
         ]
       }
     ],
-    "name": "18th & 19th impact"
+    "name": "18th & 19th impact",
+    "hints": [
+      "Navvies",
+      "Ashkenazi Jews"
+    ]
   },
   {
     "paper": "p1",
@@ -1045,7 +1089,11 @@
         ]
       }
     ],
-    "name": "Modern causes"
+    "name": "Modern causes",
+    "hints": [
+      "British Nationality Act (1948)",
+      "Maastricht Treaty"
+    ]
   },
   {
     "paper": "p2a",
@@ -2563,7 +2611,11 @@
         ]
       }
     ],
-    "name": "Challenges in 1558"
+    "name": "Challenges in 1558",
+    "hints": [
+      "Questions of legitimacy",
+      "War with France"
+    ]
   },
   {
     "paper": "p2b",
@@ -2599,7 +2651,11 @@
         ]
       }
     ],
-    "name": "Religious Settlement"
+    "name": "Religious Settlement",
+    "hints": [
+      "Act of Uniformity",
+      "Recusancy fines"
+    ]
   },
   {
     "paper": "p2b",
@@ -2635,7 +2691,11 @@
         ]
       }
     ],
-    "name": "Threats to Religious Settlement"
+    "name": "Threats to Religious Settlement",
+    "hints": [
+      "Papal excommunication (1570)",
+      "The Puritans"
+    ]
   },
   {
     "paper": "p2b",
@@ -2671,7 +2731,11 @@
         ]
       }
     ],
-    "name": "Catholic threat"
+    "name": "Catholic threat",
+    "hints": [
+      "Relations with Philip II of Spain",
+      "Mary, Queen of Scots"
+    ]
   },
   {
     "paper": "p2b",
@@ -2707,7 +2771,11 @@
         ]
       }
     ],
-    "name": "Puritan threat"
+    "name": "Puritan threat",
+    "hints": [
+      "Crucifix controversy",
+      "Robert Dudley, Earl of Leicester"
+    ]
   },
   {
     "paper": "p2b",
@@ -2743,7 +2811,11 @@
         ]
       }
     ],
-    "name": "War with Spain"
+    "name": "War with Spain",
+    "hints": [
+      "Sir Francis Drake",
+      "Treaty of Nonsuch (1585)"
+    ]
   },
   {
     "paper": "p2b",
@@ -2779,7 +2851,11 @@
         ]
       }
     ],
-    "name": "Spanish Armada"
+    "name": "Spanish Armada",
+    "hints": [
+      "Fireships",
+      "Drake's raid on Cadiz (1587)"
+    ]
   },
   {
     "paper": "p2b",
@@ -2815,7 +2891,11 @@
         ]
       }
     ],
-    "name": "Execution of Mary QoS"
+    "name": "Execution of Mary QoS",
+    "hints": [
+      "The Babington Plot (1586)",
+      "Walsingham's spies"
+    ]
   },
   {
     "paper": "p2b",
@@ -2851,7 +2931,11 @@
         ]
       }
     ],
-    "name": "Plots and Revolts"
+    "name": "Plots and Revolts",
+    "hints": [
+      "Ridolfi Plot (1571)",
+      "Foreign support"
+    ]
   },
   {
     "paper": "p2b",
@@ -2887,7 +2971,11 @@
         ]
       }
     ],
-    "name": "Plots and Revolts"
+    "name": "Plots and Revolts",
+    "hints": [
+      "Ridolfi Plot (1571)",
+      "Foreign support"
+    ]
   },
   {
     "paper": "p2b",
@@ -2923,7 +3011,11 @@
         ]
       }
     ],
-    "name": "Northern Earls"
+    "name": "Northern Earls",
+    "hints": [
+      "Religion",
+      "Mary, Queen of Scots"
+    ]
   },
   {
     "paper": "p2b",
@@ -2959,7 +3051,11 @@
         ]
       }
     ],
-    "name": "Education"
+    "name": "Education",
+    "hints": [
+      "Literacy rates",
+      "Grammar schools"
+    ]
   },
   {
     "paper": "p2b",
@@ -2995,7 +3091,11 @@
         ]
       }
     ],
-    "name": "Leisure"
+    "name": "Leisure",
+    "hints": [
+      "Blood sports",
+      "Theatre"
+    ]
   },
   {
     "paper": "p2b",
@@ -3031,7 +3131,11 @@
         ]
       }
     ],
-    "name": "Ordinary lives"
+    "name": "Ordinary lives",
+    "hints": [
+      "Poor relief",
+      "Education"
+    ]
   },
   {
     "paper": "p2b",
@@ -3067,7 +3171,11 @@
         ]
       }
     ],
-    "name": "Attitudes to poverty"
+    "name": "Attitudes to poverty",
+    "hints": [
+      "Attitudes to vagrancy",
+      "Act for the Relief of the Poor (1576)"
+    ]
   },
   {
     "paper": "p2b",
@@ -3103,7 +3211,11 @@
         ]
       }
     ],
-    "name": "Causes of poverty"
+    "name": "Causes of poverty",
+    "hints": [
+      "Enclosure",
+      "Debasement of the coinage"
+    ]
   },
   {
     "paper": "p2b",
@@ -3139,7 +3251,11 @@
         ]
       }
     ],
-    "name": "Exploration"
+    "name": "Exploration",
+    "hints": [
+      "Transatlantic Slave Trade",
+      "Astrolabes"
+    ]
   },
   {
     "paper": "p2b",
@@ -3175,7 +3291,11 @@
         ]
       }
     ],
-    "name": "Virginia colony"
+    "name": "Virginia colony",
+    "hints": [
+      "Death of Wingina",
+      "Disease"
+    ]
   },
   {
     "paper": "p3",
