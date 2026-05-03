@@ -361,6 +361,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       <div style="margin-bottom:.75rem">
         <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Choose unit</label>
         <select id="fd-unit" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
+          <option value="">— select a unit —</option>
           <option value="all">All units</option>
         </select>
       </div>
@@ -1461,7 +1462,7 @@ function fdSetOutstanding(arr) {
 function fdSetup() {
   // Populate unit dropdown for current paper
   const sel = document.getElementById('fd-unit');
-  sel.innerHTML = '<option value="all">All units</option>';
+  sel.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>';
   P[currentPaper].units.forEach(u => {
     const opt = document.createElement('option');
     opt.value = u;
@@ -1483,7 +1484,7 @@ function fdSetup() {
   fdOutstanding = fdOutstanding.filter(k => FD.find(c => fdKey(c) === k));
   fdSetOutstanding(fdOutstanding);
 
-  const unit = document.getElementById('fd-unit') ? document.getElementById('fd-unit').value : 'all';
+  const unit = document.getElementById('fd-unit') ? (document.getElementById('fd-unit').value || 'all') : 'all';
   const outNotInDeck = fdOutstanding.filter(k => {
     const c = FD.find(c => fdKey(c) === k);
     if (!c) return false;
@@ -1511,6 +1512,10 @@ function fdStart() {
     return;
   }
   const unit = document.getElementById('fd-unit').value;
+  if (!unit) {
+    alert('Please select a unit first.');
+    return;
+  }
   const mastered = fdGetMastered();
 
   // Build base deck for this paper/unit
