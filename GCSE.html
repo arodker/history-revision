@@ -1663,7 +1663,7 @@ function fdNext() {
   const chipsEl = document.getElementById('fd-hint-chips');
   const hintsOn = (document.getElementById('fd-hints-on') && document.getElementById('fd-hints-on').checked) || (document.getElementById('fd-hints-on-drill') && document.getElementById('fd-hints-on-drill').checked);
   if (hintsOn && fdCurrent.hints && fdCurrent.hints.length) {
-    chipsEl.innerHTML = fdCurrent.hints.map(h => `<span class="fd-hint-chip">${h}</span>`).join('');
+    chipsEl.innerHTML = fdCurrent.hints.map(h => `<span class="tag t-${fdCurrent.paper}">${h}</span>`).join('');
     chipsEl.style.display = 'flex';
   } else {
     chipsEl.innerHTML = '';
@@ -1688,9 +1688,9 @@ function fdFlip() {
   // Stagger bullet points then show self-mark buttons
   const items = document.querySelectorAll('#fd-points li');
   items.forEach((li, i) => {
-    setTimeout(() => li.classList.add('fd-pt-show'), 200 + i * 500);
+    setTimeout(() => li.classList.add('fd-pt-show'), 300 + i * 700);
   });
-  const delay = 200 + items.length * 500 + 300;
+  const delay = 300 + items.length * 700 + 400;
   setTimeout(() => {
     document.getElementById('fd-btn-row').style.display = 'grid';
   }, delay);
