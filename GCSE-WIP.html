@@ -193,13 +193,10 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
 /* ── FLASHCARD DRILL ── */
 .fd-scene { perspective: 900px; width:100%; margin-bottom:1rem; cursor:pointer; }
-.fd-card-inner { position:relative; width:100%; transform-style:preserve-3d; transition:transform .45s cubic-bezier(.4,0,.2,1); border-radius:14px; }
+.fd-card-inner { position:relative; width:100%; transform-style:preserve-3d; transition:transform .45s cubic-bezier(.4,0,.2,1); border-radius:14px; min-height:160px; }
 .fd-card-inner.flipped { transform:rotateY(180deg); }
-.fd-face { position:absolute; top:0; left:0; width:100%; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:14px; }
-.fd-front { background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; }
-.fd-back  { background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; transform:rotateY(180deg); }
-/* Front needs min-height; back height auto but at least same */
-.fd-front, .fd-back { box-sizing:border-box; min-height:160px; }
+.fd-front { position:absolute; top:0; left:0; width:100%; box-sizing:border-box; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; }
+.fd-back  { position:absolute; top:0; left:0; width:100%; box-sizing:border-box; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; transform:rotateY(180deg); }
 .fd-tag { display:inline-block; font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:2px 8px; border-radius:20px; margin-bottom:.75rem; }
 .fd-question { font-size:.95rem; font-weight:700; line-height:1.5; color:var(--text); }
 .fd-tap-hint { font-size:.72rem; color:var(--muted); margin-top:.75rem; text-align:center; }
@@ -1927,7 +1924,8 @@ function fdNext() {
   // Update card UI
   const paperColour = currentPaper; // may differ for outstanding cards
   const cardPaper = fdCurrent.paper;
-  const tag = `${fdCurrent.paper.toUpperCase().replace('P','P')} · ${fdCurrent.unit}`;
+  const paperNames = {p1:'Migrants', p2a:'Cold War', p2b:'Elizabeth I', p3:'Germany'};
+  const tag = `${paperNames[cardPaper] || cardPaper} · ${fdCurrent.unit}`;
 
   const tagClasses = {p1:'bg-p1', p2a:'bg-p2a', p2b:'bg-p2b', p3:'bg-p3'};
   const stripeColours = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'};
@@ -1952,16 +1950,21 @@ function fdNext() {
   document.getElementById('fd-card-inner').classList.remove('flipped');
   document.getElementById('fd-btn-row').style.display = 'none';
 
-  // Set card height so front and back match
-  // Use setTimeout to let DOM settle, then sync heights
+  // Set scene height: briefly make back visible (opacity 0) to measure, then restore
   setTimeout(() => {
+    const inner = document.getElementById('fd-card-inner');
     const front = document.getElementById('fd-front');
     const back  = document.getElementById('fd-back');
+    // Temporarily un-rotate back to measure its natural height
+    back.style.transform = 'none';
+    back.style.visibility = 'hidden';
     const h = Math.max(front.scrollHeight, back.scrollHeight, 160);
+    back.style.transform = 'rotateY(180deg)';
+    back.style.visibility = '';
     front.style.minHeight = h + 'px';
     back.style.minHeight  = h + 'px';
-    document.getElementById('fd-card-inner').style.height = h + 'px';
-  }, 20);
+    inner.style.height = h + 'px';
+  }, 30);
 
   fdUpdateProgress();
 }
