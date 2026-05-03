@@ -20,6 +20,23 @@
     "paper": "p1",
     "type": "4mark",
     "skill": "Similarity/Difference",
+    "q": "Explain one similarity in the experience of Jewish migrants in the medieval period and Ashkenazi Jewish migrants in the 18th and 19th centuries. (4 marks)",
+    "content": [
+      {
+        "h": "Points",
+        "pts": [
+          "Both groups faced hostility driven by economic resentment and religious prejudice",
+          "Medieval Jews: blood libel myth (1144); forced to wear yellow badge; eventually expelled 1290",
+          "Ashkenazi Jews: falsely blamed for Jack the Ripper murders 1888; targeted by the Aliens Act 1905; hostility from English workers in the East End"
+        ]
+      }
+    ],
+    "name": "Medieval Jews and Ashkenazi Jews"
+  },
+  {
+    "paper": "p1",
+    "type": "4mark",
+    "skill": "Similarity/Difference",
     "q": "Explain one difference in the experience of Ashkenazi Jews in London in the 18th and 19th centuries and Norman migrants in England in the medieval period. (4 marks)",
     "content": [
       {
@@ -32,23 +49,6 @@
       }
     ],
     "name": "Ashkenazi Jews and Normans"
-  },
-  {
-    "paper": "p1",
-    "type": "4mark",
-    "skill": "Similarity/Difference",
-    "q": "Explain one similarity in the treatment of Caribbean migrants in the modern period and Irish migrants in the 18th and 19th centuries. (4 marks)",
-    "content": [
-      {
-        "h": "Points",
-        "pts": [
-          "Both groups faced economic scapegoating – accused of stealing jobs and lowering wages",
-          "Irish migrants: accused of taking work from English workers; Orange Order violence in Liverpool and Glasgow",
-          "Caribbean migrants: 1958 Notting Hill riots; \"No Blacks, No Dogs, No Irish\" signs; blamed for housing shortages"
-        ]
-      }
-    ],
-    "name": "Caribbean and Irish migrants"
   },
   {
     "paper": "p1",
@@ -121,18 +121,18 @@
     "paper": "p1",
     "type": "4mark",
     "skill": "Similarity/Difference",
-    "q": "Explain one similarity in the experience of Jewish migrants in the medieval period and Ashkenazi Jewish migrants in the 18th and 19th centuries. (4 marks)",
+    "q": "Explain one similarity in the treatment of Caribbean migrants in the modern period and Irish migrants in the 18th and 19th centuries. (4 marks)",
     "content": [
       {
         "h": "Points",
         "pts": [
-          "Both groups faced hostility driven by economic resentment and religious prejudice",
-          "Medieval Jews: blood libel myth (1144); forced to wear yellow badge; eventually expelled 1290",
-          "Ashkenazi Jews: falsely blamed for Jack the Ripper murders 1888; targeted by the Aliens Act 1905; hostility from English workers in the East End"
+          "Both groups faced economic scapegoating – accused of stealing jobs and lowering wages",
+          "Irish migrants: accused of taking work from English workers; Orange Order violence in Liverpool and Glasgow",
+          "Caribbean migrants: 1958 Notting Hill riots; \"No Blacks, No Dogs, No Irish\" signs; blamed for housing shortages"
         ]
       }
     ],
-    "name": "Medieval Jews and Ashkenazi Jews"
+    "name": "Caribbean and Irish migrants"
   },
   {
     "paper": "p1",
@@ -243,6 +243,43 @@
     "hints": [
       "Built environment",
       "Impact on language"
+    ]
+  },
+  {
+    "paper": "p1",
+    "type": "12mark",
+    "skill": "Explain why",
+    "q": "Explain why there was hostility to migrants in the period c.800–c.1700. (12 marks)",
+    "content": [
+      {
+        "h": "Para 1 – Anti-Semitism",
+        "pts": [
+          "1144: blood libel myth falsely accused Jews of ritual child murder – spread religious hatred for centuries",
+          "1189–90: anti-Jewish riots across England; ~150 Jews died at York Castle",
+          "1290: Edward I expelled all Jews – centuries of Anti-Semitism translated into official government action"
+        ]
+      },
+      {
+        "h": "Para 2 – Competition for jobs",
+        "pts": [
+          "1517: Evil May Day – London apprentices attacked foreign merchants; accused them of stealing work and lowering wages",
+          "Flemish weavers in Sandwich faced formal work restrictions by 1569; English guilds lobbied against migrant Competition for jobs",
+          "Huguenot weavers faced riots in 1675, 1681 and 1683 from English weavers fearing job losses"
+        ]
+      },
+      {
+        "h": "Para 3 – Government action reflecting popular hostility",
+        "pts": [
+          "1275: Statute of Jewry restricted Jewish lending – government responding to both religious and economic hostility",
+          "1290: Expulsion of Jews showed government willing to act on popular anti-Semitic pressure",
+          "1709: 3,000 Palatines deported to Ireland – government responded to public hostility toward migrants seen as a burden"
+        ]
+      }
+    ],
+    "name": "Medieval/Early Modern hostility",
+    "hints": [
+      "Blood Libel",
+      "Evil May Day (1517)"
     ]
   },
   {
@@ -360,6 +397,80 @@
     "paper": "p1",
     "type": "12mark",
     "skill": "Explain why",
+    "q": "Explain why migrants came to Britain in the period c.1700–c.1900. (12 marks)",
+    "content": [
+      {
+        "h": "Para 1 – War and conflict",
+        "pts": [
+          "Irish Famine 1845–46: potato blight killed ~1 million; ~2 million fled to Britain – catastrophe as a push factor",
+          "Wars in the Rhineland drove ~13,000 Palatine refugees to London in 1709",
+          "American War of Independence 1780s: Black Loyalists given homes in Britain after fighting for the crown"
+        ]
+      },
+      {
+        "h": "Para 2 – Religious persecution",
+        "pts": [
+          "Russian Pogroms from the 1880s drove ~150,000 Ashkenazi Jews to Britain – religious persecution as a push factor",
+          "Palatines fled religious wars in the Rhineland; came to Protestant England as a religious sanctuary",
+          "1708 Foreign Protestants Naturalisation Act established England as a Protestant refuge – religious pull factor"
+        ]
+      },
+      {
+        "h": "Para 3 – Trade and economics",
+        "pts": [
+          "Irish Navvies came for work on canals and railways – economic pull of Britain's industrial boom",
+          "Lascars and Ayahs came with the expansion of the East India Company – empire created economic networks pulling South Asians to Britain",
+          "Economic opportunity in industrial cities consistently pulled migrants from Ireland, Europe and beyond"
+        ]
+      }
+    ],
+    "name": "18th & 19th causes",
+    "hints": [
+      "The British Empire",
+      "Russian pogroms"
+    ]
+  },
+  {
+    "paper": "p1",
+    "type": "12mark",
+    "skill": "Explain why",
+    "q": "Explain why migration has led to changes in Britain in the period c.1700–present. (12 marks)",
+    "content": [
+      {
+        "h": "Para 1 – Culture and language",
+        "pts": [
+          "Irish communities shaped the culture of Liverpool and Manchester; Scouse accent partly from Irish speech patterns",
+          "Notting Hill Carnival (1959) grew from Caribbean community – now largest street festival in Europe",
+          "South Asian, Caribbean and African communities transformed British food, music and urban culture throughout the 20th century"
+        ]
+      },
+      {
+        "h": "Para 2 – New religions",
+        "pts": [
+          "Jewish communities established synagogues across Britain from the 17th century; Bevis Marks synagogue (1701) still stands",
+          "South Asian migration brought Hinduism, Sikhism and Islam – Leicester now hosts the largest Diwali celebrations outside Asia",
+          "New religious communities built mosques, temples and gurdwaras – transformed the built environment of British cities"
+        ]
+      },
+      {
+        "h": "Para 3 – Trade and industry",
+        "pts": [
+          "Irish Navvies built over 20,000 miles of British railway – transformed the industrial landscape of Britain",
+          "By 2003: 30% of NHS doctors and 44% of nurses were migrants – migration became structurally essential to the British economy",
+          "Windrush migrants were essential for helping rebuild Britain after WWII - led to economic recovery. "
+        ]
+      }
+    ],
+    "name": "18th & 19th/Modern impact",
+    "hints": [
+      "Culture and language",
+      "New religions"
+    ]
+  },
+  {
+    "paper": "p1",
+    "type": "12mark",
+    "skill": "Explain why",
     "q": "Explain why migration to Britain has increased since the year 1900. (12 marks)",
     "content": [
       {
@@ -434,111 +545,37 @@
     "paper": "p1",
     "type": "12mark",
     "skill": "Explain why",
-    "q": "Explain why migration has led to changes in Britain in the period c.1700–present. (12 marks)",
+    "q": "Explain why the experience of migrants in Britain changed in the years c.1900–present. (12 marks)",
     "content": [
       {
-        "h": "Para 1 – Culture and language",
+        "h": "Para 1 – Anti-immigration politicians",
         "pts": [
-          "Irish communities shaped the culture of Liverpool and Manchester; Scouse accent partly from Irish speech patterns",
-          "Notting Hill Carnival (1959) grew from Caribbean community – now largest street festival in Europe",
-          "South Asian, Caribbean and African communities transformed British food, music and urban culture throughout the 20th century"
+          "Oswald Mosley led anti-immigration protests against Jewish migrants in Whitechapel in the 1930s, and Windrush migrants in Notting Hill in the 1950s.",
+          "Enoch Powell - Rivers of Blood speech (1968) predicted migration would lead to a race war. 74% of people agreed with him.",
+          "Far-Right political parties like the National Front led campaigns of intimidation against migrant communities in the 1970s. Fought anti-fascist protestors in 1977 Battle of Lewisham."
         ]
       },
       {
-        "h": "Para 2 – New religions",
+        "h": "Para 2 – Legal change improved experience",
         "pts": [
-          "Jewish communities established synagogues across Britain from the 17th century; Bevis Marks synagogue (1701) still stands",
-          "South Asian migration brought Hinduism, Sikhism and Islam – Leicester now hosts the largest Diwali celebrations outside Asia",
-          "New religious communities built mosques, temples and gurdwaras – transformed the built environment of British cities"
+          "1965 Race Relations Act: first law banning racial discrimination in public life",
+          "1971 Mangrove Nine verdict: first official recognition of institutional racism – legal accountability began",
+          "2010 Equality Act: comprehensive legal protection; experience of migrants legally transformed from 1905"
         ]
       },
       {
-        "h": "Para 3 – Trade and industry",
+        "h": "Para 3 – Treatment by police",
         "pts": [
-          "Irish Navvies built over 20,000 miles of British railway – transformed the industrial landscape of Britain",
-          "By 2003: 30% of NHS doctors and 44% of nurses were migrants – migration became structurally essential to the British economy",
-          "Windrush migrants were essential for helping rebuild Britain after WWII - led to economic recovery. "
+          "In the 1950s: 97% of police were white men; no laws against discrimination; and racism in police was common. Authorities provided no protection",
+          "Stop and search powers were used by police primarily against migrant communities. Led to riots in Brixton in 1981.",
+          "1999 Macpherson Report: Metropolitan Police still institutionally racist – attitudes slower to change than laws"
         ]
       }
     ],
-    "name": "18th & 19th/Modern impact",
+    "name": "Modern experience",
     "hints": [
-      "Culture and language",
-      "New religions"
-    ]
-  },
-  {
-    "paper": "p1",
-    "type": "12mark",
-    "skill": "Explain why",
-    "q": "Explain why there was hostility to migrants in the period c.800–c.1700. (12 marks)",
-    "content": [
-      {
-        "h": "Para 1 – Anti-Semitism",
-        "pts": [
-          "1144: blood libel myth falsely accused Jews of ritual child murder – spread religious hatred for centuries",
-          "1189–90: anti-Jewish riots across England; ~150 Jews died at York Castle",
-          "1290: Edward I expelled all Jews – centuries of Anti-Semitism translated into official government action"
-        ]
-      },
-      {
-        "h": "Para 2 – Competition for jobs",
-        "pts": [
-          "1517: Evil May Day – London apprentices attacked foreign merchants; accused them of stealing work and lowering wages",
-          "Flemish weavers in Sandwich faced formal work restrictions by 1569; English guilds lobbied against migrant Competition for jobs",
-          "Huguenot weavers faced riots in 1675, 1681 and 1683 from English weavers fearing job losses"
-        ]
-      },
-      {
-        "h": "Para 3 – Government action reflecting popular hostility",
-        "pts": [
-          "1275: Statute of Jewry restricted Jewish lending – government responding to both religious and economic hostility",
-          "1290: Expulsion of Jews showed government willing to act on popular anti-Semitic pressure",
-          "1709: 3,000 Palatines deported to Ireland – government responded to public hostility toward migrants seen as a burden"
-        ]
-      }
-    ],
-    "name": "Medieval/Early Modern hostility",
-    "hints": [
-      "Blood Libel",
-      "Evil May Day (1517)"
-    ]
-  },
-  {
-    "paper": "p1",
-    "type": "12mark",
-    "skill": "Explain why",
-    "q": "Explain why migrants came to Britain in the period c.1700–c.1900. (12 marks)",
-    "content": [
-      {
-        "h": "Para 1 – War and conflict",
-        "pts": [
-          "Irish Famine 1845–46: potato blight killed ~1 million; ~2 million fled to Britain – catastrophe as a push factor",
-          "Wars in the Rhineland drove ~13,000 Palatine refugees to London in 1709",
-          "American War of Independence 1780s: Black Loyalists given homes in Britain after fighting for the crown"
-        ]
-      },
-      {
-        "h": "Para 2 – Religious persecution",
-        "pts": [
-          "Russian Pogroms from the 1880s drove ~150,000 Ashkenazi Jews to Britain – religious persecution as a push factor",
-          "Palatines fled religious wars in the Rhineland; came to Protestant England as a religious sanctuary",
-          "1708 Foreign Protestants Naturalisation Act established England as a Protestant refuge – religious pull factor"
-        ]
-      },
-      {
-        "h": "Para 3 – Trade and economics",
-        "pts": [
-          "Irish Navvies came for work on canals and railways – economic pull of Britain's industrial boom",
-          "Lascars and Ayahs came with the expansion of the East India Company – empire created economic networks pulling South Asians to Britain",
-          "Economic opportunity in industrial cities consistently pulled migrants from Ireland, Europe and beyond"
-        ]
-      }
-    ],
-    "name": "18th & 19th causes",
-    "hints": [
-      "The British Empire",
-      "Russian pogroms"
+      "Relations with the police",
+      "Race Relations Act (1965)"
     ]
   },
   {
@@ -580,79 +617,42 @@
   },
   {
     "paper": "p1",
-    "type": "12mark",
-    "skill": "Explain why",
-    "q": "Explain why the experience of migrants in Britain changed in the years c.1900–present. (12 marks)",
-    "content": [
-      {
-        "h": "Para 1 – Anti-immigration politicians",
-        "pts": [
-          "Oswald Mosley led anti-immigration protests against Jewish migrants in Whitechapel in the 1930s, and Windrush migrants in Notting Hill in the 1950s.",
-          "Enoch Powell - Rivers of Blood speech (1968) predicted migration would lead to a race war. 74% of people agreed with him.",
-          "Far-Right political parties like the National Front led campaigns of intimidation against migrant communities in the 1970s. Fought anti-fascist protestors in 1977 Battle of Lewisham."
-        ]
-      },
-      {
-        "h": "Para 2 – Legal change improved experience",
-        "pts": [
-          "1965 Race Relations Act: first law banning racial discrimination in public life",
-          "1971 Mangrove Nine verdict: first official recognition of institutional racism – legal accountability began",
-          "2010 Equality Act: comprehensive legal protection; experience of migrants legally transformed from 1905"
-        ]
-      },
-      {
-        "h": "Para 3 – Treatment by police",
-        "pts": [
-          "In the 1950s: 97% of police were white men; no laws against discrimination; and racism in police was common. Authorities provided no protection",
-          "Stop and search powers were used by police primarily against migrant communities. Led to riots in Brixton in 1981.",
-          "1999 Macpherson Report: Metropolitan Police still institutionally racist – attitudes slower to change than laws"
-        ]
-      }
-    ],
-    "name": "Modern experience",
-    "hints": [
-      "Relations with the police",
-      "Race Relations Act (1965)"
-    ]
-  },
-  {
-    "paper": "p1",
     "type": "16mark",
     "skill": "How far do you agree",
-    "q": "\"In the years c.800–c.1500, the most important impact made by migrants in England was the development of trade.\" How far do you agree?",
+    "q": "\"The main reason migrants came to England in the years c.800–c.1500 was for economic gain.\" How far do you agree?",
     "content": [
       {
-        "h": "Agree – trade development was the most important impact",
+        "h": "Agree – economic gain drove migration",
         "agree": true,
         "pts": [
-          "Viking city of York grew from ~1,000 to ~15,000 people – transformed into an international trading hub with goods from Baltic, Byzantium and Islamic world",
-          "Hansa merchants and Flemish weavers transformed the English cloth trade – Colchester rose from 53rd to 13th richest town",
-          "Jewish moneylenders financed crown projects; 8% of royal income from Jewish loans by 13th century – migrants funded economic growth"
+          "Vikings: York became an international trading hub – economic opportunity pulled merchants and settlers from Scandinavia",
+          "Hansa merchants came for lower taxes and access to English wool trade – purely economic motivation",
+          "Flemish weavers invited by Edward III in 1351 because English cloth industry was profitable – economic pull from both sides"
         ]
       },
       {
-        "h": "Disagree A – power and government more significant",
+        "h": "Disagree A – conquest and war drove the largest migration waves",
         "agree": false,
         "pts": [
-          "Normans introduced the Feudal System – completely restructured English society; Normans at top, English at bottom",
-          "Norman French was the official language for ~200 years; shaped law, government and administration at every level",
-          "Earlier, Viking things were group meetings which helped lead to juries and early democracy."
+          "865: Great Heathen Army invaded England – conquest, not economic gain, drove initial Viking settlement",
+          "Norman Conquest 1066: William's knights came as conquerors given land as reward – power and conquest, not economic migration",
+          "Jewish moneylenders were invited by William in 1070 to serve royal financial needs – government direction, not individual economic choice"
         ]
       },
       {
-        "h": "Disagree B – built environment was equally lasting",
+        "h": "Disagree B – government invitation and royal policy were decisive",
         "agree": false,
         "pts": [
-          "Hundreds of Norman castles and churches permanently altered the English landscape; many still stand today",
-          "Viking settlements created many of England's modern cities – Leicester, Derby, York all grew from Viking foundations",
-          "Jewish moneylenders were vital in funding Norman castles. 84 funded from Jewish loans alone."
+          "Kings invited Jewish moneylenders, Hansa merchants and Flemish weavers – migration was shaped by royal command",
+          "Edward III personally invited Flemish weavers after they were expelled from France – government action determined who came",
+          "Most medieval migration was directed by rulers for political purposes; \"economic gain\" as a personal motivation applied mainly to merchants"
         ]
       }
     ],
-    "name": "Medieval impact",
+    "name": "Medieval causes",
     "hints": [
-      "Viking city of York",
-      "Norman castles"
+      "Great Heathen Army (865)",
+      "Jewish moneylenders"
     ]
   },
   {
@@ -693,6 +693,46 @@
     "hints": [
       "Expulsion of Jewish communities (1290)",
       "Norman Conquest (1066)"
+    ]
+  },
+  {
+    "paper": "p1",
+    "type": "16mark",
+    "skill": "How far do you agree",
+    "q": "\"In the years c.800–c.1500, the most important impact made by migrants in England was the development of trade.\" How far do you agree?",
+    "content": [
+      {
+        "h": "Agree – trade development was the most important impact",
+        "agree": true,
+        "pts": [
+          "Viking city of York grew from ~1,000 to ~15,000 people – transformed into an international trading hub with goods from Baltic, Byzantium and Islamic world",
+          "Hansa merchants and Flemish weavers transformed the English cloth trade – Colchester rose from 53rd to 13th richest town",
+          "Jewish moneylenders financed crown projects; 8% of royal income from Jewish loans by 13th century – migrants funded economic growth"
+        ]
+      },
+      {
+        "h": "Disagree A – power and government more significant",
+        "agree": false,
+        "pts": [
+          "Normans introduced the Feudal System – completely restructured English society; Normans at top, English at bottom",
+          "Norman French was the official language for ~200 years; shaped law, government and administration at every level",
+          "Earlier, Viking things were group meetings which helped lead to juries and early democracy."
+        ]
+      },
+      {
+        "h": "Disagree B – built environment was equally lasting",
+        "agree": false,
+        "pts": [
+          "Hundreds of Norman castles and churches permanently altered the English landscape; many still stand today",
+          "Viking settlements created many of England's modern cities – Leicester, Derby, York all grew from Viking foundations",
+          "Jewish moneylenders were vital in funding Norman castles. 84 funded from Jewish loans alone."
+        ]
+      }
+    ],
+    "name": "Medieval impact",
+    "hints": [
+      "Viking city of York",
+      "Norman castles"
     ]
   },
   {
@@ -779,166 +819,6 @@
     "paper": "p1",
     "type": "16mark",
     "skill": "How far do you agree",
-    "q": "\"The growth of the British empire was the main reason for migration to Britain in the period c.1700–c.1900.\" How far do you agree?",
-    "content": [
-      {
-        "h": "Agree – empire was a major driver",
-        "agree": true,
-        "pts": [
-          "East India Company expansion created demand for Lascars (Indian sailors) and Ayahs (nannies/servants) employed by colonial officials",
-          "Suez Canal opened 1869 – halved travel times between Britain and India; empire's trade routes brought South Asians to Britain",
-          "Black Loyalists came to Britain after the American War of Independence (1780s) – direct consequence of empire and imperial conflict"
-        ]
-      },
-      {
-        "h": "Disagree A – persecution and conflict more important",
-        "agree": false,
-        "pts": [
-          "Irish Famine 1845–46: ~2 million fled – catastrophic push factor with nothing to do with empire",
-          "Russian pogroms from 1880s drove ~150,000 Ashkenazi Jews to Britain – persecution in Eastern Europe, not British imperial expansion",
-          "Wars in the Rhineland drove ~13,000 Palatine refugees to London in 1709 – European conflict as push factor"
-        ]
-      },
-      {
-        "h": "Disagree B – Civil Liberties and legal frameworks also drove migration",
-        "agree": false,
-        "pts": [
-          "1772 Somerset Case ruled slavery illegal in Britain – making Britain a refuge for enslaved Africans seeking freedom",
-          "1829 Catholic Emancipation Act improved legal status of Irish Catholics in Britain – legal change as pull factor",
-          "1708 Foreign Protestants Naturalisation Act created a formal legal framework for Protestant migration – government policy, not empire"
-        ]
-      }
-    ],
-    "name": "18th & 19th causes",
-    "hints": [
-      "Lascars",
-      "Civil liberties"
-    ]
-  },
-  {
-    "paper": "p1",
-    "type": "16mark",
-    "skill": "How far do you agree",
-    "q": "\"In the period c.1900–present, migrants were treated with hostility by the British authorities.\" How far do you agree?",
-    "content": [
-      {
-        "h": "Agree – clear examples of state hostility",
-        "agree": true,
-        "pts": [
-          "1905 Aliens Act restricted Jewish immigration – Britain's first immigration law explicitly targeting Ashkenazi Jews",
-          "1958 Notting Hill riots: Metropolitan Police arrested black defenders rather than white attackers; 97% of officers were white men",
-          "2012: Windrush scandal – legal Caribbean migrants wrongly detained, denied healthcare; 1999 Macpherson Report found Metropolitan Police institutionally racist"
-        ]
-      },
-      {
-        "h": "Disagree A – positive government action",
-        "agree": false,
-        "pts": [
-          "1948 British Nationality Act actively facilitated mass Commonwealth migration; 1965 and 1976 Race Relations Acts banned discrimination",
-          "2010 Equality Act strengthened legal protections; 2022: Rishi Sunak became first Prime Minister of Asian heritage",
-          "1971 Mangrove Nine verdict – legal system delivered justice; first official recognition of institutional racism"
-        ]
-      },
-      {
-        "h": "Disagree B – community action drove change",
-        "agree": false,
-        "pts": [
-          "1963: Bristol Bus Boycott ended employment colour bar in Bristol and helped lead to the Race Relations Act 1965",
-          "Claudia Jones, West Indian Gazette and Mangrove Nine showed communities could challenge and change hostile attitudes",
-          "Windrush Generation helped rebuild Britain – by 1960s 12% of London Transport employees from ethnic minorities; by 2003 30% of NHS doctors were migrants"
-        ]
-      }
-    ],
-    "name": "Modern experience",
-    "hints": [
-      "The Metropolitan Police",
-      "Rivers of Blood (1968)"
-    ]
-  },
-  {
-    "paper": "p1",
-    "type": "16mark",
-    "skill": "How far do you agree",
-    "q": "\"The biggest impact of migration in the years c.1900–present was on British culture.\" How far do you agree?",
-    "content": [
-      {
-        "h": "Agree – cultural impact was the biggest",
-        "agree": true,
-        "pts": [
-          "Notting Hill Carnival (1966): Caribbean Music and culture transformed British public life – largest street festival in Europe",
-          "South Asian food, music and fashion reshaped everyday British culture; curry became the nation's most popular dish",
-          "Caribbean Music influenced British pop and rock from the 1950s onwards – reggae, ska and later grime all have Caribbean migrant roots"
-        ]
-      },
-      {
-        "h": "Disagree A – impact on The NHS and public services more significant",
-        "agree": false,
-        "pts": [
-          "By 2003: 30% of NHS doctors and 44% of nurses were migrants – The NHS could not function without migrant workers",
-          "London Transport recruited extensively in the Caribbean after WWII; by 1960s 12% of employees were from ethnic minorities",
-          "Migrant workers were structurally essential to Britain's public services – this is a deeper and more lasting impact than cultural change"
-        ]
-      },
-      {
-        "h": "Disagree B – legal and political impact equally significant",
-        "agree": false,
-        "pts": [
-          "Migration directly caused 1965 Race Relations Act, 1976 Race Relations Act and 2010 Equality Act – transformed Britain's entire legal framework",
-          "1971 Mangrove Nine verdict changed how institutional racism was scrutinised in policing",
-          "Britain's identity as a multicultural society with comprehensive equality law is a direct and lasting political consequence of migration"
-        ]
-      }
-    ],
-    "name": "Modern impact",
-    "hints": [
-      "The NHS",
-      "Multiculturalism"
-    ]
-  },
-  {
-    "paper": "p1",
-    "type": "16mark",
-    "skill": "How far do you agree",
-    "q": "\"The main reason migrants came to England in the years c.800–c.1500 was for economic gain.\" How far do you agree?",
-    "content": [
-      {
-        "h": "Agree – economic gain drove migration",
-        "agree": true,
-        "pts": [
-          "Vikings: York became an international trading hub – economic opportunity pulled merchants and settlers from Scandinavia",
-          "Hansa merchants came for lower taxes and access to English wool trade – purely economic motivation",
-          "Flemish weavers invited by Edward III in 1351 because English cloth industry was profitable – economic pull from both sides"
-        ]
-      },
-      {
-        "h": "Disagree A – conquest and war drove the largest migration waves",
-        "agree": false,
-        "pts": [
-          "865: Great Heathen Army invaded England – conquest, not economic gain, drove initial Viking settlement",
-          "Norman Conquest 1066: William's knights came as conquerors given land as reward – power and conquest, not economic migration",
-          "Jewish moneylenders were invited by William in 1070 to serve royal financial needs – government direction, not individual economic choice"
-        ]
-      },
-      {
-        "h": "Disagree B – government invitation and royal policy were decisive",
-        "agree": false,
-        "pts": [
-          "Kings invited Jewish moneylenders, Hansa merchants and Flemish weavers – migration was shaped by royal command",
-          "Edward III personally invited Flemish weavers after they were expelled from France – government action determined who came",
-          "Most medieval migration was directed by rulers for political purposes; \"economic gain\" as a personal motivation applied mainly to merchants"
-        ]
-      }
-    ],
-    "name": "Medieval causes",
-    "hints": [
-      "Great Heathen Army (865)",
-      "Jewish moneylenders"
-    ]
-  },
-  {
-    "paper": "p1",
-    "type": "16mark",
-    "skill": "How far do you agree",
     "q": "\"The most important impact of migration in the period c.1500–c.1700 was on the built environment.\" How far do you agree?",
     "content": [
       {
@@ -973,6 +853,46 @@
     "hints": [
       "Sandwich and Canterbury",
       "Draining of the fens"
+    ]
+  },
+  {
+    "paper": "p1",
+    "type": "16mark",
+    "skill": "How far do you agree",
+    "q": "\"The growth of the British empire was the main reason for migration to Britain in the period c.1700–c.1900.\" How far do you agree?",
+    "content": [
+      {
+        "h": "Agree – empire was a major driver",
+        "agree": true,
+        "pts": [
+          "East India Company expansion created demand for Lascars (Indian sailors) and Ayahs (nannies/servants) employed by colonial officials",
+          "Suez Canal opened 1869 – halved travel times between Britain and India; empire's trade routes brought South Asians to Britain",
+          "Black Loyalists came to Britain after the American War of Independence (1780s) – direct consequence of empire and imperial conflict"
+        ]
+      },
+      {
+        "h": "Disagree A – persecution and conflict more important",
+        "agree": false,
+        "pts": [
+          "Irish Famine 1845–46: ~2 million fled – catastrophic push factor with nothing to do with empire",
+          "Russian pogroms from 1880s drove ~150,000 Ashkenazi Jews to Britain – persecution in Eastern Europe, not British imperial expansion",
+          "Wars in the Rhineland drove ~13,000 Palatine refugees to London in 1709 – European conflict as push factor"
+        ]
+      },
+      {
+        "h": "Disagree B – Civil Liberties and legal frameworks also drove migration",
+        "agree": false,
+        "pts": [
+          "1772 Somerset Case ruled slavery illegal in Britain – making Britain a refuge for enslaved Africans seeking freedom",
+          "1829 Catholic Emancipation Act improved legal status of Irish Catholics in Britain – legal change as pull factor",
+          "1708 Foreign Protestants Naturalisation Act created a formal legal framework for Protestant migration – government policy, not empire"
+        ]
+      }
+    ],
+    "name": "18th & 19th causes",
+    "hints": [
+      "Lascars",
+      "Civil liberties"
     ]
   },
   {
@@ -1093,6 +1013,86 @@
     "hints": [
       "British Nationality Act (1948)",
       "Maastricht Treaty"
+    ]
+  },
+  {
+    "paper": "p1",
+    "type": "16mark",
+    "skill": "How far do you agree",
+    "q": "\"In the period c.1900–present, migrants were treated with hostility by the British authorities.\" How far do you agree?",
+    "content": [
+      {
+        "h": "Agree – clear examples of state hostility",
+        "agree": true,
+        "pts": [
+          "1905 Aliens Act restricted Jewish immigration – Britain's first immigration law explicitly targeting Ashkenazi Jews",
+          "1958 Notting Hill riots: Metropolitan Police arrested black defenders rather than white attackers; 97% of officers were white men",
+          "2012: Windrush scandal – legal Caribbean migrants wrongly detained, denied healthcare; 1999 Macpherson Report found Metropolitan Police institutionally racist"
+        ]
+      },
+      {
+        "h": "Disagree A – positive government action",
+        "agree": false,
+        "pts": [
+          "1948 British Nationality Act actively facilitated mass Commonwealth migration; 1965 and 1976 Race Relations Acts banned discrimination",
+          "2010 Equality Act strengthened legal protections; 2022: Rishi Sunak became first Prime Minister of Asian heritage",
+          "1971 Mangrove Nine verdict – legal system delivered justice; first official recognition of institutional racism"
+        ]
+      },
+      {
+        "h": "Disagree B – community action drove change",
+        "agree": false,
+        "pts": [
+          "1963: Bristol Bus Boycott ended employment colour bar in Bristol and helped lead to the Race Relations Act 1965",
+          "Claudia Jones, West Indian Gazette and Mangrove Nine showed communities could challenge and change hostile attitudes",
+          "Windrush Generation helped rebuild Britain – by 1960s 12% of London Transport employees from ethnic minorities; by 2003 30% of NHS doctors were migrants"
+        ]
+      }
+    ],
+    "name": "Modern experience",
+    "hints": [
+      "The Metropolitan Police",
+      "Rivers of Blood (1968)"
+    ]
+  },
+  {
+    "paper": "p1",
+    "type": "16mark",
+    "skill": "How far do you agree",
+    "q": "\"The biggest impact of migration in the years c.1900–present was on British culture.\" How far do you agree?",
+    "content": [
+      {
+        "h": "Agree – cultural impact was the biggest",
+        "agree": true,
+        "pts": [
+          "Notting Hill Carnival (1966): Caribbean Music and culture transformed British public life – largest street festival in Europe",
+          "South Asian food, music and fashion reshaped everyday British culture; curry became the nation's most popular dish",
+          "Caribbean Music influenced British pop and rock from the 1950s onwards – reggae, ska and later grime all have Caribbean migrant roots"
+        ]
+      },
+      {
+        "h": "Disagree A – impact on The NHS and public services more significant",
+        "agree": false,
+        "pts": [
+          "By 2003: 30% of NHS doctors and 44% of nurses were migrants – The NHS could not function without migrant workers",
+          "London Transport recruited extensively in the Caribbean after WWII; by 1960s 12% of employees were from ethnic minorities",
+          "Migrant workers were structurally essential to Britain's public services – this is a deeper and more lasting impact than cultural change"
+        ]
+      },
+      {
+        "h": "Disagree B – legal and political impact equally significant",
+        "agree": false,
+        "pts": [
+          "Migration directly caused 1965 Race Relations Act, 1976 Race Relations Act and 2010 Equality Act – transformed Britain's entire legal framework",
+          "1971 Mangrove Nine verdict changed how institutional racism was scrutinised in policing",
+          "Britain's identity as a multicultural society with comprehensive equality law is a direct and lasting political consequence of migration"
+        ]
+      }
+    ],
+    "name": "Modern impact",
+    "hints": [
+      "The NHS",
+      "Multiculturalism"
     ]
   },
   {
@@ -1227,6 +1227,38 @@
     "paper": "p2a",
     "type": "4mark-consequence",
     "skill": "Consequence",
+    "name": "East German Refugee Crisis",
+    "q": "Explain one consequence of the East German refugee crisis of the 1950s. (4 marks)",
+    "content": [
+      {
+        "h": "Points",
+        "pts": [
+          "Between 1949 and 1961 approximately 3 million East Germans fled to the West through West Berlin – many were skilled professionals (doctors, engineers, lawyers) whose loss crippled the GDR economy; known as the \"brain drain\" it was deeply embarrassing for communism and showed people were choosing capitalism",
+          "Khrushchev responded by issuing the Berlin Ultimatum in November 1958 giving the West 6 months to leave West Berlin – triggering the 2nd Berlin Crisis; the failed Paris Summit (1960) and Vienna Summit (1961) followed, showing the crisis was destabilising superpower relations"
+        ]
+      }
+    ]
+  },
+  {
+    "paper": "p2a",
+    "type": "4mark-consequence",
+    "skill": "Consequence",
+    "name": "U2 Spy Plane Crisis",
+    "q": "Explain one consequence of the U2 Spy-plane crisis (1960). (4 marks)",
+    "content": [
+      {
+        "h": "Points",
+        "pts": [
+          "Khrushchev walked out of the Paris Summit May 1960 after Eisenhower first denied then admitted the U2 flight – destroyed any chance of diplomatic progress; the summit collapsed entirely before it had begun and set back détente significantly",
+          "At the Vienna Summit 1961 Khrushchev judged Kennedy as weak and inexperienced; this emboldened him to place missiles in Cuba in 1962 – the U2 crisis contributed directly to the Cuban Missile Crisis"
+        ]
+      }
+    ]
+  },
+  {
+    "paper": "p2a",
+    "type": "4mark-consequence",
+    "skill": "Consequence",
     "q": "Explain one consequence of the building of the Berlin Wall (1961). (4 marks)",
     "content": [
       {
@@ -1355,38 +1387,6 @@
     "paper": "p2a",
     "type": "4mark-consequence",
     "skill": "Consequence",
-    "name": "East German Refugee Crisis",
-    "q": "Explain one consequence of the East German refugee crisis of the 1950s. (4 marks)",
-    "content": [
-      {
-        "h": "Points",
-        "pts": [
-          "Between 1949 and 1961 approximately 3 million East Germans fled to the West through West Berlin – many were skilled professionals (doctors, engineers, lawyers) whose loss crippled the GDR economy; known as the \"brain drain\" it was deeply embarrassing for communism and showed people were choosing capitalism",
-          "Khrushchev responded by issuing the Berlin Ultimatum in November 1958 giving the West 6 months to leave West Berlin – triggering the 2nd Berlin Crisis; the failed Paris Summit (1960) and Vienna Summit (1961) followed, showing the crisis was destabilising superpower relations"
-        ]
-      }
-    ]
-  },
-  {
-    "paper": "p2a",
-    "type": "4mark-consequence",
-    "skill": "Consequence",
-    "name": "U2 Spy Plane Crisis",
-    "q": "Explain one consequence of the U2 Spy-plane crisis (1960). (4 marks)",
-    "content": [
-      {
-        "h": "Points",
-        "pts": [
-          "Khrushchev walked out of the Paris Summit May 1960 after Eisenhower first denied then admitted the U2 flight – destroyed any chance of diplomatic progress; the summit collapsed entirely before it had begun and set back détente significantly",
-          "At the Vienna Summit 1961 Khrushchev judged Kennedy as weak and inexperienced; this emboldened him to place missiles in Cuba in 1962 – the U2 crisis contributed directly to the Cuban Missile Crisis"
-        ]
-      }
-    ]
-  },
-  {
-    "paper": "p2a",
-    "type": "4mark-consequence",
-    "skill": "Consequence",
     "name": "August Coup",
     "q": "Explain one consequence of the fall of the August Coup (1991). (4 marks)",
     "content": [
@@ -1395,6 +1395,37 @@
         "pts": [
           "The Gang of Eight arrested Gorbachev in August 1991 but he was released after three days thanks to Boris Yeltsin who led resistance from the Russian parliament building; the army refused to fire on civilians and the coup collapsed – but Gorbachev's political authority was completely destroyed",
           "Without authority to hold the USSR together by force, Gorbachev resigned Christmas Day 1991 and dissolved the USSR; 15 independent republics emerged and the Cold War formally ended"
+        ]
+      }
+    ]
+  },
+  {
+    "paper": "p2a",
+    "type": "8mark-narrative",
+    "skill": "Narrative account",
+    "name": "Formation of the Grand Alliance / Yalta",
+    "hints": [
+      "Formation of the Grand Alliance (1941)",
+      "Yalta Conference (Feb 1945)"
+    ],
+    "q": "Write a narrative account analysing the key events of US-Soviet relations during the Second World War (1941-45). (8 marks)",
+    "content": [
+      {
+        "h": "Beginning",
+        "pts": [
+          "1941 – USA, UK and USSR formed the Grand Alliance against Nazi Germany; ideological differences set aside because of their common enemy; Tehran Conference 1943 – Stalin pleased when Roosevelt and Churchill committed to a second front (D-Day 1944); alliance appeared strong while Germany was the common enemy"
+        ]
+      },
+      {
+        "h": "Middle",
+        "pts": [
+          "February 1945 Yalta – Germany to be divided into four occupation zones; Stalin promised free and fair elections in Poland and Eastern Europe; Roosevelt died April 1945 and was replaced by the far more anti-communist Truman; Stalin immediately broke his Yalta promise by installing communist governments in Poland and Eastern Europe before the war had even ended"
+        ]
+      },
+      {
+        "h": "End",
+        "pts": [
+          "July 1945 Potsdam – Truman dropped the atomic bomb on Japan without informing Stalin; Stalin saw this as a direct threat to the USSR; conference ended with very few agreements and enormous tension; the Grand Alliance had effectively collapsed before the war was officially over; Long and Novikov Telegrams (1946) formalised mutual hostility"
         ]
       }
     ]
@@ -1706,37 +1737,6 @@
     "paper": "p2a",
     "type": "8mark-narrative",
     "skill": "Narrative account",
-    "name": "Formation of the Grand Alliance / Yalta",
-    "hints": [
-      "Formation of the Grand Alliance (1941)",
-      "Yalta Conference (Feb 1945)"
-    ],
-    "q": "Write a narrative account analysing the key events of US-Soviet relations during the Second World War (1941-45). (8 marks)",
-    "content": [
-      {
-        "h": "Beginning",
-        "pts": [
-          "1941 – USA, UK and USSR formed the Grand Alliance against Nazi Germany; ideological differences set aside because of their common enemy; Tehran Conference 1943 – Stalin pleased when Roosevelt and Churchill committed to a second front (D-Day 1944); alliance appeared strong while Germany was the common enemy"
-        ]
-      },
-      {
-        "h": "Middle",
-        "pts": [
-          "February 1945 Yalta – Germany to be divided into four occupation zones; Stalin promised free and fair elections in Poland and Eastern Europe; Roosevelt died April 1945 and was replaced by the far more anti-communist Truman; Stalin immediately broke his Yalta promise by installing communist governments in Poland and Eastern Europe before the war had even ended"
-        ]
-      },
-      {
-        "h": "End",
-        "pts": [
-          "July 1945 Potsdam – Truman dropped the atomic bomb on Japan without informing Stalin; Stalin saw this as a direct threat to the USSR; conference ended with very few agreements and enormous tension; the Grand Alliance had effectively collapsed before the war was officially over; Long and Novikov Telegrams (1946) formalised mutual hostility"
-        ]
-      }
-    ]
-  },
-  {
-    "paper": "p2a",
-    "type": "8mark-narrative",
-    "skill": "Narrative account",
     "name": "Collapse of the USSR",
     "hints": [
       "Baltic States",
@@ -1760,6 +1760,27 @@
         "h": "End",
         "pts": [
           "Boris Yeltsin led resistance from the Russian parliament building; the army refused to fire on civilians; the coup collapsed after three days; Gorbachev was released but his authority was completely destroyed; to avoid civil war he resigned Christmas Day 1991 and dissolved the USSR; 15 independent republics emerged; Cold War formally ended"
+        ]
+      }
+    ]
+  },
+  {
+    "paper": "p2a",
+    "type": "8mark-importance",
+    "skill": "Importance",
+    "name": "Division of Germany (FRG/GDR)",
+    "q": "Explain the importance of the division of East Germany (GDR) and West Germany (FRG) for the development of the Cold War. (8 marks)",
+    "content": [
+      {
+        "h": "Para 1",
+        "pts": [
+          "May 1949 Stalin lifted the Berlin Blockade; Germany permanently divided into FRG (West, capitalist, Marshall Aid, growing prosperity) and GDR (East, communist, shortages, lack of freedom); 1955 West Germany joined NATO – a rearmed West Germany inside the Western military alliance alarmed Moscow enormously; Warsaw Pact formed May 1955 in direct response; Germany became the front line of the Cold War with two permanently armed blocs facing each other across the Iron Curtain"
+        ]
+      },
+      {
+        "h": "Para 2",
+        "pts": [
+          "The FRG's visible prosperity under Marshall Aid compared to the GDR's shortages created the brain drain – between 1949 and 1961 approximately 3 million East Germans fled West; many were skilled professionals (doctors, engineers, lawyers) whose loss crippled the GDR economy; directly caused Khrushchev's 1958 Berlin Ultimatum, the 2nd Berlin Crisis and the building of the Berlin Wall August 1961 – the division of Germany drove Cold War crises for over a decade"
         ]
       }
     ]
@@ -1855,6 +1876,27 @@
       }
     ],
     "name": "Hungarian Uprising"
+  },
+  {
+    "paper": "p2a",
+    "type": "8mark-importance",
+    "skill": "Importance",
+    "name": "East German Refugee Crisis",
+    "q": "Explain the importance of the East German refugee crisis for relations between east and west. (8 marks)",
+    "content": [
+      {
+        "h": "Para 1",
+        "pts": [
+          "Between 1949 and 1961 approximately 3 million East Germans fled to the West through West Berlin – many were skilled professionals (doctors, engineers, teachers) whose loss devastated the GDR economy; this was deeply embarrassing for communism and showed ordinary people were choosing capitalism; Khrushchev responded with the Berlin Ultimatum November 1958 giving the West 6 months to leave West Berlin; triggered the failed Paris Summit (1960, collapsed over U2 spy plane) and Vienna Summit (1961) – the refugee crisis directly destabilised superpower relations for three years"
+        ]
+      },
+      {
+        "h": "Para 2",
+        "pts": [
+          "Khrushchev's only solution was the Berlin Wall – on 13 August 1961 East German soldiers built a barbed wire fence around West Berlin overnight; it immediately ended the brain drain; however the Wall became the defining symbol of Cold War division and communist failure; Kennedy's \"Ich bin ein Berliner\" speech (1963) exploited it as propaganda; 140 people were killed trying to cross it between 1961 and 1989; the refugee crisis and its solution demonstrated that communism could only survive by imprisoning its own skilled and educated people"
+        ]
+      }
+    ]
   },
   {
     "paper": "p2a",
@@ -2016,48 +2058,6 @@
       }
     ],
     "name": "Fall of the Berlin Wall"
-  },
-  {
-    "paper": "p2a",
-    "type": "8mark-importance",
-    "skill": "Importance",
-    "name": "Division of Germany (FRG/GDR)",
-    "q": "Explain the importance of the division of East Germany (GDR) and West Germany (FRG) for the development of the Cold War. (8 marks)",
-    "content": [
-      {
-        "h": "Para 1",
-        "pts": [
-          "May 1949 Stalin lifted the Berlin Blockade; Germany permanently divided into FRG (West, capitalist, Marshall Aid, growing prosperity) and GDR (East, communist, shortages, lack of freedom); 1955 West Germany joined NATO – a rearmed West Germany inside the Western military alliance alarmed Moscow enormously; Warsaw Pact formed May 1955 in direct response; Germany became the front line of the Cold War with two permanently armed blocs facing each other across the Iron Curtain"
-        ]
-      },
-      {
-        "h": "Para 2",
-        "pts": [
-          "The FRG's visible prosperity under Marshall Aid compared to the GDR's shortages created the brain drain – between 1949 and 1961 approximately 3 million East Germans fled West; many were skilled professionals (doctors, engineers, lawyers) whose loss crippled the GDR economy; directly caused Khrushchev's 1958 Berlin Ultimatum, the 2nd Berlin Crisis and the building of the Berlin Wall August 1961 – the division of Germany drove Cold War crises for over a decade"
-        ]
-      }
-    ]
-  },
-  {
-    "paper": "p2a",
-    "type": "8mark-importance",
-    "skill": "Importance",
-    "name": "East German Refugee Crisis",
-    "q": "Explain the importance of the East German refugee crisis for relations between east and west. (8 marks)",
-    "content": [
-      {
-        "h": "Para 1",
-        "pts": [
-          "Between 1949 and 1961 approximately 3 million East Germans fled to the West through West Berlin – many were skilled professionals (doctors, engineers, teachers) whose loss devastated the GDR economy; this was deeply embarrassing for communism and showed ordinary people were choosing capitalism; Khrushchev responded with the Berlin Ultimatum November 1958 giving the West 6 months to leave West Berlin; triggered the failed Paris Summit (1960, collapsed over U2 spy plane) and Vienna Summit (1961) – the refugee crisis directly destabilised superpower relations for three years"
-        ]
-      },
-      {
-        "h": "Para 2",
-        "pts": [
-          "Khrushchev's only solution was the Berlin Wall – on 13 August 1961 East German soldiers built a barbed wire fence around West Berlin overnight; it immediately ended the brain drain; however the Wall became the defining symbol of Cold War division and communist failure; Kennedy's \"Ich bin ein Berliner\" speech (1963) exploited it as propaganda; 140 people were killed trying to cross it between 1961 and 1989; the refugee crisis and its solution demonstrated that communism could only survive by imprisoning its own skilled and educated people"
-        ]
-      }
-    ]
   },
   {
     "paper": "p2b",
@@ -2781,120 +2781,40 @@
     "paper": "p2b",
     "type": "16mark",
     "skill": "How far do you agree",
-    "q": "\"The decline in Anglo-Spanish relations 1569–85 was mainly due to Elizabeth's actions.\" How far do you agree?",
+    "q": "\"Religion was the main reason for the Revolt of the Northern Earls.\" How far do you agree?",
     "content": [
       {
-        "h": "Agree – Elizabeth's actions drove deterioration",
+        "h": "Agree – religion was central to the revolt",
         "agree": true,
         "pts": [
-          "Secretly funded and armed Dutch rebels against Philip's rule throughout the 1570s; Treaty of Nonsuch 1585 made this open and official",
-          "Knighted Drake in 1580 after theft of £400,000 of Spanish treasure – open endorsement of acts Philip regarded as acts of war",
-          "Mary Queen of Scots' execution 1587 removed the Catholic alternative to Elizabeth; Philip decided invasion was the only option"
+          "Marched under banner of the Five Wounds of Christ; tore up Protestant prayer books in Durham Cathedral; celebrated Catholic Mass",
+          "Stated aim was to restore Catholicism and remove the Protestant Settlement imposed from the south",
+          "The north had remained more Catholic than the south; religion gave the revolt its popular support among ordinary people"
         ]
       },
       {
-        "h": "Disagree A – Philip's own actions also caused deterioration",
+        "h": "Disagree A – political grievances drove the earls personally",
         "agree": false,
         "pts": [
-          "1584: Treaty of Joinville with French Catholics pledging to destroy Protestantism – Elizabeth was a direct target before Drake's raids escalated",
-          "Philip supported the Ridolfi Plot 1571 – actively sought to overthrow Elizabeth long before war was declared",
-          "Philip's brutal suppression of The Dutch Revolt drove Protestant refugees to England and made English support for Dutch rebels popular and rational"
+          "Earls resented being marginalised by Elizabeth's Protestant advisers, particularly William Cecil",
+          "Traditional families had ruled northern England but had been replaced by Elizabeth's Council of the North – loss of status and power",
+          "Revolt was as much about restoring aristocratic influence as restoring Catholicism – the two were inseparable for the earls"
         ]
       },
       {
-        "h": "Disagree B – religious rivalry was the root cause of deterioration",
+        "h": "Disagree B – Mary Queen of Scots was the catalyst that made rebellion possible",
         "agree": false,
         "pts": [
-          "Spain and England were natural rivals: largest Catholic power vs leading Protestant power; Pope's excommunication 1570 made this official",
-          "Commercial rivalry in the New World was structural – not caused by any individual's actions but by competing imperial ambitions",
-          "Deterioration was gradual and mutual; both sides made choices that worsened relations throughout the period"
+          "Mary's arrival and imprisonment in the north gave the revolt its specific political objective – placing her on the throne",
+          "Without Mary as an alternative monarch the revolt would have had no clear aim beyond opposing the Settlement",
+          "Revolt planned to free Mary and marry her to the Duke of Norfolk – a political coup that used religious language as justification"
         ]
       }
     ],
-    "name": "War with Spain",
+    "name": "Northern Earls",
     "hints": [
-      "Sir Francis Drake",
-      "Treaty of Nonsuch (1585)"
-    ]
-  },
-  {
-    "paper": "p2b",
-    "type": "16mark",
-    "skill": "How far do you agree",
-    "q": "\"The Armada was defeated mainly because of the weather rather than English actions.\" How far do you agree?",
-    "content": [
-      {
-        "h": "Agree – weather was decisive",
-        "agree": true,
-        "pts": [
-          "Storms off Ireland and Scotland destroyed over half of the 130 ships – far more destruction than English guns caused",
-          "Spanish captains unfamiliar with northern waters; Philip's rigid orders gave Medina-Sidonia no flexibility when conditions changed drastically",
-          "Medal read \"God blew, and they were scattered\" – Elizabethan contemporaries themselves credited weather"
-        ]
-      },
-      {
-        "h": "Disagree A – English tactics were crucial",
-        "agree": false,
-        "pts": [
-          "Fireships at Calais broke the Spanish crescent formation – without this the Armada might have regrouped successfully",
-          "Battle of Gravelines: faster English galleons inflicted significant damage on the disordered Spanish fleet",
-          "Drake's 1587 raid on Cadiz delayed the Armada by a year and gave England crucial time to prepare its defences"
-        ]
-      },
-      {
-        "h": "Disagree B – the Spanish plan was unworkable from the start",
-        "agree": false,
-        "pts": [
-          "Parma's 30,000 troops trapped in Netherlands by Dutch flyboats – could never get out to link up with the Armada regardless of Poor communication between commanders",
-          "Plan required impossible coordination across the sea with no direct communication",
-          "Even without English tactics or storms the Armada could not have achieved its objective – defeat was built into the plan itself"
-        ]
-      }
-    ],
-    "name": "Spanish Armada",
-    "hints": [
-      "Fireships",
-      "Drake's raid on Cadiz (1587)"
-    ]
-  },
-  {
-    "paper": "p2b",
-    "type": "16mark",
-    "skill": "How far do you agree",
-    "q": "\"Mary Queen of Scots was executed mainly because of pressure from Elizabeth's Privy Council.\" How far do you agree?",
-    "content": [
-      {
-        "h": "Agree – Privy Council was the decisive factor",
-        "agree": true,
-        "pts": [
-          "Walsingham spent years building the legal case against Mary; allowed Babington Plot to run specifically to obtain written evidence of her guilt",
-          "Bond of Association 1584 pledged the Privy Council to kill anyone who conspired to benefit from Elizabeth's death – made execution automatic",
-          "When Elizabeth signed the warrant, Privy Council rushed it through without waiting for final royal confirmation – they acted on their own initiative"
-        ]
-      },
-      {
-        "h": "Disagree A – Mary's own actions made execution unavoidable",
-        "agree": false,
-        "pts": [
-          "Mary's direct written approval of plans to assassinate Elizabeth gave undeniable evidence; very hard for Elizabeth to refuse to act after this",
-          "Linked to three separate plots over 18 years – Ridolfi, Throckmorton, Babington; her continued existence made every conspiracy possible",
-          "Walsingham could only get the evidence by allowing the plot to run – but Mary's own decision to write approving assassination provided it"
-        ]
-      },
-      {
-        "h": "Disagree B – Elizabeth was more willing than she claimed",
-        "agree": false,
-        "pts": [
-          "Elizabeth had resisted executing Mary after two previous plots – by 1586 she had effectively run out of arguments",
-          "Elizabeth signed the death warrant – the signature was her decision, not the Privy Council's, regardless of what happened afterwards",
-          "Her theatrical display of horror at the execution may have been politically motivated to distance herself from Catholic backlash rather than genuine surprise"
-        ]
-      }
-    ],
-    "name": "Execution of Mary QoS",
-    "hints": [
-      "The Babington Plot (1586)",
-      "Walsingham's spies"
+      "Religion",
+      "Mary, Queen of Scots"
     ]
   },
   {
@@ -2981,40 +2901,120 @@
     "paper": "p2b",
     "type": "16mark",
     "skill": "How far do you agree",
-    "q": "\"Religion was the main reason for the Revolt of the Northern Earls.\" How far do you agree?",
+    "q": "\"Mary Queen of Scots was executed mainly because of pressure from Elizabeth's Privy Council.\" How far do you agree?",
     "content": [
       {
-        "h": "Agree – religion was central to the revolt",
+        "h": "Agree – Privy Council was the decisive factor",
         "agree": true,
         "pts": [
-          "Marched under banner of the Five Wounds of Christ; tore up Protestant prayer books in Durham Cathedral; celebrated Catholic Mass",
-          "Stated aim was to restore Catholicism and remove the Protestant Settlement imposed from the south",
-          "The north had remained more Catholic than the south; religion gave the revolt its popular support among ordinary people"
+          "Walsingham spent years building the legal case against Mary; allowed Babington Plot to run specifically to obtain written evidence of her guilt",
+          "Bond of Association 1584 pledged the Privy Council to kill anyone who conspired to benefit from Elizabeth's death – made execution automatic",
+          "When Elizabeth signed the warrant, Privy Council rushed it through without waiting for final royal confirmation – they acted on their own initiative"
         ]
       },
       {
-        "h": "Disagree A – political grievances drove the earls personally",
+        "h": "Disagree A – Mary's own actions made execution unavoidable",
         "agree": false,
         "pts": [
-          "Earls resented being marginalised by Elizabeth's Protestant advisers, particularly William Cecil",
-          "Traditional families had ruled northern England but had been replaced by Elizabeth's Council of the North – loss of status and power",
-          "Revolt was as much about restoring aristocratic influence as restoring Catholicism – the two were inseparable for the earls"
+          "Mary's direct written approval of plans to assassinate Elizabeth gave undeniable evidence; very hard for Elizabeth to refuse to act after this",
+          "Linked to three separate plots over 18 years – Ridolfi, Throckmorton, Babington; her continued existence made every conspiracy possible",
+          "Walsingham could only get the evidence by allowing the plot to run – but Mary's own decision to write approving assassination provided it"
         ]
       },
       {
-        "h": "Disagree B – Mary Queen of Scots was the catalyst that made rebellion possible",
+        "h": "Disagree B – Elizabeth was more willing than she claimed",
         "agree": false,
         "pts": [
-          "Mary's arrival and imprisonment in the north gave the revolt its specific political objective – placing her on the throne",
-          "Without Mary as an alternative monarch the revolt would have had no clear aim beyond opposing the Settlement",
-          "Revolt planned to free Mary and marry her to the Duke of Norfolk – a political coup that used religious language as justification"
+          "Elizabeth had resisted executing Mary after two previous plots – by 1586 she had effectively run out of arguments",
+          "Elizabeth signed the death warrant – the signature was her decision, not the Privy Council's, regardless of what happened afterwards",
+          "Her theatrical display of horror at the execution may have been politically motivated to distance herself from Catholic backlash rather than genuine surprise"
         ]
       }
     ],
-    "name": "Northern Earls",
+    "name": "Execution of Mary QoS",
     "hints": [
-      "Religion",
-      "Mary, Queen of Scots"
+      "The Babington Plot (1586)",
+      "Walsingham's spies"
+    ]
+  },
+  {
+    "paper": "p2b",
+    "type": "16mark",
+    "skill": "How far do you agree",
+    "q": "\"The decline in Anglo-Spanish relations 1569–85 was mainly due to Elizabeth's actions.\" How far do you agree?",
+    "content": [
+      {
+        "h": "Agree – Elizabeth's actions drove deterioration",
+        "agree": true,
+        "pts": [
+          "Secretly funded and armed Dutch rebels against Philip's rule throughout the 1570s; Treaty of Nonsuch 1585 made this open and official",
+          "Knighted Drake in 1580 after theft of £400,000 of Spanish treasure – open endorsement of acts Philip regarded as acts of war",
+          "Mary Queen of Scots' execution 1587 removed the Catholic alternative to Elizabeth; Philip decided invasion was the only option"
+        ]
+      },
+      {
+        "h": "Disagree A – Philip's own actions also caused deterioration",
+        "agree": false,
+        "pts": [
+          "1584: Treaty of Joinville with French Catholics pledging to destroy Protestantism – Elizabeth was a direct target before Drake's raids escalated",
+          "Philip supported the Ridolfi Plot 1571 – actively sought to overthrow Elizabeth long before war was declared",
+          "Philip's brutal suppression of The Dutch Revolt drove Protestant refugees to England and made English support for Dutch rebels popular and rational"
+        ]
+      },
+      {
+        "h": "Disagree B – religious rivalry was the root cause of deterioration",
+        "agree": false,
+        "pts": [
+          "Spain and England were natural rivals: largest Catholic power vs leading Protestant power; Pope's excommunication 1570 made this official",
+          "Commercial rivalry in the New World was structural – not caused by any individual's actions but by competing imperial ambitions",
+          "Deterioration was gradual and mutual; both sides made choices that worsened relations throughout the period"
+        ]
+      }
+    ],
+    "name": "War with Spain",
+    "hints": [
+      "Sir Francis Drake",
+      "Treaty of Nonsuch (1585)"
+    ]
+  },
+  {
+    "paper": "p2b",
+    "type": "16mark",
+    "skill": "How far do you agree",
+    "q": "\"The Armada was defeated mainly because of the weather rather than English actions.\" How far do you agree?",
+    "content": [
+      {
+        "h": "Agree – weather was decisive",
+        "agree": true,
+        "pts": [
+          "Storms off Ireland and Scotland destroyed over half of the 130 ships – far more destruction than English guns caused",
+          "Spanish captains unfamiliar with northern waters; Philip's rigid orders gave Medina-Sidonia no flexibility when conditions changed drastically",
+          "Medal read \"God blew, and they were scattered\" – Elizabethan contemporaries themselves credited weather"
+        ]
+      },
+      {
+        "h": "Disagree A – English tactics were crucial",
+        "agree": false,
+        "pts": [
+          "Fireships at Calais broke the Spanish crescent formation – without this the Armada might have regrouped successfully",
+          "Battle of Gravelines: faster English galleons inflicted significant damage on the disordered Spanish fleet",
+          "Drake's 1587 raid on Cadiz delayed the Armada by a year and gave England crucial time to prepare its defences"
+        ]
+      },
+      {
+        "h": "Disagree B – the Spanish plan was unworkable from the start",
+        "agree": false,
+        "pts": [
+          "Parma's 30,000 troops trapped in Netherlands by Dutch flyboats – could never get out to link up with the Armada regardless of Poor communication between commanders",
+          "Plan required impossible coordination across the sea with no direct communication",
+          "Even without English tactics or storms the Armada could not have achieved its objective – defeat was built into the plan itself"
+        ]
+      }
+    ],
+    "name": "Spanish Armada",
+    "hints": [
+      "Fireships",
+      "Drake's raid on Cadiz (1587)"
     ]
   },
   {
@@ -3141,46 +3141,6 @@
     "paper": "p2b",
     "type": "16mark",
     "skill": "How far do you agree",
-    "q": "\"Attitudes towards the poor barely changed during Elizabeth's reign.\" How far do you agree?",
-    "content": [
-      {
-        "h": "Agree – core attitudes remained unchanged",
-        "agree": true,
-        "pts": [
-          "Distinction between \"deserving\" and \"undeserving\" poor persisted completely unchanged throughout the reign",
-          "1572 Vagabonds Act: whipping and ear-burning – harsh punitive approach reflecting belief that poverty was a moral failing",
-          "Exaggerated rumours about criminal Vagabonds persisted throughout the reign; popular attitudes never fundamentally changed"
-        ]
-      },
-      {
-        "h": "Disagree A – legislation showed changing official thinking",
-        "agree": false,
-        "pts": [
-          "1576 Act for the Relief of the Poor: Houses of Correction built; local officials required to find work for poor; wealthy required to fund relief",
-          "A shift from pure punishment toward practical support – recognising poverty as a social problem requiring organised response",
-          "The 1576 Act was a genuine departure from the purely punitive approach of the 1572 Vagabonds Act"
-        ]
-      },
-      {
-        "h": "Disagree B – attitudes varied by group and changed gradually",
-        "agree": false,
-        "pts": [
-          "The deserving/undeserving distinction itself showed some compassion – old and disabled recognised as genuinely needing help",
-          "Elizabethan poor law developed across several pieces of legislation (1563, 1572, 1576) – shows evolving thinking, not static attitudes",
-          "To say attitudes \"barely changed\" is too absolute; the 1576 Act's constructive approach was a genuine change from earlier Tudor thinking"
-        ]
-      }
-    ],
-    "name": "Attitudes to poverty",
-    "hints": [
-      "Attitudes to vagrancy",
-      "Act for the Relief of the Poor (1576)"
-    ]
-  },
-  {
-    "paper": "p2b",
-    "type": "16mark",
-    "skill": "How far do you agree",
     "q": "\"Poverty increased during Elizabeth's reign mainly because of changes in agriculture.\" How far do you agree?",
     "content": [
       {
@@ -3215,6 +3175,46 @@
     "hints": [
       "Enclosure",
       "Debasement of the coinage"
+    ]
+  },
+  {
+    "paper": "p2b",
+    "type": "16mark",
+    "skill": "How far do you agree",
+    "q": "\"Attitudes towards the poor barely changed during Elizabeth's reign.\" How far do you agree?",
+    "content": [
+      {
+        "h": "Agree – core attitudes remained unchanged",
+        "agree": true,
+        "pts": [
+          "Distinction between \"deserving\" and \"undeserving\" poor persisted completely unchanged throughout the reign",
+          "1572 Vagabonds Act: whipping and ear-burning – harsh punitive approach reflecting belief that poverty was a moral failing",
+          "Exaggerated rumours about criminal Vagabonds persisted throughout the reign; popular attitudes never fundamentally changed"
+        ]
+      },
+      {
+        "h": "Disagree A – legislation showed changing official thinking",
+        "agree": false,
+        "pts": [
+          "1576 Act for the Relief of the Poor: Houses of Correction built; local officials required to find work for poor; wealthy required to fund relief",
+          "A shift from pure punishment toward practical support – recognising poverty as a social problem requiring organised response",
+          "The 1576 Act was a genuine departure from the purely punitive approach of the 1572 Vagabonds Act"
+        ]
+      },
+      {
+        "h": "Disagree B – attitudes varied by group and changed gradually",
+        "agree": false,
+        "pts": [
+          "The deserving/undeserving distinction itself showed some compassion – old and disabled recognised as genuinely needing help",
+          "Elizabethan poor law developed across several pieces of legislation (1563, 1572, 1576) – shows evolving thinking, not static attitudes",
+          "To say attitudes \"barely changed\" is too absolute; the 1576 Act's constructive approach was a genuine change from earlier Tudor thinking"
+        ]
+      }
+    ],
+    "name": "Attitudes to poverty",
+    "hints": [
+      "Attitudes to vagrancy",
+      "Act for the Relief of the Poor (1576)"
     ]
   },
   {
@@ -3406,6 +3406,43 @@
     "hints": [
       "Cultural changes",
       "Working conditions"
+    ]
+  },
+  {
+    "paper": "p3",
+    "type": "12mark",
+    "skill": "Explain why",
+    "name": "Hitler gains control of DAP",
+    "hints": [
+      "The 25 point programme (1920)",
+      "Hitler's charisma"
+    ],
+    "q": "Explain why Hitler was able to gain control over the German Workers' Party (DAP) in the years 1919-21. (12 marks)",
+    "content": [
+      {
+        "h": "Para 1 – Personal appeal transformed the party",
+        "pts": [
+          "Hitler joined the DAP in 1919 as an army spy – it had just 23 members led by Anton Drexler; he was made head of propaganda and co-wrote the 25 Point Programme (1920) with Drexler outlining nationalist, anti-democratic and anti-Semitic views",
+          "His powerful and charismatic speeches grew membership from 23 (1919) to 3,000 (1920) to 20,000 (1923) – people joined because of Hitler personally, not the party; he was simply too important to the party's growth for Drexler to resist",
+          "By 1921 Hitler challenged Drexler for leadership and won; he surrounded himself with loyal supporters; his personal following made him impossible to remove"
+        ]
+      },
+      {
+        "h": "Para 2 – Improved Nazi messaging",
+        "pts": [
+          "Hitler rebranded the party as NSDAP (1920); introduced the swastika logo and the party newspaper Völkischer Beobachter; the 25 Point Programme gave the party a clear nationalist, anti-Semitic and anti-Weimar identity that had not existed under Drexler",
+          "The messaging was deliberately simple and emotionally powerful – promising to tear up Versailles, destroy Communism and restore German greatness; it appealed directly to the grievances of ordinary Germans humiliated by the Treaty",
+          "Propaganda gave the party a coherent identity that attracted a mass following; Hitler's communications skills transformed the party's public profile entirely"
+        ]
+      },
+      {
+        "h": "Para 3 – Improved Nazi organisation",
+        "pts": [
+          "Hitler set up the SA (Stormtroopers) under Röhm with 800 members by 1922 – gave the party a paramilitary force that could intimidate opponents and protect meetings; the SA projected strength and discipline",
+          "At the Bamberg Conference 1926 Hitler cemented the party as an extremist far-right party and silenced left-wing Nazi leaders – organisational control matched his rhetorical dominance",
+          "Hitler transformed a tiny fringe group of 23 into an organised mass movement of 20,000 in just four years through both personal charisma and systematic party-building"
+        ]
+      }
     ]
   },
   {
@@ -3634,6 +3671,43 @@
     "paper": "p3",
     "type": "12mark",
     "skill": "Explain why",
+    "name": "Goebbels and propaganda",
+    "hints": [
+      "Censorship",
+      "The Berlin Olympics (1936)"
+    ],
+    "q": "Explain why Joseph Goebbels was able to influence the attitudes of the German people in the years 1933-39. (12 marks)",
+    "content": [
+      {
+        "h": "Para 1 – Control of media and propaganda",
+        "pts": [
+          "Goebbels was named head of the Reich Ministry of Public Enlightenment and Propaganda; controlled all public information; all films preceded by 45 minutes of Nazi propaganda; Nazi leaders broadcast on radio with loudspeakers set up on street corners across Germany",
+          "Nuremberg rallies organised each year with 200,000 people and 20,000 flags – carefully staged to project an image of total Nazi power and popular support; Leni Riefenstahl's Triumph of the Will (1934) glorified Nazi power for cinema audiences across the world",
+          "Propaganda was about spreading ideas the Nazis wanted Germans to believe – it was total, relentless and professionally executed; Goebbels understood that repetition and spectacle were more powerful than argument"
+        ]
+      },
+      {
+        "h": "Para 2 – Censorship removed all dissent",
+        "pts": [
+          "Critical newspapers closed; radios specifically designed to block foreign broadcasts; books by Jewish and Communist authors publicly burned in mass events across German cities",
+          "All art, music and films had to be approved – heroes were always Aryan, villains Jewish or Communist; without any alternative viewpoint, propaganda was far more effective as people could not compare Nazi claims to other perspectives",
+          "The combination of total propaganda and total censorship created an information environment where opposition was invisible; self-censorship became widespread as people knew the consequences of dissent"
+        ]
+      },
+      {
+        "h": "Para 3 – Culture and sport normalised Nazi rule",
+        "pts": [
+          "Berlin Olympics 1936 used as a global propaganda showcase – huge stadiums covered in eagles and swastikas; Germany won the most medals; showed the world a strong, modern, confident Germany; Jesse Owens' four gold medals was an embarrassment but Goebbels managed the domestic narrative",
+          "KdF (Strength through Joy) provided leisure activities – concerts, theatre trips, holidays and cruises previously only available to the wealthy; 35 million KdF members by 1936; culture and leisure normalised Nazi rule and created genuine popular enthusiasm that pure political propaganda could not achieve alone",
+          "By embedding Nazi ideology into everyday cultural life – sport, art, music, leisure – Goebbels made support for the regime feel natural rather than coerced; this was arguably his most effective and lasting achievement"
+        ]
+      }
+    ]
+  },
+  {
+    "paper": "p3",
+    "type": "12mark",
+    "skill": "Explain why",
     "q": "Explain why some groups opposed the Nazis in the years 1933–39. (12 marks)",
     "content": [
       {
@@ -3782,117 +3856,6 @@
     "paper": "p3",
     "type": "12mark",
     "skill": "Explain why",
-    "q": "Explain why the lives of Jewish people in Germany changed in the years 1933–39. (12 marks)",
-    "content": [
-      {
-        "h": "Para 1 – Early discrimination from 1933 showed anti-Semitism was central to Nazism",
-        "pts": [
-          "April 1933: national boycott of Jewish shops; SA stood outside to intimidate customers; Jews banned from professions",
-          "This immediate discrimination showed anti-Semitism was central to Nazism from the very start – not a later development",
-          "Propaganda reinforced anti-Semitic stereotypes; books by Jewish authors publicly burned"
-        ]
-      },
-      {
-        "h": "Para 2 – Nuremberg Laws 1935 removed legal status",
-        "pts": [
-          "Stripped Jews of German citizenship; banned from marrying non-Jews; classified as a separate race",
-          "Gave legal backing to discrimination that had previously been informal; Jews were now a legally defined inferior category",
-          "Clear escalation from social and economic discrimination to full legal persecution – a fundamental change"
-        ]
-      },
-      {
-        "h": "Para 3 – Kristallnacht 1938 marked the shift to organised violence",
-        "pts": [
-          "9–10 November 1938: thousands of synagogues and Jewish businesses destroyed; over 100 killed; 30,000 arrested and sent to camps",
-          "Jews fined 1 billion marks for \"the damage\" – showed complete powerlessness of Jews in Nazi Germany by 1938",
-          "Marked shift from legal persecution to organised state violence; a major step on the road to the Holocaust"
-        ]
-      }
-    ],
-    "name": "Jewish persecution",
-    "hints": [
-      "Nuremberg Laws (1935)",
-      "Boycott of shops"
-    ]
-  },
-  {
-    "paper": "p3",
-    "type": "12mark",
-    "skill": "Explain why",
-    "name": "Hitler gains control of DAP",
-    "hints": [
-      "The 25 point programme (1920)",
-      "Hitler's charisma"
-    ],
-    "q": "Explain why Hitler was able to gain control over the German Workers' Party (DAP) in the years 1919-21. (12 marks)",
-    "content": [
-      {
-        "h": "Para 1 – Personal appeal transformed the party",
-        "pts": [
-          "Hitler joined the DAP in 1919 as an army spy – it had just 23 members led by Anton Drexler; he was made head of propaganda and co-wrote the 25 Point Programme (1920) with Drexler outlining nationalist, anti-democratic and anti-Semitic views",
-          "His powerful and charismatic speeches grew membership from 23 (1919) to 3,000 (1920) to 20,000 (1923) – people joined because of Hitler personally, not the party; he was simply too important to the party's growth for Drexler to resist",
-          "By 1921 Hitler challenged Drexler for leadership and won; he surrounded himself with loyal supporters; his personal following made him impossible to remove"
-        ]
-      },
-      {
-        "h": "Para 2 – Improved Nazi messaging",
-        "pts": [
-          "Hitler rebranded the party as NSDAP (1920); introduced the swastika logo and the party newspaper Völkischer Beobachter; the 25 Point Programme gave the party a clear nationalist, anti-Semitic and anti-Weimar identity that had not existed under Drexler",
-          "The messaging was deliberately simple and emotionally powerful – promising to tear up Versailles, destroy Communism and restore German greatness; it appealed directly to the grievances of ordinary Germans humiliated by the Treaty",
-          "Propaganda gave the party a coherent identity that attracted a mass following; Hitler's communications skills transformed the party's public profile entirely"
-        ]
-      },
-      {
-        "h": "Para 3 – Improved Nazi organisation",
-        "pts": [
-          "Hitler set up the SA (Stormtroopers) under Röhm with 800 members by 1922 – gave the party a paramilitary force that could intimidate opponents and protect meetings; the SA projected strength and discipline",
-          "At the Bamberg Conference 1926 Hitler cemented the party as an extremist far-right party and silenced left-wing Nazi leaders – organisational control matched his rhetorical dominance",
-          "Hitler transformed a tiny fringe group of 23 into an organised mass movement of 20,000 in just four years through both personal charisma and systematic party-building"
-        ]
-      }
-    ]
-  },
-  {
-    "paper": "p3",
-    "type": "12mark",
-    "skill": "Explain why",
-    "name": "Goebbels and propaganda",
-    "hints": [
-      "Censorship",
-      "The Berlin Olympics (1936)"
-    ],
-    "q": "Explain why Joseph Goebbels was able to influence the attitudes of the German people in the years 1933-39. (12 marks)",
-    "content": [
-      {
-        "h": "Para 1 – Control of media and propaganda",
-        "pts": [
-          "Goebbels was named head of the Reich Ministry of Public Enlightenment and Propaganda; controlled all public information; all films preceded by 45 minutes of Nazi propaganda; Nazi leaders broadcast on radio with loudspeakers set up on street corners across Germany",
-          "Nuremberg rallies organised each year with 200,000 people and 20,000 flags – carefully staged to project an image of total Nazi power and popular support; Leni Riefenstahl's Triumph of the Will (1934) glorified Nazi power for cinema audiences across the world",
-          "Propaganda was about spreading ideas the Nazis wanted Germans to believe – it was total, relentless and professionally executed; Goebbels understood that repetition and spectacle were more powerful than argument"
-        ]
-      },
-      {
-        "h": "Para 2 – Censorship removed all dissent",
-        "pts": [
-          "Critical newspapers closed; radios specifically designed to block foreign broadcasts; books by Jewish and Communist authors publicly burned in mass events across German cities",
-          "All art, music and films had to be approved – heroes were always Aryan, villains Jewish or Communist; without any alternative viewpoint, propaganda was far more effective as people could not compare Nazi claims to other perspectives",
-          "The combination of total propaganda and total censorship created an information environment where opposition was invisible; self-censorship became widespread as people knew the consequences of dissent"
-        ]
-      },
-      {
-        "h": "Para 3 – Culture and sport normalised Nazi rule",
-        "pts": [
-          "Berlin Olympics 1936 used as a global propaganda showcase – huge stadiums covered in eagles and swastikas; Germany won the most medals; showed the world a strong, modern, confident Germany; Jesse Owens' four gold medals was an embarrassment but Goebbels managed the domestic narrative",
-          "KdF (Strength through Joy) provided leisure activities – concerts, theatre trips, holidays and cruises previously only available to the wealthy; 35 million KdF members by 1936; culture and leisure normalised Nazi rule and created genuine popular enthusiasm that pure political propaganda could not achieve alone",
-          "By embedding Nazi ideology into everyday cultural life – sport, art, music, leisure – Goebbels made support for the regime feel natural rather than coerced; this was arguably his most effective and lasting achievement"
-        ]
-      }
-    ]
-  },
-  {
-    "paper": "p3",
-    "type": "12mark",
-    "skill": "Explain why",
     "name": "Workers' lives",
     "hints": [
       "Removal of Trade Unions",
@@ -3924,6 +3887,43 @@
           "By the late 1930s real wages had fallen; working hours had increased; the war economy revealed the fundamental contradiction between Nazi promises to workers and the realities of an economy being prepared for total war"
         ]
       }
+    ]
+  },
+  {
+    "paper": "p3",
+    "type": "12mark",
+    "skill": "Explain why",
+    "q": "Explain why the lives of Jewish people in Germany changed in the years 1933–39. (12 marks)",
+    "content": [
+      {
+        "h": "Para 1 – Early discrimination from 1933 showed anti-Semitism was central to Nazism",
+        "pts": [
+          "April 1933: national boycott of Jewish shops; SA stood outside to intimidate customers; Jews banned from professions",
+          "This immediate discrimination showed anti-Semitism was central to Nazism from the very start – not a later development",
+          "Propaganda reinforced anti-Semitic stereotypes; books by Jewish authors publicly burned"
+        ]
+      },
+      {
+        "h": "Para 2 – Nuremberg Laws 1935 removed legal status",
+        "pts": [
+          "Stripped Jews of German citizenship; banned from marrying non-Jews; classified as a separate race",
+          "Gave legal backing to discrimination that had previously been informal; Jews were now a legally defined inferior category",
+          "Clear escalation from social and economic discrimination to full legal persecution – a fundamental change"
+        ]
+      },
+      {
+        "h": "Para 3 – Kristallnacht 1938 marked the shift to organised violence",
+        "pts": [
+          "9–10 November 1938: thousands of synagogues and Jewish businesses destroyed; over 100 killed; 30,000 arrested and sent to camps",
+          "Jews fined 1 billion marks for \"the damage\" – showed complete powerlessness of Jews in Nazi Germany by 1938",
+          "Marked shift from legal persecution to organised state violence; a major step on the road to the Holocaust"
+        ]
+      }
+    ],
+    "name": "Jewish persecution",
+    "hints": [
+      "Nuremberg Laws (1935)",
+      "Boycott of shops"
     ]
   }
 ]
