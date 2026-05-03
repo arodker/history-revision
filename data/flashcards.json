@@ -6,32 +6,32 @@
     "front": "How did WWI impact Germany?",
     "p1": "British naval blockade caused mass starvation — 750,000 civilian deaths.",
     "p2": "2 million German soldiers killed; war trebled government debts.",
-    "p3": "Collapse of law and order; Kaiser Wilhelm II forced to abdicate 9 November 1918.",
+    "p3": "Collapse of law and order - Kiel Mutiny saw sailors refusing to follow orders.",
     "hints": [
-      "naval",
-      "soldiers",
-      "Kaiser"
+      "Blockade",
+      "2 million",
+      "Mutiny"
     ]
   },
   {
     "no": 1,
     "paper": "p3",
     "unit": "Unit 1 – Weimar Republic",
-    "front": "Why did Kaiser Wilhelm abdicate?",
-    "p1": "Loss of control over the army and collapse of law and order by late 1918.",
-    "p2": "Armistice signed 11 November 1918 — no Allied soldier had entered Germany, so many Germans refused to believe they were losing.",
-    "p3": "Wilhelm abdicated 9 November 1918; Weimar Republic declared the same day.",
+    "front": "What happened in November 1918?",
+    "p1": "Kaiser Wilhelm had lost control over the army and there was a collapse of law and order by late 1918.",
+    "p2": "Wilhelm abdicated 9 November 1918; Weimar Republic declared the same day by leading politicians.",
+    "p3": "Armistice signed 11 November 1918 — no Allied soldier had entered Germany, so many Germans refused to believe they were losing.",
     "hints": [
-      "Loss",
-      "November",
-      "Weimar"
+      "Control",
+      "Wilhelm",
+      "Armistice"
     ]
   },
   {
     "no": 2,
     "paper": "p3",
     "unit": "Unit 1 – Weimar Republic",
-    "front": "How did Friedrich Ebert create a Weimar Republic?",
+    "front": "How did the Weimar Republic begin?",
     "p1": "Ebert emerged as dominant politician Nov 1918–Jul 1919, reassuring the army and industrialists that communism would not take hold.",
     "p2": "Defeated the Spartacist uprising, proving he could maintain order.",
     "p3": "Weimar Constitution agreed July 1919: President (head of state, elected every 7 years), Chancellor (day-to-day government), Reichstag (directly elected parliament).",
@@ -50,8 +50,8 @@
     "p2": "100,000 workers struck in Berlin and seized government communication offices.",
     "p3": "Ebert sent in Freikorps (far-right ex-soldiers) who crushed the revolt; Luxemburg and Liebknecht were killed.",
     "hints": [
-      "Spartacists",
-      "Berlin",
+      "Luxemburg",
+      "100,000",
       "Freikorps"
     ]
   },
@@ -64,9 +64,9 @@
     "p2": "Government fled to Stuttgart and called for passive resistance — workers went on strike.",
     "p3": "Kapp could not govern and fled after four days; rebellion collapsed.",
     "hints": [
-      "Ebert",
-      "Stuttgart",
-      "Kapp"
+      "Freikorps",
+      "Passive Resistance",
+      "Four days"
     ]
   },
   {
@@ -78,9 +78,9 @@
     "p2": "Proportional representation meant it was hard for one party to control government. Led to 9 unstable coalition governments 1919–23.",
     "p3": "The Weimar Republic was created out of violence in the aftermath of WWI. Violence was always seen as an acceptable part of politics in Germany.",
     "hints": [
-      "Reichstag",
-      "Proportional",
-      "Weimar"
+      "48",
+      "Coalitions",
+      "Violence"
     ]
   },
   {
@@ -90,11 +90,11 @@
     "front": "What were the strengths of the Weimar Constitution?",
     "p1": "All men and women had equal voting rights.",
     "p2": "Power was divided between the President, Chancellor, and Reichstag to avoid one person having too much power.",
-    "p3": "Proportional Representation made it much easier for small parties to get seats and a foothold in the Reichstag than in Britain or America.",
+    "p3": "Proportional Representation meant that everyone's vote had equal weight unlike in the First Past the Post systems of Britain or America.",
     "hints": [
-      "women",
-      "President",
-      "Representation"
+      "Equal",
+      "Power",
+      "Proportional"
     ]
   },
   {
@@ -102,13 +102,13 @@
     "paper": "p3",
     "unit": "Unit 1 – Weimar Republic",
     "front": "What were the terms of the Treaty of Versailles?",
-    "p1": "Army limited to 100,000 men; no air force; navy severely restricted. £6.6 billion reparations.",
-    "p2": "Germany lost 13% of land including the Rhineland (demilitarised) and the Polish Corridor.",
-    "p3": "War Guilt Clause (Article 231) forced Germany to accept 100% of the blame for WWI.",
+    "p1": "Army limited to 100,000 men; no air force; navy severely restricted. Rhineland on border with France demilitarised.",
+    "p2": "Germany lost 13% of land including Alsace-Lorraine (to France), all colonies, and the Polish Corridor.",
+    "p3": "War Guilt Clause (Article 231) forced Germany to accept 100% of the blame for WWI. Had to pay £6.6 billion reparations.",
     "hints": [
       "Army",
-      "Rhineland",
-      "Guilt"
+      "Land",
+      "Reparations"
     ]
   },
   {
@@ -134,9 +134,9 @@
     "p2": "German government called a general strike in the Ruhr; loss of production caused shortages and unemployment.",
     "p3": "Government printed money to pay striking workers, causing a vicious cycle of inflation — a loaf of bread cost 1 mark in 1919 and 200,000 billion marks by 1923.",
     "hints": [
-      "France",
       "Ruhr",
-      "printed"
+      "Strike",
+      "Printed"
     ]
   },
   {
@@ -144,13 +144,13 @@
     "paper": "p3",
     "unit": "Unit 1 – Weimar Republic",
     "front": "What was the impact of Hyperinflation?",
-    "p1": "Collapse of society; mass shortages as foreign suppliers refused to accept German marks.",
-    "p2": "Middle-class savings wiped out overnight.",
-    "p3": "Loss of trust in the Weimar government, which was seen as unable to manage the economy.",
+    "p1": "Collapse of society; mass shortages as foreign suppliers refused to accept German marks. People cannot afford basic goods.",
+    "p2": "Middle-class savings wiped out overnight. Pensions also become worthless.",
+    "p3": "Loss of trust in the Weimar government, which was seen as unable to manage the economy. Hitler attempted Munich Putsch during Hyperinflation.",
     "hints": [
       "Collapse",
-      "Middle-class",
-      "Weimar"
+      "Savings",
+      "Putsch"
     ]
   },
   {
@@ -158,7 +158,7 @@
     "paper": "p3",
     "unit": "Unit 1 – Weimar Republic",
     "front": "How did Stresemann stabilise Germany's economy?",
-    "p1": "1923: Rentenmark introduced to replace the worthless mark and end hyperinflation.",
+    "p1": "1923: Rentenmark introduced to replace the worthless mark and end hyperinflation. Later strengthened to Reichsmark.",
     "p2": "1924: Dawes Plan — reparations reduced to £50 million/year; USA began $2.5 billion in loans to Germany.",
     "p3": "1929: Young Plan reduced total reparations to £2 billion and extended the deadline to 1988.",
     "hints": [
@@ -176,7 +176,7 @@
     "p2": "1926: Germany admitted to the League of Nations — accepted back into the international community.",
     "p3": "1928: Kellogg-Briand Pact — 61 nations agreed to renounce war as a tool of foreign policy.",
     "hints": [
-      "Pact",
+      "Locarno",
       "League",
       "Kellogg-Briand"
     ]
@@ -190,9 +190,9 @@
     "p2": "Election of war hero Paul von Hindenburg as President in 1925 increased nationalist support for the republic.",
     "p3": "But German economy dangerously reliant on American loans; underlying mistrust of government remained.",
     "hints": [
-      "Support",
-      "Paul",
-      "American"
+      "Extremist",
+      "Hindenburg",
+      "Loans"
     ]
   },
   {
@@ -204,9 +204,9 @@
     "p2": "Average working week fell from 50 to 46 hours; wages rose 25% by late 1920s.",
     "p3": "Government built 100,000 new homes to ease housing shortage; 4% unemployment rate by 1924.",
     "hints": [
-      "Unemployment",
-      "Average",
-      "built"
+      "Benefit",
+      "Wages",
+      "Homes"
     ]
   },
   {
@@ -219,8 +219,8 @@
     "p3": "Women paid on average 33% less than men; the 'new woman' challenged gendered social norms.",
     "hints": [
       "Reichstag",
-      "traditional",
-      "Women"
+      "jobs",
+      "New Woman"
     ]
   },
   {
@@ -232,9 +232,9 @@
     "p2": "Architecture: Bauhaus movement. Film: Fritz Lang's Metropolis; stardom of Marlene Dietrich.",
     "p3": "Art: Otto Dix painted expressionist works highly critical of German society.",
     "hints": [
-      "European",
+      "avant-garde",
       "Bauhaus",
-      "Otto"
+      "Dix"
     ]
   },
   {
@@ -246,9 +246,9 @@
     "p2": "Hitler became attracted to the DAP's ideas and joined in 1919.",
     "p3": "Within two years Hitler had taken control of the DAP and transformed it into the Nazi Party (NSDAP).",
     "hints": [
-      "Hitler",
-      "DAP's",
-      "Nazi"
+      "Spy",
+      "ideas",
+      "NSDAP"
     ]
   },
   {
@@ -260,8 +260,8 @@
     "p2": "Created party structure: permanent Munich office, swastika logo, Volkischer Beobachter newspaper; brought in Hess, Göring, Streicher, Röhm.",
     "p3": "August 1921: formed the SA (Sturmabteilung) — brownshirted ex-soldiers who intimidated opposition with violence.",
     "hints": [
-      "Programme",
-      "Munich",
+      "25",
+      "structure",
       "Sturmabteilung"
     ]
   },
@@ -274,9 +274,9 @@
     "p2": "Inspired by Mussolini's fascist March on Rome in 1922; boosted by support of war hero Ludendorff.",
     "p3": "1923 context: Ruhr occupation and hyperinflation made Weimar Republic deeply unpopular — moment seemed right.",
     "hints": [
-      "Hitler",
-      "Mussolini's",
-      "Ruhr"
+      "50,000",
+      "Mussolini",
+      "Weimar"
     ]
   },
   {
@@ -288,9 +288,9 @@
     "p2": "Ludendorff mistakenly allowed von Kahr to leave; Kahr alerted the government in Berlin.",
     "p3": "9 November: army crushed the Putsch; 16 Nazis killed. Hitler arrested.",
     "hints": [
-      "Hitler",
+      "beer hall",
       "Kahr",
-      "Putsch"
+      "16"
     ]
   },
   {
@@ -302,9 +302,9 @@
     "p2": "Hitler used his defence speech to gain national publicity; wrote Mein Kampf in prison outlining Nazi ideology.",
     "p3": "Hitler concluded direct revolution had failed — decided to win power through elections instead.",
     "hints": [
-      "Hitler",
-      "Mein",
-      "concluded"
+      "Landsberg",
+      "Publicity",
+      "Elections"
     ]
   },
   {
@@ -314,11 +314,11 @@
     "front": "How did the Nazis reorganise in the 1920s?",
     "p1": "Party ban lifted 1925; spread nationwide — each region (Gau) led by a Gauleiter.",
     "p2": "SA grew to 400,000 by 1930; Hitler established personal bodyguard (SS) led by Heinrich Himmler.",
-    "p3": "1926 Bamberg Conference: Hitler redirected party to nationalism, abandoned socialist policies; won over Goebbels.",
+    "p3": "1926 Bamberg Conference: Hitler redirected party to far-right nationalism, abandoned socialist policies; won over Goebbels.",
     "hints": [
       "Gauleiter",
-      "Hitler",
-      "Conference"
+      "SS",
+      "Bamberg"
     ]
   },
   {
@@ -330,7 +330,7 @@
     "p2": "Germany's improved international standing (League of Nations, Locarno) cut support for nationalist parties.",
     "p3": "Election of Hindenburg as President in 1925 increased support for the republic among nationalists.",
     "hints": [
-      "Weimar",
+      "2.6%",
       "League",
       "Hindenburg"
     ]
@@ -345,7 +345,7 @@
     "p3": "Savings lost in banking crisis; homelessness surged; 24% increase in theft in Berlin.",
     "hints": [
       "loans",
-      "Mass",
+      "6 milloin",
       "Berlin"
     ]
   },
@@ -355,12 +355,12 @@
     "unit": "Unit 2 – Hitler's Rise",
     "front": "How did the Great Depression affect the Nazis?",
     "p1": "Nazis rose from 2.6% (1928) to 37% of the vote and 230 seats by July 1932 — largest party in Reichstag.",
-    "p2": "Economic desperation drove millions to extremes; fear of communism drove middle and upper classes to the Nazis.",
-    "p3": "Nazi policies had broad appeal: 'Work and Bread' for workers; anti-communism for the middle class; protection of land for farmers.",
+    "p2": "Economic desperation drove millions to extremist ideas - Weimar was failing to deal with the crisis so support for moderates collapsed.",
+    "p3": "Communists (KPD) also became popular - terrifyed the wealthy who bankrolled the Nazis as their only hope.",
     "hints": [
-      "July",
-      "Nazis",
-      "Bread'"
+      "230",
+      "extremist",
+      "KPD'"
     ]
   },
   {
@@ -370,11 +370,11 @@
     "front": "How did the Nazis use propaganda to gain support 1929–32?",
     "p1": "Goebbels ran 120 newspapers; ensured Nazi message spread via radio and eye-catching posters across Germany.",
     "p2": "Hitler held rallies across Germany, travelling to 5 cities in one day by plane — projected image of a modern saviour.",
-    "p3": "SA disrupted communist meetings and street-fought the KPD's Red Front Fighters — projected power and order.",
+    "p3": "Nazi policies had broad appeal: 'Work and Bread' for workers; anti-communism for the middle class; protection of land for farmers.",
     "hints": [
-      "Nazi",
-      "Hitler",
-      "KPD's"
+      "Newspapers",
+      "Plane",
+      "Work and Bread's"
     ]
   },
   {
@@ -382,13 +382,13 @@
     "paper": "p3",
     "unit": "Unit 2 – Hitler's Rise",
     "front": "Why did Hindenburg make Hitler Chancellor?",
-    "p1": "Chancellor Brüning resigned May 1932; von Papen and von Schleicher both failed to command Reichstag authority.",
-    "p2": "Von Schleicher threatened to make himself head of a military dictatorship — risking civil war.",
-    "p3": "January 1933: von Papen convinced Hindenburg to make Hitler Chancellor with von Papen as Vice Chancellor, believing Hitler could be controlled. Hindenburg reluctantly agreed.",
+    "p1": "Chancellor Brüning resigned May 1932; Hitler was head of largest party but Hindenburg refused to make him Chancellor.",
+    "p2": "Hindenburg appointed von Papen and then von Schleicher - both failed to control Reichstag without Nazi support. Von Schleicher threatened military dictatorship.",
+    "p3": "January 1933: von Papen convinced Hindenburg to make Hitler Chancellor with von Papen as Vice Chancellor, believing Hitler could be a mouse in his pocket. Hindenburg reluctantly agreed.",
     "hints": [
-      "Papen",
-      "Schleicher",
-      "Hindenburg"
+      "Brüning",
+      "Reichstag",
+      "von Papen"
     ]
   },
   {
@@ -397,12 +397,12 @@
     "unit": "Unit 3 – Nazi Control",
     "front": "How did the Reichstag Fire increase Hitler's power?",
     "p1": "27 February 1933: Reichstag set fire by Dutch communist Marinus van der Lubbe.",
-    "p2": "Hitler used it to claim communist conspiracy; 4,000 communists arrested that night.",
-    "p3": "Pressured Hindenburg to declare a state of emergency — Decree for the Protection of People and State gave Hitler power to imprison opponents and ban communist newspapers.",
+    "p2": "Hitler convinced Hindenburg to declare a state of emergency — Decree for the Protection of People and State gave Hitler power to imprison opponents and ban communist newspapers.",
+    "p3": "4,000 communists arrested that night. 81 communists removed from Reichstag giving Nazis 2/3 majority.",
     "hints": [
-      "Reichstag",
-      "Hitler",
-      "Hindenburg"
+      "der Lubbe",
+      "Hindenburg",
+      "4,000"
     ]
   },
   {
@@ -410,13 +410,13 @@
     "paper": "p3",
     "unit": "Unit 3 – Nazi Control",
     "front": "How did the Enabling Act increase Hitler's power?",
-    "p1": "March 1933 election: campaign of fear and SA violence; Nazis won 288 seats; communists banned from taking their 81 seats.",
-    "p2": "With von Papen's Centre Party support Hitler had a 2/3 majority — enough to change the constitution.",
-    "p3": "Enabling Act passed 444–94 (under threat of SA violence): gave Hitler right to make laws without the Reichstag — end of the Weimar Republic.",
+    "p1": "March 1933 election: campaign of fear and SA violence; Nazis won 288 seats; Hitler had 2/3 majority - enough to change constitution.",
+    "p2": "Enabling Act passed: give Hitler right to make laws without the Reichstag - end of Weimar democarcy.",
+    "p3": "Hitler used Enabling Act to ban Trade Unions, all other political parties and local governments (länder).",
     "hints": [
-      "Nazis",
-      "Papen's",
-      "Hitler"
+      "2/3",
+      "Laws",
+      "Ban"
     ]
   },
   {
@@ -424,13 +424,13 @@
     "paper": "p3",
     "unit": "Unit 3 – Nazi Control",
     "front": "Why was Hitler worried about Ernst Röhm's power in 1934?",
-    "p1": "Röhm commanded 3 million SA men loyal to him personally — a dangerous rival power base.",
+    "p1": "Röhm commanded 3 million SA men loyal to him personally — a dangerous rival power base. Röhm publically critical of Hitler.",
     "p2": "Röhm favoured a socialist direction opposed to Hitler's policies; the army leadership felt threatened by the SA.",
     "p3": "The violent SA made Nazis look like thugs; SS leaders Himmler and Heydrich resented Röhm and wanted him removed.",
     "hints": [
-      "commanded",
-      "Hitler's",
-      "Nazis"
+      "3 million",
+      "Socialist",
+      "Thugs"
     ]
   },
   {
@@ -439,12 +439,12 @@
     "unit": "Unit 3 – Nazi Control",
     "front": "How did the Night of the Long Knives increase Hitler's power?",
     "p1": "30 June 1934: Röhm and approximately 400 other critics within the Nazi Party were murdered.",
-    "p2": "Göring legalised the killings at a press conference; SA placed firmly under Hitler's control.",
-    "p3": "Army and conservatives reassured — Hitler now had the loyalty of the military leadership.",
+    "p2": "Other enemies are removed including Von Kahr and Strasser who had crossed Hitler in 1920s.",
+    "p3": "After Night of Long Knives, no one else in Nazi party would dare oppose Hitler - creates deterrence.",
     "hints": [
-      "Nazi",
-      "Hitler's",
-      "Hitler"
+      "400",
+      "enemies",
+      "deterrence"
     ]
   },
   {
@@ -453,12 +453,12 @@
     "unit": "Unit 3 – Nazi Control",
     "front": "How did the death of Hindenburg increase Hitler's power?",
     "p1": "2 August 1934: Hindenburg died aged 87.",
-    "p2": "Hitler declared himself Führer — combining the roles of Chancellor and President.",
-    "p3": "90% approved in a referendum; the army swore a personal oath of loyalty to Hitler — power was now absolute.",
+    "p2": "Hitler declared himself Führer — combining the roles of Chancellor and President. 90% approved in a referendum.",
+    "p3": "The army swore a personal oath of loyalty to Hitler, not the republic — power was now absolute.",
     "hints": [
-      "Hindenburg",
-      "Chancellor",
-      "Hitler"
+      "87",
+      "Führer",
+      "army"
     ]
   },
   {
@@ -470,9 +470,9 @@
     "p2": "The Gestapo – Secret police ran by Reinhard Heydrich. Relied on a network of informers. 30,000 agents but rumours spread there was one on every corner. SD also listened in on peoples' phonecalls.",
     "p3": "All courts and police had to be completely loyal to Hitler. Most serious cases were tried at the People's Court with no jury and no right to appeal. 534 were sentenced to death by 1939.",
     "hints": [
-      "Heinrich",
+      "SS",
       "Gestapo",
-      "Hitler"
+      "Courts"
     ]
   },
   {
@@ -484,8 +484,8 @@
     "p2": "Film used to promote Nazi messages — Leni Riefenstahl directed Triumph of the Will glorifying Hitler.",
     "p3": "Berlin Olympics 1936 used as a global propaganda showcase; Germany topped the medal table.",
     "hints": [
-      "People's",
-      "Nazi",
+      "Radio",
+      "Film",
       "Olympics"
     ]
   },
@@ -499,8 +499,8 @@
     "p3": "Jazz banned; Jewish composers like Mendelssohn forbidden; focus on German classical music — Beethoven, Bach, Wagner.",
     "hints": [
       "Newspapers",
-      "writers",
-      "Jewish"
+      "burned",
+      "music"
     ]
   },
   {
@@ -512,9 +512,9 @@
     "p2": "July 1933 Concordat with Pope Pius XI: Catholic priests would not be political; Hitler would not interfere with Catholic schools (he later did anyway).",
     "p3": "Pope publicly criticised Hitler in 1937; Catholic schools brought into line with Nazi schools; Catholic priests harassed and arrested throughout the 1930s.",
     "hints": [
-      "Church",
+      "Reich Church",
       "Concordat",
-      "Hitler"
+      "Catholic"
     ]
   },
   {
@@ -527,8 +527,8 @@
     "p3": "Opposition was limited — no direct political action, small numbers, motives mainly cultural rather than political.",
     "hints": [
       "Pirates",
-      "Youth",
-      "Opposition"
+      "Swing",
+      "Small numbers"
     ]
   },
   {
@@ -540,9 +540,9 @@
     "p2": "Confessing Church: 6,000 pastors joined in opposition to Nazi interference; 2,000 remained in the Reich Church.",
     "p3": "Opposition largely crushed: 800 priests sent to camps; Niemöller arrested for treason in 1937 and sent to a concentration camp.",
     "hints": [
-      "Emergency",
-      "Church",
-      "Niem"
+      "Niemöller",
+      "Confessing",
+      "800"
     ]
   },
   {
@@ -551,12 +551,12 @@
     "unit": "Unit 3 – Nazi Control",
     "front": "Did ordinary Germans conform with the Nazis?",
     "p1": "Most Germans outwardly conformed due to fear of the Gestapo and social pressure — one informer could destroy a family.",
-    "p2": "Many genuinely supported Hitler, especially after economic recovery and Armada-style national events like the 1936 Olympics.",
+    "p2": "Many genuinely supported Hitler, especially after economic recovery and style national events like the 1936 Olympics.",
     "p3": "Private dissent existed — SD reports noted complaints about falling wages and food shortages — but open resistance was rare and dangerous.",
     "hints": [
-      "Germans",
-      "Hitler",
-      "Private"
+      "fear",
+      "supported",
+      "complaints"
     ]
   },
   {
@@ -568,9 +568,9 @@
     "p2": "Believed women's role was the 3 Ks: Kinder (children), Küche (kitchen), Kirche (church).",
     "p3": "Aimed to reverse women's entry into the workforce and increase the German birth rate to build a 1,000-year Reich.",
     "hints": [
-      "Weimar",
-      "Kinder",
-      "Reich"
+      "new woman",
+      "3 Ks",
+      "birth rate"
     ]
   },
   {
@@ -580,11 +580,11 @@
     "front": "What were Nazi policies towards women?",
     "p1": "Law for the Encouragement of Marriage (1933): loans of 1,000 marks to couples who married — only if women stopped work; quarter written off per child born.",
     "p2": "Mother's Cross: encouraged childbirth (4 children=bronze, 6=silver, 8=gold); Hitler Youth saluted gold medallists.",
-    "p3": "1933: women banned from being teachers, doctors, civil servants. 1936: no woman could be a judge or lawyer. By 1937 reversed — women pushed back into factories for war preparation.",
+    "p3": "Job restrictions - 1933: women banned from being teachers, doctors, civil servants. 1936: no woman could be a judge or lawyer. By 1937 reversed — women pushed back into factories for war preparation.",
     "hints": [
-      "Encouragement",
+      "loans",
       "Cross",
-      "women"
+      "job"
     ]
   },
   {
@@ -593,12 +593,12 @@
     "unit": "Unit 4 – Life in Nazi Germany",
     "front": "How did the Nazis change education?",
     "p1": "1933: teachers had to swear loyalty to Hitler and join the Nazi Teachers' League; lessons began with 'Heil Hitler' salute.",
-    "p2": "Curriculum altered: race studies compulsory; PE doubled; history textbooks rewritten to promote Dolchstoss myth and anti-Semitism; Mein Kampf compulsory.",
+    "p2": "Curriculum altered: race studies compulsory; PE 4 hours a day; history textbooks rewritten to promote Dolchstoss myth and anti-Semitism; Mein Kampf compulsory.",
     "p3": "Girls taught cooking and needlework; all textbooks approved by the Nazis; 1933 — teachers who didn't comply could be sacked.",
     "hints": [
-      "Hitler",
-      "Dolchstoss",
-      "Nazis"
+      "Teachers",
+      "Curriculum",
+      "Girls"
     ]
   },
   {
@@ -612,7 +612,7 @@
     "hints": [
       "Youth",
       "Maidens",
-      "Nazis"
+      "1,000"
     ]
   },
   {
@@ -620,13 +620,13 @@
     "paper": "p3",
     "unit": "Unit 4 – Life in Nazi Germany",
     "front": "How did the Nazis reduce unemployment?",
-    "p1": "German Labour Service (RAD, 1933): paid public work schemes — roads, tree planting, drainage; compulsory from 1935 for 6 months for all young men.",
-    "p2": "Autobahns: 7,000-mile motorway network; 125,000 men employed in construction by 1935.",
-    "p3": "Rearmament: defied ToV — 1.36 million men in army by 1939; arms factories producing tanks, aircraft and guns created mass employment. Unofficial unemployment hidden by excluding women, Jews and part-time workers from statistics.",
+    "p1": "German Labour Service (RAD, 1933): paid public work schemes. Compulsory from 1935 for 6 months for all young men. 7,000km of Autobahn (motorway) miles built.",
+    "p2": "Rearmament: defied ToV — 1.36 million men in army by 1939; arms factories producing tanks, aircraft and guns created mass employment.",
+    "p3": "Unofficial unemployment hidden by excluding women, Jews and part-time workers from statistics.",
     "hints": [
-      "Labour",
-      "Autobahns",
-      "Unofficial"
+      "RAD",
+      "Rearmament",
+      "Rearmament"
     ]
   },
   {
@@ -638,9 +638,9 @@
     "p2": "KdF (Strength through Joy): provided leisure — cinema, sports, foreign travel; KdF Wagon (VW Beetle) promised to workers for 5 marks/week — none ever delivered, factories used for armaments.",
     "p3": "SdA (Beauty of Labour): improved workplace facilities like toilets and canteens — but workers had to do the building themselves with no extra pay.",
     "hints": [
-      "Labour",
-      "Strength",
-      "Beauty"
+      "trade unions",
+      "leisure",
+      "facilities"
     ]
   },
   {
@@ -650,11 +650,11 @@
     "front": "What were Nazi beliefs about race?",
     "p1": "Eugenics: belief that humans should be selectively bred to produce the 'ideal' Aryan human — forced evolution.",
     "p2": "Racial Hygiene: belief in the superiority of the Aryan race; races should be kept separate.",
-    "p3": "Anti-Semitism: long-established racist beliefs against Jews given legal force under the Nazis.",
+    "p3": "Anti-Semitism: long-established racist beliefs against Jews given legal force under the Nazis. Nazis believed Jewish politicians were behind Dolschstoss (incorrectly).",
     "hints": [
-      "Aryan",
+      "Eugenics",
       "Hygiene",
-      "Jews"
+      "Anti-Semitism"
     ]
   },
   {
@@ -666,9 +666,9 @@
     "p2": "1935: Nuremberg Laws — stripped Jews of German citizenship; banned from marrying non-Jews; required to wear yellow star.",
     "p3": "Jews also banned from inheriting land, serving in the army, and many professions; Nazi propaganda portrayed Jews as subhuman.",
     "hints": [
-      "Jewish",
-      "Laws",
-      "Nazi"
+      "boycott",
+      "Nuremburg",
+      "propaganda"
     ]
   },
   {
@@ -681,8 +681,8 @@
     "p3": "SA, SS and ordinary Germans participated; Jews then fined 1 billion marks for 'the damage' — arrested when they couldn't pay.",
     "hints": [
       "Paris",
-      "Jewish",
-      "Germans"
+      "Synagogues",
+      "ordinary Germans"
     ]
   },
   {
