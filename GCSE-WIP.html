@@ -493,7 +493,7 @@ function pickPaper(p) {
   document.getElementById('k-out').innerHTML = '';
   updateNavUI();
   updateProgressBar();
-  if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
+  updateExamDirectory();
   // Update hub badge
   // Apply paper stripe to mode buttons
   document.querySelectorAll('.mode-btn').forEach(btn => {
@@ -555,7 +555,7 @@ function setMode(m) {
   document.getElementById('d-go').style.display = 'block';
   updateFlagBar();
   if (m === 'knowledge') { if (!kPool.length && !learntCards.size) buildKPool(); updateNavUI(); }
-  if (m === 'exam') if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
+  if (m === 'exam') updateExamDirectory();
   if (m === 'dates') {
     const hardBtn = document.getElementById('d-hard');
     if (hardBtn) {
@@ -1026,12 +1026,579 @@ function jumpToCard() {
   }
 }
 // ═══════════════════════════════════════════
-// RAPID FIRE DATA (sample — expand with full PDF data)
+// RAPID FIRE DATA
 // difficulty: 'easy' | 'medium' | 'hard'
 // ═══════════════════════════════════════════
 let RQ = []; // loaded from data/rq.json
-let EQ = []; // loaded from data/eq.json
-let DATES = []; // loaded from data/dates.json
+
+// ── Mixed Retrieval Quiz state ──
+let rqPapers = {p1:true, p2a:true, p2b:true, p3:true};
+let rqDiff = 2; // single value: 1=easy only, 2=easy+medium, 3=all
+let rqMode = 'grid'; // 'grid' or 'one'
+let rqOnePool = [], rqOneIdx = 0, rqOneOK = 0, rqOneBad = 0, rqOneMissed = [], rqOneStreak = 0;
+let rqInProgress = false; // tracks if a quiz is mid-session
+let rqInProgressMode = 'grid';
+
+function setRQMode(m) {
+  rqMode = m;
+  document.getElementById('rq-mode-grid').classList.toggle('sel', m === 'grid');
+  document.getElementById('rq-mode-one').classList.toggle('sel', m === 'one');
+}
+
+function rqBackToSetup() {
+  document.getElementById('rq-setup').style.display = 'block';
+  document.getElementById('rq-out').style.display = 'none';
+  document.getElementById('rq-one').style.display = 'none';
+  document.getElementById('rq-one-end').style.display = 'none';
+  document.getElementById('rq-one-card').style.display = 'block';
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) printBtn.style.display = 'none';
+}
+
+function rqOneReveal() {
+  document.getElementById('rq-one-reveal').style.display = 'block';
+  document.getElementById('rq-one-tap').style.display = 'none';
+}
+
+function rqOneAnswer(correct) {
+  if (correct) {
+    rqOneOK++;
+    rqOneStreak++;
+  } else {
+    rqOneBad++;
+    rqOneStreak = 0;
+    rqOneMissed.push(rqOnePool[rqOneIdx]);
+  }
+  rqOneIdx++;
+  rqOneNext();
+}
+
+function rqOneNext() {
+  if (rqOneIdx >= rqOnePool.length) { rqOneEnd(); return; }
+  const q = rqOnePool[rqOneIdx];
+  const total = rqOnePool.length;
+  const pct = Math.round((rqOneIdx / total) * 100);
+  document.getElementById('rq-one-prog').style.width = pct + '%';
+  document.getElementById('rq-one-hdr').textContent = `Question ${rqOneIdx + 1} of ${total}`;
+  document.getElementById('rq-one-ok').textContent = `✓ ${rqOneOK}`;
+  document.getElementById('rq-one-bad').textContent = `✗ ${rqOneBad}`;
+  const streakEl = document.getElementById('rq-one-streak');
+  if (streakEl) streakEl.textContent = rqOneStreak >= 3 ? `🔥 ${rqOneStreak}` : '';
+  document.getElementById('rq-one-q').textContent = q.q;
+  const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
+  const stripe = document.getElementById('rq-one-stripe');
+  if (stripe) stripe.style.background = colours[q.paper] || '#ddd';
+  document.getElementById('rq-one-a').textContent = q.a;
+  document.getElementById('rq-one-reveal').style.display = 'none';
+  document.getElementById('rq-one-tap').style.display = 'block';
+}
+
+function rqOneEnd() {
+  rqInProgress = false;
+  document.getElementById('rq-one-card').style.display = 'none';
+  const total = rqOnePool.length;
+  const pct = Math.round((rqOneOK / total) * 100);
+  document.getElementById('rq-one-score').textContent = `${rqOneOK} of ${total} correct`;
+  const rqMsg = pct === 100 ? 'Perfect score! Every question nailed. 🏆'
+    : pct >= 80 ? 'Excellent — almost perfect! 🎯'
+    : pct >= 60 ? 'Good effort, keep at the tricky ones. ⭐'
+    : pct >= 40 ? 'A solid start — retry the missed ones. 📚'
+    : 'Keep drilling — it gets easier. 💪';
+  document.getElementById('rq-one-msg').textContent = rqMsg;
+  const missedList = document.getElementById('rq-one-missed-list');
+  if (rqOneMissed.length) {
+    missedList.innerHTML = '<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem">Missed:</div>' +
+      rqOneMissed.map(q => `<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.4rem .6rem;margin-bottom:.3rem;font-size:.82rem"><strong>${q.q}</strong><br><span style="color:var(--muted)">${q.a}</span></div>`).join('');
+    document.getElementById('rq-retry-btn').style.display = 'block';
+  } else {
+    missedList.innerHTML = '';
+    document.getElementById('rq-retry-btn').style.display = 'none';
+  }
+  document.getElementById('rq-one-end').style.display = 'block';
+}
+
+function rqRetryMissed() {
+  rqOnePool = shuffle([...rqOneMissed]);
+  rqOneIdx = 0; rqOneOK = 0; rqOneBad = 0; rqOneMissed = []; rqOneStreak = 0;
+  document.getElementById('rq-one-end').style.display = 'none';
+  document.getElementById('rq-one-card').style.display = 'block';
+  rqOneNext();
+}
+
+function showRapidSetup() {
+  showScreen('s-rapid');
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) printBtn.style.display = 'none';
+  document.getElementById('rq-setup').style.display = 'block';
+  document.getElementById('rq-out').style.display = 'none';
+  document.getElementById('rq-one').style.display = 'none';
+  document.getElementById('rq-err').style.display = 'none';
+  // Show resume button if quiz in progress
+  const resumeBtn = document.getElementById('rq-resume-btn');
+  if (resumeBtn) resumeBtn.style.display = rqInProgress ? 'block' : 'none';
+  ['p1','p2a','p2b','p3'].forEach(p => {
+    const btn = document.getElementById('rqp-' + p);
+    if (rqPapers[p]) btn.classList.add('on-' + p);
+    else btn.classList.remove('on-' + p);
+  });
+  [1,2,3].forEach(i => {
+    document.getElementById('rqs-' + i).classList.toggle('sel', i === rqDiff);
+  });
+  updateRQCounter();
+}
+
+function resumeRQ() {
+  document.getElementById('rq-setup').style.display = 'none';
+  document.getElementById('rq-out').style.display = rqInProgressMode === 'grid' ? 'block' : 'none';
+  document.getElementById('rq-one').style.display = rqInProgressMode === 'one' ? 'block' : 'none';
+  if (rqInProgressMode === 'grid') {
+    const pb = document.getElementById('print-btn');
+    if (pb) pb.style.display = 'inline-block';
+  }
+}
+
+function toggleRQPaper(p) {
+  rqPapers[p] = !rqPapers[p];
+  const btn = document.getElementById('rqp-' + p);
+  if (rqPapers[p]) {
+    btn.classList.add('on-' + p);
+  } else {
+    btn.classList.remove('on-' + p);
+  }
+  updateRQCounter();
+}
+
+function setRQDiff(n) {
+  rqDiff = n;
+  [1,2,3].forEach(i => document.getElementById('rqs-' + i).classList.toggle('sel', i === n));
+  updateRQCounter();
+}
+
+function updateRQCounter() {
+  const activePapers = Object.keys(rqPapers).filter(p => rqPapers[p]);
+  const allowed = ['easy'];
+  if (rqDiff >= 2) allowed.push('medium');
+  if (rqDiff >= 3) allowed.push('hard');
+  const count = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d)).length;
+  const counter = document.getElementById('rq-counter');
+  if (counter) counter.textContent = count >= 10 ? count + ' questions available' : count > 0 ? count + ' questions (need at least 10)' : '';
+  const goBtn = document.getElementById('rq-go');
+  if (goBtn) {
+    const ready = count >= 10;
+    goBtn.style.background = ready ? '#555' : 'var(--subtle)';
+    goBtn.style.color = ready ? '#fff' : 'var(--muted)';
+    goBtn.style.cursor = ready ? 'pointer' : 'not-allowed';
+  }
+}
+
+function generateRQ() {
+  const activePapers = Object.keys(rqPapers).filter(p => rqPapers[p]);
+  if (!activePapers.length) {
+    document.getElementById('rq-err').style.display = 'block';
+    document.getElementById('rq-err').textContent = 'Please select at least one paper.';
+    return;
+  }
+  const allowed = ['easy'];
+  if (rqDiff >= 2) allowed.push('medium');
+  if (rqDiff >= 3) allowed.push('hard');
+  let pool = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d));
+  if (pool.length < 10) {
+    document.getElementById('rq-err').style.display = 'block';
+    document.getElementById('rq-err').textContent = 'Not enough questions match these filters. Try adding more papers or increasing difficulty.';
+    return;
+  }
+  document.getElementById('rq-err').style.display = 'none';
+  const ten = shuffle(pool).slice(0, 10);
+  const grid = document.getElementById('rq-grid');
+  const counter = document.getElementById('rq-counter');
+  if (counter) counter.textContent = pool.length + ' questions available';
+  const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
+  grid.innerHTML = ten.map((q, i) => `
+    <div class="rq-card" id="rqc${i}" onclick="revealRQ(${i})" style="border-left:4px solid ${colours[q.paper]}">
+      <div class="rq-q">${i+1}. ${q.q}</div>
+      <div class="rq-a">${q.a}</div>
+      <div class="rq-tap">Tap to reveal</div>
+    </div>`).join('');
+  document.getElementById('rq-setup').style.display = 'none';
+  if (rqMode === 'one') { rqInProgress = true; rqInProgressMode = 'one'; }
+  if (rqMode === 'one') {
+    rqOnePool = shuffle(pool).slice(0, 10);
+    rqOneIdx = 0; rqOneOK = 0; rqOneBad = 0; rqOneMissed = []; rqOneStreak = 0;
+    document.getElementById('rq-one').style.display = 'block';
+    document.getElementById('rq-out').style.display = 'none';
+    document.getElementById('rq-one-end').style.display = 'none';
+    document.getElementById('rq-one-card').style.display = 'block';
+    rqOneNext();
+    return;
+  }
+  document.getElementById('rq-out').style.display = 'block';
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) printBtn.style.display = 'inline-block';
+}
+
+function revealRQ(i) {
+  document.getElementById('rqc' + i).classList.toggle('revealed');
+}
+
+function revealAll() {
+  const allRevealed = Array.from({length:10}, (_,i) => document.getElementById('rqc'+i))
+    .filter(Boolean).every(c => c.classList.contains('revealed'));
+  for (let i = 0; i < 10; i++) {
+    const card = document.getElementById('rqc' + i);
+    if (card) {
+      if (allRevealed) card.classList.remove('revealed');
+      else card.classList.add('revealed');
+    }
+  }
+  const btn = document.getElementById('rq-reveal-all');
+  if (btn) btn.textContent = allRevealed ? '👁️ Reveal all' : '🙈 Hide all';
+}
+// ═══════════════════════════════════════════
+// EXAM PRACTICE
+// ═══════════════════════════════════════════
+let examHistory = [];
+let examHistoryIdx = -1;
+let fsInterval = null;
+let fsTotal = 0;
+let fsElapsed = 0;
+
+function enterFullscreen(q) {
+  const timings = {
+    '2mark': 2, '4mark': 5, '4mark-consequence': 5,
+    '8mark-importance': 12, '8mark-narrative': 15,
+    '12mark': 15, '16mark': 25
+  };
+  const mins = timings[q.type] || 10;
+  fsTotal = mins * 60;
+  fsElapsed = 0;
+
+  const typeLabel = {
+    '2mark':'2-mark describe','4mark':'4-mark similarity/difference',
+    '4mark-consequence':'4-mark consequence','8mark-narrative':'8-mark narrative',
+    '8mark-importance':'8-mark importance','12mark':'12-mark explain why','16mark':'16-mark debate'
+  }[q.type] || q.type;
+
+  document.getElementById('fs-type').textContent = typeLabel + ' · ' + mins + ' minutes';
+  const qText = q.q.replace(/\nHints:.*/,'').trim();
+  document.getElementById('fs-q').textContent = qText;
+  document.getElementById('fs-q-blur').textContent = qText;
+
+  const hintsEl = document.getElementById('fs-hints');
+  hintsEl.innerHTML = (q.hints && q.hints.length) ? '<strong>You may use:</strong> ' + q.hints.join(' · ') : '';
+
+  updateFsTimer();
+  // Paper colours for start button
+  const paperStyles = {
+    p1:  {bg:'#FEF9E7', color:'#9A6B00', border:'#F0B429'},
+    p2a: {bg:'#FBEAF0', color:'#993556', border:'#D4537E'},
+    p2b: {bg:'#E1F5EE', color:'#0F6E56', border:'#1D9E75'},
+    p3:  {bg:'#E6F1FB', color:'#185FA5', border:'#378ADD'},
+  };
+  const ps = paperStyles[q.paper] || {bg:'var(--subtle)', color:'var(--text)', border:'var(--border2)'};
+  const startBtn = document.getElementById('fs-start-btn');
+  if (startBtn) {
+    startBtn.style.background = ps.bg;
+    startBtn.style.color = ps.color;
+    startBtn.style.borderColor = ps.border;
+  }
+  document.getElementById('fs-pre').style.display = 'block';
+  document.getElementById('fs-active').style.display = 'none';
+  const fsEl = document.getElementById('exam-fullscreen');
+  fsEl.style.display = 'block';
+  fsEl.style.visibility = 'visible';
+  document.body.style.overflow = 'hidden';
+}
+
+function startFsClock() {
+  document.getElementById('fs-pre').style.display = 'none';
+  document.getElementById('fs-active').style.display = 'block';
+  if (fsInterval) clearInterval(fsInterval);
+  fsInterval = setInterval(() => {
+    fsElapsed++;
+    updateFsTimer();
+    if (fsElapsed >= fsTotal) {
+      clearInterval(fsInterval);
+      fsInterval = null;
+    }
+  }, 1000);
+}
+
+function updateFsTimer() {
+  const remaining = Math.max(0, fsTotal - fsElapsed);
+  const m = Math.floor(remaining / 60);
+  const s = remaining % 60;
+  const timerEl = document.getElementById('fs-timer');
+  timerEl.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  timerEl.classList.toggle('warn', remaining < 60);
+  const pct = fsTotal > 0 ? Math.max(0, (fsTotal - fsElapsed) / fsTotal * 100) : 100;
+  const fill = document.getElementById('fs-bar-fill');
+  fill.style.width = pct + '%';
+  fill.style.background = remaining < 60 ? '#D4537E' : remaining < fsTotal * 0.25 ? '#F0B429' : '#4a7c59';
+}
+
+// Wire exit button safely after DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+  const exitBtn = document.getElementById('fs-exit-btn');
+  if (exitBtn) exitBtn.addEventListener('click', exitFullscreen);
+  const startBtn = document.getElementById('fs-start-btn');
+  if (startBtn) startBtn.addEventListener('click', startFsClock);
+});
+
+function exitFullscreen() {
+  if (fsInterval) { clearInterval(fsInterval); fsInterval = null; }
+  const el = document.getElementById('exam-fullscreen');
+  el.style.display = 'none';
+  el.style.visibility = 'hidden';
+  document.body.style.overflow = '';
+  // Reset for next use
+  document.getElementById('fs-pre').style.display = 'block';
+  document.getElementById('fs-active').style.display = 'none';
+  fsElapsed = 0;
+}
+// ═══════════════════════════════════════════
+function drawExam() {
+  const type = document.getElementById('e-type').value;
+  let pool = EQ.filter(q => q.paper === currentPaper);
+  if (type !== 'all') pool = pool.filter(q => q.type === type);
+  if (!pool.length) {
+    document.getElementById('e-out').innerHTML = '<div class="empty">No questions match these filters.</div>';
+    return;
+  }
+  // Avoid repeats — filter out seen questions, reset if all seen
+  let unseen = pool.filter(q => !examHistory.map(h=>h.q).includes(q.q));
+  if (!unseen.length) { examHistory = []; unseen = pool; }
+  const q = rand(unseen);
+  // Trim forward history if we shuffled from mid-point
+  if (examHistoryIdx < examHistory.length - 1) examHistory = examHistory.slice(0, examHistoryIdx + 1);
+  examHistory.push(q);
+  examHistoryIdx = examHistory.length - 1;
+  drawExamCard(q);
+}
+
+function updateExamDirectory() {
+  const type = document.getElementById('e-type').value;
+  let pool = EQ.filter(q => q.paper === currentPaper);
+  if (type !== 'all') pool = pool.filter(q => q.type === type);
+  const typeShort = {
+    '4mark':'[4m]','4mark-consequence':'[4m]',
+    '8mark-narrative':'[8m]','8mark-importance':'[8m]',
+    '12mark':'[12m]','16mark':'[16m]'
+  };
+  const sel = document.getElementById('e-directory');
+  sel.innerHTML = '<option value="">— select a question —</option>' +
+    pool.map((q, i) => `<option value="${i}">${typeShort[q.type]||''} ${q.name || q.q.substring(0,55)}</option>`).join('');
+  sel._pool = pool;
+}
+
+function loadSelectedExam() {
+  const sel = document.getElementById('e-directory');
+  const idx = sel.value;
+  if (idx === '') { drawExam(); return; }
+  const q = sel._pool[parseInt(idx)];
+  if (q) {
+    if (examHistoryIdx < examHistory.length - 1) examHistory = examHistory.slice(0, examHistoryIdx + 1);
+    examHistory.push(q);
+    examHistoryIdx = examHistory.length - 1;
+    drawExamCard(q);
+  }
+}
+
+let currentExamQ = null;
+function stepExam(dir) {
+  const newIdx = examHistoryIdx + dir;
+  if (newIdx < 0 || newIdx >= examHistory.length) return;
+  examHistoryIdx = newIdx;
+  drawExamCard(examHistory[examHistoryIdx]);
+}
+
+function drawExamCard(q) {
+  currentExamQ = q;
+  const typeLabel = {
+    '2mark': '2-mark describe',
+    '4mark': '4-mark similarity/difference',
+    '4mark-consequence': '4-mark consequence',
+    '8mark-narrative': '8-mark narrative',
+    '8mark-importance': '8-mark importance',
+    '12mark': '12-mark explain why',
+    '16mark': '16-mark debate'
+  }[q.type] || q.type;
+
+  let contentHtml = '';
+  if (q.type === '16mark') {
+    const agreeItems = q.content.filter(p => p.agree === true);
+    const disagreeItems = q.content.filter(p => p.agree === false);
+    agreeItems.forEach(p => {
+      contentHtml += `<div class="rhead agree">✓ Agree – ${p.h}</div><ul>${p.pts.map(pt => `<li>${pt}</li>`).join('')}</ul>`;
+    });
+    disagreeItems.forEach((p, i) => {
+      contentHtml += `<div class="rhead disagree">✗ Disagree ${['A','B'][i]} – ${p.h}</div><ul>${p.pts.map(pt => `<li>${pt}</li>`).join('')}</ul>`;
+    });
+  } else {
+    q.content.forEach(p => {
+      contentHtml += `<div class="rhead">${p.h}</div><ul>${p.pts.map(pt => `<li>${pt}</li>`).join('')}</ul>`;
+    });
+  }
+
+  document.getElementById('e-out').innerHTML = `
+    <div class="card">
+      <div class="stripe s-${q.paper}"></div>
+      <div class="inner">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem">
+          <div class="meta" style="margin-bottom:0">
+            <span class="tag t-grey">${typeLabel}</span>
+          </div>
+          <button class="btn-sm" onclick="enterFullscreen(currentExamQ)" style="font-size:.72rem;padding:4px 8px;white-space:nowrap">⏱ Try it timed</button>
+        </div>
+        <div class="card-q" style="font-weight:600">${q.q}</div>
+        ${q.hints && q.hints.length ? `<div style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem"><span style="font-style:italic">You may use:</span><ul style="margin:.35rem 0 0 1rem;padding:0">${q.hints.map(h => `<li style="font-weight:400">${h}</li>`).join('')}</ul></div>` : ''}
+       <div class="btn-row">
+          <button class="btn-sm" onclick="tog('er');this.textContent=this.textContent==='🔍 Show indicative content'?'🔍 Hide indicative content':'🔍 Show indicative content'">🔍 Show indicative content</button>
+
+        </div>
+        <div class="reveal" id="er">${contentHtml}</div>
+      </div>
+    </div>`;
+}
+
+// ═══════════════════════════════════════════
+// KEY DATES QUIZ
+// ═══════════════════════════════════════════
+// ── Dates quiz state ──
+let quizStreak = 0;
+let quizMissed = []; // dates got wrong this session
+let quizHardMode = false;
+
+function getHardDates() {
+  return JSON.parse(localStorage.getItem('gcse_hard_dates_' + currentPaper) || '[]');
+}
+function saveHardDates(arr) {
+  localStorage.setItem('gcse_hard_dates_' + currentPaper, JSON.stringify(arr));
+}
+
+function startQuiz(hardMode) {
+  const all = DATES.filter(d => d.paper === currentPaper);
+  if (!all.length) {
+    document.getElementById('d-out').innerHTML = '<div class="empty">No dates for this paper.</div>';
+    return;
+  }
+  quizHardMode = !!hardMode;
+  let pool = hardMode
+    ? all.filter(d => getHardDates().includes(d.event))
+    : all;
+  if (!pool.length) pool = all; // fallback if no hard dates yet
+  quizPool = shuffle([...pool]).slice(0, Math.min(pool.length, 15));
+  quizIdx = 0; quizOK = 0; quizBad = 0; quizStreak = 0; quizMissed = [];
+  document.getElementById('d-go').style.display = 'none';
+  const hardBtn = document.getElementById('d-hard');
+  if (hardBtn) hardBtn.style.display = 'none';
+  renderQ();
+}
+
+function renderQ() {
+  if (quizIdx >= quizPool.length) { showQuizEnd(); return; }
+  const item = quizPool[quizIdx];
+  const total = quizPool.length;
+  const pct = Math.round((quizIdx / total) * 100);
+  const others = shuffle(DATES.filter(d => d.paper === currentPaper && d.event !== item.event)).slice(0, 3).map(d => d.event);
+  const opts = shuffle([item.event, ...others]);
+  const optsHtml = opts.map((o, i) =>
+    `<button class="opt" id="opt${i}" data-val="${esc(o)}" data-correct="${esc(item.event)}" onclick="checkAns(this)">${o}</button>`
+  ).join('');
+  const streakHtml = quizStreak >= 3 ? `<span style="font-size:.8rem;color:#F0B429;font-weight:600">🔥 ${quizStreak}</span>` : '';
+  document.getElementById('d-out').innerHTML = `
+    <div class="quiz-prog"><div class="quiz-fill ${P[currentPaper].fill}" style="width:${pct}%"></div></div>
+    <div class="quiz-hdr">
+      <span class="quiz-hdr-l">Question ${quizIdx + 1} of ${total}</span>
+      <div class="sc-row">${streakHtml}<span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-date">${item.date}</div>
+      <div class="quiz-prompt">What happened?</div>
+      <div class="opts">${optsHtml}</div>
+      <div class="quiz-fb" id="qfb"></div>
+    </div>`;
+}
+
+function checkAns(btn) {
+  const chosen = btn.dataset.val;
+  const correct = btn.dataset.correct;
+  const item = quizPool[quizIdx];
+  document.querySelectorAll('.opt').forEach(b => b.disabled = true);
+  const fb = document.getElementById('qfb');
+  if (chosen === correct) {
+    quizOK++;
+    quizStreak++;
+    btn.classList.add('correct');
+    fb.textContent = 'Correct!';
+    fb.className = 'quiz-fb fb-c';
+    // Remove from hard dates if got right
+    const hard = getHardDates().filter(e => e !== item.event);
+    saveHardDates(hard);
+  } else {
+    quizBad++;
+    quizStreak = 0;
+    quizMissed.push(item);
+    btn.classList.add('wrong');
+    fb.textContent = 'Not quite — correct answer highlighted.';
+    fb.className = 'quiz-fb fb-w';
+    document.querySelectorAll('.opt').forEach(b => {
+      if (b.dataset.val === correct) b.classList.add('show-c');
+    });
+    // Add to hard dates
+    const hard = getHardDates();
+    if (!hard.includes(item.event)) hard.push(item.event);
+    saveHardDates(hard);
+  }
+  fb.style.display = 'block';
+  setTimeout(() => { quizIdx++; renderQ(); }, 1700);
+}
+
+function showQuizEnd() {
+  const total = quizPool.length;
+  const pct = Math.round((quizOK / total) * 100);
+  const celebrations_dates = [
+    'History is all about timing — and yours is excellent. 🏆',
+    'Top marks! Every date nailed. 🎯',
+    'Outstanding! You clearly know your chronology. ⭐',
+  ];
+  const [grade, cls] = pct === 100
+    ? [celebrations_dates[Math.floor(Math.random()*celebrations_dates.length)], 'grade-a']
+    : pct >= 80 ? ['Excellent work — nearly there! 🏆', 'grade-a']
+    : pct >= 60 ? ['Good effort, keep drilling the tricky ones. ⭐', 'grade-b']
+    : pct >= 40 ? ['A solid start — use hardest dates mode to focus. 📚', 'grade-c']
+    : ['Keep at it — chronology takes practice. 💪', 'grade-c'];
+  const hardCount = getHardDates().length;
+
+  // Missed dates review
+  const missedHtml = quizMissed.length ? `
+    <div style="margin:.75rem 0;text-align:left">
+      <div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem">Review — dates to learn:</div>
+      ${quizMissed.map(d => `
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.5rem .75rem;margin-bottom:.4rem;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem">
+          <span style="font-size:.85rem;font-weight:700">${d.date}</span>
+          <span style="font-size:.8rem;color:var(--muted);flex:1;text-align:right">${d.event}</span>
+        </div>`).join('')}
+    </div>` : '';
+
+  const hardBtn = hardCount > 0 && !quizHardMode
+    ? `<button class="btn-sm" onclick="startQuiz(true)" style="width:100%;margin-top:.25rem">🎯 Hardest dates only (${hardCount})</button>`
+    : '';
+
+  document.getElementById('d-out').innerHTML = `
+    <div class="quiz-end">
+      <div class="end-score">${quizOK}/${total}</div>
+      <div class="end-sub">${pct}% correct</div>
+      <div class="end-grade ${cls}">${grade}</div>
+      ${missedHtml}
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:.5rem">
+        <button class="btn-sm" style="width:100%" onclick="startQuiz()">🔄 New quiz</button>
+        ${hardBtn}
+      </div>
+    </div>`;
+  const go = document.getElementById('d-go');
+  go.style.display = 'block';
+  go.textContent = 'New quiz';
+}
 const KC = [
 // ── PAPER 1 · Unit 1 Medieval ───────────────
 {paper:'p1',unit:'Unit 1 – Medieval',heading:'Viking raids and settlement',
@@ -1442,650 +2009,13 @@ const KC = [
  facts:['April 1933: national boycott of Jewish shops; SA stood outside to intimidate customers; Jews banned from professions','1935: Nuremberg Laws – stripped Jews of citizenship; banned from marrying non-Jews; classified as a separate race','9–10 November 1938: Kristallnacht – thousands of synagogues and Jewish businesses destroyed; over 100 Jews killed; 30,000 arrested and sent to camps','Jews then fined 1 billion marks for "the damage" – showed complete powerlessness of Jews under Nazi rule','ordinary Germans and their families took part in Kristallnacht - not just SS or Nazi thugs. Shows power of 5 years of propaganda.','Clear escalation 1933→1935→1938; Kristallnacht marked the shift from economic and legal persecution to organised physical violence']},
 
 ];
+let EQ = []; // loaded from data/eq.json
 
-// ═══════════════════════════════════════════
-// PAPER CONFIG
-// NAVIGATION
-// ═══════════════════════════════════════════
-function pickPaper(p) {
-  currentPaper = p;
-  const info = P[p];
-  document.getElementById('paper-badge').textContent = info.label;
-  document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
-  ['d-go'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.className = 'btn-go ' + info.go;
-  });
-  const sel = document.getElementById('k-unit');
-  sel.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>' +
-    info.units.map(u => `<option value="${u}">${u}</option>`).join('');
-  const esel = document.getElementById('e-type');
-  esel.innerHTML = info.qtypes.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
-  learntCards = new Set();
-  examHistory = [];
-  examHistoryIdx = -1;
-  buildKPool();
-  kPoolTotal = kPool.length;
-  document.getElementById('k-out').innerHTML = '';
-  updateNavUI();
-  updateProgressBar();
-  if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
-  // Update hub badge
-  // Apply paper stripe to mode buttons
-  document.querySelectorAll('.mode-btn').forEach(btn => {
-    btn.classList.remove('stripe-p1','stripe-p2a','stripe-p2b','stripe-p3');
-    btn.classList.add('stripe-' + p);
-  });
-  // Apply paper colour to all selects
-  document.querySelectorAll('select').forEach(sel => {
-    sel.classList.remove('sel-p1','sel-p2a','sel-p2b','sel-p3');
-    sel.classList.add('sel-' + p);
-  });
-  document.getElementById('hub-paper-badge').textContent = info.label;
-  document.getElementById('hub-paper-badge').className = 'paper-badge ' + info.badge;
-  document.getElementById('paper-badge').textContent = info.label;
-  document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
-  showScreen('s-hub');
-}
-
-function goBack() {
-  showScreen('s-hub');
-  document.getElementById('d-out').innerHTML = '';
-  document.getElementById('k-out').innerHTML = '';
-  document.getElementById('e-out').innerHTML = '';
-}
-
-function showScreen(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  const hubLink = document.getElementById('hub-link');
-  if (hubLink) hubLink.style.display = id === 's-pick' ? 'inline-block' : 'none';
-  // print btn handled by setMode; hide when leaving s-main
-  if (id !== 's-main') {
-    const printBtn = document.getElementById('print-btn');
-    if (printBtn) printBtn.style.display = 'none';
-  }
-  // update flagged button on hub
-  updateFlagBar();
-}
-
-function enterMode(m) {
-  showScreen('s-main');
-  setMode(m);
-}
-
-function setMode(m) {
-  const titles = {knowledge:'🧠 Knowledge Builder', dates:'📅 Key Dates Quiz', exam:'✏️ Exam Practice'};
-  const titleEl = document.getElementById('mode-title');
-  if (titleEl) titleEl.textContent = titles[m] || '';
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) printBtn.style.display = (m === 'knowledge' || m === 'exam' || m === 'dates') ? 'inline-block' : 'none';
-  ['knowledge','dates','exam'].forEach(mode => {
-    const modeEl = document.getElementById('mode-' + mode);
-    if (modeEl) modeEl.style.display = mode === m ? 'block' : 'none';
-  });
-  // reset outputs when switching
-  if (m !== 'knowledge') document.getElementById('k-out').innerHTML = '';
-  document.getElementById('d-out').innerHTML = '';
-  document.getElementById('e-out').innerHTML = '';
-  document.getElementById('d-go').style.display = 'block';
-  updateFlagBar();
-  if (m === 'knowledge') { if (!kPool.length && !learntCards.size) buildKPool(); updateNavUI(); }
-  if (m === 'exam') if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
-  if (m === 'dates') {
-    const hardBtn = document.getElementById('d-hard');
-    if (hardBtn) {
-      const hardCount = JSON.parse(localStorage.getItem('gcse_hard_dates_' + currentPaper) || '[]').length;
-      hardBtn.style.display = hardCount > 0 ? 'block' : 'none';
-      hardBtn.textContent = `🎯 Hardest dates only (${hardCount})`;
-    }
-    // Build print list of all dates for this paper
-    const printList = document.getElementById('d-print-list');
-    if (printList) {
-      const dates = DATES.filter(d => d.paper === currentPaper);
-      printList.innerHTML = `<h2 style="margin-bottom:.75rem">${P[currentPaper].label} — Key Dates</h2>` +
-        dates.map(d => `<div style="display:flex;gap:1rem;padding:.4rem 0;border-bottom:1px solid var(--border)"><strong style="min-width:80px">${d.date}</strong><span>${d.event}</span></div>`).join('');
-    }
-  }
-}
-
-// ═══════════════════════════════════════════
-// UTILITIES
-// ═══════════════════════════════════════════
-function rand(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
-function shuffle(a) {
-  const b = [...a];
-  for (let i = b.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [b[i], b[j]] = [b[j], b[i]];
-  }
-  return b;
-}
-function tog(id) { const el = document.getElementById(id); if (el) el.classList.toggle('open'); }
-function esc(s) { return s.replace(/'/g, "&#39;").replace(/"/g, "&quot;"); }
-
-function paperTagClass(p) {
-  return 't-' + p;
-}
-
-// ═══════════════════════════════════════════
-// KNOWLEDGE RECALL
-function buildKPool() {
-  const unit = document.getElementById('k-unit').value;
-  const cardSel = document.getElementById('k-card');
-  if (!unit) {
-    kPool = [];
-    kPoolTotal = 0;
-    if (cardSel) cardSel.innerHTML = '<option value="">— select a topic —</option>';
-    return;
-  }
-  let all = KC.filter(c => c.paper === currentPaper);
-  const units = P[currentPaper].units;
-  all.sort((a, b) => {
-    const ui = units.indexOf(a.unit);
-    const vi = units.indexOf(b.unit);
-    if (ui !== vi) return ui - vi;
-    return KC.indexOf(a) - KC.indexOf(b);
-  });
-  if (unit !== 'all') all = all.filter(c => c.unit === unit);
-  const unitCounts = {};
-  // All cards for dropdown (including flagged)
-  const allEntries = all.map(c => {
-    const uIdx = units.indexOf(c.unit) + 1;
-    unitCounts[uIdx] = (unitCounts[uIdx] || 0) + 1;
-    return { card: c, num: `${uIdx}.${unitCounts[uIdx]}` };
-  });
-  // Pool for sequential flow excludes flagged cards
-  kPool = allEntries.filter(e => !flaggedCards.find(fc => fc.paper === e.card.paper && fc.heading === e.card.heading));
-  if (cardSel) {
-    cardSel.innerHTML = '<option value="">— select a topic —</option>' +
-      allEntries.map((entry, i) => {
-        const isFlagged = flaggedCards.find(fc => fc.paper === entry.card.paper && fc.heading === entry.card.heading);
-        return `<option value="dd-${i}">${entry.num} – ${entry.card.heading}${isFlagged ? ' 🚩' : ''}</option>`;
-      }).join('');
-    cardSel._allEntries = allEntries;
-  }
-  kPoolTotal = allEntries.length;
-}
-
-function onUnitChange() {
-  learntCards = new Set();
-  showKBControls();
-  buildKPool();
-  kPoolTotal = kPool.length;
-  kIdx = 0;
-  document.getElementById('k-out').innerHTML = '';
-  updateNavUI();
-  updateProgressBar();
-  if (kPool.length) renderKCard(kPool[0]);
-}
-
-function updateNavUI() {
-  const cardSel = document.getElementById('k-card');
-  if (cardSel && kPool.length) {
-    const current = kPool[kIdx];
-    const allEntries = cardSel._allEntries || [];
-    const ddIdx = allEntries.findIndex(e => e.card.paper === current.card.paper && e.card.heading === current.card.heading);
-    if (ddIdx !== -1) cardSel.value = 'dd-' + ddIdx;
-  }
-}
-
-function drawRandomCard() {
-  // If no unit selected, build pool from all units then draw random
-  if (!kPool.length) {
-    const unit = document.getElementById('k-unit').value;
-    if (!unit) {
-      document.getElementById('k-unit').value = 'all';
-      learntCards = new Set();
-      showKBControls();
-      buildKPool();
-      kPoolTotal = kPool.length;
-      updateProgressBar();
-      // fall through to random draw below
-    } else {
-      document.getElementById('k-out').innerHTML = '<div class="empty">No cards match these filters.</div>';
-      updateNavUI();
-      return;
-    }
-  }
-  kIdx = Math.floor(Math.random() * kPool.length);
-  renderKCard(kPool[kIdx]);
-  updateNavUI();
-  updateProgressBar();
-}
-
-function stepCard(dir) {
-  if (!kPool.length) { drawRandomCard(); return; }
-
-  kIdx = (kIdx + dir + kPool.length) % kPool.length;
-  renderKCard(kPool[kIdx]);
-  updateNavUI();
-}
-
-function updateCardSelect() {} // kept for compatibility
-
-function boldHints(text, hints) {
-  let out = text;
-  hints.forEach(h => {
-    // escape special regex chars
-    const escaped = h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const re = new RegExp('(' + escaped + ')', 'gi');
-    out = out.replace(re, '<strong>$1</strong>');
-  });
-  return out;
-}
-
-function markLearntBtn(btn) {
-  btn.style.background = '#EAF3DE';
-  btn.style.color = '#3B6D11';
-  btn.style.borderColor = '#3B6D11';
-  btn.disabled = true;
-  setTimeout(markLearnt, 400);
-}
-
-function unflagLearntBtn(btn) {
-  btn.style.background = '#EAF3DE';
-  btn.style.color = '#3B6D11';
-  btn.style.borderColor = '#3B6D11';
-  btn.disabled = true;
-  setTimeout(() => unflagCard(btn), 400);
-}
-  
-function showKBComplete() {
-  const totalLearnt = learntCards.size;
-  const unitVal = document.getElementById('k-unit').value;
-  const flaggedThisUnit = flaggedCards.filter(fc =>
-    KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
-      (unitVal === 'all' || unitVal === '' || c.unit === unitVal))
-  ).length;
-  const celebrations = [
-    'Outstanding work! Every card nailed. \u{1F4AA}',
-    'Unit complete \u2014 your future self will thank you. \u{1F3C6}',
-    'That\u2019s the whole unit done. Impressive. \u2B50',
-    'All cards learnt. You\u2019re on a roll. \u{1F525}',
-    'Exam board won\u2019t know what hit them. \u{1F3AF}',
-    'Unit complete! Keep this momentum going. \u{1F680}',
-    'Every card done. That\u2019s how it\u2019s done. \u{1F44F}',
-  ];
-  const msg = celebrations[Math.floor(Math.random() * celebrations.length)];
-  document.getElementById('k-out').innerHTML = `
-    <div style="text-align:center;padding:2rem">
-      <div style="font-size:2.5rem;margin-bottom:.5rem">\u{1F389}</div>
-      <div style="font-size:1.2rem;font-weight:700;margin-bottom:.4rem">Unit complete!</div>
-      <div style="font-size:.88rem;color:var(--muted);margin-bottom:1.5rem">${msg}</div>
-      <div style="display:flex;justify-content:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap">
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
-          <div style="font-size:1.5rem;font-weight:700;color:#4a7c59">${totalLearnt}</div>
-          <div style="font-size:.7rem;color:var(--muted);margin-top:2px">cards learnt</div>
-        </div>
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
-          <div style="font-size:1.5rem;font-weight:700;color:#D4537E">${sessionFlaggedCount}</div>
-          <div style="font-size:.7rem;color:var(--muted);margin-top:2px">flagged for review</div>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        ${flaggedThisUnit > 0 ? `<button class="btn-sm" onclick="showFlaggedScreen()" style="width:100%">\u{1F6A9} Review ${flaggedThisUnit} flagged cards</button>` : ''}
-        <button class="btn-sm" onclick="showScreen('s-hub')" style="width:100%">\u{1F4DA} Pick a new unit</button>
-        <button class="btn-sm" onclick="resetLearnt()" style="width:100%">\u{1F504} Reset and start again</button>
-      </div>
-    </div>`;
-  document.getElementById('k-progress-wrap').style.display = 'none';
-  document.getElementById('k-flag-bar').style.display = 'none';
-  const kGoRow = document.getElementById('k-go') && document.getElementById('k-go').parentElement;
-  if (kGoRow) kGoRow.style.display = 'none';
-  document.querySelector('#mode-knowledge .filter-row').style.display = 'none';
-  sessionStartTime = null;
-  sessionFlaggedCount = 0;
-  updateNavUI();
-}
-
-function markLearnt() {
-  const entry = kPool[kIdx];
-  learntCards.add(entry.card.paper + '|' + entry.card.heading);
-  kPool.splice(kIdx, 1);
-  if (kPool.length === 0) { showKBComplete(); return; }
-  kIdx = kIdx % kPool.length;
-  renderKCard(kPool[kIdx]);
-  updateNavUI();
-  updateProgressBar();
-}
-
-function resetLearnt() {
-  learntCards = new Set();
-  sessionStartTime = null;
-  sessionFlaggedCount = 0;
-  showKBControls();
-  buildKPool();
-  kPoolTotal = kPool.length;
-  kIdx = 0;
-  updateNavUI();
-  updateProgressBar();
-  if (kPool.length) renderKCard(kPool[0]);
-}
-
-function showKBControls() {
-  document.getElementById('k-progress-wrap').style.display = 'block';
-  document.querySelector('#mode-knowledge .filter-row').style.display = 'flex';
-  const navRow = document.getElementById('k-go') && document.getElementById('k-go').parentElement;
-  if (navRow) navRow.style.display = 'flex';
-}
-  
-
-function flagCard(btn) {
-  const card = btn.closest('.card');
-  const paper = card.dataset.paper;
-  const heading = card.dataset.heading;
-  const already = flaggedCards.find(c => c.paper === paper && c.heading === heading);
-  if (!already) {
-    flaggedCards.push({paper, heading});
-    sessionFlaggedCount++;
-    updateFlagBar();
-    btn.outerHTML = `<button class="btn-sm" style="background:#FEF9E7;color:#9A6B00;border-color:#F0B429" disabled>🚩 Flagged</button>`;
-    const learntBtn = card.querySelector('#k-learnt-btn');
-    if (learntBtn) learntBtn.remove();
-    // Remove from kPool immediately so it doesn't come back
-    const poolIdx = kPool.findIndex(e => e.card.paper === paper && e.card.heading === heading);
-    if (poolIdx !== -1) {
-      kPool.splice(poolIdx, 1);
-      if (kIdx >= kPool.length) kIdx = Math.max(0, kPool.length - 1);
-      updateProgressBar();
-    }
-    // Auto-advance after 0.9 seconds — or show end screen if pool empty
-    setTimeout(() => {
-      if (kPool.length === 0) { showKBComplete(); return; }
-      renderKCard(kPool[kIdx]); updateNavUI();
-    }, 900);
-  }
-}
-  
-function updateProgressBar() {
-  const wrap = document.getElementById('k-progress-wrap');
-  const bar = document.getElementById('k-progress-bar');
-  const text = document.getElementById('k-progress-text');
-  if (!kPoolTotal || kPoolTotal === 0) { wrap.style.display = 'none'; return; }
-  wrap.style.display = 'block';
-  const done = kPoolTotal - kPool.length;
-  const pct = Math.round((done / kPoolTotal) * 100);
-  bar.style.width = pct + '%';
-  const flagCount = flaggedCards.filter(fc =>
-    KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
-      (document.getElementById('k-unit').value === 'all' || document.getElementById('k-unit').value === '' || c.unit === document.getElementById('k-unit').value))
-  ).length;
-  text.textContent = `${learntCards.size} of ${kPoolTotal} learnt` + (flagCount > 0 ? ` · 🚩 ${flagCount} flagged` : '');
-}
-
-function showFlaggedButton() {
-  if (flaggedCards.length > 0) {
-    document.getElementById('k-out').innerHTML +=
-      `<button class="btn-go" onclick="showFlaggedScreen()" style="margin-top:1rem">Review ${flaggedCards.length} flagged cards</button>`;
-  }
-}
-  
-function unflagCard(btn) {
-  const card = btn.closest('.card');
-  const paper = card.dataset.paper;
-  const heading = card.dataset.heading;
-  flaggedCards = flaggedCards.filter(c => !(c.paper === paper && c.heading === heading));
-  updateFlagBar();
-  if (document.getElementById('s-flagged').classList.contains('active')) {
-    showFlaggedScreen();
-  } else {
-    btn.outerHTML = `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>
-  <button class="btn-sm" id="k-learnt-btn" onclick="markLearntBtn(this)">✅ Learnt</button>`;
-  }
-}
-  
-function updateFlagBar() {
-  localStorage.setItem('gcse_flagged', JSON.stringify(flaggedCards));
-  const bar = document.getElementById('k-flag-bar');
-  const num = document.getElementById('k-flag-num');
-  const homeBtn = document.getElementById('home-flag-btn');
-  const homeNum = document.getElementById('home-flag-num');
-  const hubFlagBtn = document.getElementById('hub-flag-btn');
-  const hubFlagNum = document.getElementById('hub-flag-num');
-  if (flaggedCards.length > 0) {
-    bar.style.display = 'flex';
-    num.textContent = flaggedCards.length;
-    if (homeBtn) { homeBtn.style.display = 'block'; homeNum.textContent = flaggedCards.length; }
-    if (hubFlagBtn) { hubFlagBtn.style.display = 'block'; hubFlagNum.textContent = flaggedCards.length; }
-  } else {
-    bar.style.display = 'none';
-    if (homeBtn) homeBtn.style.display = 'none';
-    if (hubFlagBtn) hubFlagBtn.style.display = 'none';
-  }
-}
-
-function reviewFlagged() {
-  showFlaggedScreen();
-}
-  
-function goToFlagged() {
-  if (!flaggedCards.length) return;
-  showFlaggedScreen();
-}
-
-function showFlaggedScreen() {
-  showScreen('s-flagged');
-  const out = document.getElementById('flagged-out');
-  if (!flaggedCards.length) {
-    out.innerHTML = '<div class="empty" style="padding:2rem;text-align:center">🎉 All flagged cards reviewed! Head back and keep going.</div><div style="text-align:center;margin-top:1rem"><button class="btn-sm" onclick="showScreen(\'s-pick\')">🏠 Home</button></div>';
-    return;
-  }
-  out.innerHTML = flaggedCards.map(fc => {
-    const card = KC.find(c => c.paper === fc.paper && c.heading === fc.heading);
-    if (!card) return '';
-    const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0">` +
-      card.hints.map(h => `<span class="tag t-${card.paper}">${h}</span>`).join('') +
-      `</div>`;
-    const factsHtml = '<ul>' + card.facts.map(f =>
-      `<li>${boldHints(f, card.hints)}</li>`
-    ).join('') + '</ul>';
-    const uid = card.paper + '_' + card.heading.replace(/\W/g,'');
-    return `
-      <div class="card" data-paper="${card.paper}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
-        <div class="stripe s-${card.paper}"></div>
-        <div class="inner">
-          <div class="meta">
-            <span class="tag t-${card.paper}">${card.unit}</span>
-          </div>
-          <div class="card-heading">${card.heading}</div>
-          <div class="btn-row">
-            <button class="btn-sm" onclick="tog('fh_${uid}');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
-            <button class="btn-sm" onclick="tog('ff_${uid}');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
-            <button class="btn-sm" onclick="unflagCard(this)">✅ Learnt</button>
-          </div>
-          <div class="reveal" id="fh_${uid}">${hintsHtml}</div>
-          <div class="reveal" id="ff_${uid}">${factsHtml}</div>
-        </div>
-      </div>`;
-  }).join('');
-}
-
-function clearFlagged() {
-  flaggedCards = [];
-  updateFlagBar();
-}
-  
-function drawSpecificCard(card) {
-  const hintsHtml = card.hints.map(h =>
-    `<div class="hint-item"><span class="hint-kw">hint</span>${h}</div>`
-  ).join('');
-  const factsHtml = '<ul>' + card.facts.map(f =>
-    `<li>${boldHints(f, card.hints)}</li>`
-  ).join('') + '</ul>';
-  document.getElementById('k-out').innerHTML = `
-    <div class="card">
-      <div class="stripe s-${card.paper}"></div>
-      <div class="inner">
-        <div class="meta">
-          <span class="tag t-${card.paper}">${card.unit}</span>
-          <span class="tag t-grey">🚩 Flagged</span>
-        </div>
-        <div class="card-heading">${card.heading}</div>
-        <div class="btn-row">
-          <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
-          <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='Reveal key content'?'Hide content':'Reveal key content'">Reveal key content</button>
-          <button class="btn-sm" onclick="unflagCard('${card.paper}','${card.heading}')">🚩 Remove flag</button>
-        </div>
-        <div class="reveal" id="kh">${hintsHtml}</div>
-        <div class="reveal" id="kf">${factsHtml}</div>
-      </div>
-    </div>`;
-}
-
-function renderKCard(entry, isInterleaved) {
-  if (!sessionStartTime) sessionStartTime = Date.now();
-  const card = entry.card;
-  const num = entry.num;
-  const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0">` +
-  card.hints.map(h => `<span class="tag t-${card.paper}">${h}</span>`).join('') +
-  `</div>`;
-  const factsHtml = '<ul>' + card.facts.map(f =>
-    `<li>${boldHints(f, card.hints)}</li>`
-  ).join('') + '</ul>';
-  const alreadyFlagged = flaggedCards.find(c => c.paper === card.paper && c.heading === card.heading);
-  const interleavedBadge = isInterleaved ? `<span class="tag t-grey" style="background:#FEF9E7;color:#9A6B00;border:1px solid #F0B429">🚩 Flagged review</span>` : '';
-  document.getElementById('k-out').innerHTML = `
-    <div class="card" data-paper="${card.paper}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
-      <div class="stripe s-${card.paper}"></div>
-      <div class="inner">
-        <div class="meta">
-          ${interleavedBadge}<span class="tag t-grey">${num}</span>
-          <span class="tag t-${card.paper}">${card.unit}</span>
-        </div>
-        <div class="card-heading">${card.heading}</div>
-        <p style="font-size:.78rem;color:var(--muted);margin-bottom:.75rem">Show hints for a nudge · Reveal key content to check your knowledge · Flag cards to revisit · Mark as learnt to track progress</p>
-
-        <div class="btn-row">
-          <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
-<button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
-          ${alreadyFlagged ?
-  `<button class="btn-sm" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11" onclick="unflagCard(this)">🚩 Remove flag</button>` :
-  `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>
-   <button class="btn-sm" id="k-learnt-btn" onclick="markLearntBtn(this)">✅ Learnt</button>`}
-        </div>
-        <div class="reveal" id="kh">${hintsHtml}</div>
-        <div class="reveal" id="kf">${factsHtml}</div>
-      </div>
-    </div>`;
-}
-
-function jumpToCard() {
-  const val = document.getElementById('k-card').value;
-  if (!val || val === '') return;
-  const cardSel = document.getElementById('k-card');
-  const allEntries = cardSel._allEntries;
-  if (val.startsWith('dd-') && allEntries) {
-    const i = parseInt(val.replace('dd-', ''));
-    if (isNaN(i)) return;
-    const entry = allEntries[i];
-    if (!entry) return;
-    // Find in kPool or render directly (for flagged cards)
-    const poolIdx = kPool.findIndex(e => e.card.paper === entry.card.paper && e.card.heading === entry.card.heading);
-    if (poolIdx !== -1) {
-      kIdx = poolIdx;
-      renderKCard(kPool[kIdx]);
-    } else {
-      // Flagged card - render directly without affecting kIdx
-      renderKCard(entry);
-    }
-    updateNavUI();
-  }
-}
-// ═══════════════════════════════════════════
-// RAPID FIRE DATA (sample — expand with full PDF data)
-// difficulty: 'easy' | 'medium' | 'hard'
-// ═══════════════════════════════════════════
+let DATES = []; // loaded from data/dates.json
 
 // ═══════════════════════════════════════════
 // LOAD EXTERNAL DATA
 // ═══════════════════════════════════════════
-if (window.location.protocol !== 'file:') {
-  Promise.all([
-    fetch('data/eq.json').then(r => { if (!r.ok) throw new Error('eq.json: ' + r.status); return r.json(); }),
-    fetch('data/rq.json').then(r => { if (!r.ok) throw new Error('rq.json: ' + r.status); return r.json(); }),
-    fetch('data/dates.json').then(r => { if (!r.ok) throw new Error('dates.json: ' + r.status); return r.json(); }),
-  ]).then(([eq, rq, dates]) => {
-    EQ = eq;
-    RQ = rq;
-    DATES = dates;
-    const examMode = document.getElementById('mode-exam');
-    if (examMode && examMode.style.display !== 'none') if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
-    console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length);
-  }).catch(err => {
-    console.error('Data load failed:', err);
-    const eOut = document.getElementById('e-out');
-    if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load data files. Make sure data/eq.json, rq.json and dates.json are in your repository.</div>';
-  });
-} else {
-  console.warn('Running as local file — external data not loaded.');
-}
-
-// ═══════════════════════════════════════════
-// RESTORED FUNCTIONS (FROM v17)
-// ═══════════════════════════════════════════
-
-function updateExamDirectory() {
-  if (!EQ || !EQ.length) return; // prevent race condition
-
-  const type = document.getElementById('e-type').value;
-  let pool = EQ.filter(q => q.paper === currentPaper);
-  if (type !== 'all') pool = pool.filter(q => q.type === type);
-
-  const typeShort = {
-    '2mark':'[2m]',
-    '4mark':'[4m]',
-    '4mark-consequence':'[4m]',
-    '8mark-narrative':'[8m]',
-    '8mark-importance':'[8m]',
-    '12mark':'[12m]',
-    '16mark':'[16m]'
-  };
-
-  const sel = document.getElementById('e-directory');
-  if (!sel) return;
-
-  sel.innerHTML = '<option value="">— select a question —</option>' +
-    pool.map((q, i) =>
-      `<option value="${i}">${typeShort[q.type] || ''} ${q.name || q.q.substring(0,55)}</option>`
-    ).join('');
-
-  sel._pool = pool;
-}
-
-function showRapidSetup() {
-  showScreen('s-rapid');
-
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) printBtn.style.display = 'none';
-
-  document.getElementById('rq-setup').style.display = 'block';
-  document.getElementById('rq-out').style.display = 'none';
-  document.getElementById('rq-one').style.display = 'none';
-  document.getElementById('rq-err').style.display = 'none';
-
-  const resumeBtn = document.getElementById('rq-resume-btn');
-  if (resumeBtn) resumeBtn.style.display = rqInProgress ? 'block' : 'none';
-
-  ['p1','p2a','p2b','p3'].forEach(p => {
-    const btn = document.getElementById('rqp-' + p);
-    if (!btn) return;
-    if (rqPapers[p]) btn.classList.add('on-' + p);
-    else btn.classList.remove('on-' + p);
-  });
-
-  [1,2,3].forEach(i => {
-    const el = document.getElementById('rqs-' + i);
-    if (el) el.classList.toggle('sel', i === rqDiff);
-  });
-
-  updateRQCounter();
-}
-
-// ═══════════════════════════════════════════
-// FIXED DATA LOADING
-// ═══════════════════════════════════════════
-
 Promise.all([
   fetch('data/eq.json').then(r => { if (!r.ok) throw new Error('eq.json: ' + r.status); return r.json(); }),
   fetch('data/rq.json').then(r => { if (!r.ok) throw new Error('rq.json: ' + r.status); return r.json(); }),
@@ -2094,245 +2024,16 @@ Promise.all([
   EQ = eq;
   RQ = rq;
   DATES = dates;
-
-  console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length);
-
-  // SAFE refresh after data loads
-  if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
-
+  // Refresh any visible modes
   const examMode = document.getElementById('mode-exam');
-  if (examMode && examMode.style.display !== 'none') {
-    if (typeof updateExamDirectory === 'function') {   updateExamDirectory(); }
-  }
-
+  if (examMode && examMode.style.display !== 'none') updateExamDirectory();
+  console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length);
 }).catch(err => {
   console.error('Data load failed:', err);
   const eOut = document.getElementById('e-out');
-  if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load data files.</div>';
+  if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load data files. Make sure data/eq.json, rq.json and dates.json are in your repository.</div>';
 });
-function updateExamDirectory() {
-  if (!EQ || !EQ.length) return;
 
-  const type = document.getElementById('e-type').value;
-  let pool = EQ.filter(q => q.paper === currentPaper);
-  if (type !== 'all') pool = pool.filter(q => q.type === type);
-
-  const sel = document.getElementById('e-directory');
-  if (!sel) return;
-
-  sel.innerHTML = '<option value="">— select a question —</option>' +
-    pool.map((q, i) =>
-      `<option value="${i}">${q.name || q.q.substring(0,50)}</option>`
-    ).join('');
-
-  sel._pool = pool;
-}
-  // ==========================
-// EXAM MODULE (RESTORED)
-// ==========================
-let examPool = [];
-let examIdx = 0;
-
-function drawExam() {
-  if (!EQ || !EQ.length) return;
-
-  examPool = EQ.filter(q => q.paper === currentPaper);
-  if (!examPool.length) return;
-
-  examIdx = Math.floor(Math.random() * examPool.length);
-  renderExam(examPool[examIdx]);
-}
-
-function stepExam(dir) {
-  if (!examPool.length) return;
-
-  examIdx = (examIdx + dir + examPool.length) % examPool.length;
-  renderExam(examPool[examIdx]);
-}
-
-function loadSelectedExam() {
-  const sel = document.getElementById('e-directory');
-  if (!sel || !sel._pool) return;
-
-  const idx = sel.value;
-  if (idx === '') return;
-
-  examPool = sel._pool;
-  examIdx = Number(idx);
-  renderExam(examPool[examIdx]);
-}
-
-function renderExam(q) {
-  const out = document.getElementById('e-out');
-  if (!out || !q) return;
-
-  out.innerHTML = `
-    <div class="card">
-      <div class="inner">
-        <div class="card-heading">${q.name || 'Exam question'}</div>
-        <div class="card-q">${q.q}</div>
-      </div>
-    </div>
-  `;
-}
-
-// ==========================
-// DATES QUIZ (RESTORED)
-// ==========================
-function startQuiz(hardOnly=false) {
-  if (!DATES || !DATES.length) return;
-
-  quizPool = hardOnly ? DATES.filter(d => d.hard) : [...DATES];
-  quizPool.sort(() => Math.random() - 0.5);
-
-  quizIdx = 0;
-  quizOK = 0;
-  quizBad = 0;
-
-  renderQuizQuestion();
-}
-
-function renderQuizQuestion() {
-  const out = document.getElementById('d-out');
-  if (!out || !quizPool[quizIdx]) return;
-
-  const q = quizPool[quizIdx];
-  const options = shuffle([
-    q.answer,
-    ...q.distractors
-  ]);
-
-  out.innerHTML = `
-    <div class="quiz-card">
-      <div class="quiz-date">${q.date}</div>
-      <div class="quiz-prompt">What happened?</div>
-      <div class="opts">
-        ${options.map(opt => `<button class="opt" onclick="checkAnswer('${escapeStr(opt)}')">${opt}</button>`).join('')}
-      </div>
-      <div id="quiz-fb" class="quiz-fb"></div>
-    </div>
-  `;
-}
-
-function checkAnswer(ans) {
-  const q = quizPool[quizIdx];
-  const fb = document.getElementById('quiz-fb');
-
-  if (!fb) return;
-
-  if (ans === q.answer) {
-    quizOK++;
-    fb.textContent = "Correct";
-    fb.className = "quiz-fb fb-c";
-  } else {
-    quizBad++;
-    fb.textContent = "Wrong";
-    fb.className = "quiz-fb fb-w";
-  }
-
-  fb.style.display = "block";
-
-  setTimeout(nextQuestion, 800);
-}
-
-function nextQuestion() {
-  quizIdx++;
-  if (quizIdx >= quizPool.length) {
-    endQuiz();
-  } else {
-    renderQuizQuestion();
-  }
-}
-
-function endQuiz() {
-  const out = document.getElementById('d-out');
-  if (!out) return;
-
-  out.innerHTML = `
-    <div class="quiz-end">
-      <div class="end-score">${quizOK}/${quizPool.length}</div>
-      <div class="end-sub">Finished</div>
-    </div>
-  `;
-}
-
-// ==========================
-// RETRIEVAL QUIZ (RESTORED)
-// ==========================
-let rqPapers = new Set(['p1','p2a','p2b','p3']);
-let rqDiff = 3;
-let rqMode = 'grid';
-let rqCurrent = [];
-
-function toggleRQPaper(p) {
-  rqPapers.has(p) ? rqPapers.delete(p) : rqPapers.add(p);
-  updateRQCounter();
-}
-
-function setRQDiff(d) {
-  rqDiff = d;
-  updateRQCounter();
-}
-
-function setRQMode(m) {
-  rqMode = m;
-}
-
-function generateRQ() {
-  if (!RQ || !RQ.length) return;
-
-  rqCurrent = RQ.filter(q =>
-    rqPapers.has(q.paper) &&
-    q.diff <= rqDiff
-  ).sort(() => Math.random() - 0.5).slice(0, 6);
-
-  const grid = document.getElementById('rq-grid');
-  const out = document.getElementById('rq-out');
-  const setup = document.getElementById('rq-setup');
-
-  if (!grid || !out || !setup) return;
-
-  grid.innerHTML = rqCurrent.map((q,i)=>`
-    <div class="rq-card" onclick="this.classList.toggle('revealed')">
-      <div class="rq-q">${q.q}</div>
-      <div class="rq-a">${q.a}</div>
-    </div>
-  `).join('');
-
-  setup.style.display = 'none';
-  out.style.display = 'block';
-}
-
-function rqBackToSetup() {
-  document.getElementById('rq-out').style.display = 'none';
-  document.getElementById('rq-setup').style.display = 'block';
-}
-
-function revealAll() {
-  document.querySelectorAll('.rq-card').forEach(c => c.classList.add('revealed'));
-}
-
-function updateRQCounter() {
-  const el = document.getElementById('rq-counter');
-  if (!el) return;
-
-  const count = RQ ? RQ.filter(q =>
-    rqPapers.has(q.paper) && q.diff <= rqDiff
-  ).length : 0;
-
-  el.textContent = count ? `${count} questions available` : '';
-}
-
-// ==========================
-// HELPERS
-// ==========================
-function shuffle(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
-}
-
-function escapeStr(str) {
-  return str.replace(/'/g, "\\'");
-}
 </script>
 <!-- EXAM FULLSCREEN OVERLAY -->
 <div id="exam-fullscreen" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;padding:2rem 1.5rem;overflow-y:auto">
