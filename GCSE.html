@@ -286,8 +286,8 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <span class="paper-badge" id="hub-paper-badge"></span>
   </div>
   <div class="mode-grid" style="grid-template-columns:1fr 1fr;margin-bottom:.75rem">
-    <button class="mode-btn" onclick="enterMode('flashcard')"><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Are you ready to test your knowledge?</span></button>
     <button class="mode-btn" onclick="enterMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Read and review the key facts</span></button>
+    <button class="mode-btn" onclick="enterMode('flashcard')"><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Are you ready to test your knowledge?</span></button>
     <button class="mode-btn" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Can you get the dates right?</span></button>
     <button class="mode-btn" onclick="enterMode('exam')"><span class="icon">✏️</span>Exam Practice<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Can you do it in timed conditions?</span></button>
   </div>
@@ -759,7 +759,6 @@ function renderKCard(entry, isInterleaved) {
           <span class="tag t-${card.paper}">${card.unit}</span>
         </div>
         <div class="card-heading">${card.heading}</div>
-        ${card.summary ? `<p style="font-size:.85rem;color:var(--muted);margin-bottom:.5rem;font-style:italic">${card.summary}</p>` : ''}
         <p style="font-size:.75rem;color:var(--muted);margin-bottom:.75rem">Show hints for a nudge · Reveal key content to check your knowledge</p>
 
         <div class="btn-row">
@@ -767,7 +766,7 @@ function renderKCard(entry, isInterleaved) {
           <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
         </div>
         <div class="reveal" id="kh">${hintsHtml}</div>
-        <div class="reveal" id="kf">${factsHtml}</div>
+        <div class="reveal" id="kf">${card.summary ? `<p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;font-style:italic">${card.summary}</p>` : ''}${factsHtml}</div>
       </div>
     </div>`;
 }
