@@ -3,59 +3,105 @@
 <head>
 <title>Mr Rodker's Revision Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body {
-  font-family: system-ui, sans-serif;
-  max-width: 800px;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 720px;
   margin: auto;
-  padding: 2rem;
-  line-height: 1.6;
+  padding: 1.5rem 1rem 3rem;
+  background: #f8f7f4;
+  color: #1a1a18;
 }
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
 h1 {
-  text-align: center;
-  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.2rem;
 }
-.intro {
-  text-align: center;
-  color: #555;
-  margin-bottom: 2rem;
-}
-h2 {
-  margin-top: 2rem;
-}
-ul {
-  line-height: 2;
-}
-a {
-  text-decoration: none;
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #6b6b68;
   font-weight: 600;
 }
-a:hover {
-  text-decoration: underline;
+
+/* CARDS */
+.section {
+  background: #ffffff;
+  border: 1px solid #e8e7e2;
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
 }
+
+/* BUTTON LINKS */
+.link-btn {
+  display: block;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 0.6rem;
+  transition: 0.15s;
+}
+
+/* COLOUR THEMES (aligned with GCSE page) */
+.p1 { background:#FEF9E7; color:#9A6B00; border:1.5px solid #F0B429; }
+.p2 { background:#FBEAF0; color:#993556; border:1.5px solid #D4537E; }
+.p3 { background:#E6F1FB; color:#185FA5; border:1.5px solid #378ADD; }
+.gcse { background:#E1F5EE; color:#0F6E56; border:1.5px solid #1D9E75; }
+
+.link-btn:hover {
+  opacity: 0.9;
+}
+
+/* DISABLED */
+.disabled {
+  background:#eee;
+  color:#888;
+  border:1px solid #ddd;
+  pointer-events:none;
+}
+
 </style>
 </head>
+
 <body>
-<h1>Welcome to Mr Rodker's Revision Hub</h1>
-<p class="intro">
-  Use the links below to access revision quizzes and materials.
-</p>
 
-<h2>A Level History</h2>
-<ul>
-  <li><a href=Coming soon...>Paper 1 (Y107) The Later Tudors, 1547-1603</a></li>
-  <li><a href="civil-rights.html">Paper 3 (Y319) Civil Rights in the USA, 1865-1992</a></li>
+<div class="header">
+  <h1>Mr Rodker's Revision Hub</h1>
+  <p class="subtitle">Knowledge is Porridge</p>
+</div>
 
-</ul>
+<div class="section">
+  <h2>🎓 A Level History</h2>
 
-<h2>GCSE History</h2>
-<ul>
-  <li><a href="GCSE.html">GCSE History Revision</a></li>
-</ul>
+  <a class="link-btn p1 disabled">
+    👑 Paper 1 (Y107) The Later Tudors — Coming soon
+  </a>
 
-<h2>Other Materials</h2>
-<ul>
-  <!-- PDFs or extra resources -->
-</ul>
+  <a class="link-btn p2 disabled">
+    ☢️ Paper 2 (Y223) The Cold War — Coming soon
+  </a>
+
+  <a href="civil-rights.html" class="link-btn p3">
+    ✊ Paper 3 (Y319) Civil Rights in the USA, 1865–1992
+  </a>
+</div>
+
+<div class="section">
+  <h2>🧠 GCSE History</h2>
+
+  <a href="GCSE.html" class="link-btn gcse">
+    🎯 GCSE Revision Hub (Migration, Cold War, Elizabeth, Germany)
+  </a>
+</div>
+
 </body>
 </html>
