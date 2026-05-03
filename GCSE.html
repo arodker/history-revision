@@ -201,7 +201,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
 /* ── FLASHCARD DRILL ── */
 .fd-scene { width:100%; margin-bottom:1rem; cursor:pointer; overflow:hidden; border-radius:14px; }
-.fd-card-inner { position:relative; width:100%; border-radius:14px; transition:transform .32s cubic-bezier(.4,0,.2,1), opacity .32s; }
+.fd-card-inner { position:relative; width:100%; border-radius:14px; transition:transform .2s cubic-bezier(.4,0,.2,1), opacity .2s; }
 .fd-card-inner.slide-out-right { transform:translateX(110%) !important; opacity:0; }
 .fd-card-inner.slide-out-left  { transform:translateX(-110%) !important; opacity:0; }
 .fd-card-inner.slide-in { transform:translateX(0) !important; opacity:1; }
@@ -211,10 +211,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .fd-back  { display:none; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; box-sizing:border-box; }
 .fd-card-inner.flipped .fd-front { display:none; }
 .fd-card-inner.flipped .fd-back  { display:block; }
-.fd-card-inner.flash-got  .fd-back { background:#bbf7d0; border-color:#16a34a; border-left-color:#16a34a; }
-.fd-card-inner.flash-miss .fd-back { background:#fecaca; border-color:#dc2626; border-left-color:#dc2626; }
-:root.dark .fd-card-inner.flash-got  .fd-back { background:#14532d; border-color:#16a34a; border-left-color:#16a34a; }
-:root.dark .fd-card-inner.flash-miss .fd-back { background:#7f1d1d; border-color:#dc2626; border-left-color:#dc2626; }
+
 .fd-tag { display:inline-block; font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:2px 8px; border-radius:20px; margin-bottom:.75rem; }
 .fd-question { font-size:1.15rem; font-weight:700; line-height:1.5; color:var(--text); text-align:center; padding:.5rem 0; }
 .fd-tap-hint { font-size:.72rem; color:var(--muted); margin-top:.75rem; text-align:center; }
@@ -436,7 +433,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
             <div class="fd-tag" id="fd-tag"></div>
             <div class="fd-question" id="fd-question"></div>
             <div class="fd-hint-chips" id="fd-hint-chips" style="display:none"></div>
-            <div class="fd-tap-hint">Tap to reveal answer</div>
+            <div class="fd-tap-hint" id="fd-tap-hint">Tap to reveal answer</div>
           </div>
           <div class="fd-back" id="fd-back">
             <div class="fd-tag" id="fd-tag-back"></div>
@@ -1446,6 +1443,7 @@ const LS_MASTERED   = 'gcse_fd_mastered';    // {cardKey: true} — cards ever t
 const LS_MISSED     = 'gcse_fd_missed';       // [cardKey, ...] — outstanding missed cards (cross-session)
 const LS_STREAK     = 'gcse_fd_streak';       // {date:'YYYY-MM-DD', count:N}
 const LS_SESSION    = 'gcse_fd_session';      // {date:'YYYY-MM-DD', got:{p1:N,...}, total:{p1:N,...}}
+const LS_HINTS      = 'gcse_fd_hints';         // boolean — remembered hint preference
 
 // State
 let fdDeck       = [];   // current round deck (card objects, may include outstanding)
@@ -1484,8 +1482,8 @@ function fdRecordSessionCard(paper, got) {
 }
 
 function fdSyncHints(on) {
-  fdHintsOn = on; // persist across cards
-  // Keep both checkboxes in sync
+  fdHintsOn = on;
+  localStorage.setItem(LS_HINTS, on ? '1' : '0');
   const setup = document.getElementById('fd-hints-on');
   const drill = document.getElementById('fd-hints-on-drill');
   if (setup) setup.checked = on;
@@ -1526,12 +1524,12 @@ function fdSetOutstanding(arr) {
 
 function fdSetup() {
   // Always reset hints toggle to off
-  // Reset hints to off at start of each session
-  fdHintsOn = false;
+  // Restore remembered hints preference
+  fdHintsOn = localStorage.getItem(LS_HINTS) === '1';
   const hintsChk = document.getElementById('fd-hints-on');
   const hintsDrill = document.getElementById('fd-hints-on-drill');
-  if (hintsChk) hintsChk.checked = false;
-  if (hintsDrill) hintsDrill.checked = false;
+  if (hintsChk) hintsChk.checked = fdHintsOn;
+  if (hintsDrill) hintsDrill.checked = fdHintsOn;
   // Populate unit dropdown for current paper
   const sel = document.getElementById('fd-unit');
   sel.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>';
@@ -1674,8 +1672,9 @@ function fdNext() {
     (isOutstandingCard ? '📌 ' : '') + fdCurrent.front;
 
   const pts = document.getElementById('fd-points');
-  pts.innerHTML = ['p1','p2','p3'].map(k =>
-    fdCurrent[k] ? `<li>${boldHints(fdCurrent[k], fdCurrent.hints || [])}</li>` : ''
+  const hints = fdCurrent.hints || [];
+  pts.innerHTML = ['p1','p2','p3'].map((k, i) =>
+    fdCurrent[k] ? `<li>${boldHints(fdCurrent[k], hints[i] ? [hints[i]] : [])}</li>` : ''
   ).join('');
   // Reset stagger state
   document.querySelectorAll('#fd-points li').forEach(li => li.classList.remove('fd-pt-show'));
@@ -1703,9 +1702,14 @@ function fdNext() {
 }
 
 function fdFlip() {
-  if (fdFlipped) return; // only flip once per card
+  const inner = document.getElementById('fd-card-inner');
+  if (fdFlipped) {
+    // Tap again — flip back to question, keep buttons visible
+    inner.classList.remove('flipped');
+    return;
+  }
   fdFlipped = true;
-  document.getElementById('fd-card-inner').classList.add('flipped');
+  inner.classList.add('flipped');
   // Stagger bullet points then show self-mark buttons
   const items = document.querySelectorAll('#fd-points li');
   items.forEach((li, i) => {
@@ -1750,24 +1754,19 @@ function fdAnswer(got) {
 
   // Animate card out, then advance
   const inner = document.getElementById('fd-card-inner');
-  inner.classList.add(got ? 'flash-got' : 'flash-miss');
+  inner.classList.add(got ? 'slide-out-right' : 'slide-out-left');
   setTimeout(() => {
-    inner.classList.add(got ? 'slide-out-right' : 'slide-out-left');
-  }, 180);
-  setTimeout(() => {
-    inner.classList.remove('flash-got','flash-miss','slide-out-right','slide-out-left','flipped');
+    inner.classList.remove('slide-out-right','slide-out-left','flipped');
     inner.classList.add(got ? 'from-left' : 'from-right');
     fdNext();
-    // Trigger slide-in on next frame
     requestAnimationFrame(() => requestAnimationFrame(() => {
       inner.classList.remove('from-left','from-right');
       inner.classList.add('slide-in');
-      setTimeout(() => inner.classList.remove('slide-in'), 350);
+      setTimeout(() => inner.classList.remove('slide-in'), 250);
     }));
-    // Refresh wheels
     if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
     if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
-  }, 480);
+  }, 220);
 }
 
 function fdUpdateProgress() {
