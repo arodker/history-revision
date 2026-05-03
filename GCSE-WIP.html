@@ -192,13 +192,14 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 }
 
 /* ── FLASHCARD DRILL ── */
-.fd-scene { perspective: 900px; width:100%; margin-bottom:1rem; cursor:pointer; }
-.fd-card-inner { position:relative; width:100%; transform-style:preserve-3d; transition:transform .45s cubic-bezier(.4,0,.2,1); border-radius:14px; min-height:160px; }
-.fd-card-inner.flipped { transform:rotateY(180deg); }
-.fd-front { position:absolute; top:0; left:0; width:100%; box-sizing:border-box; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; }
-.fd-back  { position:absolute; top:0; left:0; width:100%; box-sizing:border-box; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; transform:rotateY(180deg); }
+.fd-scene { width:100%; margin-bottom:1rem; cursor:pointer; }
+.fd-card-inner { position:relative; width:100%; border-radius:14px; }
+.fd-front { display:block; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; box-sizing:border-box; }
+.fd-back  { display:none; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; box-sizing:border-box; }
+.fd-card-inner.flipped .fd-front { display:none; }
+.fd-card-inner.flipped .fd-back  { display:block; }
 .fd-tag { display:inline-block; font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:2px 8px; border-radius:20px; margin-bottom:.75rem; }
-.fd-question { font-size:.95rem; font-weight:700; line-height:1.5; color:var(--text); }
+.fd-question { font-size:1.15rem; font-weight:700; line-height:1.5; color:var(--text); text-align:center; padding:.5rem 0; }
 .fd-tap-hint { font-size:.72rem; color:var(--muted); margin-top:.75rem; text-align:center; }
 .fd-points { list-style:none; padding:0; margin:.5rem 0 0 0; }
 .fd-points li { font-size:.85rem; line-height:1.55; padding:.4rem 0; border-bottom:1px solid var(--subtle); color:var(--text); }
@@ -1817,6 +1818,11 @@ function fdSetup() {
   // Colour the select
   sel.className = 'sel-' + currentPaper;
 
+  // Colour start button to current paper
+  const startBtn = document.getElementById('fd-start-btn');
+  const goClasses = {p1:'c-p1', p2a:'c-p2a', p2b:'c-p2b', p3:'c-p3'};
+  startBtn.className = 'btn-go ' + (goClasses[currentPaper] || '');
+
   // Show outstanding banner
   fdOutstanding = fdGetOutstanding();
   const banner = document.getElementById('fd-outstanding-banner');
@@ -1949,23 +1955,6 @@ function fdNext() {
   // Reset flip
   document.getElementById('fd-card-inner').classList.remove('flipped');
   document.getElementById('fd-btn-row').style.display = 'none';
-
-  // Set scene height: briefly make back visible (opacity 0) to measure, then restore
-  setTimeout(() => {
-    const inner = document.getElementById('fd-card-inner');
-    const front = document.getElementById('fd-front');
-    const back  = document.getElementById('fd-back');
-    // Temporarily un-rotate back to measure its natural height
-    back.style.transform = 'none';
-    back.style.visibility = 'hidden';
-    const h = Math.max(front.scrollHeight, back.scrollHeight, 160);
-    back.style.transform = 'rotateY(180deg)';
-    back.style.visibility = '';
-    front.style.minHeight = h + 'px';
-    back.style.minHeight  = h + 'px';
-    inner.style.height = h + 'px';
-  }, 30);
-
   fdUpdateProgress();
 }
 
