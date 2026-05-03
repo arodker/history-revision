@@ -200,12 +200,21 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 }
 
 /* ── FLASHCARD DRILL ── */
-.fd-scene { width:100%; margin-bottom:1rem; cursor:pointer; }
-.fd-card-inner { position:relative; width:100%; border-radius:14px; }
-.fd-front { display:block; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; box-sizing:border-box; }
+.fd-scene { width:100%; margin-bottom:1rem; cursor:pointer; overflow:hidden; border-radius:14px; }
+.fd-card-inner { position:relative; width:100%; border-radius:14px; transition:transform .32s cubic-bezier(.4,0,.2,1), opacity .32s; }
+.fd-card-inner.slide-out-right { transform:translateX(110%) !important; opacity:0; }
+.fd-card-inner.slide-out-left  { transform:translateX(-110%) !important; opacity:0; }
+.fd-card-inner.slide-in { transform:translateX(0) !important; opacity:1; }
+.fd-card-inner.from-right { transform:translateX(110%); opacity:0; }
+.fd-card-inner.from-left  { transform:translateX(-110%); opacity:0; }
+.fd-front { display:block; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; box-sizing:border-box; transition:background .25s; }
 .fd-back  { display:none; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; box-sizing:border-box; }
 .fd-card-inner.flipped .fd-front { display:none; }
 .fd-card-inner.flipped .fd-back  { display:block; }
+.fd-card-inner.flash-got  .fd-back { background:#bbf7d0; border-color:#16a34a; border-left-color:#16a34a; }
+.fd-card-inner.flash-miss .fd-back { background:#fecaca; border-color:#dc2626; border-left-color:#dc2626; }
+:root.dark .fd-card-inner.flash-got  .fd-back { background:#14532d; border-color:#16a34a; border-left-color:#16a34a; }
+:root.dark .fd-card-inner.flash-miss .fd-back { background:#7f1d1d; border-color:#dc2626; border-left-color:#dc2626; }
 .fd-tag { display:inline-block; font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:2px 8px; border-radius:20px; margin-bottom:.75rem; }
 .fd-question { font-size:1.15rem; font-weight:700; line-height:1.5; color:var(--text); text-align:center; padding:.5rem 0; }
 .fd-tap-hint { font-size:.72rem; color:var(--muted); margin-top:.75rem; text-align:center; }
@@ -215,7 +224,8 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .fd-points li:last-child { border-bottom:none; }
 .fd-points li::before { content:'•'; color:var(--muted); margin-right:.5rem; }
 .fd-hint-chips { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.6rem; }
-.fd-hint-chip { font-size:.7rem; font-weight:600; padding:.2rem .55rem; border-radius:20px; background:var(--subtle); color:var(--muted); border:1px solid var(--border); }
+.fd-hint-chip { font-size:.7rem; font-weight:700; padding:.2rem .55rem; border-radius:20px; background:var(--subtle); color:var(--muted); border:1px solid var(--border); }
+.fd-hint-chips .tag { font-weight:700; }
 .fd-hints-toggle { display:flex; align-items:center; gap:.6rem; font-size:.78rem; font-weight:600; color:var(--muted); margin-bottom:.75rem; }
 .fd-hints-toggle input[type=checkbox] { width:1.1rem; height:1.1rem; cursor:pointer; accent-color:var(--accent); }
 .fd-btn-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:.5rem; }
@@ -1445,6 +1455,7 @@ let fdGot        = 0;    // ✅ count this round
 let fdMissCount  = 0;    // ❌ count this round
 let fdCurrent    = null; // card currently shown
 let fdFlipped    = false;
+let fdHintsOn    = false; // persists across cards within a session
 let fdTotal      = 0;    // original deck size (for progress bar)
 let fdOutstanding = [];  // outstanding missed keys loaded from localStorage
 
@@ -1473,6 +1484,7 @@ function fdRecordSessionCard(paper, got) {
 }
 
 function fdSyncHints(on) {
+  fdHintsOn = on; // persist across cards
   // Keep both checkboxes in sync
   const setup = document.getElementById('fd-hints-on');
   const drill = document.getElementById('fd-hints-on-drill');
@@ -1481,7 +1493,7 @@ function fdSyncHints(on) {
   // Re-render chips on current card
   if (!fdCurrent) return;
   const chipsEl = document.getElementById('fd-hint-chips');
-  if (on && fdCurrent.hints && fdCurrent.hints.length) {
+  if (fdHintsOn && fdCurrent.hints && fdCurrent.hints.length) {
     chipsEl.innerHTML = fdCurrent.hints.map(h => `<span class="tag t-${fdCurrent.paper}">${h}</span>`).join('');
     chipsEl.style.display = 'flex';
   } else {
@@ -1514,7 +1526,8 @@ function fdSetOutstanding(arr) {
 
 function fdSetup() {
   // Always reset hints toggle to off
-  // Reset hints to off at start of each session, sync both checkboxes
+  // Reset hints to off at start of each session
+  fdHintsOn = false;
   const hintsChk = document.getElementById('fd-hints-on');
   const hintsDrill = document.getElementById('fd-hints-on-drill');
   if (hintsChk) hintsChk.checked = false;
@@ -1662,14 +1675,14 @@ function fdNext() {
 
   const pts = document.getElementById('fd-points');
   pts.innerHTML = ['p1','p2','p3'].map(k =>
-    fdCurrent[k] ? `<li>${fdCurrent[k]}</li>` : ''
+    fdCurrent[k] ? `<li>${boldHints(fdCurrent[k], fdCurrent.hints || [])}</li>` : ''
   ).join('');
   // Reset stagger state
   document.querySelectorAll('#fd-points li').forEach(li => li.classList.remove('fd-pt-show'));
 
   // Hint chips on front face
   const chipsEl = document.getElementById('fd-hint-chips');
-  const hintsOn = (document.getElementById('fd-hints-on') && document.getElementById('fd-hints-on').checked) || (document.getElementById('fd-hints-on-drill') && document.getElementById('fd-hints-on-drill').checked);
+  const hintsOn = fdHintsOn;
   if (hintsOn && fdCurrent.hints && fdCurrent.hints.length) {
     chipsEl.innerHTML = fdCurrent.hints.map(h => `<span class="tag t-${fdCurrent.paper}">${h}</span>`).join('');
     chipsEl.style.display = 'flex';
@@ -1735,10 +1748,26 @@ function fdAnswer(got) {
     }
   }
 
-  fdNext();
-  // Refresh wheels live as cards are answered
-  if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
-  if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
+  // Animate card out, then advance
+  const inner = document.getElementById('fd-card-inner');
+  inner.classList.add(got ? 'flash-got' : 'flash-miss');
+  setTimeout(() => {
+    inner.classList.add(got ? 'slide-out-right' : 'slide-out-left');
+  }, 180);
+  setTimeout(() => {
+    inner.classList.remove('flash-got','flash-miss','slide-out-right','slide-out-left','flipped');
+    inner.classList.add(got ? 'from-left' : 'from-right');
+    fdNext();
+    // Trigger slide-in on next frame
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      inner.classList.remove('from-left','from-right');
+      inner.classList.add('slide-in');
+      setTimeout(() => inner.classList.remove('slide-in'), 350);
+    }));
+    // Refresh wheels
+    if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
+    if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
+  }, 480);
 }
 
 function fdUpdateProgress() {
