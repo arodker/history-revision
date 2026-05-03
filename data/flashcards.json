@@ -710,7 +710,7 @@
     "hints": [
       "property",
       "individuals",
-      "democracy'"
+      "democracy"
     ]
   },
   {
@@ -2062,13 +2062,13 @@
     "paper": "p1",
     "unit": "Unit 1 – Medieval",
     "front": "What was England like in the Medieval period?",
-    "p1": "Majority rural society; most people were peasants farming the land with little power or wealth.",
-    "p2": "England was repeatedly invaded and settled — Vikings from Scandinavia, Normans from France.",
-    "p3": "Religion dominated life — the Catholic Church was central to government, law and culture.",
+    "p1": "Majority rural society; most people were peasants farming the land with little power or wealth. Cloth trade became important later in the period.",
+    "p2": "Kings had complete power and there was no parliament. Weak defences meant that invasions were common.",
+    "p3": "Religion dominated life — the Church was central to government, law and culture. Monasteries were wealthy and poorly .",
     "hints": [
-      "Majority",
-      "Vikings",
-      "Catholic"
+      "Rural",
+      "Kings",
+      "Church"
     ]
   },
   {
@@ -2077,12 +2077,12 @@
     "unit": "Unit 1 – Medieval",
     "front": "Why did the Vikings come to England?",
     "p1": "Economic: Vikings came to trade and later to raid, attracted by England's wealth and weak coastal defences compared to scarce resources in Scandinavia.",
-    "p2": "Military: 865 — Great Heathen Army invaded seeking revenge for the murder of Ragnar Lodbrok by King Ælla of Northumbria.",
-    "p3": "Settlement: 878 — Viking conquests led to creation of the Danelaw; Vikings encouraged to settle across North and East England.",
+    "p2": "War: 865 — Great Heathen Army invaded seeking revenge for the murder of Ragnar Lodbrok by King Ælla of Northumbria.",
+    "p3": "Religion: Norse religion believed the only way to Valhalla (paradise) was to die in battle. Motivated exploration and conquest.",
     "hints": [
-      "Vikings",
-      "Great",
-      "Viking"
+      "resources",
+      "Ragnar",
+      "Valhalla"
     ]
   },
   {
@@ -2090,13 +2090,13 @@
     "paper": "p1",
     "unit": "Unit 1 – Medieval",
     "front": "What was the Viking experience in the Danelaw?",
-    "p1": "878: Treaty between Alfred and Guthrum — Vikings allowed to settle in the Danelaw; established towns and farming communities.",
-    "p2": "1016: Viking king Cnut conquered all England — promoted acceptance and peace between Vikings and English.",
-    "p3": "Vikings faced hostility: 1002 — King Æthelred ordered the St Brice's Day Massacre — death of all Danes in England.",
+    "p1": "878: Treaty between Alfred and Guthrum — Vikings allowed to settle in the Danelaw (northeastern England); many assimilated including Guthrum who converted to Christianity.",
+    "p2": "Vikings faced hostility: 1002 — King Æthelred ordered the St Brice's Day Massacre — death of all Danes in England. It is not known how many were killed.",
+    "p3": "1016: A Viking king Cnut conquered all England — but promoted acceptance and peace between Vikings and English. He assimilated and kept English laws.",
     "hints": [
       "Alfred",
       "Cnut",
-      "King"
+      "St. Brice's Day"
     ]
   },
   {
@@ -2104,13 +2104,13 @@
     "paper": "p1",
     "unit": "Unit 1 – Medieval",
     "front": "How did the Vikings impact England?",
-    "p1": "Trade: Vikings brought trade links from Europe and the Middle East to the Danelaw; York became an international trading hub.",
+    "p1": "Built Environment: Vikings built burhs (fortified towns) across England. They grew into Nottingham, Leicester, and Derby.",
     "p2": "Government: Vikings introduced 'Things' — local democratic assemblies where communities voted on laws and decided guilt (early juries).",
-    "p3": "Language: Old Norse heavily influenced English — days of the week (e.g. Thursday = Thor's day); many place names ending in -by or -thorpe.",
+    "p3": "Language: Old Norse heavily influenced English; Over 1,000 words including egg and knife; days of the week (e.g. Thursday = Thor's day); many place names ending in -by or -thorpe.",
     "hints": [
-      "Vikings",
-      "introduced",
-      "Norse"
+      "Burhs",
+      "Things",
+      "Language"
     ]
   },
   {
@@ -2118,13 +2118,13 @@
     "paper": "p1",
     "unit": "Unit 1 – Medieval",
     "front": "Case Study: York under the Vikings",
-    "p1": "York grew from a town of 1,000 in 850 to a city of around 15,000 people by 950 — one of the largest cities in England.",
-    "p2": "Became an international trading hub — merchants travelled from across Europe and the Middle East to trade there.",
-    "p3": "Archaeological evidence at Coppergate shows Norse crafts, jewellery, and goods from as far as Constantinople — a genuinely multicultural city.",
+    "p1": "York (Jorvik) grew from a town of 1,000 in 850 to a city of around 15,000 people by 950 — one of the largest cities in England.",
+    "p2": "Became an international trading hub with rivers Ouse and Foss linking Jorvik to the sea. Goods traded from Africa and Constantinople (Istanbul).",
+    "p3": "Evidence of peaceful co-operation and assimilation between English Christians and Vikings. Last Viking king of Jorvik Erik the Bloodaxe is defeated in 954.",
     "hints": [
-      "England",
-      "Europe",
-      "Coppergate"
+      "15,000",
+      "trading",
+      "assimilation"
     ]
   },
   {
@@ -2132,13 +2132,13 @@
     "paper": "p1",
     "unit": "Unit 1 – Medieval",
     "front": "Why did Normans invade England in 1066?",
-    "p1": "King Edward the Confessor died without children; William of Normandy claimed Edward had named him as heir.",
-    "p2": "William promised any Norman knight who supported the invasion land and power in England.",
-    "p3": "Pope supported the invasion — gave religious legitimacy to William's claim; William carried a Papal banner at the Battle of Hastings.",
+    "p1": "King Edward the Confessor died without children; William, Duke of Normandy claimed Edward had named him as heir. Invaded to assert his claim.",
+    "p2": "William promised any Norman knight who supported the invasion land and power in England. Thousands followed William.",
+    "p3": "The Pope supported the invasion — gave religious legitimacy to William's claim; William carried a Papal banner at the Battle of Hastings.",
     "hints": [
-      "Edward",
-      "Norman",
-      "William's"
+      "Heir",
+      "Land",
+      "Pope"
     ]
   },
   {
@@ -2146,13 +2146,13 @@
     "paper": "p1",
     "unit": "Unit 1 – Medieval",
     "front": "What was life like for the Normans after 1066?",
-    "p1": "Normans became the ruling class — given land and positions at the top of the Feudal System by William.",
-    "p2": "Faced rebellions from the English — Normans increased oppression and control (built 84 castles using Jewish loans) to maintain power.",
-    "p3": "French was the official language of England for 200 years after 1066 — though the poor continued to speak English.",
+    "p1": "Normans became the ruling class — given land and positions at the top of the Feudal System by William. 200 Norman barons owned majority of English land.",
+    "p2": "Faced rebellions from the English — Normans increased oppression and control to maintain power.",
+    "p3": "French was the official language of England for 200 years after 1066 — though the poor continued to speak English. Limited assimilation.",
     "hints": [
       "Feudal",
-      "English",
-      "England"
+      "rebellions",
+      "French"
     ]
   },
   {
@@ -2161,40 +2161,40 @@
     "unit": "Unit 1 – Medieval",
     "front": "How did the Normans impact England?",
     "p1": "Feudal System: imposed a strict hierarchy — King, barons, knights, English peasants at the bottom. The Normans formed the ruling class for centuries.",
-    "p2": "Built environment: hundreds of castles and cathedrals; introduced Norman surnames; Norman French heavily influenced the English language.",
-    "p3": "Church: brought the English Church into line with Rome; replaced English bishops with Norman ones; built thousands of churches, cathedrals and monasteries.",
+    "p2": "Built environment: hundreds of castles and cathedrals built to dominate England. Tower of London (1070) built to control Londoners.",
+    "p3": "Language: French became language of power - 'parliament', 'army' etc; French words used for food e.g. 'Beouf - beef', English words for animal (cow); English names (Athelstan e.g.) replaced with William, Henry, Robert etc.",
     "hints": [
-      "System",
-      "Norman",
-      "English"
+      "Feudal System",
+      "Castles",
+      "Language"
     ]
   },
   {
     "no": 155,
     "paper": "p1",
     "unit": "Unit 1 – Medieval",
-    "front": "Why did the kings initially protect Jewish moneylenders?",
+    "front": "Why did the English Kings protect Jewish moneylenders?",
     "p1": "1070: William I invited Jewish moneylenders to England — Papal ban on usury (charging interest) meant only Jews could legally lend money at interest.",
     "p2": "Kings relied on Jewish loans to fund castles, wars and government — 8% of royal income came from Jewish communities.",
-    "p3": "1135: Royal Charter granted liberties to Jews; Jewries (Jewish communities) developed across England. 84 castles built using Jewish loans.",
+    "p3": "1135: Royal Charter granted liberties to Jews; Jewries (Jewish communities) developed across England. Jews could swear oaths on Torah and received fair trials.",
     "hints": [
-      "Jewish",
-      "Kings",
-      "Charter"
+      "1070",
+      "8%",
+      "liberties"
     ]
   },
   {
     "no": 156,
     "paper": "p1",
     "unit": "Unit 1 – Medieval",
-    "front": "Why did attitudes to Jews in medieval England change?",
-    "p1": "1144: First blood libel stories emerged in Norwich — Jews falsely accused of murdering Christian children for rituals.",
-    "p2": "1189: Large-scale anti-Semitic riots across England; 150 Jews committed suicide in York Castle to avoid massacre.",
-    "p3": "1265: Pope allowed Christians to perform usury — Jews no longer needed for royal finance; their protected status began to crumble.",
+    "front": "Why did people's attitudes to Jews in medieval England change?",
+    "p1": "Crusades in the Holy Land against Muslims led to priests condemning anyone who wasn't Christian. Jewish communities became targets.",
+    "p2": "1144: First blood libel stories emerged in Norwich — Jews falsely accused of murdering Christian children for rituals.",
+    "p3": "1189: Large-scale anti-Semitic riots across England; 150 Jews committed suicide in York Castle to avoid mass baptism.",
     "hints": [
-      "Norwich",
-      "England",
-      "Christians"
+      "Crusades",
+      "Blood Libel",
+      "York Castle"
     ]
   },
   {
@@ -2202,13 +2202,13 @@
     "paper": "p1",
     "unit": "Unit 1 – Medieval",
     "front": "How did royal treatment of Medieval Jews worsen?",
-    "p1": "1100s: English kings steadily increased taxation of Jewish communities.",
-    "p2": "1200s: Henry III introduced restrictions — Tabula (yellow badge) enforced; Jewish community increasingly scapegoated.",
+    "p1": "1200s: Henry III introduced restrictions — Tabula (yellow badge) enforced; Jewish community increasingly scapegoated and taxation increased.",
+    "p2": "1265: Pope allowed Christians to perform usury - meant that Kings no longer needed Jewish moneylenders for finance.",
     "p3": "1275: Statute of Jewry banned Jews from usury. 1290: Edward I expelled all Jews — over 3,000 forced into exile.",
     "hints": [
-      "Jewish",
       "Tabula",
-      "Jewry"
+      "Pope",
+      "Edward I"
     ]
   },
   {
@@ -2218,11 +2218,11 @@
     "front": "What was the impact of Medieval Jewish communities?",
     "p1": "Jewish loans funded major building projects including 84 Norman castles and royal government.",
     "p2": "8% of royal income came from Jewish communities — crucial to English state finances.",
-    "p3": "After expulsion in 1290, Edward I invited Italian banking families to fill the financial gap — showing how dependent the Crown had been on Jewish finance.",
+    "p3": "Jacob of Oxford, a Jewish moneylender, helped to fund and develop the University of Oxford.",
     "hints": [
-      "Norman",
-      "Jewish",
-      "Edward"
+      "castles",
+      "8%",
+      "Oxford"
     ]
   },
   {
@@ -2234,7 +2234,7 @@
     "p2": "1351: Edward III invited Flemish weavers to develop the cloth trade after they were evicted from their French hometowns during the Hundred Years' War.",
     "p3": "1303: Edward I gave Hansa merchants permission to establish the Steelyard in London — trading wool and cloth to Northern Europe.",
     "hints": [
-      "England",
+      "Cloth",
       "Flemish",
       "Hansa"
     ]
@@ -2244,13 +2244,13 @@
     "paper": "p1",
     "unit": "Unit 1 – Medieval",
     "front": "What was the experience of European traders and craftsmen?",
-    "p1": "Normally lived in harmony with English neighbours during prosperous times.",
+    "p1": "Normally lived in harmony with English neighbours during prosperous times. Could apply for Denizen status from 1378 and had right to fair trial.",
     "p2": "1381: foreign merchants attacked during the Peasants' Revolt — 150 murdered.",
     "p3": "Craft guilds resented migrants as job competition — especially hostile to Flemish weavers; 1440: alien taxes introduced.",
     "hints": [
-      "English",
+      "Denization",
       "Peasants'",
-      "Flemish"
+      "Alien taxes"
     ]
   },
   {
@@ -2264,7 +2264,7 @@
     "hints": [
       "Colchester",
       "Steelyard",
-      "English"
+      "weaving"
     ]
   },
   {
@@ -2272,13 +2272,13 @@
     "paper": "p1",
     "unit": "Unit 2 – Early Modern",
     "front": "How did England change in the Early Modern period?",
-    "p1": "Protestant Reformation in the 1500s made England a 'safe haven' for Protestant refugees from Europe.",
-    "p2": "English involvement in the Transatlantic Slave Trade increased significantly — many enslaved Africans brought to England.",
-    "p3": "East India Company (1600) began developing trade in India — first Lascars and Ayahs arrived in England.",
+    "p1": "In 1500s England became a predominately Protestant nation under Henry VIII, Edward VI and Elizabeth I. Europe is divided between Protestants and Catholics.",
+    "p2": "In the 1600s the Civil War between Parliament and the King led to growth in Parliament and decrease in royal power by end of the period.",
+    "p3": "This period saw the beginnigs of empire with early colonies in America and India and the beginning of Britain's involvement in the slave trade. Britain more connected with the wider world.",
     "hints": [
-      "Reformation",
-      "Transatlantic",
-      "India"
+      "Protestant",
+      "Parliament",
+      "wider world"
     ]
   },
   {
