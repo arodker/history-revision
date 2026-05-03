@@ -1284,7 +1284,7 @@ function enterFullscreen(q) {
   document.getElementById('fs-q-blur').textContent = qText;
 
   const hintsEl = document.getElementById('fs-hints');
-  hintsEl.innerHTML = (q.hints && q.hints.length) ? '<strong>You may use:</strong> ' + q.hints.join(' · ') : '';
+  hintsEl.innerHTML = (q.hints && q.hints.length) ? '<strong>You may use:</strong><ul style="margin:.3rem 0 0 1rem;padding:0">' + q.hints.map(h => `<li style="font-weight:400">${h}</li>`).join('') + '</ul>' : '';
 
   updateFsTimer();
   // Paper colours for start button
