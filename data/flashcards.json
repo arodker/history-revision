@@ -2287,12 +2287,12 @@
     "unit": "Unit 2 – Early Modern",
     "front": "Why did the Huguenots come to England?",
     "p1": "Huguenots were French Protestants fleeing Catholic persecution — St Bartholomew's Day Massacre (1572) killed 30,000 Huguenots in France.",
-    "p2": "First wave: 1560s–70s. Second wave: 1680s — French Catholic monarchy increased persecution; approximately 50,000 settled in London.",
-    "p3": "England's Protestant identity made it a natural refuge; government actively welcomed skilled Protestant workers.",
+    "p2": "Second wave of 50,000 Huguenots arrive in 1680s after French Kings resume persecution of Catholics. All Huguenots offered Denizen status by King Charles II.",
+    "p3": "Government actively welcomes and encourages Huguenot migration as they know the positive impact they can have on the economy.",
     "hints": [
-      "French",
-      "Catholic",
-      "Protestant"
+      "St Bartholomew's",
+      "Second wave",
+      "Government"
     ]
   },
   {
@@ -2304,9 +2304,9 @@
     "p2": "1680s: tensions in Spitalfields between Huguenots and English workers who accused them of stealing jobs.",
     "p3": "1600s: many English people donated money to help Huguenots settle — viewed with sympathy as Protestant victims of persecution.",
     "hints": [
-      "Huguenots",
+      "Denizen",
       "Spitalfields",
-      "English"
+      "donated"
     ]
   },
   {
@@ -2314,93 +2314,79 @@
     "paper": "p1",
     "unit": "Unit 2 – Early Modern",
     "front": "What was the impact of Huguenot migrants?",
-    "p1": "Helped found the Bank of England in 1694; started the English paper industry — 200 paper mills by 1714.",
-    "p2": "Transformed Spitalfields into a prosperous weaver town; cloth exports were 20 times higher by the end of the 17th century than at its start.",
+    "p1": "Economy: Helped found the Bank of England in 1694; started the English paper industry — 200 paper mills by 1714. 2/3 of printers were European migrants.",
+    "p2": "Built Environment Transformed Spitalfields into a prosperous weaver town; cloth exports were 20 times higher by the end of the 17th century than at its start.",
     "p3": "Huguenot scientists contributed to development of inoculations; 2/3 of printers in England were European migrants.",
     "hints": [
       "Bank",
       "Spitalfields",
-      "England"
+      "Scientists"
     ]
   },
-  {
+    {
     "no": 166,
     "paper": "p1",
     "unit": "Unit 2 – Early Modern",
-    "front": "Case Study: Huguenots in 17th Century England",
-    "p1": "Settled in Spitalfields, East London — transformed it into a weaving centre with silk production.",
-    "p2": "Founded the Bank of England (1694) and started the English paper industry.",
-    "p3": "By the late 1600s the Huguenot community in London had a positive relationship with the mayor and city authorities.",
+    "front": "Case Study: Flemish migrants in Sandwich",
+    "p1": "1561: local government of Sandwich invited Flemish weavers to support the local economy following the Dutch Revolt.",
+    "p2": "400 Flemings settled in Sandwich - boosted weaving economy. Ships in the town's harbour trebled over next decade.",
+    "p3": "Increasing restrictions and hostility as Flemish migrants were accused of 'taking English jobs'; Flemish banned from non-weaving jobs.",
     "hints": [
-      "Spitalfields",
-      "Bank",
-      "Huguenot"
+      "invited",
+      "harbour",
+      "hostility"
     ]
   },
   {
     "no": 167,
     "paper": "p1",
     "unit": "Unit 2 – Early Modern",
-    "front": "Case Study: Flemish migrants in Sandwich",
-    "p1": "1560s: local government of Sandwich invited Flemish weavers to support the local economy following the Dutch Revolt.",
-    "p2": "Initially seen as positive — introduced new weaving techniques and boosted trade.",
-    "p3": "Over time: increasing restrictions and hostility as Flemish migrants were accused of 'taking English jobs'; growing tensions by the 1580s.",
+    "front": "Case Study: Walloon migrants in Canterbury",
+    "p1": "1570s: local government of Canterbury invited Walloon migrants (French-speaking Protestants from the Netherlands) to boost the local economy.",
+    "p2": "Walloons became highly successful — employed English people and taught them their skills; Canterbury became prosperous.",
+    "p3": "1580s: Walloons seen as a positive influence in Canterbury — by developing and teaching new trades including diamond cutting and sugar refining.",
     "hints": [
-      "Sandwich",
-      "Initially",
-      "Flemish"
+      "Invited",
+      "Successful",
+      "Diamond"
     ]
   },
   {
     "no": 168,
     "paper": "p1",
     "unit": "Unit 2 – Early Modern",
-    "front": "Case Study: Walloon migrants in Canterbury",
-    "p1": "1570s: local government of Canterbury invited Walloon migrants (French-speaking Protestants from the Netherlands) to boost the local economy.",
-    "p2": "Walloons became highly successful — employed English people and taught them their skills; Canterbury became prosperous.",
-    "p3": "1580s: Walloons seen as a positive influence in Canterbury — contrast with the more hostile reception in Sandwich.",
+    "front": "Why did Oliver Cromwell allow Jewish migrants to return to England in 1656?",
+    "p1": "Jews had been expelled from England since 1290. Manasseh ben Israel campaigned for their return — as Jews were facing intense violence in other European countries.",
+    "p2": "Cromwell's Puritan beliefs led him to allow their return so they could be converted to Christianity.",
+    "p3": "Pragmatic reasons: Jewish financiers would help turn London into a major financial centre; Cromwell was aware of their contribution to the Dutch economy.",
     "hints": [
-      "Canterbury",
-      "English",
-      "Sandwich"
+      "Manasseh ben Israel",
+      "Oliver Cromwell",
+      "Financiers"
     ]
   },
   {
     "no": 169,
     "paper": "p1",
     "unit": "Unit 2 – Early Modern",
-    "front": "Why did Oliver Cromwell allow Jewish migrants to return to England in 1656?",
-    "p1": "Jews had been expelled from England since 1290. Manasseh ben Israel campaigned for their return — arguing Jews needed to disperse to all nations before the Second Coming.",
-    "p2": "Cromwell's Puritan beliefs led him to allow their return so they could be converted to Christianity.",
-    "p3": "Pragmatic reasons: Jewish financiers would help turn London into a major financial centre; their intelligence networks were also valued.",
+    "front": "What was the experience of Jewish migrants in the Early Modern period?",
+    "p1": "1656: allowed to build their own synagogue; but restricted — forbidden from attending university, serving in the army or becoming lawyers or MPs.",
+    "p2": "Late 1600s: Jewish community in London had a positive relationship with the mayor and people of the city. But anti-Semitic stereotypes continued.",
+    "p3": "After 1656, Jewish financiers helped turn London into a major financial centre — the first steps toward the City's dominance.",
     "hints": [
-      "England",
-      "Puritan",
-      "Jewish"
+      "restricted",
+      "mayor",
+      "London"
     ]
   },
   {
     "no": 170,
     "paper": "p1",
     "unit": "Unit 2 – Early Modern",
-    "front": "What was the experience of Jewish migrants in the Early Modern period?",
-    "p1": "1656: allowed to build their own synagogue; but restricted — forbidden from attending university, serving in the army or becoming lawyers or MPs.",
-    "p2": "Late 1600s: Jewish community in London had a positive relationship with the mayor and people of the city.",
-    "p3": "After 1656, Jewish financiers helped turn London into a major financial centre — the first steps toward the City's dominance.",
-    "hints": [
-      "allowed",
-      "Jewish",
-      "London"
-    ]
-  },
-  {
-    "no": 171,
-    "paper": "p1",
-    "unit": "Unit 2 – Early Modern",
     "front": "How did the experience of black people in England change in the Early Modern period?",
-    "p1": "Early 1500s: evidence of black Africans living peacefully alongside the English population — racism as a concept had not yet developed.",
+    "p1": "Early 1500s: evidence of black Africans living peacefully alongside the English population e.g. John Blanke — successful black trumpeter. Racism as a concept had not yet developed.",
     "p2": "From the 1560s: Elizabeth I sponsored John Hawkins and Francis Drake in the slave trade; black people began to be seen as property.",
-    "p3": "1596: Elizabeth I gave permission for all black people in London to be gathered and sold — though this never actually happened; 1660: Charles II founded the Royal African Company.",
+    "p3": "1660: King Charles II founded Royal African Company to enslave West Africans. Ultimately responsible for enslaving c.200,000 Africans."
     "hints": [
       "Africans",
       "Elizabeth",
@@ -2408,7 +2394,7 @@
     ]
   },
   {
-    "no": 172,
+    "no": 171,
     "paper": "p1",
     "unit": "Unit 2 – Early Modern",
     "front": "Why did Palatines come to England?",
@@ -2417,26 +2403,26 @@
     "p3": "Palatines saw Protestant England as a safe refuge after years of religious war and instability in Germany.",
     "hints": [
       "Rhineland",
-      "Foreign",
-      "Protestant"
+      "Naturalisation",
+      "refuge"
+    ]
+  },
+  {
+    "no": 172,
+    "paper": "p1",
+    "unit": "Unit 2 – Early Modern",
+    "front": "What was the experience of Palatine migrants?",
+    "p1": "Unlike Huguenots, Palatines were mainly farmers. Seen as a burden — they lacked specialist skills and arrived in overwhelming numbers.",
+    "p2": "3,000 Palatines were deported to Ireland in 1709 when their numbers overwhelmed resources — showed reception depended on economic usefulness.",
+    "p3": "Reception contrasted sharply with the Huguenots — demonstrated that Protestant faith alone was not enough to guarantee welcome.",
+    "hints": [
+      "farmers",
+      "Ireland",
+      "contrast"
     ]
   },
   {
     "no": 173,
-    "paper": "p1",
-    "unit": "Unit 2 – Early Modern",
-    "front": "What was the experience of Palatine migrants?",
-    "p1": "Unlike Huguenots, Palatines were seen as a burden — they lacked specialist skills and arrived in overwhelming numbers.",
-    "p2": "3,000 Palatines were deported to Ireland in 1709 when their numbers overwhelmed resources — showed reception depended on economic usefulness.",
-    "p3": "Reception contrasted sharply with the Huguenots — demonstrated that Protestant faith alone was not enough to guarantee welcome.",
-    "hints": [
-      "Huguenots",
-      "Ireland",
-      "Protestant"
-    ]
-  },
-  {
-    "no": 174,
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "How did Britain change in the 18th and 19th centuries?",
@@ -2450,7 +2436,7 @@
     ]
   },
   {
-    "no": 175,
+    "no": 174,
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "Why did Irish migrants come to Britain in the 1840s?",
@@ -2464,7 +2450,7 @@
     ]
   },
   {
-    "no": 176,
+    "no": 175,
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "What was the experience of Irish migrants?",
@@ -2478,7 +2464,7 @@
     ]
   },
   {
-    "no": 177,
+    "no": 176,
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "What was the impact of Irish migrants?",
@@ -2492,7 +2478,7 @@
     ]
   },
   {
-    "no": 178,
+    "no": 177,
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "Why did Asian migrants come to Britain in the 18th and 19th centuries?",
@@ -2506,7 +2492,7 @@
     ]
   },
   {
-    "no": 179,
+    "no": 178,
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "What was the experience of Asian migrants?",
@@ -2520,7 +2506,7 @@
     ]
   },
   {
-    "no": 180,
+    "no": 179,
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "What was the impact of Asian migrants?",
@@ -2534,7 +2520,7 @@
     ]
   },
   {
-    "no": 181,
+    "no": 180,
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "Case Study: Liverpool in the 19th Century",
@@ -2548,7 +2534,7 @@
     ]
   },
   {
-    "no": 182,
+    "no": 181,
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "How did the experience of black people in Britain change in the 18th and 19th centuries?",
@@ -2562,7 +2548,7 @@
     ]
   },
   {
-    "no": 183,
+    "no": 182,
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "What was the impact of black migrants in the 18th and 19th centuries?",
@@ -2576,7 +2562,7 @@
     ]
   },
   {
-    "no": 184,
+    "no": 183,
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "Why did 150,000 Ashkenazi Jews come to Britain in the 1880s?",
@@ -2590,7 +2576,7 @@
     ]
   },
   {
-    "no": 185,
+    "no": 184,
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "Case Study: Experience of Ashkenazi Jews in the East End of London",
@@ -2604,7 +2590,7 @@
     ]
   },
   {
-    "no": 186,
+    "no": 185,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "How did Britain change in the Modern period?",
@@ -2618,7 +2604,7 @@
     ]
   },
   {
-    "no": 187,
+    "no": 186,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "What was the experience of refugees to Britain?",
@@ -2632,7 +2618,7 @@
     ]
   },
   {
-    "no": 188,
+    "no": 187,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "How did WWI affect migration?",
@@ -2646,7 +2632,7 @@
     ]
   },
   {
-    "no": 189,
+    "no": 188,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "How did WWII affect migration?",
@@ -2660,7 +2646,7 @@
     ]
   },
   {
-    "no": 190,
+    "no": 189,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "Why did the Windrush Generation come to Britain?",
@@ -2674,7 +2660,7 @@
     ]
   },
   {
-    "no": 191,
+    "no": 190,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "How did laws about who could migrate to Britain change in the 20th century?",
@@ -2688,7 +2674,7 @@
     ]
   },
   {
-    "no": 192,
+    "no": 191,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "What was the experience of Windrush migrants?",
@@ -2702,7 +2688,7 @@
     ]
   },
   {
-    "no": 193,
+    "no": 192,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "How did Windrush migrants impact Britain?",
@@ -2716,7 +2702,7 @@
     ]
   },
   {
-    "no": 194,
+    "no": 193,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "How did laws protecting migrants develop in the 20th Century?",
@@ -2730,7 +2716,7 @@
     ]
   },
   {
-    "no": 195,
+    "no": 194,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "What were the anti-immigrant political movements of the 20th century?",
@@ -2744,7 +2730,7 @@
     ]
   },
   {
-    "no": 196,
+    "no": 195,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "Case Study: Bristol in the mid 20th Century",
@@ -2758,7 +2744,7 @@
     ]
   },
   {
-    "no": 197,
+    "no": 196,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "Why did East African Asians come to Britain?",
@@ -2772,7 +2758,7 @@
     ]
   },
   {
-    "no": 198,
+    "no": 197,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "Case Study: Asian migrants in Leicester",
@@ -2786,7 +2772,7 @@
     ]
   },
   {
-    "no": 199,
+    "no": 198,
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "How did Britain's relationship with the European Union change?",
@@ -2800,7 +2786,7 @@
     ]
   },
   {
-    "no": 200,
+    "no": 199,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "Why did Windrush Migrants come to Notting Hill in the 1950s?",
@@ -2814,7 +2800,7 @@
     ]
   },
   {
-    "no": 201,
+    "no": 200,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What was housing like in Notting Hill?",
@@ -2828,7 +2814,7 @@
     ]
   },
   {
-    "no": 202,
+    "no": 20,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What was the Notting Hill Housing Trust and Pardner schemes?",
@@ -2842,7 +2828,7 @@
     ]
   },
   {
-    "no": 203,
+    "no": 202,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "How did Caribbean culture change Notting Hill?",
@@ -2856,7 +2842,7 @@
     ]
   },
   {
-    "no": 204,
+    "no": 203,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What were Shebeens?",
@@ -2870,7 +2856,7 @@
     ]
   },
   {
-    "no": 205,
+    "no": 204,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What was the Portobello Road Market?",
@@ -2884,7 +2870,7 @@
     ]
   },
   {
-    "no": 206,
+    "no": 205,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "Why was the Mangrove restaurant important to the Caribbean community?",
@@ -2898,7 +2884,7 @@
     ]
   },
   {
-    "no": 207,
+    "no": 206,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "How did the police treat the black community in Notting Hill?",
@@ -2912,7 +2898,7 @@
     ]
   },
   {
-    "no": 208,
+    "no": 207,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What anti-immigration groups were active in Notting Hill?",
@@ -2926,7 +2912,7 @@
     ]
   },
   {
-    "no": 209,
+    "no": 208,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What happened during the Notting Hill riots (1958)?",
@@ -2940,7 +2926,7 @@
     ]
   },
   {
-    "no": 210,
+    "no": 209,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What happened during and after the murder of Kelso Cochrane (1959)?",
@@ -2954,7 +2940,7 @@
     ]
   },
   {
-    "no": 211,
+    "no": 210,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "How did Claudia Jones change Notting Hill?",
@@ -2968,7 +2954,7 @@
     ]
   },
   {
-    "no": 212,
+    "no": 211,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "Who were the British Black Panthers?",
@@ -2982,7 +2968,7 @@
     ]
   },
   {
-    "no": 213,
+    "no": 212,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "Why did the trial of the Mangrove Nine matter?",
@@ -2996,7 +2982,7 @@
     ]
   },
   {
-    "no": 214,
+    "no": 213,
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What primary sources can we use to find out about Notting Hill?",
