@@ -163,7 +163,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   :root.dark #rq-one-a { color:#6EE7B7 !important; }
   :root.dark .btn-sm[onclick*="rqOneAnswer(true)"] { background:#1a3d2e !important; color:#6EE7B7 !important; border-color:#6EE7B7 !important; }
 /* KC mode readability */
-#mode-knowledge .card-heading { font-size:1.05rem; margin-bottom:.75rem; line-height:1.4; font-weight:700; }
+#mode-knowledge .card-heading { font-size:1.05rem; margin-bottom:.75rem; line-height:1.4; text-decoration:underline; text-underline-offset:3px; }
 #mode-knowledge ul { margin:.25rem 0 0; padding-left:1.1rem; }
 #mode-knowledge li { font-size:.88rem; line-height:1.75; margin-bottom:.35rem; }
 #mode-knowledge .kc-summary { font-size:.88rem; font-style:italic; color:var(--muted); margin-bottom:.9rem; line-height:1.6; }
@@ -282,12 +282,12 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   <div class="rq-section" style="margin-bottom:1rem">
     <p class="rq-section-label">⚡ Flashcard progress</p>
     <p style="font-size:.75rem;font-weight:600;color:var(--muted);margin-bottom:.15rem">How much have you covered today?</p>
-    <p style="font-size:.68rem;color:var(--muted);margin-bottom:.6rem;opacity:.8">Tap a wheel to launch a flashcard drill</p>
+    <p style="font-size:.68rem;color:var(--muted);margin-bottom:.6rem;opacity:.8">Tap a wheel to launch a flashcard mode</p>
     <div id="fd-tracker" style="display:flex;justify-content:space-around;align-items:flex-start;padding:.75rem .5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:14px">
-      <div class="fd-wheel-cell" data-paper="p1" onclick="fdWheelLaunch('p1')" title="Launch flashcard drill"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg><div class="fd-wheel-label">Migrants</div></div>
-      <div class="fd-wheel-cell" data-paper="p2a" onclick="fdWheelLaunch('p2a')" title="Launch flashcard drill"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg><div class="fd-wheel-label">Cold War</div></div>
-      <div class="fd-wheel-cell" data-paper="p2b" onclick="fdWheelLaunch('p2b')" title="Launch flashcard drill"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2b" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg><div class="fd-wheel-label">Elizabeth</div></div>
-      <div class="fd-wheel-cell" data-paper="p3" onclick="fdWheelLaunch('p3')" title="Launch flashcard drill"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p3" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg><div class="fd-wheel-label">Germany</div></div>
+      <div class="fd-wheel-cell" data-paper="p1" onclick="fdWheelLaunch('p1')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg><div class="fd-wheel-label">Migrants</div></div>
+      <div class="fd-wheel-cell" data-paper="p2a" onclick="fdWheelLaunch('p2a')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg><div class="fd-wheel-label">Cold War</div></div>
+      <div class="fd-wheel-cell" data-paper="p2b" onclick="fdWheelLaunch('p2b')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2b" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg><div class="fd-wheel-label">Elizabeth</div></div>
+      <div class="fd-wheel-cell" data-paper="p3" onclick="fdWheelLaunch('p3')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p3" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg><div class="fd-wheel-label">Germany</div></div>
     </div>
   </div>
 </div>
@@ -298,25 +298,30 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
     <span class="paper-badge" id="hub-paper-badge"></span>
   </div>
-  <div class="mode-grid" style="grid-template-columns:1fr 1fr;margin-bottom:.75rem">
-    <button class="mode-btn" onclick="enterMode('flashcard')"><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Are you ready to test your knowledge?</span></button>
-    <button class="mode-btn" onclick="enterMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Read and review the key facts</span></button>
-    <button class="mode-btn" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Can you get the dates right?</span></button>
-    <button class="mode-btn" onclick="enterMode('exam')"><span class="icon">✏️</span>Exam Practice<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Can you do it in timed conditions?</span></button>
-  </div>
-  <!-- Single paper flashcard progress wheel -->
-  <div style="display:flex;flex-direction:column;align-items:center;padding:.75rem .5rem .5rem;border-top:1px solid var(--border)">
-    <p style="font-size:.68rem;font-weight:600;color:var(--muted);margin-bottom:.5rem;text-align:center">⚡ Flashcard progress today — tap to drill</p>
-    <div id="fd-hub-wheel-cell" onclick="enterMode('flashcard')" title="Launch flashcard drill" style="cursor:pointer;text-align:center">
-      <svg id="fd-hub-wheel" class="fd-wheel" viewBox="0 0 60 60" style="width:72px;height:72px">
+  <!-- Primary: Flashcard Drill with wheel -->
+  <div style="display:flex;align-items:center;gap:1rem;background:var(--surface);border:1.5px solid var(--border2);border-left-width:4px;border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;cursor:pointer" id="fd-primary-btn" onclick="enterMode('flashcard')">
+    <div id="fd-hub-wheel-cell" title="Flashcard progress today" style="flex-shrink:0;text-align:center">
+      <svg id="fd-hub-wheel" class="fd-wheel" viewBox="0 0 60 60" style="width:64px;height:64px;display:block">
         <circle id="fd-hub-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
         <circle id="fd-hub-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
         <circle id="fd-hub-ring-got" cx="30" cy="30" r="24" fill="none" stroke="#888" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
         <circle id="fd-hub-ring-fill" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/>
         <text id="fd-hub-pct" x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)">0%</text>
       </svg>
-      <div id="fd-hub-label" class="fd-wheel-label" style="margin-top:.2rem"></div>
+      <div id="fd-hub-label" class="fd-wheel-label" style="margin-top:.2rem;font-size:.6rem"></div>
     </div>
+    <div style="flex:1">
+      <div style="font-size:1rem;font-weight:700;margin-bottom:.2rem">⚡ Flashcard Mode</div>
+      <div style="font-size:.75rem;color:var(--muted);line-height:1.4">Test yourself card by card — the best way to revise. Missed cards come back until you know them.</div>
+      <div style="font-size:.68rem;color:var(--muted);margin-top:.4rem;opacity:.75">Tap to start · wheel shows today's progress</div>
+    </div>
+  </div>
+  <!-- Secondary modes -->
+  <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Also available</p>
+  <div class="mode-grid" style="grid-template-columns:1fr 1fr 1fr;margin-bottom:.75rem">
+    <button class="mode-btn" onclick="enterMode('knowledge')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">🧠</span>Revision Guide</button>
+    <button class="mode-btn" onclick="enterMode('dates')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">📅</span>Key Dates Quiz</button>
+    <button class="mode-btn" onclick="enterMode('exam')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">✏️</span>Exam Practice</button>
   </div>
 </div>
 
@@ -396,7 +401,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
         <label for="fd-hints-on">💡 Show keyword hints on cards</label>
       </div>
       <div id="fd-outstanding-banner" style="display:none;font-size:.78rem;color:var(--muted);background:var(--subtle);border-radius:8px;padding:.6rem .75rem;margin-bottom:.75rem"></div>
-      <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start Flashcard Drill</button>
+      <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start Flashcard Mode</button>
     </div>
 
     <!-- Drill state -->
@@ -621,6 +626,8 @@ function pickPaper(p) {
   document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
   showScreen('s-hub');
   renderFdHubWheel();
+  const primaryBtn = document.getElementById('fd-primary-btn');
+  if (primaryBtn) primaryBtn.style.borderLeftColor = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'}[p] || '#888';
 }
 
 function goBack() {
@@ -651,7 +658,7 @@ function enterMode(m) {
 }
 
 function setMode(m) {
-  const titles = {knowledge:'🧠 Knowledge Builder', dates:'📅 Key Dates Quiz', exam:'✏️ Exam Practice', flashcard:'⚡ Flashcard Drill'};
+  const titles = {knowledge:'🧠 Revision Guide', dates:'📅 Key Dates Quiz', exam:'✏️ Exam Practice', flashcard:'⚡ Flashcard Mode'};
   const titleEl = document.getElementById('mode-title');
   if (titleEl) titleEl.textContent = titles[m] || '';
   const printBtn = document.getElementById('print-btn');
@@ -741,9 +748,10 @@ function buildKPool() {
 function onUnitChange() {
   buildKPool();
   kIdx = 0;
-  document.getElementById('k-out').innerHTML = '';
-  updateNavUI();
-  if (kPool.length) renderKCard(kPool[0]);
+  document.getElementById('k-out').innerHTML = '<div style="font-size:.85rem;color:var(--muted);padding:.75rem 0">Select a topic from the dropdown above to begin.</div>';
+  // Reset topic dropdown to placeholder
+  const cardSel = document.getElementById('k-card');
+  if (cardSel) cardSel.value = '';
 }
 
 function updateNavUI() {
@@ -1753,7 +1761,7 @@ function fdShowSummary() {
   const outstanding = fdGetOutstanding();
   const note = document.getElementById('fd-sum-note');
   if (outstanding.length > 0) {
-    note.innerHTML = `📌 <strong>${outstanding.length} card${outstanding.length > 1 ? 's' : ''} missed</strong> — these will be woven into your future flashcard drills automatically (marked 📌).`;
+    note.innerHTML = `📌 <strong>${outstanding.length} card${outstanding.length > 1 ? 's' : ''} missed</strong> — these will be woven into your future flashcard modes automatically (marked 📌).`;
   } else {
     note.textContent = '';
   }
@@ -1942,7 +1950,7 @@ function fdShowToast(msg) {
 }
 
 function fdWheelLaunch(paper) {
-  // Navigate to flashcard drill for this paper
+  // Navigate to flashcard mode for this paper
   pickPaper(paper);
   enterMode('flashcard');
 }
