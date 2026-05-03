@@ -224,12 +224,25 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .fd-outstanding-note { font-size:.78rem; color:var(--text); background:var(--subtle); border-radius:8px; padding:.5rem .75rem; margin-top:.75rem; line-height:1.45; }
 
 /* FLASHCARD TRACKER WHEELS */
-.fd-wheel { width:64px; height:64px; display:block; margin:0 auto .4rem; }
-.fd-wheel-cell { text-align:center; flex:1; }
+.fd-wheel { width:64px; height:64px; display:block; margin:0 auto .4rem; transition:transform .15s; }
+.fd-wheel-cell { text-align:center; flex:1; cursor:pointer; padding:.25rem; border-radius:10px; transition:background .15s; }
+.fd-wheel-cell:hover .fd-wheel { transform:scale(1.08); }
+.fd-wheel-cell:hover { background:var(--subtle); }
 .fd-wheel-label { font-size:.68rem; font-weight:600; color:var(--muted); }
+.fd-wheel-hint { font-size:.62rem; color:var(--muted); opacity:.7; margin-top:.2rem; }
+@keyframes fd-pulse { 0%{transform:scale(1)} 40%{transform:scale(1.18)} 70%{transform:scale(.95)} 100%{transform:scale(1)} }
+.fd-wheel-pulse { animation:fd-pulse .5s ease; }
+.fd-wheel-done circle.fd-ring-gold { stroke:#F0B429; }
+#fd-toast { position:fixed; bottom:1.5rem; left:50%; transform:translateX(-50%) translateY(80px); background:#1a1a18; color:#fff; padding:.65rem 1.2rem; border-radius:12px; font-size:.82rem; font-weight:600; z-index:9999; opacity:0; transition:opacity .3s, transform .3s; pointer-events:none; white-space:nowrap; }
+#fd-toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+#fd-confetti-canvas { position:fixed; inset:0; pointer-events:none; z-index:9998; }
+.fd-summary-card.is-perfect { border-color:#F0B429; background:linear-gradient(135deg,#fffbeb,#fff); }
+:root.dark .fd-summary-card.is-perfect { background:linear-gradient(135deg,#2a2510,#2e2e34); border-color:#c49a1a; }
 </style>
 </head>
 <body>
+<div id="fd-toast"></div>
+<canvas id="fd-confetti-canvas" style="display:none"></canvas>
 <div class="app">
 <div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;margin-bottom:.5rem">
   <button id="print-btn" onclick="window.print()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;display:none" title="Print">🖨️</button>
@@ -253,13 +266,15 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
   </div>
   <!-- Flashcard tracker wheels -->
-  <div style="margin-bottom:1rem">
-    <p style="font-size:.75rem;font-weight:600;color:var(--muted);margin-bottom:.6rem;text-align:center">Flashcard progress — how much have you covered?</p>
+  <div class="rq-section" style="margin-bottom:1rem">
+    <p class="rq-section-label">⚡ Flashcard progress</p>
+    <p style="font-size:.75rem;font-weight:600;color:var(--muted);margin-bottom:.15rem">How much have you covered today?</p>
+    <p style="font-size:.68rem;color:var(--muted);margin-bottom:.6rem;opacity:.8">Tap a wheel to launch a flashcard drill</p>
     <div id="fd-tracker" style="display:flex;justify-content:space-around;align-items:flex-start;padding:.75rem .5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:14px">
-      <div class="fd-wheel-cell" data-paper="p1"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg><div class="fd-wheel-label">Migrants</div></div>
-      <div class="fd-wheel-cell" data-paper="p2a"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg><div class="fd-wheel-label">Cold War</div></div>
-      <div class="fd-wheel-cell" data-paper="p2b"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg><div class="fd-wheel-label">Elizabeth</div></div>
-      <div class="fd-wheel-cell" data-paper="p3"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg><div class="fd-wheel-label">Germany</div></div>
+      <div class="fd-wheel-cell" data-paper="p1" onclick="fdWheelLaunch('p1')" title="Launch flashcard drill"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg><div class="fd-wheel-label">Migrants</div></div>
+      <div class="fd-wheel-cell" data-paper="p2a" onclick="fdWheelLaunch('p2a')" title="Launch flashcard drill"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg><div class="fd-wheel-label">Cold War</div></div>
+      <div class="fd-wheel-cell" data-paper="p2b" onclick="fdWheelLaunch('p2b')" title="Launch flashcard drill"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2b" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg><div class="fd-wheel-label">Elizabeth</div></div>
+      <div class="fd-wheel-cell" data-paper="p3" onclick="fdWheelLaunch('p3')" title="Launch flashcard drill"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p3" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg><div class="fd-wheel-label">Germany</div></div>
     </div>
   </div>
 </div>
@@ -1389,6 +1404,7 @@ Promise.all([
 const LS_MASTERED   = 'gcse_fd_mastered';    // {cardKey: true} — cards ever ticked ✅
 const LS_MISSED     = 'gcse_fd_missed';       // [cardKey, ...] — outstanding missed cards (cross-session)
 const LS_STREAK     = 'gcse_fd_streak';       // {date:'YYYY-MM-DD', count:N}
+const LS_SESSION    = 'gcse_fd_session';      // {date:'YYYY-MM-DD', got:{p1:N,...}, total:{p1:N,...}}
 
 // State
 let fdDeck       = [];   // current round deck (card objects, may include outstanding)
@@ -1400,6 +1416,30 @@ let fdCurrent    = null; // card currently shown
 let fdFlipped    = false;
 let fdTotal      = 0;    // original deck size (for progress bar)
 let fdOutstanding = [];  // outstanding missed keys loaded from localStorage
+
+function fdTodayStr() {
+  return new Date().toISOString().slice(0, 10);
+}
+function fdGetSession() {
+  const s = JSON.parse(localStorage.getItem(LS_SESSION) || 'null');
+  const today = fdTodayStr();
+  if (!s || s.date !== today) {
+    // New day — reset
+    const fresh = { date: today, got: {p1:0,p2a:0,p2b:0,p3:0}, total: {p1:0,p2a:0,p2b:0,p3:0} };
+    localStorage.setItem(LS_SESSION, JSON.stringify(fresh));
+    return fresh;
+  }
+  return s;
+}
+function fdSetSession(s) {
+  localStorage.setItem(LS_SESSION, JSON.stringify(s));
+}
+function fdRecordSessionCard(paper, got) {
+  const s = fdGetSession();
+  s.total[paper] = (s.total[paper] || 0) + 1;
+  if (got) s.got[paper] = (s.got[paper] || 0) + 1;
+  fdSetSession(s);
+}
 
 function fdKey(card) {
   return card.paper + '|' + card.no;
@@ -1584,6 +1624,9 @@ function fdAnswer(got) {
   const mastered = fdGetMastered();
   const outstanding = fdGetOutstanding();
 
+  // Record in today's session tally
+  fdRecordSessionCard(fdCurrent.paper, got);
+
   if (got) {
     fdGot++;
     mastered[key] = true;
@@ -1608,6 +1651,8 @@ function fdAnswer(got) {
   }
 
   fdNext();
+  // Refresh wheels live as cards are answered
+  if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
 }
 
 function fdUpdateProgress() {
@@ -1637,6 +1682,24 @@ function fdShowSummary() {
 
   const drillBtn = document.getElementById('fd-drill-again-btn');
   drillBtn.style.display = fdMissCount > 0 ? 'block' : 'none';
+
+  // Check if this paper hit 100% today
+  const session = fdGetSession();
+  const paperTotal = FD.filter(c => c.paper === currentPaper).length;
+  const sessionGot = session.got[currentPaper] || 0;
+  const sessionSeen = session.total[currentPaper] || 0;
+  const isPerfect = fdMissCount === 0 && sessionGot >= paperTotal;
+
+  const summaryCard = document.querySelector('#fd-summary .fd-summary-card');
+  const summaryHeading = document.querySelector('#fd-summary .fd-summary-card div:first-child');
+  if (isPerfect) {
+    summaryCard.classList.add('is-perfect');
+    summaryHeading.textContent = 'All cards mastered today! 🏆';
+    fdFireConfetti();
+  } else {
+    summaryCard.classList.remove('is-perfect');
+    summaryHeading.textContent = 'Session complete! 🏁';
+  }
 
   // Update streak
   fdUpdateStreak();
@@ -1705,38 +1768,113 @@ function fdUpdateStreak() {
 // ═══════════════════════════════════════════
 function renderFdWheels() {
   if (!FD || !FD.length) return;
-  const mastered = fdGetMastered();
+  const session = fdGetSession();
   const outstanding = fdGetOutstanding();
   const circ = 2 * Math.PI * 24; // ~150.8
+  const paperNames = {p1:'Migrants', p2a:'Cold War', p2b:'Elizabeth', p3:'Germany'};
 
   ['p1','p2a','p2b','p3'].forEach(paper => {
-    const total   = FD.filter(c => c.paper === paper).length;
-    if (!total) return;
-    const mastKeys = Object.keys(mastered).filter(k => k.startsWith(paper + '|'));
-    const missKeys = outstanding.filter(k => k.startsWith(paper + '|'));
-    const mastCount = mastKeys.length;
-    const missCount = missKeys.length;
+    const paperTotal = FD.filter(c => c.paper === paper).length;
+    if (!paperTotal) return;
 
-    const mastPct = mastCount / total;
-    const missPct = Math.min(missCount / total, 1 - mastPct); // grey arc for missed
+    const sessionGot   = session.got[paper]   || 0;
+    const sessionTotal = session.total[paper] || 0;
+    // Got % = cards got right today / all cards in this paper
+    const gotPct  = sessionGot / paperTotal;
+    // Missed arc = cards seen today but wrong / total (capped so arcs don't exceed full circle)
+    const missedToday = Math.max(0, sessionTotal - sessionGot);
+    const missPct = Math.min(missedToday / paperTotal, 1 - gotPct);
+    // Pinned arc = outstanding pinned cards / total (shown in remaining space)
+    const pinnedCount = outstanding.filter(k => k.startsWith(paper + '|')).length;
+    // We use grey arc for missed-today only (cleaner)
 
-    const mastDash = mastPct * circ;
+    const gotDash  = gotPct  * circ;
     const missDash = missPct * circ;
-    // Missed arc starts where mastered arc ends
-    const missOffset = -(mastDash);
 
     const gotEl  = document.querySelector('.fd-ring-got-'  + paper);
     const missEl = document.querySelector('.fd-ring-miss-' + paper);
     const txtEl  = document.querySelector('.fd-pct-'       + paper);
 
-    if (gotEl)  gotEl.setAttribute( 'stroke-dasharray', mastDash + ' ' + (circ - mastDash));
+    if (gotEl)  gotEl.setAttribute('stroke-dasharray', gotDash + ' ' + (circ - gotDash));
     if (missEl) {
       missEl.setAttribute('stroke-dasharray', missDash + ' ' + (circ - missDash));
-      // Rotate miss arc to start right after mastered arc
-      missEl.setAttribute('transform', `rotate(${-90 + mastPct * 360} 30 30)`);
+      missEl.setAttribute('transform', `rotate(${-90 + gotPct * 360} 30 30)`);
     }
-    if (txtEl)  txtEl.textContent = Math.round(mastPct * 100) + '%';
+    const isDone = gotPct >= 1 && sessionTotal > 0;
+
+    // Text: always show percentage
+    if (txtEl) {
+      txtEl.textContent = Math.round(gotPct * 100) + '%';
+      txtEl.setAttribute('fill', isDone ? '#92620a' : 'var(--text)');
+      txtEl.setAttribute('font-size', '10');
+    }
+
+    // Gold filled circle behind text when complete
+    const bgEl = document.querySelector(`.fd-wheel-cell[data-paper="${paper}"] svg circle:first-child`);
+    if (bgEl) bgEl.setAttribute('stroke', isDone ? '#F0B429' : 'var(--subtle)');
+
+    // Gold fill circle (second element = fill indicator)
+    const fillEl = document.querySelector(`.fd-ring-fill-${paper}`);
+    if (fillEl) fillEl.setAttribute('r', isDone ? '18' : '0');
   });
+}
+
+function fdShowToast(msg) {
+  const t = document.getElementById('fd-toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4000);
+}
+
+function fdWheelLaunch(paper) {
+  // Navigate to flashcard drill for this paper
+  pickPaper(paper);
+  enterMode('flashcard');
+}
+
+function fdFireConfetti() {
+  const canvas = document.getElementById('fd-confetti-canvas');
+  canvas.style.display = 'block';
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const ctx = canvas.getContext('2d');
+  const colours = ['#F0B429','#D4537E','#1D9E75','#378ADD','#fff','#f9a8d4','#86efac'];
+  const pieces = Array.from({length: 120}, () => ({
+    x: Math.random() * canvas.width,
+    y: -20 - Math.random() * 80,
+    r: 4 + Math.random() * 5,
+    d: 2 + Math.random() * 3,
+    col: colours[Math.floor(Math.random() * colours.length)],
+    tilt: Math.random() * 10 - 5,
+    tiltAngle: 0,
+    tiltSpeed: 0.05 + Math.random() * 0.1,
+  }));
+  let frame = 0;
+  const maxFrames = 130;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pieces.forEach(p => {
+      p.tiltAngle += p.tiltSpeed;
+      p.y += p.d + Math.sin(frame * 0.04) * 0.8;
+      p.x += Math.sin(p.tiltAngle) * 1.5;
+      p.tilt = Math.sin(p.tiltAngle) * 12;
+      const alpha = frame < 90 ? 1 : 1 - (frame - 90) / 40;
+      ctx.globalAlpha = Math.max(0, alpha);
+      ctx.fillStyle = p.col;
+      ctx.beginPath();
+      ctx.ellipse(p.x, p.y, p.r, p.r * 0.5, p.tilt * Math.PI / 180, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    frame++;
+    if (frame < maxFrames) {
+      requestAnimationFrame(draw);
+    } else {
+      canvas.style.display = 'none';
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+  requestAnimationFrame(draw);
 }
 
 
