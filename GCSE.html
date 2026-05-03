@@ -222,6 +222,11 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .fd-badge-got  { background:#d1fae5; color:#065f46; padding:4px 12px; border-radius:20px; font-size:.82rem; font-weight:700; }
 .fd-badge-miss { background:#fee2e2; color:#991b1b; padding:4px 12px; border-radius:20px; font-size:.82rem; font-weight:700; }
 .fd-outstanding-note { font-size:.78rem; color:var(--text); background:var(--subtle); border-radius:8px; padding:.5rem .75rem; margin-top:.75rem; line-height:1.45; }
+
+/* FLASHCARD TRACKER WHEELS */
+.fd-wheel { width:64px; height:64px; display:block; margin:0 auto .4rem; }
+.fd-wheel-cell { text-align:center; flex:1; }
+.fd-wheel-label { font-size:.68rem; font-weight:600; color:var(--muted); }
 </style>
 </head>
 <body>
@@ -246,6 +251,16 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   <div class="rq-section">
     <p class="rq-section-label">Or try:</p>
     <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
+  </div>
+  <!-- Flashcard tracker wheels -->
+  <div style="margin-bottom:1rem">
+    <p style="font-size:.75rem;font-weight:600;color:var(--muted);margin-bottom:.6rem;text-align:center">Flashcard progress — how much have you covered?</p>
+    <div id="fd-tracker" style="display:flex;justify-content:space-around;align-items:flex-start;padding:.75rem .5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:14px">
+      <div class="fd-wheel-cell" data-paper="p1"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg><div class="fd-wheel-label">Migrants</div></div>
+      <div class="fd-wheel-cell" data-paper="p2a"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg><div class="fd-wheel-label">Cold War</div></div>
+      <div class="fd-wheel-cell" data-paper="p2b"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg><div class="fd-wheel-label">Elizabeth</div></div>
+      <div class="fd-wheel-cell" data-paper="p3"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg><div class="fd-wheel-label">Germany</div></div>
+    </div>
   </div>
 </div>
 
@@ -576,6 +591,7 @@ function showScreen(id) {
     if (printBtn) printBtn.style.display = 'none';
   }
   // update flagged button on hub
+  if (id === 's-pick') renderFdWheels();
 }
 
 function enterMode(m) {
@@ -1358,6 +1374,7 @@ Promise.all([
   const kbMode = document.getElementById('mode-knowledge');
   if (kbMode && kbMode.style.display !== 'none') { buildKPool(); updateNavUI(); }
   console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length, 'FD:', FD.length, 'KC:', KC.length);
+  renderFdWheels(); // update picker screen wheels once data is ready
 }).catch(err => {
   console.error('Data load failed:', err);
   const eOut = document.getElementById('e-out');
@@ -1426,13 +1443,17 @@ function fdSetup() {
   fdOutstanding = fdOutstanding.filter(k => FD.find(c => fdKey(c) === k));
   fdSetOutstanding(fdOutstanding);
 
-  const outFromOther = fdOutstanding.filter(k => {
+  const unit = document.getElementById('fd-unit') ? document.getElementById('fd-unit').value : 'all';
+  const outNotInDeck = fdOutstanding.filter(k => {
     const c = FD.find(c => fdKey(c) === k);
-    return c && c.paper !== currentPaper;
+    if (!c) return false;
+    if (c.paper !== currentPaper) return true; // other paper
+    if (unit === 'all') return false; // same paper, drilling all units — already included
+    return c.unit !== unit; // same paper, different unit
   });
-  if (outFromOther.length > 0) {
+  if (outNotInDeck.length > 0) {
     banner.style.display = 'block';
-    banner.textContent = `⚡ ${outFromOther.length} missed card${outFromOther.length > 1 ? 's' : ''} from other papers will be woven in.`;
+    banner.textContent = `📌 ${outNotInDeck.length} pinned card${outNotInDeck.length > 1 ? 's' : ''} from other units/papers will be woven in.`;
   } else {
     banner.style.display = 'none';
   }
@@ -1456,12 +1477,17 @@ function fdStart() {
   let base = FD.filter(c => c.paper === currentPaper);
   if (unit !== 'all') base = base.filter(c => c.unit === unit);
 
-  // Separate outstanding missed cards (cross-paper) — fetch full card objects
+  // Separate outstanding missed cards not already in the deck
   fdOutstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
   const outCards = fdOutstanding
     .map(k => FD.find(c => fdKey(c) === k))
     .filter(Boolean)
-    .filter(c => c.paper !== currentPaper); // don't double-add same-paper cards
+    .filter(c => {
+      // Exclude if already in base deck (same paper + same unit, or same paper + drilling all)
+      if (c.paper !== currentPaper) return true; // other paper — always include
+      if (unit === 'all') return false;           // same paper, all units — base already covers it
+      return c.unit !== unit;                     // same paper, different unit — include
+    });
 
   // Combine: base deck + outstanding from other papers
   // Interleave outstanding: insert one every ~6 base cards
@@ -1673,6 +1699,46 @@ function fdUpdateStreak() {
   streak.date  = today;
   localStorage.setItem(LS_STREAK, JSON.stringify(streak));
 }
+
+// ═══════════════════════════════════════════
+// FLASHCARD TRACKER WHEELS
+// ═══════════════════════════════════════════
+function renderFdWheels() {
+  if (!FD || !FD.length) return;
+  const mastered = fdGetMastered();
+  const outstanding = fdGetOutstanding();
+  const circ = 2 * Math.PI * 24; // ~150.8
+
+  ['p1','p2a','p2b','p3'].forEach(paper => {
+    const total   = FD.filter(c => c.paper === paper).length;
+    if (!total) return;
+    const mastKeys = Object.keys(mastered).filter(k => k.startsWith(paper + '|'));
+    const missKeys = outstanding.filter(k => k.startsWith(paper + '|'));
+    const mastCount = mastKeys.length;
+    const missCount = missKeys.length;
+
+    const mastPct = mastCount / total;
+    const missPct = Math.min(missCount / total, 1 - mastPct); // grey arc for missed
+
+    const mastDash = mastPct * circ;
+    const missDash = missPct * circ;
+    // Missed arc starts where mastered arc ends
+    const missOffset = -(mastDash);
+
+    const gotEl  = document.querySelector('.fd-ring-got-'  + paper);
+    const missEl = document.querySelector('.fd-ring-miss-' + paper);
+    const txtEl  = document.querySelector('.fd-pct-'       + paper);
+
+    if (gotEl)  gotEl.setAttribute( 'stroke-dasharray', mastDash + ' ' + (circ - mastDash));
+    if (missEl) {
+      missEl.setAttribute('stroke-dasharray', missDash + ' ' + (circ - missDash));
+      // Rotate miss arc to start right after mastered arc
+      missEl.setAttribute('transform', `rotate(${-90 + mastPct * 360} 30 30)`);
+    }
+    if (txtEl)  txtEl.textContent = Math.round(mastPct * 100) + '%';
+  });
+}
+
 
 </script>
 <!-- EXAM FULLSCREEN OVERLAY -->
