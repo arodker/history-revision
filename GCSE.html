@@ -772,7 +772,7 @@ function boldHints(text, hints) {
 function renderKCard(entry, isInterleaved) {
   const card = entry.card;
   const num = entry.num;
-  const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0">` +
+  const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0 .75rem">` +
   card.hints.map(h => `<span class="tag t-${card.paper}">${h}</span>`).join('') +
   `</div>`;
   const factsHtml = '<ul>' + card.facts.map(f =>
@@ -787,16 +787,12 @@ function renderKCard(entry, isInterleaved) {
           <span class="tag t-${card.paper}">${card.unit}</span>
         </div>
         <div class="card-heading">${card.heading}</div>
-        <p style="font-size:.75rem;color:var(--muted);margin-bottom:.75rem">Show hints for a nudge · Reveal key content to check your knowledge</p>
-
-        <div class="btn-row">
-          <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
-          <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
-        </div>
-        <div class="reveal" id="kh">${hintsHtml}</div>
-        <div class="reveal" id="kf">${card.summary ? `<p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;font-style:italic">${card.summary}</p>` : ''}${factsHtml}</div>
+        ${hintsHtml}
+        ${card.summary ? `<p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;font-style:italic">${card.summary}</p>` : ''}
+        ${factsHtml}
       </div>
     </div>`;
+}
 }
 
 function jumpToCard() {
