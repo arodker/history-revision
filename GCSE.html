@@ -161,63 +161,67 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
 /* PRINT MODE */
 @media print {
-  /* Mixed Retrieval print */
-  #s-rapid .mode-header,
-  #rq-setup,
-  .rq-btn-row,
-  .rq-tap { display:none !important; }
-  #rq-out { display:block !important; }
-  .rq-grid { display:block !important; }
-  .rq-card {
-    break-inside:avoid;
-    border:1px solid #ccc !important;
-    border-radius:4px !important;
-    margin-bottom:.4rem !important;
-    padding:.4rem .6rem !important;
-    min-height:unset !important;
-    display:flex !important;
-    flex-direction:row !important;
-    align-items:baseline !important;
-    gap:.75rem !important;
-  }
-  .rq-card .rq-q { font-size:.85rem !important; flex:1; }
-  .rq-card .rq-a {
-    display:block !important;
-    background:none !important;
-    border-radius:0 !important;
-    padding:0 !important;
-    font-size:.85rem !important;
-    color:#333 !important;
-    font-weight:600 !important;
-    flex:1;
-    border-left:1px solid #ccc;
-    padding-left:.75rem !important;
-  }
-  .rq-card .rq-q span { display:none !important; } /* hide difficulty stars */
-}
-@media print {
-  /* Dates mode: hide quiz, show clean list */
-  #mode-dates #d-out,
-  #mode-dates #d-go,
-  #mode-dates #d-hard { display:none !important; }
-  #mode-dates #d-print-list { display:block !important; }
-}
-@media print {
+  /* Hide all chrome — navigation, buttons, screens other than s-main */
   #dark-toggle, #hub-link, .mode-grid, .back-btn, .paper-grid, .rq-section,
-  .btn-row, .btn-go, .btn-sm, .filter-row, #k-progress-wrap, #k-flag-bar,
-  #k-card, #k-go, .mode-header, .screen:not(#s-main), #mode-dates, #mode-exam {
+  .btn-row, .btn-go, .btn-sm, .filter-row, .mode-header,
+  .screen:not(#s-main), #mode-dates, #mode-flashcard,
+  #k-card, #e-type, #e-directory,
+  div[style*="display:flex;gap:8px;margin-bottom"] {
     display:none !important;
   }
   body { background:#fff !important; color:#000 !important; }
   .app { max-width:100%; padding:.5rem; }
-  .card { break-inside:avoid; border:1px solid #ccc; margin-bottom:.75rem; box-shadow:none; }
-  .reveal { display:block !important; }
-  .card-heading { font-size:1.1rem; font-weight:700; }
-  .reveal li { font-size:.85rem; }
-  .stripe { display:none; }
-  .inner { padding-left:0; }
+  /* KB: show current card with hints and facts revealed */
+  #mode-knowledge .card { break-inside:avoid; border:1px solid #ccc; margin-bottom:.75rem; box-shadow:none; }
+  #mode-knowledge .reveal { display:block !important; }
+  #mode-knowledge .card-heading { font-size:1.1rem; font-weight:700; }
+  #mode-knowledge .reveal li { font-size:.85rem; }
+  #mode-knowledge .stripe { display:none; }
+  #mode-knowledge .inner { padding-left:0; }
+  /* Exam: show question card with indicative content revealed */
+  #mode-exam .card { break-inside:avoid; border:1px solid #ccc; margin-bottom:.75rem; box-shadow:none; }
+  #mode-exam .reveal { display:block !important; }
+  #mode-exam .card-q { font-size:1rem; font-weight:700; margin-bottom:.5rem; }
+  #mode-exam .rhead { font-size:.75rem; font-weight:700; text-transform:uppercase; color:#555; margin:.5rem 0 .2rem; }
+  #mode-exam .stripe { display:none; }
+  #mode-exam .inner { padding-left:0; }
+  /* Hints as plain text for print */
+  .hint-item { font-size:.82rem; padding:2px 0; border:none; }
+  .tag { border:1px solid #ccc; }
   h1 { font-size:1.2rem; margin-bottom:.2rem; }
 }
+
+/* ── FLASHCARD DRILL ── */
+.fd-scene { width:100%; margin-bottom:1rem; cursor:pointer; }
+.fd-card-inner { position:relative; width:100%; border-radius:14px; }
+.fd-front { display:block; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; box-sizing:border-box; }
+.fd-back  { display:none; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; box-sizing:border-box; }
+.fd-card-inner.flipped .fd-front { display:none; }
+.fd-card-inner.flipped .fd-back  { display:block; }
+.fd-tag { display:inline-block; font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:2px 8px; border-radius:20px; margin-bottom:.75rem; }
+.fd-question { font-size:1.15rem; font-weight:700; line-height:1.5; color:var(--text); text-align:center; padding:.5rem 0; }
+.fd-tap-hint { font-size:.72rem; color:var(--muted); margin-top:.75rem; text-align:center; }
+.fd-points { list-style:none; padding:0; margin:.5rem 0 0 0; }
+.fd-points li { font-size:.85rem; line-height:1.55; padding:.4rem 0; border-bottom:1px solid var(--subtle); color:var(--text); }
+.fd-points li:last-child { border-bottom:none; }
+.fd-points li::before { content:'•'; color:var(--muted); margin-right:.5rem; }
+.fd-btn-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:.5rem; }
+.fd-btn { padding:14px 8px; border-radius:12px; border:none; font-family:inherit; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .15s; }
+.fd-got  { background:#d1fae5; color:#065f46; }
+.fd-got:hover  { background:#a7f3d0; }
+.fd-miss { background:#fee2e2; color:#991b1b; }
+.fd-miss:hover { background:#fecaca; }
+.fd-progress-wrap { margin-bottom:.75rem; }
+.fd-progress-text { font-size:.75rem; color:var(--muted); margin-bottom:4px; display:flex; justify-content:space-between; }
+.fd-bar-bg { background:#e5e5e3; border-radius:99px; height:6px; }
+.fd-bar-fill { height:6px; border-radius:99px; transition:width .3s; }
+.fd-summary-card { background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem; text-align:center; margin-bottom:1rem; }
+.fd-summary-stat { font-size:2rem; font-weight:800; }
+.fd-summary-label { font-size:.78rem; color:var(--muted); margin-top:.2rem; }
+.fd-summary-row { display:flex; gap:1rem; justify-content:center; margin:.75rem 0; }
+.fd-badge-got  { background:#d1fae5; color:#065f46; padding:4px 12px; border-radius:20px; font-size:.82rem; font-weight:700; }
+.fd-badge-miss { background:#fee2e2; color:#991b1b; padding:4px 12px; border-radius:20px; font-size:.82rem; font-weight:700; }
+.fd-outstanding-note { font-size:.75rem; color:var(--muted); margin-top:.5rem; }
 </style>
 </head>
 <body>
@@ -242,7 +246,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   <div class="rq-section">
     <p class="rq-section-label">Or try:</p>
     <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
-    <button class="btn-go" id="home-flag-btn" style="background:var(--subtle);color:var(--text);display:none;margin-bottom:0" onclick="goToFlagged()">🚩 Review flagged cards (<span id="home-flag-num">0</span>)</button>
   </div>
 </div>
 
@@ -253,12 +256,11 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <span class="paper-badge" id="hub-paper-badge"></span>
   </div>
   <div class="mode-grid" style="grid-template-columns:1fr 1fr;margin-bottom:.75rem">
-    <button class="mode-btn" onclick="enterMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Learn key content card by card</span></button>
-    <button class="mode-btn" style="opacity:.45;cursor:not-allowed" disabled><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Coming soon</span></button>
-    <button class="mode-btn" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Test your chronology</span></button>
-    <button class="mode-btn" onclick="enterMode('exam')"><span class="icon">✏️</span>Exam Practice<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Practise exam questions</span></button>
+    <button class="mode-btn" onclick="enterMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Read and review the key facts</span></button>
+    <button class="mode-btn" onclick="enterMode('flashcard')"><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">How much do you actually know?</span></button>
+    <button class="mode-btn" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Can you get the dates right?</span></button>
+    <button class="mode-btn" onclick="enterMode('exam')"><span class="icon">✏️</span>Exam Practice<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Can you do it in timed conditions?</span></button>
   </div>
-  <button class="btn-go" id="hub-flag-btn" style="background:var(--subtle);color:var(--text);display:none" onclick="goToFlagged()">🚩 Review flagged cards (<span id="hub-flag-num">0</span>)</button>
 </div>
 
 <!-- SCREEN 3: MODE CONTENT -->
@@ -276,31 +278,16 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
   <!-- KNOWLEDGE -->
   <div id="mode-knowledge" style="display:none">
-    <div id="k-out" style="margin-bottom:.75rem"></div>
-    <div class="filter-row">
+    <div class="filter-row" style="margin-bottom:.75rem">
       <select id="k-unit" onchange="onUnitChange()"><option value="">— select a unit —</option><option value="all">All units</option></select>
       <select id="k-card" onchange="jumpToCard()"><option value="">— select a topic —</option></select>
     </div>
-
+    <div id="k-out" style="margin-bottom:.75rem"></div>
     <div style="display:flex;gap:8px;margin-bottom:.75rem">
       <button class="btn-sm" onclick="stepCard(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
-      <button class="btn-sm" id="k-go" onclick="drawRandomCard()" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">🔀 Shuffle</button>
       <button class="btn-sm" onclick="stepCard(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
     </div>
     <span id="k-card-num" style="display:none"></span>
-    <div id="k-progress-wrap" style="margin-bottom:.75rem;display:none">
-      <div style="font-size:.75rem;color:var(--muted);margin-bottom:4px">
-        <span id="k-progress-text"></span>
-      </div>
-      <div style="background:#e5e5e3;border-radius:99px;height:6px">
-        <div id="k-progress-bar" style="height:6px;border-radius:99px;background:#4a7c59;transition:width .3s"></div>
-      </div>
-    </div>
-    <div id="k-flag-bar" style="display:none;gap:8px;align-items:center;margin-bottom:.75rem">
-      <span id="k-flag-count" style="font-size:.82rem;color:var(--muted)">🚩 <span id="k-flag-num">0</span> flagged</span>
-      <button class="btn-sm" onclick="showFlaggedScreen()">Review flagged cards</button>
-      <button class="btn-sm" onclick="clearFlagged()">Clear flags</button>
-    </div>
   </div>
 
   <!-- DATES -->
@@ -308,7 +295,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <button class="btn-go" id="d-go" onclick="startQuiz()">Start key dates quiz</button>
     <button class="btn-sm" id="d-hard" onclick="startQuiz(true)" style="width:100%;margin-top:-.5rem;margin-bottom:.75rem;display:none">🎯 Hardest dates only</button>
     <div id="d-out"></div>
-    <div id="d-print-list" style="display:none"></div>
   </div>
 
   <!-- EXAM -->
@@ -318,6 +304,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Question type</label>
       <select id="e-type" onchange="updateExamDirectory()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px">
         <option value="all">All question types</option>
+        <option value="2mark">2-mark describe</option>
         <option value="4mark">4-mark similarity/difference</option>
         <option value="4mark-consequence">4-mark consequence</option>
         <option value="8mark-narrative">8-mark narrative</option>
@@ -334,6 +321,81 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       <button class="btn-sm" onclick="stepExam(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
       <button class="btn-sm" id="e-random" onclick="drawExam()" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">🔀 Shuffle</button>
       <button class="btn-sm" onclick="stepExam(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
+    </div>
+  </div>
+
+  <!-- FLASHCARD DRILL -->
+  <div id="mode-flashcard" style="display:none">
+    <!-- Setup state -->
+    <div id="fd-setup">
+      <div style="margin-bottom:.75rem">
+        <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Choose unit</label>
+        <select id="fd-unit" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
+          <option value="all">All units</option>
+        </select>
+      </div>
+      <div id="fd-outstanding-banner" style="display:none;font-size:.78rem;color:var(--muted);background:var(--subtle);border-radius:8px;padding:.6rem .75rem;margin-bottom:.75rem"></div>
+      <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start Flashcard Drill</button>
+    </div>
+
+    <!-- Drill state -->
+    <div id="fd-drill" style="display:none">
+      <div class="fd-progress-wrap">
+        <div class="fd-progress-text">
+          <span id="fd-prog-text"></span>
+          <span id="fd-prog-count"></span>
+        </div>
+        <div class="fd-bar-bg">
+          <div class="fd-bar-fill" id="fd-bar" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="fd-scene" id="fd-scene" onclick="fdFlip()">
+        <div class="fd-card-inner" id="fd-card-inner">
+          <div class="fd-front" id="fd-front">
+            <div class="fd-tag" id="fd-tag"></div>
+            <div class="fd-question" id="fd-question"></div>
+            <div class="fd-tap-hint">Tap to reveal answer</div>
+          </div>
+          <div class="fd-back" id="fd-back">
+            <div class="fd-tag" id="fd-tag-back"></div>
+            <ul class="fd-points" id="fd-points"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="fd-btn-row" id="fd-btn-row" style="display:none">
+        <button class="fd-btn fd-miss" onclick="fdAnswer(false)">❌ Missed</button>
+        <button class="fd-btn fd-got"  onclick="fdAnswer(true)">✅ Got it</button>
+      </div>
+    </div>
+
+    <!-- Summary state -->
+    <div id="fd-summary" style="display:none">
+      <div class="fd-summary-card">
+        <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Round complete!</div>
+        <div class="fd-summary-row">
+          <div>
+            <div class="fd-summary-stat" id="fd-sum-got">0</div>
+            <div class="fd-badge-got" style="margin-top:.3rem">✅ Got it</div>
+          </div>
+          <div>
+            <div class="fd-summary-stat" id="fd-sum-miss">0</div>
+            <div class="fd-badge-miss" style="margin-top:.3rem">❌ Missed</div>
+          </div>
+        </div>
+        <div class="fd-outstanding-note" id="fd-sum-note"></div>
+      </div>
+      <button class="btn-go" id="fd-drill-again-btn" onclick="fdDrillMissed()" style="margin-bottom:.5rem">🔁 Drill missed cards</button>
+      <button class="btn-go" onclick="fdFinish()" style="background:var(--subtle);color:var(--text)">✓ Finish session</button>
+    </div>
+
+    <!-- Completion state -->
+    <div id="fd-complete" style="display:none;text-align:center;padding:2rem 1rem">
+      <div style="font-size:2.5rem;margin-bottom:.5rem">🎉</div>
+      <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">All cards mastered!</div>
+      <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem" id="fd-complete-note"></div>
+      <button class="btn-go" onclick="fdFinish()">← Back to unit picker</button>
     </div>
   </div>
 </div>
@@ -412,18 +474,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     </div>
   </div>
 </div>
-<!-- SCREEN 4: FLAGGED CARDS -->
-<div class="screen" id="s-flagged">
-  <div class="mode-header">
-    <div style="display:flex;gap:6px">
-      <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
-      <button class="back-btn" onclick="showScreen('s-hub')">← Back</button>
-    </div>
-    <span style="font-size:.85rem;font-weight:600;color:var(--muted)">🚩 Flagged for review</span>
-  </div>
-  <button onclick="clearFlagged();showFlaggedScreen()" style="width:100%;text-align:left;padding:8px 12px;margin-bottom:.75rem;font-size:.82rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:#A32D2D;cursor:pointer;font-family:inherit">🗑️ Clear all flagged cards</button>
-  <div id="flagged-out"></div>
-</div>
 
 </div>
 
@@ -484,14 +534,11 @@ function pickPaper(p) {
     info.units.map(u => `<option value="${u}">${u}</option>`).join('');
   const esel = document.getElementById('e-type');
   esel.innerHTML = info.qtypes.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
-  learntCards = new Set();
   examHistory = [];
   examHistoryIdx = -1;
   buildKPool();
-  kPoolTotal = kPool.length;
   document.getElementById('k-out').innerHTML = '';
   updateNavUI();
-  updateProgressBar();
   updateExamDirectory();
   // Update hub badge
   // Apply paper stripe to mode buttons
@@ -529,7 +576,6 @@ function showScreen(id) {
     if (printBtn) printBtn.style.display = 'none';
   }
   // update flagged button on hub
-  updateFlagBar();
 }
 
 function enterMode(m) {
@@ -538,12 +584,12 @@ function enterMode(m) {
 }
 
 function setMode(m) {
-  const titles = {knowledge:'🧠 Knowledge Builder', dates:'📅 Key Dates Quiz', exam:'✏️ Exam Practice'};
+  const titles = {knowledge:'🧠 Knowledge Builder', dates:'📅 Key Dates Quiz', exam:'✏️ Exam Practice', flashcard:'⚡ Flashcard Drill'};
   const titleEl = document.getElementById('mode-title');
   if (titleEl) titleEl.textContent = titles[m] || '';
   const printBtn = document.getElementById('print-btn');
-  if (printBtn) printBtn.style.display = (m === 'knowledge' || m === 'exam' || m === 'dates') ? 'inline-block' : 'none';
-  ['knowledge','dates','exam'].forEach(mode => {
+  if (printBtn) printBtn.style.display = (m === 'knowledge' || m === 'exam') ? 'inline-block' : 'none';
+  ['knowledge','dates','exam','flashcard'].forEach(mode => {
     const modeEl = document.getElementById('mode-' + mode);
     if (modeEl) modeEl.style.display = mode === m ? 'block' : 'none';
   });
@@ -552,9 +598,9 @@ function setMode(m) {
   document.getElementById('d-out').innerHTML = '';
   document.getElementById('e-out').innerHTML = '';
   document.getElementById('d-go').style.display = 'block';
-  updateFlagBar();
-  if (m === 'knowledge') { if (!kPool.length && !learntCards.size) buildKPool(); updateNavUI(); }
+  if (m === 'knowledge') { if (!kPool.length && KC.length) buildKPool(); updateNavUI(); }
   if (m === 'exam') updateExamDirectory();
+  if (m === 'flashcard') fdSetup();
   if (m === 'dates') {
     const hardBtn = document.getElementById('d-hard');
     if (hardBtn) {
@@ -562,13 +608,7 @@ function setMode(m) {
       hardBtn.style.display = hardCount > 0 ? 'block' : 'none';
       hardBtn.textContent = `🎯 Hardest dates only (${hardCount})`;
     }
-    // Build print list of all dates for this paper
-    const printList = document.getElementById('d-print-list');
-    if (printList) {
-      const dates = DATES.filter(d => d.paper === currentPaper);
-      printList.innerHTML = `<h2 style="margin-bottom:.75rem">${P[currentPaper].label} — Key Dates</h2>` +
-        dates.map(d => `<div style="display:flex;gap:1rem;padding:.4rem 0;border-bottom:1px solid var(--border)"><strong style="min-width:80px">${d.date}</strong><span>${d.event}</span></div>`).join('');
-    }
+
   }
 }
 
@@ -596,17 +636,12 @@ function paperTagClass(p) {
 // ═══════════════════════════════════════════
 let kPool = [];
 let kIdx = 0;
-let kPoolTotal = 0;
-let learntCards = new Set();
-let sessionStartTime = null;
-let sessionFlaggedCount = 0;
 
 function buildKPool() {
   const unit = document.getElementById('k-unit').value;
   const cardSel = document.getElementById('k-card');
   if (!unit) {
     kPool = [];
-    kPoolTotal = 0;
     if (cardSel) cardSel.innerHTML = '<option value="">— select a topic —</option>';
     return;
   }
@@ -626,28 +661,21 @@ function buildKPool() {
     unitCounts[uIdx] = (unitCounts[uIdx] || 0) + 1;
     return { card: c, num: `${uIdx}.${unitCounts[uIdx]}` };
   });
-  // Pool for sequential flow excludes flagged cards
-  kPool = allEntries.filter(e => !flaggedCards.find(fc => fc.paper === e.card.paper && fc.heading === e.card.heading));
+  kPool = allEntries;
   if (cardSel) {
     cardSel.innerHTML = '<option value="">— select a topic —</option>' +
-      allEntries.map((entry, i) => {
-        const isFlagged = flaggedCards.find(fc => fc.paper === entry.card.paper && fc.heading === entry.card.heading);
-        return `<option value="dd-${i}">${entry.num} – ${entry.card.heading}${isFlagged ? ' 🚩' : ''}</option>`;
-      }).join('');
+      allEntries.map((entry, i) =>
+        `<option value="dd-${i}">${entry.num} – ${entry.card.heading}</option>`
+      ).join('');
     cardSel._allEntries = allEntries;
   }
-  kPoolTotal = allEntries.length;
 }
 
 function onUnitChange() {
-  learntCards = new Set();
-  showKBControls();
   buildKPool();
-  kPoolTotal = kPool.length;
   kIdx = 0;
   document.getElementById('k-out').innerHTML = '';
   updateNavUI();
-  updateProgressBar();
   if (kPool.length) renderKCard(kPool[0]);
 }
 
@@ -661,33 +689,8 @@ function updateNavUI() {
   }
 }
 
-function drawRandomCard() {
-  // If no unit selected, build pool from all units then draw random
-  if (!kPool.length) {
-    const unit = document.getElementById('k-unit').value;
-    if (!unit) {
-      document.getElementById('k-unit').value = 'all';
-      learntCards = new Set();
-      showKBControls();
-      buildKPool();
-      kPoolTotal = kPool.length;
-      updateProgressBar();
-      // fall through to random draw below
-    } else {
-      document.getElementById('k-out').innerHTML = '<div class="empty">No cards match these filters.</div>';
-      updateNavUI();
-      return;
-    }
-  }
-  kIdx = Math.floor(Math.random() * kPool.length);
-  renderKCard(kPool[kIdx]);
-  updateNavUI();
-  updateProgressBar();
-}
-
 function stepCard(dir) {
-  if (!kPool.length) { drawRandomCard(); return; }
-
+  if (!kPool.length) return;
   kIdx = (kIdx + dir + kPool.length) % kPool.length;
   renderKCard(kPool[kIdx]);
   updateNavUI();
@@ -706,267 +709,7 @@ function boldHints(text, hints) {
   return out;
 }
 
-function markLearntBtn(btn) {
-  btn.style.background = '#EAF3DE';
-  btn.style.color = '#3B6D11';
-  btn.style.borderColor = '#3B6D11';
-  btn.disabled = true;
-  setTimeout(markLearnt, 400);
-}
-
-function unflagLearntBtn(btn) {
-  btn.style.background = '#EAF3DE';
-  btn.style.color = '#3B6D11';
-  btn.style.borderColor = '#3B6D11';
-  btn.disabled = true;
-  setTimeout(() => unflagCard(btn), 400);
-}
-  
-function showKBComplete() {
-  const totalLearnt = learntCards.size;
-  const unitVal = document.getElementById('k-unit').value;
-  const flaggedThisUnit = flaggedCards.filter(fc =>
-    KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
-      (unitVal === 'all' || unitVal === '' || c.unit === unitVal))
-  ).length;
-  const celebrations = [
-    'Outstanding work! Every card nailed. \u{1F4AA}',
-    'Unit complete \u2014 your future self will thank you. \u{1F3C6}',
-    'That\u2019s the whole unit done. Impressive. \u2B50',
-    'All cards learnt. You\u2019re on a roll. \u{1F525}',
-    'Exam board won\u2019t know what hit them. \u{1F3AF}',
-    'Unit complete! Keep this momentum going. \u{1F680}',
-    'Every card done. That\u2019s how it\u2019s done. \u{1F44F}',
-  ];
-  const msg = celebrations[Math.floor(Math.random() * celebrations.length)];
-  document.getElementById('k-out').innerHTML = `
-    <div style="text-align:center;padding:2rem">
-      <div style="font-size:2.5rem;margin-bottom:.5rem">\u{1F389}</div>
-      <div style="font-size:1.2rem;font-weight:700;margin-bottom:.4rem">Unit complete!</div>
-      <div style="font-size:.88rem;color:var(--muted);margin-bottom:1.5rem">${msg}</div>
-      <div style="display:flex;justify-content:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap">
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
-          <div style="font-size:1.5rem;font-weight:700;color:#4a7c59">${totalLearnt}</div>
-          <div style="font-size:.7rem;color:var(--muted);margin-top:2px">cards learnt</div>
-        </div>
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
-          <div style="font-size:1.5rem;font-weight:700;color:#D4537E">${sessionFlaggedCount}</div>
-          <div style="font-size:.7rem;color:var(--muted);margin-top:2px">flagged for review</div>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        ${flaggedThisUnit > 0 ? `<button class="btn-sm" onclick="showFlaggedScreen()" style="width:100%">\u{1F6A9} Review ${flaggedThisUnit} flagged cards</button>` : ''}
-        <button class="btn-sm" onclick="showScreen('s-hub')" style="width:100%">\u{1F4DA} Pick a new unit</button>
-        <button class="btn-sm" onclick="resetLearnt()" style="width:100%">\u{1F504} Reset and start again</button>
-      </div>
-    </div>`;
-  document.getElementById('k-progress-wrap').style.display = 'none';
-  document.getElementById('k-flag-bar').style.display = 'none';
-  const kGoRow = document.getElementById('k-go') && document.getElementById('k-go').parentElement;
-  if (kGoRow) kGoRow.style.display = 'none';
-  document.querySelector('#mode-knowledge .filter-row').style.display = 'none';
-  sessionStartTime = null;
-  sessionFlaggedCount = 0;
-  updateNavUI();
-}
-
-function markLearnt() {
-  const entry = kPool[kIdx];
-  learntCards.add(entry.card.paper + '|' + entry.card.heading);
-  kPool.splice(kIdx, 1);
-  if (kPool.length === 0) { showKBComplete(); return; }
-  kIdx = kIdx % kPool.length;
-  renderKCard(kPool[kIdx]);
-  updateNavUI();
-  updateProgressBar();
-}
-
-function resetLearnt() {
-  learntCards = new Set();
-  sessionStartTime = null;
-  sessionFlaggedCount = 0;
-  showKBControls();
-  buildKPool();
-  kPoolTotal = kPool.length;
-  kIdx = 0;
-  updateNavUI();
-  updateProgressBar();
-  if (kPool.length) renderKCard(kPool[0]);
-}
-
-function showKBControls() {
-  document.getElementById('k-progress-wrap').style.display = 'block';
-  document.querySelector('#mode-knowledge .filter-row').style.display = 'flex';
-  const navRow = document.getElementById('k-go') && document.getElementById('k-go').parentElement;
-  if (navRow) navRow.style.display = 'flex';
-}
-  
-let flaggedCards = JSON.parse(localStorage.getItem('gcse_flagged') || '[]');
-
-function flagCard(btn) {
-  const card = btn.closest('.card');
-  const paper = card.dataset.paper;
-  const heading = card.dataset.heading;
-  const already = flaggedCards.find(c => c.paper === paper && c.heading === heading);
-  if (!already) {
-    flaggedCards.push({paper, heading});
-    sessionFlaggedCount++;
-    updateFlagBar();
-    btn.outerHTML = `<button class="btn-sm" style="background:#FEF9E7;color:#9A6B00;border-color:#F0B429" disabled>🚩 Flagged</button>`;
-    const learntBtn = card.querySelector('#k-learnt-btn');
-    if (learntBtn) learntBtn.remove();
-    // Remove from kPool immediately so it doesn't come back
-    const poolIdx = kPool.findIndex(e => e.card.paper === paper && e.card.heading === heading);
-    if (poolIdx !== -1) {
-      kPool.splice(poolIdx, 1);
-      if (kIdx >= kPool.length) kIdx = Math.max(0, kPool.length - 1);
-      updateProgressBar();
-    }
-    // Auto-advance after 0.9 seconds — or show end screen if pool empty
-    setTimeout(() => {
-      if (kPool.length === 0) { showKBComplete(); return; }
-      renderKCard(kPool[kIdx]); updateNavUI();
-    }, 900);
-  }
-}
-  
-function updateProgressBar() {
-  const wrap = document.getElementById('k-progress-wrap');
-  const bar = document.getElementById('k-progress-bar');
-  const text = document.getElementById('k-progress-text');
-  if (!kPoolTotal || kPoolTotal === 0) { wrap.style.display = 'none'; return; }
-  wrap.style.display = 'block';
-  const done = kPoolTotal - kPool.length;
-  const pct = Math.round((done / kPoolTotal) * 100);
-  bar.style.width = pct + '%';
-  const flagCount = flaggedCards.filter(fc =>
-    KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
-      (document.getElementById('k-unit').value === 'all' || document.getElementById('k-unit').value === '' || c.unit === document.getElementById('k-unit').value))
-  ).length;
-  text.textContent = `${learntCards.size} of ${kPoolTotal} learnt` + (flagCount > 0 ? ` · 🚩 ${flagCount} flagged` : '');
-}
-
-function showFlaggedButton() {
-  if (flaggedCards.length > 0) {
-    document.getElementById('k-out').innerHTML +=
-      `<button class="btn-go" onclick="showFlaggedScreen()" style="margin-top:1rem">Review ${flaggedCards.length} flagged cards</button>`;
-  }
-}
-  
-function unflagCard(btn) {
-  const card = btn.closest('.card');
-  const paper = card.dataset.paper;
-  const heading = card.dataset.heading;
-  flaggedCards = flaggedCards.filter(c => !(c.paper === paper && c.heading === heading));
-  updateFlagBar();
-  if (document.getElementById('s-flagged').classList.contains('active')) {
-    showFlaggedScreen();
-  } else {
-    btn.outerHTML = `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>
-  <button class="btn-sm" id="k-learnt-btn" onclick="markLearntBtn(this)">✅ Learnt</button>`;
-  }
-}
-  
-function updateFlagBar() {
-  localStorage.setItem('gcse_flagged', JSON.stringify(flaggedCards));
-  const bar = document.getElementById('k-flag-bar');
-  const num = document.getElementById('k-flag-num');
-  const homeBtn = document.getElementById('home-flag-btn');
-  const homeNum = document.getElementById('home-flag-num');
-  const hubFlagBtn = document.getElementById('hub-flag-btn');
-  const hubFlagNum = document.getElementById('hub-flag-num');
-  if (flaggedCards.length > 0) {
-    bar.style.display = 'flex';
-    num.textContent = flaggedCards.length;
-    if (homeBtn) { homeBtn.style.display = 'block'; homeNum.textContent = flaggedCards.length; }
-    if (hubFlagBtn) { hubFlagBtn.style.display = 'block'; hubFlagNum.textContent = flaggedCards.length; }
-  } else {
-    bar.style.display = 'none';
-    if (homeBtn) homeBtn.style.display = 'none';
-    if (hubFlagBtn) hubFlagBtn.style.display = 'none';
-  }
-}
-
-function reviewFlagged() {
-  showFlaggedScreen();
-}
-  
-function goToFlagged() {
-  if (!flaggedCards.length) return;
-  showFlaggedScreen();
-}
-
-function showFlaggedScreen() {
-  showScreen('s-flagged');
-  const out = document.getElementById('flagged-out');
-  if (!flaggedCards.length) {
-    out.innerHTML = '<div class="empty" style="padding:2rem;text-align:center">🎉 All flagged cards reviewed! Head back and keep going.</div><div style="text-align:center;margin-top:1rem"><button class="btn-sm" onclick="showScreen(\'s-pick\')">🏠 Home</button></div>';
-    return;
-  }
-  out.innerHTML = flaggedCards.map(fc => {
-    const card = KC.find(c => c.paper === fc.paper && c.heading === fc.heading);
-    if (!card) return '';
-    const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0">` +
-      card.hints.map(h => `<span class="tag t-${card.paper}">${h}</span>`).join('') +
-      `</div>`;
-    const factsHtml = '<ul>' + card.facts.map(f =>
-      `<li>${boldHints(f, card.hints)}</li>`
-    ).join('') + '</ul>';
-    const uid = card.paper + '_' + card.heading.replace(/\W/g,'');
-    return `
-      <div class="card" data-paper="${card.paper}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
-        <div class="stripe s-${card.paper}"></div>
-        <div class="inner">
-          <div class="meta">
-            <span class="tag t-${card.paper}">${card.unit}</span>
-          </div>
-          <div class="card-heading">${card.heading}</div>
-          <div class="btn-row">
-            <button class="btn-sm" onclick="tog('fh_${uid}');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
-            <button class="btn-sm" onclick="tog('ff_${uid}');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
-            <button class="btn-sm" onclick="unflagCard(this)">✅ Learnt</button>
-          </div>
-          <div class="reveal" id="fh_${uid}">${hintsHtml}</div>
-          <div class="reveal" id="ff_${uid}">${factsHtml}</div>
-        </div>
-      </div>`;
-  }).join('');
-}
-
-function clearFlagged() {
-  flaggedCards = [];
-  updateFlagBar();
-}
-  
-function drawSpecificCard(card) {
-  const hintsHtml = card.hints.map(h =>
-    `<div class="hint-item"><span class="hint-kw">hint</span>${h}</div>`
-  ).join('');
-  const factsHtml = '<ul>' + card.facts.map(f =>
-    `<li>${boldHints(f, card.hints)}</li>`
-  ).join('') + '</ul>';
-  document.getElementById('k-out').innerHTML = `
-    <div class="card">
-      <div class="stripe s-${card.paper}"></div>
-      <div class="inner">
-        <div class="meta">
-          <span class="tag t-${card.paper}">${card.unit}</span>
-          <span class="tag t-grey">🚩 Flagged</span>
-        </div>
-        <div class="card-heading">${card.heading}</div>
-        <div class="btn-row">
-          <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
-          <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='Reveal key content'?'Hide content':'Reveal key content'">Reveal key content</button>
-          <button class="btn-sm" onclick="unflagCard('${card.paper}','${card.heading}')">🚩 Remove flag</button>
-        </div>
-        <div class="reveal" id="kh">${hintsHtml}</div>
-        <div class="reveal" id="kf">${factsHtml}</div>
-      </div>
-    </div>`;
-}
-
 function renderKCard(entry, isInterleaved) {
-  if (!sessionStartTime) sessionStartTime = Date.now();
   const card = entry.card;
   const num = entry.num;
   const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0">` +
@@ -975,26 +718,21 @@ function renderKCard(entry, isInterleaved) {
   const factsHtml = '<ul>' + card.facts.map(f =>
     `<li>${boldHints(f, card.hints)}</li>`
   ).join('') + '</ul>';
-  const alreadyFlagged = flaggedCards.find(c => c.paper === card.paper && c.heading === card.heading);
-  const interleavedBadge = isInterleaved ? `<span class="tag t-grey" style="background:#FEF9E7;color:#9A6B00;border:1px solid #F0B429">🚩 Flagged review</span>` : '';
   document.getElementById('k-out').innerHTML = `
-    <div class="card" data-paper="${card.paper}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
+    <div class="card" data-paper="${card.paper}">
       <div class="stripe s-${card.paper}"></div>
       <div class="inner">
         <div class="meta">
-          ${interleavedBadge}<span class="tag t-grey">${num}</span>
+          <span class="tag t-grey">${num}</span>
           <span class="tag t-${card.paper}">${card.unit}</span>
         </div>
         <div class="card-heading">${card.heading}</div>
-        <p style="font-size:.78rem;color:var(--muted);margin-bottom:.75rem">Show hints for a nudge · Reveal key content to check your knowledge · Flag cards to revisit · Mark as learnt to track progress</p>
+        ${card.summary ? `<p style="font-size:.85rem;color:var(--muted);margin-bottom:.5rem;font-style:italic">${card.summary}</p>` : ''}
+        <p style="font-size:.75rem;color:var(--muted);margin-bottom:.75rem">Show hints for a nudge · Reveal key content to check your knowledge</p>
 
         <div class="btn-row">
           <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
-<button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
-          ${alreadyFlagged ?
-  `<button class="btn-sm" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11" onclick="unflagCard(this)">🚩 Remove flag</button>` :
-  `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>
-   <button class="btn-sm" id="k-learnt-btn" onclick="markLearntBtn(this)">✅ Learnt</button>`}
+          <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
         </div>
         <div class="reveal" id="kh">${hintsHtml}</div>
         <div class="reveal" id="kf">${factsHtml}</div>
@@ -1050,8 +788,6 @@ function rqBackToSetup() {
   document.getElementById('rq-one').style.display = 'none';
   document.getElementById('rq-one-end').style.display = 'none';
   document.getElementById('rq-one-card').style.display = 'block';
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) printBtn.style.display = 'none';
 }
 
 function rqOneReveal() {
@@ -1126,8 +862,6 @@ function rqRetryMissed() {
 
 function showRapidSetup() {
   showScreen('s-rapid');
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) printBtn.style.display = 'none';
   document.getElementById('rq-setup').style.display = 'block';
   document.getElementById('rq-out').style.display = 'none';
   document.getElementById('rq-one').style.display = 'none';
@@ -1231,8 +965,6 @@ function generateRQ() {
     return;
   }
   document.getElementById('rq-out').style.display = 'block';
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) printBtn.style.display = 'inline-block';
 }
 
 function revealRQ(i) {
@@ -1598,416 +1330,7 @@ function showQuizEnd() {
   go.style.display = 'block';
   go.textContent = 'New quiz';
 }
-const KC = [
-// ── PAPER 1 · Unit 1 Medieval ───────────────
-{paper:'p1',unit:'Unit 1 – Medieval',heading:'Viking raids and settlement',
- hints:['865','Danelaw','Alfred','Assimilation','Guthrum'],
- facts:['793: first Viking raid on Lindisfarne monastery – shocked Christian Europe; raids intensified throughout early 9th century','865: Great Heathen Army invaded seeking land and revenge for murder of Ragnar Lodbrok; led by Ivar the Boneless','878: King Alfred defeated Vikings at Battle of Edington; Treaty of Alfred and Guthrum created the Danelaw – Viking legal autonomy across north and east England','Viking settlers assimilated over time: intermarriage with English was common; many converted to Christianity including Guthrum; adopted English customs while shaping English culture','Cnut became King of England 1016 – ruled as Christian Viking king maintaining English laws; showed how complete Viking assimilation had become']},
-
-{paper:'p1',unit:'Unit 1 – Medieval',heading:'Jorvik – Viking York',
- hints:['Jorvik','15000','Coppergate','Amber','Christianity'],
- facts:['York (Jorvik) grew from a small Roman city of ~1,000 people (850) to ~15,000 by 950 – one of the largest cities in northern Europe','Became a major international trading hub: amber from the Baltic, silk from Byzantium, spices from the Islamic world, furs from Scandinavia all traded in Jorvik','Coppergate excavations (1976–81) revealed remarkable evidence: leather shoes, wooden bowls, amber jewellery, silk caps – showing a sophisticated urban economy','Jorvik had specialist craftworkers: metalworkers, comb-makers (from animal bone and antler), leatherworkers, weavers – a diverse skilled economy','There is evidence of assimilation between Norse Pagan religion and Christianity in Jorvik - two religions blending together']},
-
-{paper:'p1',unit:'Unit 1 – Medieval',heading:'Norman Conquest 1066',
- hints:['Hastings','Feudal','84castles','French','Monarchy'],
- facts:['1066: William defeated Harold at Hastings backed by the Pope; Norman knights, churchmen and administrators flooded into England','Normans introduced the Feudal System – placed themselves at the top; seized English land and distributed it among followers','84 castles built using Jewish loans to enforce Norman rule physically across England','Norman French became the official language for ~200 years; still visible – "beef" (French ruling class) vs "cow" (English peasants)','Current British monarchy descends directly from William the Conqueror']},
-
-{paper:'p1',unit:'Unit 1 – Medieval',heading:'Medieval Jewish communities',
- hints:['Usury','Protection','Tabula','Statute','Expulsion'],
- facts:['1070: William invited Jewish moneylenders – Church banned Christians from usury so Jews filled the gap; 8% of royal income came from Jewish loans by 13th century','Protected as King\'s "special property" – legal protection tied directly to their economic usefulness to the crown','1200s: forced to wear the tabula (yellow badge) marking them out; 1144 blood libel myth spread false accusation of child murder','1275: Statute of Jewry banned usury after Church allowed Christians to lend – Jews lost their economic purpose and royal protection','1290: Edward I expelled all Jews – over 3,000 forced into exile']},
-
-{paper:'p1',unit:'Unit 1 – Medieval',heading:'Flemish weavers and Hansa merchants',
- hints:['Steelyard','Edward','Colchester','Guilds','Cloth'],
- facts:['1303: Edward I granted Hansa (German) merchants lower taxes to operate the Steelyard in London – boosted English wool exports to Europe','1351: Edward III invited skilled Flemish weavers expelled from France – wanted their expertise to develop English cloth industry','Colchester rose from 53rd to 13th richest town in England as a result of Flemish weavers','Craft guilds resented migrants – accused them of stealing jobs and lowering wages; periodic riots','English cloth trade became hugely profitable; Hansa and Flemish migrants were fundamental to this transformation']},
-
-// ── PAPER 1 · Unit 2 Early Modern ───────────
-{paper:'p1',unit:'Unit 2 – Early Modern',heading:'Huguenot migrants c.1570–1710',
- hints:['Massacre','Denizen','Spitalfields','Bank','Riots'],
- facts:['1572: St Bartholomew\'s Day Massacre – 30,000 Huguenots murdered in France; thousands fled to Protestant England','1681: Charles II granted all Huguenots Denizen status – legal protection and right to own property','Huguenots transformed Spitalfields into a major textile centre – cloth exports rose twenty-fold over the century','Helped found the Bank of England (1694); started the English paper industry – 200 paper mills by 1714','English weavers rioted in 1675, 1681 and 1683 fearing job competition; tensions eased when Huguenots shared skills']},
-
-{paper:'p1',unit:'Unit 2 – Early Modern',heading:'Palatine migrants 1708–09',
- hints:['Rhineland','13000','Naturalisation','Deported','Burden'],
- facts:['Wars in the Rhineland drove ~13,000 Palatine German Protestant refugees to London in 1709','1708: Foreign Protestants Naturalisation Act gave all European Protestants full citizenship – England positioned as Protestant sanctuary','Unlike Huguenots, Palatines were refugees not skilled workers – seen as a burden rather than an economic asset','Government response was hostile: 3,000 deported to Ireland when numbers overwhelmed resources','Their reception shows that Protestant identity alone was not enough – economic usefulness mattered too']},
-
-{paper:'p1',unit:'Unit 2 – Early Modern',heading:'Return of the Jews 1656',
- hints:['Cromwell','Manasseh','Bevis','Restrictions','Finance'],
- facts:['1656: Cromwell, persuaded by Rabbi Manasseh ben Israel, allowed Jews to return to England to escape European persecution','Jews allowed to build their own synagogue – Bevis Marks in London (1701); could practise faith openly','Restrictions remained: still banned from university, army, law and Parliament','Jewish financiers helped develop London as a major financial centre after their return','Contrast with 1290 expulsion shows how economic usefulness again shaped government attitudes toward Jewish migrants']},
-
-{paper:'p1',unit:'Unit 2 – Early Modern',heading:'Flemings and Walloons in Sandwich and Canterbury',
- hints:['Sandwich','Canterbury','Tripled','Restrictions','Skills'],
- facts:['1560s–70s: local councils in Sandwich and Canterbury actively invited Flemish and Walloon weavers to boost textile economy','Sandwich harbour traffic tripled in a decade; Canterbury allocated 100 empty homes to Walloon migrants','1569: Flemings in Sandwich banned from work Englishmen could do – resentment from local weavers grew','Tensions in Canterbury eased when Walloons shared skills: silk weaving, lace-making, diamond cutting; employed English workers','Shows local economic invitation could work but required skill-sharing to reduce hostility']},
-
-// ── PAPER 1 · Unit 3 18th & 19th Centuries ──
-{paper:'p1',unit:'Unit 3 – 18th & 19th Centuries',heading:'Irish migrants',
- hints:['Famine','Orange','Navvies','Scouse','Catholics'],
- facts:['Acts of Union 1801: Ireland incorporated into UK; Irish Catholics (90% of population) owned only 14% of land','Irish Famine 1845–46: potato blight killed ~1 million; ~2 million fled – many to Liverpool and Manchester','Orange Order violently opposed Catholic Irish migrants in Liverpool and Glasgow throughout the 19th century','Irish navvies built over 20,000 miles of British railway – fundamental to industrial infrastructure','Liverpool\'s Scouse accent developed partly from Irish speech patterns; Irish made up over 20% of the city\'s population by 1850s']},
-
-{paper:'p1',unit:'Unit 3 – 18th & 19th Centuries',heading:'Ashkenazi Jews in Whitechapel',
- hints:['Pogroms','Yiddish','Ripper','Aliens','Sweatshops'],
- facts:['1880s: Russian pogroms drove ~150,000 Ashkenazi Jews to Britain; many settled in Whitechapel near docks and existing Jewish community','Some streets became 95% Jewish; Yiddish speakers often worked only within Jewish clothing sweatshops','Jewish Free School established to help children integrate and learn English','1888: Jews falsely blamed for Jack the Ripper murders by popular press – increased prejudice with no evidence','1905: Aliens Act directly targeted Ashkenazi Jewish migrants – Britain\'s first immigration restriction law']},
-
-{paper:'p1',unit:'Unit 3 – 18th & 19th Centuries',heading:'South Asian migrants in the 18th & 19th centuries',
- hints:['Ayahs','Lascars','Suez','Abandoned','Space'],
- facts:['East India Company expansion from 1600s created demand for Indian Lascars (sailors) and Ayahs (nannies/servants)','Suez Canal opened 1869 – halved travel times between Britain and India; increased movement of people','1876: white sailors given 10 feet of personal space on ships; Lascars given only 6 feet – institutionalised racial inequality','Indian Ayahs sometimes abandoned by employers on arrival in England; Ayahs\' Home opened in Hackney 1900','Lascars paid less than white sailors and given inferior living conditions by shipping companies']},
-
-{paper:'p1',unit:'Unit 3 – 18th & 19th Centuries',heading:'Black migrants in the 18th & 19th centuries',
- hints:['Somerset','Loyalists','Deported','Equiano','Ornaments'],
- facts:['1772: Somerset Case ruled slavery illegal in Britain – made Britain a refuge for enslaved Africans seeking freedom','American War of Independence 1780s: Black Loyalists who fought for Britain were given homes in Britain','400 black migrants deported from London to Sierra Leone 1792 – despite earlier promises of freedom','Black abolitionists Equiano and Sancho wrote autobiographies that helped persuade Parliament to abolish the slave trade (1807)','Some wealthy families kept African children as household "ornaments" – reflecting deep racial attitudes of the period']},
-
-{paper:'p1',unit:'Unit 3 – 18th & 19th Centuries',heading:'Liverpool as a case study in migration',
- hints:['Irish','Lascars','Docklands','Orange','20percent'],
- facts:['Liverpool was Britain\'s busiest port and became a major centre of migrant settlement throughout the 18th and 19th centuries','Irish community: Irish Famine (1845–46) drove mass migration; by the 1850s Irish made up over 20percent of Liverpool\'s population – the highest concentration in any English city','Irish migrants settled in courts and cellars near the docks; faced intense Orange Order hostility; Catholic-Protestant tensions led to regular street violence throughout the 19th century','Lascars: South Asian and East African sailors employed by the East India Company regularly landed in Liverpool; many settled around the docklands; faced exploitation and inferior conditions','Liverpool became a genuinely multi-ethnic city by the late 19th century – but migrant communities faced poverty, disease and hostility in a city shaped by the slave trade and empire']},
-
-// ── PAPER 1 · Unit 4 Modern ─────────────────
-{paper:'p1',unit:'Unit 4 – Modern',heading:'WWI/WWII troops and refugees',
- hints:['Belgian','Kindertransport','Polish','Resettlement','Rebuild'],
- facts:['WWI: ~250,000 Belgian refugees welcomed in Britain as war victims; 90% returned home after 1918','Kindertransport 1938–39: ~8,000 Jewish children evacuated from Nazi Germany to British families – one of the most significant humanitarian acts in British history','WWII: millions of colonial soldiers from India, Africa and Caribbean served Britain; personal connections to Britain created expectation of belonging','1947: Polish Resettlement Act allowed ~120,000 Polish soldiers and families to remain in Britain','Post-WWII Britain needed over 1 million workers to Rebuild – actively recruited in Caribbean for London Transport and the NHS']},
-
-{paper:'p1',unit:'Unit 4 – Modern',heading:'Windrush Generation',
- hints:['Nationality','Transport','NHS','Relations','Scandal'],
- facts:['1948 British Nationality Act gave all Commonwealth subjects the legal right to settle in Britain','London Transport and NHS actively recruited in the Caribbean – adverts in local newspapers; average pay four times higher than in the Caribbean','By 1960s: 12% of London Transport employees from ethnic minorities; by 2003: 30% of NHS doctors and 44% of nurses were migrants','1965 Race Relations Act: first law banning racial discrimination; 1976 Race Relations Act strengthened protections','2012: Windrush Scandal – legal Caribbean migrants wrongly detained, denied healthcare and threatened with deportation; exposed institutional failure']},
-
-{paper:'p1',unit:'Unit 4 – Modern',heading:'East African Asians',
- hints:['Kenya','Amin','Leicester','Golden','Diwali'],
- facts:['1967: Africanisation in Kenya forced ~20,000 Kenyan Asians to choose British citizenship or leave; many came to Britain','1972: Idi Amin expelled ~27,000 Asians from Uganda with 90 days\' notice; most settled in Leicester and the Midlands','Leicester City Council placed adverts in Ugandan newspapers discouraging migration – showing official hostility','Despite initial hostility, Belgrave Road in Leicester became the "Golden Mile" due to prosperous Asian-owned businesses','Leicester now hosts the largest Diwali celebrations outside Asia']},
-
-{paper:'p1',unit:'Unit 4 – Modern',heading:'EU migration',
- hints:['Maastricht','Poland','Brexit','3million','Freedom'],
- facts:['1992: Maastricht Treaty created the EU and free movement of people across all member states','2004: EU expansion brought large numbers of Polish and Eastern European workers to Britain','One of the largest waves of migration in British history – approximately 3 million EU citizens settled in Britain','Net migration from EU averaged ~150,000/year in the decade before Brexit','Brexit 2016: free movement ended – government policy reversed the entire framework for EU migration']},
-
-{paper:'p1',unit:'Unit 4 – Modern',heading:'Black migrants in Bristol – 20th century',
- hints:['Windrush','Boycott','Lawrence','Riots','StPauls'],
- facts:['Caribbean migrants arrived in Bristol from late 1940s onwards; settled in St Pauls district; faced colour bar in housing, pubs and employment – Bristol Omnibus Company refused to employ black or Asian drivers or conductors','Bristol Bus Boycott 1963: led by Paul Stephenson and the West Indian Development Council; four-month boycott of Bristol buses forced the company to end its colour bar – directly influenced the 1965 Race Relations Act','Boycott was a key moment in British civil rights: showed that organised community action could challenge institutional racism through non-violent protest','1980: St Pauls riots broke out after police raid on the Black and White Café; two nights of unrest; showed deep tensions between Bristol\'s black community and police','1981: Scarman Report into Brixton riots (London) also reflected conditions in St Pauls – recommended community policing reforms; showed systemic problems nationally, not just locally']},
-
-{paper:'p1',unit:'Unit 4 – Modern',heading:'20th Century legislation for migrants',
- hints:['Aliens','Nationality','Commonwealth','Relations','Equality'],
- facts:['1905 Aliens Act: Britain\'s first immigration restriction law – specifically targeted Ashkenazi Jewish migrants fleeing Russian pogroms; introduced immigration officers and right of refusal','1948 British Nationality Act: gave all Commonwealth subjects the legal right to settle in Britain – enabled the Windrush Generation; a deliberate government policy to recruit labour','1962 Commonwealth Immigrants Act: restricted Commonwealth immigration for the first time – required employment vouchers; a major reversal of the 1948 open-door policy','1968 Commonwealth Immigrants Act: rushed through in three days specifically to prevent Kenyan Asians (British passport holders) from settling – widely condemned as racist','Race Relations Acts 1965, 1976 and 2010: banned racial discrimination progressively – 1965 in public places, 1976 in employment and housing, 2010 Equality Act created comprehensive legal framework']},
-
-{paper:'p1',unit:'Unit 4 – Modern',heading:'Anti-immigration politicians and movements',
- hints:['Mosley','Powell','National','Lewisham','Rivers'],
- facts:['Oswald Mosley: led British Union of Fascists in the 1930s (Battle of Cable Street 1936); returned with Union Movement after WWII; "Keep Britain White" slogan; received 8% of vote in Notting Hill 1959','Enoch Powell: Conservative MP; gave "Rivers of Blood" speech April 1968 – predicted racial violence if immigration continued; dismissed from Shadow Cabinet by Heath but 74% of British public agreed with him','National Front: founded 1967; grew rapidly in the 1970s; combined racism, antisemitism and anti-immigration politics; regular marches through immigrant communities','Battle of Lewisham 1977: National Front march through South London was blocked by anti-racist protesters; police protected National Front marchers; 214 arrests; showed public opposition to far right']},
-
-{paper:'p1',unit:'Unit 4 – Modern',heading:'Asian community in Leicester',
- hints:['Amin','Belgrave','Golden','Diwali','Integration'],
- facts:['1972: Idi Amin gave Ugandan Asians 90 days to leave Uganda; ~27,000 settled in Britain; Leicester City Council placed adverts in Ugandan newspapers discouraging them from coming to Leicester specifically','Despite official hostility, many Ugandan Asians settled in Leicester – they were educated, entrepreneurial and had business experience; brought capital and skills','Belgrave Road in Leicester became the "Golden Mile" – Asian-owned shops, restaurants, jewellers and textile businesses created a prosperous and distinctive commercial district','Leicester now hosts the largest Diwali celebrations outside of India and Nepal – more than 35,000 people gather on Belgrave Road for the lights ceremony each year','Leicester is often cited as an example of successful multicultural integration: by 2011 it was one of the first British cities where white British were a minority; multiple communities have political representation']},
-
-
-// ── PAPER 1 · Unit 5 Notting Hill ───────────
-{paper:'p1',unit:'Unit 5 – Notting Hill',heading:'Arrival and settlement in Notting Hill',
- hints:['Bomb','Colour','Rachman','Pardner','Trust'],
- facts:['Post-WWII Notting Hill had cheap bomb-damaged housing – one of few areas where Caribbean migrants could rent given the colour bar elsewhere','Colour bar: estate agents and landlords refused housing to black migrants across London','Peter Rachman exploited black tenants: bought run-down properties, charged high rents, refused repairs, used threats to evict complainants','Sam King (ex-RAF) organised pardner schemes – informal community savings groups helping migrants buy homes','Notting Hill Housing Trust founded 1963 by Bruce Kenrick – provided fair housing for over 1,000 black residents']},
-
-{paper:'p1',unit:'Unit 5 – Notting Hill',heading:'Housing and the colour bar',
- hints:['HMOs','Rachman','Protection','Portobello','Shebeens'],
- facts:['Colour bar forced most Caribbean migrants into multi-occupancy houses (HMOs) in run-down areas – no legal protection against discrimination until 1965','Rachman: packed tenants in, charged high rents, refused repairs, used intimidation to remove those who complained','Portobello Road Market hosted Caribbean food stalls – became a hub of Caribbean identity and community life','Shebeens (unlicensed basement clubs) developed because pubs and clubs routinely refused entry to black customers','No Race Relations Act until 1965 – black tenants entirely unprotected against exploitation throughout the 1950s']},
-
-{paper:'p1',unit:'Unit 5 – Notting Hill',heading:'Racism and policing',
- hints:['97%','NoLaw','Teddy','Mosley','Stop'],
- facts:['In the 1950s: 97% of police were white men; no laws against racial discrimination existed','Police routinely raided black-owned businesses without evidence; failed to investigate racist attacks on black residents','Teddy Boys carried out violent street attacks on black people; police frequently failed to prosecute perpetrators','Oswald Mosley\'s Union Movement ran "Keep Britain White" campaign in 1959; received 8% of vote in North Kensington','Government allowed the White Defence League to hold rallies – showing official tolerance of racist organisations']},
-
-{paper:'p1',unit:'Unit 5 – Notting Hill',heading:'1958 riots and murder of Kelso Cochrane',
- hints:['Mob','Police','Mail','Cochrane','Funeral'],
- facts:['August 1958: white mob of ~400 attacked black homes with petrol bombs, iron bars and clubs; violence lasted five nights','Police refused to link violence to racism; arrested black residents who defended themselves – one third of arrests were black victims','Daily Mail blamed black migrants for "provoking tensions" – reinforced rather than challenged racist narratives','May 1959: Kelso Cochrane (32-year-old Antiguan carpenter) killed by white youths; community believed police failed to investigate properly','Funeral attended by 1,200 mourners – black and white – showing solidarity; government still allowed White Defence League to rally']},
-
-{paper:'p1',unit:'Unit 5 – Notting Hill',heading:'Black activism – Claudia Jones',
- hints:['Gazette','Carnival','Calypso','Panthers','Trinidad'],
- facts:['Claudia Jones (Trinidad-born activist) founded the West Indian Gazette 1958 – first major newspaper for Black Britons; campaigned against colour bars and racist immigration laws','1959: Jones organised the first Caribbean Carnival at St Pancras Town Hall in direct response to the 1958 riots – Calypso music, dance, Caribbean heritage celebrated','After Jones\' death the event moved outdoors and became the Notting Hill Carnival 1966 – now the largest street festival in Europe','British Black Panthers (BBP) focused on Black pride, self-defence against police brutality, housing and education','BBP led the 1970 protest march against police harassment of the Mangrove restaurant']},
-
-{paper:'p1',unit:'Unit 5 – Notting Hill',heading:'Mangrove Nine 1970–71',
- hints:['Raids','Howe','OldBailey','Verdict','Racism'],
- facts:['Mangrove restaurant (Frank Crichlow) raided nine times in 18 months without justification; served as a community hub for meetings and legal advice','1970: BBP led protest march; police arrested nine leaders including Darcus Howe, Altheia Jones-LeCointe and Frank Crichlow','Tried at the Old Bailey 1971; demanded all-black jury citing Magna Carta right to "jury of peers" – denied','Found not guilty of main charges; judge explicitly stated racial hatred had influenced police actions','First official recognition of institutional racism in British policing – landmark moment in Black British history']},
-
-{paper:'p1',unit:'Unit 5 – Notting Hill',heading:'Primary sources for Notting Hill',
- hints:['Gazette','Census','Times','Police','Oral'],
- facts:['West Indian Gazette (1958): shows Caribbean community perspectives on discrimination and activism – but as a campaign paper it reflects the views of activists, not all migrants','Census records 1951 and 1961: show numbers and types of people living in specific areas – useful for tracking settlement patterns objectively','National newspapers (The Times, Daily Mail): reveal how mainstream opinion viewed events – but can reflect prejudice of editors','Local police records and court transcripts: show how incidents were handled – useful for studying racial justice but may omit or minimise racist motivation','Oral history interviews (Crichlow, Jones): rich first-hand accounts – but subjective; memory selective; recorded long after events']},
-
-// ── PAPER 2A · Unit 1 Origins 1941–58 ───────
-{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Grand Alliance and Tehran Conference',
- hints:['Alliance','Common','Tehran','Front','Suppressed'],
- facts:['1941: USA and UK formed Grand Alliance with USSR to defeat Nazi Germany – ideological differences between capitalism and communism put aside','Tehran Conference 1943: Stalin, Roosevelt and Churchill agreed strategy; Stalin pleased when Allies committed to a "second front" (D-Day 1944)','Alliance held together only by the common enemy – with Germany defeated it rapidly unravelled','Potsdam 1945: Stalin had already broken his Tehran promises; Roosevelt replaced by anti-Communist Truman; atomic bomb dropped without telling Stalin','The Grand Alliance was a temporary marriage of convenience, not a genuine partnership']},
-
-{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Yalta Conference February 1945',
- hints:['Zones','Elections','Promise','Roosevelt','Broken'],
- facts:['February 1945: agreed Germany split into four occupation zones; Berlin (inside Soviet zone) also divided into four','Stalin promised free and fair elections in Poland and Eastern Europe – a promise he immediately broke','Roosevelt died between Yalta and Potsdam; replaced by Truman who was far more aggressively anti-Communist','Stalin installed communist governments in Eastern Europe before the war had even ended','The broken Yalta promises were the single most important cause of the collapse of the Grand Alliance']},
-
-{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Potsdam Conference July 1945',
- hints:['Truman','Atomic','Broken','Tension','Agreements'],
- facts:['July 1945: with Hitler dead and Germany defeated, the common enemy was gone – tensions immediately surfaced','Stalin had already broken his Yalta promise by installing communist governments in Eastern Europe','Truman dropped the atomic bomb on Japan without telling Stalin – Stalin saw this as a direct threat to the USSR','Conference ended with very few agreements and enormous tension between Truman and Stalin','Potsdam was the point at which the Grand Alliance effectively collapsed']},
-
-{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Satellite states and Iron Curtain',
- hints:['Buffer','Cominform','Comecon','Curtain','Churchill'],
- facts:['Stalin created a \"buffer zone\" of communist satellite states – Poland, Czechoslovakia, Hungary, Romania, Bulgaria – to protect USSR from future invasion; Latvia, Lithuania and Estonia were absorbed directly into the USSR','1946: Churchill\'s \"Iron Curtain\" speech described the division of Europe into capitalist west and communist east – the phrase defined the Cold War geography for the next 45 years','1947: Cominform (Communist Information Bureau) set up to coordinate and control the policies of all communist parties in the satellite states – ensured leaders followed Moscow\'s instructions and suppressed any independent thinking','1949: Comecon (Council for Mutual Economic Assistance) set up to control satellite economies – forced satellite states to trade with the USSR on unfavourable terms rather than benefiting from Marshall Aid; kept Eastern Europe economically dependent on Moscow','Yugoslavia was the exception – Tito resisted Stalin and maintained genuine independence; expelled from Cominform 1948; showed it was possible to be communist without Soviet control']},
-
-{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Long and Novikov Telegrams 1946',
- hints:['Kennan','Novikov','Containment','Paranoia','Enemy'],
- facts:['February 1946: Long Telegram from US Ambassador Kennan – advised Truman the USSR was expansionist and must be "contained"; not a partner for diplomacy','September 1946: Novikov Telegram from Soviet Ambassador – advised Stalin the USA was seeking world domination and was an enemy','Both telegrams formally advised their governments to treat the other as an enemy – hardened attitudes on both sides','Long Telegram directly shaped the Truman Doctrine (1947) – "containment" became official US policy','Together the telegrams show how diplomatic communications formalised Cold War hostility']},
-
-{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Truman Doctrine and Marshall Plan 1947',
- hints:['Containment','$400m','$13bn','Imperialism','Cominform'],
- facts:['1947: Truman Doctrine – $400m to anti-communist fighters in Greece and Turkey; USA committed to containing communism anywhere in the world','1948: Marshall Plan – $13bn to rebuild Western European economies; reduced appeal of communist parties in France and Italy','Stalin rejected Marshall Aid for all satellite states; called it "Dollar Imperialism"','Stalin\'s response: Cominform 1947 (control satellite leaders); Comecon 1949 (control satellite economies)','Marshall Plan was highly effective – Western Europe recovered rapidly; contrast with struggling Eastern bloc was clear']},
-
-{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Berlin Blockade 1948–49',
- hints:['Trizonia','Blockade','Airlift','NoAtom','Divided'],
- facts:['West combined zones into Trizonia 1947 and introduced Deutschmark 1948 – both infuriated Stalin who saw this as rebuilding Germany as an anti-Soviet power','June 1948: Stalin closed all road and rail links to West Berlin – attempted to force the West to abandon the city','Truman ordered Berlin Airlift: 4,000 tonnes of food and fuel flown in daily for 10 months; planes landed every 3 minutes at peak','Stalin could not shoot down planes without starting a full war – he had no atomic bomb yet','May 1949: Stalin lifted the blockade; Germany permanently divided into FRG (West) and GDR (East)']},
-
-{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'NATO and the Warsaw Pact',
- hints:['April','Article5','Isolationism','Warsaw','1955'],
- facts:['NATO formed April 1949 as a direct response to Soviet expansion and the Berlin Blockade – 12 founding members including USA, UK, France and Canada','Article 5: an attack on one member is an attack on all – committed the USA to defending Western Europe militarily','First peacetime military alliance in US history – a major break from traditional American isolationism; American military bases spread across Western Europe','1955: West Germany joined NATO – a rearmed Germany inside the Western military alliance alarmed Moscow enormously; seen as direct preparation for war against the USSR','Warsaw Pact formed May 1955 as the communist military alliance in direct response; commanded by the Soviet Union; included all satellite states; Europe was now divided into two permanently armed blocs facing each other across the Iron Curtain']},
-
-{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Arms race and space race 1949–57',
- hints:['Hbomb','ICBMs','MAD','Sputnik','Laika'],
- facts:['1949: USSR developed atomic bomb – ending the US nuclear monopoly; arms race began immediately','1952: USA developed Hydrogen Bomb – 1,000 times more powerful than the atomic bomb; USSR followed in 1953; the destructive capacity of both sides now exceeded anything previously imaginable','1957: both sides developed ICBMs (Intercontinental Ballistic Missiles) – nuclear weapons could now be launched across continents within minutes; MAD (Mutually Assured Destruction) meant neither side could win a nuclear war','1957: USSR launched Sputnik – the first artificial satellite; Americans were shocked that Soviet rocket technology could reach space and therefore potentially strike the US mainland','Space race became a key arena of Cold War competition – safer than military conflict but equally important as propaganda; 1957: USSR sent Laika the dog into orbit; 1961: Yuri Gagarin became the first human in space, a major victory for communism']},
-
-{paper:'p2a',unit:'Unit 1 – Origins 1941–58',heading:'Hungarian Uprising 1956',
- hints:['Rákosi','Nagy','1000tanks','20000','West'],
- facts:['Hungary was a communist satellite state ruled by harsh Stalinist dictator Rákosi; food shortages, secret police and lack of freedom drove protests','1956: Khrushchev wanted to Destalinise so replaced Rákosi with the popular Imre Nagy who began reforms – releasing prisoners, relaxing censorship, freedom of speech','Nagy went too far by announcing Hungary would leave the Warsaw Pact – Khrushchev sent 1,000 tanks into Budapest; 3,000 killed and 20,000 fled to the West','3,000 killed; 20,000 fled to the West; Nagy arrested and later executed; Kadar installed as new hardline leader','West condemned the invasion but did nothing – showed NATO would not intervene inside the Soviet sphere']},
-
-// ── PAPER 2A · Unit 2 Crises 1958–70 ────────
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'2nd Berlin Crisis – causes',
- hints:['Drain','NATO','Ultimatum','Brain','1955'],
- facts:['Brain drain: between 1949–61 approximately 3 million East Germans fled to the West via West Berlin – many were skilled professionals (doctors, engineers, lawyers) whose loss weakened the GDR economy severely','1955: West Germany joined NATO – Khrushchev saw this as a direct threat; a rearmed West Germany inside the Western military alliance was alarming to Soviet security','Khrushchev issued the Berlin Ultimatum November 1958: gave the Western powers six months to leave West Berlin and make it a "free city"; if not, he would hand control of access routes to East Germany','The Ultimatum was rejected by the West – Berlin remained a flashpoint; Khrushchev extended the deadline several times but the crisis continued to escalate','The brain drain was the most urgent problem for Khrushchev: by 1961 East Germany was losing around 30,000 people a month – the socialist state was bleeding to death through its own open border']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'2nd Berlin Crisis – summits and U2',
- hints:['Paris','Vienna','U2','Eisenhower','Lied'],
- facts:['Paris Summit May 1960: Khrushchev walked out after an American U2 spy plane (piloted by Gary Powers) was shot down over the USSR; Eisenhower initially denied the flight then admitted it when the USSR produced Powers and the wreckage','Eisenhower\'s lie destroyed the Paris Summit before it began; Khrushchev used it as propaganda proof that the USA could not be trusted; set back diplomacy significantly','Vienna Summit June 1961: Kennedy and Khrushchev met for the first time; Khrushchev pressed his Berlin Ultimatum; he judged Kennedy as weak and inexperienced – this misjudgement contributed to placing missiles in Cuba later','Kennedy stood firm on Berlin at Vienna but was shaken by Khrushchev\'s aggression; returned to Washington and requested a $3.25bn increase in defence spending','The failed summits showed diplomacy could not resolve the Berlin crisis; a more decisive action was needed – the Wall was Khrushchev\'s solution']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'2nd Berlin Crisis – consequences',
- hints:['Wall','140','Berliner','Symbol','August'],
- facts:['13 August 1961: East German soldiers began building the Berlin Wall overnight; barbed wire first, then concrete; it eventually stretched 155km around West Berlin','The Wall ended the brain drain immediately – emigration stopped almost overnight; Khrushchev had solved his most urgent problem','Over 140 people were killed trying to cross the Wall between 1961 and 1989; Peter Fechter (1962) bled to death in the "death strip" as guards watched – a powerful propaganda image for the West','June 1963: President Kennedy visited West Berlin; his speech declared "Ich bin ein Berliner" – American commitment to West Berlin; 450,000 people gathered; the visit was a major propaganda victory for the West','The Wall became the defining symbol of the Cold War – physical proof that communism could only survive by imprisoning its own people; it stood until 9 November 1989']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Cuban Revolution and Bay of Pigs',
- hints:['Castro','Batista','Nationalised','1400','Humiliated'],
- facts:['1959: Fidel Castro overthrew pro-American dictator Fulgencio Batista in the Cuban Revolution; Castro nationalised all American-owned land and businesses – US companies lost approximately $1 billion in assets','USA imposed a trade embargo on Cuba; Castro turned to the USSR for support; Khrushchev agreed to buy Cuban sugar and provide economic and military assistance – Cuba became a communist state 90 miles from the USA','April 1961: Bay of Pigs invasion – CIA trained approximately 1,400 Cuban exiles (Brigade 2506) to invade Cuba and overthrow Castro; Kennedy cancelled planned US air support at the last minute','The invasion was a catastrophic failure: all 1,400 men were captured or killed within three days; Kennedy was publicly humiliated; the CIA\'s involvement was obvious despite denials','Bay of Pigs had two crucial consequences: it pushed Cuba and the USSR even closer together, and it convinced Khrushchev that Kennedy was weak – a misjudgement that led directly to the missile crisis']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Cuban Missile Crisis – 13 days',
- hints:['Spyplane','Blockade','13days','Dobrynin','DEFCON'],
- facts:['14 October 1962: US U2 spy plane photographed Soviet nuclear missile sites under construction in Cuba; CIA analysts estimated they would be operational within two weeks','Kennedy was briefed on 16 October; formed ExComm (Executive Committee) of senior advisers; debated options – air strike, invasion, blockade, or diplomacy; chose a naval "quarantine" (blockade)','22 October: Kennedy announced the blockade on live television; put US forces on DEFCON 3; Soviet ships were sailing toward the blockade line with nuclear materials on board','Soviet submarines accompanying the ships carried nuclear torpedoes; submarine B-59 nearly fired one when depth-charged by US destroyers – officer Vasili Arkhipov refused to authorise launch','Thirteen days of intense diplomacy through back-channels (including Soviet ambassador Dobrynin); Khrushchev and Kennedy exchanged letters; world came closer to nuclear war than at any other point']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Cuban Missile Crisis – consequences',
- hints:['Hotline','Test','Khrushchev','Turkey','Détente'],
- facts:['Resolution: Khrushchev agreed to remove Soviet missiles from Cuba; Kennedy publicly pledged not to invade Cuba and secretly agreed to remove US Jupiter missiles from Turkey within six months','Kennedy appeared to "win" – Khrushchev appeared to have backed down; this damaged Khrushchev\'s authority within the USSR and he was removed from power in October 1964','June 1963: Moscow-Washington Hotline established – a direct telephone link between the two leaders to prevent future accidental nuclear war; a direct consequence of the dangerous lack of communication during the crisis','August 1963: Partial Test Ban Treaty signed – banned nuclear weapons testing in the atmosphere, underwater and in space; first arms control agreement of the Cold War','The crisis planted seeds of détente: both superpowers had looked into the nuclear abyss; recognised that MAD required communication and restraint; relationship cautiously improved throughout the 1960s']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Prague Spring – Dubček and reforms',
- hints:['Dubček','Human','Tito','Censorship','Writers'],
- facts:['January 1968: Alexander Dubček became First Secretary of the Czechoslovak Communist Party; he had grown up in the USSR but was committed to genuine reform','Dubček announced "Socialism with a human face" – a programme of liberalisation: relaxed censorship, allowed criticism of the government, permitted foreign travel, released political prisoners','Czech writers, intellectuals and students enthusiastically supported the reforms; newspapers published openly critical articles; a genuine political spring emerged in Prague','Dubček invited Marshal Tito of Yugoslavia (who had broken from Moscow in 1948 and ran an independent communist state) to Prague – Brezhnev saw this as a dangerous signal that Czechoslovakia might seek independence','By summer 1968: Brezhnev was receiving alarming reports from other satellite state leaders who feared the Czech example would inspire similar demands in their own countries; he decided to act']},
-
-{paper:'p2a',unit:'Unit 2 – Crises 1958–70',heading:'Prague Spring – invasion and Brezhnev Doctrine',
- hints:['500000','70killed','Brezhnev','Albania','Husák'],
- facts:['Night of 20–21 August 1968: 500,000 Warsaw Pact troops (from USSR, Poland, Hungary, Bulgaria and East Germany) invaded Czechoslovakia; Dubček was arrested and taken to Moscow','70 civilians were killed in the invasion; Czechoslovak people responded with passive resistance – moving road signs, arguing with soldiers – but had no military means to resist','Dubček was forced to sign the Moscow Protocol agreeing to end all reforms; he was replaced by the hardline Gustáv Husák; the "normalisation" of Czechoslovakia began','Brezhnev Doctrine announced: if any communist country threatened the socialist bloc as a whole, other communist nations had a duty to intervene; this formalised Soviet right to invade any satellite state','Albania left the Warsaw Pact in protest and aligned with China; the West condemned the invasion but took no military action – showed once again that the Soviet sphere of influence was inviolable']},
-
-// ── PAPER 2A · Unit 3 End of Cold War ───────
-{paper:'p2a',unit:'Unit 3 – End of Cold War 1970–91',heading:'Détente and SALT 1970s',
- hints:['40%','SALT1','Helsinki','Apollo','Vietnam'],
- facts:['By 1970s both sides had reasons to ease tensions: 40% of Soviet economy spent on nuclear weapons; USA spending $150bn/year on Vietnam War','1972: SALT 1 signed by Nixon and Brezhnev – first nuclear arms limitation treaty; restricted ICBMs and SLBMs','1975: Helsinki Accords signed by 35 nations – agreed European borders, scientific cooperation and human rights','1975: Apollo-Soyuz mission – US and Soviet spacecraft docked in orbit; symbolised end of space race','SALT 2 negotiations began but USSR invaded Afghanistan 1979; Carter cancelled treaty – détente over']},
-
-{paper:'p2a',unit:'Unit 3 – End of Cold War 1970–91',heading:'Soviet invasion of Afghanistan 1979',
- hints:['Mujahideen','Christmas','$8bn','Carter','Doctrine'],
- facts:['1978: Afghanistan became communist and tried to remove Islam from society – sparked Muslim resistance (the Mujahideen)','Mujahideen began overpowering the communist Afghan government; Brezhnev feared this would inspire rebellion in the USSR\'s own Muslim regions','Christmas Eve 1979: USSR invaded Afghanistan to prop up the communist government','10-year war costing $8 billion per year; estimated 15,000 Soviet soldiers killed; deeply unpopular at home','Carter scrapped SALT 2; issued Carter Doctrine; sent arms to Mujahideen – détente officially ended; Second Cold War began']},
-
-{paper:'p2a',unit:'Unit 3 – End of Cold War 1970–91',heading:'Second Cold War and Reagan 1980–85',
- hints:['Evil','Trillion','Olympics','SDI','Doctrine'],
- facts:['1980: Reagan elected US President; called USSR an "Evil Empire"; committed to "winning" the Cold War rather than managing it','Reagan increased military spending by $1 trillion; Reagan Doctrine – funding anti-communist groups worldwide','USA boycotted Moscow Olympics 1980 (60 countries joined); USSR boycotted LA Olympics 1984 in retaliation','1983: SDI ("Star Wars") announced – orbital lasers to shoot down Soviet missiles; technology not ready but terrified USSR','SDI forced Soviet planners to consider whether they could afford to continue the arms race']},
-
-{paper:'p2a',unit:'Unit 3 – End of Cold War 1970–91',heading:'Gorbachev\'s New Thinking 1985–88',
- hints:['Perestroika','Glasnost','Sinatra','INF','Malta'],
- facts:['1985: Gorbachev became Soviet leader; inherited poor economy, costly Afghanistan war, arms race the USSR could not win','Perestroika (reconstruction): allowed some capitalist investment in the Soviet economy','Glasnost (openness): freedom of speech; political prisoners released','1988: Sinatra Doctrine replaced Brezhnev Doctrine – satellite states could "go their own way" without Soviet invasion; crucial change','1987: INF Treaty – USA and USSR agreed to destroy all intermediate-range missiles; 1989: Malta Summit declared Cold War at an end']},
-
-{paper:'p2a',unit:'Unit 3 – End of Cold War 1970–91',heading:'Events of 1989',
- hints:['Poland','Solidarity','Wall','November','Dominos'],
- facts:['June 1989: Poland first to abandon communism – Solidarity won elections; when Gorbachev did not send tanks, other satellite states followed rapidly','Hungary, Czechoslovakia, Bulgaria, Romania all abandoned communism by end of 1989; Romania involved violent revolution','9 November 1989: Berlin Wall fell – crowds gathered; East German guards stood down; people tore the Wall down','By December 1989 every satellite state had abandoned communism – process took less than six months once Poland led','Germany reunited October 1990; Warsaw Pact dissolved July 1991']},
-
-{paper:'p2a',unit:'Unit 3 – End of Cold War 1970–91',heading:'Collapse of the USSR 1991',
- hints:['Latvia','Coup','Yeltsin','Christmas','Dissolved'],
- facts:['Gorbachev\'s reforms had unleashed forces he could not control: republics including Latvia, Lithuania and Estonia demanded independence','August 1991: Gang of Eight hardline communists arrested Gorbachev in an attempted coup to restore old-style communist rule','Boris Yeltsin led resistance from the Russian parliament building; army refused to fire on civilians; coup collapsed after three days','After the coup\'s failure Gorbachev had no authority left; holding the USSR together by force risked civil war','Christmas Day 1991: Gorbachev resigned and dissolved the USSR; 15 independent republics emerged; Cold War officially ended']},
-
-// ── PAPER 2B · Unit 1 Queen & Religion ──────
-{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Elizabethan society and government 1558',
- hints:['Hierarchy','Nobles','Privy','Prerogative','Parliament'],
- facts:['England was a hierarchical rural society – nobles (dukes and earls) owned vast land and could raise armies; gentry held local power as JPs; merchants were represented in Parliament; peasants were powerless','Elizabeth was the monarch but did not rule alone – she relied on key institutions','Privy Council: 19 key advisors including William Cecil, Robert Dudley and Francis Walsingham – the inner circle of government','Parliament: had to approve all taxation; Elizabeth called it as rarely as possible','Royal prerogative: foreign policy, religion, succession and marriage were Elizabeth\'s alone – Parliament could advise but not decide']},
-
-{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Personal challenges facing Elizabeth 1558',
- hints:['Illegitimate','Patriarchal','Marriage','Debt','Calais'],
- facts:['Legitimacy: Catholics believed Henry VIII\'s divorce was invalid – making Elizabeth illegitimate; Mary Queen of Scots had a stronger Catholic claim','Gender: England was deeply patriarchal; many believed women could not govern or lead armies; Bloody Mary had reinforced fears about female rule; Protestant reformer John Knox published his \"First Blast of the Trumpet\" in 1558 declaring female rule against God\'s will – \"the blind leading those who can see\"','Marriage dilemma: a foreign husband risked foreign interference and English resentment; an English husband would create noble rivalries – but remaining unmarried left no heir','Finance: Elizabeth inherited £227,000 of debt from Mary I; forced to sell crown lands for quick income, reducing future revenue','At war with France; Calais lost 1558 – national humiliation; peace made 1559 but the weakness it exposed remained']},
-
-{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Foreign challenges facing Elizabeth 1558',
- hints:['Philip','Auld','Mary','France','Netherlands'],
- facts:['Spain: most powerful country in the world; Philip II had proposed to Elizabeth – she refused; controlled the Netherlands and New World gold; reluctant to act against Elizabeth only because he feared creating a French empire under Mary QoS','France: England\'s traditional enemy; the Auld Alliance between France and Scotland meant a hostile Franco-Scottish alliance on England\'s northern border','Mary QoS was in France as wife of the French king Francis II – a Catholic claimant to Elizabeth\'s throne backed by the most powerful Catholic dynasty in Europe, the Guise family','Scotland itself had a strong Protestant movement led by John Knox; Scotland became Protestant in 1559 while Mary was still in France – creating an unstable northern neighbour','Elizabeth\'s foreign policy priority was to prevent France and Spain ever combining against her – she exploited their rivalry throughout her reign']},
-
-{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Religious challenges facing Elizabeth 1558',
- hints:['Henry','Edward','Mary','Turmoil','ViMedia'],
- facts:['Henry VIII broke from Rome in 1534 for personal reasons – remained personally Catholic; persecuted both extreme Protestants and Catholics simultaneously','Edward VI (r.1547–53) made England austerely Protestant; but died after 6 years before reforms were embedded outside London and the South East','Mary I (r.1553–58) burned ~300 Protestants at the stake and drove over 800 Puritans abroad; deep scars remained and the country was bitterly divided','Elizabeth inherited Catholic bishops from Mary who were likely to obstruct any Protestant settlement; the majority of English people, especially in the North and West, remained Catholic','Elizabeth\'s answer was the \"Via Media\" – a deliberate middle way; she sought unity over doctrinal purity, knowing another religious upheaval could provoke rebellion or foreign invasion']},
-
-{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Religious Settlement 1558–59',
- hints:['Supremacy','Uniformity','Shilling','Vestments','Crucifix'],
- facts:['Act of Supremacy: Elizabeth became "Supreme Governor" of the Church – removed all papal authority from England','Act of Uniformity: identical Protestant services required in all churches; Catholic images and vestments allowed – the "Via Media"','Recusants fined 1 shilling for not attending – far lighter than burning (Mary I\'s approach)','Vestment Controversy: Puritans tried to ban vestments; Archbishop insisted they must be worn – Puritans lost','Crucifix Controversy: Puritans succeeded in getting crucifixes removed from all churches – a small but real Puritan victory']},
-
-{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Puritan challenge to the Settlement',
- hints:['Extreme','Dudley','MPs','Vestments','Limits'],
- facts:['Puritans were extreme Protestants who wanted to remove all Catholic elements from the Church of England','Influential supporters: two Privy Councillors (Dudley and Walsingham) were Puritan sympathisers; Puritan MPs pushed for change in Parliament','Vestment Controversy showed limits of Puritan power: Archbishop held firm; could not override Church authority','Crucifix Controversy showed they could win small concessions – but could not fundamentally alter the Settlement','Unlike Catholics, Puritans had no alternative monarch to replace Elizabeth with – challenge was to the Settlement\'s details, not her rule']},
-
-{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Catholic threat and excommunication',
- hints:['Recusancy','Excommunication','Treason','Distracted','Compliance'],
- facts:['One third of nobles were Catholic but most paid the 1 shilling recusancy fine rather than rebel – too risky','1570: Pope Pius V excommunicated Elizabeth – all Catholics encouraged to remove her from power; parliament made owning the decree treason','Spain and France were powerful Catholic nations but distracted: France in religious civil war from 1560s; Spain occupied with Dutch Revolt','Most English Catholics complied publicly while practising privately – potential threat far greater than actual danger','The excommunication gave foreign powers a religious justification for invasion they had not previously had']},
-
-{paper:'p2b',unit:'Unit 1 – Queen & Religion',heading:'Mary, Queen of Scots 1558–69',
- hints:['Illegitimate','Guise','Edinburgh','Murder','Imprisoned'],
- facts:['Catholics believed Elizabeth was illegitimate and Mary was the true queen of England; even Protestants knew Mary was heir if Elizabeth had no children','Mary\'s mother from powerful Guise family; grew up in France as wife of the French king; Scotland had Auld Alliance with France','Treaty of Edinburgh 1560: Scottish lords renounced Mary\'s claim to English throne; Mary refused to ratify – kept threat alive','1567: accused of murdering husband Lord Darnley; forced to abdicate; fled to England 1568 seeking help','Elizabeth imprisoned Mary in northern England rather than helping her or handing her back – making her a focal point for 18 years of Catholic conspiracy']},
-
-// ── PAPER 2B · Unit 2 Challenges 1569–88 ────
-{paper:'p2b',unit:'Unit 2 – Challenges 1569–88',heading:'Revolt of the Northern Earls 1569',
- hints:['Northumberland','Durham','Nobles','Spanish','14000'],
- facts:['Earls of Northumberland and Westmoreland rebelled – wanted to restore Catholicism; resented losing influence to Elizabeth\'s Council of the North','Planned to free Mary Queen of Scots, marry her to Duke of Norfolk and place her on the throne','Raised armies; marched on Durham Cathedral; celebrated Catholic Mass; called for other Catholic nobles to join','No other nobles joined; expected Spanish troops never arrived; Elizabeth raised 14,000 soldiers and the Earls fled','~450 rebels hanged; Mary moved to Coventry, further from the Catholic north; Revolt actually strengthened Elizabeth\'s position']},
-
-{paper:'p2b',unit:'Unit 2 – Challenges 1569–88',heading:'Plots – Ridolfi, Throckmorton, Babington',
- hints:['Ridolfi','Throckmorton','Babington','Walsingham','Executed'],
- facts:['All three plots aimed to kill Elizabeth and place Mary Queen of Scots on the throne; all uncovered by Walsingham\'s spy network','Ridolfi 1571: needed Spanish troops that never came; Duke of Norfolk executed; Elizabeth refused to execute Mary','Throckmorton 1583: involved French invasion; failed; Bond of Association 1584 – Privy Council pledged to kill anyone who conspired to benefit from Elizabeth\'s death','Babington 1586: Walsingham allowed it to run until he had Mary\'s written approval of plans to assassinate Elizabeth','Mary executed February 1587; Elizabeth signed death warrant but claimed to be horrified when carried out']},
-
-{paper:'p2b',unit:'Unit 2 – Challenges 1569–88',heading:'Causes of war with Spain and the Dutch Revolt',
- hints:['Philip','Joinville','Drake','Nonsuch','Privateers'],
- facts:['Religious rivalry: Philip II wanted England returned to Catholicism; the 1570 papal excommunication made it a Catholic duty to remove Elizabeth; 1584 Treaty of Joinville saw Spain and France pledge to destroy Protestantism','Political rivalry: as English power grew Spain felt threatened; French religious civil war from 1562 removed France as a counterweight, making Spain Elizabeth\'s main rival','Commercial rivalry: Drake raided Spanish treasure ships throughout the 1570s–80s secretly backed by Elizabeth; stole £400,000 on his circumnavigation; Elizabeth\'s 1580 knighting of Drake on the deck of the Golden Hind was seen by Philip as open endorsement of piracy','Dutch Revolt: the Netherlands were Catholic Spain\'s Protestant subjects; from 1566 they rebelled; Elizabeth secretly funded them to keep Spain distracted and prevent a Spanish-controlled channel coast','1584: William of Orange assassinated; revolt in danger of collapse; Elizabeth signed Treaty of Nonsuch 1585 – committed 7,400 troops and £126,000/year; England and Spain were now officially at war']},
-
-{paper:'p2b',unit:'Unit 2 – Challenges 1569–88',heading:'Early years of war with Spain – Drake and Dudley',
- hints:['Leicester','Ostend','Cadiz','Barrels','Beard'],
- facts:['Leicester (Robert Dudley) sent to the Netherlands with 7,400 troops after Treaty of Nonsuch 1585; he lacked sufficient men, money and supplies to take on Parma\'s superior army directly','Leicester faced betrayals from his own commanders and was unable to stop Parma\'s advance; his one significant success was preventing Parma capturing the deep-water port of Ostend – crucial because without it Parma\'s troops could not board the Armada quickly','1587: Drake sent to disrupt Spanish Armada preparations at Cadiz – chose a moonless night, slipped into the harbour and destroyed 30 Spanish ships; he also damaged supply barrels, meaning Spanish food and water would rot on the voyage','Drake\'s raid on Cadiz – the \"singeing of the King of Spain\'s beard\" – bought England approximately 12 months to prepare for the Armada','Drake then raided Portugal and captured a Spanish treasure ship worth £140,000 on the way home – the raid was a strategic, propaganda and financial success']},
-
-{paper:'p2b',unit:'Unit 2 – Challenges 1569–88',heading:'Spanish Armada 1588',
- hints:['Nonsuch','Fireships','Gravelines','Storms','Tilbury'],
- facts:['1585: Treaty of Nonsuch – Elizabeth pledged 7,400 troops to Dutch rebels; England and Spain officially at war; Drake raided Cadiz 1587','1588: Medina-Sidonia sent with 130 ships and 27,000 men to collect Parma\'s 30,000 troops from Netherlands then invade England','Drake sent fireships into the Armada at Calais – Spanish captains panicked and scattered, breaking the defensive formation','English navy defeated the disordered fleet at Battle of Gravelines; storms off Ireland and Scotland then destroyed over half the 130 ships','Parma\'s army was trapped by Dutch flyboats – plan was unworkable from the start; Elizabeth\'s Tilbury speech used as Protestant propaganda victory']},
-
-// ── PAPER 2B · Unit 3 Elizabethan Society ───
-{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Education in Elizabethan England',
- hints:['Grammar','Literacy','Nobility','Latin','Apprentice'],
- facts:['72 new grammar schools founded in Elizabeth\'s reign; fees based on parents\' income; some poor boys with promise attended free, funded by wealthy donors','Sons of nobility learned Latin, Greek, History, Philosophy and Government at schools like Eton – preparing them for roles in government; daughters of nobility also received a broad education','Male literacy rose from 20% to 30% during the reign; female literacy remained at 10% – girls of the gentry attended dame schools learning domestic skills, not academic subjects','Working-class children did not attend school; they learned farming or craft skills from their families, or entered apprenticeships from an early age','Education reinforced the social hierarchy – it was designed to prepare children for the station they were born into, not to enable social mobility']},
-
-{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Leisure in Elizabethan England',
- hints:['Theatre','Bear','Penny','Hunting','Puritans'],
- facts:['Nobility enjoyed hunting on horseback, hawking, real tennis, fencing and fishing; employed household musicians; imported luxury goods like tobacco from the New World','Working class enjoyed football (often deadly, no rules), gambling on bear-baiting and cock-fighting, hunting rabbit, and listening to music at fairs, markets and church','Theatre developed rapidly under Elizabeth: Protestantism encouraged secular plays; the first permanent theatre (The Red Lion) opened in 1576, followed by the Rose (1586) and the Globe (1599)','Theatre was open to all classes: 1 penny for a standing place in the pit (noisy, close to the stage); the wealthy paid for seats in the galleries; all plays had to be approved by the Queen\'s official from 1572','Puritans strongly opposed the theatre as sinful and satanic; their opposition grew throughout the reign but they failed to close the theatres during Elizabeth\'s lifetime']},
-
-{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Poverty and poor relief',
- hints:['Population','Enclosure','Vagabonds','Correction','Deserving'],
- facts:['Population rose from 3 million to 4 million – food prices rose; wages fell; more competition for fewer jobs','Enclosure: wealthy landowners took common land from the poor to farm sheep for the wool trade; many became landless','1572 Vagabonds Act: vagabonds over 14 whipped and burned through the right ear; further offences meant execution','1576: Houses of Correction built to teach the poor skills; wealthy parishioners required to fund poor relief','Society divided poor into "deserving" (old, disabled) and "undeserving" (able-bodied unemployed) – blamed the poor for poverty']},
-
-{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Voyages of exploration',
- hints:['Mercator','Hawkins','Drake','Circumnavigation','Patronage'],
- facts:['New technology made long voyages possible: Mercator map 1569 (accurate world geography); astrolabes (navigation by stars); improved galleons','1562: Hawkins created Triangular Slave Trade bringing great wealth; Elizabeth personally invested in his expeditions','1577–80: Drake circumnavigated the globe (second person to do so); raided £400,000 of Spanish treasure; knighted by Elizabeth 1580','Voyages driven by desire for fame, profit and royal patronage – Elizabeth\'s support gave exploration social prestige','Exploration increased England\'s commercial and geographic knowledge; laid foundations for later Empire']},
-
-{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Virginia colony 1585 and 1587',
- hints:['Raleigh','Tiger','Wingina','Roanoke','Croatoan'],
- facts:['Sir Walter Raleigh organised and financed two attempts at a colony in Virginia in the 1580s','1585: 108 settlers on Roanoke Island; supply ship The Tiger ran aground – seawater destroyed most food stores immediately','Too many soldiers and merchants; not enough farmers; colonists depended on Algonquian people for food from the start','Relations broke down as disease (invisible bullets) spread from English to natives; Ralph Lane led pre-emptive attack and killed chief Wingina – ended any chance of cooperation', 'supply ships cannot leave England as all ships are needed to defend against Spanish Armada','1590: returned to find colony vanished; only "Croatoan" carved in a tree; colonists never seen again']},
-
-{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Causes of poverty in Elizabethan England',
- hints:['Population','Enclosure','Harvest','Debasement','Malthusian'],
- facts:['Population growth: England\'s population grew from approximately 3 million to 4 million during Elizabeth\'s reign – increased demand for food drove up prices while more people competed for the same number of jobs, driving down wages; a classic Malthusian crisis','Enclosure: wealthy landowners enclosed common land to farm sheep for the highly profitable wool trade; poor families lost access to land they had used to grow food and graze animals for generations – many became landless','Harvest failures: the "little ice age" brought lower temperatures and more frequent harvest failures throughout the second half of the 16th century; bad harvests in the 1590s caused near-famine conditions in some areas','Debasement of the currency: Henry VIII and Edward VI had reduced the silver content of coins to fund wars; this caused inflation that continued throughout Elizabeth\'s reign – prices rose faster than wages could keep pace'],},
-
-{paper:'p2b',unit:'Unit 3 – Elizabethan Society',heading:'Attitudes and legislation towards the poor',
- hints:['Deserving','Vagabonds','Correction','Attitudes','Statute'],
- facts:['Elizabethan society divided the poor into the "deserving poor" (the elderly, sick or disabled who genuinely could not work) and the "undeserving poor" (able-bodied people without work, assumed to be lazy or criminal)','1563 Statute of Artificers: set maximum wages and made it illegal to turn down a job if you were under 30; showed government still believed the poor were lazy and needed regulating.','1572 Vagabonds Act: vagabonds over 14 to be whipped and burned through the right ear for the first offence; further offences could mean execution; reflected the punitive Attitudes of the period','1576 Act for the Relief of the Poor: established Houses of Correction to teach the poor skills; local officials required to find work for the able-bodied (undeserving poor); wealthy required to contribute to a poor relief fund – shift in government attitudes towards help rather than punishment.'],},
-
-// ── PAPER 3 · Unit 1 Weimar Republic ────────
-{paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'WWI and the German Revolution 1918',
- hints:['Blockade','750000','Abdication','Armistice','Dolchstoss'],
- facts:['British naval blockade caused mass starvation – 750,000 civilian deaths; 2 million soldiers killed; government debts tripled; collapse of law and order across Germany by late 1918','Kaiser Wilhelm II lost control and was forced to abdicate 9 November 1918; Friedrich Ebert (Social Democrat) declared the Weimar Republic the same day','Armistice signed 11 November 1918 – no Allied soldier had set foot on German soil; many Germans genuinely refused to believe they were losing the war','\"Dolchstoss\" – stab-in-the-back myth: right-wing nationalists blamed the new Weimar politicians for betraying an undefeated army; completely false but enormously damaging','Weimar politicians became known as the \"November Criminals\" – hated for signing the armistice and later the Treaty of Versailles; Matthias Erzberger, who signed the armistice, was assassinated by a right-wing extremist in 1921']},
-
-{paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'Structure of the Weimar Republic 1919',
- hints:['Ebert','President','Reichstag','Proportional','Article48'],
- facts:['Ebert emerged as dominant politician by February 1919 by reassuring the army and industrialists that communism would not take hold – his defeat of the Spartacists helped consolidate his position','President: head of state, elected every 7 years, chose the Chancellor – a powerful position above day-to-day politics','Chancellor: led the government and made day-to-day decisions, but needed Reichstag support to govern','Reichstag: directly elected parliament that voted on all legislation; proportional representation meant every small party won seats – created 9 unstable coalition governments between 1919 and 1923','Article 48: allowed the President to pass laws without the Reichstag in a national emergency – designed as a safeguard but became a dangerous loophole; used 66 times in 1932 alone']},
-
-{paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'Treaty of Versailles 1919',
- hints:['Reparations','Land','Army','Guilt','Dolchstoss'],
- facts:['June 1919: Weimar government had no say in negotiations – forced to accept terms dictated by Britain, France and USA','£6.6 billion reparations; lost 13% of land (Alsace-Lorraine to France; Polish Corridor created); overseas colonies lost','Army limited to 100,000 men; no submarines or air force; Rhineland demilitarised','Article 231 – war guilt clause: Germany forced to accept 100% responsibility; used to justify reparations','Combined with the Dolchstoss myth, the Treaty made the Weimar Republic deeply unpopular from its very first days']},
-
-{paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'Spartacists and Kapp Putsch 1919–20',
- hints:['Luxemburg','Freikorps','Kapp','Strike','376'],
- facts:['January 1919: Spartacist revolt – Rosa Luxemburg led 100,000 communist workers in armed uprising in Berlin','Ebert used right-wing Freikorps (ex-soldiers) to crush the revolt; Luxemburg killed; showed Weimar would use far-right against far-left','1920: Kapp Putsch – Freikorps seized Berlin; Ebert fled; regular army refused to fire on Freikorps ("Reichswehr does not fire on Reichswehr")','Workers of Berlin went on general strike; Kapp could not govern; gave up after 3 days','376 politicians assassinated in these early years – government threatened from both left and right simultaneously']},
-
-{paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'Hyperinflation 1923',
- hints:['Ruhr','Printed','Bread','Savings','Munich'],
- facts:['Germany defaulted on reparations; January 1923: French and Belgian troops invaded the Ruhr to extract coal directly','Weimar government asked Ruhr workers to go on strike; printed money to pay them – currency collapsed','Bread rose from 1 mark (1919) to 200 billion marks (November 1923)','Middle classes lost savings permanently; working class could not keep up with prices','Munich Putsch November 1923 directly exploited this crisis – economic chaos fuelled political extremism']},
-
-{paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'Stresemann and Weimar recovery 1923–29',
- hints:['Rentenmark','Dawes','Locarno','League','Young'],
- facts:['November 1923: Stresemann introduced the Rentenmark – tied to land value, not printed money; halted hyperinflation','1924: Dawes Plan – reparations cut to £50m/year; secured $200m US loans to stabilise economy','1925: Locarno Pact – Germany accepted Versailles borders; France left the Ruhr; Germany accepted back into Europe diplomatically','1926: Germany joined the League of Nations','1929: Young Plan – reparations cut to £2bn extended to 1988; extremist support fell from 40% (1924) to 28% (1928)']},
-
-{paper:'p3',unit:'Unit 1 – Weimar Republic',heading:'Weimar culture and women in the Golden Years',
- hints:['Wages','Women','Bauhaus','Metropolis','Fragile'],
- facts:['Wages rose 25%; unemployment fell; 100,000 new houses built; war veterans received pensions','Women gained equal voting rights to men; worked in traditionally male jobs; wore modern fashions; more independent social lives','Bauhaus school developed modern affordable design; Otto Dix\'s art depicted post-war reality; Fritz Lang\'s Metropolis (1927) a landmark film','Berlin became one of the most culturally exciting cities in Europe','However: 2 million remained unemployed; middle-class savings never returned; prosperity entirely dependent on US loans – all destroyed by 1929 crash']},
-
-// ── PAPER 3 · Unit 2 Hitler\'s Rise ──────────
-{paper:'p3',unit:'Unit 2 – Hitler\'s Rise',heading:'Early Nazi Party 1919–22',
- hints:['DAP','25Point','3000','SA','Rebranded'],
- facts:['Hitler joined the tiny German Workers\' Party (DAP) in Munich – only 23 members; he had been sent as an army spy but was converted by their ideas','1920: co-wrote 25 Point Programme – nationalist, anti-democratic and anti-Semitic views; party renamed NSDAP','Charismatic speeches grew membership from 23 (1919) to 3,000 (1920) to 20,000 (1923)','1921: Hitler took over the party leadership; SA (Stormtroopers) set up under Röhm – 800 members by 1922','Introduced swastika logo and party newspaper (Völkischer Beobachter)']},
-
-{paper:'p3',unit:'Unit 2 – Hitler\'s Rise',heading:'Munich Putsch 1923',
- hints:['Ludendorff','Mussolini','BeerHall','16dead','MeinKampf'],
- facts:['By 1923: 20,000 Nazi members; General Ludendorff\'s support; hyperinflation made Weimar deeply unpopular','Inspired by Mussolini\'s successful March on Rome (1922) – hoped to seize Munich then march on Berlin','8 November: Hitler burst into Beer Hall where politician Von Kahr was speaking; Von Kahr secretly informed Ebert rather than joining','9 November: police were waiting; 16 Nazis killed; Hitler fled; arrested 11 November; Putsch completely failed','At trial gave nationally-reported speech; served only 9 months of 5-year sentence; wrote Mein Kampf; switched to electoral strategy']},
-
-{paper:'p3',unit:'Unit 2 – Hitler\'s Rise',heading:'Lean years 1923–29',
- hints:['Banned','Electoral','Bamberg','Goebbels','12seats'],
- facts:['After Munich Putsch: Nazi Party banned; Hitler served 9 months; on release rebuilt party with new electoral strategy','New branches (Gaue) across Germany; Goebbels joined and developed propaganda; SS set up as personal elite bodyguard','Bamberg Conference 1926: Hitler cemented far-right direction; silenced left-wing Nazi leaders','However: in 1928 Nazis won only 12 Reichstag seats – Stresemann\'s economic recovery meant few wanted radical solutions','Hindenburg\'s election as President (1925) gave many conservatives confidence in the Republic – further marginalised Nazis']},
-
-{paper:'p3',unit:'Unit 2 – Hitler\'s Rise',heading:'Wall Street Crash and Nazi growth 1929–32',
- hints:['£14bn','6million','Brüning','Businessmen','230'],
- facts:['October 1929: Wall Street Crash – American banks lost £14bn in a day; recalled loans from Germany; businesses went bankrupt','Unemployment reached 6 million by 1933; Chancellor Brüning nicknamed "hunger chancellor"; Weimar appeared helpless','Wealthy businesspeople, fearing Communist revolution, bankrolled the Nazis – funded propaganda, rallies and SA expansion','Nazis targeted different groups: "Arbeit und Brot" for workers; price guarantees for farmers; national restoration for middle class','July 1932: Nazis won 230 seats – largest party; grown from 12 seats in just 4 years']},
-
-{paper:'p3',unit:'Unit 2 – Hitler\'s Rise',heading:'Hitler becomes Chancellor January 1933',
- hints:['Corporal','13million','Papen','Controlled','30January'],
- facts:['Even with 230 seats Hindenburg despised Hitler as a "jumped-up little corporal" and refused to make him Chancellor','April 1932: Hindenburg re-elected President; Hitler came second with 13 million votes but still denied the chancellorship','Von Papen (May 1932) then Von Schleicher (November 1932) both failed as Chancellors; Hindenburg ran out of alternatives','Von Papen convinced Hindenburg he could "control" Hitler as Chancellor with himself as Vice-Chancellor – a fatal miscalculation','30 January 1933: Hitler appointed Chancellor; Von Papen told a friend "Mouse in my pocket"']},
-
-// ── PAPER 3 · Unit 3 Nazi Control ───────────
-{paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Reichstag Fire and Enabling Act 1933',
- hints:['Fire','4000','81seats','Enabling','Banned'],
- facts:['27 February 1933: Reichstag burned; Dutch Communist van der Lubbe blamed; Article 48 emergency declared; 4,000 Communists arrested that night','Communists banned from their 81 seats – gave Nazis the crucial 2/3 majority needed to change the Constitution legally','March 1933: Enabling Act passed – gave Hitler power to make any law without the Reichstag; democracy legally abolished','Hitler immediately banned all other parties (July 1933), trade unions and local government','Germany became a one-party state within months of Hitler taking the chancellorship']},
-
-{paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Night of the Long Knives 1934',
- hints:['Röhm','3 million','30June','400'],
- facts:['Ernst Röhm led the SA – 3 million members; publicly called for SA to replace the regular army; threatened Hitler\'s relationship with the military','Hitler feared that Röhm was the only person in Nazi party influential enough to rival him.','Röhm was often critical of Hitler, called him Little Adie, and wanted a more left-wing revolution.','Hitler\'s conservative allies (army, businesspeople) feared the SA; army made clear their loyalty depended on SA being removed','30 June 1934: SS murdered Röhm and approximately 400 others including rival politicians and former allies.','Hitler personally arrests Röhm who is taken to a cell and shot.','Hitler has removed internal rivals within the Nazi party - no one else will dare challenge him now!']},
-
-{paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Hindenburg\'s death and the oath of allegiance',
- hints:['Führer','Oath','August','Personal','Constitution'],
- facts:['2 August 1934: President Paul von Hindenburg died of lung cancer aged 86; Hitler immediately combined the offices of Chancellor and President into the new title of "Führer und Reichskanzler" (Leader and Reich Chancellor)','Hitler held a rigged referendum and ensured it was approved with 90% in favour','The Reichswehr (German army) immediately swore a new personal oath of loyalty – not to Germany as before, but to Adolf Hitler personally.','Now Hitler was complete dictator of Germany.'],},
-
-{paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Police state – Gestapo and SS',
- hints:['Gestapo','SS300000','Dachau','Judges','SD'],
- facts:['Gestapo (secret police): plainclothes; people so afraid they informed on neighbours, parents and friends – self-policing made resistance nearly impossible','SS: led by Himmler and Heydrich; 300,000 members; above the law; ran Dachau concentration camp (opened 1933)','All lawyers and judges had to be loyal Nazis; no juries; prisoners sent to camps without fair trial','SD (Security Service): tapped phones, read letters, monitored behaviour – comprehensive surveillance of German society','Combination of real terror and feared surveillance created a society in which most chose compliance']},
-
-{paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Control of the Churches',
- hints:['Concordat','Reich','Niemöller','800','Confessing'],
- facts:['1933: Concordat signed with Pope Pius XI – Pope agreed not to criticise Nazis in exchange for Catholic schools being left alone; neutered potential Catholic opposition','Reich Church established to bring all Protestant churches under Nazi control; swastika displayed alongside the cross','Some clergy refused: Pastor Niemöller set up the Confessing Church 1934 to oppose the Reich Church','6,000 priests joined the Confessing Church; approximately 800 sent to concentration camps for speaking out','Shows Nazis could not fully control religion – but could suppress open opposition through imprisonment']},
-
-{paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Propaganda and censorship',
- hints:['Goebbels','45mins','Burning','Nuremberg','Olympics'],
- facts:['Goebbels ran the Reich Ministry of Public Enlightenment and Propaganda – controlled all public information','All films preceded by 45 minutes of Nazi propaganda; Nazi leaders broadcast on radio; loudspeakers set up on street corners','Censorship: critical newspapers closed; radios designed to block foreign broadcasts; books by Jewish and Communist authors publicly burned','Nuremberg rallies: 200,000 people, 20,000 flags – carefully orchestrated to project image of total Nazi power and unity','Berlin Olympics 1936 used as global propaganda showcase; Leni Riefenstahl\'s film Triumph of the Will glorified Nazi power']},
-
-{paper:'p3',unit:'Unit 3 – Nazi Control',heading:'Opposition and resistance',
- hints:['Swing','Pirates','Niemöller','Democrats','Assassination'],
- facts:['Most people either genuinely supported the regime or passively accepted it – propaganda, economic improvement and terror all worked together','Swing Youth: teenagers from wealthy families who listened to banned American jazz; Edelweiss Pirates attacked Hitler Youth members','Confessing Church (Niemöller): 6,000 priests; ~800 sent to concentration camps – religious resistance existed but was suppressed','Social Democrats continued underground anti-Nazi newspapers; trade unionists carried out small acts of sabotage','Some army officers attempted to assassinate Hitler (1944 most notable) – all failed; showed even within the regime there were opponents']},
-
-// ── PAPER 3 · Unit 4 Life in Nazi Germany ───
-{paper:'p3',unit:'Unit 4 – Life in Nazi Germany',heading:'Women in Nazi Germany',
- hints:['3Ks','Loan','Cross','Banned','Reversed'],
- facts:['Nazis believed in the "3 Ks": Kinder (Children), Kirche (Church), Küche (Kitchen) – hated the "new women" of 1920s Weimar','1933: Marriage loan of 1,000 marks if wife gave up work; a quarter cancelled per child – powerful economic incentive','Mother\'s Cross medal: bronze for 4 children, silver for 6, gold for 8 – motherhood elevated as patriotic service','Women banned from teaching, medicine, law and civil service; girls banned from grammar schools from 1937','By late 1930s: rearmament forced the Nazis to bring women back into factories – ideology reversed by economic necessity']},
-
-{paper:'p3',unit:'Unit 4 – Life in Nazi Germany',heading:'Young people and Hitler Youth',
- hints:['Oath','Guns','Maidens','Compulsory','Schools'],
- facts:['All youth groups banned 1933 except Nazi ones; boys joined Hitler Youth from 14; swore personal oath to Hitler','Hitler Youth: camping, shooting, military drills; over 1 million trained to shoot guns','League of German Maidens: swore loyalty oath; physical fitness; trained to be wives and mothers for the Reich','Only 25% attended voluntarily before made compulsory 1936 – limited genuine enthusiasm','Schools used for indoctrination: "Heil Hitler" at start of every lesson; textbooks rewritten; anti-Semitism and racial hygiene taught']},
-
-{paper:'p3',unit:'Unit 4 – Life in Nazi Germany',heading:'Employment and living standards',
- hints:['6million','RAD','Autobahn','Conscription','Statistics'],
- facts:['January 1933: 6 million unemployed; by 1939: officially 500,000 – one of the Nazis most powerful propaganda claims','RAD (National Labour Service) set up 1933: compulsory 6 months from 1935; built roads, planted trees; pay was very low','Autobahn motorway programme employed thousands in construction; showcased German engineering','Rearmament: conscription 1935; army grew from 100,000 to 1.36 million by 1939; weapons factories created millions of jobs','Statistics were manipulated – women, Jews and concentration camp prisoners excluded from unemployment count']},
-
-{paper:'p3',unit:'Unit 4 – Life in Nazi Germany',heading:'Policies towards workers – DAF and KdF',
- hints:['DAF','KdF','Volkswagen','Beauty','Wages'],
- facts:['May 1933: trade unions were banned and replaced by the Deutsche Arbeitsfront (DAF – German Labour Front); workers could no longer strike or negotiate wages; DAF controlled all workplace relations','Kraft durch Freude (KdF – Strength through Joy): set up 1933 to organise leisure time for workers; ran concerts, theatre trips, sports facilities and holidays; by 1939 had 43 million members','KdF offered cruises to Norway and the Mediterranean – previously only available to the wealthy; designed to show workers that Nazism improved their lives and to keep them occupied outside work hours','Volkswagen (People\'s Car) scheme: workers saved 5 marks per week from their wages for a KdF-Wagen (later the VW Beetle); 336,000 workers saved; not a single car was ever delivered – the money funded rearmament instead','Schönheit der Arbeit (Beauty of Labour): scheme to improve workplace conditions – better lighting, canteens, washing facilities; more propaganda than reality but some genuine improvements were made']},
-
-{paper:'p3',unit:'Unit 4 – Life in Nazi Germany',heading:'Nazi racial ideology',
- hints:['Aryan','Hierarchy','Eugenics','T4','Sterilisation'],
- facts:['Nazi racial ideology was based on Social Darwinism: the idea that races competed for survival and the "Aryan" (Nordic/Germanic) race was superior to all others','Racial hierarchy: Aryans at the top; Slavs regarded as "Untermenschen" (sub-human); Jews at the bottom – seen not just as inferior but as an active threat seeking to destroy Aryan civilisation','1933: Law for the Prevention of Hereditarily Diseased Offspring – compulsory sterilisation of people with mental illness, physical disability or hereditary conditions; approximately 400,000 people were forcibly sterilised by 1945','T4 Programme (1939): systematic murder of disabled people deemed "unworthy of life"; approximately 200,000 people were killed; used the same gas chamber technology later applied in the Holocaust','Racial hygiene was taught as science in all German schools from 1933; students measured skulls, learned racial categories and were taught to identify and avoid "racial inferiors"']},
-
-{paper:'p3',unit:'Unit 4 – Life in Nazi Germany',heading:'Jewish persecution and Kristallnacht',
- hints:['Boycott','Nuremberg','Kristallnacht','Fined','Escalation'],
- facts:['April 1933: national boycott of Jewish shops; SA stood outside to intimidate customers; Jews banned from professions','1935: Nuremberg Laws – stripped Jews of citizenship; banned from marrying non-Jews; classified as a separate race','9–10 November 1938: Kristallnacht – thousands of synagogues and Jewish businesses destroyed; over 100 Jews killed; 30,000 arrested and sent to camps','Jews then fined 1 billion marks for "the damage" – showed complete powerlessness of Jews under Nazi rule','ordinary Germans and their families took part in Kristallnacht - not just SS or Nazi thugs. Shows power of 5 years of propaganda.','Clear escalation 1933→1935→1938; Kristallnacht marked the shift from economic and legal persecution to organised physical violence']},
-
-];
+let KC = []; // loaded from data/kc.json
 let EQ = []; // loaded from data/eq.json
 
 let DATES = []; // loaded from data/dates.json
@@ -2015,23 +1338,349 @@ let DATES = []; // loaded from data/dates.json
 // ═══════════════════════════════════════════
 // LOAD EXTERNAL DATA
 // ═══════════════════════════════════════════
+let FD = []; // loaded from data/flashcards.json
+
 Promise.all([
   fetch('data/eq.json').then(r => { if (!r.ok) throw new Error('eq.json: ' + r.status); return r.json(); }),
   fetch('data/rq.json').then(r => { if (!r.ok) throw new Error('rq.json: ' + r.status); return r.json(); }),
   fetch('data/dates.json').then(r => { if (!r.ok) throw new Error('dates.json: ' + r.status); return r.json(); }),
-]).then(([eq, rq, dates]) => {
+  fetch('data/flashcards.json').then(r => { if (!r.ok) throw new Error('flashcards.json: ' + r.status); return r.json(); }),
+  fetch('data/kc.json').then(r => { if (!r.ok) throw new Error('kc.json: ' + r.status); return r.json(); }),
+]).then(([eq, rq, dates, fd, kc]) => {
   EQ = eq;
   RQ = rq;
   DATES = dates;
+  FD = fd;
+  KC = kc;
   // Refresh any visible modes
   const examMode = document.getElementById('mode-exam');
   if (examMode && examMode.style.display !== 'none') updateExamDirectory();
-  console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length);
+  const kbMode = document.getElementById('mode-knowledge');
+  if (kbMode && kbMode.style.display !== 'none') { buildKPool(); updateNavUI(); }
+  console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length, 'FD:', FD.length, 'KC:', KC.length);
 }).catch(err => {
   console.error('Data load failed:', err);
   const eOut = document.getElementById('e-out');
-  if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load data files. Make sure data/eq.json, rq.json and dates.json are in your repository.</div>';
+  if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load data files. Make sure data/eq.json, rq.json, dates.json, flashcards.json and kc.json are in your repository.</div>';
 });
+
+// ═══════════════════════════════════════════
+// FLASHCARD DRILL
+// ═══════════════════════════════════════════
+
+// localStorage keys
+const LS_MASTERED   = 'gcse_fd_mastered';    // {cardKey: true} — cards ever ticked ✅
+const LS_MISSED     = 'gcse_fd_missed';       // [cardKey, ...] — outstanding missed cards (cross-session)
+const LS_STREAK     = 'gcse_fd_streak';       // {date:'YYYY-MM-DD', count:N}
+
+// State
+let fdDeck       = [];   // current round deck (card objects, may include outstanding)
+let fdSeen       = [];   // cards seen this round (in order)
+let fdMissed     = [];   // missed this round (to recycle)
+let fdGot        = 0;    // ✅ count this round
+let fdMissCount  = 0;    // ❌ count this round
+let fdCurrent    = null; // card currently shown
+let fdFlipped    = false;
+let fdTotal      = 0;    // original deck size (for progress bar)
+let fdOutstanding = [];  // outstanding missed keys loaded from localStorage
+
+function fdKey(card) {
+  return card.paper + '|' + card.no;
+}
+
+function fdGetMastered() {
+  return JSON.parse(localStorage.getItem(LS_MASTERED) || '{}');
+}
+function fdSetMastered(obj) {
+  localStorage.setItem(LS_MASTERED, JSON.stringify(obj));
+}
+function fdGetOutstanding() {
+  return JSON.parse(localStorage.getItem(LS_MISSED) || '[]');
+}
+function fdSetOutstanding(arr) {
+  localStorage.setItem(LS_MISSED, JSON.stringify(arr));
+}
+
+function fdSetup() {
+  // Populate unit dropdown for current paper
+  const sel = document.getElementById('fd-unit');
+  sel.innerHTML = '<option value="all">All units</option>';
+  P[currentPaper].units.forEach(u => {
+    const opt = document.createElement('option');
+    opt.value = u;
+    opt.textContent = u;
+    sel.appendChild(opt);
+  });
+  // Colour the select
+  sel.className = 'sel-' + currentPaper;
+
+  // Colour start button to current paper
+  const startBtn = document.getElementById('fd-start-btn');
+  const goClasses = {p1:'c-p1', p2a:'c-p2a', p2b:'c-p2b', p3:'c-p3'};
+  startBtn.className = 'btn-go ' + (goClasses[currentPaper] || '');
+
+  // Show outstanding banner
+  fdOutstanding = fdGetOutstanding();
+  const banner = document.getElementById('fd-outstanding-banner');
+  // Filter outstanding to cards that exist in FD
+  fdOutstanding = fdOutstanding.filter(k => FD.find(c => fdKey(c) === k));
+  fdSetOutstanding(fdOutstanding);
+
+  const outFromOther = fdOutstanding.filter(k => {
+    const c = FD.find(c => fdKey(c) === k);
+    return c && c.paper !== currentPaper;
+  });
+  if (outFromOther.length > 0) {
+    banner.style.display = 'block';
+    banner.textContent = `⚡ ${outFromOther.length} missed card${outFromOther.length > 1 ? 's' : ''} from other papers will be woven in.`;
+  } else {
+    banner.style.display = 'none';
+  }
+
+  // Show setup, hide others
+  document.getElementById('fd-setup').style.display = 'block';
+  document.getElementById('fd-drill').style.display = 'none';
+  document.getElementById('fd-summary').style.display = 'none';
+  document.getElementById('fd-complete').style.display = 'none';
+}
+
+function fdStart() {
+  if (!FD.length) {
+    alert('Flashcard data not loaded yet — please wait a moment and try again.');
+    return;
+  }
+  const unit = document.getElementById('fd-unit').value;
+  const mastered = fdGetMastered();
+
+  // Build base deck for this paper/unit
+  let base = FD.filter(c => c.paper === currentPaper);
+  if (unit !== 'all') base = base.filter(c => c.unit === unit);
+
+  // Separate outstanding missed cards (cross-paper) — fetch full card objects
+  fdOutstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
+  const outCards = fdOutstanding
+    .map(k => FD.find(c => fdKey(c) === k))
+    .filter(Boolean)
+    .filter(c => c.paper !== currentPaper); // don't double-add same-paper cards
+
+  // Combine: base deck + outstanding from other papers
+  // Interleave outstanding: insert one every ~6 base cards
+  const combined = [...base];
+  if (outCards.length > 0) {
+    const interval = 6;
+    outCards.forEach((oc, i) => {
+      const pos = Math.min(Math.max((i + 1) * interval, 2), combined.length);
+      combined.splice(pos, 0, oc);
+    });
+  }
+
+  if (!combined.length) {
+    alert('No flashcards found for this selection.');
+    return;
+  }
+
+  // Shuffle
+  for (let i = combined.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [combined[i], combined[j]] = [combined[j], combined[i]];
+  }
+
+  fdDeck      = [...combined];
+  fdSeen      = [];
+  fdMissed    = [];
+  fdGot       = 0;
+  fdMissCount = 0;
+  fdTotal     = combined.length;
+
+  document.getElementById('fd-setup').style.display   = 'none';
+  document.getElementById('fd-drill').style.display   = 'block';
+  document.getElementById('fd-summary').style.display = 'none';
+  document.getElementById('fd-complete').style.display = 'none';
+
+  fdNext();
+}
+
+function fdNext() {
+  // If main deck exhausted but missed cards remain, recycle them into deck
+  if (fdDeck.length === 0 && fdMissed.length > 0) {
+    // Don't show summary yet — keep going until deck AND missed are empty
+    // But we only recycle at end of pass, so just continue with missed
+    fdDeck = [...fdMissed];
+    fdMissed = [];
+    // Shuffle recycled
+    for (let i = fdDeck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [fdDeck[i], fdDeck[j]] = [fdDeck[j], fdDeck[i]];
+    }
+  }
+
+  if (fdDeck.length === 0) {
+    // Round over
+    fdShowSummary();
+    return;
+  }
+
+  fdCurrent = fdDeck.shift();
+  fdFlipped = false;
+
+  // Update card UI
+  const paperColour = currentPaper; // may differ for outstanding cards
+  const cardPaper = fdCurrent.paper;
+  const paperNames = {p1:'Migrants', p2a:'Cold War', p2b:'Elizabeth I', p3:'Germany'};
+  const tag = `${paperNames[cardPaper] || cardPaper} · ${fdCurrent.unit}`;
+
+  const tagClasses = {p1:'bg-p1', p2a:'bg-p2a', p2b:'bg-p2b', p3:'bg-p3'};
+  const stripeColours = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'};
+
+  document.getElementById('fd-tag').className = 'fd-tag ' + (tagClasses[cardPaper] || '');
+  document.getElementById('fd-tag').textContent = tag;
+  document.getElementById('fd-tag-back').className = 'fd-tag ' + (tagClasses[cardPaper] || '');
+  document.getElementById('fd-tag-back').textContent = tag;
+  document.getElementById('fd-question').textContent = fdCurrent.front;
+
+  const pts = document.getElementById('fd-points');
+  pts.innerHTML = ['p1','p2','p3'].map(k =>
+    fdCurrent[k] ? `<li>${fdCurrent[k]}</li>` : ''
+  ).join('');
+
+  // Paper stripe colour on both faces
+  const col = stripeColours[cardPaper] || '#888';
+  document.getElementById('fd-front').style.borderLeftColor = col;
+  document.getElementById('fd-back').style.borderLeftColor  = col;
+
+  // Reset flip
+  document.getElementById('fd-card-inner').classList.remove('flipped');
+  document.getElementById('fd-btn-row').style.display = 'none';
+  fdUpdateProgress();
+}
+
+function fdFlip() {
+  if (fdFlipped) return; // only flip once per card
+  fdFlipped = true;
+  document.getElementById('fd-card-inner').classList.add('flipped');
+  document.getElementById('fd-btn-row').style.display = 'grid';
+}
+
+function fdAnswer(got) {
+  const key = fdKey(fdCurrent);
+  const mastered = fdGetMastered();
+  const outstanding = fdGetOutstanding();
+
+  if (got) {
+    fdGot++;
+    mastered[key] = true;
+    fdSetMastered(mastered);
+    // Remove from outstanding if present
+    const idx = outstanding.indexOf(key);
+    if (idx !== -1) outstanding.splice(idx, 1);
+    fdSetOutstanding(outstanding);
+    fdOutstanding = outstanding;
+  } else {
+    fdMissCount++;
+    fdMissed.push(fdCurrent);
+    // Add to outstanding cross-session list
+    if (!outstanding.includes(key)) outstanding.push(key);
+    fdSetOutstanding(outstanding);
+    fdOutstanding = outstanding;
+    // Remove from mastered if they previously got it
+    if (mastered[key]) {
+      delete mastered[key];
+      fdSetMastered(mastered);
+    }
+  }
+
+  fdNext();
+}
+
+function fdUpdateProgress() {
+  const seen = fdGot + fdMissCount;
+  const pct  = fdTotal > 0 ? Math.round((seen / fdTotal) * 100) : 0;
+  const bar  = document.getElementById('fd-bar');
+  const col  = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'}[currentPaper] || '#555';
+  bar.style.width      = pct + '%';
+  bar.style.background = col;
+  document.getElementById('fd-prog-text').textContent  = `${seen} of ${fdTotal} cards`;
+  document.getElementById('fd-prog-count').textContent = `✅ ${fdGot}  ❌ ${fdMissCount}`;
+}
+
+function fdShowSummary() {
+  document.getElementById('fd-drill').style.display   = 'none';
+  document.getElementById('fd-summary').style.display = 'block';
+  document.getElementById('fd-sum-got').textContent   = fdGot;
+  document.getElementById('fd-sum-miss').textContent  = fdMissCount;
+
+  const outstanding = fdGetOutstanding();
+  const note = document.getElementById('fd-sum-note');
+  if (outstanding.length > 0) {
+    note.textContent = `${outstanding.length} card${outstanding.length > 1 ? 's' : ''} still outstanding — they'll appear in your next session.`;
+  } else {
+    note.textContent = '';
+  }
+
+  const drillBtn = document.getElementById('fd-drill-again-btn');
+  drillBtn.style.display = fdMissCount > 0 ? 'block' : 'none';
+
+  // Update streak
+  fdUpdateStreak();
+}
+
+function fdDrillMissed() {
+  // Start a new round with only the missed cards from this session
+  // Pull fresh from outstanding (which was updated during this round)
+  const outstanding = fdGetOutstanding();
+  const missedCards = outstanding
+    .map(k => FD.find(c => fdKey(c) === k))
+    .filter(Boolean);
+
+  if (!missedCards.length) {
+    fdShowComplete();
+    return;
+  }
+
+  fdDeck      = [...missedCards];
+  fdSeen      = [];
+  fdMissed    = [];
+  fdGot       = 0;
+  fdMissCount = 0;
+  fdTotal     = missedCards.length;
+
+  // Shuffle
+  for (let i = fdDeck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [fdDeck[i], fdDeck[j]] = [fdDeck[j], fdDeck[i]];
+  }
+
+  document.getElementById('fd-summary').style.display = 'none';
+  document.getElementById('fd-drill').style.display   = 'block';
+  fdNext();
+}
+
+function fdShowComplete() {
+  document.getElementById('fd-summary').style.display  = 'none';
+  document.getElementById('fd-complete').style.display = 'block';
+  const mastered = fdGetMastered();
+  const total = FD.filter(c => c.paper === currentPaper).length;
+  const mastCount = Object.keys(mastered).filter(k => k.startsWith(currentPaper + '|')).length;
+  document.getElementById('fd-complete-note').textContent =
+    `${mastCount} of ${total} ${P[currentPaper].label} cards mastered overall.`;
+}
+
+function fdFinish() {
+  // Reset to setup view
+  document.getElementById('fd-summary').style.display  = 'none';
+  document.getElementById('fd-complete').style.display = 'none';
+  fdSetup();
+}
+
+function fdUpdateStreak() {
+  const today = new Date().toISOString().slice(0, 10);
+  let streak = JSON.parse(localStorage.getItem(LS_STREAK) || '{"date":"","count":0}');
+  if (streak.date === today) return; // already counted today
+  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  streak.count = (streak.date === yesterday) ? streak.count + 1 : 1;
+  streak.date  = today;
+  localStorage.setItem(LS_STREAK, JSON.stringify(streak));
+}
 
 </script>
 <!-- EXAM FULLSCREEN OVERLAY -->
