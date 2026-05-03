@@ -162,6 +162,12 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 /* PRINT MODE */
   :root.dark #rq-one-a { color:#6EE7B7 !important; }
   :root.dark .btn-sm[onclick*="rqOneAnswer(true)"] { background:#1a3d2e !important; color:#6EE7B7 !important; border-color:#6EE7B7 !important; }
+/* KC mode readability */
+#mode-knowledge .card-heading { font-size:1.15rem; margin-bottom:.75rem; line-height:1.4; }
+#mode-knowledge ul { margin:.25rem 0 0; padding-left:1.1rem; }
+#mode-knowledge li { font-size:.95rem; line-height:1.8; margin-bottom:.4rem; }
+#mode-knowledge .kc-summary { font-size:.95rem; font-style:italic; color:var(--muted); margin-bottom:.9rem; line-height:1.65; }
+
 @media print {
   /* Hide all chrome — navigation, buttons, screens other than s-main */
   #dark-toggle, #hub-link, .mode-grid, .back-btn, .paper-grid, .rq-section,
@@ -293,8 +299,8 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <span class="paper-badge" id="hub-paper-badge"></span>
   </div>
   <div class="mode-grid" style="grid-template-columns:1fr 1fr;margin-bottom:.75rem">
-    <button class="mode-btn" onclick="enterMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Read and review the key facts</span></button>
     <button class="mode-btn" onclick="enterMode('flashcard')"><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Are you ready to test your knowledge?</span></button>
+    <button class="mode-btn" onclick="enterMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Read and review the key facts</span></button>
     <button class="mode-btn" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Can you get the dates right?</span></button>
     <button class="mode-btn" onclick="enterMode('exam')"><span class="icon">✏️</span>Exam Practice<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Can you do it in timed conditions?</span></button>
   </div>
@@ -355,7 +361,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Question type</label>
       <select id="e-type" onchange="updateExamDirectory()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px">
         <option value="all">All question types</option>
-        <option value="2mark">2-mark describe</option>
         <option value="4mark">4-mark similarity/difference</option>
         <option value="4mark-consequence">4-mark consequence</option>
         <option value="8mark-narrative">8-mark narrative</option>
@@ -406,6 +411,10 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
         </div>
       </div>
 
+      <div class="fd-hints-toggle" style="margin-bottom:.5rem;margin-top:-.25rem">
+        <input type="checkbox" id="fd-hints-on-drill" onchange="fdSyncHints(this.checked)">
+        <label for="fd-hints-on-drill">💡 Hints</label>
+      </div>
       <div class="fd-scene" id="fd-scene" onclick="fdFlip()">
         <div class="fd-card-inner" id="fd-card-inner">
           <div class="fd-front" id="fd-front">
@@ -557,13 +566,13 @@ function toggleDark() {
 const P = {
   p1:  {label:'Paper 1 – Migration',       badge:'bg-p1',  go:'c-p1',  fill:'fill-p1',
         units:['Unit 1 – Medieval','Unit 2 – Early Modern','Unit 3 – 18th & 19th Centuries','Unit 4 – Modern','Unit 5 – Notting Hill'],
-        qtypes:[['all','All question types'],['2mark','2-mark describe'],['4mark','4-mark similarity/difference'],['12mark','12-mark explain why'],['16mark','16-mark debate']]},
+        qtypes:[['all','All question types'],['4mark','4-mark similarity/difference'],['12mark','12-mark explain why'],['16mark','16-mark debate']]},
   p2a: {label:'Paper 2a – Cold War',        badge:'bg-p2a', go:'c-p2a', fill:'fill-p2a',
         units:['Unit 1 – Origins 1941–58','Unit 2 – Crises 1958–70','Unit 3 – End of Cold War 1970–91'],
         qtypes:[['all','All question types'],['4mark-consequence','4-mark consequence'],['8mark-narrative','8-mark narrative'],['8mark-importance','8-mark importance']]},
   p2b: {label:'Paper 2b – Elizabeth I',     badge:'bg-p2b', go:'c-p2b', fill:'fill-p2b',
         units:['Unit 1 – Queen & Religion','Unit 2 – Challenges 1569–88','Unit 3 – Elizabethan Society'],
-        qtypes:[['all','All question types'],['2mark','2-mark describe'],['12mark','12-mark explain why'],['16mark','16-mark debate']]},
+        qtypes:[['all','All question types'],['12mark','12-mark explain why'],['16mark','16-mark debate']]},
   p3:  {label:'Paper 3 – Weimar & Nazi',    badge:'bg-p3',  go:'c-p3',  fill:'fill-p3',
         units:['Unit 1 – Weimar Republic','Unit 2 – Hitler\'s Rise','Unit 3 – Nazi Control','Unit 4 – Life in Nazi Germany'],
         qtypes:[['all','All question types'],['12mark','12-mark explain why']]},
@@ -770,9 +779,6 @@ function boldHints(text, hints) {
 function renderKCard(entry, isInterleaved) {
   const card = entry.card;
   const num = entry.num;
-  const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0 .75rem">` +
-  card.hints.map(h => `<span class="tag t-${card.paper}">${h}</span>`).join('') +
-  `</div>`;
   const factsHtml = '<ul>' + card.facts.map(f =>
     `<li>${boldHints(f, card.hints)}</li>`
   ).join('') + '</ul>';
@@ -785,8 +791,7 @@ function renderKCard(entry, isInterleaved) {
           <span class="tag t-${card.paper}">${card.unit}</span>
         </div>
         <div class="card-heading">${card.heading}</div>
-        ${hintsHtml}
-        ${card.summary ? `<p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;font-style:italic">${card.summary}</p>` : ''}
+        ${card.summary ? `<p class="kc-summary">${card.summary}</p>` : ''}
         ${factsHtml}
       </div>
     </div>`;
@@ -1140,6 +1145,7 @@ function exitFullscreen() {
 }
 // ═══════════════════════════════════════════
 function drawExam() {
+  const sel = document.getElementById('e-directory');
   const type = document.getElementById('e-type').value;
   let pool = EQ.filter(q => q.paper === currentPaper);
   if (type !== 'all') pool = pool.filter(q => q.type === type);
@@ -1147,15 +1153,10 @@ function drawExam() {
     document.getElementById('e-out').innerHTML = '<div class="empty">No questions match these filters.</div>';
     return;
   }
-  // Avoid repeats — filter out seen questions, reset if all seen
-  let unseen = pool.filter(q => !examHistory.map(h=>h.q).includes(q.q));
-  if (!unseen.length) { examHistory = []; unseen = pool; }
-  const q = rand(unseen);
-  // Trim forward history if we shuffled from mid-point
-  if (examHistoryIdx < examHistory.length - 1) examHistory = examHistory.slice(0, examHistoryIdx + 1);
-  examHistory.push(q);
-  examHistoryIdx = examHistory.length - 1;
-  drawExamCard(q);
+  const randIdx = Math.floor(Math.random() * pool.length);
+  examPoolIdx = randIdx;
+  if (sel) { sel._pool = pool; sel.value = String(randIdx); }
+  drawExamCard(pool[randIdx]);
 }
 
 function updateExamDirectory() {
@@ -1173,25 +1174,26 @@ function updateExamDirectory() {
   sel._pool = pool;
 }
 
+let examPoolIdx = -1; // index into current filtered pool
+
 function loadSelectedExam() {
   const sel = document.getElementById('e-directory');
   const idx = sel.value;
   if (idx === '') { drawExam(); return; }
-  const q = sel._pool[parseInt(idx)];
-  if (q) {
-    if (examHistoryIdx < examHistory.length - 1) examHistory = examHistory.slice(0, examHistoryIdx + 1);
-    examHistory.push(q);
-    examHistoryIdx = examHistory.length - 1;
-    drawExamCard(q);
-  }
+  examPoolIdx = parseInt(idx);
+  const q = sel._pool[examPoolIdx];
+  if (q) drawExamCard(q);
 }
 
 let currentExamQ = null;
 function stepExam(dir) {
-  const newIdx = examHistoryIdx + dir;
-  if (newIdx < 0 || newIdx >= examHistory.length) return;
-  examHistoryIdx = newIdx;
-  drawExamCard(examHistory[examHistoryIdx]);
+  const sel = document.getElementById('e-directory');
+  const pool = sel._pool;
+  if (!pool || !pool.length) return;
+  examPoolIdx = Math.max(0, Math.min(pool.length - 1, examPoolIdx + dir));
+  // Sync the dropdown
+  sel.value = String(examPoolIdx);
+  drawExamCard(pool[examPoolIdx]);
 }
 
 function drawExamCard(q) {
@@ -1462,18 +1464,27 @@ function fdRecordSessionCard(paper, got) {
   fdSetSession(s);
 }
 
-function fdToggleHints() {
-  // Just re-render current card chips if drill is active
+function fdSyncHints(on) {
+  // Keep both checkboxes in sync
+  const setup = document.getElementById('fd-hints-on');
+  const drill = document.getElementById('fd-hints-on-drill');
+  if (setup) setup.checked = on;
+  if (drill) drill.checked = on;
+  // Re-render chips on current card
   if (!fdCurrent) return;
   const chipsEl = document.getElementById('fd-hint-chips');
-  const hintsOn = document.getElementById('fd-hints-on').checked;
-  if (hintsOn && fdCurrent.hints && fdCurrent.hints.length) {
-    chipsEl.innerHTML = fdCurrent.hints.map(h => `<span class="fd-hint-chip">${h}</span>`).join('');
+  if (on && fdCurrent.hints && fdCurrent.hints.length) {
+    chipsEl.innerHTML = fdCurrent.hints.map(h => `<span class="tag t-${fdCurrent.paper}">${h}</span>`).join('');
     chipsEl.style.display = 'flex';
   } else {
     chipsEl.innerHTML = '';
     chipsEl.style.display = 'none';
   }
+}
+
+function fdToggleHints() {
+  const on = document.getElementById('fd-hints-on').checked;
+  fdSyncHints(on);
 }
 
 function fdKey(card) {
@@ -1495,8 +1506,11 @@ function fdSetOutstanding(arr) {
 
 function fdSetup() {
   // Always reset hints toggle to off
+  // Reset hints to off at start of each session, sync both checkboxes
   const hintsChk = document.getElementById('fd-hints-on');
+  const hintsDrill = document.getElementById('fd-hints-on-drill');
   if (hintsChk) hintsChk.checked = false;
+  if (hintsDrill) hintsDrill.checked = false;
   // Populate unit dropdown for current paper
   const sel = document.getElementById('fd-unit');
   sel.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>';
@@ -1647,7 +1661,7 @@ function fdNext() {
 
   // Hint chips on front face
   const chipsEl = document.getElementById('fd-hint-chips');
-  const hintsOn = document.getElementById('fd-hints-on') && document.getElementById('fd-hints-on').checked;
+  const hintsOn = (document.getElementById('fd-hints-on') && document.getElementById('fd-hints-on').checked) || (document.getElementById('fd-hints-on-drill') && document.getElementById('fd-hints-on-drill').checked);
   if (hintsOn && fdCurrent.hints && fdCurrent.hints.length) {
     chipsEl.innerHTML = fdCurrent.hints.map(h => `<span class="fd-hint-chip">${h}</span>`).join('');
     chipsEl.style.display = 'flex';
@@ -1674,9 +1688,9 @@ function fdFlip() {
   // Stagger bullet points then show self-mark buttons
   const items = document.querySelectorAll('#fd-points li');
   items.forEach((li, i) => {
-    setTimeout(() => li.classList.add('fd-pt-show'), 150 + i * 350);
+    setTimeout(() => li.classList.add('fd-pt-show'), 200 + i * 500);
   });
-  const delay = 150 + items.length * 350 + 200;
+  const delay = 200 + items.length * 500 + 300;
   setTimeout(() => {
     document.getElementById('fd-btn-row').style.display = 'grid';
   }, delay);
