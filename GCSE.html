@@ -160,6 +160,8 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .fs-hints{font-size:.85rem;color:var(--muted);margin-bottom:1.5rem}
 
 /* PRINT MODE */
+  :root.dark #rq-one-a { color:#6EE7B7 !important; }
+  :root.dark .btn-sm[onclick*="rqOneAnswer(true)"] { background:#1a3d2e !important; color:#6EE7B7 !important; border-color:#6EE7B7 !important; }
 @media print {
   /* Hide all chrome — navigation, buttons, screens other than s-main */
   #dark-toggle, #hub-link, .mode-grid, .back-btn, .paper-grid, .rq-section,
@@ -202,9 +204,14 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .fd-question { font-size:1.15rem; font-weight:700; line-height:1.5; color:var(--text); text-align:center; padding:.5rem 0; }
 .fd-tap-hint { font-size:.72rem; color:var(--muted); margin-top:.75rem; text-align:center; }
 .fd-points { list-style:none; padding:0; margin:.5rem 0 0 0; }
-.fd-points li { font-size:.85rem; line-height:1.55; padding:.4rem 0; border-bottom:1px solid var(--subtle); color:var(--text); }
+.fd-points li { font-size:1rem; line-height:1.6; padding:.55rem 0; border-bottom:1px solid var(--subtle); color:var(--text); opacity:0; transform:translateY(6px); transition:opacity .3s ease, transform .3s ease; }
+.fd-points li.fd-pt-show { opacity:1; transform:translateY(0); }
 .fd-points li:last-child { border-bottom:none; }
 .fd-points li::before { content:'•'; color:var(--muted); margin-right:.5rem; }
+.fd-hint-chips { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.6rem; }
+.fd-hint-chip { font-size:.7rem; font-weight:600; padding:.2rem .55rem; border-radius:20px; background:var(--subtle); color:var(--muted); border:1px solid var(--border); }
+.fd-hints-toggle { display:flex; align-items:center; gap:.6rem; font-size:.78rem; font-weight:600; color:var(--muted); margin-bottom:.75rem; }
+.fd-hints-toggle input[type=checkbox] { width:1.1rem; height:1.1rem; cursor:pointer; accent-color:var(--accent); }
 .fd-btn-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:.5rem; }
 .fd-btn { padding:14px 8px; border-radius:12px; border:none; font-family:inherit; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .15s; }
 .fd-got  { background:#d1fae5; color:#065f46; }
@@ -286,10 +293,24 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <span class="paper-badge" id="hub-paper-badge"></span>
   </div>
   <div class="mode-grid" style="grid-template-columns:1fr 1fr;margin-bottom:.75rem">
-    <button class="mode-btn" onclick="enterMode('flashcard')"><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Are you ready to test your knowledge?</span></button>
     <button class="mode-btn" onclick="enterMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Read and review the key facts</span></button>
+    <button class="mode-btn" onclick="enterMode('flashcard')"><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Are you ready to test your knowledge?</span></button>
     <button class="mode-btn" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Can you get the dates right?</span></button>
     <button class="mode-btn" onclick="enterMode('exam')"><span class="icon">✏️</span>Exam Practice<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Can you do it in timed conditions?</span></button>
+  </div>
+  <!-- Single paper flashcard progress wheel -->
+  <div style="display:flex;flex-direction:column;align-items:center;padding:.75rem .5rem .5rem;border-top:1px solid var(--border)">
+    <p style="font-size:.68rem;font-weight:600;color:var(--muted);margin-bottom:.5rem;text-align:center">⚡ Flashcard progress today — tap to drill</p>
+    <div id="fd-hub-wheel-cell" onclick="enterMode('flashcard')" title="Launch flashcard drill" style="cursor:pointer;text-align:center">
+      <svg id="fd-hub-wheel" class="fd-wheel" viewBox="0 0 60 60" style="width:72px;height:72px">
+        <circle id="fd-hub-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
+        <circle id="fd-hub-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
+        <circle id="fd-hub-ring-got" cx="30" cy="30" r="24" fill="none" stroke="#888" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
+        <circle id="fd-hub-ring-fill" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/>
+        <text id="fd-hub-pct" x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)">0%</text>
+      </svg>
+      <div id="fd-hub-label" class="fd-wheel-label" style="margin-top:.2rem"></div>
+    </div>
   </div>
 </div>
 
@@ -365,6 +386,10 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
           <option value="all">All units</option>
         </select>
       </div>
+      <div class="fd-hints-toggle">
+        <input type="checkbox" id="fd-hints-on" onchange="fdToggleHints()">
+        <label for="fd-hints-on">💡 Show keyword hints on cards</label>
+      </div>
       <div id="fd-outstanding-banner" style="display:none;font-size:.78rem;color:var(--muted);background:var(--subtle);border-radius:8px;padding:.6rem .75rem;margin-bottom:.75rem"></div>
       <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start Flashcard Drill</button>
     </div>
@@ -386,6 +411,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
           <div class="fd-front" id="fd-front">
             <div class="fd-tag" id="fd-tag"></div>
             <div class="fd-question" id="fd-question"></div>
+            <div class="fd-hint-chips" id="fd-hint-chips" style="display:none"></div>
             <div class="fd-tap-hint">Tap to reveal answer</div>
           </div>
           <div class="fd-back" id="fd-back">
@@ -587,6 +613,7 @@ function pickPaper(p) {
   document.getElementById('paper-badge').textContent = info.label;
   document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
   showScreen('s-hub');
+  renderFdHubWheel();
 }
 
 function goBack() {
@@ -608,6 +635,7 @@ function showScreen(id) {
   }
   // update flagged button on hub
   if (id === 's-pick') renderFdWheels();
+  if (id === 's-hub')  renderFdHubWheel();
 }
 
 function enterMode(m) {
@@ -1441,6 +1469,20 @@ function fdRecordSessionCard(paper, got) {
   fdSetSession(s);
 }
 
+function fdToggleHints() {
+  // Just re-render current card chips if drill is active
+  if (!fdCurrent) return;
+  const chipsEl = document.getElementById('fd-hint-chips');
+  const hintsOn = document.getElementById('fd-hints-on').checked;
+  if (hintsOn && fdCurrent.hints && fdCurrent.hints.length) {
+    chipsEl.innerHTML = fdCurrent.hints.map(h => `<span class="fd-hint-chip">${h}</span>`).join('');
+    chipsEl.style.display = 'flex';
+  } else {
+    chipsEl.innerHTML = '';
+    chipsEl.style.display = 'none';
+  }
+}
+
 function fdKey(card) {
   return card.paper + '|' + card.no;
 }
@@ -1459,6 +1501,9 @@ function fdSetOutstanding(arr) {
 }
 
 function fdSetup() {
+  // Always reset hints toggle to off
+  const hintsChk = document.getElementById('fd-hints-on');
+  if (hintsChk) hintsChk.checked = false;
   // Populate unit dropdown for current paper
   const sel = document.getElementById('fd-unit');
   sel.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>';
@@ -1604,6 +1649,19 @@ function fdNext() {
   pts.innerHTML = ['p1','p2','p3'].map(k =>
     fdCurrent[k] ? `<li>${fdCurrent[k]}</li>` : ''
   ).join('');
+  // Reset stagger state
+  document.querySelectorAll('#fd-points li').forEach(li => li.classList.remove('fd-pt-show'));
+
+  // Hint chips on front face
+  const chipsEl = document.getElementById('fd-hint-chips');
+  const hintsOn = document.getElementById('fd-hints-on') && document.getElementById('fd-hints-on').checked;
+  if (hintsOn && fdCurrent.hints && fdCurrent.hints.length) {
+    chipsEl.innerHTML = fdCurrent.hints.map(h => `<span class="fd-hint-chip">${h}</span>`).join('');
+    chipsEl.style.display = 'flex';
+  } else {
+    chipsEl.innerHTML = '';
+    chipsEl.style.display = 'none';
+  }
 
   // Paper stripe colour on both faces
   const col = stripeColours[cardPaper] || '#888';
@@ -1620,7 +1678,15 @@ function fdFlip() {
   if (fdFlipped) return; // only flip once per card
   fdFlipped = true;
   document.getElementById('fd-card-inner').classList.add('flipped');
-  document.getElementById('fd-btn-row').style.display = 'grid';
+  // Stagger bullet points then show self-mark buttons
+  const items = document.querySelectorAll('#fd-points li');
+  items.forEach((li, i) => {
+    setTimeout(() => li.classList.add('fd-pt-show'), 150 + i * 350);
+  });
+  const delay = 150 + items.length * 350 + 200;
+  setTimeout(() => {
+    document.getElementById('fd-btn-row').style.display = 'grid';
+  }, delay);
 }
 
 function fdAnswer(got) {
@@ -1657,6 +1723,7 @@ function fdAnswer(got) {
   fdNext();
   // Refresh wheels live as cards are answered
   if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
+  if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
 }
 
 function fdUpdateProgress() {
@@ -1770,6 +1837,43 @@ function fdUpdateStreak() {
 // ═══════════════════════════════════════════
 // FLASHCARD TRACKER WHEELS
 // ═══════════════════════════════════════════
+const paperColours = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'};
+const paperLabels  = {p1:'Migrants', p2a:'Cold War', p2b:'Elizabeth', p3:'Germany'};
+
+function renderFdHubWheel() {
+  if (!FD || !FD.length || !currentPaper) return;
+  const session    = fdGetSession();
+  const outstanding = fdGetOutstanding();
+  const circ       = 2 * Math.PI * 24;
+  const paper      = currentPaper;
+  const paperTotal = FD.filter(c => c.paper === paper).length;
+  if (!paperTotal) return;
+
+  const sessionGot   = session.got[paper]   || 0;
+  const sessionTotal = session.total[paper] || 0;
+  const gotPct  = sessionGot / paperTotal;
+  const missedToday = Math.max(0, sessionTotal - sessionGot);
+  const missPct = Math.min(missedToday / paperTotal, 1 - gotPct);
+  const isDone  = gotPct >= 1 && sessionTotal > 0;
+  const col     = paperColours[paper] || '#888';
+
+  const gotDash  = gotPct  * circ;
+  const missDash = missPct * circ;
+
+  const gotEl   = document.getElementById('fd-hub-ring-got');
+  const missEl  = document.getElementById('fd-hub-ring-miss');
+  const fillEl  = document.getElementById('fd-hub-ring-fill');
+  const txtEl   = document.getElementById('fd-hub-pct');
+  const bgEl    = document.getElementById('fd-hub-bg');
+  const labelEl = document.getElementById('fd-hub-label');
+
+  if (gotEl)   { gotEl.setAttribute('stroke', col); gotEl.setAttribute('stroke-dasharray', gotDash + ' ' + (circ - gotDash)); }
+  if (missEl)  { missEl.setAttribute('stroke-dasharray', missDash + ' ' + (circ - missDash)); missEl.setAttribute('transform', `rotate(${-90 + gotPct * 360} 30 30)`); }
+  if (fillEl)  fillEl.setAttribute('r', isDone ? '18' : '0');
+  if (bgEl)    bgEl.setAttribute('stroke', isDone ? col : 'var(--subtle)');
+  if (txtEl)   { txtEl.textContent = Math.round(gotPct * 100) + '%'; txtEl.setAttribute('fill', isDone ? '#92620a' : 'var(--text)'); }
+  if (labelEl) labelEl.textContent = paperLabels[paper] || '';
+}
 function renderFdWheels() {
   if (!FD || !FD.length) return;
   const session = fdGetSession();
