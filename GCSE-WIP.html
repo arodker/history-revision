@@ -161,63 +161,69 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
 /* PRINT MODE */
 @media print {
-  /* Mixed Retrieval print */
-  #s-rapid .mode-header,
-  #rq-setup,
-  .rq-btn-row,
-  .rq-tap { display:none !important; }
-  #rq-out { display:block !important; }
-  .rq-grid { display:block !important; }
-  .rq-card {
-    break-inside:avoid;
-    border:1px solid #ccc !important;
-    border-radius:4px !important;
-    margin-bottom:.4rem !important;
-    padding:.4rem .6rem !important;
-    min-height:unset !important;
-    display:flex !important;
-    flex-direction:row !important;
-    align-items:baseline !important;
-    gap:.75rem !important;
-  }
-  .rq-card .rq-q { font-size:.85rem !important; flex:1; }
-  .rq-card .rq-a {
-    display:block !important;
-    background:none !important;
-    border-radius:0 !important;
-    padding:0 !important;
-    font-size:.85rem !important;
-    color:#333 !important;
-    font-weight:600 !important;
-    flex:1;
-    border-left:1px solid #ccc;
-    padding-left:.75rem !important;
-  }
-  .rq-card .rq-q span { display:none !important; } /* hide difficulty stars */
-}
-@media print {
-  /* Dates mode: hide quiz, show clean list */
-  #mode-dates #d-out,
-  #mode-dates #d-go,
-  #mode-dates #d-hard { display:none !important; }
-  #mode-dates #d-print-list { display:block !important; }
-}
-@media print {
+  /* Hide all chrome — navigation, buttons, screens other than s-main */
   #dark-toggle, #hub-link, .mode-grid, .back-btn, .paper-grid, .rq-section,
-  .btn-row, .btn-go, .btn-sm, .filter-row, #k-progress-wrap, #k-flag-bar,
-  #k-card, #k-go, .mode-header, .screen:not(#s-main), #mode-dates, #mode-exam {
+  .btn-row, .btn-go, .btn-sm, .filter-row, .mode-header,
+  .screen:not(#s-main), #mode-dates, #mode-flashcard,
+  #k-card, #e-type, #e-directory,
+  div[style*="display:flex;gap:8px;margin-bottom"] {
     display:none !important;
   }
   body { background:#fff !important; color:#000 !important; }
   .app { max-width:100%; padding:.5rem; }
-  .card { break-inside:avoid; border:1px solid #ccc; margin-bottom:.75rem; box-shadow:none; }
-  .reveal { display:block !important; }
-  .card-heading { font-size:1.1rem; font-weight:700; }
-  .reveal li { font-size:.85rem; }
-  .stripe { display:none; }
-  .inner { padding-left:0; }
+  /* KB: show current card with hints and facts revealed */
+  #mode-knowledge .card { break-inside:avoid; border:1px solid #ccc; margin-bottom:.75rem; box-shadow:none; }
+  #mode-knowledge .reveal { display:block !important; }
+  #mode-knowledge .card-heading { font-size:1.1rem; font-weight:700; }
+  #mode-knowledge .reveal li { font-size:.85rem; }
+  #mode-knowledge .stripe { display:none; }
+  #mode-knowledge .inner { padding-left:0; }
+  /* Exam: show question card with indicative content revealed */
+  #mode-exam .card { break-inside:avoid; border:1px solid #ccc; margin-bottom:.75rem; box-shadow:none; }
+  #mode-exam .reveal { display:block !important; }
+  #mode-exam .card-q { font-size:1rem; font-weight:700; margin-bottom:.5rem; }
+  #mode-exam .rhead { font-size:.75rem; font-weight:700; text-transform:uppercase; color:#555; margin:.5rem 0 .2rem; }
+  #mode-exam .stripe { display:none; }
+  #mode-exam .inner { padding-left:0; }
+  /* Hints as plain text for print */
+  .hint-item { font-size:.82rem; padding:2px 0; border:none; }
+  .tag { border:1px solid #ccc; }
   h1 { font-size:1.2rem; margin-bottom:.2rem; }
 }
+
+/* ── FLASHCARD DRILL ── */
+.fd-scene { perspective: 900px; width:100%; margin-bottom:1rem; cursor:pointer; }
+.fd-card-inner { position:relative; width:100%; transform-style:preserve-3d; transition:transform .45s cubic-bezier(.4,0,.2,1); border-radius:14px; }
+.fd-card-inner.flipped { transform:rotateY(180deg); }
+.fd-face { position:absolute; top:0; left:0; width:100%; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:14px; }
+.fd-front { background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; }
+.fd-back  { background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; transform:rotateY(180deg); }
+/* Front needs min-height; back height auto but at least same */
+.fd-front, .fd-back { box-sizing:border-box; min-height:160px; }
+.fd-tag { display:inline-block; font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:2px 8px; border-radius:20px; margin-bottom:.75rem; }
+.fd-question { font-size:.95rem; font-weight:700; line-height:1.5; color:var(--text); }
+.fd-tap-hint { font-size:.72rem; color:var(--muted); margin-top:.75rem; text-align:center; }
+.fd-points { list-style:none; padding:0; margin:.5rem 0 0 0; }
+.fd-points li { font-size:.85rem; line-height:1.55; padding:.4rem 0; border-bottom:1px solid var(--subtle); color:var(--text); }
+.fd-points li:last-child { border-bottom:none; }
+.fd-points li::before { content:'•'; color:var(--muted); margin-right:.5rem; }
+.fd-btn-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:.5rem; }
+.fd-btn { padding:14px 8px; border-radius:12px; border:none; font-family:inherit; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .15s; }
+.fd-got  { background:#d1fae5; color:#065f46; }
+.fd-got:hover  { background:#a7f3d0; }
+.fd-miss { background:#fee2e2; color:#991b1b; }
+.fd-miss:hover { background:#fecaca; }
+.fd-progress-wrap { margin-bottom:.75rem; }
+.fd-progress-text { font-size:.75rem; color:var(--muted); margin-bottom:4px; display:flex; justify-content:space-between; }
+.fd-bar-bg { background:#e5e5e3; border-radius:99px; height:6px; }
+.fd-bar-fill { height:6px; border-radius:99px; transition:width .3s; }
+.fd-summary-card { background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem; text-align:center; margin-bottom:1rem; }
+.fd-summary-stat { font-size:2rem; font-weight:800; }
+.fd-summary-label { font-size:.78rem; color:var(--muted); margin-top:.2rem; }
+.fd-summary-row { display:flex; gap:1rem; justify-content:center; margin:.75rem 0; }
+.fd-badge-got  { background:#d1fae5; color:#065f46; padding:4px 12px; border-radius:20px; font-size:.82rem; font-weight:700; }
+.fd-badge-miss { background:#fee2e2; color:#991b1b; padding:4px 12px; border-radius:20px; font-size:.82rem; font-weight:700; }
+.fd-outstanding-note { font-size:.75rem; color:var(--muted); margin-top:.5rem; }
 </style>
 </head>
 <body>
@@ -241,8 +247,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   </div>
   <div class="rq-section">
     <p class="rq-section-label">Or try:</p>
-    <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
-    <button class="btn-go" id="home-flag-btn" style="background:var(--subtle);color:var(--text);display:none;margin-bottom:0" onclick="goToFlagged()">🚩 Review flagged cards (<span id="home-flag-num">0</span>)</button>
+    <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz — A bit of everything, keep sharp</button>
   </div>
 </div>
 
@@ -253,12 +258,11 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <span class="paper-badge" id="hub-paper-badge"></span>
   </div>
   <div class="mode-grid" style="grid-template-columns:1fr 1fr;margin-bottom:.75rem">
-    <button class="mode-btn" onclick="enterMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Learn key content card by card</span></button>
-    <button class="mode-btn" style="opacity:.45;cursor:not-allowed" disabled><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Coming soon</span></button>
-    <button class="mode-btn" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Test your chronology</span></button>
-    <button class="mode-btn" onclick="enterMode('exam')"><span class="icon">✏️</span>Exam Practice<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Practise exam questions</span></button>
+    <button class="mode-btn" onclick="enterMode('knowledge')"><span class="icon">🧠</span>Knowledge Builder<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Read and review the key facts</span></button>
+    <button class="mode-btn" onclick="enterMode('flashcard')"><span class="icon">⚡</span>Flashcard Drill<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">How much do you actually know?</span></button>
+    <button class="mode-btn" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Can you get the dates right?</span></button>
+    <button class="mode-btn" onclick="enterMode('exam')"><span class="icon">✏️</span>Exam Practice<span style="display:block;font-size:.68rem;font-weight:400;opacity:.7;margin-top:.3rem">Can you do it in timed conditions?</span></button>
   </div>
-  <button class="btn-go" id="hub-flag-btn" style="background:var(--subtle);color:var(--text);display:none" onclick="goToFlagged()">🚩 Review flagged cards (<span id="hub-flag-num">0</span>)</button>
 </div>
 
 <!-- SCREEN 3: MODE CONTENT -->
@@ -276,31 +280,16 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
   <!-- KNOWLEDGE -->
   <div id="mode-knowledge" style="display:none">
-    <div id="k-out" style="margin-bottom:.75rem"></div>
-    <div class="filter-row">
+    <div class="filter-row" style="margin-bottom:.75rem">
       <select id="k-unit" onchange="onUnitChange()"><option value="">— select a unit —</option><option value="all">All units</option></select>
       <select id="k-card" onchange="jumpToCard()"><option value="">— select a topic —</option></select>
     </div>
-
+    <div id="k-out" style="margin-bottom:.75rem"></div>
     <div style="display:flex;gap:8px;margin-bottom:.75rem">
       <button class="btn-sm" onclick="stepCard(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
-      <button class="btn-sm" id="k-go" onclick="drawRandomCard()" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">🔀 Shuffle</button>
       <button class="btn-sm" onclick="stepCard(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
     </div>
     <span id="k-card-num" style="display:none"></span>
-    <div id="k-progress-wrap" style="margin-bottom:.75rem;display:none">
-      <div style="font-size:.75rem;color:var(--muted);margin-bottom:4px">
-        <span id="k-progress-text"></span>
-      </div>
-      <div style="background:#e5e5e3;border-radius:99px;height:6px">
-        <div id="k-progress-bar" style="height:6px;border-radius:99px;background:#4a7c59;transition:width .3s"></div>
-      </div>
-    </div>
-    <div id="k-flag-bar" style="display:none;gap:8px;align-items:center;margin-bottom:.75rem">
-      <span id="k-flag-count" style="font-size:.82rem;color:var(--muted)">🚩 <span id="k-flag-num">0</span> flagged</span>
-      <button class="btn-sm" onclick="showFlaggedScreen()">Review flagged cards</button>
-      <button class="btn-sm" onclick="clearFlagged()">Clear flags</button>
-    </div>
   </div>
 
   <!-- DATES -->
@@ -308,7 +297,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <button class="btn-go" id="d-go" onclick="startQuiz()">Start key dates quiz</button>
     <button class="btn-sm" id="d-hard" onclick="startQuiz(true)" style="width:100%;margin-top:-.5rem;margin-bottom:.75rem;display:none">🎯 Hardest dates only</button>
     <div id="d-out"></div>
-    <div id="d-print-list" style="display:none"></div>
   </div>
 
   <!-- EXAM -->
@@ -335,6 +323,81 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       <button class="btn-sm" onclick="stepExam(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
       <button class="btn-sm" id="e-random" onclick="drawExam()" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">🔀 Shuffle</button>
       <button class="btn-sm" onclick="stepExam(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
+    </div>
+  </div>
+
+  <!-- FLASHCARD DRILL -->
+  <div id="mode-flashcard" style="display:none">
+    <!-- Setup state -->
+    <div id="fd-setup">
+      <div style="margin-bottom:.75rem">
+        <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Choose unit</label>
+        <select id="fd-unit" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
+          <option value="all">All units</option>
+        </select>
+      </div>
+      <div id="fd-outstanding-banner" style="display:none;font-size:.78rem;color:var(--muted);background:var(--subtle);border-radius:8px;padding:.6rem .75rem;margin-bottom:.75rem"></div>
+      <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start Flashcard Drill</button>
+    </div>
+
+    <!-- Drill state -->
+    <div id="fd-drill" style="display:none">
+      <div class="fd-progress-wrap">
+        <div class="fd-progress-text">
+          <span id="fd-prog-text"></span>
+          <span id="fd-prog-count"></span>
+        </div>
+        <div class="fd-bar-bg">
+          <div class="fd-bar-fill" id="fd-bar" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="fd-scene" id="fd-scene" onclick="fdFlip()">
+        <div class="fd-card-inner" id="fd-card-inner">
+          <div class="fd-front" id="fd-front">
+            <div class="fd-tag" id="fd-tag"></div>
+            <div class="fd-question" id="fd-question"></div>
+            <div class="fd-tap-hint">Tap to reveal answer</div>
+          </div>
+          <div class="fd-back" id="fd-back">
+            <div class="fd-tag" id="fd-tag-back"></div>
+            <ul class="fd-points" id="fd-points"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="fd-btn-row" id="fd-btn-row" style="display:none">
+        <button class="fd-btn fd-miss" onclick="fdAnswer(false)">❌ Missed</button>
+        <button class="fd-btn fd-got"  onclick="fdAnswer(true)">✅ Got it</button>
+      </div>
+    </div>
+
+    <!-- Summary state -->
+    <div id="fd-summary" style="display:none">
+      <div class="fd-summary-card">
+        <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Round complete!</div>
+        <div class="fd-summary-row">
+          <div>
+            <div class="fd-summary-stat" id="fd-sum-got">0</div>
+            <div class="fd-badge-got" style="margin-top:.3rem">✅ Got it</div>
+          </div>
+          <div>
+            <div class="fd-summary-stat" id="fd-sum-miss">0</div>
+            <div class="fd-badge-miss" style="margin-top:.3rem">❌ Missed</div>
+          </div>
+        </div>
+        <div class="fd-outstanding-note" id="fd-sum-note"></div>
+      </div>
+      <button class="btn-go" id="fd-drill-again-btn" onclick="fdDrillMissed()" style="margin-bottom:.5rem">🔁 Drill missed cards</button>
+      <button class="btn-go" onclick="fdFinish()" style="background:var(--subtle);color:var(--text)">✓ Finish session</button>
+    </div>
+
+    <!-- Completion state -->
+    <div id="fd-complete" style="display:none;text-align:center;padding:2rem 1rem">
+      <div style="font-size:2.5rem;margin-bottom:.5rem">🎉</div>
+      <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">All cards mastered!</div>
+      <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem" id="fd-complete-note"></div>
+      <button class="btn-go" onclick="fdFinish()">← Back to unit picker</button>
     </div>
   </div>
 </div>
@@ -413,18 +476,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     </div>
   </div>
 </div>
-<!-- SCREEN 4: FLAGGED CARDS -->
-<div class="screen" id="s-flagged">
-  <div class="mode-header">
-    <div style="display:flex;gap:6px">
-      <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
-      <button class="back-btn" onclick="showScreen('s-hub')">← Back</button>
-    </div>
-    <span style="font-size:.85rem;font-weight:600;color:var(--muted)">🚩 Flagged for review</span>
-  </div>
-  <button onclick="clearFlagged();showFlaggedScreen()" style="width:100%;text-align:left;padding:8px 12px;margin-bottom:.75rem;font-size:.82rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:#A32D2D;cursor:pointer;font-family:inherit">🗑️ Clear all flagged cards</button>
-  <div id="flagged-out"></div>
-</div>
 
 </div>
 
@@ -485,14 +536,11 @@ function pickPaper(p) {
     info.units.map(u => `<option value="${u}">${u}</option>`).join('');
   const esel = document.getElementById('e-type');
   esel.innerHTML = info.qtypes.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
-  learntCards = new Set();
   examHistory = [];
   examHistoryIdx = -1;
   buildKPool();
-  kPoolTotal = kPool.length;
   document.getElementById('k-out').innerHTML = '';
   updateNavUI();
-  updateProgressBar();
   updateExamDirectory();
   // Update hub badge
   // Apply paper stripe to mode buttons
@@ -530,7 +578,6 @@ function showScreen(id) {
     if (printBtn) printBtn.style.display = 'none';
   }
   // update flagged button on hub
-  updateFlagBar();
 }
 
 function enterMode(m) {
@@ -539,12 +586,12 @@ function enterMode(m) {
 }
 
 function setMode(m) {
-  const titles = {knowledge:'🧠 Knowledge Builder', dates:'📅 Key Dates Quiz', exam:'✏️ Exam Practice'};
+  const titles = {knowledge:'🧠 Knowledge Builder', dates:'📅 Key Dates Quiz', exam:'✏️ Exam Practice', flashcard:'⚡ Flashcard Drill'};
   const titleEl = document.getElementById('mode-title');
   if (titleEl) titleEl.textContent = titles[m] || '';
   const printBtn = document.getElementById('print-btn');
-  if (printBtn) printBtn.style.display = (m === 'knowledge' || m === 'exam' || m === 'dates') ? 'inline-block' : 'none';
-  ['knowledge','dates','exam'].forEach(mode => {
+  if (printBtn) printBtn.style.display = (m === 'knowledge' || m === 'exam') ? 'inline-block' : 'none';
+  ['knowledge','dates','exam','flashcard'].forEach(mode => {
     const modeEl = document.getElementById('mode-' + mode);
     if (modeEl) modeEl.style.display = mode === m ? 'block' : 'none';
   });
@@ -553,9 +600,9 @@ function setMode(m) {
   document.getElementById('d-out').innerHTML = '';
   document.getElementById('e-out').innerHTML = '';
   document.getElementById('d-go').style.display = 'block';
-  updateFlagBar();
-  if (m === 'knowledge') { if (!kPool.length && !learntCards.size) buildKPool(); updateNavUI(); }
+  if (m === 'knowledge') { if (!kPool.length) buildKPool(); updateNavUI(); }
   if (m === 'exam') updateExamDirectory();
+  if (m === 'flashcard') fdSetup();
   if (m === 'dates') {
     const hardBtn = document.getElementById('d-hard');
     if (hardBtn) {
@@ -563,13 +610,7 @@ function setMode(m) {
       hardBtn.style.display = hardCount > 0 ? 'block' : 'none';
       hardBtn.textContent = `🎯 Hardest dates only (${hardCount})`;
     }
-    // Build print list of all dates for this paper
-    const printList = document.getElementById('d-print-list');
-    if (printList) {
-      const dates = DATES.filter(d => d.paper === currentPaper);
-      printList.innerHTML = `<h2 style="margin-bottom:.75rem">${P[currentPaper].label} — Key Dates</h2>` +
-        dates.map(d => `<div style="display:flex;gap:1rem;padding:.4rem 0;border-bottom:1px solid var(--border)"><strong style="min-width:80px">${d.date}</strong><span>${d.event}</span></div>`).join('');
-    }
+
   }
 }
 
@@ -597,17 +638,12 @@ function paperTagClass(p) {
 // ═══════════════════════════════════════════
 let kPool = [];
 let kIdx = 0;
-let kPoolTotal = 0;
-let learntCards = new Set();
-let sessionStartTime = null;
-let sessionFlaggedCount = 0;
 
 function buildKPool() {
   const unit = document.getElementById('k-unit').value;
   const cardSel = document.getElementById('k-card');
   if (!unit) {
     kPool = [];
-    kPoolTotal = 0;
     if (cardSel) cardSel.innerHTML = '<option value="">— select a topic —</option>';
     return;
   }
@@ -627,28 +663,21 @@ function buildKPool() {
     unitCounts[uIdx] = (unitCounts[uIdx] || 0) + 1;
     return { card: c, num: `${uIdx}.${unitCounts[uIdx]}` };
   });
-  // Pool for sequential flow excludes flagged cards
-  kPool = allEntries.filter(e => !flaggedCards.find(fc => fc.paper === e.card.paper && fc.heading === e.card.heading));
+  kPool = allEntries;
   if (cardSel) {
     cardSel.innerHTML = '<option value="">— select a topic —</option>' +
-      allEntries.map((entry, i) => {
-        const isFlagged = flaggedCards.find(fc => fc.paper === entry.card.paper && fc.heading === entry.card.heading);
-        return `<option value="dd-${i}">${entry.num} – ${entry.card.heading}${isFlagged ? ' 🚩' : ''}</option>`;
-      }).join('');
+      allEntries.map((entry, i) =>
+        `<option value="dd-${i}">${entry.num} – ${entry.card.heading}</option>`
+      ).join('');
     cardSel._allEntries = allEntries;
   }
-  kPoolTotal = allEntries.length;
 }
 
 function onUnitChange() {
-  learntCards = new Set();
-  showKBControls();
   buildKPool();
-  kPoolTotal = kPool.length;
   kIdx = 0;
   document.getElementById('k-out').innerHTML = '';
   updateNavUI();
-  updateProgressBar();
   if (kPool.length) renderKCard(kPool[0]);
 }
 
@@ -662,33 +691,8 @@ function updateNavUI() {
   }
 }
 
-function drawRandomCard() {
-  // If no unit selected, build pool from all units then draw random
-  if (!kPool.length) {
-    const unit = document.getElementById('k-unit').value;
-    if (!unit) {
-      document.getElementById('k-unit').value = 'all';
-      learntCards = new Set();
-      showKBControls();
-      buildKPool();
-      kPoolTotal = kPool.length;
-      updateProgressBar();
-      // fall through to random draw below
-    } else {
-      document.getElementById('k-out').innerHTML = '<div class="empty">No cards match these filters.</div>';
-      updateNavUI();
-      return;
-    }
-  }
-  kIdx = Math.floor(Math.random() * kPool.length);
-  renderKCard(kPool[kIdx]);
-  updateNavUI();
-  updateProgressBar();
-}
-
 function stepCard(dir) {
-  if (!kPool.length) { drawRandomCard(); return; }
-
+  if (!kPool.length) return;
   kIdx = (kIdx + dir + kPool.length) % kPool.length;
   renderKCard(kPool[kIdx]);
   updateNavUI();
@@ -707,267 +711,7 @@ function boldHints(text, hints) {
   return out;
 }
 
-function markLearntBtn(btn) {
-  btn.style.background = '#EAF3DE';
-  btn.style.color = '#3B6D11';
-  btn.style.borderColor = '#3B6D11';
-  btn.disabled = true;
-  setTimeout(markLearnt, 400);
-}
-
-function unflagLearntBtn(btn) {
-  btn.style.background = '#EAF3DE';
-  btn.style.color = '#3B6D11';
-  btn.style.borderColor = '#3B6D11';
-  btn.disabled = true;
-  setTimeout(() => unflagCard(btn), 400);
-}
-  
-function showKBComplete() {
-  const totalLearnt = learntCards.size;
-  const unitVal = document.getElementById('k-unit').value;
-  const flaggedThisUnit = flaggedCards.filter(fc =>
-    KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
-      (unitVal === 'all' || unitVal === '' || c.unit === unitVal))
-  ).length;
-  const celebrations = [
-    'Outstanding work! Every card nailed. \u{1F4AA}',
-    'Unit complete \u2014 your future self will thank you. \u{1F3C6}',
-    'That\u2019s the whole unit done. Impressive. \u2B50',
-    'All cards learnt. You\u2019re on a roll. \u{1F525}',
-    'Exam board won\u2019t know what hit them. \u{1F3AF}',
-    'Unit complete! Keep this momentum going. \u{1F680}',
-    'Every card done. That\u2019s how it\u2019s done. \u{1F44F}',
-  ];
-  const msg = celebrations[Math.floor(Math.random() * celebrations.length)];
-  document.getElementById('k-out').innerHTML = `
-    <div style="text-align:center;padding:2rem">
-      <div style="font-size:2.5rem;margin-bottom:.5rem">\u{1F389}</div>
-      <div style="font-size:1.2rem;font-weight:700;margin-bottom:.4rem">Unit complete!</div>
-      <div style="font-size:.88rem;color:var(--muted);margin-bottom:1.5rem">${msg}</div>
-      <div style="display:flex;justify-content:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap">
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
-          <div style="font-size:1.5rem;font-weight:700;color:#4a7c59">${totalLearnt}</div>
-          <div style="font-size:.7rem;color:var(--muted);margin-top:2px">cards learnt</div>
-        </div>
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.75rem 1.25rem;min-width:80px">
-          <div style="font-size:1.5rem;font-weight:700;color:#D4537E">${sessionFlaggedCount}</div>
-          <div style="font-size:.7rem;color:var(--muted);margin-top:2px">flagged for review</div>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        ${flaggedThisUnit > 0 ? `<button class="btn-sm" onclick="showFlaggedScreen()" style="width:100%">\u{1F6A9} Review ${flaggedThisUnit} flagged cards</button>` : ''}
-        <button class="btn-sm" onclick="showScreen('s-hub')" style="width:100%">\u{1F4DA} Pick a new unit</button>
-        <button class="btn-sm" onclick="resetLearnt()" style="width:100%">\u{1F504} Reset and start again</button>
-      </div>
-    </div>`;
-  document.getElementById('k-progress-wrap').style.display = 'none';
-  document.getElementById('k-flag-bar').style.display = 'none';
-  const kGoRow = document.getElementById('k-go') && document.getElementById('k-go').parentElement;
-  if (kGoRow) kGoRow.style.display = 'none';
-  document.querySelector('#mode-knowledge .filter-row').style.display = 'none';
-  sessionStartTime = null;
-  sessionFlaggedCount = 0;
-  updateNavUI();
-}
-
-function markLearnt() {
-  const entry = kPool[kIdx];
-  learntCards.add(entry.card.paper + '|' + entry.card.heading);
-  kPool.splice(kIdx, 1);
-  if (kPool.length === 0) { showKBComplete(); return; }
-  kIdx = kIdx % kPool.length;
-  renderKCard(kPool[kIdx]);
-  updateNavUI();
-  updateProgressBar();
-}
-
-function resetLearnt() {
-  learntCards = new Set();
-  sessionStartTime = null;
-  sessionFlaggedCount = 0;
-  showKBControls();
-  buildKPool();
-  kPoolTotal = kPool.length;
-  kIdx = 0;
-  updateNavUI();
-  updateProgressBar();
-  if (kPool.length) renderKCard(kPool[0]);
-}
-
-function showKBControls() {
-  document.getElementById('k-progress-wrap').style.display = 'block';
-  document.querySelector('#mode-knowledge .filter-row').style.display = 'flex';
-  const navRow = document.getElementById('k-go') && document.getElementById('k-go').parentElement;
-  if (navRow) navRow.style.display = 'flex';
-}
-  
-let flaggedCards = JSON.parse(localStorage.getItem('gcse_flagged') || '[]');
-
-function flagCard(btn) {
-  const card = btn.closest('.card');
-  const paper = card.dataset.paper;
-  const heading = card.dataset.heading;
-  const already = flaggedCards.find(c => c.paper === paper && c.heading === heading);
-  if (!already) {
-    flaggedCards.push({paper, heading});
-    sessionFlaggedCount++;
-    updateFlagBar();
-    btn.outerHTML = `<button class="btn-sm" style="background:#FEF9E7;color:#9A6B00;border-color:#F0B429" disabled>🚩 Flagged</button>`;
-    const learntBtn = card.querySelector('#k-learnt-btn');
-    if (learntBtn) learntBtn.remove();
-    // Remove from kPool immediately so it doesn't come back
-    const poolIdx = kPool.findIndex(e => e.card.paper === paper && e.card.heading === heading);
-    if (poolIdx !== -1) {
-      kPool.splice(poolIdx, 1);
-      if (kIdx >= kPool.length) kIdx = Math.max(0, kPool.length - 1);
-      updateProgressBar();
-    }
-    // Auto-advance after 0.9 seconds — or show end screen if pool empty
-    setTimeout(() => {
-      if (kPool.length === 0) { showKBComplete(); return; }
-      renderKCard(kPool[kIdx]); updateNavUI();
-    }, 900);
-  }
-}
-  
-function updateProgressBar() {
-  const wrap = document.getElementById('k-progress-wrap');
-  const bar = document.getElementById('k-progress-bar');
-  const text = document.getElementById('k-progress-text');
-  if (!kPoolTotal || kPoolTotal === 0) { wrap.style.display = 'none'; return; }
-  wrap.style.display = 'block';
-  const done = kPoolTotal - kPool.length;
-  const pct = Math.round((done / kPoolTotal) * 100);
-  bar.style.width = pct + '%';
-  const flagCount = flaggedCards.filter(fc =>
-    KC.find(c => c.paper === fc.paper && c.heading === fc.heading &&
-      (document.getElementById('k-unit').value === 'all' || document.getElementById('k-unit').value === '' || c.unit === document.getElementById('k-unit').value))
-  ).length;
-  text.textContent = `${learntCards.size} of ${kPoolTotal} learnt` + (flagCount > 0 ? ` · 🚩 ${flagCount} flagged` : '');
-}
-
-function showFlaggedButton() {
-  if (flaggedCards.length > 0) {
-    document.getElementById('k-out').innerHTML +=
-      `<button class="btn-go" onclick="showFlaggedScreen()" style="margin-top:1rem">Review ${flaggedCards.length} flagged cards</button>`;
-  }
-}
-  
-function unflagCard(btn) {
-  const card = btn.closest('.card');
-  const paper = card.dataset.paper;
-  const heading = card.dataset.heading;
-  flaggedCards = flaggedCards.filter(c => !(c.paper === paper && c.heading === heading));
-  updateFlagBar();
-  if (document.getElementById('s-flagged').classList.contains('active')) {
-    showFlaggedScreen();
-  } else {
-    btn.outerHTML = `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>
-  <button class="btn-sm" id="k-learnt-btn" onclick="markLearntBtn(this)">✅ Learnt</button>`;
-  }
-}
-  
-function updateFlagBar() {
-  localStorage.setItem('gcse_flagged', JSON.stringify(flaggedCards));
-  const bar = document.getElementById('k-flag-bar');
-  const num = document.getElementById('k-flag-num');
-  const homeBtn = document.getElementById('home-flag-btn');
-  const homeNum = document.getElementById('home-flag-num');
-  const hubFlagBtn = document.getElementById('hub-flag-btn');
-  const hubFlagNum = document.getElementById('hub-flag-num');
-  if (flaggedCards.length > 0) {
-    bar.style.display = 'flex';
-    num.textContent = flaggedCards.length;
-    if (homeBtn) { homeBtn.style.display = 'block'; homeNum.textContent = flaggedCards.length; }
-    if (hubFlagBtn) { hubFlagBtn.style.display = 'block'; hubFlagNum.textContent = flaggedCards.length; }
-  } else {
-    bar.style.display = 'none';
-    if (homeBtn) homeBtn.style.display = 'none';
-    if (hubFlagBtn) hubFlagBtn.style.display = 'none';
-  }
-}
-
-function reviewFlagged() {
-  showFlaggedScreen();
-}
-  
-function goToFlagged() {
-  if (!flaggedCards.length) return;
-  showFlaggedScreen();
-}
-
-function showFlaggedScreen() {
-  showScreen('s-flagged');
-  const out = document.getElementById('flagged-out');
-  if (!flaggedCards.length) {
-    out.innerHTML = '<div class="empty" style="padding:2rem;text-align:center">🎉 All flagged cards reviewed! Head back and keep going.</div><div style="text-align:center;margin-top:1rem"><button class="btn-sm" onclick="showScreen(\'s-pick\')">🏠 Home</button></div>';
-    return;
-  }
-  out.innerHTML = flaggedCards.map(fc => {
-    const card = KC.find(c => c.paper === fc.paper && c.heading === fc.heading);
-    if (!card) return '';
-    const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0">` +
-      card.hints.map(h => `<span class="tag t-${card.paper}">${h}</span>`).join('') +
-      `</div>`;
-    const factsHtml = '<ul>' + card.facts.map(f =>
-      `<li>${boldHints(f, card.hints)}</li>`
-    ).join('') + '</ul>';
-    const uid = card.paper + '_' + card.heading.replace(/\W/g,'');
-    return `
-      <div class="card" data-paper="${card.paper}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
-        <div class="stripe s-${card.paper}"></div>
-        <div class="inner">
-          <div class="meta">
-            <span class="tag t-${card.paper}">${card.unit}</span>
-          </div>
-          <div class="card-heading">${card.heading}</div>
-          <div class="btn-row">
-            <button class="btn-sm" onclick="tog('fh_${uid}');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
-            <button class="btn-sm" onclick="tog('ff_${uid}');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
-            <button class="btn-sm" onclick="unflagCard(this)">✅ Learnt</button>
-          </div>
-          <div class="reveal" id="fh_${uid}">${hintsHtml}</div>
-          <div class="reveal" id="ff_${uid}">${factsHtml}</div>
-        </div>
-      </div>`;
-  }).join('');
-}
-
-function clearFlagged() {
-  flaggedCards = [];
-  updateFlagBar();
-}
-  
-function drawSpecificCard(card) {
-  const hintsHtml = card.hints.map(h =>
-    `<div class="hint-item"><span class="hint-kw">hint</span>${h}</div>`
-  ).join('');
-  const factsHtml = '<ul>' + card.facts.map(f =>
-    `<li>${boldHints(f, card.hints)}</li>`
-  ).join('') + '</ul>';
-  document.getElementById('k-out').innerHTML = `
-    <div class="card">
-      <div class="stripe s-${card.paper}"></div>
-      <div class="inner">
-        <div class="meta">
-          <span class="tag t-${card.paper}">${card.unit}</span>
-          <span class="tag t-grey">🚩 Flagged</span>
-        </div>
-        <div class="card-heading">${card.heading}</div>
-        <div class="btn-row">
-          <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='Show hints'?'Hide hints':'Show hints'">Show hints</button>
-          <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='Reveal key content'?'Hide content':'Reveal key content'">Reveal key content</button>
-          <button class="btn-sm" onclick="unflagCard('${card.paper}','${card.heading}')">🚩 Remove flag</button>
-        </div>
-        <div class="reveal" id="kh">${hintsHtml}</div>
-        <div class="reveal" id="kf">${factsHtml}</div>
-      </div>
-    </div>`;
-}
-
 function renderKCard(entry, isInterleaved) {
-  if (!sessionStartTime) sessionStartTime = Date.now();
   const card = entry.card;
   const num = entry.num;
   const hintsHtml = `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:.5rem 0">` +
@@ -976,26 +720,20 @@ function renderKCard(entry, isInterleaved) {
   const factsHtml = '<ul>' + card.facts.map(f =>
     `<li>${boldHints(f, card.hints)}</li>`
   ).join('') + '</ul>';
-  const alreadyFlagged = flaggedCards.find(c => c.paper === card.paper && c.heading === card.heading);
-  const interleavedBadge = isInterleaved ? `<span class="tag t-grey" style="background:#FEF9E7;color:#9A6B00;border:1px solid #F0B429">🚩 Flagged review</span>` : '';
   document.getElementById('k-out').innerHTML = `
-    <div class="card" data-paper="${card.paper}" data-heading="${card.heading.replace(/"/g,'&quot;')}">
+    <div class="card" data-paper="${card.paper}">
       <div class="stripe s-${card.paper}"></div>
       <div class="inner">
         <div class="meta">
-          ${interleavedBadge}<span class="tag t-grey">${num}</span>
+          <span class="tag t-grey">${num}</span>
           <span class="tag t-${card.paper}">${card.unit}</span>
         </div>
         <div class="card-heading">${card.heading}</div>
-        <p style="font-size:.78rem;color:var(--muted);margin-bottom:.75rem">Show hints for a nudge · Reveal key content to check your knowledge · Flag cards to revisit · Mark as learnt to track progress</p>
+        <p style="font-size:.78rem;color:var(--muted);margin-bottom:.75rem">Show hints for a nudge · Reveal key content to check your knowledge</p>
 
         <div class="btn-row">
           <button class="btn-sm" onclick="tog('kh');this.textContent=this.textContent==='👀 Show hints'?'👀 Hide hints':'👀 Show hints'">👀 Show hints</button>
-<button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
-          ${alreadyFlagged ?
-  `<button class="btn-sm" style="background:#EAF3DE;color:#3B6D11;border-color:#3B6D11" onclick="unflagCard(this)">🚩 Remove flag</button>` :
-  `<button class="btn-sm" onclick="flagCard(this)">🚩 Flag to review</button>
-   <button class="btn-sm" id="k-learnt-btn" onclick="markLearntBtn(this)">✅ Learnt</button>`}
+          <button class="btn-sm" onclick="tog('kf');this.textContent=this.textContent==='📖 Reveal key content'?'📖 Hide content':'📖 Reveal key content'">📖 Reveal key content</button>
         </div>
         <div class="reveal" id="kh">${hintsHtml}</div>
         <div class="reveal" id="kf">${factsHtml}</div>
@@ -1051,8 +789,6 @@ function rqBackToSetup() {
   document.getElementById('rq-one').style.display = 'none';
   document.getElementById('rq-one-end').style.display = 'none';
   document.getElementById('rq-one-card').style.display = 'block';
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) printBtn.style.display = 'none';
 }
 
 function rqOneReveal() {
@@ -1127,8 +863,6 @@ function rqRetryMissed() {
 
 function showRapidSetup() {
   showScreen('s-rapid');
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) printBtn.style.display = 'none';
   document.getElementById('rq-setup').style.display = 'block';
   document.getElementById('rq-out').style.display = 'none';
   document.getElementById('rq-one').style.display = 'none';
@@ -1232,8 +966,6 @@ function generateRQ() {
     return;
   }
   document.getElementById('rq-out').style.display = 'block';
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) printBtn.style.display = 'inline-block';
 }
 
 function revealRQ(i) {
@@ -2016,23 +1748,351 @@ let DATES = []; // loaded from data/dates.json
 // ═══════════════════════════════════════════
 // LOAD EXTERNAL DATA
 // ═══════════════════════════════════════════
+let FD = []; // loaded from data/flashcards.json
+
 Promise.all([
   fetch('data/eq.json').then(r => { if (!r.ok) throw new Error('eq.json: ' + r.status); return r.json(); }),
   fetch('data/rq.json').then(r => { if (!r.ok) throw new Error('rq.json: ' + r.status); return r.json(); }),
   fetch('data/dates.json').then(r => { if (!r.ok) throw new Error('dates.json: ' + r.status); return r.json(); }),
-]).then(([eq, rq, dates]) => {
+  fetch('data/flashcards.json').then(r => { if (!r.ok) throw new Error('flashcards.json: ' + r.status); return r.json(); }),
+]).then(([eq, rq, dates, fd]) => {
   EQ = eq;
   RQ = rq;
   DATES = dates;
+  FD = fd;
   // Refresh any visible modes
   const examMode = document.getElementById('mode-exam');
   if (examMode && examMode.style.display !== 'none') updateExamDirectory();
-  console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length);
+  console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length, 'FD:', FD.length);
 }).catch(err => {
   console.error('Data load failed:', err);
   const eOut = document.getElementById('e-out');
-  if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load data files. Make sure data/eq.json, rq.json and dates.json are in your repository.</div>';
+  if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load data files. Make sure data/eq.json, rq.json, dates.json and flashcards.json are in your repository.</div>';
 });
+
+// ═══════════════════════════════════════════
+// FLASHCARD DRILL
+// ═══════════════════════════════════════════
+
+// localStorage keys
+const LS_MASTERED   = 'gcse_fd_mastered';    // {cardKey: true} — cards ever ticked ✅
+const LS_MISSED     = 'gcse_fd_missed';       // [cardKey, ...] — outstanding missed cards (cross-session)
+const LS_STREAK     = 'gcse_fd_streak';       // {date:'YYYY-MM-DD', count:N}
+
+// State
+let fdDeck       = [];   // current round deck (card objects, may include outstanding)
+let fdSeen       = [];   // cards seen this round (in order)
+let fdMissed     = [];   // missed this round (to recycle)
+let fdGot        = 0;    // ✅ count this round
+let fdMissCount  = 0;    // ❌ count this round
+let fdCurrent    = null; // card currently shown
+let fdFlipped    = false;
+let fdTotal      = 0;    // original deck size (for progress bar)
+let fdOutstanding = [];  // outstanding missed keys loaded from localStorage
+
+function fdKey(card) {
+  return card.paper + '|' + card.no;
+}
+
+function fdGetMastered() {
+  return JSON.parse(localStorage.getItem(LS_MASTERED) || '{}');
+}
+function fdSetMastered(obj) {
+  localStorage.setItem(LS_MASTERED, JSON.stringify(obj));
+}
+function fdGetOutstanding() {
+  return JSON.parse(localStorage.getItem(LS_MISSED) || '[]');
+}
+function fdSetOutstanding(arr) {
+  localStorage.setItem(LS_MISSED, JSON.stringify(arr));
+}
+
+function fdSetup() {
+  // Populate unit dropdown for current paper
+  const sel = document.getElementById('fd-unit');
+  sel.innerHTML = '<option value="all">All units</option>';
+  P[currentPaper].units.forEach(u => {
+    const opt = document.createElement('option');
+    opt.value = u;
+    opt.textContent = u;
+    sel.appendChild(opt);
+  });
+  // Colour the select
+  sel.className = 'sel-' + currentPaper;
+
+  // Show outstanding banner
+  fdOutstanding = fdGetOutstanding();
+  const banner = document.getElementById('fd-outstanding-banner');
+  // Filter outstanding to cards that exist in FD
+  fdOutstanding = fdOutstanding.filter(k => FD.find(c => fdKey(c) === k));
+  fdSetOutstanding(fdOutstanding);
+
+  const outFromOther = fdOutstanding.filter(k => {
+    const c = FD.find(c => fdKey(c) === k);
+    return c && c.paper !== currentPaper;
+  });
+  if (outFromOther.length > 0) {
+    banner.style.display = 'block';
+    banner.textContent = `⚡ ${outFromOther.length} missed card${outFromOther.length > 1 ? 's' : ''} from other papers will be woven in.`;
+  } else {
+    banner.style.display = 'none';
+  }
+
+  // Show setup, hide others
+  document.getElementById('fd-setup').style.display = 'block';
+  document.getElementById('fd-drill').style.display = 'none';
+  document.getElementById('fd-summary').style.display = 'none';
+  document.getElementById('fd-complete').style.display = 'none';
+}
+
+function fdStart() {
+  if (!FD.length) {
+    alert('Flashcard data not loaded yet — please wait a moment and try again.');
+    return;
+  }
+  const unit = document.getElementById('fd-unit').value;
+  const mastered = fdGetMastered();
+
+  // Build base deck for this paper/unit
+  let base = FD.filter(c => c.paper === currentPaper);
+  if (unit !== 'all') base = base.filter(c => c.unit === unit);
+
+  // Separate outstanding missed cards (cross-paper) — fetch full card objects
+  fdOutstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
+  const outCards = fdOutstanding
+    .map(k => FD.find(c => fdKey(c) === k))
+    .filter(Boolean)
+    .filter(c => c.paper !== currentPaper); // don't double-add same-paper cards
+
+  // Combine: base deck + outstanding from other papers
+  // Interleave outstanding: insert one every ~6 base cards
+  const combined = [...base];
+  if (outCards.length > 0) {
+    const interval = 6;
+    outCards.forEach((oc, i) => {
+      const pos = Math.min((i + 1) * interval, combined.length);
+      combined.splice(pos, 0, oc);
+    });
+  }
+
+  if (!combined.length) {
+    alert('No flashcards found for this selection.');
+    return;
+  }
+
+  // Shuffle
+  for (let i = combined.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [combined[i], combined[j]] = [combined[j], combined[i]];
+  }
+
+  fdDeck      = [...combined];
+  fdSeen      = [];
+  fdMissed    = [];
+  fdGot       = 0;
+  fdMissCount = 0;
+  fdTotal     = combined.length;
+
+  document.getElementById('fd-setup').style.display   = 'none';
+  document.getElementById('fd-drill').style.display   = 'block';
+  document.getElementById('fd-summary').style.display = 'none';
+  document.getElementById('fd-complete').style.display = 'none';
+
+  fdNext();
+}
+
+function fdNext() {
+  // If main deck exhausted but missed cards remain, recycle them into deck
+  if (fdDeck.length === 0 && fdMissed.length > 0) {
+    // Don't show summary yet — keep going until deck AND missed are empty
+    // But we only recycle at end of pass, so just continue with missed
+    fdDeck = [...fdMissed];
+    fdMissed = [];
+    // Shuffle recycled
+    for (let i = fdDeck.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [fdDeck[i], fdDeck[j]] = [fdDeck[j], fdDeck[i]];
+    }
+  }
+
+  if (fdDeck.length === 0) {
+    // Round over
+    fdShowSummary();
+    return;
+  }
+
+  fdCurrent = fdDeck.shift();
+  fdFlipped = false;
+
+  // Update card UI
+  const paperColour = currentPaper; // may differ for outstanding cards
+  const cardPaper = fdCurrent.paper;
+  const tag = `${fdCurrent.paper.toUpperCase().replace('P','P')} · ${fdCurrent.unit}`;
+
+  const tagClasses = {p1:'bg-p1', p2a:'bg-p2a', p2b:'bg-p2b', p3:'bg-p3'};
+  const stripeColours = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'};
+
+  document.getElementById('fd-tag').className = 'fd-tag ' + (tagClasses[cardPaper] || '');
+  document.getElementById('fd-tag').textContent = tag;
+  document.getElementById('fd-tag-back').className = 'fd-tag ' + (tagClasses[cardPaper] || '');
+  document.getElementById('fd-tag-back').textContent = tag;
+  document.getElementById('fd-question').textContent = fdCurrent.front;
+
+  const pts = document.getElementById('fd-points');
+  pts.innerHTML = ['p1','p2','p3'].map(k =>
+    fdCurrent[k] ? `<li>${fdCurrent[k]}</li>` : ''
+  ).join('');
+
+  // Paper stripe colour on both faces
+  const col = stripeColours[cardPaper] || '#888';
+  document.getElementById('fd-front').style.borderLeftColor = col;
+  document.getElementById('fd-back').style.borderLeftColor  = col;
+
+  // Reset flip
+  document.getElementById('fd-card-inner').classList.remove('flipped');
+  document.getElementById('fd-btn-row').style.display = 'none';
+
+  // Set card height so front and back match
+  // Use setTimeout to let DOM settle, then sync heights
+  setTimeout(() => {
+    const front = document.getElementById('fd-front');
+    const back  = document.getElementById('fd-back');
+    const h = Math.max(front.scrollHeight, back.scrollHeight, 160);
+    front.style.minHeight = h + 'px';
+    back.style.minHeight  = h + 'px';
+    document.getElementById('fd-card-inner').style.height = h + 'px';
+  }, 20);
+
+  fdUpdateProgress();
+}
+
+function fdFlip() {
+  if (fdFlipped) return; // only flip once per card
+  fdFlipped = true;
+  document.getElementById('fd-card-inner').classList.add('flipped');
+  document.getElementById('fd-btn-row').style.display = 'grid';
+}
+
+function fdAnswer(got) {
+  const key = fdKey(fdCurrent);
+  const mastered = fdGetMastered();
+  const outstanding = fdGetOutstanding();
+
+  if (got) {
+    fdGot++;
+    mastered[key] = true;
+    fdSetMastered(mastered);
+    // Remove from outstanding if present
+    const idx = outstanding.indexOf(key);
+    if (idx !== -1) outstanding.splice(idx, 1);
+    fdSetOutstanding(outstanding);
+    fdOutstanding = outstanding;
+  } else {
+    fdMissCount++;
+    fdMissed.push(fdCurrent);
+    // Add to outstanding cross-session list
+    if (!outstanding.includes(key)) outstanding.push(key);
+    fdSetOutstanding(outstanding);
+    fdOutstanding = outstanding;
+    // Remove from mastered if they previously got it
+    if (mastered[key]) {
+      delete mastered[key];
+      fdSetMastered(mastered);
+    }
+  }
+
+  fdNext();
+}
+
+function fdUpdateProgress() {
+  const seen = fdGot + fdMissCount;
+  const pct  = fdTotal > 0 ? Math.round((seen / fdTotal) * 100) : 0;
+  const bar  = document.getElementById('fd-bar');
+  const col  = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'}[currentPaper] || '#555';
+  bar.style.width      = pct + '%';
+  bar.style.background = col;
+  document.getElementById('fd-prog-text').textContent  = `${seen} of ${fdTotal} cards`;
+  document.getElementById('fd-prog-count').textContent = `✅ ${fdGot}  ❌ ${fdMissCount}`;
+}
+
+function fdShowSummary() {
+  document.getElementById('fd-drill').style.display   = 'none';
+  document.getElementById('fd-summary').style.display = 'block';
+  document.getElementById('fd-sum-got').textContent   = fdGot;
+  document.getElementById('fd-sum-miss').textContent  = fdMissCount;
+
+  const outstanding = fdGetOutstanding();
+  const note = document.getElementById('fd-sum-note');
+  if (outstanding.length > 0) {
+    note.textContent = `${outstanding.length} card${outstanding.length > 1 ? 's' : ''} still outstanding — they'll appear in your next session.`;
+  } else {
+    note.textContent = '';
+  }
+
+  const drillBtn = document.getElementById('fd-drill-again-btn');
+  drillBtn.style.display = fdMissCount > 0 ? 'block' : 'none';
+
+  // Update streak
+  fdUpdateStreak();
+}
+
+function fdDrillMissed() {
+  // Start a new round with only the missed cards from this session
+  // Pull fresh from outstanding (which was updated during this round)
+  const outstanding = fdGetOutstanding();
+  const missedCards = outstanding
+    .map(k => FD.find(c => fdKey(c) === k))
+    .filter(Boolean);
+
+  if (!missedCards.length) {
+    fdShowComplete();
+    return;
+  }
+
+  fdDeck      = [...missedCards];
+  fdSeen      = [];
+  fdMissed    = [];
+  fdGot       = 0;
+  fdMissCount = 0;
+  fdTotal     = missedCards.length;
+
+  // Shuffle
+  for (let i = fdDeck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [fdDeck[i], fdDeck[j]] = [fdDeck[j], fdDeck[i]];
+  }
+
+  document.getElementById('fd-summary').style.display = 'none';
+  document.getElementById('fd-drill').style.display   = 'block';
+  fdNext();
+}
+
+function fdShowComplete() {
+  document.getElementById('fd-summary').style.display  = 'none';
+  document.getElementById('fd-complete').style.display = 'block';
+  const mastered = fdGetMastered();
+  const total = FD.filter(c => c.paper === currentPaper).length;
+  const mastCount = Object.keys(mastered).filter(k => k.startsWith(currentPaper + '|')).length;
+  document.getElementById('fd-complete-note').textContent =
+    `${mastCount} of ${total} ${P[currentPaper].label} cards mastered overall.`;
+}
+
+function fdFinish() {
+  // Reset to setup view
+  document.getElementById('fd-summary').style.display  = 'none';
+  document.getElementById('fd-complete').style.display = 'none';
+  fdSetup();
+}
+
+function fdUpdateStreak() {
+  const today = new Date().toISOString().slice(0, 10);
+  let streak = JSON.parse(localStorage.getItem(LS_STREAK) || '{"date":"","count":0}');
+  if (streak.date === today) return; // already counted today
+  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  streak.count = (streak.date === yesterday) ? streak.count + 1 : 1;
+  streak.date  = today;
+  localStorage.setItem(LS_STREAK, JSON.stringify(streak));
+}
 
 </script>
 <!-- EXAM FULLSCREEN OVERLAY -->
