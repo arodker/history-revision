@@ -1615,7 +1615,7 @@
     "unit": "Unit 1 – Queen & Religion",
     "front": "Why was Mary, Queen of Scots a threat to Elizabeth 1558–68?",
     "p1": "Catholics viewed Mary as the true Queen of England — Elizabeth's illegitimacy in Catholic eyes made Mary the rightful heir.",
-    "p2": "Mary's marriage to Lord Darnley strengthened her claim — both had claims to the English throne; their son James (b.1566) highlighted Elizabeth's lack of an heir.",
+    "p2": "Mary's marriage to Lord Darnley strengthened her claim; their son James (b.1566) highlighted Elizabeth's lack of an heir.",
     "p3": "1560: Scottish protestant lords signed the Treaty of Edinburgh giving up Mary's claim to the English throne — Mary never accepted it.",
     "hints": [
       "rightful",
@@ -1740,7 +1740,7 @@
     "paper": "p2b",
     "unit": "Unit 2 – Challenges 1569–88",
     "front": "Why did England and Spain become rivals?",
-    "p1": "Religious rivalry: Philip II wanted England Catholic again; 1570 Papal excommunication made it a Catholic duty to overthrow Elizabeth; 1584 Treaty of Joinville — France and Spain pledged to destroy Protestantism.",
+    "p1": "Religious rivalry; 1570 Papal excommunication made it a Catholic duty to overthrow Elizabeth; 1584 Treaty of Joinville — France and Spain pledged to destroy Protestantism.",
     "p2": "Commercial rivalry: English cloth trade collapse in 1550s forced merchants to seek new markets; Spanish controlled the most valuable New World trade routes.",
     "p3": "Drake raided Spanish ports and treasure ships with Elizabeth's secret backing — £40,000 from Panama 1572; £400,000 during circumnavigation 1577–80. Elizabeth's knighting of Drake in 1580 inflamed Spain.",
     "hints": [
@@ -1756,7 +1756,7 @@
     "front": "What was England's involvement in the Dutch Revolt?",
     "p1": "From 1566 Protestant Dutch revolted against Catholic Spanish rule; Large Spanish army in Netherlands to fight rebels was concerning to England.",
     "p2": "Elizabeth supplied weapons and money secretly — eager to keep Spain distracted and support fellow protestants.",
-    "p3": "1584: Dutch leader William of Orange assassinated — revolt in danger of collapse; Elizabeth signed Treaty of Nonsuch (1585) committing 7,400 troops and £126,000/year.",
+    "p3": "1584: Dutch leader William of Orange assassinated; Elizabeth signed Treaty of Nonsuch (1585) committing 7,400 troops and £126,000/year.",
     "hints": [
       "Netherlands",
       "supplied",
@@ -1768,7 +1768,7 @@
     "paper": "p2b",
     "unit": "Unit 2 – Challenges 1569–88",
     "front": "What did Dudley do in the Netherlands?",
-    "p1": "Robert Dudley, Earl of Leicester, sent with an army after the Treaty of Nonsuch — accepted title of Governor-General of the Netherlands against Elizabeth's wishes.",
+    "p1": "Robert Dudley, Earl of Leicester, led English army — accepted title of Governor-General of the Netherlands against Elizabeth's wishes.",
     "p2": "Lacked enough men, money or supplies to defeat Parma's superior force. Only managed to slow Parma's progress.",
     "p3": "Key success: prevented Parma capturing the deep-water port of Ostend — stopping Parma's troops boarding the Armada quickly.",
     "hints": [
@@ -1783,7 +1783,7 @@
     "unit": "Unit 2 – Challenges 1569–88",
     "front": "What did Drake do at Cadiz?",
     "p1": "1587: Walsingham's spies reported a great Armada being built at Cadiz. Drake sent to buy England time.",
-    "p2": "Drake slipped into Cadiz harbour on a moonless night with four ships; destroyed 30 Spanish ships and damaged more; raided precious food and supply barrels.",
+    "p2": "Drake slipped into Cadiz on a moonless night with four ships; destroyed 30 Spanish ships and damaged more; destroyed food barrels.",
     "p3": "Drake then raided Portugal and captured a Spanish treasure ship worth £140,000 — brought England 12 months to prepare for the Armada.",
     "hints": [
       "Armada",
@@ -1798,11 +1798,11 @@
     "front": "What was Philip II's plan for the Armada?",
     "p1": "Duke of Medina-Sidonia to sail 130 ships and 27,000 men to the Spanish Netherlands.",
     "p2": "Rendezvous with Duke of Parma and his 30,000 men; combined force to invade England and kill Elizabeth.",
-    "p3": "Plan fatally dependent on Parma and the Armada meeting at exactly the right time — Parma was 6 days' march from Calais when the Armada arrived.",
+    "p3": "Plan fatally dependent on Parma and the Armada meeting at exactly the right time.",
     "hints": [
       "Medina-Sidonia",
-      "Duke",
-      "Parma"
+      "30,000",
+      "right time"
     ]
   },
   {
@@ -1810,13 +1810,13 @@
     "paper": "p2b",
     "unit": "Unit 2 – Challenges 1569–88",
     "front": "How did English tactics defeat the Armada?",
-    "p1": "Drake's raid on Cadiz gained England 12 months to prepare — warning beacons built along the coast; faster galleons constructed.",
-    "p2": "English navy (Drake and Lord Howard) chased the slow Armada up the Channel, harrying from long range — Spanish could not board in the open sea.",
-    "p3": "Fireships sent into the anchored Armada at Calais — Spanish fleet scattered and broke formation; decisive English attack at the Battle of Gravelines (6 August 1588).",
+    "p1": "Drake's raid on Cadiz gained England 12 months to prepare — warning beacons built along the coast.",
+    "p2": "English navy (Drake and Howard) chased the slow Armada up the Channel, harrying from long range.",
+    "p3": "Fireships sent into Armada at Calais — Spanish fleet scattered and broke formation; decisive English attack at the Battle of Gravelines (6 August 1588).",
     "hints": [
       "Cadiz",
-      "Drake",
-      "Armada"
+      "harrying",
+      "fireships"
     ]
   },
   {
@@ -1825,12 +1825,12 @@
     "unit": "Unit 2 – Challenges 1569–88",
     "front": "How did Spanish poor planning defeat the Armada?",
     "p1": "Armada led by inexperienced Medina-Sidonia — first-choice commander Santa Cruz had died.",
-    "p2": "Miscommunication: Parma not in Calais on time; failure to capture deep-water port of Ostend meant boarding Parma's troops would have taken 3 days even with perfect communication.",
-    "p3": "Drake's Cadiz raid meant Spain had insufficient food and supply barrels — many Spanish soldiers starved.",
+    "p2": "Parma not in Calais on time; failure to capture deep-water port of Ostend meant boarding Parma's troops would have taken 3 days even with perfect communication.",
+    "p3": "Philip's orders didn't allow for improvisation. Spanish didnt take opportunity to destroy English navy trapped at Plymouth.",
     "hints": [
       "Medina-Sidonia",
       "Parma",
-      "Cadiz"
+      "Plymouth"
     ]
   },
   {
@@ -1840,11 +1840,11 @@
     "front": "How did wind and weather defeat the Armada?",
     "p1": "After Gravelines, wind blew the Armada north around Scotland and Ireland — unfamiliar, rough seas.",
     "p2": "40 ships shipwrecked in storms; fewer than 80 ships and fewer than 10,000 men returned to Spain.",
-    "p3": "English galleons were faster and more manoeuvrable than Spanish transport ships — though only 24 of the English fleet were galleons.",
+    "p3": "English galleons were faster and more manoeuvrable than Spanish transport ships — better suited to rough English waters.",
     "hints": [
-      "Gravelines",
-      "Spain",
-      "Spanish"
+      "wind",
+      "storms",
+      "waters"
     ]
   },
   {
@@ -1856,9 +1856,9 @@
     "p2": "Victory suggested God was on the Protestants' side — commemorative medal issued: 'God blew, and they were scattered'.",
     "p3": "Defeat of the most powerful nation in the world boosted English confidence; more confidence to explore, trade and attack Spain. Armada bankrupted Philip.",
     "hints": [
-      "Armada",
-      "Protestants'",
-      "English"
+      "stomach",
+      "blew",
+      "confidence"
     ]
   },
   {
@@ -1884,7 +1884,7 @@
     "p2": "Hunting rabbit. Music heard at fairs, markets, pubs and church.",
     "p3": "Theatre: 1 penny to stand in the 'pit' — close to the action, noisy and popular with all classes.",
     "hints": [
-      "Gambling",
+      "bear",
       "Music",
       "Theatre"
     ]
@@ -1912,9 +1912,9 @@
     "p2": "1576: The Theatre opened; followed by the Rose (1586) and the Globe (1599). Open to all social classes — 1 penny for the pit.",
     "p3": "From 1572 all plays had to be approved by the Queen's official — some censorship. Puritans opposed theatre as sinful and satanic.",
     "hints": [
-      "Bible",
-      "Theatre",
-      "Queen's"
+      "secular",
+      "penny",
+      "censorship"
     ]
   },
   {
@@ -1922,13 +1922,13 @@
     "paper": "p2b",
     "unit": "Unit 3 – Elizabethan Society",
     "front": "How did population rise lead to poverty?",
-    "p1": "Population grew by around 1/3 in Elizabeth's reign — greater demand for land meant landlords raised rents.",
-    "p2": "More people meant greater demand for food — rising food prices. Also greater supply of labour — employers could pay less.",
-    "p3": "Combined effect of rising prices and falling wages created widespread poverty, especially in the countryside.",
+    "p1": "Population grew by around 1/3 in Elizabeth's reign from 3 million to 4 million.",
+    "p2": "More people meant greater demand for food and land— rising  prices. Also greater supply of labour — employers could pay less.",
+    "p3": "Combined effect of rising prices and falling wages created widespread poverty - a Malthusian crisis.",
     "hints": [
-      "Elizabeth's",
-      "people",
-      "Combined"
+      "4 million",
+      "prices",
+      "Malthusian"
     ]
   },
   {
@@ -1938,11 +1938,11 @@
     "front": "How did enclosure lead to poverty?",
     "p1": "Enclosure: wealthy landowners claimed common farmland, hedged it and used it to graze sheep instead of growing crops.",
     "p2": "Poor labourers lost their land and income; food prices rose as less was being grown.",
-    "p3": "Displaced labourers became vagabonds — wandering in search of work and regarded with fear and hostility.",
+    "p3": "In the east of England 70% of farmland became enclosed. Blamed for the increase in poverty.",
     "hints": [
-      "Enclosure",
-      "Poor",
-      "Displaced"
+      "sheep",
+      "land",
+      "70%"
     ]
   },
   {
@@ -1950,13 +1950,13 @@
     "paper": "p2b",
     "unit": "Unit 3 – Elizabethan Society",
     "front": "How did debasement lead to poverty?",
-    "p1": "During the 1540s the currency was debased — precious metal removed from coins to create more of them; value of coins fell; prices rose.",
-    "p2": "Inflation already high from population growth; debasement made it worse.",
-    "p3": "Dissolution of the monasteries (Henry VIII, 1530s) removed the safety net for the poor — especially in the North.",
+    "p1": "16th century coinage was based on a specific amount of precious metal, usually silver, to determine value.",
+    "p2": "During the 1540s the currency was debased — precious metal removed from coins to create more of them.",
+    "p3": "Merchants lost confidence in the value of coinage so raised prices leading to inflation.",
     "hints": [
-      "currency",
-      "Inflation",
-      "Henry"
+      "precious metal",
+      "1540s",
+      "inflation"
     ]
   },
   {
@@ -1979,12 +1979,12 @@
     "unit": "Unit 3 – Elizabethan Society",
     "front": "How were the poor treated by new laws?",
     "p1": "Statute of Artificers (1563): established maximum national wages for specific jobs to deter economic migration.",
-    "p2": "Vagabonds Act (1572): vagabonds over 14 whipped and burned through the right ear; sent to House of Correction on 2nd offence; JPs had to register the poor and collect a poor rate.",
+    "p2": "Vagabonds Act (1572): vagabonds over 14 whipped and burned through the right ear; executed if repeat offender; government collected a poor rate for deserving poor.",
     "p3": "Act for the Relief of the Poor (1576): towns required to find work for the undeserving poor; those refusing work sent to a House of Correction.",
     "hints": [
       "Artificers",
-      "House",
-      "Relief"
+      "Vagabonds",
+      "House of Correction"
     ]
   },
   {
@@ -2010,7 +2010,7 @@
     "p2": "Financial gain and fame: Drake returned from circumnavigation with £400,000 of Spanish gold; new luxury goods (tobacco, cocoa, potatoes) could be sold at high prices.",
     "p3": "1561: John Hawkins created the Triangular Slave Trade — beginning large amounts of wealth for England.",
     "hints": [
-      "World",
+      "New World",
       "Drake",
       "Hawkins"
     ]
@@ -2024,9 +2024,9 @@
     "p2": "Returned with over £400,000 of Spanish gold (almost £500 million today); became 2nd person in history and 1st Englishman to circumnavigate the globe.",
     "p3": "Established a short-lived colony near San Francisco (Nova Albion); publicly knighted by Elizabeth on the deck of the Golden Hind 1580 — inflaming Spain.",
     "hints": [
-      "Spanish",
-      "Englishman",
-      "Francisco"
+      "Pacific",
+      "£400,000",
+      "Nova Albion"
     ]
   },
   {
@@ -2034,13 +2034,13 @@
     "paper": "p2b",
     "unit": "Unit 3 – Elizabethan Society",
     "front": "What went wrong in the planning of the colony of Virginia?",
-    "p1": "Poor leadership: Raleigh organised and financed the voyages but never went himself; Ralph Lane led the 1585 colony but lacked the skills to manage relations with Native Americans or sustain the settlement.",
+    "p1": "Poor leadership: Raleigh organised and financed the voyages but never went himself; Ralph Lane was too hot-headed to manage relations with Natives.",
     "p2": "All food stored on one ship — The Tiger — making the colony fatally vulnerable when it hit a reef and seawater destroyed the supplies.",
     "p3": "Wrong colonists sent: too many merchants, soldiers and craftsmen; almost no one who could farm the land or produce food for a long-term settlement.",
     "hints": [
       "Raleigh",
       "Tiger",
-      "supplies"
+      "soldiers"
     ]
   },
   {
@@ -2048,13 +2048,13 @@
     "paper": "p2b",
     "unit": "Unit 3 – Elizabethan Society",
     "front": "What happened at Roanoke Island?",
-    "p1": "1585 (first colony): The Tiger hit a reef destroying food supplies — colonists immediately dependent on the Algonquian people. Relations deteriorated as Native Americans blamed the English for spreading disease; Lane massacred Wingina's village and decapitated him. Colony abandoned.",
-    "p2": "1587 (second colony): John White returned with new settlers but arrived too late to plant crops. Attacked by forces led by Wanchese; White sailed back to England for help — the Spanish Armada prevented his return for three years.",
-    "p3": "1590: White returned to find the colony completely abandoned — only the word Croatoan carved into a tree. The 117 colonists were never seen again.",
+    "p1": "1585 (first colony): The Tiger hit a reef destroying food supplies — colonists immediately dependent on the Algonquian people.",
+    "p2": "Relations deteriorated as Native Americans blamed the English for spreading disease (invisible bullets); Lane massacred Wingina's village and decapitated him. Colony abandoned.",
+    "p3": "1587 (second colony): new settlers arrived too late to plant crops. Attacked by native forces led by Wanchese; Spanish Armada prevented supply ships for three years. Colony disappeared.",
     "hints": [
       "Tiger",
-      "John",
-      "Croatoan"
+      "Wingina",
+      "disappeared"
     ]
   },
   {
