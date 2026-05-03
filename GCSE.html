@@ -221,7 +221,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .fd-summary-row { display:flex; gap:1rem; justify-content:center; margin:.75rem 0; }
 .fd-badge-got  { background:#d1fae5; color:#065f46; padding:4px 12px; border-radius:20px; font-size:.82rem; font-weight:700; }
 .fd-badge-miss { background:#fee2e2; color:#991b1b; padding:4px 12px; border-radius:20px; font-size:.82rem; font-weight:700; }
-.fd-outstanding-note { font-size:.75rem; color:var(--muted); margin-top:.5rem; }
+.fd-outstanding-note { font-size:.78rem; color:var(--text); background:var(--subtle); border-radius:8px; padding:.5rem .75rem; margin-top:.75rem; line-height:1.45; }
 </style>
 </head>
 <body>
@@ -373,7 +373,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <!-- Summary state -->
     <div id="fd-summary" style="display:none">
       <div class="fd-summary-card">
-        <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Round complete!</div>
+        <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Session complete! 🏁</div>
         <div class="fd-summary-row">
           <div>
             <div class="fd-summary-stat" id="fd-sum-got">0</div>
@@ -386,8 +386,8 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
         </div>
         <div class="fd-outstanding-note" id="fd-sum-note"></div>
       </div>
-      <button class="btn-go" id="fd-drill-again-btn" onclick="fdDrillMissed()" style="margin-bottom:.5rem">🔁 Drill missed cards</button>
-      <button class="btn-go" onclick="fdFinish()" style="background:var(--subtle);color:var(--text)">✓ Finish session</button>
+      <button class="btn-go" id="fd-drill-again-btn" onclick="fdDrillMissed()" style="margin-bottom:.75rem;background:#1D9E75">🔁 Review missed cards now</button>
+      <button class="btn-go" onclick="fdFinish()" style="background:#374151;color:#fff">✓ Finish &amp; return to menu</button>
     </div>
 
     <!-- Completion state -->
@@ -1361,7 +1361,7 @@ Promise.all([
 }).catch(err => {
   console.error('Data load failed:', err);
   const eOut = document.getElementById('e-out');
-  if (eOut) eOut.innerHTML = '<div class="empty">⚠️ Could not load data files. Make sure data/eq.json, rq.json, dates.json, flashcards.json and kc.json are in your repository.</div>';
+  if (eOut) eOut.innerHTML = '<div class="empty">📌 Could not load data files. Make sure data/eq.json, rq.json, dates.json, flashcards.json and kc.json are in your repository.</div>';
 });
 
 // ═══════════════════════════════════════════
@@ -1501,19 +1501,6 @@ function fdStart() {
 }
 
 function fdNext() {
-  // If main deck exhausted but missed cards remain, recycle them into deck
-  if (fdDeck.length === 0 && fdMissed.length > 0) {
-    // Don't show summary yet — keep going until deck AND missed are empty
-    // But we only recycle at end of pass, so just continue with missed
-    fdDeck = [...fdMissed];
-    fdMissed = [];
-    // Shuffle recycled
-    for (let i = fdDeck.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [fdDeck[i], fdDeck[j]] = [fdDeck[j], fdDeck[i]];
-    }
-  }
-
   if (fdDeck.length === 0) {
     // Round over
     fdShowSummary();
@@ -1536,7 +1523,12 @@ function fdNext() {
   document.getElementById('fd-tag').textContent = tag;
   document.getElementById('fd-tag-back').className = 'fd-tag ' + (tagClasses[cardPaper] || '');
   document.getElementById('fd-tag-back').textContent = tag;
-  document.getElementById('fd-question').textContent = fdCurrent.front;
+
+  // Show 📌 on cards that are outstanding (previously missed in an earlier session)
+  const outstandingCheck = fdGetOutstanding();
+  const isOutstandingCard = outstandingCheck.includes(fdKey(fdCurrent));
+  document.getElementById('fd-question').textContent =
+    (isOutstandingCard ? '📌 ' : '') + fdCurrent.front;
 
   const pts = document.getElementById('fd-points');
   pts.innerHTML = ['p1','p2','p3'].map(k =>
@@ -1612,7 +1604,7 @@ function fdShowSummary() {
   const outstanding = fdGetOutstanding();
   const note = document.getElementById('fd-sum-note');
   if (outstanding.length > 0) {
-    note.textContent = `${outstanding.length} card${outstanding.length > 1 ? 's' : ''} still outstanding — they'll appear in your next session.`;
+    note.innerHTML = `📌 <strong>${outstanding.length} card${outstanding.length > 1 ? 's' : ''} missed</strong> — these will be woven into your future flashcard drills automatically (marked 📌).`;
   } else {
     note.textContent = '';
   }
