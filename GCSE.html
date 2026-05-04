@@ -168,6 +168,9 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 #mode-knowledge li { font-size:.88rem; line-height:1.75; margin-bottom:.35rem; }
 #mode-knowledge .kc-summary { font-size:.88rem; font-style:italic; color:var(--muted); margin-bottom:.9rem; line-height:1.6; }
 
+@keyframes cd-pop { 0%{transform:scale(.7);opacity:0} 40%{transform:scale(1.15)} 70%{transform:scale(.95)} 100%{transform:scale(1);opacity:1} }
+#d-countdown-num { animation:cd-pop .35s ease forwards; }
+
 @media print {
   /* Hide all chrome — navigation, buttons, screens other than s-main */
   #dark-toggle, #hub-link, .mode-grid, .back-btn, .paper-grid, .rq-section,
@@ -272,14 +275,17 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
 <!-- SCREEN 1: PAPER PICKER -->
 <div class="screen active" id="s-pick">
-  <h1 style="margin-bottom:.2rem">Edexcel GCSE History</h1>
-  <p class="subtitle">Mr Rodker's Revision Hub</p>
+  <h1 style="margin-bottom:.2rem">Mr Rodker's GCSE History Hub</h1>
+  <p class="subtitle">Knowledge is porridge</p>
   <p style="font-size:.85rem;color:var(--muted);margin-bottom:.9rem">Which paper are you revising?</p>
   <div class="paper-grid">
     <button class="paper-btn pb-p1" onclick="pickPaper('p1')"><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
     <button class="paper-btn pb-p2a" onclick="pickPaper('p2a')"><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
     <button class="paper-btn pb-p2b" onclick="pickPaper('p2b')"><span class="plabel">Paper 2b</span>👑 Early Elizabethan England</button>
     <button class="paper-btn pb-p3" onclick="pickPaper('p3')"><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
+  </div>
+  <div id="home-pinned-link" style="display:none;text-align:center;margin-bottom:.25rem">
+    <button class="btn-go" onclick="goToPinnedReview()" style="background:transparent;color:var(--muted);font-size:.75rem;font-weight:600;border:1px solid var(--border);padding:.4rem 1rem;width:auto">Review pinned cards</button>
   </div>
   <div class="rq-section">
     <p class="rq-section-label">Or try:</p>
@@ -361,8 +367,12 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
   <!-- DATES -->
   <div id="mode-dates" style="display:none">
-    <button class="btn-go" id="d-go" onclick="startQuiz()">Start key dates quiz</button>
-    <button class="btn-sm" id="d-hard" onclick="startQuiz(true)" style="width:100%;margin-top:-.5rem;margin-bottom:.75rem;display:none">🎯 Hardest dates only</button>
+    <button class="btn-go" id="d-go" onclick="startQuizCountdown()">Start key dates quiz</button>
+    <button class="btn-sm" id="d-hard" onclick="startQuizCountdown(true)" style="width:100%;margin-top:-.5rem;margin-bottom:.75rem;display:none">🎯 Hardest dates only</button>
+    <div id="d-countdown" style="display:none;text-align:center;padding:2rem 0">
+      <div id="d-countdown-num" style="font-size:5rem;font-weight:800;font-family:'DM Serif Display',serif;line-height:1;color:var(--accent)">3</div>
+      <div style="font-size:.85rem;color:var(--muted);margin-top:.5rem">Get ready…</div>
+    </div>
     <div id="d-out"></div>
   </div>
 
@@ -396,6 +406,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   <div id="mode-flashcard" style="display:none">
     <!-- Setup state -->
     <div id="fd-setup">
+
       <div style="margin-bottom:.75rem">
         <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Choose unit</label>
         <select id="fd-unit" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
@@ -409,6 +420,21 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       </div>
       <div id="fd-outstanding-banner" style="display:none;font-size:.78rem;color:var(--muted);background:var(--subtle);border-radius:8px;padding:.6rem .75rem;margin-bottom:.75rem"></div>
       <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start Flashcard Mode</button>
+      <button class="btn-go" id="fd-pinned-btn" onclick="fdStartPinned()" style="background:#374151;color:#ccc;margin-top:.5rem;display:none">Review pinned cards</button>
+      <!-- Single paper wheel for current paper -->
+      <div style="display:flex;justify-content:center;align-items:center;gap:1rem;padding:.75rem .5rem .25rem;margin-top:.75rem">
+        <div id="fd-setup-wheel-cell" style="text-align:center">
+          <svg id="fd-setup-wheel" viewBox="0 0 60 60" style="width:64px;height:64px;display:block;margin:0 auto .3rem">
+            <circle id="fd-setup-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
+            <circle id="fd-setup-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
+            <circle id="fd-setup-ring-got" cx="30" cy="30" r="24" fill="none" stroke="#888" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
+            <circle id="fd-setup-ring-fill" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/>
+            <text id="fd-setup-pct" x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)">0%</text>
+          </svg>
+          <div id="fd-setup-label" class="fd-wheel-label"></div>
+        </div>
+        <div style="font-size:.75rem;color:var(--muted);line-height:1.5">Today's progress<br>for this paper</div>
+      </div>
     </div>
 
     <!-- Drill state -->
@@ -657,6 +683,7 @@ function showScreen(id) {
   // update flagged button on hub
   if (id === 's-pick') renderFdWheels();
   if (id === 's-hub')  renderFdHubWheel();
+  if (id === 's-main' && currentPaper) renderFdSetupWheel();
 }
 
 function enterMode(m) {
@@ -1275,6 +1302,37 @@ function saveHardDates(arr) {
   localStorage.setItem('gcse_hard_dates_' + currentPaper, JSON.stringify(arr));
 }
 
+function startQuizCountdown(hardMode) {
+  // Hide start buttons
+  document.getElementById('d-go').style.display = 'none';
+  const hardBtn = document.getElementById('d-hard');
+  if (hardBtn) hardBtn.style.display = 'none';
+  // Show countdown
+  const cdEl = document.getElementById('d-countdown');
+  const numEl = document.getElementById('d-countdown-num');
+  cdEl.style.display = 'block';
+  let count = 3;
+  numEl.textContent = count;
+  // Re-trigger animation each tick
+  function tick() {
+    numEl.style.animation = 'none';
+    void numEl.offsetWidth; // reflow
+    numEl.style.animation = 'cd-pop .35s ease forwards';
+    numEl.textContent = count;
+    if (count === 0) {
+      numEl.textContent = 'Go!';
+      setTimeout(() => {
+        cdEl.style.display = 'none';
+        startQuiz(hardMode);
+      }, 500);
+      return;
+    }
+    count--;
+    setTimeout(tick, 700);
+  }
+  setTimeout(tick, 100);
+}
+
 function startQuiz(hardMode) {
   const all = DATES.filter(d => d.paper === currentPaper);
   if (!all.length) {
@@ -1301,9 +1359,10 @@ function renderQ() {
   const pct = Math.round((quizIdx / total) * 100);
   const others = shuffle(DATES.filter(d => d.paper === currentPaper && d.event !== item.event)).slice(0, 3).map(d => d.event);
   const opts = shuffle([item.event, ...others]);
-  const optsHtml = opts.map((o, i) =>
-    `<button class="opt" id="opt${i}" data-val="${esc(o)}" data-correct="${esc(item.event)}" onclick="checkAns(this)">${o}</button>`
-  ).join('');
+  const optsHtml = opts.map((o, i) => {
+    const formatted = o.replace(/^([^—–-]+)(—|–|-)/, '<strong>$1</strong>$2');
+    return `<button class="opt" id="opt${i}" data-val="${esc(o)}" data-correct="${esc(item.event)}" onclick="checkAns(this)">${formatted}</button>`;
+  }).join('');
   const streakHtml = quizStreak >= 3 ? `<span style="font-size:.8rem;color:#F0B429;font-weight:600">🔥 ${quizStreak}</span>` : '';
   document.getElementById('d-out').innerHTML = `
     <div class="quiz-prog"><div class="quiz-fill ${P[currentPaper].fill}" style="width:${pct}%"></div></div>
@@ -1428,6 +1487,8 @@ Promise.all([
   if (kbMode && kbMode.style.display !== 'none') { buildKPool(); updateNavUI(); }
   console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length, 'FD:', FD.length, 'KC:', KC.length);
   renderFdWheels(); // update picker screen wheels once data is ready
+  renderFdSetupWheel();
+  renderFdHubWheel();
 }).catch(err => {
   console.error('Data load failed:', err);
   const eOut = document.getElementById('e-out');
@@ -1523,7 +1584,8 @@ function fdSetOutstanding(arr) {
 }
 
 function fdSetup() {
-  // Always reset hints toggle to off
+  renderFdWheels();
+  renderFdSetupWheel();
   // Restore remembered hints preference
   fdHintsOn = localStorage.getItem(LS_HINTS) === '1';
   const hintsChk = document.getElementById('fd-hints-on');
@@ -1543,6 +1605,14 @@ function fdSetup() {
   sel.className = 'sel-' + currentPaper;
 
   // Colour start button to current paper
+  // Show pinned review button if there are any pinned cards
+  const pinnedBtn = document.getElementById('fd-pinned-btn');
+  if (pinnedBtn) {
+    const outstanding = fdGetOutstanding();
+    const hasPinned = outstanding.some(k => FD.find(c => fdKey(c) === k));
+    pinnedBtn.style.display = hasPinned ? 'block' : 'none';
+    if (hasPinned) pinnedBtn.textContent = 'Review pinned cards';
+  }
   const startBtn = document.getElementById('fd-start-btn');
   const goClasses = {p1:'c-p1', p2a:'c-p2a', p2b:'c-p2b', p3:'c-p3'};
   startBtn.className = 'btn-go ' + (goClasses[currentPaper] || '');
@@ -1703,22 +1773,25 @@ function fdNext() {
 
 function fdFlip() {
   const inner = document.getElementById('fd-card-inner');
-  if (fdFlipped) {
-    // Tap again — flip back to question, keep buttons visible
+  if (!fdFlipped) {
+    // First reveal — stagger animation
+    fdFlipped = true;
+    inner.classList.add('flipped');
+    const items = document.querySelectorAll('#fd-points li');
+    items.forEach((li, i) => {
+      setTimeout(() => li.classList.add('fd-pt-show'), 300 + i * 700);
+    });
+    const delay = 300 + items.length * 700 + 400;
+    setTimeout(() => {
+      document.getElementById('fd-btn-row').style.display = 'grid';
+    }, delay);
+  } else if (inner.classList.contains('flipped')) {
+    // Flip back to question — buttons stay, no animation reset
     inner.classList.remove('flipped');
-    return;
+  } else {
+    // Flip forward again instantly — already revealed
+    inner.classList.add('flipped');
   }
-  fdFlipped = true;
-  inner.classList.add('flipped');
-  // Stagger bullet points then show self-mark buttons
-  const items = document.querySelectorAll('#fd-points li');
-  items.forEach((li, i) => {
-    setTimeout(() => li.classList.add('fd-pt-show'), 300 + i * 700);
-  });
-  const delay = 300 + items.length * 700 + 400;
-  setTimeout(() => {
-    document.getElementById('fd-btn-row').style.display = 'grid';
-  }, delay);
 }
 
 function fdAnswer(got) {
@@ -1766,6 +1839,7 @@ function fdAnswer(got) {
     }));
     if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
     if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
+    renderFdSetupWheel();
   }, 220);
 }
 
@@ -1817,6 +1891,33 @@ function fdShowSummary() {
 
   // Update streak
   fdUpdateStreak();
+}
+
+function fdStartPinned() {
+  const outstanding = fdGetOutstanding();
+  const pinnedCards = outstanding
+    .map(k => FD.find(c => fdKey(c) === k))
+    .filter(Boolean);
+  if (!pinnedCards.length) {
+    alert('No pinned cards to review!');
+    return;
+  }
+  // Shuffle pinned
+  for (let i = pinnedCards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pinnedCards[i], pinnedCards[j]] = [pinnedCards[j], pinnedCards[i]];
+  }
+  fdDeck      = [...pinnedCards];
+  fdSeen      = [];
+  fdMissed    = [];
+  fdGot       = 0;
+  fdMissCount = 0;
+  fdTotal     = pinnedCards.length;
+  document.getElementById('fd-setup').style.display   = 'none';
+  document.getElementById('fd-drill').style.display   = 'block';
+  document.getElementById('fd-summary').style.display = 'none';
+  document.getElementById('fd-complete').style.display = 'none';
+  fdNext();
 }
 
 function fdDrillMissed() {
@@ -1883,6 +1984,40 @@ function fdUpdateStreak() {
 const paperColours = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'};
 const paperLabels  = {p1:'Migrants', p2a:'Cold War', p2b:'Elizabeth', p3:'Germany'};
 
+function renderFdSetupWheel() {
+  if (!FD || !FD.length || !currentPaper) return;
+  const session    = fdGetSession();
+  const circ       = 2 * Math.PI * 24;
+  const paper      = currentPaper;
+  const paperTotal = FD.filter(c => c.paper === paper).length;
+  if (!paperTotal) return;
+  const sessionGot   = session.got[paper]   || 0;
+  const sessionTotal = session.total[paper] || 0;
+  const gotPct  = Math.min(1, sessionGot / paperTotal);
+  const missedToday = Math.max(0, sessionTotal - sessionGot);
+  const missPct = Math.min(missedToday / paperTotal, 1 - gotPct);
+  const isDone  = gotPct >= 1 && sessionTotal > 0;
+  const col     = paperColours[paper] || '#888';
+  const gotDash  = gotPct  * circ;
+  const missDash = missPct * circ;
+  const gotEl   = document.getElementById('fd-setup-ring-got');
+  const missEl  = document.getElementById('fd-setup-ring-miss');
+  const fillEl  = document.getElementById('fd-setup-ring-fill');
+  const txtEl   = document.getElementById('fd-setup-pct');
+  const bgEl    = document.getElementById('fd-setup-bg');
+  const labelEl = document.getElementById('fd-setup-label');
+  if (gotEl)   { gotEl.setAttribute('stroke', col); gotEl.setAttribute('stroke-dasharray', gotDash + ' ' + (circ - gotDash)); }
+  if (missEl)  { missEl.setAttribute('stroke-dasharray', missDash + ' ' + (circ - missDash)); missEl.setAttribute('transform', `rotate(${-90 + gotPct * 360} 30 30)`); }
+  if (fillEl)  fillEl.setAttribute('r', isDone ? '18' : '0');
+  if (bgEl)    bgEl.setAttribute('stroke', isDone ? col : 'var(--subtle)');
+  if (txtEl)   {
+    if (isDone) { txtEl.textContent = '🥇'; txtEl.setAttribute('font-size','14'); }
+    else        { txtEl.textContent = Math.round(gotPct * 100) + '%'; txtEl.setAttribute('font-size','10'); }
+    txtEl.setAttribute('fill', 'var(--text)');
+  }
+  if (labelEl) labelEl.textContent = paperLabels[paper] || '';
+}
+
 function renderFdHubWheel() {
   if (!FD || !FD.length || !currentPaper) return;
   const session    = fdGetSession();
@@ -1894,7 +2029,7 @@ function renderFdHubWheel() {
 
   const sessionGot   = session.got[paper]   || 0;
   const sessionTotal = session.total[paper] || 0;
-  const gotPct  = sessionGot / paperTotal;
+  const gotPct  = Math.min(1, sessionGot / paperTotal);
   const missedToday = Math.max(0, sessionTotal - sessionGot);
   const missPct = Math.min(missedToday / paperTotal, 1 - gotPct);
   const isDone  = gotPct >= 1 && sessionTotal > 0;
@@ -1914,7 +2049,11 @@ function renderFdHubWheel() {
   if (missEl)  { missEl.setAttribute('stroke-dasharray', missDash + ' ' + (circ - missDash)); missEl.setAttribute('transform', `rotate(${-90 + gotPct * 360} 30 30)`); }
   if (fillEl)  fillEl.setAttribute('r', isDone ? '18' : '0');
   if (bgEl)    bgEl.setAttribute('stroke', isDone ? col : 'var(--subtle)');
-  if (txtEl)   { txtEl.textContent = Math.round(gotPct * 100) + '%'; txtEl.setAttribute('fill', isDone ? '#92620a' : 'var(--text)'); }
+  if (txtEl)   { 
+    if (isDone) { txtEl.textContent = '🥇'; txtEl.setAttribute('font-size', '14'); }
+    else        { txtEl.textContent = Math.round(gotPct * 100) + '%'; txtEl.setAttribute('font-size', '10'); }
+    txtEl.setAttribute('fill', 'var(--text)');
+  }
   if (labelEl) labelEl.textContent = paperLabels[paper] || '';
 }
 function renderFdWheels() {
@@ -1931,7 +2070,7 @@ function renderFdWheels() {
     const sessionGot   = session.got[paper]   || 0;
     const sessionTotal = session.total[paper] || 0;
     // Got % = cards got right today / all cards in this paper
-    const gotPct  = sessionGot / paperTotal;
+    const gotPct  = Math.min(1, sessionGot / paperTotal);
     // Missed arc = cards seen today but wrong / total (capped so arcs don't exceed full circle)
     const missedToday = Math.max(0, sessionTotal - sessionGot);
     const missPct = Math.min(missedToday / paperTotal, 1 - gotPct);
@@ -1955,9 +2094,15 @@ function renderFdWheels() {
 
     // Text: always show percentage
     if (txtEl) {
-      txtEl.textContent = Math.round(gotPct * 100) + '%';
-      txtEl.setAttribute('fill', isDone ? '#92620a' : 'var(--text)');
-      txtEl.setAttribute('font-size', '10');
+      if (isDone) {
+        txtEl.textContent = '🥇';
+        txtEl.setAttribute('font-size', '14');
+        txtEl.setAttribute('fill', 'var(--text)');
+      } else {
+        txtEl.textContent = Math.round(gotPct * 100) + '%';
+        txtEl.setAttribute('font-size', '10');
+        txtEl.setAttribute('fill', 'var(--text)');
+      }
     }
 
     // Gold filled circle behind text when complete
@@ -1975,6 +2120,15 @@ function fdShowToast(msg) {
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 4000);
+}
+
+function goToPinnedReview() {
+  // Go to flashcard mode and trigger pinned review directly
+  // Pick any paper first (doesn't matter for pinned — all papers included)
+  if (!currentPaper) pickPaper('p1');
+  enterMode('flashcard');
+  // Small delay for setup to render, then trigger
+  setTimeout(() => fdStartPinned(), 100);
 }
 
 function fdWheelLaunch(paper) {
