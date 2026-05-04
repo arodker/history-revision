@@ -275,33 +275,29 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
 <!-- SCREEN 1: PAPER PICKER -->
 <div class="screen active" id="s-pick">
-  <h1 style="margin-bottom:.2rem">Mr Rodker's GCSE History Hub</h1>
-  <p class="subtitle">Knowledge is porridge</p>
-  <p style="font-size:.85rem;color:var(--muted);margin-bottom:.9rem">Which paper are you revising?</p>
+  <h1 style="margin-bottom:.5rem;font-size:1.25rem">Mr Rodker's GCSE History Hub</h1>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:.9rem">What are you revising today?</p>
   <div class="paper-grid">
     <button class="paper-btn pb-p1" onclick="pickPaper('p1')"><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
     <button class="paper-btn pb-p2a" onclick="pickPaper('p2a')"><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
     <button class="paper-btn pb-p2b" onclick="pickPaper('p2b')"><span class="plabel">Paper 2b</span>👑 Early Elizabethan England</button>
     <button class="paper-btn pb-p3" onclick="pickPaper('p3')"><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
   </div>
-  <div id="home-pinned-link" style="display:none;text-align:center;margin-bottom:.25rem">
-    <button class="btn-go" onclick="goToPinnedReview()" style="background:transparent;color:var(--muted);font-size:.75rem;font-weight:600;border:1px solid var(--border);padding:.4rem 1rem;width:auto">Review pinned cards</button>
-  </div>
-  <div class="rq-section">
-    <p class="rq-section-label">Or try:</p>
+  <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #e8e7e2">
     <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
   </div>
   <!-- Flashcard tracker wheels -->
   <div class="rq-section" style="margin-bottom:1rem">
-    <p class="rq-section-label">⚡ Flashcard progress</p>
-    <p style="font-size:.75rem;font-weight:600;color:var(--muted);margin-bottom:.15rem">How much have you covered today?</p>
-    <p style="font-size:.68rem;color:var(--muted);margin-bottom:.6rem;opacity:.8">Tap a wheel to launch a flashcard mode</p>
+    <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem">⚡ Your progress today</p>
     <div id="fd-tracker" style="display:flex;justify-content:space-around;align-items:flex-start;padding:.75rem .5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:14px">
       <div class="fd-wheel-cell" data-paper="p1" onclick="fdWheelLaunch('p1')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg><div class="fd-wheel-label">Migrants</div></div>
       <div class="fd-wheel-cell" data-paper="p2a" onclick="fdWheelLaunch('p2a')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg><div class="fd-wheel-label">Cold War</div></div>
       <div class="fd-wheel-cell" data-paper="p2b" onclick="fdWheelLaunch('p2b')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2b" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg><div class="fd-wheel-label">Elizabeth</div></div>
       <div class="fd-wheel-cell" data-paper="p3" onclick="fdWheelLaunch('p3')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p3" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg><div class="fd-wheel-label">Germany</div></div>
     </div>
+  </div>
+  <div id="home-pinned-link" style="display:none;text-align:center;margin-top:.5rem">
+    <button onclick="goToPinnedReview()" style="background:none;border:none;color:var(--muted);font-size:.68rem;font-weight:500;padding:.25rem .5rem;cursor:pointer;opacity:.7">📌 Review pinned cards</button>
   </div>
 </div>
 
@@ -420,7 +416,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       </div>
       <div id="fd-outstanding-banner" style="display:none;font-size:.78rem;color:var(--muted);background:var(--subtle);border-radius:8px;padding:.6rem .75rem;margin-bottom:.75rem"></div>
       <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start Flashcard Mode</button>
-      <button class="btn-go" id="fd-pinned-btn" onclick="fdStartPinned()" style="background:#374151;color:#ccc;margin-top:.5rem;display:none">Review pinned cards</button>
+      <button id="fd-pinned-btn" onclick="fdStartPinned()" style="background:none;border:none;color:var(--muted);font-size:.68rem;font-weight:500;padding:.25rem .5rem;cursor:pointer;opacity:.7;display:none;width:100%;text-align:center;margin-top:.25rem">📌 Review pinned cards</button>
       <!-- Single paper wheel for current paper -->
       <div style="display:flex;justify-content:center;align-items:center;gap:1rem;padding:.75rem .5rem .25rem;margin-top:.75rem">
         <div id="fd-setup-wheel-cell" style="text-align:center">
