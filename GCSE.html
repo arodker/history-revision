@@ -363,8 +363,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
   <!-- DATES -->
   <div id="mode-dates" style="display:none">
-    <button class="btn-go" id="d-go" onclick="startQuizCountdown()">Start key dates quiz</button>
-    <button class="btn-sm" id="d-hard" onclick="startQuizCountdown(true)" style="width:100%;margin-top:-.5rem;margin-bottom:.75rem;display:none">🎯 Hardest dates only</button>
     <div id="d-countdown" style="display:none;text-align:center;padding:2rem 0">
       <div id="d-countdown-num" style="font-size:5rem;font-weight:800;font-family:'DM Serif Display',serif;line-height:1;color:var(--accent)">3</div>
       <div style="font-size:.85rem;color:var(--muted);margin-top:.5rem">Get ready…</div>
@@ -623,7 +621,7 @@ function pickPaper(p) {
   const info = P[p];
   document.getElementById('paper-badge').textContent = info.label;
   document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
-  ['d-go'].forEach(id => {
+  [].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.className = 'btn-go ' + info.go;
   });
@@ -701,7 +699,6 @@ function setMode(m) {
   if (m !== 'knowledge') document.getElementById('k-out').innerHTML = '';
   document.getElementById('d-out').innerHTML = '';
   document.getElementById('e-out').innerHTML = '';
-  document.getElementById('d-go').style.display = 'block';
   if (m === 'knowledge') { if (!kPool.length && KC.length) buildKPool(); updateNavUI(); }
   if (m === 'exam') updateExamDirectory();
   if (m === 'flashcard') fdSetup();
@@ -1299,10 +1296,6 @@ function saveHardDates(arr) {
 }
 
 function startQuizCountdown(hardMode) {
-  // Hide start buttons
-  document.getElementById('d-go').style.display = 'none';
-  const hardBtn = document.getElementById('d-hard');
-  if (hardBtn) hardBtn.style.display = 'none';
   // Show countdown
   const cdEl = document.getElementById('d-countdown');
   const numEl = document.getElementById('d-countdown-num');
@@ -1342,9 +1335,6 @@ function startQuiz(hardMode) {
   if (!pool.length) pool = all; // fallback if no hard dates yet
   quizPool = shuffle([...pool]).slice(0, Math.min(pool.length, 15));
   quizIdx = 0; quizOK = 0; quizBad = 0; quizStreak = 0; quizMissed = [];
-  document.getElementById('d-go').style.display = 'none';
-  const hardBtn = document.getElementById('d-hard');
-  if (hardBtn) hardBtn.style.display = 'none';
   renderQ();
 }
 
