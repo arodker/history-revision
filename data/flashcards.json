@@ -2790,13 +2790,13 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "Why did Windrush Migrants come to Notting Hill in the 1950s?",
-    "p1": "Caribbean migrants arrived in Britain after the 1948 British Nationality Act — needed cheap accommodation close to work in West London.",
-    "p2": "Notting Hill had large Victorian houses divided into cheap bedsits by exploitative landlords like Peter Rachman who targeted migrants who had no other options.",
-    "p3": "Colour bars in housing meant migrants were refused accommodation elsewhere — Notting Hill became a centre of Caribbean settlement by necessity.",
+    "p1": "Caribbean migrants arrived in Britain after the 1948 British Nationality Act — came for wages and opportunities in the 'mother country' after WWII.",
+    "p2": "Notting Hill had large bomb-damaged Victorian houses. One of the few areas of London where the colour bar was not common as white British people did not want the homes.",
+    "p3": "Notting Hill was closest district to Paddington Station - became a centre for Caribbean migrants and so new migrants were more likely to settle there.",
     "hints": [
-      "Britain",
-      "Hill",
-      "Notting"
+      "Nationality Act",
+      "bomb-damaged",
+      "Paddington"
     ]
   },
   {
@@ -2804,13 +2804,13 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What was housing like in Notting Hill?",
-    "p1": "Large Victorian houses subdivided into cramped, expensive bedsits. Landlords like Peter Rachman charged high rents and provided poor conditions.",
-    "p2": "Colour bars meant Black migrants were refused housing elsewhere — trapped in overcrowded, poor-quality accommodation.",
+    "p1": "Large Victorian houses subdivided into cramped, expensive bedsits. Slum landlords like Peter Rachman charged high rents and provided poor conditions.",
+    "p2": "Migrants typically lived in Homes of Multiple Occupancy (HMOs). Multiple families — trapped in overcrowded, poor-quality accommodation. Some beds shared by multiple people on shifts.",
     "p3": "Overcrowding, poor sanitation and exploitation were common — yet migrants had little legal protection and few alternatives.",
     "hints": [
-      "Victorian",
-      "Black",
-      "Overcrowding"
+      "Peter Rachman",
+      "HMOs",
+      "Sanitation"
     ]
   },
   {
@@ -2818,27 +2818,13 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What was the Notting Hill Housing Trust and Pardner schemes?",
-    "p1": "Notting Hill Housing Trust set up to provide better affordable housing for the Caribbean community — a community response to exploitation by private landlords.",
-    "p2": "Pardner scheme: a Caribbean savings system where members contributed to a shared pot — each member received the full pot in turn.",
-    "p3": "Pardner schemes allowed Caribbean migrants to save enough to buy property and start businesses — a self-help system in the absence of bank credit.",
+    "p1": "Notting Hill Housing Trust set up by Bruce Kenrick to provide better affordable housing for the Caribbean community..",
+    "p2": "NHHT founded in 1963 housed 57 migrants in first year - successfully found homes for 1,000 by 1970.",
+    "p3": "Pardner schemes set up by Sam King helped Caribbean migrants to save enough to buy property and start businesses — a mutual self-help system.",
     "hints": [
-      "Hill",
-      "Caribbean",
+      "Kenrick",
+      "NHHT",
       "Pardner"
-    ]
-  },
-  {
-    "no": 202,
-    "paper": "p1",
-    "unit": "Unit 5 – Notting Hill",
-    "front": "How did Caribbean culture change Notting Hill?",
-    "p1": "Caribbean migrants transformed Notting Hill's culture — music, food and community events became central to the area's identity.",
-    "p2": "1959: Claudia Jones founded the Caribbean Carnival (forerunner of the Notting Hill Carnival) — a direct response to the 1958 riots, turning community trauma into celebration.",
-    "p3": "Shebeens, the Mangrove restaurant and the Portobello Road market became key cultural spaces for the Caribbean community.",
-    "hints": [
-      "Notting",
-      "Jones",
-      "Mangrove"
     ]
   },
   {
@@ -2850,9 +2836,9 @@
     "p2": "Created because mainstream pubs and clubs operated colour bars — Black people were refused entry.",
     "p3": "Police regularly raided shebeens — another flashpoint between the Caribbean community and the Metropolitan Police.",
     "hints": [
-      "Caribbean",
-      "Black",
-      "Metropolitan"
+      "unlicensed",
+      "mainstream",
+      "police"
     ]
   },
   {
@@ -2864,9 +2850,9 @@
     "p2": "Caribbean stalls sold food, music and goods — creating a visible, vibrant presence in the neighbourhood.",
     "p3": "The market helped establish Notting Hill as a multicultural area and gave Caribbean traders a space to operate outside mainstream commerce.",
     "hints": [
-      "Road",
-      "Caribbean",
-      "Notting"
+      "cultural",
+      "food",
+      "traders"
     ]
   },
   {
@@ -2874,13 +2860,13 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "Why was the Mangrove restaurant important to the Caribbean community?",
-    "p1": "The Mangrove on All Saints Road was a Caribbean restaurant and community hub run by Frank Crichlow — a gathering place for activists, artists and community members.",
-    "p2": "Police raided the Mangrove 12 times between 1969 and 1970 despite finding no evidence of wrongdoing — seen as deliberate harassment of the Black community.",
-    "p3": "1970: British Black Panthers led by Darcus Howe organised a protest march against the raids — leading directly to the trial of the Mangrove Nine.",
+    "p1": "The Mangrove on All Saints Road was a Caribbean restaurant and community hub run by Frank Crichlow — celebrities including Diana Ross, Bob Marley, and Jimi Hendrix ate there.",
+    "p2": "Mangrove was centre for black community organising - lawyers provided free legal advice for black migrants. Notting Hill carnival organised from there.",
+    "p3": "Police raided the Mangrove 12 times between 1969 and 1970 despite finding no evidence of wrongdoing — seen as deliberate harassment of the Black community.",
     "hints": [
-      "Mangrove",
-      "Black",
-      "Panthers"
+      "Crichlow",
+      "Legal advice",
+      "raided"
     ]
   },
   {
@@ -2890,11 +2876,11 @@
     "front": "How did the police treat the black community in Notting Hill?",
     "p1": "Metropolitan Police repeatedly stopped and searched Black residents — using the 'sus law' (suspicion of intent to commit a crime) disproportionately against Black people.",
     "p2": "Police raided the Mangrove restaurant 12 times (1969–70) and targeted Shebeens — widespread harassment of the Caribbean community.",
-    "p3": "1999 Macpherson Report (following Stephen Lawrence's murder) described the Metropolitan Police as 'institutionally racist'.",
+    "p3": "Many police officers would deliberately plant evidence on black people to frame for theft or supply of drugs.",
     "hints": [
-      "Police",
+      "Sus law",
       "Mangrove",
-      "Report"
+      "plant"
     ]
   },
   {
@@ -2902,13 +2888,13 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What anti-immigration groups were active in Notting Hill?",
-    "p1": "The White Defence League and the Ku Klux Klan (British chapter) distributed racist leaflets in Notting Hill in the 1950s.",
-    "p2": "Teddy Boys were young white men associated with racist violence against Black residents in Notting Hill.",
-    "p3": "1967: National Front formed — anti-immigration party that never won significant electoral support but was active in areas like Notting Hill.",
+    "p1": "Oswald Mosley (far-right fascist) led the Union Movement which campaigned to 'keep Britain white'. Mosley ran for MP in 1959 - won 8% of vote.",
+    "p2": "Teddy Boys were young white gangs associated with racist violence against Black residents in Notting Hill. Often drove in to Notting Hill for 'N***** hunts'.",
+    "p3": "The White Defence League held a rally in Trafalgar Square after the murder of Kelso Chochrane.",
     "hints": [
-      "White",
-      "Boys",
-      "Front"
+      "Mosley",
+      "Teddy",
+      "White Defence"
     ]
   },
   {
@@ -2916,9 +2902,9 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What happened during the Notting Hill riots (1958)?",
-    "p1": "August–September 1958: white Teddy Boys and far-right groups launched violent attacks on Black residents over several nights — 'nigger hunting'.",
+    "p1": "August–September 1958: white Teddy Boys and far-right groups launched violent attacks on Black residents over several nights — targeting mixed race couples.",
     "p2": "Caribbean community defended itself — some Black residents armed with bottles and iron bars fought back.",
-    "p3": "Riots shocked the nation but judges gave heavier sentences to Black defendants than white attackers — showing ongoing institutional racism.",
+    "p3": "Riots shocked the nation but police and judges responded more harshly to Black defendants than white attackers — showing ongoing institutional racism.",
     "hints": [
       "September",
       "Black",
