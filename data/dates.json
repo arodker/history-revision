@@ -16,6 +16,11 @@
   },
   {
     "paper": "p1",
+    "date": "1144",
+    "event": "First Blood Libel stories begin in Norwich - increased anti-Semitism in England."
+  },
+  {
+    "paper": "p1",
     "date": "1290",
     "event": "Edward I expels all Jews – over 3,000 forced into exile"
   },
@@ -91,8 +96,8 @@
   },
   {
     "paper": "p1",
-    "date": "1971",
-    "event": "Mangrove Nine trial – judge recognises institutional racism in policing for the first time"
+    "date": "1970-1",
+    "event": "Mangrove Nine protest and trial – judge recognises institutional racism in policing for the first time"
   },
   {
     "paper": "p1",
@@ -189,6 +194,11 @@
     "date": "1972",
     "event": "SALT 1 signed – Nixon and Brezhnev agree first nuclear arms limitation treaty; détente begins"
   },
+    {
+    "paper": "p2a",
+    "date": "1975",
+    "event": "Helsinki Accords agreed - European Borders; Human rights; Trade and scientifc co-operation."
+  },
   {
     "paper": "p2a",
     "date": "1979",
@@ -264,10 +274,15 @@
     "date": "1571",
     "event": "Ridolfi Plot uncovered – first major Catholic assassination plot; Duke of Norfolk executed"
   },
+    {
+    "paper": "p2b",
+    "date": "1572",
+    "event": "Vagabonds Act - Vagrants over 14 to be whipped and have hole burnt in ear."
+  },
   {
     "paper": "p2b",
     "date": "1576",
-    "event": "Act for the relief of the poor - Houses of Creation established for able-bodied poor."
+    "event": "Act for the Relief of the Poor - Houses of Creation established for able-bodied poor."
   },
   {
     "paper": "p2b",
@@ -344,6 +359,11 @@
     "date": "1925",
     "event": "Hindenburg elected President; Locarno Pact – Germany accepts Versailles borders; France leaves the Ruhr"
   },
+    {
+    "paper": "p3",
+    "date": "1926",
+    "event": "Bamberg Conference - Hitler cements Nazi party as Far-Right party focused on elections, not violent revolution."
+  },
   {
     "paper": "p3",
     "date": "1929",
@@ -383,6 +403,11 @@
     "paper": "p3",
     "date": "1935",
     "event": "Nuremberg Laws – Jews stripped of German citizenship; banned from marrying non-Jews"
+  },
+    {
+    "paper": "p3",
+    "date": "1936",
+    "event": "Berlin Olympics - Huge celebration of German nationalism - Jesse Owens wins 4 Gold medals."
   },
   {
     "paper": "p3",
