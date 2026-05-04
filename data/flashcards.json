@@ -466,9 +466,9 @@
     "paper": "p3",
     "unit": "Unit 3 – Nazi Control",
     "front": "How did the Nazis use the police state to maintain power?",
-    "p1": "The SS: 300,000 members led by Heinrich Himmler. Had almost unlimited power in Germany. Would send opponents to the Nazis to the feared Concentration Camps like Dachau.",
-    "p2": "The Gestapo – Secret police ran by Reinhard Heydrich. Relied on a network of informers. 30,000 agents but rumours spread there was one on every corner. SD also listened in on peoples' phonecalls.",
-    "p3": "All courts and police had to be completely loyal to Hitler. Most serious cases were tried at the People's Court with no jury and no right to appeal. 534 were sentenced to death by 1939.",
+    "p1": "SS: 300,000 members led by Himmler. Had unlimited power. Sent opponents to Concentration Camps like Dachau.",
+    "p2": "Gestapo – Secret police ran by Heydrich. Relied on a network of informers. 30,000 agents. SD also listened in on phonecalls.",
+    "p3": "All courts and police had to be completely loyal to Hitler. No jury and no right to appeal. 534 were sentenced to death by 1939.",
     "hints": [
       "SS",
       "Gestapo",
@@ -480,12 +480,12 @@
     "paper": "p3",
     "unit": "Unit 3 – Nazi Control",
     "front": "How was propaganda used in Nazi Germany?",
-    "p1": "Goebbels controlled all radio; People's Radio (cheap, 70% of households) blocked foreign stations. Mass Nuremberg rallies staged annually with 200,000 people and 20,000 flags.",
-    "p2": "Film used to promote Nazi messages — Leni Riefenstahl directed Triumph of the Will glorifying Hitler.",
+    "p1": "Goebbels controlled all radio; People's Radio (cheap, 70% of households) blocked foreign stations.",
+    "p2": "Mass Nuremberg rallies staged annually with 200,000 people and 20,000 flags.",
     "p3": "Berlin Olympics 1936 used as a global propaganda showcase; Germany topped the medal table.",
     "hints": [
       "Radio",
-      "Film",
+      "Nuremburg",
       "Olympics"
     ]
   },
@@ -580,11 +580,11 @@
     "front": "What were Nazi policies towards women?",
     "p1": "Law for the Encouragement of Marriage (1933): loans of 1,000 marks to couples who married — only if women stopped work; quarter written off per child born.",
     "p2": "Mother's Cross: encouraged childbirth (4 children=bronze, 6=silver, 8=gold); Hitler Youth saluted gold medallists.",
-    "p3": "Job restrictions - 1933: women banned from being teachers, doctors, civil servants. 1936: no woman could be a judge or lawyer. By 1937 reversed — women pushed back into factories for war preparation.",
+    "p3": "Banned from being teachers, doctors, civil servants, judges, lawyers. 1937 reversed — women pushed back into factories for war.",
     "hints": [
       "loans",
       "Cross",
-      "job"
+      "Banned"
     ]
   },
   {
@@ -635,7 +635,7 @@
     "unit": "Unit 4 – Life in Nazi Germany",
     "front": "How did KdF, DAF, and SdA affect German workers?",
     "p1": "DAF (German Labour Front): replaced trade unions; workers lost right to negotiate pay; DAF could punish workers who disrupted production.",
-    "p2": "KdF (Strength through Joy): provided leisure — cinema, sports, foreign travel; KdF Wagon (VW Beetle) promised to workers for 5 marks/week — none ever delivered, factories used for armaments.",
+    "p2": "KdF (Strength through Joy): provided cinema, sports, foreign travel; KdF Wagon promised to workers for 5 marks/week — none delivered, factories used for armaments.",
     "p3": "SdA (Beauty of Labour): improved workplace facilities like toilets and canteens — but workers had to do the building themselves with no extra pay.",
     "hints": [
       "trade unions",
@@ -732,7 +732,7 @@
     "paper": "p2a",
     "unit": "Unit 1 – Origins 1941–58",
     "front": "What was agreed at the Yalta Conference?",
-    "p1": "February 1945 (Roosevelt, Stalin, Churchill): Germany to be split into 4 occupation zones; Berlin also split; Germany to pay $20 billion reparations, half to USSR.",
+    "p1": "February 1945 (Roosevelt, Stalin, Churchill): Germany and Berlin split into 4 zones; Germany to pay $20 billion reparations, half to USSR.",
     "p2": "Stalin promised Poland and Eastern Europe would hold free elections.",
     "p3": "Eastern Europe agreed as a Soviet 'sphere of influence' — though the exact meaning was left undefined.",
     "hints": [
@@ -760,7 +760,7 @@
     "paper": "p2a",
     "unit": "Unit 1 – Origins 1941–58",
     "front": "Why was there more tension at the Potsdam Conference?",
-    "p1": "July–August 1945 (Truman, Stalin, Attlee): Hitler's death removed the common enemy; Roosevelt's death replaced a cooperative president with the far more hostile Truman.",
+    "p1": "Hitler's death removed the common enemy; Roosevelt's death replaced a cooperative president with the far more hostile Truman.",
     "p2": "Between Yalta and Potsdam, Stalin had installed a communist puppet government in Poland — breaking his Yalta promise.",
     "p3": "USA's successful atomic bomb test increased tension; Truman timed the testing of the bomb to intimidate Stalin.",
     "hints": [
@@ -789,7 +789,7 @@
     "unit": "Unit 1 – Origins 1941–58",
     "front": "How did Stalin create Satellite States?",
     "p1": "Red Army had liberated Eastern Europe from Nazi rule; Stalin turned these states into a 'buffer zone' to protect the USSR from future invasion.",
-    "p2": "Latvia, Lithuania and Estonia absorbed into the USSR. Hungary, Poland, Romania, Bulgaria, Czechoslovakia and Albania became communist one-party states 1945–48.",
+    "p2": "Red Army used salami tactics to remove opponents in Hungary, Poland, Romania, Bulgaria, Czechoslovakia until they became communist one-party states.",
     "p3": "Yugoslavia resisted Stalin and maintained independence under Tito. Churchill declared an 'Iron Curtain' had descended over Europe in 1946.",
     "hints": [
       "Red Army",
@@ -802,8 +802,8 @@
     "paper": "p2a",
     "unit": "Unit 1 – Origins 1941–58",
     "front": "What did the Long and Novikov Telegrams say?",
-    "p1": "February 1946: George Kennan (US ambassador in Moscow) sent the 8,000-word Long Telegram — Stalin planned destruction of capitalism and world communism, but would back down under pressure.",
-    "p2": "September 1946: Novikov Telegram — Soviet ambassador reported USA was planning to use military might to dominate the world; cooperation impossible since Roosevelt's death.",
+    "p1": "February 1946: Kennan (US ambassador in Moscow) sent 8,000-word Long Telegram — Stalin planned 'world communism', but would back down under pressure.",
+    "p2": "September 1946: Novikov Telegram — reported USA was planning to use military to dominate the world; cooperation impossible since Roosevelt's death.",
     "p3": "Both telegrams hardened attitudes on each side and shaped Cold War strategy. contributed to Truman Doctrine.",
     "hints": [
       "Kennan",
@@ -872,7 +872,7 @@
     "paper": "p2a",
     "unit": "Unit 1 – Origins 1941–58",
     "front": "What was the impact of the Berlin Airlift?",
-    "p1": "June 1948–May 1949: Western allies airlifted 4,000 tonnes of food and fuel daily into West Berlin. Stalin could not shoot down the planes without risking nuclear war.",
+    "p1": "West airlifted 4,000 tonnes of food and fuel daily into West Berlin for 10 months. Stalin could not shoot down the planes without risking nuclear war.",
     "p2": "Huge propaganda victory for the West — demonstrated capitalism's commitment to its people.",
     "p3": "Cemented division of Germany (FRG and GDR established 1949); led to NATO (1949) and Warsaw Pact (1955); USSR developed own nuclear bomb 1949.",
     "hints": [
@@ -947,7 +947,7 @@
     "p3": "Khrushchev's De-Stalinisation speech (February 1956) raised hopes of reform; food shortages and protests began.",
     "hints": [
       "economy",
-      "Rakosi",
+      "Rákosi",
       "De-Stalinisation"
     ]
   },
@@ -956,9 +956,9 @@
     "paper": "p2a",
     "unit": "Unit 1 – Origins 1941–58",
     "front": "What happened during the Hungarian Uprising?",
-    "p1": "Imre Nagy replaced Rákosi; introduced reforms — ended one-party state, released political prisoners, asked Khrushchev to remove Soviet troops. Khrushchev initially agreed.",
-    "p2": "Nagy went too far: announced Hungary would leave the Warsaw Pact. Khrushchev ordered invasion — 1,000 tanks rolled into Budapest; 3,000 Hungarians killed, 20,000 fled.",
-    "p3": "Nagy executed 1958; replaced by hard-line communist Kádár. West failed to help — showed America would not intervene in the Soviet sphere.",
+    "p1": "Nagy replaced Rákosi; introduced reforms — ended one-party state, released political prisoners, remove Red Army. Khrushchev initially agreed.",
+    "p2": "Nagy went too far: asked to leave Warsaw Pact. Khrushchev cannot accept. 1,000 tanks rolled into Budapest; 3,000 Hungarians killed, 20,000 fled.",
+    "p3": "Nagy executed 1958; replaced by hard-line communist Kádár. America failed to help — would not intervene in the Soviet sphere.",
     "hints": [
       "Nagy",
       "Warsaw Pact",
@@ -970,11 +970,11 @@
     "paper": "p2a",
     "unit": "Unit 2 – Crises 1958–70",
     "front": "Why did Khrushchev make his Berlin Ultimatum?",
-    "p1": "During the 1950s over 4 million East Germans (1/5 of the population) fled to the West through the Berlin loophole — many highly skilled, damaging the Eastern economy.",
+    "p1": "1950s: 4 million East Germans (1/5 of population) fled to the West through Berlin — 'Brain Drain' of skilled young workers.",
     "p2": "West Germany joined NATO in 1955 — confirming Soviet fears of a rearmed, threatening Germany.",
-    "p3": "1958 Berlin Ultimatum: Western allies given 6 months to leave Berlin and declare it a 'free city', or Khrushchev would hand control of transport links to East Germany.",
+    "p3": "1958 Berlin Ultimatum: West given 6 months to leave Berlin and declare it a 'free city', or Khrushchev would hand control of transport links to East Germany.",
     "hints": [
-      "1/5",
+      "Brain Drain",
       "West Germany",
       "free city"
     ]
@@ -985,8 +985,8 @@
     "unit": "Unit 2 – Crises 1958–70",
     "front": "Why did the summits of 1959–61 fail to solve the Berlin Crisis?",
     "p1": "Geneva (May 1959) and Camp David (September 1959): little achieved, though Khrushchev postponed the six-month deadline.",
-    "p2": "Paris Summit (1960): collapsed when Khrushchev demanded Eisenhower apologise for the U2 spy plane shot down over the USSR; Eisenhower refused; Khrushchev walked out.",
-    "p3": "Vienna Summit (1961): Khrushchev saw Kennedy as young and inexperienced; bullied him by reissuing the ultimatum; Kennedy responded by increasing US military spending by $3 billion.",
+    "p2": "Paris Summit (1960): collapsed when Khrushchev demanded Eisenhower apologise for U2 spy plane incident; Eisenhower refused; Khrushchev stormed out.",
+    "p3": "Vienna Summit (1961): Khrushchev tried to bully Kennedy by reissuing the ultimatum; Kennedy responded by increasing US military spending by $3 billion.",
     "hints": [
       "Camp David",
       "U2",
@@ -1110,7 +1110,7 @@
     "paper": "p2a",
     "unit": "Unit 2 – Crises 1958–70",
     "front": "What was the Prague Spring?",
-    "p1": "Background: Czechoslovakia had been a democracy before WWII; Stalinist Novotný's rule was deeply unpopular; economy run for benefit of USSR not Czechoslovakia.",
+    "p1": "Background: Czechoslovakia had been a democracy before WWII; Novotný's rule was deeply unpopular; economy run for benefit of USSR not Czechoslovakia.",
     "p2": "January 1968: Alexander Dubček became new communist leader of Czechoslovakia — called for 'Socialism with a Human Face'.",
     "p3": "Freedoms: free speech, abolished censorship, curbed secret police, increased trade with West, announced 10-year programme for democratic elections.",
     "hints": [
@@ -1126,7 +1126,7 @@
     "front": "Why did the USSR invade Czechoslovakia?",
     "p1": "Brezhnev feared Czechoslovakia was becoming too capitalist and Soviet control would weaken.",
     "p2": "Feared Czechoslovakia would leave the Warsaw Pact — Marshal Tito's visit to Prague in summer 1968 intensified this fear.",
-    "p3": "Hard-line Warsaw Pact leaders Ulbricht (East Germany) and Gomulka (Poland) begged Brezhnev to intervene — feared the reforms spreading to their countries.",
+    "p3": "Warsaw Pact leaders Ulbricht (East Germany) and Gomulka (Poland) begged Brezhnev to intervene — feared the reforms spreading to their countries.",
     "hints": [
       "Brezhnev",
       "Tito",
@@ -1143,7 +1143,7 @@
     "p3": "150 Czechoslovak civilians killed; Jan Palach set himself on fire in protest.",
     "hints": [
       "500,000",
-      "Moscow",
+      "paratroopers",
       "Palach"
     ]
   },
@@ -1152,12 +1152,12 @@
     "paper": "p2a",
     "unit": "Unit 2 – Crises 1958–70",
     "front": "What was the Brezhnev Doctrine?",
-    "p1": "Issued by Brezhnev to justify the invasion of Czechoslovakia: if any communist country showed signs of turning towards capitalism, all communist countries had a duty to force it back.",
-    "p2": "Formalised the Soviet right to invade any satellite state that threatened the communist bloc.",
+    "p1": "Justified invasion of Czechoslovakia: if any communist country showed signs of turning towards capitalism, all communist countries had a duty to force it back.",
+    "p2": "Act as deterrent - formalised the Soviet right to invade any satellite state that threatened the communist bloc.",
     "p3": "Later replaced by Gorbachev's 'Sinatra Doctrine' in 1988 — allowing satellite states to 'go their own way'.",
     "hints": [
-      "Brezhnev",
-      "Soviet",
+      "justified",
+      "deterrent",
       "Gorbachev's"
     ]
   },
@@ -1222,9 +1222,9 @@
     "paper": "p2a",
     "unit": "Unit 3 – End of Cold War 1970–91",
     "front": "What were the Helsinki Accords? (1975)",
-    "p1": "33 nations from NATO and Warsaw Pact met in Helsinki; agreed 3 'baskets': Basket 1 — European borders inviolable; Basket 2 — economic and scientific cooperation; Basket 3 — human rights to be respected.",
+    "p1": "33 nations agreed; Basket 1 — European borders inviolable; Basket 2 — economic and scientific cooperation; Basket 3 — human rights to be respected.",
     "p2": "Followed by Apollo-Soyuz Mission — US and Soviet spacecraft docked in orbit, symbolising the spirit of détente.",
-    "p3": "Seen as the zenith of détente but in practice 'just a piece of paper' — human rights basket largely ignored by USSR.",
+    "p3": "Seen as the peak of détente but in practice 'just a piece of paper' — human rights basket largely ignored by USSR.",
     "hints": [
       "baskets",
       "Apollo-Soyuz",
@@ -1292,7 +1292,7 @@
     "paper": "p2a",
     "unit": "Unit 3 – End of Cold War 1970–91",
     "front": "What was the impact of the Soviet invasion of Afghanistan?",
-    "p1": "Carter alarmed by Soviet presence near the Persian Gulf (US oil interests); issued Carter Doctrine — America would respond strongly to any attempt to control the Persian Gulf.",
+    "p1": "Carter alarmed by Soviet presence near the Persian Gulf (US oil interests); Carter Doctrine — America would use force to defend the Persian Gulf.",
     "p2": "Economic sanctions on USSR — end of grain trade; America funded and supplied weapons to the Mujahedeen.",
     "p3": "Olympic boycotts: USA refused 1980 Moscow Olympics; USSR refused 1984 Los Angeles Olympics. SALT II cancelled — détente officially dead.",
     "hints": [
@@ -1350,7 +1350,7 @@
     "front": "What was New Thinking?",
     "p1": "Perestroika ('Restructuring'): individuals and foreigners could now invest in businesses; Soviet state retained control of key industries.",
     "p2": "Glasnost ('Openness'): greater freedom of speech and press; political prisoners released; citizens encouraged to discuss solutions to Soviet problems.",
-    "p3": "1988: Sinatra Doctrine replaced the Brezhnev Doctrine — satellite states free to 'go their own way'; aimed to ease military spending but severely undermined Soviet control in Europe.",
+    "p3": "1988: Sinatra Doctrine replaced the Brezhnev Doctrine — satellite states free to 'go their own way'.",
     "hints": [
       "Restructuring",
       "Openness",
@@ -1363,7 +1363,7 @@
     "unit": "Unit 3 – End of Cold War 1970–91",
     "front": "What was the INF Treaty?",
     "p1": "Washington 1987: Intermediate Range Nuclear Force Treaty signed by Reagan and Gorbachev.",
-    "p2": "Agreed to destroy all intermediate-range nuclear missiles — a major, verifiable arms reduction.",
+    "p2": "Agreed to destroy all intermediate-range nuclear missiles — first arms reduction since detente.",
     "p3": "Beginning of end of Cold War. Gorbachev later said he would never start a hot war.",
     "hints": [
       "Washington",
@@ -1376,13 +1376,13 @@
     "paper": "p2a",
     "unit": "Unit 3 – End of Cold War 1970–91",
     "front": "What happened in Eastern Europe in 1989?",
-    "p1": "Gorbachev's New Thinking sparked unrest — citizens saw freedoms in the USSR and demanded the same; hard-line leaders like Honecker (East Germany) refused to reform.",
+    "p1": "Eastern Europeans saw glasnost/perestroika in the USSR and demanded the same; hard-line leaders like Honecker (East Germany) refused to reform.",
     "p2": "June 1989: Poland first to abandon communism — Solidarity won elections; when Gorbachev sent no tanks, other states followed rapidly.",
-    "p3": "Hungary, Czechoslovakia, Bulgaria, Romania all abandoned communism by end of 1989; Romania involved violent revolution. All Eastern Europe capitalist within 6 months.",
+    "p3": "Hungary, Czechoslovakia, Bulgaria, Romania all became capitalist by end of 1989; Romania involved violent revolution.",
     "hints": [
       "New Thinking",
       "Poland",
-      "Czechoslovakia"
+      "capitalist"
     ]
   },
   {
@@ -1405,7 +1405,7 @@
     "unit": "Unit 3 – End of Cold War 1970–91",
     "front": "How did Gorbachev lose control over the USSR?",
     "p1": "Gorbachev seen as a hero in the West (Nobel Peace Prize 1990) but regarded as weak in the USSR.",
-    "p2": "Soviet republics saw how easily satellite states had gained independence and demanded the same — 1990: Estonia, Latvia, Lithuania declared independence.",
+    "p2": "Soviet republics saw how easily satellite states had gained independence. 1990: Estonia, Latvia, Lithuania declared independence.",
     "p3": "Boris Yeltsin, president of Russia (the largest republic), began openly defying Gorbachev in early 1991.",
     "hints": [
       "weak",
@@ -1433,8 +1433,8 @@
     "unit": "Unit 1 – Queen & Religion",
     "front": "What was society like in Elizabethan England?",
     "p1": "Majority rural; high levels of poverty. Society was hierarchical — everyone expected to keep their place.",
-    "p2": "Nobles (dukes/earls): most powerful below Elizabeth; owned huge land, could raise armies. Gentry: less wealthy landowners, often JPs. Merchants: wealthy town traders represented in parliament.",
-    "p3": "Peasants: vast majority; entirely powerless.",
+    "p2": "Nobles (dukes/earls): most powerful below Elizabeth; owned huge land, could raise armies. Gentry: less wealthy landowners, often JPs.",
+    "p3": "Peasants: vast majority; entirely powerless. Poorest are vagrants - wandering landless poor.",
     "hints": [
       "hierarchical",
       "Nobles",
@@ -1502,8 +1502,8 @@
     "paper": "p2b",
     "unit": "Unit 1 – Queen & Religion",
     "front": "What were relations between England and foreign powers like in 1558?",
-    "p1": "Spain: most powerful country in the world under Philip II (former husband of Mary I, had proposed to Elizabeth); controlled the New World and the Netherlands.",
-    "p2": "France: 2nd most powerful; England's traditional enemy; at war with England at the start of the reign until the 1559 Treaty of Cateau-Cambrésis (Elizabeth gave up Calais).",
+    "p1": "Spain: most powerful country in the world under Philip II (former husband of Mary I); controlled the New World and the Netherlands.",
+    "p2": "France: 2nd most powerful; England's traditional enemy; at war with England until 1559 Treaty of Cateau-Cambrésis (England lost Calais).",
     "p3": "Scotland: independent, ruled by Mary, Queen of Scots (in France married to Prince Francis); bound to France by the Auld Alliance.",
     "hints": [
       "Spain",
@@ -1532,7 +1532,7 @@
     "front": "What were the religious divides in England in 1558?",
     "p1": "Henry VIII's break with Rome in 1534 began 25 years of religious turmoil — Protestant under Edward VI, Catholic under Mary I.",
     "p2": "Mary I burned 284 Protestants at the stake; over 800 extreme Protestants fled to Europe. They returned as Puritans.",
-    "p3": "Elizabeth inherited Catholic bishops and clergy from Mary; majority of the population — especially in the North and West — were likely Catholic; Elizabeth herself was Protestant.",
+    "p3": "Elizabeth inherited Catholic bishops and clergy from Mary I; majority of the population — especially in the North — were Catholic.",
     "hints": [
       "25 years ",
       "Puritans",
@@ -1545,7 +1545,7 @@
     "unit": "Unit 1 – Queen & Religion",
     "front": "What was the Religious Settlement?",
     "p1": "Act of Supremacy: Elizabeth declared 'supreme governor' of the Church of England; all clergy and officials had to swear loyalty.",
-    "p2": "Act of Uniformity: all churches had to use the English Book of Common Prayer; everyone had to attend a licensed church on Sundays (fined 1 shilling as a recusant if not).",
+    "p2": "Act of Uniformity: all churches had to use the English Book of Common Prayer; 1 shilling recusancy fine for not attending a licensed church.",
     "p3": "Royal Injunctions: Catholic pilgrimages and saints denounced; images and vestments allowed; all churches to hold an English Bible.",
     "hints": [
       "Supremacy",
@@ -1586,13 +1586,13 @@
     "paper": "p2b",
     "unit": "Unit 1 – Queen & Religion",
     "front": "Were the Puritans a serious threat?",
-    "p1": "Threat: had support from key Privy Council members (Leicester, Walsingham); some became bishops to alter the settlement; persistent Puritan MPs for change in Parliament.",
-    "p2": "Succeeded in forcing Elizabeth to remove crucifixes. Failed to remove vestments - had to accept plain white robe.",
-    "p3": "Not a threat: no foreign support or alternative monarch; tiny minority (a few thousand); divided with no clear leader; several Puritan MPs imprisoned for challenging the settlement.",
+    "p1": "Threat: support in Privy Council (Leicester, Walsingham); some became bishops to alter the settlement; Puritan MPs tried for change in Parliament.",
+    "p2": "Succeeded in forcing Elizabeth to remove crucifixes. Failed to remove vestments - had to accept plain white robe by Archbishop Parker.",
+    "p3": "No foreign support or alternative monarch; tiny minority (a few thousand); divided with no clear leader; Puritan MPs imprisoned.",
     "hints": [
-      "Privy",
+      "Privy Council",
       "Crucifix",
-      "alternative monarch"
+      "support"
     ]
   },
   {
@@ -1629,10 +1629,10 @@
     "unit": "Unit 1 – Queen & Religion",
     "front": "Why did Mary, Queen of Scots come to England and what was the York Conference?",
     "p1": "1567: Mary deposed by Scottish Protestant lords — suspected of involvement in assassination of her 2nd husband Lord Darnley.",
-    "p2": "1568: Mary escaped imprisonment, fled to England seeking Elizabeth's aid — leaving Elizabeth with an impossible dilemma: help, hand over, imprison, or allow her to flee to the continent.",
-    "p3": "Following the York Conference, Elizabeth chose imprisonment — keeping Mary as a pawn but preventing her from becoming a rallying point for Catholic invasion.",
+    "p2": "1568: Mary escaped imprisonment, fled to England seeking Elizabeth's aid — leaving Elizabeth with an impossible dilemma.",
+    "p3": "Following the York Conference, Elizabeth chose imprisonment — preventing her from becoming a rallying point for Catholic invasion.",
     "hints": [
-      "assassination",
+      "Darnley",
       "escaped",
       "imprisonment"
     ]
@@ -1670,9 +1670,9 @@
     "paper": "p2b",
     "unit": "Unit 2 – Challenges 1569–88",
     "front": "How serious was Papal Excommunication?",
-    "p1": "1570: Pope Pius V excommunicated Elizabeth and released all Catholics from loyalty to her — theoretically making it a Catholic's duty to overthrow her.",
+    "p1": "1570: Pope Pius V excommunicated Elizabeth and released all Catholics from loyalty to her — making it a Catholic's duty to overthrow her.",
     "p2": "1571: Elizabeth made it treason to possess or spread copies of the Papal Bull.",
-    "p3": "In practice, the excommunication increased the Catholic threat by giving foreign powers religious justification to invade — but France and Spain were still too preoccupied to act.",
+    "p3": "In long term increased tensions with Catholic foreign powers like Spain and France.",
     "hints": [
       "Pius",
       "treason",
@@ -1698,9 +1698,9 @@
     "paper": "p2b",
     "unit": "Unit 2 – Challenges 1569–88",
     "front": "What happened in the Ridolfi and Throckmorton Plots?",
-    "p1": "Ridolfi Plot (1571): Pope's spy Ridolfi planned the Duke of Norfolk to lead a rebellion with Spanish support to make Mary queen; discovered by Cecil — Norfolk executed.",
-    "p2": "Throckmorton Plot (1583): French Catholic army led by Duke of Guise to invade, free Mary, start a Catholic rebellion backed by Spain; discovered by Walsingham; plotters tortured and executed.",
-    "p3": "Both plots led Cecil and Walsingham to agree the Bond of Association (1584): both swore to execute anyone found to be plotting against Elizabeth.",
+    "p1": "Ridolfi Plot (1571): Pope's spy plots to kill Elizabeth and make Mary QoS queen with Duke of Norfolk; Duke of Norfolk executed.",
+    "p2": "Throckmorton Plot (1583): French Catholic army led by Duke of Guise (Mary's cousin) to invade, free Mary; discovered by Walsingham.",
+    "p3": "Cecil and Walsingham to agree the Bond of Association (1584): both determined that Mary Queen of Scots will be executed next time.",
     "hints": [
       "Norfolk",
       "Guise",
@@ -1726,9 +1726,9 @@
     "paper": "p2b",
     "unit": "Unit 2 – Challenges 1569–88",
     "front": "What led to Mary, Queen of Scots' execution?",
-    "p1": "Despite proof of involvement in the Babington Plot, Elizabeth was reluctant to execute a cousin and an anointed monarch — feared setting a precedent that parliaments could execute monarchs.",
+    "p1": "Despite Babington Plot, Elizabeth was reluctant to execute an anointed monarch — feared precedent that parliaments could execute monarchs.",
     "p2": "Cecil and Walsingham knew the Spanish Armada was imminent — Mary as a Spanish pawn had to be removed.",
-    "p3": "Elizabeth signed the death warrant but forbade its use; Privy Council ignored her and Cecil sent it in secret. February 1587: Mary executed at Fotheringhay Castle.",
+    "p3": "Elizabeth signed the death warrant but forbade its use; Cecil sent it in secret. February 1587: Mary executed at Fotheringhay Castle.",
     "hints": [
       "reluctant",
       "Armada",
@@ -1740,9 +1740,9 @@
     "paper": "p2b",
     "unit": "Unit 2 – Challenges 1569–88",
     "front": "Why did England and Spain become rivals?",
-    "p1": "Religious rivalry; 1570 Papal excommunication made it a Catholic duty to overthrow Elizabeth; 1584 Treaty of Joinville — France and Spain pledged to destroy Protestantism.",
+    "p1": "Religious rivalry; 1570 Papal excommunication; 1584 Treaty of Joinville — France and Spain pledged to destroy Protestantism.",
     "p2": "Commercial rivalry: English cloth trade collapse in 1550s forced merchants to seek new markets; Spanish controlled the most valuable New World trade routes.",
-    "p3": "Drake raided Spanish ports and treasure ships with Elizabeth's secret backing — £40,000 from Panama 1572; £400,000 during circumnavigation 1577–80. Elizabeth's knighting of Drake in 1580 inflamed Spain.",
+    "p3": "Drake raided Spanish ports and treasure ships; £400,000 during circumnavigation 1577–80. Elizabeth's knighting of Drake in 1580 inflamed Spain.",
     "hints": [
       "Joinville",
       "Commercial",
@@ -1812,7 +1812,7 @@
     "front": "How did English tactics defeat the Armada?",
     "p1": "Drake's raid on Cadiz gained England 12 months to prepare — warning beacons built along the coast.",
     "p2": "English navy (Drake and Howard) chased the slow Armada up the Channel, harrying from long range.",
-    "p3": "Fireships sent into Armada at Calais — Spanish fleet scattered and broke formation; decisive English attack at the Battle of Gravelines (6 August 1588).",
+    "p3": "Fireships sent into Armada at Calais — Spanish fleet scatter; English victory next day at the Battle of Gravelines (6 August).",
     "hints": [
       "Cadiz",
       "harrying",
@@ -1825,7 +1825,7 @@
     "unit": "Unit 2 – Challenges 1569–88",
     "front": "How did Spanish poor planning defeat the Armada?",
     "p1": "Armada led by inexperienced Medina-Sidonia — first-choice commander Santa Cruz had died.",
-    "p2": "Parma not in Calais on time; failure to capture deep-water port of Ostend meant boarding Parma's troops would have taken 3 days even with perfect communication.",
+    "p2": "Parma not in Calais on time; failure to capture deep-water port of Ostend meant boarding Parma's troops would have taken 3 days.",
     "p3": "Philip's orders didn't allow for improvisation. Spanish didnt take opportunity to destroy English navy trapped at Plymouth.",
     "hints": [
       "Medina-Sidonia",
@@ -1852,9 +1852,9 @@
     "paper": "p2b",
     "unit": "Unit 2 – Challenges 1569–88",
     "front": "How did the defeat of the Armada boost Elizabeth?",
-    "p1": "At Tilbury during the Armada, Elizabeth addressed her army in full armour aged 55: 'I have the heart and stomach of a king' — challenged gender expectations.",
+    "p1": "Tilbury Speech: Elizabeth addressed her army in full armour aged 55: 'I have the heart and stomach of a king' — challenged gender expectations.",
     "p2": "Victory suggested God was on the Protestants' side — commemorative medal issued: 'God blew, and they were scattered'.",
-    "p3": "Defeat of the most powerful nation in the world boosted English confidence; more confidence to explore, trade and attack Spain. Armada bankrupted Philip.",
+    "p3": "Defeat of the most powerful nation in the world boosted English confidence to explore, trade and attack Spain. Armada bankrupted Philip.",
     "hints": [
       "stomach",
       "blew",
@@ -1866,9 +1866,9 @@
     "paper": "p2b",
     "unit": "Unit 3 – Elizabethan Society",
     "front": "What was education like in Elizabeth's reign?",
-    "p1": "By end of reign 30% of men and 10% of women were literate (up from 20% and 10% at the start). 72 new Grammar Schools established.",
+    "p1": "End of reign 30% of men, 10% of women were literate (up from 20% and 10%). 72 new Grammar Schools established for middle class boys.",
     "p2": "Nobility: sons learned Latin, Greek, history, philosophy, government, theology. Girls also educated — Elizabeth herself was highly educated.",
-    "p3": "Working class: education not available; children worked from early age. Some poor boys of promise attended grammar schools funded by wealthy donors.",
+    "p3": "Working class: education not available; children worked from early age. Some poor boys attended grammar schools funded by wealthy donors.",
     "hints": [
       "Grammar",
       "Latin",
@@ -1880,13 +1880,13 @@
     "paper": "p2b",
     "unit": "Unit 3 – Elizabethan Society",
     "front": "What were the leisure activities of the poor?",
-    "p1": "Football: often led to deaths — no rules. Gambling on bear-baiting (chained bear fighting dogs) and cock-fighting.",
+    "p1": "Football: often led to deaths — no rules. .",
     "p2": "Hunting rabbit. Music heard at fairs, markets, pubs and church.",
-    "p3": "Theatre: 1 penny to stand in the 'pit' — close to the action, noisy and popular with all classes.",
+    "p3": "Gambling on blood-sports was common including bear-baiting (chained bear fighting dogs) and cock-fighting.",
     "hints": [
-      "bear",
+      "football",
       "Music",
-      "Theatre"
+      "blood-sports"
     ]
   },
   {
@@ -1896,7 +1896,7 @@
     "front": "What were the leisure activities of the rich?",
     "p1": "Hunting on horseback (male and female), hawking, fishing, fencing, real tennis, wrestling.",
     "p2": "Luxury goods like tobacco from the New World; employed household musicians.",
-    "p3": "Theatre: wealthy paid for seats in the galleries. Literature and poetry — patronage of writers like Shakespeare.",
+    "p3": "Literature and poetry — patronage of writers like Shakespeare.",
     "hints": [
       "Hunting",
       "World",
@@ -1909,7 +1909,7 @@
     "unit": "Unit 3 – Elizabethan Society",
     "front": "What was the Elizabethan Theatre like?",
     "p1": "Protestantism encouraged secular (non-religious) plays — replaced medieval Bible stories. Theatres backed by powerful nobles like the Earl of Leicester.",
-    "p2": "1576: The Theatre opened; followed by the Rose (1586) and the Globe (1599). Open to all social classes — 1 penny for the pit.",
+    "p2": "Open to all social classes — 1 penny for the pit. Wealthy would pay to be seated above the action for prestige.",
     "p3": "From 1572 all plays had to be approved by the Queen's official — some censorship. Puritans opposed theatre as sinful and satanic.",
     "hints": [
       "secular",
@@ -1964,7 +1964,7 @@
     "paper": "p2b",
     "unit": "Unit 3 – Elizabethan Society",
     "front": "What were Elizabethan attitudes to the poor?",
-    "p1": "Key distinction: deserving (impotent) poor — old, sick, disabled — deserved help. Undeserving (able-bodied) poor — fit to work but unemployed — treated harshly.",
+    "p1": "Deserving (impotent) poor — old, sick, disabled — deserved help. Undeserving (able-bodied) poor — fit to work but unemployed — treated harshly.",
     "p2": "Puritans believed idleness was a sin; feared exaggerated numbers of vagabonds could stir revolts; blamed vagabonds for plague outbreaks.",
     "p3": "Vagabonds associated with crime — with little law enforcement, hostility was widespread.",
     "hints": [
@@ -1979,7 +1979,7 @@
     "unit": "Unit 3 – Elizabethan Society",
     "front": "How were the poor treated by new laws?",
     "p1": "Statute of Artificers (1563): established maximum national wages for specific jobs to deter economic migration.",
-    "p2": "Vagabonds Act (1572): vagabonds over 14 whipped and burned through the right ear; executed if repeat offender; government collected a poor rate for deserving poor.",
+    "p2": "Vagabonds Act (1572): vagabonds over 14 whipped and burned through the right ear; later executed; government collected poor rate for deserving poor.",
     "p3": "Act for the Relief of the Poor (1576): towns required to find work for the undeserving poor; those refusing work sent to a House of Correction.",
     "hints": [
       "Artificers",
@@ -2006,9 +2006,9 @@
     "paper": "p2b",
     "unit": "Unit 3 – Elizabethan Society",
     "front": "Why did Elizabethans explore?",
-    "p1": "Spanish controlled the most valuable New World trade; English sought to plunder Spanish routes and find new markets after the collapse of the Dutch cloth trade in the 1550s.",
-    "p2": "Financial gain and fame: Drake returned from circumnavigation with £400,000 of Spanish gold; new luxury goods (tobacco, cocoa, potatoes) could be sold at high prices.",
-    "p3": "1561: John Hawkins created the Triangular Slave Trade — beginning large amounts of wealth for England.",
+    "p1": "English wanted to plunder Spanish trade routes in New World and find new markets after the collapse of cloth trade in the 1550s.",
+    "p2": "Financial gain and fame: Drake returned from circumnavigation with £400,000 of Spanish gold; new luxury goods (tobacco, cocoa, potatoes) for profit.",
+    "p3": "1561: John Hawkins created the Triangular Slave Trade — beginning of large amounts of wealth for England.",
     "hints": [
       "New World",
       "Drake",
@@ -2020,9 +2020,9 @@
     "paper": "p2b",
     "unit": "Unit 3 – Elizabethan Society",
     "front": "What happened during Drake's Circumnavigation?",
-    "p1": "1577–80: Drake was raiding Spanish colonies in South America; pursued by Spanish ships so escaped into the Pacific — circumnavigation was unplanned.",
-    "p2": "Returned with over £400,000 of Spanish gold (almost £500 million today); became 2nd person in history and 1st Englishman to circumnavigate the globe.",
-    "p3": "Established a short-lived colony near San Francisco (Nova Albion); publicly knighted by Elizabeth on the deck of the Golden Hind 1580 — inflaming Spain.",
+    "p1": "1577–80: Drake was raiding Spanish colonies in South America; pursued by Spanish ships so escaped into the Pacific.",
+    "p2": "Returned with over £400,000 of Spanish gold (£500 million today); became 2nd person in history and 1st Englishman to circumnavigate the globe.",
+    "p3": "Established a short-lived colony near San Francisco (Nova Albion); publicly knighted by Elizabeth on the deck of the Golden Hind 1580.",
     "hints": [
       "Pacific",
       "£400,000",
@@ -2049,8 +2049,8 @@
     "unit": "Unit 3 – Elizabethan Society",
     "front": "What happened at Roanoke Island?",
     "p1": "1585 (first colony): The Tiger hit a reef destroying food supplies — colonists immediately dependent on the Algonquian people.",
-    "p2": "Relations deteriorated as Native Americans blamed the English for spreading disease (invisible bullets); Lane massacred Wingina's village and decapitated him. Colony abandoned.",
-    "p3": "1587 (second colony): new settlers arrived too late to plant crops. Attacked by native forces led by Wanchese; Spanish Armada prevented supply ships for three years. Colony disappeared.",
+    "p2": "Relations deteriorated as disease spread to natives (invisible bullets); Lane massacred Wingina's village and decapitated him. Colony abandoned.",
+    "p3": "1587 (second colony): new settlers arrived too late to plant crops; Attacked by native forces; Armada prevented supply ships; Colony disappeared.",
     "hints": [
       "Tiger",
       "Wingina",
@@ -2090,7 +2090,7 @@
     "paper": "p1",
     "unit": "Unit 1 – Medieval",
     "front": "What was the Viking experience in the Danelaw?",
-    "p1": "878: Treaty between Alfred and Guthrum — Vikings allowed to settle in the Danelaw (northeastern England); many assimilated including Guthrum who converted to Christianity.",
+    "p1": "878: Treaty between Alfred and Guthrum — Vikings allowed to settle in Danelaw (northeastern England); many assimilated and converted to Christianity.",
     "p2": "Vikings faced hostility: 1002 — King Æthelred ordered the St Brice's Day Massacre — death of all Danes in England. It is not known how many were killed.",
     "p3": "1016: A Viking king Cnut conquered all England — but promoted acceptance and peace between Vikings and English. He assimilated and kept English laws.",
     "hints": [
@@ -2106,7 +2106,7 @@
     "front": "How did the Vikings impact England?",
     "p1": "Built Environment: Vikings built burhs (fortified towns) across England. They grew into Nottingham, Leicester, and Derby.",
     "p2": "Government: Vikings introduced 'Things' — local democratic assemblies where communities voted on laws and decided guilt (early juries).",
-    "p3": "Language: Old Norse heavily influenced English; Over 1,000 words including egg and knife; days of the week (e.g. Thursday = Thor's day); many place names ending in -by or -thorpe.",
+    "p3": "Language: Old Norse heavily influenced English; Over 1,000 words including egg and knife; days of the week (e.g. Thursday = Thor's day).",
     "hints": [
       "Burhs",
       "Things",
@@ -2120,7 +2120,7 @@
     "front": "Case Study: York under the Vikings",
     "p1": "York (Jorvik) grew from a town of 1,000 in 850 to a city of around 15,000 people by 950 — one of the largest cities in England.",
     "p2": "Became an international trading hub with rivers Ouse and Foss linking Jorvik to the sea. Goods traded from Africa and Constantinople (Istanbul).",
-    "p3": "Evidence of peaceful co-operation and assimilation between English Christians and Vikings. Last Viking king of Jorvik Erik the Bloodaxe is defeated in 954.",
+    "p3": "Evidence of peaceful co-operation and assimilation between English Christians and Vikings.",
     "hints": [
       "15,000",
       "trading",
@@ -2162,7 +2162,7 @@
     "front": "How did the Normans impact England?",
     "p1": "Feudal System: imposed a strict hierarchy — King, barons, knights, English peasants at the bottom. The Normans formed the ruling class for centuries.",
     "p2": "Built environment: hundreds of castles and cathedrals built to dominate England. Tower of London (1070) built to control Londoners.",
-    "p3": "Language: French became language of power - 'parliament', 'army' etc; French words used for food e.g. 'Beouf - beef', English words for animal (cow); English names (Athelstan e.g.) replaced with William, Henry, Robert etc.",
+    "p3": "French became language of power - 'parliament'; French words used for food e.g. 'Beouf'; English names (Athelstan) replaced with William, Henry, Robert etc.",
     "hints": [
       "Feudal System",
       "Castles",
@@ -2274,11 +2274,11 @@
     "front": "How did England change in the Early Modern period?",
     "p1": "In 1500s England became a predominately Protestant nation under Henry VIII, Edward VI and Elizabeth I. Europe is divided between Protestants and Catholics.",
     "p2": "In the 1600s the Civil War between Parliament and the King led to growth in Parliament and decrease in royal power by end of the period.",
-    "p3": "This period saw the beginnigs of empire with early colonies in America and India and the beginning of Britain's involvement in the slave trade. Britain more connected with the wider world.",
+    "p3": "This period saw the beginnigs of empire with early colonies in America and India and the beginning of Britain's involvement in the slave trade.",
     "hints": [
       "Protestant",
       "Parliament",
-      "wider world"
+      "colonies"
     ]
   },
   {
@@ -2314,8 +2314,8 @@
     "paper": "p1",
     "unit": "Unit 2 – Early Modern",
     "front": "What was the impact of Huguenot migrants?",
-    "p1": "Economy: Helped found the Bank of England in 1694; started the English paper industry — 200 paper mills by 1714. 2/3 of printers were European migrants.",
-    "p2": "Built Environment Transformed Spitalfields into a prosperous weaver town; cloth exports were 20 times higher by the end of the 17th century than at its start.",
+    "p1": "Economy: Helped found the Bank of England in 1694; started the English paper industry — 200 paper mills by 1714.",
+    "p2": "Built Environment Transformed Spitalfields into a prosperous weaver town; cloth exports were 20 times higher by the end of the 17th century.",
     "p3": "Huguenot scientists contributed to development of inoculations; 2/3 of printers in England were European migrants.",
     "hints": [
       "Bank",
@@ -2356,7 +2356,7 @@
     "paper": "p1",
     "unit": "Unit 2 – Early Modern",
     "front": "Why did Oliver Cromwell allow Jewish migrants to return to England in 1656?",
-    "p1": "Jews had been expelled from England since 1290. Manasseh ben Israel campaigned for their return — as Jews were facing intense violence in other European countries.",
+    "p1": "Rabbi Manasseh ben Israel campaigned for their return — as Jews were facing intense violence in other European countries.",
     "p2": "Cromwell's Puritan beliefs led him to allow their return so they could be converted to Christianity.",
     "p3": "Pragmatic reasons: Jewish financiers would help turn London into a major financial centre; Cromwell was aware of their contribution to the Dutch economy.",
     "hints": [
@@ -2384,7 +2384,7 @@
     "paper": "p1",
     "unit": "Unit 2 – Early Modern",
     "front": "How did the experience of black people in England change in the Early Modern period?",
-    "p1": "Early 1500s: evidence of black Africans living peacefully alongside the English population e.g. John Blanke — successful black trumpeter. Racism as a concept had not yet developed.",
+    "p1": "Early 1500s: evidence of black Africans living peacefully alongside the English population e.g. John Blanke — successful black trumpeter.",
     "p2": "From the 1560s: Elizabeth I sponsored John Hawkins and Francis Drake in the slave trade; black people began to be seen as property.",
     "p3": "1660: King Charles II founded Royal African Company to enslave West Africans. Ultimately responsible for enslaving c.200,000 Africans.",
     "hints": [
@@ -2399,7 +2399,7 @@
     "unit": "Unit 2 – Early Modern",
     "front": "Why did Palatines come to England?",
     "p1": "1708–09: Wars in the Rhineland region of Germany caused instability; approximately 13,000 Protestant Palatine refugees sought refuge in England.",
-    "p2": "1708: Parliament passed the Foreign Protestants Naturalisation Act — offering citizenship to all foreign Protestants; intended for Huguenots but attracted the Palatines.",
+    "p2": "1708: Parliament passed the Foreign Protestants Naturalisation Act — offering citizenship to all foreign Protestants.",
     "p3": "Palatines saw Protestant England as a safe refuge after years of religious war and instability in Germany.",
     "hints": [
       "Rhineland",
@@ -2440,7 +2440,7 @@
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "Why did Irish migrants come to Britain in the 1840s?",
-    "p1": "1845–46: Potato Blight caused the Great Famine — approximately 2 million fled Ireland; 1 million died. Many wanted to travel to America but could not afford the fee.",
+    "p1": "1845–46: Potato Blight caused famine — approximately 2 million fled Ireland; 1 million died. Many couldn't afford ticket to America.",
     "p2": "Ireland lacked industrial cities (outside Belfast) — economic migration to British industrial cities for factory and construction work.",
     "p3": "In Ireland Protestant minority owned 90% of the land and had all the power. After 1829 - Catholics had more freedoms on the British mainland.",
     "hints": [
@@ -2455,7 +2455,7 @@
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "What was the experience of Irish migrants?",
     "p1": "Worked harsh conditions as 'Navvies' — building Britain's canals and railways. Blamed by the media for diseases and lowering wages.",
-    "p2": "Small group of Fenians campaigned for Irish Independence in dynamite attacks. Police Special Branch harassed Irish migrants - assuming they were all Fenians.",
+    "p2": "Small group of Fenians campaigned for Irish Independence in dynamite attacks. Special Branch harassed Irish migrants - assuming they were all Fenians.",
     "p3": "Anti-Catholic Orange Order resisted Irish Catholic migration; riots in areas of Irish settlement through the 1860s.",
     "hints": [
       "Navvies",
@@ -2470,11 +2470,11 @@
     "front": "What was the impact of Irish migrants?",
     "p1": "Irish Navvies built the rail network connecting all cities and ports in Britain — transformed trade and communication.",
     "p2": "Over 20% of Liverpool was Irish — the modern 'Scouse' accent developed from Irish influence.",
-    "p3": "Irish political leaders like Feargus O'Connor played key roles in the Chartist movement for working-class parliamentary representation.",
+    "p3": "Irish political leaders like O'Connor played key roles in the Chartist movement for working-class parliamentary representation.",
     "hints": [
       "Navvies",
       "Scouse",
-      "Feargus"
+      "O'Connor"
     ]
   },
   {
@@ -2482,7 +2482,7 @@
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "Why did Asian migrants come to Britain in the 18th and 19th centuries?",
-    "p1": "East India Company developed British trade in India from 1600 — increased travel between India and Britain; first Lascars (Indian sailors) and Ayahs (Indian nannies) arrived.",
+    "p1": "East Indian Company (EIC) took control over India. EIC elite employed Indian nannies (Ayahs) and often brought them back to England.",
     "p2": "1869: Suez Canal opened — increased shipping between Europe and India; greater demand for Lascars on merchant ships.",
     "p3": "1858: Britain took direct control of India after the Indian Rebellion — Indian elite came to Britain for education.",
     "hints": [
@@ -2539,12 +2539,12 @@
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "How did the experience of black people in Britain change in the 18th and 19th centuries?",
     "p1": "1700s: Slavery at its height. African 'servants' in Britain likely to be enslaved. African child servants seen as status symbols.",
-    "p2": "1772 - Somerset Case says slavery illegal in England. 1807 - Abolition of Transatlantic Slave Trade. 1833 - Abolition of Slavery in British Empire.",
+    "p2": "1772 - Somerset Case says slavery illegal in England. 1807 - Abolition of Slave Trade. 1833 - Abolition of Slavery in British Empire.",
     "p3": "Some African migrants became successful. Ignatious Sancho - wealthy enough to vote. Majority experienced poverty.",
     "hints": [
       "Slavery",
       "Abolition",
-      "poverty"
+      "Sancho"
     ]
   },
   {
@@ -2678,7 +2678,7 @@
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "What was the experience of Windrush migrants?",
-    "p1": "Colour bars common in housing and employment: 'No Blacks, No Dogs, No Irish' signs. White-dominated trade unions viewed migrants as economic competition.",
+    "p1": "Colour bars common in housing and employment: 'No Blacks, No Dogs, No Irish' signs. White-dominated trade unions viewed migrants as threats.",
     "p2": "1958: race riots in Nottingham and Notting Hill. 1968: Enoch Powell's 'Rivers of Blood' speech — 74% of the public agreed with him.",
     "p3": "Metropolitan police were institionally racist - targetted black communities with 'SUS laws' (Stop and search).",
     "hints": [
@@ -2706,7 +2706,7 @@
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "How did laws protecting migrants develop in the 20th Century?",
-    "p1": "1965 Race Relations Act: banned racial discrimination in public places. 1968 Race Relations Act: extended to housing and employment — outlawing colour bars.",
+    "p1": "1965 Race Relations Act: banned racial discrimination in public places. 1968: extended to housing and employment — outlawing colour bars.",
     "p2": "1971: High Court ruled in favour of the Mangrove Nine. 2005: use of racist language became a hate crime.",
     "p3": "2010 Equalities Act: protection of rights regardless of gender, race, sexuality or religion.",
     "hints": [
@@ -2720,9 +2720,9 @@
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "What were the anti-immigrant political movements of the 20th century?",
-    "p1": "1930s: Oswald Mosley's British Union of Fascists — anti-Semitic movement; defeated at the Battle of Cable Street (1936) when East Londoners blocked their march.",
+    "p1": "1936: Battle of Cable Street - Oswald Mosley's blackshirts tried an intimidatory march through Jewish Whitechapel - locals resisted.",
     "p2": "1968: Enoch Powell's 'Rivers of Blood' predicted a race war and English people being 'strangers in their own land'. 74% agreed with him.",
-    "p3": "1970s National Front formed as an anti-immigration party. Attacked migrant communities — never won more than 1% of the vote; 1977 Battle of Lewisham — their march resisted by local people.",
+    "p3": "1970s National Front attacked migrant communities — never won more than 1% of the vote; 1977 Battle of Lewisham — their march resisted by local people.",
     "hints": [
       "Mosley",
       "Powell",
@@ -2734,7 +2734,7 @@
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "Case Study: Bristol in the mid 20th Century",
-    "p1": "Large Caribbean community develops in poorest district of St Pauls.",
+    "p1": "Large Caribbean community develops in poorest district of St Pauls. Struggle with colour bars in jobs and housing.",
     "p2": "1963: Bristol Bus Boycott, organised to challenge colour bar led by Paul Stephenson and Roy Hackett. Supported by white students.",
     "p3": "Boycott was successful - Bristol Bus Company forced to remove colour bar. Helped lead to national Race Relations Act 1965.",
     "hints": [
@@ -2790,12 +2790,12 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "Why did Windrush Migrants come to Notting Hill in the 1950s?",
-    "p1": "Caribbean migrants arrived in Britain after the 1948 British Nationality Act — came for wages and opportunities in the 'mother country' after WWII.",
-    "p2": "Notting Hill had large bomb-damaged Victorian houses. One of the few areas of London where the colour bar was not common as white British people did not want the homes.",
+    "p1": "Caribbean migrants arrived in Britain after the 1948 British Nationality Act — came for wages and opportunities in the 'mother country'.",
+    "p2": "Notting Hill was one of the few areas of London where the colour bar was not common as white British people did not want the homes.",
     "p3": "Notting Hill was closest district to Paddington Station - became a centre for Caribbean migrants and so new migrants were more likely to settle there.",
     "hints": [
       "Nationality Act",
-      "bomb-damaged",
+      "colour bar",
       "Paddington"
     ]
   },
@@ -2804,8 +2804,8 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What was housing like in Notting Hill?",
-    "p1": "Large Victorian houses subdivided into cramped, expensive bedsits. Slum landlords like Peter Rachman charged high rents and provided poor conditions.",
-    "p2": "Migrants typically lived in Homes of Multiple Occupancy (HMOs). Multiple families — trapped in overcrowded, poor-quality accommodation. Some beds shared by multiple people on shifts.",
+    "p1": "Victorian houses subdivided into cramped, expensive bedsits. Slum landlords like Peter Rachman charged high rents and provided poor conditions.",
+    "p2": "Migrants typically lived in Homes of Multiple Occupancy (HMOs). Multiple tenants — trapped in overcrowded, poor-quality accommodation.",
     "p3": "Overcrowding, poor sanitation and exploitation were common — yet migrants had little legal protection and few alternatives.",
     "hints": [
       "Peter Rachman",
@@ -2860,7 +2860,7 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "Why was the Mangrove restaurant important to the Caribbean community?",
-    "p1": "The Mangrove on All Saints Road was a Caribbean restaurant and community hub run by Frank Crichlow — celebrities including Diana Ross, Bob Marley, and Jimi Hendrix ate there.",
+    "p1": "Mangrove on All Saints Road was a Caribbean restaurant and community hub run by Frank Crichlow — black celebrities like Hendrix, Marley and Ross ate there.",
     "p2": "Mangrove was centre for black community organising - lawyers provided free legal advice for black migrants. Notting Hill carnival organised from there.",
     "p3": "Police raided the Mangrove 12 times between 1969 and 1970 despite finding no evidence of wrongdoing — seen as deliberate harassment of the Black community.",
     "hints": [
@@ -2874,7 +2874,7 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "How did the police treat the black community in Notting Hill?",
-    "p1": "Metropolitan Police repeatedly stopped and searched Black residents — using the 'sus law' (suspicion of intent to commit a crime) disproportionately against Black people.",
+    "p1": "Metropolitan Police repeatedly stopped and searched Black residents — using the 'sus law' (suspicion of intent to commit a crime).",
     "p2": "Police raided the Mangrove restaurant 12 times (1969–70) and targeted Shebeens — widespread harassment of the Caribbean community.",
     "p3": "Many police officers would deliberately plant evidence on black people to frame for theft or supply of drugs.",
     "hints": [
@@ -2889,7 +2889,7 @@
     "unit": "Unit 5 – Notting Hill",
     "front": "What anti-immigration groups were active in Notting Hill?",
     "p1": "Oswald Mosley (far-right fascist) led the Union Movement which campaigned to 'keep Britain white'. Mosley ran for MP in 1959 - won 8% of vote.",
-    "p2": "Teddy Boys were young white gangs associated with racist violence against Black residents in Notting Hill. Often drove in to Notting Hill for 'N***** hunts'.",
+    "p2": "Teddy Boys were young white gangs associated with racist violence against Black residents in Notting Hill.",
     "p3": "The White Defence League held a rally in Trafalgar Square after the murder of Kelso Chochrane.",
     "hints": [
       "Mosley",
@@ -2902,9 +2902,9 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What happened during the Notting Hill riots (1958)?",
-    "p1": "August–September 1958: white Teddy Boys and far-right groups launched violent attacks on Black residents over several nights — targeting mixed race couples.",
+    "p1": "White Teddy Boys and far-right groups launched violent attacks on Black residents over several nights — targeting mixed race couples.",
     "p2": "Caribbean community defended itself — some Black residents armed with bottles and iron bars fought back.",
-    "p3": "Riots shocked the nation but police and judges responded more harshly to Black defendants than white attackers — showing ongoing institutional racism.",
+    "p3": "Riots shocked the nation but police and judges responded more harshly to Black defendants than white attackers.",
     "hints": [
       "mixed race",
       "defended",
@@ -2916,8 +2916,8 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What happened during and after the murder of Kelso Cochrane (1959)?",
-    "p1": "May 1959: Kelso Cochrane, a young Antiguan carpenter, was stabbed to death by a gang of white youths in Notting Hill. Despite witnesses, the murderers were never brought to justice",
-    "p2": "Over 1,200 people attended Cochrane's funeral in a powerful demonstration of community solidarity; his death strengthened Caribbean community resolve.",
+    "p1": "Kelso Cochrane, was stabbed to death by a gang of white youths in Notting Hill. Despite witnesses, the murderers were never brought to justice",
+    "p2": "Over 1,200 people attended Cochrane's funeral in a powerful demonstration of community solidarity.",
     "p3": "Government allowed the White Defence League to host a rally in Trafalgar Square days after the funeral.",
     "hints": [
       "justice",
@@ -2932,7 +2932,7 @@
     "front": "How did Claudia Jones change Notting Hill?",
     "p1": "Claudia Jones was a Trinidadian-born activist and journalist who founded the West Indian Gazette — the first major Black British newspaper.",
     "p2": "The West Indian Gazette became an important voice investigating the colour bar, racism, and celebrating black culture.",
-    "p3": "1959: Jones organised the first Caribbean Carnival in a London ballroom — a direct response to the 1958 riots, reclaiming joy from trauma. Later developed into the Notting Hill Carnival in 1966.",
+    "p3": "1959: Jones organised the first Caribbean Carnival - a direct response to the 1958 riots. Later developed into the Notting Hill Carnival in 1966.",
     "hints": [
       "Gazette ",
       "investigating",
@@ -2944,9 +2944,9 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "Who were the British Black Panthers?",
-    "p1": "British Black Panthers formed in the late 1960s — inspired by the American movement; led figures included Darcus Howe and Althea Jones-Lecointe.",
+    "p1": "British Black Panthers formed in the late 1960s — inspired by the American movement; lead figures included Darcus Howe.",
     "p2": "Organised the 1970 protest march against police raids on the Mangrove restaurant — directly challenging police harassment.",
-    "p3": "Darcus Howe was one of the Mangrove Nine who defended himself in court and helped expose police racism — a landmark moment in British civil rights history.",
+    "p3": "Darcus Howe was one of the Mangrove Nine who defended himself in court and helped expose police racism.",
     "hints": [
       "Black",
       "Mangrove",
@@ -2960,7 +2960,7 @@
     "front": "Why did the trial of the Mangrove Nine matter?",
     "p1": "1970: Nine Black activists (including Darcus Howe and Frank Crichlow) charged with incitement to riot following the Mangrove protest march.",
     "p2": "At the trial, Mangrove Nine demanded the right to be tried by jury of peers (an all-black jury) according to Magna Carta. This was denied.",
-    "p3": "1971: all nine acquitted or cleared of most serious charges; the judge acknowledged evidence of police harassment of the Black community — an unprecedented admission.",
+    "p3": "1971: all nine acquitted or cleared of most serious charges; the judge acknowledged evidence of police harassment of the Black community.",
     "hints": [
       "Howe",
       "peers",
@@ -2972,9 +2972,9 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What primary sources can we use to find out about Notting Hill?",
-    "p1": "West Indian Gazette (founded by Claudia Jones, 1958): useful for understanding the Caribbean community's own perspective — reports on discrimination, police harassment, cultural events and the 1958 riots from a Black British viewpoint.",
+    "p1": "West Indian Gazette: useful for reports on discrimination, police harassment, cultural events and the 1958 riots from a Black British viewpoint.",
     "p2": "Police records (Metropolitan Police): useful for tracking the number of raids on the Mangrove, stop-and-search data, and records of the 1958 riots.",
-    "p3": "Oral histories: testimonies from named individuals such as Bruce Kenrick (NHHT), Frank Crichlow (Mangrove owner), Darcus Howe (British Black Panthers, Mangrove Nine) and residents who lived through the 1958 riots — useful for personal experience.",
+    "p3": "Oral histories: testimonies from named individuals such as Bruce Kenrick (NHHT), Frank Crichlow (Mangrove owner), Darcus Howe (Mangrove Nine).",
     "hints": [
       "Gazette",
       "Metropolitan",
