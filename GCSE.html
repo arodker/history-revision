@@ -297,7 +297,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     </div>
   </div>
   <div id="home-pinned-link" style="display:none;text-align:center;margin-top:.5rem">
-    <button onclick="goToPinnedReview()" style="background:none;border:none;color:var(--muted);font-size:.68rem;font-weight:500;padding:.25rem .5rem;cursor:pointer;opacity:.7">📌 Review pinned cards</button>
+    <button onclick="goToPinnedReview()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer">📌 Review pinned cards</button>
   </div>
 </div>
 
@@ -416,7 +416,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       </div>
       <div id="fd-outstanding-banner" style="display:none;font-size:.78rem;color:var(--muted);background:var(--subtle);border-radius:8px;padding:.6rem .75rem;margin-bottom:.75rem"></div>
       <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start Flashcard Mode</button>
-      <button id="fd-pinned-btn" onclick="fdStartPinned()" style="background:none;border:none;color:var(--muted);font-size:.68rem;font-weight:500;padding:.25rem .5rem;cursor:pointer;opacity:.7;display:none;width:100%;text-align:center;margin-top:.25rem">📌 Review pinned cards</button>
+      <button id="fd-pinned-btn" onclick="fdStartPinned()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer;display:none;width:100%;text-align:center;margin-top:.5rem">📌 Review pinned cards</button>
       <!-- Single paper wheel for current paper -->
       <div style="display:flex;justify-content:center;align-items:center;gap:1rem;padding:.75rem .5rem .25rem;margin-top:.75rem">
         <div id="fd-setup-wheel-cell" style="text-align:center">
@@ -429,7 +429,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
           </svg>
           <div id="fd-setup-label" class="fd-wheel-label"></div>
         </div>
-        <div style="font-size:.75rem;color:var(--muted);line-height:1.5">Today's progress<br>for this paper</div>
+
       </div>
     </div>
 
@@ -1607,7 +1607,7 @@ function fdSetup() {
     const outstanding = fdGetOutstanding();
     const hasPinned = outstanding.some(k => FD.find(c => fdKey(c) === k));
     pinnedBtn.style.display = hasPinned ? 'block' : 'none';
-    if (hasPinned) pinnedBtn.textContent = 'Review pinned cards';
+    if (hasPinned) pinnedBtn.textContent = '📌 Review pinned cards';
   }
   const startBtn = document.getElementById('fd-start-btn');
   const goClasses = {p1:'c-p1', p2a:'c-p2a', p2b:'c-p2b', p3:'c-p3'};
@@ -2109,6 +2109,13 @@ function renderFdWheels() {
     const fillEl = document.querySelector(`.fd-ring-fill-${paper}`);
     if (fillEl) fillEl.setAttribute('r', isDone ? '18' : '0');
   });
+
+  // Show/hide home pinned link
+  const homePinned = document.getElementById('home-pinned-link');
+  if (homePinned) {
+    const outstanding = fdGetOutstanding();
+    homePinned.style.display = outstanding.length > 0 ? 'block' : 'none';
+  }
 }
 
 function fdShowToast(msg) {
