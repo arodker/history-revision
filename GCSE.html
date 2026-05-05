@@ -363,8 +363,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
   <!-- DATES -->
   <div id="mode-dates" style="display:none">
-    <button class="btn-go" id="d-go" onclick="startQuizCountdown()">Start key dates quiz</button>
-    <button class="btn-sm" id="d-hard" onclick="startQuizCountdown(true)" style="width:100%;margin-top:-.5rem;margin-bottom:.75rem;display:none">🎯 Hardest dates only</button>
     <div id="d-countdown" style="display:none;text-align:center;padding:2rem 0">
       <div id="d-countdown-num" style="font-size:5rem;font-weight:800;font-family:'DM Serif Display',serif;line-height:1;color:var(--accent)">3</div>
       <div style="font-size:.85rem;color:var(--muted);margin-top:.5rem">Get ready…</div>
@@ -623,7 +621,7 @@ function pickPaper(p) {
   const info = P[p];
   document.getElementById('paper-badge').textContent = info.label;
   document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
-  ['d-go'].forEach(id => {
+  [].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.className = 'btn-go ' + info.go;
   });
@@ -701,7 +699,6 @@ function setMode(m) {
   if (m !== 'knowledge') document.getElementById('k-out').innerHTML = '';
   document.getElementById('d-out').innerHTML = '';
   document.getElementById('e-out').innerHTML = '';
-  document.getElementById('d-go').style.display = 'block';
   if (m === 'knowledge') { if (!kPool.length && KC.length) buildKPool(); updateNavUI(); }
   if (m === 'exam') updateExamDirectory();
   if (m === 'flashcard') fdSetup();
@@ -955,6 +952,29 @@ function rqRetryMissed() {
   rqOneNext();
 }
 
+function printRQ(questions) {
+  // Build a print-only window with just the questions
+  const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
+  const paperNames = {p1:'Migrants',p2a:'Cold War',p2b:'Elizabeth',p3:'Germany'};
+  const rows = (questions || rqOnePool || []).map((q, i) =>
+    `<div style="margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid #ddd">
+      <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${colours[q.paper]};margin-right:6px;vertical-align:middle"></span>
+      <strong style="font-size:.7rem;color:#888;text-transform:uppercase;letter-spacing:.05em">${paperNames[q.paper]}</strong>
+      <p style="margin:.35rem 0 0;font-size:1rem;line-height:1.5">${i+1}. ${q.q}</p>
+      <div style="margin-top:.5rem;height:3rem;border-bottom:1px solid #eee"></div>
+    </div>`
+  ).join('');
+  const win = window.open('', '_blank');
+  win.document.write(`<!DOCTYPE html><html><head><title>Do Now — Mixed Retrieval Quiz</title>
+    <style>body{font-family:Georgia,serif;max-width:680px;margin:2rem auto;padding:0 1rem;color:#111}
+    h2{font-size:1rem;font-weight:700;margin-bottom:1.5rem;color:#555}
+    @media print{body{margin:1cm}}</style></head>
+    <body><h2>Do Now — Mixed Retrieval Quiz &nbsp;|&nbsp; ${new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}</h2>
+    ${rows}
+    <script>window.onload=()=>{window.print()}<\/script></body></html>`);
+  win.document.close();
+}
+
 function showRapidSetup() {
   showScreen('s-rapid');
   document.getElementById('rq-setup').style.display = 'block';
@@ -1037,6 +1057,7 @@ function generateRQ() {
   }
   document.getElementById('rq-err').style.display = 'none';
   const ten = shuffle(pool).slice(0, 10);
+  window._rqCurrentPool = ten; // for printing
   const grid = document.getElementById('rq-grid');
   const counter = document.getElementById('rq-counter');
   if (counter) counter.textContent = pool.length + ' questions available';
@@ -1048,7 +1069,7 @@ function generateRQ() {
       <div class="rq-tap">Tap to reveal</div>
     </div>`).join('');
   document.getElementById('rq-setup').style.display = 'none';
-  if (rqMode === 'one') { rqInProgress = true; rqInProgressMode = 'one'; }
+  rqInProgress = true; rqInProgressMode = rqMode;
   if (rqMode === 'one') {
     rqOnePool = shuffle(pool).slice(0, 10);
     rqOneIdx = 0; rqOneOK = 0; rqOneBad = 0; rqOneMissed = []; rqOneStreak = 0;
@@ -1059,7 +1080,16 @@ function generateRQ() {
     rqOneNext();
     return;
   }
-  document.getElementById('rq-out').style.display = 'block';
+  // Add print button for grid/do-now mode
+  const rqOutEl = document.getElementById('rq-out');
+  rqOutEl.style.display = 'block';
+  // Insert print button above grid if not already there
+  if (!document.getElementById('rq-print-btn')) {
+    const printDiv = document.createElement('div');
+    printDiv.style.cssText = 'text-align:right;margin-bottom:.5rem';
+    printDiv.innerHTML = '<button id="rq-print-btn" onclick="printRQ(window._rqCurrentPool)" class="btn-sm" style="font-size:.75rem">🖨️ Print as do-now</button>';
+    rqOutEl.insertBefore(printDiv, rqOutEl.firstChild);
+  }
 }
 
 function revealRQ(i) {
@@ -1299,10 +1329,6 @@ function saveHardDates(arr) {
 }
 
 function startQuizCountdown(hardMode) {
-  // Hide start buttons
-  document.getElementById('d-go').style.display = 'none';
-  const hardBtn = document.getElementById('d-hard');
-  if (hardBtn) hardBtn.style.display = 'none';
   // Show countdown
   const cdEl = document.getElementById('d-countdown');
   const numEl = document.getElementById('d-countdown-num');
@@ -1342,9 +1368,6 @@ function startQuiz(hardMode) {
   if (!pool.length) pool = all; // fallback if no hard dates yet
   quizPool = shuffle([...pool]).slice(0, Math.min(pool.length, 15));
   quizIdx = 0; quizOK = 0; quizBad = 0; quizStreak = 0; quizMissed = [];
-  document.getElementById('d-go').style.display = 'none';
-  const hardBtn = document.getElementById('d-hard');
-  if (hardBtn) hardBtn.style.display = 'none';
   renderQ();
 }
 
@@ -2012,6 +2035,30 @@ function renderFdSetupWheel() {
     txtEl.setAttribute('fill', 'var(--text)');
   }
   if (labelEl) labelEl.textContent = paperLabels[paper] || '';
+
+  // Unit breakdown
+  const breakdownEl = document.getElementById('fd-unit-breakdown');
+  if (breakdownEl && FD.length) {
+    const session = fdGetSession();
+    const units = [...new Set(FD.filter(c => c.paper === paper).map(c => c.unit))];
+    breakdownEl.innerHTML = units.map(unit => {
+      const unitCards = FD.filter(c => c.paper === paper && c.unit === unit);
+      const unitTotal = unitCards.length;
+      const unitKeys = unitCards.map(c => fdKey(c));
+      // Count cards seen today for this unit (approximation via session — we track by paper not unit)
+      // Use mastered keys intersected with unit keys for today's session
+      const sessionKeys = Object.keys(fdGetSession()).length; // fallback
+      // Better: track via fd-seen which is reset per session
+      const gotToday = fdSeen.filter(k => unitKeys.includes(k)).length;
+      const colour = gotToday >= unitTotal ? '#1D9E75' : gotToday > 0 ? '#F0B429' : 'var(--muted)';
+      const dot = gotToday >= unitTotal ? '●' : gotToday > 0 ? '◑' : '○';
+      return `<div style="display:flex;justify-content:space-between;padding:.15rem 0;border-bottom:1px solid var(--subtle)">
+        <span style="color:${colour}">${dot}</span>
+        <span style="flex:1;padding:0 .4rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${unit}</span>
+        <span style="font-weight:600;flex-shrink:0">${gotToday}/${unitTotal}</span>
+      </div>`;
+    }).join('');
+  }
 }
 
 function renderFdHubWheel() {
