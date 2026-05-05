@@ -1544,11 +1544,13 @@ function fdGetSession() {
   const s = JSON.parse(localStorage.getItem(LS_SESSION) || 'null');
   const today = fdTodayStr();
   if (!s || s.date !== today) {
-    // New day — reset
-    const fresh = { date: today, got: {p1:0,p2a:0,p2b:0,p3:0}, total: {p1:0,p2a:0,p2b:0,p3:0} };
+    const fresh = { date: today, got: {p1:0,p2a:0,p2b:0,p3:0}, total: {p1:0,p2a:0,p2b:0,p3:0}, unitGot:{}, unitTotal:{} };
     localStorage.setItem(LS_SESSION, JSON.stringify(fresh));
     return fresh;
   }
+  // Ensure unitGot/unitTotal exist for older sessions
+  if (!s.unitGot)   s.unitGot   = {};
+  if (!s.unitTotal) s.unitTotal = {};
   return s;
 }
 function fdSetSession(s) {
@@ -1558,6 +1560,12 @@ function fdRecordSessionCard(paper, got) {
   const s = fdGetSession();
   s.total[paper] = (s.total[paper] || 0) + 1;
   if (got) s.got[paper] = (s.got[paper] || 0) + 1;
+  // Track per unit
+  if (fdCurrent && fdCurrent.unit) {
+    const uk = paper + '|' + fdCurrent.unit;
+    s.unitTotal[uk] = (s.unitTotal[uk] || 0) + 1;
+    if (got) s.unitGot[uk] = (s.unitGot[uk] || 0) + 1;
+  }
   fdSetSession(s);
 }
 
@@ -2038,26 +2046,25 @@ function renderFdSetupWheel() {
 
   // Unit breakdown
   const breakdownEl = document.getElementById('fd-unit-breakdown');
-  if (breakdownEl && FD.length) {
+  if (breakdownEl) {
+    if (!FD.length) {
+      breakdownEl.innerHTML = '<div style="color:var(--muted);font-style:italic">Unit breakdown loads with flashcard data.</div>';
+    } else {
     const session = fdGetSession();
     const units = [...new Set(FD.filter(c => c.paper === paper).map(c => c.unit))];
     breakdownEl.innerHTML = units.map(unit => {
-      const unitCards = FD.filter(c => c.paper === paper && c.unit === unit);
-      const unitTotal = unitCards.length;
-      const unitKeys = unitCards.map(c => fdKey(c));
-      // Count cards seen today for this unit (approximation via session — we track by paper not unit)
-      // Use mastered keys intersected with unit keys for today's session
-      const sessionKeys = Object.keys(fdGetSession()).length; // fallback
-      // Better: track via fd-seen which is reset per session
-      const gotToday = fdSeen.filter(k => unitKeys.includes(k)).length;
-      const colour = gotToday >= unitTotal ? '#1D9E75' : gotToday > 0 ? '#F0B429' : 'var(--muted)';
-      const dot = gotToday >= unitTotal ? '●' : gotToday > 0 ? '◑' : '○';
-      return `<div style="display:flex;justify-content:space-between;padding:.15rem 0;border-bottom:1px solid var(--subtle)">
-        <span style="color:${colour}">${dot}</span>
-        <span style="flex:1;padding:0 .4rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${unit}</span>
-        <span style="font-weight:600;flex-shrink:0">${gotToday}/${unitTotal}</span>
+      const unitTotal = FD.filter(c => c.paper === paper && c.unit === unit).length;
+      const uk = paper + '|' + unit;
+      const gotToday  = session.unitGot[uk]   || 0;
+      const colour = gotToday >= unitTotal && unitTotal > 0 ? '#1D9E75' : gotToday > 0 ? '#F0B429' : 'var(--muted)';
+      const dot = gotToday >= unitTotal && unitTotal > 0 ? '●' : gotToday > 0 ? '◑' : '○';
+      return `<div style="display:flex;align-items:center;gap:.4rem;padding:.2rem 0;border-bottom:1px solid var(--subtle);font-size:.72rem">
+        <span style="color:${colour};font-size:.65rem">${dot}</span>
+        <span style="flex:1;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${unit}</span>
+        <span style="font-weight:700;color:${colour};flex-shrink:0">${gotToday}/${unitTotal}</span>
       </div>`;
     }).join('');
+    }
   }
 }
 
