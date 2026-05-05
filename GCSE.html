@@ -415,9 +415,9 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       <div id="fd-outstanding-banner" style="display:none;font-size:.78rem;color:var(--muted);background:var(--subtle);border-radius:8px;padding:.6rem .75rem;margin-bottom:.75rem"></div>
       <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start Flashcard Mode</button>
       <button id="fd-pinned-btn" onclick="fdStartPinned()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer;display:none;width:100%;text-align:center;margin-top:.5rem">📌 Review pinned cards</button>
-      <!-- Single paper wheel for current paper -->
-      <div style="display:flex;justify-content:center;align-items:center;gap:1rem;padding:.75rem .5rem .25rem;margin-top:.75rem">
-        <div id="fd-setup-wheel-cell" style="text-align:center">
+      <!-- Single paper wheel + unit breakdown -->
+      <div style="display:flex;align-items:flex-start;gap:1rem;padding:.75rem .5rem .25rem;margin-top:.75rem">
+        <div id="fd-setup-wheel-cell" style="text-align:center;flex-shrink:0">
           <svg id="fd-setup-wheel" viewBox="0 0 60 60" style="width:64px;height:64px;display:block;margin:0 auto .3rem">
             <circle id="fd-setup-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
             <circle id="fd-setup-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
@@ -427,7 +427,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
           </svg>
           <div id="fd-setup-label" class="fd-wheel-label"></div>
         </div>
-
+        <div id="fd-unit-breakdown" style="flex:1;font-size:.72rem;margin-top:.1rem"></div>
       </div>
     </div>
 
@@ -2057,7 +2057,7 @@ function renderFdSetupWheel() {
       const uk = paper + '|' + unit;
       const gotToday  = session.unitGot[uk]   || 0;
       const colour = gotToday >= unitTotal && unitTotal > 0 ? '#1D9E75' : gotToday > 0 ? '#F0B429' : 'var(--muted)';
-      const dot = gotToday >= unitTotal && unitTotal > 0 ? '●' : gotToday > 0 ? '◑' : '○';
+      const dot = gotToday >= unitTotal && unitTotal > 0 ? '🥇' : gotToday > 0 ? '◑' : '○';
       return `<div style="display:flex;align-items:center;gap:.4rem;padding:.2rem 0;border-bottom:1px solid var(--subtle);font-size:.72rem">
         <span style="color:${colour};font-size:.65rem">${dot}</span>
         <span style="flex:1;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${unit}</span>
