@@ -953,23 +953,34 @@ function rqRetryMissed() {
 }
 
 function printRQ(questions) {
-  // Build a print-only window with just the questions
   const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
   const paperNames = {p1:'Migrants',p2a:'Cold War',p2b:'Elizabeth',p3:'Germany'};
   const rows = (questions || rqOnePool || []).map((q, i) =>
-    `<div style="margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid #ddd">
-      <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${colours[q.paper]};margin-right:6px;vertical-align:middle"></span>
-      <strong style="font-size:.7rem;color:#888;text-transform:uppercase;letter-spacing:.05em">${paperNames[q.paper]}</strong>
-      <p style="margin:.35rem 0 0;font-size:1rem;line-height:1.5">${i+1}. ${q.q}</p>
-      <div style="margin-top:.5rem;height:3rem;border-bottom:1px solid #eee"></div>
+    `<div class="row">
+      <span class="dot" style="background:${colours[q.paper]}"></span>
+      <div class="q">
+        <span class="paper">${paperNames[q.paper]}</span>
+        <span class="qtext">${i+1}. ${q.q}</span>
+        <div class="line"></div>
+      </div>
     </div>`
   ).join('');
   const win = window.open('', '_blank');
   win.document.write(`<!DOCTYPE html><html><head><title>Do Now — Mixed Retrieval Quiz</title>
-    <style>body{font-family:Georgia,serif;max-width:680px;margin:2rem auto;padding:0 1rem;color:#111}
-    h2{font-size:1rem;font-weight:700;margin-bottom:1.5rem;color:#555}
-    @media print{body{margin:1cm}}</style></head>
-    <body><h2>Do Now — Mixed Retrieval Quiz &nbsp;|&nbsp; ${new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}</h2>
+    <style>
+      * { box-sizing:border-box; margin:0; padding:0; }
+      body { font-family:Georgia,serif; font-size:9.5pt; color:#111; padding:.6cm .9cm; }
+      h2 { font-size:9pt; font-weight:700; color:#555; margin-bottom:.4cm; }
+      .row { display:flex; align-items:flex-start; gap:5px; margin-bottom:.28cm; padding-bottom:.28cm; border-bottom:1px solid #ddd; }
+      .dot { flex-shrink:0; width:8px; height:8px; border-radius:50%; margin-top:3px; }
+      .q { flex:1; }
+      .paper { display:block; font-size:7pt; color:#888; text-transform:uppercase; letter-spacing:.04em; margin-bottom:1px; }
+      .qtext { display:block; line-height:1.35; margin-bottom:.15cm; }
+      .line { border-bottom:1px solid #ddd; margin-top:.15cm; height:.55cm; }
+      @media print { @page { size:A4; margin:.8cm .9cm; } body { padding:0; } }
+    </style></head>
+    <body>
+    <h2>Do Now — Mixed Retrieval Quiz &nbsp;|&nbsp; ${new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}</h2>
     ${rows}
     <script>window.onload=()=>{window.print()}<\/script></body></html>`);
   win.document.close();
