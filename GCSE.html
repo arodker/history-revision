@@ -703,13 +703,8 @@ function setMode(m) {
   if (m === 'exam') updateExamDirectory();
   if (m === 'flashcard') fdSetup();
   if (m === 'dates') {
-    const hardBtn = document.getElementById('d-hard');
-    if (hardBtn) {
-      const hardCount = JSON.parse(localStorage.getItem('gcse_hard_dates_' + currentPaper) || '[]').length;
-      hardBtn.style.display = hardCount > 0 ? 'block' : 'none';
-      hardBtn.textContent = `🎯 Hardest dates only (${hardCount})`;
-    }
-
+    // Auto-start countdown
+    setTimeout(() => startQuizCountdown(), 50);
   }
 }
 
