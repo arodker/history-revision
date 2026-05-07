@@ -1375,8 +1375,8 @@ let SOURCE_SETS = [];
 let ESSAY_QS    = [];
 
 Promise.all([
-  fetch('data/kc.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
-  fetch('data/flashcards.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/kc-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/flashcards-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/dates.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/rq.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/sources.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
