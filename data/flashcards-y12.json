@@ -4,14 +4,14 @@
     "section": "mtc",
     "reign": "edward",
     "unit": "Unit 1 \u2013 Stability of the Monarchy",
-    "front": "Why were there serious concerns about Edward VI's age in 1547?",
+    "front": "Why were there concerns about Edward VI's age in 1547?",
     "p1": "Edward was only nine \u2014 it was feared a regent might seize power, as Richard III had done in 1483 during his nephew's minority.",
-    "p2": "Edward wouldn't be able to control faction within the Council, and the image of monarchy as a strong, divine power would be challenged by the image of a child.",
-    "p3": "Henry had left a divided council between reformists and conservatives \u2014 Gardiner and Norfolk's fall in 1546 already left it weighted in favour of the reformists.",
+    "p2": "Power of the monarchy relied on the monarch's image - 9 year old boy could not project image of divinely appointed just and military leader.",
+    "p3": "Henry had left a divided council between reformists and conservatives \u2014 Gardiner and Norfolk's fall in 1546 already left it weighted in favour of the reformists. Edward wouldn't be able to control faction.",
     "hints": [
-      "minority",
       "Richard III",
-      "reformists"
+      "image",
+      "faction"
     ]
   },
   {
@@ -19,14 +19,14 @@
     "section": "mtc",
     "reign": "edward",
     "unit": "Unit 1 \u2013 Stability of the Monarchy",
-    "front": "How far did Edward's minority actually threaten stability?",
-    "p1": "Not all previous minorities had ended badly \u2014 Edward was noted to be an extremely bright boy showing great promise as a ruler.",
-    "p2": "Somerset quickly monopolised power using the dry stamp and the 'unfulfilled gifts' clause of Henry's will, against Henry's intention of 16 co-equal councillors.",
-    "p3": "The ultimate test came in 1549 \u2014 unrest spread to over half the counties of England, the most widespread of the Tudor period, showing the minority had created a serious vacuum of authority.",
+    "front": "How did Somerset gain and use power?",
+    "p1": "Edward Seymour, conspiring with William Paget, quickly monopolised power using the dry stamp and the 'unfulfilled gifts' clause of Henry's will. Seymour made himself Duke of Somerset and Lord Protector.",
+    "p2": "Somerset centralised power against Henry's will of 16 co-equal councillors. Ruled as an autocrat from Somerset House. Denied Edward VI and power - and pocket money!",
+    "p3": "Somerset positioned himself as the Good Duke - an ally of the ordinary man and a religious reformer. Led English forces against Scotland during the Rough Wooing.",
     "hints": [
       "dry stamp",
-      "Lord Protector",
-      "1549"
+      "autocrat",
+      "Good Duke"
     ]
   },
   {
@@ -34,14 +34,14 @@
     "section": "mtc",
     "reign": "edward",
     "unit": "Unit 1 \u2013 Stability of the Monarchy",
-    "front": "Why was faction particularly dangerous during Edward VI's minority?",
+    "front": "How dangerous was faction under Somerset?",
     "p1": "In the reign of a minor there was no authority to control faction \u2014 disputes could spill over into rebellion or civil war.",
-    "p2": "Somerset used his position as Lord Protector to increase his personal wealth and power, giving positions to supporters like his brother Thomas Seymour \u2014 who he later executed for treason.",
-    "p3": "Other Tudor monarchs encouraged faction to ensure ministers competed for their loyalty \u2014 but managing it required a strong monarch, which a nine-year-old could not provide.",
+    "p2": "Somerset used his position as Lord Protector to increase his personal wealth and power, giving positions to supporters like his brother Thomas Seymour \u2014 who he later executed for treason after attempting a coup. Showed the dangerous culture of ambition Somerset had created.",
+    "p3": "Anti-Somerset Faction developed with reformers and conservatives led by John Dudley, Earl of Warwick, Thomas Wriothesley, Lord Chancellor, and William Paget. Paget and Warwick were former allies of Somerset.",
     "hints": [
-      "minority",
-      "faction",
-      "Lord Protector"
+      "minor",
+      "Thomas Seymour",
+      "Anti-Somerset"
     ]
   },
   {
@@ -54,9 +54,9 @@
     "p2": "Feeling threatened, Somerset issued a general summons on 5th October for loyal subjects to defend him against the Council \u2014 seen as inciting revolt.",
     "p3": "Somerset retreated to Windsor Castle but surrendered when the King turned against him, declaring he was being kept prisoner.",
     "hints": [
-      "Anti-Somerset faction",
+      "faction",
       "general summons",
-      "Windsor Castle"
+      "surrendered"
     ]
   },
   {
@@ -65,13 +65,13 @@
     "reign": "edward",
     "unit": "Unit 1 \u2013 Stability of the Monarchy",
     "front": "How did Northumberland consolidate power after Somerset's fall?",
-    "p1": "Facing conservative opposition, Warwick allied himself with the reformist faction and committed to further religious reform \u2014 becoming Lord President of the Council in 1550.",
-    "p2": "He released Somerset and restored him to the Council, but when this proved unsuccessful had Somerset executed for treason in 1552 \u2014 the charges were likely fabricated to remove a rival.",
-    "p3": "Northumberland's methods showed how dangerous minority rule was \u2014 without a strong monarch, the most ruthless faction could dominate government and eliminate opponents under cover of law.",
+    "p1": "Facing conservative opposition, Warwick allied himself with the reformist faction and committed to further religious reform \u2014 becoming Lord President of the Council in 1550. Made himself Duke of Northumberland.",
+    "p2": "Northumberland needed Somerset's voice as a reformist ally. Released him in 1550. However - saw him as a threat so Somerset was executed in 1552 on (likely) fabricated charges of treason.",
+    "p3": "Northumberland learnt to work more closely with Edward VI - involved him more in running of government as he grew older. Knew that maintaining support of the monarch would be crucial.",
     "hints": [
-      "Duke of Northumberland",
-      "Lord President",
-      "Somerset's execution"
+      "reformist",
+      "Somerset",
+      "Edward"
     ]
   },
   {
@@ -84,9 +84,9 @@
     "p2": "Northumberland feared his own fall from power when Mary came to the throne, so married his son Guildford Dudley to Jane Grey to control the heir.",
     "p3": "Edward's illness progressed before Jane Grey had children, so in his own hand he crossed out 'male heirs' and named Jane Grey directly \u2014 giving the Devise a shaky legal basis.",
     "hints": [
-      "Devise for the Succession",
-      "Jane Grey",
-      "Guildford Dudley"
+      "Protestant",
+      "Guildford",
+      "male heirs"
     ]
   },
   {
@@ -95,13 +95,13 @@
     "reign": "edward",
     "unit": "Unit 1 \u2013 Stability of the Monarchy",
     "front": "Why did the Devise for the Succession fail to prevent Mary's accession?",
-    "p1": "Mary had a significant power base in East Anglia \u2014 she proclaimed herself Queen on 9th July, before the Council's proclamation of Jane on the 10th.",
-    "p2": "On the march north, Northumberland's army deserted him and Councillors broke ranks for Mary. He retreated to Cambridge and accepted Mary as queen on the 19th.",
+    "p1": "Mary had a power base in East Anglia where there was significant hatred of Northumberland after Kett's rebellion \u2014 she proclaimed herself Queen on 9th July, before the Council's proclamation of Jane on the 10th.",
+    "p2": "Council never truly believed in Devise - bullied into it by Northumberland. On the march north, Northumberland's army deserted him and Councillors broke ranks for Mary. He retreated to Cambridge and accepted Mary as queen on the 19th.",
     "p3": "Mary entered London to rousing popular support \u2014 popular legitimacy proved more powerful than legal manoeuvring, and Northumberland, Jane Grey and Guildford Dudley were all later executed.",
     "hints": [
       "East Anglia",
-      "Nine Days' Queen",
-      "popular legitimacy"
+      "Council",
+      "entered London"
     ]
   },
   {
@@ -110,13 +110,13 @@
     "reign": "mary",
     "unit": "Unit 1 \u2013 Stability of the Monarchy",
     "front": "Why did Mary's gender create problems for her rule?",
-    "p1": "Mary was the first Queen to rule England in her own right \u2014 many believed female rulers could not control powerful men, lead soldiers into battle or display the strength a monarch needed.",
+    "p1": "Mary was the first Queen to rule England in her own right \u2014 many believed female rulers could not control powerful men, lead soldiers into battle or display the strength a monarch needed. Precedent of Matilda in 12th Century.",
     "p2": "John Knox wrote The First Blast of the Trumpet Against the Monstrous Regiment of Women (1558), comparing female rulers to 'the blind leading those who can see'.",
-    "p3": "Precedent was concerning \u2014 when Matilda was named heir in the 12th century, Henry I's death led to a civil war as many nobles refused to accept female rule.",
+    "p3": "Marriage is a serious hurdle - wife expected to obey husband. Has serious consequences if Mary marries an English noble or a foreign prince.",
     "hints": [
-      "female rule",
+      "Matilda",
       "John Knox",
-      "Matilda"
+      "Marriage"
     ]
   },
   {
@@ -129,7 +129,7 @@
     "p2": "During Wyatt's Rebellion Mary stayed in London against her Council's advice and delivered her Guildhall speech to rally the Londoners \u2014 proving female rulers could act with strength.",
     "p3": "The willingness of Edward and Northumberland to make Jane Grey queen shows gender was seen as less important than religion \u2014 concerns about female rule were subordinate to other political calculations.",
     "hints": [
-      "Wyatt's Rebellion",
+      "faction",
       "Guildhall",
       "Jane Grey"
     ]
@@ -144,9 +144,9 @@
     "p2": "Philip was Mary's personal choice \u2014 championed by Paget \u2014 bringing powerful Habsburg alliances as his father Charles V was Holy Roman Emperor. But Edward Courtenay, championed by Gardiner, was the English alternative.",
     "p3": "Ultimately the marriage ended unhappily \u2014 after Mary's phantom pregnancy, Philip rarely spent time in England. When Mary died he commented he felt 'a reasonable regret'.",
     "hints": [
-      "Philip of Spain",
-      "xenophobia",
-      "phantom pregnancy"
+      "zenophobic",
+      "Charles V",
+      "unhappily"
     ]
   },
   {
@@ -154,14 +154,14 @@
     "section": "mtc",
     "reign": "mary",
     "unit": "Unit 1 \u2013 Stability of the Monarchy",
-    "front": "How was the marriage to Philip managed to limit its dangers?",
+    "front": "How was the marriage to Philip designed to limit its dangers?",
     "p1": "A treaty was agreed: Philip would be named King but have no power in his own right; no Spaniards would be granted offices or lands in England.",
     "p2": "After Mary's death Philip would have no claim to the throne; England would not be entangled in Spain's wars \u2014 terms designed to reassure the English political nation.",
     "p3": "The treaty ultimately failed to prevent controversy \u2014 England was drawn into Spain's war with France, leading to the humiliating loss of Calais in 1558, the last English territory in France.",
     "hints": [
-      "marriage treaty",
-      "Calais",
-      "Parliament"
+      "King",
+      "claim",
+      "war with France"
     ]
   },
   {
@@ -174,9 +174,9 @@
     "p2": "Three key figures dominated: Gardiner (cautious realist), Paget (exceptional administrator) and Cardinal Pole (zealous Catholic). Pole's return in 1554 brought dispute with Gardiner over the pace of restoration.",
     "p3": "These struggles were minor and short-lived \u2014 Gardiner's death in 1555 ensured Pole's methods won out. For the majority of Mary's reign the Council worked effectively and carried out her wishes.",
     "hints": [
-      "Gardiner",
-      "Paget",
-      "Cardinal Pole"
+      "casual councillors",
+      "Pole",
+      "1555"
     ]
   },
   {
@@ -184,14 +184,14 @@
     "section": "mtc",
     "reign": "mary",
     "unit": "Unit 1 \u2013 Stability of the Monarchy",
-    "front": "What problems did Elizabeth inherit at the succession in 1558?",
-    "p1": "Mary died having failed to produce an heir. England had lost Calais \u2014 the last English territory in France \u2014 from joining Spain's war with France. Cardinal Pole died the same day, leaving the Church without an Archbishop.",
-    "p2": "Philip of Spain chose not to press his claim, preferring a Protestant England to a France-aligned Catholic one. But Henry II of France proclaimed Mary Queen of Scots as the true Queen of England.",
-    "p3": "Elizabeth inherited a country divided by religion, weakened by war and debt, and faced an immediate Catholic challenge to the legitimacy of her rule.",
+    "front": "How smooth was the succession of 1558?",
+    "p1": "Mary died having failed to produce an heir. On her deathbed Mary reluctantly recognised Elizabeth I as successor but asked her to preserve the Catholic faith.",
+    "p2": "Philip of Spain chose not to press his claim, preferring a Protestant England to a France-aligned Catholic one.",
+    "p3": "Henry II of France proclaimed Mary Queen of Scots as the true Queen of England - modified Mary Stuart's heraldry to include coat of arms of England.",
     "hints": [
-      "Calais",
-      "Mary Queen of Scots",
-      "Henry II of France"
+      "deathbed",
+      "Philip",
+      "Henry II"
     ]
   },
   {
@@ -204,9 +204,9 @@
     "p2": "The 1539 Act of Six Articles confirmed Catholic practices including Transubstantiation and clerical celibacy \u2014 England was doctrinally Catholic despite the break with Rome.",
     "p3": "The majority of the country, outside London and East Anglia, just wanted to worship as their ancestors had done for a millennium \u2014 they did not understand the differences between Catholicism and Protestantism.",
     "hints": [
-      "Act of Six Articles",
-      "Transubstantiation",
-      "Dissolution"
+      "Dissolution",
+      "Six Articles",
+      "Majority"
     ]
   },
   {
@@ -216,12 +216,12 @@
     "unit": "Unit 2 \u2013 Religious Change",
     "front": "What did the three stages of the Edwardian Reformation achieve?",
     "p1": "Stage 1 \u2014 Destruction, 1547: iconoclasm encouraged; Six Articles and Treason Act repealed; Chantries dissolved. The old had to be destroyed before the new could be installed.",
-    "p2": "Stage 2 \u2014 Limbo, 1548\u201349: First Book of Common Prayer enforced \u2014 a vague compromise on Holy Communion that pleased nobody and prompted the Western Rebellion.",
+    "p2": "Stage 2 \u2014 Limbo, 1548\u201349: First Book of Common Prayer enforced \u2014 a vague compromise on Holy Communion that pleased nobody and prompted the Western Rebellion. Repeal of Treason Laws led to multitude of religious preachers.",
     "p3": "Stage 3 \u2014 Formulation, 1550\u201353: Second Book of Common Prayer (1552) removed all Catholic practices and confirmed Communion was purely symbolic. Forty-Two Articles drawn up but never passed \u2014 Edward died in 1553.",
     "hints": [
-      "iconoclasm",
-      "Book of Common Prayer",
-      "Forty-Two Articles"
+      "Destruction",
+      "Limbo",
+      "Formulation"
     ]
   },
   {
@@ -229,14 +229,14 @@
     "section": "mtc",
     "reign": "edward",
     "unit": "Unit 2 \u2013 Religious Change",
-    "front": "How far was England Protestant by 1553 \u2014 the analytical argument?",
+    "front": "How far was England Protestant by 1553?",
     "p1": "Just because de jure England was Protestant does not mean de facto this was true \u2014 six years was a small amount of time to upend 1,000 years of Catholic worship.",
     "p2": "Bishop Hooper's visitations found that of 311 Gloucester clergymen, 171 couldn't repeat the Ten Commandments and 40 couldn't find the Lord's Prayer.",
     "p3": "Evidence from wills shows little support for changes outside London and East Anglia \u2014 the rapid restoration of Catholicism under Mary suggests traditional religion still retained its popularity.",
     "hints": [
-      "de jure",
-      "de facto",
-      "Hooper's visitations"
+      "six years",
+      "Hooper",
+      "wills"
     ]
   },
   {
@@ -249,9 +249,9 @@
     "p2": "Advisors were concerned: Gardiner doubted restoring Papal authority; Renard warned against restoring monastic property; even Charles V and the Pope feared she would move too quickly.",
     "p3": "Parliament refused to repeal the Act of Supremacy in October 1553, and in April 1554 landowning MPs refused to reinstate the heresy laws until Mary guaranteed ex-monastic land was safe.",
     "hints": [
+      "1529",
       "Papal authority",
-      "ex-monastic land",
-      "Simon Renard"
+      "ex-monastic land"
     ]
   },
   {
@@ -260,13 +260,13 @@
     "reign": "mary",
     "unit": "Unit 2 \u2013 Religious Change",
     "front": "How systematic was Mary's Catholic restoration?",
-    "p1": "Mary used the royal prerogative to restore the Catholic Mass. The Royal Injunctions of 1554 restored Catholic practices \u2014 Holy Days, processions and ceremonies \u2014 and deprived large numbers of married clergy.",
-    "p2": "The Second Act of Repeal (November 1554) repealed all religious legislation since 1529. Over the next three years 284 Protestants were burnt \u2014 most notably Archbishop Cranmer and Bishops Hooper, Ridley and Latimer.",
-    "p3": "The 12 Decrees of 1556 banned absenteeism, pluralism and simony \u2014 showing Mary was improving clerical quality, not just restoring Catholicism.",
+    "p1": "First Act of Repeal (1553) reversed Edward's changes immediately. The Royal Injunctions of 1554 restored Catholic practices \u2014 Holy Days, processions and ceremonies \u2014 and deprived large numbers of married clergy.",
+    "p2": "The Second Act of Repeal (November 1554) repealed all religious legislation since 1529. However, Mary was forced to compromise on ex-monastic land - not restored to The Church.",
+    "p3": "Pole's 12 Decrees of 1556 banned absenteeism, pluralism and simony \u2014 showing Mary was improving clerical quality, not just restoring Catholicism.",
     "hints": [
-      "Second Act of Repeal",
-      "12 Decrees",
-      "284"
+      "First Act of Repeal",
+      "ex-monastic",
+      "12 Decrees"
     ]
   },
   {
@@ -276,12 +276,12 @@
     "unit": "Unit 2 \u2013 Religious Change",
     "front": "Why were the Marian burnings counter-productive?",
     "p1": "284 people were burnt (51 women), mostly in the Protestant strongholds of the south-east. Large numbers attended but there is little evidence the burnings converted anyone \u2014 many viewed them as entertainment.",
-    "p2": "Gardiner opposed the burnings as counter-productive \u2014 his death in 1555 meant they continued under Pole's direction. Foxe's Book of Martyrs shaped how posterity viewed the Marian regime.",
+    "p2": "Burnings of Protestant bishop martyrs inspired resistance - Cranmer's burning in 1556 saw him plunge the hand that wrote a recantation of Protestism into the flames first.",
     "p3": "c.800 Protestants fled abroad, including many printers who developed an underground propaganda movement \u2014 keeping Cranmer's Prayer Book and Foxe's Book of Martyrs in circulation and radicalising the exiles with Calvinist ideas.",
     "hints": [
       "284",
-      "Foxe's Book of Martyrs",
-      "Marian exiles"
+      "Cranmer",
+      "Foxe's"
     ]
   },
   {
@@ -289,14 +289,14 @@
     "section": "mtc",
     "reign": "mary",
     "unit": "Unit 2 \u2013 Religious Change",
-    "front": "How far had England returned to Catholicism by 1558 \u2014 the analytical argument?",
-    "p1": "Edward's short reign meant much of the country, especially the North, had always remained Catholic. Catholic worship returned speedily \u2014 unlike Henry and Edward, Mary faced no rebellion on the issue of religion.",
-    "p2": "However five years was insufficient to enact lasting change. Over 800 clergy were deprived for failing to return to Catholic practices \u2014 though a small proportion of the total.",
+    "front": "How far had England returned to Catholicism by 1558?",
+    "p1": "Edward's short reign meant much of the country, especially the North, had always remained Catholic. Catholic worship returned speedily \u2014 unlike Henry and Edward, Mary faced no rebellion purley on the issue of religion.",
+    "p2": "Mary failed to suppress the Protestant underground movement. 2/3 of printers were Protestant and 19,000 copies of the Second Book of Common Prayer remained in circulation alongside Foxe's Book of Martyrs.",
     "p3": "By not producing an heir, Catholicism did not triumph. But the time it took Elizabeth to re-establish Protestantism suggests the Marian restoration had achieved significant de facto change.",
     "hints": [
-      "de facto",
-      "five years",
-      "800 clergy"
+      "rebellion",
+      "19,000",
+      "heir"
     ]
   },
   {
@@ -319,14 +319,14 @@
     "section": "mtc",
     "reign": "mtc",
     "unit": "Unit 3 \u2013 Rebellion and Unrest",
-    "front": "How far did the government's response to socioeconomic problems make the situation worse?",
-    "p1": "Somerset commissioned John Hales to investigate enclosures in 1548 \u2014 raising expectations he could not fulfil \u2014 while simultaneously continuing debasement to fund the Scottish war.",
+    "front": "How far did Somerset's response to socioeconomic problems make the situation worse?",
+    "p1": "Somerset commissioned John Hales to investigate enclosures in 1548 and imposed a 5% Sheep Tax \u2014 raising expectations he could not fulfil.",
     "p2": "The Vagrancy Act of 1547 condemned vagrants to two years slavery for a first offence and lifetime slavery for a second \u2014 a deeply unpopular measure showing the government's instinct was punishment rather than relief.",
-    "p3": "The lack of a strong royal presence in the minority meant central government appeared weak and susceptible to rebellion \u2014 the unrest of 1549 spread to over half the counties of England.",
+    "p3": "Government fundamentally did not understand causes of Great Price Rise beyond enclosure. Debasement continued to fund Scottish war in ignorance of its impact.",
     "hints": [
       "John Hales",
       "Vagrancy Act",
-      "minority"
+      "ignorance"
     ]
   },
   {
@@ -334,14 +334,14 @@
     "section": "mtc",
     "reign": "edward",
     "unit": "Unit 3 \u2013 Rebellion and Unrest",
-    "front": "How serious was the unrest of 1549?",
+    "front": "How serious was the wider unrest of 1549?",
     "p1": "1549 was the 'year of the many-headed monster' \u2014 unrest in over half the counties of England, the most widespread of the Tudor period. Kett's captured Norwich; the Western Rebellion besieged Exeter for a month.",
     "p2": "Thousands of soldiers were diverted from the Scottish border. The order to execute 3,000 of the Western rebels demonstrates the establishment's fear.",
     "p3": "However neither rebellion attempted to march on London \u2014 their demands were written politely to Somerset, anger directed at local gentry rather than the Crown. Ultimately both were no match for government force.",
     "hints": [
       "many-headed monster",
-      "half the counties",
-      "Dussindale"
+      "Scottish border",
+      "London"
     ]
   },
   {
@@ -350,13 +350,13 @@
     "reign": "edward",
     "unit": "Unit 3 \u2013 Rebellion and Unrest",
     "front": "What were the causes of Kett's Rebellion?",
-    "p1": "The unrest began when a mob attacked the enclosures of John Flowerdew, who redirected the protest to Robert Kett \u2014 another gentleman who had also enclosed land. Rebels' demands centred on enclosure and high rents, and absent or uneducated clergy.",
-    "p2": "16,000 rebels met in July 1549, marched on Norwich, camped at Mousehold Heath and stormed the city. Somerset's commissions on enclosure had raised hopes he was the champion of the poor.",
+    "p1": "The unrest began when a mob attacked the enclosures of John Flowerdew, who redirected the protest to Robert Kett \u2014 another gentleman who had enclosed land and somehow became leader of rebellion. ",
+    "p2": "Rebels' demands centred on enclosure and high rents, and absent or uneducated clergy. Written politely to Somerset assuming his support as the Good Duke.",
     "p3": "In Norfolk 6% owned 60% of the land \u2014 the rebellion reflected genuine and extreme economic inequality, not just political opportunism.",
     "hints": [
       "Flowerdew",
-      "Mousehold Heath",
-      "enclosure"
+      "demands",
+      "6%"
     ]
   },
   {
@@ -364,14 +364,14 @@
     "section": "mtc",
     "reign": "edward",
     "unit": "Unit 3 \u2013 Rebellion and Unrest",
-    "front": "Why did Kett's Rebellion fail and what does this reveal about mid-Tudor unrest?",
-    "p1": "Warwick arrived with 12,000 well-trained troops from the Scottish war and massacred the rebels at Dussindale \u2014 3,000 killed, 49 leaders executed for treason.",
-    "p2": "Kett made the fatal error of abandoning his well-defended camp at Mousehold Heath to meet Warwick at Dussindale on open ground.",
-    "p3": "The rebellion reveals the limits of mid-Tudor unrest \u2014 rebels were well-organised with legitimate grievances but lacked military experience, national coordination, and any intention of overthrowing the Crown.",
+    "front": "What happened during Kett's Rebellion?",
+    "p1": "16,000 rebels met in July 1549, marched on Norwich, camped at Mousehold Heath and stormed the city. Somerset's commissions on enclosure had raised hopes he was the champion of the poor.",
+    "p2": "Kett's camp was well-disciplined and organised with Kett maintaining order and dispensing justice. No attempt made to march on London.",
+    "p3": "Warwick arrived with 12,000 well-trained troops from the Scottish war and massacred the rebels at Dussindale \u2014 3,000 killed, 49 leaders executed for treason.",
     "hints": [
-      "Warwick",
-      "Dussindale",
-      "Mousehold Heath"
+      "16,000",
+      "well-disciplined",
+      "Dussindale"
     ]
   },
   {
@@ -380,13 +380,13 @@
     "reign": "edward",
     "unit": "Unit 3 \u2013 Rebellion and Unrest",
     "front": "What were the causes of the Western Rebellion of 1549?",
-    "p1": "The murder of William Body in 1548 \u2014 tasked with supervising iconoclasm in Cornwall \u2014 and opposition to the First Book of Common Prayer triggered the rebellion. Many Cornishmen were more familiar with Latin than English.",
-    "p2": "The demands were almost entirely religious \u2014 drawn up by literate local clergy. But evidence of excluded demands about high taxes and rents, and the chant 'Kill all the gentlemen!' at Bodmin, shows economic grievances also existed.",
-    "p3": "The rebellion was primarily religious unlike Kett's which was primarily economic \u2014 but both shared a backdrop of socioeconomic grievance and were products of Somerset's failure to manage the Reformation or the economic crisis effectively.",
+    "p1": "Resistance to Protestant reforms. Cornishmen more familiar with Latin language than English. William Body murdered for overseeing iconoclasm in Helston in 1548.",
+    "p2": "The demands were almost entirely religious \u2014 drawn up by literate local clergy. Dissmissed new mass as 'Christmas game'. Chant 'Kill all the gentlemen!' at Bodmin, shows economic grievances also existed.",
+    "p3": "West country also had resentments towards central government. Cornish viewed themselves as a distinct culture, language and nation. Most didn't speak English. 1497 Cornish rebellion had been crushed by Henry VII.",
     "hints": [
-      "Prayer Book Rebellion",
       "William Body",
-      "Latin"
+      "Kill all",
+      "Cornish"
     ]
   },
   {
@@ -394,14 +394,14 @@
     "section": "mtc",
     "reign": "edward",
     "unit": "Unit 3 \u2013 Rebellion and Unrest",
-    "front": "How threatening was the Western Rebellion and why did it fail?",
-    "p1": "The rebels besieged Exeter for a month and attacked gentry at St Michael's Mount, Bodmin and Trematon Castle. Government forces of 8,000 led by Lord John Russell defeated the rebels at Sampford Courtenay \u2014 over 3,000 executed.",
-    "p2": "The rebellion failed due to no clear leadership \u2014 different sections attacked different targets, unlike the more organised Kett's Rebellion.",
-    "p3": "Though serious enough to require royal suppression, the rebels never attempted to march on London. The 'many-headed monster' of 1549 showed that the combination of minority, economic crisis and religious change had made England difficult to govern without decisive royal authority.",
+    "front": "What happened during the Western Rebellion?",
+    "p1": "The rebels besieged Exeter for a month and attacked gentry at St Michael's Mount, Bodmin and Trematon Castle. Local militia failed to suppress revolt.",
+    "p2": "Government forces of 8,000 led by Lord John Russell defeated the rebels at Sampford Courtenay \u2014 over 3,000 executed.",
+    "p3": "The rebellion failed due to no clear leadership \u2014 different sections attacked different targets, unlike the more organised Kett's Rebellion. Cornish language suppressed after this rebellion.",
     "hints": [
-      "Lord John Russell",
+      "Exeter",
       "Sampford Courtenay",
-      "no clear leadership"
+      "leadership"
     ]
   },
   {
@@ -410,12 +410,12 @@
     "reign": "mary",
     "unit": "Unit 3 \u2013 Rebellion and Unrest",
     "front": "What were the causes of Wyatt's Rebellion in 1554?",
-    "p1": "The ostensible cause was Mary's marriage to Philip of Spain \u2014 concerns over a foreign marriage, patronage going to the Spanish, and England being dragged into Habsburg wars. The timing, immediately after the marriage was proposed in parliament, supports this.",
-    "p2": "However xenophobia may have masked other causes. The rebellion began in Protestant Kent \u2014 part of the plot was to replace Mary with Elizabeth. Many leaders had lost positions at court due to their faith.",
-    "p3": "The collapse of the cloth trade created unemployment in Kent. Government chronicler John Proctor blamed religion \u2014 but he was unlikely to accept popular opposition to Philip.",
+    "p1": "The ostensible cause was Mary's marriage to Philip of Spain \u2014 xenophobic concerns over a foreign marriage, patronage going to the Spanish, and England being dragged into Habsburg wars.",
+    "p2": "Xenophobia may have masked other causes. The rebellion began in Protestant Kent \u2014 part of the plot was to replace Mary with Elizabeth. Many leaders had lost positions at court due to their faith.",
+    "p3": "The collapse of the cloth trade created unemployment in Kent. Kentish peiple also had long history of rebellions (1381, 1450).",
     "hints": [
-      "Philip of Spain",
-      "xenophobia",
+      "Xenophobic",
+      "Protestant",
       "cloth trade"
     ]
   },
@@ -426,12 +426,12 @@
     "unit": "Unit 3 \u2013 Rebellion and Unrest",
     "front": "How serious a threat was Wyatt's Rebellion to Mary's reign?",
     "p1": "Government soldiers deserted Norfolk and joined Wyatt's forces declaring 'We are all Englishmen!', and Wyatt reached the gates of London \u2014 if the Londoners had opened the city gates the rebellion could have succeeded.",
-    "p2": "Only one of the planned four forces actually rose \u2014 the other leaders got cold feet. The rebellion was poorly coordinated and lacked popular support outside Kent.",
-    "p3": "Mary's decisive Guildhall speech secured the Londoners' loyalty. Wyatt and leaders were executed; Elizabeth was imprisoned in the Tower but released after Wyatt refused to implicate her under torture.",
+    "p2": "Courtenay's revealed plot to Gardiner - forced Wyatt's hand in January. French and other three forces did not join rebellion. Rebellion hard to sustain in winter months.",
+    "p3": "Mary's decisive Guildhall speech secured the Londoners' loyalty who closed the gates to Wyatt. Wyatt and leaders were executed; Elizabeth was imprisoned in the Tower but released after Wyatt refused to implicate her under torture.",
     "hints": [
-      "Guildhall speech",
       "We are all Englishmen",
-      "Elizabeth imprisoned"
+      "Courtenay",
+      "Guildhall"
     ]
   },
   {
