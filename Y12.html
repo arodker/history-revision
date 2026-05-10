@@ -240,21 +240,30 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 <!-- ══ SCREEN 1: SECTION PICKER ══ -->
 <div class="screen active" id="s-pick">
   <h1 style="margin-bottom:.3rem">Mr Rodker's A Level History Hub</h1>
-  <p style="font-size:.85rem;color:var(--muted);margin-bottom:.9rem">OCR Y107 — England 1547–1603. What are you revising today?</p>
-  <div class="pick-grid">
-    <button class="pick-btn pb-mtc" onclick="pickSection('mtc')">
-      <span class="plabel">1547–1558</span>⚔️ Mid Tudor Crisis
-      <div class="reign-dots">
-        <span class="reign-dot" style="background:#6B9DE8"></span>
-        <span class="reign-dot" style="background:#E87A6B"></span>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:.9rem">A Level Revision — Year 12 Content</p>
+
+  <div style="display:grid;grid-template-columns:2fr 1fr;gap:8px">
+    <div style="border:1.5px solid var(--border2);border-radius:12px;padding:.6rem .6rem .5rem">
+      <div style="font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.45rem;padding-left:.1rem">Paper 1</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <button class="pick-btn pb-mtc" onclick="pickSection('mtc')">
+          <span class="plabel">1547–1558</span>⚔️ Mid Tudor Crisis
+          <div class="reign-dots">
+            <span class="reign-dot" style="background:#6B9DE8"></span>
+            <span class="reign-dot" style="background:#E87A6B"></span>
+          </div>
+        </button>
+        <button class="pick-btn pb-liz" onclick="pickSection('elizabeth')">
+          <span class="plabel">1558–1603</span>⚜️ Elizabeth I
+        </button>
       </div>
-    </button>
-    <button class="pick-btn pb-liz" onclick="pickSection('elizabeth')">
-      <span class="plabel">1558–1603</span>⚜️ Elizabeth I
-    </button>
-    <button class="pick-btn pb-cw" onclick="pickSection('coldwar')">
-      <span class="plabel">1941–1995</span>☢️ Cold War
-    </button>
+    </div>
+    <div style="border:1.5px solid var(--border2);border-radius:12px;padding:.6rem .6rem .5rem">
+      <div style="font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.45rem;padding-left:.1rem">Paper 2</div>
+      <button class="pick-btn pb-cw" onclick="pickSection('coldwar')" style="width:100%;height:calc(100% - 1.4rem)">
+        <span class="plabel">1941–1995</span>☢️ Cold War
+      </button>
+    </div>
   </div>
   <!-- Tracker wheels -->
   <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border)">
