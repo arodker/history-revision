@@ -819,11 +819,6 @@ function renderQ() {
   const item = quizPool[quizIdx];
   const total = quizPool.length;
   const pct = Math.round((quizIdx / total) * 100);
-  const others = shuffle(DATES.filter(d => d.event !== item.event)).slice(0, 3).map(d => d.event);
-  const opts = shuffle([item.event, ...others]);
-  const optsHtml = opts.map((o,i) =>
-    `<button class="opt" id="opt${i}" data-val="${o.replace(/"/g,'&quot;')}" data-correct="${item.event.replace(/"/g,'&quot;')}" onclick="checkAns(this)">${o}</button>`
-  ).join('');
   const col = S[currentSection].colour;
   document.getElementById('d-out').innerHTML = `
     <div class="quiz-prog"><div class="quiz-fill" style="width:${pct}%;background:${col}"></div></div>
@@ -832,30 +827,44 @@ function renderQ() {
       <div class="sc-row"><span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div>
     </div>
     <div class="quiz-card">
-      <div class="quiz-date">${item.date}</div>
-      <div class="quiz-prompt">What happened on this date?</div>
-      <div class="opts">${optsHtml}</div>
-      <div class="quiz-fb" id="qfb"></div>
+      <div style="font-size:1.05rem;font-weight:700;line-height:1.5;margin-bottom:1.25rem">${item.event}</div>
+      <div class="quiz-prompt" style="margin-bottom:.75rem">What year did this happen?</div>
+      <div style="display:flex;gap:8px;justify-content:center">
+        <input id="year-input" type="number" min="1500" max="2000" placeholder="e.g. 1588"
+          style="width:130px;padding:10px 12px;font-size:1.2rem;font-weight:700;text-align:center;border:2px solid var(--border2);border-radius:10px;background:var(--input-bg);color:var(--text);font-family:inherit"
+          onkeydown="if(event.key==='Enter')submitYear()">
+        <button onclick="submitYear()" style="padding:10px 18px;font-size:.95rem;font-weight:700;border:none;border-radius:10px;background:${col};color:#fff;cursor:pointer;font-family:inherit">Check</button>
+      </div>
+      <div class="quiz-fb" id="qfb" style="margin-top:.75rem"></div>
     </div>`;
+  setTimeout(() => { const inp = document.getElementById('year-input'); if (inp) inp.focus(); }, 80);
 }
 
-function checkAns(btn) {
-  const chosen = btn.dataset.val, correct = btn.dataset.correct;
+function submitYear() {
+  const inp = document.getElementById('year-input');
+  if (!inp || !inp.value) return;
   const item = quizPool[quizIdx];
-  document.querySelectorAll('.opt').forEach(b => b.disabled = true);
+  const typed = inp.value.trim();
+  const correct = item.date;
+  inp.disabled = true;
+  document.querySelector('[onclick="submitYear()"]').disabled = true;
   const fb = document.getElementById('qfb');
-  if (chosen === correct) {
-    quizOK++; btn.classList.add('correct');
-    fb.textContent = 'Correct!'; fb.className = 'quiz-fb fb-c';
-    const hard = getHardDates().filter(e => e !== item.event); saveHardDates(hard);
+  if (typed === correct) {
+    quizOK++;
+    fb.textContent = '✓ Correct!';
+    fb.className = 'quiz-fb fb-c';
+    const hard = getHardDates().filter(e => e !== item.event);
+    saveHardDates(hard);
   } else {
-    quizBad++; quizMissed.push(item); btn.classList.add('wrong');
-    fb.textContent = 'Not quite — correct answer highlighted.'; fb.className = 'quiz-fb fb-w';
-    document.querySelectorAll('.opt').forEach(b => { if (b.dataset.val === correct) b.classList.add('show-c'); });
-    const hard = getHardDates(); if (!hard.includes(item.event)) hard.push(item.event); saveHardDates(hard);
+    quizBad++; quizMissed.push(item);
+    fb.textContent = `✗ The answer was ${correct}`;
+    fb.className = 'quiz-fb fb-w';
+    const hard = getHardDates();
+    if (!hard.includes(item.event)) hard.push(item.event);
+    saveHardDates(hard);
   }
   fb.style.display = 'block';
-  setTimeout(() => { quizIdx++; renderQ(); }, 1700);
+  setTimeout(() => { quizIdx++; renderQ(); }, 1800);
 }
 
 function showQuizEnd() {
@@ -865,7 +874,7 @@ function showQuizEnd() {
     : pct >= 60 ? ['Good effort, keep drilling. ⭐','grade-b']
     : ['Keep at it — chronology takes practice. 💪','grade-c'];
   const hardCount = getHardDates().length;
-  const missedHtml = quizMissed.length ? `<div style="margin:.75rem 0;text-align:left"><div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem">Review — dates to learn:</div>${quizMissed.map(d=>`<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.5rem .75rem;margin-bottom:.4rem;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem"><span style="font-size:.85rem;font-weight:700">${d.date}</span><span style="font-size:.8rem;color:var(--muted);flex:1;text-align:right">${d.event}</span></div>`).join('')}</div>` : '';
+  const missedHtml = quizMissed.length ? `<div style="margin:.75rem 0;text-align:left"><div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem">Review — dates to learn:</div>${quizMissed.map(d=>`<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.5rem .75rem;margin-bottom:.4rem;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem"><span style="font-size:.82rem;color:var(--text);flex:1">${d.event}</span><span style="font-size:.88rem;font-weight:700;white-space:nowrap">${d.date}</span></div>`).join('')}</div>` : '';
   const hardBtn = hardCount > 0 ? `<button class="btn-sm" onclick="startQuiz(true)" style="width:100%;margin-top:.25rem">🎯 Hardest dates only (${hardCount})</button>` : '';
   document.getElementById('d-out').innerHTML = `<div class="quiz-end"><div class="end-score">${quizOK}/${total}</div><div class="end-sub">${pct}% correct</div><div class="end-grade ${cls}">${grade}</div>${missedHtml}<div style="display:flex;flex-direction:column;gap:6px;margin-top:.5rem"><button class="btn-sm" style="width:100%" onclick="startQuiz()">🔄 New quiz</button>${hardBtn}</div></div>`;
 }
