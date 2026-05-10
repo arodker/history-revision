@@ -156,27 +156,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .exam-route-btn:hover:not(.disabled){border-color:#aaa;background:var(--subtle)}
 .exam-route-btn.source{border-color:#B87020;color:#7a4e00}
 .exam-route-btn.essay{border-color:#1D9E75;color:#0F6E56}
-.exam-route-btn.disabled{
-  opacity:.45;
-  cursor:default;
-  pointer-events:none;
-  position:relative;
-  filter:grayscale(.3);
-}
-
-.exam-route-btn.disabled::after{
-  content:'COMING SOON';
-  position:absolute;
-  top:10px;
-  right:10px;
-  font-size:.58rem;
-  font-weight:700;
-  letter-spacing:.08em;
-  background:#555;
-  color:#fff;
-  padding:4px 7px;
-  border-radius:999px;
-}
+.exam-route-btn.disabled{opacity:.35;cursor:default;pointer-events:none}
 .source-set-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:.75rem}
 .source-set-header{padding:1rem 1.25rem;border-bottom:1px solid var(--border);background:var(--subtle)}
 .source-set-q{font-size:1rem;font-weight:700;line-height:1.4;margin-bottom:.4rem}
@@ -364,7 +344,13 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
   <div class="mode-grid">
     <button class="mode-btn" onclick="enterMode('knowledge')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">🧠</span>Revision Guide</button>
     <button class="mode-btn" onclick="enterMode('dates')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">📅</span>Key Dates Quiz</button>
-    <button class="mode-btn" onclick="enterMode('exam')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">✏️</span>Exam Practice</button>
+    <button class="mode-btn" style="padding:.9rem .5rem;opacity:.45;cursor:default;pointer-events:none;position:relative">
+  <span class="icon" style="font-size:1.2rem">✏️</span>
+  Exam Practice
+  <div style="font-size:.58rem;font-weight:700;letter-spacing:.06em;margin-top:.35rem;color:#888">
+    COMING SOON
+  </div>
+</button>
   </div>
 </div>
 
