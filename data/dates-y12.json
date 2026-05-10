@@ -1,127 +1,1227 @@
 [
-  {"section":"mtc","reign":"edward","date":"1547","event":"Henry VIII dies; Edward VI becomes king aged nine"},
-  {"section":"mtc","reign":"edward","date":"1547","event":"Somerset becomes Lord Protector using the dry stamp"},
-  {"section":"mtc","reign":"edward","date":"1547","event":"Act of Six Articles repealed; Chantries dissolved"},
-  {"section":"mtc","reign":"edward","date":"1548","event":"John Hales commissioned to investigate enclosures"},
-  {"section":"mtc","reign":"edward","date":"1549","event":"First Book of Common Prayer enforced by Act of Uniformity"},
-  {"section":"mtc","reign":"edward","date":"1549","event":"Kett's Rebellion — 16,000 rebels camp at Mousehold Heath"},
-  {"section":"mtc","reign":"edward","date":"1549","event":"Western Rebellion — rebels besiege Exeter for a month"},
-  {"section":"mtc","reign":"edward","date":"1549","event":"Somerset arrested and falls from power"},
-  {"section":"mtc","reign":"edward","date":"1550","event":"Warwick becomes Lord President of the Council"},
-  {"section":"mtc","reign":"edward","date":"1552","event":"Second Book of Common Prayer — all Catholic practices removed"},
-  {"section":"mtc","reign":"edward","date":"1552","event":"Somerset executed for treason"},
-  {"section":"mtc","reign":"edward","date":"1553","event":"Forty-Two Articles drawn up by Cranmer"},
-  {"section":"mtc","reign":"edward","date":"1553","event":"Devise for the Succession names Lady Jane Grey as heir"},
-  {"section":"mtc","reign":"edward","date":"1553","event":"Edward VI dies; Jane Grey proclaimed queen on 10th July"},
-  {"section":"mtc","reign":"mary","date":"1553","event":"Mary I enters London to popular support — Nine Days' Queen ends"},
-  {"section":"mtc","reign":"mary","date":"1553","event":"First Act of Repeal restores religious situation of 1547"},
-  {"section":"mtc","reign":"mary","date":"1554","event":"Wyatt's Rebellion — rebels reach the gates of London"},
-  {"section":"mtc","reign":"mary","date":"1554","event":"Mary marries Philip of Spain"},
-  {"section":"mtc","reign":"mary","date":"1554","event":"Second Act of Repeal — all religious legislation since 1529 repealed"},
-  {"section":"mtc","reign":"mary","date":"1554","event":"Cardinal Pole returns to England; England reconciled with Rome"},
-  {"section":"mtc","reign":"mary","date":"1555","event":"Burning of Protestants begins — first victim John Rogers"},
-  {"section":"mtc","reign":"mary","date":"1555","event":"Bishops Ridley and Latimer burned at Oxford"},
-  {"section":"mtc","reign":"mary","date":"1555","event":"Gardiner dies — Pole takes over direction of the burnings"},
-  {"section":"mtc","reign":"mary","date":"1556","event":"Archbishop Cranmer burned at the stake"},
-  {"section":"mtc","reign":"mary","date":"1556","event":"12 Decrees issued to improve clerical discipline"},
-  {"section":"mtc","reign":"mary","date":"1558","event":"Calais lost to France — last English territory in France"},
-  {"section":"mtc","reign":"mary","date":"1558","event":"Mary I dies; Cardinal Pole dies the same day"},
-  {"section":"elizabeth","date":"1558","event":"Elizabeth I becomes queen"},
-  {"section":"elizabeth","date":"1559","event":"Acts of Supremacy and Uniformity establish the Religious Settlement"},
-  {"section":"elizabeth","date":"1559","event":"Religious Settlement passes the Lords by just three votes"},
-  {"section":"elizabeth","date":"1562","event":"Elizabeth nearly dies of smallpox — succession crisis"},
-  {"section":"elizabeth","date":"1563","event":"39 Articles agreed at the Convocation — Puritan attempts defeated by one vote"},
-  {"section":"elizabeth","date":"1566","event":"Parker's Advertisements — compromise on vestments"},
-  {"section":"elizabeth","date":"1568","event":"Mary Queen of Scots arrives in England and is placed under house arrest"},
-  {"section":"elizabeth","date":"1569","event":"Rising of the North — northern earls capture Durham"},
-  {"section":"elizabeth","date":"1570","event":"Papal Bull Regnans in Excelsis excommunicates Elizabeth"},
-  {"section":"elizabeth","date":"1571","event":"Ridolfi Plot uncovered — Norfolk arrested"},
-  {"section":"elizabeth","date":"1572","event":"Duke of Norfolk executed for the Ridolfi Plot"},
-  {"section":"elizabeth","date":"1574","event":"First seminary priests from Douai arrive in England"},
-  {"section":"elizabeth","date":"1576","event":"Archbishop Grindal suspended for refusing to suppress prophesyings"},
-  {"section":"elizabeth","date":"1580","event":"First Jesuits arrive in England — Edmund Campion and Robert Parsons"},
-  {"section":"elizabeth","date":"1581","event":"Recusancy fines raised to £20 a month"},
-  {"section":"elizabeth","date":"1583","event":"Whitgift becomes Archbishop — uses Three Articles to remove Puritans"},
-  {"section":"elizabeth","date":"1583","event":"Throckmorton Plot uncovered by Walsingham"},
-  {"section":"elizabeth","date":"1584","event":"Bond of Association pledges to kill anyone linked to plots against Elizabeth"},
-  {"section":"elizabeth","date":"1585","event":"All Catholic priests expelled; harbouring a priest punishable by death"},
-  {"section":"elizabeth","date":"1586","event":"Babington Plot — evidence found directly implicating Mary Queen of Scots"},
-  {"section":"elizabeth","date":"1587","event":"Mary Queen of Scots executed at Fotheringhay Castle"},
-  {"section":"elizabeth","date":"1588","event":"Spanish Armada defeated — fireships at Calais scatter the fleet"},
-  {"section":"elizabeth","date":"1596","event":"Privy Council orders destruction of unflattering portraits of Elizabeth"},
-  {"section":"elizabeth","date":"1597","event":"Monopolies raised as major issue in Parliament"},
-  {"section":"elizabeth","date":"1598","event":"William Cecil, Lord Burghley, dies"},
-  {"section":"elizabeth","date":"1599","event":"Essex leads 16,000 to Ireland but returns without permission"},
-  {"section":"elizabeth","date":"1601","event":"Essex's Rebellion fails — Essex executed"},
-  {"section":"elizabeth","date":"1601","event":"Elizabeth's Golden Speech to Parliament on monopolies"},
-  {"section":"elizabeth","date":"1601","event":"Poor Law codifies the distinction between deserving and undeserving poor"},
-  {"section":"elizabeth","date":"1603","event":"Elizabeth I dies — James VI of Scotland becomes James I"},
-  {"section":"coldwar","date":"1917","event":"Bolshevik Revolution — USSR established as communist state"},
-  {"section":"coldwar","date":"1941","event":"Operation Barbarossa — Hitler invades USSR; Grand Alliance formed"},
-  {"section":"coldwar","date":"1943","event":"Tehran Conference — Big Three meet for the first time"},
-  {"section":"coldwar","date":"1945","event":"Yalta Conference — Germany divided into four zones; free elections promised"},
-  {"section":"coldwar","date":"1945","event":"Potsdam Conference — atomic bomb used; no general peace settlement"},
-  {"section":"coldwar","date":"1945","event":"United Nations established"},
-  {"section":"coldwar","date":"1946","event":"Churchill delivers the Iron Curtain speech in Fulton, Missouri"},
-  {"section":"coldwar","date":"1946","event":"Long Telegram sent by Kennan; Novikov Telegram sent by Novikov"},
-  {"section":"coldwar","date":"1947","event":"Truman Doctrine announced — USA commits to containment"},
-  {"section":"coldwar","date":"1947","event":"Marshall Plan announced — $13 billion aid to Europe"},
-  {"section":"coldwar","date":"1947","event":"Cominform established by Stalin"},
-  {"section":"coldwar","date":"1948","event":"Communist coup in Czechoslovakia — Jan Masaryk thrown from a window"},
-  {"section":"coldwar","date":"1948","event":"Berlin Blockade begins — all road and rail links to West Berlin cut"},
-  {"section":"coldwar","date":"1949","event":"Berlin Blockade ends — airlift supplies the city for 11 months"},
-  {"section":"coldwar","date":"1949","event":"NATO signed — North Atlantic Treaty, 4 April"},
-  {"section":"coldwar","date":"1949","event":"USSR tests its first atomic bomb"},
-  {"section":"coldwar","date":"1949","event":"Comecon established"},
-  {"section":"coldwar","date":"1949","event":"West Germany and East Germany formally created as separate states"},
-  {"section":"coldwar","date":"1950","event":"Korean War begins — communist North Korea invades South Korea"},
-  {"section":"coldwar","date":"1952","event":"USA tests first hydrogen bomb"},
-  {"section":"coldwar","date":"1953","event":"Stalin dies"},
-  {"section":"coldwar","date":"1953","event":"East German Rising — workers strike; Soviet tanks deployed"},
-  {"section":"coldwar","date":"1955","event":"West Germany joins NATO"},
-  {"section":"coldwar","date":"1955","event":"Warsaw Pact signed — 14 May"},
-  {"section":"coldwar","date":"1956","event":"Khrushchev delivers secret speech denouncing Stalin"},
-  {"section":"coldwar","date":"1956","event":"Polish October — Gomulka accepted by Khrushchev as Polish leader"},
-  {"section":"coldwar","date":"1956","event":"Hungarian Uprising — Imre Nagy announces Hungary leaves Warsaw Pact"},
-  {"section":"coldwar","date":"1956","event":"Soviet invasion of Hungary — 1,000 tanks; 3,000 Hungarians killed"},
-  {"section":"coldwar","date":"1957","event":"Sputnik launched — first man-made satellite"},
-  {"section":"coldwar","date":"1957","event":"USSR tests first ICBM — intercontinental ballistic missile"},
-  {"section":"coldwar","date":"1958","event":"Khrushchev issues Berlin Ultimatum — West must leave within 6 months"},
-  {"section":"coldwar","date":"1960","event":"Paris summit collapses — US U-2 spy plane shot down over USSR"},
-  {"section":"coldwar","date":"1961","event":"Bay of Pigs — CIA-backed Cuban exiles fail to overthrow Castro"},
-  {"section":"coldwar","date":"1961","event":"Berlin Wall built — 12-13 August"},
-  {"section":"coldwar","date":"1962","event":"Cuban Missile Crisis — world on brink of nuclear war for 13 days"},
-  {"section":"coldwar","date":"1963","event":"Nuclear hotline established between Washington and Moscow"},
-  {"section":"coldwar","date":"1963","event":"Limited Test Ban Treaty signed"},
-  {"section":"coldwar","date":"1963","event":"Kennedy delivers 'Ich bin ein Berliner' speech in West Berlin"},
-  {"section":"coldwar","date":"1968","event":"Prague Spring — Dubček launches 'socialism with a human face'"},
-  {"section":"coldwar","date":"1968","event":"Soviet invasion of Czechoslovakia — 500,000 troops"},
-  {"section":"coldwar","date":"1968","event":"Brezhnev Doctrine issued — USSR right to intervene in communist states"},
-  {"section":"coldwar","date":"1969","event":"Neil Armstrong lands on the moon — USA wins Space Race"},
-  {"section":"coldwar","date":"1969","event":"Détente begins — Nixon and Brezhnev pursue improved relations"},
-  {"section":"coldwar","date":"1970","event":"Moscow Treaty — Brandt and Brezhnev; Ostpolitik begins"},
-  {"section":"coldwar","date":"1972","event":"SALT I signed — 5-year freeze on missile launchers"},
-  {"section":"coldwar","date":"1975","event":"Helsinki Accords — 33 nations agree on European borders and human rights"},
-  {"section":"coldwar","date":"1975","event":"Apollo-Soyuz Mission — first joint US-Soviet space mission"},
-  {"section":"coldwar","date":"1979","event":"SALT II signed but never ratified by US Senate"},
-  {"section":"coldwar","date":"1979","event":"Soviet invasion of Afghanistan — Christmas Day"},
-  {"section":"coldwar","date":"1980","event":"USA boycotts Moscow Olympics"},
-  {"section":"coldwar","date":"1980","event":"Solidarity trade union recognised in Poland"},
-  {"section":"coldwar","date":"1981","event":"Reagan becomes US President — describes USSR as 'evil empire'"},
-  {"section":"coldwar","date":"1981","event":"Martial law declared in Poland — Solidarity suspended"},
-  {"section":"coldwar","date":"1983","event":"Reagan announces Strategic Defence Initiative (Star Wars)"},
-  {"section":"coldwar","date":"1985","event":"Gorbachev becomes leader of the USSR"},
-  {"section":"coldwar","date":"1986","event":"Chernobyl nuclear disaster"},
-  {"section":"coldwar","date":"1986","event":"Reykjavik summit — Reagan refuses to abandon SDI"},
-  {"section":"coldwar","date":"1987","event":"INF Treaty — medium-range missiles withdrawn from Europe"},
-  {"section":"coldwar","date":"1988","event":"Sinatra Doctrine — satellite states free to go their own way"},
-  {"section":"coldwar","date":"1989","event":"Soviet troops withdraw from Afghanistan"},
-  {"section":"coldwar","date":"1989","event":"Solidarity wins elections in Poland — first non-communist government"},
-  {"section":"coldwar","date":"1989","event":"Hungary opens its borders with Austria — 150,000 East Germans flee West"},
-  {"section":"coldwar","date":"1989","event":"Berlin Wall falls — 9 November"},
-  {"section":"coldwar","date":"1989","event":"Velvet Revolution — Vaclav Havel becomes president of Czechoslovakia"},
-  {"section":"coldwar","date":"1989","event":"Ceausescu executed in Romania — 25 December"},
-  {"section":"coldwar","date":"1990","event":"Germany formally reunified — 3 October"},
-  {"section":"coldwar","date":"1991","event":"Gang of Eight coup attempt — Yeltsin leads resistance"},
-  {"section":"coldwar","date":"1991","event":"Gorbachev resigns — USSR officially dissolved, Christmas Day"}
+  {
+    "section": "mtc",
+    "date": "1534",
+    "event": "Henry VIII breaks from Rome and establishes the Church of England"
+  },
+  {
+    "section": "mtc",
+    "date": "1536",
+    "event": "Dissolution of the Monasteries begins under Henry VIII"
+  },
+  {
+    "section": "mtc",
+    "date": "1539",
+    "event": "Act of Six Articles confirms Catholic doctrine \u2014 Transubstantiation, clerical celibacy"
+  },
+  {
+    "section": "mtc",
+    "date": "1540s",
+    "event": "Regular debasement enacted by Henry VIII to fund wars in Scotland and France"
+  },
+  {
+    "section": "mtc",
+    "date": "1544",
+    "event": "Henry VIII issues Third Act of Succession naming Edward, Mary then Elizabeth as heirs"
+  },
+  {
+    "section": "mtc",
+    "date": "1547",
+    "event": "Act of Six Articles repealed; Chantries dissolved"
+  },
+  {
+    "section": "mtc",
+    "date": "1547",
+    "event": "Battle of Pinkie \u2014 Somerset defeats Scots in the 'Rough Wooing'"
+  },
+  {
+    "section": "mtc",
+    "date": "1547",
+    "event": "Book of Homilies introduced \u2014 Protestant sermons to be read in churches"
+  },
+  {
+    "section": "mtc",
+    "date": "1547",
+    "event": "Henry VIII dies; Edward VI becomes king aged nine"
+  },
+  {
+    "section": "mtc",
+    "date": "1547",
+    "event": "Royal Injunctions order removal of superstitious images from churches"
+  },
+  {
+    "section": "mtc",
+    "date": "1547",
+    "event": "Somerset becomes Lord Protector using the dry stamp"
+  },
+  {
+    "section": "mtc",
+    "date": "1547",
+    "event": "Thomas Seymour (Somerset's brother) appointed Lord Admiral"
+  },
+  {
+    "section": "mtc",
+    "date": "1547",
+    "event": "Vagrancy Act \u2014 punishment for vagrancy set as two years' slavery"
+  },
+  {
+    "section": "mtc",
+    "date": "1548",
+    "event": "Cranmer publishes First Book of Common Prayer \u2014 December"
+  },
+  {
+    "section": "mtc",
+    "date": "1548",
+    "event": "John Hales commissioned to investigate enclosures"
+  },
+  {
+    "section": "mtc",
+    "date": "1548",
+    "event": "Somerset commissions John Hales to investigate enclosures in the Midlands"
+  },
+  {
+    "section": "mtc",
+    "date": "1548",
+    "event": "Widespread riots across England \u2014 Privy Council voices opposition to Somerset's policies"
+  },
+  {
+    "section": "mtc",
+    "date": "1548",
+    "event": "William Body murdered in Cornwall whilst supervising iconoclasm"
+  },
+  {
+    "section": "mtc",
+    "date": "1549",
+    "event": "Act of Uniformity enforces First Book of Common Prayer"
+  },
+  {
+    "section": "mtc",
+    "date": "1549",
+    "event": "First Book of Common Prayer enforced by Act of Uniformity"
+  },
+  {
+    "section": "mtc",
+    "date": "1549",
+    "event": "Kett's Rebellion \u2014 16,000 rebels camp at Mousehold Heath"
+  },
+  {
+    "section": "mtc",
+    "date": "1549",
+    "event": "Somerset arrested and falls from power"
+  },
+  {
+    "section": "mtc",
+    "date": "1549",
+    "event": "Thomas Seymour executed for treason by Somerset"
+  },
+  {
+    "section": "mtc",
+    "date": "1549",
+    "event": "Western Rebellion \u2014 rebels besiege Exeter for a month"
+  },
+  {
+    "section": "mtc",
+    "date": "1550",
+    "event": "New Ordinal encourages appointment of Protestant clergy"
+  },
+  {
+    "section": "mtc",
+    "date": "1550",
+    "event": "Warwick becomes Lord President of the Council"
+  },
+  {
+    "section": "mtc",
+    "date": "1551",
+    "event": "Catholic bishops Gardiner and Bonner imprisoned"
+  },
+  {
+    "section": "mtc",
+    "date": "1552",
+    "event": "Second Act of Uniformity enforces new Book of Common Prayer"
+  },
+  {
+    "section": "mtc",
+    "date": "1552",
+    "event": "Second Book of Common Prayer \u2014 all Catholic practices removed"
+  },
+  {
+    "section": "mtc",
+    "date": "1552",
+    "event": "Somerset executed for treason"
+  },
+  {
+    "section": "mtc",
+    "date": "1553",
+    "event": "Devise for the Succession names Lady Jane Grey as heir"
+  },
+  {
+    "section": "mtc",
+    "date": "1553",
+    "event": "Edward VI dies; Jane Grey proclaimed queen on 10th July"
+  },
+  {
+    "section": "mtc",
+    "date": "1553",
+    "event": "First Act of Repeal restores religious situation of 1547"
+  },
+  {
+    "section": "mtc",
+    "date": "1553",
+    "event": "First Act of Repeal undoes Edward VI's religious changes"
+  },
+  {
+    "section": "mtc",
+    "date": "1553",
+    "event": "Forty-Two Articles drawn up by Cranmer"
+  },
+  {
+    "section": "mtc",
+    "date": "1553",
+    "event": "Jane Grey married to Guildford Dudley (Northumberland's son)"
+  },
+  {
+    "section": "mtc",
+    "date": "1553",
+    "event": "Leading Protestants Cranmer, Latimer, Hooper and Ridley arrested"
+  },
+  {
+    "section": "mtc",
+    "date": "1553",
+    "event": "Mary I enters London to popular support \u2014 Nine Days' Queen ends"
+  },
+  {
+    "section": "mtc",
+    "date": "1553",
+    "event": "Northumberland executed for treason after Mary's accession"
+  },
+  {
+    "section": "mtc",
+    "date": "1554",
+    "event": "Cardinal Pole returns to England; England reconciled with Rome"
+  },
+  {
+    "section": "mtc",
+    "date": "1554",
+    "event": "Heresy Laws revived \u2014 Parliament agrees after Mary guarantees ex-monastic land"
+  },
+  {
+    "section": "mtc",
+    "date": "1554",
+    "event": "Mary marries Philip of Spain"
+  },
+  {
+    "section": "mtc",
+    "date": "1554",
+    "event": "Privy Council streamlined \u2014 'casual councillors' excluded from key committees"
+  },
+  {
+    "section": "mtc",
+    "date": "1554",
+    "event": "Second Act of Repeal \u2014 all religious legislation since 1529 repealed"
+  },
+  {
+    "section": "mtc",
+    "date": "1554",
+    "event": "Wyatt's Rebellion \u2014 rebels reach the gates of London"
+  },
+  {
+    "section": "mtc",
+    "date": "1554",
+    "event": "c.800 Protestants flee England to Netherlands and Switzerland"
+  },
+  {
+    "section": "mtc",
+    "date": "1555",
+    "event": "Bishops Ridley and Latimer burned at Oxford"
+  },
+  {
+    "section": "mtc",
+    "date": "1555",
+    "event": "Burning of Protestants begins \u2014 first victim John Rogers"
+  },
+  {
+    "section": "mtc",
+    "date": "1555",
+    "event": "Gardiner dies \u2014 Pole takes over direction of the burnings"
+  },
+  {
+    "section": "mtc",
+    "date": "1555",
+    "event": "Mary suffers phantom pregnancy \u2014 Philip leaves England"
+  },
+  {
+    "section": "mtc",
+    "date": "1555",
+    "event": "Pole becomes Archbishop of Canterbury"
+  },
+  {
+    "section": "mtc",
+    "date": "1556",
+    "event": "12 Decrees issued to improve clerical discipline"
+  },
+  {
+    "section": "mtc",
+    "date": "1556",
+    "event": "Archbishop Cranmer burned at the stake"
+  },
+  {
+    "section": "mtc",
+    "date": "1556",
+    "event": "Philip becomes King Philip II of Spain"
+  },
+  {
+    "section": "mtc",
+    "date": "1556",
+    "event": "Thomas Cranmer recants Protestantism then burns at Oxford"
+  },
+  {
+    "section": "mtc",
+    "date": "1557",
+    "event": "England joins Spain in war against France \u2014 leads to loss of Calais"
+  },
+  {
+    "section": "mtc",
+    "date": "1557",
+    "event": "Pole recalled to Rome accused of heresy \u2014 Mary refuses to allow him to leave"
+  },
+  {
+    "section": "mtc",
+    "date": "1558",
+    "event": "Calais lost to France \u2014 last English territory in France"
+  },
+  {
+    "section": "mtc",
+    "date": "1558",
+    "event": "Mary I dies; Cardinal Pole dies the same day"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1558",
+    "event": "Elizabeth I becomes queen"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1558",
+    "event": "Elizabeth appoints William Cecil as her Secretary of State"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1558",
+    "event": "Revised Book of Rates comes into force under Elizabeth"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1559",
+    "event": "Acts of Supremacy and Uniformity establish the Religious Settlement"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1559",
+    "event": "Matthew Parker appointed Archbishop of Canterbury"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1559",
+    "event": "Religious Settlement passes the Lords by just three votes"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1559",
+    "event": "Treaty of Cateau-Cambr\u00e9sis \u2014 peace made with France"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1560",
+    "event": "Amy Robsart (Leicester's wife) dies in mysterious circumstances"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1560",
+    "event": "Attempt at recoinage \u2014 proves largely unsuccessful"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1562",
+    "event": "Beginning of the French Wars of Religion"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1562",
+    "event": "Elizabeth nearly dies of smallpox \u2014 succession crisis"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1562",
+    "event": "Hawkins begins Triangular Slave Trade \u2014 Elizabeth invests personally"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1562",
+    "event": "Robert Dudley made a Privy Councillor"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1563",
+    "event": "39 Articles agreed at the Convocation \u2014 Puritan attempts defeated by one vote"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1563",
+    "event": "Elizabeth's 2nd Parliament \u2014 focus on marriage and succession"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1563",
+    "event": "Statute of Artificers and Alms Act passed"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1564",
+    "event": "Dudley created Earl of Leicester"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1565",
+    "event": "Gresham founds the Royal Exchange in London"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1566",
+    "event": "37 London preachers deprived over Vestiarian Controversy"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1566",
+    "event": "Parker's Advertisements \u2014 compromise on vestments"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1566",
+    "event": "Rioting in the Netherlands \u2014 many Flemings settle in England bringing skills"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1567",
+    "event": "Mary Queen of Scots forced to abdicate following Darnley murder"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1568",
+    "event": "Elizabeth orders seizure of Genoese Loan in English ports \u2014 trade embargo with Spain begins"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1568",
+    "event": "Mary Queen of Scots arrives in England and is placed under house arrest"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1569",
+    "event": "Rising of the North \u2014 northern earls capture Durham"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1570",
+    "event": "Papal Bull Regnans in Excelsis excommunicates Elizabeth"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1570",
+    "event": "Thomas Cartwright gives Puritan lectures at Cambridge \u2014 loses academic privilege"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1571",
+    "event": "Elizabeth's 3rd Parliament \u2014 Treason Laws and Strickland's Bill debated"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1571",
+    "event": "Parliament \u2014 treason to spread Papal Bull; Strickland's proposals debated"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1571",
+    "event": "Ridolfi Plot uncovered \u2014 Norfolk arrested"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1571",
+    "event": "William Cecil made Lord Burghley"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1572",
+    "event": "'Admonition to Parliament' published by Field and Wilcox"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1572",
+    "event": "Death of William Paulet \u2014 succeeded by Cecil as Lord Treasurer"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1572",
+    "event": "Duke of Norfolk executed for the Ridolfi Plot"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1572",
+    "event": "Elizabeth's 4th Parliament \u2014 calls to execute Mary Queen of Scots and Norfolk"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1572",
+    "event": "St Bartholomew's Day Massacre \u2014 thousands of Huguenots killed in France"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1572",
+    "event": "Vagabonds Act \u2014 compulsory Poor Rate introduced"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1573",
+    "event": "Sir Francis Walsingham takes over from Burghley as Secretary of State"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1574",
+    "event": "First seminary priests from Douai arrive in England"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1575",
+    "event": "Edmund Grindal becomes Archbishop of Canterbury"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1575",
+    "event": "Matthew Parker dies \u2014 succeeded by Edmund Grindal as Archbishop"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1576",
+    "event": "Act for the Relief of the Poor \u2014 first Houses of Correction established"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1576",
+    "event": "Archbishop Grindal suspended for refusing to suppress prophesyings"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1576",
+    "event": "Elizabeth's 4th Parliament 2nd session \u2014 trouble over freedom of speech"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1576",
+    "event": "Marian debt cleared \u2014 announced by Sir Walter Mildmay"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1576",
+    "event": "Martin Frobisher reaches Canada \u2014 beginning of English exploration"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1576",
+    "event": "Spanish Fury \u2014 destruction of Antwerp damages English cloth trade"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1577",
+    "event": "Cuthbert Mayne executed \u2014 first execution of a Catholic priest in England"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1577",
+    "event": "Drake begins circumnavigation of the globe"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1579",
+    "event": "Eastland Company formed to trade with the Baltic"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1579",
+    "event": "Francis Duke of Alen\u00e7on attempts to woo Elizabeth \u2014 opposed by Leicester"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1579",
+    "event": "John Stubbs writes pamphlet criticising Alen\u00e7on match \u2014 has hand removed"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1580",
+    "event": "Drake completes circumnavigation \u2014 returns with vast Spanish plunder"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1580",
+    "event": "First Jesuits arrive in England \u2014 Edmund Campion and Robert Parsons"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1580",
+    "event": "Levant Company formed to trade with the Ottoman Empire"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1581",
+    "event": "Recusancy fines raised to \u00a320 a month"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1583",
+    "event": "Edmund Grindal dies \u2014 replaced by John Whitgift as Archbishop"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1583",
+    "event": "Throckmorton Plot uncovered by Walsingham"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1583",
+    "event": "Whitgift becomes Archbishop \u2014 uses Three Articles to remove Puritans"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1584",
+    "event": "Bond of Association pledges to kill anyone linked to plots against Elizabeth"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1584",
+    "event": "Death of Francis Duke of Alen\u00e7on aged 29"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1584",
+    "event": "Elizabeth has a surplus of \u00a3300,000"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1584",
+    "event": "Raleigh attempts to found colony at Roanoke Island \u2014 fails"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1584",
+    "event": "Treaty of Joinville \u2014 Spanish and French Catholics join against Protestantism"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1585",
+    "event": "All Catholic priests expelled; harbouring a priest punishable by death"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1585",
+    "event": "Parliament makes it treasonous to be a Catholic priest"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1585",
+    "event": "Treaty of Nonsuch \u2014 England commits \u00a3126,000 a year to support Dutch rebels"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1586",
+    "event": "Anthony Cope presents 'bill and book' in the House of Commons \u2014 sent to Tower"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1586",
+    "event": "Babington Plot \u2014 evidence found directly implicating Mary Queen of Scots"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1586",
+    "event": "Book of Orders issued to tackle grain hoarding"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1587",
+    "event": "Drake's raid on Cadiz \u2014 'singeing the King of Spain's beard'"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1587",
+    "event": "Mary Queen of Scots executed at Fotheringhay Castle"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1588",
+    "event": "Marprelate Tracts begin circulating \u2014 suppressed by 1589"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1588",
+    "event": "Marprelate Tracts circulate attacking bishops \u2014 suppressed by 1589"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1588",
+    "event": "Spanish Armada defeated \u2014 fireships at Calais scatter the fleet"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1589",
+    "event": "Drake leads the English Armada \u2014 defeated by the Spanish"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1589",
+    "event": "Henry of Navarre becomes Henry IV of France"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1589",
+    "event": "Parliament grants an unprecedented double subsidy to fund the war with Spain"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1591",
+    "event": "Sir Robert Cecil becomes a Privy Councillor"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1593",
+    "event": "Burghley secures a triple subsidy from Parliament"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1593",
+    "event": "Earl of Essex becomes a Privy Councillor"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1593",
+    "event": "Peter Wentworth MP arrested for demanding Parliament's right to discuss the succession"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1593",
+    "event": "Separatist church in London led by Barrow and Greenwood suppressed \u2014 leaders executed"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1594",
+    "event": "Case of Dr Lopez \u2014 Portuguese physician executed for allegedly plotting to poison Elizabeth"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1594",
+    "event": "Tyrone's Rebellion begins in Ireland"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1595",
+    "event": "Riots by apprentices and others in London"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1596",
+    "event": "Drake dies off the coast of Panama whilst raiding the Spanish Main"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1596",
+    "event": "Extremely poor harvests spark food riots across England"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1596",
+    "event": "Oxfordshire Rising \u2014 food riot at peak of 1590s socioeconomic crisis"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1596",
+    "event": "Privy Council orders destruction of unflattering portraits of Elizabeth"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1596",
+    "event": "Robert Cecil becomes Secretary of State during Essex's Cadiz expedition"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1597",
+    "event": "Monopolies raised as major issue in Parliament"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1598",
+    "event": "Act for the Relief of the Poor and Act for the Punishment of Rogues passed"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1598",
+    "event": "Battle of Yellow Ford \u2014 Tyrone defeats English forces in Ireland"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1598",
+    "event": "Henry IV of France unilaterally makes peace with Spain"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1598",
+    "event": "Philip II of Spain dies \u2014 succeeded by Philip III who continues the war"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1598",
+    "event": "William Cecil, Lord Burghley, dies"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1599",
+    "event": "Essex leads 16,000 to Ireland but returns without permission"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1600",
+    "event": "East India Company founded"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1601",
+    "event": "4,000 Spanish troops land at Kinsale, Ireland to support Tyrone's Rebellion"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1601",
+    "event": "Elizabeth's Golden Speech to Parliament on monopolies"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1601",
+    "event": "Essex's Rebellion fails \u2014 Essex executed"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1601",
+    "event": "Mountjoy appointed Lord Deputy of Ireland \u2014 defeats Tyrone"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1601",
+    "event": "Poor Law codifies the distinction between deserving and undeserving poor"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1601",
+    "event": "Tyrone submits to Mountjoy days after Elizabeth's death"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1603",
+    "event": "Elizabeth I dies \u2014 James VI of Scotland becomes James I"
+  },
+  {
+    "section": "elizabeth",
+    "date": "1603",
+    "event": "Tyrone surrenders to Lord Mountjoy \u2014 unaware Elizabeth had already died"
+  },
+  {
+    "section": "coldwar",
+    "date": "1917",
+    "event": "Bolshevik Revolution \u2014 USSR established as communist state"
+  },
+  {
+    "section": "coldwar",
+    "date": "1941",
+    "event": "Operation Barbarossa \u2014 Hitler invades USSR; Grand Alliance formed"
+  },
+  {
+    "section": "coldwar",
+    "date": "1943",
+    "event": "Tehran Conference \u2014 Big Three meet for the first time"
+  },
+  {
+    "section": "coldwar",
+    "date": "1945",
+    "event": "Potsdam Conference \u2014 atomic bomb used; no general peace settlement"
+  },
+  {
+    "section": "coldwar",
+    "date": "1945",
+    "event": "United Nations established"
+  },
+  {
+    "section": "coldwar",
+    "date": "1945",
+    "event": "Yalta Conference \u2014 Germany divided into four zones; free elections promised"
+  },
+  {
+    "section": "coldwar",
+    "date": "1946",
+    "event": "Churchill delivers the Iron Curtain speech in Fulton, Missouri"
+  },
+  {
+    "section": "coldwar",
+    "date": "1946",
+    "event": "Long Telegram sent by Kennan; Novikov Telegram sent by Novikov"
+  },
+  {
+    "section": "coldwar",
+    "date": "1947",
+    "event": "Cominform established by Stalin"
+  },
+  {
+    "section": "coldwar",
+    "date": "1947",
+    "event": "Marshall Plan announced \u2014 $13 billion aid to Europe"
+  },
+  {
+    "section": "coldwar",
+    "date": "1947",
+    "event": "Truman Doctrine announced \u2014 USA commits to containment"
+  },
+  {
+    "section": "coldwar",
+    "date": "1948",
+    "event": "Berlin Blockade begins \u2014 all road and rail links to West Berlin cut"
+  },
+  {
+    "section": "coldwar",
+    "date": "1948",
+    "event": "Communist coup in Czechoslovakia \u2014 Jan Masaryk thrown from a window"
+  },
+  {
+    "section": "coldwar",
+    "date": "1949",
+    "event": "Berlin Blockade ends \u2014 airlift supplies the city for 11 months"
+  },
+  {
+    "section": "coldwar",
+    "date": "1949",
+    "event": "Comecon established"
+  },
+  {
+    "section": "coldwar",
+    "date": "1949",
+    "event": "NATO signed \u2014 North Atlantic Treaty, 4 April"
+  },
+  {
+    "section": "coldwar",
+    "date": "1949",
+    "event": "USSR tests its first atomic bomb"
+  },
+  {
+    "section": "coldwar",
+    "date": "1949",
+    "event": "West Germany and East Germany formally created as separate states"
+  },
+  {
+    "section": "coldwar",
+    "date": "1950",
+    "event": "Korean War begins \u2014 communist North Korea invades South Korea"
+  },
+  {
+    "section": "coldwar",
+    "date": "1950",
+    "event": "NSC-68 \u2014 USA quadruples defence spending in response to Soviet atomic bomb"
+  },
+  {
+    "section": "coldwar",
+    "date": "1952",
+    "event": "USA tests first hydrogen bomb"
+  },
+  {
+    "section": "coldwar",
+    "date": "1953",
+    "event": "East German Rising \u2014 workers strike; Soviet tanks deployed"
+  },
+  {
+    "section": "coldwar",
+    "date": "1953",
+    "event": "Korean War armistice signed \u2014 Korea remains divided at 38th parallel"
+  },
+  {
+    "section": "coldwar",
+    "date": "1953",
+    "event": "Stalin dies"
+  },
+  {
+    "section": "coldwar",
+    "date": "1954",
+    "event": "French defeated at Dien Bien Phu \u2014 USA begins involvement in Vietnam"
+  },
+  {
+    "section": "coldwar",
+    "date": "1955",
+    "event": "Warsaw Pact signed \u2014 14 May"
+  },
+  {
+    "section": "coldwar",
+    "date": "1955",
+    "event": "West Germany joins NATO"
+  },
+  {
+    "section": "coldwar",
+    "date": "1956",
+    "event": "Hungarian Uprising \u2014 Imre Nagy announces Hungary leaves Warsaw Pact"
+  },
+  {
+    "section": "coldwar",
+    "date": "1956",
+    "event": "Khrushchev delivers secret speech denouncing Stalin"
+  },
+  {
+    "section": "coldwar",
+    "date": "1956",
+    "event": "Polish October \u2014 Gomulka accepted by Khrushchev as Polish leader"
+  },
+  {
+    "section": "coldwar",
+    "date": "1956",
+    "event": "Soviet invasion of Hungary \u2014 1,000 tanks; 3,000 Hungarians killed"
+  },
+  {
+    "section": "coldwar",
+    "date": "1957",
+    "event": "Sputnik launched \u2014 first man-made satellite"
+  },
+  {
+    "section": "coldwar",
+    "date": "1957",
+    "event": "USSR tests first ICBM \u2014 intercontinental ballistic missile"
+  },
+  {
+    "section": "coldwar",
+    "date": "1958",
+    "event": "Khrushchev issues Berlin Ultimatum \u2014 West must leave within 6 months"
+  },
+  {
+    "section": "coldwar",
+    "date": "1960",
+    "event": "Paris summit collapses \u2014 US U-2 spy plane shot down over USSR"
+  },
+  {
+    "section": "coldwar",
+    "date": "1961",
+    "event": "Bay of Pigs \u2014 CIA-backed Cuban exiles fail to overthrow Castro"
+  },
+  {
+    "section": "coldwar",
+    "date": "1961",
+    "event": "Berlin Wall built \u2014 12-13 August"
+  },
+  {
+    "section": "coldwar",
+    "date": "1961",
+    "event": "Gagarin becomes first human in space \u2014 USSR leads Space Race"
+  },
+  {
+    "section": "coldwar",
+    "date": "1962",
+    "event": "Cuban Missile Crisis \u2014 world on brink of nuclear war for 13 days"
+  },
+  {
+    "section": "coldwar",
+    "date": "1963",
+    "event": "Kennedy delivers 'Ich bin ein Berliner' speech in West Berlin"
+  },
+  {
+    "section": "coldwar",
+    "date": "1963",
+    "event": "Limited Test Ban Treaty signed"
+  },
+  {
+    "section": "coldwar",
+    "date": "1963",
+    "event": "Nuclear hotline established between Washington and Moscow"
+  },
+  {
+    "section": "coldwar",
+    "date": "1963",
+    "event": "Partial Test Ban Treaty \u2014 atmospheric nuclear testing banned"
+  },
+  {
+    "section": "coldwar",
+    "date": "1965",
+    "event": "USA sends combat troops to Vietnam \u2014 500,000 by 1969"
+  },
+  {
+    "section": "coldwar",
+    "date": "1968",
+    "event": "Brezhnev Doctrine issued \u2014 USSR right to intervene in communist states"
+  },
+  {
+    "section": "coldwar",
+    "date": "1968",
+    "event": "Prague Spring \u2014 Dub\u010dek launches 'socialism with a human face'"
+  },
+  {
+    "section": "coldwar",
+    "date": "1968",
+    "event": "Soviet invasion of Czechoslovakia \u2014 500,000 troops"
+  },
+  {
+    "section": "coldwar",
+    "date": "1969",
+    "event": "D\u00e9tente begins \u2014 Nixon and Brezhnev pursue improved relations"
+  },
+  {
+    "section": "coldwar",
+    "date": "1969",
+    "event": "Neil Armstrong lands on the moon \u2014 USA wins Space Race"
+  },
+  {
+    "section": "coldwar",
+    "date": "1970",
+    "event": "Moscow Treaty \u2014 Brandt and Brezhnev; Ostpolitik begins"
+  },
+  {
+    "section": "coldwar",
+    "date": "1972",
+    "event": "SALT I signed \u2014 5-year freeze on missile launchers"
+  },
+  {
+    "section": "coldwar",
+    "date": "1973",
+    "event": "USA withdraws from Vietnam \u2014 communist North Vietnam wins war by 1975"
+  },
+  {
+    "section": "coldwar",
+    "date": "1975",
+    "event": "Apollo-Soyuz Mission \u2014 first joint US-Soviet space mission"
+  },
+  {
+    "section": "coldwar",
+    "date": "1975",
+    "event": "Helsinki Accords \u2014 33 nations agree on European borders and human rights"
+  },
+  {
+    "section": "coldwar",
+    "date": "1979",
+    "event": "SALT II signed but never ratified by US Senate"
+  },
+  {
+    "section": "coldwar",
+    "date": "1979",
+    "event": "Soviet invasion of Afghanistan \u2014 Christmas Day"
+  },
+  {
+    "section": "coldwar",
+    "date": "1980",
+    "event": "Solidarity trade union recognised in Poland"
+  },
+  {
+    "section": "coldwar",
+    "date": "1980",
+    "event": "USA boycotts Moscow Olympics"
+  },
+  {
+    "section": "coldwar",
+    "date": "1981",
+    "event": "Martial law declared in Poland \u2014 Solidarity suspended"
+  },
+  {
+    "section": "coldwar",
+    "date": "1981",
+    "event": "Reagan becomes US President \u2014 describes USSR as 'evil empire'"
+  },
+  {
+    "section": "coldwar",
+    "date": "1983",
+    "event": "Reagan announces Strategic Defence Initiative (Star Wars)"
+  },
+  {
+    "section": "coldwar",
+    "date": "1985",
+    "event": "Gorbachev becomes leader of the USSR"
+  },
+  {
+    "section": "coldwar",
+    "date": "1986",
+    "event": "Chernobyl nuclear disaster"
+  },
+  {
+    "section": "coldwar",
+    "date": "1986",
+    "event": "Reykjavik summit \u2014 Reagan refuses to abandon SDI"
+  },
+  {
+    "section": "coldwar",
+    "date": "1987",
+    "event": "INF Treaty \u2014 medium-range missiles withdrawn from Europe"
+  },
+  {
+    "section": "coldwar",
+    "date": "1988",
+    "event": "Sinatra Doctrine \u2014 satellite states free to go their own way"
+  },
+  {
+    "section": "coldwar",
+    "date": "1989",
+    "event": "Berlin Wall falls \u2014 9 November"
+  },
+  {
+    "section": "coldwar",
+    "date": "1989",
+    "event": "Ceausescu executed in Romania \u2014 25 December"
+  },
+  {
+    "section": "coldwar",
+    "date": "1989",
+    "event": "Hungary opens its borders with Austria \u2014 150,000 East Germans flee West"
+  },
+  {
+    "section": "coldwar",
+    "date": "1989",
+    "event": "Solidarity wins elections in Poland \u2014 first non-communist government"
+  },
+  {
+    "section": "coldwar",
+    "date": "1989",
+    "event": "Soviet troops withdraw from Afghanistan"
+  },
+  {
+    "section": "coldwar",
+    "date": "1989",
+    "event": "Tiananmen Square massacre \u2014 China crushes pro-democracy protests"
+  },
+  {
+    "section": "coldwar",
+    "date": "1989",
+    "event": "Velvet Revolution \u2014 Vaclav Havel becomes president of Czechoslovakia"
+  },
+  {
+    "section": "coldwar",
+    "date": "1990",
+    "event": "Germany formally reunified \u2014 3 October"
+  },
+  {
+    "section": "coldwar",
+    "date": "1991",
+    "event": "Gang of Eight coup attempt \u2014 Yeltsin leads resistance"
+  },
+  {
+    "section": "coldwar",
+    "date": "1991",
+    "event": "Gorbachev resigns \u2014 USSR officially dissolved, Christmas Day"
+  },
+  {
+    "section": "coldwar",
+    "date": "1993",
+    "event": "Czechoslovakia peacefully splits into Czech Republic and Slovakia"
+  },
+  {
+    "section": "coldwar",
+    "date": "1995",
+    "event": "Dayton Accord signed \u2014 ends Bosnian War; Bosnia divided into two entities"
+  },
+  {
+    "section": "coldwar",
+    "date": "1999",
+    "event": "NATO bombing campaign forces Serbia to withdraw from Kosovo"
+  }
 ]
