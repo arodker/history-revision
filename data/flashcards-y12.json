@@ -452,9 +452,9 @@
     "no": 30,
     "section": "elizabeth",
     "unit": "Unit 4 \u2013 Elizabeth I and Religion",
-    "front": "What did the Elizabethan Religious Settlement establish and why was it a via media?",
-    "p1": "The Act of Supremacy made Elizabeth Supreme Governor of the Church and repealed Mary's heresy laws. The Act of Uniformity enforced Cranmer's 1552 Book of Common Prayer \u2014 but omitted the 'Black Rubric' denying Transubstantiation, leaving communion deliberately ambiguous.",
-    "p2": "Holy Communion wording drew from both 1552 and 1548 Prayer Books, allowing open interpretation. Everyone must attend Church of England services on a Sunday \u2014 recusancy fine of 1 shilling.",
+    "front": "What did the Elizabethan Religious Settlement establish?",
+    "p1": "The Act of Supremacy made Elizabeth Supreme Governor of the Church and repealed Mary's heresy laws. All clergy and royal officials had to swear oath of loyalty to Elizabeth.",
+    "p2": "Act of Uniformity enforced Cranmer's 1552 Book of Common Prayer \u2014 omitted the 'Black Rubric' denying Transubstantiation. Everyone must attend Church of England services on a Sunday \u2014 recusancy fine of 1 shilling. Catholic elements like vestments, images, also retained.",
     "p3": "Elizabeth called it Via Media \u2014 'the middle way'. She promised she 'would not open windows unto men's souls' \u2014 demanding only outward conformity, not inner belief.",
     "hints": [
       "Act of Supremacy",
@@ -471,8 +471,8 @@
     "p2": "Elizabeth prorogued parliament over Easter 1559, arrested two vocal critics \u2014 the Bishops of Lincoln and Winchester \u2014 and compromised by adopting the title 'Supreme Governor' instead.",
     "p3": "The Settlement passed the House of Lords by just three votes. Elizabeth then removed the Marian bishops when they refused to swear the Oath of Loyalty.",
     "hints": [
-      "prorogation",
-      "Supreme Governor",
+      "bishops",
+      "prorogued",
       "three votes"
     ]
   },
@@ -490,18 +490,31 @@
       "Royal Prerogative"
     ]
   },
-  {
-    "no": 33,
+    {
+    "no": 33a,
     "section": "elizabeth",
     "unit": "Unit 4 \u2013 Elizabeth I and Religion",
-    "front": "How did Puritans challenge the settlement from within the Church and through popular appeals?",
-    "p1": "The Vestiarian Controversy: Puritans despised vestments. Parker compromised in his 1566 Advertisements \u2014 but 37 clergymen who refused lost their jobs. Cartwright gave Presbyterian lectures at Cambridge in 1570 denouncing Church hierarchy \u2014 he lost his professorship.",
+    "front": "How did Puritans challenge the settlement from within the Church?",
+    "p1": "The Vestiarian Controversy: Puritans despised vestments. Parker compromised in his 1566 Advertisements \u2014 but 37 clergymen who refused lost their jobs.",
+    "p2": "Puritans attempted to alter the 39 Articles in Church Convocation (1563). Anglican articles only passed by one vote - compromise where cermony is more ambiguous but doctrine is clearly moderate.",
+    "p3": "Bottom-up prophesying and classis movements in 1570s and 1580s attempted to spread Calvinist and Presbyterian ideals amongst clergy. Later suppressed by Whitgift.",
+    "hints": [
+      "Vestiarian",
+      "39 Articles",
+      "prophesying"
+    ]
+  },{
+    "no": 33b,
+    "section": "elizabeth",
+    "unit": "Unit 4 \u2013 Elizabeth I and Religion",
+    "front": "How did Puritans challenge the settlement through popular appeals?",
+    "p1": "Cartwright gave Presbyterian lectures at Cambridge in 1570 denouncing Church hierarchy \u2014 he lost his professorship.",
     "p2": "Field and Wilcox published the 'Admonition to Parliament' (1572) calling for the end of episcopacy. The Marprelate Tracts (1588\u201389) made vicious attacks on bishops \u2014 but alienated moderates.",
     "p3": "Separatist movements were suppressed \u2014 Robert Browne's 1581 Brownist Church in Norwich, and Henry Barrow and John Greenwood's 1590s movement \u2014 the leaders were arrested and executed in 1593.",
     "hints": [
-      "Vestiarian Controversy",
-      "Marprelate Tracts",
-      "Robert Browne"
+      "Cartwright",
+      "Marprelate",
+      "Separatist"
     ]
   },
   {
@@ -523,13 +536,13 @@
     "section": "elizabeth",
     "unit": "Unit 4 \u2013 Elizabeth I and Religion",
     "front": "Why was the Catholic threat limited in the first decade of Elizabeth's reign?",
-    "p1": "Elizabeth's relative tolerance limited overt challenge. The heresy laws were repealed \u2014 the sole recusancy punishment was a 1 shilling fine. Many Church Papists simply attended Church of England services before attending secret Catholic services. Elizabeth 'would not open windows unto men's souls'.",
+    "p1": "Elizabeth's tolerance \u2014 the sole recusancy punishment was a 1 shilling fine. Many Church Papists attended Church of England services before attending secret Catholic services. Elizabeth 'would not open windows unto men's souls'.",
     "p2": "Philip of Spain persuaded Pope Pius IV not to excommunicate Elizabeth in 1563 \u2014 Philip feared France gaining control of England if Mary Queen of Scots came to the throne.",
-    "p3": "The Habsburg-Valois rivalry prevented coordinated Catholic action \u2014 England was not a high enough priority to overcome their mutual hostility.",
+    "p3": "Elizabeth resisted parliament's attempts to increase punishments of Catholics. Law that stated those refusing oath of supremacy twice could be executed - Elizabeth decreed that no one would be asked twice!",
     "hints": [
-      "recusancy",
-      "Church Papists",
-      "Habsburg-Valois rivalry"
+      "tolerance",
+      "Philip",
+      "parliament"
     ]
   },
   {
@@ -541,7 +554,7 @@
     "p2": "A plot to marry Mary to the Duke of Norfolk triggered the Rising of the North \u2014 the northern earls captured Durham and held Catholic mass in the Cathedral. But no other Catholic nobility answered the summons; a royal army marched north and Elizabeth executed 450 rebels.",
     "p3": "In 1570 Pope Pius V issued his Papal bull Regnans in Excelsis excommunicating Elizabeth \u2014 Catholics were now absolved of any loyalty to her. This transformed passive non-conformity into active potential treachery.",
     "hints": [
-      "Rising of the North",
+      "figurehead",
       "Norfolk",
       "Papal Bull"
     ]
@@ -565,8 +578,8 @@
     "section": "elizabeth",
     "unit": "Unit 4 \u2013 Elizabeth I and Religion",
     "front": "How did seminary priests and Jesuits transform the Catholic threat from the 1570s?",
-    "p1": "William Allen's 'English College' at Douai produced the first seminary priests, who arrived in England from 1574. By 1585, 279 had travelled to England. From the 1580s Jesuits also arrived \u2014 around 650 in total, sheltered by Catholic gentry in priest holes.",
-    "p2": "The priests revitalised English Catholicism but gave the government justification for treating all Catholics as potential traitors \u2014 making it increasingly difficult for moderate 'Church Papists' to maintain their ambiguous position.",
+    "p1": "William Allen's 'English College' at Douai trained seminary priests, who arrived in England from 1574. By 1585, 279 had travelled to England. From the 1580s Jesuits also arrived \u2014 around 650 in total, sheltered by Catholic gentry in priest holes.",
+    "p2": "The priests revitalised English Catholicism, undermining Elizabeth's goal of allowing Catholicism to wither on the vine.",
     "p3": "Government response escalated: 1581 \u2014 recusancy fines raised to \u00a320 a month; 1585 \u2014 all Catholic priests expelled, harbouring a priest punishable by death. 133 seminary priests and Jesuits were executed.",
     "hints": [
       "William Allen",
