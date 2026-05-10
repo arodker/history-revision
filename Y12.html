@@ -86,6 +86,8 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .card ul{padding-left:1.2rem;margin:0}
 .card li{font-size:.87rem;line-height:1.55;margin-bottom:.55rem}
 .card li:last-child{margin-bottom:0}
+.kc-sub{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:1rem 0 .35rem;padding-bottom:.2rem;border-bottom:1px solid var(--subtle)}
+.kc-sub:first-child{margin-top:.25rem}
 .btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:.9rem}
 .reveal{display:none;border-top:1px solid var(--subtle);margin-top:.9rem;padding-top:.9rem}
 .reveal.open{display:block}
@@ -254,10 +256,6 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
         <button class="pick-btn pb-mtc" onclick="pickSection('mtc')">
           <span class="plabel">1547–1558</span>⚔️ Mid Tudor Crisis
-          <div class="reign-dots">
-            <span class="reign-dot" style="background:#6B9DE8"></span>
-            <span class="reign-dot" style="background:#E87A6B"></span>
-          </div>
         </button>
         <button class="pick-btn pb-liz" onclick="pickSection('elizabeth')">
           <span class="plabel">1558–1603</span>⚜️ Elizabeth I
@@ -592,7 +590,7 @@ function pickSection(sec) {
   const kUnit = document.getElementById('k-unit');
   kUnit.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>' +
     info.units.map(u => `<option value="${u}">${u}</option>`).join('');
-  kUnit.className = 'sel-' + (sec === 'mtc' ? 'mtc' : 'liz');
+  kUnit.className = sec === 'coldwar' ? 'sel-cw' : sec === 'elizabeth' ? 'sel-liz' : 'sel-mtc';
   // Exam routes
   buildExamRoutes(sec);
   // Build KC pool
@@ -676,12 +674,14 @@ function boldHints(text, hints) {
   });
   return out;
 }
-function stripeCol(reign) {
-  return {edward:'#6B9DE8', mary:'#E87A6B', mtc:'#A96BE8', elizabeth:'#1D9E75', coldwar:'#C47B1A'}[reign] || '#888';
+function stripeCol(val) {
+  return {edward:'#6B9DE8', mary:'#E87A6B', mtc:'#A96BE8', elizabeth:'#1D9E75', coldwar:'#C47B1A'}[val] || '#888';
 }
-function tagClass(reign) {
-  const map = {edward:'t-edward', mary:'t-mary', mtc:'t-mtc', elizabeth:'t-elizabeth', coldwar:'t-coldwar'};
-  return map[reign] || 't-mtc';
+function tagClass(val) {
+  if (val === 'elizabeth') return 't-elizabeth';
+  if (val === 'coldwar') return 't-coldwar';
+  if (val === 'edward' || val === 'mary' || val === 'mtc') return 't-mtc';
+  return 't-mtc';
 }
 
 // ═══════════════════════════════════
@@ -765,18 +765,26 @@ function jumpToCard() {
 
 function renderKCard(entry) {
   const card = entry.card, num = entry.num;
-  const factsHtml = '<ul>' + (card.facts||[]).map(f => `<li>${boldHints(f, card.hints)}</li>`).join('') + '</ul>';
+  const colKey = card.reign || card.section || currentSection;
+  let bodyHtml = '';
+  if (card.subheadings && card.subheadings.length) {
+    bodyHtml = card.subheadings.map(s =>
+      `<div class="kc-sub">${s.label}</div><ul>${s.facts.map(f => `<li>${f}</li>`).join('')}</ul>`
+    ).join('');
+  } else {
+    bodyHtml = '<ul>' + (card.facts||[]).map(f => `<li>${f}</li>`).join('') + '</ul>';
+  }
   document.getElementById('k-out').innerHTML = `
     <div class="card">
-      <div class="stripe" style="background:${stripeCol(card.reign)}"></div>
+      <div class="stripe" style="background:${stripeCol(colKey)}"></div>
       <div class="inner">
         <div class="meta">
           <span class="tag t-grey">${num}</span>
-          <span class="tag ${tagClass(card.reign)}">${card.unit}</span>
+          <span class="tag ${tagClass(colKey)}">${card.unit}</span>
         </div>
         <div class="card-heading">${card.heading}</div>
         ${card.summary ? `<p class="kc-summary">${card.summary}</p>` : ''}
-        ${factsHtml}
+        ${bodyHtml}
       </div>
     </div>`;
 }
