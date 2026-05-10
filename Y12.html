@@ -1414,12 +1414,12 @@ let SOURCE_SETS = [];
 let ESSAY_QS    = [];
 
 Promise.all([
-  fetch('kc-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
-  fetch('flashcards-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
-  fetch('dates-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
-  fetch('rq.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
-  fetch('sources.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
-  fetch('essays.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/kc-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/flashcards-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/dates-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/rq.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/sources.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/essays.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
 ]).then(([kc,fd,dates,rq,sources,essays]) => {
   KC = kc; FD = fd; DATES = dates; RQ = rq; SOURCE_SETS = sources; ESSAY_QS = essays;
   console.log('Data loaded — KC:', KC.length, 'FD:', FD.length, 'DATES:', DATES.length, 'RQ:', RQ.length);
