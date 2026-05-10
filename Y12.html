@@ -130,6 +130,8 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .rf-pill{padding:6px 12px;font-size:.78rem;font-weight:600;border:1.5px solid var(--border2);border-radius:20px;cursor:pointer;background:var(--surface);color:var(--muted);font-family:inherit;transition:all .15s}
 .rf-pill.on-edward{background:#EEF3FB;color:#1B4B9A;border-color:#6B9DE8}
 .rf-pill.on-mary{background:#FBF0EE;color:#9A1B1B;border-color:#E87A6B}
+.rf-pill.on-mtc{background:#F3EEFB;color:#5B1B9A;border-color:#A96BE8}
+.rf-pill.on-coldwar{background:#FEF3DC;color:#7a4e00;border-color:#C47B1A}
 .rf-pill.on-elizabeth{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
 .count-row{display:flex;gap:8px;margin-bottom:1rem}
 .count-btn{flex:1;padding:10px;font-size:.9rem;font-weight:700;border:1.5px solid var(--border2);border-radius:10px;cursor:pointer;background:var(--surface);color:var(--text);font-family:inherit;text-align:center;transition:all .15s}
@@ -495,11 +497,11 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     <span style="font-size:.85rem;font-weight:600;color:var(--muted)">🎯 Rapid Fire</span>
   </div>
   <div id="rq-setup">
-    <p class="rf-section-label">Which reigns?</p>
+    <p class="rf-section-label">Which section?</p>
     <div class="rf-pills">
-      <button class="rf-pill on-edward" id="rqp-edward" onclick="toggleRQReign('edward')">👑 Edward VI</button>
-      <button class="rf-pill on-mary" id="rqp-mary" onclick="toggleRQReign('mary')">🔥 Mary I</button>
+      <button class="rf-pill on-mtc" id="rqp-mtc" onclick="toggleRQReign('mtc')">⚔️ Mid Tudor Crisis</button>
       <button class="rf-pill on-elizabeth" id="rqp-elizabeth" onclick="toggleRQReign('elizabeth')">⚜️ Elizabeth I</button>
+      <button class="rf-pill on-coldwar" id="rqp-coldwar" onclick="toggleRQReign('coldwar')">☢️ Cold War</button>
     </div>
     <p class="rf-section-label">How many questions?</p>
     <div class="count-row">
@@ -943,10 +945,10 @@ function drawEssay(marks) {
 // ═══════════════════════════════════
 // RAPID FIRE
 // ═══════════════════════════════════
-let rqReigns = new Set(['edward','mary','elizabeth']), rqCount = 10;
+let rqReigns = new Set(['mtc','elizabeth']), rqCount = 10;
 
 function showRapidSetup() {
-  rqReigns = new Set(['edward','mary','elizabeth']);
+  rqReigns = new Set(['mtc','elizabeth']);
   ['edward','mary','elizabeth'].forEach(r => {
     document.getElementById('rqp-' + r).className = 'rf-pill on-' + r;
   });
@@ -968,12 +970,12 @@ function setRQCount(n) {
 }
 
 function generateRQ() {
-  const pool = shuffle(RQ.filter(q => rqReigns.has(q.reign))).slice(0, rqCount);
+  const pool = shuffle(RQ.filter(q => rqReigns.has(q.section))).slice(0, rqCount);
   if (!pool.length) { alert('No questions available for the selected reigns.'); return; }
   document.getElementById('rq-setup').style.display = 'none';
   document.getElementById('rq-out').style.display = 'block';
   document.getElementById('rq-grid').innerHTML = pool.map((q,i) => {
-    const col = stripeCol(q.reign);
+    const col = stripeCol(q.section);
     return `<div class="rq-card" id="rqc${i}" onclick="this.classList.add('revealed')" style="border-left:4px solid ${col}">
       <div class="rq-q">${i+1}. ${q.q}</div>
       <div class="rq-a">${q.a}</div>
@@ -1430,7 +1432,7 @@ Promise.all([
   fetch('data/kc-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/flashcards-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/dates-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
-  fetch('data/rq.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/rq-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/sources.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/essays.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
 ]).then(([kc,fd,dates,rq,sources,essays]) => {
