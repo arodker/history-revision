@@ -308,7 +308,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     </div>
   </div>
   <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border)">
-    <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Rapid Fire — all reigns mixed</button>
+    <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
     <div id="home-pinned-link" style="display:none;text-align:center">
       <button onclick="goToPinnedReview()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer">📌 Review pinned cards</button>
     </div>
@@ -494,7 +494,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 <div class="screen" id="s-rapid">
   <div class="mode-header">
     <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
-    <span style="font-size:.85rem;font-weight:600;color:var(--muted)">🎯 Rapid Fire</span>
+    <span style="font-size:.85rem;font-weight:600;color:var(--muted)">🎯 Mixed Retrieval Quiz</span>
   </div>
   <div id="rq-setup">
     <p class="rf-section-label">Which section?</p>
@@ -503,20 +503,35 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
       <button class="rf-pill on-elizabeth" id="rqp-elizabeth" onclick="toggleRQReign('elizabeth')">⚜️ Elizabeth I</button>
       <button class="rf-pill on-coldwar" id="rqp-coldwar" onclick="toggleRQReign('coldwar')">☢️ Cold War</button>
     </div>
-    <p class="rf-section-label">How many questions?</p>
+    <p class="rf-section-label">Mode</p>
     <div class="count-row">
-      <button class="count-btn" id="cnt-5" onclick="setRQCount(5)">5</button>
-      <button class="count-btn sel" id="cnt-10" onclick="setRQCount(10)">10</button>
-      <button class="count-btn" id="cnt-15" onclick="setRQCount(15)">15</button>
+      <button class="count-btn sel" id="rqm-batch" onclick="setRQMode('batch')">10 at once</button>
+      <button class="count-btn" id="rqm-one" onclick="setRQMode('one')">One at a time</button>
+      <button class="count-btn" id="rqm-endless" onclick="setRQMode('endless')">Endless</button>
     </div>
     <button class="btn-go" style="background:#555" onclick="generateRQ()">🎯 Let's go</button>
   </div>
   <div id="rq-out" style="display:none">
-    <div class="rq-grid" id="rq-grid"></div>
-    <div class="rq-btn-row">
-      <button class="btn-sm" onclick="generateRQ()">🔄 New questions</button>
-      <button class="btn-sm" onclick="revealAllRQ()">👁 Reveal all</button>
-      <button class="btn-sm" onclick="document.getElementById('rq-setup').style.display='block';document.getElementById('rq-out').style.display='none'">⚙️ Settings</button>
+    <div id="rq-one-wrap" style="display:none">
+      <div class="rq-card" id="rq-one-card" onclick="rqRevealCard()">
+        <div class="rq-q" id="rq-one-q"></div>
+        <div class="rq-a" id="rq-one-a"></div>
+        <div class="rq-tap" id="rq-one-tap">Tap to reveal</div>
+      </div>
+      <div id="rq-answer-btns" style="display:none;gap:10px;margin-top:.75rem">
+        <button class="btn-go" style="background:#1D9E75;margin-bottom:0;flex:1" onclick="rqMark(true)">✓ Got it</button>
+        <button class="btn-go" style="background:#C82A2A;margin-bottom:0;flex:1" onclick="rqMark(false)">✗ Wrong</button>
+      </div>
+      <div id="rq-one-progress" style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:.6rem"></div>
+      <button class="btn-sm" style="width:100%;margin-top:.75rem" onclick="showRapidSetup()">✕ Exit quiz</button>
+    </div>
+    <div id="rq-batch-wrap">
+      <div class="rq-grid" id="rq-grid"></div>
+      <div class="rq-btn-row">
+        <button class="btn-sm" onclick="generateRQ()">🔄 New questions</button>
+        <button class="btn-sm" onclick="revealAllRQ()">👁 Reveal all</button>
+      </div>
+      <button class="btn-sm" style="width:100%;margin-top:.5rem" onclick="showRapidSetup()">✕ Exit quiz</button>
     </div>
   </div>
 </div>
@@ -945,7 +960,12 @@ function drawEssay(marks) {
 // ═══════════════════════════════════
 // RAPID FIRE
 // ═══════════════════════════════════
-let rqReigns = new Set(['mtc','elizabeth']), rqCount = 10;
+let rqReigns = new Set(['mtc','elizabeth','coldwar']), rqMode = 'batch';
+let rqPool = [], rqOneIdx = 0, rqWrong = [], rqSinceWrong = 0;
+
+function revealAllRQ() {
+  document.querySelectorAll('.rq-card').forEach(c => c.classList.add('revealed'));
+}
 
 function showRapidSetup() {
   rqReigns = new Set(['mtc','elizabeth','coldwar']);
@@ -953,7 +973,7 @@ function showRapidSetup() {
     const el = document.getElementById('rqp-' + r);
     if (el) el.className = 'rf-pill on-' + r;
   });
-  setRQCount(10);
+  setRQMode('batch');
   document.getElementById('rq-setup').style.display = 'block';
   document.getElementById('rq-out').style.display = 'none';
   showScreen('s-rapid');
@@ -966,29 +986,114 @@ function toggleRQReign(r) {
   if (el) el.className = 'rf-pill ' + (rqReigns.has(r) ? 'on-' + r : '');
 }
 
-function setRQCount(n) {
-  rqCount = n;
-  [5,10,15].forEach(c => document.getElementById('cnt-' + c).classList.toggle('sel', c === n));
+function setRQMode(m) {
+  rqMode = m;
+  ['batch','one','endless'].forEach(x => {
+    const el = document.getElementById('rqm-' + x);
+    if (el) el.classList.toggle('sel', x === m);
+  });
 }
 
 function generateRQ() {
-  const pool = shuffle(RQ.filter(q => rqReigns.has(q.section))).slice(0, rqCount);
-  if (!pool.length) { alert('No questions available for the selected reigns.'); return; }
+  const filtered = shuffle(RQ.filter(q => rqReigns.has(q.section)));
+  if (!filtered.length) { alert('No questions available for the selected sections.'); return; }
   document.getElementById('rq-setup').style.display = 'none';
   document.getElementById('rq-out').style.display = 'block';
-  document.getElementById('rq-grid').innerHTML = pool.map((q,i) => {
-    const col = stripeCol(q.section);
-    return `<div class="rq-card" id="rqc${i}" onclick="this.classList.add('revealed')" style="border-left:4px solid ${col}">
-      <div class="rq-q">${i+1}. ${q.q}</div>
-      <div class="rq-a">${q.a}</div>
-      <div class="rq-tap">Tap to reveal</div>
-    </div>`;
-  }).join('');
+
+  if (rqMode === 'batch') {
+    rqPool = filtered.slice(0, 10);
+    document.getElementById('rq-one-wrap').style.display = 'none';
+    document.getElementById('rq-batch-wrap').style.display = 'block';
+    document.getElementById('rq-grid').innerHTML = rqPool.map((q,i) => {
+      const col = stripeCol(q.section);
+      return `<div class="rq-card" id="rqc${i}" onclick="this.classList.add('revealed')" style="border-left:4px solid ${col}">
+        <div class="rq-q">${i+1}. ${q.q}</div>
+        <div class="rq-a">${q.a}</div>
+        <div class="rq-tap">Tap to reveal</div>
+      </div>`;
+    }).join('');
+  } else {
+    rqPool = rqMode === 'one' ? filtered.slice(0, 10) : [...filtered];
+    rqWrong = [];
+    rqOneIdx = 0;
+    rqSinceWrong = 0;
+    document.getElementById('rq-batch-wrap').style.display = 'none';
+    document.getElementById('rq-one-wrap').style.display = 'block';
+    renderRQOne();
+  }
 }
 
-function revealAllRQ() {
-  document.querySelectorAll('.rq-card').forEach(c => c.classList.add('revealed'));
+function rqRevealCard() {
+  const card = document.getElementById('rq-one-card');
+  if (card.classList.contains('revealed')) return;
+  card.classList.add('revealed');
+  document.getElementById('rq-one-tap').style.display = 'none';
+  // Show got it / wrong for both modes
+  const btns = document.getElementById('rq-answer-btns');
+  btns.style.display = 'flex';
 }
+
+function rqMark(correct) {
+  document.getElementById('rq-answer-btns').style.display = 'none';
+  if (!correct && rqMode === 'endless') {
+    // add to wrong pile to be recycled
+    rqWrong.push(rqPool[rqOneIdx]);
+  }
+  rqOneIdx++;
+  rqSinceWrong++;
+
+  // In endless mode: every 4 new questions, inject a wrong one if available
+  if (rqMode === 'endless' && rqSinceWrong >= 4 && rqWrong.length > 0) {
+    rqPool.splice(rqOneIdx, 0, rqWrong.shift());
+    rqSinceWrong = 0;
+  }
+
+  renderRQOne();
+}
+
+function renderRQOne() {
+  // Endless: reshuffle when pool exhausted
+  if (rqMode === 'endless' && rqOneIdx >= rqPool.length) {
+    rqPool = shuffle(RQ.filter(q => rqReigns.has(q.section)));
+    // re-inject any remaining wrong
+    if (rqWrong.length) { rqPool.splice(3, 0, ...rqWrong); rqWrong = []; }
+    rqOneIdx = 0;
+    rqSinceWrong = 0;
+  }
+
+  if (rqOneIdx >= rqPool.length) {
+    // one-at-a-time finished
+    const card = document.getElementById('rq-one-card');
+    card.className = 'rq-card revealed';
+    card.style.borderLeft = '4px solid var(--muted)';
+    document.getElementById('rq-one-q').textContent = '✅ All done!';
+    document.getElementById('rq-one-a').textContent = '';
+    document.getElementById('rq-one-tap').style.display = 'none';
+    document.getElementById('rq-answer-btns').style.display = 'none';
+    document.getElementById('rq-one-progress').textContent = '';
+    return;
+  }
+
+  const q = rqPool[rqOneIdx];
+  const card = document.getElementById('rq-one-card');
+  card.className = 'rq-card';
+  card.style.borderLeft = `4px solid ${stripeCol(q.section)}`;
+  document.getElementById('rq-one-q').textContent = `${rqOneIdx + 1}. ${q.q}`;
+  document.getElementById('rq-one-a').textContent = q.a;
+  document.getElementById('rq-one-tap').style.display = 'block';
+  document.getElementById('rq-answer-btns').style.display = 'none';
+
+  if (rqMode === 'one') {
+    const wrongCount = rqWrong ? rqWrong.length : 0;
+    document.getElementById('rq-one-progress').textContent = `${rqOneIdx + 1} / ${rqPool.length}`;
+  } else {
+    const wrongCount = rqWrong.length;
+    document.getElementById('rq-one-progress').textContent =
+      wrongCount > 0 ? `Question ${rqOneIdx + 1} — ${wrongCount} to revisit` : `Question ${rqOneIdx + 1}`;
+  }
+}
+
+function rqOneNext() { rqOneIdx++; renderRQOne(); }
 
 // ═══════════════════════════════════
 // FLASHCARD DRILL
