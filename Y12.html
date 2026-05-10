@@ -181,7 +181,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .fd-card-inner.flipped{transform:rotateY(180deg)}
 .fd-front,.fd-back{width:100%;min-height:180px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;box-sizing:border-box}
 .fd-back{position:absolute;top:0;left:0;transform:rotateY(180deg)}
-.fd-tag{font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:.75rem}
+.fd-tag{font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:.75rem;max-width:100%;white-space:normal;line-height:1.4}
 .fd-question{font-size:1rem;font-weight:700;line-height:1.45;margin-bottom:.75rem}
 .fd-hint-chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
 .fd-hint-chips .tag{font-weight:700}
@@ -1110,7 +1110,7 @@ function fdNext() {
   const cardSec = fdCurrent.section || currentSection;
   const col = S[cardSec] ? S[cardSec].colour : '#888';
   const sectionLabel = S[cardSec] ? S[cardSec].label : cardSec;
-  const tag = `${sectionLabel} · ${fdCurrent.unit}`;
+  const tag = fdCurrent.unit || sectionLabel;
   const tagCls = cardSec === 'elizabeth' ? 't-elizabeth' : cardSec === 'coldwar' ? 't-coldwar' : 't-mtc';
   document.getElementById('fd-tag').className = 'fd-tag ' + tagCls;
   document.getElementById('fd-tag').textContent = tag;
@@ -1377,7 +1377,7 @@ function renderFdSetupWheel() {
       const gotToday = session.unitGot[uk] || 0;
       const colour = gotToday>=unitTotal&&unitTotal>0?'#1D9E75':gotToday>0?'#F0B429':'var(--muted)';
       const dot = gotToday>=unitTotal&&unitTotal>0?'🥇':gotToday>0?'◑':'○';
-      return `<div style="display:flex;align-items:center;gap:.4rem;padding:.2rem 0;border-bottom:1px solid var(--subtle);font-size:.72rem"><span style="color:${colour};font-size:.65rem">${dot}</span><span style="flex:1;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${unit}</span><span style="font-weight:700;color:${colour};flex-shrink:0">${gotToday}/${unitTotal}</span></div>`;
+      return `<div style="display:flex;align-items:center;gap:.4rem;padding:.2rem 0;border-bottom:1px solid var(--subtle);font-size:.72rem"><span style="color:${colour};font-size:.65rem;flex-shrink:0">${dot}</span><span style="flex:1;color:var(--text)">${unit}</span><span style="font-weight:700;color:${colour};flex-shrink:0;margin-left:.3rem">${gotToday}/${unitTotal}</span></div>`;
     }).join('');
   }
 }
