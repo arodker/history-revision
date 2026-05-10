@@ -176,10 +176,10 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 
 /* FLASHCARD DRILL */
 .fd-scene{perspective:1200px;margin-bottom:.75rem;cursor:pointer}
-.fd-card-inner{position:relative;width:100%;min-height:220px;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.fd-card-inner{position:relative;width:100%;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.4,0,.2,1)}
 .fd-card-inner.flipped{transform:rotateY(180deg)}
-.fd-front,.fd-back{position:absolute;width:100%;min-height:220px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem}
-.fd-back{transform:rotateY(180deg)}
+.fd-front,.fd-back{width:100%;min-height:180px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;box-sizing:border-box}
+.fd-back{position:absolute;top:0;left:0;transform:rotateY(180deg)}
 .fd-tag{font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:.75rem}
 .fd-question{font-size:1rem;font-weight:700;line-height:1.45;margin-bottom:.75rem}
 .fd-hint-chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
@@ -293,7 +293,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     </div>
   </div>
   <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border)">
-    <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Rapid Fire — mixed retrieval</button>
+    <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Rapid Fire — all reigns mixed</button>
     <div id="home-pinned-link" style="display:none;text-align:center">
       <button onclick="goToPinnedReview()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer">📌 Review pinned cards</button>
     </div>
@@ -688,7 +688,7 @@ function buildKPool() {
       ? (c.reign === 'edward' || c.reign === 'mary' || c.reign === 'mtc')
       : currentSection === 'coldwar'
         ? c.section === 'coldwar'
-        : c.reign === 'elizabeth'
+        : c.section === 'elizabeth'
   );
   all.sort((a,b) => {
     const ui = units.indexOf(a.unit), vi = units.indexOf(b.unit);
@@ -1093,7 +1093,7 @@ function fdNext() {
   const col = S[cardSec] ? S[cardSec].colour : '#888';
   const sectionLabel = S[cardSec] ? S[cardSec].label : cardSec;
   const tag = `${sectionLabel} · ${fdCurrent.unit}`;
-  const tagCls = cardSec === 'elizabeth' ? 't-elizabeth' : 't-mtc';
+  const tagCls = cardSec === 'elizabeth' ? 't-elizabeth' : cardSec === 'coldwar' ? 't-coldwar' : 't-mtc';
   document.getElementById('fd-tag').className = 'fd-tag ' + tagCls;
   document.getElementById('fd-tag').textContent = tag;
   document.getElementById('fd-tag-back').className = 'fd-tag ' + tagCls;
@@ -1103,8 +1103,8 @@ function fdNext() {
   document.getElementById('fd-question').textContent = (isOut ? '📌 ' : '') + fdCurrent.front;
   const pts = document.getElementById('fd-points');
   const hints = fdCurrent.hints || [];
-  pts.innerHTML = ['p1','p2','p3'].map((k,i) =>
-    fdCurrent[k] ? `<li>${boldHints(fdCurrent[k], hints[i] ? [hints[i]] : [])}</li>` : ''
+  pts.innerHTML = ['p1','p2','p3'].map(k =>
+    fdCurrent[k] ? `<li>${boldHints(fdCurrent[k], hints)}</li>` : ''
   ).join('');
   document.querySelectorAll('#fd-points li').forEach(li => li.classList.remove('fd-pt-show'));
   const chipsEl = document.getElementById('fd-hint-chips');
@@ -1117,6 +1117,16 @@ function fdNext() {
   document.getElementById('fd-card-inner').classList.remove('flipped');
   document.getElementById('fd-btn-row').style.display = 'none';
   fdUpdateProgress();
+  setTimeout(fdSyncHeight, 30);
+}
+
+function fdSyncHeight() {
+  const inner = document.getElementById('fd-card-inner');
+  const front = document.getElementById('fd-front');
+  const back  = document.getElementById('fd-back');
+  if (!inner || !front || !back) return;
+  const h = fdFlipped ? back.offsetHeight : front.offsetHeight;
+  inner.style.height = Math.max(h, 140) + 'px';
 }
 
 function fdFlip() {
@@ -1124,13 +1134,24 @@ function fdFlip() {
   if (!fdFlipped) {
     fdFlipped = true; inner.classList.add('flipped');
     const items = document.querySelectorAll('#fd-points li');
-    items.forEach((li,i) => setTimeout(() => li.classList.add('fd-pt-show'), 300 + i*700));
+    items.forEach((li,i) => setTimeout(() => {
+      li.classList.add('fd-pt-show');
+      fdSyncHeight();
+    }, 300 + i*700));
     const delay = 300 + items.length*700 + 400;
-    setTimeout(() => { document.getElementById('fd-btn-row').style.display = 'grid'; }, delay);
+    setTimeout(() => {
+      document.getElementById('fd-btn-row').style.display = 'grid';
+      fdSyncHeight();
+    }, delay);
+    setTimeout(fdSyncHeight, 50);
   } else if (inner.classList.contains('flipped')) {
     inner.classList.remove('flipped');
+    fdFlipped = false;
+    setTimeout(fdSyncHeight, 50);
   } else {
     inner.classList.add('flipped');
+    fdFlipped = true;
+    setTimeout(fdSyncHeight, 50);
   }
 }
 
@@ -1375,8 +1396,8 @@ let SOURCE_SETS = [];
 let ESSAY_QS    = [];
 
 Promise.all([
-  fetch('data/kc-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
-  fetch('data/flashcards-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/kc.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/flashcards.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/dates.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/rq.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/sources.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
