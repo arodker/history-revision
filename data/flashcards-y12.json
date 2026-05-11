@@ -959,17 +959,17 @@
     ]
   },
   {
-    "no": 88,
+    "no": 97,
     "section": "elizabeth",
     "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "How successfully did Elizabeth manage Crown finances before the war with Spain?",
-    "p1": "By 1576 the Marian debt had been cleared; by 1584 Elizabeth had accrued a surplus of £300,000. Achieved by avoiding her father's excessive lifestyle, not spending on building projects, going on 'progress' at courtiers' expense, and avoiding war.",
-    "p2": "However her management of ordinary revenue was less impressive — she sold significant Crown lands (bringing in £600,000 but depleting long-term income), the Book of Rates was not regularly revised, and Custom Farmers led to widespread corruption.",
-    "p3": "Taxes in England were amongst the lowest in Europe. The financial success before 1585 was real but fragile — dependent on continued peace and prudent spending, not structural reform of revenue collection.",
+    "front": "How successfully did Elizabeth manage the Crown's finances before 1585?",
+    "p1": "Elizabeth effectively removed the Marian debt. By 1576 the Chancellor of the Exchequer informed parliament that the Marian debt had been removed. By 1584 Elizabeth had accrued a surplus of £300,000.",
+    "p2": "She achieved this by not indulging in the excessive lifestyle of her father, not spending on lavish building projects, going on 'progress' each summer at courtiers' expense, and avoiding war at all cost.",
+    "p3": "However she sold a significant portion of Crown Lands — bringing in £600,000 but depleting long-term income. Custom Farmers led to widespread corruption that reduced actual revenues below their potential. Refused to pay for professional tax-collecting service.",
     "hints": [
-      "surplus £300,000",
-      "Crown lands",
-      "Custom Farmers"
+      "Marian debt",
+      "lifestyle",
+      "Crown Lands"
     ]
   },
   {
@@ -987,45 +987,31 @@
     ]
   },
   {
-    "no": 90,
-    "section": "elizabeth",
-    "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "How effectively did the government respond to inflation?",
-    "p1": "Gresham's recoinage of 1560 called in debased coins and removed base alloys — but prices did not go down: merchants simply set the same prices, or higher.",
-    "p2": "Elizabeth encouraged fasting during Lent and 'fish days' on Wednesdays and Fridays to limit demand. The 1586 Book of Orders prohibited hoarding of grain — demand management rather than structural solutions.",
-    "p3": "Ultimately the government could not tackle inflation — they lacked understanding of how rising population affected supply and demand. Inflation was a structural problem no Tudor government had the economic tools to solve.",
-    "hints": [
-      "recoinage",
-      "fish days",
-      "Book of Orders"
-    ]
-  },
-  {
     "no": 91,
     "section": "elizabeth",
     "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "What was the financial impact of the war with Spain from 1585?",
-    "p1": "Elizabeth's surplus of £300,000 was used almost entirely in the first year of war. The Treaty of Nonsuch committed £126,000 per year to support the Dutch rebels. Total war cost: £4.5 million — £2m in the Netherlands, £2m in Ireland, £500,000 for Henry of Navarre, £160,000 against the Armada.",
-    "p2": "Elizabeth was forced to sell more Crown lands in the 1590s and resort to monopolies as patronage — contributing to price rises and creating dissatisfaction in Parliament.",
-    "p3": "Some benefits: Drake's 1587 Cadiz raid brought £140,000; Flemings and Huguenots brought improved manufacturing skills. But these could not compensate for the enormous drain on the Exchequer.",
+    "front": "How effectively did overseas trade develop in Europe and the Middle East?",
+    "p1": "Cloth trade represented 75% of exports at start of reign. The Dutch Revolt and war with Spain collapsed the Antwerp cloth market — new markets were needed. New companies were established: Muscovy Company (1555); Eastland Company (1579); Levant Company (1580); East India Company (1600).",
+    "p2": "Muscovy Company (1555) founded to trade in Russia - over time became prosperous trading cloth for Russian hides. Eastland Company (1579) established to trade in Baltic less successful due to dominance of German Hanseatic League.",
+    "p3": "Levant Company (1580) founded to trade in Eastern Mediterranean with Ottomans. Attempts to build trading relationship with Shah of Persia failed for religious reasons.",
     "hints": [
-      "Treaty of Nonsuch",
-      "£4.5 million",
-      "monopolies"
+      "75%",
+      "Russia",
+      "Levant"
     ]
   },
   {
     "no": 92,
     "section": "elizabeth",
     "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "How successfully did Elizabeth expand overseas trade?",
-    "p1": "The Dutch Revolt and war with Spain collapsed the Antwerp cloth market — new markets were needed. New companies were established: Muscovy Company (1555); Eastland Company (1579); Levant Company (1580); East India Company (1600).",
-    "p2": "In the New World, Hawkins created the Triangular Slave Trade in 1562 — Elizabeth herself invested. Raleigh's attempts to create colonies at Roanoke Island failed. Spain and Portugal dominated the New World — English activity was largely limited to piracy.",
-    "p3": "Success was limited — the Hanseatic League resisted English advances in the Baltic; the East India Company had little value in Elizabeth's lifetime; no colonies were established. England remained dependent on the European markets the war had disrupted.",
+    "front": "How effectively did overseas trade develop in the Americas and Asia?",
+    "p1": "Americas dominated by Spain and Portugal. Raleigh's colonisation attempts at Roanoke island fail in 1580s. John Dee and Martin Frobisher fail to find north-west passage.",
+    "p2": "John Hawkins establishes English involvement in Transatlantic Slave Trade (1562) - still dominated by Spanish and Portuguese in this period.",
+    "p3": "East India Company established 1600 - would go on to become vital to empire but too early for Elizabeth I to benefit. By end of reign 75% of trade is with traditional European partners.",
     "hints": [
-      "Muscovy Company",
-      "East India Company",
-      "Roanoke"
+      "Raleigh",
+      "Hawkins",
+      "1600"
     ]
   },
   {
@@ -1033,27 +1019,27 @@
     "section": "elizabeth",
     "unit": "Unit 6 – Financial, Economic and Social Affairs",
     "front": "What caused poverty and vagrancy to grow during Elizabeth's reign?",
-    "p1": "The growing population created a labour surplus — employers could lower wages while landlords raised rents. Combined with inflation this created large amounts of poverty. Contemporaries blamed enclosure and greedy landlords, though the real cause was population growth.",
+    "p1": "The growing population (3 to 4 million) created Malthusian Crisis — employers could lower wages while landlords raised rents. Combined with inflation this created large amounts of poverty. ",
     "p2": "The wars with Spain and Ireland compounded the problem — soldiers and sailors were discharged far from home, often with no pay and serious injuries, adding to the pool of destitute vagrants.",
-    "p3": "Elizabethans feared vagrants intensely — viewed as disease-spreaders and criminals. The government feared they encouraged social unrest. By 1600, in some areas over 70% of available arable land was enclosed.",
+    "p3": "Contemporaries blamed enclosure and greedy landlords. By 1600, in some areas over 70% of available arable land was enclosed - but nationally only 2%.",
     "hints": [
       "Malthusian Crisis",
-      "vagrants",
-      "discharged soldiers"
+      "wars",
+      "enclosure"
     ]
   },
   {
     "no": 94,
     "section": "elizabeth",
     "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "How did government attitudes to poverty change during Elizabeth's reign?",
-    "p1": "Early legislation was punitive: the 1563 Alms Act created a voluntary Poor Rate; the 1572 Vagabonds Act made contributions compulsory but enacted severe penalties including whipping, mutilation and execution.",
-    "p2": "A gradual shift occurred: the 1576 Act for the Relief of the Poor provided 'able-bodied' poor with work in a House of Correction — the first recognition that the 'undeserving poor' required help, not just punishment.",
-    "p3": "The 1601 Poor Law made the state permanently responsible for providing poor relief and codified the distinction between 'deserving' and 'undeserving' poor — provisions lasting until the mid-19th century.",
+    "front": "How did government attitudes to poverty change at the start Elizabeth's reign?",
+    "p1": "Distinction made between deserving and undeserving poor. Early legislation only supported deserving - e.g. 1563 Alms Act created voluntary poor rate.",
+    "p2": "Belief that undeserving poor needed regulating, not helping. 1563 Statute of Artificers set maximum wage rates and enforced 7-year apprenticeships. 1572 Vagabonds Act set physical mutilation as punishmend for vagrancy.",
+    "p3": "Poor relief was domain of church, not state. Early examples of poor relief are either run at parish level, or are voluntary poor rates. JPs take over later in reign.",
     "hints": [
-      "deserving poor",
-      "House of Correction",
-      "1601 Poor Law"
+      "deserving",
+      "regulating",
+      "church"
     ]
   },
   {
@@ -1074,28 +1060,14 @@
     "no": 96,
     "section": "elizabeth",
     "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "Who were Gresham and Paulet and what was their advice?",
-    "p1": "Sir Thomas Gresham: a highly perceptive financier experienced in the key money markets. His primary advice was to maintain an excellent credit rating by swiftly repaying existing debt and avoiding loans in peacetime.",
+    "front": "How did Gresham and Paulet improve royal finances?",
+    "p1": "Sir Thomas Gresham: a highly perceptive financier experienced in the key money markets. Stopped debasement and led the recoinage efforts of 1560-1.",
     "p2": "In 1565 Gresham founded the Royal Exchange as a London equivalent to the Antwerp Exchange. Cecil eventually agreed to his argument that relaxing usury laws would stimulate the English financial markets.",
-    "p3": "William Paulet: a highly effective and experienced Lord Treasurer. Despite being in his 70s when Elizabeth came to the throne, he served loyally until his death in 1572, aged 89.",
+    "p3": "William Paulet: a highly effective and experienced Lord Treasurer. Excellent financial management helped Elizabeth clear Marian debt by 1576.",
     "hints": [
-      "Gresham",
+      "debasement",
       "Royal Exchange",
-      "William Paulet"
-    ]
-  },
-  {
-    "no": 97,
-    "section": "elizabeth",
-    "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "How successfully did Elizabeth manage the Crown's finances before 1585?",
-    "p1": "Elizabeth quickly and effectively removed the Marian debt. By 1576 the Chancellor of the Exchequer informed parliament that the Marian debt had been removed. By 1584 Elizabeth had accrued a surplus of £300,000.",
-    "p2": "She achieved this by not indulging in the excessive lifestyle of her father, not spending on lavish building projects, going on 'progress' each summer at courtiers' expense, and avoiding war at all cost.",
-    "p3": "However she sold a significant portion of Crown Lands — bringing in £600,000 but depleting long-term income. Custom Farmers led to widespread corruption that reduced actual revenues below their potential.",
-    "hints": [
-      "surplus £300,000",
-      "progress",
-      "Crown Lands"
+      "debt"
     ]
   },
   {
@@ -1116,7 +1088,7 @@
     "no": 99,
     "section": "elizabeth",
     "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "What were the specific causes of inflation — population, harvests and bullion?",
+    "front": "What were the specific causes of inflation?",
     "p1": "Population rise: between 1547 and 1603 the population increased from c.2.7 million to c.4 million. The availability of resources could not increase at the same rate — increased demand led to increased prices. By the 1560s, average food prices were triple those of Henry VII's reign.",
     "p2": "Poor harvests — made common by the Little Ice Age — decreased the supply of goods and thus increased prices.",
     "p3": "Bullion: huge quantities of gold and silver from the New World decreased the value of precious metals — coinage became less valuable and prices rose.",
@@ -1137,7 +1109,7 @@
     "hints": [
       "recoinage",
       "fish days",
-      "Book of Orders"
+      "did not understand"
     ]
   },
   {
@@ -1147,7 +1119,7 @@
     "front": "What was the cost of the war with Spain from 1585?",
     "p1": "The Treaty of Nonsuch committed Elizabeth to £126,000 per year to support the Dutch rebels. In total the war cost £4.5 million — £2m in the Netherlands, £2m in Ireland, £500,000 supporting Henry of Navarre and £160,000 defending against the Spanish Armada.",
     "p2": "Even before 1585 the ongoing Dutch Revolt negatively affected English trade. A 1576 mutiny by Spanish troops in Antwerp destroyed much of that city — a centre for the English wool trade. Elizabeth's seizure of the Genoese Leon in 1568 prompted a trade embargo with Spain until 1573.",
-    "p3": "Elizabeth's hard work at improving her finances was made redundant by the war. Her surplus of £300,000 was used almost entirely in the first year.",
+    "p3": "Elizabeth's hard work at improving her finances was made redundant by the war. Her surplus of £300,000 was used almost entirely in the first year. Elizabeth was forced to sell more Crown lands in the 1590s and resort to monopolies as patronage — contributing to price rises and creating dissatisfaction in Parliament.",
     "hints": [
       "Treaty of Nonsuch",
       "£4.5 million",
@@ -1158,56 +1130,14 @@
     "no": 102,
     "section": "elizabeth",
     "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "What benefits did the war with Spain bring and how did Elizabeth adapt financially?",
+    "front": "What economic benefits did the war with Spain bring?",
     "p1": "Many Flemings fled the Netherlands in 1566 and brought improved manufacturing skills to England — particularly cloth-making. French Huguenots fleeing persecution also brought manufacturing skills and trade to England.",
-    "p2": "Elizabeth's sponsorship of privateers often brought dividends — Drake's circumnavigation of the globe (1577–80) stole large amounts from Spanish ships and ports. His 1587 raid on Cadiz brought £140,000.",
+    "p2": "Elizabeth's sponsorship of privateers often brought dividends — Drake's circumnavigation of the globe (1577–80) stole £400,000 from Spanish ships and ports. His 1587 raid on Cadiz brought £140,000.",
     "p3": "Due to the cost of war, Elizabeth resorted to monopolies in her later years to reward her courtiers — these contributed to price rises and caused great dissatisfaction. Elizabeth forced to sell more Crown lands in the 1590s, further weakening long-term royal finances.",
     "hints": [
       "Flemings",
       "Drake",
       "monopolies"
-    ]
-  },
-  {
-    "no": 103,
-    "section": "elizabeth",
-    "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "How did Elizabeth attempt to expand overseas trade?",
-    "p1": "Prior to Elizabeth's reign, English trade was reliant on the Antwerp cloth market — the Dutch Revolt and war with Spain collapsed it. The Muscovy Company (1555) was established to trade English wool in Russia. The Eastland Company (1579) established a depot in Poland for Baltic trade.",
-    "p2": "The Levant Company (1580) was founded to trade with the Ottoman Empire. The East India Company (1600) was founded to trade with India — hugely important later but limited in Elizabeth's lifetime.",
-    "p3": "In the New World: Sir John Hawkins created the Triangular Slave Trade in 1562 — Elizabeth herself invested. Sir Walter Raleigh's attempts to create colonies at Roanoke Island failed. Spain and Portugal dominated the New World — English activity was largely limited to piracy.",
-    "hints": [
-      "Muscovy Company",
-      "Levant Company",
-      "East India Company"
-    ]
-  },
-  {
-    "no": 104,
-    "section": "elizabeth",
-    "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "What were the specific causes of poverty and vagrancy — population and war?",
-    "p1": "The growing population (2.8 million in the 1540s to 4.1 million by Elizabeth's death) led to a surplus of labour — employers could lower wages while landlords raised rents. Combined with inflation this created large amounts of poverty.",
-    "p2": "In the later years, the wars with Spain and Ireland compounded the problem — soldiers and sailors were discharged far from home, often with no pay and serious injuries, adding to the pool of destitute vagrants.",
-    "p3": "Contemporaries blamed enclosure and greedy landlords. By 1600, in some areas over 70% of available arable land was enclosed — though enclosure was actually declining as the collapse of the Dutch cloth market removed the incentive for sheep farming.",
-    "hints": [
-      "surplus labour",
-      "discharged soldiers",
-      "enclosure"
-    ]
-  },
-  {
-    "no": 105,
-    "section": "elizabeth",
-    "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "What were the early government responses to poverty under Elizabeth?",
-    "p1": "1563 Statute of Artificers: introduced compulsory seven-year apprenticeships for craftspeople. JPs set maximum regional wages and discouraged economic migration in search of work. Proved impossible to enforce.",
-    "p2": "1563 Alms Act: the 'deserving poor' were to be supported by a Poor Rate organised by the Church. Contributions not enforced by the state.",
-    "p3": "1572 Vagabonds Act: contributions to the Poor Rate made compulsory. Severe penalties against vagrants and the 'undeserving/idle poor' — whipping, mutilation and ultimately execution.",
-    "hints": [
-      "Statute of Artificers",
-      "Alms Act",
-      "Vagabonds Act"
     ]
   },
   {
@@ -1220,8 +1150,8 @@
     "p3": "1601 Poor Law: the government assumed responsibility for providing the Poor Rate from the Church. The distinction between 'deserving' and 'undeserving' poor was codified. These provisions lasted until the mid-19th century.",
     "hints": [
       "House of Correction",
-      "1601 Poor Law",
-      "deserving poor"
+      "sturdy beggars",
+      "responsibility"
     ]
   },
   {
@@ -1234,78 +1164,22 @@
     "p3": "Archbishops Parker and Whitgift contributed to almshouses; Leicester established a hospital for the poor in Warwick. However these efforts were ultimately limited and no replacement for effective central legislation.",
     "hints": [
       "Norwich",
-      "almshouses",
-      "Leicester"
-    ]
-  },
-  {
-    "no": 108,
-    "section": "elizabeth",
-    "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "What were the main theatres of the war with Spain and what did the Spanish Armada achieve?",
-    "p1": "War was fought in the Netherlands (supporting Dutch rebels), at sea (Sea Dogs raiding the Spanish Main), in France (supporting Protestant Henry of Navarre) and in Ireland (Spain supported Tyrone's Rebellion).",
-    "p2": "The Spanish Armada of 1588 — 130 ships and 57,000 men — was defeated: English fireships at Calais scattered the fleet; the Battle of Gravelines inflicted losses; storms destroyed much of the remainder. Elizabeth's Tilbury speech was a major propaganda triumph.",
-    "p3": "Victory came at huge cost — forced loans of £75,000 from the nobility and £56,000 from the City of London. After the Armada, failure at sea was common — Drake's 'English Armada' of 1589 was an unmitigated disaster.",
-    "hints": [
-      "Treaty of Nonsuch",
-      "Armada",
-      "Tilbury speech"
+      "wills",
+      "almshouses"
     ]
   },
   {
     "no": 109,
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "What was the domestic impact of the war with Spain?",
+    "front": "What was the financial impact of the war with Spain?",
     "p1": "The £4.5 million cost destroyed Elizabeth's surplus almost immediately. She was forced to sell more Crown lands and resort to monopolies as patronage — contributing to price rises and creating dissatisfaction in Parliament.",
-    "p2": "The war forced Elizabeth to call Parliament more frequently — five of her ten Parliaments were called after 1585, giving MPs leverage to raise grievances over monopolies, purveyance and the succession.",
-    "p3": "The war exacerbated faction between the conservative Cecils and the more hawkish Essex — creating a lack of coherent policy. Elizabeth used her Golden Speech to appease MPs' anger over monopolies in the 1601 Parliament.",
+    "p2": "Changed Elizabeth's need for taxation - but parliament willing to provide. Double subsidy in 1589 and triple subsidy secured in 1593!",
+    "p3": "Victory against the Armada came at huge cost — forced loans of £75,000 from the nobility and £56,000 from the City of London.",
     "hints": [
       "£4.5 million",
-      "monopolies",
-      "Golden Speech"
-    ]
-  },
-  {
-    "no": 110,
-    "section": "elizabeth",
-    "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "Why was Ireland such a serious problem during Elizabeth's later years?",
-    "p1": "English power was only felt in the Pale around Dublin. Elizabeth's unwillingness to commit funds to a long-term strategy led to poorly implemented policies under ever-changing Lord Deputies. Ireland remained Catholic as English power was too weak to enforce Protestantism.",
-    "p2": "Tyrone's Rebellion (1594–1603) was the most dangerous — coming during the war with Spain when resources were stretched. Tyrone gained national support and won at Yellow Ford in 1598. Essex led 16,000 men but never fought a battle and returned to London without permission.",
-    "p3": "Lord Mountjoy forced Tyrone's surrender days after Elizabeth's death in 1603 — Tyrone fled, allowing Ulster to be colonised by Protestants. Total cost: £2 million — a devastating drain on already strained finances.",
-    "hints": [
-      "Tyrone",
-      "Yellow Ford",
-      "Lord Mountjoy"
-    ]
-  },
-  {
-    "no": 111,
-    "section": "elizabeth",
-    "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "How did Essex rise to prominence at Elizabeth's court?",
-    "p1": "Essex rose to court as Leicester's godson — his wit, eloquence and dashing personality made him a favourite of the ageing Elizabeth. Raised to the Privy Council in 1593 due to personality more than political skill.",
-    "p2": "Essex frequently acted unilaterally — joining Drake's 1589 Armada against Elizabeth's orders; capturing Cadiz in 1596 which made him enormously popular. But in 1596 Robert Cecil became Secretary of State while Essex was at Cadiz, securing control over government.",
-    "p3": "Essex's flamboyant arrogance clashed with the more pragmatic Robert Cecil. The war exacerbated faction between the conservative Cecils and the hawkish Essex, creating a lack of coherent policy.",
-    "hints": [
-      "Leicester",
-      "Cadiz",
-      "Robert Cecil"
-    ]
-  },
-  {
-    "no": 112,
-    "section": "elizabeth",
-    "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "Why did Essex's Rebellion of 1601 fail and what were its consequences?",
-    "p1": "Whilst in house arrest Essex lost his monopoly over sweet wines. He controversially commissioned a performance of Shakespeare's Richard II — depicting the deposition of a childless monarch. Elizabeth had banned this play.",
-    "p2": "Essex gathered supporters in the City of London but most got cold feet — the rebellion was poorly planned and almost immediately defeated. Essex and just 5 supporters were executed in 1601.",
-    "p3": "The rebellion revealed that personal popularity was no substitute for control of government machinery. Cecil's careful accumulation of institutional power proved decisive — from 1601 his faction controlled government unopposed, managing the smooth transition to James I in 1603.",
-    "hints": [
-      "Richard II",
-      "house arrest",
-      "Robert Cecil"
+      "subsidy",
+      "loan"
     ]
   },
   {
@@ -1315,9 +1189,9 @@
     "front": "What caused the socioeconomic crisis of the 1590s?",
     "p1": "A series of bad harvests from 1594–98 doubled the average price of wheat. The Malthusian Crisis continued — population continued to outstrip food production. The death rate increased by 50% at the peak of the crisis in 1595–7.",
     "p2": "The wars with Spain and Ireland compounded the problem: unprecedented taxation in 1589 and 1593; monopolies raising prices; discharged soldiers adding to the numbers of destitute vagrants.",
-    "p3": "Between 1595–98 food riots erupted in Kent, Sussex, Somerset and Norfolk. Elizabeth's granting of monopolies to favourites increased prices on staple goods — combining with harvest failure to create the most serious socioeconomic crisis of her reign.",
+    "p3": "Between 1595–98 food riots erupted in Kent, Sussex, Somerset and Norfolk. Elizabeth's granting of monopolies to favourites increased prices on staple goods..",
     "hints": [
-      "bad harvests",
+      "death rate",
       "Malthusian Crisis",
       "food riots"
     ]
@@ -1327,41 +1201,13 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "How effectively did the government respond to the socioeconomic crisis of the 1590s?",
-    "p1": "The Oxfordshire Rising of 1596 — a protest against enclosure at the peak of the food crisis — was quickly suppressed. The five ringleaders were executed. In the end only four people actually turned up — the threat of unrest was greater than actual unrest.",
+    "p1": "The Oxfordshire Rising of 1596 — a protest against enclosure at the peak of the food crisis — was quickly suppressed. The five ringleaders were executed. In the end only four people actually turned up..",
     "p2": "The 1597 Tillage Act reversed enclosure carried out since 1588. The 1601 Poor Law codified the distinction between 'deserving' and 'undeserving' poor and made the state permanently responsible for poor relief — lasting until the mid-19th century.",
-    "p3": "The crisis revealed the structural limits of Elizabethan government — it could respond to disorder but not prevent its underlying causes. Norwich's community fund, inspired by Kett's rebellion, was a model for what a determined local authority could achieve.",
+    "p3": "The crisis revealed the structural limits of Elizabethan government — it could respond to disorder but not prevent its underlying causes.",
     "hints": [
-      "Oxfordshire Rising",
+      "Oxfordshire",
       "Tillage Act",
-      "1601 Poor Law"
-    ]
-  },
-  {
-    "no": 115,
-    "section": "elizabeth",
-    "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "How did Elizabeth manage her reputation in her later years?",
-    "p1": "As Elizabeth entered her 60s her looks diminished — blackened teeth, grey hair hidden by a red wig, a pockmarked face from smallpox. In 1596 the Privy Council ordered the destruction of any 'unseemly' portraits — all had to be based on Nicholas Hilliard's agreed flattering version.",
-    "p2": "Portraits like the Rainbow Portrait used heavy symbolism — she holds a rainbow (peace and divine favour); on her dress are eyes and ears (she sees and hears all). Every year on November 17, Accession Day Tilts were lavishly celebrated. Spenser's The Faerie Queene glorified Elizabeth as 'Gloriana'.",
-    "p3": "However scandals undermined her image at court, the nobility were sometimes reluctant to accompany her on progress, and the 1590s unrest led some to comment 'We shall never have a merry world while the queen liveth'. Yet her 1601 Golden Speech was seen as a glorious end to an era.",
-    "hints": [
-      "Rainbow Portrait",
-      "Gloriana",
-      "Golden Speech"
-    ]
-  },
-  {
-    "no": 116,
-    "section": "elizabeth",
-    "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "What were the main theatres of the war with Spain?",
-    "p1": "Netherlands: Elizabeth sent a force, initially led by Leicester, to support the Dutch rebels against the Spanish.",
-    "p2": "At sea: Sea Dogs led by Francis Drake attacked Spanish ports in the Spanish Main and attempted to capture the Spanish treasure fleet. Both sides launched Armadas against each other.",
-    "p3": "In France: Spain and England intervened in the French Wars of Religion where the French Catholic League led by the Duke of Guise fought the Protestant Huguenots led by Henry of Navarre. In Ireland: Spain supported Tyrone's Rebellion with troops.",
-    "hints": [
-      "Netherlands",
-      "Drake",
-      "France"
+      "underlying causes"
     ]
   },
   {
@@ -1387,9 +1233,9 @@
     "p2": "The English capture of the Madre de Dios in 1592 brought riches worth half the Crown's usual income. English support for the Dutch rebels ensured their survival and eventual success.",
     "p3": "The Huguenot Henry of Navarre's coronation as Henry IV in 1589 seemed a huge opportunity — Elizabeth sent gifts of £20,000 and 10,000 troops. However his conversion to Catholicism and unilateral peace with Spain in 1598 negated these gains.",
     "hints": [
+      "English Armada",
       "Madre de Dios",
-      "Henry of Navarre",
-      "1589"
+      "Henry of Navarre"
     ]
   },
   {
@@ -1425,37 +1271,51 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What was the background to Ireland and what caused Tyrone's Rebellion?",
-    "p1": "The English Crown had laid claim to Ireland since the 12th century — but by the 16th century English power was only truly felt in the Pale around Dublin. Ireland was ruled by local lords who held large autonomy — some Anglo-Norman, others native Gaelic lords resistant to English rule.",
-    "p2": "Throughout Elizabeth's reign Ireland was a source of unrest — the Fitzgerald Rebellions of 1569–73 and 1579–83. Ireland had remained Catholic as English power was too weak to enforce Protestantism. Many rebels fought the English to defend Catholicism.",
-    "p3": "Tyrone's Rebellion (1594–1603) — also known as the Nine Years' War — was led by Hugh O'Neill, Earl of Tyrone. It came during the war with Spain when Elizabeth's resources were already stretched. Tyrone gained national support across Ireland including from many powerful Irish earls.",
+    "p1": "The English Crown had laid claim to Ireland since the 12th century — but by the 16th century English power was only truly felt in the Pale around Dublin.",
+    "p2": "Ulster and Connaught in North/West were ruled by Gaelic chieftans - opposed to English culture. Munster and Leinster in South/East were ruled by autonomous Anglo-Norman families who resented control from London. All were Catholic.",
+    "p3": "Throughout Elizabeth's reign Ireland was a source of unrest — the Fitzgerald Rebellions of 1569–73 and 1579–83. Elizabeth had attempted to increase control through plantations in Munster - unsuccessfully.",
     "hints": [
       "The Pale",
-      "Fitzgerald Rebellions",
-      "Hugh O'Neill"
+      "Gaelic",
+      "Fitzgerald"
     ]
   },
   {
     "no": 122,
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "What were the key events of Tyrone's Rebellion and how was it resolved?",
-    "p1": "Tyrone won major victories against the English — most notably at Yellow Ford in 1598 which allowed him to take control of the majority of Ireland. Tyrone was an excellent military leader who utilised guerrilla tactics.",
-    "p2": "In 1599, the Earl of Essex led an English force of 16,000 — the largest force ever sent to Ireland — against Tyrone. He returned home against orders without fighting a battle. This humiliation led to his rebellion.",
-    "p3": "Essex's replacement, Lord Mountjoy, arrived in 1600. By 1603 he had forced Tyrone's surrender days after Elizabeth's death. Tyrone and other Ulster lords fled to Europe — allowing Ulster to be colonised by Protestants. Total cost to Elizabeth: £2 million.",
+    "front": "What happened during the Nine Years' War?",
+    "p1": "1594 - Hugh O'Neill, Earl of Tyrone starts rebellion of Gaelic chieftans against English rule. Victory at Yellow Ford in 1598 saw Tyrone control majority of island.",
+    "p2": "4,000 elite Spanish troops arrive to support siege of Kinsale in 1600. Spanish army on England's doorstep!",
+    "p3": "Lord Mountjoy eventually defeats Spanish at Kinsale (1601) and secures surrender of Tyrone in 1603.",
     "hints": [
       "Yellow Ford",
-      "Essex",
+      "Kinsale",
       "Lord Mountjoy"
+    ]
+  },
+   {
+    "no": 116,
+    "section": "elizabeth",
+    "unit": "Unit 7 – Later Years 1588–1603",
+    "front": "How serious a problem was Tyrone's Rebellion?",
+    "p1": "Rebellion extremelly costly to suppress - over £2 million. Crippling in context of war with Spain. Yellow Ford defeat was a humiliation.",
+    "p2": "In 1599, the Earl of Essex led an English force of 16,000 — the largest force ever sent to Ireland — against Tyrone. He returned home against orders without fighting a battle.",
+    "p3": "Tyrone's ultimate defeat by Mountjoy secured Ireland for England. Gaelic lords flee and allow for Protestant plantations in Ulster. England never seriously threatened.",
+    "hints": [
+      "£2 million",
+      "Essex",
+      "defeat"
     ]
   },
   {
     "no": 123,
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "What were the specific events of Essex's rise and his rivalry with Cecil?",
+    "front": "What were the specific events of Essex's rise?",
     "p1": "Robert Devereux, the Earl of Essex, rose to Elizabeth's court as the godson of Leicester and due to his marriage to the daughter of Francis Walsingham. His wit, eloquence and dashing personality quickly made him a favourite of the ageing Elizabeth in the 1590s.",
     "p2": "Essex was raised to the Privy Council in 1593 due to his personality more than his political skills. His flamboyant arrogance often clashed with the more pragmatic Lord Burghley and his son Robert Cecil.",
-    "p3": "Essex frequently acted unilaterally: in 1589 he joined Drake's English Armada against Elizabeth's direct orders; in 1592 he disobeyed orders to confer with Henry IV of France; his capture of Cadiz in 1596 made him extremely popular across England.",
+    "p3": "Essex frequently acted unilaterally: in 1589 he joined Drake's English Armada against Elizabeth's direct orders; in 1592 he disobeyed orders to confer with Henry IV of France; his burning of Cadiz in 1596 made him extremely popular across England.",
     "hints": [
       "Leicester",
       "Privy Council",
@@ -1467,12 +1327,12 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What led to Essex's downfall and rebellion?",
-    "p1": "In the 1590s, following Leicester's death, Essex and Robert Cecil competed to be the principal figure on the Privy Council. In 1596, during Essex's expedition to Cadiz, Robert Cecil became Secretary of State — securing control over government.",
+    "p1": "In the 1590s, Essex was jealous of loss of power. Initially refused to go to Ireland on Elizabeth's orders before being slapped and half drawing his sword.",
     "p2": "In Ireland in 1599, Essex led 16,000 men but never fought a battle and returned to London without permission. His defiant return enraged Elizabeth — Essex was placed under house arrest.",
     "p3": "Whilst in house arrest Essex lost his monopoly over sweet wines. The success of Lord Mountjoy in crushing the Tyrone Rebellion further disgraced him. In desperation Essex began his 1601 rebellion.",
     "hints": [
-      "Robert Cecil",
-      "house arrest",
+      "slapped",
+      "Ireland",
       "sweet wines"
     ]
   },
@@ -1481,8 +1341,8 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What were the key events and consequences of Essex's Rebellion?",
-    "p1": "Essex controversially commissioned a performance of Shakespeare's Richard II — in which a childless monarch is deposed by a noble. Elizabeth had banned this play.",
-    "p2": "Essex gathered supporters in the City of London including the Earl of Southampton. He attempted to raise the citizens against Cecil — but most of his supporters got cold feet. The rebellion was quickly defeated.",
+    "p1": "Essex wrote to James VI of Scotland that Robert Cecil would prevent his succession. Controversially commissioned performance of banned play Richard II — in which a childless monarch is deposed by a noble.",
+    "p2": "Essex gathered supporters in the City of London including the Earl of Southampton. He attempted to raise the citizens against Cecil — but most of his supporters got cold feet. The rebellion was quickly defeated as guns of Tower turned on Essex House.",
     "p3": "Essex and just 5 supporters were executed in 1601. From then on, Cecil's faction controlled government unopposed — Cecil managed the smooth transition to James I in 1603.",
     "hints": [
       "Richard II",
@@ -1502,20 +1362,6 @@
       "bad harvests",
       "Malthusian Crisis",
       "tax burden"
-    ]
-  },
-  {
-    "no": 127,
-    "section": "elizabeth",
-    "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "What were the key events of the socioeconomic unrest in the 1590s?",
-    "p1": "Between 1595–98 there were food riots in Kent, Sussex, Somerset and Norfolk. Food shortages and poverty led to widespread unrest throughout the 1590s.",
-    "p2": "The Oxfordshire Rising of 1596: ostensibly a protest against enclosure, it came at the peak of the food crisis. The plot was betrayed — the five ringleaders were publicly tried and executed as traitors. In the end only four people actually turned up.",
-    "p3": "Government action: the 1597 Tillage Act was passed to reverse any enclosure carried out since 1588. The 1601 Poor Law codified the distinction between 'deserving' and 'undeserving' poor and made the state permanently responsible for providing poor relief.",
-    "hints": [
-      "food riots",
-      "Oxfordshire Rising",
-      "Tillage Act"
     ]
   },
   {
