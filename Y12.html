@@ -159,6 +159,11 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .exam-route-btn.source{border-color:#B87020;color:#7a4e00}
 .exam-route-btn.essay{border-color:#1D9E75;color:#0F6E56}
 .exam-route-btn.disabled{opacity:.35;cursor:default;pointer-events:none}
+.sp-cat-btn{padding:6px 13px;font-size:.8rem;font-weight:600;border:1.5px solid var(--border2);border-radius:20px;cursor:pointer;background:var(--surface);color:var(--muted);font-family:inherit;transition:all .15s}
+.sp-cat-btn:hover{background:var(--subtle)}
+.sp-cat-btn.sp-cat-active.cat-generic{background:#F3EEFB;color:#5B1B9A;border-color:#A96BE8}
+.sp-cat-btn.sp-cat-active.cat-edward{background:#EEF3FB;color:#1B4B9A;border-color:#6B9DE8}
+.sp-cat-btn.sp-cat-active.cat-mary{background:#FBF0EE;color:#9A1B1B;border-color:#E87A6B}
 .source-set-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:.75rem}
 .source-set-header{padding:1rem 1.25rem;border-bottom:1px solid var(--border);background:var(--subtle)}
 .source-set-q{font-size:1rem;font-weight:700;line-height:1.4;margin-bottom:.4rem}
@@ -187,11 +192,17 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .essay-struct tr:last-child td{border-bottom:none}
 
 /* FLASHCARD DRILL */
-.fd-scene{perspective:1200px;margin-bottom:.75rem;cursor:pointer}
-.fd-card-inner{position:relative;width:100%;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.4,0,.2,1)}
-.fd-card-inner.flipped{transform:rotateY(180deg)}
-.fd-front,.fd-back{width:100%;min-height:180px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;box-sizing:border-box}
-.fd-back{position:absolute;top:0;left:0;transform:rotateY(180deg)}
+.fd-scene{width:100%;margin-bottom:.75rem;cursor:pointer;overflow:hidden;border-radius:14px}
+.fd-card-inner{position:relative;width:100%;border-radius:14px;transition:transform .2s cubic-bezier(.4,0,.2,1),opacity .2s}
+.fd-card-inner.slide-out-right{transform:translateX(110%) !important;opacity:0}
+.fd-card-inner.slide-out-left{transform:translateX(-110%) !important;opacity:0}
+.fd-card-inner.slide-in{transform:translateX(0) !important;opacity:1}
+.fd-card-inner.from-right{transform:translateX(110%);opacity:0}
+.fd-card-inner.from-left{transform:translateX(-110%);opacity:0}
+.fd-front{display:block;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;box-sizing:border-box}
+.fd-back{display:none;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;box-sizing:border-box}
+.fd-card-inner.flipped .fd-front{display:none}
+.fd-card-inner.flipped .fd-back{display:block}
 .fd-tag{font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:.75rem;max-width:100%;white-space:normal;line-height:1.4}
 .fd-question{font-size:1rem;font-weight:700;line-height:1.45;margin-bottom:.75rem}
 .fd-hint-chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
@@ -217,14 +228,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .fd-badge-got{background:#d1fae5;color:#065f46;padding:4px 12px;border-radius:20px;font-size:.82rem;font-weight:700}
 .fd-badge-miss{background:#fee2e2;color:#991b1b;padding:4px 12px;border-radius:20px;font-size:.82rem;font-weight:700}
 .fd-outstanding-note{font-size:.78rem;color:var(--text);background:var(--subtle);border-radius:8px;padding:.5rem .75rem;margin-top:.75rem;line-height:1.45}
-@keyframes slide-out-r{to{transform:translateX(110%);opacity:0}}
-@keyframes slide-out-l{to{transform:translateX(-110%);opacity:0}}
-@keyframes slide-in-r{from{transform:translateX(-18%);opacity:0}to{transform:translateX(0);opacity:1}}
-@keyframes slide-in-l{from{transform:translateX(18%);opacity:0}to{transform:translateX(0);opacity:1}}
-.fd-card-inner.slide-out-right{animation:slide-out-r .2s ease forwards}
-.fd-card-inner.slide-out-left{animation:slide-out-l .2s ease forwards}
-.fd-card-inner.slide-in-r{animation:slide-in-r .22s ease forwards}
-.fd-card-inner.slide-in-l{animation:slide-in-l .22s ease forwards}
+
 
 /* TRACKER WHEELS */
 .fd-wheel{width:64px;height:64px;display:block;margin:0 auto .4rem;transition:transform .15s}
@@ -348,7 +352,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
   <div class="mode-grid">
     <button class="mode-btn" id="hub-btn-knowledge" onclick="enterMode('knowledge')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">🧠</span>Revision Guide</button>
     <button class="mode-btn" id="hub-btn-dates" onclick="enterMode('dates')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">📅</span>Key Dates Quiz</button>
-    <button class="mode-btn" id="hub-btn-exam" style="padding:.9rem .5rem;opacity:.4;cursor:default;pointer-events:none"><span class="icon" style="font-size:1.2rem">✏️</span>Exam Practice<br><small style="font-size:.65rem;font-weight:400;opacity:.8">Coming soon</small></button>
+    <button class="mode-btn" id="hub-btn-exam" onclick="enterMode('exam')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">✏️</span>Exam Practice</button>
   </div>
 </div>
 
@@ -389,23 +393,55 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 
   <!-- EXAM PRACTICE -->
   <div id="mode-exam" style="display:none">
-    <div id="exam-pick">
-      <p style="font-size:.84rem;color:var(--muted);margin-bottom:.9rem">Choose your exam practice route:</p>
-      <div class="exam-route-grid" id="exam-route-grid"></div>
-    </div>
     <div id="exam-source" style="display:none">
-      <div style="display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap">
-        <button class="btn-go c-mtc" style="margin-bottom:0;flex:1" onclick="drawSource()">🔀 New source set</button>
-        <button class="btn-sm" onclick="stepSource(-1)" style="padding:10px 14px">←</button>
-        <button class="btn-sm" onclick="stepSource(1)" style="padding:10px 14px">→</button>
+      <!-- Category pills -->
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.75rem">
+        <button class="sp-cat-btn sp-cat-active" id="sp-cat-generic" onclick="spSetCat('generic')" style="border-color:#A96BE8">📚 Generic</button>
+        <button class="sp-cat-btn" id="sp-cat-edward" onclick="spSetCat('edward')" style="border-color:#6B9DE8">👦 Edward VI</button>
+        <button class="sp-cat-btn" id="sp-cat-mary" onclick="spSetCat('mary')" style="border-color:#E87A6B">👧 Mary I</button>
       </div>
-      <div id="source-out"></div>
-      <button class="btn-sm muted-btn" style="margin-top:.5rem" onclick="backToExamRoutes()">← Back</button>
+      <!-- Dropdown + random -->
+      <div style="display:flex;gap:8px;margin-bottom:1rem;align-items:center">
+        <select id="sp-select" onchange="spFromSelect()" style="flex:1;padding:9px 10px;font-size:.83rem;border:1.5px solid var(--border2);border-radius:8px;background:var(--input-bg);color:var(--text);font-family:inherit"></select>
+        <button onclick="spRandom()" style="padding:9px 13px;font-size:.85rem;border:1.5px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;white-space:nowrap;font-weight:600">🔀 Random</button>
+      </div>
+      <!-- Card -->
+      <div id="sp-card" style="display:none">
+        <div id="sp-card-inner" style="background:var(--card);border:1.5px solid #A96BE8;border-left-width:4px;border-radius:14px;padding:1.25rem;margin-bottom:.75rem">
+          <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
+            <span id="sp-cat-tag" style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 9px;border-radius:20px;background:#F3EEFB;color:#5B1B9A"></span>
+            <span id="sp-name" style="font-size:1rem;font-weight:700;color:var(--text)"></span>
+          </div>
+          <!-- Prompt 1: What is it? -->
+          <div style="background:var(--subtle);border-radius:9px;padding:.75rem 1rem;margin-bottom:.6rem">
+            <div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem">❓ What kind of source is this?</div>
+            <div style="font-size:.82rem;color:var(--muted);font-style:italic">Think before you reveal — what do you know about this source type?</div>
+          </div>
+          <div id="sp-whatisit" style="display:none;background:#E1F5EE;border-radius:9px;padding:.75rem 1rem;margin-bottom:.6rem">
+            <div style="font-size:.72rem;font-weight:700;color:#0F6E56;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.35rem">What it is</div>
+            <div id="sp-whatisit-text" style="font-size:.88rem;line-height:1.65;color:var(--text)"></div>
+          </div>
+          <button id="sp-reveal-what-btn" onclick="spRevealWhat()" style="width:100%;padding:10px;font-size:.83rem;font-weight:700;border:1.5px solid #1D9E75;border-radius:9px;background:transparent;color:#1D9E75;cursor:pointer;font-family:inherit;margin-bottom:.75rem">👁 Reveal — what is it?</button>
+          <!-- Prompt 2: Provenance -->
+          <div style="background:var(--subtle);border-radius:9px;padding:.75rem 1rem;margin-bottom:.6rem">
+            <div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem">🧠 What should you consider for provenance?</div>
+            <div style="font-size:.82rem;color:var(--muted);font-style:italic">Think about Nature, Origin, Purpose — and the specific context of this source type.</div>
+          </div>
+          <div id="sp-provenance" style="display:none;border-radius:9px;overflow:hidden;margin-bottom:.6rem">
+            <div id="sp-prov-header" style="background:#F3EEFB;padding:.6rem 1rem;border-radius:9px 9px 0 0">
+              <div style="font-size:.72rem;font-weight:700;color:#5B1B9A;text-transform:uppercase;letter-spacing:.06em">Provenance considerations</div>
+            </div>
+            <ul id="sp-prompts-list" style="list-style:none;padding:0;margin:0;border:1.5px solid #A96BE8;border-top:none;border-radius:0 0 9px 9px"></ul>
+          </div>
+          <button id="sp-reveal-prov-btn" onclick="spRevealProvenance()" style="width:100%;padding:10px;font-size:.83rem;font-weight:700;border:1.5px solid #A96BE8;border-radius:9px;background:transparent;color:#5B1B9A;cursor:pointer;font-family:inherit;margin-bottom:.5rem">👁 Reveal provenance considerations</button>
+        </div>
+      </div>
+      <div id="sp-empty" style="display:none" class="empty">No sources found for this category.</div>
+      <button class="btn-sm muted-btn" style="margin-top:.25rem" onclick="showScreen('s-hub')">← Back to hub</button>
     </div>
     <div id="exam-essay" style="display:none">
-      <button class="btn-go c-liz" onclick="drawEssay()">🔀 Random 20-marker</button>
       <div id="essay-out"></div>
-      <button class="btn-sm muted-btn" style="margin-top:.5rem" onclick="backToExamRoutes()">← Back</button>
+      <button class="btn-sm muted-btn" style="margin-top:.5rem" onclick="showScreen('s-hub')">← Back to hub</button>
     </div>
   </div>
 
@@ -567,19 +603,16 @@ const S = {
     label: 'Mid Tudor Crisis',
     badge: 'bg-mtc', go: 'c-mtc', fill: 'fill-mtc', colour: '#A96BE8',
     units: ['Unit 1 – Stability of the Monarchy','Unit 2 – Religious Change','Unit 3 – Rebellion and Unrest'],
-    hasSource: true, hasEssay: false, hasCWEssay: false
   },
   elizabeth: {
     label: 'Elizabeth I',
     badge: 'bg-liz', go: 'c-liz', fill: 'fill-liz', colour: '#1D9E75',
     units: ['Unit 4 – Elizabeth I and Religion','Unit 5 – Government and Parliament','Unit 6 – Financial, Economic and Social Affairs','Unit 7 – Later Years 1588–1603'],
-    hasSource: false, hasEssay: true, hasCWEssay: false
   },
   coldwar: {
     label: 'Cold War in Europe',
     badge: 'bg-cw', go: 'c-cw', fill: 'fill-cw', colour: '#C47B1A',
     units: ['Chapter 1 – Origins of the Cold War to 1945','Chapter 2 – Development of the Cold War 1946–1955','Chapter 3 – The Cold War 1956–1984','Chapter 4 – The End of the Cold War 1984–1995'],
-    hasSource: false, hasEssay: false, hasCWEssay: true
   }
 };
 
@@ -607,7 +640,7 @@ function pickSection(sec) {
   // Hub wheel stripe
   const primaryBtn = document.getElementById('fd-primary-btn');
   if (primaryBtn) primaryBtn.style.borderLeftColor = info.colour;
-  ['knowledge','dates'].forEach(id => {
+  ['knowledge','dates','exam'].forEach(id => {
     const btn = document.getElementById('hub-btn-' + id);
     if (btn) btn.style.borderLeftColor = info.colour;
   });
@@ -616,8 +649,6 @@ function pickSection(sec) {
   kUnit.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>' +
     info.units.map(u => `<option value="${u}">${u}</option>`).join('');
   kUnit.className = sec === 'coldwar' ? 'sel-cw' : sec === 'elizabeth' ? 'sel-liz' : 'sel-mtc';
-  // Exam routes
-  buildExamRoutes(sec);
   // Build KC pool
   buildKPool();
   document.getElementById('k-out').innerHTML = '';
@@ -641,41 +672,19 @@ function setMode(m) {
   if (m !== 'knowledge') document.getElementById('k-out').innerHTML = '';
   document.getElementById('d-out').innerHTML = '';
   if (m === 'knowledge') { buildKPool(); updateNavUI(); }
-  if (m === 'exam') backToExamRoutes();
+  if (m === 'exam') {
+    if (currentSection === 'mtc') {
+      document.getElementById('exam-source').style.display = 'block';
+      document.getElementById('exam-essay').style.display = 'none';
+      spSetCat('generic');
+    } else {
+      document.getElementById('exam-source').style.display = 'none';
+      document.getElementById('exam-essay').style.display = 'block';
+      drawEssay(currentSection === 'coldwar' ? null : '20');
+    }
+  }
   if (m === 'flashcard') fdSetup();
   if (m === 'dates') setTimeout(() => startQuizCountdown(), 50);
-}
-
-// ═══════════════════════════════════
-// EXAM ROUTES
-// ═══════════════════════════════════
-function buildExamRoutes(sec) {
-  const info = S[sec];
-  const grid = document.getElementById('exam-route-grid');
-  let html = '';
-  if (info.hasSource) {
-    html += `<button class="exam-route-btn source" onclick="showSourceMode()"><span class="er-label">Question 1 · 30 marks</span>📜 Source Analysis<br><small style="font-size:.73rem;opacity:.65">Four primary sources — Edward &amp; Mary</small></button>`;
-    html += `<button class="exam-route-btn disabled"><span class="er-label">Question 2 · 20 marks</span>✏️ Essay<br><small style="font-size:.73rem;opacity:.65">Not applicable for this section</small></button>`;
-  } else if (info.hasEssay) {
-    html += `<button class="exam-route-btn disabled"><span class="er-label">Question 1 · 30 marks</span>📜 Source Analysis<br><small style="font-size:.73rem;opacity:.65">Source Q is Mid Tudor only</small></button>`;
-    html += `<button class="exam-route-btn essay" onclick="showEssayMode('20')"><span class="er-label">Question 2 · 20 marks</span>✏️ Essay Questions<br><small style="font-size:.73rem;opacity:.65">Past &amp; practice 20-markers</small></button>`;
-  } else if (info.hasCWEssay) {
-    html += `<button class="exam-route-btn" style="border-color:#C47B1A;color:#7a4e00" onclick="showEssayMode('10')"><span class="er-label">Question 1 · 10 marks</span>✏️ 10-mark Essays<br><small style="font-size:.73rem;opacity:.65">Shorter essay questions</small></button>`;
-    html += `<button class="exam-route-btn" style="border-color:#C47B1A;color:#7a4e00" onclick="showEssayMode('20')"><span class="er-label">Question 2 · 20 marks</span>✏️ 20-mark Essays<br><small style="font-size:.73rem;opacity:.65">Extended essay questions</small></button>`;
-  }
-  grid.innerHTML = html;
-}
-
-function backToExamRoutes() {
-  document.getElementById('exam-pick').style.display = 'block';
-  document.getElementById('exam-source').style.display = 'none';
-  document.getElementById('exam-essay').style.display = 'none';
-}
-function showSourceMode() {
-  document.getElementById('exam-pick').style.display = 'none';
-  document.getElementById('exam-source').style.display = 'block';
-  document.getElementById('exam-essay').style.display = 'none';
-  buildSourcePool(); drawSource();
 }
 
 // ═══════════════════════════════════
@@ -918,44 +927,111 @@ function showQuizEnd() {
 }
 
 // ═══════════════════════════════════
-// SOURCE SETS
+// SOURCE PRACTICE
 // ═══════════════════════════════════
-let sourcePool = [], sourceIdx = 0;
-function buildSourcePool() {
-  sourcePool = SOURCE_SETS.filter(s => s.section === 'mtc');
-  sourceIdx = 0;
+let SP_SOURCES = [];
+let spCurrentCat = 'generic';
+let spCurrentSource = null;
+
+fetch('data/sources-y12.json').then(r => r.ok ? r.json() : {sources:[]}).catch(() => ({sources:[]}))
+  .then(data => { SP_SOURCES = data.sources || []; });
+
+const SP_CAT_STYLES = {
+  generic: { border: '#A96BE8', bg: '#F3EEFB', col: '#5B1B9A', arrow: '#A96BE8' },
+  edward:  { border: '#6B9DE8', bg: '#EEF3FB', col: '#1B4B9A', arrow: '#6B9DE8' },
+  mary:    { border: '#E87A6B', bg: '#FBF0EE', col: '#9A1B1B', arrow: '#E87A6B' },
+};
+
+function spSetCat(cat) {
+  spCurrentCat = cat;
+  const st = SP_CAT_STYLES[cat] || SP_CAT_STYLES.generic;
+  ['generic','edward','mary'].forEach(c => {
+    const btn = document.getElementById('sp-cat-' + c);
+    const active = c === cat;
+    btn.classList.toggle('sp-cat-active', active);
+    // Clear all cat modifier classes then apply current
+    btn.classList.remove('cat-generic','cat-edward','cat-mary');
+    if (active) btn.classList.add('cat-' + c);
+  });
+  // Sync card chrome to category colour
+  const cardInner = document.getElementById('sp-card-inner');
+  if (cardInner) cardInner.style.borderColor = st.border;
+  const catTag = document.getElementById('sp-cat-tag');
+  if (catTag) { catTag.style.background = st.bg; catTag.style.color = st.col; }
+  const provHdr = document.getElementById('sp-prov-header');
+  if (provHdr) { provHdr.style.background = st.bg; const d = provHdr.querySelector('div'); if (d) d.style.color = st.col; }
+  const provList = document.getElementById('sp-prompts-list');
+  if (provList) provList.style.borderColor = st.border;
+  const provBtn = document.getElementById('sp-reveal-prov-btn');
+  if (provBtn) { provBtn.style.borderColor = st.border; provBtn.style.color = st.col; }
+  spPopulateDropdown();
+  spHideCard();
 }
-function drawSource() {
-  if (!sourcePool.length) buildSourcePool();
-  if (!sourcePool.length) { document.getElementById('source-out').innerHTML = '<div class="empty">No source sets available yet.</div>'; return; }
-  sourceIdx = Math.floor(Math.random() * sourcePool.length);
-  renderSourceSet(sourcePool[sourceIdx]);
+
+function spPopulateDropdown() {
+  const sel = document.getElementById('sp-select');
+  const sources = SP_SOURCES.filter(s => s.category === spCurrentCat);
+  sel.innerHTML = '<option value="">— select a source —</option>' +
+    sources.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
 }
-function stepSource(dir) {
-  if (!sourcePool.length) buildSourcePool();
-  sourceIdx = (sourceIdx + dir + sourcePool.length) % sourcePool.length;
-  renderSourceSet(sourcePool[sourceIdx]);
+
+function spFromSelect() {
+  const id = document.getElementById('sp-select').value;
+  if (!id) { spHideCard(); return; }
+  const src = SP_SOURCES.find(s => s.id === id);
+  if (src) spShowSource(src);
 }
-function renderSourceSet(ss) {
-  const uid = 'ss_' + Math.random().toString(36).slice(2,6);
-  const srcHtml = ss.sources.map((s,i) => {
-    const sid = `${uid}_s${i}`;
-    const apHtml = s.approach ? `<div class="approach-box" id="${sid}_ap"><div class="approach-title">Provenance considerations</div><ul class="approach-list">${s.approach.map(a=>`<li>${a}</li>`).join('')}</ul></div><button class="btn-sm" style="margin-top:.5rem;font-size:.74rem" onclick="tog('${sid}_ap');this.textContent=this.textContent.includes('Show')?'Hide provenance notes':'Show provenance notes'">Show provenance notes</button>` : '';
-    return `<div class="source-item"><div class="source-item-hdr">Source ${String.fromCharCode(65+i)}</div><div class="source-item-prov">${s.prov}</div><div class="source-item-text">${s.text}</div>${apHtml}</div>`;
-  }).join('');
-  document.getElementById('source-out').innerHTML = `<div class="source-set-card"><div class="source-set-header"><div class="source-set-q">${ss.question}</div><div class="source-set-meta">30 marks · Edward &amp; Mary Source Analysis</div></div><div class="source-body">${srcHtml}<div class="approach-box open"><div class="approach-title">Structure reminder</div><ul class="approach-list"><li>Introduction: which sources agree/disagree on the surface? State your thesis.</li><li>For each source: Agree or disagree? → 2 source details → Contextual knowledge → Provenance (Nature, Origin, Purpose) → Mini-conclusion on value.</li><li>Conclusion: as a set of 4, do they support the view?</li><li>You cannot reach L4+ using only provenance <strong>or</strong> only knowledge — you must use both.</li></ul></div></div></div>`;
+
+function spRandom() {
+  const pool = SP_SOURCES.filter(s => s.category === spCurrentCat);
+  if (!pool.length) return;
+  const src = pool[Math.floor(Math.random() * pool.length)];
+  // Sync dropdown
+  document.getElementById('sp-select').value = src.id;
+  spShowSource(src);
+}
+
+function spShowSource(src) {
+  spCurrentSource = src;
+  const st = SP_CAT_STYLES[src.category] || SP_CAT_STYLES.generic;
+  const catLabels = { generic: 'Generic Source Type', edward: 'Edward VI Sources', mary: 'Mary I Sources' };
+  document.getElementById('sp-name').textContent = src.name;
+  document.getElementById('sp-cat-tag').textContent = catLabels[src.category] || src.category;
+  document.getElementById('sp-whatisit-text').textContent = src.whatIsIt;
+  // Build prompts list with category arrow colour
+  const ul = document.getElementById('sp-prompts-list');
+  ul.innerHTML = src.prompts.map((p, i, arr) =>
+    `<li style="padding:.65rem 1rem;${i < arr.length-1 ? 'border-bottom:1px solid var(--border);' : ''}font-size:.86rem;line-height:1.6;color:var(--text);display:flex;gap:.6rem"><span style="color:${st.arrow};flex-shrink:0;font-weight:700">→</span><span>${p}</span></li>`
+  ).join('');
+  // Reset reveals
+  document.getElementById('sp-whatisit').style.display = 'none';
+  document.getElementById('sp-provenance').style.display = 'none';
+  document.getElementById('sp-reveal-what-btn').style.display = 'block';
+  document.getElementById('sp-reveal-prov-btn').style.display = 'block';
+  document.getElementById('sp-card').style.display = 'block';
+  document.getElementById('sp-empty').style.display = 'none';
+}
+
+function spHideCard() {
+  document.getElementById('sp-card').style.display = 'none';
+}
+
+function spRevealWhat() {
+  document.getElementById('sp-whatisit').style.display = 'block';
+  document.getElementById('sp-reveal-what-btn').style.display = 'none';
+}
+
+function spRevealProvenance() {
+  document.getElementById('sp-provenance').style.display = 'block';
+  document.getElementById('sp-reveal-prov-btn').style.display = 'none';
 }
 
 // ═══════════════════════════════════
 // ESSAY QUESTIONS
 // ═══════════════════════════════════
-function showEssayMode(marks) {
-  document.getElementById('exam-pick').style.display = 'none';
-  document.getElementById('exam-source').style.display = 'none';
-  document.getElementById('exam-essay').style.display = 'block';
-  drawEssay(marks);
-}
-
+// ═══════════════════════════════════
+// ESSAY QUESTIONS
+// ═══════════════════════════════════
 function drawEssay(marks) {
   const pool = ESSAY_QS.filter(q => q.section === currentSection && (!marks || String(q.marks) === String(marks)));
   if (!pool.length) { document.getElementById('essay-out').innerHTML = '<div class="empty">No essay questions available yet.</div>'; return; }
@@ -1286,38 +1362,23 @@ function fdNext() {
   fdUpdateProgress();
 }
 
-function fdSyncHeight() {
-  const inner = document.getElementById('fd-card-inner');
-  const front = document.getElementById('fd-front');
-  const back  = document.getElementById('fd-back');
-  if (!inner || !front || !back) return;
-  const h = fdFlipped ? back.offsetHeight : front.offsetHeight;
-  inner.style.height = Math.max(h, 140) + 'px';
-}
 
 function fdFlip() {
   const inner = document.getElementById('fd-card-inner');
   if (!fdFlipped) {
     fdFlipped = true; inner.classList.add('flipped');
     const items = document.querySelectorAll('#fd-points li');
-    items.forEach((li,i) => setTimeout(() => {
-      li.classList.add('fd-pt-show');
-      fdSyncHeight();
-    }, 300 + i*700));
+    items.forEach((li,i) => setTimeout(() => li.classList.add('fd-pt-show'), 300 + i*700));
     const delay = 300 + items.length*700 + 400;
     setTimeout(() => {
       document.getElementById('fd-btn-row').style.display = 'grid';
-      fdSyncHeight();
     }, delay);
-    setTimeout(fdSyncHeight, 50);
   } else if (inner.classList.contains('flipped')) {
     inner.classList.remove('flipped');
     fdFlipped = false;
-    setTimeout(fdSyncHeight, 50);
   } else {
     inner.classList.add('flipped');
     fdFlipped = true;
-    setTimeout(fdSyncHeight, 50);
   }
 }
 
@@ -1338,21 +1399,16 @@ function fdAnswer(got) {
     if (mastered[key]) { delete mastered[key]; fdSetMastered(mastered); }
   }
   const inner = document.getElementById('fd-card-inner');
-  const slideInClass = got ? 'slide-in-r' : 'slide-in-l';
   inner.classList.add(got ? 'slide-out-right' : 'slide-out-left');
   setTimeout(() => {
-    // Suppress visibility during content swap to prevent flash
-    inner.style.visibility = 'hidden';
     inner.classList.remove('slide-out-right','slide-out-left','flipped');
-    inner.style.height = '';
+    inner.classList.add(got ? 'from-left' : 'from-right');
     fdNext();
-    // Let the DOM settle, then reveal and animate in
-    requestAnimationFrame(() => {
-      fdSyncHeight();
-      inner.style.visibility = '';
-      inner.classList.add(slideInClass);
-      setTimeout(() => inner.classList.remove(slideInClass), 250);
-    });
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      inner.classList.remove('from-left','from-right');
+      inner.classList.add('slide-in');
+      setTimeout(() => inner.classList.remove('slide-in'), 250);
+    }));
     if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
     if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
     renderFdSetupWheel();
@@ -1565,18 +1621,16 @@ let KC          = [];
 let FD          = [];
 let DATES       = [];
 let RQ          = [];
-let SOURCE_SETS = [];
-let ESSAY_QS    = [];
+let ESSAY_QS = [];
 
 Promise.all([
   fetch('data/kc-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/flashcards-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/dates-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/rq-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
-  fetch('data/sources.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/essays.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
-]).then(([kc,fd,dates,rq,sources,essays]) => {
-  KC = kc; FD = fd; DATES = dates; RQ = rq; SOURCE_SETS = sources; ESSAY_QS = essays;
+]).then(([kc,fd,dates,rq,essays]) => {
+  KC = kc; FD = fd; DATES = dates; RQ = rq; ESSAY_QS = essays;
   console.log('Data loaded — KC:', KC.length, 'FD:', FD.length, 'DATES:', DATES.length, 'RQ:', RQ.length);
   renderFdWheels(); renderFdSetupWheel(); renderFdHubWheel();
   // Refresh visible modes if already on screen
