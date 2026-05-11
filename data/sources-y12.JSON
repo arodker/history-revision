@@ -7,10 +7,11 @@
       "name": "Chronicle",
       "whatIsIt": "Narrative accounts of events written by contemporaries — clergy, merchants, court servants. Examples include Grafton's Chronicle and the Chronicle of the Grey Friars of London.",
       "prompts": [
+        "Chronicles reflect the narrative of whoever is in power when they are written. A chronicle written under a Protestant government will present events very differently from one written under a Catholic one.",
         "Every chronicle has a viewpoint. What is the author's religion, social position, and likely audience?",
         "Often written years or decades after the events. A chronicle written under Elizabeth will carry Protestant assumptions about Mary's reign.",
         "Chroniclers copied from each other and repeated rumour. The account may be second or third hand.",
-        "What the author chose NOT to record matters as much as what they did. Silences can reflect censorship or self-censorship."
+        "Chronicles were often used to justify the current regime. A Protestant chronicler writing under Elizabeth will frame Mary's reign as tyranny — that is a political choice, not history."
       ]
     },
 
@@ -21,7 +22,7 @@
       "whatIsIt": "Personal records kept by individuals — recording events, observations, and private reactions. Range from courtiers to London tradesmen.",
       "prompts": [
         "Diaries can offer rare access to private reactions — but 'private' doesn't mean unfiltered or typical.",
-        "Think about the author's social position. A London craftsman sees very different things from a court official.",
+        "Think about the author's social position. A London craftsman sees very different things from a court official — and London itself was atypical of England in its size, diversity, and proximity to power.",
         "Was this written for private use, or with a future reader in mind? That changes how honest it is.",
         "Damage to manuscripts or later editing may mean what survives isn't exactly what was written."
       ]
@@ -33,7 +34,7 @@
       "name": "Ambassador Report",
       "whatIsIt": "Letters and dispatches sent by foreign ambassadors to their governments, reporting on English politics, religion, and court affairs.",
       "prompts": [
-        "Ambassadors wrote to please their masters, not to give a balanced account.",
+        "Ambassadors wrote to please their masters and to look competent. Admitting uncertainty or missing important events would damage their careers.",
         "Crises are over-reported. Stability and uncertainty are rarely admitted.",
         "Information came from informants with their own agendas. 'Popular discontent' may reflect one contact's anxiety, not general opinion.",
         "Foreign observers often misread English politics. Being an outsider does not make you more objective.",
@@ -63,7 +64,7 @@
         "Tells us what the author wanted people to believe — not what people actually believed.",
         "The language is often deliberately vague. Cranmer's 1549 Prayer Book was designed to satisfy both Catholics and Protestants.",
         "Who produced it matters. A government text and a Protestant exile pamphlet are very different things, even if they say similar things.",
-        "We can't know how people received it. A catechism tells us what the church wanted taught, not whether anyone learned it."
+        "Use visitation records and churchwarden accounts alongside religious texts — they show whether official theology was actually reaching ordinary people."
       ]
     },
 
@@ -229,11 +230,9 @@
       "name": "Foxe's Martyrs",
       "whatIsIt": "A huge martyrology compiled by the Protestant exile John Foxe, first published in English in 1563. It records the persecution of Protestants under Mary I using eyewitness accounts, letters, and official records. Under Elizabeth, parishes were ordered to display it.",
       "prompts": [
-        "Foxe had a clear purpose — to make Protestantism look heroic by casting its followers as martyrs. Every choice he made serves that argument.",
+        "Under Elizabeth, parishes were ordered to display it alongside the Bible. It became state-sponsored Protestant propaganda — which tells us as much about Elizabeth's reign as Mary's.",
         "Ask yourself: is this a source about Mary's reign, or about how Elizabethan Protestants wanted Mary's reign to be remembered? Those are not the same thing.",
-        "When Foxe records hostile crowds or messy deaths — which occasionally he does — those details carry extra weight precisely because they damage his own argument.",
-        "Some accounts are second or third hand, already shaped by earlier retellings before they reached Foxe.",
-        "Tells us more reliably about how Protestants presented themselves than about how ordinary people actually responded to the burnings."
+        "When Foxe records hostile crowds or messy deaths — which occasionally he does — those details carry extra weight precisely because they damage his own argument."
       ]
     },
 
@@ -257,10 +256,11 @@
       "name": "Venetian Reports",
       "whatIsIt": "Regular diplomatic reports sent by Venetian ambassadors to the Senate of Venice, offering a non-Spanish, non-English perspective on Mary's reign and the Spanish marriage.",
       "prompts": [
+        "Venice had the most professional diplomatic service in 16th-century Europe. Their ambassadors were trained observers, not political appointees.",
         "Unlike Renard, the Venetians had no stake in English politics. Less biased — but also less well connected to the English court.",
         "Venice cared about Mediterranean trade and the European balance of power. That shapes what they chose to report.",
         "Most useful when read alongside Renard's dispatches. Two foreign observers from opposite sides of the same conflict seeing things differently — that contrast is the point.",
-        "Venetians applied Italian political thinking to English situations, which often led them astray. Being a foreign observer does not automatically make you more accurate."
+        "Venetians applied Italian political thinking to English situations, which sometimes led them astray. Professional does not mean infallible."
       ]
     },
 
@@ -299,7 +299,7 @@
         "The rebels said they were opposing the Spanish marriage, not Mary's religion. This is strategically important — and historically contested.",
         "If they had called it a Protestant rebellion, far fewer people would have joined. The framing was a deliberate choice, not necessarily the full truth.",
         "Mary needed it to be a religious plot to justify her response. Wyatt needed it to look constitutional to win support. Both sides had reasons to spin the story.",
-        "These documents will never reveal Protestant religious motivation — even if it existed. That was the whole point of the strategy."
+        "The rebellion nearly succeeded — Mary only held London after her personal speech at the Guildhall. That near-success tells us how fragile her position really was."
       ]
     },
 
@@ -338,7 +338,7 @@
         "The closest we can get to Mary's own voice. Her letters to Philip — sometimes pleading, sometimes proud — show a woman navigating a very difficult marriage to a largely absent husband.",
         "Her letters to the papacy reveal deep religious commitment and real frustration when Rome let her down. Her standoff with Pope Paul IV shows she could hold her ground even against the pope.",
         "Always ask what Mary needed her reader to feel or do. A letter asking Philip to come back is very different from a letter giving orders to the council.",
-        "What these letters never show is any doubt about the burnings. She saw them as a religious duty. Other sources are needed to judge whether she understood the political damage they caused."
+        "Her letters show an active ruler, not a passive figurehead. Her direct interventions — especially pushing the heresy persecution — carry more evidential weight than formal proclamations issued in her name."
       ]
     }
 
