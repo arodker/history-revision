@@ -144,7 +144,7 @@
     "p2": "Philip was Mary's personal choice — championed by Paget — bringing powerful Habsburg alliances as his father Charles V was Holy Roman Emperor. But Edward Courtenay, championed by Gardiner, was the English alternative.",
     "p3": "Ultimately the marriage ended unhappily — after Mary's phantom pregnancy, Philip rarely spent time in England. When Mary died he commented he felt 'a reasonable regret'.",
     "hints": [
-      "zenophobic",
+      "xenophobic",
       "Charles V",
       "unhappily"
     ]
@@ -629,11 +629,11 @@
     "front": "What domestic religious pressures did Elizabeth face in 1558?",
     "p1": "Returning Marian exiles had been radicalised by Calvinist and Zwinglian ideas in Zurich, Frankfurt and Geneva — denying any role for the monarch in the Church.",
     "p2": "The powerful bishops Elizabeth inherited from Mary were all Catholics. Approximately 1/3 of the powerful English nobility and gentry retained the Catholic faith privately.",
-    "p3": "Under Mary's reign Catholicism had been restored by law. Elizabeth's personal beliefs: raised Protestant but found radical Protestantism tedious and had a fondness for ceremonial aspects of Catholicism.",
+    "p3": "Elizabeth's personal beliefs: raised Protestant but found radical Protestantism tedious and had a fondness for ceremonial aspects of Catholicism.",
     "hints": [
       "Marian exiles",
-      "Calvinist",
-      "bishops"
+      "bishops",
+      "personal beliefs"
     ]
   },
   {
@@ -730,8 +730,8 @@
     "p3": "A royal army led by the Earl of Sussex marched north and the rebels fled without fighting a battle. Mary was moved to Coventry. Elizabeth executed 450 rebels.",
     "hints": [
       "Norfolk",
-      "Northumberland",
-      "Westmoreland"
+      "Durham",
+      "Sussex"
     ]
   },
   {
@@ -982,8 +982,8 @@
     "p3": "Contemporaries blamed enclosure and greedy landlords — they did not understand how rising population affected supply and demand. This misdiagnosis meant the government could not tackle the underlying cause.",
     "hints": [
       "population rise",
-      "Little Ice Age",
-      "bullion"
+      "bullion",
+      "misdiagnosis"
     ]
   },
   {
@@ -1043,20 +1043,6 @@
     ]
   },
   {
-    "no": 95,
-    "section": "elizabeth",
-    "unit": "Unit 6 – Financial, Economic and Social Affairs",
-    "front": "Who were Gresham and Paulet and what financial advice did they give?",
-    "p1": "Elizabeth inherited a debt of £227,000 from Mary's involvement in the war with France — largely owed to the Antwerp Exchange at an interest rate of 14%.",
-    "p2": "Gresham identified three major problems: debasement of coinage begun under Henry VIII; the cost of war and damaging loans; the Hanseatic League's control over the export market for English wools.",
-    "p3": "Mary had introduced the revised Book of Rates determining customs duties and the Exchequer now collected roughly three-quarters of Crown revenue — giving Elizabeth a better administrative base than Mary had inherited.",
-    "hints": [
-      "£227,000",
-      "Antwerp Exchange",
-      "Hanseatic League"
-    ]
-  },
-  {
     "no": 96,
     "section": "elizabeth",
     "unit": "Unit 6 – Financial, Economic and Social Affairs",
@@ -1079,9 +1065,9 @@
     "p2": "Customs Duties: Mary's revised Book of Rates boosted revenue — from £29,315 to £82,797 in one year. However the Book of Rates was not regularly revised and by the 1590s customs revenue stood at only £91,000.",
     "p3": "Extraordinary revenue: parliamentary grants of subsidies (around £100,000) and fifteenths and tenths (around £30,000). Taxes in England were amongst the lowest in Europe — local gentry who made assessments undervalued their own and their lord's lands.",
     "hints": [
-      "ordinary revenue",
-      "customs duties",
-      "subsidy"
+      "Crown land",
+      "Book of Rates",
+      "subsidies"
     ]
   },
   {
@@ -1183,20 +1169,6 @@
     ]
   },
   {
-    "no": 113,
-    "section": "elizabeth",
-    "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "What caused the socioeconomic crisis of the 1590s?",
-    "p1": "A series of bad harvests from 1594–98 doubled the average price of wheat. The Malthusian Crisis continued — population continued to outstrip food production. The death rate increased by 50% at the peak of the crisis in 1595–7.",
-    "p2": "The wars with Spain and Ireland compounded the problem: unprecedented taxation in 1589 and 1593; monopolies raising prices; discharged soldiers adding to the numbers of destitute vagrants.",
-    "p3": "Between 1595–98 food riots erupted in Kent, Sussex, Somerset and Norfolk. Elizabeth's granting of monopolies to favourites increased prices on staple goods..",
-    "hints": [
-      "death rate",
-      "Malthusian Crisis",
-      "food riots"
-    ]
-  },
-  {
     "no": 114,
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
@@ -1243,13 +1215,13 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What were the key issues in Parliament during Elizabeth's later years — monopolies and purveyance?",
-    "p1": "Monopolies: since Elizabeth no longer had funds to bestow lavish gifts on her favourites, she resorted to granting monopolies. The holder had the sole right to selling that good in England. Raised as a major issue in the Parliament of 1597.",
-    "p2": "In the 1601 Parliament MPs publicly listed the monopolies granted since 1597 — one MP sarcastically commented 'is not bread there?' Elizabeth recognised the need for concessions, annulling the most contentious monopolies including salt and starch. She used her Golden Speech to appease MPs' anger.",
+    "p1": "Monopolies: Elizabeth no longer had funds to bestow gifts on favourites - resorted to granting monopolies. The holder had the sole right to selling that good in England. Raised as a major issue in the Parliament of 1597.",
+    "p2": "In the 1601 Parliament MPs publicly listed the monopolies granted since 1597. Elizabeth recognised the need for concessions, annulling the most contentious monopolies including salt. Golden Speech calmed MPs' anger.",
     "p3": "Purveyance — the monarch's customary right to purchase goods at below market value — was criticised by MPs in the 1589 and 1593 Parliaments. Lord Burghley defended it as part of the Royal Prerogative. Elizabeth privately agreed to investigate but no major concessions were made.",
     "hints": [
-      "monopolies",
-      "purveyance",
-      "Golden Speech"
+      "1597",
+      "concessions",
+      "customary right"
     ]
   },
   {
@@ -1257,12 +1229,12 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What were the key parliamentary issues in the later years — succession and taxation?",
-    "p1": "As Elizabeth entered her 60s in the 1590s, Parliament's attention returned to the succession. Peter Wentworth MP wrote a pamphlet calling on Parliament to be given the right to examine candidates. In 1591 Wentworth was questioned by the Privy Council and imprisoned briefly. He was sent to the Tower in 1593 where he stayed until his death in 1596.",
+    "p1": "Peter Wentworth MP wrote a pamphlet calling on Parliament to be given the right to examine candidates. In 1591 Wentworth was questioned by the Privy Council and imprisoned briefly. He was sent to the Tower in 1593 where he stayed until his death in 1596.",
     "p2": "Five of Elizabeth's ten Parliaments were called after 1585 — the war with Spain forced reliance on parliamentary subsidies.",
     "p3": "Despite the increased reliance on Parliament, the war provided a common enemy around which Crown and Parliament united. In 1589 Parliament granted a double subsidy. Burghley secured a triple subsidy in 1593.",
     "hints": [
       "Peter Wentworth",
-      "double subsidy",
+      "war with Spain",
       "triple subsidy"
     ]
   },
@@ -1368,28 +1340,28 @@
     "no": 128,
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "How did Elizabeth manage her physical image and public portraiture in her later years?",
-    "p1": "As Elizabeth entered her 60s, her looks diminished — her fondness for sugar had blackened her teeth; her grey hair was hidden by a bright red wig; her face, pockmarked from Smallpox in 1562, was always heavily made-up with white lead paint.",
-    "p2": "In her official portraits Elizabeth still appeared as young as in her coronation in 1558. In 1596 the Privy Council ordered the destruction of any 'unseemly and improper' portraits — all portraits had to be based on an agreed, flattering version produced by Nicholas Hilliard.",
+    "front": "How did Elizabeth manage her public image in her later years?",
+    "p1": "As Elizabeth entered her 60s, her looks diminished — blackened teeth; bright red wig; pockmarked face made-up with white lead paint. On progress public described her as 'old and ill'.",
+    "p2": "In 1596 the Privy Council ordered the destruction of any 'unseemly and improper' portraits — all portraits had to be based on an agreed, flattering version produced by Nicholas Hilliard.",
     "p3": "Portraits like the Rainbow Portrait used heavy symbolism — she holds a rainbow (peace and divine favour); on her dress are eyes and ears (Elizabeth sees and hears all, no one can plot against her).",
     "hints": [
-      "Nicholas Hilliard",
-      "Rainbow Portrait",
-      "white lead paint"
+      "looks",
+      "unseemly",
+      "Rainbow"
     ]
   },
   {
     "no": 129,
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "How did Elizabeth manage her reputation at court and among the people in her later years?",
-    "p1": "A series of scandals undermined Elizabeth's image at court — including Walter Raleigh's disgrace at making Bess Throckmorton (one of Elizabeth's closest ladies) pregnant. Attendance at court tailed off and the nobility were sometimes reluctant to accompany Elizabeth on progress.",
-    "p2": "However every year on November 17, Accession Day Tilts were lavishly celebrated. Works like Edmund Spenser's The Faerie Queene glorified Elizabeth as 'Gloriana'. Festivals were encouraged amongst ordinary people on Accession Day to celebrate Elizabeth as England and Protestantism's saviour.",
-    "p3": "The socioeconomic unrest of the 1590s led to increased criticism — some commented 'We shall never have a merry world while the queen liveth'. Yet her final parliament of 1601, with its famous Golden Speech, was seen as a glorious end to an era.",
+    "front": "How did Elizabeth manage her reputation at court in her later years?",
+    "p1": "A series of scandals undermined Elizabeth's image at court (e.g. Raleigh and Bess Throckmorton's child). Attendance at court decreased and the nobility were reluctant to accompany Elizabeth on progress.",
+    "p2": "However every year on November 17, Accession Day Tilts were lavishly celebrated. . Festivals were encouraged amongst ordinary people on Accession Day to celebrate Elizabeth as England and Protestantism's saviour.",
+    "p3": "Works like Edmund Spenser's The Faerie Queene glorified Elizabeth as 'Gloriana' and the cult of the Virgin Queen wedded to England was popularised. Reinforced by 1601 Golden Speech.",
     "hints": [
-      "Gloriana",
+      "scandals",
       "Accession Day",
-      "Golden Speech"
+      "Faerie Queene"
     ]
   },
   {
@@ -1401,10 +1373,9 @@
     "p2": "Lenin adapted Marx's ideas for Russia, founding the Bolshevik Party in 1903 which seized power in October 1917. The USSR became an authoritarian state with no democratic elections and limited freedom of speech.",
     "p3": "Marxism-Leninism was opposed to religion ('the opium of the masses'), to private property and to parliamentary democracy, which it dismissed as a camouflage for capitalism.",
     "hints": [
-      "Marx",
-      "Lenin",
-      "Bolshevik",
-      "proletariat"
+      "proletariat",
+      "authoritarian",
+      "religion"
     ]
   },
   {
@@ -1414,12 +1385,11 @@
     "front": "What was capitalism and how did it differ from communism?",
     "p1": "Capitalism is an economic system based on private investment and profit — run by people who wish to make a profit, producing what people want rather than by the state.",
     "p2": "The West believed in liberty of the individual, equality before the law, freedom of speech and elected government — parliament elected by the people to whom the government is ultimately responsible.",
-    "p3": "The USSR dismissed parliamentary democracy as a camouflage for capitalism. For Marxist-Leninists, democracy meant economic equality under the dictatorship of the proletariat — not political freedom.",
+    "p3": "Inevitably leads to economic inequalities. For Marxist-Leninists, democracy meant economic equality under the dictatorship of the proletariat — not political freedom.",
     "hints": [
-      "capitalism",
-      "private property",
-      "democracy",
-      "freedom"
+      "profit",
+      "liberty",
+      "inequalities"
     ]
   },
   {
@@ -1431,10 +1401,9 @@
     "p2": "The Comintern (1919) confirmed Western fears the USSR sought to export revolution. The 1920s and 1930s saw a Red Scare in the USA. Stalin's show trials reinforced Western perceptions of a brutal dictatorship.",
     "p3": "The Nazi-Soviet Pact of 1939 shocked the West — confirming communism and fascism had more in common than communism and democracy. The 1938 Munich Agreement had convinced Stalin the West wanted Germany and Russia to fight each other.",
     "hints": [
-      "Bolshevik Revolution",
+      "Civil War",
       "Comintern",
-      "Nazi-Soviet Pact",
-      "Red Scare"
+      "Nazi-Soviet Pact"
     ]
   },
   {
@@ -1442,14 +1411,13 @@
     "section": "coldwar",
     "unit": "Chapter 1 – Origins of the Cold War to 1945",
     "front": "What was the Atlantic Charter and why was it significant?",
-    "p1": "A joint British and American document signed in August 1941, affirming war aims including self-determination, political freedom and freedom of speech — directly threatening Soviet ideas.",
+    "p1": "A joint British and American document signed in August 1941, affirming war aims including self-determination, political freedom and freedom of speech — directly threatening Soviet ideas. Also signal that decolonisation would follow victory.",
     "p2": "The USSR 'endorsed' it alongside 125 other nations in January 1942, but was not part of writing it. Stalin resented being presented with Western values as a condition of alliance.",
     "p3": "It demonstrated the fundamental incompatibility of Western and Soviet war aims — the West was fighting for liberal democracy while the USSR sought a buffer zone of compliant states. This tension would resurface at every wartime conference.",
     "hints": [
-      "Atlantic Charter",
-      "August 1941",
-      "self-determination",
-      "war aims"
+      "1941",
+      "Stalin",
+      "tension"
     ]
   },
   {
@@ -1461,10 +1429,9 @@
     "p2": "Britain and the USA stalled on opening the Second Front until June 1944 — Churchill wanted it opened in the Balkans to prevent Soviet influence there. Stalin believed the delay was deliberate to weaken the USSR.",
     "p3": "Soviet foreign minister Andrei Gromyko argued that 'the Cold War began as a secret Cold War when the Allies delayed the opening of the second front in Europe.' The delay deepened Stalin's suspicion of Western intentions.",
     "hints": [
-      "second front",
-      "1944",
-      "North Africa",
-      "Stalin's suspicion"
+      "alone",
+      "Balkans",
+      "Gromyko"
     ]
   },
   {
@@ -1476,10 +1443,9 @@
     "p2": "The USSR saw Poland as a vital buffer zone — it had been invaded via Poland three times and had already seized eastern Polish territory in the Nazi-Soviet Pact. Stalin wanted a 'friendly' (i.e. communist) Polish government.",
     "p3": "Poland symbolised the fundamental clash of war aims — the West wanted self-determination and free elections; the USSR wanted security through compliant neighbours. The dispute over Poland at Yalta and Potsdam set the pattern for the Cold War division of Europe.",
     "hints": [
-      "Poland",
+      "Polish independence",
       "buffer zone",
-      "government in exile",
-      "free elections"
+      "symbolised"
     ]
   },
   {
@@ -1491,10 +1457,9 @@
     "p2": "Churchill scribbled the percentages on a piece of paper and pushed it across to Stalin — who ticked it. Churchill described it as a 'naughty document'.",
     "p3": "It showed the contempt both leaders had for the wishes of Eastern Europeans. This was never put into practice as the USA would not have agreed — but it revealed that Churchill and Stalin were already dividing Europe between them, undermining later Western claims to be fighting for self-determination.",
     "hints": [
-      "Percentages Agreement",
-      "October 1944",
-      "spheres of influence",
-      "Churchill"
+      "secret deal",
+      "Churchill",
+      "wishes of Eastern Europeans"
     ]
   },
   {
@@ -1506,10 +1471,9 @@
     "p2": "The USA and UK promised to open a second front — D-Day would take place in May/June 1944. Stalin agreed to declare war on Japan once Germany was defeated.",
     "p3": "There was a vague agreement Germany would remain weak after the war. It was the most cooperative of the three wartime conferences — the common enemy still dominated and attention had not yet turned to the post-war world.",
     "hints": [
-      "Tehran",
-      "November 1943",
+      "strategy",
       "second front",
-      "Big Three"
+      "remain weak"
     ]
   },
   {
@@ -1521,25 +1485,23 @@
     "p2": "Stalin promised free elections in Eastern Europe. Eastern Europe would be a Soviet 'sphere of influence' — though this was never clearly defined. Stalin wanted greater UN representation for individual Soviet republics.",
     "p3": "Poland was disagreed: Stalin wanted the communist Lublin Committee; Britain had hosted the Polish government in exile. There was little to guarantee Stalin would deliver free elections — the vague language of Yalta contained the seeds of future conflict.",
     "hints": [
-      "Yalta",
-      "February 1945",
-      "four zones",
-      "free elections"
+      "Germany",
+      "Eastern Europe",
+      "Poland"
     ]
   },
   {
     "no": 139,
     "section": "coldwar",
     "unit": "Chapter 1 – Origins of the Cold War to 1945",
-    "front": "What was disagreed at the Potsdam Conference (July–August 1945)?",
+    "front": "What was contested at the Potsdam Conference (July–August 1945)?",
     "p1": "Britain and America did not want harsh reparations on Germany — they feared a repeat of Versailles and wanted Germany to recover as a buffer against communism. Stalin, who had lost 25 million people, wanted very harsh reparations.",
     "p2": "Truman strongly objected to the Soviet presence in Eastern Europe and the lack of free elections — between Yalta and Potsdam, Stalin had installed a communist puppet government in Poland, breaking his promise.",
     "p3": "Truman informed Stalin of the atomic bomb vaguely during the conference. The bombs were dropped on Hiroshima (6 August) and Nagasaki (9 August) without telling Stalin — he saw this as a direct threat. No general peace settlement was reached.",
     "hints": [
-      "Potsdam",
       "reparations",
-      "atomic bomb",
-      "Truman"
+      "Eastern Europe",
+      "atomic bomb"
     ]
   },
   {
@@ -1551,25 +1513,23 @@
     "p2": "Eastern liberation: the Red Army inflicted harsh retribution — terrible reprisals against civilians, widespread plunder, deportation of ethnic Germans. Pre-1918 Russian territories were restored to Soviet control by annexation.",
     "p3": "Soviet political influence spread rapidly — they supported communist coups in Romania (1945), installed communist-dominated coalitions in Hungary and Bulgaria and established pro-Soviet committees in Poland. By 1948, Latvia, Lithuania and Estonia had been absorbed into the USSR.",
     "hints": [
-      "liberation",
-      "Eastern Europe",
-      "satellite states",
-      "annexation"
+      "Allied forces",
+      "Red Army",
+      "communist-dominated"
     ]
   },
   {
     "no": 141,
     "section": "coldwar",
     "unit": "Chapter 2 – Development of the Cold War 1946–1955",
-    "front": "What was the United Nations and how did it immediately become a Cold War battleground?",
+    "front": "What was the role of the United Nations at the start of the Cold War?",
     "p1": "The UN was established on 24 October 1945, replacing the ineffective League of Nations. The Security Council gave five permanent members (USA, USSR, UK, France and China) the power of veto.",
     "p2": "At its very first meeting in 1946, Russia used the first Security Council veto to block a plan for Britain and France to withdraw from Syria and Lebanon. The Atomic Control Commission was created — but the USA proposed international control of atomic weapons; the USSR rejected this.",
     "p3": "Despite Cold War tensions, the UN provided a forum for diplomacy that helped prevent direct superpower conflict. It played a key role in the Korean War (1950–53) when the USSR was boycotting the Security Council and the USA secured a resolution authorising military action.",
     "hints": [
-      "UN",
       "Security Council",
-      "veto",
-      "1945"
+      "Syria and Lebanon",
+      "Korean War"
     ]
   },
   {
@@ -1581,10 +1541,9 @@
     "p2": "Churchill argued the USSR wanted to expand without limit; the West needed to negotiate from a position of strength — 'supported by the whole strength of the English-speaking world'. He saw Stalin as admiring strength and despising weakness.",
     "p3": "Stalin reacted by accusing Churchill of being 'a firebrand of war'. Many in the USA thought the speech irresponsible. Despite its inaccuracies (Soviet influence was not yet uniform across Eastern Europe), the speech gave voice to Western fears of Soviet expansionism and helped harden attitudes on both sides.",
     "hints": [
-      "Iron Curtain",
-      "Fulton",
       "Stettin",
-      "Sinews of Peace"
+      "admiring strength",
+      "firebrand of war"
     ]
   },
   {
@@ -1596,10 +1555,9 @@
     "p2": "Methods included: carefully controlled elections using violence and intimidation; forced mergers between socialist parties and communists; extensive propaganda; establishment of political police; arrests and murder of opposition leaders.",
     "p3": "By 1948, unrepresentative pro-Moscow communist leaders had been established across Eastern Europe and all opposition had been destroyed. The term was coined by Hungarian communist leader Mátyás Rákosi.",
     "hints": [
-      "salami tactics",
       "coalition",
-      "Eastern Europe",
-      "Rákosi"
+      "controlled elections",
+      "1948"
     ]
   },
   {
@@ -1611,10 +1569,9 @@
     "p2": "The non-communist Peasant Party representatives resigned in protest. By 1947 the communist-dominated government had repressed all opposition.",
     "p3": "Poland was the most symbolically important case — Britain had gone to war to defend Polish independence. The failure to deliver free elections was the clearest early breach of the Yalta agreements and confirmed Western fears about Soviet intentions.",
     "hints": [
-      "Poland",
-      "Lublin Committee",
       "London Poles",
-      "free elections"
+      "Peasant Party",
+      "Yalta"
     ]
   },
   {
@@ -1623,13 +1580,12 @@
     "unit": "Chapter 2 – Development of the Cold War 1946–1955",
     "front": "How did the USSR take control of Czechoslovakia?",
     "p1": "Elections in March 1946 gave Czech communists 38% of the vote — genuinely free. By 1947 there was more pressure for communist domination. The USSR was determined to prevent the Czechs accepting Marshall Aid.",
-    "p2": "In February 1948 a communist coup took place — the police force was taken over by communists; non-communist personnel were purged; non-communist ministers were removed from government. Foreign minister Jan Masaryk was thrown from a window, probably by the security police. President Benes was forced to resign.",
+    "p2": "In February 1948 a communist coup took place — the police force was taken over by communists; non-communist personnel were purged; non-communist ministers were removed from government. Foreign minister Jan Masaryk was defenestrated, probably by the security police. President Benes was forced to resign.",
     "p3": "The Czech coup had important psychological significance for the West — it played on feelings of guilt (Britain had failed to prevent Hitler taking Czechoslovakia in 1938–9) and accelerated the formation of NATO.",
     "hints": [
-      "Czechoslovakia",
-      "1948 coup",
+      "March 1946",
       "Jan Masaryk",
-      "Benes"
+      "feelings of guilt"
     ]
   },
   {
@@ -1641,10 +1597,9 @@
     "p2": "Novikov Telegram (September 1946): Soviet ambassador Novikov in Washington reported that the US were planning to use their new military might to dominate the world and that, since Roosevelt's death, cooperation was impossible.",
     "p3": "Both telegrams confirmed to each side that the other was their enemy — they increased the paranoia on both sides and shaped the foreign policies of Truman and Stalin. The Long Telegram became the intellectual basis for the policy of containment.",
     "hints": [
-      "Long Telegram",
-      "Novikov Telegram",
-      "Kennan",
-      "containment"
+      "8,000 words",
+      "cooperation",
+      "paranoia"
     ]
   },
   {
@@ -1656,10 +1611,9 @@
     "p2": "He set out two competing ways of life: one based on free institutions, representative government and individual liberty; the other based on terror, oppression and the will of a minority. He pledged $400 million to Greece and Turkey.",
     "p3": "The trigger was Britain's inability to keep financing anti-communist fighters in Greece. By 1947 Stalin was not keeping to his Yalta agreements about elections in Eastern Europe. The Doctrine ended American isolationism and committed the USA to opposing communism globally.",
     "hints": [
-      "Truman Doctrine",
-      "12 March 1947",
       "containment",
-      "$400 million"
+      "competing ways",
+      "Greece"
     ]
   },
   {
@@ -1671,10 +1625,9 @@
     "p2": "16 nations attended without the Soviet bloc. Congress approved the policy in 1948. Most of the $12.7 billion in aid was used to purchase US goods and raw materials. It supported the re-industrialisation of West Germany and promoted political stability.",
     "p3": "Stalin labelled it 'Dollar Imperialism' — turning Europe into an American economic empire. It forced Stalin to consolidate his hold on Eastern Europe — creating Cominform (1947) and Comecon (1949). Europe was now divided into two competing economic camps.",
     "hints": [
-      "Marshall Plan",
       "$13 billion",
-      "June 1947",
-      "dollar diplomacy"
+      "US goods",
+      "dollar imperialism"
     ]
   },
   {
@@ -1686,9 +1639,8 @@
     "p2": "Its aims were to 'provide information to strengthen the anti-imperialist democratic camp' — in practice it was propaganda to prevent any communist party being lured by US 'dollar diplomacy' and to maintain Soviet ideological control.",
     "p3": "The most significant consequence was the expulsion of Yugoslavia — Tito resisted Stalin's control, wanted to apply for Marshall Aid and refused subordination to Moscow. Yugoslavia was expelled in 1948, showing the limits of Soviet control. Cominform was abolished in 1956.",
     "hints": [
-      "Cominform",
-      "September 1947",
-      "propaganda",
+      "Marshall Aid",
+      "ideological control",
       "Tito"
     ]
   },
@@ -1701,10 +1653,9 @@
     "p2": "During the Stalin era there was direct economic aid to Eastern Europe, but Comecon did not develop much in the way of regional cooperation — economic life was dominated by relations between Comecon members and the USSR, providing an outlet for Soviet manufacturers and raw materials.",
     "p3": "Comecon helped divide Europe into two competing economic blocs and boosted the USSR's control of its satellites. Unlike the Marshall Plan it did not provide an engine for growth — it kept Eastern economies subordinate to Soviet interests.",
     "hints": [
-      "Comecon",
-      "1949",
       "economic alliance",
-      "Marshall Plan"
+      "Soviet manufacturers",
+      "subordinate"
     ]
   },
   {
@@ -1712,14 +1663,13 @@
     "section": "coldwar",
     "unit": "Chapter 2 – Development of the Cold War 1946–1955",
     "front": "What caused the Berlin Blockade?",
-    "p1": "Germany was divided into four occupation zones. The West wanted Germany to recover as a buffer; the USSR wanted reparations and a weak Germany. In January 1947 Bizonia was created from the US and British zones.",
+    "p1": "Germany was divided into four occupation zones. The West wanted Germany to recover as a buffer; the USSR wanted reparations and a weak Germany. In January 1947 Bizonia was created from the US and British zones. Later became Trizonia with the French.",
     "p2": "In June 1948 the West introduced the Deutschmark for West Germany without consulting the USSR — Stalin's key aim was to prevent the creation of a West German state. He chose to put pressure on the West's weakest point — West Berlin.",
     "p3": "On 23 June 1948 Stalin imposed a blockade on all road and rail links to West Berlin and cut off its electricity. He could not shoot down Allied supply planes without starting a war — so the Allies supplied the city entirely by air.",
     "hints": [
-      "Berlin Blockade",
-      "23 June 1948",
+      "Trizonia",
       "Deutschmark",
-      "Bizonia"
+      "23 June"
     ]
   },
   {
@@ -1728,13 +1678,12 @@
     "unit": "Chapter 2 – Development of the Cold War 1946–1955",
     "front": "What happened during the Berlin Airlift and what were its consequences?",
     "p1": "Each day 2,000 tonnes of supplies were flown in, reaching 8,000 tonnes a day by February 1949. 60 B29 bombers were stationed in England as a threat. The blockade and airlift ended in May 1949.",
-    "p2": "The blockade was a propaganda disaster for the USSR — confirming the view of Soviet aggression. It directly accelerated the formation of NATO in April 1949 and led to the creation of two separate German states.",
+    "p2": "The blockade was a disaster for the USSR — confirming the view of Soviet aggression. It directly accelerated the formation of NATO in April 1949 and led to the creation of two separate German states.",
     "p3": "The West's willingness to risk confrontation to defend West Berlin showed the USSR that containment was serious. The airlift became a symbol of Western resolve — and of the West Berlin population's refusal to submit to Soviet pressure.",
     "hints": [
-      "airlift",
       "2,000 tonnes",
-      "May 1949",
-      "NATO"
+      "NATO",
+      "symbol"
     ]
   },
   {
@@ -1746,10 +1695,9 @@
     "p2": "Demands quickly became political: free elections and the end of the SED regime. Soviet tanks were deployed on 17 June. Around 55 people were killed, 20 were executed and thousands arrested. The uprising was crushed within days.",
     "p3": "The East German Rising showed how shallow the roots of communism were in the DDR — workers were rising against a workers' state. In West Germany, 17 June became a national holiday — 'Tag der Deutschen Einheit' — until German reunification in 1990.",
     "hints": [
-      "East German Rising",
-      "17 June 1953",
       "Ulbricht",
-      "400,000"
+      "Soviet tanks",
+      "national holiday"
     ]
   },
   {
@@ -1757,14 +1705,13 @@
     "section": "coldwar",
     "unit": "Chapter 2 – Development of the Cold War 1946–1955",
     "front": "What was NATO and why was it created?",
-    "p1": "The North Atlantic Treaty (4 April 1949): expanding the Brussels Pact after the Berlin Blockade and Czech coup, secret talks between Britain, Canada and the USA created NATO. It promised consultation on mutual interest and assistance in the event of attack.",
-    "p2": "It had an ideological element — defending not merely national security but 'freedom, common heritage and civilisation'. NATO was like a wartime alliance but with distinct political aims.",
+    "p1": "The North Atlantic Treaty (4 April 1949): expanding the Brussels Pact after the Berlin Blockade and Czech coup, secret talks between Britain, Canada and the USA created NATO. ",
+    "p2": "Article 5 - An attack on one is an attack on all. Establish as a deterrent to Soviet expansion - America will intervene to defend Europe.",
     "p3": "NATO expansion was driven by events: in September 1949 the USSR tested its first atomic bomb; in 1950 North Korea invaded South Korea; in 1952 a permanent HQ was established in Paris with a permanent military force of 35 divisions. West Germany joined NATO in May 1955.",
     "hints": [
-      "NATO",
-      "4 April 1949",
-      "Brussels Pact",
-      "collective defence"
+      "1949",
+      "Article 5",
+      "expansion"
     ]
   },
   {
@@ -1776,10 +1723,9 @@
     "p2": "Unlike NATO, it was not an agreement between independent states — it was a policy move by the USSR in direct response to West Germany joining NATO. If 'a general European treaty of Collective Security' were signed it would lapse — indicating it was more political than defensive.",
     "p3": "Though it seemed to divide Europe into armed camps, little had actually changed — Moscow already controlled the foreign and defence policies of its allies. But it meant suppression of discontent would now be by 'the Warsaw Pact' rather than the USSR alone — a convenient fiction.",
     "hints": [
-      "Warsaw Pact",
-      "14 May 1955",
-      "East Germany",
-      "collective security"
+      "1955",
+      "West Germany",
+      "armed camps"
     ]
   },
   {
@@ -1787,13 +1733,12 @@
     "section": "coldwar",
     "unit": "Chapter 2 – Development of the Cold War 1946–1955",
     "front": "How did the arms race develop between 1945 and 1955?",
-    "p1": "USA dropped atomic bombs on Hiroshima and Nagasaki in August 1945, ending WWII. Stalin immediately accelerated the Soviet nuclear programme. The USSR tested its first atomic bomb in 1949 — years earlier than the West expected. In 1952 the USA tested the hydrogen bomb — vastly more destructive; the USSR tested its own in 1953.",
-    "p2": "The USA shifted strategic policy to 'mutually assured destruction' (MAD) — any Russian attack would lead to devastating retaliatory strikes with the capacity to destroy half the Russian population and 80% of its industry.",
-    "p3": "The arms race perpetuated the Cold War but prevented it developing into a direct conflict — neither side could win a nuclear war. It drove the economic overstretch that would eventually contribute to the USSR's collapse in 1991.",
+    "p1": "USA dropped atomic bombs on Hiroshima and Nagasaki in August 1945, ending WWII. Stalin immediately accelerated the Soviet nuclear programme. The USSR tested its first atomic bomb in 1949 — years earlier than the West expected. ",
+    "p2": "In 1952 the USA tested the hydrogen bomb — 1000x Hiroshima Bomb; the USSR tested its own in 1953. ICBMs developed 1957 by both sides.",
+    "p3": "The USA shifted strategic policy to 'mutually assured destruction' (MAD) — any Russian attack would lead to devastating retaliatory strikes with the capacity to destroy half the Russian population and 80% of its industry. Prevented either side starting a hot war",
     "hints": [
-      "atomic bomb",
-      "1949",
-      "hydrogen bomb",
+      "atomic",
+      "hydrogen",
       "MAD"
     ]
   },
@@ -1803,13 +1748,12 @@
     "unit": "Chapter 3 – The Cold War 1956–1984",
     "front": "What was Khrushchev's secret speech (1956)?",
     "p1": "In February 1956 Khrushchev gave his 'secret speech' at the 20th Party Congress, denouncing Stalin's crimes — the purges, show trials, cult of personality and abuse of power.",
-    "p2": "The speech raised hopes of liberalisation across Eastern Europe where communist regimes had shallow roots. It was called the beginning of 'de-Stalinisation' — a thaw in the oppressive policies of the Stalin era.",
+    "p2": "It was called the beginning of 'de-Stalinisation' — a thaw in the oppressive policies of the Stalin era. Khrushchev called for 'peaceful co-existance with the West. Brief reeconciliation with Yugoslavia (Belgrade Declaration)",
     "p3": "The speech had unintended consequences — it unleashed expectations for reform that Khrushchev could not fully satisfy. It directly contributed to the Polish October and Hungarian Uprising of 1956, as people across Eastern Europe took the speech as a signal that change was possible.",
     "hints": [
-      "secret speech",
-      "February 1956",
-      "de-Stalinisation",
-      "thaw"
+      "denouncing",
+      "co-existance",
+      "Eastern Europe"
     ]
   },
   {
@@ -1821,10 +1765,9 @@
     "p2": "In October 1956, party support went to Wladyslaw Gomulka — a communist who had been imprisoned from 1949 to 1954 for 'deviationist' activities. Support for Gomulka grew in the so-called 'Polish October'. Khrushchev accepted Gomulka rather than launching a massive invasion.",
     "p3": "Gomulka proved to be a limited reformer — loyal to the USSR and to the Warsaw Pact. The unrest in Poland was a major factor in similar, more serious unrest in Hungary. The Polish October showed Khrushchev would accept limited reform to avoid a full rebellion.",
     "hints": [
-      "Polish October",
-      "Gomulka",
       "Poznan",
-      "deviationist"
+      "Gomulka",
+      "limited"
     ]
   },
   {
@@ -1837,8 +1780,7 @@
     "p3": "However Nagy went too far — announcing Hungary would leave the Warsaw Pact and become a neutral non-aligned country. This could cause a chain reaction across the Eastern bloc — Khrushchev ordered the invasion.",
     "hints": [
       "Rakosi",
-      "Imre Nagy",
-      "AVH",
+      "Nagy",
       "Warsaw Pact"
     ]
   },
@@ -1851,9 +1793,8 @@
     "p2": "The West failed to help — distracted by the Suez Crisis. The USA disapproved of the British and French invasion of Suez, meaning the West was divided at a crucial time. This showed that America would not intervene to defend the satellite states.",
     "p3": "Consequences: the failure of the USA to intervene revealed the limitations of containment. There was little long-term interruption of contacts between East and West. The West had accepted that Hungary was part of the Soviet bloc — NATO was a defensive alliance and the iron curtain was a reality.",
     "hints": [
-      "1,000 tanks",
-      "Janos Kadar",
-      "180,000 fled",
+      "tanks",
+      "Suez",
       "containment"
     ]
   },
@@ -1866,160 +1807,107 @@
     "p2": "A compromise was reached: in October 1954 France agreed to a limited West German army. Germany was not to have nuclear weapons and British forces would remain in Germany as a safeguard. West Germany joined NATO in May 1955.",
     "p3": "The Warsaw Pact was signed just days after West Germany joined NATO — in direct response. West German rearmament increased East German fears and accelerated the brain drain — by 1961, 3.5 million East Germans had fled West, creating the crisis that led to the Berlin Wall.",
     "hints": [
-      "rearmament",
       "EDC",
-      "NATO May 1955",
-      "Warsaw Pact"
+      "compromise",
+      "East German fears"
     ]
   },
+ {
+  "no": 162,
+  "section": "coldwar",
+  "unit": "Chapter 3 – The Cold War 1956–1984",
+  "front": "What caused the Berlin Crisis of 1958–61?",
+  "p1": "Berlin remained a major weakness for the USSR because people could still cross freely between East and West Berlin. Between 1949 and 1961 around 3.5 million East Germans fled to the West, including many skilled workers, doctors and engineers. This became known as the brain drain and exposed the failure of communist rule in East Germany.",
+  "p2": "Khrushchev feared East Germany would collapse if the flow continued. In November 1958 he issued the Berlin Ultimatum, demanding that the Western powers leave West Berlin within six months and turn it into a demilitarised free city. The USA, Britain and France refused to withdraw.",
+  "p3": "Attempts to solve the crisis failed. The Paris Summit of 1960 collapsed after the USSR shot down an American U-2 spy plane over Soviet territory. Eisenhower refused to apologise for spying, so Khrushchev walked out. By 1961 tensions over Berlin remained unresolved and pressure grew for a permanent solution.",
+  "hints": [
+    "3.5 million",
+    "Ultimatum",
+    "Summit"
+  ]
+},
+{
+  "no": 163,
+  "section": "coldwar",
+  "unit": "Chapter 3 – The Cold War 1956–1984",
+  "front": "Why was the Berlin Wall built and why was it significant?",
+  "p1": "On 12–13 August 1961 East German troops sealed the border between East and West Berlin with barbed wire and roadblocks. A concrete wall soon replaced these barriers. In 1962 a second inner wall and a heavily guarded 'death strip' were added to stop escapes.",
+  "p2": "The Wall was built to end the brain drain from East Germany. Around 5,000 people still managed to escape before 1989, although many were captured or killed attempting to cross. The Wall became a powerful symbol of communist repression because it existed to stop people leaving the East.",
+  "p3": "The USA condemned the Wall but accepted it rather than risk war. In 1963 President Kennedy visited West Berlin and declared 'Ich bin ein Berliner'. US Secretary of State Dean Rusk called the Wall 'a monument to communist failure'. The Wall stabilised the situation in Berlin but became the clearest symbol of Cold War division until its fall in November 1989.",
+  "hints": [
+    "August 1961",
+    "repression",
+    "Kennedy"
+  ]
+},
+{
+  "no": 166,
+  "section": "coldwar",
+  "unit": "Chapter 3 – The Cold War 1956–1984",
+  "front": "Why did the Space Race matter?",
+  "p1": "The Space Race became a major Cold War rivalry over technology and prestige. In October 1957 the USSR launched Sputnik, the first satellite, shocking the USA and suggesting Soviet rocket technology was ahead. Yuri Gagarin became the first human in space in April 1961.",
+  "p2": "The USA responded by creating NASA in 1958 and increasing spending on science and missile technology. Kennedy pledged to land a man on the moon before 1970, achieved by Neil Armstrong and Buzz Aldrin in July 1969.",
+  "p3": "The Space Race mattered because space rockets could also carry nuclear missiles. Sputnik increased American fears about Soviet military strength and spying technology, linking the Space Race directly to the arms race and Cold War propaganda.",
+  "hints": [
+    "Sputnik",
+    "Armstrong",
+    "propaganda",
+   ]
+  }
   {
-    "no": 162,
-    "section": "coldwar",
-    "unit": "Chapter 3 – The Cold War 1956–1984",
-    "front": "What caused the brain drain and Khrushchev's Berlin Ultimatum?",
-    "p1": "The division of Germany produced a relatively open frontier — people could move between East and West Berlin without checks. By 1961 3.5 million East Germans had fled West — 20% of the population, including the best educated and trained.",
-    "p2": "In July and early August 1961 alone, 36,000 left via Berlin. Khrushchev needed to show the world that Soviet economic policies worked — but in East Germany they were obviously failing. He had also issued the Berlin Ultimatum in 1958 (demanding the West leave West Berlin within 6 months) with no result.",
-    "p3": "The Paris summit (1960) between Khrushchev and Eisenhower failed when a US U-2 spy plane was shot down over the USSR — Eisenhower refused to apologise for spying so Khrushchev stormed out. By 1961 the crisis demanded a permanent solution.",
-    "hints": [
-      "brain drain",
-      "3.5 million",
-      "Berlin Ultimatum",
-      "U-2 spy plane"
-    ]
+  "no": 167,
+  "section": "coldwar",
+  "unit": "Chapter 3 – The Cold War 1956–1984",
+  "front": "What was the Prague Spring (1968)?",
+  "p1": "In January 1968 Alexander Dubček became leader of Czechoslovakia and introduced reforms known as the Prague Spring. He promoted ‘socialism with a human face’, including reduced censorship, greater freedom of speech and limited political reform within the communist system.",
+  "p2": "The reforms alarmed Brezhnev, Ulbricht and Gormulka, who feared they would weaken communist control across Eastern Europe. In July 1968 the USSR and other Warsaw Pact states sent Dubček the Warsaw Letter, warning that the reforms threatened socialism. Dubček refused to reverse his policies.",
+  "p3": "Brezhnev became increasingly concerned that Czechoslovakia might drift away from Soviet influence. Soviet fears grew further after Dubček visited Yugoslav leader Tito, whose independent communist regime had broken away from Soviet control in 1948.",
+  "hints": [
+    "Dubček",
+    "Warsaw Letter",
+    "Tito"
+  ]
   },
   {
-    "no": 163,
-    "section": "coldwar",
-    "unit": "Chapter 3 – The Cold War 1956–1984",
-    "front": "Why was the Berlin Wall built and what was its significance?",
-    "p1": "On 12–13 August 1961 barriers were erected and the Wall was built on 17 August. A second inner wall was constructed in 1962 with a 'zone of death' between. Some 5,000 managed to escape up to 1989; there were possibly 136 deaths among those attempting to escape.",
-    "p2": "Kennedy increased troop numbers and made his famous Berlin speech in June 1963: 'Ich bin ein Berliner'. US Secretary of State Dean Rusk called the Wall 'a monument to communist failure' — its purpose was to keep East Germans from defecting, not to separate East from West.",
-    "p3": "The Wall confirmed the status quo in Europe and ended hopes that détente might lead to fundamental change. It showed communist leaders were now wedded to defence of a failing system. Its fall on 9 November 1989 became the defining symbol of the Cold War's end.",
-    "hints": [
-      "12 August 1961",
-      "Ich bin ein Berliner",
-      "monument to communist failure",
-      "zone of death"
-    ]
-  },
-  {
-    "no": 164,
-    "section": "coldwar",
-    "unit": "Chapter 3 – The Cold War 1956–1984",
-    "front": "What caused the Cuban Missile Crisis?",
-    "p1": "Cuba became communist under Castro in 1959. The USA sponsored the failed Bay of Pigs invasion in 1961. Khrushchev placed nuclear missiles in Cuba to defend it and to counter US Jupiter missiles in Turkey, which were a direct threat to the USSR.",
-    "p2": "In October 1962 a U-2 spy plane photographed Soviet missile installations in Cuba. Kennedy chose a naval blockade ('quarantine') rather than an air strike and demanded the missiles be removed.",
-    "p3": "For 13 days the world held its breath as Soviet ships carrying missiles approached the US quarantine line. Soviet submarines were in the area. The crisis brought both sides closer to nuclear war than any other Cold War event.",
-    "hints": [
-      "Cuba",
-      "Bay of Pigs",
-      "quarantine",
-      "U-2"
-    ]
-  },
-  {
-    "no": 165,
-    "section": "coldwar",
-    "unit": "Chapter 3 – The Cold War 1956–1984",
-    "front": "How was the Cuban Missile Crisis resolved and what were its consequences?",
-    "p1": "Khrushchev offered to remove the missiles if the USA pledged not to invade Cuba. Kennedy publicly accepted this and secretly agreed to remove the Jupiter missiles from Turkey. Khrushchev was seen to have backed down first.",
-    "p2": "Consequences for Khrushchev: America had been forced to remove Jupiter missiles from Turkey; Cuba remained communist. However Khrushchev was humiliated and was ousted in 1964, replaced by Brezhnev.",
-    "p3": "Consequences for both sides: 1963 — nuclear hotline established; 1963 — Limited Test Ban Treaty; 1968 — Nuclear Non-Proliferation Treaty. The crisis made both sides more determined to avoid future nuclear confrontations — and became a key reason for détente.",
-    "hints": [
-      "Jupiter missiles",
-      "hotline",
-      "Limited Test Ban Treaty",
-      "Khrushchev ousted"
-    ]
-  },
-  {
-    "no": 166,
-    "section": "coldwar",
-    "unit": "Chapter 3 – The Cold War 1956–1984",
-    "front": "What was the Space Race and what were the key events?",
-    "p1": "Sputnik (October 1957): the USSR launched the first man-made satellite — shocking the USA and showing Soviet technology was no longer lagging behind. Yuri Gagarin became the first human in space (April 1961). First woman in space: Valentina Tereshkova (June 1963). First spacewalk: Alexei Leonov (March 1965).",
-    "p2": "US response: NASA was formed using German scientist Werner von Braun's rocket knowledge. Kennedy pledged in September 1962 to put a man on the moon by the end of the decade. Neil Armstrong and Buzz Aldrin landed on the moon on 20 July 1969.",
-    "p3": "The Space Race mattered as a direct Cold War competition for technological and ideological prestige. Soviet early successes challenged assumptions of Western superiority. The first joint US-Soviet space mission — Apollo-Soyuz (1975) — symbolised the spirit of détente.",
-    "hints": [
-      "Sputnik",
-      "Gagarin",
-      "Armstrong",
-      "Apollo-Soyuz"
-    ]
-  },
-  {
-    "no": 167,
-    "section": "coldwar",
-    "unit": "Chapter 3 – The Cold War 1956–1984",
-    "front": "What was the Prague Spring (1968)?",
-    "p1": "In January 1968, Alexander Dubček became leader of the Czech Communist Party and launched the 'Prague Spring' — liberalisation including freedom of speech and press, multi-party democracy, and 'socialism with a human face'.",
-    "p2": "The USSR was alarmed — if the Czechs could liberalise, other satellite states would follow. Brezhnev warned Dubček repeatedly but he refused to abandon his reforms.",
-    "p3": "In August 1968 the USSR, Poland, Hungary, Bulgaria and East Germany invaded Czechoslovakia with 500,000 troops. Dubček was taken to Moscow and 'encouraged' to abandon his reforms. 150 Czechoslovak civilians were killed. Jan Palach set himself on fire in protest. Hard-line Gustáv Husák replaced Dubček.",
-    "hints": [
-      "Dubček",
-      "Prague Spring",
-      "socialism with a human face",
-      "500,000 troops"
-    ]
-  },
-  {
-    "no": 168,
-    "section": "coldwar",
-    "unit": "Chapter 3 – The Cold War 1956–1984",
-    "front": "What were the consequences of the Czech Crisis of 1968?",
-    "p1": "America failed to help — too distracted by Vietnam, again showing the West would not intervene in the Soviet sphere. Albania left the Warsaw Pact in protest. Yugoslavia and Romania condemned the invasion and began to foster closer links with China. Western communist parties cut ties with the USSR.",
-    "p2": "Brezhnev issued the Brezhnev Doctrine to justify the invasion — if any communist country was showing signs of turning towards capitalism, it was the responsibility of all communist countries to force it back to communism.",
-    "p3": "The doctrine cast a long shadow over Eastern Europe, making clear to reformers in Poland, Hungary and Czechoslovakia that there were firm limits to change. Gorbachev replaced it with the 'Sinatra Doctrine' in 1988 — this was the key decision enabling the 1989 revolutions.",
-    "hints": [
-      "Brezhnev Doctrine",
-      "limited sovereignty",
-      "Albania",
-      "Vietnam"
-    ]
-  },
-  {
-    "no": 169,
-    "section": "coldwar",
-    "unit": "Chapter 3 – The Cold War 1956–1984",
-    "front": "What was the Brezhnev Doctrine?",
-    "p1": "Issued after the invasion of Czechoslovakia in 1968: if any communist country showed signs of turning towards capitalism, it was the responsibility of all communist countries to force it back to communism.",
-    "p2": "It asserted 'limited sovereignty' — communist states were not fully sovereign if their actions threatened the socialist bloc as a whole. This directly contradicted the UN Charter's principle of national self-determination.",
-    "p3": "In practice, it meant any satellite state attempting to leave the Warsaw Pact or adopt multi-party democracy would face Soviet military intervention. Gorbachev replaced it with the 'Sinatra Doctrine' in 1988 — satellite states were free to 'do it their way' — enabling the 1989 revolutions.",
-    "hints": [
-      "Brezhnev Doctrine",
-      "limited sovereignty",
-      "1968",
-      "Sinatra Doctrine"
+     "no": 168,
+  "section": "coldwar",
+  "unit": "Chapter 3 – The Cold War 1956–1984",
+  "front": "What were the consequences of the Czech Crisis of 1968?",
+  "p1": "In August 1968 the USSR and other Warsaw Pact states invaded Czechoslovakia with around 500,000 troops. Dubček was removed and replaced by Gustáv Husák, who reversed the reforms and restored strict communist control. Jan Palach self-immolated in protest",
+  "p2": "America did not intervene because it was heavily involved in Vietnam, confirming that Eastern Europe remained within the Soviet sphere of influence. Albania left the Warsaw Pact in protest, while Yugoslavia and Romania condemned the invasion and moved closer to China.",
+  "p3": "Brezhnev used the crisis to introduce the Brezhnev Doctrine, arguing that the USSR had the right to intervene if socialism was threatened in any communist state. The doctrine discouraged reform across Eastern Europe until Gorbachev abandoned it in 1988.",
+  "hints": [
+    "500,000",
+    "Vietnam",
+    "Brezhnev Doctrine",
     ]
   },
   {
     "no": 170,
     "section": "coldwar",
     "unit": "Chapter 3 – The Cold War 1956–1984",
-    "front": "What was Solidarity and why was it significant?",
+    "front": "What happened in Poland 1980-1?",
     "p1": "Economic unrest — strikes in the Gdansk shipyards in 1980 — led the Polish government to recognise Solidarity, the first independent trade union in the Eastern bloc, led by Lech Walesa.",
-    "p2": "In April 1981 Round Table Agreements saw Solidarity recognised as a political party. General Jaruzelski declared martial law in December 1981, suspending Solidarity and arresting Walesa. However the elections of June 1989 resulted in a Solidarity government — the first non-communist government in Eastern Europe since 1948.",
+    "p2": "In April 1981 Round Table Agreements saw Solidarity recognised as a political party. General Jaruzelski declared martial law in December 1981, suspending Solidarity and arresting Walesa. 
     "p3": "Solidarity was the first mass movement to successfully challenge Soviet-bloc communist authority without being crushed by tanks. The role of Pope John Paul II — a Pole elected in 1979 — was crucial in strengthening the resolve of the Polish people.",
     "hints": [
-      "Solidarity",
-      "Walesa",
       "Gdansk",
-      "martial law"
+      "Martial Law",
+      "John Paul II"
     ]
   },
   {
-    "no": 171,
-    "section": "coldwar",
-    "unit": "Chapter 3 – The Cold War 1956–1984",
-    "front": "What was détente and why did it develop?",
-    "p1": "Détente (1969–1979) was a period of improved superpower relations. Reasons: the USSR faced worsening relations with China and serious border clashes in 1969; the USA faced the costly Vietnam War and oil price rises in 1973; both sides recognised arms reduction would help their economies.",
-    "p2": "Both sides had been frightened by how close they had come to nuclear war in Cuba in 1962. By the 1970s, more pragmatic leaders — Brezhnev in the USSR and Nixon (advised by Kissinger) in the USA — based policy on national interest rather than ideology.",
-    "p3": "The Soviet invasion of Afghanistan (Christmas Day 1979) ended détente and began the new Cold War. SALT II was proposed but never ratified — cancelled by Carter after Afghanistan. The Olympic boycotts (1980 and 1984) symbolised the collapse of détente.",
-    "hints": [
-      "détente",
-      "1969–1979",
-      "Nixon",
-      "Afghanistan"
+  "no": 171,
+  "section": "coldwar",
+  "unit": "Chapter 3 – The Cold War 1956–1984",
+  "front": "Why did the superpowers want Detente?",
+  "p1": "The USSR was spending around 40% of its budget on defence while economic growth slowed sharply. Relations with China collapsed after the Sino-Soviet split, leading to armed border clashes on the Ussuri River in 1969. Desparate for access to USA grain and technology.",
+  "p2": " The USA was weakened by the Vietnam War, anti-war protest, damaging race riots in 1960s and the economic impact of the 1973 oil crisis. Hoped improved USSR relations could bring Vietnam to end.",
+  "p3": "The nuclear balance also encouraged détente. By the late 1960s both sides had achieved nuclear parity and second-strike capability through ICBMs, SLBMs and the continued growth of the arms race. After the Cuban Missile Crisis and the dangers exposed by Brinkmanship, leaders such as Brezhnev, Nixon and Kissinger favoured a more pragmatic policy based on arms limitation and peaceful coexistence.",
+  "hints": [
+    "Ussuri River",
+    "Vietnam",
+    "second-strike capability"
     ]
   },
   {
@@ -2031,10 +1919,9 @@
     "p2": "Both sides still had enough nuclear weapons to initiate MAD — but it symbolised improving relations. Nixon and Brezhnev visited each other in 1972/3.",
     "p3": "SALT I was significant as the first formal arms limitation agreement between the superpowers — showing both sides recognised the dangers of the arms race. It laid the groundwork for SALT II (1979) and the Helsinki Accords (1975).",
     "hints": [
-      "SALT I",
-      "1972",
-      "ICBMs",
-      "freeze"
+      "5-year",
+      "MAD",
+      "groundwork"
     ]
   },
   {
@@ -2046,9 +1933,8 @@
     "p2": "Later that year Basket 2's vision was followed up by the Apollo-Soyuz Mission — the first joint US-Soviet space mission. This was seen as the zenith of détente.",
     "p3": "In practice the Helsinki Accords were 'just a piece of paper' — the human rights provisions of Basket 3 were regularly ignored by the USSR. However, Basket 3 gave Eastern European dissidents a legal basis to demand their rights, and this became increasingly important in the 1980s.",
     "hints": [
-      "Helsinki Accords",
-      "1975",
-      "three baskets",
+      "baskets",
+      "Apollo-Soyuz",
       "human rights"
     ]
   },
@@ -2058,13 +1944,12 @@
     "unit": "Chapter 3 – The Cold War 1956–1984",
     "front": "What was Ostpolitik?",
     "p1": "Ostpolitik ('East Politics') was pursued by West German Chancellor Willy Brandt from 1969. The FRG Hallstein Doctrine had stated West Germany would break off relations with any state recognising the DDR — Brandt abandoned this.",
-    "p2": "Key treaties: Moscow Treaty (August 1970) — neither Germany had territorial claims against any other state; western frontier of Poland recognised; Germany accepted the loss of 1945 territory as 'inviolable'. Basic Treaty (December 1972) — FRG recognised the DDR as an equal sovereign state; both Germanies became UN members.",
-    "p3": "Brandt won the Nobel Peace Prize in 1971. Ostpolitik gained concessions for West Berlin and did not weaken ties with the USA or NATO. The way was left open for future reunification — achieved in 1990. It showed that patient diplomacy could produce real gains without military confrontation.",
+    "p2": "Key treaties: Moscow Treaty (August 1970) — neither Germany had territorial claims against any other state; western frontier of Poland recognised; Germany accepted the loss of 1945 territory as 'inviolable'.",
+    "p3": "Basic Treaty (December 1972) — FRG recognised the DDR as an equal sovereign state; both Germanies became UN members..",
     "hints": [
-      "Ostpolitik",
       "Brandt",
-      "Hallstein Doctrine",
-      "Moscow Treaty"
+      "Moscow Treaty",
+      "Basic Treaty"
     ]
   },
   {
@@ -2073,10 +1958,9 @@
     "unit": "Chapter 3 – The Cold War 1956–1984",
     "front": "Why did the USSR invade Afghanistan (1979)?",
     "p1": "In 1978 a communist party (PDPA) seized power in Afghanistan. Many Afghans rejected the communist government — its atheism conflicted with their Muslim faith; the communists imprisoned and murdered Muslim religious leaders. An anti-communist resistance movement (the Mujahedeen) formed.",
-    "p2": "Brezhnev invaded on Christmas Day 1979 with 100,000 Soviet forces to support the communist government. They faced guerrilla opposition inspired by Islamic beliefs and supplied by the USA via Pakistan.",
-    "p3": "The invasion ended détente and triggered the new Cold War. Carter cancelled SALT II, ended the grain trade with the USSR and issued the Carter Doctrine — stating that America would respond strongly to any attempts to take control of the Persian Gulf.",
+    "p2": "Brezhnev ",
+    "p3": "Brezhnev invaded on Christmas Day 1979 with 100,000 Soviet forces to support the communist government. They faced guerrilla opposition inspired by Islamic beliefs and supplied by the USA via Pakistan.",
     "hints": [
-      "Afghanistan",
       "Mujahedeen",
       "Christmas Day 1979",
       "Carter Doctrine"
@@ -2091,7 +1975,6 @@
     "p2": "The war eroded the confidence of Soviet leaders in using military intervention — this directly influenced Gorbachev's decision not to use force to maintain communist regimes in 1989. It weakened the Red Army's reputation.",
     "p3": "The losses increased resentment within the USSR from non-Russians. When glasnost allowed press freedom, the reporting of the war brought about discontent and demand for political change. The spiralling costs of the war were another drain on a Russian economy already struggling to meet heavier defence demands.",
     "hints": [
-      "10-year war",
       "38,000 Soviets",
       "Gorbachev",
       "glasnost"
@@ -2106,7 +1989,6 @@
     "p2": "Reagan stationed Pershing and Cruise missiles in Western Europe in 1983. America boycotted the 1980 Moscow Olympics; the USSR boycotted the 1984 Los Angeles Olympics. In 1983 the USSR shot down South Korean airliner KAL 007 — killing all 269 people, intensifying mutual hostility.",
     "p3": "Soviet military spending was already high and did not dramatically increase in response to Reagan's build-up — it was internal economic stagnation that forced Gorbachev to seek arms reduction. Reagan's SDI was nevertheless crucial in bringing Gorbachev to the negotiating table.",
     "hints": [
-      "evil empire",
       "SDI",
       "Reagan",
       "Olympic boycotts"
@@ -2121,7 +2003,6 @@
     "p2": "Poor living standards and lack of human rights caused unrest in satellite states — for example Solidarity in Poland. Reagan's SDI threatened to make all Soviet ICBMs obsolete. The two elderly leaders who followed Brezhnev — Andropov and Chernenko — meant stagnation characterised policy at a vital time.",
     "p3": "When Gorbachev became leader in 1985 at 54 — relatively young — there was widespread understanding that severe economic problems existed and radical change was needed. The Soviet economy was over-spending on defence, producing insufficient consumer goods and losing the technological race with the West.",
     "hints": [
-      "stagnation",
       "Afghanistan",
       "Chernobyl",
       "SDI"
@@ -2136,7 +2017,6 @@
     "p2": "However the changes did not lead to grateful appreciation — new private industries were not all efficient, long-term economic problems continued and there were more shortages of some goods than before. The disruption to economic life caused job losses and uncertainty.",
     "p3": "Perestroika was intended to save the communist system — but by opening the economy to market forces, it unleashed expectations and inequalities the system could not manage. Combined with glasnost, it set in motion forces that would ultimately destroy the USSR.",
     "hints": [
-      "perestroika",
       "restructuring",
       "1987",
       "private enterprise"
@@ -2151,7 +2031,6 @@
     "p2": "In January 1987 Gorbachev proposed multi-candidate elections by secret ballot for local councils. In February 1989 elections for a new Congress of People's Deputies saw the defeat of many party establishment figures — new leaders emerged, including Boris Yeltsin.",
     "p3": "Glasnost was intended to drive progress through open discussion — but it revealed how deep the problems were. When glasnost allowed press freedom, the reporting of the Afghanistan war and Chernobyl brought about discontent and demand for political change that Gorbachev could not control.",
     "hints": [
-      "glasnost",
       "openness",
       "1986",
       "Yeltsin"
@@ -2166,7 +2045,6 @@
     "p2": "The Sinatra Doctrine was the single most important decision enabling the 1989 revolutions — it removed the threat of Soviet military intervention that had crushed the Hungarian Uprising (1956) and Czech Crisis (1968).",
     "p3": "By 1989, Gorbachev would not bolster unpopular communist regimes that were unwilling to apply the remedies he had introduced in the USSR. The contrast with the Brezhnev Doctrine was stark — and the satellite states moved rapidly to exploit the new freedom.",
     "hints": [
-      "Sinatra Doctrine",
       "1988",
       "Brezhnev Doctrine",
       "satellite states"
@@ -2181,7 +2059,6 @@
     "p2": "Gorbachev stopped increasing SS-20 missiles stationed in Eastern Europe in April 1985. Reagan and Gorbachev visited each other's countries and developed a working relationship — Reagan came to believe Gorbachev was genuinely different from previous Soviet leaders.",
     "p3": "The new détente of 1985–88 was an indication that the USSR was susceptible to pressure. But the primary driver was Gorbachev's realisation that the USSR needed to reduce military spending to save its economy — Western pressure was a contributory factor, not the primary cause.",
     "hints": [
-      "Reykjavik",
       "INF Treaty",
       "1987",
       "medium-range missiles"
@@ -2196,7 +2073,6 @@
     "p2": "The elections of June 1989 resulted in a Solidarity government — the first non-communist government in Eastern Europe since 1948. The existing leader Jaruzelski remained president and Communists held key posts in the new government.",
     "p3": "Poland remained part of the Warsaw Pact but the USSR had accepted a non-Communist government and important constitutional change. Poland's revolution showed that the Sinatra Doctrine was real — and triggered a wave of revolutions across Eastern Europe.",
     "hints": [
-      "Solidarity",
       "June 1989",
       "Round Table Agreements",
       "Jaruzelski"
@@ -2211,7 +2087,6 @@
     "p2": "Hungary opened its borders with Austria in August 1989 — this made it possible for 150,000 East Germans to leave for the West via this route. This triggered the crisis that led to the fall of the Berlin Wall.",
     "p3": "Hungary's peaceful transition showed that communism could be reformed away without violence — in sharp contrast to Romania. It also played a crucial indirect role in bringing about German reunification by enabling the mass exodus of East Germans that made the Berlin Wall untenable.",
     "hints": [
-      "Hungary",
       "1989",
       "open borders",
       "150,000 East Germans"
@@ -2226,7 +2101,6 @@
     "p2": "The Communist Party relinquished power and a coalition government was formed in December in which Communists were only a minority. Havel was made president. The so-called 'Velvet Revolution' — named for its peaceful nature.",
     "p3": "The Velvet Revolution led to the end of communism and the formation of two states — Slovakia and the Czech Republic — in 1992. It was perhaps the most complete and peaceful of the 1989 revolutions, demonstrating that decades of communist rule had failed to eliminate democratic political culture.",
     "hints": [
-      "Velvet Revolution",
       "Havel",
       "Charter 77",
       "Civic Forum"
@@ -2241,7 +2115,6 @@
     "p2": "Ceausescu and his wife fled but were captured and executed on 25 December 1989 — the only Eastern European leaders to suffer this fate. Opposition groups formed a coalition and a new leader, Ion Iliescu, was elected.",
     "p3": "Romania's violent revolution contrasted with the peaceful transitions elsewhere. It reflected Ceausescu's particularly brutal and personal dictatorship — unlike Gorbachev-aligned reformers elsewhere, he showed no willingness to compromise. The execution of Ceausescu removed any prospect of a negotiated transition.",
     "hints": [
-      "Romania",
       "Ceausescu",
       "25 December 1989",
       "Timisoara"
@@ -2256,7 +2129,6 @@
     "p2": "On 9 November 1989 the government announced that East Germans would be allowed to travel freely. As soon as this was announced, border guards — overwhelmed by crowds — opened up crossing points. Crowds began demolishing the Wall with hammers and pickaxes.",
     "p3": "The fall of the Wall was the defining symbolic moment of the Cold War's end. Kennedy had pledged in 1963 'Ich bin ein Berliner' — 26 years later the Wall was gone. Its fall confirmed that the Sinatra Doctrine was real and that the Cold War was over.",
     "hints": [
-      "9 November 1989",
       "Hungary",
       "Honecker",
       "Gorbachev"
@@ -2271,7 +2143,6 @@
     "p2": "On 1 July 1990 the economies of the two Germanies merged — the Deutschmark replaced the East German Mark at a 1:1 exchange rate. On 3 October 1990 Germany was formally reunified. The 'Two Plus Four Treaty' with the four wartime Allies formally recognised reunification and settled the borders of the new state.",
     "p3": "Reunification brought massive challenges: East German industry was uncompetitive; property rights were confused (over 2 million claims filed); high unemployment in the East; enormous West German investment was needed. Gorbachev agreed in return for assurances NATO would not expand eastwards — an assurance that became highly controversial in later decades.",
     "hints": [
-      "Kohl",
       "3 October 1990",
       "Two Plus Four Treaty",
       "Deutschmark"
@@ -2286,7 +2157,6 @@
     "p2": "Gorbachev was increasingly unpopular in Moscow amongst hard-line Communists who felt his reforms had gone too far. In August 1991 eight communist hardliners organised a coup and removed Gorbachev from power — suspending glasnost and perestroika.",
     "p3": "However Boris Yeltsin led the resistance — standing on a tank outside the Russian Parliament, he rallied popular opposition. The coup collapsed after just 3 days, restoring Gorbachev to power. The affair demonstrated how little power Gorbachev had now — Yeltsin acted like he was in control.",
     "hints": [
-      "Gang of Eight",
       "August 1991",
       "Yeltsin",
       "Baltic states"
@@ -2301,7 +2171,6 @@
     "p2": "The 15 former Soviet republics became independent states. Russia inherited the USSR's permanent seat on the UN Security Council and its nuclear arsenal. The USA emerged as the world's sole superpower.",
     "p3": "The collapse of the USSR ended the Cold War definitively. It was the most dramatic geopolitical change since the end of WWII — 15 new states, the disappearance of the second superpower, and the triumph of capitalism over communism as the world's dominant economic system.",
     "hints": [
-      "Christmas Day 1991",
       "Gorbachev resigned",
       "15 republics",
       "Yeltsin"
@@ -2316,7 +2185,6 @@
     "p2": "Political instability: in October 1993 hard-line communists barricaded themselves in the Russian parliament — Yeltsin ordered tanks to shell the building, killing at least 187 people. In December 1994 Yeltsin launched a military campaign in Chechnya — Russian forces suffered humiliating defeats.",
     "p3": "By the mid-1990s Yeltsin's health was failing, Russia had lost its superpower status and its international influence was a fraction of the USSR's. Yeltsin resigned on 31 December 1999, handing power to his chosen successor Vladimir Putin.",
     "hints": [
-      "shock therapy",
       "oligarchs",
       "Chechnya",
       "hyperinflation"
@@ -2331,7 +2199,6 @@
     "p2": "Slovenia and Croatia declared independence in June 1991 — war broke out immediately. In Bosnia a three-way conflict between Bosnian Muslims, Bosnian Serbs and Bosnian Croats led to the worst violence in Europe since WWII. Serbian forces conducted 'ethnic cleansing'. The Srebrenica massacre (July 1995) saw 8,000 Bosnian Muslim men and boys murdered.",
     "p3": "NATO bombing campaigns against Serbia in 1995 forced the Dayton Peace Agreement. Yugoslavia showed the dangerous consequences of communism's fall in multi-ethnic states — when the communist framework suppressing ethnic nationalism was removed, old rivalries re-emerged with catastrophic force.",
     "hints": [
-      "Milosevic",
       "ethnic cleansing",
       "Srebrenica",
       "Dayton"
