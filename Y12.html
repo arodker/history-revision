@@ -412,28 +412,40 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
             <span id="sp-cat-tag" style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 9px;border-radius:20px;background:#F3EEFB;color:#5B1B9A"></span>
             <span id="sp-name" style="font-size:1rem;font-weight:700;color:var(--text)"></span>
           </div>
+
           <!-- Prompt 1: What is it? -->
           <div style="background:var(--subtle);border-radius:9px;padding:.75rem 1rem;margin-bottom:.6rem">
             <div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem">❓ What kind of source is this?</div>
             <div style="font-size:.82rem;color:var(--muted);font-style:italic">Think before you reveal — what do you know about this source type?</div>
           </div>
-          <div id="sp-whatisit" style="display:none;background:#E1F5EE;border-radius:9px;padding:.75rem 1rem;margin-bottom:.6rem">
-            <div style="font-size:.72rem;font-weight:700;color:#0F6E56;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.35rem">What it is</div>
+          <div id="sp-whatisit" style="display:none;background:var(--subtle);border-left:3px solid #1D9E75;border-radius:0 9px 9px 0;padding:.75rem 1rem;margin-bottom:.5rem">
+            <div style="font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.35rem">What it is</div>
             <div id="sp-whatisit-text" style="font-size:.88rem;line-height:1.65;color:var(--text)"></div>
           </div>
-          <button id="sp-reveal-what-btn" onclick="spRevealWhat()" style="width:100%;padding:10px;font-size:.83rem;font-weight:700;border:1.5px solid #1D9E75;border-radius:9px;background:transparent;color:#1D9E75;cursor:pointer;font-family:inherit;margin-bottom:.75rem">👁 Reveal — what is it?</button>
+          <div id="sp-reveal-what-wrap" style="display:flex;gap:8px;margin-bottom:.75rem">
+            <button id="sp-reveal-what-btn" onclick="spRevealWhat()" style="flex:1;padding:10px;font-size:.83rem;font-weight:700;border:none;border-radius:9px;background:#1D9E75;color:#fff;cursor:pointer;font-family:inherit">👁 Reveal — what is it?</button>
+          </div>
+          <div id="sp-hide-what-wrap" style="display:none;margin-bottom:.75rem">
+            <button onclick="spHideWhat()" style="width:100%;padding:8px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:9px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">▲ Hide</button>
+          </div>
+
           <!-- Prompt 2: Provenance -->
           <div style="background:var(--subtle);border-radius:9px;padding:.75rem 1rem;margin-bottom:.6rem">
             <div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem">🧠 What should you consider for provenance?</div>
             <div style="font-size:.82rem;color:var(--muted);font-style:italic">Think about Nature, Origin, Purpose — and the specific context of this source type.</div>
           </div>
-          <div id="sp-provenance" style="display:none;border-radius:9px;overflow:hidden;margin-bottom:.6rem">
+          <div id="sp-provenance" style="display:none;border-radius:9px;overflow:hidden;margin-bottom:.5rem">
             <div id="sp-prov-header" style="background:#F3EEFB;padding:.6rem 1rem;border-radius:9px 9px 0 0">
               <div style="font-size:.72rem;font-weight:700;color:#5B1B9A;text-transform:uppercase;letter-spacing:.06em">Provenance considerations</div>
             </div>
             <ul id="sp-prompts-list" style="list-style:none;padding:0;margin:0;border:1.5px solid #A96BE8;border-top:none;border-radius:0 0 9px 9px"></ul>
           </div>
-          <button id="sp-reveal-prov-btn" onclick="spRevealProvenance()" style="width:100%;padding:10px;font-size:.83rem;font-weight:700;border:1.5px solid #A96BE8;border-radius:9px;background:transparent;color:#5B1B9A;cursor:pointer;font-family:inherit;margin-bottom:.5rem">👁 Reveal provenance considerations</button>
+          <div id="sp-reveal-prov-wrap" style="display:flex;gap:8px;margin-bottom:.5rem">
+            <button id="sp-reveal-prov-btn" onclick="spRevealProvenance()" style="flex:1;padding:10px;font-size:.83rem;font-weight:700;border:none;border-radius:9px;background:#A96BE8;color:#fff;cursor:pointer;font-family:inherit">👁 Reveal provenance considerations</button>
+          </div>
+          <div id="sp-hide-prov-wrap" style="display:none;margin-bottom:.5rem">
+            <button onclick="spHideProvenance()" style="width:100%;padding:8px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:9px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">▲ Hide</button>
+          </div>
         </div>
       </div>
       <div id="sp-empty" style="display:none" class="empty">No sources found for this category.</div>
@@ -963,7 +975,7 @@ function spSetCat(cat) {
   const provList = document.getElementById('sp-prompts-list');
   if (provList) provList.style.borderColor = st.border;
   const provBtn = document.getElementById('sp-reveal-prov-btn');
-  if (provBtn) { provBtn.style.borderColor = st.border; provBtn.style.color = st.col; }
+  if (provBtn) { provBtn.style.background = st.border; }
   spPopulateDropdown();
   spHideCard();
 }
@@ -1003,11 +1015,15 @@ function spShowSource(src) {
   ul.innerHTML = src.prompts.map((p, i, arr) =>
     `<li style="padding:.65rem 1rem;${i < arr.length-1 ? 'border-bottom:1px solid var(--border);' : ''}font-size:.86rem;line-height:1.6;color:var(--text);display:flex;gap:.6rem"><span style="color:${st.arrow};flex-shrink:0;font-weight:700">→</span><span>${p}</span></li>`
   ).join('');
-  // Reset reveals
+  // Reset both reveals
   document.getElementById('sp-whatisit').style.display = 'none';
   document.getElementById('sp-provenance').style.display = 'none';
-  document.getElementById('sp-reveal-what-btn').style.display = 'block';
-  document.getElementById('sp-reveal-prov-btn').style.display = 'block';
+  document.getElementById('sp-reveal-what-wrap').style.display = 'flex';
+  document.getElementById('sp-hide-what-wrap').style.display = 'none';
+  document.getElementById('sp-reveal-prov-wrap').style.display = 'flex';
+  document.getElementById('sp-hide-prov-wrap').style.display = 'none';
+  // Update reveal button colours to match category
+  document.getElementById('sp-reveal-prov-btn').style.background = st.border;
   document.getElementById('sp-card').style.display = 'block';
   document.getElementById('sp-empty').style.display = 'none';
 }
@@ -1018,12 +1034,26 @@ function spHideCard() {
 
 function spRevealWhat() {
   document.getElementById('sp-whatisit').style.display = 'block';
-  document.getElementById('sp-reveal-what-btn').style.display = 'none';
+  document.getElementById('sp-reveal-what-wrap').style.display = 'none';
+  document.getElementById('sp-hide-what-wrap').style.display = 'block';
+}
+
+function spHideWhat() {
+  document.getElementById('sp-whatisit').style.display = 'none';
+  document.getElementById('sp-reveal-what-wrap').style.display = 'flex';
+  document.getElementById('sp-hide-what-wrap').style.display = 'none';
 }
 
 function spRevealProvenance() {
   document.getElementById('sp-provenance').style.display = 'block';
-  document.getElementById('sp-reveal-prov-btn').style.display = 'none';
+  document.getElementById('sp-reveal-prov-wrap').style.display = 'none';
+  document.getElementById('sp-hide-prov-wrap').style.display = 'block';
+}
+
+function spHideProvenance() {
+  document.getElementById('sp-provenance').style.display = 'none';
+  document.getElementById('sp-reveal-prov-wrap').style.display = 'flex';
+  document.getElementById('sp-hide-prov-wrap').style.display = 'none';
 }
 
 // ═══════════════════════════════════
