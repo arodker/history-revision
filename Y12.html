@@ -1341,18 +1341,18 @@ function fdAnswer(got) {
   const slideInClass = got ? 'slide-in-r' : 'slide-in-l';
   inner.classList.add(got ? 'slide-out-right' : 'slide-out-left');
   setTimeout(() => {
+    // Suppress visibility during content swap to prevent flash
+    inner.style.visibility = 'hidden';
     inner.classList.remove('slide-out-right','slide-out-left','flipped');
-    // Reset height before loading new content to avoid jump
-    inner.style.height = inner.style.height; // hold current height
+    inner.style.height = '';
     fdNext();
-    // Sync height once, then animate in
-    setTimeout(() => {
+    // Let the DOM settle, then reveal and animate in
+    requestAnimationFrame(() => {
       fdSyncHeight();
-      requestAnimationFrame(() => {
-        inner.classList.add(slideInClass);
-        setTimeout(() => inner.classList.remove(slideInClass), 250);
-      });
-    }, 20);
+      inner.style.visibility = '';
+      inner.classList.add(slideInClass);
+      setTimeout(() => inner.classList.remove(slideInClass), 250);
+    });
     if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
     if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
     renderFdSetupWheel();
