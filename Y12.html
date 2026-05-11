@@ -7,6 +7,7 @@
 <title>Mr Rodker's A Level History Hub</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+html{font-size:17px}
 :root{
   --bg:#f8f7f4;--surface:#fff;--card:#fafaf8;--border:#e8e7e2;--border2:#ddddd8;
   --text:#1a1a18;--muted:#6b6b68;--muted2:#5f5e5a;--subtle:#eeede8;
@@ -22,7 +23,7 @@ body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--tex
 input,select,textarea{font-size:max(16px,1em)}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
-.app{max-width:780px;margin:0 auto;padding:1.5rem 1.25rem 4rem;font-size:16px}
+.app{max-width:780px;margin:0 auto;padding:1.5rem 1.25rem 4rem}
 h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
 .subtitle{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
 .screen{display:none}.screen.active{display:block}
@@ -218,10 +219,12 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .fd-outstanding-note{font-size:.78rem;color:var(--text);background:var(--subtle);border-radius:8px;padding:.5rem .75rem;margin-top:.75rem;line-height:1.45}
 @keyframes slide-out-r{to{transform:translateX(110%);opacity:0}}
 @keyframes slide-out-l{to{transform:translateX(-110%);opacity:0}}
-@keyframes slide-in{from{transform:translateX(0);opacity:0}to{opacity:1}}
-.fd-card-inner.slide-out-right{animation:slide-out-r .22s ease forwards}
-.fd-card-inner.slide-out-left{animation:slide-out-l .22s ease forwards}
-.fd-card-inner.slide-in{animation:slide-in .22s ease forwards}
+@keyframes slide-in-r{from{transform:translateX(-18%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes slide-in-l{from{transform:translateX(18%);opacity:0}to{transform:translateX(0);opacity:1}}
+.fd-card-inner.slide-out-right{animation:slide-out-r .2s ease forwards}
+.fd-card-inner.slide-out-left{animation:slide-out-l .2s ease forwards}
+.fd-card-inner.slide-in-r{animation:slide-in-r .22s ease forwards}
+.fd-card-inner.slide-in-l{animation:slide-in-l .22s ease forwards}
 
 /* TRACKER WHEELS */
 .fd-wheel{width:64px;height:64px;display:block;margin:0 auto .4rem;transition:transform .15s}
@@ -1174,6 +1177,8 @@ function fdToggleHints() { fdSyncHints(document.getElementById('fd-hints-on').ch
 
 function fdSetup() {
   renderFdWheels(); renderFdSetupWheel();
+  // If FD not yet loaded, retry once it is
+  if (!FD.length) { setTimeout(() => { renderFdWheels(); renderFdSetupWheel(); }, 500); }
   fdHintsOn = localStorage.getItem(LS_HINTS) === '1';
   const hintsChk = document.getElementById('fd-hints-on');
   const hintsDrill = document.getElementById('fd-hints-on-drill');
@@ -1279,7 +1284,6 @@ function fdNext() {
   document.getElementById('fd-card-inner').classList.remove('flipped');
   document.getElementById('fd-btn-row').style.display = 'none';
   fdUpdateProgress();
-  setTimeout(fdSyncHeight, 30);
 }
 
 function fdSyncHeight() {
@@ -1334,18 +1338,25 @@ function fdAnswer(got) {
     if (mastered[key]) { delete mastered[key]; fdSetMastered(mastered); }
   }
   const inner = document.getElementById('fd-card-inner');
+  const slideInClass = got ? 'slide-in-r' : 'slide-in-l';
   inner.classList.add(got ? 'slide-out-right' : 'slide-out-left');
   setTimeout(() => {
     inner.classList.remove('slide-out-right','slide-out-left','flipped');
+    // Reset height before loading new content to avoid jump
+    inner.style.height = inner.style.height; // hold current height
     fdNext();
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      inner.classList.add('slide-in');
-      setTimeout(() => inner.classList.remove('slide-in'), 250);
-    }));
+    // Sync height once, then animate in
+    setTimeout(() => {
+      fdSyncHeight();
+      requestAnimationFrame(() => {
+        inner.classList.add(slideInClass);
+        setTimeout(() => inner.classList.remove(slideInClass), 250);
+      });
+    }, 20);
     if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
     if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
     renderFdSetupWheel();
-  }, 220);
+  }, 200);
 }
 
 function fdUpdateProgress() {
