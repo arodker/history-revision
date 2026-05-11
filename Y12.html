@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <script>if(localStorage.getItem('alevel_dark')=='1')document.documentElement.classList.add('dark');</script>
 <title>Mr Rodker's A Level History Hub</title>
 <style>
@@ -22,7 +22,7 @@ body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--tex
 input,select,textarea{font-size:max(16px,1em)}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
-.app{max-width:720px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.app{max-width:780px;margin:0 auto;padding:1.5rem 1.25rem 4rem;font-size:16px}
 h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
 .subtitle{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
 .screen{display:none}.screen.active{display:block}
@@ -140,12 +140,13 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .rq-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
 .rq-card{background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:.85rem;cursor:pointer;min-height:90px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .15s}
 .rq-card:hover{border-color:var(--muted)}
-.rq-card.revealed{border-color:#3B6D11;cursor:default}
-.rq-q{font-size:.78rem;line-height:1.5;color:var(--text);font-weight:500}
-.rq-a{display:none;margin-top:.55rem;padding:.45rem .55rem;background:#EAF3DE;border-radius:7px;font-size:.78rem;font-weight:700;color:#3B6D11;line-height:1.4}
+.rq-card.revealed{border-color:#3B6D11}
+.rq-q{font-size:.9rem;line-height:1.5;color:var(--text);font-weight:500}
+.rq-a{display:none;margin-top:.55rem;padding:.45rem .55rem;background:#EAF3DE;border-radius:7px;font-size:.9rem;font-weight:700;color:#3B6D11;line-height:1.4}
 .rq-card.revealed .rq-a{display:block}
 .rq-tap{font-size:.68rem;color:#bbb;margin-top:.4rem}
-.rq-card.revealed .rq-tap{display:none}
+.rq-card.revealed .rq-tap{font-size:.65rem}
+.rq-card.revealed .rq-tap::before{content:"Tap to hide"}
 .rq-btn-row{display:flex;gap:8px;flex-wrap:wrap}
 .rq-btn-row .btn-sm{background:var(--subtle)}
 
@@ -342,15 +343,9 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
   <!-- Secondary modes -->
   <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Also available</p>
   <div class="mode-grid">
-    <button class="mode-btn" onclick="enterMode('knowledge')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">🧠</span>Revision Guide</button>
-    <button class="mode-btn" onclick="enterMode('dates')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">📅</span>Key Dates Quiz</button>
-    <button class="mode-btn" style="padding:.9rem .5rem;opacity:.45;cursor:default;pointer-events:none;position:relative">
-  <span class="icon" style="font-size:1.2rem">✏️</span>
-  Exam Practice
-  <div style="font-size:.58rem;font-weight:700;letter-spacing:.06em;margin-top:.35rem;color:#888">
-    COMING SOON
-  </div>
-</button>
+    <button class="mode-btn" id="hub-btn-knowledge" onclick="enterMode('knowledge')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">🧠</span>Revision Guide</button>
+    <button class="mode-btn" id="hub-btn-dates" onclick="enterMode('dates')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">📅</span>Key Dates Quiz</button>
+    <button class="mode-btn" id="hub-btn-exam" style="padding:.9rem .5rem;opacity:.4;cursor:default;pointer-events:none"><span class="icon" style="font-size:1.2rem">✏️</span>Exam Practice<br><small style="font-size:.65rem;font-weight:400;opacity:.8">Coming soon</small></button>
   </div>
 </div>
 
@@ -609,6 +604,10 @@ function pickSection(sec) {
   // Hub wheel stripe
   const primaryBtn = document.getElementById('fd-primary-btn');
   if (primaryBtn) primaryBtn.style.borderLeftColor = info.colour;
+  ['knowledge','dates'].forEach(id => {
+    const btn = document.getElementById('hub-btn-' + id);
+    if (btn) btn.style.borderLeftColor = info.colour;
+  });
   // Unit dropdown
   const kUnit = document.getElementById('k-unit');
   kUnit.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>' +
@@ -863,7 +862,7 @@ function renderQ() {
       <span class="quiz-hdr-l">Question ${quizIdx+1} of ${total}</span>
       <div class="sc-row"><span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div>
     </div>
-    <div class="quiz-card">
+    <div class="quiz-card" style="border-left:4px solid ${col};position:relative">
       <div style="font-size:1.05rem;font-weight:700;line-height:1.5;margin-bottom:1.25rem">${item.event}</div>
       <div class="quiz-prompt" style="margin-bottom:.75rem">What year did this happen?</div>
       <div style="display:flex;justify-content:center">
@@ -1012,7 +1011,7 @@ function generateRQ() {
     document.getElementById('rq-batch-wrap').style.display = 'block';
     document.getElementById('rq-grid').innerHTML = rqPool.map((q,i) => {
       const col = stripeCol(q.section);
-      return `<div class="rq-card" id="rqc${i}" onclick="this.classList.add('revealed')" style="border-left:4px solid ${col}">
+      return `<div class="rq-card" id="rqc${i}" onclick="this.classList.toggle('revealed')" style="border-left:4px solid ${col}">
         <div class="rq-q">${i+1}. ${q.q}</div>
         <div class="rq-a">${q.a}</div>
         <div class="rq-tap">Tap to reveal</div>
@@ -1041,9 +1040,11 @@ function rqRevealCard() {
 
 function rqMark(correct) {
   document.getElementById('rq-answer-btns').style.display = 'none';
-  if (!correct && rqMode === 'endless') {
-    // add to wrong pile to be recycled
+  if (!correct) {
     rqWrong.push(rqPool[rqOneIdx]);
+    if (rqMode === 'endless') {
+      // inject back into queue every 4 new questions
+    }
   }
   rqOneIdx++;
   rqSinceWrong++;
@@ -1068,14 +1069,29 @@ function renderRQOne() {
   }
 
   if (rqOneIdx >= rqPool.length) {
-    // one-at-a-time finished
+    // one-at-a-time finished — proper end screen
     const card = document.getElementById('rq-one-card');
     card.className = 'rq-card revealed';
-    card.style.borderLeft = '4px solid var(--muted)';
-    document.getElementById('rq-one-q').textContent = '✅ All done!';
-    document.getElementById('rq-one-a').textContent = '';
-    document.getElementById('rq-one-tap').style.display = 'none';
+    card.style.borderLeft = '4px solid #1D9E75';
+    card.style.cursor = 'default';
+    card.onclick = null;
+    const total = rqPool.length;
+    const wrong = rqWrong ? rqWrong.length : 0;
+    const correct = total - wrong;
+    const pct = Math.round((correct / total) * 100);
+    const emoji = pct === 100 ? '🏆' : pct >= 80 ? '🎯' : pct >= 60 ? '👍' : '📚';
+    card.innerHTML = `
+      <div style="text-align:center;padding:.5rem 0">
+        <div style="font-size:3rem;margin-bottom:.4rem">${emoji}</div>
+        <div style="font-size:2.2rem;font-weight:800;color:var(--text)">${correct}/${total}</div>
+        <div style="font-size:.85rem;color:var(--muted);margin:.3rem 0 1rem">${pct}% correct</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <button class="btn-go" style="background:#555;margin-bottom:0" onclick="generateRQ()">🔄 Go again</button>
+          <button class="btn-go" style="background:var(--surface);color:var(--text);border:1.5px solid var(--border2);margin-bottom:0" onclick="showRapidSetup()">⚙️ Change settings</button>
+        </div>
+      </div>`;
     document.getElementById('rq-answer-btns').style.display = 'none';
+    document.getElementById('rq-one-tap').style.display = 'none';
     document.getElementById('rq-one-progress').textContent = '';
     return;
   }
