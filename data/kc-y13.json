@@ -1,0 +1,571 @@
+[
+  {
+    "section": "aa",
+    "period": "start",
+    "heading": "Position of African Americans in 1865",
+    "summary": "The end of the Civil War left 4 million freed people with legal freedom but almost no political, social or economic rights.",
+    "isTurningPoint": false,
+    "isDepthStudy": false,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Political Rights",
+        "facts": [
+          "15th Amendment (1870) guaranteed voting rights, enforced in the South by northern troops. Before the 15th Amendment, 500,000 African Americans voted in the 1868 Election. 🦅 ⚔️",
+          "More than 1,500 African Americans held elected public office during Reconstruction, mostly local positions, but 22 were elected to the US Federal Congress. Blanche K. Bruce served a full 6-year Senate term for Mississippi. South Carolina's state government briefly had a majority of African American members. ✊",
+          "Radical Republicans (Sumner and Stevens) pushed for major reform. President Grant suppressed the KKK with Enforcement Acts in 1870–1. 🦅",
+          "Limitations: President Johnson actively opposed African American political rights and issued mass pardons to Southern whites. Enforcement of the 15th Amendment was weak and reliant on Union soldiers. Terror prevented many exercising their rights — Colfax Massacre (1873): c.100 killed in Louisiana. Federal support faded in early 1870s — deaths of Sumner and Stevens, economic crisis of 1873, return of Southern States to Congress diluting Radical Republican majority. 🦅 🏛️ 🔥"
+        ]
+      },
+      {
+        "label": "Social Rights",
+        "facts": [
+          "Education: The Freedmen's Bureau (1865–72) helped establish over 1,000 schools in the South. By 1870, around 10% of African American children enrolled in schools in the South. Closure in 1872 meant educational gains were short-lived. 🦅 ✊",
+          "Living Standards and Public Services: Southern states introduced Black Codes immediately after the war — restricted movement, labour, property and assembly — repealed during military occupation. Vast majority lived in poverty with limited access to social advancement. 🏛️",
+          "Violence and Terror: KKK used violence to intimidate African Americans from voting, seeking education or asserting rights. Colfax Massacre (1873) and New Orleans Massacre (1866) were stark examples. Despite Enforcement Acts, lynching was common. 🔥",
+          "Social Attitudes and Culture: White supremacist attitudes dominated both South and North. Media spread ideas of lazy, idle freedmen. Myths of Black men as sexually violent and a threat to white women quickly spread post-war. 📺 🔥"
+        ]
+      },
+      {
+        "label": "Economic Rights",
+        "facts": [
+          "Working Conditions: Majority of freedmen worked on plantations as sharecroppers — paid rent with their crops, often to the same landowner as during slavery. Lack of access to land and education trapped them in effective debt bondage. 💰 🏛️",
+          "Housing and Land: The promise of '40 acres and a mule' was impossible to fulfil due to President Johnson's mass pardons — Confederate land returned to white owners. By 1900 only 25% of African Americans owned land. 🦅 💰",
+          "Labour and Unions: African Americans generally excluded from labour unions. NLU encouraged African Americans to set up separate unions — CNLU formed 1869 by Isaiah Montgomery but short-lived. White unions often hostile due to fears of undercutting white wages. 💰"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "reconstruction",
+    "heading": "Reconstruction 1865–1877",
+    "summary": "Radical Reconstruction briefly transformed African American political life before the Hayes–Tilden Compromise ended federal enforcement and allowed white supremacy to reassert itself across the South.",
+    "isTurningPoint": true,
+    "isDepthStudy": false,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Political Rights",
+        "facts": [
+          "Reconstruction Act (1867) divided Southern states into military-occupied districts, enforced Radical Reconstruction and removed Black Codes. 14th Amendment (1868) guaranteed citizenship and equal protection. 15th Amendment (1870) prohibited denial of the vote based on race. 🦅 ⚔️",
+          "More than 1,500 African Americans held public office during Reconstruction, including 22 in Congress. Senator Blanche Bruce (Mississippi, 1875–81) served a full term. South Carolina's state government briefly had an African American majority. ✊",
+          "Civil Rights Act (1875) banned segregation in public spaces but lacked enforcement — later declared unconstitutional in the Civil Rights Cases (1883). 🦅",
+          "Hayes–Tilden Compromise (1877) ended Reconstruction — withdrawal of federal troops led to resurgence of white supremacy in the South. First Jim Crow law introduced on Tennessee railroads the same year. 🦅 🏛️"
+        ]
+      },
+      {
+        "label": "Social Rights",
+        "facts": [
+          "Education: Freedmen's Bureau established over 1,000 schools in the South — by 1870 around 10% of African American children were enrolled. Bureau's closure in 1872 ended these gains. 🦅 ✊",
+          "Violence and Terror: KKK terrorism widespread. Enforcement Acts (1870–71) temporarily suppressed the Klan — over 600 Klan members prosecuted. Colfax Massacre (1873) killed c.100 African Americans in Louisiana. After 1877, federal protection was withdrawn and violence escalated unchecked. 🔥 🦅"
+        ]
+      },
+      {
+        "label": "Economic Rights",
+        "facts": [
+          "Working Conditions: Promise of '40 acres and a mule' never realised following Johnson's mass pardons. Most freedpeople forced into sharecropping — same land, same landowner as during slavery. 🦅 💰",
+          "Panic of 1873 shifted Northern attention from Reconstruction to economic recovery, accelerating the abandonment of African American rights. Hayes–Tilden Compromise of 1877 confirmed this political retreat. 💰 🦅"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "gilded-age",
+    "heading": "Gilded Age c.1877–1900",
+    "summary": "The Gilded Age saw the systematic dismantling of Reconstruction gains through Jim Crow legislation, disenfranchisement and racial terror — yet African Americans built parallel institutions and a small professional class.",
+    "isTurningPoint": true,
+    "isDepthStudy": true,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Political Rights",
+        "facts": [
+          "Jim Crow laws spread across the South in all areas of public life following 1877 — schools, churches, parks, libraries, cemeteries, restrooms, restaurants and hospitals. 🏛️",
+          "Voter suppression introduced in Mississippi in 1890 and spread across the South — literacy tests, poll taxes and grandfather clauses. Black voter registration in Mississippi fell from 90% (1867) to less than 6% (1892). Over 90% of Southern African Americans disenfranchised by 1900. 🏛️",
+          "Plessy v Ferguson (1896) — Supreme Court ruled 'separate but equal' constitutional, giving legal backing to all Jim Crow legislation. Mississippi v Williams (1898) ruled voter suppression did not violate the 15th Amendment. 🦅",
+          "Wilmington Coup (1898) — white supremacists violently overthrew the biracial elected government of Wilmington, North Carolina. Showed that even legitimate political power could be destroyed by organised white violence without federal protection. 🔥 🏛️"
+        ]
+      },
+      {
+        "label": "Social Rights",
+        "facts": [
+          "Education: Black schools systematically underfunded by state governments. Tuskegee Institute (1881) trained over 1,500 students by 1900 — by 1915, 5,000 Black schools had been founded following Washington's example. ✊ 🏛️",
+          "Violence and Terror: Lynching widespread and unpunished — over 100 per year in the early 1890s. Ida B. Wells published 'Southern Horrors' (1892) exposing lynching. In 1900, Governor Tillman of South Carolina openly defended lynching. Southern Democratic politicians repeatedly defeated anti-lynching bills in Congress. 🔥 🏛️ ✊",
+          "Social Attitudes and Culture: 'Lost Cause' myth — romanticised slavery and justified Jim Crow. Social Darwinism and eugenics justified racial separation. Birth of a Nation (1915 — later period) had roots in this era's cultural attitudes. 📺 🔥",
+          "Convict leasing system grew across the South in the 1880s — exploited 13th Amendment loophole to force imprisoned African Americans into unpaid labour for private companies. 🏛️ 💰"
+        ]
+      },
+      {
+        "label": "Economic Rights",
+        "facts": [
+          "Working Conditions: Most African Americans remained trapped in sharecropping and convict leasing. Economic opportunities confined to low-wage agriculture and domestic service. 💰 🏛️",
+          "Black Business and Economic Success: By 1900 c.50,000 African American professionals — doctors, lawyers and teachers. Literacy rose from c.10% (1865) to c.50% (1900). Du Bois became first African American Harvard PhD in 1895. By 1890s, 50,000+ Black-owned businesses including 40 Black-owned banks. Madam C.J. Walker — first self-made female millionaire in USA. ✊ 💰",
+          "Labour and Unions: African Americans excluded from most labour unions. National Negro Business League (1900) founded by B.T. Washington promoted parallel businesses — 600 chapters in 34 states by 1915. ✊ 💰"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "gilded-age-ds1-debate1",
+    "heading": "DS1 Debate: How much progress did African Americans make during the Gilded Age?",
+    "summary": "Historians debate whether the Gilded Age was one of unrelieved regression or whether African Americans built meaningful institutions and community strength beneath the political catastrophe.",
+    "isTurningPoint": false,
+    "isDepthStudy": true,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Advances",
+        "facts": [
+          "By 1887, 22 African Americans had served in Congress including Hiram Revels, first African American senator. Populist Movement of the 1890s led to a brief resurgence of Black political power, with some holding local offices. ✊",
+          "By 1900, African Americans owned 15 million acres of land — slow but steady increase in Black landownership. Notable figures like Bass Reeves (Deputy US Marshal) and all-Black towns like Allensworth, California demonstrated spaces of African American self-governance. ✊ 💰",
+          "By 1900 c.50,000 African American professionals including doctors, lawyers and teachers. Parallel businesses — barbershops, undertakers, small shops — formed basis of a small Black middle class. 50,000+ Black-owned businesses by 1890s including 40 Black-owned banks. ✊ 💰",
+          "Tuskegee Institute (1881) trained African Americans in trades — over 1,500 by 1900. Literacy rate rose from c.10% (1865) to 50% (1900). Du Bois became first African American Harvard PhD in 1895. ✊ 💰",
+          "NAACP founded 1909 by Du Bois, Ida B. Wells and white progressive allies — direct institutional fruit of Gilded Age organising. ✊"
+        ]
+      },
+      {
+        "label": "Retreats",
+        "facts": [
+          "Withdrawal of federal troops (1877) allowed Southern states to enforce Jim Crow laws, disenfranchise Black voters and condone racial violence. Social conditions deteriorated markedly. 🦅 🏛️",
+          "Civil Rights Cases (1883) declared Civil Rights Act 1875 unconstitutional. Plessy v Ferguson (1896) gave constitutional backing to all Jim Crow legislation. Mississippi v Williams (1898) ruled voter suppression did not violate the 15th Amendment. 🦅",
+          "Voter suppression was near-total. Black voter registration in Mississippi fell from 90% (1867) to less than 6% (1892). Over 90% of African Americans in the South were disenfranchised by 1900. 🏛️",
+          "Lynching epidemic — 100+ per year in early 1890s. Wilmington Coup (1898) showed that even successful Black political power could be destroyed by organised white violence. Convict leasing created a new form of forced labour. 🔥 🏛️",
+          "Atlanta Compromise (1895) — Washington's acceptance of social segregation in return for economic co-operation — seen by critics including Du Bois as legitimising Jim Crow and suppressing demands for political equality. ✊ 📺"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "gilded-age-ds1-debate2",
+    "heading": "DS1 Debate: How significant was the role of African Americans themselves during the Gilded Age?",
+    "summary": "The debate centres on whether African Americans were passive victims of white supremacy or active agents who built institutions, challenged injustice and laid foundations for later resistance.",
+    "isTurningPoint": false,
+    "isDepthStudy": true,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Washington's accommodationist strategy",
+        "facts": [
+          "Atlanta Compromise (1895) — accepted social segregation in exchange for economic co-operation. Tuskegee Institute trained over 1,500 students by 1900 — by 1915, 5,000 Black schools had been founded following his example. ✊ 💰",
+          "First Black informal presidential advisor — met Theodore Roosevelt in 1901, secured federal appointments for Black Americans. 'Tuskegee Machine' controlled Black newspapers, charities and political appointments. ✊ 🦅",
+          "Critics including Du Bois argued Washington's approach sacrificed political and civil rights. Du Bois's concept of the 'talented tenth' — ablest African Americans must lead the fight for full equality, not accept economic accommodation. ✊"
+        ]
+      },
+      {
+        "label": "Du Bois and organised resistance",
+        "facts": [
+          "Du Bois launched Niagara Movement (1905) — immediate predecessor to NAACP — demanding immediate full civil and political equality, a direct challenge to Washington's gradualism. ✊",
+          "Ida B. Wells published 'Southern Horrors' (1892) exposing the reality of lynching — launched decades-long anti-lynching campaign reaching both Black and white audiences nationally and internationally. ✊ 📺",
+          "NAACP founded 1909 by Du Bois, Ida B. Wells and white progressive allies — focused on political pressure and legal litigation. ✊"
+        ]
+      },
+      {
+        "label": "Limits of Black agency",
+        "facts": [
+          "Structural power of white supremacy — backed by law, courts, state governments and organised terrorism — severely constrained what African Americans could achieve through their own efforts alone. 🏛️ 🔥",
+          "Exoduster movement (1879) — 40,000 African Americans fled South for Kansas, only to face economic hardships and hostility in the West. Opportunities limited; racial violence still present. ✊ 💰",
+          "Wilmington Coup (1898) demonstrated that even legitimate political success could be violently destroyed. Divisions between Washington's accommodationism and Du Bois's militancy also weakened collective action. 🔥 ✊"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "progressive-wwi",
+    "heading": "Progressive Era & WWI 1900–1920",
+    "summary": "The Progressive Era brought the NAACP and organised resistance. WWI created new economic opportunities through the Great Migration, but gains were reversed by the Red Summer of 1919.",
+    "isTurningPoint": false,
+    "isDepthStudy": false,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Political Rights",
+        "facts": [
+          "NAACP founded 1909 by Du Bois, Ida B. Wells and white progressive allies — focused on legal litigation and political pressure. US v Guinn (1915) successfully challenged grandfather clauses. ✊ 🦅",
+          "President Wilson segregated the federal government in 1913 — a significant backward step from a supposedly Progressive administration. Wilson was an open white supremacist who screened Birth of a Nation in the White House. 🦅 📺",
+          "Marcus Garvey founded New York branch of UNIA (1917), published The Negro World newspaper and launched the Black Star Line (1919). 'Back to Africa' movement offered a radical Black nationalist alternative — reached millions of members by early 1920s. ✊ 📺"
+        ]
+      },
+      {
+        "label": "Social Rights",
+        "facts": [
+          "Birth of a Nation (1915) — D.W. Griffith's film glorified the KKK and depicted African Americans as threats to white women and society. Directly caused a resurgence of KKK activity and membership — screened by Wilson at the White House. 🔥 📺",
+          "Over 380,000 African Americans served in WWI in segregated units — including the Harlem Hellfighters — hoping military service would earn equal treatment. Largely confined to less glamorous roles. Many stationed in Britain experienced a less segregated society. ⚔️ ✊",
+          "Red Summer (1919): return of white soldiers and retraction of industry led to race riots across America — worst violence in Chicago. African Americans fought back in unprecedented ways. Elaine Massacre: Black sharecroppers organising for better wages attacked by white mobs, killing 200+. ⚔️ 🔥 💰"
+        ]
+      },
+      {
+        "label": "Economic Rights",
+        "facts": [
+          "Great Migration (1916–19): wartime demand for labour sparked movement of over 500,000 African Americans from rural South to Northern cities — created influential Black urban communities like Harlem. Chicago's Black population doubled between 1910–1920. ⚔️ 💰",
+          "BSCP (Brotherhood of Sleeping Car Porters, 1925) — first successful Black union, founded by Philip Randolph. Became first Black union to receive AFL recognition in 1935. Secured contract 1937: higher wages, shorter hours, paid uniforms. ✊ 💰",
+          "Elaine Massacre (1919) — Black sharecroppers attempting to organise for better wages attacked by white mobs — showed that economic organising by Black workers met with violent suppression. 🔥 💰"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "boom-bust",
+    "heading": "Boom & Bust 1920–1933",
+    "summary": "The 1920s saw the Harlem Renaissance and cultural flourishing alongside KKK membership reaching 5 million. The Great Depression then devastated Black communities more than any other group.",
+    "isTurningPoint": false,
+    "isDepthStudy": false,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Political Rights",
+        "facts": [
+          "KKK membership reached approximately 5 million — around 15% of the eligible population. Many Southern state politicians were openly KKK members. Republican administrations of the 1920s showed no interest in supporting civil rights. 🔥 🏛️ 🦅",
+          "Oscar De Priest (1928) — first African American elected to Congress from a Northern state since Reconstruction. Struggled to enact reforms as an isolated figure. ✊",
+          "'Garvey must go' campaign gained momentum after Garvey met with the KKK in 1922. Garvey deported to Jamaica in 1927 for mail fraud — federal government action ended the movement. 🦅 ✊"
+        ]
+      },
+      {
+        "label": "Social Rights",
+        "facts": [
+          "Social Attitudes and Culture: White supremacist attitudes dominated both South and North. Social Darwinism justified racial separation. Harlem Renaissance — Langston Hughes, Louis Armstrong, Zora Neale Hurston gained national recognition. Harlem's population grew from 50,000 to 200,000 between 1910–1930. Du Bois used The Crisis to promote Black intellectualism — 100,000 circulation. ✊ 📺 💰",
+          "Violence and Terror: Tulsa Race Massacre (1921) — white mob destroyed Greenwood District ('Black Wall Street'), killing up to 300 African Americans and destroying 35 blocks of a prosperous Black neighbourhood. Showed that Black economic success provoked violent white backlash. 🔥 💰",
+          "Over 50 African Americans were lynched annually during the 1920s. KKK at peak of 5 million members. Southern states took no action — no anti-lynching legislation passed Congress. 🔥 🏛️ 🦅"
+        ]
+      },
+      {
+        "label": "Economic Rights",
+        "facts": [
+          "Great Depression disproportionately affected African Americans — unemployment rates reached 50%, compared to 25% for the general population. 75% of Southern African Americans still sharecroppers. Chicago Black unemployment 20% in 1930 vs 12% for white workers. 💰",
+          "Great Migration had opened some opportunities — by 1930 around 10% of African Americans in the North were registered voters and 40% of African American men in the North held skilled jobs compared to 15% in the South. 💰 ✊",
+          "Nation of Islam (NOI) founded 1930 — Black nationalist organisation offering an alternative vision of Black economic self-sufficiency in response to Depression despair and continued white supremacy. ✊ 💰"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "new-deal",
+    "heading": "The New Deal 1933–1941",
+    "summary": "New Deal programmes offered significant but often discriminatory and exclusionary relief to African Americans. The period saw the political shift to the Democratic Party and the creation of an informal 'Black Cabinet'.",
+    "isTurningPoint": true,
+    "isDepthStudy": true,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Political Rights",
+        "facts": [
+          "FDR (1933–45) created informal 'Black Cabinet' led by Mary McLeod Bethune. Eleanor Roosevelt advocated for civil rights and supported anti-lynching bills — resigned from DAR in 1939 when they refused to let Marian Anderson perform at Constitution Hall. African Americans began voting Democratic in large numbers — major long-term political shift. 🦅 ✊",
+          "Mary McLeod Bethune founded Daytona Educational and Industrial Training School for Negro Girls in 1904 — later Bethune-Cookman College. Her role in FDR's Black Cabinet helped fund training and jobs for 600,000 Black youths. Robert Weaver part of Black Cabinet — later first African American Cabinet Secretary (Housing and Urban Development, 1966). 🦅 ✊",
+          "Adam Clayton Powell Jr. (Harlem, 1945–71), chair of the Education and Labour Committee, influenced legislation supporting Black communities. Jimmy Carter (1977–81) appointed Patricia Harris as first Black woman to the Cabinet and appointed more Black federal judges (37) than any other president. 🦅 ✊"
+        ]
+      },
+      {
+        "label": "Social Rights",
+        "facts": [
+          "Education: Bethune's role in the National Youth Administration's Negro Affairs Division helped fund training and jobs for 600,000 Black youths. By 1930, 300,000 African Americans attended public schools in the North. 🦅 ✊",
+          "Social Attitudes: Anti-Communist Red Scare — organisations improving African American conditions suspected of communism. Leaders like Du Bois surveilled and harassed. Many unions advocating for African American rights, including the CIO, lost funding. 📺 🦅"
+        ]
+      },
+      {
+        "label": "Economic Rights",
+        "facts": [
+          "First New Deal (1933): FERA — 20–30% of recipients were African American. CCC employed c.200,000 African Americans (c.10% of total enrolment). PWA funded infrastructure projects — 65,000+ African Americans employed by 1940. 🦅 💰",
+          "Second New Deal (1935–6): WPA infrastructure jobs — 15% of workers were African American. Social Security Act provided pensions and unemployment insurance for the first time. BSCP received first Black union AFL recognition following Wagner Act (1935). 🦅 💰 ✊",
+          "Limitations: AAA (1933) inadvertently displaced 200,000 Black sharecroppers. Social Security excluded agricultural and domestic workers — 65% of Black workers. Wagner Act inadvertently created 'closed shops' allowing white-only unions to dominate. Aid administered by Southern states — whites discriminated in its application. 🦅 🏛️ 💰"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "new-deal-ds2-debate1",
+    "heading": "DS2 Debate: How strong were African American rights by 1932?",
+    "summary": "Before assessing the New Deal's impact, historians examine the baseline position of African American rights by 1932 — partial Northern progress against Southern catastrophe.",
+    "isTurningPoint": false,
+    "isDepthStudy": true,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Positives by 1932",
+        "facts": [
+          "1.6 million African Americans moved to Northern cities during the Great Migration (1910–1930) — by 1920, 40% of African American men in the North held skilled jobs, compared to 15% in the South. 💰 ✊",
+          "By 1930, around 10% of African Americans in the North were registered voters. Oscar De Priest (1928) first African American elected to Congress from a Northern state since Reconstruction. 300,000 African Americans attended public schools in the North by 1930. ✊",
+          "Harlem Renaissance flourished — Langston Hughes, Louis Armstrong gained national recognition. Harlem's population grew from 50,000 to 200,000 (1910–1930). Black businesses increased. NAACP membership growing. ✊ 📺 💰"
+        ]
+      },
+      {
+        "label": "Negatives by 1932",
+        "facts": [
+          "Great Depression disproportionately affected African Americans — 50% unemployment vs 25% national average. 75% of Southern African Americans still sharecroppers. Chicago Black unemployment 20% vs 12% for white workers. 💰",
+          "Jim Crow enforced racial segregation across the South. Over 50 African Americans lynched annually during the 1920s. KKK at 5 million peak. Over 90% of Southern African Americans disenfranchised. 🏛️ 🔥",
+          "Between 1877 and the New Deal — long period of federal disinterest. Presidents at best apathetic, at worst white supremacists — Wilson segregated the federal government in 1913. No anti-lynching bill passed Congress. 🦅"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "new-deal-ds2-debate2",
+    "heading": "DS2 Debate: How far did the New Deal improve African American rights?",
+    "summary": "Historians debate whether the New Deal represented a meaningful improvement or whether its exclusions and segregationist implementation limited its impact.",
+    "isTurningPoint": false,
+    "isDepthStudy": true,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Gains",
+        "facts": [
+          "FERA — 20–30% of recipients were African American. CCC employed c.200,000 African Americans. PWA employed 65,000+ in infrastructure by 1940. WPA — 15% of workers were African American. Social Security provided pensions for the first time. 🦅 💰",
+          "Some Black sharecroppers became independent farmers through federal assistance. Eleanor Roosevelt and Mary McLeod Bethune gave African Americans a voice in government. Bethune's NYA role helped fund training and jobs for 600,000 Black youths. 🦅 ✊",
+          "African Americans began voting Democratic in large numbers — a major long-term political shift that would shape the Civil Rights Movement era. BSCP gained AFL recognition following Wagner Act (1935). 💰 ✊ 🦅"
+        ]
+      },
+      {
+        "label": "Limitations",
+        "facts": [
+          "AAA (1933) inadvertently displaced 200,000 Black sharecroppers. Social Security excluded agricultural and domestic workers — 65% of Black workers. Wagner Act created 'closed shops' allowing white-only unions to dominate. 🦅 💰",
+          "Aid administered by Southern whites who discriminated in its application — gains did not always reach those for whom intended, particularly in the South. 🏛️",
+          "Anti-Communist Red Scare — organisations improving African American economic position suspected of communism. CIO lost funding. Du Bois surveilled and harassed. Segregation and economic discrimination persisted throughout. 📺 🦅 🔥"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "wwii-postwar",
+    "heading": "WWII & Post-War 1941–1954",
+    "summary": "WWII exposed the contradiction between fighting fascism abroad and racial oppression at home. The post-war period brought Executive Order 9981 desegregating the military and Brown v Board — but McCarthyism threatened civil rights organisations.",
+    "isTurningPoint": true,
+    "isDepthStudy": false,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Political Rights",
+        "facts": [
+          "Smith v Allwright (1944) outlawed all-white primaries — African American voter registration rose from 2% (1940) to 12% (1947). 🦅 ✊",
+          "Executive Order 9981 (1948): President Truman desegregated the military — landmark moment in federal policy. Eisenhower (1953–61) deployed 101st Airborne to enforce Little Rock integration (1957) and sent 30,000 federal marshals to the University of Mississippi (1962) — reluctant but significant federal enforcement. 🦅 ⚔️",
+          "McCarthyism: NAACP forced to purge suspected communists. Many unions advocating for African American rights, including the CIO, lost funding. Leaders like Du Bois surveilled and harassed for alleged communist ties — weakened the civil rights movement. 🦅 📺"
+        ]
+      },
+      {
+        "label": "Social Rights",
+        "facts": [
+          "Education: NAACP victory in Brown v Board of Education (1954) — Thurgood Marshall proved Southern states spent $43/yr on Black students vs $179 for white students. Supreme Court overturned 'separate but equal'. Theoretically impacted 9 million Black children in the South but no de facto change immediately followed. 🦅 ✊",
+          "Violence and Terror: Lynching of Emmett Till (1955) — 14-year-old murdered in Mississippi. Mother insisted on open-casket funeral and allowed media to share images of his body — galvanised the civil rights movement. White Citizens' Councils formed in 1955 to oppose school integration — 'respectable' face of massive resistance. 🔥 📺 ✊",
+          "Social Attitudes: Decolonisation movements of 1950s–60s inspired African Americans through actions of Gandhi and Kwame Nkrumah. Cold War context — Soviet propaganda publicised racial violence like Birmingham Campaign to discredit the US internationally — made Federal Government increasingly conscious of civil rights optics. 📺 ⚔️"
+        ]
+      },
+      {
+        "label": "Economic Rights",
+        "facts": [
+          "Executive Order 8802 (1941): Randolph's March on Washington Movement threatened 100,000-strong march — pressured FDR to ban racial discrimination in defence industries. By end of WWII, over 2 million African Americans employed in defence industries. 🦅 ✊ ⚔️ 💰",
+          "Over 1 million African Americans served in WWII. Tuskegee Airmen proved skill in combat. Many GIs stationed in Britain experienced a less segregated society — raised expectations on return. ⚔️ ✊",
+          "Shift to automation post-WWII disproportionately affected African Americans — concentrated in low-skill manual labour jobs that were eliminated. Unemployment rates of African Americans double those of whites in this period. 💰"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "civil-rights-movement",
+    "heading": "Civil Rights Movement 1954–1965",
+    "summary": "A decade of organised non-violent direct action, legal challenge and federal legislation dismantled legal segregation and secured voting rights — the greatest formal gains of the entire period.",
+    "isTurningPoint": true,
+    "isDepthStudy": false,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Political Rights",
+        "facts": [
+          "SCLC and SNCC organised Selma March (1965) — Selma had 50% Black population but only 1% of electorate was Black. John Lewis led marchers — violent police attack on Edmund Pettus Bridge ('Bloody Sunday') broadcast nationwide. Directly led to Voting Rights Act (1965). ✊ 📺 🏛️",
+          "Voting Rights Act (1965) banned all voter suppression including literacy tests and poll taxes. Mississippi Black voter registration: 6% (1964) → 60% (1969). Civil Rights Act (1964) removed all Jim Crow segregation and prohibited employment discrimination. 🦅 ✊",
+          "Kennedy (1961–63) and Lyndon Johnson (1963–69) made civil rights central to their agendas. LBJ used 'Johnson treatment' to force Civil Rights and Voting Rights Acts through Congress. Appointed Thurgood Marshall as first Black Supreme Court Justice and Robert Weaver as first Black Cabinet Secretary. Sheriff Jim Clark led violence against Selma marchers — state opposition exposed on national television. 🦅 🏛️ 📺",
+          "Albany Campaign (1962) — SCLC and King failed due to subtle police tactics of Chief Laurie Pritchett, who used non-violent policing denying King the media images of brutality that forced federal response. Key lesson shaping Birmingham strategy. ✊ 📺 🏛️"
+        ]
+      },
+      {
+        "label": "Social Rights",
+        "facts": [
+          "Education: NAACP organised Little Rock Nine (1957) — Eisenhower forced to intervene against Governor Faubus. By 1964 however, 98% of Black students still attended segregated schools. James Meredith's enrolment at University of Mississippi (1962) — Kennedy deployed 30,000 troops. By 1965, over 50,000 Black students attended integrated colleges in the South. 🦅 ✊ 🏛️",
+          "Living Standards and Public Services: Montgomery Bus Boycott (1955–6) — 381-day boycott by 40,000 Black residents of Montgomery, sparked by Rosa Parks' arrest, led by King — cost bus company $3,000/day and forced desegregation. Greensboro Sit-ins (1960) — 70,000 students engaged, 1,000+ businesses desegregated lunch counters. Freedom Rides (1961) — CORE and SNCC challenged interstate segregation — fire-bombed in Alabama, forced Attorney General to enforce desegregation. ✊ 🦅",
+          "Violence and Terror: Birmingham Campaign (1963) — Bull Connor's violence against peaceful protesters including children broadcast worldwide. Kennedy announced America had 'moral duty' to intervene — directly led to Civil Rights Act 1964. Baptist Church Bombings (1963) — KKK killed four young girls, no convictions. March on Washington (1963) — 250,000 marched for jobs and freedom, King's 'I Have a Dream' speech. 🔥 🏛️ 📺 ✊",
+          "Cold War context — Soviet propaganda publicised Birmingham Campaign globally. Kennedy: 'We preach freedom around the world… but are we to say the land of the free — except for the Negroes?' — Civil rights became a Cold War imperative. ⚔️ 📺 🦅"
+        ]
+      },
+      {
+        "label": "Economic Rights",
+        "facts": [
+          "Civil Rights Act (1964) prohibited employment discrimination — EEOC enforcement. Affirmative action first introduced as a test in Philadelphia (1969), soon spreading nationally. African Americans in white-collar jobs: 5% (1960) → 15% (mid-1970s). 🦅 💰",
+          "Great Society and War on Poverty (1964–8): Medicare and Medicaid (1965) — African Americans with health insurance: 25% → 75% by 1970. Food Stamp Act (1964) — 33% of recipients were African American despite being 12% of the population. 🦅 💰",
+          "Despite legislative gains, Civil Rights Movement failed to make economic gains especially in Northern cities. By 1970, Black families earned average 58% of what white families earned. King's Chicago Freedom Movement (1966) failed to address de facto segregation in Northern housing — revealed limits of non-violent direct action in the North. ✊ 💰"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "black-power",
+    "heading": "Black Power 1965–1970",
+    "summary": "The Black Power movement challenged the limits of integration and demanded economic justice, self-determination and Black pride — but divisions, FBI repression and violent rhetoric undermined its impact.",
+    "isTurningPoint": true,
+    "isDepthStudy": true,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Political Rights",
+        "facts": [
+          "Malcolm X's key ideas: rejected integration and non-violence — 'by any means necessary' justified self-defence against white supremacy. 'Who taught you to hate yourself?' — promoted Black pride and rejection of white cultural standards. NOI grew from 400 (1952) to 40,000 (1960) under his leadership. Post-Hajj (1964) adopted a more inclusive vision before assassination in 1965 — made him a martyr for the movement. ✊ 📺",
+          "Stokely Carmichael took over SNCC (1966) — coined 'Black Power' slogan during Meredith March — rejected non-violence and integration in favour of self-determination and community control. SNCC and CORE both moved away from interracial coalition politics. ✊",
+          "BPP founded by Huey Newton and Bobby Seale in Oakland (1966) — Ten-Point Programme demanded reparations, land, full employment, decent housing, and an end to police brutality. BPP organised armed patrols to monitor police conduct in Black neighbourhoods, challenging police brutality directly. ✊",
+          "Nixon won 1968 presidential campaign on 'Law and Order' ticket — pro-segregation George Wallace won 5 states. Vietnam War severed King–LBJ relationship and ended federal momentum on civil rights reforms. 🦅 ⚔️ 📺"
+        ]
+      },
+      {
+        "label": "Social Rights",
+        "facts": [
+          "BPP survival programmes: free breakfast programmes feeding 20,000 children per day, 13 health clinics screening thousands for sickle cell anaemia, legal aid, 60+ community schools — directly addressed poverty that civil rights legislation had not solved. ✊ 💰",
+          "Cultural Renaissance: Black Power fostered cultural pride — Afro hairstyles, dashikis, cultural flourishing in music, theatre and fashion. Black Arts Movement rejected white cultural standards. Smith and Carlos raised Black Power salutes at 1968 Mexico Olympics — global symbol. ✊ 📺",
+          "Watts Riots (1965) — response to poverty, police brutality and de facto segregation in LA, $40 million property damage. Long Hot Summer (1967) — 150 race riots, largest in Detroit and Newark. Assassination of Martin Luther King (1968) triggered new wave of riots. 🔥 💰",
+          "COINTELPRO: FBI infiltrated Black Power groups — planted informants, manufactured evidence, created internal divisions. Fred Hampton (Black Panther leader) assassinated in FBI-orchestrated raid (1969). Demonstrated state willingness to use illegal tactics against the movement. 🦅 🔥"
+        ]
+      },
+      {
+        "label": "Economic Rights",
+        "facts": [
+          "BPP's Ten-Point Programme demanded reparations, land, full employment and decent housing — shifted civil rights agenda from legal equality to economic justice and community control. ✊ 💰",
+          "DRUM (Dodge Revolutionary Union Movement, 1968) organised wildcat strikes at Chrysler's Dodge Main plant — challenged racial pay gap in the auto industry from within the union movement. ✊ 💰",
+          "Despite legislative gains from Civil Rights Act (1964), by 1970 Black families still earned average 58% of what white families earned. Civil rights legislation had failed to address de facto economic inequality in Northern cities. 💰"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "black-power-ds3-debate1",
+    "heading": "DS3 Debate: What was the impact of Malcolm X as a civil rights leader?",
+    "summary": "Malcolm X remains one of the most debated figures of the civil rights era — celebrated for giving voice to Black urban grievances and criticised for the divisions his rhetoric caused.",
+    "isTurningPoint": false,
+    "isDepthStudy": true,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Positives",
+        "facts": [
+          "NOI Expansion: Malcolm X's leadership grew Nation of Islam from 400 members (1952) to 40,000 (1960), establishing it nationally. Northern Relevance: uniquely addressed urban poverty and racial inequality in the North where King's Southern appeal struggled. ✊ 💰",
+          "Black Identity: promoted pride in being Black, rejected dependency on white approval. His relatable leadership — personal experience of hardship — resonated with working-class African Americans. Broader Vision Post-Hajj: after 1964 adopted a more inclusive, spiritual vision, softening earlier rhetoric. ✊ 📺",
+          "Inspiration for Black Power: influenced movements like the Black Panthers and leaders like Stokely Carmichael. Cultural Impact: fostered cultural pride through symbols like Afros, dashikis and African names. His assassination in 1965 made him a martyr, inspiring young activists to radicalise. ✊ 📺"
+        ]
+      },
+      {
+        "label": "Negatives",
+        "facts": [
+          "Limited Achievements: unlike King, Malcolm X achieved no legislative victories. Separatist stance alienated moderates and sympathetic whites. 'By any means necessary' philosophy fed fears of Black militancy. ✊ 📺",
+          "NOI Controversies: radical racial theories undermined his credibility. Dismissed March on Washington as a 'farce' — alienated figures like King and damaged movement unity. ✊",
+          "Short Legacy: assassination in 1965 by NOI members limited his ability to develop and implement his evolving ideas. Post-Hajj evolution towards integration left incomplete — impact therefore limited to inspiration rather than legislation. ✊"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "black-power-ds3-debate2",
+    "heading": "DS3 Debate: Why did Black Power rise to prominence in the late 1960s?",
+    "summary": "Black Power's rise was driven by multiple intersecting factors — Malcolm X's legacy, the failures of the Civil Rights Movement in the North, Vietnam and the Long Hot Summers.",
+    "isTurningPoint": false,
+    "isDepthStudy": true,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Role of Malcolm X",
+        "facts": [
+          "Malcolm X's speeches and philosophy of Black pride, self-reliance and self-defence resonated with disillusioned African Americans. Assassination in 1965 made him a martyr, inspiring young activists to radicalise. ✊ 📺",
+          "Critique of nonviolence and rejection of integration laid ideological foundation for Black Power groups like the BPP and SNCC under Carmichael. Emphasis on addressing poverty, ghetto conditions and police brutality gave Black Power a clear urban focus. ✊ 💰",
+          "NOI grew from 400 (1952) to 40,000 (1960) under his leadership — demonstrated mass appeal of a more confrontational approach, especially among Northern urban working-class African Americans. ✊ 💰"
+        ]
+      },
+      {
+        "label": "Failures of the Civil Rights Movement",
+        "facts": [
+          "Neglect of the North: SCLC and NAACP focused on Southern desegregation — Northern urban communities still faced poverty, poor housing and police violence. King's Chicago Freedom Movement (1966) failed to address de facto segregation in Northern housing. ✊ 💰",
+          "Unmet Expectations: despite Civil Rights Act (1964) and Voting Rights Act (1965), African Americans in urban areas still faced economic inequality. Integration criticised as too dependent on white support, failing to address deeper systemic issues. 🦅 💰",
+          "King's declining appeal in the North: non-violence strategy increasingly seen as ineffective where racial tensions and systemic neglect required a more confrontational approach. Groups like NAACP seen as middle-class organisations out of touch with the urban poor. ✊ 📺"
+        ]
+      },
+      {
+        "label": "Vietnam War and Long Hot Summers",
+        "facts": [
+          "African Americans disproportionately drafted into Vietnam — returned home angry and disillusioned. King's 'Beyond Vietnam' speech (1967) severed relations with LBJ, ending federal momentum on civil rights. Media attention shifted from civil rights marches to anti-war protests. ⚔️ 🦅 📺",
+          "Watts Riot (1965) — $40 million damage — exposed failure of nonviolence to address systemic Northern problems. Rioters saw Malcolm X's rhetoric as more realistic than King's dream of racial harmony. 💰 📺",
+          "Long Hot Summer (1967): 150 race riots, largest in Detroit and Newark. Police brutality fuelled support for Black Power's emphasis on self-defence. Nixon won on 'Law and Order' ticket (1968) — federal sympathy for civil rights ended. 🔥 🦅 💰"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "black-power-ds3-debate3",
+    "heading": "DS3 Debate: What was the overall impact of Black Power on African American civil rights?",
+    "summary": "Historians weigh Black Power's genuine community achievements and cultural legacy against its fragmentation, alienation of allies and FBI-assisted destruction.",
+    "isTurningPoint": false,
+    "isDepthStudy": true,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Positives",
+        "facts": [
+          "BPP created free breakfast programmes feeding 20,000 children per day, ran 13 health clinics, screened thousands for sickle cell anaemia, provided legal aid and ran 60+ community schools. Survival programmes directly addressed poverty that civil rights legislation had not solved. ✊ 💰",
+          "Black Power shifted focus from legal equality to economic justice, community control and Black empowerment. BPP's Ten-Point Programme demanded reparations, land, full employment and decent housing. Exerted radicalising influence on King and SCLC — by late 1960s King began emphasising poverty, unemployment and education. ✊ 💰",
+          "Cultural Renaissance: fostered pride and identity — Afro hairstyles, dashikis, cultural flourishing in music, theatre and fashion. Inspiration for Others: ethos inspired AIM (Native Americans), Latinos and feminist movements. ✊ 📺"
+        ]
+      },
+      {
+        "label": "Negatives",
+        "facts": [
+          "Fragmentation: Black Power's lack of unified goals — cultural nationalism, armed self-defence or economic reform — led to confusion and diminished impact. Panthers never exceeded 5,000 members. ✊",
+          "Alienation of Allies: confrontational nature alienated white liberals and moderate African Americans — eroded cross-racial alliances that had supported 1964/65 legislation. CORE's white funding dramatically decreased in 1969 as it moved toward radical nationalism. 📺 ✊",
+          "COINTELPRO: FBI infiltrated Black Power groups, leading to arrests, assassinations (Fred Hampton, 1969) and collapse of the Panthers by 1982. Media backlash: images of armed Panthers and urban riots tarnished the movement's reputation. 🦅 🔥 📺"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "aa",
+    "period": "after-black-power",
+    "heading": "After Black Power 1970–1992",
+    "summary": "Gains from the Civil Rights Movement were institutionalised, but systemic racism, police brutality, the War on Drugs and Reagan's welfare cuts ensured that economic equality remained out of reach.",
+    "isTurningPoint": false,
+    "isDepthStudy": false,
+    "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
+    "subheadings": [
+      {
+        "label": "Political Rights",
+        "facts": [
+          "The Vote: Voting Rights Act (1965) continued to protect African American voting rights. Voter turnout reached 54% by 1992 vs 61% for white Americans. Unofficial suppression continued — gerrymandering and insufficient polling locations in predominantly Black areas. 🦅 🏛️",
+          "Political Representation: by 1992, 8,000+ African Americans held public office. Congressional Black Caucus grew to 36 members. Thurgood Marshall (first Black Supreme Court Justice, 1967–91), Douglas Wilder (first Black governor, Virginia, 1989). Jesse Jackson's 1984 and 1988 presidential campaigns won 7 million votes but he was not the official Democrat candidate. ✊",
+          "Voice in Government: under Nixon and Reagan, Supreme Court became increasingly conservative — moved away from liberal Warren Court. Swann v Charlotte-Mecklenburg (1971) ruled bussing constitutional. Griggs v Duke Power Co. (1971) confirmed affirmative action as constitutional. 🦅"
+        ]
+      },
+      {
+        "label": "Social Rights",
+        "facts": [
+          "Education: school desegregation progress peaked in the 1970s but began reversing — judicial weakening of bussing programmes in the 1980s. By 1992, 40% of Black students attended majority-Black schools, reflecting re-segregation trends. HBCUs remained vital, producing 25% of Black graduates. 🦅 🏛️",
+          "Living Standards and Public Services: federal programmes like Medicaid, Medicare and housing assistance improved standards, but poverty remained disproportionately high — 33% of African Americans below poverty line vs 12% of white Americans. Reagan's welfare cuts disproportionately harmed African Americans. 🦅 💰",
+          "Violence and Terror: police brutality and racial violence remained significant. Beating of Rodney King (1991) and Los Angeles Riots (1992) — acquittal of officers by all-white jury, $1 billion damage. Lynching of Michael Donald (1981) — government took firm action, murderer executed, KKK bankrupted. 🔥 🦅 📺",
+          "War on Drugs: Nixon began War on Drugs disproportionately targeting African Americans — accelerated under Reagan. By 1992, 25% of Black men were in prison, on parole or on probation. Later described by Nixon aide as deliberately targeting Black communities. 🦅 🏛️ 🔥",
+          "Social Attitudes and Culture: positive strides — Oprah Winfrey, Michael Jordan, Spike Lee became icons of Black success. Conservatism of 1970s–80s was a 'silent majority' backlash against 1960s social change — Nixon and Reagan prioritised 'law and order'. MLK Day established as national holiday (1983). 📺 🦅"
+        ]
+      },
+      {
+        "label": "Economic Rights",
+        "facts": [
+          "Working Conditions: in 1992, African Americans earned 60% of average white income and were overrepresented in low-wage sectors. Black unemployment 14.2% vs 7.2% for whites. Deindustrialisation disproportionately hit African Americans concentrated in manufacturing. 💰",
+          "Affirmative Action: first introduced as a test in Philadelphia (1969), spread nationally — African Americans in white-collar jobs rose from 5% (1960) to 15% (mid-1970s). Weakened by Regents of University of California v Bakke (1978) — racial quotas ruled unconstitutional. Under Reagan and Bush labelled 'reverse discrimination' and federal enforcement reduced. 🦅 💰",
+          "Home Ownership: redlining and discriminatory lending had lasting effects. Homeownership rate 43% for African Americans vs 70% for whites (1992). Urban renewal projects of 1960s–70s displaced many Black communities. 💰 🏛️",
+          "Black Business and Economic Success: by 1992, approximately 40% of African Americans considered middle class — 500,000+ Black-owned businesses with $10 billion gross revenue. Gains were uneven however, creating 'bifurcation' between a growing middle class and a persistently poor urban underclass. ✊ 💰",
+          "Labour and Unions: exclusion from unions decreased but discrimination remained. African Americans made up 11% of union membership but were underrepresented in leadership roles. Broader weakening of the labour movement under Reagan further weakened Black union power. 💰 🦅"
+        ]
+      }
+    ]
+  }
+]
