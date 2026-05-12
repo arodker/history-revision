@@ -710,7 +710,7 @@
     "no": 49,
     "section": "elizabeth",
     "unit": "Unit 4 – Elizabeth I and Religion",
-    "front": "What were Grindal's key actions as Archbishop?",
+    "front": "What were Grindal's and Whitgift's key actions as Archbishop?",
     "p1": "Edmund Grindal (1575–83): former Marian exile, sympathetic to Puritan concerns. Came into conflict with Elizabeth over prophesyings — unlicensed meetings where clergy preached and discussed scripture.",
     "p2": "Ordered to suppress prophesyings 1576 → refused, writing that he must 'obey God rather than man'. Suspended 1577, confined to house arrest.",
     "p3": "Remained suspended until death 1583 — never restored to favour. Showed Elizabeth would tolerate no challenge to her control of the Church, however principled.",
@@ -1228,14 +1228,14 @@
     "no": 86,
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
-    "front": "What were the key issues in Parliament during Elizabeth's later years — monopolies and purveyance?",
-    "p1": "Monopolies: Elizabeth lacked funds to reward favourites → resorted to granting monopolies (sole right to sell a particular good in England). Raised as a major issue in the Parliament of 1597.",
-    "p2": "1601 Parliament: MPs publicly listed monopolies granted since 1597 — including salt, starch, iron and vinegar. Elizabeth annulled the most contentious and delivered the Golden Speech → MPs left satisfied.",
-    "p3": "Purveyance — monarch's customary right to purchase goods at below market value — criticised by MPs 1589 and 1593. Burghley defended as Royal Prerogative. Elizabeth agreed to investigate abuses but made no major concessions.",
+    "front": "What was the monopolies dispute in Parliament?",
+    "p1": "Elizabeth lacked funds to reward favourites → resorted to granting monopolies (sole right to sell a particular good in England). Raised as a major issue in the Parliament of 1597.",
+    "p2": "1601 Parliament: MPs publicly listed monopolies granted since 1597 — including salt, starch, iron and vinegar. Scale of grievance threatened to overwhelm parliamentary goodwill.",
+    "p3": "Elizabeth annulled the most contentious monopolies and delivered the Golden Speech — skilfully reframing the concession as a demonstration of her love for her people. MPs left satisfied.",
     "hints": [
       "1597",
-      "concessions",
-      "customary right"
+      "salt and starch",
+      "Golden Speech"
     ]
   },
   {
@@ -1243,13 +1243,13 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What was the purveyance dispute in Parliament?",
-    "p1": "Peter Wentworth MP wrote a pamphlet calling on Parliament to examine candidates for succession. Questioned by the Privy Council 1591; sent to the Tower 1593 — where he stayed until death 1596.",
-    "p2": "Five of Elizabeth's ten Parliaments were called after 1585 — the war with Spain forced reliance on parliamentary subsidies.",
-    "p3": "War provided a common enemy around which Crown and Parliament united. Double subsidy granted 1589. Burghley secured a triple subsidy 1593.",
+    "p1": "Purveyance — monarch's customary right to purchase goods at below market value for the royal household — criticised by MPs in the Parliaments of 1589 and 1593.",
+    "p2": "Lord Burghley defended purveyance as part of the Royal Prerogative. Elizabeth privately agreed to investigate abuses but made no major concessions — the right was maintained intact.",
+    "p3": "By the 1597 Parliament the issue had dissipated — evidence of Elizabeth's tactics of delay working.",
     "hints": [
       "customary right",
       "Burghley",
-      "ten times"
+      "delay"
     ]
   },
   {
@@ -1257,9 +1257,9 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What were the key parliamentary issues in the later years — succession and taxation?",
-    "p1": "English Crown had claimed Ireland since the 12th century — but by the 16th century English power truly felt only in the Pale around Dublin.",
-    "p2": "Ulster and Connaught (north/west): ruled by Gaelic chieftains, opposed to English culture. Munster and Leinster (south/east): ruled by Anglo-Norman families who resented London. All Catholic.",
-    "p3": "Ireland a persistent source of unrest — Fitzgerald Rebellions 1569–73 and 1579–83. Plantations in Munster attempted to increase control → unsuccessfully.",
+    "p1": "Peter Wentworth MP wrote a pamphlet calling on Parliament to examine candidates for succession. Questioned by the Privy Council 1591; sent to the Tower 1593 — where he stayed until death 1596.",
+    "p2": "Five of Elizabeth's ten Parliaments were called after 1585 — the war with Spain forced reliance on parliamentary subsidies.",
+    "p3": "War provided a common enemy around which Crown and Parliament united. Double subsidy granted 1589. Burghley secured a triple subsidy 1593.",
     "hints": [
       "Peter Wentworth",
       "war with Spain",
@@ -1271,9 +1271,9 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What was the background to Ireland and what caused Tyrone's Rebellion?",
-    "p1": "1594: Hugh O'Neill, Earl of Tyrone, led rebellion of Gaelic chieftains against English rule. Victory at Yellow Ford 1598 — the worst English defeat in Ireland — left Tyrone controlling most of the island.",
-    "p2": "Essex sent 1599 with 17,000 men — the largest force Elizabeth ever dispatched. Failed disastrously: made an unauthorised truce with Tyrone; returned to London without permission and in disgrace. 4,000 Spanish troops landed at Kinsale 1600 to support Tyrone.",
-    "p3": "Lord Mountjoy defeated the Spanish at Kinsale 1601 and secured Tyrone's surrender 1603 — just days after Elizabeth's death. War cost ~£2 million → nearly broke Elizabethan finances.",
+    "p1": "English Crown had claimed Ireland since the 12th century — but by the 16th century English power truly felt only in the Pale around Dublin.",
+    "p2": "Ulster and Connaught (north/west): ruled by Gaelic chieftains, opposed to English culture. Munster and Leinster (south/east): ruled by Anglo-Norman families who resented London. All Catholic.",
+    "p3": "Ireland a persistent source of unrest — Fitzgerald Rebellions 1569–73 and 1579–83. Plantations in Munster attempted to increase control → unsuccessfully.",
     "hints": [
       "The Pale",
       "Gaelic",
@@ -1285,9 +1285,9 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What happened during the Nine Years' War?",
-    "p1": "Rebellion extremely costly to suppress — over £2 million. Crippling in context of war with Spain. Yellow Ford defeat was a humiliation.",
-    "p2": "1599: Essex led 16,000 men — the largest force ever sent to Ireland. Returned home without orders, without fighting a battle.",
-    "p3": "Tyrone's ultimate defeat by Mountjoy secured Ireland → Gaelic lords fled; Protestant plantations in Ulster. England never seriously threatened.",
+    "p1": "1594: Hugh O'Neill, Earl of Tyrone, led rebellion of Gaelic chieftains against English rule. Victory at Yellow Ford 1598 — the worst English defeat in Ireland — left Tyrone controlling most of the island.",
+    "p2": "Essex sent 1599 with 17,000 men — the largest force Elizabeth ever dispatched. Failed disastrously: made an unauthorised truce with Tyrone; returned to London without permission and in disgrace. 4,000 Spanish troops landed at Kinsale 1600 to support Tyrone.",
+    "p3": "Lord Mountjoy defeated the Spanish at Kinsale 1601 and secured Tyrone's surrender 1603 — just days after Elizabeth's death. War cost ~£2 million → nearly broke Elizabethan finances.",
     "hints": [
       "Yellow Ford",
       "Kinsale",
@@ -1299,9 +1299,9 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "How serious a problem was Tyrone's Rebellion?",
-    "p1": "Robert Devereux, Earl of Essex — godson of Leicester, married Walsingham's daughter. Wit, eloquence and dashing personality made him a favourite of the ageing Elizabeth in the 1590s.",
-    "p2": "Raised to the Privy Council 1593 more for personality than political skill. Arrogance clashed repeatedly with the pragmatic Robert Cecil.",
-    "p3": "Frequently acted without authorisation: joined Drake's English Armada 1589 against direct orders; disobeyed orders in France 1592. His burning of Cadiz 1596 made him enormously popular across England.",
+    "p1": "Rebellion extremely costly to suppress — over £2 million. Crippling in context of war with Spain. Yellow Ford defeat was a humiliation.",
+    "p2": "1599: Essex led 16,000 men — the largest force ever sent to Ireland. Returned home without orders, without fighting a battle.",
+    "p3": "Tyrone's ultimate defeat by Mountjoy secured Ireland → Gaelic lords fled; Protestant plantations in Ulster. England never seriously threatened.",
     "hints": [
       "£2 million",
       "Essex",
@@ -1313,9 +1313,9 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What were the specific events of Essex's rise?",
-    "p1": "In the 1590s, Essex jealous of loss of power. Initially refused to go to Ireland on Elizabeth's orders before being slapped — and half drawing his sword.",
-    "p2": "In Ireland 1599, led 16,000 men but never fought a battle; returned to London without permission. Defiant return enraged Elizabeth → placed under house arrest.",
-    "p3": "Under house arrest, Essex lost his monopoly over sweet wines. Mountjoy's success in crushing the Tyrone Rebellion further disgraced him. In desperation → Essex began his 1601 rebellion.",
+    "p1": "Robert Devereux, Earl of Essex — godson of Leicester, married Walsingham's daughter. Wit, eloquence and dashing personality made him a favourite of the ageing Elizabeth in the 1590s.",
+    "p2": "Raised to the Privy Council 1593 more for personality than political skill. Arrogance clashed repeatedly with the pragmatic Robert Cecil.",
+    "p3": "Frequently acted without authorisation: joined Drake's English Armada 1589 against direct orders; disobeyed orders in France 1592. His burning of Cadiz 1596 made him enormously popular across England.",
     "hints": [
       "Leicester",
       "Privy Council",
@@ -1327,9 +1327,9 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What led to Essex's downfall and rebellion?",
-    "p1": "Essex wrote to James VI warning Robert Cecil would prevent his succession. Commissioned performance of the banned play Richard II — in which a childless monarch is deposed by a nobleman.",
-    "p2": "Gathered supporters including the Earl of Southampton; marched into the City of London hoping to raise citizens against Cecil. Most supporters got cold feet → rebellion collapsed as Tower's guns turned on Essex House.",
-    "p3": "Essex and five supporters executed February 1601. Cecil's faction controlled government unopposed from then on → engineered the smooth succession of James I in 1603.",
+    "p1": "In the 1590s, Essex jealous of loss of power. Initially refused to go to Ireland on Elizabeth's orders before being slapped — and half drawing his sword.",
+    "p2": "In Ireland 1599, led 16,000 men but never fought a battle; returned to London without permission. Defiant return enraged Elizabeth → placed under house arrest.",
+    "p3": "Under house arrest, Essex lost his monopoly over sweet wines. Mountjoy's success in crushing the Tyrone Rebellion further disgraced him. In desperation → Essex began his 1601 rebellion.",
     "hints": [
       "slapped",
       "Ireland",
@@ -1341,9 +1341,9 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What were the key events and consequences of Essex's Rebellion?",
-    "p1": "Bad harvests 1594–98 → average price of wheat doubled. Cheaper grains rose even faster, hitting the poorest hardest. At the crisis peak 1595–97, the death rate increased by 50%.",
-    "p2": "Population growth throughout the century had outstripped food supply — a Malthusian Crisis. Collapse of trade due to war with Spain → reduced supply of imported goods and cost jobs in cloth manufacture.",
-    "p3": "War taxation (unprecedented subsidies 1589 and 1593) and Elizabeth's granting of monopolies further raised prices on staple goods. The 1590s crisis combined natural, economic and fiscal pressures simultaneously.",
+    "p1": "Essex wrote to James VI warning Robert Cecil would prevent his succession. Commissioned performance of the banned play Richard II — in which a childless monarch is deposed by a nobleman.",
+    "p2": "Gathered supporters including the Earl of Southampton; marched into the City of London hoping to raise citizens against Cecil. Most supporters got cold feet → rebellion collapsed as Tower's guns turned on Essex House.",
+    "p3": "Essex and five supporters executed February 1601. Cecil's faction controlled government unopposed from then on → engineered the smooth succession of James I in 1603.",
     "hints": [
       "Richard II",
       "Southampton",
@@ -1355,13 +1355,13 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What were the specific causes of the 1590s socioeconomic crisis?",
-    "p1": "As Elizabeth entered her 60s, looks diminished — blackened teeth; bright red wig; pockmarked face made up with white lead. On progress, public described her as 'old and ill'.",
-    "p2": "1596: Privy Council ordered destruction of any 'unseemly and improper' portraits → all portraits had to be based on an agreed flattering version produced by Nicholas Hilliard.",
-    "p3": "Rainbow Portrait used heavy symbolism: holds a rainbow (peace and divine favour); dress covered with eyes and ears — Elizabeth sees and hears all; no one can plot against her.",
+    "p1": "Bad harvests 1594–98 → average price of wheat doubled. Cheaper grains rose even faster, hitting the poorest hardest. At the crisis peak 1595–97, the death rate increased by 50%.",
+    "p2": "Population growth throughout the century had outstripped food supply — a Malthusian Crisis. Collapse of trade due to war with Spain → reduced supply of imported goods and cost jobs in cloth manufacture.",
+    "p3": "War taxation (unprecedented subsidies 1589 and 1593) and Elizabeth's granting of monopolies further raised prices on staple goods. The 1590s crisis combined natural, economic and fiscal pressures simultaneously.",
     "hints": [
       "bad harvests",
       "Malthusian Crisis",
-      "tax burden"
+      "monopolies"
     ]
   },
   {
@@ -1369,9 +1369,9 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "How did Elizabeth manage her public image in her later years?",
-    "p1": "Series of scandals undermined Elizabeth's image at court (e.g. Raleigh and Bess Throckmorton's child). Attendance at court decreased; nobility reluctant to accompany her on progress.",
-    "p2": "Every year on 17 November, Accession Day Tilts lavishly celebrated. Festivals encouraged among ordinary people on Accession Day → celebrate Elizabeth as saviour of England and Protestantism.",
-    "p3": "Edmund Spenser's The Faerie Queene glorified Elizabeth as 'Gloriana' — the cult of the Virgin Queen wedded to England was popularised. Reinforced by the 1601 Golden Speech.",
+    "p1": "As Elizabeth entered her 60s, looks diminished — blackened teeth; bright red wig; pockmarked face made up with white lead. On progress, public described her as 'old and ill'.",
+    "p2": "1596: Privy Council ordered destruction of any 'unseemly and improper' portraits → all portraits had to be based on an agreed flattering version produced by Nicholas Hilliard.",
+    "p3": "Rainbow Portrait used heavy symbolism: holds a rainbow (peace and divine favour); dress covered with eyes and ears — Elizabeth sees and hears all; no one can plot against her.",
     "hints": [
       "looks",
       "unseemly",
@@ -1383,9 +1383,9 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "How did Elizabeth manage her reputation at court in her later years?",
-    "p1": "Privy Council: monarch's most important advisors — maximum 20 members, met several times a week. Dominated most of the reign by William Cecil. Key function: advising on policy and implementing decisions.",
-    "p2": "Parliament: could pass legislation more permanent than a proclamation. Monarch needed parliamentary approval for taxation. Called only ten times during Elizabeth's reign.",
-    "p3": "Parliament increasingly claimed the right to debate matters Elizabeth considered part of the Royal Prerogative — religion; marriage; succession. Unresolved tension inherited by the Stuarts.",
+    "p1": "Series of scandals undermined Elizabeth's image at court (e.g. Raleigh and Bess Throckmorton's child). Attendance at court decreased; nobility reluctant to accompany her on progress.",
+    "p2": "Every year on 17 November, Accession Day Tilts lavishly celebrated. Festivals encouraged among ordinary people on Accession Day → celebrate Elizabeth as saviour of England and Protestantism.",
+    "p3": "Edmund Spenser's The Faerie Queene glorified Elizabeth as 'Gloriana' — the cult of the Virgin Queen wedded to England was popularised. Reinforced by the 1601 Golden Speech.",
     "hints": [
       "scandals",
       "Accession Day",
@@ -2116,7 +2116,7 @@
     "p3": "By 1989 Gorbachev would not bolster unpopular communist regimes unwilling to reform. Satellite states moved rapidly to exploit the new freedom.",
     "hints": [
       "UN speech 1988",
-      "removal of threat",
+      "Hungary and Czechoslovakia",
       "would not bolster"
     ]
   },
