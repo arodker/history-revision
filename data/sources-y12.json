@@ -5,340 +5,293 @@
       "id": "gen-001",
       "category": "generic",
       "name": "Chronicle",
-      "whatIsIt": "Narrative accounts of events written by contemporaries — clergy, merchants, court servants. Examples include Grafton's Chronicle and the Chronicle of the Grey Friars of London.",
+      "whatIsIt": "Narrative accounts of events written by contemporaries — clergy, merchants, court servants.",
       "prompts": [
-        "Chronicles reflect the narrative of whoever is in power when they are written. A chronicle written under a Protestant government will present events very differently from one written under a Catholic one.",
-        "Every chronicle has a viewpoint. What is the author's religion, social position, and likely audience?",
-        "Often written years or decades after the events. A chronicle written under Elizabeth will carry Protestant assumptions about Mary's reign.",
-        "Chroniclers copied from each other and repeated rumour. The account may be second or third hand.",
-        "Chronicles were often used to justify the current regime. A Protestant chronicler writing under Elizabeth will frame Mary's reign as tyranny — that is a political choice, not history."
+        "Who: Identify the author's religion, social position, and who they were writing for. A court servant sees very different things from a parish priest.",
+        "What: Chronicles are narrative accounts — they tell a story, which means they make choices about what to include and how to frame it.",
+        "Context: Chronicles tend to reflect the politics of when they were written, not just when the events happened. A chronicle written under Elizabeth carries Protestant assumptions about Mary's reign.",
+        "How informed: Were they eyewitnesses, or writing from other accounts? Chroniclers frequently copied from each other and repeated rumour.",
+        "Nature: Often written years after events. Memory fades and the political climate changes — both shape what gets written."
       ]
     },
 
     {
       "id": "gen-002",
       "category": "generic",
-      "name": "Diary / Journal",
-      "whatIsIt": "Personal records kept by individuals — recording events, observations, and private reactions. Range from courtiers to London tradesmen.",
+      "name": "Ambassador Report",
+      "whatIsIt": "Letters sent by foreign ambassadors to their governments, reporting on English politics and court affairs.",
       "prompts": [
-        "Diaries can offer rare access to private reactions — but 'private' doesn't mean unfiltered or typical.",
-        "Think about the author's social position. A London craftsman sees very different things from a court official — and London itself was atypical of England in its size, diversity, and proximity to power.",
-        "Was this written for private use, or with a future reader in mind? That changes how honest it is.",
-        "Damage to manuscripts or later editing may mean what survives isn't exactly what was written."
+        "Who: The ambassador's nationality determines their priorities. A Spanish ambassador focuses on Habsburg interests; a Venetian on trade and European power. There is no neutral observer.",
+        "What: Diplomatic dispatches are written to inform and impress. Admitting uncertainty or missing key events would damage their career.",
+        "Context: Ambassadors relied on local informants with their own agendas. 'Popular discontent' may reflect one contact's anxiety, not general opinion.",
+        "How informed: Foreign observers often misread English political culture. Being an outsider does not make you more objective.",
+        "Nature: Crises are over-reported, stability is under-reported. Ambassadors needed to seem useful to their masters."
       ]
     },
 
     {
       "id": "gen-003",
       "category": "generic",
-      "name": "Ambassador Report",
-      "whatIsIt": "Letters and dispatches sent by foreign ambassadors to their governments, reporting on English politics, religion, and court affairs.",
+      "name": "Government Records",
+      "whatIsIt": "Documents produced by royal government — Acts of the Privy Council, royal proclamations, parliamentary statutes.",
       "prompts": [
-        "Ambassadors wrote to please their masters and to look competent. Admitting uncertainty or missing important events would damage their careers.",
-        "Crises are over-reported. Stability and uncertainty are rarely admitted.",
-        "Information came from informants with their own agendas. 'Popular discontent' may reflect one contact's anxiety, not general opinion.",
-        "Foreign observers often misread English politics. Being an outsider does not make you more objective.",
-        "The ambassador's nationality shapes what they noticed. There is no neutral foreign observer."
+        "Who: Whoever dominated the council controlled what got recorded. Somerset's arrest was written down by the men who arrested him.",
+        "What: Records decisions, not the arguments and deals behind them. The real politics happened before the clerk picked up his pen.",
+        "Context: A proclamation shows what the government intended, not what actually happened. Check local sources to see if it was enforced.",
+        "Nature: If something had to be proclaimed, it probably wasn't happening naturally on its own.",
+        "How informed: Official records speak in the language of authority — they tell us how the government wanted its actions to appear, not the full reality."
       ]
     },
 
     {
       "id": "gen-004",
       "category": "generic",
-      "name": "Govt Record",
-      "whatIsIt": "Documents produced by royal government — Acts of the Privy Council, royal proclamations, parliamentary statutes, judicial records.",
+      "name": "Legal Records",
+      "whatIsIt": "Court proceedings, attainders, and execution records — including the Seymour attainders and Marian heresy trials.",
       "prompts": [
-        "Records decisions, not the debates behind them. The real politics happened before the clerk picked up his pen.",
-        "Who controlled the record matters. Under Somerset and Northumberland, the dominant councillor shaped what was written down.",
-        "A proclamation shows what the government intended, not what actually happened. Check local sources to see if policy was enforced.",
-        "The fact that something had to be proclaimed is itself evidence it wasn't just happening naturally."
+        "Who: Charges were constructed by political enemies. Read them as evidence of what those enemies needed people to believe.",
+        "What: Tudor treason trials confirmed outcomes already decided. Parliamentary attainder needed no evidence at all.",
+        "Context: Somerset's original charges were so weak Northumberland had to retry him on the lesser charge of felony — that tells us something important about the strength of the case.",
+        "Nature: Confessions from condemned prisoners were often written by others and read aloud as the price of a less painful death.",
+        "How informed: These documents tell us what the government needed people to believe, not what the accused actually did."
       ]
     },
 
     {
       "id": "gen-005",
       "category": "generic",
-      "name": "Religious Text",
-      "whatIsIt": "Texts produced for religious purposes — prayer books, homilies, catechisms. In this period: the Books of Common Prayer, the Edwardian Homilies, and Marian Catholic devotional writing.",
+      "name": "Churchwarden Accounts",
+      "whatIsIt": "Parish financial records — spending on church upkeep, buying Bibles, whitewashing images, restoring rood screens.",
       "prompts": [
-        "Tells us what the author wanted people to believe — not what people actually believed.",
-        "The language is often deliberately vague. Cranmer's 1549 Prayer Book was designed to satisfy both Catholics and Protestants.",
-        "Who produced it matters. A government text and a Protestant exile pamphlet are very different things, even if they say similar things.",
-        "Use visitation records and churchwarden accounts alongside religious texts — they show whether official theology was actually reaching ordinary people."
+        "Who: Written by local officials doing their administrative duty — not making theological statements.",
+        "What: Their value is in their mundanity. Written to record spending, not to persuade. When a parish records whitewashing images, that is real behaviour — not just an intention.",
+        "Nature: Never read belief from compliance. A churchwarden who buys a Protestant Bible under Edward and restores a rood screen under Mary is following the law.",
+        "Context: They reveal huge regional variation. London looked very different from Cornwall — be careful about national generalisations.",
+        "How informed: These are the most direct evidence we have of what actually happened at parish level, rather than what the government wanted to happen."
       ]
     },
 
     {
       "id": "gen-006",
       "category": "generic",
-      "name": "Pamphlet",
-      "whatIsIt": "Texts written to persuade — to change minds, stir opinion, or attack opponents. The printing press made these a major force from the 1530s.",
+      "name": "Visitation Records",
+      "whatIsIt": "Records of bishops inspecting parishes — checking equipment, services, and whether clergy were teaching correctly.",
       "prompts": [
-        "A pamphlet is trying to win an argument, not give a balanced account. Read it as persuasion, not evidence.",
-        "Where it was published matters. A Geneva pamphlet could say things impossible to print in England — that gap is itself evidence of the political climate.",
-        "The fact that a pamphlet exists at all shows there was genuine controversy.",
-        "Pamphlets only reached people who could read. Claims about 'popular' attitudes may actually reflect a small, educated minority."
+        "Who: Written by bishops and their officials — reflects the priorities of church authority, not ordinary parishioners.",
+        "What: Standard questions produce standard answers. This creates a false impression of uniformity across very different parishes.",
+        "Context: Non-compliance recorded here is some of the best evidence for the gap between what reform intended and what it actually achieved.",
+        "How informed: The view from above. Tells us what bishops were looking for, not what ordinary people experienced.",
+        "Nature: Most useful when combined with churchwarden accounts and wills. No single local source gives the full picture."
       ]
     },
 
     {
       "id": "gen-007",
       "category": "generic",
-      "name": "Legal Record",
-      "whatIsIt": "Court proceedings, indictments, attainders, and execution records. In this period: the Seymour attainders, the trial of Lady Jane Grey, and Marian heresy trials.",
+      "name": "Wills",
+      "whatIsIt": "Legal documents recording last wishes, including religious preambles that can indicate Catholic or Protestant beliefs. Survive in very large numbers.",
       "prompts": [
-        "Tudor treason trials confirmed outcomes that had already been decided. The charges tell us what the government needed to prove, not what really happened.",
-        "Parliamentary attainder needed no evidence at all. Somerset's original charges were so weak that Northumberland later had to retry him on the lesser charge of felony.",
-        "Confessions from condemned prisoners were often written by others and read out loud as a condition of a less painful death.",
-        "Read the charges as evidence of what the government needed people to believe — not what the accused actually did."
-      ]
-    },
-
-    {
-      "id": "gen-008",
-      "category": "generic",
-      "name": "Churchwarden Accounts",
-      "whatIsIt": "Parish financial records documenting spending on church upkeep and compliance with religious orders — buying English Bibles, whitewashing images, restoring rood screens.",
-      "prompts": [
-        "Their value is in their mundanity. They were written to record spending, not to persuade anyone. When a parish records whitewashing images, that is real behaviour — not just an intention.",
-        "These are financial records, not statements of faith. Never read belief from compliance.",
-        "A churchwarden who buys a Protestant Bible under Edward and restores a rood screen under Mary is following the law — not necessarily expressing what they believe.",
-        "They reveal huge regional variation. London looked very different from Cornwall. Be careful about making national generalisations."
-      ]
-    },
-
-    {
-      "id": "gen-009",
-      "category": "generic",
-      "name": "Visitation Records",
-      "whatIsIt": "Records of formal inspections by bishops — checking whether parishes had the right books and equipment, whether clergy conducted services properly, and whether there were doctrinal problems.",
-      "prompts": [
-        "This is the view from above. It tells us what bishops were looking for — which reflects official priorities, not what ordinary parishioners cared about.",
-        "The questions asked were standard, and the answers were recorded in standard terms. This creates a false impression of uniformity.",
-        "Non-compliance recorded here is some of the best evidence for the gap between what reform intended and what it actually achieved.",
-        "Most useful when combined with churchwarden accounts and wills. No single local source gives the full picture."
-      ]
-    },
-
-    {
-      "id": "gen-010",
-      "category": "generic",
-      "name": "Private Letter",
-      "whatIsIt": "Letters written for private purposes — family correspondence, political alliances, communications between reformers and continental theologians.",
-      "prompts": [
-        "No letter in this period was truly private. Writers knew letters could be intercepted and were careful about what they said. Several people were arrested on the evidence of their correspondence.",
-        "Always ask: who is writing to whom, and why? That shapes everything that is said — and everything that is left out.",
-        "Letters that survived did so because someone chose to keep them — for political, legal, or personal reasons. What survives is not a random sample.",
-        "Letters could be edited, forged, or copied by later hands. Many survive only in transcriptions made years after the original was written."
+        "Who: A wealthy merchant dictating their own will is a very different source from a labourer whose parish priest wrote it for them. The agency of the testator matters enormously.",
+        "What: Their evidential power is statistical, not anecdotal. One will proves almost nothing — hundreds from one area tracked over time can reveal real patterns.",
+        "Context: Were testators writing their own words, or repeating phrases the scribe suggested? The two are very different things.",
+        "How informed: Most students only see a handful of examples. That is not enough to draw conclusions from.",
+        "Nature: Religious preambles can reflect genuine belief, legal convention, or simply whatever formula the local clergyman offered."
       ]
     },
 
     {
       "id": "edw-001",
       "category": "edward",
-      "name": "Edward's Chronicle",
-      "whatIsIt": "A personal journal kept by Edward VI from around 1549, recording council decisions, rebellions, and religious change in a terse, factual style — written partly as a political exercise encouraged by his Protestant tutors.",
+      "name": "Edward VI's Chronicle",
+      "whatIsIt": "Edward VI's personal journal from around 1549 — recording council decisions, rebellions, and religious change in a terse, factual style.",
       "prompts": [
-        "Edward was educated by committed Protestant humanists. His view of events reflects their values as much as his own — we cannot easily separate what Edward believed from what he was trained to think.",
-        "Was this a private diary, or a record designed to show Edward as an active, capable ruler?",
-        "He records Somerset's fall and coming execution with almost no emotion. Reading alongside ambassador reports shows how much the Chronicle leaves out about the real political situation.",
-        "After 1549, he may simply be repeating Northumberland's version of events without questioning it."
+        "Who: Written by a boy raised by Protestant humanist tutors. His view of events reflects their values as much as his own.",
+        "What: Presented as a private diary — but may have been written to show Edward as an active, capable ruler despite his age.",
+        "How informed: After 1549, Edward's information came largely through Northumberland. He is probably repeating Northumberland's version of events without questioning it.",
+        "Context: He records Somerset's coming execution with almost no emotion. Reading alongside ambassador reports reveals how much the Chronicle leaves out.",
+        "Typicality: Edward never questions Northumberland's actions or the pace and purpose of the Reformation. That absence of doubt is itself revealing."
       ]
     },
 
     {
       "id": "edw-002",
       "category": "edward",
-      "name": "The Devise",
-      "whatIsIt": "A document in Edward's own handwriting trying to remove Mary and Elizabeth from the succession and give the crown to Lady Jane Grey — controversially altered from 'Lady Jane's heirs male' to 'Lady Jane and her heirs male'.",
+      "name": "The Devise for the Succession",
+      "whatIsIt": "A document in Edward's handwriting trying to pass the crown to Lady Jane Grey — altered from 'Jane's male heirs' to 'Jane and her heirs male'.",
       "prompts": [
-        "Who changed the wording? Was it Edward, Northumberland's agents, or someone after Edward's death? The dispute over the handwriting has never been settled.",
-        "Edward was a dying teenager surrounded by powerful men who had strong reasons to stop a Catholic succession. Genuine belief and political pressure are not mutually exclusive.",
-        "The document was legally impossible — it could not override the 1544 Act of Succession. It tells us about desperation as much as intent.",
-        "Northumberland signed it knowing it would keep him in power if Jane became queen. His interest helps explain why the document exists at all."
+        "Who: Edward was a dying teenager surrounded by powerful men with strong reasons to stop a Catholic succession. Genuine belief and political manipulation are not mutually exclusive.",
+        "What: A legal document — but legally impossible. It could not override the 1544 Act of Succession. Tells us about desperation as much as intent.",
+        "How informed: Northumberland signed it knowing it would keep him in power. His self-interest shapes the whole document.",
+        "Context: Who changed the wording from 'Jane's male heirs' to 'Jane and her heirs male'? Edward, Northumberland's agents, or someone after Edward's death? Never settled.",
+        "Nature: The handwriting dispute means we cannot even be certain what Edward himself wrote versus what was added later."
       ]
     },
 
     {
       "id": "edw-003",
       "category": "edward",
-      "name": "The Prayer Books",
-      "whatIsIt": "The Books of Common Prayer compiled by Archbishop Cranmer — the deliberately vague 1549 version and the decisively Protestant 1552 revision.",
+      "name": "The Books of Common Prayer",
+      "whatIsIt": "Cranmer's Prayer Books — the deliberately vague 1549 version and the clearly Protestant 1552 revision.",
       "prompts": [
-        "The 1549 language on the Eucharist was a political calculation — Cranmer wrote it to be acceptable to both Catholics and Protestants because he needed to keep a divided country on board.",
-        "Comparing 1549 and 1552 side by side is very revealing. The 1552 version removes almost all remaining Catholic ceremony — the gap between the two texts shows how fast the Reformation was actually moving.",
-        "Tells us what Cranmer intended. Cannot tell us how congregations responded.",
-        "The Western Rebellion was directly triggered by the 1549 Prayer Book. The source and the resistance it caused must be read together."
+        "Who: Written by Cranmer, an expert on religious language who knew exactly how to be deliberately ambiguous. Expertise is not the same as objectivity.",
+        "What: Official religious texts — telling us what the government wanted people to believe, not how congregations responded.",
+        "Context: The 1549 language on the Eucharist was a political calculation — written to keep both Catholics and Protestants on board in a divided country.",
+        "Nature: Compare 1549 and 1552 side by side. The removal of almost all Catholic ceremony in 1552 shows how fast the Reformation was actually moving.",
+        "How informed: The Western Rebellion was directly triggered by the 1549 Prayer Book. The source and the resistance it caused must be read together."
       ]
     },
 
     {
       "id": "edw-004",
       "category": "edward",
-      "name": "The Homilies",
-      "whatIsIt": "Twelve sermons issued by royal authority in 1547, to be read aloud in churches across England — written for clergy who were not confident or learned enough to preach independently.",
+      "name": "The Edwardian Homilies",
+      "whatIsIt": "Twelve sermons issued by royal authority in 1547, to be read aloud in churches — written because clergy could not be trusted to preach the new theology themselves.",
       "prompts": [
-        "The fact that these had to be written at all shows how little the government trusted parish priests to teach the new theology. That tells us something important about the state of the clergy in 1547.",
-        "Theologically direct in ways the 1549 Prayer Book deliberately was not. The contrast between the two shows different strategies for different audiences.",
-        "Tells us what the government wanted every English person to believe. Not whether they believed it.",
-        "Use visitation records and churchwarden accounts to check whether the homilies were actually being read in churches."
+        "Who: Produced by the Edwardian government — an official statement of what the regime wanted every English person to believe.",
+        "What: The fact these were needed shows how little the government trusted parish priests in 1547. That itself tells us something important about the state of the clergy.",
+        "Context: Far more theologically direct than the 1549 Prayer Book — different documents, different audiences, different strategies.",
+        "Nature: Tells us what the government wanted people to believe about salvation and scripture. Not whether they believed it.",
+        "How informed: Use visitation records and churchwarden accounts alongside — they show whether the homilies were actually being read in churches."
       ]
     },
 
     {
       "id": "edw-005",
       "category": "edward",
-      "name": "Zurich Letters",
-      "whatIsIt": "Letters between English Protestant reformers and continental theologians — especially Heinrich Bullinger in Zurich — discussing doctrine and reporting on the English Reformation.",
+      "name": "The Zurich Letters",
+      "whatIsIt": "Letters between English Protestant reformers and theologians in Zurich — especially Heinrich Bullinger — reporting on the English Reformation.",
       "prompts": [
-        "These are letters between allies. Achievements are played up, setbacks played down, and England is presented in the best possible Protestant light.",
-        "No letter in this period was truly private. Writers were careful, knowing letters could be intercepted.",
-        "Reformers frequently complain that change is moving too slowly. Does that mean the Reformation was genuinely too conservative — or that committed Protestants are never satisfied?",
-        "One of the best sources for the gap between official policy and what committed Protestants actually wanted."
+        "Who: Committed Protestant reformers writing to their theological heroes abroad. They had every reason to present England positively.",
+        "What: Letters between allies — achievements are emphasised, setbacks ignored. They construct the picture of England that reformers wanted Bullinger to see.",
+        "Context: Not truly private — writers knew letters could be intercepted. They wrote with that in mind.",
+        "How informed: Reformers had real access to events but filtered everything through a Protestant lens that assumed reform was right and necessary.",
+        "Typicality: They never question the pace or purpose of the Reformation — only complain it is moving too slowly. That one-sidedness is the point."
       ]
     },
 
     {
       "id": "edw-006",
       "category": "edward",
-      "name": "Kett's Articles",
-      "whatIsIt": "Twenty-nine formal demands drawn up during Kett's Rebellion in Norfolk, 1549, focusing on economic grievances: enclosure, excessive rents, and exploitation of the commons.",
+      "name": "Kett's Rebellion Articles",
+      "whatIsIt": "Twenty-nine formal demands from Kett's Rebellion in Norfolk, 1549 — focused on economic grievances like enclosure and excessive rents.",
       "prompts": [
-        "The legal skill and careful drafting show this was written by gentry, not ordinary Norfolk peasants. Kett himself was a landowner.",
-        "Formal written demands show political sophistication. These rebels were presenting themselves as loyal subjects with legitimate grievances, not troublemakers.",
-        "No religious demands at all. The contrast with the Western rebels' articles is the most important thing about this source.",
-        "The fact that ordinary people wrote a petition to the crown shows they engaged with national politics in more sophisticated ways than we might expect."
+        "Who: The careful legal drafting shows this was written by gentry, not ordinary Norfolk peasants. Kett himself was a landowner.",
+        "What: Formal written demands — presenting the rebels as loyal subjects with legitimate grievances, not troublemakers.",
+        "Context: Shows that ordinary people engaged with national politics in more sophisticated ways than we might expect.",
+        "Nature: No religious demands at all. The contrast with the Western rebels' articles is the most important thing about this source.",
+        "How informed: The gentry leadership shaped what grievances were articulated. Ordinary rebels may have had different or additional concerns that never made it into the articles."
       ]
     },
 
     {
       "id": "edw-007",
       "category": "edward",
-      "name": "Western Articles",
-      "whatIsIt": "The formal demands of the Western (Prayer Book) rebels of 1549, focused on religious grievances — demanding the restoration of the Latin Mass, the Six Articles, and traditional Catholic practice.",
+      "name": "The Western Rebels' Articles",
+      "whatIsIt": "Demands from the Western (Prayer Book) rebels of 1549 — calling for the Latin Mass, Six Articles, and traditional Catholic practice.",
       "prompts": [
-        "The demands were written by conservative clergy, not ordinary Cornish and Devon people. The leadership of the church shaped what the rebellion was about.",
-        "The rebels called the new Prayer Book 'a Christmas game.' This is the voice of educated clergy — not ordinary farmers who largely didn't speak English and had no opinion on Reformed theology.",
-        "Compare directly with Kett's Articles. The difference between religious and economic grievances is key to understanding the mid-Tudor rebellions.",
-        "Formal demands show political awareness — rebels presenting themselves as loyal subjects. Ask who was articulating these demands, and for whom."
+        "Who: Written by conservative clergy, not ordinary Cornish and Devon people. The church leadership shaped what this rebellion was about.",
+        "What: Formal demands presenting rebels as loyal subjects — but the clergy were using the commons to fight their own battle.",
+        "How informed: Many Western rebels didn't speak English and had no opinion on Reformed theology. The clergy were speaking for them — and for themselves.",
+        "Context: Compare directly with Kett's Articles. One rebellion is about religion, one about economics. That contrast is central to understanding 1549.",
+        "Nature: The rebels called the new Prayer Book 'a Christmas game' — the voice of educated clergy, not ordinary farmers."
+      ]
+    },
+
+    {
+      "id": "edw-008",
+      "category": "edward",
+      "name": "Commonwealth Writers",
+      "whatIsIt": "Protestant writers like Robert Crowley and Thomas Lever who attacked enclosure, rack-renting, and the exploitation of the poor in Edward's reign.",
+      "prompts": [
+        "Who: Educated Protestant preachers writing for wealthy, literate audiences — not for the poor they were describing.",
+        "What: Moral campaigners, not neutral observers. Their descriptions of poverty are vivid but deliberately shaped to shame the powerful into action.",
+        "Context: Writing during a period of real economic hardship — their anger reflects genuine anxiety even if the detail is overstated.",
+        "Nature: Protestant social criticism directed upward, toward those with power — not outward toward the commons themselves.",
+        "Typicality: They never admit that Protestant religious reform itself might be causing popular unrest. That is a significant blind spot that tells us about the limits of their thinking."
       ]
     },
 
     {
       "id": "mary-001",
       "category": "mary",
-      "name": "Foxe's Martyrs",
-      "whatIsIt": "A huge martyrology compiled by the Protestant exile John Foxe, first published in English in 1563. It records the persecution of Protestants under Mary I using eyewitness accounts, letters, and official records. Under Elizabeth, parishes were ordered to display it.",
+      "name": "Foxe's Acts and Monuments",
+      "whatIsIt": "John Foxe's martyrology published 1563, recording Protestant persecution under Mary. Under Elizabeth, every parish was ordered to display it alongside the Bible.",
       "prompts": [
-        "Under Elizabeth, parishes were ordered to display it alongside the Bible. It became state-sponsored Protestant propaganda — which tells us as much about Elizabeth's reign as Mary's.",
-        "Ask yourself: is this a source about Mary's reign, or about how Elizabethan Protestants wanted Mary's reign to be remembered? Those are not the same thing.",
-        "When Foxe records hostile crowds or messy deaths — which occasionally he does — those details carry extra weight precisely because they damage his own argument."
+        "Who: A Protestant exile writing to legitimise his faith by casting its followers as heroic martyrs. Every editorial choice serves that argument.",
+        "What: Ordered into every parish under Elizabeth — state-sponsored Protestant propaganda that tells us as much about Elizabeth's reign as Mary's.",
+        "Context: Is this a source about Mary's reign, or about how Elizabethan Protestants wanted it remembered? Those are not the same thing.",
+        "How informed: Some accounts are second or third hand, already shaped by earlier retellings before they reached Foxe.",
+        "Typicality: When Foxe records hostile crowds or difficult deaths, those details are probably accurate — they damage his own argument, so he had no reason to include them."
       ]
     },
 
     {
       "id": "mary-002",
       "category": "mary",
-      "name": "Renard's Dispatches",
-      "whatIsIt": "Letters and reports sent by Simon Renard, the Spanish ambassador, to Charles V and Philip II — covering Mary's court, the Spanish marriage negotiations, and crises like Wyatt's Rebellion.",
+      "name": "Renard's Diplomatic Dispatches",
+      "whatIsIt": "Letters from Simon Renard, the Spanish ambassador, to Charles V and Philip II — covering Mary's court, the Spanish marriage, and crises like Wyatt's Rebellion.",
       "prompts": [
-        "Written to serve Spanish interests, not to give a balanced account. He consistently highlighted threats and opportunities that mattered to Spain.",
-        "He was trapped in a Spanish bubble — his informants shared his anxieties, making him prone to overestimating threats like Wyatt's Rebellion.",
-        "He repeatedly misread English politics, overestimating the Protestant threat and underestimating how loyal the English nobility actually were.",
-        "His dispatches tell us what the Spanish court was told about England — not necessarily what was actually happening.",
-        "When he reports something that damages his own argument — like English hostility to Philip — that detail carries extra weight because he had reason to leave it out."
+        "Who: A Spanish diplomat advancing Habsburg interests — not a neutral observer. He highlighted threats and opportunities that mattered to Spain.",
+        "What: Diplomatic dispatches written to impress his masters and protect his career. Crises are over-reported, stability ignored.",
+        "How informed: Trapped in a Spanish bubble — his contacts shared his anxieties, making him prone to overestimating threats like Wyatt's Rebellion. He also had unusual personal influence over Mary, meaning he was shaping events, not just reporting them.",
+        "Context: Repeatedly misread English politics — overestimated the Protestant threat, underestimated noble loyalty to Mary.",
+        "Typicality: When he reports something damaging to his own case — like English hostility to Philip — that detail is probably true. He had every reason to leave it out."
       ]
     },
 
     {
       "id": "mary-003",
       "category": "mary",
-      "name": "Venetian Reports",
-      "whatIsIt": "Regular diplomatic reports sent by Venetian ambassadors to the Senate of Venice, offering a non-Spanish, non-English perspective on Mary's reign and the Spanish marriage.",
+      "name": "The Venetian Ambassador Reports",
+      "whatIsIt": "Diplomatic reports from Venetian ambassadors to the Senate of Venice on Mary's reign and the Spanish marriage.",
       "prompts": [
-        "Venice had the most professional diplomatic service in 16th-century Europe. Their ambassadors were trained observers, not political appointees.",
-        "Unlike Renard, the Venetians had no stake in English politics. Less biased — but also less well connected to the English court.",
-        "Venice cared about Mediterranean trade and the European balance of power. That shapes what they chose to report.",
-        "Most useful when read alongside Renard's dispatches. Two foreign observers from opposite sides of the same conflict seeing things differently — that contrast is the point.",
-        "Venetians applied Italian political thinking to English situations, which sometimes led them astray. Professional does not mean infallible."
+        "Who: Venice had the most professional diplomatic service in Europe — trained observers sent to report accurately, not to advance a dynastic agenda.",
+        "What: No stake in English politics — less biased than Renard, but also less well connected to what was really happening at court.",
+        "Context: Venice cared about Mediterranean trade and the European balance of power. That shapes what they noticed and what they ignored.",
+        "How informed: Most useful when read alongside Renard's dispatches — two observers from opposite sides interpreting the same events very differently. That contrast is the point.",
+        "Nature: Professional does not mean infallible. They sometimes applied Italian political thinking to English situations where it didn't fit."
       ]
     },
 
     {
       "id": "mary-004",
       "category": "mary",
-      "name": "French Dispatches",
-      "whatIsIt": "Reports from French ambassadors in England — especially Antoine de Noailles — to Henri II of France, covering the Spanish marriage and its threat to French power in Europe.",
+      "name": "The French Ambassador Dispatches",
+      "whatIsIt": "Reports from French ambassadors — especially Antoine de Noailles — to Henri II, covering the Spanish marriage and English politics.",
       "prompts": [
-        "France wanted to exaggerate English opposition to the Spanish marriage. Anything that destabilised a Spain-friendly England was good for France.",
-        "De Noailles was actively helping to stir up opposition — including contacts with Wyatt. He was not just watching events; he was involved in them.",
-        "Most useful when read against Renard's dispatches. Two ambassadors from opposite sides watching the same events very differently.",
-        "French pressure eventually helped drag England into the Habsburg-Valois war, leading to the loss of Calais in 1558. These dispatches are part of that story."
+        "Who: French diplomats with a direct interest in destabilising England. Anything that weakened a Spanish-allied England served French interests.",
+        "What: De Noailles was in contact with Wyatt's rebels — he was not observing the rebellion, he was helping to cause it.",
+        "Context: Most useful when read against Renard's dispatches. Same events, completely opposite agendas — the contrast reveals how national interest shapes what observers claim to see.",
+        "How informed: Well connected but deeply partisan. Their reports on English opposition to the Spanish marriage are likely exaggerated.",
+        "Nature: French pressure eventually helped drag England into the Habsburg-Valois war and the loss of Calais in 1558. These dispatches are part of that story."
       ]
     },
 
     {
       "id": "mary-005",
       "category": "mary",
-      "name": "Knox's Blast",
-      "whatIsIt": "A polemical pamphlet by the Scottish Protestant John Knox, published in Geneva in 1558, arguing that female rule was against scripture, nature, and law. Aimed mainly at Mary I.",
+      "name": "Knox's First Blast of the Trumpet",
+      "whatIsIt": "A pamphlet by Scottish Protestant John Knox, published in Geneva 1558, arguing that female rule was against God, nature, and law. Aimed mainly at Mary I.",
       "prompts": [
-        "Knox wrote this in Geneva, where he was safe. He could only say these things from outside England — that distance is itself evidence of what was impossible to say inside it.",
-        "The pamphlet backfired badly when Elizabeth came to the throne. She was furious, suggesting Knox was speaking for a radical fringe, not mainstream Protestant opinion.",
-        "Knox was building a careful theological argument using scripture and classical authorities — not just venting his feelings. Read it as a structured case, not a rant.",
-        "Where it was published matters. A Geneva pamphlet shows what could not be safely printed in England."
+        "Who: Knox was a powerful, charismatic Calvinist preacher with a zealous congregation behind him. His ideas were widely shared among committed Protestants — this was not just one man's view.",
+        "What: A carefully structured theological argument using scripture and classical authorities — designed to be difficult to argue against within the thinking of the time.",
+        "Context: Written in Geneva because it could not safely be written in England. What could only be said from abroad tells us about the limits of free expression under Mary.",
+        "How informed: Knox was a Protestant exile with strong connections to the reforming network across Europe — well informed about the wider Protestant cause if not always about English politics specifically.",
+        "Nature: Backfired badly when Elizabeth became queen — she was furious. This shows Knox was speaking for a committed Calvinist fringe, not mainstream English Protestant opinion."
       ]
     },
 
     {
       "id": "mary-006",
       "category": "mary",
-      "name": "Wyatt's Demands",
-      "whatIsIt": "Documents from Sir Thomas Wyatt's rebellion of January-February 1554 — manifestos and proclamations from a Kent-based rising claiming to oppose the Spanish marriage, not Mary's religion.",
+      "name": "Wyatt's Rebel Documents",
+      "whatIsIt": "Manifestos and proclamations from Wyatt's rebellion of 1554 — a Kent-based rising against the Spanish marriage.",
       "prompts": [
-        "The rebels said they were opposing the Spanish marriage, not Mary's religion. This is strategically important — and historically contested.",
-        "If they had called it a Protestant rebellion, far fewer people would have joined. The framing was a deliberate choice, not necessarily the full truth.",
-        "Mary needed it to be a religious plot to justify her response. Wyatt needed it to look constitutional to win support. Both sides had reasons to spin the story.",
-        "The rebellion nearly succeeded — Mary only held London after her personal speech at the Guildhall. That near-success tells us how fragile her position really was."
-      ]
-    },
-
-    {
-      "id": "mary-007",
-      "category": "mary",
-      "name": "Jane Grey's Writings",
-      "whatIsIt": "A small collection of letters and writings attributed to Lady Jane Grey — including letters written in the Tower before her execution and a personally annotated prayer book.",
-      "prompts": [
-        "Some documents attributed to Jane may not be genuine — several were published after her death by Protestant propagandists. How much of 'Jane' in these texts is actually Jane?",
-        "These are the words of a highly educated young woman facing execution. Her Protestant conviction may be genuine — or it may be the only option left to her.",
-        "The annotated prayer book is probably the most reliable source. It was private, never meant to be published, and written before the political crisis began.",
-        "Compare the intimacy of the prayer book with the polished public letters attributed to her. The contrast is itself a clue about which documents to trust."
-      ]
-    },
-
-    {
-      "id": "mary-008",
-      "category": "mary",
-      "name": "Pole's Letters",
-      "whatIsIt": "Correspondence, instructions, and official documents produced by Cardinal Reginald Pole, Archbishop of Canterbury — including his letters to the papacy and his 12 decrees of 1556 for reforming the English church.",
-      "prompts": [
-        "Pole was a genuine reformer, not just someone trying to reverse Edward's changes. He wanted an educated, preaching clergy that could win people over — a more ambitious project than is often recognised.",
-        "His relationship with Pope Paul IV collapsed badly. Paul suspected him of heresy and recalled his authority in 1557. Pole's late letters reveal serious tensions within Marian Catholicism that students rarely hear about.",
-        "These are the only sources that show the Marian church from the inside. Almost everything else about this period is written by Protestants or outsiders.",
-        "Reading Pole alongside Foxe shows two completely different versions of the same reign. The gap between them is historically significant."
-      ]
-    },
-
-    {
-      "id": "mary-009",
-      "category": "mary",
-      "name": "Mary's Letters",
-      "whatIsIt": "Personal letters written by Mary herself — separate from official proclamations — including letters to Philip II, Pope Paul IV, Emperor Charles V, and members of her council.",
-      "prompts": [
-        "The closest we can get to Mary's own voice. Her letters to Philip — sometimes pleading, sometimes proud — show a woman navigating a very difficult marriage to a largely absent husband.",
-        "Her letters to the papacy reveal deep religious commitment and real frustration when Rome let her down. Her standoff with Pope Paul IV shows she could hold her ground even against the pope.",
-        "Always ask what Mary needed her reader to feel or do. A letter asking Philip to come back is very different from a letter giving orders to the council.",
-        "Her letters show an active ruler, not a passive figurehead. Her direct interventions — especially pushing the heresy persecution — carry more evidential weight than formal proclamations issued in her name."
+        "Who: Written by rebel leaders trying to build the broadest possible coalition. The language had to be unifying, not divisive.",
+        "What: Manifestos are designed to win support — the stated cause was opposition to the Spanish marriage, not Mary's religion. A Protestant rebellion would have attracted far fewer people.",
+        "Context: Mary needed it to look like a religious plot to justify her response. Wyatt needed it to look constitutional to maximise support. Both sides had reasons to misrepresent it.",
+        "How informed: The rebellion nearly succeeded — Mary only held London after her personal speech at the Guildhall. That near-success shows how fragile her position really was.",
+        "Typicality: The documents never mention Protestant motivation — even though it almost certainly existed. That deliberate omission is itself the most important thing about them."
       ]
     }
 
