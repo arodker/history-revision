@@ -1548,7 +1548,7 @@ function renderQ() {
       <div class="sc-row">${streakHtml}<span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div>
     </div>
     <div class="quiz-card">
-      <div class="quiz-date" style="${quizTypeMode === 'type' ? 'font-size:1.1rem;font-weight:700;line-height:1.4' : ''}">${quizTypeMode === 'type' ? item.event : item.date}</div>
+      <div class="quiz-date" style="${quizTypeMode === 'type' ? "font-family:Arial,Helvetica,sans-serif;font-size:1.05rem;font-weight:600;line-height:1.4;margin-bottom:.5rem" : ''}">${quizTypeMode === 'type' ? item.event : item.date}</div>
       <div class="quiz-prompt">${quizTypeMode === 'type' ? 'What year did this happen?' : 'What happened?'}</div>
       ${answerHtml}
     </div>`;
@@ -1609,7 +1609,7 @@ function renderHistoricalQ() {
       <div class="sc-row"><span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div>
     </div>
     <div class="quiz-card">
-      <div class="quiz-date" style="${quizTypeMode === 'type' ? 'font-size:1.1rem;font-weight:700;line-height:1.4' : ''}">${quizTypeMode === 'type' ? item.event : item.date}</div>
+      <div class="quiz-date" style="${quizTypeMode === 'type' ? "font-family:Arial,Helvetica,sans-serif;font-size:1.05rem;font-weight:600;line-height:1.4;margin-bottom:.5rem" : ''}">${quizTypeMode === 'type' ? item.event : item.date}</div>
       <div class="quiz-prompt">${quizTypeMode === 'type' ? 'What year did this happen?' : 'What happened?'}</div>
       ${resultHtml}
     </div>`;
@@ -1679,8 +1679,19 @@ function checkYearAns() {
     fb.style.display = 'block';
     return;
   }
-  const typedNorm = typed.replace(/s$/, '').replace(/[^0-9]/g, '');
-  const wasCorrect = allYears.some(y => typedNorm === y);
+  const typedNorm = (() => {
+    const t = typed.trim();
+    // If user typed a range like 1577-80, expand it the same way as the date
+    const rm = t.match(/^([0-9]{3,4})[-–]([0-9]{2})$/);
+    if (rm) {
+      // Return both ends so either matches
+      const base = rm[1];
+      const expanded = base.slice(0, base.length - 2) + rm[2];
+      return [base, expanded];
+    }
+    return [t.replace(/s$/, '').replace(/[^0-9]/g, '')];
+  })();
+  const wasCorrect = typedNorm.some(tn => allYears.some(y => tn === y));
   inp.disabled = true;
   if (wasCorrect) {
     quizOK++; quizStreak++;
