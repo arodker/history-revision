@@ -919,26 +919,6 @@
     ]
   },
   {
-    "no": 52,
-    "section": "aa",
-    "period": "boom-bust",
-    "front": "What was the significance of Philip Randolph and the BSCP?",
-    "p1": "BSCP (Brotherhood of Sleeping Car Porters) founded 1925 → first successful Black union → led by Randolph → protected Pullman Company porters.",
-    "p2": "First Black union to receive AFL recognition (1935) → secured contract 1937: higher wages, shorter hours, paid uniforms → proved Black workers could organise.",
-    "p3": "March on Washington Movement (1941) → threatened 100,000-strong march → pressured FDR into Executive Order 8802 → banned discrimination in defence industries.",
-    "hints": [
-      "BSCP 1925",
-      "AFL recognition 1935",
-      "Executive Order 8802"
-    ],
-    "isDepthStudy": false,
-    "periods": [
-      "boom-bust",
-      "new-deal",
-      "wwii-postwar"
-    ]
-  },
-  {
     "no": 55,
     "section": "aa",
     "period": "new-deal-ds",
@@ -1045,25 +1025,6 @@
     "periods": [
       "civil-rights-movement",
       "black-power"
-    ]
-  },
-  {
-    "no": 62,
-    "section": "aa",
-    "period": "black-power-ds",
-    "front": "What was the significance of DRUM and the LRBW?",
-    "p1": "DRUM (Dodge Revolutionary Union Movement, 1968) → organised wildcat strikes at Chrysler's Dodge Main plant → challenged racial pay gap in auto industry → first Black-led union movement to win concessions from a major manufacturer.",
-    "p2": "LRBW (League of Revolutionary Black Workers) → pushed for Black leadership in UAW → by early 1970s Black workers 30% of UAW membership → won more Black leaders in UAW and GM management.",
-    "p3": "Limitations → LRBW collapsed from internal divisions by early 1970s → Black workers still earned $2,000 less/year than white counterparts → structural economic gap remained despite organisational gains.",
-    "hints": [
-      "DRUM 1968",
-      "wildcat strikes",
-      "30% UAW",
-      "LRBW collapsed"
-    ],
-    "isDepthStudy": true,
-    "periods": [
-      "black-power-ds"
     ]
   },
   {
@@ -1312,13 +1273,13 @@
     ],
     "isDepthStudy": true,
     "front": "What was the significance of the Homestead Strike (1892)?",
-    "p1": "Carnegie Steel's Homestead plant, Pennsylvania — wage cuts and anti-union lockout of Amalgamated Association workers. Carnegie left for Scotland leaving Frick to break the union. 300 armed Pinkerton agents arrived by barge — violent clash left 12 men dead.",
-    "p2": "Pennsylvania Governor deployed 8,000 state militia — ended workers' control of the plant. Amalgamated Association collapsed — steel industry remained union-free until 1930s. Homestead virtually bankrupted the union. AFL refused to support — exposed skilled/unskilled division.",
-    "p3": "Significance: showed corporations would use private armies and state force against workers. Highlighted growing corporate power and willingness to use private and state militias. Over 40 years later Flint sit-down strike (1936–37) finally won UAW recognition — showing how long it took to overcome Homestead's legacy.",
+    "p1": "Carnegie Steel locked out Amalgamated Association workers — wage cuts + anti-union. 300 Pinkerton agents arrived by barge, 12 dead in violent clash. 8,000 state militia deployed — workers defeated.",
+    "p2": "AFL refused to support — exposed skilled/unskilled division. Steel industry union-free until 1930s. Homestead virtually bankrupted the union. Carnegie's absence in Scotland damaged his 'workers' friend' reputation.",
+    "p3": "Showed corporations would use private armies and state force against workers. Highlighted Gilded Age employer power. Contrast: Flint sit-down (1936–37) finally won UAW recognition — over 40 years later.",
     "hints": [
-      "Pinkerton agents by barge",
-      "12 men dead",
-      "union-free until 1930s"
+      "Pinkertons by barge",
+      "union-free until 1930s",
+      "AFL refused"
     ]
   },
   {
@@ -1701,24 +1662,6 @@
     ]
   },
   {
-    "no": 98,
-    "section": "lab",
-    "period": "wwii-taft-hartley",
-    "periods": [
-      "wwii-taft-hartley"
-    ],
-    "isDepthStudy": false,
-    "front": "What was the impact of WWII on labour rights?",
-    "p1": "NWLB (1942): government worked with AFL and CIO to mediate disputes and uphold codes of practice — prevented strike action during war. Union membership peaked at 35% of workforce (14.8 million) by 1945.",
-    "p2": "Smith-Connally Act (1943): allowed federal government to seize industries threatened by strike action — passed over FDR's veto. Unions agreed no-strike pledges in exchange for recognition and wartime wages.",
-    "p3": "Post-WWII strike wave (1946): 5,000 strikes involving 4.6 million workers — showed pent-up pressure suppressed during war. EO 8802 (1941): banned racial discrimination in defence industries — secured by Randolph's March on Washington Movement threat.",
-    "hints": [
-      "35% membership",
-      "Smith-Connally",
-      "post-war strike wave"
-    ]
-  },
-  {
     "no": 99,
     "section": "lab",
     "period": "wwii-taft-hartley",
@@ -2050,7 +1993,8 @@
     "section": "na",
     "period": "na-plains-wars",
     "periods": [
-      "na-plains-wars"
+      "na-plains-wars",
+      "na-gilded-age-ds"
     ],
     "isDepthStudy": false,
     "front": "What was the significance of Red Cloud's War (1866–68) and the Treaty of Fort Laramie?",
@@ -2068,7 +2012,8 @@
     "section": "na",
     "period": "na-plains-wars",
     "periods": [
-      "na-plains-wars"
+      "na-plains-wars",
+      "na-gilded-age-ds"
     ],
     "isDepthStudy": false,
     "front": "What was the significance of the Sand Creek Massacre (1864) and buffalo extermination?",
@@ -2122,7 +2067,9 @@
     "section": "na",
     "period": "na-gilded-age-ds",
     "periods": [
-      "na-gilded-age-ds"
+      "na-gilded-age-ds",
+      "na-progressive-twenties",
+      "na-new-deal-ds"
     ],
     "isDepthStudy": true,
     "front": "What was the Dawes Severalty Act (1887) and how did it work?",
@@ -2194,7 +2141,8 @@
     "section": "na",
     "period": "na-gilded-age-ds",
     "periods": [
-      "na-gilded-age-ds"
+      "na-gilded-age-ds",
+      "na-progressive-twenties"
     ],
     "isDepthStudy": true,
     "front": "What was the Carlisle Indian Industrial School and the boarding school system?",
@@ -2302,7 +2250,8 @@
     "section": "na",
     "period": "na-new-deal-ds",
     "periods": [
-      "na-new-deal-ds"
+      "na-new-deal-ds",
+      "na-wwii-postwar"
     ],
     "isDepthStudy": true,
     "front": "What did the Indian Reorganization Act (Wheeler-Howard Act, 1934) do?",
@@ -2320,7 +2269,8 @@
     "section": "na",
     "period": "na-new-deal-ds",
     "periods": [
-      "na-new-deal-ds"
+      "na-new-deal-ds",
+      "na-wwii-postwar"
     ],
     "isDepthStudy": true,
     "front": "What were the limitations of the Indian Reorganization Act (1934)?",
@@ -2336,9 +2286,10 @@
   {
     "no": 133,
     "section": "na",
-    "period": "na-new-deal-ds",
+    "period": "na-wwii-postwar",
     "periods": [
-      "na-new-deal-ds"
+      "na-wwii-postwar",
+      "na-termination"
     ],
     "isDepthStudy": true,
     "front": "What was the role of the NCAI (1944) and the Indian Claims Commission (1946)?",
@@ -2356,7 +2307,8 @@
     "section": "na",
     "period": "na-wwii-postwar",
     "periods": [
-      "na-wwii-postwar"
+      "na-wwii-postwar",
+      "na-termination"
     ],
     "isDepthStudy": false,
     "front": "What was the significance of the Navajo Code Talkers and Ira Hayes in WWII?",
@@ -2374,7 +2326,8 @@
     "section": "na",
     "period": "na-termination",
     "periods": [
-      "na-termination"
+      "na-termination",
+      "na-red-power-ds"
     ],
     "isDepthStudy": false,
     "front": "What was the Termination Policy (1953) and what were its consequences?",
@@ -2410,7 +2363,8 @@
     "section": "na",
     "period": "na-termination",
     "periods": [
-      "na-termination"
+      "na-termination",
+      "na-red-power-ds"
     ],
     "isDepthStudy": false,
     "front": "What was the significance of the NIYC (1961) and the fish-ins?",
@@ -2644,7 +2598,8 @@
     "section": "lab",
     "period": "gilded-age-ds",
     "periods": [
-      "gilded-age-ds"
+      "gilded-age-ds",
+      "early-industrialisation"
     ],
     "isDepthStudy": true,
     "front": "What was laissez-faire and why was it harmful to workers?",
@@ -2652,8 +2607,8 @@
     "p2": "Consequences: Sherman Antitrust Act (1890) aimed at monopolies but used against unions. Court injunctions stopped strikes — Pullman (1894) ruled illegal. National Guard used 23 times in 1892 alone. Federal troops killed 100+ in Great Railroad Strike (1877).",
     "p3": "Persistence: survived into Progressive Era — Lochner (1905), Coppage (1915), Adkins (1923) all upheld 'freedom of contract'. Only Great Depression proving capitalism had failed created conditions for New Deal to break with laissez-faire (1933).",
     "hints": [
-      "no government interference",
-      "Sherman Act used against unions",
+      "laissez-faire",
+      "Sherman Act vs unions",
       "freedom of contract"
     ]
   },
@@ -2662,7 +2617,8 @@
     "section": "lab",
     "period": "gilded-age-ds",
     "periods": [
-      "gilded-age-ds"
+      "gilded-age-ds",
+      "new-deal-ds"
     ],
     "isDepthStudy": true,
     "front": "What was collective bargaining and why did it matter?",
@@ -2670,7 +2626,7 @@
     "p2": "Gilded Age: AFL made gains through voluntary bargaining with Hanna and JP Morgan — exceptional cases, not the norm. Most employers refused outright. Wagner Act (1935): legally guaranteed right to collectively bargain — NLRB enforced.",
     "p3": "Impact: union membership 3.7 million (1933) → 9 million (1938). By 1960s AFL-CIO members earned 20% more than non-unionised workers — direct product of collective bargaining.",
     "hints": [
-      "employers could refuse before 1935",
+      "no obligation before 1935",
       "Wagner Act NLRB",
       "20% earnings premium"
     ]
@@ -2680,7 +2636,8 @@
     "section": "lab",
     "period": "gilded-age-ds",
     "periods": [
-      "gilded-age-ds"
+      "gilded-age-ds",
+      "early-industrialisation"
     ],
     "isDepthStudy": true,
     "front": "How did employers suppress unions in the Gilded Age?",
@@ -2698,7 +2655,8 @@
     "section": "lab",
     "period": "gilded-age-ds",
     "periods": [
-      "gilded-age-ds"
+      "gilded-age-ds",
+      "progressive-era"
     ],
     "isDepthStudy": true,
     "front": "What was the Sherman Antitrust Act (1890) and how was it used against unions?",
@@ -2720,13 +2678,13 @@
     ],
     "isDepthStudy": true,
     "front": "What was the story of the Homestead Strike (1892)?",
-    "p1": "Carnegie Steel Homestead, Pennsylvania — wage cuts and anti-union lockout. Carnegie left for Scotland; Frick left to break union. 300 Pinkerton agents arrived by barge on Monongahela River — workers fought back. 12 men dead.",
-    "p2": "Pennsylvania Governor deployed 8,000 state militia — ended workers' control. Frick survived assassination attempt by anarchist Berkman — used to discredit strikers. All rehired without union recognition. Steel industry union-free until 1930s.",
-    "p3": "Significance: corporations willing to use private armies and state force against workers. AFL refused to support — exposed skilled/unskilled division. Homestead virtually bankrupted the union. Contrast: Flint sit-down (1936–37) finally won UAW recognition — 40+ years later.",
+    "p1": "July 1892: Carnegie left for Scotland; Frick cut wages and locked out workers. Amalgamated Association organised defence of plant. Frick hired 300 Pinkerton agents — arrived by barge on Monongahela River July 6.",
+    "p2": "Workers fought back with rifles and cannons — 12 killed, Pinkertons surrendered. Governor Pattison then deployed 8,000 state militia — workers lost control of plant. Frick survived assassination attempt by anarchist Berkman — used to discredit strikers.",
+    "p3": "Strike collapsed November 1892. All rehired without union recognition. Carnegie praised Frick in private. Publicly maintained he supported workers — hypocrisy exposed by strike. Alexander Berkman imprisoned 22 years.",
     "hints": [
-      "Pinkertons by barge",
-      "12 dead",
-      "AFL refused to support"
+      "Pinkertons surrendered initially",
+      "Berkman assassination attempt",
+      "Carnegie hypocrisy"
     ]
   },
   {
@@ -2737,10 +2695,10 @@
       "gilded-age-ds"
     ],
     "isDepthStudy": true,
-    "front": "What was the story of the Pullman Strike (1894)?",
-    "p1": "Pullman Palace Car cut wages 25% — did not reduce rents in company housing. Workers joined Debs' ARU → boycotted Pullman cars → spread to 27 states, paralyising rail traffic. Cleveland obtained federal court injunction under Sherman Act — strike declared illegal restraint of trade.",
-    "p2": "12,000 federal troops sent despite Illinois Governor Altgeld's objection. 30 deaths, widespread violence. Debs arrested and imprisoned for contempt. AFL refused to support ARU — exposed skilled/unskilled division.",
-    "p3": "Significance: first use of federal injunction to break a strike — precedent used for decades. Showed federal government sided with corporations through courts and troops. Debs' imprisonment radicalised him → ran for president 5x as Socialist, won 6% (1912).",
+    "front": "What was the story and significance of the Pullman Strike (1894)?",
+    "p1": "Pullman Palace Car cut wages 25% — did not reduce rents in company housing. Debs' ARU boycotted Pullman cars → spread to 27 states, paralyising rail traffic. Cleveland obtained court injunction under Sherman Act — strike declared illegal.",
+    "p2": "12,000 federal troops sent despite Governor Altgeld's objection. 30 deaths. Debs imprisoned for contempt. AFL refused to support ARU — exposed skilled/unskilled division.",
+    "p3": "First use of federal injunction to break a strike — precedent used for decades. Federal government sided with corporations through courts and troops. Debs' imprisonment radicalised him → ran for president 5x as Socialist, won 6% (1912).",
     "hints": [
       "injunction precedent",
       "Debs imprisoned",
@@ -2752,7 +2710,8 @@
     "section": "lab",
     "period": "gilded-age-ds",
     "periods": [
-      "gilded-age-ds"
+      "gilded-age-ds",
+      "progressive-era"
     ],
     "isDepthStudy": true,
     "front": "How did the courts obstruct union rights? (Lochner, Coppage, Deering, Adkins)",
@@ -2770,7 +2729,8 @@
     "section": "lab",
     "period": "fifties-seventies",
     "periods": [
-      "fifties-seventies"
+      "fifties-seventies",
+      "black-power-ds"
     ],
     "isDepthStudy": false,
     "front": "What made Cesar Chavez a significant leader?",
@@ -2814,8 +2774,8 @@
     "p2": "40,000 workers. Michigan Governor Murphy refused to deploy National Guard. GM sought court injunction — judge revealed he owned GM stock, injunction discredited. Police attempted to cut off heat and food — 'Battle of Bulls Run' repulsed. After 44 days GM recognised UAW.",
     "p3": "Inspired 200 more sit-down strikes in 1937 across industries. US Steel unionised without a strike shortly after. NLRB v Fansteel (1939) later ruled sit-downs illegal. First recognition of major industrial union by one of America's largest corporations.",
     "hints": [
-      "occupied factory",
-      "GM recognised UAW after 44 days",
+      "factory occupied",
+      "UAW recognised",
       "200 more sit-downs"
     ]
   },
@@ -2834,7 +2794,7 @@
     "hints": [
       "NWLB 1942",
       "Smith-Connally",
-      "no-strike pledges → 1946 wave"
+      "no-strike pledges"
     ]
   },
   {
@@ -2878,7 +2838,9 @@
     "section": "na",
     "period": "na-start",
     "periods": [
-      "na-start"
+      "na-start",
+      "na-plains-wars",
+      "na-gilded-age-ds"
     ],
     "isDepthStudy": false,
     "front": "What was Manifest Destiny and how did it shape attitudes towards Native Americans?",
@@ -2896,7 +2858,9 @@
     "section": "na",
     "period": "na-start",
     "periods": [
-      "na-start"
+      "na-start",
+      "na-gilded-age-ds",
+      "na-termination"
     ],
     "isDepthStudy": false,
     "front": "What was the reservation system and how did it work?",
@@ -2914,7 +2878,8 @@
     "section": "na",
     "period": "na-plains-wars",
     "periods": [
-      "na-plains-wars"
+      "na-plains-wars",
+      "na-gilded-age-ds"
     ],
     "isDepthStudy": false,
     "front": "What was the significance of the buffalo extermination?",
@@ -2924,7 +2889,7 @@
     "hints": [
       "30 million to 1,000",
       "Sheridan encouraged slaughter",
-      "Sioux ration cuts → starvation"
+      "Sioux rations cut"
     ]
   },
   {
@@ -2942,7 +2907,7 @@
     "hints": [
       "300-mile march",
       "Bosque Redondo",
-      "Treaty of 1868 — return home"
+      "Treaty 1868"
     ]
   },
   {
@@ -2950,7 +2915,8 @@
     "section": "na",
     "period": "na-plains-wars",
     "periods": [
-      "na-plains-wars"
+      "na-plains-wars",
+      "na-gilded-age-ds"
     ],
     "isDepthStudy": false,
     "front": "What was the significance of Crazy Horse and Sitting Bull as leaders?",
@@ -2968,7 +2934,9 @@
     "section": "na",
     "period": "na-plains-wars",
     "periods": [
-      "na-plains-wars"
+      "na-plains-wars",
+      "na-gilded-age-ds",
+      "na-self-determination"
     ],
     "isDepthStudy": false,
     "front": "What was the significance of the Black Hills to the Sioux and why does it matter across the whole period?",
@@ -2977,15 +2945,16 @@
     "p3": "US v Sioux Nation (1980): Supreme Court ruled Black Hills illegally seized in 1877 — awarded $106 million compensation. Sioux refused: 'The Black Hills are not for sale.' By 1992 fund grown to over $600 million — still unclaimed. Shows land sovereignty, not financial compensation, was the fundamental Native demand across the entire period.",
     "hints": [
       "sacred Paha Sapa",
-      "gold 1874 — treaty violated",
+      "gold 1874",
       "$106 million refused"
     ]
   },
   {
     "no": 169,
     "section": "na",
-    "period": "na-gilded-age-ds",
+    "period": "na-plains-wars",
     "periods": [
+      "na-plains-wars",
       "na-gilded-age-ds"
     ],
     "isDepthStudy": true,
@@ -2994,8 +2963,8 @@
     "p2": "Practical consequences: BIA took increasing control — paternalistic and corrupt. Tribes lost legal standing as nations — could not sue in federal courts or challenge federal decisions as sovereign entities. All land losses after 1871 — Dawes (1887), Curtis (1898), Termination (1953) — imposed without treaty consent.",
     "p3": "Lone Wolf v Hitchcock (1903): Congress could unilaterally revoke even existing treaties — left Natives entirely at federal mercy. Combined effect: 1871 Act removed future treaty protection; Lone Wolf removed past treaty protection. Foundation for total federal control over Native lives.",
     "hints": [
-      "wards of the state",
-      "no legal standing as nations",
+      "wards of state",
+      "no legal standing",
       "Lone Wolf 1903"
     ]
   },
@@ -3014,7 +2983,7 @@
     "hints": [
       "Navajo expansion",
       "BIA schools",
-      "territorial base for later activism"
+      "base for later activism"
     ]
   },
   {
@@ -3085,8 +3054,8 @@
     "p3": "Significance: end of armed Plains Indian resistance — last major military confrontation. Ghost Dance suppressed — last major cultural resistance movement destroyed. Wounded Knee became enduring symbol of Native suffering: AIM chose it deliberately for 1973 occupation.",
     "hints": [
       "Ghost Dance suppressed",
-      "over 250 killed",
-      "AIM 1973 chose it deliberately"
+      "250 killed",
+      "AIM chose it 1973"
     ]
   },
   {
@@ -3094,7 +3063,9 @@
     "section": "na",
     "period": "na-gilded-age-ds",
     "periods": [
-      "na-gilded-age-ds"
+      "na-gilded-age-ds",
+      "na-progressive-twenties",
+      "na-new-deal-ds"
     ],
     "isDepthStudy": true,
     "front": "What was the full impact of the Dawes Act on Native land ownership?",
@@ -3112,7 +3083,9 @@
     "section": "na",
     "period": "na-gilded-age-ds",
     "periods": [
-      "na-gilded-age-ds"
+      "na-gilded-age-ds",
+      "na-progressive-twenties",
+      "na-new-deal-ds"
     ],
     "isDepthStudy": true,
     "front": "What was the full impact of boarding schools on Native culture and identity?",
@@ -3120,8 +3093,8 @@
     "p2": "Death rates 30–50% from neglect, abuse and malnutrition. Navajo students received only 13 cents/day for lunch vs recommended 50 cents. 60,000+ children in schools by 1930. 75% of Native American languages lost by 1930.",
     "p3": "Long-term trauma: graduates returned alienated from both worlds. Boarding schools weakened matriarchal structures — Western gender norms imposed. Cultural trauma passed through generations — contributed to high alcoholism and suicide rates on reservations. Indian Child Welfare Act (1978) finally established tribal authority over child placement.",
     "hints": [
-      "kill the Indian save the man",
-      "death rates 30–50%",
+      "kill the Indian",
+      "death rates 30-50%",
       "ICWA 1978"
     ]
   },
@@ -3130,7 +3103,8 @@
     "section": "na",
     "period": "na-gilded-age-ds",
     "periods": [
-      "na-gilded-age-ds"
+      "na-gilded-age-ds",
+      "na-progressive-twenties"
     ],
     "isDepthStudy": true,
     "front": "What was the role of the Five Civilised Tribes and the Muskogee/Sequoyah Convention (1905)?",
@@ -3138,9 +3112,9 @@
     "p2": "Curtis Act (1898): ended Five Civilised Tribes' governments — stripped ability to self-govern. Allotment imposed. Muskogee/Sequoyah Convention (1905): leaders proposed all-Native state of Sequoyah — own governor, Congressional representatives. Application submitted to Congress.",
     "p3": "Congress rejected Sequoyah — Oklahoma created 1907, merging Indian Territory with Oklahoma Territory. Showed Native Americans could govern successfully on own terms. Sequoyah Convention most ambitious attempt at Native self-determination before Red Power era.",
     "hints": [
-      "exempt until Curtis Act 1898",
+      "exempt until Curtis Act",
       "Sequoyah Convention 1905",
-      "Oklahoma created instead"
+      "Oklahoma instead"
     ]
   },
   {
@@ -3148,7 +3122,10 @@
     "section": "na",
     "period": "na-gilded-age-ds",
     "periods": [
-      "na-gilded-age-ds"
+      "na-gilded-age-ds",
+      "na-progressive-twenties",
+      "na-new-deal-ds",
+      "na-termination"
     ],
     "isDepthStudy": true,
     "front": "What was the role of BIA corruption and paternalism as a structural obstacle?",
@@ -3157,7 +3134,7 @@
     "p3": "20th century persistence: Collier's IRA (1934) tried to reform BIA — paternalism persisted. Collier's presumption all tribes wanted same self-determination itself paternalistic — 25% rejected IRA. Trail of Broken Treaties (1972): AIM occupied BIA headquarters — symbolised BIA as enemy. Nixon ended termination (1970) began shifting power from BIA to tribes.",
     "hints": [
       "wards of state",
-      "stole rations, no legal recourse",
+      "rations stolen",
       "AIM occupied BIA 1972"
     ]
   },
@@ -3166,7 +3143,8 @@
     "section": "na",
     "period": "na-progressive-twenties",
     "periods": [
-      "na-progressive-twenties"
+      "na-progressive-twenties",
+      "na-new-deal-ds"
     ],
     "isDepthStudy": false,
     "front": "What was the significance of John Collier and the AIDA?",
@@ -3193,8 +3171,8 @@
     "p3": "Limits: Navajo students received 13 cents/day for lunch vs recommended 50 cents. Only $2 million annually to buy back lost land — fraction of 90 million acres lost. 82% of Native Americans still below poverty line by 1940. Post-WWII termination reversed many gains.",
     "hints": [
       "85,000 employed",
-      "Indian Arts and Crafts Board",
-      "82% below poverty line 1940"
+      "Arts and Crafts Board",
+      "82% below poverty 1940"
     ]
   },
   {
@@ -3220,7 +3198,10 @@
     "section": "na",
     "period": "na-termination",
     "periods": [
-      "na-termination"
+      "na-termination",
+      "na-red-power-ds",
+      "na-self-determination",
+      "na-end"
     ],
     "isDepthStudy": false,
     "front": "What was the impact of reservation poverty as a structural condition?",
@@ -3236,8 +3217,9 @@
   {
     "no": 183,
     "section": "na",
-    "period": "na-red-power-ds",
+    "period": "na-termination",
     "periods": [
+      "na-termination",
       "na-red-power-ds"
     ],
     "isDepthStudy": true,
@@ -3254,8 +3236,9 @@
   {
     "no": 184,
     "section": "na",
-    "period": "na-red-power-ds",
+    "period": "na-termination",
     "periods": [
+      "na-termination",
       "na-red-power-ds"
     ],
     "isDepthStudy": true,
@@ -3264,8 +3247,8 @@
     "p2": "Pan-Indian unity mirrored Black Power racial solidarity. Young Natives disillusioned with slow pace of change — drawn to radical tactics as African Americans had been. Alcatraz (1969): 10,000 Natives visited — media attention mirrored Panthers' impact.",
     "p3": "Limits: Native activism pre-dated Black Power — NIYC (1961) fish-ins already underway. NCAI (1944) established. Great Society and War on Poverty laid groundwork independently. Native sovereignty demands distinct from Black integration/equality demands.",
     "hints": [
-      "red berets modelled on Panthers",
-      "NIYC 1961 predates Black Power",
+      "red berets",
+      "NIYC 1961 predates",
       "sovereignty not integration"
     ]
   },
@@ -3290,8 +3273,9 @@
   {
     "no": 186,
     "section": "na",
-    "period": "na-self-determination",
+    "period": "na-red-power-ds",
     "periods": [
+      "na-red-power-ds",
       "na-self-determination"
     ],
     "isDepthStudy": false,
@@ -3308,8 +3292,9 @@
   {
     "no": 187,
     "section": "na",
-    "period": "na-self-determination",
+    "period": "na-red-power-ds",
     "periods": [
+      "na-red-power-ds",
       "na-self-determination"
     ],
     "isDepthStudy": false,
@@ -3318,16 +3303,17 @@
     "p2": "Oneida v Oneida and Madison Counties (1974): Oneida Nation could sue for land claims under federal treaties — major precedent for tribes seeking legal restitution for treaty violations. Opened legal route for dozens of tribal land claims.",
     "p3": "Further NARF victories: Fisher v Montana (1976) — tribes decide on adoptions of Native children. Bryan v Itasca County (1976) — states cannot tax reservations. Built tribal sovereignty case by case. Legal and direct action strategies complementary.",
     "hints": [
-      "NARF 1970 legal representation",
-      "Oneida precedent for land claims",
-      "Fisher + Bryan victories"
+      "NARF 1970",
+      "Oneida precedent",
+      "Fisher + Bryan"
     ]
   },
   {
     "no": 188,
     "section": "na",
-    "period": "na-self-determination",
+    "period": "na-red-power-ds",
     "periods": [
+      "na-red-power-ds",
       "na-self-determination"
     ],
     "isDepthStudy": false,
@@ -3339,24 +3325,6 @@
       "25-35% children removed",
       "tribal jurisdiction over welfare",
       "cultural transmission protected"
-    ]
-  },
-  {
-    "no": 189,
-    "section": "lab",
-    "period": "gilded-age-ds",
-    "periods": [
-      "gilded-age-ds"
-    ],
-    "isDepthStudy": true,
-    "front": "What was the significance of the Pullman Strike (1894)?",
-    "p1": "Pullman Palace Car cut wages 25% — did not reduce rents in company housing. Workers joined Debs' ARU → boycotted Pullman cars → spread to 27 states, paralyised rail traffic. Cleveland obtained court injunction under Sherman Act — strike declared illegal restraint of trade.",
-    "p2": "12,000 federal troops sent despite Illinois Governor Altgeld's objection. 30 deaths, widespread violence. Debs arrested and imprisoned for contempt. AFL refused to support ARU — exposed skilled/unskilled division.",
-    "p3": "First use of federal injunction to break a strike — precedent used for decades. Federal government sided with corporations through courts and troops. Debs' imprisonment radicalised him → ran for president 5x as Socialist, won 6% (1912).",
-    "hints": [
-      "injunction precedent",
-      "Debs imprisoned",
-      "AFL refused to support ARU"
     ]
   }
 ]
