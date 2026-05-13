@@ -363,6 +363,15 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
   <!-- DATES -->
   <div id="mode-dates" style="display:none">
+    <!-- Setup: choose mode before countdown -->
+    <div id="d-setup" style="margin-bottom:1rem">
+      <p style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Mode</p>
+      <div style="display:flex;gap:8px;margin-bottom:.75rem">
+        <button id="d-mode-pick" class="rq-star sel" onclick="setDatesMode('pick')" style="flex:1;border-radius:8px;padding:8px">📋 Pick answer</button>
+        <button id="d-mode-type" class="rq-star" onclick="setDatesMode('type')" style="flex:1;border-radius:8px;padding:8px">⌨️ Type the year</button>
+      </div>
+      <button class="btn-go" id="d-go" style="background:#555;margin-bottom:0" onclick="startQuizCountdown()">▶ Start quiz</button>
+    </div>
     <div id="d-countdown" style="display:none;text-align:center;padding:2rem 0">
       <div id="d-countdown-num" style="font-size:5rem;font-weight:800;font-family:'DM Serif Display',serif;line-height:1;color:var(--accent)">3</div>
       <div style="font-size:.85rem;color:var(--muted);margin-top:.5rem">Get ready…</div>
@@ -522,6 +531,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <div style="display:flex;gap:8px;margin-bottom:1rem">
       <button class="rq-star sel" id="rq-mode-grid" onclick="setRQMode('grid')" style="flex:1;border-radius:8px;padding:8px">All at once</button>
       <button class="rq-star" id="rq-mode-one" onclick="setRQMode('one')" style="flex:1;border-radius:8px;padding:8px">One at a time</button>
+      <button class="rq-star" id="rq-mode-endless" onclick="setRQMode('endless')" style="flex:1;border-radius:8px;padding:8px">♾️ Endless</button>
     </div>
     <button class="btn-go" id="rq-go" style="background:var(--subtle);color:var(--muted);cursor:not-allowed" onclick="generateRQ()">🎯 Let's go</button>
     <p id="rq-counter" style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:-.75rem;margin-bottom:.5rem"></p>
@@ -536,6 +546,29 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       <button class="btn-sm" onclick="revealAll()">👁 Reveal all</button>
       <button class="btn-sm" onclick="rqBackToSetup()">⚙️ Settings</button>
     </div>
+  </div>
+  <!-- Endless mode output -->
+  <div id="rq-endless" style="display:none">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
+      <span id="rq-el-hdr" style="font-size:.8rem;color:var(--muted)">Question 1</span>
+      <div class="sc-row"><span id="rq-el-streak" style="font-size:.8rem;color:#F0B429;font-weight:600"></span><span class="sc sc-c" id="rq-el-ok">✓ 0</span><span class="sc sc-w" id="rq-el-bad">✗ 0</span></div>
+    </div>
+    <div class="rq-card" id="rq-el-card" style="position:relative;overflow:hidden;min-height:unset;cursor:default;padding:1rem">
+      <div id="rq-el-stripe" style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#ddd"></div>
+      <div style="padding-left:.75rem">
+        <div style="font-size:1rem;font-weight:600;line-height:1.5;margin-bottom:1rem" id="rq-el-q"></div>
+        <div id="rq-el-reveal" style="display:none;border-top:1px solid var(--border);padding-top:.75rem;margin-top:.25rem">
+          <div style="font-size:1.05rem;font-weight:700;color:#3B6D11;margin-bottom:.75rem" id="rq-el-a"></div>
+          <div style="font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem">Self mark:</div>
+          <div style="display:flex;gap:8px">
+            <button class="btn-sm" onclick="rqElAnswer(true)" style="flex:1;font-size:1.1rem;background:#EAF3DE;color:#3B6D11;border-color:#3B6D11">✓</button>
+            <button class="btn-sm" onclick="rqElAnswer(false)" style="flex:1;font-size:1.1rem;background:#FCEBEB;color:#A32D2D;border-color:#A32D2D">✗</button>
+          </div>
+        </div>
+        <button id="rq-el-tap" onclick="rqElReveal()" class="btn-sm" style="width:100%;margin-top:.5rem">👁 Reveal answer</button>
+      </div>
+    </div>
+    <button class="btn-sm" onclick="rqBackToSetup()" style="width:100%;margin-top:.5rem">⚙️ Settings</button>
   </div>
   <!-- One at a time mode output -->
   <div id="rq-one" style="display:none">
@@ -703,8 +736,10 @@ function setMode(m) {
   if (m === 'exam') updateExamDirectory();
   if (m === 'flashcard') fdSetup();
   if (m === 'dates') {
-    // Auto-start countdown
-    setTimeout(() => startQuizCountdown(), 50);
+    // Show setup screen — user picks mode then presses Start
+    quizTypeMode = 'pick';
+    setDatesMode('pick');
+    applyDatesStartBtn();
   }
 }
 
@@ -860,6 +895,7 @@ let rqPapers = {p1:true, p2a:true, p2b:true, p3:true};
 let rqDiff = 2; // single value: 1=easy only, 2=easy+medium, 3=all
 let rqMode = 'grid'; // 'grid' or 'one'
 let rqOnePool = [], rqOneIdx = 0, rqOneOK = 0, rqOneBad = 0, rqOneMissed = [], rqOneStreak = 0;
+let rqElPool = [], rqElIdx = 0, rqElOK = 0, rqElBad = 0, rqElStreak = 0, rqElTotal = 0;
 let rqInProgress = false; // tracks if a quiz is mid-session
 let rqInProgressMode = 'grid';
 
@@ -867,12 +903,14 @@ function setRQMode(m) {
   rqMode = m;
   document.getElementById('rq-mode-grid').classList.toggle('sel', m === 'grid');
   document.getElementById('rq-mode-one').classList.toggle('sel', m === 'one');
+  document.getElementById('rq-mode-endless').classList.toggle('sel', m === 'endless');
 }
 
 function rqBackToSetup() {
   document.getElementById('rq-setup').style.display = 'block';
   document.getElementById('rq-out').style.display = 'none';
   document.getElementById('rq-one').style.display = 'none';
+  document.getElementById('rq-endless').style.display = 'none';
   document.getElementById('rq-one-end').style.display = 'none';
   document.getElementById('rq-one-card').style.display = 'block';
 }
@@ -947,6 +985,41 @@ function rqRetryMissed() {
   rqOneNext();
 }
 
+// ── Endless mode ──
+function rqElNext() {
+  // Reshuffle and loop when pool exhausted
+  if (rqElIdx >= rqElPool.length) {
+    rqElPool = shuffle([...rqElPool]);
+    rqElIdx = 0;
+  }
+  const q = rqElPool[rqElIdx];
+  const num = rqElOK + rqElBad + 1;
+  document.getElementById('rq-el-hdr').textContent = `Question ${num}`;
+  document.getElementById('rq-el-ok').textContent = `✓ ${rqElOK}`;
+  document.getElementById('rq-el-bad').textContent = `✗ ${rqElBad}`;
+  const streakEl = document.getElementById('rq-el-streak');
+  if (streakEl) streakEl.textContent = rqElStreak >= 3 ? `🔥 ${rqElStreak}` : '';
+  document.getElementById('rq-el-q').textContent = q.q;
+  document.getElementById('rq-el-a').textContent = q.a;
+  const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
+  const stripe = document.getElementById('rq-el-stripe');
+  if (stripe) stripe.style.background = colours[q.paper] || '#ddd';
+  document.getElementById('rq-el-reveal').style.display = 'none';
+  document.getElementById('rq-el-tap').style.display = 'block';
+}
+
+function rqElReveal() {
+  document.getElementById('rq-el-reveal').style.display = 'block';
+  document.getElementById('rq-el-tap').style.display = 'none';
+}
+
+function rqElAnswer(correct) {
+  if (correct) { rqElOK++; rqElStreak++; }
+  else { rqElBad++; rqElStreak = 0; }
+  rqElIdx++;
+  rqElNext();
+}
+
 function printRQ(questions) {
   const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
   const paperNames = {p1:'Migrants',p2a:'Cold War',p2b:'Elizabeth',p3:'Germany'};
@@ -1005,6 +1078,7 @@ function resumeRQ() {
   document.getElementById('rq-setup').style.display = 'none';
   document.getElementById('rq-out').style.display = rqInProgressMode === 'grid' ? 'block' : 'none';
   document.getElementById('rq-one').style.display = rqInProgressMode === 'one' ? 'block' : 'none';
+  document.getElementById('rq-endless').style.display = rqInProgressMode === 'endless' ? 'block' : 'none';
   if (rqInProgressMode === 'grid') {
     const pb = document.getElementById('print-btn');
     if (pb) pb.style.display = 'inline-block';
@@ -1084,6 +1158,16 @@ function generateRQ() {
     document.getElementById('rq-one-end').style.display = 'none';
     document.getElementById('rq-one-card').style.display = 'block';
     rqOneNext();
+    return;
+  }
+  if (rqMode === 'endless') {
+    rqElPool = shuffle([...pool]);
+    rqElIdx = 0; rqElOK = 0; rqElBad = 0; rqElStreak = 0; rqElTotal = rqElPool.length;
+    document.getElementById('rq-setup').style.display = 'none';
+    document.getElementById('rq-out').style.display = 'none';
+    document.getElementById('rq-one').style.display = 'none';
+    document.getElementById('rq-endless').style.display = 'block';
+    rqElNext();
     return;
   }
   // Add print button for grid/do-now mode
@@ -1326,6 +1410,9 @@ function drawExamCard(q) {
 let quizStreak = 0;
 let quizMissed = []; // dates got wrong this session
 let quizHardMode = false;
+let quizTypeMode = 'pick'; // 'pick' | 'type' — hard mode (type the year)
+let quizHistory = []; // [{item, wasCorrect}] — answered questions in order
+let quizViewIdx = 0; // which question is currently displayed (may be < quizIdx when reviewing)
 
 function getHardDates() {
   return JSON.parse(localStorage.getItem('gcse_hard_dates_' + currentPaper) || '[]');
@@ -1334,7 +1421,45 @@ function saveHardDates(arr) {
   localStorage.setItem('gcse_hard_dates_' + currentPaper, JSON.stringify(arr));
 }
 
+function applyDatesStartBtn() {
+  const goBtn = document.getElementById('d-go');
+  if (!goBtn) return;
+  const solid = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
+  goBtn.style.background = solid[currentPaper] || '#555';
+}
+
+function setDatesMode(m) {
+  quizTypeMode = m;
+  const colours = {p1:{bg:'#FEF9E7',color:'#9A6B00',border:'#F0B429'},p2a:{bg:'#FBEAF0',color:'#993556',border:'#D4537E'},p2b:{bg:'#E1F5EE',color:'#0F6E56',border:'#1D9E75'},p3:{bg:'#E6F1FB',color:'#185FA5',border:'#378ADD'}};
+  const c = colours[currentPaper] || {bg:'#f0f0ee',color:'#555',border:'#aaa'};
+  ['pick','type'].forEach(mode => {
+    const btn = document.getElementById('d-mode-' + mode);
+    if (!btn) return;
+    if (mode === m) {
+      btn.style.background = c.bg;
+      btn.style.color = c.color;
+      btn.style.borderColor = c.border;
+    } else {
+      btn.style.background = 'var(--surface)';
+      btn.style.color = 'var(--muted)';
+      btn.style.borderColor = 'var(--border2)';
+    }
+  });
+}
+
+function datesShowSetup() {
+  document.getElementById('d-out').innerHTML = '';
+  document.getElementById('d-countdown').style.display = 'none';
+  const setupEl = document.getElementById('d-setup');
+  if (setupEl) setupEl.style.display = 'block';
+  setDatesMode(quizTypeMode);
+  applyDatesStartBtn();
+}
+
 function startQuizCountdown(hardMode) {
+  // Hide setup
+  const setupEl = document.getElementById('d-setup');
+  if (setupEl) setupEl.style.display = 'none';
   // Show countdown
   const cdEl = document.getElementById('d-countdown');
   const numEl = document.getElementById('d-countdown-num');
@@ -1351,7 +1476,7 @@ function startQuizCountdown(hardMode) {
       numEl.textContent = 'Go!';
       setTimeout(() => {
         cdEl.style.display = 'none';
-        startQuiz(hardMode);
+        startQuiz(hardMode, quizTypeMode);
       }, 500);
       return;
     }
@@ -1361,45 +1486,133 @@ function startQuizCountdown(hardMode) {
   setTimeout(tick, 100);
 }
 
-function startQuiz(hardMode) {
+function startQuiz(hardMode, typeMode) {
   const all = DATES.filter(d => d.paper === currentPaper);
   if (!all.length) {
     document.getElementById('d-out').innerHTML = '<div class="empty">No dates for this paper.</div>';
     return;
   }
   quizHardMode = !!hardMode;
+  quizTypeMode = typeMode || 'pick';
   let pool = hardMode
     ? all.filter(d => getHardDates().includes(d.event))
     : all;
   if (!pool.length) pool = all; // fallback if no hard dates yet
   quizPool = shuffle([...pool]).slice(0, Math.min(pool.length, 15));
-  quizIdx = 0; quizOK = 0; quizBad = 0; quizStreak = 0; quizMissed = [];
+  quizIdx = 0; quizOK = 0; quizBad = 0; quizStreak = 0; quizMissed = []; quizHistory = []; quizViewIdx = 0;
   renderQ();
 }
 
 function renderQ() {
+  // If viewing a previously answered question (quizViewIdx < quizIdx)
+  if (quizViewIdx < quizIdx) {
+    renderHistoricalQ();
+    return;
+  }
+  // Live unanswered question
   if (quizIdx >= quizPool.length) { showQuizEnd(); return; }
   const item = quizPool[quizIdx];
   const total = quizPool.length;
   const pct = Math.round((quizIdx / total) * 100);
-  const others = shuffle(DATES.filter(d => d.paper === currentPaper && d.event !== item.event)).slice(0, 3).map(d => d.event);
-  const opts = shuffle([item.event, ...others]);
-  const optsHtml = opts.map((o, i) => {
-    const formatted = o.replace(/^([^—–-]+)(—|–|-)/, '<strong>$1</strong>$2');
-    return `<button class="opt" id="opt${i}" data-val="${esc(o)}" data-correct="${esc(item.event)}" onclick="checkAns(this)">${formatted}</button>`;
-  }).join('');
   const streakHtml = quizStreak >= 3 ? `<span style="font-size:.8rem;color:#F0B429;font-weight:600">🔥 ${quizStreak}</span>` : '';
+  const prevBtn = quizHistory.length > 0
+    ? `<button onclick="quizGoBack()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">← Prev</button>`
+    : `<span></span>`;
+
+  let answerHtml;
+  if (quizTypeMode === 'type') {
+    answerHtml = `
+      <div style="margin-top:.75rem">
+        <input id="quiz-year-input" type="number" min="1" max="2100" placeholder="Type the year and press Enter…"
+          style="width:100%;padding:10px;font-size:1.1rem;font-weight:700;text-align:center;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text);font-family:inherit"
+          onkeydown="if(event.key==='Enter')checkYearAns()">
+        <div class="quiz-fb" id="qfb"></div>
+      </div>`;
+  } else {
+    const others = shuffle(DATES.filter(d => d.paper === currentPaper && d.event !== item.event)).slice(0, 3).map(d => d.event);
+    const opts = shuffle([item.event, ...others]);
+    const optsHtml = opts.map((o, i) => {
+      const formatted = o.replace(/^([^—–-]+)(—|–|-)/, '<strong>$1</strong>$2');
+      return `<button class="opt" id="opt${i}" data-val="${esc(o)}" data-correct="${esc(item.event)}" onclick="checkAns(this)">${formatted}</button>`;
+    }).join('');
+    answerHtml = `<div class="opts">${optsHtml}</div><div class="quiz-fb" id="qfb"></div>`;
+  }
+
   document.getElementById('d-out').innerHTML = `
     <div class="quiz-prog"><div class="quiz-fill ${P[currentPaper].fill}" style="width:${pct}%"></div></div>
     <div class="quiz-hdr">
-      <span class="quiz-hdr-l">Question ${quizIdx + 1} of ${total}</span>
+      <div style="display:flex;align-items:center;gap:8px">
+        ${prevBtn}
+        <span class="quiz-hdr-l">Question ${quizIdx + 1} of ${total}</span>
+      </div>
       <div class="sc-row">${streakHtml}<span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div>
     </div>
     <div class="quiz-card">
-      <div class="quiz-date">${item.date}</div>
-      <div class="quiz-prompt">What happened?</div>
+      <div class="quiz-date" style="${quizTypeMode === 'type' ? 'font-size:1.1rem;font-weight:700;line-height:1.4' : ''}">${quizTypeMode === 'type' ? item.event : item.date}</div>
+      <div class="quiz-prompt">${quizTypeMode === 'type' ? 'What year did this happen?' : 'What happened?'}</div>
+      ${answerHtml}
+    </div>`;
+
+  if (quizTypeMode === 'type') {
+    const inp = document.getElementById('quiz-year-input');
+    if (inp) setTimeout(() => inp.focus(), 50);
+  }
+}
+
+function renderHistoricalQ() {
+  // Show a previously answered question — locked, result visible, with Prev/Next nav
+  const hist = quizHistory[quizViewIdx];
+  const item = hist.item;
+  const total = quizPool.length;
+  const pct = Math.round((quizViewIdx / total) * 100);
+
+  const prevBtn = quizViewIdx > 0
+    ? `<button onclick="quizGoBack()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">← Prev</button>`
+    : `<span></span>`;
+  const nextBtn = `<button onclick="quizGoForward()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">Next →</button>`;
+
+  let resultHtml;
+  if (quizTypeMode === 'type') {
+    const yearMatch = item.date.match(/\b(1[0-9]{3}|20[0-9]{2})\b/);
+    const correctYear = yearMatch ? yearMatch[1] : '?';
+    resultHtml = `
+      <div style="margin-top:.75rem">
+        <div class="quiz-fb ${hist.wasCorrect ? 'fb-c' : 'fb-w'}" style="display:block">
+          ${hist.wasCorrect ? `✓ Correct — ${correctYear}` : `✗ Answer was ${correctYear} — ${item.event}`}
+        </div>
+      </div>`;
+  } else {
+    // Show all options locked — correct highlighted, wrong highlighted if they got it wrong
+    const others = hist.otherOpts || [];
+    const allOpts = hist.allOpts || [item.event, ...others];
+    const optsHtml = allOpts.map(o => {
+      const formatted = o.replace(/^([^—–-]+)(—|–|-)/, '<strong>$1</strong>$2');
+      let cls = 'opt';
+      if (o === item.event) cls += ' show-c';
+      if (!hist.wasCorrect && o === hist.chosen) cls += ' wrong';
+      return `<button class="${cls}" disabled>${formatted}</button>`;
+    }).join('');
+    resultHtml = `
       <div class="opts">${optsHtml}</div>
-      <div class="quiz-fb" id="qfb"></div>
+      <div class="quiz-fb ${hist.wasCorrect ? 'fb-c' : 'fb-w'}" style="display:block">
+        ${hist.wasCorrect ? 'Correct!' : 'Not quite — correct answer highlighted.'}
+      </div>`;
+  }
+
+  document.getElementById('d-out').innerHTML = `
+    <div class="quiz-prog"><div class="quiz-fill ${P[currentPaper].fill}" style="width:${pct}%"></div></div>
+    <div class="quiz-hdr">
+      <div style="display:flex;align-items:center;gap:8px">
+        ${prevBtn}
+        <span class="quiz-hdr-l">Question ${quizViewIdx + 1} of ${total} <span style="font-size:.7rem;color:var(--muted)">(reviewing)</span></span>
+        ${nextBtn}
+      </div>
+      <div class="sc-row"><span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-date" style="${quizTypeMode === 'type' ? 'font-size:1.1rem;font-weight:700;line-height:1.4' : ''}">${quizTypeMode === 'type' ? item.event : item.date}</div>
+      <div class="quiz-prompt">${quizTypeMode === 'type' ? 'What year did this happen?' : 'What happened?'}</div>
+      ${resultHtml}
     </div>`;
 }
 
@@ -1409,13 +1622,15 @@ function checkAns(btn) {
   const item = quizPool[quizIdx];
   document.querySelectorAll('.opt').forEach(b => b.disabled = true);
   const fb = document.getElementById('qfb');
-  if (chosen === correct) {
+  const wasCorrect = chosen === correct;
+  // Capture all option values for history replay
+  const allOpts = Array.from(document.querySelectorAll('.opt')).map(b => b.dataset.val);
+  if (wasCorrect) {
     quizOK++;
     quizStreak++;
     btn.classList.add('correct');
     fb.textContent = 'Correct!';
     fb.className = 'quiz-fb fb-c';
-    // Remove from hard dates if got right
     const hard = getHardDates().filter(e => e !== item.event);
     saveHardDates(hard);
   } else {
@@ -1428,13 +1643,57 @@ function checkAns(btn) {
     document.querySelectorAll('.opt').forEach(b => {
       if (b.dataset.val === correct) b.classList.add('show-c');
     });
-    // Add to hard dates
     const hard = getHardDates();
     if (!hard.includes(item.event)) hard.push(item.event);
     saveHardDates(hard);
   }
   fb.style.display = 'block';
-  setTimeout(() => { quizIdx++; renderQ(); }, 1700);
+  quizHistory.push({ item, wasCorrect, chosen, allOpts });
+  setTimeout(() => { quizIdx++; quizViewIdx = quizIdx; renderQ(); }, 1700);
+}
+
+function checkYearAns() {
+  const inp = document.getElementById('quiz-year-input');
+  if (!inp) return;
+  const item = quizPool[quizIdx];
+  const fb = document.getElementById('qfb');
+  // Extract year from item.date (e.g. "1917", "October 1917", "1917–18")
+  const yearMatch = item.date.match(/\b(1[0-9]{3}|20[0-9]{2})\b/);
+  if (!yearMatch) { fb.textContent = 'Answer: ' + item.event; fb.className = 'quiz-fb fb-w'; fb.style.display = 'block'; return; }
+  const correctYear = yearMatch[1];
+  const typed = inp.value.trim();
+  const wasCorrect = typed === correctYear;
+  inp.disabled = true;
+  if (wasCorrect) {
+    quizOK++; quizStreak++;
+    fb.textContent = `✓ Correct — ${correctYear}`;
+    fb.className = 'quiz-fb fb-c';
+    const hard = getHardDates().filter(e => e !== item.event);
+    saveHardDates(hard);
+  } else {
+    quizBad++; quizStreak = 0;
+    quizMissed.push(item);
+    fb.textContent = `✗ The answer was ${correctYear} — ${item.event}`;
+    fb.className = 'quiz-fb fb-w';
+    const hard = getHardDates();
+    if (!hard.includes(item.event)) hard.push(item.event);
+    saveHardDates(hard);
+  }
+  fb.style.display = 'block';
+  quizHistory.push({ item, wasCorrect });
+  setTimeout(() => { quizIdx++; quizViewIdx = quizIdx; renderQ(); }, 2000);
+}
+
+function quizGoBack() {
+  if (quizViewIdx <= 0) return;
+  quizViewIdx--;
+  renderQ();
+}
+
+function quizGoForward() {
+  if (quizViewIdx >= quizIdx) return;
+  quizViewIdx++;
+  renderQ();
 }
 
 function showQuizEnd() {
@@ -1465,7 +1724,7 @@ function showQuizEnd() {
     </div>` : '';
 
   const hardBtn = hardCount > 0 && !quizHardMode
-    ? `<button class="btn-sm" onclick="startQuiz(true)" style="width:100%;margin-top:.25rem">🎯 Hardest dates only (${hardCount})</button>`
+    ? `<button class="btn-sm" onclick="startQuizCountdown(true)" style="width:100%;margin-top:.25rem">🎯 Hardest dates only (${hardCount})</button>`
     : '';
 
   document.getElementById('d-out').innerHTML = `
@@ -1475,13 +1734,10 @@ function showQuizEnd() {
       <div class="end-grade ${cls}">${grade}</div>
       ${missedHtml}
       <div style="display:flex;flex-direction:column;gap:6px;margin-top:.5rem">
-        <button class="btn-sm" style="width:100%" onclick="startQuiz()">🔄 New quiz</button>
+        <button class="btn-sm" style="width:100%" onclick="datesShowSetup()">🔄 New quiz</button>
         ${hardBtn}
       </div>
     </div>`;
-  const go = document.getElementById('d-go');
-  go.style.display = 'block';
-  go.textContent = 'New quiz';
 }
 let KC = []; // loaded from data/kc.json
 let EQ = []; // loaded from data/eq.json
