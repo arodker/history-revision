@@ -374,9 +374,9 @@ function rebuildEraUI(){
   var container=document.getElementById('fd-era-pills');
   if(!container)return;
   var u=currentUnit;
-  var html='<button class="pill active-'+u+'" id="fd-era-all" onclick="fdToggleEra('all')">All <span id="fd-count-all" style="opacity:.6"></span></button>';
+  var html='<button class="pill active-'+u+'" id="fd-era-all" onclick="fdToggleEra(\'all\')">All <span id="fd-count-all" style="opacity:.6"></span></button>';
   ERA_PILL_KEYS.forEach(function(era){
-    html+='<button class="pill" id="fd-era-'+era+'" onclick="fdToggleEra(''+era+'')">'+ue.labels[era]+' <span id="fd-count-'+era+'" style="opacity:.6"></span></button>';
+    html+='<button class="pill" id="fd-era-'+era+'" onclick="fdToggleEra(\''+era+'\')">'+ue.labels[era]+' <span id="fd-count-'+era+'" style="opacity:.6"></span></button>';
   });
   container.innerHTML=html;
 }
