@@ -696,27 +696,38 @@
     "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
     "subheadings": [
       {
-        "label": "Political Rights",
+        "label": "The Vote",
         "facts": [
-          "Reconstruction: 15th Amendment (1870) prohibited denial of the vote by race — enforced by Union troops. Enforcement Acts (1870–1): 600+ KKK convictions — first federal action against racial terror. Warren Court (1953–69): most liberal in US history — Brown v Board (1954); Smith v Allwright (1944); Browder v Gayle (1956). 🦅",
-          "LBJ used the 'Johnson treatment' to force Civil Rights Act (1964) and Voting Rights Act (1965) through Congress — Mississippi registration: 6% (1964) → 60% (1969). Appointed Thurgood Marshall as first Black Supreme Court Justice and Robert Weaver as first Black Cabinet Secretary. Eisenhower deployed 101st Airborne at Little Rock (1957) and sent 30,000 federal marshals to Ole Miss (1962). Carter appointed 37 Black federal judges. 🦅",
-          "Limitations: Compromise of 1877 withdrew troops — Redeemer governments dismantled every Reconstruction gain. Long period of federal indifference 1877–1933 — at best apathetic, at worst white supremacists. Wilson segregated the federal government (1913) and screened Birth of a Nation at the White House. 200+ anti-lynching bills defeated in Congress. FBI COINTELPRO illegally infiltrated NAACP, SCLC and Black Panthers — Fred Hampton assassinated 1969. Reagan's conservative court appointments weakened VRA. 🦅"
+          "Reconstruction: 15th Amendment (1870) prohibited denial of vote by race — enforced by union troops. Enforcement Acts (1870–71) targeted KKK. BUT Compromise of 1877 withdrew troops — Redeemer governments dismantled every Reconstruction gain. Mississippi v Williams (1898): Supreme Court upheld poll taxes and literacy tests — 90% disenfranchised by 1900. 🏛️",
+          "VRA (1965): LBJ used 'Johnson treatment' to force Voting Rights Act — banned all voter suppression. Mississippi Black voter registration 6% (1964) → 60% (1969). US v Guinn (1915) earlier struck down grandfather clauses. Post-1965: gerrymandering limited impact of VRA — Milliken v Bradley (1974) weakened bussing. 🦅"
         ]
       },
       {
-        "label": "Social Rights",
+        "label": "Political Representation",
         "facts": [
-          "Freedmen's Bureau (1865–72): 1,000+ schools, 250,000 enrolled, Howard University (1867) founded. Brown v Board (1954): Thurgood Marshall proved $43/yr Black vs $179/yr white — overturned 'separate but equal'. Civil Rights Act (1964) ended de jure Jim Crow. Great Society: Medicare and Medicaid raised Black health insurance from 25% to 75% by 1970. 🦅",
-          "Cold War context made racial segregation internationally damaging — Soviet propaganda publicised Birmingham Campaign. Kennedy: 'We preach freedom around the world… but are we to say the land of the free — except for the Negroes?' This Cold War pressure was a genuine driver of federal civil rights action. 🦅 ⚔️",
-          "Limitations: Slaughterhouse Case (1873) gutted 14th Amendment; Plessy v Ferguson (1896) sanctioned Jim Crow for 58 years. Brown II (1956): no integration deadline — 98% of Black students still in segregated Southern schools by 1964. Milliken v Bradley (1974) limited court-ordered bussing — re-segregation followed. Reagan's welfare cuts disproportionately harmed Black Americans. 🦅"
+          "Federal government slow to appoint African Americans — Washington first informal advisor to TR (1901). FDR's Black Cabinet led by Mary McLeod Bethune influenced New Deal. LBJ appointed Thurgood Marshall first Black Supreme Court Justice (1967) and Robert Weaver first Black Cabinet member. 🦅",
+          "Limitations: Wilson (1913–21) segregated federal government and praised Birth of a Nation. Long period of federal disinterest 1877–1933. 8,000 African Americans held office by 1992 — progress but still underrepresentation. 🦅"
         ]
       },
       {
-        "label": "Economic Rights",
+        "label": "Influence in Government",
         "facts": [
-          "Executive Order 8802 (1941): banned racial discrimination in defence industries — 2 million+ Black Americans employed in defence by war's end. Great Society (1964–8): Food Stamp Act — 33% of recipients were Black Americans despite being 12% of the population. EEOC enforcement raised Black white-collar employment from 5% to 15% by mid-1970s. 🦅 💰",
-          "New Deal: FERA, CCC, PWA employed hundreds of thousands of Black Americans. Black Cabinet influenced New Deal programme delivery. Bethune's NYA role helped 600,000 Black youths. African Americans shifted to vote Democratic — major long-term political shift. 🦅 💰",
-          "Limitations: 40 acres and a mule never realised — Johnson's mass pardons returned Confederate land. Social Security excluded agricultural and domestic workers — 65% of Black workers. AAA (1933) displaced 200,000 Black sharecroppers. Red Scare: organisations improving Black economic position suspected of communism — Du Bois surveilled. Bakke (1978) weakened affirmative action. Reagan and Bush labelled affirmative action 'reverse discrimination' and reduced enforcement. 🦅 💰"
+          "Cold War context forced federal action: Soviet propaganda publicised racial violence internationally. Kennedy after Birmingham (1963): 'We preach freedom around the world... but are we to say to the world this is the land of the free — except for the negroes?' Decolonisation movements inspired African Americans — Gandhi and Nkrumah. 🦅",
+          "Great Society (LBJ 1964–68): Medicare, Medicaid, Food Stamp Act, Head Start — transformed economic rights. By 1970 Black Americans with health insurance: 25% → 75%. BUT Reagan (1981–89) cut welfare programmes disproportionately affecting Black Americans. Bakke (1978) weakened affirmative action. 🦅"
+        ]
+      },
+      {
+        "label": "Education",
+        "facts": [
+          "Freedmen's Bureau (1865–72): 1,000+ schools, 250,000 enrolled, Howard University (1867) founded. BUT Bureau closed 1872 — left freedmen without educational infrastructure. Brown v Board (1954): Warren Court overturned Plessy — segregated schools unconstitutional. Little Rock (1957): Eisenhower deployed 101st Airborne to enforce integration. 🏛️",
+          "Limitations: Brown II (1955) set no deadline beyond 'all deliberate speed' — 98% of Black Southern students still in segregated schools by 1964. Milliken v Bradley (1974) ruled suburban schools could not be forced into bussing — re-segregation accelerated. By 1992 40% of Black students attended majority-Black schools. 🦅"
+        ]
+      },
+      {
+        "label": "Jobs, Wages and Economic Support",
+        "facts": [
+          "EO 8802 (1941): banned racial discrimination in defence industries — 2 million African Americans employed in defence by end of WWII. New Deal: FERA, CCC, PWA employed hundreds of thousands of Black Americans — 20–30% of FERA recipients were African American. Great Society: Civil Rights Act (1964) prohibited employment discrimination. 🦅",
+          "Limitations: 40 acres and a mule never realised — Johnson's mass pardons returned Confederate land. Social Security Act (1935) excluded agricultural and domestic workers — 65% of Black workers. AAA inadvertently displaced 200,000 Black sharecroppers. GI Bill (1944) locally administered in South — Black veterans denied benefits. 🦅"
         ]
       }
     ],
@@ -1545,25 +1556,45 @@
     "factorKey": "🔨 Union Leadership · 🦅 Federal Gov · 💼 Employers · ⚔️ War · 💰 Socioeconomic · 💥 Division",
     "subheadings": [
       {
-        "label": "Right to Exist and Collectively Bargain",
+        "label": "Building Organisation",
         "facts": [
-          "NLU (1866): Sylvis pushed for 8-hour workday — collapsed after his death (1869), over-reliant on one leader. KOL (1869): largest early union at 700,000 — inclusive of women, African Americans, immigrants — but poor organisation and Haymarket (1886) destroyed it. AFL (1886): Gompers focused on skilled workers and collective bargaining — made gains with Hanna and JP Morgan but excluded unskilled, women and most African Americans. 🔨",
-          "Mitchell's moderate leadership in 1902 Coal Strike secured presidential arbitration — first positive federal intervention as mediator. CIO (1935): John Lewis embraced industrial unionism — Flint sit-down strike (1936–7) forced UAW recognition. AFL-CIO merger (1955): 16 million members, 85% of unionised workforce. Chavez (UFW, 1966): organised Mexican American and Filipino farm workers — Delano Grape Strike and Salad Bowl Strike won recognition. DRUM (1968): challenged racial inequality within UAW — 500+ members by 1969. 🔨",
-          "Limits: violent tactics alienated public — Molly Maguires, Haymarket. PATCO (1981) alienated Americans by demanding $10,000 pay rise during summer holidays — easy for Reagan to clamp down. Lack of unified national strategy — ideological conflicts between AFL and KOL, skilled and unskilled divisions. 🔨 💥",
-          "Collective bargaining: the process by which unions negotiate wages, hours and conditions with employers on behalf of all workers — gave individual workers power they lacked alone. Central demand of every major union from NLU (1866) through AFL-CIO. Without legal recognition (pre-Wagner Act 1935), employers could simply refuse. 🔨"
+          "NLU (1866): Sylvis pushed for 8-hour workday — collapsed after his death (1869). KOL (1869): peak 700,000 members by 1886 — most inclusive union of the era, welcomed women, African Americans and unskilled workers. AFL (1886): Gompers focused on skilled workers — pragmatic business unionism. CIO (1935): Lewis organised industrial workers regardless of skill — 3.7 million by 1944. 🔨",
+          "Limits: violent tactics alienated public — Haymarket (1886) discredited KOL. Pullman (1894) and Homestead (1892) showed limits of confrontation. PATCO (1981) alienated public by demanding $10,000 pay rise — Reagan fired 11,000. Internal divisions between AFL and CIO exposed by Pullman Strike. AFL expelled CIO 1938. 🔨 💥"
         ]
       },
       {
-        "label": "Right to Strike",
+        "label": "Legal Recognition",
         "facts": [
-          "Gompers' AFL discouraged strikes and preferred negotiation. Mitchell's Coal Strike (1902) showed effectiveness of moderation. Lawrence Textile Strike (1912): IWW-led women secured 15% pay rise — no reprisal agreement a step forward. CIO sit-down strikes (1936–7): forced UAW and US Steel recognition. Chavez's nonviolent strikes and boycotts effective through 1960s–70s. 🔨",
-          "Limits: Pullman (1894), Homestead (1892) — violent failures crushed by troops. Seattle General Strike (1919) — suppressed. AFL no-strike pledges in WWI limited effectiveness. 🔨 💥"
+          "Mitchell's moderate leadership in 1902 Coal Strike secured presidential arbitration — first time federal government mediated in workers' favour. Randolph's BSCP (1925): first Black union to gain AFL recognition (1937) and employer contract. Wagner Act (1935) transformed legal landscape — union membership 3.7 million (1933) → 9 million (1938). AFL-CIO merger (1955): 16 million members, 85% of unionised workforce. 🔨",
+          "Collective bargaining context: before Wagner Act no legal obligation for employers to recognise unions. AFL under Gompers made gains through voluntary bargaining with Hanna and JP Morgan — exceptional not the norm. By 1960s AFL-CIO members earned 20% more than non-unionised workers. Landrum-Griffin (1959) reduced corruption but curtailed union political activities. 🔨 🦅"
         ]
       },
       {
-        "label": "Right to Fair and Safe Working Conditions",
+        "label": "Rights to Strike",
         "facts": [
-          "Lawrence Textile Strike (1912): women received 15% pay rise and overtime. BSCP secured fair wages and working conditions for African American railroad workers. Randolph's March on Washington Movement led to desegregation in federal and defence industries (EO 8802, 1941). AFL-CIO members earned 20% more than non-unionised workers by 1960s. Union-led campaigns produced OSHA (1970). 🔨"
+          "Coal Strike (1902): Mitchell's disciplined strike won arbitration — showed strategic strike could force federal intervention. CIO sit-down strikes (1936–37): occupied factories — GM recognised UAW after 44 days, US Steel followed without a strike. Chavez's Delano Grape Strike (1965–70) and Salad Bowl Strike (1970): nonviolent tactics won farm workers legal recognition. 🔨",
+          "Limits: Gompers discouraged strikes, preferring negotiation. Seattle General Strike (1919) failed — demonised as Bolshevik. PATCO alienated public — Reagan's hard-line response emboldened employers across industries. Strike numbers fell from 400+ annually in mid-20th century to 46 major strikes by 1989. 🔨"
+        ]
+      },
+      {
+        "label": "Strike Success and Failure",
+        "facts": [
+          "Successes: Great Coal Strike (1902) — partial victory, first positive federal intervention. Flint (1936–37) — UAW recognised by GM. Lawrence Textile (1912) — 15% pay rise, overtime pay. UFW Delano Grape and Salad Bowl — California ALRA (1975). BSCP contract (1937) — fair wages, shorter hours, paid uniforms. 🔨",
+          "Failures: Great Railroad Strike (1877) — 100+ killed by federal troops. Homestead (1892) — union bankrupt, steel union-free until 1930s. Pullman (1894) — Debs imprisoned, AFL refused support. Seattle General (1919) — defeated by media and Mayor Hanson. PATCO (1981) — 11,000 workers fired. Courts issued injunctions against strikes from 1894 until Norris-LaGuardia (1932). 🔨"
+        ]
+      },
+      {
+        "label": "Wages and Hours",
+        "facts": [
+          "NLU fought for 8-hour workday — limited success. FLSA (1938): $25 weekly minimum wage, banned child labour under 16. Wagner Act (1935) enabled collective bargaining that drove wages up. By 1960s AFL-CIO members earned 20% more than non-unionised workers. Chavez's UFW secured better wages for farm workers — California ALRA (1975). 🔨",
+          "Limits: Adkins v Children's Hospital (1923) struck down minimum wage for women. FLSA excluded agricultural and domestic workers. Post-war automation threatened wage gains — manufacturing jobs fell 40% 1970–79. Reaganomics and right-to-work laws eroded bargaining power — by 1990 union membership 16% down from 35% (1945). 🔨"
+        ]
+      },
+      {
+        "label": "Safety and Working Conditions",
+        "facts": [
+          "Triangle Shirtwaist Fire (1911): 146 killed — sparked state-level safety legislation, New York Factory Commission. Lawrence Textile Strike (1912): IWW-led immigrant women won 15% pay rise and overtime. BSCP secured safer working conditions for Pullman porters. OSHA (1970): first comprehensive federal workplace safety law — workplace fatalities fell from 14,000 annually (1930s) to 4,500 by 1990s. 🔨",
+          "Context: by 1900 over 35,000 workplace deaths annually. Keating-Owen Act (1916) banned child labour — struck down Hammer v Dagenhart (1918). Lochner v New York (1905) struck down bakers' hours law. FLSA (1938): 44-hour maximum working week. Unions pushed hardest on safety — AFL-CIO campaigns drove OSHA legislation. 🔨"
         ]
       }
     ]
@@ -2424,23 +2455,39 @@
     "factorKey": "🏹 Native Tribal Actions · 🤝 Pan-Tribal Unity · 🤠 White Attitudes · 🦅 Federal Gov · ⚔️ War",
     "subheadings": [
       {
-        "label": "Right to Land",
+        "label": "Treaty Rights and Violations",
         "facts": [
-          "Indian Appropriations Act (1871): ended treaty-making — tribes wards of state. Dawes Act (1887): 90 million acres lost. Curtis Act (1898). Lone Wolf v Hitchcock (1903): Congress could unilaterally revoke treaties. Indian Claims Commission (1946): compensation but no land returned. 🦅",
-          "IRA (1934): restored 4 million acres — fraction of 90 million lost. Indian Gaming Regulatory Act (1988): allowed casinos — economic gains for some tribes. US v Sioux Nation (1980): acknowledged illegal seizure but offered only compensation. 🦅"
+          "Treaty of Fort Laramie (1868): guaranteed Black Hills to Sioux 'in perpetuity' — violated 1877 after gold discovered. Lone Wolf v Hitchcock (1903): Congress could unilaterally revoke treaties — removed all treaty protection. Indian Claims Commission (1946): awarded $800 million compensation — but no land returned. US v Sioux Nation (1980): Supreme Court ruled Black Hills illegally seized — Sioux refused $106 million, demanded land's return. 🦅"
         ]
       },
       {
-        "label": "Right to Self-Determination",
+        "label": "Land Allotment and Dispossession",
         "facts": [
-          "Termination Policy (1953): ended recognition of 109 tribes — most damaging policy since Dawes Act. Indian Relocation Act (1956): urban poverty and cultural dislocation. 🦅",
-          "Nixon ended Termination (1970). Indian Self-Determination Act (1975): meaningful shift toward tribal control. BUT 60% still economically reliant on federal assistance by 1992 — sovereignty remained limited. 🦅"
+          "Dawes Act (1887): divided communal lands into 160-acre allotments — 90 million acres lost. Curtis Act (1898): extended Dawes to Five Civilised Tribes. Dead Indian Act (1902): allowed sale of inherited land. Wheeler-Howard Act (1934): halted allotment — restored only 4 million of 90 million acres. Indian Gaming Regulatory Act (1988): tribes operate casinos — 150 casinos generating $1 billion+ annually by early 1990s. 🦅"
         ]
       },
       {
-        "label": "Right to Cultural and Religious Freedoms",
+        "label": "Legal Self-Governance",
         "facts": [
-          "Federal government: boarding schools (100,000+ children forced in by early 1900s), Sun Dance banned, buffalo systematically exterminated. Wheeler-Howard Act reversed some cultural bans. American Indian Religious Freedom Act (1978). Graves Protection Act (1990). Native Languages Act (1990). But over 70% of Native religious leaders still reported struggles by 1992. 🦅"
+          "Indian Appropriations Act (1871): tribes wards of state — no legal standing. IRA (1934): tribes establish democratic constitutions and elect tribal councils — 92 of 252 tribes adopted. Nixon ended Termination (1970). Indian Self-Determination Act (1975): 200+ tribes administered own federal programmes by 1992. Bryan v Itasca (1976): states cannot tax reservations. 🦅"
+        ]
+      },
+      {
+        "label": "Sovereignty and Federal Control",
+        "facts": [
+          "BIA: managed Native affairs — often corrupt and paternalistic. Termination Policy (1953): ended recognition of 109 tribes — extreme poverty resulted. Indian Relocation Act (1956): pushed Natives to cities — urban poverty replaced reservation poverty. BUT Nixon reversed termination (1970) — most significant federal reversal since IRA. 60% still economically reliant on federal assistance by 1992. 🦅"
+        ]
+      },
+      {
+        "label": "Assimilation and Cultural Suppression",
+        "facts": [
+          "Federal government: boarding schools (100,000+ children by early 1900s, death rates 30–50%), Sun Dance banned, Ghost Dance suppressed at Wounded Knee (1890), 75% of languages lost by 1930. Wheeler-Howard Act reversed cultural bans. AIRFA (1978) protected religious practices — but 70% of Native religious leaders still reported struggles by 1992. Graves Protection Act (1990): 10,000 items returned. 🦅"
+        ]
+      },
+      {
+        "label": "Broader Political and Economic Rights",
+        "facts": [
+          "Indian Citizenship Act (1924): U.S. citizenship to all Natives — but states imposed voting restrictions. Harrison v Laveen (1948): right to vote recognised. By 1992 only 50% of Native Americans registered to vote. Reservation poverty: per capita income half national average, unemployment 50–80%, no running water in many homes. LBJ 'Forgotten Americans' speech (1968) launched War on Poverty for reservations. 🦅"
         ]
       }
     ]
