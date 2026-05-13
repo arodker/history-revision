@@ -1523,7 +1523,7 @@ function renderQ() {
   if (quizTypeMode === 'type') {
     answerHtml = `
       <div style="margin-top:.75rem">
-        <input id="quiz-year-input" type="number" min="1" max="2100" placeholder="Type the year and press Enter…"
+        <input id="quiz-year-input" type="text" inputmode="numeric" placeholder="Type the year and press Enter…"
           style="width:100%;padding:10px;font-size:1.1rem;font-weight:700;text-align:center;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text);font-family:inherit"
           onkeydown="if(event.key==='Enter')checkYearAns()">
         <div class="quiz-fb" id="qfb"></div>
@@ -1573,12 +1573,11 @@ function renderHistoricalQ() {
 
   let resultHtml;
   if (quizTypeMode === 'type') {
-    const yearMatch = item.date.match(/\b(1[0-9]{3}|20[0-9]{2})\b/);
-    const correctYear = yearMatch ? yearMatch[1] : '?';
+    const correctDate = item.date;
     resultHtml = `
       <div style="margin-top:.75rem">
         <div class="quiz-fb ${hist.wasCorrect ? 'fb-c' : 'fb-w'}" style="display:block">
-          ${hist.wasCorrect ? `✓ Correct — ${correctYear}` : `✗ Answer was ${correctYear} — ${item.event}`}
+          ${hist.wasCorrect ? `✓ Correct — ${correctDate}` : `✗ Answer was ${correctDate}`}
         </div>
       </div>`;
   } else {
@@ -1654,26 +1653,45 @@ function checkAns(btn) {
 
 function checkYearAns() {
   const inp = document.getElementById('quiz-year-input');
-  if (!inp) return;
+  if (!inp || inp.disabled) return;
+  const typed = inp.value.trim();
+  if (!typed) return;
   const item = quizPool[quizIdx];
   const fb = document.getElementById('qfb');
-  // Extract year from item.date (e.g. "1917", "October 1917", "1917–18")
-  const yearMatch = item.date.match(/\b(1[0-9]{3}|20[0-9]{2})\b/);
-  if (!yearMatch) { fb.textContent = 'Answer: ' + item.event; fb.className = 'quiz-fb fb-w'; fb.style.display = 'block'; return; }
-  const correctYear = yearMatch[1];
-  const typed = inp.value.trim();
-  const wasCorrect = typed === correctYear;
+  const correctDate = item.date;
+  // Extract ALL year tokens — handles 865, 1708-09, 1880s, c.1850, 1941–45 etc.
+  const allYears = [];
+  const fullYearMatches = correctDate.match(/\b([0-9]{2,4})s?\b/g) || [];
+  fullYearMatches
+    .map(y => y.replace(/s$/, ''))
+    .filter(y => { const n = parseInt(y); return n >= 100 && n <= 2099; })
+    .forEach(y => allYears.push(y));
+  // Expand shorthand ranges: "865-70" → 870, "1708-09" → 1709, "1941–45" → 1945
+  const rangeMatch = correctDate.match(/\b([0-9]{3,4})[-–]([0-9]{2})\b/);
+  if (rangeMatch) {
+    const base = rangeMatch[1];
+    const expanded = base.slice(0, base.length - 2) + rangeMatch[2];
+    if (!allYears.includes(expanded)) allYears.push(expanded);
+  }
+  if (!allYears.length) {
+    fb.textContent = 'Answer: ' + correctDate;
+    fb.className = 'quiz-fb fb-w';
+    fb.style.display = 'block';
+    return;
+  }
+  const typedNorm = typed.replace(/s$/, '').replace(/[^0-9]/g, '');
+  const wasCorrect = allYears.some(y => typedNorm === y);
   inp.disabled = true;
   if (wasCorrect) {
     quizOK++; quizStreak++;
-    fb.textContent = `✓ Correct — ${correctYear}`;
+    fb.textContent = `✓ Correct — ${correctDate}`;
     fb.className = 'quiz-fb fb-c';
     const hard = getHardDates().filter(e => e !== item.event);
     saveHardDates(hard);
   } else {
     quizBad++; quizStreak = 0;
     quizMissed.push(item);
-    fb.textContent = `✗ The answer was ${correctYear} — ${item.event}`;
+    fb.textContent = `✗ The answer was ${correctDate}`;
     fb.className = 'quiz-fb fb-w';
     const hard = getHardDates();
     if (!hard.includes(item.event)) hard.push(item.event);
