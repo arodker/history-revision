@@ -12,7 +12,10 @@
       "Black Codes",
       "vetoed"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "reconstruction"
+    ]
   },
   {
     "no": 2,
@@ -27,7 +30,10 @@
       "Reconstruction Act",
       "Blanche Bruce"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "reconstruction"
+    ]
   },
   {
     "no": 3,
@@ -42,12 +48,15 @@
       "Panic of 1873",
       "Slaughterhouse"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "reconstruction"
+    ]
   },
   {
     "no": 4,
     "section": "aa",
-    "period": "gilded-age",
+    "period": "gilded-age-ds",
     "front": "What was the impact of Jim Crow laws on African Americans?",
     "p1": "Spread across South from 1877 → segregated schools, transport, hospitals, parks, restaurants, churches.",
     "p2": "Voter suppression from 1890 → literacy tests, poll taxes, grandfather clauses → Mississippi Black voter registration: 90% (1867) → 6% (1892).",
@@ -57,12 +66,15 @@
       "voter suppression",
       "Plessy"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "gilded-age-ds"
+    ]
   },
   {
     "no": 5,
     "section": "aa",
-    "period": "gilded-age",
+    "period": "gilded-age-ds",
     "front": "What was the significance of the Wilmington Coup (1898)?",
     "p1": "White supremacists violently overthrew the biracial elected government of Wilmington, North Carolina.",
     "p2": "Showed that even legitimate political power could be destroyed by organised white violence without federal protection.",
@@ -72,12 +84,15 @@
       "white supremacists",
       "Mississippi v Williams"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "gilded-age-ds"
+    ]
   },
   {
     "no": 6,
     "section": "aa",
-    "period": "gilded-age",
+    "period": "gilded-age-ds",
     "front": "What was the significance of Booker T. Washington?",
     "p1": "Atlanta Compromise (1895) → accepted social segregation in exchange for economic self-improvement → critics saw this as legitimising Jim Crow and abandoning political rights.",
     "p2": "Tuskegee Institute (1881) → trained 1,500 Black students in practical skills annually → Negro Business League (1900) → 600 chapters → 50,000+ Black-owned businesses by 1890s → first Black informal presidential advisor (Roosevelt, 1901).",
@@ -88,12 +103,15 @@
       "Negro Business League",
       "Du Bois"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "gilded-age-ds"
+    ]
   },
   {
     "no": 7,
     "section": "aa",
-    "period": "gilded-age",
+    "period": "gilded-age-ds",
     "front": "What were the criticisms of Booker T. Washington's Atlanta Compromise?",
     "p1": "Du Bois argued the Atlanta Compromise (1895) sacrificed political and social rights for economic gains — Washington's acceptance of segregation legitimised Jim Crow. Du Bois founded the Niagara Movement (1905) in direct opposition, demanding full civil and political rights.",
     "p2": "William Monroe Trotter: Washington's autocratic control of Black organisations ('Tuskegee Machine') — he controlled Black newspapers, charities and political appointments and was suspicious of critics. Ida B. Wells criticised his silence on lynching.",
@@ -104,7 +122,10 @@
       "Tuskegee Machine",
       "NAACP 1909"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "gilded-age-ds"
+    ]
   },
   {
     "no": 8,
@@ -119,7 +140,14 @@
       "Smith v Allwright",
       "Brown v Board"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "progressive-wwi",
+      "boom-bust",
+      "new-deal-ds",
+      "wwii-postwar",
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 9,
@@ -134,12 +162,16 @@
       "Black Star Line",
       "deported 1927"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "progressive-wwi",
+      "boom-bust"
+    ]
   },
   {
     "no": 10,
     "section": "aa",
-    "period": "boom-bust",
+    "period": "reconstruction",
     "front": "What was the role of State Governments in hindering African Americans?",
     "p1": "'State Rights' ideology → argued states should manage affairs without federal interference → used to block civil rights enforcement.",
     "p2": "Massive resistance to Brown (1954) → Virginia closed all public schools rather than integrate → 300+ private 'segregation academies' founded.",
@@ -149,12 +181,23 @@
       "massive resistance",
       "Wallace/Faubus"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "reconstruction",
+      "gilded-age-ds",
+      "progressive-wwi",
+      "boom-bust",
+      "new-deal-ds",
+      "wwii-postwar",
+      "civil-rights-movement",
+      "black-power-ds",
+      "after-black-power"
+    ]
   },
   {
     "no": 11,
     "section": "aa",
-    "period": "new-deal",
+    "period": "new-deal-ds",
     "front": "What was the impact of the New Deal on African American political rights?",
     "p1": "FDR created informal 'Black Cabinet' → led by Mary McLeod Bethune → influenced New Deal programmes for Black Americans.",
     "p2": "Eleanor Roosevelt advocated for civil rights + supported anti-lynching bills. African Americans began voting Democratic in large numbers → major long-term political shift.",
@@ -164,7 +207,10 @@
       "Eleanor Roosevelt",
       "Red Scare"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "new-deal-ds"
+    ]
   },
   {
     "no": 12,
@@ -179,7 +225,11 @@
       "Brown v Board",
       "most liberal"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "wwii-postwar",
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 13,
@@ -194,7 +244,10 @@
       "separate but equal",
       "massive resistance"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "wwii-postwar"
+    ]
   },
   {
     "no": 14,
@@ -209,7 +262,10 @@
       "Birmingham",
       "Selma"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 15,
@@ -224,7 +280,10 @@
       "John Lewis",
       "Carmichael"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 16,
@@ -239,7 +298,10 @@
       "no media images",
       "key lesson"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 17,
@@ -254,7 +316,10 @@
       "70,000 students",
       "SNCC founded"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 18,
@@ -269,7 +334,10 @@
       "fire-bombings",
       "interstate desegregation"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 19,
@@ -284,7 +352,10 @@
       "moral duty",
       "Church bombings"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 20,
@@ -299,7 +370,10 @@
       "I Have a Dream",
       "Malcolm X 'farce'"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 21,
@@ -314,7 +388,10 @@
       "Johnson treatment",
       "de facto North"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 22,
@@ -329,12 +406,15 @@
       "Bloody Sunday",
       "Voting Rights Act"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 23,
     "section": "aa",
-    "period": "black-power",
+    "period": "black-power-ds",
     "front": "What were the key ideas of Malcolm X and the Nation of Islam?",
     "p1": "NOI → Black nationalism + separatism → rejected integration → 'by any means necessary' → self-defence against white supremacy.",
     "p2": "NOI grew from 400 members (1952) → 40,000 (1960) under Malcolm X → addressed Northern urban poverty King's movement neglected.",
@@ -344,12 +424,15 @@
       "400 → 40,000",
       "post-Hajj"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "black-power-ds"
+    ]
   },
   {
     "no": 24,
     "section": "aa",
-    "period": "black-power",
+    "period": "black-power-ds",
     "front": "What were the key ideas of Stokely Carmichael and Black Power?",
     "p1": "1966 → took over SNCC → rejected non-violence + integration → coined 'Black Power' slogan during Meredith March.",
     "p2": "Black Power = self-determination, Black pride, economic self-sufficiency, community control — not dependence on white liberals.",
@@ -359,12 +442,15 @@
       "1966 SNCC",
       "alienated allies"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "black-power-ds"
+    ]
   },
   {
     "no": 25,
     "section": "aa",
-    "period": "black-power",
+    "period": "black-power-ds",
     "front": "Why did Black Power rise to prominence in the late 1960s?",
     "p1": "Failures of CRM in North → SCLC/NAACP focused on Southern desegregation → Northern urban communities still faced poverty + police violence. King's Chicago (1966) failed.",
     "p2": "Vietnam War → African Americans disproportionately drafted → returned radicalised → war severed King–LBJ relationship → media attention shifted.",
@@ -374,12 +460,15 @@
       "Vietnam radicalised",
       "Watts 1965"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "black-power-ds"
+    ]
   },
   {
     "no": 26,
     "section": "aa",
-    "period": "after-black-power",
+    "period": "black-power-ds",
     "front": "What was the impact of Nixon's and Reagan's policies on African Americans?",
     "p1": "Nixon's 'Law and Order' (1968) → War on Drugs → disproportionately targeted Black communities. Reagan (1981–89) → welfare cuts deepened economic disparities → school desegregation reversed through judicial weakening of bussing → by 1992, 40% of Black students in majority-Black schools.",
     "p2": "Supreme Court became increasingly conservative under Reagan → affirmative action weakened → Bakke (1978) precedent extended. Reagan and Bush labelled affirmative action 'reverse discrimination' and reduced federal enforcement.",
@@ -390,7 +479,11 @@
       "25% incarcerated",
       "affirmative action"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "black-power-ds",
+      "after-black-power"
+    ]
   },
   {
     "no": 27,
@@ -405,7 +498,10 @@
       "Jesse Jackson",
       "54% turnout"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "after-black-power"
+    ]
   },
   {
     "no": 28,
@@ -420,7 +516,10 @@
       "Howard University",
       "closed 1872"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "reconstruction"
+    ]
   },
   {
     "no": 29,
@@ -435,12 +534,15 @@
       "Enforcement Acts",
       "after 1877"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "reconstruction"
+    ]
   },
   {
     "no": 30,
     "section": "aa",
-    "period": "gilded-age",
+    "period": "gilded-age-ds",
     "front": "What was the impact of lynching on African American social rights?",
     "p1": "Lynching epidemic → 100+ per year in early 1890s → used as tool of racial terror to enforce social hierarchy and deter political participation.",
     "p2": "Ida B. Wells → 'Southern Horrors' (1892) → documented frequency + disproved myth it was response to violent crime → national + international campaign.",
@@ -450,12 +552,15 @@
       "Ida B. Wells",
       "Congress defeated bills"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "gilded-age-ds"
+    ]
   },
   {
     "no": 31,
     "section": "aa",
-    "period": "gilded-age",
+    "period": "gilded-age-ds",
     "front": "What was the impact of convict leasing on African Americans?",
     "p1": "Exploited 13th Amendment loophole → 'except as punishment for crime' → Southern states arrested African Americans on trivial charges → leased to private companies as unpaid labour.",
     "p2": "Grew across the South in the 1880s → effectively recreated slavery → dangerous conditions, no pay, no rights.",
@@ -465,12 +570,15 @@
       "1880s",
       "unpaid labour"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "gilded-age-ds"
+    ]
   },
   {
     "no": 32,
     "section": "aa",
-    "period": "gilded-age",
+    "period": "gilded-age-ds",
     "front": "What was the role of anti-civil rights groups in hindering African American rights?",
     "p1": "KKK → violence at poll booths, lynching, destruction of Black organisations → Colfax Massacre (1873): 100+ killed to prevent voting.",
     "p2": "White Citizens Councils (1955) → 'respectable' opposition to integration → pressured employers, banks and landlords to discriminate → counterpart to KKK in the 1950s–60s.",
@@ -480,12 +588,15 @@
       "White Citizens Councils",
       "Lost Cause"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "gilded-age-ds"
+    ]
   },
   {
     "no": 33,
     "section": "aa",
-    "period": "gilded-age",
+    "period": "gilded-age-ds",
     "front": "What was the role of Social Darwinism and the 'Lost Cause' myth?",
     "p1": "'Lost Cause' myth → Southern historians + United Daughters of the Confederacy → romanticised slavery + Confederacy → justified Jim Crow as natural social order.",
     "p2": "Social Darwinism → pseudoscientific extension of Darwin → eugenics seen as modern science → justified racial separation + hostility to interracial marriage.",
@@ -495,7 +606,10 @@
       "Social Darwinism/eugenics",
       "media myths"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "gilded-age-ds"
+    ]
   },
   {
     "no": 34,
@@ -510,7 +624,10 @@
       "5 million members",
       "media power"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "progressive-wwi"
+    ]
   },
   {
     "no": 35,
@@ -526,7 +643,10 @@
       "Red Summer",
       "Elaine Massacre"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "progressive-wwi"
+    ]
   },
   {
     "no": 36,
@@ -541,7 +661,10 @@
       "The Crisis",
       "no political gains"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "boom-bust"
+    ]
   },
   {
     "no": 37,
@@ -556,7 +679,10 @@
       "300 killed",
       "economic success = backlash"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "boom-bust"
+    ]
   },
   {
     "no": 38,
@@ -572,7 +698,10 @@
       "NOI 1930",
       "Democratic coalition"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "boom-bust"
+    ]
   },
   {
     "no": 39,
@@ -587,7 +716,10 @@
       "NAACP 50k → 500k",
       "Cold War optics"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "wwii-postwar"
+    ]
   },
   {
     "no": 40,
@@ -602,7 +734,10 @@
       "all-white jury",
       "galvanised movement"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "wwii-postwar"
+    ]
   },
   {
     "no": 41,
@@ -617,7 +752,11 @@
       "Kennedy quote",
       "decolonisation"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "wwii-postwar",
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 42,
@@ -632,7 +771,10 @@
       "King + Bull Connor",
       "Emmett Till"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 43,
@@ -647,12 +789,16 @@
       "Beyond Vietnam speech",
       "media shifted"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "civil-rights-movement",
+      "black-power-ds"
+    ]
   },
   {
     "no": 44,
     "section": "aa",
-    "period": "black-power",
+    "period": "black-power-ds",
     "front": "What was the impact of the Black Panther Party's community programmes?",
     "p1": "Free breakfast programmes → fed 20,000 children per day → 'survival programmes' addressed poverty the civil rights legislation had not solved.",
     "p2": "13 health clinics established → screened thousands for sickle cell anaemia → People's Free Medical Centres in 13 deprived areas. 60+ community schools.",
@@ -662,12 +808,15 @@
       "13 clinics",
       "10-Point Programme"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "black-power-ds"
+    ]
   },
   {
     "no": 45,
     "section": "aa",
-    "period": "black-power",
+    "period": "black-power-ds",
     "front": "What were the Long Hot Summers (1967) and what caused them?",
     "p1": "150 race riots in 1967 → largest in Detroit and Newark → response to poverty, police brutality and de facto segregation in Northern cities.",
     "p2": "Watts (1965) $40m property damage → exposed failure of non-violence + civil rights legislation to address systemic Northern inequality.",
@@ -677,12 +826,15 @@
       "Detroit/Newark",
       "Law and Order"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "black-power-ds"
+    ]
   },
   {
     "no": 46,
     "section": "aa",
-    "period": "black-power",
+    "period": "black-power-ds",
     "front": "What was the impact of COINTELPRO on Black Power organisations?",
     "p1": "FBI infiltrated Black Power groups → planted informants → manufactured evidence → created internal suspicion + divisions.",
     "p2": "Arrests + assassinations: Fred Hampton (Black Panther leader) killed in FBI-orchestrated raid 1969 → Panthers collapsed by 1982.",
@@ -692,7 +844,10 @@
       "Fred Hampton 1969",
       "5,000 members"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "black-power-ds"
+    ]
   },
   {
     "no": 48,
@@ -707,7 +862,10 @@
       "$1 billion",
       "all-white jury"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "after-black-power"
+    ]
   },
   {
     "no": 49,
@@ -722,12 +880,15 @@
       "crop-lien",
       "25% owned land 1900"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "reconstruction"
+    ]
   },
   {
     "no": 50,
     "section": "aa",
-    "period": "gilded-age",
+    "period": "gilded-age-ds",
     "front": "What evidence is there of Black economic success during the Gilded Age?",
     "p1": "Parallel businesses emerged in the de jure segregated South — 50,000+ Black-owned businesses by 1890s including grocery stores, laundrettes, barbershops and 40 Black-owned banks. 'Black towns' like Mound Bayou, Mississippi had 150+ Black businesses. Booker T. Washington's Negro Business League (1900) had 600 chapters.",
     "p2": "By 1900, c.50,000 African American professionals including doctors, lawyers and teachers (out of a population of 8 million). Literacy rate rose from 10% (1865) to 50% (1900). African American landownership reached 15 million acres by early 20th century — up from almost nothing in 1865.",
@@ -738,7 +899,10 @@
       "50,000 professionals",
       "literacy 50%"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "gilded-age-ds"
+    ]
   },
   {
     "no": 51,
@@ -753,12 +917,18 @@
       "Harlem/South Side",
       "40% skilled jobs North"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "progressive-wwi",
+      "boom-bust",
+      "wwii-postwar",
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 52,
     "section": "aa",
-    "period": "progressive-wwi",
+    "period": "boom-bust",
     "front": "What was the significance of Philip Randolph and the BSCP?",
     "p1": "BSCP (Brotherhood of Sleeping Car Porters) founded 1925 → first successful Black union → led by Randolph → protected Pullman Company porters.",
     "p2": "First Black union to receive AFL recognition (1935) → secured contract 1937: higher wages, shorter hours, paid uniforms → proved Black workers could organise.",
@@ -768,12 +938,17 @@
       "AFL recognition 1935",
       "Executive Order 8802"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "boom-bust",
+      "new-deal-ds",
+      "wwii-postwar"
+    ]
   },
   {
     "no": 55,
     "section": "aa",
-    "period": "new-deal",
+    "period": "new-deal-ds",
     "front": "How did the First New Deal affect African Americans economically?",
     "p1": "FERA → direct relief → 20–30% of recipients were African American. CCC → employed c.200,000 African Americans (10% of enrolment). PWA → 65,000+ in infrastructure jobs by 1940.",
     "p2": "Some Black sharecroppers became independent farmers through federal assistance → Black Cabinet influenced programme delivery.",
@@ -783,12 +958,15 @@
       "200,000 sharecroppers displaced",
       "NRA manipulated"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "new-deal-ds"
+    ]
   },
   {
     "no": 56,
     "section": "aa",
-    "period": "new-deal",
+    "period": "new-deal-ds",
     "front": "How did the Second New Deal affect African Americans?",
     "p1": "WPA → infrastructure jobs → 15% of workers were African American. Social Security Act → pensions + unemployment insurance for the first time.",
     "p2": "Wagner Act (1935) → recognised BSCP → first Black union to win AFL recognition → but inadvertently created 'closed shops' → white-only unions could dominate.",
@@ -798,12 +976,15 @@
       "Wagner Act/BSCP",
       "600,000 youths"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "new-deal-ds"
+    ]
   },
   {
     "no": 57,
     "section": "aa",
-    "period": "new-deal",
+    "period": "new-deal-ds",
     "front": "What were the economic limitations of the New Deal for African Americans?",
     "p1": "Social Security excluded agricultural + domestic workers → 65% of Black workers → most significant exclusion from New Deal economic protection.",
     "p2": "Aid administered by Southern states → whites controlled distribution → African Americans discriminated against in application of relief policies.",
@@ -813,7 +994,10 @@
       "Southern administration",
       "Red Scare"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "new-deal-ds"
+    ]
   },
   {
     "no": 58,
@@ -828,7 +1012,10 @@
       "2 million defence jobs",
       "first mass movement success"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "wwii-postwar"
+    ]
   },
   {
     "no": 59,
@@ -843,7 +1030,10 @@
       "double unemployment",
       "bifurcation"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "wwii-postwar"
+    ]
   },
   {
     "no": 60,
@@ -858,12 +1048,16 @@
       "EEOC",
       "58% of white income 1970"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "civil-rights-movement",
+      "black-power-ds"
+    ]
   },
   {
     "no": 61,
     "section": "aa",
-    "period": "civil-rights-movement",
+    "period": "progressive-wwi",
     "front": "What was the strategy and significance of the NUL (National Urban League)?",
     "p1": "Founded 1910 → worked to improve access to jobs, housing and healthcare in Northern cities → helped 250,000 secure housing by 1960s.",
     "p2": "Whitney Young, NUL leader → advised LBJ on anti-poverty initiatives → economic focus complemented NAACP's legal strategy.",
@@ -873,12 +1067,16 @@
       "250,000 housing",
       "advised LBJ"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "progressive-wwi",
+      "civil-rights-movement"
+    ]
   },
   {
     "no": 62,
     "section": "aa",
-    "period": "black-power",
+    "period": "black-power-ds",
     "front": "What was the significance of DRUM and the LRBW?",
     "p1": "DRUM (Dodge Revolutionary Union Movement, 1968) → organised wildcat strikes at Chrysler's Dodge Main plant → challenged racial pay gap in auto industry → first Black-led union movement to win concessions from a major manufacturer.",
     "p2": "LRBW (League of Revolutionary Black Workers) → pushed for Black leadership in UAW → by early 1970s Black workers 30% of UAW membership → won more Black leaders in UAW and GM management.",
@@ -889,12 +1087,15 @@
       "30% UAW",
       "LRBW collapsed"
     ],
-    "isDepthStudy": true
+    "isDepthStudy": true,
+    "periods": [
+      "black-power-ds"
+    ]
   },
   {
     "no": 63,
     "section": "aa",
-    "period": "after-black-power",
+    "period": "black-power-ds",
     "front": "What was the impact of affirmative action on African American economic rights?",
     "p1": "First introduced Philadelphia 1969 → spread nationally → African Americans in white-collar jobs: 5% (1960) → 15% (mid-1970s) → growing Black middle class.",
     "p2": "Regents of University of California v Bakke (1978) → racial quotas unconstitutional → weakened programme. Reagan/Bush labelled it 'reverse discrimination' → federal enforcement reduced.",
@@ -904,7 +1105,11 @@
       "Bakke 1978",
       "bifurcation"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "black-power-ds",
+      "after-black-power"
+    ]
   },
   {
     "no": 64,
@@ -919,38 +1124,45 @@
       "43% homeownership",
       "bifurcation"
     ],
-    "isDepthStudy": false
+    "isDepthStudy": false,
+    "periods": [
+      "after-black-power"
+    ]
   },
   {
     "no": 65,
     "section": "aa",
-    "period": "gilded-age",
+    "period": "gilded-age-ds",
     "isDepthStudy": true,
     "front": "How different were experiences of African Americans outside of the South during the Gilded Age?",
-    "p1": "North: better access to industrial jobs and education → growing Black middle class. African Americans established newspapers, businesses and professional organisations. BUT de facto segregation common — in Chicago 5,000 African Americans confined to one area; in New York Harlem became a separate district for 23,000. White unions hostile — most relegated to menial jobs (janitors, domestic workers).",
-    "p2": "West: relative racial indifference — worked as cowboys, trappers, miners, shopkeepers. Bass Reeves: Deputy US Marshal who arrested thousands of criminals. Mary Fields: former slave, famous stagecoach driver. All-Black towns: Allensworth (California) and Dearfield (Colorado) provided spaces for self-governance.",
-    "p3": "Limitations of the West: Exoduster movement (1879) — 40,000 African Americans fled South to Kansas, only to face economic hardships and hostility. Most worked low-paying, dangerous jobs. Racial violence still present. By 1900, 90% of African Americans still lived in the South — the North and West were exceptions, not the norm.",
+    "p1": "North → better industrial jobs + education → growing Black middle class → BUT de facto segregation — Chicago 5,000 confined to one area; NY Harlem separate district for 23,000 → white unions hostile → most in menial jobs",
+    "p2": "West → relative racial indifference → cowboys, trappers, miners, shopkeepers → Bass Reeves: Deputy US Marshal, arrested thousands → Mary Fields: famous stagecoach driver → all-Black towns: Allensworth CA, Dearfield CO",
+    "p3": "Limits → Exoduster movement (1879): 40,000 fled South to Kansas → faced hostility + hardship → racial violence still present → by 1900, 90% of African Americans still in the South — North/West were exceptions",
     "hints": [
       "Bass Reeves",
-      "Exodusters",
-      "Allensworth",
+      "Exodusters 1879",
       "de facto segregation"
+    ],
+    "periods": [
+      "gilded-age-ds"
     ]
   },
   {
     "no": 66,
     "section": "aa",
-    "period": "gilded-age",
+    "period": "gilded-age-ds",
     "isDepthStudy": true,
     "front": "What was the significance of key Supreme Court cases during the Gilded Age?",
-    "p1": "States' Rights doctrine dominated the period — the Supreme Court consistently ruled that the 14th Amendment protected rights of national citizenship only, leaving states free to discriminate. Slaughterhouse Cases (1873) gutted the 14th Amendment's protections. Civil Rights Cases (1883) ruled that the Federal Government could not prevent private discrimination — killed the Civil Rights Act of 1875.",
-    "p2": "Plessy v Ferguson (1896): Homer Plessy challenged segregated railway cars in Louisiana — Supreme Court ruled 'separate but equal' was constitutional. Gave legal cover to Jim Crow segregation across every area of public life for 58 years until Brown (1954). Cumming v Richmond County Board of Education (1899): upheld separate and unequal schools — Black high school closed while white school remained open.",
-    "p3": "Mississippi v Williams (1898): upheld literacy tests and poll taxes as constitutional voter suppression — by 1900, over 90% of African Americans in the South disenfranchised. Together these cases show the Supreme Court as an instrument of oppression during the Gilded Age — systematically dismantling Reconstruction gains and giving constitutional backing to white supremacy.",
+    "p1": "States' Rights doctrine → Supreme Court ruled 14th Amendment only protected national citizenship → states free to discriminate → gave constitutional backing to white supremacy throughout the Gilded Age",
+    "p2": "Plessy v Ferguson (1896) → 'separate but equal' constitutional → Jim Crow legal cover for 58 years → Cumming v Richmond (1899): upheld unequal schools — Black high school closed, white remained open",
+    "p3": "Mississippi v Williams (1898) → upheld literacy tests + poll taxes → by 1900, 90% of Southern African Americans disenfranchised → Supreme Court = instrument of oppression, not protection",
     "hints": [
-      "States Rights",
-      "Plessy",
+      "Plessy 1896",
       "separate but equal",
       "Mississippi v Williams"
+    ],
+    "periods": [
+      "gilded-age-ds"
     ]
   },
   {
@@ -959,62 +1171,71 @@
     "period": "progressive-wwi",
     "isDepthStudy": false,
     "front": "What was the significance of W.E.B. Du Bois?",
-    "p1": "First African American to receive a PhD from Harvard (1895). Niagara Movement (1905) — demanded full civil and political rights, directly opposing Washington's accommodation strategy. Co-founded NAACP (1909) — became editor of The Crisis magazine, reaching 100,000 subscribers by 1920.",
-    "p2": "'Talented tenth' theory: the educated Black professional class should lead liberation — through culture, intellect and political agitation, not just vocational training. Pan-Africanism: Du Bois organised Pan-African Congresses (1919, 1921, 1923) — connected African American struggle to global anti-colonial movements.",
-    "p3": "Limitations: Du Bois's middle-class focus meant he struggled to connect with the economic needs of the poorest African Americans. His socialist leanings made him a target during the Red Scare — surveilled and harassed by the FBI. Emigrated to Ghana (1961) after being disillusioned with American racism.",
+    "p1": "First Black Harvard PhD (1895) → Niagara Movement (1905): demanded full civil + political rights, directly opposed Washington → co-founded NAACP (1909) → The Crisis: 100,000 subscribers by 1920",
+    "p2": "'Talented tenth' → educated Black professional class to lead liberation through intellect + political agitation → Pan-Africanism: organised Pan-African Congresses 1919, 1921, 1923 → linked AA struggle to global anti-colonialism",
+    "p3": "Limits → middle-class focus → struggled to connect with poorest African Americans → socialist leanings → FBI surveillance during Red Scare → emigrated to Ghana 1961, disillusioned with American racism",
     "hints": [
-      "Harvard PhD",
       "Niagara 1905",
       "NAACP 1909",
       "talented tenth"
+    ],
+    "periods": [
+      "progressive-wwi",
+      "boom-bust"
     ]
   },
   {
     "no": 68,
     "section": "aa",
-    "period": "new-deal",
+    "period": "new-deal-ds",
     "isDepthStudy": true,
     "front": "How strong was the position of African Americans by 1932?",
-    "p1": "Progress since Reconstruction: literacy rose from 10% (1865) to 85% (1930). 300,000 African Americans attended Northern public schools. NAACP (1909) had won US v Guinn (1915) removing grandfather clauses. Great Migration created influential Black urban communities — Harlem Renaissance. Some Black political representation in Northern cities.",
-    "p2": "Weak position in 1932: voter suppression kept only 2% of African Americans registered to vote in the South. 75% of Southern African Americans still sharecroppers. Great Depression: Black unemployment 50% vs 25% national average. KKK 15% of eligible population — 50+ lynchings annually in the 1920s.",
-    "p3": "Structurally weak: anti-lynching legislation repeatedly blocked in Congress. Social and economic gains of Reconstruction completely reversed in the South. NAACP had some legal successes but lacked political power. 90% of African Americans still in the South — most with no vote, land or economic security.",
+    "p1": "Progress: literacy 10% (1865) → 85% (1930) → 300,000 in Northern schools → NAACP won US v Guinn (1915) removing grandfather clauses → Great Migration created Harlem Renaissance → some Black political representation in North",
+    "p2": "Weakness: only 2% registered to vote in South → 75% still sharecroppers → Black unemployment 50% vs 25% national (Depression) → KKK 15% of eligible population → 50+ lynchings/year in 1920s",
+    "p3": "Structural limits: anti-lynching bills repeatedly blocked → Reconstruction gains fully reversed in South → NAACP legal successes but no political power → 90% still in South with no vote, land or security",
     "hints": [
-      "literacy 85%",
       "2% registered",
       "50% unemployment",
-      "KKK 15%"
+      "literacy 85%"
+    ],
+    "periods": [
+      "new-deal-ds"
     ]
   },
   {
     "no": 69,
     "section": "aa",
-    "period": "new-deal",
+    "period": "new-deal-ds",
     "isDepthStudy": true,
     "front": "Was Roosevelt's administration an effective supporter of African American rights?",
-    "p1": "Effective: appointed more African Americans to government than any previous president — Mary McLeod Bethune, William H. Hastie (first Black federal judge 1937), Robert Weaver. Black Cabinet worked to represent Black interests. Eleanor Roosevelt resigned from DAR to support Marian Anderson's Lincoln Memorial concert (1939). NYA trained 600,000 Black youths.",
-    "p2": "Voting shift: in 1932, ¾ of African Americans voted Republican. By 1936, ¾ voted Democrat — a fundamental political realignment. Harold Ickes (Secretary of Interior) pushed anti-segregation policies. WPA employed 1 million+ African Americans by 1939 and funded 16 Black theatre groups.",
-    "p3": "Ineffective: refused to support anti-lynching legislation — feared losing Southern Democrats. AAA displaced 200,000 Black sharecroppers. Social Security excluded 65% of Black workers. CCC segregated. New Deal's reliance on Southern Democrats meant civil rights reforms consistently side-lined. Black Cabinet had limited real power — segregated from white leadership.",
+    "p1": "Effective: appointed more Black Americans to gov than any predecessor → Black Cabinet led by Bethune → Eleanor Roosevelt resigned DAR to support Marian Anderson (1939) → Hastie: first Black federal judge 1937 → NYA trained 600,000 Black youths",
+    "p2": "Political shift: ¾ AA voted Republican 1932 → ¾ voted Democrat 1936 → fundamental realignment → WPA employed 1 million+ AA by 1939 → Harold Ickes pushed anti-segregation policies",
+    "p3": "Ineffective: refused anti-lynching bill — feared losing Southern Democrats → AAA displaced 200,000 Black sharecroppers → Social Security excluded 65% of Black workers → CCC segregated → civil rights consistently side-lined",
     "hints": [
       "Black Cabinet",
-      "Eleanor Roosevelt",
       "anti-lynching failed",
       "¾ voted Democrat"
+    ],
+    "periods": [
+      "new-deal-ds"
     ]
   },
   {
     "no": 70,
     "section": "aa",
-    "period": "black-power",
+    "period": "black-power-ds",
     "isDepthStudy": true,
     "front": "What was the cultural impact of Black Power?",
-    "p1": "Black Arts Movement (1965–75): Amiri Baraka founded the Black Arts Repertory Theatre (1965) — 'cultural wing of Black Power'. Hundreds of Black arts organisations created across the USA. Poetry, theatre, visual art and music celebrated Black identity and challenged white cultural norms. James Brown's 'Say It Loud – I'm Black and I'm Proud' (1968) became an anthem.",
-    "p2": "Black Studies: more than 500 Black Studies programmes established in US universities by 1971 — demanded by student activists. Afro hairstyle, dashikis and African cultural symbols became acts of political assertion. 'Black is Beautiful' challenged white beauty standards embedded in American culture since slavery.",
-    "p3": "Limitations: cultural impact did not translate into economic or political gains for the majority. Black Power's cultural renaissance was primarily felt by middle-class and educated African Americans — those in ghettos saw little change. COINTELPRO (1967–71) destroyed key cultural organisations alongside political ones.",
+    "p1": "Black Arts Movement (1965–75): Amiri Baraka founded Black Arts Repertory Theatre 1965 — 'cultural wing of Black Power' → 500+ Black arts organisations → James Brown 'Say It Loud — I'm Black and I'm Proud' (1968)",
+    "p2": "500+ Black Studies programmes in US universities by 1971 → demanded by student activists → Afro hairstyle, dashikis = acts of political assertion → 'Black is Beautiful' challenged white beauty standards",
+    "p3": "Limits → cultural gains did not translate to economic/political progress → mainly felt by middle-class + educated → those in ghettos saw little change → COINTELPRO destroyed key cultural organisations alongside political ones",
     "hints": [
       "Black Arts Movement",
-      "Black Studies",
-      "Black is Beautiful",
-      "Say It Loud"
+      "Black Studies 500+",
+      "Black is Beautiful"
+    ],
+    "periods": [
+      "black-power-ds"
     ]
   }
 ]
