@@ -43,7 +43,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.6rem;align-items:center}
 .tag{font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px}
 .t-grey{background:var(--tag-bg);color:var(--tag-col)}.t-aa{background:var(--aa-bg);color:var(--aa)}.t-lab{background:var(--lab-bg);color:var(--lab)}.t-na{background:var(--na-bg);color:var(--na)}.t-wom{background:var(--wom-bg);color:var(--wom)}
-.t-tp{background:#FEF9C3;color:#7a5900}.t-ds{background:#F0FDF4;color:#166534}.t-obs{background:#FEE2E2;color:#991b1b}
+.t-tp{background:#FEF9C3;color:#7a5900}.t-ds{background:#F0FDF4;color:#166534}.t-obs{background:#FEE2E2;color:#991b1b}.t-fac{background:#EEF3FB;color:#1B4B8A}
 .card-heading{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;line-height:1.3;text-decoration:underline;text-underline-offset:3px}
 .kc-summary{font-size:.86rem;font-style:italic;color:var(--muted);margin-bottom:.75rem;line-height:1.6}
 .factor-key{font-size:.7rem;color:var(--muted);background:var(--subtle);border-radius:7px;padding:.4rem .65rem;margin-bottom:.75rem;line-height:1.6}
@@ -163,6 +163,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     <div class="filter-row"><select id="k-period" onchange="jumpToPeriod()"><option value="">-- select a period --</option></select></div>
     <div class="filter-row" id="k-ds-row" style="display:none"><select id="k-ds" onchange="jumpToDs()"><option value="">-- select a depth study debate --</option></select></div>
     <div class="filter-row" id="k-obs-row" style="display:none"><select id="k-obs" onchange="jumpToObs()"><option value="">-- select an obstacle --</option></select></div>
+    <div class="filter-row" id="k-fac-row" style="display:none"><select id="k-fac" onchange="jumpToFac()"><option value="">-- select a factor --</option></select></div>
     <div id="k-out"><div class="empty">Select a period above to begin.</div></div>
     <div style="display:flex;gap:8px;margin-top:.5rem"><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(-1)">Prev</button><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(1)">Next</button></div>
   </div>
@@ -252,7 +253,7 @@ function buildPeriodDropdown(){
   var obsRow=document.getElementById('k-obs-row');
   sel.innerHTML='<option value="">-- select a period --</option>';
   KC.forEach(function(c,i){
-    if(!c.isDepthStudy&&!c.isObstacle){
+    if(!c.isDepthStudy&&!c.isObstacle&&!c.isFactor){
       var o=document.createElement('option');o.value=i;o.textContent=c.heading;sel.appendChild(o);
     }
   });
@@ -276,12 +277,26 @@ function buildPeriodDropdown(){
       }
     });
   } else { obsRow.style.display='none'; }
+  var facRow=document.getElementById('k-fac-row');
+  var facSel=document.getElementById('k-fac');
+  var facCards=KC.filter(function(c){return c.isFactor;});
+  if(facCards.length){
+    facRow.style.display='';
+    facSel.innerHTML='<option value="">-- select a factor --</option>';
+    KC.forEach(function(c,i){
+      if(c.isFactor){
+        var o=document.createElement('option');o.value=i;o.textContent=c.heading;facSel.appendChild(o);
+      }
+    });
+  } else { facRow.style.display='none'; }
   kPeriodIdx=0;document.getElementById('k-out').innerHTML='<div class="empty">Select a period above to begin.</div>';
 }
-function jumpToObs(){var sel=document.getElementById('k-obs');if(sel.value==='')return;document.getElementById('k-period').value='';document.getElementById('k-ds').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
-function jumpToPeriod(){var sel=document.getElementById('k-period');if(sel.value==='')return;document.getElementById('k-ds').value='';document.getElementById('k-obs').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
-function stepPeriod(dir){if(!KC.length)return;var eraIdxs=KC.map(function(c,i){return(!c.isDepthStudy&&!c.isObstacle)?i:-1;}).filter(function(i){return i>=0;});var cur=eraIdxs.indexOf(kPeriodIdx);if(cur===-1)cur=0;var next=eraIdxs[(cur+dir+eraIdxs.length)%eraIdxs.length];kPeriodIdx=next;document.getElementById('k-period').value=next;document.getElementById('k-ds').value='';document.getElementById('k-obs').value='';renderKCard(kPeriodIdx);}
-function renderKCard(idx){var card=KC[idx];if(!card){document.getElementById('k-out').innerHTML='<div class="empty">Content coming soon.</div>';return;}var u=UNITS[currentUnit],badges='';if(card.isTurningPoint)badges+='<span class="tag t-tp">⭐ Turning Point</span>';if(card.isDepthStudy)badges+='<span class="tag t-ds">🔑 Depth Study</span>';if(card.isObstacle)badges+='<span class="tag t-obs">🚧 Obstacle</span>';var sub=(card.subheadings||[]).map(function(s){return '<div class="kc-sub">'+s.label+'</div><ul>'+(s.facts||[]).map(function(f){return '<li>'+f+'</li>';}).join('')+'</ul>';}).join('');document.getElementById('k-out').innerHTML='<div class="card"><div class="stripe s-'+currentUnit+'"></div><div class="inner"><div class="meta"><span class="tag t-'+currentUnit+'">'+u.short+'</span>'+badges+'</div><div class="card-heading">'+card.heading+'</div>'+(card.summary?'<p class="kc-summary">'+card.summary+'</p>':'')+(card.factorKey?'<div class="kc-factor-key">'+card.factorKey+'</div>':'')+sub+'</div></div>';}
+function jumpToFac(){var sel=document.getElementById('k-fac');if(sel.value==='')return;document.getElementById('k-period').value='';document.getElementById('k-ds').value='';document.getElementById('k-obs').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
+function jumpToDs(){var sel=document.getElementById('k-ds');if(sel.value==='')return;document.getElementById('k-period').value='';document.getElementById('k-obs').value='';document.getElementById('k-fac').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
+function jumpToObs(){var sel=document.getElementById('k-obs');if(sel.value==='')return;document.getElementById('k-period').value='';document.getElementById('k-ds').value='';document.getElementById('k-fac').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
+function jumpToPeriod(){var sel=document.getElementById('k-period');if(sel.value==='')return;document.getElementById('k-ds').value='';document.getElementById('k-obs').value='';document.getElementById('k-fac').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
+function stepPeriod(dir){if(!KC.length)return;var eraIdxs=KC.map(function(c,i){return(!c.isDepthStudy&&!c.isObstacle&&!c.isFactor)?i:-1;}).filter(function(i){return i>=0;});var cur=eraIdxs.indexOf(kPeriodIdx);if(cur===-1)cur=0;var next=eraIdxs[(cur+dir+eraIdxs.length)%eraIdxs.length];kPeriodIdx=next;document.getElementById('k-period').value=next;document.getElementById('k-ds').value='';document.getElementById('k-obs').value='';document.getElementById('k-fac').value='';renderKCard(kPeriodIdx);}
+function renderKCard(idx){var card=KC[idx];if(!card){document.getElementById('k-out').innerHTML='<div class="empty">Content coming soon.</div>';return;}var u=UNITS[currentUnit],badges='';if(card.isDepthStudy)badges+='<span class="tag t-ds">🔑 Depth Study</span>';if(card.isObstacle)badges+='<span class="tag t-obs">🚧 Obstacle</span>';if(card.isFactor)badges+='<span class="tag t-fac">⚙️ Factor</span>';var sub=(card.subheadings||[]).map(function(s){return '<div class="kc-sub">'+s.label+'</div><ul>'+(s.facts||[]).map(function(f){return '<li>'+f+'</li>';}).join('')+'</ul>';}).join('');document.getElementById('k-out').innerHTML='<div class="card"><div class="stripe s-'+currentUnit+'"></div><div class="inner"><div class="meta"><span class="tag t-'+currentUnit+'">'+u.short+'</span>'+badges+'</div><div class="card-heading">'+card.heading+'</div>'+(card.summary?'<p class="kc-summary">'+card.summary+'</p>':'')+(card.factorKey?'<div class="kc-factor-key">'+card.factorKey+'</div>':'')+sub+'</div></div>';}
 var quizPool=[],quizIdx=0,quizOK=0,quizBad=0;
 function startQuizCountdown(){var cdEl=document.getElementById('d-countdown'),numEl=document.getElementById('d-countdown-num');numEl.style.color=UNITS[currentUnit].colour;cdEl.style.display='block';var count=3;function tick(){numEl.style.animation='none';void numEl.offsetWidth;numEl.style.animation='cd-pop .35s ease forwards';numEl.textContent=count;if(count===0){numEl.textContent='Go!';setTimeout(function(){cdEl.style.display='none';startQuiz();},500);return;}count--;setTimeout(tick,700);}setTimeout(tick,100);}
 function startQuiz(){if(!DATES.length){document.getElementById('d-out').innerHTML='<div class="empty">No dates loaded yet.</div>';return;}quizPool=shuffle(DATES.slice()).slice(0,Math.min(DATES.length,15));quizIdx=0;quizOK=0;quizBad=0;renderDateQ();}
