@@ -318,14 +318,22 @@ function fdKey(c){return c.section+'|'+c.no;}
 function buildFdSelects(){}
 function fdSyncHints(on){fdHintsOn=on;localStorage.setItem(LS_H,on?'1':'0');['fd-hints-on','fd-hints-on-drill'].forEach(function(id){var el=document.getElementById(id);if(el)el.checked=on;});if(!fdCurrent)return;var chips=document.getElementById('fd-hint-chips');if(fdHintsOn&&fdCurrent.hints&&fdCurrent.hints.length){chips.innerHTML=fdCurrent.hints.map(function(h){return '<span class="tag t-'+currentUnit+'">'+h+'</span>';}).join('');chips.style.display='flex';}else{chips.innerHTML='';chips.style.display='none';}}
 function fdSetup(){fdActiveEras=new Set(ALL_ERAS);fdAllOn=true;fdHintsOn=localStorage.getItem(LS_H)!=='0';['fd-hints-on','fd-hints-on-drill'].forEach(function(id){var el=document.getElementById(id);if(el)el.checked=fdHintsOn;});document.getElementById('fd-start-btn').style.background=UNITS[currentUnit].colour;fdOutstanding=fdGetOutstanding().filter(function(k){return FD.find(function(c){return fdKey(c)===k;});});fdSetOutstanding(fdOutstanding);var pb=document.getElementById('fd-pinned-btn');if(pb)pb.style.display=fdOutstanding.length>0?'block':'none';var bn=document.getElementById('fd-outstanding-banner');if(fdOutstanding.length>0){bn.style.display='block';bn.textContent=fdOutstanding.length+' pinned card'+(fdOutstanding.length>1?'s':'')+' will be woven in.';}else bn.style.display='none';['fd-setup','fd-drill','fd-summary','fd-complete'].forEach(function(id,i){document.getElementById(id).style.display=i===0?'block':'none';});fdPopulateCounts();renderFdSetupWheel();}
-var ALL_ERAS=['reconstruction','gilded-age-ds','progressive-wwi','boom-bust','new-deal-ds','wwii-postwar','civil-rights-movement','black-power-ds','after-black-power'];
+var ALL_ERAS=['reconstruction','gilded-age-ds','gilded-age','progressive-wwi','boom-bust','new-deal-ds','new-deal','wwii-postwar','civil-rights-movement','black-power-ds','black-power','after-black-power'];
+var ERA_PILL_KEYS=['reconstruction','gilded-age-ds','progressive-wwi','boom-bust','new-deal-ds','wwii-postwar','civil-rights-movement','black-power-ds','after-black-power'];
+var DS_PAIRS={'gilded-age-ds':'gilded-age','new-deal-ds':'new-deal','black-power-ds':'black-power'};
 var fdActiveEras=new Set(ALL_ERAS);
 var fdAllOn=true;
 function fdToggleEra(era){
   if(era==='all'){fdActiveEras=new Set(ALL_ERAS);fdAllOn=true;}
-  else if(fdAllOn){fdActiveEras=new Set([era]);fdAllOn=false;}
+  else if(fdAllOn){
+    fdActiveEras=new Set([era]);
+    if(DS_PAIRS[era])fdActiveEras.add(DS_PAIRS[era]);
+    fdAllOn=false;
+  }
   else{
-    if(fdActiveEras.has(era))fdActiveEras.delete(era);else fdActiveEras.add(era);
+    var pair=DS_PAIRS[era];
+    if(fdActiveEras.has(era)){fdActiveEras.delete(era);if(pair)fdActiveEras.delete(pair);}
+    else{fdActiveEras.add(era);if(pair)fdActiveEras.add(pair);}
     if(fdActiveEras.size===0){fdActiveEras=new Set(ALL_ERAS);fdAllOn=true;}
     else if(fdActiveEras.size===ALL_ERAS.length)fdAllOn=true;
   }
@@ -335,7 +343,7 @@ function fdUpdateFilterUI(){
   var u=currentUnit;
   var allEl=document.getElementById('fd-era-all');
   if(allEl)allEl.className='pill'+(fdAllOn?' active-'+u:'');
-  ALL_ERAS.forEach(function(era){
+  ERA_PILL_KEYS.forEach(function(era){
     var el=document.getElementById('fd-era-'+era);
     if(el)el.className='pill'+(!fdAllOn&&fdActiveEras.has(era)?' active-'+u+(era.indexOf('-ds')!==-1?' active-ds':''):'');
   });
@@ -354,7 +362,7 @@ function fdPopulateCounts(){
   var sec=currentUnit;
   var allCount=FD.filter(function(c){return c.section===sec;}).length;
   var allEl=document.getElementById('fd-count-all');if(allEl)allEl.textContent=allCount?'('+allCount+')':'';
-  ALL_ERAS.forEach(function(era){
+  ERA_PILL_KEYS.forEach(function(era){
     var count=FD.filter(function(c){
       if(c.section!==sec)return false;
       var periods=c.periods&&c.periods.length?c.periods:[c.period];
@@ -365,7 +373,7 @@ function fdPopulateCounts(){
   fdUpdateFilterUI();
 }
 function fdStart(){if(!FD.length){alert('No flashcards loaded.');return;}var base=fdFilteredCards();if(!base.length){alert('No cards match this selection.');return;}fdOutstanding=fdGetOutstanding().filter(function(k){return FD.find(function(c){return fdKey(c)===k;});});var outCards=fdOutstanding.map(function(k){return FD.find(function(c){return fdKey(c)===k;});}).filter(Boolean).filter(function(c){return c.section!==currentUnit;});var combined=shuffle(base.slice());outCards.forEach(function(oc,i){combined.splice(Math.min((i+1)*6,combined.length),0,oc);});fdDeck=combined;fdMissed=[];fdGot=0;fdMissCount=0;fdTotal=combined.length;document.getElementById('fd-setup').style.display='none';document.getElementById('fd-drill').style.display='block';fdNext();}
-function fdNext(){if(fdDeck.length===0){fdShowSummary();return;}fdCurrent=fdDeck.shift();fdFlipped=false;var col=UNITS[fdCurrent.section]?UNITS[fdCurrent.section].colour:'#888',tc='t-'+(fdCurrent.section||currentUnit);var PLABELS={'reconstruction':'Reconstruction 1865–77','gilded-age-ds':'Gilded Age 1877–1900','gilded-age':'Gilded Age 1877–1900','progressive-wwi':'Progressive Era 1900–19','boom-bust':'1920s–32','new-deal-ds':'New Deal 1933–41','new-deal':'New Deal 1933–41','wwii-postwar':'WWII & Post-War 1941–54','civil-rights-movement':'Civil Rights 1954–65','black-power-ds':'Black Power 1965–70','black-power':'Black Power 1965–70','after-black-power':'After Black Power 1970–92'};var periodLabel=PLABELS[fdCurrent.period]||fdCurrent.period||UNITS[currentUnit].short;var dsTag=fdCurrent.isDepthStudy?' 🔑':'';document.getElementById('fd-tag').className='fd-tag '+tc;document.getElementById('fd-tag').textContent=periodLabel+dsTag;document.getElementById('fd-tag-back').className='fd-tag '+tc;document.getElementById('fd-tag-back').textContent=periodLabel+dsTag;var out=fdGetOutstanding();document.getElementById('fd-question').textContent=(out.indexOf(fdKey(fdCurrent))!==-1?'[P] ':'')+fdCurrent.front;var pts=document.getElementById('fd-points');pts.innerHTML=['p1','p2','p3'].map(function(k){return fdCurrent[k]?'<li>'+boldHints(fdCurrent[k],fdCurrent.hints)+'</li>':'';}).join('');document.querySelectorAll('#fd-points li').forEach(function(li){li.classList.remove('fd-pt-show');});var chips=document.getElementById('fd-hint-chips');if(fdHintsOn&&fdCurrent.hints&&fdCurrent.hints.length){chips.innerHTML=fdCurrent.hints.map(function(h){return '<span class="tag '+tc+'">'+h+'</span>';}).join('');chips.style.display='flex';}else{chips.innerHTML='';chips.style.display='none';}document.getElementById('fd-front').style.borderLeftColor=col;document.getElementById('fd-back').style.borderLeftColor=col;document.getElementById('fd-card-inner').classList.remove('flipped');document.getElementById('fd-btn-row').style.display='none';fdUpdateProgress();}
+function fdNext(){if(fdDeck.length===0){fdShowSummary();return;}fdCurrent=fdDeck.shift();fdFlipped=false;var col=UNITS[fdCurrent.section]?UNITS[fdCurrent.section].colour:'#888',tc='t-'+(fdCurrent.section||currentUnit);var PLABELS={'reconstruction':'Reconstruction 1865–77','gilded-age-ds':'Gilded Age 1877–1900 🔑','gilded-age':'Gilded Age 1877–1900','progressive-wwi':'Progressive Era 1900–19','boom-bust':'1920s–32','new-deal-ds':'New Deal 1933–41 🔑','new-deal':'New Deal 1933–41','wwii-postwar':'WWII & Post-War 1941–54','civil-rights-movement':'Civil Rights 1954–65','black-power-ds':'Black Power 1965–70 🔑','black-power':'Black Power 1965–70','after-black-power':'After Black Power 1970–92'};var allPeriods=fdCurrent.periods&&fdCurrent.periods.length?fdCurrent.periods:[fdCurrent.period];var periodLabel=allPeriods.map(function(p){return PLABELS[p]||p;}).join(' · ');document.getElementById('fd-tag').className='fd-tag '+tc;document.getElementById('fd-tag').textContent=periodLabel;document.getElementById('fd-tag-back').className='fd-tag '+tc;document.getElementById('fd-tag-back').textContent=periodLabel;var out=fdGetOutstanding();document.getElementById('fd-question').textContent=(out.indexOf(fdKey(fdCurrent))!==-1?'[P] ':'')+fdCurrent.front;var pts=document.getElementById('fd-points');pts.innerHTML=['p1','p2','p3'].map(function(k){return fdCurrent[k]?'<li>'+boldHints(fdCurrent[k],fdCurrent.hints)+'</li>':'';}).join('');document.querySelectorAll('#fd-points li').forEach(function(li){li.classList.remove('fd-pt-show');});var chips=document.getElementById('fd-hint-chips');if(fdHintsOn&&fdCurrent.hints&&fdCurrent.hints.length){chips.innerHTML=fdCurrent.hints.map(function(h){return '<span class="tag '+tc+'">'+h+'</span>';}).join('');chips.style.display='flex';}else{chips.innerHTML='';chips.style.display='none';}document.getElementById('fd-front').style.borderLeftColor=col;document.getElementById('fd-back').style.borderLeftColor=col;document.getElementById('fd-card-inner').classList.remove('flipped');document.getElementById('fd-btn-row').style.display='none';fdUpdateProgress();}
 function boldHints(text,hints){var out=text;(hints||[]).forEach(function(h){var e=h.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');var re=new RegExp('('+e+')','gi');if(re.test(out)){out=out.replace(new RegExp('('+e+')','gi'),'<strong>$1</strong>');}else{h.split(/[\s\/\-]+/).forEach(function(w){if(w.length>=4){var we=w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');out=out.replace(new RegExp('('+we+')','gi'),'<strong>$1</strong>');}});}});return out;}
 function fdSyncHeight(){var inner=document.getElementById('fd-card-inner'),front=document.getElementById('fd-front'),back=document.getElementById('fd-back');if(!inner||!front||!back)return;inner.style.height=Math.max(fdFlipped?back.offsetHeight:front.offsetHeight,140)+'px';}
 function fdFlip(){var inner=document.getElementById('fd-card-inner');if(!fdFlipped){fdFlipped=true;inner.classList.add('flipped');var items=document.querySelectorAll('#fd-points li');items.forEach(function(li,i){setTimeout(function(){li.classList.add('fd-pt-show');fdSyncHeight();},300+i*700);});setTimeout(function(){document.getElementById('fd-btn-row').style.display='grid';fdSyncHeight();},300+items.length*700+400);setTimeout(fdSyncHeight,50);}else if(inner.classList.contains('flipped')){inner.classList.remove('flipped');fdFlipped=false;setTimeout(fdSyncHeight,50);}else{inner.classList.add('flipped');fdFlipped=true;setTimeout(fdSyncHeight,50);}}
