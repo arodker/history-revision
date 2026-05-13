@@ -8,7 +8,12 @@
     "p1": "Johnson issued mass pardons to Southern whites → Confederate land returned → '40 acres and a mule' never realised.",
     "p2": "Black Codes introduced by Southern states → restricted movement, labour, property rights → de facto re-enslavement.",
     "p3": "Johnson actively opposed 14th and 15th Amendments → vetoed both → Congress overruled him.",
-    "hints": ["mass pardons", "Black Codes", "vetoed"]
+    "hints": [
+      "mass pardons",
+      "Black Codes",
+      "vetoed"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 2,
@@ -19,7 +24,12 @@
     "p1": "14th Amendment (1868) → citizenship + equal protection. 15th Amendment (1870) → voting rights for Black men.",
     "p2": "Reconstruction Act (1867) → South divided into military districts → Black Codes removed → elections enforced.",
     "p3": "1,500+ African Americans held public office → 22 in Congress → Blanche Bruce: full Senate term for Mississippi.",
-    "hints": ["14th Amendment", "Reconstruction Act", "Blanche Bruce"]
+    "hints": [
+      "14th Amendment",
+      "Reconstruction Act",
+      "Blanche Bruce"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 3,
@@ -30,7 +40,12 @@
     "p1": "Hayes–Tilden Compromise (1877) → federal troops withdrawn → 'Redeemer' governments retook the South.",
     "p2": "Deaths of Sumner and Stevens + Panic of 1873 → Northern attention shifts → Radical Republican majority diluted.",
     "p3": "Slaughterhouse Case (1873) → civil rights ruled a state issue → Supreme Court undermined 14th Amendment.",
-    "hints": ["Hayes–Tilden", "Panic of 1873", "Slaughterhouse"]
+    "hints": [
+      "Hayes–Tilden",
+      "Panic of 1873",
+      "Slaughterhouse"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 4,
@@ -41,7 +56,12 @@
     "p1": "Spread across South from 1877 → segregated schools, transport, hospitals, parks, restaurants, churches.",
     "p2": "Voter suppression from 1890 → literacy tests, poll taxes, grandfather clauses → Mississippi Black voter registration: 90% (1867) → 6% (1892).",
     "p3": "Plessy v Ferguson (1896) → 'separate but equal' constitutional → gave legal cover to all Jim Crow legislation.",
-    "hints": ["1877", "voter suppression", "Plessy"]
+    "hints": [
+      "1877",
+      "voter suppression",
+      "Plessy"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 5,
@@ -52,7 +72,12 @@
     "p1": "White supremacists violently overthrew the biracial elected government of Wilmington, North Carolina.",
     "p2": "Showed that even legitimate political power could be destroyed by organised white violence without federal protection.",
     "p3": "Mississippi v Williams (1898) same year → Supreme Court ruled voter suppression didn't violate 15th Amendment → over 90% disenfranchised by 1900.",
-    "hints": ["biracial government", "white supremacists", "Mississippi v Williams"]
+    "hints": [
+      "biracial government",
+      "white supremacists",
+      "Mississippi v Williams"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 6,
@@ -63,7 +88,12 @@
     "p1": "Atlanta Compromise (1895) → accepted social segregation in exchange for economic co-operation → critics saw this as legitimising Jim Crow.",
     "p2": "'Tuskegee Machine' → controlled Black newspapers, charities, political appointments → first Black informal presidential advisor (Roosevelt, 1901).",
     "p3": "Du Bois argued Washington sacrificed political rights → founded Niagara Movement (1905) in direct opposition → later NAACP (1909).",
-    "hints": ["Atlanta Compromise", "Tuskegee Machine", "Du Bois opposition"]
+    "hints": [
+      "Atlanta Compromise",
+      "Tuskegee Machine",
+      "Du Bois opposition"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 7,
@@ -74,7 +104,12 @@
     "p1": "Rejected Washington's accommodationism → demanded immediate full civil and political equality → 'talented tenth' must lead.",
     "p2": "Founded Niagara Movement (1905) → direct predecessor to NAACP. Co-founded NAACP (1909) → focused on legal litigation and political pressure.",
     "p3": "Edited The Crisis → promoted Black intellectualism and cultural achievement → 100,000 circulation by 1920s.",
-    "hints": ["talented tenth", "Niagara Movement", "The Crisis"]
+    "hints": [
+      "talented tenth",
+      "Niagara Movement",
+      "The Crisis"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 8,
@@ -85,7 +120,12 @@
     "p1": "Founded 1909 → Du Bois, Ida B. Wells + white progressives → legal litigation + political pressure strategy.",
     "p2": "Key victories: US v Guinn (1915) → grandfather clauses unconstitutional. Smith v Allwright (1944) → all-white primaries banned → Black voter registration 2% (1940) → 12% (1947).",
     "p3": "Brown v Board (1954) → Thurgood Marshall proved $43/yr Black vs $179/yr white → 'separate but equal' overturned. Little Rock Nine (1957) organised.",
-    "hints": ["legal litigation", "Smith v Allwright", "Brown v Board"]
+    "hints": [
+      "legal litigation",
+      "Smith v Allwright",
+      "Brown v Board"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 9,
@@ -96,7 +136,12 @@
     "p1": "Founded UNIA New York branch (1917) → The Negro World newspaper → 200,000 weekly readers. Black Star Line (1919) → 'Back to Africa' movement.",
     "p2": "UNIA reached 4 million members by early 1920s → largest Black mass movement in history → Black nationalism + Pan-Africanism.",
     "p3": "'Garvey must go' campaign (1922) after meeting KKK → deported to Jamaica (1927) for mail fraud → federal government action ended movement.",
-    "hints": ["UNIA", "Black Star Line", "deported 1927"]
+    "hints": [
+      "UNIA",
+      "Black Star Line",
+      "deported 1927"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 10,
@@ -107,7 +152,12 @@
     "p1": "'State Rights' ideology → argued states should manage affairs without federal interference → used to block civil rights enforcement.",
     "p2": "Massive resistance to Brown (1954) → Virginia closed all public schools rather than integrate → 300+ private 'segregation academies' founded.",
     "p3": "Wallace: 'segregation today, tomorrow, forever' → stood in University of Alabama doorway 1963. Faubus deployed National Guard against Little Rock Nine (1957).",
-    "hints": ["state rights", "massive resistance", "Wallace/Faubus"]
+    "hints": [
+      "state rights",
+      "massive resistance",
+      "Wallace/Faubus"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 11,
@@ -118,7 +168,12 @@
     "p1": "FDR created informal 'Black Cabinet' → led by Mary McLeod Bethune → influenced New Deal programmes for Black Americans.",
     "p2": "Eleanor Roosevelt advocated for civil rights + supported anti-lynching bills. African Americans began voting Democratic in large numbers → major long-term political shift.",
     "p3": "Anti-Communist Red Scare → organisations improving AA rights suspected of communism → Du Bois surveilled + harassed → CIO lost funding.",
-    "hints": ["Black Cabinet", "Eleanor Roosevelt", "Red Scare"]
+    "hints": [
+      "Black Cabinet",
+      "Eleanor Roosevelt",
+      "Red Scare"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 12,
@@ -129,7 +184,12 @@
     "p1": "Chief Justice Earl Warren → considered most liberal Supreme Court in US history → transformed federal protection of civil rights.",
     "p2": "Brown v Board (1954) → overturned Plessy. Browder v Gayle (1956) → segregated buses unconstitutional. Boynton v Virginia (1960) → interstate buses desegregated.",
     "p3": "Swann v Charlotte-Mecklenburg (1971) → bussing constitutional. Griggs v Duke Power Co. (1971) → affirmative action constitutional.",
-    "hints": ["Earl Warren", "Brown v Board", "most liberal"]
+    "hints": [
+      "Earl Warren",
+      "Brown v Board",
+      "most liberal"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 13,
@@ -140,7 +200,12 @@
     "p1": "Thurgood Marshall proved Southern states spent $43/yr on Black students vs $179/yr white → Supreme Court overturned 'separate but equal'.",
     "p2": "Theoretically impacted 9 million Black children in the South → but no de facto change immediately → by 1964, 98% still attended segregated schools.",
     "p3": "Triggered 'massive resistance' across the South → Virginia closed schools → 300+ segregation academies founded → exposed limits of legal victories.",
-    "hints": ["$43 vs $179", "separate but equal", "massive resistance"]
+    "hints": [
+      "$43 vs $179",
+      "separate but equal",
+      "massive resistance"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 14,
@@ -151,7 +216,12 @@
     "p1": "Founded 1957 → led by Martin Luther King → non-violent direct action → used media + moral pressure to force federal response.",
     "p2": "Birmingham Campaign (1963) → Bull Connor's violence vs peaceful protesters → broadcast nationwide → Kennedy announces moral duty to act → Civil Rights Act 1964.",
     "p3": "Selma March (1965) → 50% Black population, 1% electorate → Bloody Sunday broadcast nationally → directly led to Voting Rights Act 1965.",
-    "hints": ["non-violent direct action", "Birmingham", "Selma"]
+    "hints": [
+      "non-violent direct action",
+      "Birmingham",
+      "Selma"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 15,
@@ -162,7 +232,12 @@
     "p1": "Founded 1960 → grassroots, student-led → more radical than SCLC → organised sit-ins, Freedom Rides, voter registration drives.",
     "p2": "Selma March (1965) → John Lewis led marchers onto Edmund Pettus Bridge → 'Bloody Sunday' → Voting Rights Act.",
     "p3": "1966 under Stokely Carmichael → rejected non-violence + integration → embraced Black Power → 'Black Power' slogan coined.",
-    "hints": ["grassroots", "John Lewis", "Carmichael"]
+    "hints": [
+      "grassroots",
+      "John Lewis",
+      "Carmichael"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 16,
@@ -173,7 +248,12 @@
     "p1": "SCLC and King targeted Albany, Georgia → Police Chief Laurie Pritchett used non-violent policing → denied King media images of brutality.",
     "p2": "No single dramatic confrontation → media lost interest → federal government had no reason to intervene → no legislation resulted.",
     "p3": "Key lesson → non-violent direct action only worked when it provoked visible repression on camera → shaped Birmingham Campaign strategy.",
-    "hints": ["Pritchett", "no media images", "key lesson"]
+    "hints": [
+      "Pritchett",
+      "no media images",
+      "key lesson"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 17,
@@ -184,7 +264,12 @@
     "p1": "4 Black students sat at 'white-only' lunch counter in Greensboro, NC → spontaneous non-violent direct action.",
     "p2": "Over 70,000 students engaged in sit-ins across the South co-ordinated by SNCC → more than 1,000 businesses desegregated lunch counters.",
     "p3": "Demonstrated power of youth-led spontaneous protest → led to founding of SNCC → showed NAACP's legal approach could be complemented by direct action.",
-    "hints": ["1960", "70,000 students", "SNCC founded"]
+    "hints": [
+      "1960",
+      "70,000 students",
+      "SNCC founded"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 18,
@@ -195,7 +280,12 @@
     "p1": "CORE + SNCC → Black and white activists rode interstate buses from Washington D.C. into the Deep South → testing Boynton v Virginia (1960).",
     "p2": "Met with violent mobs including fire-bombings in Alabama → national outrage → federal government forced to respond.",
     "p3": "Attorney General enforced desegregation of interstate public transport → demonstrated that federal pressure could be forced through confrontation.",
-    "hints": ["CORE + SNCC", "fire-bombings", "interstate desegregation"]
+    "hints": [
+      "CORE + SNCC",
+      "fire-bombings",
+      "interstate desegregation"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 19,
@@ -206,7 +296,12 @@
     "p1": "King + SCLC targeted Birmingham → Bull Connor used police dogs + fire hoses against peaceful protesters including children → images broadcast worldwide.",
     "p2": "Kennedy announced America had a 'moral duty' to intervene → directly led to Civil Rights Act 1964.",
     "p3": "Baptist Church bombings (1963) → KKK killed four young girls → no convictions → highlighted state government complicity in racial terror.",
-    "hints": ["Bull Connor", "moral duty", "Church bombings"]
+    "hints": [
+      "Bull Connor",
+      "moral duty",
+      "Church bombings"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 20,
@@ -217,7 +312,12 @@
     "p1": "250,000 marched for jobs and freedom → King's 'I Have a Dream' speech → largest civil rights demonstration in US history.",
     "p2": "Organised by Randolph + Rustin → brought together NAACP, SCLC, SNCC, CORE, NUL → demonstrated broad coalition.",
     "p3": "Malcolm X dismissed it as a 'farce' → highlighted divisions between integrationist and nationalist wings of the movement.",
-    "hints": ["250,000", "I Have a Dream", "Malcolm X 'farce'"]
+    "hints": [
+      "250,000",
+      "I Have a Dream",
+      "Malcolm X 'farce'"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 21,
@@ -228,7 +328,12 @@
     "p1": "Removed all Jim Crow segregation across the South → prohibited employment discrimination based on race.",
     "p2": "Pushed through by LBJ using 'Johnson treatment' → most significant federal civil rights legislation since Reconstruction.",
     "p3": "Limitations → did not address de facto segregation in the North → did not solve economic inequality → enforcement remained weak in many states.",
-    "hints": ["Jim Crow ended", "Johnson treatment", "de facto North"]
+    "hints": [
+      "Jim Crow ended",
+      "Johnson treatment",
+      "de facto North"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 22,
@@ -239,7 +344,12 @@
     "p1": "Selma: 50% Black population but only 1% of electorate → SCLC + SNCC march to expose voter suppression.",
     "p2": "Bloody Sunday → John Lewis led marchers → violent police attack on Edmund Pettus Bridge → broadcast nationwide.",
     "p3": "Directly led to Voting Rights Act (1965) → banned all voter suppression → Mississippi Black voter registration: 6% (1964) → 60% (1969).",
-    "hints": ["1% electorate", "Bloody Sunday", "Voting Rights Act"]
+    "hints": [
+      "1% electorate",
+      "Bloody Sunday",
+      "Voting Rights Act"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 23,
@@ -250,7 +360,12 @@
     "p1": "NOI → Black nationalism + separatism → rejected integration → 'by any means necessary' → self-defence against white supremacy.",
     "p2": "NOI grew from 400 members (1952) → 40,000 (1960) under Malcolm X → addressed Northern urban poverty King's movement neglected.",
     "p3": "Post-Hajj (1964) → Malcolm X adopted more inclusive vision → broke from NOI → assassinated by NOI members 1965 → became martyr for Black Power.",
-    "hints": ["separatism", "400 → 40,000", "post-Hajj"]
+    "hints": [
+      "separatism",
+      "400 → 40,000",
+      "post-Hajj"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 24,
@@ -261,7 +376,12 @@
     "p1": "1966 → took over SNCC → rejected non-violence + integration → coined 'Black Power' slogan during Meredith March.",
     "p2": "Black Power = self-determination, Black pride, economic self-sufficiency, community control — not dependence on white liberals.",
     "p3": "Alienated white allies + moderate African Americans → CORE lost white funding 1969 → weakened cross-racial coalition that had passed 1964/65 legislation.",
-    "hints": ["Black Power slogan", "1966 SNCC", "alienated allies"]
+    "hints": [
+      "Black Power slogan",
+      "1966 SNCC",
+      "alienated allies"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 25,
@@ -272,7 +392,12 @@
     "p1": "Failures of CRM in North → SCLC/NAACP focused on Southern desegregation → Northern urban communities still faced poverty + police violence. King's Chicago (1966) failed.",
     "p2": "Vietnam War → African Americans disproportionately drafted → returned radicalised → war severed King–LBJ relationship → media attention shifted.",
     "p3": "Long Hot Summers → Watts (1965) $40m damage → 150 riots (1967) → showed non-violence couldn't address systemic Northern inequality.",
-    "hints": ["Chicago failure", "Vietnam radicalised", "Watts 1965"]
+    "hints": [
+      "Chicago failure",
+      "Vietnam radicalised",
+      "Watts 1965"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 26,
@@ -283,7 +408,12 @@
     "p1": "Nixon's 'Law and Order' platform (1968) → War on Drugs → disproportionately targeted African Americans → mass incarceration begins.",
     "p2": "Reagan (1981–89) → Supreme Court became increasingly conservative → affirmative action labelled 'reverse discrimination' → federal enforcement reduced.",
     "p3": "By 1992 → 25% of Black men in prison, on parole or probation → War on Drugs described by Nixon aide as targeting Black communities deliberately.",
-    "hints": ["War on Drugs", "mass incarceration", "25% by 1992"]
+    "hints": [
+      "War on Drugs",
+      "mass incarceration",
+      "25% by 1992"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 27,
@@ -294,7 +424,12 @@
     "p1": "8,000+ African Americans held public office → Congressional Black Caucus: 36 members → Thurgood Marshall (1967–91) first Black Supreme Court Justice. Douglas Wilder first Black governor (Virginia, 1989).",
     "p2": "Voter turnout 54% vs 61% white → unofficial suppression continued → gerrymandering + insufficient polling locations in Black areas.",
     "p3": "Jesse Jackson's 1984 + 1988 presidential campaigns won 7 million votes → but never official Democrat candidate → no Black presidential or VP candidate in the period.",
-    "hints": ["8,000 offices", "Jesse Jackson", "54% turnout"]
+    "hints": [
+      "8,000 offices",
+      "Jesse Jackson",
+      "54% turnout"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 28,
@@ -305,7 +440,12 @@
     "p1": "Established 1865 → helped create 1,000+ Black schools → 250,000 enrolled → founded Howard University (1867), one of first HBCUs.",
     "p2": "Distributed 21 million rations of food to freedmen → provided basic housing, medical care and legal support.",
     "p3": "Closure 1872 → gains immediately reversed → educational and social progress lost without federal infrastructure to sustain it.",
-    "hints": ["1,000 schools", "Howard University", "closed 1872"]
+    "hints": [
+      "1,000 schools",
+      "Howard University",
+      "closed 1872"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 29,
@@ -316,7 +456,12 @@
     "p1": "KKK founded Tennessee 1865 → used violence to intimidate African Americans from voting, education, asserting rights.",
     "p2": "Colfax Massacre (1873) → c.100 African Americans killed in Louisiana following contested elections → federal government failed to help. New Orleans Massacre (1866): 40–200 killed.",
     "p3": "Enforcement Acts (1870–71) → Grant suppressed 1st KKK → over 600 prosecuted. But after 1877 troop withdrawal → KKK resurgent + unpunished.",
-    "hints": ["Colfax Massacre", "Enforcement Acts", "after 1877"]
+    "hints": [
+      "Colfax Massacre",
+      "Enforcement Acts",
+      "after 1877"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 30,
@@ -327,7 +472,12 @@
     "p1": "Lynching epidemic → 100+ per year in early 1890s → used as tool of racial terror to enforce social hierarchy and deter political participation.",
     "p2": "Ida B. Wells → 'Southern Horrors' (1892) → documented frequency + disproved myth it was response to violent crime → national + international campaign.",
     "p3": "Southern Democratic politicians repeatedly defeated anti-lynching bills in Congress. In 1900, Governor Tillman of South Carolina openly defended lynching.",
-    "hints": ["100+/year", "Ida B. Wells", "Congress defeated bills"]
+    "hints": [
+      "100+/year",
+      "Ida B. Wells",
+      "Congress defeated bills"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 31,
@@ -338,7 +488,12 @@
     "p1": "Exploited 13th Amendment loophole → 'except as punishment for crime' → Southern states arrested African Americans on trivial charges → leased to private companies as unpaid labour.",
     "p2": "Grew across the South in the 1880s → effectively recreated slavery → dangerous conditions, no pay, no rights.",
     "p3": "System designed to control Black population + provide cheap labour to Southern economies → continued into early 20th century.",
-    "hints": ["13th Amendment loophole", "1880s", "unpaid labour"]
+    "hints": [
+      "13th Amendment loophole",
+      "1880s",
+      "unpaid labour"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 32,
@@ -349,7 +504,12 @@
     "p1": "KKK → violence at poll booths, lynching, destruction of Black organisations → Colfax Massacre (1873): 100+ killed to prevent voting.",
     "p2": "White Citizens Councils (1955) → 'respectable' opposition to integration → pressured employers, banks and landlords to discriminate → counterpart to KKK in the 1950s–60s.",
     "p3": "United Daughters of the Confederacy → 'Lost Cause' myth → romanticised slavery + Confederacy → justified Jim Crow → shaped Southern white opinion for generations.",
-    "hints": ["KKK terror", "White Citizens Councils", "Lost Cause"]
+    "hints": [
+      "KKK terror",
+      "White Citizens Councils",
+      "Lost Cause"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 33,
@@ -360,7 +520,12 @@
     "p1": "'Lost Cause' myth → Southern historians + United Daughters of the Confederacy → romanticised slavery + Confederacy → justified Jim Crow as natural social order.",
     "p2": "Social Darwinism → pseudoscientific extension of Darwin → eugenics seen as modern science → justified racial separation + hostility to interracial marriage.",
     "p3": "Media spread ideas of lazy, idle freedmen + myth of Black male sexual violence → reinforced white supremacy + justified lynching in public discourse.",
-    "hints": ["Lost Cause", "Social Darwinism/eugenics", "media myths"]
+    "hints": [
+      "Lost Cause",
+      "Social Darwinism/eugenics",
+      "media myths"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 34,
@@ -371,7 +536,12 @@
     "p1": "D.W. Griffith's film → glorified KKK → depicted Black men as threats to white women → early blockbuster seen by millions.",
     "p2": "Directly caused resurgence of KKK → membership reached c.5 million by 1920s → 15% of eligible population.",
     "p3": "Demonstrated power of media to entrench white supremacy → 19th century newspapers had already perpetuated stereotypes of Black criminality and sexual violence.",
-    "hints": ["glorified KKK", "5 million members", "media power"]
+    "hints": [
+      "glorified KKK",
+      "5 million members",
+      "media power"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 35,
@@ -382,7 +552,12 @@
     "p1": "380,000 African Americans served in segregated units → Harlem Hellfighters → hoped military service would demonstrate citizenship + earn equal treatment.",
     "p2": "Many African American GIs stationed in Britain → experienced less segregated society → raised expectations on return.",
     "p3": "Red Summer (1919) → return of white soldiers + industrial retraction → race riots across America → worst violence in Chicago → African Americans fought back.",
-    "hints": ["380,000", "less segregated Britain", "Red Summer"]
+    "hints": [
+      "380,000",
+      "less segregated Britain",
+      "Red Summer"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 36,
@@ -393,7 +568,12 @@
     "p1": "1920s cultural explosion → Langston Hughes, Louis Armstrong, Zora Neale Hurston → Black artistic achievement gained national recognition.",
     "p2": "Harlem population grew 50,000 → 200,000 (1910–1930) → Du Bois used The Crisis to promote Black intellectualism → 100,000 circulation.",
     "p3": "Cultural flourishing did not translate into political or economic gains → KKK at 5 million same decade → Tulsa massacre (1921) destroyed 'Black Wall Street'.",
-    "hints": ["Hughes/Armstrong", "The Crisis", "no political gains"]
+    "hints": [
+      "Hughes/Armstrong",
+      "The Crisis",
+      "no political gains"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 37,
@@ -404,7 +584,12 @@
     "p1": "White mob destroyed Greenwood District ('Black Wall Street') → 600+ Black-owned businesses destroyed → 35 blocks burned.",
     "p2": "Up to 300 African Americans killed → 10,000 left homeless → one of worst incidents of racial violence in US history.",
     "p3": "Showed that Black economic success provoked violent white backlash → prosperity offered no protection without political and legal rights.",
-    "hints": ["Black Wall Street", "300 killed", "economic success = backlash"]
+    "hints": [
+      "Black Wall Street",
+      "300 killed",
+      "economic success = backlash"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 38,
@@ -415,7 +600,12 @@
     "p1": "Black unemployment 50% vs 25% national average → 75% of Southern African Americans still sharecroppers → Depression hit hardest.",
     "p2": "50+ African Americans lynched annually in 1920s → KKK at 5 million → social conditions remained deeply hostile throughout.",
     "p3": "Nation of Islam founded (1930) → offered alternative social vision of Black self-sufficiency → response to Depression despair + continued white supremacy.",
-    "hints": ["50% unemployment", "50+ lynchings/year", "NOI 1930"]
+    "hints": [
+      "50% unemployment",
+      "50+ lynchings/year",
+      "NOI 1930"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 39,
@@ -426,7 +616,12 @@
     "p1": "NAACP launched Double V → victory against fascism abroad AND racism at home → exposed contradiction of fighting for democracy while denying it domestically.",
     "p2": "NAACP membership grew 50,000 → 500,000 during WWII → Cold War context made federal government increasingly conscious of international optics.",
     "p3": "Soviet propaganda publicised racial violence like Birmingham Campaign → Kennedy: 'We preach freedom around the world… but are we to say the land of the free — except for the negroes?'",
-    "hints": ["Double V", "NAACP 50k → 500k", "Cold War optics"]
+    "hints": [
+      "Double V",
+      "NAACP 50k → 500k",
+      "Cold War optics"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 40,
@@ -437,7 +632,12 @@
     "p1": "14-year-old boy from Chicago murdered in Mississippi → body mutilated → murderers acquitted by all-white jury.",
     "p2": "Mother insisted on open-casket funeral → allowed media to share images of Emmett's body → spread outrage nationally and internationally.",
     "p3": "Galvanised civil rights movement → demonstrated that racial terror was ongoing + systemic → key catalyst for Montgomery Bus Boycott.",
-    "hints": ["open casket", "all-white jury", "galvanised movement"]
+    "hints": [
+      "open casket",
+      "all-white jury",
+      "galvanised movement"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 41,
@@ -448,7 +648,12 @@
     "p1": "Soviet propaganda publicised US racial violence to discredit America internationally → Birmingham Campaign broadcast globally.",
     "p2": "Federal Government increasingly conscious of Cold War optics → Kennedy: 'land of the free — except for the negroes?' after Birmingham.",
     "p3": "Decolonisation movements in 1950s–60s inspired African Americans → Gandhi + Kwame Nkrumah's actions influenced non-violent strategy.",
-    "hints": ["Soviet propaganda", "Kennedy quote", "decolonisation"]
+    "hints": [
+      "Soviet propaganda",
+      "Kennedy quote",
+      "decolonisation"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 42,
@@ -459,7 +664,12 @@
     "p1": "Televised images of Bloody Sunday (1965) + Birmingham Campaign (1963) shocked international audiences → generated massive support for movement.",
     "p2": "King adept at exploiting television cameras → chose Birmingham deliberately because Bull Connor guaranteed visible brutality → forced federal response.",
     "p3": "Emmett Till's open casket (1955) → media images of body spread outrage. Contrast with 19th century press → had perpetuated stereotypes + justified lynching.",
-    "hints": ["television", "King + Bull Connor", "Emmett Till"]
+    "hints": [
+      "television",
+      "King + Bull Connor",
+      "Emmett Till"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 43,
@@ -470,7 +680,12 @@
     "p1": "African Americans disproportionately drafted → returned radicalised + disillusioned → fed Black Power ethos of militancy.",
     "p2": "King's 'Beyond Vietnam' speech (1967) → severed relationship with LBJ → ended federal momentum on civil rights reforms.",
     "p3": "Media attention shifted from civil rights marches to anti-war protests → movement lost national spotlight → Black Power filled the vacuum.",
-    "hints": ["disproportionately drafted", "Beyond Vietnam speech", "media shifted"]
+    "hints": [
+      "disproportionately drafted",
+      "Beyond Vietnam speech",
+      "media shifted"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 44,
@@ -481,7 +696,12 @@
     "p1": "Free breakfast programmes → fed 20,000 children per day → 'survival programmes' addressed poverty the civil rights legislation had not solved.",
     "p2": "13 health clinics established → screened thousands for sickle cell anaemia → People's Free Medical Centres in 13 deprived areas. 60+ community schools.",
     "p3": "BPP's 10-Point Programme demanded reparations, land, full employment, decent housing → shifted civil rights agenda from legal equality to economic justice.",
-    "hints": ["20,000 meals/day", "13 clinics", "10-Point Programme"]
+    "hints": [
+      "20,000 meals/day",
+      "13 clinics",
+      "10-Point Programme"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 45,
@@ -492,7 +712,12 @@
     "p1": "150 race riots in 1967 → largest in Detroit and Newark → response to poverty, police brutality and de facto segregation in Northern cities.",
     "p2": "Watts (1965) $40m property damage → exposed failure of non-violence + civil rights legislation to address systemic Northern inequality.",
     "p3": "Showed CRM had not resolved economic grievances → MLK's assassination (1968) triggered new wave of riots → Nixon won on 'Law and Order' ticket.",
-    "hints": ["150 riots 1967", "Detroit/Newark", "Law and Order"]
+    "hints": [
+      "150 riots 1967",
+      "Detroit/Newark",
+      "Law and Order"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 46,
@@ -503,7 +728,12 @@
     "p1": "FBI infiltrated Black Power groups → planted informants → manufactured evidence → created internal suspicion + divisions.",
     "p2": "Arrests + assassinations: Fred Hampton (Black Panther leader) killed in FBI-orchestrated raid 1969 → Panthers collapsed by 1982.",
     "p3": "Panthers never exceeded 5,000 members → COINTELPRO accelerated collapse → demonstrated state willingness to use illegal tactics against civil rights organisations.",
-    "hints": ["infiltrated", "Fred Hampton 1969", "5,000 members"]
+    "hints": [
+      "infiltrated",
+      "Fred Hampton 1969",
+      "5,000 members"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 47,
@@ -514,7 +744,12 @@
     "p1": "Welfare cuts disproportionately harmed African Americans → deepened economic disparities → 33% below poverty line by 1992 vs 12% white.",
     "p2": "School desegregation reversed → judicial weakening of bussing → by 1992, 40% of Black students attended majority-Black schools → re-segregation.",
     "p3": "War on Drugs accelerated → mass incarceration → by 1992, 25% of Black men in prison, on parole or probation. HBCUs remained vital → produced 25% of Black graduates.",
-    "hints": ["welfare cuts", "re-segregation", "mass incarceration"]
+    "hints": [
+      "welfare cuts",
+      "re-segregation",
+      "mass incarceration"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 48,
@@ -525,7 +760,12 @@
     "p1": "Erupted after acquittal of LAPD officers for beating Rodney King by all-white jury → $1 billion of damage → 63 killed.",
     "p2": "Demonstrated that police brutality + racial injustice remained systemic → civil rights legislation had not changed ground realities for urban Black communities.",
     "p3": "Positive strides by 1992 → Oprah, Michael Jordan, Spike Lee as icons of Black success → but persistent stereotypes + poverty for majority remained.",
-    "hints": ["Rodney King acquittal", "$1 billion", "all-white jury"]
+    "hints": [
+      "Rodney King acquittal",
+      "$1 billion",
+      "all-white jury"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 49,
@@ -536,7 +776,12 @@
     "p1": "No land redistribution → '40 acres and a mule' never realised → freedpeople forced to farm same land, same landowner as during slavery.",
     "p2": "Crop-lien system → sharecroppers paid rent in crops → always in debt to landowner → could not leave without repaying debt → effective debt bondage.",
     "p3": "By 1900 only 25% of African Americans owned land → economic freedom impossible without land ownership → Southern economic system rebuilt on near-slavery.",
-    "hints": ["debt bondage", "crop-lien", "25% owned land 1900"]
+    "hints": [
+      "debt bondage",
+      "crop-lien",
+      "25% owned land 1900"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 50,
@@ -547,7 +792,12 @@
     "p1": "Built beauty empire for Afro hair in 1910s → employed thousands of Black women → became first self-made female millionaire in the USA.",
     "p2": "Demonstrated Black economic success possible despite Jim Crow → parallel economy serving Black customers → model for Black business development.",
     "p3": "Part of broader pattern → by 1890s 50,000+ Black-owned businesses → 40 Black-owned banks → 'Black towns' like Mound Bayou, Mississippi had 150+ businesses.",
-    "hints": ["first female millionaire", "Afro hair empire", "parallel economy"]
+    "hints": [
+      "first female millionaire",
+      "Afro hair empire",
+      "parallel economy"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 51,
@@ -558,7 +808,12 @@
     "p1": "1916–1970 → over 6 million African Americans moved from rural South to Northern + Western cities → escaping Jim Crow + seeking economic opportunity.",
     "p2": "Created influential Black urban communities → Harlem + South Side Chicago → fostered cultural and political movements → WWI phase: 500,000 moved 1916–19.",
     "p3": "Opened skilled industrial jobs in North → 40% of Black men in North held skilled jobs by 1920 vs 15% in South → but de facto segregation + racial hostility persisted.",
-    "hints": ["6 million", "Harlem/South Side", "40% skilled jobs North"]
+    "hints": [
+      "6 million",
+      "Harlem/South Side",
+      "40% skilled jobs North"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 52,
@@ -569,7 +824,12 @@
     "p1": "BSCP (Brotherhood of Sleeping Car Porters) founded 1925 → first successful Black union → led by Randolph → protected Pullman Company porters.",
     "p2": "First Black union to receive AFL recognition (1935) → secured contract 1937: higher wages, shorter hours, paid uniforms → proved Black workers could organise.",
     "p3": "March on Washington Movement (1941) → threatened 100,000-strong march → pressured FDR into Executive Order 8802 → banned discrimination in defence industries.",
-    "hints": ["BSCP 1925", "AFL recognition 1935", "Executive Order 8802"]
+    "hints": [
+      "BSCP 1925",
+      "AFL recognition 1935",
+      "Executive Order 8802"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 53,
@@ -580,7 +840,12 @@
     "p1": "Wartime demand for labour → Great Migration accelerated → 500,000 moved North 1916–19 → industrial wages significantly higher than sharecropping.",
     "p2": "Gains were short-lived → Red Summer (1919) → Elaine Massacre: Black sharecroppers organising for better wages → white mobs killed 200+ → gains reversed.",
     "p3": "Elaine Massacre showed → economic organising by Black workers met with violent suppression → structural barriers remained regardless of wartime opportunity.",
-    "hints": ["Great Migration", "short-lived", "Elaine Massacre"]
+    "hints": [
+      "Great Migration",
+      "short-lived",
+      "Elaine Massacre"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 54,
@@ -591,7 +856,12 @@
     "p1": "Black unemployment 50% vs 25% national average → 75% of Southern African Americans still sharecroppers → hardest hit community.",
     "p2": "Urban areas: Chicago Black unemployment 20% (1930) vs 12% white — before Depression's full impact. Jobs lost in North disproportionately held by African Americans.",
     "p3": "AFL had no affiliated Black unions → African Americans restricted to unprotected jobs → economic vulnerability exposed lack of union protection.",
-    "hints": ["50% unemployment", "Chicago 20%", "no union protection"]
+    "hints": [
+      "50% unemployment",
+      "Chicago 20%",
+      "no union protection"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 55,
@@ -602,7 +872,12 @@
     "p1": "FERA → direct relief → 20–30% of recipients were African American. CCC → employed c.200,000 African Americans (10% of enrolment). PWA → 65,000+ in infrastructure jobs by 1940.",
     "p2": "Some Black sharecroppers became independent farmers through federal assistance → Black Cabinet influenced programme delivery.",
     "p3": "AAA (1933) inadvertently displaced 200,000 Black sharecroppers → NRA codes manipulated by employers → gains were partial and unevenly distributed.",
-    "hints": ["FERA/CCC/PWA", "200,000 sharecroppers displaced", "NRA manipulated"]
+    "hints": [
+      "FERA/CCC/PWA",
+      "200,000 sharecroppers displaced",
+      "NRA manipulated"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 56,
@@ -613,7 +888,12 @@
     "p1": "WPA → infrastructure jobs → 15% of workers were African American. Social Security Act → pensions + unemployment insurance for the first time.",
     "p2": "Wagner Act (1935) → recognised BSCP → first Black union to win AFL recognition → but inadvertently created 'closed shops' → white-only unions could dominate.",
     "p3": "Bethune's role in NYA → funded training + jobs for 600,000 Black youths during Depression → most direct targeted benefit for African Americans.",
-    "hints": ["WPA 15%", "Wagner Act/BSCP", "600,000 youths"]
+    "hints": [
+      "WPA 15%",
+      "Wagner Act/BSCP",
+      "600,000 youths"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 57,
@@ -624,7 +904,12 @@
     "p1": "Social Security excluded agricultural + domestic workers → 65% of Black workers → most significant exclusion from New Deal economic protection.",
     "p2": "Aid administered by Southern states → whites controlled distribution → African Americans discriminated against in application of relief policies.",
     "p3": "Anti-Communist Red Scare → organisations advocating for Black economic rights suspected of communism → CIO lost funding → unions weakened.",
-    "hints": ["65% excluded", "Southern administration", "Red Scare"]
+    "hints": [
+      "65% excluded",
+      "Southern administration",
+      "Red Scare"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 58,
@@ -635,7 +920,12 @@
     "p1": "Randolph's March on Washington Movement threatened 100,000-strong march → pressured FDR → EO 8802 banned racial discrimination in defence industries.",
     "p2": "By end of WWII → 2 million+ African Americans employed in defence industries → significant wartime economic opportunity.",
     "p3": "First time a mass non-violent movement forced a major federal economic concession → model for later civil rights pressure tactics.",
-    "hints": ["Randolph's threat", "2 million defence jobs", "first mass movement success"]
+    "hints": [
+      "Randolph's threat",
+      "2 million defence jobs",
+      "first mass movement success"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 59,
@@ -646,7 +936,12 @@
     "p1": "Automation in manufacturing post-WWII → disproportionately affected African Americans → concentrated in low-skill manual labour jobs that were eliminated.",
     "p2": "Black unemployment double white rates throughout this period → Great Migration had brought African Americans into industrial jobs now being automated away.",
     "p3": "Shift to service economy accelerated → African Americans not positioned to benefit → economic bifurcation → growing middle class alongside persistent ghetto poverty.",
-    "hints": ["automation", "double unemployment", "bifurcation"]
+    "hints": [
+      "automation",
+      "double unemployment",
+      "bifurcation"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 60,
@@ -657,7 +952,12 @@
     "p1": "Medicare + Medicaid (1965) → Black Americans with health insurance: 25% → 75% by 1970. Food Stamp Act (1964) → 33% of recipients were African American despite being 12% of population.",
     "p2": "Civil Rights Act (1964) → prohibited employment discrimination → EEOC enforcement → African Americans in white-collar jobs: 5% (1960) → 15% (mid-1970s).",
     "p3": "Despite legislation → by 1970 Black families earned average 58% of white families → CRM failed to make economic gains in Northern cities.",
-    "hints": ["25% → 75% health insurance", "EEOC", "58% of white income 1970"]
+    "hints": [
+      "25% → 75% health insurance",
+      "EEOC",
+      "58% of white income 1970"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 61,
@@ -668,7 +968,12 @@
     "p1": "Founded 1910 → worked to improve access to jobs, housing and healthcare in Northern cities → helped 250,000 secure housing by 1960s.",
     "p2": "Whitney Young, NUL leader → advised LBJ on anti-poverty initiatives → economic focus complemented NAACP's legal strategy.",
     "p3": "Limitations → NUL approach seen as too moderate → focused on working within system → did not challenge structural racism directly.",
-    "hints": ["1910", "250,000 housing", "advised LBJ"]
+    "hints": [
+      "1910",
+      "250,000 housing",
+      "advised LBJ"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 62,
@@ -679,7 +984,12 @@
     "p1": "DRUM (Dodge Revolutionary Union Movement, 1968) → organised wildcat strikes at Chrysler's Dodge Main plant → challenged racial pay gap in auto industry.",
     "p2": "LRBW (League of Revolutionary Black Workers) pushed for Black leadership in UAW → by early 1970s Black workers: 30% of UAW membership → more Black leaders in UAW + GM.",
     "p3": "Limitations → LRBW collapsed from internal divisions by early 1970s → Black workers earned $2,000 less/year than white counterparts → structural gap remained.",
-    "hints": ["DRUM 1968", "30% UAW", "LRBW collapsed"]
+    "hints": [
+      "DRUM 1968",
+      "30% UAW",
+      "LRBW collapsed"
+    ],
+    "isDepthStudy": true
   },
   {
     "no": 63,
@@ -690,7 +1000,12 @@
     "p1": "First introduced Philadelphia 1969 → spread nationally → African Americans in white-collar jobs: 5% (1960) → 15% (mid-1970s) → growing Black middle class.",
     "p2": "Regents of University of California v Bakke (1978) → racial quotas unconstitutional → weakened programme. Reagan/Bush labelled it 'reverse discrimination' → federal enforcement reduced.",
     "p3": "By 1980s → 40% of African Americans middle class → but gains uneven → 'bifurcation' → persistent ghetto poverty alongside professional success.",
-    "hints": ["Philadelphia 1969", "Bakke 1978", "bifurcation"]
+    "hints": [
+      "Philadelphia 1969",
+      "Bakke 1978",
+      "bifurcation"
+    ],
+    "isDepthStudy": false
   },
   {
     "no": 64,
@@ -701,6 +1016,11 @@
     "p1": "African Americans earned 60% of average white income → Black unemployment 14.2% vs 7.2% white → overrepresented in low-wage sectors.",
     "p2": "Homeownership 43% vs 70% white → redlining + discriminatory lending had lasting effects → urban renewal projects displaced many Black communities.",
     "p3": "500,000+ Black-owned businesses → $10 billion gross revenue → 40% middle class → but 33% below poverty line → 'bifurcation' defined economic reality by 1992.",
-    "hints": ["60% of white income", "43% homeownership", "bifurcation"]
+    "hints": [
+      "60% of white income",
+      "43% homeownership",
+      "bifurcation"
+    ],
+    "isDepthStudy": false
   }
 ]
