@@ -169,18 +169,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
   <div id="mode-flashcard" style="display:none">
     <div id="fd-setup">
       <p style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Filter by period</p>
-      <div class="pill-row" id="fd-era-pills">
-        <button class="pill" id="fd-era-all" onclick="fdToggleEra('all')">All <span id="fd-count-all" style="opacity:.6"></span></button>
-        <button class="pill" id="fd-era-reconstruction" onclick="fdToggleEra('reconstruction')">Reconstruction 1865–77 <span id="fd-count-reconstruction" style="opacity:.6"></span></button>
-        <button class="pill" id="fd-era-gilded-age-ds" onclick="fdToggleEra('gilded-age-ds')">🔑 Gilded Age 1877–1900 <span id="fd-count-gilded-age-ds" style="opacity:.6"></span></button>
-        <button class="pill" id="fd-era-progressive-wwi" onclick="fdToggleEra('progressive-wwi')">Progressive Era 1900–19 <span id="fd-count-progressive-wwi" style="opacity:.6"></span></button>
-        <button class="pill" id="fd-era-boom-bust" onclick="fdToggleEra('boom-bust')">1920s–32 <span id="fd-count-boom-bust" style="opacity:.6"></span></button>
-        <button class="pill" id="fd-era-new-deal-ds" onclick="fdToggleEra('new-deal-ds')">🔑 New Deal 1933–41 <span id="fd-count-new-deal-ds" style="opacity:.6"></span></button>
-        <button class="pill" id="fd-era-wwii-postwar" onclick="fdToggleEra('wwii-postwar')">WWII &amp; Post-War 1941–54 <span id="fd-count-wwii-postwar" style="opacity:.6"></span></button>
-        <button class="pill" id="fd-era-civil-rights-movement" onclick="fdToggleEra('civil-rights-movement')">Civil Rights 1954–65 <span id="fd-count-civil-rights-movement" style="opacity:.6"></span></button>
-        <button class="pill" id="fd-era-black-power-ds" onclick="fdToggleEra('black-power-ds')">🔑 Black Power 1965–70 <span id="fd-count-black-power-ds" style="opacity:.6"></span></button>
-        <button class="pill" id="fd-era-after-black-power" onclick="fdToggleEra('after-black-power')">After Black Power 1970–92 <span id="fd-count-after-black-power" style="opacity:.6"></span></button>
-      </div>
+      <div class="pill-row" id="fd-era-pills"></div>
       <div class="fd-hints-toggle"><input type="checkbox" id="fd-hints-on" onchange="fdSyncHints(this.checked)"><label for="fd-hints-on">💡 Show keyword hints</label></div>
       <div class="fd-outstanding-banner" id="fd-outstanding-banner"></div>
       <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start — <span id="fd-start-count">0</span> cards</button>
@@ -250,7 +239,7 @@ var currentUnit='aa',KC=[],FD=[],DATES=[],ESSAY_QS=[],INTERP_QS=[],kPeriodIdx=0;
 function toggleDark(){var d=document.documentElement.classList.toggle('dark');localStorage.setItem('cr_dark',d?'1':'0');document.getElementById('dark-toggle').textContent=d?'☀️':'🌙';}
 (function(){if(localStorage.getItem('cr_dark')==='1'){document.documentElement.classList.add('dark');var b=document.getElementById('dark-toggle');if(b)b.textContent='☀️';}})();
 function showScreen(id){document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active');});document.getElementById(id).classList.add('active');window.scrollTo(0,0);if(id==='s-pick')renderFdWheels();if(id==='s-hub')renderFdHubWheel();if(id==='s-main')renderFdSetupWheel();}
-function pickUnit(unit){currentUnit=unit;var u=UNITS[unit];['hub-badge','main-badge'].forEach(function(id){var el=document.getElementById(id);if(el){el.textContent=u.short;el.className='section-badge bg-'+unit;}});var pb=document.getElementById('fd-primary-btn');if(pb)pb.style.borderLeftColor=u.colour;['knowledge','dates','exam'].forEach(function(m){var b=document.getElementById('hub-btn-'+m);if(b)b.style.borderLeftColor=u.colour;});var eb=document.getElementById('exam-btn-essay');if(eb){eb.style.borderColor=u.colour;eb.style.color=u.colour;}buildPeriodDropdown();showScreen('s-hub');renderFdHubWheel();}
+function pickUnit(unit){currentUnit=unit;var u=UNITS[unit];['hub-badge','main-badge'].forEach(function(id){var el=document.getElementById(id);if(el){el.textContent=u.short;el.className='section-badge bg-'+unit;}});var pb=document.getElementById('fd-primary-btn');if(pb)pb.style.borderLeftColor=u.colour;['knowledge','dates','exam'].forEach(function(m){var b=document.getElementById('hub-btn-'+m);if(b)b.style.borderLeftColor=u.colour;});var eb=document.getElementById('exam-btn-essay');if(eb){eb.style.borderColor=u.colour;eb.style.color=u.colour;}buildPeriodDropdown();rebuildEraUI();showScreen('s-hub');renderFdHubWheel();}
 function enterMode(mode){var titles={knowledge:'Revision Guide',flashcard:'Flashcard Mode',dates:'Key Dates Quiz',exam:'Exam Practice'};document.getElementById('mode-title').textContent=titles[mode]||'';['knowledge','flashcard','dates','exam'].forEach(function(m){document.getElementById('mode-'+m).style.display=m===mode?'block':'none';});if(mode==='flashcard')fdSetup();if(mode==='dates')setTimeout(startQuizCountdown,50);if(mode==='exam')showExamPick();showScreen('s-main');}
 function rand(arr){return arr[Math.floor(Math.random()*arr.length)];}
 function shuffle(a){var b=a.slice();for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=b[i];b[i]=b[j];b[j]=t;}return b;}
@@ -259,28 +248,55 @@ function buildPeriodDropdown(){
   var sel=document.getElementById('k-period');
   var dsSel=document.getElementById('k-ds');
   var dsRow=document.getElementById('k-ds-row');
-  // Era cards (non-DS debate)
-  var eraCards=KC.filter(function(c){return !c.isDepthStudy||c.period.indexOf('-ds')===-1;});
-  // DS debate cards only
-  var dsCards=KC.filter(function(c){return c.isDepthStudy&&c.period.indexOf('-ds')!==-1;});
-  sel.innerHTML='<option value="">-- select a period --</option>';
+  // Filter by current unit
+  var unitKC=KC.filter(function(c){return c.section===currentUnit;});
+  var eraCards=unitKC.filter(function(c){return !c.isDepthStudy&&!c.isFactor&&!c.isObstacle;});
+  var dsCards=unitKC.filter(function(c){return c.isDepthStudy;});
+  var factorCards=unitKC.filter(function(c){return c.isFactor;});
+  var obstacleCards=unitKC.filter(function(c){return c.isObstacle;});
+  sel.innerHTML='<option value="">-- select a card --</option>';
+  // Helper to get emoji prefix
+  function prefix(c){return c.isObstacle?'🛑 ':c.isFactor?'⚙️ ':'';}
+  // Add era (period) cards
   KC.forEach(function(c,i){
-    if(!c.isDepthStudy||c.period.indexOf('-ds')===-1){
+    if(c.section!==currentUnit)return;
+    if(!c.isDepthStudy&&!c.isFactor&&!c.isObstacle){
       var o=document.createElement('option');o.value=i;o.textContent=c.heading;sel.appendChild(o);
     }
   });
+  // Add factor cards to period dropdown with emoji
+  if(factorCards.length){
+    var grp=document.createElement('optgroup');grp.label='⚙️ Factors';
+    KC.forEach(function(c,i){
+      if(c.section===currentUnit&&c.isFactor){
+        var o=document.createElement('option');o.value=i;o.textContent='⚙️ '+c.heading;grp.appendChild(o);
+      }
+    });
+    sel.appendChild(grp);
+  }
+  // Add obstacle cards to period dropdown with emoji
+  if(obstacleCards.length){
+    var grp2=document.createElement('optgroup');grp2.label='🛑 Obstacles';
+    KC.forEach(function(c,i){
+      if(c.section===currentUnit&&c.isObstacle){
+        var o=document.createElement('option');o.value=i;o.textContent='🛑 '+c.heading;grp2.appendChild(o);
+      }
+    });
+    sel.appendChild(grp2);
+  }
+  // DS dropdown
   if(dsCards.length){
     dsRow.style.display='';
     dsSel.innerHTML='<option value="">-- select a depth study debate --</option>';
     KC.forEach(function(c,i){
-      if(c.isDepthStudy&&c.period.indexOf('-ds')!==-1){
+      if(c.section===currentUnit&&c.isDepthStudy){
         var o=document.createElement('option');o.value=i;o.textContent=c.heading;dsSel.appendChild(o);
       }
     });
   } else {
     dsRow.style.display='none';
   }
-  kPeriodIdx=0;document.getElementById('k-out').innerHTML='<div class="empty">Select a period above to begin.</div>';
+  kPeriodIdx=0;document.getElementById('k-out').innerHTML='<div class="empty">Select a card above to begin.</div>';
 }
 function jumpToDs(){var sel=document.getElementById('k-ds');if(sel.value==='')return;document.getElementById('k-period').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
 function jumpToPeriod(){var sel=document.getElementById('k-period');if(sel.value==='')return;document.getElementById('k-ds').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
@@ -317,12 +333,53 @@ function fdSetOutstanding(a){localStorage.setItem(LS_P,JSON.stringify(a));}
 function fdKey(c){return c.section+'|'+c.no;}
 function buildFdSelects(){}
 function fdSyncHints(on){fdHintsOn=on;localStorage.setItem(LS_H,on?'1':'0');['fd-hints-on','fd-hints-on-drill'].forEach(function(id){var el=document.getElementById(id);if(el)el.checked=on;});if(!fdCurrent)return;var chips=document.getElementById('fd-hint-chips');if(fdHintsOn&&fdCurrent.hints&&fdCurrent.hints.length){chips.innerHTML=fdCurrent.hints.map(function(h){return '<span class="tag t-'+currentUnit+'">'+h+'</span>';}).join('');chips.style.display='flex';}else{chips.innerHTML='';chips.style.display='none';}}
-function fdSetup(){fdActiveEras=new Set(ALL_ERAS);fdAllOn=true;fdHintsOn=localStorage.getItem(LS_H)==='1';['fd-hints-on','fd-hints-on-drill'].forEach(function(id){var el=document.getElementById(id);if(el)el.checked=fdHintsOn;});document.getElementById('fd-start-btn').style.background=UNITS[currentUnit].colour;fdOutstanding=fdGetOutstanding().filter(function(k){return FD.find(function(c){return fdKey(c)===k;});});fdSetOutstanding(fdOutstanding);var pb=document.getElementById('fd-pinned-btn');if(pb)pb.style.display=fdOutstanding.length>0?'block':'none';var bn=document.getElementById('fd-outstanding-banner');if(fdOutstanding.length>0){bn.style.display='block';bn.textContent=fdOutstanding.length+' pinned card'+(fdOutstanding.length>1?'s':'')+' will be woven in.';}else bn.style.display='none';['fd-setup','fd-drill','fd-summary','fd-complete'].forEach(function(id,i){document.getElementById(id).style.display=i===0?'block':'none';});fdPopulateCounts();renderFdSetupWheel();}
-var ALL_ERAS=['reconstruction','gilded-age-ds','gilded-age','progressive-wwi','boom-bust','new-deal-ds','new-deal','wwii-postwar','civil-rights-movement','black-power-ds','black-power','after-black-power'];
-var ERA_PILL_KEYS=['reconstruction','gilded-age-ds','progressive-wwi','boom-bust','new-deal-ds','wwii-postwar','civil-rights-movement','black-power-ds','after-black-power'];
-var DS_PAIRS={'gilded-age-ds':'gilded-age','new-deal-ds':'new-deal','black-power-ds':'black-power'};
+function fdSetup(){rebuildEraUI();fdHintsOn=localStorage.getItem(LS_H)==='1';['fd-hints-on','fd-hints-on-drill'].forEach(function(id){var el=document.getElementById(id);if(el)el.checked=fdHintsOn;});document.getElementById('fd-start-btn').style.background=UNITS[currentUnit].colour;fdOutstanding=fdGetOutstanding().filter(function(k){return FD.find(function(c){return fdKey(c)===k;});});fdSetOutstanding(fdOutstanding);var pb=document.getElementById('fd-pinned-btn');if(pb)pb.style.display=fdOutstanding.length>0?'block':'none';var bn=document.getElementById('fd-outstanding-banner');if(fdOutstanding.length>0){bn.style.display='block';bn.textContent=fdOutstanding.length+' pinned card'+(fdOutstanding.length>1?'s':'')+' will be woven in.';}else bn.style.display='none';['fd-setup','fd-drill','fd-summary','fd-complete'].forEach(function(id,i){document.getElementById(id).style.display=i===0?'block':'none';});fdPopulateCounts();renderFdSetupWheel();}
+// Per-unit era definitions
+var UNIT_ERAS={
+  aa:{
+    keys:['reconstruction','gilded-age-ds','progressive-wwi','boom-bust','new-deal-ds','wwii-postwar','civil-rights-movement','black-power-ds','after-black-power'],
+    labels:{'reconstruction':'Reconstruction 1865–77','gilded-age-ds':'🔑 Gilded Age 1877–1900','progressive-wwi':'Progressive Era 1900–19','boom-bust':'1920s–32','new-deal-ds':'🔑 New Deal 1933–41','wwii-postwar':'WWII & Post-War 1941–54','civil-rights-movement':'Civil Rights 1954–65','black-power-ds':'🔑 Black Power 1965–70','after-black-power':'After Black Power 1970–92'},
+    pairs:{'gilded-age-ds':'gilded-age','new-deal-ds':'new-deal','black-power-ds':'black-power'},
+    all:['reconstruction','gilded-age-ds','gilded-age','progressive-wwi','boom-bust','new-deal-ds','new-deal','wwii-postwar','civil-rights-movement','black-power-ds','black-power','after-black-power']
+  },
+  lab:{
+    keys:['start','early-industrialisation','gilded-age-ds','progressive-era','wwi-red-summer','twenties','new-deal-ds','wwii-taft-hartley','fifties-seventies','black-power-ds','reagan-era','end'],
+    labels:{'start':'Position 1865','early-industrialisation':'Early Industrialisation 1865–77','gilded-age-ds':'🔑 Gilded Age 1877–1900','progressive-era':'Progressive Era 1900–17','wwi-red-summer':'WWI & Red Summer 1917–19','twenties':'1920s','new-deal-ds':'🔑 New Deal 1933–41','wwii-taft-hartley':'WWII & Taft-Hartley 1941–50','fifties-seventies':'1950s–70s','black-power-ds':'🔑 Black Power Era','reagan-era':'Reagan Era 1981–92','end':'Position 1992'},
+    pairs:{'gilded-age-ds':'gilded-age','new-deal-ds':'new-deal','black-power-ds':'black-power'},
+    all:['start','early-industrialisation','gilded-age-ds','gilded-age','progressive-era','wwi-red-summer','twenties','new-deal-ds','new-deal','wwii-taft-hartley','fifties-seventies','black-power-ds','black-power','reagan-era','end']
+  },
+  na:{
+    keys:['na-start','na-plains-wars','na-gilded-age-ds','na-progressive-twenties','na-new-deal-ds','na-wwii-postwar','na-termination','na-red-power-ds','na-self-determination','na-end'],
+    labels:{'na-start':'Position 1865','na-plains-wars':'Plains Wars 1854–77','na-gilded-age-ds':'🔑 Gilded Age 1877–1905','na-progressive-twenties':'1910s–1932','na-new-deal-ds':'🔑 New Deal 1933–41','na-wwii-postwar':'WWII & Post-War 1941–53','na-termination':'Termination 1953–68','na-red-power-ds':'🔑 Red Power 1968–75','na-self-determination':'Self-Determination 1975–92','na-end':'Position 1992'},
+    pairs:{'na-gilded-age-ds':'na-gilded-age','na-new-deal-ds':'na-new-deal','na-red-power-ds':'na-red-power'},
+    all:['na-start','na-plains-wars','na-gilded-age-ds','na-gilded-age','na-progressive-twenties','na-new-deal-ds','na-new-deal','na-wwii-postwar','na-termination','na-red-power-ds','na-red-power','na-self-determination','na-end']
+  },
+  wom:{
+    keys:['wom-start','wom-gilded-age-ds','wom-progressive','wom-twenties','wom-new-deal-ds','wom-wwii','wom-sixties','wom-seventies','wom-end'],
+    labels:{'wom-start':'Position 1865','wom-gilded-age-ds':'🔑 Gilded Age 1877–1900','wom-progressive':'Progressive Era & WWI 1900–20','wom-twenties':'1920s–32','wom-new-deal-ds':'🔑 New Deal 1933–41','wom-wwii':'WWII & Post-War 1941–60','wom-sixties':'1960s Civil Rights','wom-seventies':'1970s Feminism','wom-end':'Position 1992'},
+    pairs:{'wom-gilded-age-ds':'wom-gilded-age','wom-new-deal-ds':'wom-new-deal'},
+    all:['wom-start','wom-gilded-age-ds','wom-gilded-age','wom-progressive','wom-twenties','wom-new-deal-ds','wom-new-deal','wom-wwii','wom-sixties','wom-seventies','wom-end']
+  }
+};
+function getUnitEras(){return UNIT_ERAS[currentUnit]||UNIT_ERAS.aa;}
+var ALL_ERAS=getUnitEras().all;
+var ERA_PILL_KEYS=getUnitEras().keys;
+var DS_PAIRS=getUnitEras().pairs;
 var fdActiveEras=new Set(ALL_ERAS);
 var fdAllOn=true;
+function rebuildEraUI(){
+  var ue=getUnitEras();
+  ALL_ERAS=ue.all;ERA_PILL_KEYS=ue.keys;DS_PAIRS=ue.pairs;
+  fdActiveEras=new Set(ALL_ERAS);fdAllOn=true;
+  var container=document.getElementById('fd-era-pills');
+  if(!container)return;
+  var u=currentUnit;
+  var html='<button class="pill active-'+u+'" id="fd-era-all" onclick="fdToggleEra('all')">All <span id="fd-count-all" style="opacity:.6"></span></button>';
+  ERA_PILL_KEYS.forEach(function(era){
+    html+='<button class="pill" id="fd-era-'+era+'" onclick="fdToggleEra(''+era+'')">'+ue.labels[era]+' <span id="fd-count-'+era+'" style="opacity:.6"></span></button>';
+  });
+  container.innerHTML=html;
+}
 function fdToggleEra(era){
   if(era==='all'){fdActiveEras=new Set(ALL_ERAS);fdAllOn=true;}
   else if(fdAllOn){
