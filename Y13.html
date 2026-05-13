@@ -351,11 +351,11 @@ function fdWheelLaunch(unit){pickUnit(unit);enterMode('flashcard');}
 // DATA — loaded from JSON files (same folder as HTML)
 // ═══════════════════════════════════
 Promise.all([
-  fetch('kc-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
-  fetch('flashcards-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
-  fetch('dates-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
-  fetch('essays-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
-  fetch('interp-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];})
+  fetch('data/kc-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
+  fetch('data/flashcards-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
+  fetch('data/dates-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
+  fetch('data/essays-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
+  fetch('data/interp-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];})
 ]).then(function(results){
   KC=results[0]; FD=results[1]; DATES=results[2]; ESSAY_QS=results[3]; INTERP_QS=results[4];
   console.log('Data loaded — KC:',KC.length,'FD:',FD.length,'DATES:',DATES.length);
