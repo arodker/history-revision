@@ -144,7 +144,7 @@
     "periods": [
       "progressive-wwi",
       "boom-bust",
-      "new-deal-ds",
+      "new-deal",
       "wwii-postwar",
       "civil-rights-movement"
     ]
@@ -171,8 +171,8 @@
   {
     "no": 10,
     "section": "aa",
-    "period": "reconstruction",
-    "front": "What was the role of State Governments in hindering African Americans?",
+    "period": "wwii-postwar",
+    "front": "What was the role of State Governments in resisting desegregation?",
     "p1": "'State Rights' ideology → argued states should manage affairs without federal interference → used to block civil rights enforcement.",
     "p2": "Massive resistance to Brown (1954) → Virginia closed all public schools rather than integrate → 300+ private 'segregation academies' founded.",
     "p3": "Wallace: 'segregation today, tomorrow, forever' → stood in University of Alabama doorway 1963. Faubus deployed National Guard against Little Rock Nine (1957).",
@@ -183,15 +183,8 @@
     ],
     "isDepthStudy": false,
     "periods": [
-      "reconstruction",
-      "gilded-age-ds",
-      "progressive-wwi",
-      "boom-bust",
-      "new-deal-ds",
       "wwii-postwar",
-      "civil-rights-movement",
-      "black-power-ds",
-      "after-black-power"
+      "civil-rights-movement"
     ]
   },
   {
@@ -217,13 +210,13 @@
     "section": "aa",
     "period": "wwii-postwar",
     "front": "What was the significance of the Warren Court (1953–1969)?",
-    "p1": "Chief Justice Earl Warren → considered most liberal Supreme Court in US history → transformed federal protection of civil rights.",
-    "p2": "Brown v Board (1954) → overturned Plessy. Browder v Gayle (1956) → segregated buses unconstitutional. Boynton v Virginia (1960) → interstate buses desegregated.",
-    "p3": "Swann v Charlotte-Mecklenburg (1971) → bussing constitutional. Griggs v Duke Power Co. (1971) → affirmative action constitutional.",
+    "p1": "Warren Court (1953–69) → considered most liberal Supreme Court in US history → transformed federal protection of civil rights through judicial activism",
+    "p2": "Brown v Board (1954) → overturned Plessy — 'separate but equal' unconstitutional in education → Brown II (1955): desegregation 'with all deliberate speed' → BUT no firm deadline — 98% of Black Southern students still segregated by 1964",
+    "p3": "Browder v Gayle (1956) → segregated buses unconstitutional → triggered end of Montgomery Bus Boycott → Boynton v Virginia (1960) → segregation on interstate buses unconstitutional → directly led to Freedom Rides",
     "hints": [
-      "Earl Warren",
       "Brown v Board",
-      "most liberal"
+      "Browder v Gayle",
+      "Boynton"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -481,7 +474,7 @@
     ],
     "isDepthStudy": false,
     "periods": [
-      "black-power-ds",
+      "black-power",
       "after-black-power"
     ]
   },
@@ -597,14 +590,14 @@
     "no": 33,
     "section": "aa",
     "period": "gilded-age-ds",
-    "front": "What was the role of Social Darwinism and the 'Lost Cause' myth?",
-    "p1": "'Lost Cause' myth → Southern historians + United Daughters of the Confederacy → romanticised slavery + Confederacy → justified Jim Crow as natural social order.",
-    "p2": "Social Darwinism → pseudoscientific extension of Darwin → eugenics seen as modern science → justified racial separation + hostility to interracial marriage.",
-    "p3": "Media spread ideas of lazy, idle freedmen + myth of Black male sexual violence → reinforced white supremacy + justified lynching in public discourse.",
+    "front": "What ideas and attitudes were used to justify Jim Crow?",
+    "p1": "Lost Cause myth: United Daughters of the Confederacy romanticised slavery as noble — framed Civil War as states' rights struggle, not slavery. Justified Jim Crow as preserving natural social order. Confederate monuments, school textbooks and Birth of a Nation (1915) spread the mythology nationally.",
+    "p2": "Social Darwinism: pseudoscientific extension of Darwin's theories — framed African Americans as 'backward', on inferior rung of civilisation. Eugenic theories seen as modern science. Justified racial separation as natural progress. Provided intellectual respectability for white supremacy.",
+    "p3": "Religious justification: many white Southern Christians believed racial hierarchy divinely ordained — Richmond Times editor: 'God almighty drew the color line.' Churches supported segregation. Lost Cause gave historical justification → Social Darwinism gave scientific justification → religion gave divine justification.",
     "hints": [
-      "Lost Cause",
-      "Social Darwinism/eugenics",
-      "media myths"
+      "United Daughters of the Confederacy",
+      "Social Darwinism",
+      "God almighty drew the color line"
     ],
     "isDepthStudy": true,
     "periods": [
@@ -615,14 +608,14 @@
     "no": 34,
     "section": "aa",
     "period": "progressive-wwi",
-    "front": "What was the significance of Birth of a Nation (1915)?",
-    "p1": "D.W. Griffith's film → glorified KKK → depicted Black men as threats to white women → early blockbuster seen by millions.",
-    "p2": "Directly caused resurgence of KKK → membership reached c.5 million by 1920s → 15% of eligible population.",
-    "p3": "Demonstrated power of media to entrench white supremacy → 19th century newspapers had already perpetuated stereotypes of Black criminality and sexual violence.",
+    "front": "What was the significance of Birth of a Nation (1915) and the rise of the second KKK?",
+    "p1": "Birth of a Nation (1915): D.W. Griffith film — glorified first KKK, depicted Black men as violent sexual predators. Screened at White House by Wilson who praised it. Led directly to KKK revival.",
+    "p2": "Second KKK: membership reached 5 million by 1920s — 15% of population. Unlike first KKK, national not just Southern — included politicians, police chiefs, judges across North and West. Targeted Catholics, Jews and immigrants as well as African Americans.",
+    "p3": "Impact: 1925 — Klan burned crosses outside NAACP offices. KKK members in public office undermined law enforcement against racial violence. Showed white supremacy was national not uniquely Southern — critical challenge to Great Migration narrative.",
     "hints": [
-      "glorified KKK",
-      "5 million members",
-      "media power"
+      "Wilson praised it",
+      "5 million / 15% population",
+      "national not just Southern"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -792,7 +785,7 @@
     "isDepthStudy": false,
     "periods": [
       "civil-rights-movement",
-      "black-power-ds"
+      "black-power"
     ]
   },
   {
@@ -941,7 +934,7 @@
     "isDepthStudy": false,
     "periods": [
       "boom-bust",
-      "new-deal-ds",
+      "new-deal",
       "wwii-postwar"
     ]
   },
@@ -1021,14 +1014,14 @@
     "no": 59,
     "section": "aa",
     "period": "wwii-postwar",
-    "front": "What was the impact of post-WWII automation on African American economic rights?",
-    "p1": "Automation in manufacturing post-WWII → disproportionately affected African Americans → concentrated in low-skill manual labour jobs that were eliminated.",
-    "p2": "Black unemployment double white rates throughout this period → Great Migration had brought African Americans into industrial jobs now being automated away.",
-    "p3": "Shift to service economy accelerated → African Americans not positioned to benefit → economic bifurcation → growing middle class alongside persistent ghetto poverty.",
+    "front": "What were the post-war economic challenges facing African Americans?",
+    "p1": "GI Bill (1944): provided education, housing loans and job training to veterans — but administered locally in the South → African American veterans denied benefits. Restrictive covenants barred Black veterans from suburban housing (e.g. Levittown). White veterans built wealth through homeownership; Black veterans locked out.",
+    "p2": "Automation: post-WWII manufacturing shift disproportionately hit African Americans concentrated in low-skill manual jobs. Black unemployment double white unemployment. Manufacturing jobs eliminated were precisely those gained during Great Migration and wartime production.",
+    "p3": "Continued violence: NAACP recorded 56 Black veterans attacked, some in uniform, in 1919. Pattern repeated post-WWII — returning veterans who asserted rights targeted. Economic exclusion compounded by residential segregation in the North and West.",
     "hints": [
-      "automation",
-      "double unemployment",
-      "bifurcation"
+      "GI Bill excluded",
+      "automation double unemployment",
+      "56 veterans attacked"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -1051,26 +1044,7 @@
     "isDepthStudy": false,
     "periods": [
       "civil-rights-movement",
-      "black-power-ds"
-    ]
-  },
-  {
-    "no": 61,
-    "section": "aa",
-    "period": "progressive-wwi",
-    "front": "What was the strategy and significance of the NUL (National Urban League)?",
-    "p1": "Founded 1910 → worked to improve access to jobs, housing and healthcare in Northern cities → helped 250,000 secure housing by 1960s.",
-    "p2": "Whitney Young, NUL leader → advised LBJ on anti-poverty initiatives → economic focus complemented NAACP's legal strategy.",
-    "p3": "Limitations → NUL approach seen as too moderate → focused on working within system → did not challenge structural racism directly.",
-    "hints": [
-      "1910",
-      "250,000 housing",
-      "advised LBJ"
-    ],
-    "isDepthStudy": false,
-    "periods": [
-      "progressive-wwi",
-      "civil-rights-movement"
+      "black-power"
     ]
   },
   {
@@ -1107,7 +1081,7 @@
     ],
     "isDepthStudy": false,
     "periods": [
-      "black-power-ds",
+      "black-power",
       "after-black-power"
     ]
   },
@@ -1236,6 +1210,2153 @@
     ],
     "periods": [
       "black-power-ds"
+    ]
+  },
+  {
+    "no": 71,
+    "section": "aa",
+    "period": "gilded-age-ds",
+    "periods": [
+      "reconstruction",
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the role of State Governments in hindering African Americans during the Gilded Age?",
+    "p1": "Black Codes (1865–6) → restricted movement, labour and assembly of freedmen → de facto re-enslavement before federal repeal → after Compromise of 1877: Jim Crow laws spread across South from 1877 → segregated every area of public life",
+    "p2": "Voter suppression: Mississippi (1890) → literacy tests, poll taxes, grandfather clauses → Black voter registration: 90% (1867) → 6% (1892) → spread across South → Mississippi v Williams (1898) upheld these methods",
+    "p3": "State govts took no action on racial violence → Governor Tillman SC openly defended lynching (1900) → 1,875 lynchings in 1890s alone → Wilmington Coup (1898): white supremacists overthrew biracial elected government → state actors = perpetrators not protectors",
+    "hints": [
+      "Black Codes",
+      "voter registration 6%",
+      "Wilmington Coup"
+    ]
+  },
+  {
+    "no": 72,
+    "section": "lab",
+    "period": "start",
+    "periods": [
+      "start"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the position of labour and union rights in 1865?",
+    "p1": "No legal protections for unions — courts upheld employers' right to suppress organising. 20 state governments had laws allowing militias to intervene in labour disputes. No obligation for employers to recognise unions.",
+    "p2": "NLU (1866): 300,000 members at peak — but collapsed after Sylvis's death (1869). Craft unions like Cigar Makers represented less than 10% of workers in any industry. Fewer than 5% of strikes led to concessions 1865–75.",
+    "p3": "Working conditions dire: 3,000 railroad workers killed and 20,000 injured annually in early 1870s. 750,000 children under 15 in industrial labour. Immigrants worked 60–70 hours/week for as little as $1/day. No injury compensation.",
+    "hints": [
+      "no legal protections",
+      "NLU 1866",
+      "fewer than 5%"
+    ]
+  },
+  {
+    "no": 73,
+    "section": "lab",
+    "period": "early-industrialisation",
+    "periods": [
+      "early-industrialisation"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Great Railroad Strike (1877)?",
+    "p1": "Spontaneous nationwide strike following wage cuts during economic depression — spread from West Virginia across the country. Workers from different railroads shut down rail traffic.",
+    "p2": "Federal troops called in — killed over 100 workers. Government's focus on maintaining order rather than addressing workers' grievances.",
+    "p3": "First nationwide labour dispute → exposed need for stronger organised unions → showed federal violent resistance was the government's default response to strikes.",
+    "hints": [
+      "100+ killed",
+      "spontaneous",
+      "first nationwide"
+    ]
+  },
+  {
+    "no": 74,
+    "section": "lab",
+    "period": "early-industrialisation",
+    "periods": [
+      "early-industrialisation"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the NLU, CNLU and KOL in early industrialisation?",
+    "p1": "NLU (1866): first national labour organisation — Sylvis pushed for 8-hour workday and legislative reforms. Undermined by economic depression of early 1870s and internal divisions — over-reliant on Sylvis, collapsed 1869.",
+    "p2": "CNLU (1869): formed by African American workers excluded from NLU — showed racial divisions embedded from the start. KOL (1869): most inclusive early union — welcomed skilled and unskilled, women, African Americans and immigrants.",
+    "p3": "Molly Maguires (1873): violent conflicts in Pennsylvania coalfields — Pinkerton agents infiltrated, 10 leaders executed 1876. Associated unions with violence — damaged public support.",
+    "hints": [
+      "NLU Sylvis",
+      "CNLU 1869",
+      "Molly Maguires"
+    ]
+  },
+  {
+    "no": 75,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of the Haymarket Affair (1886) and the collapse of the KOL?",
+    "p1": "KOL grew from 20,000 (1881) to 700,000 (1886) — most inclusive labour organisation, welcomed women, African Americans and immigrants. Rally in Chicago demanding 8-hour workday turned violent — bomb killed 7 police officers.",
+    "p2": "KOL collapsed — associated with radicalism and anarchism. AFL (1886) established as safer alternative under Gompers — focused on skilled workers only, excluded unskilled, women and most African Americans.",
+    "p3": "Haymarket associated industrial unionism with anarchism in public mind — damaged union movement for decades. Showed employer and government hostility could destroy even a 700,000-strong organisation.",
+    "hints": [
+      "700,000 members",
+      "7 police killed",
+      "AFL 1886"
+    ]
+  },
+  {
+    "no": 76,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of the Homestead Strike (1892)?",
+    "p1": "Carnegie Steel's Homestead plant, Pennsylvania — wage cuts and anti-union lockout of Amalgamated Association workers. Carnegie left for Scotland leaving Frick to break the union. 300 armed Pinkerton agents arrived by barge — violent clash left 12 men dead.",
+    "p2": "Pennsylvania Governor deployed 8,000 state militia — ended workers' control of the plant. Amalgamated Association collapsed — steel industry remained union-free until 1930s. Homestead virtually bankrupted the union. AFL refused to support — exposed skilled/unskilled division.",
+    "p3": "Significance: showed corporations would use private armies and state force against workers. Highlighted growing corporate power and willingness to use private and state militias. Over 40 years later Flint sit-down strike (1936–37) finally won UAW recognition — showing how long it took to overcome Homestead's legacy.",
+    "hints": [
+      "Pinkerton agents by barge",
+      "12 men dead",
+      "union-free until 1930s"
+    ]
+  },
+  {
+    "no": 77,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the role of the AFL during the Gilded Age?",
+    "p1": "Founded 1886 by Samuel Gompers — focused on skilled workers, pushed for higher wages, shorter workdays and better conditions through collective bargaining rather than confrontation. Made some gains negotiating with Hanna and JP Morgan.",
+    "p2": "Exclusionary by design — neglected unskilled labourers, women and most African Americans. AFL included 60,000 Black workers by late 19th century but no Black union won a charter until BSCP in 1930s.",
+    "p3": "Sherman Antitrust Act (1890) routinely used against unions as illegal restraints of trade. By end of century trade union membership reached 500,000 — but only 500,000 of a workforce of millions, mostly in skilled trades.",
+    "hints": [
+      "Gompers",
+      "skilled workers only",
+      "Sherman Antitrust"
+    ]
+  },
+  {
+    "no": 78,
+    "section": "lab",
+    "period": "progressive-era",
+    "periods": [
+      "progressive-era"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Great Coal Strike (1902)?",
+    "p1": "140,000 miners — demanded higher wages, shorter hours and union recognition. President Roosevelt intervened to arbitrate rather than send troops — first time federal government acted as mediator not suppressor.",
+    "p2": "Mitchell's moderate UMWA leadership secured presidential support — Roosevelt more sympathetic to Mitchell than the abrasive company owners. Owners agreed to wage increase and improved conditions.",
+    "p3": "Partial success — marked shift in Progressive Era attitude. BUT no formal union recognition. Showed moderate leadership could achieve more than confrontation. First positive federal intervention in a labour dispute.",
+    "hints": [
+      "140,000 miners",
+      "TR mediator",
+      "Mitchell"
+    ]
+  },
+  {
+    "no": 79,
+    "section": "lab",
+    "period": "progressive-era",
+    "periods": [
+      "progressive-era"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the IWW and the Lawrence Textile Strike (1912)?",
+    "p1": "IWW ('Wobblies') founded 1905 — sought to unite all workers regardless of skill, including immigrants and minorities. Open to groups excluded by AFL. Association with socialism and anarchism led to government suppression.",
+    "p2": "Lawrence Textile 'Bread and Roses' Strike (1912): immigrant women from multiple ethnic groups — IWW-led. Women received 15% pay rise and overtime pay. No reprisal agreement against strikers — step forward for right to strike.",
+    "p3": "Showed power of solidarity across ethnic lines. BUT IWW's radical tactics ultimately led to its suppression — radical methods alienated moderates. Triangle Shirtwaist Fire (1911): 146 garment workers killed — galvanised demand for safety laws.",
+    "hints": [
+      "Wobblies",
+      "Lawrence 15%",
+      "Triangle Shirtwaist"
+    ]
+  },
+  {
+    "no": 80,
+    "section": "lab",
+    "period": "wwi-red-summer",
+    "periods": [
+      "wwi-red-summer"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of WWI and the Red Scare on labour rights?",
+    "p1": "NWLB (1918): agreement between employers and AFL to maintain production — temporarily legitimised unions and facilitated collective bargaining. BUT policies only benefited AFL — excluded unskilled and unaffiliated workers.",
+    "p2": "AFL agreed no-strike pledges during WWI — prioritised national unity. Seattle General Strike (1919): 65,000 workers — suppressed by Mayor Hanson, demonised by media as Bolshevist. Red Scare: union activity viewed as communist threat.",
+    "p3": "Red Summer (1919): race riots across major US cities — economic tensions between Black and white workers competing for jobs. Post-war reversal — all wartime gains quickly rolled back. Workers' sacrifices during war brought no lasting rights.",
+    "hints": [
+      "NWLB 1918",
+      "Seattle 65,000",
+      "Red Summer"
+    ]
+  },
+  {
+    "no": 81,
+    "section": "lab",
+    "period": "twenties",
+    "periods": [
+      "twenties"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of welfare capitalism on labour rights in the 1920s?",
+    "p1": "Employers introduced pensions, healthcare and benefits — reduced perceived need for unions. Yellow-dog contracts widespread — workers signed away right to join unions as condition of employment. Company unions replaced independent ones.",
+    "p2": "Union membership declined from peak of 5 million (1920). Deering v Duplex (1921): restricted secondary boycotts. Adkins v Children's Hospital (1923): struck down minimum wage for women — 'freedom of contract' doctrine.",
+    "p3": "BSCP founded 1925 by Philip Randolph — first successful Black union, sought recognition from Pullman Company and AFL. Would not achieve it until 1937. Wall St Crash (1929): unemployment 25% — ended welfare capitalism era abruptly.",
+    "hints": [
+      "yellow-dog contracts",
+      "BSCP 1925",
+      "Wall St Crash"
+    ]
+  },
+  {
+    "no": 82,
+    "section": "lab",
+    "period": "new-deal-ds",
+    "periods": [
+      "new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of the Wagner Act (1935)?",
+    "p1": "Guaranteed right to unionise and collectively bargain — established NLRB to enforce. Banned company spies, company unions, blacklisting and dismissal of union organisers. Union membership: 3 million (1933) → 8 million (1940).",
+    "p2": "Wagner Act promoted closed shops — but this inadvertently excluded Black workers from AFL unions. Social Security (1935) excluded farm and domestic workers — 65% of Black workers. Henry Ford resisted UAW recognition until 1941.",
+    "p3": "Milestone in labour rights — first time federal government legally recognised workers' right to organise. BUT relied on Southern Democrats who used local administration to undermine it. Employer resistance continued through spy networks and blacklisting.",
+    "hints": [
+      "NLRB",
+      "union membership 8 million",
+      "closed shops"
+    ]
+  },
+  {
+    "no": 83,
+    "section": "lab",
+    "period": "new-deal-ds",
+    "periods": [
+      "new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of the CIO and the Flint Sit-Down Strike (1936–37)?",
+    "p1": "John Lewis formed CIO (1935) as part of AFL — focused on industrial workers regardless of skill, including women and African Americans. AFL expelled CIO in 1938 — exposed fractures in movement.",
+    "p2": "Flint Sit-Down Strike (1936–37): 40,000 workers at General Motors — CIO-led. Workers occupied the factory rather than picketing outside — harder to replace. Forced recognition of UAW. Inspired 200 more sit-down strikes in 1937.",
+    "p3": "US Steel unionised 1937 without a strike — over 40 years after Homestead failure. NLRB v Fansteel (1939): sit-down strikes ruled illegal. Memorial Day Massacre (1937): Chicago police killed 10 striking steelworkers — public outrage strengthened solidarity.",
+    "hints": [
+      "Flint 40,000",
+      "UAW recognised",
+      "sit-down strikes"
+    ]
+  },
+  {
+    "no": 84,
+    "section": "lab",
+    "period": "new-deal-ds",
+    "periods": [
+      "new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of Philip Randolph and the BSCP?",
+    "p1": "BSCP founded 1925 — first successful Black union. Randolph became first African American to lead a national union that won a collective bargaining agreement. AFL recognition achieved 1935, Pullman Company recognition 1937.",
+    "p2": "March on Washington Movement (1941): threatened 100,000-strong march on Washington — pressured Roosevelt to issue EO 8802, prohibiting racial discrimination in defence industries. First time a mass non-violent movement forced a major federal concession.",
+    "p3": "Significance beyond labour: demonstrated power of non-violent mass pressure — model later used by civil rights movement. BSCP's success relied on shift in federal attitudes with New Deal. Showed Black workers could win through organisation rather than confrontation.",
+    "hints": [
+      "BSCP 1925",
+      "EO 8802",
+      "March on Washington Movement"
+    ]
+  },
+  {
+    "no": 85,
+    "section": "lab",
+    "period": "wwii-taft-hartley",
+    "periods": [
+      "wwii-taft-hartley"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of the Taft-Hartley Act (1947)?",
+    "p1": "Passed over Truman's veto — amended Wagner Act. Banned secondary strikes and closed shops. Allowed states to pass right-to-work laws prohibiting mandatory union membership — 21 states enacted them, primarily in South and West.",
+    "p2": "Required union leaders to sign anti-communist oaths — fostered division within movement, weakened CIO whose leaders included communists. McCarthyism (Red Scare 1946–50s): union activism linked to communism — further undermined left-leaning unions.",
+    "p3": "Post-WWII strike wave (1946): 5,000 strikes involving 4.6 million workers — showed pent-up pressure. Taft-Hartley imposed 60-day cooling-off period for strikes threatening national security. Marked beginning of rollback from WWII peak of 35% union membership.",
+    "hints": [
+      "right-to-work laws",
+      "anti-communist oaths",
+      "21 states"
+    ]
+  },
+  {
+    "no": 86,
+    "section": "lab",
+    "period": "fifties-seventies",
+    "periods": [
+      "fifties-seventies"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the AFL-CIO merger (1955)?",
+    "p1": "AFL and CIO merged — 16 million members, representing 85% of unionised workforce. Combined both craft and industrial unions into one huge negotiating bloc. AFL-CIO members earned 20% more than non-unionised workers by 1960s.",
+    "p2": "Automation 1950s–60s: manufacturing job losses — blue-collar unions weakened. New white-collar workers uninterested in labour struggle. New electronics and service sectors relocated to avoid unions. Manufacturing declined 40% from 1970 peak by 1979.",
+    "p3": "OSHA (1970): established workplace safety standards — significantly reduced workplace injuries and deaths. Civil Rights Act (1964): prohibited employment discrimination by race, sex or national origin. Kennedy EO 10988 (1962): federal employees right to unionise.",
+    "hints": [
+      "16 million members",
+      "AFL-CIO 1955",
+      "OSHA 1970"
+    ]
+  },
+  {
+    "no": 87,
+    "section": "lab",
+    "period": "fifties-seventies",
+    "periods": [
+      "fifties-seventies"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of Cesar Chavez and the UFW?",
+    "p1": "UFW (1966): Chavez organised Filipino and Mexican American farm workers — historically without union representation, excluded from most labour legislation. Delano Grape Strike (1965–70): nationwide grape boycott forced collective bargaining agreement.",
+    "p2": "Salad Bowl Strike (1970): led by Filipino workers, supported by Mexican and other ethnic groups. Success — strengthened UFW's position, led to better wages and union recognition for farm workers. California Agricultural Relations Board (1975): UFW victory.",
+    "p3": "Showed power of nonviolent strikes and consumer boycotts beyond the workplace. Expanded labour movement beyond its traditional white male industrial base — major increase in Hispanic union membership. UFW model influenced subsequent immigrant labour organising.",
+    "hints": [
+      "Delano Grape Strike",
+      "Salad Bowl 1970",
+      "California ALRB"
+    ]
+  },
+  {
+    "no": 88,
+    "section": "lab",
+    "period": "black-power-ds",
+    "periods": [
+      "black-power-ds",
+      "fifties-seventies"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of DRUM and the LRBW?",
+    "p1": "DRUM (1968): established in Detroit to push for racial equality for Black workers in auto industry — organised wildcat strikes at Chrysler's Dodge Main plant. 500+ members by 1969. Inspired FRUM, CADRUM and GRUM across Detroit industries.",
+    "p2": "LRBW pushed for Black leadership in UAW — Black workers made up 30% of UAW membership by early 1970s but leadership representation still limited. Black workers earned $2,000 less per year than white counterparts in late 1960s.",
+    "p3": "Limits: UAW leadership resistant to wildcat tactics despite similar methods having founded CIO in 1930s. LRBW collapsed from internal divisions — unable to resolve racial vs class basis of struggle. Showed limits of Black Power's intersection with organised labour.",
+    "hints": [
+      "DRUM 1968",
+      "wildcat strikes",
+      "$2,000 less"
+    ]
+  },
+  {
+    "no": 89,
+    "section": "lab",
+    "period": "reagan-era",
+    "periods": [
+      "reagan-era"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of the PATCO Strike (1981)?",
+    "p1": "Air traffic controllers struck for $10,000 pay rise, improved conditions and reduced hours. Reagan declared strike illegal — fired 11,000 workers and banned them from federal employment. Effectively decertified the union.",
+    "p2": "Marked decisive shift in balance of power between government and unions — emboldened employers across all industries to adopt anti-union stances. Union-busting became standard practice. Outsourcing and non-unionised temporary workers normalised.",
+    "p3": "PATCO alienated public — seen as demanding excessive pay rise during summer holidays, making Reagan's response politically easy. Union membership: 24% (1979) → 16% (1990). Most damaging single act of government hostility to unions since Pullman (1894).",
+    "hints": [
+      "11,000 fired",
+      "Reagan 1981",
+      "24% → 16%"
+    ]
+  },
+  {
+    "no": 90,
+    "section": "lab",
+    "period": "end",
+    "periods": [
+      "end"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the position of labour and union rights by 1992?",
+    "p1": "Union membership 16% of workforce — down from 35% (1945) and 24% (1979). Deindustrialisation, automation and globalisation eroded traditional union base. Manufacturing jobs declined 40% from 1970 peak.",
+    "p2": "Legal framework survived: Wagner Act, NLRB, OSHA, Civil Rights Act (1964), Equal Pay Act (1963) all in force. But employers routinely used union-busting consultants and relocated to right-to-work states. Strike activity fell dramatically from 1981.",
+    "p3": "AFL-CIO members still earned more than non-unionised workers but gap narrowing. Women and minority workers still disproportionately in non-unionised, lower-paid roles. Racial disparities in wages and union leadership persisted into 1980s.",
+    "hints": [
+      "16% membership",
+      "right-to-work states",
+      "legal framework survived"
+    ]
+  },
+  {
+    "no": 91,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What were working conditions like during the Gilded Age?",
+    "p1": "2,000 rail workers killed in accidents in 1889 alone → by 1900, 35,000 workplace deaths annually → no federal safety legislation. Panic of 1873: long depression — wages dropped by nearly half. In 1892 alone the National Guard used 23 times to break strikes.",
+    "p2": "Women 15% of industrial workforce — earned $3–6/week vs $7–10 for men. Immigrants 15–20% of urban industrial workforce — worked 60–70 hours/week for as little as $1/day. In cotton mills, children as young as 8 worked 12-hour shifts for $1/week. 750,000 children under 15 in industrial labour.",
+    "p3": "Unskilled workers earned only 30% of skilled workers' wages. 2% of population owned 30% of wealth. No legal framework for employer-provided benefits — injured workers left destitute. Blacklisting shared among 50 mine operators in Pennsylvania.",
+    "hints": [
+      "35,000 deaths",
+      "children 12-hour shifts",
+      "unskilled 30%"
+    ]
+  },
+  {
+    "no": 92,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of Eugene Debs and the ARU?",
+    "p1": "ARU (1894): first successful industrial union — mobilised railroad workers across industries regardless of skill. Debs led Pullman Strike (1894) — although defeated, brought national attention to plight of workers.",
+    "p2": "Debs' advocacy for socialism led him to run for president multiple times as Socialist Party candidate — won 6% of vote in 1912. Imprisoned for Pullman strike role — became symbol of labour martyrdom.",
+    "p3": "ARU showed potential of industrial unionism — organising workers across all industries within a sector. BUT AFL refused to support ARU during Pullman strike — skilled/unskilled division fatally weakened it. Court injunction set precedent used to break future strikes.",
+    "hints": [
+      "ARU 1894",
+      "Debs 6% 1912",
+      "court injunction"
+    ]
+  },
+  {
+    "no": 93,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the role of divisions within the Gilded Age labour movement?",
+    "p1": "Skilled vs unskilled: AFL excluded unskilled workers — Pullman Strike (1894) failed partly because AFL refused to support ARU. KOL collapsed not just from Haymarket but from poor organisation and internal conflicts.",
+    "p2": "Racial division: NLU excluded Black workers → CNLU formed separately (1869). African Americans used as strike-breakers — exacerbated mistrust. Chinese Exclusion Act (1882) — passed with KOL support — marginalised Chinese workers.",
+    "p3": "11 million new immigrants from southern and eastern Europe → race to the bottom on wages → nativist hostility within unions. Immigrant willingness to accept low wages angered native-born workers. Fewer than 5% of strikes led to concessions 1865–75 — lack of solidarity a root cause.",
+    "hints": [
+      "AFL excluded unskilled",
+      "CNLU 1869",
+      "fewer than 5%"
+    ]
+  },
+  {
+    "no": 94,
+    "section": "lab",
+    "period": "progressive-era",
+    "periods": [
+      "progressive-era"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the role of the courts and legislation in shaping labour rights in the Progressive Era?",
+    "p1": "Lochner v New York (1905): Supreme Court struck down law limiting bakers' working hours — 'freedom of contract' doctrine used to block protective legislation. Coppage v Kansas (1915): upheld yellow-dog contracts — workers could be forced to agree not to join unions.",
+    "p2": "Clayton Antitrust Act (1914): attempted to exempt unions from antitrust laws, preventing courts using injunctions against strikes. BUT Duplex Printing Press v Deering (1921) later limited its impact — injunctions against unions continued.",
+    "p3": "Keating-Owen Child Labour Act (1916): prohibited child labour in interstate commerce — struck down by Supreme Court 1918. Wilson established Department of Labor (1913) — Cabinet-level position for first time. Courts remained hostile tool of employers throughout Progressive Era.",
+    "hints": [
+      "Lochner 1905",
+      "Clayton Act 1914",
+      "yellow-dog contracts"
+    ]
+  },
+  {
+    "no": 95,
+    "section": "lab",
+    "period": "wwi-red-summer",
+    "periods": [
+      "wwi-red-summer"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Seattle General Strike (1919)?",
+    "p1": "65,000 workers across various industries struck in solidarity — largest general strike in US history to that point. Aimed to show power of cross-industry solidarity beyond a single workplace dispute.",
+    "p2": "Suppressed by Mayor Ole Hanson — described as a Bolshevist revolution. Media demonised strikers as anarchists and communists. Failed to achieve aims — exposed limits of general strike as tactic in hostile political climate.",
+    "p3": "Red Scare (1919): Bolshevik Revolution in Russia sparked fears of global communist revolution — union activity viewed with deep suspicion. All post-WWI labour gains rapidly reversed. Showed that wartime solidarity had not translated into political power for unions.",
+    "hints": [
+      "65,000 workers",
+      "Bolshevist",
+      "Red Scare"
+    ]
+  },
+  {
+    "no": 96,
+    "section": "lab",
+    "period": "twenties",
+    "periods": [
+      "twenties"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of the Great Depression on labour rights?",
+    "p1": "Wall St Crash (1929) → unemployment rose to 25% nationally — 50% for African Americans. Bargaining power of workers collapsed. Demand for federal reform grew — existing union structure could not respond.",
+    "p2": "Norris-LaGuardia Act (1932): prohibited federal courts from using injunctions against peaceful strikes and banned yellow-dog contracts — first significant legislative gain in decades. Unions had only 3 million members by 1932 — a fraction of the workforce.",
+    "p3": "Great Depression created conditions for New Deal — showed welfare capitalism had failed. Workers' desperation drove Flint sit-down strikes and pressure for Wagner Act. In 1932, ¾ of African Americans still voted Republican — political realignment not yet complete.",
+    "hints": [
+      "25% unemployment",
+      "Norris-LaGuardia",
+      "3 million members"
+    ]
+  },
+  {
+    "no": 97,
+    "section": "lab",
+    "period": "new-deal-ds",
+    "periods": [
+      "new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of the Fair Labor Standards Act (1938)?",
+    "p1": "$25 weekly minimum wage established — first federal minimum wage. Maximum working hours legislated. Child labour under 16 banned in industries engaged in interstate commerce.",
+    "p2": "Passed despite opposition from business groups — showed New Deal coalition could overcome employer resistance. PWA, CCC and WPA had already created millions of jobs — FLSA entrenched gains in law.",
+    "p3": "Limits: did not address gender pay gap — women still earned significantly less than men. Excluded farm and domestic workers — sectors with large proportion of Black and immigrant workers. Employers exploited loopholes to avoid compliance.",
+    "hints": [
+      "$25 minimum wage",
+      "child labour banned",
+      "excluded farm workers"
+    ]
+  },
+  {
+    "no": 98,
+    "section": "lab",
+    "period": "wwii-taft-hartley",
+    "periods": [
+      "wwii-taft-hartley"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of WWII on labour rights?",
+    "p1": "NWLB (1942): government worked with AFL and CIO to mediate disputes and uphold codes of practice — prevented strike action during war. Union membership peaked at 35% of workforce (14.8 million) by 1945.",
+    "p2": "Smith-Connally Act (1943): allowed federal government to seize industries threatened by strike action — passed over FDR's veto. Unions agreed no-strike pledges in exchange for recognition and wartime wages.",
+    "p3": "Post-WWII strike wave (1946): 5,000 strikes involving 4.6 million workers — showed pent-up pressure suppressed during war. EO 8802 (1941): banned racial discrimination in defence industries — secured by Randolph's March on Washington Movement threat.",
+    "hints": [
+      "35% membership",
+      "Smith-Connally",
+      "post-war strike wave"
+    ]
+  },
+  {
+    "no": 99,
+    "section": "lab",
+    "period": "wwii-taft-hartley",
+    "periods": [
+      "wwii-taft-hartley"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of McCarthyism on the labour movement?",
+    "p1": "Second Red Scare (1946–50s): union activism linked to communism — crackdown on perceived communist influence. Taft-Hartley Act (1947) required union leaders to sign anti-communist oaths — those who refused could not use NLRB.",
+    "p2": "CIO weakened — many left-wing unions expelled or forced to purge communist members. Divisions between anti-communist and left-wing unions undermined movement solidarity. Landrum-Griffin Act (1959) further curtailed unions' political activities.",
+    "p3": "Long-term damage: labour movement's political influence narrowed — no longer able to advocate for broader social change without being labelled communist. Chilled union organising in public sector and new industries. AFL-CIO merger (1955) partly a response — combined strength to resist Red Scare pressure.",
+    "hints": [
+      "anti-communist oaths",
+      "CIO weakened",
+      "Landrum-Griffin"
+    ]
+  },
+  {
+    "no": 100,
+    "section": "lab",
+    "period": "fifties-seventies",
+    "periods": [
+      "fifties-seventies"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of automation and deindustrialisation on labour rights?",
+    "p1": "Automation 1950s–60s: eliminated many manual jobs — blue-collar unions weakened as manufacturing workforce shrank. Rise of white-collar workers who were uninterested in the labour struggle and difficult to organise.",
+    "p2": "By 1979, manufacturing jobs had declined 40% from 1970 peak. New electronics and service sectors relocated to avoid unions — moved to Southwest US with weak union presence. Globalisation: outsourcing to countries with cheaper labour eroded union power in traditional industries.",
+    "p3": "Unions struggled to adapt — collective bargaining built around manufacturing not applicable to service industries. Union membership began long decline from peak of 35% (1945). Contrast with 1960s when AFL-CIO members earned 20% more than non-unionised workers — gap narrowed by 1980s.",
+    "hints": [
+      "40% manufacturing decline",
+      "white-collar",
+      "relocation to Southwest"
+    ]
+  },
+  {
+    "no": 101,
+    "section": "lab",
+    "period": "fifties-seventies",
+    "periods": [
+      "fifties-seventies"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of the gender and racial divisions in the post-war labour movement?",
+    "p1": "Women excluded from many unions for much of the 19th and early 20th centuries — expected to form separate, less influential organisations. After WWII, unions reluctant to accept women as full members. Women in lower-paying, non-unionised roles disproportionately.",
+    "p2": "Racial divisions persisted: no Black union won an AFL charter until BSCP in 1930s. UAW leadership resistant to DRUM's wildcat tactics (1968) despite similar methods having founded the CIO. Black workers still earned $2,000 less per year than white counterparts in late 1960s.",
+    "p3": "Coalition of Labor Union Women (1974): national organisation advocating for working women. Civil Rights Act (1964): prohibited employment discrimination by race, sex or national origin — significant for both women and Black workers. Equal Pay Act (1963): mandated equal pay. Progress slow — disparities in wages, jobs and union leadership persisted into 1980s.",
+    "hints": [
+      "women excluded",
+      "$2,000 less",
+      "Equal Pay Act 1963"
+    ]
+  },
+  {
+    "no": 102,
+    "section": "lab",
+    "period": "reagan-era",
+    "periods": [
+      "reagan-era"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of Reaganomics on labour rights?",
+    "p1": "Deregulation and tax cuts for business — union-busting became standard practice. Employers used legal challenges, outsourcing and non-unionised temporary workers to weaken unions. Relocating to right-to-work states normalised.",
+    "p2": "Reagan reduced OSHA funding — workplace safety declined, safety violations persisted especially in agriculture and construction. Judicial appointments shifted courts in a more employer-friendly direction — weakened NLRB enforcement.",
+    "p3": "Union membership: 24% (1979) → 16% (1990). Manufacturing decline accelerated — 40% drop from 1970 peak by 1979 already embedded. Globalisation of production meant employers had leverage unions lacked — jobs could be outsourced rather than concessions made.",
+    "hints": [
+      "OSHA defunded",
+      "24% → 16%",
+      "union-busting standard"
+    ]
+  },
+  {
+    "no": 103,
+    "section": "lab",
+    "period": "start",
+    "periods": [
+      "start",
+      "early-industrialisation"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the right to strike and right to safe conditions like in 1865?",
+    "p1": "Right to strike: fewer than 5% of strikes led to concessions 1865–75 — lack of solidarity and financial support. Scab labour widespread — in strikes of 100 workers, scabs typically comprised 20–30 replacements. Blacklisting shared among 50 mine operators in Pennsylvania. Courts issued injunctions against strikes in railroads — over 200,000 miles of track under private ownership by early 1870s.",
+    "p2": "Molly Maguires (1873): violent conflicts in Pennsylvania coalfields between Irish labourers and mine owners. Pinkerton agents infiltrated — 10 leaders executed 1876. Associated unions with violence. Public hostility high — newspapers called strikers 'rioters' and 'anarchists'.",
+    "p3": "Right to conditions: 3,000 railroad workers killed and 20,000 injured annually in early 1870s. Children as young as 8 worked 12-hour shifts for $1/week in cotton mills. No legal framework for benefits — injured workers left destitute. Contract system left workers vulnerable to layoffs during slow periods.",
+    "hints": [
+      "fewer than 5%",
+      "Molly Maguires",
+      "contract system"
+    ]
+  },
+  {
+    "no": 104,
+    "section": "lab",
+    "period": "early-industrialisation",
+    "periods": [
+      "early-industrialisation",
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of the Panic of 1873 and economic depression on labour?",
+    "p1": "Panic of 1873: long economic depression — wages dropped by nearly half, widespread unemployment. 2% of population owned 30% of wealth. Unskilled workers earned only 30% of skilled workers' wages. Contract system left workers vulnerable — mass layoffs during slow periods.",
+    "p2": "NLU collapsed — undermined by depression and internal divisions. Workers lacked financial reserves to sustain strikes — fewer than 5% of strikes led to concessions. Pattern repeated in late 1880s–90s: in 1892 alone the National Guard used 23 times to break strikes.",
+    "p3": "Coxey's Army (1894): unemployed workers marched to Washington demanding federal job creation — failed to achieve aims. Exposed lack of federal sympathy for unemployed workers. Showed workers had no political leverage during downturns — government sided with employers during every economic crisis of the Gilded Age.",
+    "hints": [
+      "wages halved",
+      "Coxey's Army",
+      "National Guard 23 times"
+    ]
+  },
+  {
+    "no": 105,
+    "section": "lab",
+    "period": "early-industrialisation",
+    "periods": [
+      "early-industrialisation",
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the role of racial and ethnic divisions in early industrialisation?",
+    "p1": "Chinese Exclusion Act (1882): Chinese workers barred due to fears they undercut wages and weakened 'native' labour — passed with KOL support, exposing nativist bias even within inclusive-seeming unions. Immigrants 15–20% of urban industrial workforce — worked 60–70 hours/week for as little as $1/day.",
+    "p2": "NLU excluded Black workers → CNLU formed separately (1869). African Americans used as strike-breakers — exacerbated mistrust between Black and white workers. Foran Act (1885): KOL pressure banned importing foreign labour under contract — first legislative gain against employer exploitation of division.",
+    "p3": "Immigrant willingness to accept low wages angered native-born workers — employers deliberately encouraged division to undermine solidarity. Race to the bottom on wages made collective action harder. Division between workers a more fundamental obstacle than employer power alone.",
+    "hints": [
+      "Chinese Exclusion 1882",
+      "CNLU 1869",
+      "Foran Act 1885"
+    ]
+  },
+  {
+    "no": 106,
+    "section": "lab",
+    "period": "new-deal-ds",
+    "periods": [
+      "new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "How significant was opposition to advancements in labour rights during the New Deal?",
+    "p1": "Employer resistance: many employers resisted Wagner Act through blacklisting, spy networks and private security. Henry Ford resisted UAW recognition until 1941. Memorial Day Massacre (1937): Chicago police killed 10 striking steelworkers — opposition was violent not just legal.",
+    "p2": "Internal divisions: AFL-CIO split (1938) — AFL expelled CIO, exposing fractures. AFL promoted closed shops inadvertently excluding Black workers. NLRB v Fansteel (1939): sit-down strikes ruled illegal — legal opposition limited key tactic.",
+    "p3": "Limits of opposition: union membership surged 3.7 million (1933) → 9 million (1938) despite resistance. US Steel unionised 1937 without a strike. Memorial Day Massacre backfired — public outrage strengthened solidarity. Wagner Act's legal framework ultimately overcame employer opposition.",
+    "hints": [
+      "Ford 1941",
+      "AFL-CIO split",
+      "membership 9 million"
+    ]
+  },
+  {
+    "no": 107,
+    "section": "lab",
+    "period": "progressive-era",
+    "periods": [
+      "progressive-era"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Triangle Shirtwaist Factory Fire (1911)?",
+    "p1": "146 garment workers killed — mostly young immigrant women — due to locked exit doors, inadequate fire escapes and poor safety standards. Workers jumped from 8th floor to escape flames. Employer Isaac Harris and Max Blanck acquitted of manslaughter.",
+    "p2": "Galvanised public demand for safety legislation — New York State Factory Investigating Commission established, leading to 30+ labour laws. Women's Trade Union League (WTUL, 1903) and International Ladies' Garment Workers' Union (ILGWU) gained members and political influence.",
+    "p3": "Exposed the gap between industrial capitalism and worker protection — showed voluntary employer safety measures were insufficient. Became a defining moment for the progressive labour reform movement. Death toll highlighted particular vulnerability of immigrant women workers.",
+    "hints": [
+      "146 killed",
+      "acquitted",
+      "Factory Investigating Commission"
+    ]
+  },
+  {
+    "no": 108,
+    "section": "lab",
+    "period": "progressive-era",
+    "periods": [
+      "progressive-era"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Clayton Antitrust Act (1914)?",
+    "p1": "Attempted to exempt unions from antitrust laws — amended Sherman Act by preventing courts using injunctions against strikes, boycotts and peaceful picketing. Declared that 'the labour of a human being is not a commodity.' Gompers called it 'labour's Magna Carta'.",
+    "p2": "Impact limited: Duplex Printing Press v Deering (1921) — Supreme Court upheld use of injunctions against unions despite Clayton Act. Courts continued to treat secondary boycotts as illegal. Coppage v Kansas (1915): upheld yellow-dog contracts.",
+    "p3": "Contrast: Norris-LaGuardia Act (1932) finally prohibited federal courts from issuing injunctions against peaceful strikes and made yellow-dog contracts unenforceable — achieved what Clayton Act had attempted. Together these show the long arc of legal struggle over the right to strike.",
+    "hints": [
+      "labour's Magna Carta",
+      "Duplex 1921",
+      "Norris-LaGuardia 1932"
+    ]
+  },
+  {
+    "no": 109,
+    "section": "lab",
+    "period": "progressive-era",
+    "periods": [
+      "progressive-era"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Women's Trade Union League (1903)?",
+    "p1": "Coalition of working-class women and middle-class reformers — advocated for better wages, shorter hours and unionisation for women workers. Actively supported Lawrence Textile Strike (1912) — helped women receive 15% pay rise and overtime pay.",
+    "p2": "Exposed the exclusion of women from male-dominated unions like the AFL. Pushed for protective legislation for women workers — contributed to pressure that led to Keating-Owen Child Labour Act (1916) and later FLSA (1938).",
+    "p3": "Limitations: AFL remained hostile to women's full membership. Triangle Shirtwaist Fire (1911) exposed inadequacy of existing protections. WTUL showed that middle-class advocacy was needed because working-class women lacked the political leverage to reform conditions alone.",
+    "hints": [
+      "WTUL 1903",
+      "Lawrence 15%",
+      "AFL hostile"
+    ]
+  },
+  {
+    "no": 110,
+    "section": "lab",
+    "period": "new-deal-ds",
+    "periods": [
+      "new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of the NIRA/NRA (1933) and why did it fail?",
+    "p1": "National Industrial Recovery Act (1933): encouraged employers to adopt codes protecting workers — set minimum wages, maximum hours and recognised right to collective bargaining under Section 7a. Seen as precursor to Wagner Act. NRA Blue Eagle symbol displayed by compliant businesses.",
+    "p2": "Declared unconstitutional by Supreme Court 1935 (Schechter Poultry v US) — exceeded federal power. Many employers displayed Blue Eagle without actually complying with its provisions. NRA codes often undermined by employers and manipulated to their advantage.",
+    "p3": "Significance: NIRA's failure showed that voluntary codes were insufficient — accelerated pressure for mandatory enforcement through Wagner Act (1935). Section 7a had encouraged union organising — membership grew even before Wagner Act. Employer evasion demonstrated need for NLRB.",
+    "hints": [
+      "Section 7a",
+      "Blue Eagle",
+      "unconstitutional 1935"
+    ]
+  },
+  {
+    "no": 111,
+    "section": "lab",
+    "period": "new-deal-ds",
+    "periods": [
+      "new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was employer and state resistance to the New Deal labour reforms?",
+    "p1": "Many employers actively resisted Wagner Act — blacklisting, spy networks and private security continued despite NLRB. Henry Ford: resisted UAW recognition until 1941 — one of last major industrial employers to accept union power. Textile Workers' Strike (1934): 400,000 workers — crushed with violence and repression.",
+    "p2": "Memorial Day Massacre (1937): Chicago police killed 10 striking steelworkers at Republic Steel — employers used local and state authorities as instruments of suppression. Public outrage over incident strengthened union solidarity and embarrassed opponents of Wagner Act.",
+    "p3": "Southern resistance: Southern Democrats maintained workplace segregation and racial hierarchies — Black workers excluded from unions, violent repression if they organised. Failure of New Deal to address workplace segregation allowed Southern employers to undermine gains. Some NRA codes contained racial wage differentials.",
+    "hints": [
+      "Ford 1941",
+      "Memorial Day 1937",
+      "Southern resistance"
+    ]
+  },
+  {
+    "no": 112,
+    "section": "lab",
+    "period": "new-deal-ds",
+    "periods": [
+      "new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of NLRB v Fansteel (1939) and Ford's recognition of the UAW (1941)?",
+    "p1": "NLRB v Fansteel (1939): Supreme Court ruled sit-down strikes were an illegal form of labour dispute — undermined key CIO tactic that had won Flint (1936-7). Workers could be dismissed for occupying factories even if employer had violated Wagner Act.",
+    "p2": "Ford recognition (1941): Henry Ford — last major industrial employer to accept union power — recognised UAW after NLRB election. Ford had used private security force (Service Department) to violently suppress organising — Battle of the Overpass (1937) saw UAW organisers beaten.",
+    "p3": "Together these show the limits and possibilities of the New Deal framework: sit-down strikes outlawed but NLRB elections provided alternative route to recognition. Union membership continued to grow despite legal setbacks — 9 million by 1938, 14.8 million by 1945.",
+    "hints": [
+      "sit-downs illegal",
+      "Ford 1941",
+      "Battle of the Overpass"
+    ]
+  },
+  {
+    "no": 113,
+    "section": "lab",
+    "period": "wwii-taft-hartley",
+    "periods": [
+      "wwii-taft-hartley"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the post-WWII strike wave (1946) and its consequences?",
+    "p1": "1946: 5,000 strikes involving 4.6 million workers — largest strike wave in US history. Pent-up pressure after wartime no-strike pledges. Steel, auto, coal and electrical workers all struck. Truman seized steel mills and threatened to draft striking rail workers into the army.",
+    "p2": "Public backlash: widespread disruption of essential services eroded public sympathy for unions. Republicans gained Congress in 1946 midterms — directly enabled Taft-Hartley Act (1947). Strike wave shown as evidence unions had too much power.",
+    "p3": "Taft-Hartley (1947): passed over Truman's veto — banned secondary strikes and closed shops, allowed right-to-work laws (21 states), imposed 60-day cooling-off period, required anti-communist oaths. Post-war strike wave thus produced the most significant legislative rollback of union rights since before the New Deal.",
+    "hints": [
+      "4.6 million workers",
+      "Truman seized mills",
+      "Taft-Hartley"
+    ]
+  },
+  {
+    "no": 114,
+    "section": "lab",
+    "period": "fifties-seventies",
+    "periods": [
+      "fifties-seventies"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Landrum-Griffin Act (1959) and Kennedy EO 10988 (1962)?",
+    "p1": "Landrum-Griffin Act (1959): increased federal oversight of union internal affairs — required regular elections, financial reporting and democratic procedures. Curtailed secondary boycotts and picketing further. Response to corruption in Teamsters and other unions revealed by Senate committee.",
+    "p2": "Kennedy EO 10988 (1962): granted federal employees right to organise and collectively bargain — but not to strike. First significant extension of union rights to public sector. Led to rapid growth of public sector unions — American Federation of Government Employees.",
+    "p3": "Together these represent the contradictions of the 1960s for labour: Landrum-Griffin curtailed union political activities while EO 10988 opened a new frontier. Public sector unionisation became the fastest-growing area of labour organisation — partially offsetting decline in manufacturing unions.",
+    "hints": [
+      "Landrum-Griffin 1959",
+      "EO 10988",
+      "public sector unions"
+    ]
+  },
+  {
+    "no": 115,
+    "section": "lab",
+    "period": "fifties-seventies",
+    "periods": [
+      "fifties-seventies"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of the Equal Pay Act (1963) and Civil Rights Act (1964) on labour rights?",
+    "p1": "Equal Pay Act (1963): first federal law prohibiting pay discrimination based on sex — required equal pay for equal work in the same establishment. Limited in scope: applied only where work was substantially equal, allowed differentials based on seniority, merit or production.",
+    "p2": "Civil Rights Act (1964) Title VII: prohibited employment discrimination by race, colour, religion, sex or national origin — established Equal Employment Opportunity Commission (EEOC) to enforce. First time federal law comprehensively addressed workplace racial discrimination.",
+    "p3": "Impact: by 1965 AFL-CIO members earned 20% more than non-unionised workers — but racial and gender pay gaps persisted. EEOC initially under-resourced. Women and minorities still disproportionately in lower-paid non-unionised roles. By 1990, service sector (70% of workforce) had weak union presence.",
+    "hints": [
+      "Equal Pay Act 1963",
+      "Title VII",
+      "EEOC"
+    ]
+  },
+  {
+    "no": 116,
+    "section": "lab",
+    "period": "fifties-seventies",
+    "periods": [
+      "fifties-seventies"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of OSHA (1970)?",
+    "p1": "Occupational Safety and Health Act (1970): established OSHA — first comprehensive federal workplace safety standards. Required employers to provide safe working conditions free from recognised hazards. Established right to refuse unsafe work and report violations without retaliation.",
+    "p2": "Impact: by 1990s workplace fatalities decreased to approximately 4,500 annually from over 14,000 in the 1930s. Significant improvement in dangerous industries — mining, construction, manufacturing. Product of union-led campaigns and broader progressive political coalition.",
+    "p3": "Limits: Reagan reduced OSHA funding — safety violations persisted especially in agriculture and construction. Non-unionised sectors particularly vulnerable — immigrant workers in agriculture and service industries faced worst conditions with limited enforcement. By 1992, service sector (70% of workforce) had weak OSHA coverage.",
+    "hints": [
+      "14,000 → 4,500 deaths",
+      "Reagan cut funding",
+      "agriculture exemptions"
+    ]
+  },
+  {
+    "no": 117,
+    "section": "na",
+    "period": "na-plains-wars",
+    "periods": [
+      "na-plains-wars"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of Red Cloud's War (1866–68) and the Treaty of Fort Laramie?",
+    "p1": "Red Cloud's War (1866–8): Sioux led by Red Cloud successfully forced U.S. Army to abandon Bozeman Trail forts — one of the few Native American military victories that led to a favourable treaty. Treaty of Fort Laramie (1868): recognised Sioux control of Black Hills and the Great Sioux Reservation.",
+    "p2": "Treaty also confined Sioux to increasingly smaller areas — beginning of reservation system. Victory short-lived: gold discovered in Black Hills (1874) — government attempted to buy land, Sioux refused. 1877: government seized Black Hills in direct violation of Fort Laramie Treaty — threatened to starve Sioux unless they gave up the land.",
+    "p3": "Significance: showed that military resistance could force federal concessions — but federal government would violate treaties when economic interests demanded. US v Sioux Nation (1980): Supreme Court eventually ruled seizure illegal, awarded $106 million — Sioux refused, demanded land returned.",
+    "hints": [
+      "Red Cloud",
+      "Fort Laramie 1868",
+      "Black Hills seized 1877"
+    ]
+  },
+  {
+    "no": 118,
+    "section": "na",
+    "period": "na-plains-wars",
+    "periods": [
+      "na-plains-wars"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Sand Creek Massacre (1864) and buffalo extermination?",
+    "p1": "Sand Creek Massacre (1864): Colorado militia attacked a peaceful Cheyenne and Arapaho village — killed over 150 men, women and children under a white flag of truce. Commander Colonel Chivington faced no criminal charges. Demonstrated that militia violence against peaceful Natives went unpunished.",
+    "p2": "Buffalo extermination: U.S. Army deliberately killed an estimated 10 million buffalo 1865–83 — direct attack on Plains tribes' food, clothing, shelter and spiritual practices. Federal government encouraged hunting to force Natives onto reservations. Buffalo population fell from 30 million (1860) to less than 1,000 (1889).",
+    "p3": "Combined impact: land loss through violence + destruction of food source = forced dependency on government rations. Plains tribes had no economic alternative to reservation life. Deliberately engineered conditions of poverty and dependency that persisted throughout the period.",
+    "hints": [
+      "Sand Creek 150 killed",
+      "10 million buffalo",
+      "30 million to 1,000"
+    ]
+  },
+  {
+    "no": 119,
+    "section": "na",
+    "period": "na-plains-wars",
+    "periods": [
+      "na-plains-wars"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Battle of Little Bighorn (1876)?",
+    "p1": "Lakota Sioux and Cheyenne forces led by Sitting Bull and Crazy Horse defeated General Custer and killed 200 men — one of the most significant Native military victories of the era. Showed Plains tribes could defeat U.S. military when united and well-led.",
+    "p2": "BUT prompted harsh federal response — government intensified military campaigns, seized Black Hills (1877) in violation of Fort Laramie Treaty. By end of 1870s all Plains tribes confined to reservations. Battle of Little Bighorn inspired rather than deterred federal dispossession.",
+    "p3": "Broader significance: led some Americans to question federal policy — Helen Hunt Jackson's 'A Century of Dishonour' (1881) exposed U.S. mistreatment of Native Americans partly in response. Sitting Bull and Crazy Horse became symbols of Native resistance. Ultimate failure showed limits of military resistance alone without broader political change.",
+    "hints": [
+      "Sitting Bull",
+      "Crazy Horse",
+      "A Century of Dishonour"
+    ]
+  },
+  {
+    "no": 120,
+    "section": "na",
+    "period": "na-plains-wars",
+    "periods": [
+      "na-plains-wars"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of the Homestead Act (1862) and transcontinental railroad on Native Americans?",
+    "p1": "Homestead Act (1862): granted settlers 160-acre plots in the West — directly encroached on Native lands already established by treaty. Opened floodgates to settler expansion onto Plains previously acknowledged as Native territory.",
+    "p2": "Transcontinental railroad completed (1869): opened West to settlers, miners and cattle ranchers. Government granted railway companies land taken from tribes — railroad companies received alternating sections of land up to 20 miles either side of track. Destroyed buffalo migration patterns, enabling mass slaughter.",
+    "p3": "Indian Appropriations Act (1871): ended treaty-making — tribes no longer recognised as independent nations. Combination of Homestead Act, railroad and end of treaties removed all legal protections for Native land. By 1870, over 30,000 troops stationed across West to enforce this dispossession.",
+    "hints": [
+      "Homestead Act 1862",
+      "railroad 1869",
+      "Indian Appropriations 1871"
+    ]
+  },
+  {
+    "no": 121,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the Dawes Severalty Act (1887) and how did it work?",
+    "p1": "Dawes Act (1887): divided communal tribal lands into individual 160-acre allotments (320 acres for grazing) per male head of family — directly imposed Western individual land ownership onto communal Native cultures. 'Surplus' land after allotment sold to white settlers.",
+    "p2": "Native landowners who accepted allotments became taxpayers and gained rights of citizenship after 25 years — federal government framed this as uplift. Five Civilised Tribes (Cherokee, Choctaw, Chickasaw, Creek, Seminole) initially exempt until Curtis Act (1898) extended it to them.",
+    "p3": "Mechanism of dispossession: Native land fell from 156 million acres (1881) to 78 million acres by 1890 — lost 78 million acres in three years. By 1934 total had fallen to 48 million acres. Dead Indian Act (1902): allowed sale of inherited land, accelerating further loss. Designed to destroy communal basis of tribal life.",
+    "hints": [
+      "160-acre allotments",
+      "156m → 78m acres",
+      "Dead Indian Act 1902"
+    ]
+  },
+  {
+    "no": 122,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the cultural and gendered impact of the Dawes Act?",
+    "p1": "Imposed male-headed family ownership onto matriarchal tribes — Iroquois and Cherokee women traditionally managed land and property. Dawes Act gave land to male heads of families, stripping women of economic power and undermining tribal governance structures rooted in women's authority.",
+    "p2": "Disrupted communal landholding that formed the social and economic basis of tribal life. Allotment land often poor quality and sold to white speculators when Natives could not farm it — majority sold their land, leaving them destitute. Most failed to adapt to individual farming under allotment system.",
+    "p3": "Cultural loss: broke up the spatial concentration of tribes — scattered families across allotments, undermining community gatherings, ceremonies and traditional governance. Combined with boarding schools and buffalo extermination = systematic destruction of the material and cultural basis of Native life.",
+    "hints": [
+      "matriarchal tribes",
+      "land sold to speculators",
+      "communal life destroyed"
+    ]
+  },
+  {
+    "no": 123,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the impact of the Curtis Act (1898) and key Supreme Court cases on Native sovereignty?",
+    "p1": "Curtis Act (1898): extended Dawes Act to Five Civilised Tribes — destroyed the governments of the Five Civilised Tribes who had maintained greater self-determination than other tribes for most of the 19th century. Oklahoma created instead of proposed Native state of Sequoyah (1905).",
+    "p2": "Crow Dog Case (1883): Supreme Court recognised tribal authority over criminal cases within reservations — BUT this motivated Congress to pass Major Crimes Act (1885) placing certain crimes under federal jurisdiction. Cherokee Nation v Hitchcock (1902): Congress had plenary authority over Native affairs.",
+    "p3": "Lone Wolf v Hitchcock (1903): Congress could unilaterally revoke treaties — cemented U.S. control over Native lands and governance. Removed last legal protection of Native sovereignty. Together Dawes Act, Curtis Act and these court cases systematically dismantled every mechanism of Native self-determination during the Gilded Age.",
+    "hints": [
+      "Curtis Act 1898",
+      "Lone Wolf 1903",
+      "Major Crimes Act 1885"
+    ]
+  },
+  {
+    "no": 124,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the Ghost Dance Movement (1889) and what did it represent?",
+    "p1": "Religious revival founded by Wovoka (Paiute prophet) — combined traditional beliefs with hope of driving away white settlers and restoring lost lands and ways of life. Promised that through five straight days of physically exhausting communal dances, ancestors would return, buffalo would come back and white settlers disappear.",
+    "p2": "Spread rapidly across Plains tribes by 1889-90 — attracted thousands. Federal government and military alarmed by mass gatherings — interpreted as prelude to armed resistance. Ordered arrest of Sitting Bull (killed during arrest, December 1890).",
+    "p3": "Wounded Knee Massacre (December 1890): U.S. Army surrounded and opened fire on a Lakota encampment — killed over 250 men, women and children, many unarmed and fleeing. Effectively ended the Ghost Dance movement and armed Native resistance on the Plains. Last major military confrontation of the Plains Wars era.",
+    "hints": [
+      "Wovoka",
+      "Sitting Bull killed",
+      "Wounded Knee 250 killed"
+    ]
+  },
+  {
+    "no": 125,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the Carlisle Indian Industrial School and the boarding school system?",
+    "p1": "Carlisle Indian Industrial School (Pennsylvania, 1879): founded by Colonel Richard Pratt on principle 'kill the Indian, save the man.' Off-reservation boarding school — removed children from families and communities. BIA also established on-reservation schools: Santa Fe, Carson, Phoenix, Pierre and Landreau.",
+    "p2": "Children forbidden to speak Native languages, practice cultural traditions or wear traditional clothing. Forced Christian conversions and Western gender norms — girls taught domestic service, boys manual trades. Some graduates gained employment as interpreters or Indian Agency workers — but most returned alienated from both Native and white societies.",
+    "p3": "Scale and mortality: over 100,000 children forced into schools by early 1900s. Death rates from neglect, abuse and malnutrition 30-50%. By 1930, 75% of Native American languages had been lost — directly attributable to boarding school system. Boarding schools housed 60,000+ children by 1930.",
+    "hints": [
+      "'kill the Indian'",
+      "death rates 30-50%",
+      "75% languages lost"
+    ]
+  },
+  {
+    "no": 126,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the role of Helen Hunt Jackson and the Indian Rights Association in the Gilded Age?",
+    "p1": "'A Century of Dishonour' (1881): Helen Hunt Jackson exposed U.S. government's systematic mistreatment and treaty violations — sparked calls for reform. Sent a copy to every member of Congress. Her novel Ramona (1884) humanised Native Americans for a white audience.",
+    "p2": "Indian Rights Association (IRA, 1882): white campaign group advocating for Native assimilation into American society — supported policies like Dawes Act allotment believing private land ownership was in Native best interests. Paternalistic — ignored importance of cultural preservation and communal life.",
+    "p3": "Paradox: reform groups like IRA meant well but actively promoted policies (allotment, boarding schools) that destroyed Native culture. Illustrated how white attitudes — even sympathetic ones — could be more damaging than overt hostility when they denied Native agency. Non-Native advocates pursued Native rights without Native input.",
+    "hints": [
+      "'Century of Dishonour'",
+      "IRA 1882",
+      "paternalistic assimilation"
+    ]
+  },
+  {
+    "no": 127,
+    "section": "na",
+    "period": "na-progressive-twenties",
+    "periods": [
+      "na-progressive-twenties"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Society of American Indians (SAI, 1911)?",
+    "p1": "First national Native-led rights organisation — founded by Native American intellectuals and professionals including Carlos Montezuma and Charles Eastman. Advocated for citizenship, education reform and unity. Published the journal 'American Indian Magazine'.",
+    "p2": "Focused on assimilation and integration — believed citizenship and education were keys to improving Native rights. This stance limited support from reservation communities who prioritised sovereignty and cultural preservation. SAI had little influence on federal policy.",
+    "p3": "Significance: represented first attempt at pan-tribal national advocacy. Paved the way for later organisations. BUT divisions between SAI members over assimilation vs sovereignty mirrored wider divisions that would hamper Native advocacy throughout the period. SAI dissolved by 1923 — replaced by more effective NCAI (1944).",
+    "hints": [
+      "first pan-tribal",
+      "Carlos Montezuma",
+      "assimilation focus"
+    ]
+  },
+  {
+    "no": 128,
+    "section": "na",
+    "period": "na-progressive-twenties",
+    "periods": [
+      "na-progressive-twenties"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of WWI service on Native Americans?",
+    "p1": "Around 12,000 Native Americans served in WWI — many in segregated units despite not having full U.S. citizenship. Some 400 awarded the Medal of Honor for bravery. Served in France where they experienced relative racial equality compared to the USA.",
+    "p2": "Wartime service raised Native Americans' status in American society — contributed to pressure for Indian Citizenship Act (1924). BUT citizenship had already been granted to two-thirds of Native Americans through previous policies like Dawes Act land allotment.",
+    "p3": "No improvement in rights followed service: boarding schools continued, reservation poverty deepened, assimilation policies remained. Contrast with AA Double V Campaign — Native veterans returned to same conditions they had left. WWI service demonstrated loyalty but generated no reciprocal federal commitment to rights.",
+    "hints": [
+      "12,000 served",
+      "Citizenship Act 1924",
+      "no rights improvement"
+    ]
+  },
+  {
+    "no": 129,
+    "section": "na",
+    "period": "na-progressive-twenties",
+    "periods": [
+      "na-progressive-twenties"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Indian Citizenship Act (1924)?",
+    "p1": "Granted U.S. citizenship to all Native Americans born in the U.S. — partly recognition of WWI service. BUT two-thirds had already gained citizenship through previous policies (Dawes Act, treaty agreements). Citizenship did not automatically confer voting rights.",
+    "p2": "Many states imposed restrictive voting laws limiting political participation — literacy tests, poll taxes, residency requirements. Several states did not allow Native Americans to vote until 1948 (Harrison v Laveen, Arizona) or later. New Mexico and Arizona only enfranchised Native Americans after court cases.",
+    "p3": "Limitations: citizenship without political or economic rights was largely symbolic. Native Americans remained wards of the BIA, living in poverty on reservations with no vote in many states. Demonstrated gap between formal legal status and substantive rights — similar to AA experience after 14th and 15th Amendments.",
+    "hints": [
+      "two-thirds already citizens",
+      "states blocked voting",
+      "Harrison v Laveen 1948"
+    ]
+  },
+  {
+    "no": 130,
+    "section": "na",
+    "period": "na-progressive-twenties",
+    "periods": [
+      "na-progressive-twenties"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of AIDA, the Leavitt Bill (1926) and the Meriam Report (1928)?",
+    "p1": "AIDA (American Indian Defense Association, 1923): founded by John Collier — opposed government assimilation policies, protected Native lands and religious freedom. Successfully mobilised public opinion against Leavitt Bill (1926) — 'Dance Order' — which sought to ban traditional Native dances. Victory showed non-Native advocacy could block assimilationist legislation.",
+    "p2": "Meriam Report (1928): government-commissioned study exposed failure of federal policies — criticised allotment, documented appalling poverty on reservations, condemned boarding schools. Called for reform in education, healthcare and land management. Directly influenced New Deal Indian policy.",
+    "p3": "By 1932: two-thirds of Native land lost since Dawes Act. 82% of Native Americans below poverty line. Boarding schools housed 60,000+ children. Less than 5% in higher education. Meriam Report provided the evidence base for Wheeler-Howard Act (1934) — without it New Deal reforms would have lacked political justification.",
+    "hints": [
+      "Leavitt Bill blocked",
+      "Meriam Report 1928",
+      "82% below poverty line"
+    ]
+  },
+  {
+    "no": 131,
+    "section": "na",
+    "period": "na-new-deal-ds",
+    "periods": [
+      "na-new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What did the Indian Reorganization Act (Wheeler-Howard Act, 1934) do?",
+    "p1": "Halted Dawes Act allotment policy — protected Native land from further sale and recovered unallocated land. Restored 4 million acres to tribal ownership (though fraction of 90 million lost). Allowed tribes to establish democratic constitutions and elect own tribal councils. Protected use of peyote for religious purposes, overturned bans on ceremonial dances.",
+    "p2": "Economic improvements: established tribal corporations to manage resources — funding for farming, healthcare and infrastructure. IECW/CCC-ID: employed 85,000 Native Americans 1933–42 — planted 25 million trees, built 6,500 miles of road on tribal lands. Indian Arts and Crafts Board (1935) revived Native crafts — funding for cultural education increased 65% between 1935 and 1940.",
+    "p3": "Significance: marked decisive ideological shift from assimilation to self-determination — Wheeler-Howard Act reversed 50 years of Dawes Act policy. Collier's influence as Commissioner of Indian Affairs crucial. BUT implementation was uneven and paternalistic — Collier presumed what all tribes wanted based on Pueblo and Navajo experience.",
+    "hints": [
+      "halted allotment",
+      "CCC-ID 85,000",
+      "ideological shift"
+    ]
+  },
+  {
+    "no": 132,
+    "section": "na",
+    "period": "na-new-deal-ds",
+    "periods": [
+      "na-new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What were the limitations of the Indian Reorganization Act (1934)?",
+    "p1": "Collier's approach failed to account for Native diversity — policies based on Pueblo and Navajo experience didn't suit all tribes. Secret ballot system to decide on IRA alienated many Natives as it clashed with traditional open council discussions. Only 92 of 252 tribes eventually adopted tribal constitutions — 25% rejected IRA outright.",
+    "p2": "Navajo rejected IRA due to government-imposed livestock reductions — Navajo were forced to kill 150,000 sheep 1933-36 to prevent overgrazing, devastating their economy and way of life. Federal funds for buying back land only $2 million annually — insufficient. Failure to establish separate federal court for Native issues weakened the Act.",
+    "p3": "Chronic underfunding: 82% of Native Americans still below poverty line by 1940. Navajo students received only 13 cents/day for lunch vs recommended 50 cents. Post-WWII termination policy systematically undermined IRA gains — by 1953 over 100 tribes terminated. Collier himself acknowledged the reforms' constrained ambitions.",
+    "hints": [
+      "150,000 sheep killed",
+      "25% rejected IRA",
+      "82% below poverty line 1940"
+    ]
+  },
+  {
+    "no": 133,
+    "section": "na",
+    "period": "na-new-deal-ds",
+    "periods": [
+      "na-new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the role of the NCAI (1944) and the Indian Claims Commission (1946)?",
+    "p1": "NCAI (National Congress of American Indians, 1944): first large-scale pan-tribal advocacy organisation — founded to oppose termination policies and advocate for Native rights. More effective than SAI as it represented tribal governments not just individual Native intellectuals. Successfully lobbied against termination legislation.",
+    "p2": "Indian Claims Commission (1946-78): created to resolve Native land claims against U.S. government — tribes could seek compensation for land losses due to treaty violations. Awarded over $800 million in compensation across the period. BUT no land returned — financial compensation only.",
+    "p3": "Limits of both: NCAI could not prevent Termination Policy (1953). Claims Commission offered money not justice — many tribes, including Sioux, refused compensation and demanded land returned instead. Harrison v Laveen (1948): Supreme Court recognised Native Americans' right to vote in Arizona — but many states still imposed restrictions.",
+    "hints": [
+      "NCAI 1944",
+      "$800 million awarded",
+      "no land returned"
+    ]
+  },
+  {
+    "no": 134,
+    "section": "na",
+    "period": "na-wwii-postwar",
+    "periods": [
+      "na-wwii-postwar"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Navajo Code Talkers and Ira Hayes in WWII?",
+    "p1": "Navajo Code Talkers: 400-500 Navajo Marines used their language to create an unbreakable military code in the Pacific theatre — played pivotal role in U.S. victory. Code was never broken by Japanese forces. Over 44,000 Native Americans served in WWII total — highest per capita of any ethnic group.",
+    "p2": "Ira Hayes (Pima): one of six men photographed raising U.S. flag at Iwo Jima — became icon of Native American sacrifice and bravery. Upon returning home faced alcoholism and discrimination — arrested 51 times before dying of exposure at 32. Embodied gap between wartime heroism and peacetime reality.",
+    "p3": "Code Talkers' success did not lead to recognition of Native cultural rights or legal protections — their code was classified until 1968. Japanese American internment camps placed on Native lands without tribal consultation during same war. Wartime service again produced no reciprocal rights — pattern repeated from WWI.",
+    "hints": [
+      "400-500 Code Talkers",
+      "Ira Hayes Iwo Jima",
+      "classified until 1968"
+    ]
+  },
+  {
+    "no": 135,
+    "section": "na",
+    "period": "na-termination",
+    "periods": [
+      "na-termination"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the Termination Policy (1953) and what were its consequences?",
+    "p1": "Termination Policy (1953-68): ended federal recognition for 109 tribes — sold their lands, terminated government services including healthcare, education and welfare. Aimed at assimilation by eliminating the special legal status of Native Americans. Over 13,000 individuals affected.",
+    "p2": "Consequences: extreme poverty — terminated tribes lost healthcare, education and economic support overnight. Menominee of Wisconsin: considered a successful self-governing tribe — terminated, reservation sold as private property, lost federal services. Poverty and unemployment soared.",
+    "p3": "NCAI lobbied against termination — helped generate momentum for its end. Nixon formally ended Termination Policy (1970): advocated for self-determination — 'forced termination is wrong.' Self-Determination Act (1975) gave tribes administrative control. Termination damaged trust between tribes and federal government that persisted decades.",
+    "hints": [
+      "109 tribes",
+      "Menominee terminated",
+      "Nixon ended 1970"
+    ]
+  },
+  {
+    "no": 136,
+    "section": "na",
+    "period": "na-termination",
+    "periods": [
+      "na-termination"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the Indian Relocation Act (1956) and what were its consequences?",
+    "p1": "Indian Relocation Act (1956): encouraged Native Americans to move to cities for jobs — provided one-way bus tickets and limited job placement assistance to cities including Chicago, Los Angeles, Denver and San Francisco. Aimed to integrate Natives into mainstream society.",
+    "p2": "Reality: many ended up in urban poverty, disconnected from cultural communities and support networks. Those who struggled could not afford to return to reservations. Urban Native communities formed — by 1970 half of all Native Americans lived in cities — but often in poor conditions.",
+    "p3": "Unintended consequence: urban Native communities became seedbed for Red Power movement — AIM (1968) founded in Minneapolis by urban Natives who had experienced urban poverty and police brutality. Concentration of radicalised young Natives in cities created conditions for militant activism that transformed Native rights movement.",
+    "hints": [
+      "one-way bus tickets",
+      "urban poverty",
+      "AIM founded in cities"
+    ]
+  },
+  {
+    "no": 137,
+    "section": "na",
+    "period": "na-termination",
+    "periods": [
+      "na-termination"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the NIYC (1961) and the fish-ins?",
+    "p1": "NIYC (National Indian Youth Council, 1961): grassroots activism — aimed to revitalise Native identity and resist assimilation. Promoted pan-tribal identity and self-determination. First significant youth-led Native organisation — marked generational shift from NCAI's moderate legalism.",
+    "p2": "Fish-ins (1960s): protested restrictions on treaty-protected fishing rights in Pacific Northwest — Washington state tried to restrict Native fishing despite 1855 treaty guarantees. NIYC organised direct action at rivers — arrested Natives continued fishing in defiance of state authorities.",
+    "p3": "Significance: fish-ins were a form of direct action inspired by civil rights sit-ins — consciously drew parallels with Southern civil rights movement. Boldt Decision (1974): federal court ruled Washington Natives entitled to 50% of harvestable salmon. NIYC model of direct action and treaty enforcement influenced AIM's more militant tactics from 1968.",
+    "hints": [
+      "NIYC 1961",
+      "fish-ins",
+      "Boldt Decision 1974"
+    ]
+  },
+  {
+    "no": 138,
+    "section": "na",
+    "period": "na-red-power-ds",
+    "periods": [
+      "na-red-power-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of AIM's founding (1968) and early actions?",
+    "p1": "AIM (American Indian Movement) founded Minneapolis 1968 by Dennis Banks and Clyde Bellecourt — urban Natives who had experienced poverty and police brutality. Established AIM Patrol to monitor and document police misconduct in Native neighbourhoods. Adopted red berets and leather jackets modelled on Black Panthers.",
+    "p2": "Early actions: Mount Rushmore Occupation (1971) — protested federal control over Black Hills. AIM's Fish-In (1968): targeted racial discrimination in fishing regulations. Trail of Broken Treaties (1972): nationwide caravan to Washington DC — occupied BIA headquarters, presented 20-point manifesto demanding treaty enforcement and sovereignty.",
+    "p3": "Significance: AIM brought pan-tribal militant identity to Native rights — united urban and reservation Natives. Media-savvy tactics generated national coverage. BUT occupations produced limited concrete policy changes — most powerful impact was cultural: revival of traditional practices, pan-Indian pride and political consciousness.",
+    "hints": [
+      "Dennis Banks 1968",
+      "BIA occupied 1972",
+      "20-point manifesto"
+    ]
+  },
+  {
+    "no": 139,
+    "section": "na",
+    "period": "na-red-power-ds",
+    "periods": [
+      "na-red-power-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of the Alcatraz Occupation (1969–71)?",
+    "p1": "Led by Richard Oakes (Mohawk) and 'Indians of All Tribes' — occupied Alcatraz Island claiming 1868 Fort Laramie Treaty provision that surplus federal land should revert to Native ownership. Offered $24 in beads and red cloth — price paid for Manhattan, sarcastically echoing colonial land transactions.",
+    "p2": "10,000 Natives visited during 19-month occupation — generated massive national media coverage and public sympathy. Demands included Native university, cultural centre and museum on the island. Nixon's administration negotiated rather than forcibly removing — showed changed political context from earlier eras.",
+    "p3": "Limits: Richard Oakes' daughter died in a fall during the occupation (1970), Oakes himself left. Occupation ended 1971 when federal marshals removed remaining 15 occupiers — no major policy concessions secured. BUT proved that direct action could pressure government and inspired 70+ subsequent occupations of federal land across the USA.",
+    "hints": [
+      "Oakes 1969",
+      "$24 in beads",
+      "70+ subsequent occupations"
+    ]
+  },
+  {
+    "no": 140,
+    "section": "na",
+    "period": "na-red-power-ds",
+    "periods": [
+      "na-red-power-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of the Wounded Knee Occupation (1973)?",
+    "p1": "71-day standoff at Wounded Knee, South Dakota — AIM members and Oglala Lakota activists occupied the town, demanded: recognition of the 1868 Fort Laramie Treaty, investigation of the BIA, and removal of the corrupt Pine Ridge Reservation tribal chairman Richard Wilson (whose private militia had intimidated residents).",
+    "p2": "Federal forces surrounded the town — negotiations held but federal government refused to discuss treaty rights. Two Natives killed in confrontations, one federal marshal wounded. Occupation ended May 1973 — government promised to review treaty rights but did not implement changes. 600+ AIM members arrested.",
+    "p3": "Significance: brought international attention to Native rights — compared by some observers to Selma. Exposed BIA corruption and internal tribal divisions. Long-term: government prosecuted AIM leaders in lengthy trials — charges eventually dropped. Wounded Knee II showed limits of confrontational direct action but also AIM's ability to sustain national and international pressure.",
+    "hints": [
+      "71-day standoff",
+      "Richard Wilson BIA",
+      "600+ arrested"
+    ]
+  },
+  {
+    "no": 141,
+    "section": "na",
+    "period": "na-self-determination",
+    "periods": [
+      "na-self-determination"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the American Indian Religious Freedom Act (1978) and Indian Child Welfare Act (1978)?",
+    "p1": "American Indian Religious Freedom Act (1978): legally recognised Native Americans' right to practice traditional religions, access sacred sites and use religious objects including peyote. First time federal law explicitly protected Native spiritual practices after a century of suppression.",
+    "p2": "Indian Child Welfare Act (1978): prevented removal of Native children from families and placement in non-Native homes — established tribal authority over child welfare cases. Response to systematic removal of Native children: by 1970s 25-35% of all Native children had been separated from families and placed in non-Native foster or adoptive homes.",
+    "p3": "Limits: AIRFA had no enforcement mechanism — over 70% of Native religious leaders still reported struggles to access sacred lands by 1992. But culturally transformative — signalled federal acknowledgement that religious suppression had been wrong. ICWA significantly reduced child separations and strengthened tribal jurisdiction over family matters.",
+    "hints": [
+      "AIRFA 1978",
+      "ICWA 1978",
+      "25-35% children removed"
+    ]
+  },
+  {
+    "no": 142,
+    "section": "na",
+    "period": "na-self-determination",
+    "periods": [
+      "na-self-determination"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Indian Gaming Regulatory Act (1988) and position by 1992?",
+    "p1": "Seminole Tribe v Butterworth (1982): Supreme Court affirmed tribal sovereignty to operate gaming establishments without state interference. Indian Gaming Regulatory Act (1988): established framework for tribal casinos — by early 1990s approximately 150 Native-run casinos generating over $1 billion annually.",
+    "p2": "By 1992: significant progress in legal framework — AIRFA, ICWA, Self-Determination Act, gaming rights. 200+ tribes administered federal programmes. BUT 25% of Native American families still below poverty line. Only 50% registered to vote. Life expectancy 5-10 years shorter than national average.",
+    "p3": "Less than 60% of Native Americans graduated from high school by 1992 — only 10% held college degrees. 60% still economically reliant on federal assistance. 30% still on reservations facing land restrictions. Gaming provided economic benefits for some tribes but most reservations struggled with limited land-based development. Sioux refused $106 million from US v Sioux Nation (1980) — demanded return of Black Hills.",
+    "hints": [
+      "150 casinos $1 billion",
+      "25% below poverty",
+      "Sioux refused $106m"
+    ]
+  },
+  {
+    "no": 143,
+    "section": "na",
+    "period": "na-start",
+    "periods": [
+      "na-start"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the position of Native American rights in 1865?",
+    "p1": "Plains tribes like the Sioux still held significant land — governed by own tribal systems with chiefs holding real authority. Federal government initially treated tribes as foreign nations negotiating treaties. BUT Indian Removal Act (1830s) had already relocated south-eastern tribes to Indian Territory (Oklahoma).",
+    "p2": "Homestead Act (1862): 160-acre plots to settlers — directly encroached on Native lands. Transcontinental railroad (1869) opened West to settlers, miners and cattle ranchers. Natives not U.S. citizens — 'wards of the state' with no political representation. BIA managed Native affairs paternalistically and corruptly.",
+    "p3": "Right to Cultural Freedoms: federal government promoted assimilation — missionaries sent to reservations undermining spiritual practices. Traditional ceremonies viewed with hostility. Buffalo populations already threatened — federal government encouraged hunting to force Natives onto reservations. Between 1860 and 1889 buffalo fell from 30 million to less than 1,000.",
+    "hints": [
+      "wards of the state",
+      "Homestead Act 1862",
+      "missionaries"
+    ]
+  },
+  {
+    "no": 144,
+    "section": "na",
+    "period": "na-wwii-postwar",
+    "periods": [
+      "na-wwii-postwar"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of Japanese American internment on Native lands and Harrison v Laveen (1948)?",
+    "p1": "Japanese American internment (WWII): over 120,000 Japanese Americans forcibly relocated — some internment camps placed on Native reservations without tribal consultation. Poston War Relocation Center on Colorado River Indian Reservation. Native tribes had no say in use of their own land.",
+    "p2": "Harrison v Laveen (1948): Supreme Court case in Arizona — recognised Native Americans' right to vote, challenging state-level discrimination. Arizona had argued Natives were 'under guardianship' and thus ineligible to vote. Decision applied across Arizona and New Mexico — last states to formally enfranchise Native Americans.",
+    "p3": "Context: despite 1924 Citizenship Act, many states still blocked Native voting through residency requirements (Natives on reservations argued not state residents), literacy tests and poll taxes. Harrison v Laveen showed citizenship without voting rights was meaningless — pattern echoing African American experience after 15th Amendment.",
+    "hints": [
+      "Poston on reservation",
+      "Harrison v Laveen 1948",
+      "last states to vote"
+    ]
+  },
+  {
+    "no": 145,
+    "section": "na",
+    "period": "na-self-determination",
+    "periods": [
+      "na-self-determination"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of US v Sioux Nation (1980) and NARF (1970)?",
+    "p1": "NARF (Native American Rights Fund, 1970): provided legal representation for tribes — fought for treaty enforcement, land claims and sovereignty. Significant victories including Fisher v Montana (1976, tribal courts jurisdiction over child custody) and Bryan v Itasca County (1976, states cannot tax reservations).",
+    "p2": "US v Sioux Nation (1980): Supreme Court ruled U.S. had unlawfully seized the Black Hills from the Sioux in 1877 in violation of Fort Laramie Treaty. Sioux awarded $106 million compensation — refused the money, demanded return of their sacred land instead. By 1992 interest had grown award to over $500 million — still unclaimed.",
+    "p3": "Significance of refusal: showed tribes prioritised sovereignty and cultural connection to land over financial settlement. Black Hills remained in federal hands — ongoing symbol of unresolved injustice. NARF's legal strategy showed courts could be used to hold government accountable to treaty obligations — but legal victories did not always translate into tangible returns.",
+    "hints": [
+      "NARF 1970",
+      "$106 million refused",
+      "Black Hills unclaimed"
+    ]
+  },
+  {
+    "no": 146,
+    "section": "na",
+    "period": "na-end",
+    "periods": [
+      "na-end"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the position of Native American rights by 1992?",
+    "p1": "Legal framework significantly stronger than 1865: Indian Self-Determination Act (1975), AIRFA (1978), ICWA (1978), Graves Protection Act (1990), Languages Act (1990). 200+ tribes administered federal programmes. Tribal sovereignty legally recognised — Fisher v Montana, Bryan v Itasca County, Seminole v Butterworth.",
+    "p2": "Economic: 150 Native-run casinos generating $1 billion+ annually by early 1990s — significant for some tribes. BUT 25% of Native American families below poverty line. 60% economically reliant on federal assistance. Per capita income still less than half national average. Unemployment on some reservations 50-80%.",
+    "p3": "Social: less than 60% of Native Americans graduated from high school — only 10% held college degrees. Life expectancy 5-10 years shorter than national average. Only 50% registered to vote. 30% still on reservations facing land restrictions. Sioux refused $106 million from US v Sioux Nation — demanded Black Hills returned. Fundamental sovereignty and land grievances remained unresolved.",
+    "hints": [
+      "25% below poverty",
+      "casinos $1 billion",
+      "Sioux refused $106m"
+    ]
+  },
+  {
+    "no": 147,
+    "section": "aa",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "Why did Southern elites introduce voter suppression in the Gilded Age?",
+    "p1": "Populist Party threat: 1892 election — Populists won 5 states, 8.5% of vote. Dividing white vote → Black vote became balance of power in South. Southern 'Bourbon' elites revived race issue to eliminate Black vote. Mississippi Plan (1890) introduced systematic disenfranchisement, spread across South.",
+    "p2": "Economic control: disenfranchising African Americans maintained dependence on white landowners as sharecroppers — political exclusion enforced economic exploitation. Racial hierarchy underpinned plantation economy.",
+    "p3": "Legal cover: Mississippi v Williams (1898) → Supreme Court upheld poll taxes and literacy tests. By 1900 over 90% of African Americans in South disenfranchised. Black voter registration in Mississippi: 90% (1867) → less than 6% (1892).",
+    "hints": [
+      "Populist Party 1892",
+      "Mississippi Plan 1890",
+      "90% disenfranchised"
+    ]
+  },
+  {
+    "no": 148,
+    "section": "aa",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "How was voter suppression implemented in the Gilded Age?",
+    "p1": "Literacy tests: required voters to interpret complex constitutional clauses — administered selectively by white registrars who passed illiterate whites, failed educated Black Americans. Poll taxes: fees to vote that poor Black sharecroppers could not afford.",
+    "p2": "Grandfather clauses: exempted men whose grandfathers had voted before 1867 — excluded all former slaves. White-only Democratic primaries introduced 1890s — winning the primary meant winning the election in one-party South. KKK violence at poll booths backed all legal mechanisms.",
+    "p3": "Mississippi v Williams (1898): Supreme Court ruled these tactics did not violate 15th Amendment — gave all Southern states legal cover. US v Guinn (1915) later struck down grandfather clauses. By 1900 Black voter turnout in South less than 5%.",
+    "hints": [
+      "literacy tests",
+      "grandfather clauses",
+      "Mississippi v Williams"
+    ]
+  },
+  {
+    "no": 149,
+    "section": "aa",
+    "period": "after-black-power",
+    "periods": [
+      "after-black-power"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of bifurcation on African American society?",
+    "p1": "Affirmative action + CRM → growing Black middle class: 40% of African Americans middle class by 1980s. White-collar jobs: 5% (1960) → 15% (mid-1970s). 8,000 African Americans held office by 1992.",
+    "p2": "But gains deeply uneven: bifurcation created socioeconomic divide within Black community. Many concentrated in ghettoes — high unemployment, poor housing, underfunded schools. By 1992: Black families earned 60% of white income. Black unemployment 14.2% vs 6.6% white.",
+    "p3": "War on Drugs (Nixon 1971, expanded Reagan 1980s): disproportionately targeted Black communities → by 1992 25% of Black men in prison, on parole or probation. Bifurcation undermined civil rights movement unity — middle-class Black Americans had different priorities from those in poverty.",
+    "hints": [
+      "40% middle class",
+      "War on Drugs",
+      "60% of white income"
+    ]
+  },
+  {
+    "no": 150,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was laissez-faire and why was it harmful to workers?",
+    "p1": "Laissez-faire: dominant Gilded Age ideology — government must not interfere in business or labour relations. Courts, federal and state governments consistently sided with employers. No minimum wage, no safety standards, no union protections.",
+    "p2": "Consequences: Sherman Antitrust Act (1890) aimed at monopolies but used against unions. Court injunctions stopped strikes — Pullman (1894) ruled illegal. National Guard used 23 times in 1892 alone. Federal troops killed 100+ in Great Railroad Strike (1877).",
+    "p3": "Persistence: survived into Progressive Era — Lochner (1905), Coppage (1915), Adkins (1923) all upheld 'freedom of contract'. Only Great Depression proving capitalism had failed created conditions for New Deal to break with laissez-faire (1933).",
+    "hints": [
+      "no government interference",
+      "Sherman Act used against unions",
+      "freedom of contract"
+    ]
+  },
+  {
+    "no": 151,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was collective bargaining and why did it matter?",
+    "p1": "Collective bargaining: unions negotiate wages, hours and conditions on behalf of all workers — power individual workers lacked alone. No legal obligation for employers to recognise unions or bargain before Wagner Act (1935) — employers could simply refuse.",
+    "p2": "Gilded Age: AFL made gains through voluntary bargaining with Hanna and JP Morgan — exceptional cases, not the norm. Most employers refused outright. Wagner Act (1935): legally guaranteed right to collectively bargain — NLRB enforced.",
+    "p3": "Impact: union membership 3.7 million (1933) → 9 million (1938). By 1960s AFL-CIO members earned 20% more than non-unionised workers — direct product of collective bargaining.",
+    "hints": [
+      "employers could refuse before 1935",
+      "Wagner Act NLRB",
+      "20% earnings premium"
+    ]
+  },
+  {
+    "no": 152,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "How did employers suppress unions in the Gilded Age?",
+    "p1": "Pinkertons: Carnegie Steel employed 300 armed Pinkerton agents at Homestead (1892) — arrived by barge, violent clash, 12 men dead. Companies hired private militias to break strikes. Employers planted dynamite at Lawrence (1912) to frame workers.",
+    "p2": "Blacklisting: shared among 50 mine operators in Pennsylvania — known union organisers could not find work. Yellow-dog contracts: workers signed away union rights as condition of employment — upheld by Coppage v Kansas (1915). Scab labour: in strikes of 100 workers, scabs typically 20–30 replacements.",
+    "p3": "Company towns: Pullman controlled housing, rents and wages — could evict strikers. Welfare capitalism (1920s): employer-provided pensions and healthcare → reduced perceived need for unions. Company unions replaced independent ones. Unionisation framed as un-American and Bolshevik.",
+    "hints": [
+      "Pinkertons",
+      "yellow-dog contracts",
+      "welfare capitalism"
+    ]
+  },
+  {
+    "no": 153,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the Sherman Antitrust Act (1890) and how was it used against unions?",
+    "p1": "Sherman Antitrust Act (1890): passed to break up monopolies — Carnegie, Rockefeller. Aimed to prevent illegal restraints of trade. BUT rarely enforced against monopolies — government sided with big business.",
+    "p2": "Used against unions: courts ruled strikes and boycotts were illegal restraints of trade. Pullman Strike (1894): injunction based on Sherman Act — halted strike, imprisoned Debs. Made strike action legally vulnerable throughout Gilded Age.",
+    "p3": "Clayton Antitrust Act (1914): attempted to exempt unions — labour not a commodity. BUT Duplex v Deering (1921) limited its impact. Only Norris-LaGuardia Act (1932) effectively banned injunctions against peaceful strikes.",
+    "hints": [
+      "restraint of trade",
+      "Debs imprisoned",
+      "Norris-LaGuardia 1932"
+    ]
+  },
+  {
+    "no": 154,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the story of the Homestead Strike (1892)?",
+    "p1": "Carnegie Steel Homestead, Pennsylvania — wage cuts and anti-union lockout. Carnegie left for Scotland; Frick left to break union. 300 Pinkerton agents arrived by barge on Monongahela River — workers fought back. 12 men dead.",
+    "p2": "Pennsylvania Governor deployed 8,000 state militia — ended workers' control. Frick survived assassination attempt by anarchist Berkman — used to discredit strikers. All rehired without union recognition. Steel industry union-free until 1930s.",
+    "p3": "Significance: corporations willing to use private armies and state force against workers. AFL refused to support — exposed skilled/unskilled division. Homestead virtually bankrupted the union. Contrast: Flint sit-down (1936–37) finally won UAW recognition — 40+ years later.",
+    "hints": [
+      "Pinkertons by barge",
+      "12 dead",
+      "AFL refused to support"
+    ]
+  },
+  {
+    "no": 155,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the story of the Pullman Strike (1894)?",
+    "p1": "Pullman Palace Car cut wages 25% — did not reduce rents in company housing. Workers joined Debs' ARU → boycotted Pullman cars → spread to 27 states, paralyising rail traffic. Cleveland obtained federal court injunction under Sherman Act — strike declared illegal restraint of trade.",
+    "p2": "12,000 federal troops sent despite Illinois Governor Altgeld's objection. 30 deaths, widespread violence. Debs arrested and imprisoned for contempt. AFL refused to support ARU — exposed skilled/unskilled division.",
+    "p3": "Significance: first use of federal injunction to break a strike — precedent used for decades. Showed federal government sided with corporations through courts and troops. Debs' imprisonment radicalised him → ran for president 5x as Socialist, won 6% (1912).",
+    "hints": [
+      "injunction precedent",
+      "Debs imprisoned",
+      "AFL refused"
+    ]
+  },
+  {
+    "no": 156,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "How did the courts obstruct union rights? (Lochner, Coppage, Deering, Adkins)",
+    "p1": "Freedom of contract doctrine: courts ruled employers and workers had equal right to set terms — ignored massive power imbalance. Lochner v New York (1905): struck down law limiting bakers' hours — 'freedom of contract' blocked state worker protections.",
+    "p2": "Coppage v Kansas (1915): upheld yellow-dog contracts — workers forced to sign away union rights. Duplex v Deering (1921): upheld injunctions against secondary boycotts, limiting Clayton Act. Adkins v Children's Hospital (1923): struck down minimum wage for women — same doctrine.",
+    "p3": "Pattern: courts used 14th Amendment equal protection clause to protect employer rights over worker rights. Not until NLRA v Jones & Laughlin (1937) confirmed Wagner Act constitutional did this shift. Norris-LaGuardia (1932) had already banned yellow-dog contracts.",
+    "hints": [
+      "freedom of contract",
+      "Lochner 1905",
+      "Norris-LaGuardia reversed it"
+    ]
+  },
+  {
+    "no": 157,
+    "section": "lab",
+    "period": "fifties-seventies",
+    "periods": [
+      "fifties-seventies"
+    ],
+    "isDepthStudy": false,
+    "front": "What made Cesar Chavez a significant leader?",
+    "p1": "Chavez organised Filipino and Mexican American farm workers — historically excluded from NLRA, no union representation. UFW (1966): first successful farm workers' union. Personal background as migrant farm worker gave credibility and authenticity.",
+    "p2": "Tactics: nonviolent strikes, consumer boycotts and fasting — modelled on Gandhi. Delano Grape Strike (1965–70): nationwide grape boycott built broad public support. Fasting drew Robert Kennedy's support. Salad Bowl Strike (1970) extended UFW's reach.",
+    "p3": "Legacy: California Agricultural Labor Relations Act (1975) — first U.S. law protecting farm workers' collective bargaining rights. Direct product of UFW pressure. Expanded labour movement beyond white male industrial base. Model for immigrant labour organising into 1990s.",
+    "hints": [
+      "excluded from NLRA",
+      "grape boycott",
+      "California ALRA 1975"
+    ]
+  },
+  {
+    "no": 158,
+    "section": "lab",
+    "period": "fifties-seventies",
+    "periods": [
+      "fifties-seventies"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the story and significance of the Salad Bowl Strike (1970)?",
+    "p1": "Filipino farm workers, California vegetable fields — supported by Mexican and other ethnic groups within UFW. Struck against low wages, poor conditions and exploitation of migrant workers in California's agricultural industry.",
+    "p2": "Tactics: boycotts, marches, picketing, international solidarity — Chavez connected strike to civil rights and human dignity. Lettuce boycott spread nationally. International labour solidarity pressured growers.",
+    "p3": "Success: better wages and union recognition. Alongside Delano Grape Strike, directly contributed to California Agricultural Labor Relations Act (1975). Showed nonviolent direct action could win rights for previously unorganised, vulnerable migrant workers.",
+    "hints": [
+      "Filipino workers",
+      "lettuce boycott",
+      "California ALRA 1975"
+    ]
+  },
+  {
+    "no": 159,
+    "section": "lab",
+    "period": "new-deal-ds",
+    "periods": [
+      "new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the story of the Flint Sit-Down Strike (1936–37)?",
+    "p1": "General Motors, Flint, Michigan — unskilled auto workers without union protection. CIO organised sit-down strike (December 1936): workers occupied factory rather than picketing — impossible to bring in replacements without destroying GM machinery.",
+    "p2": "40,000 workers. Michigan Governor Murphy refused to deploy National Guard. GM sought court injunction — judge revealed he owned GM stock, injunction discredited. Police attempted to cut off heat and food — 'Battle of Bulls Run' repulsed. After 44 days GM recognised UAW.",
+    "p3": "Inspired 200 more sit-down strikes in 1937 across industries. US Steel unionised without a strike shortly after. NLRB v Fansteel (1939) later ruled sit-downs illegal. First recognition of major industrial union by one of America's largest corporations.",
+    "hints": [
+      "occupied factory",
+      "GM recognised UAW after 44 days",
+      "200 more sit-downs"
+    ]
+  },
+  {
+    "no": 160,
+    "section": "lab",
+    "period": "wwii-taft-hartley",
+    "periods": [
+      "wwii-taft-hartley"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the experience of workers during WWII?",
+    "p1": "NWLB (1942): government worked with AFL and CIO — mediated disputes, upheld codes of practice, prevented strike action. Union membership peaked 35% of workforce (14.8 million) by 1945. EO 8802 (1941): banned racial discrimination in defence industries.",
+    "p2": "Smith-Connally Act (1943): government could seize industries threatened by strikes — passed over FDR's veto. AFL and CIO agreed no-strike pledges in exchange for recognition and wartime wages. Safety standards often sacrificed for wartime production.",
+    "p3": "Limits: NWLB policies only benefited AFL and CIO — excluded unaffiliated workers. Benefits uneven for African Americans despite EO 8802. No-strike pledges suppressed grievances → released as post-war strike wave (1946): 5,000 strikes, 4.6 million workers.",
+    "hints": [
+      "NWLB 1942",
+      "Smith-Connally",
+      "no-strike pledges → 1946 wave"
+    ]
+  },
+  {
+    "no": 161,
+    "section": "lab",
+    "period": "wwii-taft-hartley",
+    "periods": [
+      "wwii-taft-hartley"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the post-WWII strike wave (1946) and how did it lead to Taft-Hartley (1947)?",
+    "p1": "1946: 5,000 strikes, 4.6 million workers — largest strike wave in U.S. history. Pent-up pressure from wartime no-strike pledges. Steel, auto, coal, railways all struck simultaneously. Public sympathy limited after wartime sacrifice narrative.",
+    "p2": "Taft-Hartley Act (1947): passed over Truman's veto — direct response to strike wave. Banned secondary strikes and closed shops. Allowed right-to-work laws — 21 states enacted, primarily South and West. Required anti-communist oaths from union leaders.",
+    "p3": "Impact: anti-communist oaths weakened CIO — leaders who refused lost NLRB access. McCarthyism compounded effect. Taft-Hartley began rollback from 35% membership peak. 60-day cooling-off period imposed for strikes threatening national security.",
+    "hints": [
+      "5,000 strikes 1946",
+      "right-to-work 21 states",
+      "anti-communist oaths"
+    ]
+  },
+  {
+    "no": 162,
+    "section": "lab",
+    "period": "fifties-seventies",
+    "periods": [
+      "fifties-seventies"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the experience of workers during the 1950s–60s economic boom?",
+    "p1": "AFL-CIO merged 1955 — 16 million members, 85% of unionised workforce. Members earned 20% more than non-unionised workers by 1960s. Landrum-Griffin Act (1959): increased federal oversight — reduced corruption but curtailed political activities.",
+    "p2": "Kennedy EO 10988 (1962): federal employees right to unionise. Civil Rights Act (1964): prohibited employment discrimination by race, sex or national origin. Equal Pay Act (1963): equal pay for equal work. OSHA (1970): workplace safety standards — significantly reduced injuries.",
+    "p3": "Automation threat: manufacturing jobs declining — blue-collar unions weakened. New electronics and service sectors relocated to avoid unions. By 1979 manufacturing down 40% from 1970 peak. White-collar workers uninterested in union organising.",
+    "hints": [
+      "20% earnings premium",
+      "Kennedy EO 10988",
+      "manufacturing 40% decline"
+    ]
+  },
+  {
+    "no": 163,
+    "section": "na",
+    "period": "na-start",
+    "periods": [
+      "na-start"
+    ],
+    "isDepthStudy": false,
+    "front": "What was Manifest Destiny and how did it shape attitudes towards Native Americans?",
+    "p1": "Manifest Destiny: 19th century ideology — white American settlement of continent from coast to coast divinely ordained and inevitable. Provided moral and religious justification for Native displacement. 'God had destined the United States to expand westward.'",
+    "p2": "Social Darwinism: pseudoscientific extension of Darwin's theories — framed Native Americans as 'backward', on inferior civilisation rung. Eugenic theories seen as modern science. Justified racial separation and cultural destruction as progress.",
+    "p3": "Practical impact: underpinned Plains Wars, Dawes Act, boarding schools. Settlers not stealing land — fulfilling divine purpose. IRA (1882): white missionaries saw assimilation as Christian duty to 'uplift' Natives. DS1.3 motivation card: economic + cultural + political motivations all flowed from Manifest Destiny.",
+    "hints": [
+      "divinely ordained",
+      "Social Darwinism",
+      "IRA Christian duty"
+    ]
+  },
+  {
+    "no": 164,
+    "section": "na",
+    "period": "na-start",
+    "periods": [
+      "na-start"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the reservation system and how did it work?",
+    "p1": "Reservation system: federal policy confining Native tribes to designated land areas — managed by BIA. Began with Indian Removal Act (1830s), systematised after Plains Wars. Indian Appropriations Act (1871): tribes no longer independent nations — 'wards of the state'.",
+    "p2": "BIA took increasing control — often corrupt and paternalistic. Reservations frequently on poor, infertile land — removed traditional hunting grounds after buffalo extermination. Natives dependent on insufficient government rations. Tuberculosis 25% above national average, alcoholism up to 70% among men in some tribes.",
+    "p3": "By 1900 only 100,000 of 240,000 Plains Indians remained. Dawes Act (1887) broke up even reservation land into individual allotments — accelerated dispossession. Reservations became 'ghettos in the wilderness' — economic dependency replacing self-sufficiency.",
+    "hints": [
+      "BIA corrupt and paternalistic",
+      "wards of the state",
+      "ghettos in the wilderness"
+    ]
+  },
+  {
+    "no": 165,
+    "section": "na",
+    "period": "na-plains-wars",
+    "periods": [
+      "na-plains-wars"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the buffalo extermination?",
+    "p1": "Buffalo: central to Plains tribes — food, clothing, shelter, tools, spiritual practice. Federal government encouraged systematic slaughter to force Natives onto reservations. U.S. Army killed estimated 10 million buffalo 1865–1883.",
+    "p2": "Scale: buffalo population 30 million (1860) → less than 1,000 (1889). Transcontinental railroad (1869) destroyed migration patterns — enabled hunters to penetrate Plains. Hunters killed for hides and tongues, left carcasses to rot. General Sheridan encouraged slaughter as deliberate war strategy.",
+    "p3": "Impact: Plains tribes lost economic independence → forced onto reservations dependent on rations. Late 1880s: government cut meat subsidies to Sioux — starvation. Cultural devastation: ceremonies, spiritual practice, communal identity destroyed. Deliberate cultural as well as physical conquest.",
+    "hints": [
+      "30 million to 1,000",
+      "Sheridan encouraged slaughter",
+      "Sioux ration cuts → starvation"
+    ]
+  },
+  {
+    "no": 166,
+    "section": "na",
+    "period": "na-plains-wars",
+    "periods": [
+      "na-plains-wars"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the Long Walk of the Navajo (1864–66)?",
+    "p1": "Kit Carson destroyed Navajo crops, orchards and livestock — forced surrender. 8,000–9,000 Navajo forced on 300-mile march to Bosque Redondo reservation, New Mexico — winter conditions. Thousands died from starvation, exposure and disease en route.",
+    "p2": "Bosque Redondo: barren, alkaline soil, contaminated water — crops failed repeatedly. 3,000 Navajo died in four years from disease and starvation. Government rationing inadequate, BIA agents corrupt.",
+    "p3": "Treaty of 1868: Navajo allowed to return to ancestral lands — one of the few treaty victories of the period. Reservation expanded 4 million → 10.5 million acres. Population grew 8,000 (1868) → 22,000 by 1900. But Long Walk's trauma shaped Navajo collective identity — including rejection of IRA (1934).",
+    "hints": [
+      "300-mile march",
+      "Bosque Redondo",
+      "Treaty of 1868 — return home"
+    ]
+  },
+  {
+    "no": 167,
+    "section": "na",
+    "period": "na-plains-wars",
+    "periods": [
+      "na-plains-wars"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of Crazy Horse and Sitting Bull as leaders?",
+    "p1": "Sitting Bull (Hunkpapa Lakota): spiritual and political leader — refused to sign treaties ceding Sioux land. Led Black Hills resistance. Little Bighorn (1876): his vision of soldiers falling inspired warriors. Led followers to Canada rather than surrender. Returned 1881, killed by Indian police 1890 during Ghost Dance crisis.",
+    "p2": "Crazy Horse (Oglala Lakota): military leader — refused reservation life or surrender of Sioux sovereignty. Fought to protect Black Hills and Powder River hunting grounds. Led warriors at Little Bighorn — annihilated Custer's 7th Cavalry. Surrendered 1877, killed while allegedly resisting arrest at Fort Robinson.",
+    "p3": "Significance: both symbols of Native resistance — Little Bighorn (1876) only major Native military victory of Plains Wars. BUT both killed after surrender — showed limits of military resistance. Federal response after Little Bighorn intensified → Black Hills lost, Wounded Knee Massacre (1890).",
+    "hints": [
+      "Little Bighorn 1876",
+      "refused to sign treaties",
+      "both killed after surrender"
+    ]
+  },
+  {
+    "no": 168,
+    "section": "na",
+    "period": "na-plains-wars",
+    "periods": [
+      "na-plains-wars"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Black Hills to the Sioux and why does it matter across the whole period?",
+    "p1": "Black Hills (Paha Sapa): sacred land — centre of Sioux spiritual and cultural identity. Treaty of Fort Laramie (1868): guaranteed Black Hills to Sioux 'in perpetuity'. Gold discovered 1874 — Custer's expedition confirmed deposits. Sioux refused to sell.",
+    "p2": "1877: Black Hills seized in violation of Fort Laramie Treaty — government threatened to stop rations unless Sioux signed. Little Bighorn (1876) sparked by this encroachment. Mount Rushmore (1927–41): carved into sacred Black Hills without consent.",
+    "p3": "US v Sioux Nation (1980): Supreme Court ruled Black Hills illegally seized in 1877 — awarded $106 million compensation. Sioux refused: 'The Black Hills are not for sale.' By 1992 fund grown to over $600 million — still unclaimed. Shows land sovereignty, not financial compensation, was the fundamental Native demand across the entire period.",
+    "hints": [
+      "sacred Paha Sapa",
+      "gold 1874 — treaty violated",
+      "$106 million refused"
+    ]
+  },
+  {
+    "no": 169,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the Indian Appropriations Act (1871) and why was it significant?",
+    "p1": "Indian Appropriations Act (1871): tribes no longer recognised as independent nations capable of making treaties. Ended centuries of treaty-making — tribes became 'wards of the state'. Federal government could now make decisions about Native lands without negotiation.",
+    "p2": "Practical consequences: BIA took increasing control — paternalistic and corrupt. Tribes lost legal standing as nations — could not sue in federal courts or challenge federal decisions as sovereign entities. All land losses after 1871 — Dawes (1887), Curtis (1898), Termination (1953) — imposed without treaty consent.",
+    "p3": "Lone Wolf v Hitchcock (1903): Congress could unilaterally revoke even existing treaties — left Natives entirely at federal mercy. Combined effect: 1871 Act removed future treaty protection; Lone Wolf removed past treaty protection. Foundation for total federal control over Native lives.",
+    "hints": [
+      "wards of the state",
+      "no legal standing as nations",
+      "Lone Wolf 1903"
+    ]
+  },
+  {
+    "no": 170,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the impact of reservations on Native Americans? (positives)",
+    "p1": "Reservations allowed tribal life to continue in limited forms — cultural identity and community sustained. Better healthcare than nomadic lifestyle, albeit very limited. Some Native Americans gained jobs as interpreters, scouts or Indian Agency workers.",
+    "p2": "Navajo success: reservation expanded 4 million → 10.5 million acres. Sheep and goats: 15,000 → 1.7 million. Population: 8,000 (1868) → 22,000 by 1900. BIA established schools: Santa Fe, Carson, Phoenix, Pierre and Landreau. Carlisle and Hampton Institute offered vocational training.",
+    "p3": "Reservations provided territorial base for later political campaigns — NCAI (1944), AIM (1968) all built from reservation communities. Even limited sovereignty became foundation for self-determination claims.",
+    "hints": [
+      "Navajo expansion",
+      "BIA schools",
+      "territorial base for later activism"
+    ]
+  },
+  {
+    "no": 171,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the impact of reservations on Native Americans? (limitations)",
+    "p1": "Land infertile, difficult to farm — many dependent on insufficient government rations. Late 1880s: government cut meat subsidies to Sioux where disease had already killed cattle. By 1900 only 100,000 of estimated 240,000 Plains Indians remained — poverty, no resources.",
+    "p2": "BIA corrupt or inefficient — agents stole rations, manipulated accounts. 1871 Act abolished tribal sovereignty — tribes subject to BIA with no legal recourse. Reservations became 'ghettos in the wilderness' — humiliating dependency on government aid.",
+    "p3": "Cultural destruction: hunting and tribal leadership roles removed. Matriarchal tribes: women lost status as Dawes Act allocated land to male heads of families. Sun Dance, Ghost Dance suppressed. Tuberculosis 25% above national average. Alcoholism up to 70% among men in some tribes.",
+    "hints": [
+      "BIA corrupt",
+      "only 100,000 by 1900",
+      "ghettos in the wilderness"
+    ]
+  },
+  {
+    "no": 172,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What were the positive effects of assimilation policies on Native Americans?",
+    "p1": "Boarding schools: vocational training — domestic skills for girls, trade skills for boys. Some graduates employed as Indian Agency office workers, interpreters or army scouts. Carlisle and Hampton Institute offered broader education.",
+    "p2": "Dawes Act (1887): 160 acres farmland or 320 grazing acres per family head — landowners became taxpayers, gained citizenship rights. Five Civilised Tribes exempt from Dawes Act until Curtis Act (1898) — retained significant self-determination, developed prosperous communities in Indian Territory.",
+    "p3": "Some assimilated Natives gained access to wider society — lawyers, doctors, teachers who later advocated for Native rights. SAI (1911) founded by educated, assimilated Natives. BUT gains achieved at severe cultural cost and rarely sustained.",
+    "hints": [
+      "vocational training",
+      "Five Civilised Tribes exempt",
+      "SAI 1911"
+    ]
+  },
+  {
+    "no": 173,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What were the damaging effects of assimilation policies on Native Americans?",
+    "p1": "Cultural destruction: polygamy outlawed, buffalo hunting forbidden, Sun Dance suppressed. Missionary activity, forced Christian conversions eroded Native spiritual identities. By 1930 75% of Native American languages lost — direct product of boarding school system.",
+    "p2": "Boarding schools: 100,000+ children forced in by early 1900s. Forbidden to speak languages, practice traditions, wear traditional clothing. Death rates 30–50% from neglect, abuse and malnutrition. Many graduates returned alienated from both Native and white societies.",
+    "p3": "Dawes Act land loss: 156 million acres (1881) → 78 million acres by 1890. Allotment land poor quality — sold to white speculators, Natives left destitute. Matriarchal structures undermined — land allocated to male heads of families. Iroquois and Cherokee women lost traditional land management rights.",
+    "hints": [
+      "75% languages lost",
+      "death rates 30–50%",
+      "156m → 78m acres"
+    ]
+  },
+  {
+    "no": 174,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the Wounded Knee Massacre (1890) and why was it significant?",
+    "p1": "Ghost Dance Movement (1889): spiritual revival — 5 days of exhausting dance to reconnect with ancestors and restore lost lands. Spread rapidly across Plains. U.S. Army feared it as military threat → Sitting Bull arrested and killed by Indian police, December 1890.",
+    "p2": "December 29, 1890: 7th Cavalry surrounded Lakota Sioux at Wounded Knee Creek. Attempted to disarm warriors — shot fired, possibly accidentally — cavalry opened fire with rifles and Hotchkiss guns. Over 250 Lakota men, women and children killed. 25 soldiers died, mostly friendly fire.",
+    "p3": "Significance: end of armed Plains Indian resistance — last major military confrontation. Ghost Dance suppressed — last major cultural resistance movement destroyed. Wounded Knee became enduring symbol of Native suffering: AIM chose it deliberately for 1973 occupation.",
+    "hints": [
+      "Ghost Dance suppressed",
+      "over 250 killed",
+      "AIM 1973 chose it deliberately"
+    ]
+  },
+  {
+    "no": 175,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the full impact of the Dawes Act on Native land ownership?",
+    "p1": "Dawes Severalty Act (1887): divided communal tribal lands into individual 160-acre allotments (320 for grazing). Unallocated 'surplus' land sold to white settlers — deliberate mechanism of dispossession.",
+    "p2": "Scale: Native-owned land 138 million acres (1887) → 48 million acres by 1934 — 90 million acres lost in under 50 years. Allotment land poor quality — arid, infertile, unsuitable for farming. Most sold allotments, leaving them destitute. Curtis Act (1898): extended to Five Civilised Tribes. Dead Indian Act (1902): allowed sale of inherited land.",
+    "p3": "Wheeler-Howard Act (1934): halted allotment — restored only 4 million of 90 million acres lost. By 1932 two-thirds of Native land lost since Dawes Act. Described as 'a mighty pulverising engine to break up the tribal mass'.",
+    "hints": [
+      "138m → 48m acres",
+      "90 million acres lost",
+      "Curtis Act 1898"
+    ]
+  },
+  {
+    "no": 176,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the full impact of boarding schools on Native culture and identity?",
+    "p1": "Carlisle Indian Industrial School (Pennsylvania, 1879) — motto: 'Kill the Indian, save the man.' 100,000+ children forced in by early 1900s. Hair cut, Native clothing removed, languages forbidden — culturally violent from first day.",
+    "p2": "Death rates 30–50% from neglect, abuse and malnutrition. Navajo students received only 13 cents/day for lunch vs recommended 50 cents. 60,000+ children in schools by 1930. 75% of Native American languages lost by 1930.",
+    "p3": "Long-term trauma: graduates returned alienated from both worlds. Boarding schools weakened matriarchal structures — Western gender norms imposed. Cultural trauma passed through generations — contributed to high alcoholism and suicide rates on reservations. Indian Child Welfare Act (1978) finally established tribal authority over child placement.",
+    "hints": [
+      "kill the Indian save the man",
+      "death rates 30–50%",
+      "ICWA 1978"
+    ]
+  },
+  {
+    "no": 177,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the role of the Five Civilised Tribes and the Muskogee/Sequoyah Convention (1905)?",
+    "p1": "Five Civilised Tribes (Cherokee, Choctaw, Chickasaw, Creek, Seminole): written constitutions, elected governments, mixed economy — adopted European-American governance. Occupied Indian Territory (Oklahoma). Exempt from Dawes Act allotment until Curtis Act (1898).",
+    "p2": "Curtis Act (1898): ended Five Civilised Tribes' governments — stripped ability to self-govern. Allotment imposed. Muskogee/Sequoyah Convention (1905): leaders proposed all-Native state of Sequoyah — own governor, Congressional representatives. Application submitted to Congress.",
+    "p3": "Congress rejected Sequoyah — Oklahoma created 1907, merging Indian Territory with Oklahoma Territory. Showed Native Americans could govern successfully on own terms. Sequoyah Convention most ambitious attempt at Native self-determination before Red Power era.",
+    "hints": [
+      "exempt until Curtis Act 1898",
+      "Sequoyah Convention 1905",
+      "Oklahoma created instead"
+    ]
+  },
+  {
+    "no": 178,
+    "section": "na",
+    "period": "na-gilded-age-ds",
+    "periods": [
+      "na-gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the role of BIA corruption and paternalism as a structural obstacle?",
+    "p1": "BIA (Bureau of Indian Affairs): federal agency managing Native affairs. Tribes became 'wards of state' after Indian Appropriations Act (1871) — no independent legal standing. BIA agents on reservations often corrupt: stole rations, mismanaged tribal funds, sold reserved land.",
+    "p2": "Structural consequences: no legal recourse against BIA abuses. BIA controlled access to schools, healthcare, employment and housing. Late 1880s: government cut meat subsidies through BIA — Sioux reservation starvation. Dawes Act allotment poorly administered — land lost to speculators.",
+    "p3": "20th century persistence: Collier's IRA (1934) tried to reform BIA — paternalism persisted. Collier's presumption all tribes wanted same self-determination itself paternalistic — 25% rejected IRA. Trail of Broken Treaties (1972): AIM occupied BIA headquarters — symbolised BIA as enemy. Nixon ended termination (1970) began shifting power from BIA to tribes.",
+    "hints": [
+      "wards of state",
+      "stole rations, no legal recourse",
+      "AIM occupied BIA 1972"
+    ]
+  },
+  {
+    "no": 179,
+    "section": "na",
+    "period": "na-progressive-twenties",
+    "periods": [
+      "na-progressive-twenties"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of John Collier and the AIDA?",
+    "p1": "John Collier: white reformer — lived among Pueblo communities in New Mexico 1920s. Founded AIDA (1923) to protect Native lands and religious freedom. Blocked Leavitt Bill (1926) — 'Dance Order' seeking to ban Pueblo religious dances. Mobilised public opinion to defeat it.",
+    "p2": "Commissioner for Indian Affairs (1933–45): drove Indian Reorganization Act (1934) — ended allotment, encouraged tribal self-governance, protected cultural practices. Most significant federal Native policy shift since Dawes Act.",
+    "p3": "Limits of Collier's paternalism: policies based on experience with Pueblos and Navajos — didn't suit all tribes. Presumed all tribes wanted same form of self-determination. Navajo rejected IRA due to livestock reduction. 25% of tribes rejected IRA outright. Even well-intentioned reformers imposed their own assumptions.",
+    "hints": [
+      "AIDA blocked Leavitt Bill",
+      "IRA 1934",
+      "25% rejected IRA"
+    ]
+  },
+  {
+    "no": 180,
+    "section": "na",
+    "period": "na-new-deal-ds",
+    "periods": [
+      "na-new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the role of the IECW/CCC-ID in improving Native lives during the New Deal?",
+    "p1": "IECW/CCC-ID: New Deal employment specifically for Native Americans. 85,000 employed 1933–42 — planted 25 million trees, built 6,500 miles of road on tribal lands. Surplus army clothing distributed, hospitals, schools and irrigation systems built on reservations.",
+    "p2": "Cultural: Indian Arts and Crafts Board (1935) revived Native arts as economic ventures. Cultural education funding increased 65% between 1935 and 1940. Tribal councils reinstated. Ceremonial dance bans overturned. Peyote use for religious purposes protected.",
+    "p3": "Limits: Navajo students received 13 cents/day for lunch vs recommended 50 cents. Only $2 million annually to buy back lost land — fraction of 90 million acres lost. 82% of Native Americans still below poverty line by 1940. Post-WWII termination reversed many gains.",
+    "hints": [
+      "85,000 employed",
+      "Indian Arts and Crafts Board",
+      "82% below poverty line 1940"
+    ]
+  },
+  {
+    "no": 181,
+    "section": "na",
+    "period": "na-new-deal-ds",
+    "periods": [
+      "na-new-deal-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the Navajo livestock reduction and why did it matter?",
+    "p1": "Navajo sheep and goat herds: 1.7 million — central to Navajo economy, culture and identity. Collier and federal scientists: overgrazing destroying Navajo land. Government ordered livestock reduction 1933–36 — forced Navajo to kill 150,000 sheep, goats and horses.",
+    "p2": "Navajo experience: sheep represented wealth, spiritual connection and family heritage — their destruction was economic and cultural devastation. Women especially affected — Navajo society matrilineal, sheep traditionally women's property. Government compensation wholly inadequate.",
+    "p3": "Consequence: Navajo rejected IRA (1934) outright — tribe Collier most wanted to help refused because of livestock reduction. Showed even well-intentioned policy devastates Native communities when imposed without genuine consent. Fundamental problem of Collier's paternalism.",
+    "hints": [
+      "150,000 sheep killed",
+      "women's property destroyed",
+      "Navajo rejected IRA"
+    ]
+  },
+  {
+    "no": 182,
+    "section": "na",
+    "period": "na-termination",
+    "periods": [
+      "na-termination"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the impact of reservation poverty as a structural condition?",
+    "p1": "1960s–70s: per capita income often less than half national average. Unemployment on many reservations over 50% — sometimes approaching 80%. Few roads, schools, hospitals, utilities — many homes without running water or electricity.",
+    "p2": "LBJ 'Forgotten Americans' speech (1968): 'the most deprived and forgotten group' in U.S. — launched War on Poverty targeting housing, healthcare and education on reservations. Indian Relocation Act (1956) had pushed many to cities — urban poverty often replaced reservation poverty.",
+    "p3": "Structural causes: Dawes Act land loss, BIA mismanagement, Termination Policy (1953) destroyed economic base of 109 tribes. 60% economically reliant on federal assistance by 1992. Gaming Act (1988) created some opportunities — but 25% Native American families still below poverty line in 1992.",
+    "hints": [
+      "unemployment 50–80%",
+      "Forgotten Americans 1968",
+      "25% poverty 1992"
+    ]
+  },
+  {
+    "no": 183,
+    "section": "na",
+    "period": "na-red-power-ds",
+    "periods": [
+      "na-red-power-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was Red Power and how did it differ from earlier forms of Native activism?",
+    "p1": "Red Power: militant movement for Native rights — emerged late 1960s, inspired by Black Power. Emphasised Native pride, sovereignty and cultural revival. Rejected gradualist legal approach of NCAI. Pan-tribal identity — united Natives across tribal lines for first time since Plains Wars.",
+    "p2": "AIM (1968): red berets and black leather jackets modelled on Black Panthers. Direct action — fish-ins (1968), Alcatraz (1969–71), Trail of Broken Treaties (1972), Wounded Knee (1973). Escalating confrontation generated national media coverage.",
+    "p3": "Impact: Nixon ended Termination (1970), Indian Self-Determination Act (1975) — both partly responses to Red Power pressure. But AIM militancy vs NCAI legal approach created tensions — limited unified pressure.",
+    "hints": [
+      "pan-tribal identity",
+      "AIM direct action",
+      "Nixon ended termination"
+    ]
+  },
+  {
+    "no": 184,
+    "section": "na",
+    "period": "na-red-power-ds",
+    "periods": [
+      "na-red-power-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "How did Black Power influence Red Power and what were the limits of that influence?",
+    "p1": "Direct influence: AIM (1968) formed after peak of Black Power. Red berets and leather jackets modelled on Black Panthers. 'Red Power' directly inspired by 'Black Power'. AIM adopted militant direct action — fish-ins, Alcatraz, Trail of Broken Treaties, Wounded Knee.",
+    "p2": "Pan-Indian unity mirrored Black Power racial solidarity. Young Natives disillusioned with slow pace of change — drawn to radical tactics as African Americans had been. Alcatraz (1969): 10,000 Natives visited — media attention mirrored Panthers' impact.",
+    "p3": "Limits: Native activism pre-dated Black Power — NIYC (1961) fish-ins already underway. NCAI (1944) established. Great Society and War on Poverty laid groundwork independently. Native sovereignty demands distinct from Black integration/equality demands.",
+    "hints": [
+      "red berets modelled on Panthers",
+      "NIYC 1961 predates Black Power",
+      "sovereignty not integration"
+    ]
+  },
+  {
+    "no": 185,
+    "section": "na",
+    "period": "na-red-power-ds",
+    "periods": [
+      "na-red-power-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of the Trail of Broken Treaties (1972)?",
+    "p1": "November 1972: cross-country caravan of multiple tribes — drove to Washington DC before presidential election. Demanded restoration of Native sovereignty and treaty-making rights. Occupied BIA headquarters for several days.",
+    "p2": "20-point manifesto: treaty enforcement, restoration of tribal land base, abolition of BIA, new treaty relationships. Nixon administration negotiated rather than use force — election timing made confrontation politically costly. Government offered $66,650 to leave.",
+    "p3": "Significance: most effective pan-tribal organisation in Red Power era. BIA occupation symbolically powerful — the institution most associated with Native oppression. Led directly to Wounded Knee (1973). BUT 20-point demands not met — showed limits of symbolic victories without sustained political leverage.",
+    "hints": [
+      "BIA occupied",
+      "20-point manifesto",
+      "election timing protected protesters"
+    ]
+  },
+  {
+    "no": 186,
+    "section": "na",
+    "period": "na-self-determination",
+    "periods": [
+      "na-self-determination"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of Nixon ending termination (1970) and the Indian Self-Determination Act (1975)?",
+    "p1": "Nixon (1970): formally ended termination — acknowledged it had been wrong. Federal government had trust responsibility to Native Americans. Advocated self-determination without termination — decisive reversal of 17-year federal assault on tribal sovereignty.",
+    "p2": "Indian Self-Determination and Education Assistance Act (1975): tribes could administer own education, health and welfare programmes using federal funds. Shift away from BIA control. 200+ tribes assumed responsibility for federal programmes by 1992.",
+    "p3": "Limits: federal government still controlled funding — 60% of Native Americans economically reliant on federal assistance by 1992. Sovereignty legally recognised but practically limited by ongoing federal oversight. Most significant federal policy reversal since IRA (1934).",
+    "hints": [
+      "Nixon reversed termination 1970",
+      "200 tribes administered programmes",
+      "60% still federally dependent"
+    ]
+  },
+  {
+    "no": 187,
+    "section": "na",
+    "period": "na-self-determination",
+    "periods": [
+      "na-self-determination"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of NARF and Oneida v Oneida (1974)?",
+    "p1": "NARF (1970): provided legal representation for tribes — treaty enforcement, land claims, sovereignty in federal courts. Filled gap left by AIM's direct action — combined protest outside with legal pressure inside the system.",
+    "p2": "Oneida v Oneida and Madison Counties (1974): Oneida Nation could sue for land claims under federal treaties — major precedent for tribes seeking legal restitution for treaty violations. Opened legal route for dozens of tribal land claims.",
+    "p3": "Further NARF victories: Fisher v Montana (1976) — tribes decide on adoptions of Native children. Bryan v Itasca County (1976) — states cannot tax reservations. Built tribal sovereignty case by case. Legal and direct action strategies complementary.",
+    "hints": [
+      "NARF 1970 legal representation",
+      "Oneida precedent for land claims",
+      "Fisher + Bryan victories"
+    ]
+  },
+  {
+    "no": 188,
+    "section": "na",
+    "period": "na-self-determination",
+    "periods": [
+      "na-self-determination"
+    ],
+    "isDepthStudy": false,
+    "front": "What was the significance of the Indian Child Welfare Act (1978)?",
+    "p1": "Context: since boarding school era, Native children systematically removed — placed in white foster and adoptive homes. By 1970s, 25–35% of all Native children separated from families. In some states 90% placed in non-Native homes. Destroyed cultural transmission and community cohesion.",
+    "p2": "Indian Child Welfare Act (1978): prevented removal of Native children to non-Native homes. Established tribal authority over child welfare cases — tribes had jurisdiction over custody decisions. Required active efforts to keep children within extended family and tribal community.",
+    "p3": "Significance: most far-reaching cultural preservation victory of self-determination era. Fisher v Montana (1976) established tribal court jurisdiction over adoptions — ICWA built on this. Cultural rights required specific legal protection beyond general civil rights legislation.",
+    "hints": [
+      "25-35% children removed",
+      "tribal jurisdiction over welfare",
+      "cultural transmission protected"
+    ]
+  },
+  {
+    "no": 189,
+    "section": "lab",
+    "period": "gilded-age-ds",
+    "periods": [
+      "gilded-age-ds"
+    ],
+    "isDepthStudy": true,
+    "front": "What was the significance of the Pullman Strike (1894)?",
+    "p1": "Pullman Palace Car cut wages 25% — did not reduce rents in company housing. Workers joined Debs' ARU → boycotted Pullman cars → spread to 27 states, paralyised rail traffic. Cleveland obtained court injunction under Sherman Act — strike declared illegal restraint of trade.",
+    "p2": "12,000 federal troops sent despite Illinois Governor Altgeld's objection. 30 deaths, widespread violence. Debs arrested and imprisoned for contempt. AFL refused to support ARU — exposed skilled/unskilled division.",
+    "p3": "First use of federal injunction to break a strike — precedent used for decades. Federal government sided with corporations through courts and troops. Debs' imprisonment radicalised him → ran for president 5x as Socialist, won 6% (1912).",
+    "hints": [
+      "injunction precedent",
+      "Debs imprisoned",
+      "AFL refused to support ARU"
     ]
   }
 ]
