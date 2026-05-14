@@ -1,7 +1,7 @@
 [
   {
-    "date": "1861",
-    "event": "US Civil War begins — pro-slavery Confederate States fight Northern Union states",
+    "date": "1861-65",
+    "event": "US Civil War — Union victory over pro-slavery Confederate states",
     "section": "aa"
   },
   {
@@ -11,27 +11,27 @@
   },
   {
     "date": "1865",
-    "event": "13th Amendment abolishes slavery",
+    "event": "13th Amendment — slavery abolished, 4 million freed",
     "section": "aa"
   },
   {
     "date": "1865",
-    "event": "Freedmen's Bureau established",
+    "event": "Freedmen's Bureau established to support education and employment",
     "section": "aa"
   },
   {
     "date": "1865",
-    "event": "Ku Klux Klan founded",
-    "section": "aa"
-  },
-  {
-    "date": "1865",
-    "event": "New Orleans Massacre — 40–200 African Americans massacred by ex-Confederate soldiers",
+    "event": "KKK founded in Tennessee by ex-Confederate General Forrest",
     "section": "aa"
   },
   {
     "date": "1865",
     "event": "Black Codes introduced in defeated Confederate states",
+    "section": "aa"
+  },
+  {
+    "date": "1865",
+    "event": "New Orleans Massacre — 40–200 African Americans killed by ex-Confederate soldiers",
     "section": "aa"
   },
   {
@@ -41,12 +41,12 @@
   },
   {
     "date": "1867",
-    "event": "Reconstruction Act — divides Southern states into military-occupied districts",
+    "event": "Reconstruction Act — divides South into military districts, removes Black Codes",
     "section": "aa"
   },
   {
     "date": "1868",
-    "event": "14th Amendment grants citizenship to African Americans",
+    "event": "14th Amendment — guarantees citizenship and equal protection to all",
     "section": "aa"
   },
   {
@@ -55,43 +55,53 @@
     "section": "aa"
   },
   {
-    "date": "1870",
-    "event": "15th Amendment grants African American men the right to vote",
+    "date": "1869",
+    "event": "Colored National Labor Union formed after exclusion from NLU",
     "section": "aa"
   },
   {
     "date": "1870",
-    "event": "Hiram Revels becomes first African American senator",
+    "event": "15th Amendment — prohibits denial of the vote due to race",
     "section": "aa"
   },
   {
     "date": "1870",
-    "event": "Readmission of Confederate states — Radical Republicans lose Congressional control",
+    "event": "Readmission of Confederate States — Radical Republicans lose Congressional control",
+    "section": "aa"
+  },
+  {
+    "date": "1870-1",
+    "event": "Enforcement Acts — federal intervention to destroy the KKK",
     "section": "aa"
   },
   {
     "date": "1872",
-    "event": "Freedmen's Bureau closes",
+    "event": "Freedmen's Bureau closed due to cost",
     "section": "aa"
   },
   {
     "date": "1873",
-    "event": "Slaughterhouse Case limits federal civil rights protections",
+    "event": "Economic panic — Northern attention shifts away from Reconstruction",
+    "section": "aa"
+  },
+  {
+    "date": "1873",
+    "event": "Slaughterhouse Case — civil rights ruled a state issue",
     "section": "aa"
   },
   {
     "date": "1875",
-    "event": "Civil Rights Act guarantees equal access to public spaces",
-    "section": "aa"
-  },
-  {
-    "date": "1876",
-    "event": "US v Cruickshank — federal government cannot prosecute individuals for violating AA civil rights",
+    "event": "Civil Rights Act — bans segregation but lacks enforcement",
     "section": "aa"
   },
   {
     "date": "1877",
-    "event": "Compromise of 1877 — federal troops withdrawn from South, ending Reconstruction",
+    "event": "Hayes-Tilden Compromise — federal troops withdrawn, Reconstruction ends",
+    "section": "aa"
+  },
+  {
+    "date": "1877",
+    "event": "First Jim Crow law introduced on Tennessee railroads",
     "section": "aa"
   },
   {
@@ -106,17 +116,12 @@
   },
   {
     "date": "1881",
-    "event": "Tuskegee Institute founded by Booker T. Washington",
-    "section": "aa"
-  },
-  {
-    "date": "1883",
-    "event": "Civil Rights Act of 1875 declared unconstitutional",
+    "event": "Tuskegee Institute opened by Booker T. Washington",
     "section": "aa"
   },
   {
     "date": "1890",
-    "event": "Mississippi Plan — literacy tests and poll taxes introduced",
+    "event": "Voter suppression introduced in Mississippi, spreads across South",
     "section": "aa"
   },
   {
@@ -126,12 +131,12 @@
   },
   {
     "date": "1892",
-    "event": "Populist Party wins 5 states — advocates for working class including Black workers",
+    "event": "Presidential election — Populist Party wins 5 states",
     "section": "aa"
   },
   {
     "date": "1895",
-    "event": "Booker T. Washington delivers Atlanta Compromise speech",
+    "event": "Atlanta Compromise — Washington accepts social segregation in return for economic co-operation",
     "section": "aa"
   },
   {
@@ -141,32 +146,37 @@
   },
   {
     "date": "1898",
-    "event": "Wilmington Coup — white supremacists violently overthrow biracial government",
+    "event": "Wilmington Coup — biracial local government ousted by white mob",
+    "section": "aa"
+  },
+  {
+    "date": "1898",
+    "event": "Mississippi v Williams — Supreme Court rules voter suppression does not violate 15th Amendment",
     "section": "aa"
   },
   {
     "date": "1899",
-    "event": "Cummings v Board of Education — Supreme Court extends \"separate but equal\" to schools",
+    "event": "Cummings v Board of Education — \"separate but equal\" extended to schools",
     "section": "aa"
   },
   {
     "date": "1900",
-    "event": "Negro Business League founded by Booker T. Washington",
+    "event": "National Negro Business League — founded by Washington, 600 chapters",
     "section": "aa"
   },
   {
     "date": "1905",
-    "event": "Niagara Movement founded by W.E.B. Du Bois",
+    "event": "Niagara Movement — immediate predecessor to NAACP, founded by Du Bois",
     "section": "aa"
   },
   {
     "date": "1908",
-    "event": "Springfield Race Riot — 8 killed, directly triggers founding of NAACP",
+    "event": "Springfield Race Riot — 8 killed, directly triggers NAACP founding",
     "section": "aa"
   },
   {
     "date": "1909",
-    "event": "NAACP founded following Springfield Race Riot",
+    "event": "NAACP founded by Du Bois, Wells and white campaigners",
     "section": "aa"
   },
   {
@@ -175,13 +185,13 @@
     "section": "aa"
   },
   {
-    "date": "1914",
-    "event": "WWI and Great Migration — over 1 million African Americans migrate to Northern cities",
+    "date": "1914-18",
+    "event": "First World War — Great Migration begins, over 1 million migrate North",
     "section": "aa"
   },
   {
     "date": "1915",
-    "event": "Birth of a Nation released — KKK revival follows",
+    "event": "Birth of a Nation — glorifies KKK, leads to KKK resurgence",
     "section": "aa"
   },
   {
@@ -191,102 +201,102 @@
   },
   {
     "date": "1917",
-    "event": "East St. Louis Race Riot — 100+ African Americans killed",
+    "event": "Marcus Garvey founds New York branch of UNIA, publishes The Negro World",
+    "section": "aa"
+  },
+  {
+    "date": "1917-18",
+    "event": "Harlem Hellfighters — 350,000 Black Americans serve in military",
     "section": "aa"
   },
   {
     "date": "1919",
-    "event": "Red Summer — race riots across 25 cities",
+    "event": "Red Summer — race riots across 25 cities after white soldiers return",
     "section": "aa"
   },
   {
-    "date": "1920",
-    "event": "Harlem Renaissance begins — cultural explosion in African American arts",
-    "section": "aa"
-  },
-  {
-    "date": "1920s",
-    "event": "KKK membership reaches 5 million — 15% of population, now national not just Southern",
+    "date": "1919",
+    "event": "Black Star Line — launched by Garvey's back-to-Africa movement",
     "section": "aa"
   },
   {
     "date": "1920s",
-    "event": "Harlem Renaissance — cultural explosion in African American arts, music and literature",
+    "event": "KKK membership reaches 5 million — 15% of the population",
+    "section": "aa"
+  },
+  {
+    "date": "1920s",
+    "event": "Harlem Renaissance — cultural explosion for Black Americans",
     "section": "aa"
   },
   {
     "date": "1921",
-    "event": "Tulsa Race Massacre — Greenwood District destroyed",
+    "event": "Tulsa Race Massacre — Black Wall Street in Tulsa destroyed",
     "section": "aa"
   },
   {
     "date": "1922",
-    "event": "'Garvey must go' campaign — gains momentum after Garvey meets with KKK",
+    "event": "Garvey Must Go campaign — gains momentum after Garvey meets KKK",
     "section": "aa"
   },
   {
     "date": "1925",
-    "event": "Brotherhood of Sleeping Car Porters founded by A. Philip Randolph",
+    "event": "BSCP — first successful Black union, founded by Philip Randolph",
     "section": "aa"
   },
   {
     "date": "1927",
-    "event": "Marcus Garvey deported to Jamaica by federal government for mail fraud",
-    "section": "aa"
-  },
-  {
-    "date": "1929",
-    "event": "Great Depression begins — Black unemployment reaches 50%",
-    "section": "aa"
-  },
-  {
-    "date": "1930",
-    "event": "Nation of Islam (NOI) founded as Black nationalist organisation",
+    "event": "Garvey deported to Jamaica by federal government for mail fraud",
     "section": "aa"
   },
   {
     "date": "1930s",
-    "event": "Great Depression — Black unemployment soars to 50%, double the national rate",
+    "event": "Great Depression — Black unemployment soars to 50%",
     "section": "aa"
   },
   {
-    "date": "1931",
-    "event": "Scottsboro Boys arrested and falsely convicted",
+    "date": "1930",
+    "event": "Nation of Islam founded as a Black nationalist organisation",
     "section": "aa"
   },
   {
     "date": "1933",
-    "event": "First New Deal — FERA, CCC, PWA provide relief; African Americans benefit but face discrimination",
+    "event": "First New Deal — FERA, CCC, PWA provide relief; Black Americans benefit but face discrimination",
     "section": "aa"
   },
   {
     "date": "1935",
-    "event": "Second New Deal — Social Security Act and Wagner Act; major exclusions for Black workers",
+    "event": "Second New Deal — Social Security and Wagner Act; significant exclusions for Black workers",
+    "section": "aa"
+  },
+  {
+    "date": "1938",
+    "event": "Gaines v Canada — separate institutions must be truly equal; later used in Brown",
+    "section": "aa"
+  },
+  {
+    "date": "1941-45",
+    "event": "Second World War — over 1 million serve; Double V Campaign begins",
     "section": "aa"
   },
   {
     "date": "1941",
-    "event": "Executive Order 8802 — bans racial discrimination in defence industries",
+    "event": "Executive Order 8802 — bans segregation in defence industries",
     "section": "aa"
   },
   {
-    "date": "1944",
-    "event": "Smith v Allwright — white-only primaries declared unconstitutional",
-    "section": "aa"
-  },
-  {
-    "date": "1944",
-    "event": "GI Bill passed — denied to most Black veterans in South",
-    "section": "aa"
-  },
-  {
-    "date": "1947",
-    "event": "Jackie Robinson breaks colour barrier in Major League Baseball",
+    "date": "1942",
+    "event": "CORE founded — early non-violent civil rights organisation",
     "section": "aa"
   },
   {
     "date": "1948",
-    "event": "Truman's Executive Order 9981 — desegregation of armed forces",
+    "event": "Executive Order 9981 — Truman desegregates the military",
+    "section": "aa"
+  },
+  {
+    "date": "1953-69",
+    "event": "Warren Court — most liberal Supreme Court in US history",
     "section": "aa"
   },
   {
@@ -296,172 +306,217 @@
   },
   {
     "date": "1955",
-    "event": "Emmett Till murdered — mother's open casket galvanises movement",
+    "event": "Lynching of Emmett Till — murder of 14-year-old galvanises the movement",
     "section": "aa"
   },
   {
     "date": "1955",
-    "event": "Montgomery Bus Boycott begins",
+    "event": "White Citizens Councils formed to oppose school integration",
+    "section": "aa"
+  },
+  {
+    "date": "1955-6",
+    "event": "Montgomery Bus Boycott — Rosa Parks, 381-day protest leads to bus desegregation",
+    "section": "aa"
+  },
+  {
+    "date": "1956",
+    "event": "Browder v Gayle — segregated buses declared unconstitutional",
     "section": "aa"
   },
   {
     "date": "1957",
-    "event": "Little Rock Crisis — Eisenhower deploys 101st Airborne",
+    "event": "SCLC formed — led by Martin Luther King, non-violent organisation",
     "section": "aa"
   },
   {
     "date": "1957",
-    "event": "SCLC founded by Martin Luther King Jr",
+    "event": "Little Rock Nine — school integration forced by NAACP and Eisenhower",
+    "section": "aa"
+  },
+  {
+    "date": "1957",
+    "event": "Civil Rights Act — weak attempt to end segregation and racist employment",
     "section": "aa"
   },
   {
     "date": "1960",
-    "event": "Greensboro Sit-ins — 4 students spark nationwide movement",
+    "event": "Greensboro Sit-ins — spark wave of sit-ins across the South",
     "section": "aa"
   },
   {
     "date": "1960",
-    "event": "SNCC founded",
+    "event": "SNCC founded — grassroots student-led non-violent movement",
+    "section": "aa"
+  },
+  {
+    "date": "1960",
+    "event": "Boynton v Virginia — segregated interstate buses declared unconstitutional",
     "section": "aa"
   },
   {
     "date": "1961",
-    "event": "Freedom Rides — CORE and SNCC test interstate bus desegregation",
+    "event": "Freedom Rides — CORE and SNCC test Boynton ruling, face violent mobs",
+    "section": "aa"
+  },
+  {
+    "date": "1962",
+    "event": "Albany Campaign — SCLC and King fail due to subtle police tactics",
+    "section": "aa"
+  },
+  {
+    "date": "1962",
+    "event": "Ole Miss Riot — federal troops suppress resistance to James Meredith's enrolment",
     "section": "aa"
   },
   {
     "date": "1963",
-    "event": "Birmingham Campaign — Bull Connor deploys fire hoses and dogs",
+    "event": "Birmingham Campaign — Bull Connor's brutality shocks world, leads to Civil Rights Act",
     "section": "aa"
   },
   {
     "date": "1963",
-    "event": "March on Washington — 250,000 attend, King delivers I Have a Dream",
+    "event": "March on Washington — King delivers I Have a Dream to 250,000",
     "section": "aa"
   },
   {
     "date": "1963",
-    "event": "Medgar Evers assassinated",
+    "event": "Baptist Church Bombings — KKK bomb kills four girls in Birmingham",
     "section": "aa"
   },
   {
     "date": "1964",
-    "event": "Civil Rights Act bans discrimination in public places and employment",
+    "event": "Civil Rights Act — removes all Jim Crow segregation across the South",
     "section": "aa"
   },
   {
     "date": "1964",
-    "event": "Mississippi Freedom Summer — voter registration drives",
+    "event": "Malcolm X breaks from NOI, advocates any means necessary",
     "section": "aa"
   },
   {
     "date": "1965",
-    "event": "Voting Rights Act bans discriminatory voting practices",
+    "event": "Selma March — met with violence on Edmund Pettus Bridge",
     "section": "aa"
   },
   {
     "date": "1965",
-    "event": "Selma to Montgomery March — Bloody Sunday televised nationally",
+    "event": "Voting Rights Act — removes all voter suppression clauses",
     "section": "aa"
   },
   {
     "date": "1965",
-    "event": "Malcolm X assassinated",
+    "event": "Assassination of Malcolm X by members of the NOI",
     "section": "aa"
   },
   {
     "date": "1965",
-    "event": "Watts Riots — 6 days, 34 killed",
+    "event": "Watts Riots — response to poverty and police brutality in LA",
+    "section": "aa"
+  },
+  {
+    "date": "1965-73",
+    "event": "US involvement in Vietnam — shifts media and government priority away from civil rights",
     "section": "aa"
   },
   {
     "date": "1966",
-    "event": "Black Panther Party founded by Newton and Seale",
+    "event": "Black Panther Party — formed by Newton and Seale, focused on self-defence and community",
     "section": "aa"
   },
   {
     "date": "1966",
-    "event": "Stokely Carmichael first uses 'Black Power' slogan",
+    "event": "Chicago Freedom Movement — King fails against de facto housing segregation in North",
     "section": "aa"
   },
   {
     "date": "1967",
-    "event": "Long Hot Summers — 150 riots across USA",
-    "section": "aa"
-  },
-  {
-    "date": "1967",
-    "event": "Thurgood Marshall appointed first Black Supreme Court Justice",
+    "event": "Long Hot Summer — 150 race riots across USA",
     "section": "aa"
   },
   {
     "date": "1968",
-    "event": "Martin Luther King Jr assassinated — riots in 110 cities",
+    "event": "Assassination of Martin Luther King — new wave of race riots in 110 cities",
     "section": "aa"
   },
   {
     "date": "1968",
-    "event": "Civil Rights Act bans housing discrimination",
+    "event": "Presidential campaign — Nixon wins on Law and Order; Wallace wins 5 states",
+    "section": "aa"
+  },
+  {
+    "date": "1969",
+    "event": "Affirmative action first introduced as a federal test in Philadelphia",
     "section": "aa"
   },
   {
     "date": "1971",
-    "event": "Congressional Black Caucus founded",
+    "event": "Swann v Charlotte-Mecklenburg — bussing declared constitutional",
     "section": "aa"
   },
   {
     "date": "1971",
-    "event": "COINTELPRO FBI programme revealed by Senate committee",
+    "event": "Griggs v Duke Power Co — affirmative action declared constitutional",
+    "section": "aa"
+  },
+  {
+    "date": "1971",
+    "event": "War on Drugs — begun by Nixon, expanded by Reagan, disproportionately targets Black Americans",
     "section": "aa"
   },
   {
     "date": "1978",
-    "event": "Regents v Bakke — affirmative action quotas struck down",
+    "event": "Regents of UC v Bakke — racial quotas declared unconstitutional",
+    "section": "aa"
+  },
+  {
+    "date": "1980s",
+    "event": "Reagan's welfare cuts — disproportionately harm African Americans",
+    "section": "aa"
+  },
+  {
+    "date": "1981",
+    "event": "Lynching of Michael Donald — strong federal response, execution of murderer",
     "section": "aa"
   },
   {
     "date": "1983",
-    "event": "MLK Day established as national holiday",
+    "event": "MLK Day — national holiday established",
     "section": "aa"
   },
   {
-    "date": "1989",
-    "event": "Douglas Wilder elected first Black governor (Virginia)",
-    "section": "aa"
-  },
-  {
-    "date": "1991",
-    "event": "Rodney King beaten by LAPD — caught on video",
+    "date": "1984-88",
+    "event": "Jesse Jackson — runs for Democratic presidential nomination twice, comes 3rd then 2nd",
     "section": "aa"
   },
   {
     "date": "1992",
-    "event": "Los Angeles Riots — acquittal of officers, $1 billion damage",
+    "event": "Los Angeles Riots — acquittal of officers who beat Rodney King",
     "section": "aa"
   },
   {
     "date": "1866",
-    "event": "National Labor Union (NLU) founded — first national labour federation",
+    "event": "NLU formed by Sylvis — first national labour organisation",
     "section": "lab"
   },
   {
     "date": "1869",
-    "event": "Knights of Labor (KOL) founded — most inclusive union of era",
+    "event": "CNLU formed — created by Black workers excluded from NLU",
     "section": "lab"
   },
   {
     "date": "1869",
-    "event": "Colored National Labor Union (CNLU) founded",
+    "event": "KOL formed — welcomed women, Black Americans and unskilled workers, peaked at 700,000",
     "section": "lab"
   },
   {
     "date": "1873",
-    "event": "Panic of 1873 — wages halved, NLU collapses",
+    "event": "Molly Maguires — violent conflicts in Pennsylvania coalfields, leaders executed",
     "section": "lab"
   },
   {
     "date": "1877",
-    "event": "Great Railroad Strike — federal troops kill 100+ workers",
+    "event": "Great Railroad Strike — federal troops kill over 100 workers",
     "section": "lab"
   },
   {
@@ -471,67 +526,77 @@
   },
   {
     "date": "1885",
-    "event": "Foran Act — prohibited companies importing foreign contract labour; result of KOL pressure",
+    "event": "Foran Act — prohibited importing foreign contract labour, result of KOL pressure",
     "section": "lab"
   },
   {
     "date": "1886",
-    "event": "Haymarket Affair — bomb kills 7 police, KOL collapses",
+    "event": "AFL founded by Gompers — prioritised skilled workers, favoured collective bargaining",
     "section": "lab"
   },
   {
     "date": "1886",
-    "event": "American Federation of Labor (AFL) founded by Gompers",
+    "event": "Haymarket Affair — bomb kills 7 police, KOL collapses, unions discredited",
     "section": "lab"
   },
   {
     "date": "1890",
-    "event": "Sherman Antitrust Act passed — used against unions",
+    "event": "Sherman Antitrust Act — used against unions as restraint of trade",
     "section": "lab"
   },
   {
     "date": "1892",
-    "event": "Homestead Strike — Pinkertons, 12 killed, steel union destroyed",
+    "event": "Homestead Strike — Pinkertons clash with strikers, state militia crushes strike",
     "section": "lab"
   },
   {
     "date": "1894",
-    "event": "Pullman Strike — federal injunction, Debs imprisoned",
+    "event": "Pullman Strike — federal injunction, Cleveland sends troops, Debs imprisoned",
     "section": "lab"
   },
   {
-    "date": "1899",
-    "event": "National Consumers League founded — workplace safety advocacy",
+    "date": "1894",
+    "event": "Coxey's Army — unemployed workers march to Washington demanding jobs",
+    "section": "lab"
+  },
+  {
+    "date": "1900-17",
+    "event": "Progressive Era — government shifts against monopolies and laissez-faire",
     "section": "lab"
   },
   {
     "date": "1902",
-    "event": "Anthracite Coal Strike — first positive federal mediation",
+    "event": "Great Coal Strike — Roosevelt intervenes, first positive federal mediation",
     "section": "lab"
   },
   {
     "date": "1903",
-    "event": "Women's Trade Union League (WTUL) founded",
+    "event": "Women's Trade Union League formed — advocates for working women",
     "section": "lab"
   },
   {
     "date": "1905",
-    "event": "Lochner v New York — \"freedom of contract\" blocks worker protections",
+    "event": "IWW founded — sought to unite all workers including unskilled and minorities",
     "section": "lab"
   },
   {
     "date": "1905",
-    "event": "Industrial Workers of the World (IWW) founded",
+    "event": "Lochner v New York — freedom of contract blocks worker protections",
     "section": "lab"
   },
   {
     "date": "1911",
-    "event": "Triangle Shirtwaist Fire — 146 killed, owners had locked exits",
+    "event": "Triangle Shirtwaist fire — 146 killed, mostly young immigrant women",
     "section": "lab"
   },
   {
     "date": "1912",
-    "event": "Bread and Roses Strike — 20,000 immigrant women in Lawrence, 15% pay rise",
+    "event": "Bread and Roses Strike — 20,000 immigrant women in Lawrence win 15% pay rise",
+    "section": "lab"
+  },
+  {
+    "date": "1913",
+    "event": "Department of Labor — Cabinet-level position established by Wilson",
     "section": "lab"
   },
   {
@@ -541,32 +606,42 @@
   },
   {
     "date": "1915",
-    "event": "Coppage v Kansas — yellow-dog contracts upheld",
+    "event": "Coppage v Kansas — yellow-dog contracts upheld by Supreme Court",
     "section": "lab"
   },
   {
     "date": "1916",
-    "event": "Keating-Owen Child Labour Act — struck down 1918",
+    "event": "Keating-Owen Child Labor Act — struck down by Supreme Court in 1918",
+    "section": "lab"
+  },
+  {
+    "date": "1917-18",
+    "event": "WWI — high demand creates improved wages and conditions",
+    "section": "lab"
+  },
+  {
+    "date": "1918",
+    "event": "National War Labor Board — Wilson agreement with AFL to maintain wartime production",
     "section": "lab"
   },
   {
     "date": "1919",
-    "event": "Seattle General Strike — labelled Bolshevik, defeated",
+    "event": "Red Scare — union activity viewed as communist, Seattle General Strike defeated",
     "section": "lab"
   },
   {
     "date": "1920",
-    "event": "AFL membership peaks at 4 million",
+    "event": "Union membership around 5 million",
     "section": "lab"
   },
   {
     "date": "1920s",
-    "event": "Welfare capitalism — employers offered limited benefits to discourage unionisation; union membership declines",
+    "event": "Welfare capitalism — pensions and benefits used to discourage unionisation, yellow-dog contracts widespread",
     "section": "lab"
   },
   {
     "date": "1921",
-    "event": "Duplex v Deering — limits Clayton Act union protections",
+    "event": "Deering v Duplex — restricts union secondary boycotts",
     "section": "lab"
   },
   {
@@ -575,13 +650,18 @@
     "section": "lab"
   },
   {
+    "date": "1924",
+    "event": "Asian Exclusion Act — all Asian immigration banned",
+    "section": "lab"
+  },
+  {
     "date": "1925",
-    "event": "Brotherhood of Sleeping Car Porters (BSCP) founded by Randolph",
+    "event": "BSCP founded by Randolph — first successful Black union",
     "section": "lab"
   },
   {
     "date": "1929",
-    "event": "Wall Street Crash — Great Depression begins",
+    "event": "Wall Street Crash — Great Depression begins, mass unemployment",
     "section": "lab"
   },
   {
@@ -591,62 +671,52 @@
   },
   {
     "date": "1933",
-    "event": "NIRA/NRA — Section 7a gives workers right to organise",
+    "event": "NIRA/NRA — codes to protect workers, declared unconstitutional in 1935",
     "section": "lab"
   },
   {
     "date": "1935",
-    "event": "Wagner Act — guarantees right to unionise and collectively bargain",
+    "event": "Wagner Act — right to unionise and collectively bargain, NLRB established",
     "section": "lab"
   },
   {
     "date": "1935",
-    "event": "CIO founded by John Lewis — industrial unionism",
+    "event": "CIO formed — organises unskilled and industrial workers including women and minorities",
     "section": "lab"
   },
   {
-    "date": "1935",
-    "event": "Social Security Act — excludes domestic and agricultural workers",
-    "section": "lab"
-  },
-  {
-    "date": "1936",
-    "event": "Flint Sit-Down Strike — GM recognises UAW after 44 days",
-    "section": "lab"
-  },
-  {
-    "date": "1937",
-    "event": "NLRA v Jones & Laughlin — Wagner Act confirmed constitutional",
-    "section": "lab"
-  },
-  {
-    "date": "1937",
-    "event": "Memorial Day Massacre — 10 striking steelworkers killed by Chicago police",
-    "section": "lab"
-  },
-  {
-    "date": "1937",
-    "event": "US Steel unionises without a strike",
+    "date": "1937-9",
+    "event": "Sit-down strikes — GM recognises UAW after 44-day strike, inspires 200 more",
     "section": "lab"
   },
   {
     "date": "1938",
-    "event": "Fair Labor Standards Act — $25 minimum wage, 44-hour week, child labour ban",
+    "event": "Fair Labor Standards Act — $25 weekly minimum wage, bans child labour",
     "section": "lab"
   },
   {
     "date": "1938",
-    "event": "AFL expels CIO — unions split",
+    "event": "CIO expelled from AFL",
+    "section": "lab"
+  },
+  {
+    "date": "1939",
+    "event": "NLRB v Fansteel — sit-down strikes ruled illegal",
     "section": "lab"
   },
   {
     "date": "1941",
-    "event": "Ford recognises UAW — last major employer to accept unions",
+    "event": "Ford recognises UAW — last major company to accept union power",
     "section": "lab"
   },
   {
     "date": "1941",
-    "event": "NWLB established — government mediates wartime labour disputes",
+    "event": "Executive Order 8802 — bans racial discrimination in defence industries",
+    "section": "lab"
+  },
+  {
+    "date": "1942",
+    "event": "National War Labor Board — government mediates WWII disputes with AFL and CIO",
     "section": "lab"
   },
   {
@@ -655,63 +725,73 @@
     "section": "lab"
   },
   {
-    "date": "1944",
-    "event": "GI Bill — primarily benefits male veterans, reinforces male breadwinner model",
+    "date": "1945",
+    "event": "Union membership reaches 35% of workforce — 14.8 million workers",
     "section": "lab"
   },
   {
     "date": "1946",
-    "event": "Post-WWII strike wave — 5,000 strikes, 4.6 million workers",
+    "event": "Post-WWII strike wave — 5,000 strikes involving 4.6 million workers",
+    "section": "lab"
+  },
+  {
+    "date": "1946-50s",
+    "event": "McCarthyism — crackdown on communist influence in unions",
     "section": "lab"
   },
   {
     "date": "1947",
-    "event": "Taft-Hartley Act — bans secondary strikes, allows right-to-work laws",
+    "event": "Taft-Hartley Act — bans secondary strikes, allows right-to-work laws, passed over Truman's veto",
+    "section": "lab"
+  },
+  {
+    "date": "1950s",
+    "event": "Rise of automation — significant implications for unionised workers",
     "section": "lab"
   },
   {
     "date": "1955",
-    "event": "AFL-CIO merger — 16 million members, 85% of unionised workforce",
+    "event": "AFL-CIO merger — 16 million workers, 85% of union members",
     "section": "lab"
   },
   {
     "date": "1959",
-    "event": "Landrum-Griffin Act — increased federal oversight of unions",
-    "section": "lab"
-  },
-  {
-    "date": "1962",
-    "event": "Kennedy EO 10988 — federal employees right to organise",
+    "event": "Landrum-Griffin Act — increased regulation of unions, limits corruption and political activities",
     "section": "lab"
   },
   {
     "date": "1963",
-    "event": "Equal Pay Act — first federal law prohibiting pay discrimination by sex",
+    "event": "Equal Pay Act — mandates equal pay for equal work",
     "section": "lab"
   },
   {
     "date": "1964",
-    "event": "Civil Rights Act Title VII — prohibits employment discrimination by sex and race",
+    "event": "Civil Rights Act — prohibits employment discrimination by race and sex",
     "section": "lab"
   },
   {
     "date": "1965",
-    "event": "Delano Grape Strike begins — UFW under Chavez",
+    "event": "Delano Grape Strike — nationwide boycott led by Cesar Chavez",
+    "section": "lab"
+  },
+  {
+    "date": "1965",
+    "event": "Medicare and Medicaid — landmark healthcare reducing costs for retirees and low-income",
     "section": "lab"
   },
   {
     "date": "1966",
-    "event": "UFW (United Farm Workers) formally established",
+    "event": "UFW formed by Chavez — fights for farm workers' wages and conditions",
     "section": "lab"
   },
   {
     "date": "1968",
-    "event": "DRUM (Dodge Revolutionary Union Movement) founded",
+    "event": "DRUM established — challenges discrimination within the UAW",
     "section": "lab"
   },
   {
-    "date": "1970",
-    "event": "Bread and Roses Strike (1912) — Salad Bowl Strike led by Filipino workers",
+    "date": "1968",
+    "event": "Age Discrimination Act — bans employment discrimination against those aged 40+",
     "section": "lab"
   },
   {
@@ -720,73 +800,63 @@
     "section": "lab"
   },
   {
-    "date": "1973",
-    "event": "OPEC oil crisis — deindustrialisation begins",
+    "date": "1970",
+    "event": "Salad Bowl Strike — UFW-led farm workers strike for union recognition",
     "section": "lab"
   },
   {
     "date": "1974",
-    "event": "Coalition of Labor Union Women (CLUW) founded",
+    "event": "Coalition of Labor Union Women — advocates for working women in unions",
     "section": "lab"
   },
   {
     "date": "1975",
-    "event": "California Agricultural Labor Relations Act — protects farm workers",
+    "event": "California Agricultural Labor Relations Act — UFW victory",
     "section": "lab"
   },
   {
-    "date": "1979",
-    "event": "Manufacturing employment peaks then declines — 40% fall by 1979",
+    "date": "1980s",
+    "event": "Reaganomics — deregulation and tax cuts contribute to decline in union strength",
     "section": "lab"
   },
   {
     "date": "1981",
-    "event": "PATCO strike — Reagan fires 11,000 air traffic controllers",
+    "event": "PATCO Strike — Reagan fires 11,000 air traffic controllers, weakens unions nationwide",
     "section": "lab"
   },
   {
-    "date": "1992",
-    "event": "Union membership falls to 16% — down from 35% in 1945",
+    "date": "1990",
+    "event": "Union membership drops to 16% of the workforce",
     "section": "lab"
   },
   {
-    "date": "1854",
-    "event": "Plains Wars begin — armed conflicts between Native tribes and U.S. government as settlers expand westward",
+    "date": "1854-77",
+    "event": "Plains Wars — armed conflicts between Native tribes and US government",
     "section": "na"
   },
   {
-    "date": "1861",
-    "event": "US Civil War — distracted federal attention; some tribes (Cherokee, Creek) allied with Confederacy",
+    "date": "1861-65",
+    "event": "US Civil War — distracted federal attention; some tribes allied with Confederacy",
     "section": "na"
   },
   {
     "date": "1862",
-    "event": "Homestead Act — settlers given 160-acre plots on Native lands",
+    "event": "Homestead Act — 160-acre plots to settlers, increasing pressure on Native lands",
     "section": "na"
   },
   {
     "date": "1864",
-    "event": "Long Walk of the Navajo — 8,000-9,000 forced on 300-mile march",
+    "event": "Sand Creek Massacre — militia kills 150 Cheyenne and Arapaho, mostly women and children",
     "section": "na"
   },
   {
-    "date": "1864",
-    "event": "Sand Creek Massacre — Colorado militia kills 150+ peaceful Cheyenne",
-    "section": "na"
-  },
-  {
-    "date": "1866",
-    "event": "Red Cloud's War — Lakota defeat U.S. Army in Powder River Country",
+    "date": "1864-6",
+    "event": "Long Walk of the Navajo — forced relocation, widespread suffering and death",
     "section": "na"
   },
   {
     "date": "1868",
-    "event": "Treaty of Fort Laramie — guarantees Black Hills to Sioux \"in perpetuity\"",
-    "section": "na"
-  },
-  {
-    "date": "1869",
-    "event": "Transcontinental railroad completed — opens West to settlers, destroys buffalo migration",
+    "event": "Second Treaty of Fort Laramie — guarantees Black Hills to Sioux",
     "section": "na"
   },
   {
@@ -795,33 +865,33 @@
     "section": "na"
   },
   {
-    "date": "1874",
-    "event": "Gold discovered in Black Hills — Custer's expedition confirms deposits",
-    "section": "na"
-  },
-  {
     "date": "1876",
-    "event": "Battle of Little Bighorn — Crazy Horse and Sitting Bull annihilate Custer's 7th Cavalry",
+    "event": "Battle of Little Bighorn — Sitting Bull and Crazy Horse defeat Custer, symbolic victory",
     "section": "na"
   },
   {
     "date": "1877",
-    "event": "Black Hills seized in violation of Fort Laramie Treaty",
+    "event": "Seizure of Black Hills — government violates Fort Laramie Treaty",
     "section": "na"
   },
   {
     "date": "1879",
-    "event": "Carlisle Indian Industrial School founded — \"kill the Indian, save the man\"",
+    "event": "Carlisle Indian Industrial School founded — kill the Indian, save the man",
     "section": "na"
   },
   {
     "date": "1881",
-    "event": "Helen Hunt Jackson publishes \"A Century of Dishonour\"",
+    "event": "A Century of Dishonor — Helen Hunt Jackson exposes US mistreatment of Natives",
+    "section": "na"
+  },
+  {
+    "date": "1882",
+    "event": "Indian Rights Association — white advocacy group founded, promotes assimilation",
     "section": "na"
   },
   {
     "date": "1883",
-    "event": "Crow Dog Case — Supreme Court recognises tribal criminal jurisdiction",
+    "event": "Crow Dog Case — tribal authority over criminal cases within reservations recognised",
     "section": "na"
   },
   {
@@ -830,38 +900,28 @@
     "section": "na"
   },
   {
-    "date": "1886",
-    "event": "Geronimo surrenders — end of Apache resistance",
-    "section": "na"
-  },
-  {
     "date": "1887",
-    "event": "Dawes Severalty Act — tribal land divided into individual allotments",
+    "event": "Dawes Severalty Act — communal land divided into individual allotments; 138 million acres reduced to 48 million",
     "section": "na"
   },
   {
     "date": "1889",
-    "event": "Ghost Dance Movement begins — Wovoka's spiritual revival",
+    "event": "Ghost Dance Movement — religious revival combining traditional beliefs with hope of driving away settlers",
     "section": "na"
   },
   {
     "date": "1890",
-    "event": "Sitting Bull killed by Indian police during Ghost Dance crisis",
-    "section": "na"
-  },
-  {
-    "date": "1890",
-    "event": "Wounded Knee Massacre — 250+ Lakota killed by 7th Cavalry",
+    "event": "Wounded Knee Massacre — US Army kills 250+ Lakota during violent suppression of Ghost Dance",
     "section": "na"
   },
   {
     "date": "1898",
-    "event": "Curtis Act — ends Five Civilised Tribes' governments",
+    "event": "Curtis Act — extends Dawes Act to Five Civilised Tribes",
     "section": "na"
   },
   {
     "date": "1902",
-    "event": "Dead Indian Act — allows sale of inherited allotment land",
+    "event": "Cherokee Nation v Hitchcock — Congress has plenary authority over Native affairs",
     "section": "na"
   },
   {
@@ -871,62 +931,67 @@
   },
   {
     "date": "1905",
-    "event": "Muskogee/Sequoyah Convention — Five Civilised Tribes propose Native state",
-    "section": "na"
-  },
-  {
-    "date": "1907",
-    "event": "Oklahoma created — merges Indian Territory with Oklahoma Territory",
+    "event": "Sequoyah Convention — Five Civilised Tribes attempt to create all-Native state; fails",
     "section": "na"
   },
   {
     "date": "1911",
-    "event": "Society of American Indians (SAI) founded",
+    "event": "Society of American Indians — first national Native American rights organisation",
+    "section": "na"
+  },
+  {
+    "date": "1917-18",
+    "event": "First World War — around 10,000 Native Americans serve despite being denied citizenship",
     "section": "na"
   },
   {
     "date": "1923",
-    "event": "American Indian Defense Association (AIDA) founded by John Collier",
+    "event": "AIDA formed by John Collier — protects Native lands and religious freedom",
     "section": "na"
   },
   {
     "date": "1924",
-    "event": "Indian Citizenship Act — all Native Americans granted U.S. citizenship",
+    "event": "Indian Citizenship Act — all Native Americans granted US citizenship; many still barred from voting",
     "section": "na"
   },
   {
     "date": "1926",
-    "event": "Leavitt Bill blocked — AIDA prevents ban on Pueblo religious dances",
+    "event": "Leavitt Bill blocked — AIDA prevents ban on traditional Native dances",
     "section": "na"
   },
   {
     "date": "1928",
-    "event": "Meriam Report — documents poverty, disease and failure of Dawes Act",
+    "event": "Meriam Report — exposes failure of allotment, calls for reform in health, education and land",
     "section": "na"
   },
   {
     "date": "1934",
-    "event": "Indian Reorganization Act (Wheeler-Howard Act) — ends allotment, promotes self-governance",
+    "event": "Indian Reorganization Act — halts allotment, restores some lands, encourages tribal self-governance",
+    "section": "na"
+  },
+  {
+    "date": "1941-45",
+    "event": "WWII — over 25,000 Native Americans serve including Navajo Code Talkers",
     "section": "na"
   },
   {
     "date": "1944",
-    "event": "National Congress of American Indians (NCAI) founded — first pan-tribal advocacy",
+    "event": "NCAI founded — first pan-tribal advocacy group opposing termination",
     "section": "na"
   },
   {
     "date": "1946",
-    "event": "Indian Claims Commission established — offers compensation not land",
+    "event": "Indian Claims Commission — offers compensation for land claims, not land restoration",
     "section": "na"
   },
   {
     "date": "1948",
-    "event": "Harrison v Laveen — Arizona forced to recognise Native voting rights",
+    "event": "Harrison v Laveen — recognises Native Americans' right to vote",
     "section": "na"
   },
   {
     "date": "1953",
-    "event": "Termination Policy — ends federal recognition for 109 tribes",
+    "event": "Termination Policy — over 100 tribes lose federal recognition",
     "section": "na"
   },
   {
@@ -936,27 +1001,37 @@
   },
   {
     "date": "1961",
-    "event": "NIYC (National Indian Youth Council) founded — fish-ins begin",
+    "event": "NIYC founded — revitalises Native identity and resists assimilation",
     "section": "na"
   },
   {
     "date": "1968",
-    "event": "AIM (American Indian Movement) founded in Minneapolis",
+    "event": "Forgotten American Speech — LBJ signals shift towards self-determination",
     "section": "na"
   },
   {
-    "date": "1969",
-    "event": "Alcatraz Occupation — \"Indians of All Tribes\" occupy for 19 months",
+    "date": "1968",
+    "event": "AIM founded — militant advocacy for Native sovereignty through direct action",
+    "section": "na"
+  },
+  {
+    "date": "1968",
+    "event": "Indian Civil Rights Act — extends constitutional rights to Native Americans under tribal governments",
+    "section": "na"
+  },
+  {
+    "date": "1969-71",
+    "event": "Occupation of Alcatraz — 19-month occupation demands return of unused federal lands",
     "section": "na"
   },
   {
     "date": "1970",
-    "event": "Nixon ends Termination Policy",
+    "event": "Nixon ends Termination Policy — advocates for self-determination",
     "section": "na"
   },
   {
     "date": "1970",
-    "event": "NARF (Native American Rights Fund) established",
+    "event": "NARF established — provides legal support for Native rights",
     "section": "na"
   },
   {
@@ -966,7 +1041,7 @@
   },
   {
     "date": "1973",
-    "event": "Wounded Knee Occupation — 71-day standoff",
+    "event": "Wounded Knee Occupation — 71-day standoff highlights Native grievances",
     "section": "na"
   },
   {
@@ -976,12 +1051,7 @@
   },
   {
     "date": "1975",
-    "event": "Indian Self-Determination and Education Assistance Act",
-    "section": "na"
-  },
-  {
-    "date": "1976",
-    "event": "Fisher v Montana — tribal courts decide on Native children's adoptions",
+    "event": "Indian Self-Determination and Education Assistance Act — tribes administer own programmes",
     "section": "na"
   },
   {
@@ -990,18 +1060,23 @@
     "section": "na"
   },
   {
-    "date": "1978",
-    "event": "American Indian Religious Freedom Act (AIRFA) — protects traditional practices",
+    "date": "1976",
+    "event": "Fisher v Montana — tribal courts have jurisdiction over adoptions",
     "section": "na"
   },
   {
     "date": "1978",
-    "event": "Indian Child Welfare Act (ICWA) — tribal authority over child welfare",
+    "event": "AIRFA — American Indian Religious Freedom Act protects traditional practices",
+    "section": "na"
+  },
+  {
+    "date": "1978",
+    "event": "ICWA — Indian Child Welfare Act gives tribes authority over child welfare",
     "section": "na"
   },
   {
     "date": "1980",
-    "event": "US v Sioux Nation — $106 million awarded for Black Hills; Sioux refuse",
+    "event": "US v Sioux Nation — $106 million awarded for Black Hills; Sioux refuse, demand land return",
     "section": "na"
   },
   {
@@ -1020,18 +1095,13 @@
     "section": "na"
   },
   {
-    "date": "1848",
-    "event": "Seneca Falls Convention — first women's rights convention in USA",
+    "date": "1869",
+    "event": "AWSA formed by Lucy Stone — state-by-state suffrage strategy",
     "section": "wom"
   },
   {
     "date": "1869",
-    "event": "NWSA founded by Anthony and Stanton — demands federal suffrage amendment",
-    "section": "wom"
-  },
-  {
-    "date": "1869",
-    "event": "AWSA founded by Lucy Stone — state-by-state suffrage strategy",
+    "event": "NWSA formed by Stanton and Anthony — demands federal constitutional amendment",
     "section": "wom"
   },
   {
@@ -1041,42 +1111,47 @@
   },
   {
     "date": "1870",
-    "event": "15th Amendment grants vote to Black men — explicitly excludes women",
+    "event": "15th Amendment grants Black men the vote but excludes women, widens AWSA/NWSA divisions",
     "section": "wom"
   },
   {
-    "date": "1872",
-    "event": "Susan B. Anthony arrested for attempting to vote — fined $100, refuses to pay",
+    "date": "1871-2",
+    "event": "Susan B. Anthony and 150 others attempt to vote — Anthony arrested, fined $100, refuses to pay",
     "section": "wom"
   },
   {
     "date": "1873",
-    "event": "Comstock Laws — criminalise distribution of contraceptive information",
+    "event": "Women's Crusade against alcohol leads to WCTU founding",
+    "section": "wom"
+  },
+  {
+    "date": "1873",
+    "event": "Comstock Laws — ban distribution of contraceptives and abortion information",
     "section": "wom"
   },
   {
     "date": "1874",
-    "event": "WCTU (Women's Christian Temperance Union) founded",
+    "event": "WCTU founded — advocates for temperance and women's suffrage",
     "section": "wom"
   },
   {
     "date": "1875",
-    "event": "Minor v Happersett — citizenship does not guarantee voting rights",
+    "event": "Minor v Happersett — suffrage not guaranteed by 14th Amendment",
     "section": "wom"
   },
   {
     "date": "1889",
-    "event": "Hull House founded by Jane Addams in Chicago",
+    "event": "Hull House established by Jane Addams in Chicago",
     "section": "wom"
   },
   {
     "date": "1890",
-    "event": "NAWSA formed — merger of NWSA and AWSA under Carrie Chapman Catt",
+    "event": "NAWSA formed — merger of AWSA and NWSA",
     "section": "wom"
   },
   {
     "date": "1893",
-    "event": "Colorado becomes second state to grant female suffrage",
+    "event": "Anti-Saloon League formed — prohibitionist organisation working alongside women's groups",
     "section": "wom"
   },
   {
@@ -1086,32 +1161,27 @@
   },
   {
     "date": "1899",
-    "event": "National Consumers League founded — workplace safety advocacy",
-    "section": "wom"
-  },
-  {
-    "date": "1903",
-    "event": "Women's Trade Union League (WTUL) founded",
+    "event": "National Consumers League formed — workplace safety and fair wages advocacy",
     "section": "wom"
   },
   {
     "date": "1911",
-    "event": "Triangle Shirtwaist Fire — 146 killed, mostly young immigrant women",
+    "event": "National Association Opposed to Woman Suffrage established",
     "section": "wom"
   },
   {
-    "date": "1912",
-    "event": "Bread and Roses Strike — 20,000 immigrant women in Lawrence, 15% pay rise",
+    "date": "1911",
+    "event": "Triangle Shirtwaist fire — 146 killed, mostly women, spurs labour reform",
     "section": "wom"
   },
   {
     "date": "1913",
-    "event": "CUWS founded by Alice Paul — militant tactics modelled on British suffragettes",
+    "event": "CUWS formed by Alice Paul — militant suffrage tactics modelled on British suffragettes",
     "section": "wom"
   },
   {
     "date": "1916",
-    "event": "Margaret Sanger opens first birth control clinic in Brooklyn",
+    "event": "Sanger opens first birth control clinic despite legal restrictions",
     "section": "wom"
   },
   {
@@ -1120,8 +1190,8 @@
     "section": "wom"
   },
   {
-    "date": "1917",
-    "event": "WWI — women enter workforce in large numbers; employment rate approximately 40%",
+    "date": "1917-8",
+    "event": "WWI — women enter workforce in large numbers, employment rate approximately 40%",
     "section": "wom"
   },
   {
@@ -1140,43 +1210,43 @@
     "section": "wom"
   },
   {
-    "date": "1920",
-    "event": "League of Women Voters founded by Carrie Chapman Catt",
+    "date": "1920s",
+    "event": "Flapper Culture — challenges traditional gender norms, mainly white middle-class women",
     "section": "wom"
   },
   {
     "date": "1921",
-    "event": "American Birth Control League founded by Sanger — later Planned Parenthood",
+    "event": "Shepard-Towner Act — first federal maternity and infant health funding",
     "section": "wom"
   },
   {
     "date": "1921",
-    "event": "Shepherd-Towner Maternity and Infancy Act — first federal maternity funding",
+    "event": "American Birth Control League — founded by Sanger, 222 clinics by 1941",
     "section": "wom"
   },
   {
     "date": "1922",
-    "event": "Molly Pitcher Club formed — women oppose Prohibition, arguing against middle-class moral imposition",
+    "event": "Molly Pitcher Club — women oppose Prohibition as middle-class moral imposition",
     "section": "wom"
   },
   {
     "date": "1922",
-    "event": "Bryn Mawr Summer School for Women Workers established — educating women on labour rights",
+    "event": "Bryn Mawr Summer School for Women Workers — educates women on labour rights",
     "section": "wom"
   },
   {
     "date": "1923",
-    "event": "Equal Rights Amendment first proposed by Alice Paul",
+    "event": "ERA first proposed by Alice Paul — reintroduced to every Congress until 1972",
     "section": "wom"
   },
   {
     "date": "1929",
-    "event": "Shepherd-Towner Act funding ends — reflecting opposition to federally funded social welfare",
+    "event": "Shepard-Towner Act funding ends — reflecting opposition to federal welfare",
     "section": "wom"
   },
   {
     "date": "1933",
-    "event": "Frances Perkins becomes first female Cabinet member",
+    "event": "Frances Perkins becomes first female Cabinet member as Secretary of Labor",
     "section": "wom"
   },
   {
@@ -1186,42 +1256,42 @@
   },
   {
     "date": "1935",
-    "event": "Aid to Dependent Children — provides financial assistance to single mothers via Social Security Act",
+    "event": "Aid to Dependent Children — financial assistance to single mothers via Social Security Act",
     "section": "wom"
   },
   {
     "date": "1936",
-    "event": "Federal court ruling legalises distribution of contraceptive information to physicians",
+    "event": "Importation of birth control made legal following Supreme Court ruling",
     "section": "wom"
   },
   {
     "date": "1938",
-    "event": "Fair Labor Standards Act — sets minimum wages but excludes domestic workers",
+    "event": "Fair Labor Standards Act — minimum wage set but excludes domestic workers",
     "section": "wom"
   },
   {
-    "date": "1941",
-    "event": "Lanham Act — federal childcare funding for women war workers",
+    "date": "1941-45",
+    "event": "WWII — 350,000 women serve in non-combat roles, 6 million enter workforce",
     "section": "wom"
   },
   {
     "date": "1944",
-    "event": "GI Bill — primarily benefits male veterans, reinforces male breadwinner model",
+    "event": "GI Bill — benefits primarily male veterans, entrenches traditional gender roles",
     "section": "wom"
   },
   {
     "date": "1946",
-    "event": "Dr Spock's Baby and Child Care published — 23 million copies sold",
+    "event": "Dr Spock's Baby and Child Care published — reinforces traditional motherhood roles",
     "section": "wom"
   },
   {
     "date": "1950s",
-    "event": "Peak of the traditional housewife — idealised cultural norm, overshadowing women's wartime contributions",
+    "event": "Peak of the traditional housewife — idealised cultural norm",
     "section": "wom"
   },
   {
     "date": "1957",
-    "event": "Men and women voting at equal rates for first time",
+    "event": "Men and women voting at equal rates for the first time",
     "section": "wom"
   },
   {
@@ -1236,17 +1306,17 @@
   },
   {
     "date": "1963",
-    "event": "Betty Friedan publishes The Feminine Mystique",
-    "section": "wom"
-  },
-  {
-    "date": "1963",
     "event": "Equal Pay Act — first federal law prohibiting pay discrimination by sex",
     "section": "wom"
   },
   {
+    "date": "1963",
+    "event": "Feminine Mystique published by Betty Friedan — ignites second-wave feminism",
+    "section": "wom"
+  },
+  {
     "date": "1964",
-    "event": "Civil Rights Act Title VII — prohibits employment discrimination by sex",
+    "event": "Civil Rights Act Title VII — prohibits sex discrimination in employment",
     "section": "wom"
   },
   {
@@ -1256,17 +1326,17 @@
   },
   {
     "date": "1966",
-    "event": "NOW (National Organization for Women) founded by Betty Friedan",
+    "event": "NOW formed by Betty Friedan — advocates for social, economic and cultural equality",
     "section": "wom"
   },
   {
     "date": "1968",
-    "event": "Miss America Protest — NOW rejects beauty standard objectification",
+    "event": "Miss America Protest — NOW protests beauty pageant, rejects objectification",
     "section": "wom"
   },
   {
     "date": "1969",
-    "event": "National Organisation for Repeal of Abortion Laws (NORL) formed — advocates for reproductive rights",
+    "event": "National Organisation for Repeal of Abortion Laws formed",
     "section": "wom"
   },
   {
@@ -1301,7 +1371,7 @@
   },
   {
     "date": "1973",
-    "event": "Roe v Wade — right to abortion protected under constitutional right to privacy",
+    "event": "Roe v Wade — right to abortion protected under right to privacy",
     "section": "wom"
   },
   {
@@ -1311,7 +1381,7 @@
   },
   {
     "date": "1974",
-    "event": "CLUW (Coalition of Labor Union Women) founded",
+    "event": "Coalition of Labor Union Women founded",
     "section": "wom"
   },
   {
@@ -1336,12 +1406,12 @@
   },
   {
     "date": "1982",
-    "event": "ERA fails — only 35 of 38 states ratified by deadline",
+    "event": "ERA fails — only 35 of 38 states ratify by deadline",
     "section": "wom"
   },
   {
     "date": "1983",
-    "event": "Sally Ride — first American woman in space, 20 years after first Soviet woman in space",
+    "event": "Sally Ride — first American woman in space",
     "section": "wom"
   },
   {
@@ -1358,10 +1428,5 @@
     "date": "1992",
     "event": "Year of the Woman — 24 women elected to House, 6 to Senate",
     "section": "wom"
-  },
-  {
-    "date": "1898",
-    "event": "Mississippi v Williams — Supreme Court rules voter suppression tactics do not violate the 15th Amendment",
-    "section": "aa"
   }
 ]
