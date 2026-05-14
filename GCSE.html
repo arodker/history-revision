@@ -1529,7 +1529,7 @@ function renderQ() {
         <div class="quiz-fb" id="qfb"></div>
       </div>`;
   } else {
-    const others = shuffle(DATES.filter(d => d.paper === currentPaper && d.event !== item.event)).slice(0, 3).map(d => d.event);
+    const others = shuffle(DATES.filter(d => d.paper === currentPaper && d.event !== item.event && d.date !== item.date)).slice(0, 3).map(d => d.event);
     const opts = shuffle([item.event, ...others]);
     const optsHtml = opts.map((o, i) => {
       const formatted = o.replace(/^([^—–-]+)(—|–|-)/, '<strong>$1</strong>$2');
