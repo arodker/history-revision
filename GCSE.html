@@ -417,7 +417,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
       <div style="margin-bottom:.75rem">
         <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Choose unit</label>
-        <select id="fd-unit" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
+        <select id="fd-unit" onchange="fdUpdateStartBtn()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
           <option value="">— select a unit —</option>
           <option value="all">All units</option>
         </select>
@@ -1927,6 +1927,35 @@ function fdSetOutstanding(arr) {
   localStorage.setItem(LS_MISSED, JSON.stringify(arr));
 }
 
+function fdUpdateStartBtn() {
+  const btn  = document.getElementById('fd-start-btn');
+  const unit = (document.getElementById('fd-unit') || {}).value || '';
+  if (!unit || !FD.length) {
+    btn.textContent = '⚡ Start Flashcard Mode';
+    return;
+  }
+  const mastered = fdGetMastered();
+
+  // Unmastered cards in this unit/paper
+  let base = FD.filter(c => c.paper === currentPaper);
+  if (unit !== 'all') base = base.filter(c => c.unit === unit);
+  const unmastered = base.filter(c => !mastered[fdKey(c)]).length;
+
+  // Pinned cards from other units/papers that will be woven in
+  const outstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
+  const pinned = outstanding.filter(k => {
+    const c = FD.find(c => fdKey(c) === k);
+    if (!c) return false;
+    if (c.paper !== currentPaper) return true;
+    if (unit === 'all') return false;
+    return c.unit !== unit;
+  }).length;
+
+  let label = `⚡ Start — ${unmastered} card${unmastered !== 1 ? 's' : ''}`;
+  if (pinned > 0) label += ` + ${pinned} pinned`;
+  btn.textContent = label;
+}
+
 function fdSetup() {
   renderFdWheels();
   renderFdSetupWheel();
@@ -1988,6 +2017,7 @@ function fdSetup() {
   document.getElementById('fd-drill').style.display = 'none';
   document.getElementById('fd-summary').style.display = 'none';
   document.getElementById('fd-complete').style.display = 'none';
+  fdUpdateStartBtn();
 }
 
 function fdStart() {
@@ -2199,6 +2229,7 @@ function fdAnswer(got) {
     if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
     if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
     renderFdSetupWheel();
+    fdUpdateStartBtn();
   }, 220);
 }
 
@@ -2214,6 +2245,23 @@ function fdUpdateProgress() {
 }
 
 function fdShowSummary() {
+  // Check if the whole unit is now mastered — show gold medal instead of summary
+  const unit = document.getElementById('fd-unit').value;
+  const mastered = fdGetMastered();
+  let unitCards = FD.filter(c => c.paper === currentPaper);
+  if (unit !== 'all') unitCards = unitCards.filter(c => c.unit === unit);
+  const unitTotal = unitCards.length;
+  if (unitTotal > 0 && unitCards.every(c => mastered[fdKey(c)])) {
+    document.getElementById('fd-drill').style.display    = 'none';
+    document.getElementById('fd-summary').style.display  = 'none';
+    document.getElementById('fd-complete').style.display = 'block';
+    document.getElementById('fd-complete-count').textContent =
+      `All ${unitTotal} card${unitTotal !== 1 ? 's' : ''} mastered ✅`;
+    fdFireConfetti();
+    fdUpdateStreak();
+    return;
+  }
+
   document.getElementById('fd-drill').style.display   = 'none';
   document.getElementById('fd-summary').style.display = 'block';
   document.getElementById('fd-sum-got').textContent   = fdGot;
@@ -2313,11 +2361,11 @@ function fdDrillMissed() {
 function fdShowComplete() {
   document.getElementById('fd-summary').style.display  = 'none';
   document.getElementById('fd-complete').style.display = 'block';
-  const mastered = fdGetMastered();
-  const total = FD.filter(c => c.paper === currentPaper).length;
-  const mastCount = Object.keys(mastered).filter(k => k.startsWith(currentPaper + '|')).length;
-  document.getElementById('fd-complete-note').textContent =
-    `${mastCount} of ${total} ${P[currentPaper].label} cards mastered overall.`;
+  const unit = document.getElementById('fd-unit').value;
+  let unitCards = FD.filter(c => c.paper === currentPaper);
+  if (unit !== 'all') unitCards = unitCards.filter(c => c.unit === unit);
+  document.getElementById('fd-complete-count').textContent =
+    `All ${unitCards.length} card${unitCards.length !== 1 ? 's' : ''} mastered ✅`;
 }
 
 function fdFinish() {
@@ -2399,7 +2447,7 @@ function renderFdSetupWheel() {
     breakdownEl.innerHTML = units.map(unit => {
       const unitTotal = FD.filter(c => c.paper === paper && c.unit === unit).length;
       const uk = paper + '|' + unit;
-      const gotToday  = session.unitGot[uk]   || 0;
+      const gotToday  = Math.min(session.unitGot[uk] || 0, unitTotal);
       const colour = gotToday >= unitTotal && unitTotal > 0 ? '#1D9E75' : gotToday > 0 ? '#F0B429' : 'var(--muted)';
       const dot = gotToday >= unitTotal && unitTotal > 0 ? '🥇' : gotToday > 0 ? '◑' : '○';
       return `<div style="display:flex;align-items:center;gap:.4rem;padding:.2rem 0;border-bottom:1px solid var(--subtle);font-size:.72rem">
