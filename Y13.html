@@ -58,6 +58,15 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .sc-row{display:flex;gap:6px}.sc{font-size:.8rem;font-weight:600;padding:4px 10px;border-radius:20px}.sc-c{background:#EAF3DE;color:#3B6D11}.sc-w{background:#FCEBEB;color:#A32D2D}
 .quiz-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:.75rem}
 .quiz-fb{font-size:.85rem;font-weight:600;padding:8px;border-radius:8px;margin-top:.75rem;display:none;text-align:center}.fb-c{background:#EAF3DE;color:#3B6D11}.fb-w{background:#FCEBEB;color:#A32D2D}
+.quiz-date{font-size:1.3rem;font-weight:800;text-align:center;margin-bottom:.5rem;letter-spacing:.01em}
+.quiz-prompt{font-size:.82rem;color:var(--muted);text-align:center;margin-bottom:.75rem}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{padding:10px 14px;font-size:.9rem;font-weight:600;text-align:left;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text);cursor:pointer;font-family:inherit;transition:border-color .1s}
+.opt:hover:not(:disabled){border-color:var(--muted)}
+.opt.correct{background:#EAF3DE;border-color:#3B6D11;color:#3B6D11}
+.opt.wrong{background:#FCEBEB;border-color:#A32D2D;color:#A32D2D}
+.opt.show-c{background:#EAF3DE;border-color:#3B6D11;color:#3B6D11}
+.opt:disabled{cursor:default}
 .end-score{font-size:3.5rem;font-weight:800}.end-sub{font-size:.9rem;color:var(--muted);margin:.3rem 0 1.2rem}
 .end-grade{font-size:.9rem;font-weight:600;padding:8px 20px;border-radius:20px;display:inline-block;margin-bottom:1.2rem}.grade-a{background:#EAF3DE;color:#3B6D11}.grade-b{background:#FAEEDA;color:#854F0B}.grade-c{background:#FCEBEB;color:#A32D2D}
 @keyframes cd-pop{0%{transform:scale(.7);opacity:0}40%{transform:scale(1.15)}70%{transform:scale(.95)}100%{transform:scale(1);opacity:1}}
@@ -129,7 +138,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     <button class="pick-btn pb-aa" onclick="pickUnit('aa')"><span class="plabel">Unit 1</span>African American Rights</button>
     <button class="pick-btn pb-lab" onclick="pickUnit('lab')"><span class="plabel">Unit 2</span>Labour and Trade Union Rights</button>
     <button class="pick-btn pb-na" onclick="pickUnit('na')"><span class="plabel">Unit 3</span>Native American Rights</button>
-    <button class="pick-btn pb-wom" disabled style="opacity:.5;cursor:default"><span class="plabel">Unit 4</span>Women's Rights<span style="font-size:.65rem;opacity:.7;display:block;margin-top:.2rem">🚧 Coming soon</span></button>
+    <button class="pick-btn pb-wom" onclick="pickUnit('wom')"><span class="plabel">Unit 4</span>Women's Rights</button>
   </div>
   <div style="margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--border)">
     <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem">Your progress today</p>
@@ -151,7 +160,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
   <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Also available</p>
   <div class="mode-grid">
     <button class="mode-btn" id="hub-btn-knowledge" onclick="enterMode('knowledge')"><span class="icon">&#x1F9E0;</span>Revision Guide</button>
-    <button class="mode-btn" id="hub-btn-dates" disabled style="opacity:.45;cursor:default;border-left-color:var(--border2)!important"><span class="icon">📅</span>Key Dates Quiz<br><span style="font-size:.65rem;font-weight:400;opacity:.7">🚧 Coming soon</span></button>
+    <button class="mode-btn" id="hub-btn-dates" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz</button>
     <button class="mode-btn" id="hub-btn-exam" disabled style="opacity:.45;cursor:default;border-left-color:var(--border2)!important"><span class="icon">✏️</span>Exam Practice<br><span style="font-size:.65rem;font-weight:400;opacity:.7">🚧 Coming soon</span></button>
   </div>
 </div>
@@ -192,11 +201,25 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     </div>
     <div id="fd-complete" style="display:none;text-align:center;padding:2rem 1rem"><div style="font-size:2.5rem;margin-bottom:.5rem">&#x1F389;</div><div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">All cards mastered!</div><button class="btn-go" onclick="fdFinish()">Back</button></div>
   </div>
-  <div id="mode-dates" style="display:none">
-    <div id="d-countdown" style="display:none;text-align:center;padding:2rem 0"><div id="d-countdown-num" style="font-size:5rem;font-weight:800;line-height:1">3</div><div style="font-size:.85rem;color:var(--muted);margin-top:.5rem">Get ready</div></div>
+    <div id="mode-dates" style="display:none">
+    <!-- Setup -->
+    <div id="d-setup">
+      <p style="font-size:.8rem;color:var(--muted);margin-bottom:.6rem">Mode</p>
+      <div style="display:flex;gap:8px;margin-bottom:1rem">
+        <button id="d-mode-pick" class="count-btn sel" onclick="setDatesMode('pick')" style="flex:1">📋 Pick the event</button>
+        <button id="d-mode-type" class="count-btn" onclick="setDatesMode('type')" style="flex:1">⌨️ Type the year</button>
+      </div>
+
+      <button id="d-go" class="btn-go c-dark" onclick="startQuizCountdown()">📅 Start quiz</button>
+      <button id="d-hard-go" class="btn-sm" style="width:100%;margin-top:.5rem;display:none" onclick="startQuizCountdown(true)">⭐ Practise hard dates only</button>
+    </div>
+    <!-- Countdown -->
+    <div id="d-countdown" style="display:none;text-align:center;padding:2rem">
+      <div id="d-countdown-num" style="font-size:4rem;font-weight:900;line-height:1"></div>
+    </div>
+    <!-- Quiz output -->
     <div id="d-out"></div>
-  </div>
-  <div id="mode-exam" style="display:none">
+  </div><div id="mode-exam" style="display:none">
     <div id="exam-pick">
       <p style="font-size:.84rem;color:var(--muted);margin-bottom:.9rem">Choose your practice route:</p>
       <div class="exam-route-grid"><button class="exam-route-btn" id="exam-btn-essay" onclick="showExamRoute('essay')"><span class="er-label">25 marks</span>Thematic Essay</button><button class="exam-route-btn interp-btn" onclick="showExamRoute('interp')"><span class="er-label">30 marks</span>Interpretation Question</button></div>
@@ -215,32 +238,109 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 </div>
 <div class="screen" id="s-rapid">
   <div class="mode-header"><button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button><span style="font-size:.85rem;font-weight:600;color:var(--muted)">Mixed Retrieval Quiz</span></div>
+  <!-- Setup -->
   <div id="rq-setup">
-    <p class="rf-section-label">Which unit?</p>
-    <div class="rf-pills"><button class="rf-pill on-aa" id="rqp-aa" onclick="toggleRQUnit('aa')">African Americans</button><button class="rf-pill on-lab" id="rqp-lab" onclick="toggleRQUnit('lab')">Labour</button><button class="rf-pill on-na" id="rqp-na" onclick="toggleRQUnit('na')">Native Americans</button><button class="rf-pill on-wom" id="rqp-wom" onclick="toggleRQUnit('wom')">Women</button></div>
-    <p class="rf-section-label">Mode</p>
-    <div class="count-row"><button class="count-btn sel" id="rqm-batch" onclick="setRQMode('batch')">10 at once</button><button class="count-btn" id="rqm-one" onclick="setRQMode('one')">One at a time</button><button class="count-btn" id="rqm-endless" onclick="setRQMode('endless')">Endless</button></div>
-    <button class="btn-go c-dark" onclick="generateRQ()">Let's go</button>
-  </div>
-  <div id="rq-out" style="display:none">
-    <div id="rq-one-wrap" style="display:none">
-      <div class="rq-card" id="rq-one-card" onclick="rqRevealCard()"><div class="rq-q" id="rq-one-q"></div><div class="rq-a" id="rq-one-a"></div><div class="rq-tap" id="rq-one-tap">Tap to reveal</div></div>
-      <div id="rq-answer-btns" style="display:none;gap:10px;margin-top:.75rem"><button class="btn-go" style="background:#1D9E75;margin-bottom:0;flex:1" onclick="rqMark(true)">Got it</button><button class="btn-go" style="background:#C82A2A;margin-bottom:0;flex:1" onclick="rqMark(false)">Wrong</button></div>
-      <div id="rq-one-progress" style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:.6rem"></div>
-      <button class="btn-sm" style="width:100%;margin-top:.75rem" onclick="showRapidSetup()">Exit</button>
+    <p class="rf-section-label">Which units?</p>
+    <div class="rf-pills" style="margin-bottom:.75rem">
+      <button class="rf-pill on-aa" id="rqp-aa" onclick="toggleRQUnit('aa')">African Americans</button>
+      <button class="rf-pill on-lab" id="rqp-lab" onclick="toggleRQUnit('lab')">Labour</button>
+      <button class="rf-pill on-na" id="rqp-na" onclick="toggleRQUnit('na')">Native Americans</button>
+      <button class="rf-pill on-wom" id="rqp-wom" onclick="toggleRQUnit('wom')">Women</button>
     </div>
-    <div id="rq-batch-wrap"><div class="rq-grid" id="rq-grid"></div><div class="rq-btn-row"><button class="btn-sm" onclick="generateRQ()">New questions</button><button class="btn-sm" onclick="revealAllRQ()">Reveal all</button><button class="btn-sm" onclick="showRapidSetup()">Exit</button></div></div>
+    <p class="rf-section-label">Mode</p>
+    <div class="count-row" style="margin-bottom:1rem">
+      <button class="count-btn sel" id="rqm-batch" onclick="setRQMode('batch')">10 at once</button>
+      <button class="count-btn" id="rqm-one" onclick="setRQMode('one')">One at a time</button>
+      <button class="count-btn" id="rqm-endless" onclick="setRQMode('endless')">♾️ Endless</button>
+    </div>
+    <p id="rq-counter" style="font-size:.75rem;color:var(--muted);text-align:center;margin-bottom:.5rem"></p>
+    <button class="btn-go c-dark" id="rq-go" onclick="generateRQ()">🎯 Let's go</button>
+  </div>
+  <!-- Grid (10 at once) -->
+  <div id="rq-out" style="display:none">
+    <div class="rq-grid" id="rq-grid"></div>
+    <div class="rq-btn-row">
+      <button class="btn-sm" onclick="generateRQ()">🔄 New questions</button>
+      <button class="btn-sm" onclick="revealAllRQ()">👁 Reveal all</button>
+      <button class="btn-sm" onclick="showRapidSetup()">⚙️ Settings</button>
+    </div>
+  </div>
+  <!-- One at a time -->
+  <div id="rq-one" style="display:none">
+    <div class="quiz-prog"><div class="quiz-fill" id="rq-one-prog" style="width:0%"></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
+      <span id="rq-one-hdr" style="font-size:.8rem;color:var(--muted)"></span>
+      <div class="sc-row"><span id="rq-one-streak" style="font-size:.8rem;color:#F0B429;font-weight:600"></span><span class="sc sc-c" id="rq-one-ok">✓ 0</span><span class="sc sc-w" id="rq-one-bad">✗ 0</span></div>
+    </div>
+    <div class="rq-card" id="rq-one-card" style="position:relative;overflow:hidden;min-height:unset;cursor:default;padding:1rem">
+      <div id="rq-one-stripe" style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#ddd"></div>
+      <div style="padding-left:.75rem">
+        <div style="font-size:1rem;font-weight:600;line-height:1.5;margin-bottom:1rem" id="rq-one-q"></div>
+        <div id="rq-one-reveal" style="display:none;border-top:1px solid var(--border);padding-top:.75rem">
+          <div style="font-size:1.05rem;font-weight:700;color:#3B6D11;margin-bottom:.75rem" id="rq-one-a"></div>
+          <div style="font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem">Self mark:</div>
+          <div style="display:flex;gap:8px">
+            <button class="btn-sm" onclick="rqOneAnswer(true)" style="flex:1;font-size:1.1rem;background:#EAF3DE;color:#3B6D11;border-color:#3B6D11">✓</button>
+            <button class="btn-sm" onclick="rqOneAnswer(false)" style="flex:1;font-size:1.1rem;background:#FCEBEB;color:#A32D2D;border-color:#A32D2D">✗</button>
+          </div>
+        </div>
+        <button id="rq-one-tap" onclick="rqOneReveal()" class="btn-sm" style="width:100%;margin-top:.5rem">👁 Reveal answer</button>
+      </div>
+    </div>
+    <div id="rq-one-end" style="display:none;text-align:center;padding:1.5rem">
+      <div style="font-size:2rem;margin-bottom:.5rem">🎯</div>
+      <div style="font-size:1.1rem;font-weight:700;margin-bottom:.25rem" id="rq-one-score"></div>
+      <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem" id="rq-one-msg"></div>
+      <div id="rq-one-missed-list" style="text-align:left;margin-bottom:1rem"></div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <button id="rq-retry-btn" class="btn-sm" onclick="rqRetryMissed()" style="display:none">🔄 Retry missed</button>
+        <button class="btn-sm" onclick="generateRQ()">New questions</button>
+        <button class="btn-sm" onclick="showRapidSetup()">⚙️ Settings</button>
+      </div>
+    </div>
+    <button id="rq-one-exit" class="btn-sm" onclick="showRapidSetup()" style="width:100%;margin-top:.5rem">⚙️ Settings</button>
+  </div>
+  <!-- Endless -->
+  <div id="rq-endless" style="display:none">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
+      <span id="rq-el-hdr" style="font-size:.8rem;color:var(--muted)">Question 1</span>
+      <div class="sc-row"><span id="rq-el-streak" style="font-size:.8rem;color:#F0B429;font-weight:600"></span><span class="sc sc-c" id="rq-el-ok">✓ 0</span><span class="sc sc-w" id="rq-el-bad">✗ 0</span></div>
+    </div>
+    <div class="rq-card" style="position:relative;overflow:hidden;min-height:unset;cursor:default;padding:1rem">
+      <div id="rq-el-stripe" style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#ddd"></div>
+      <div style="padding-left:.75rem">
+        <div style="font-size:1rem;font-weight:600;line-height:1.5;margin-bottom:1rem" id="rq-el-q"></div>
+        <div id="rq-el-reveal" style="display:none;border-top:1px solid var(--border);padding-top:.75rem">
+          <div style="font-size:1.05rem;font-weight:700;color:#3B6D11;margin-bottom:.75rem" id="rq-el-a"></div>
+          <div style="font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem">Self mark:</div>
+          <div style="display:flex;gap:8px">
+            <button class="btn-sm" onclick="rqElAnswer(true)" style="flex:1;font-size:1.1rem;background:#EAF3DE;color:#3B6D11;border-color:#3B6D11">✓</button>
+            <button class="btn-sm" onclick="rqElAnswer(false)" style="flex:1;font-size:1.1rem;background:#FCEBEB;color:#A32D2D;border-color:#A32D2D">✗</button>
+          </div>
+        </div>
+        <button id="rq-el-tap" onclick="rqElReveal()" class="btn-sm" style="width:100%;margin-top:.5rem">👁 Reveal answer</button>
+      </div>
+    </div>
+    <button class="btn-sm" onclick="showRapidSetup()" style="width:100%;margin-top:.5rem">⚙️ Settings</button>
   </div>
 </div>
 </div>
 <script>
 var UNITS={aa:{label:'African American Rights',short:'African Americans',colour:'#4A7EC7',cls:'aa',rights:['Political Rights','Social Rights','Economic Rights']},lab:{label:'Labour and Trade Union Rights',short:'Labour',colour:'#C94A5A',cls:'lab',rights:['Right to Organise','Right to Strike','Right to Fair Wages and Conditions']},na:{label:'Native American Rights',short:'Native Americans',colour:'#2A9E80',cls:'na',rights:['Right to Land','Right to Self-Determination','Religious and Cultural Rights']},wom:{label:"Women's Rights",short:'Women',colour:'#9B5EC7',cls:'wom',rights:['Political Rights','Social and Economic Rights','Reproductive and Personal Rights']}};
-var currentUnit='aa',KC=[],FD=[],DATES=[],ESSAY_QS=[],INTERP_QS=[],kPeriodIdx=0;
+var currentUnit='aa',KC=[],FD=[],RQ=[],DATES=[],ESSAY_QS=[],INTERP_QS=[],kPeriodIdx=0;
+// RQ state
+var rqMode='batch',rqUnits=new Set(['aa','lab','na','wom']);
+var rqOnePool=[],rqOneIdx=0,rqOneOK=0,rqOneBad=0,rqOneMissed=[],rqOneStreak=0;
+var rqElPool=[],rqElIdx=0,rqElOK=0,rqElBad=0,rqElStreak=0;
+// Dates state
+var dqUnits=new Set(['aa','lab','na','wom']),dqTypeMode='pick';
+var quizPool=[],quizIdx=0,quizOK=0,quizBad=0,quizStreak=0,quizMissed=[],quizHistory=[],quizViewIdx=0,quizHardMode=false;
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function toggleDark(){var d=document.documentElement.classList.toggle('dark');localStorage.setItem('cr_dark',d?'1':'0');document.getElementById('dark-toggle').textContent=d?'☀️':'🌙';}
 (function(){if(localStorage.getItem('cr_dark')==='1'){document.documentElement.classList.add('dark');var b=document.getElementById('dark-toggle');if(b)b.textContent='☀️';}})();
 function showScreen(id){document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active');});document.getElementById(id).classList.add('active');window.scrollTo(0,0);if(id==='s-pick')renderFdWheels();if(id==='s-hub')renderFdHubWheel();if(id==='s-main')renderFdSetupWheel();}
 function pickUnit(unit){currentUnit=unit;var u=UNITS[unit];['hub-badge','main-badge'].forEach(function(id){var el=document.getElementById(id);if(el){el.textContent=u.short;el.className='section-badge bg-'+unit;}});var pb=document.getElementById('fd-primary-btn');if(pb)pb.style.borderLeftColor=u.colour;['knowledge','dates','exam'].forEach(function(m){var b=document.getElementById('hub-btn-'+m);if(b)b.style.borderLeftColor=u.colour;});var eb=document.getElementById('exam-btn-essay');if(eb){eb.style.borderColor=u.colour;eb.style.color=u.colour;}buildPeriodDropdown();rebuildEraUI();showScreen('s-hub');renderFdHubWheel();}
-function enterMode(mode){var titles={knowledge:'Revision Guide',flashcard:'Flashcard Mode',dates:'Key Dates Quiz',exam:'Exam Practice'};document.getElementById('mode-title').textContent=titles[mode]||'';['knowledge','flashcard','dates','exam'].forEach(function(m){document.getElementById('mode-'+m).style.display=m===mode?'block':'none';});if(mode==='flashcard')fdSetup();if(mode==='dates')setTimeout(startQuizCountdown,50);if(mode==='exam')showExamPick();showScreen('s-main');}
+function enterMode(mode){var titles={knowledge:'Revision Guide',flashcard:'Flashcard Mode',dates:'Key Dates Quiz',exam:'Exam Practice'};document.getElementById('mode-title').textContent=titles[mode]||'';['knowledge','flashcard','dates','exam'].forEach(function(m){document.getElementById('mode-'+m).style.display=m===mode?'block':'none';});if(mode==='flashcard')fdSetup();if(mode==='dates'){datesShowSetup();applyDatesHardBtn();}if(mode==='exam')showExamPick();showScreen('s-main');}
 function rand(arr){return arr[Math.floor(Math.random()*arr.length)];}
 function shuffle(a){var b=a.slice();for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=b[i];b[i]=b[j];b[j]=t;}return b;}
 function tog(id,btn,a,b){var el=document.getElementById(id);if(!el)return;var open=el.classList.toggle('open');if(btn)btn.textContent=open?(b||'Hide'):(a||'Show');}
@@ -303,23 +403,50 @@ function jumpToPeriod(){var sel=document.getElementById('k-period');if(sel.value
 function stepPeriod(dir){if(!KC.length)return;var eraIdxs=KC.map(function(c,i){return(!c.isDepthStudy||c.period.indexOf('-ds')===-1)?i:-1;}).filter(function(i){return i>=0;});var cur=eraIdxs.indexOf(kPeriodIdx);if(cur===-1)cur=0;var next=eraIdxs[(cur+dir+eraIdxs.length)%eraIdxs.length];kPeriodIdx=next;document.getElementById('k-period').value=next;document.getElementById('k-ds').value='';renderKCard(kPeriodIdx);}
 function renderKCard(idx){var card=KC[idx];if(!card){document.getElementById('k-out').innerHTML='<div class="empty">Content coming soon.</div>';return;}var u=UNITS[currentUnit],badges='';if(card.isDepthStudy)badges+='<span class="tag t-ds">🔑 Depth Study</span>';if(card.isObstacle)badges+='<span class="tag t-obs">🛑 Obstacle</span>';if(card.isFactor)badges+='<span class="tag t-fac">⚙️ Factor</span>';var sub=(card.subheadings||[]).map(function(s){return '<div class="kc-sub">'+s.label+'</div><ul>'+(s.facts||[]).map(function(f){return '<li>'+f+'</li>';}).join('')+'</ul>';}).join('');document.getElementById('k-out').innerHTML='<div class="card"><div class="stripe s-'+currentUnit+'"></div><div class="inner"><div class="meta"><span class="tag t-'+currentUnit+'">'+u.short+'</span>'+badges+'</div><div class="card-heading">'+card.heading+'</div>'+(card.summary?'<p class="kc-summary">'+card.summary+'</p>':'')+(card.factorKey?'<div class="factor-key">'+card.factorKey+'</div>':'')+sub+'</div></div>';}
 var quizPool=[],quizIdx=0,quizOK=0,quizBad=0;
-function startQuizCountdown(){var cdEl=document.getElementById('d-countdown'),numEl=document.getElementById('d-countdown-num');numEl.style.color=UNITS[currentUnit].colour;cdEl.style.display='block';var count=3;function tick(){numEl.style.animation='none';void numEl.offsetWidth;numEl.style.animation='cd-pop .35s ease forwards';numEl.textContent=count;if(count===0){numEl.textContent='Go!';setTimeout(function(){cdEl.style.display='none';startQuiz();},500);return;}count--;setTimeout(tick,700);}setTimeout(tick,100);}
-function startQuiz(){if(!DATES.length){document.getElementById('d-out').innerHTML='<div class="empty">No dates loaded yet.</div>';return;}quizPool=shuffle(DATES.slice()).slice(0,Math.min(DATES.length,15));quizIdx=0;quizOK=0;quizBad=0;renderDateQ();}
-function renderDateQ(){var out=document.getElementById('d-out');if(quizIdx>=quizPool.length){var pct=Math.round(quizOK/quizPool.length*100),gr=pct>=80?'grade-a':pct>=50?'grade-b':'grade-c';out.innerHTML='<div style="text-align:center;padding:2rem 1rem"><div class="end-score">'+quizOK+'/'+quizPool.length+'</div><div class="end-sub">'+pct+'% correct</div><div class="end-grade '+gr+'">'+(pct>=80?'Excellent':pct>=50?'Getting there':'Keep practising')+'</div><button onclick="startQuiz()" style="padding:10px 20px;font-size:.95rem;font-weight:700;border:none;border-radius:10px;background:'+UNITS[currentUnit].colour+';color:#fff;cursor:pointer;font-family:inherit">Try again</button></div>';return;}var item=quizPool[quizIdx],p=Math.round(quizIdx/quizPool.length*100),col=UNITS[currentUnit].colour;out.innerHTML='<div class="quiz-prog"><div class="quiz-fill" style="width:'+p+'%;background:'+col+'"></div></div><div class="quiz-hdr"><span class="quiz-hdr-l">Question '+(quizIdx+1)+' of '+quizPool.length+'</span><div class="sc-row"><span class="sc sc-c">'+quizOK+'</span><span class="sc sc-w">'+quizBad+'</span></div></div><div class="quiz-card" style="border-left:4px solid '+col+';text-align:center"><div style="font-size:1rem;font-weight:600;line-height:1.5;margin-bottom:1.25rem">'+item.event+'</div><div style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem">What year did this happen?</div><div style="display:flex;gap:8px;justify-content:center"><input id="year-input" type="number" min="1865" max="1992" inputmode="numeric" placeholder="e.g. 1954" style="width:130px;padding:12px;font-size:1.1rem;font-weight:700;text-align:center;border:2px solid var(--border2);border-radius:10px;background:var(--input-bg);color:var(--text);font-family:inherit" onkeydown="if(event.key===\'Enter\')checkDate()"><button onclick="checkDate()" style="padding:12px 18px;font-size:.95rem;font-weight:700;border:none;border-radius:10px;background:'+col+';color:#fff;cursor:pointer;font-family:inherit">Check</button></div><div class="quiz-fb" id="date-fb"></div></div><div id="date-next-btn" style="display:none;text-align:center;margin-top:.5rem"><button onclick="quizIdx++;renderDateQ();" style="padding:11px 28px;font-size:.95rem;font-weight:700;border:none;border-radius:10px;background:'+col+';color:#fff;cursor:pointer;font-family:inherit">Next</button></div>';setTimeout(function(){var el=document.getElementById('year-input');if(el)el.focus();},100);}
-function checkDate(){var input=document.getElementById('year-input'),val=parseInt(input.value);if(!val)return;var correct=quizPool[quizIdx].year,fb=document.getElementById('date-fb');fb.style.display='block';if(val===correct||Math.abs(val-correct)<=1){fb.className='quiz-fb fb-c';fb.textContent=val===correct?'Correct - '+correct:'Close enough - it was '+correct;quizOK++;}else{fb.className='quiz-fb fb-w';fb.textContent='It was '+correct;quizBad++;}input.disabled=true;document.getElementById('date-next-btn').style.display='block';}
+function getHardDates(section){return JSON.parse(localStorage.getItem('cr_hard_dates_'+(section||'all'))||'[]');}
+function saveHardDates(section,arr){localStorage.setItem('cr_hard_dates_'+(section||'all'),JSON.stringify(arr));}
+function toggleDQUnit(u){dqUnits.has(u)?dqUnits.delete(u):dqUnits.add(u);var el=document.getElementById('dqp-'+u);if(el)el.className='rf-pill'+(dqUnits.has(u)?' on-'+u:'');applyDatesHardBtn();}
+function setDatesMode(m){dqTypeMode=m;var btns=['pick','type'];btns.forEach(function(x){var el=document.getElementById('d-mode-'+x);if(el)el.classList.toggle('sel',x===m);});}
+function applyDatesHardBtn(){var all=DATES.filter(function(d){return d.section===currentUnit;});var hard=all.filter(function(d){var h=getHardDates(d.section);return h.indexOf(d.event)!==-1;});var btn=document.getElementById('d-hard-go');if(btn)btn.style.display=hard.length>0?'block':'none';}
+function datesShowSetup(){document.getElementById('d-out').innerHTML='';document.getElementById('d-countdown').style.display='none';document.getElementById('d-setup').style.display='block';setDatesMode(dqTypeMode);applyDatesHardBtn();}
+function startQuizCountdown(hardMode){document.getElementById('d-setup').style.display='none';var cdEl=document.getElementById('d-countdown'),numEl=document.getElementById('d-countdown-num');cdEl.style.display='block';var count=3;function tick(){numEl.style.animation='none';void numEl.offsetWidth;numEl.style.animation='cd-pop .35s ease forwards';numEl.textContent=count;if(count===0){numEl.textContent='Go!';setTimeout(function(){cdEl.style.display='none';startQuiz(hardMode);},500);return;}count--;setTimeout(tick,700);}setTimeout(tick,100);}
+function startQuiz(hardMode){var all=DATES.filter(function(d){return d.section===currentUnit;});if(!all.length){document.getElementById('d-out').innerHTML='<div class="empty">No dates loaded for these units.</div>';return;}quizHardMode=!!hardMode;var pool=hardMode?all.filter(function(d){var h=getHardDates(d.section);return h.indexOf(d.event)!==-1;}):all;if(!pool.length)pool=all;quizPool=shuffle(pool.slice()).slice(0,Math.min(pool.length,15));quizIdx=0;quizOK=0;quizBad=0;quizStreak=0;quizMissed=[];quizHistory=[];quizViewIdx=0;renderQ();}
+function renderQ(){if(quizViewIdx<quizIdx){renderHistQ();return;}if(quizIdx>=quizPool.length){showDatesEnd();return;}var item=quizPool[quizIdx],total=quizPool.length,pct=Math.round(quizIdx/total*100);var col=item.section&&UNITS[item.section]?UNITS[item.section].colour:'#555';var strk=quizStreak>=3?'<span style="font-size:.8rem;color:#F0B429;font-weight:600">🔥 '+quizStreak+'</span>':'';var prevBtn=quizHistory.length>0?'<button onclick="quizGoBack()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">← Prev</button>':'<span></span>';var ansHtml;if(dqTypeMode==='type'){ansHtml='<div style="margin-top:.75rem"><input id="quiz-year-input" type="text" inputmode="numeric" placeholder="Type the year and press Enter…" style="width:100%;padding:10px;font-size:1.1rem;font-weight:700;text-align:center;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text);font-family:inherit" onkeydown="if(event.key===\'Enter\')checkYearAns()"><div class="quiz-fb" id="qfb"></div></div>';}else{var others=shuffle(DATES.filter(function(d){return d.section===currentUnit&&d.event!==item.event&&d.date!==item.date;})).slice(0,3).map(function(d){return d.date;});var opts=shuffle([item.date].concat(others));var optsHtml=opts.map(function(o,i){return '<button class="opt" id="opt'+i+'" data-val="'+esc(o)+'" data-correct="'+esc(item.date)+'" onclick="checkAns(this)">'+o+'</button>';}).join('');ansHtml='<div class="opts">'+optsHtml+'</div><div class="quiz-fb" id="qfb"></div>';}
+document.getElementById('d-out').innerHTML='<div class="quiz-prog"><div class="quiz-fill" style="width:'+pct+'%;background:'+col+'"></div></div><div class="quiz-hdr"><div style="display:flex;align-items:center;gap:8px">'+prevBtn+'<span class="quiz-hdr-l">Question '+(quizIdx+1)+' of '+total+'</span></div><div class="sc-row">'+strk+'<span class="sc sc-c">✓ '+quizOK+'</span><span class="sc sc-w">✗ '+quizBad+'</span></div></div><div class="quiz-card" style="border-left:4px solid '+col+'"><div class="quiz-date" style="'+(dqTypeMode==='type'?'font-size:1.05rem;font-weight:600;line-height:1.4;margin-bottom:.5rem':'')+'">'+( dqTypeMode==='type'?item.event:item.date)+'</div><div class="quiz-prompt">'+(dqTypeMode==='type'?'What year did this happen?':'What happened in this year?')+'</div>'+ansHtml+'</div><button onclick="datesShowSetup()" style="margin-top:.75rem;width:100%;padding:8px;font-size:.8rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">⚙️ Settings</button>';
+if(dqTypeMode==='type'){var inp=document.getElementById('quiz-year-input');if(inp)setTimeout(function(){inp.focus();},50);}}
+function renderHistQ(){var hist=quizHistory[quizViewIdx],item=hist.item,total=quizPool.length,pct=Math.round(quizViewIdx/total*100);var col=item.section&&UNITS[item.section]?UNITS[item.section].colour:'#555';var prevBtn=quizViewIdx>0?'<button onclick="quizGoBack()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">← Prev</button>':'<span></span>';var nextBtn='<button onclick="quizGoForward()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">Next →</button>';var resultHtml;if(dqTypeMode==='type'){resultHtml='<div style="margin-top:.75rem"><div class="quiz-fb '+(hist.wasCorrect?'fb-c':'fb-w')+'" style="display:block">'+(hist.wasCorrect?'✓ Correct — '+item.date:'✗ Answer was '+item.date)+'</div></div>';}else{var allOpts=hist.allOpts||[item.date];var optsHtml=allOpts.map(function(o){var cls='opt';if(o===item.date)cls+=' show-c';if(!hist.wasCorrect&&o===hist.chosen)cls+=' wrong';return '<button class="'+cls+'" disabled>'+o+'</button>';}).join('');resultHtml='<div class="opts">'+optsHtml+'</div><div class="quiz-fb '+(hist.wasCorrect?'fb-c':'fb-w')+'" style="display:block">'+(hist.wasCorrect?'Correct!':'Not quite — correct answer highlighted.')+'</div>';}
+document.getElementById('d-out').innerHTML='<div class="quiz-prog"><div class="quiz-fill" style="width:'+pct+'%;background:'+col+'"></div></div><div class="quiz-hdr"><div style="display:flex;align-items:center;gap:8px">'+prevBtn+'<span class="quiz-hdr-l">Question '+(quizViewIdx+1)+' of '+total+' <span style="font-size:.7rem;color:var(--muted)">(reviewing)</span></span>'+nextBtn+'</div><div class="sc-row"><span class="sc sc-c">✓ '+quizOK+'</span><span class="sc sc-w">✗ '+quizBad+'</span></div></div><div class="quiz-card" style="border-left:4px solid '+col+'">'+(dqTypeMode==='type'?'<div class="quiz-date" style="font-size:1.05rem;font-weight:600;line-height:1.4;margin-bottom:.5rem">'+item.event+'</div>':'<div class="quiz-date">'+item.date+'</div>')+'<div class="quiz-prompt">'+(dqTypeMode==='type'?'What year did this happen?':'What happened in this year?')+'</div>'+resultHtml+'</div><button onclick="datesShowSetup()" style="margin-top:.75rem;width:100%;padding:8px;font-size:.8rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">⚙️ Settings</button>';}
+function checkAns(btn){var chosen=btn.dataset.val,correct=btn.dataset.correct,item=quizPool[quizIdx];document.querySelectorAll('.opt').forEach(function(b){b.disabled=true;});var fb=document.getElementById('qfb'),wasCorrect=chosen===correct,allOpts=Array.from(document.querySelectorAll('.opt')).map(function(b){return b.dataset.val;});if(wasCorrect){quizOK++;quizStreak++;btn.classList.add('correct');fb.textContent='Correct!';fb.className='quiz-fb fb-c';var hard=getHardDates(item.section).filter(function(e){return e!==item.event;});saveHardDates(item.section,hard);}else{quizBad++;quizStreak=0;quizMissed.push(item);btn.classList.add('wrong');fb.textContent='Not quite — correct date highlighted.';fb.className='quiz-fb fb-w';document.querySelectorAll('.opt').forEach(function(b){if(b.dataset.val===correct)b.classList.add('show-c');});var hard=getHardDates(item.section);if(hard.indexOf(item.event)===-1)hard.push(item.event);saveHardDates(item.section,hard);}fb.style.display='block';quizHistory.push({item:item,wasCorrect:wasCorrect,chosen:chosen,allOpts:allOpts});setTimeout(function(){quizIdx++;quizViewIdx=quizIdx;renderQ();},1700);}
+function checkYearAns(){var inp=document.getElementById('quiz-year-input');if(!inp||inp.disabled)return;var typed=inp.value.trim();if(!typed)return;var item=quizPool[quizIdx],fb=document.getElementById('qfb'),correctDate=item.date;var allYears=[];var fullYears=correctDate.match(/([0-9]{3,4})s?/g)||[];fullYears.map(function(y){return y.replace(/s$/,'');}).filter(function(y){var n=parseInt(y);return n>=100&&n<=2099;}).forEach(function(y){allYears.push(y);});var rm=correctDate.match(/([0-9]{3,4})[-–]([0-9]{2})/);if(rm){var exp=rm[1].slice(0,rm[1].length-2)+rm[2];if(allYears.indexOf(exp)===-1)allYears.push(exp);}if(!allYears.length){fb.textContent='Answer: '+correctDate;fb.className='quiz-fb fb-w';fb.style.display='block';return;}var typedNorm=[typed.replace(/[^0-9]/g,'')];var wasCorrect=typedNorm.some(function(tn){return allYears.some(function(y){return tn===y;});});inp.disabled=true;if(wasCorrect){quizOK++;quizStreak++;fb.textContent='✓ Correct — '+correctDate;fb.className='quiz-fb fb-c';var hard=getHardDates(item.section).filter(function(e){return e!==item.event;});saveHardDates(item.section,hard);}else{quizBad++;quizStreak=0;quizMissed.push(item);fb.textContent='✗ The answer was '+correctDate;fb.className='quiz-fb fb-w';var hard=getHardDates(item.section);if(hard.indexOf(item.event)===-1)hard.push(item.event);saveHardDates(item.section,hard);}fb.style.display='block';quizHistory.push({item:item,wasCorrect:wasCorrect});setTimeout(function(){quizIdx++;quizViewIdx=quizIdx;renderQ();},2000);}
+function quizGoBack(){if(quizViewIdx<=0)return;quizViewIdx--;renderQ();}
+function quizGoForward(){if(quizViewIdx>=quizIdx)return;quizViewIdx++;renderQ();}
+function showDatesEnd(){var pct=Math.round(quizOK/quizPool.length*100),col=dqUnits.size===1&&UNITS[Array.from(dqUnits)[0]]?UNITS[Array.from(dqUnits)[0]].colour:'#555';document.getElementById('d-out').innerHTML='<div style="text-align:center;padding:2rem 1rem"><div style="font-size:3rem;font-weight:900;margin-bottom:.25rem">'+quizOK+'/'+quizPool.length+'</div><div style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem">'+pct+'% correct</div><div style="font-size:.95rem;font-weight:700;margin-bottom:1.5rem">'+(pct===100?'Perfect! 🏆':pct>=80?'Excellent 🎯':pct>=60?'Good effort ⭐':pct>=40?'Keep drilling 📚':'Keep going 💪')+'</div><div style="display:flex;flex-direction:column;gap:8px"><button onclick="startQuiz(false)" style="padding:11px;font-size:.95rem;font-weight:700;border:none;border-radius:10px;background:'+col+';color:#fff;cursor:pointer;font-family:inherit">Try again</button><button onclick="datesShowSetup()" style="padding:11px;font-size:.9rem;font-weight:600;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text);cursor:pointer;font-family:inherit">⚙️ Settings</button></div></div>';}
+
 function showExamPick(){document.getElementById('exam-pick').style.display='block';document.getElementById('exam-essay').style.display='none';document.getElementById('exam-interp').style.display='none';var col=UNITS[currentUnit].colour;document.getElementById('essay-go-btn').style.background=col;document.getElementById('interp-go-btn').style.background=col;}
 function showExamRoute(r){document.getElementById('exam-pick').style.display='none';document.getElementById('exam-essay').style.display=r==='essay'?'block':'none';document.getElementById('exam-interp').style.display=r==='interp'?'block':'none';if(r==='essay')drawEssay();if(r==='interp')drawInterp();}
 function drawEssay(){var f=document.getElementById('essay-type-filter').value,pool=(ESSAY_QS||[]).filter(function(q){return q.section===currentUnit&&(f==='all'||q.type===f);});var out=document.getElementById('essay-out');if(!pool.length){out.innerHTML='<div class="empty">No questions available yet.</div>';return;}var q=rand(pool),uid='eq'+Math.random().toString(36).slice(2,6),u=UNITS[currentUnit],tm={factor:'Factor',turning:'Turning point',fedgov:'Federal Gov',hindrance:'Hindrance',progress:'Extent of progress'};out.innerHTML='<div class="essay-card"><div class="essay-q">'+q.q+'</div><div class="essay-meta">'+(q.year||'')+' - '+(tm[q.type]||q.type||'')+' - 25 marks</div><div class="btn-row"><button class="btn-sm" onclick="drawEssay()">New question</button><button class="btn-sm" id="sb'+uid+'" onclick="tog(\''+uid+'_s\',document.getElementById(\'sb'+uid+'\'),\'Show structure\',\'Hide structure\')">Show structure</button></div><div class="essay-struct" id="'+uid+'_s" style="background:var(--subtle)"><div class="essay-struct-title" style="color:'+u.colour+'">Right-by-Right Structure</div><table><tr><td>Intro</td><td>Deconstruct question. Set criteria. State thesis.</td></tr><tr><td>Para 1</td><td>Political Rights - Yes (evidence) - But (limits) - So (judgement).</td></tr><tr><td>Para 2</td><td>Social Rights - repeat structure.</td></tr><tr><td>Para 3</td><td>Economic Rights - repeat structure.</td></tr><tr><td>Conclusion</td><td>Overall judgement. Return to thesis. Cover 1865-1992.</td></tr></table></div></div>';}
 function drawInterp(){var f=document.getElementById('interp-ds-filter').value,pool=(INTERP_QS||[]).filter(function(q){return q.section===currentUnit&&(f==='all'||q.depthStudy===f);});var out=document.getElementById('interp-out');if(!pool.length){out.innerHTML='<div class="empty">No questions available yet.</div>';return;}var q=rand(pool),uid='iq'+Math.random().toString(36).slice(2,6),dsl={'gilded-age':'Gilded Age','new-deal':'New Deal','black-power':'Black Power Era'}[q.depthStudy]||q.depthStudy,ph=(q.passages||[]).map(function(p){return '<div class="passage-item"><div class="passage-item-hdr">'+p.label+'</div><div class="passage-item-attr">'+p.attribution+'</div><div class="passage-item-text">'+p.text+'</div></div>';}).join('');out.innerHTML='<div class="passage-card"><div class="passage-hdr"><div class="passage-q">'+q.q+'</div><div class="passage-meta">'+(q.year||'')+' - '+dsl+' - 30 marks</div></div><div class="passage-body">'+ph+'<div class="btn-row"><button class="btn-sm" onclick="drawInterp()">New question</button><button class="btn-sm" id="ab'+uid+'" onclick="tog(\''+uid+'_a\',document.getElementById(\'ab'+uid+'\'),\'Show approach\',\'Hide approach\')">Show approach</button></div><div class="approach-box" id="'+uid+'_a"><div class="approach-title">5-Step Approach</div><ul class="approach-list"><li>What is Passage A arguing?</li><li>What is convincing about A?</li><li>What is unconvincing about A?</li><li>Repeat for Passage B</li><li>Overall - which is more convincing and why?</li></ul></div></div></div>';}
 var rqUnits=new Set(['aa','lab','na','wom']),rqMode='batch',rqPool=[],rqOneIdx=0,rqWrong=[],rqSinceWrong=0;
-function showRapidSetup(){rqUnits=new Set(['aa','lab','na','wom']);['aa','lab','na','wom'].forEach(function(u){var el=document.getElementById('rqp-'+u);if(el)el.className='rf-pill on-'+u;});setRQMode('batch');document.getElementById('rq-setup').style.display='block';document.getElementById('rq-out').style.display='none';showScreen('s-rapid');}
+function showRapidSetup(){['aa','lab','na','wom'].forEach(function(u){var el=document.getElementById('rqp-'+u);if(el)el.className='rf-pill on-'+u+(rqUnits.has(u)?'':' inactive');});setRQMode(rqMode||'batch');document.getElementById('rq-setup').style.display='block';document.getElementById('rq-out').style.display='none';document.getElementById('rq-one').style.display='none';document.getElementById('rq-endless').style.display='none';updateRQCounter();showScreen('s-rapid');}
 function toggleRQUnit(u){if(rqUnits.has(u)){if(rqUnits.size>1)rqUnits.delete(u);}else rqUnits.add(u);var el=document.getElementById('rqp-'+u);if(el)el.className='rf-pill'+(rqUnits.has(u)?' on-'+u:'');}
 function setRQMode(m){rqMode=m;['batch','one','endless'].forEach(function(x){var el=document.getElementById('rqm-'+x);if(el)el.classList.toggle('sel',x===m);});}
 function revealAllRQ(){document.querySelectorAll('.rq-card').forEach(function(c){c.classList.add('revealed');});}
-function generateRQ(){var pool=shuffle(FD.filter(function(c){return rqUnits.has(c.section);}));if(!pool.length){alert('No cards loaded. Select a unit first.');return;}document.getElementById('rq-setup').style.display='none';document.getElementById('rq-out').style.display='block';if(rqMode==='batch'){rqPool=pool.slice(0,10);document.getElementById('rq-one-wrap').style.display='none';document.getElementById('rq-batch-wrap').style.display='block';document.getElementById('rq-grid').innerHTML=rqPool.map(function(q,i){return '<div class="rq-card" onclick="this.classList.toggle(\'revealed\')" style="border-left:4px solid '+(UNITS[q.section]?UNITS[q.section].colour:'#888')+'"><div class="rq-q">'+(i+1)+'. '+q.front+'</div><div class="rq-a">'+q.p1+'</div><div class="rq-tap">Tap to reveal</div></div>';}).join('');}else{rqPool=rqMode==='one'?pool.slice(0,10):pool;rqWrong=[];rqOneIdx=0;rqSinceWrong=0;document.getElementById('rq-batch-wrap').style.display='none';document.getElementById('rq-one-wrap').style.display='block';renderRQOne();}}
-function rqRevealCard(){var card=document.getElementById('rq-one-card');if(card.classList.contains('revealed'))return;card.classList.add('revealed');document.getElementById('rq-one-tap').style.display='none';document.getElementById('rq-answer-btns').style.display='flex';}
+function rqOneReveal(){document.getElementById('rq-one-reveal').style.display='block';document.getElementById('rq-one-tap').style.display='none';}
+function rqOneAnswer(correct){if(correct){rqOneOK++;rqOneStreak++;}else{rqOneBad++;rqOneStreak=0;rqOneMissed.push(rqOnePool[rqOneIdx]);}rqOneIdx++;rqOneNext();}
+function rqOneNext(){if(rqOneIdx>=rqOnePool.length){rqOneEnd();return;}var q=rqOnePool[rqOneIdx],total=rqOnePool.length,pct=Math.round(rqOneIdx/total*100);document.getElementById('rq-one-prog').style.width=pct+'%';document.getElementById('rq-one-hdr').textContent='Question '+(rqOneIdx+1)+' of '+total;document.getElementById('rq-one-ok').textContent='✓ '+rqOneOK;document.getElementById('rq-one-bad').textContent='✗ '+rqOneBad;var sk=document.getElementById('rq-one-streak');if(sk)sk.textContent=rqOneStreak>=3?'🔥 '+rqOneStreak:'';var st=document.getElementById('rq-one-stripe');if(st)st.style.background=UNITS[q.section]?UNITS[q.section].colour:'#ddd';document.getElementById('rq-one-q').textContent=q.q;document.getElementById('rq-one-a').textContent=q.a;document.getElementById('rq-one-reveal').style.display='none';document.getElementById('rq-one-tap').style.display='block';}
+function rqOneEnd(){document.getElementById('rq-one-card').style.display='none';document.getElementById('rq-one-exit').style.display='none';var total=rqOnePool.length,pct=Math.round(rqOneOK/total*100);document.getElementById('rq-one-score').textContent=rqOneOK+' of '+total+' correct';var msg=pct===100?'Perfect! Every question nailed. 🏆':pct>=80?'Excellent — almost perfect! 🎯':pct>=60?'Good effort — keep at the tricky ones. ⭐':pct>=40?'A solid start — retry the missed ones. 📚':'Keep drilling — it gets easier. 💪';document.getElementById('rq-one-msg').textContent=msg;var ml=document.getElementById('rq-one-missed-list');if(rqOneMissed.length){ml.innerHTML='<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem">Missed:</div>'+rqOneMissed.map(function(q){return '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.4rem .6rem;margin-bottom:.3rem;font-size:.82rem"><strong>'+q.q+'</strong><br><span style="color:var(--muted)">'+q.a+'</span></div>';}).join('');document.getElementById('rq-retry-btn').style.display='block';}else{ml.innerHTML='';document.getElementById('rq-retry-btn').style.display='none';}document.getElementById('rq-one-end').style.display='block';}
+function rqRetryMissed(){rqOnePool=shuffle([...rqOneMissed]);rqOneIdx=0;rqOneOK=0;rqOneBad=0;rqOneMissed=[];rqOneStreak=0;document.getElementById('rq-one-end').style.display='none';document.getElementById('rq-one-card').style.display='block';document.getElementById('rq-one-exit').style.display='block';rqOneNext();}
+function rqElReveal(){document.getElementById('rq-el-reveal').style.display='block';document.getElementById('rq-el-tap').style.display='none';}
+function rqElAnswer(correct){if(correct){rqElOK++;rqElStreak++;}else{rqElBad++;rqElStreak=0;}rqElIdx++;rqElNext();}
+function rqElNext(){if(rqElIdx>=rqElPool.length){rqElPool=shuffle([...rqElPool]);rqElIdx=0;}var q=rqElPool[rqElIdx],num=rqElOK+rqElBad+1;document.getElementById('rq-el-hdr').textContent='Question '+num;document.getElementById('rq-el-ok').textContent='✓ '+rqElOK;document.getElementById('rq-el-bad').textContent='✗ '+rqElBad;var sk=document.getElementById('rq-el-streak');if(sk)sk.textContent=rqElStreak>=3?'🔥 '+rqElStreak:'';var st=document.getElementById('rq-el-stripe');if(st)st.style.background=UNITS[q.section]?UNITS[q.section].colour:'#ddd';document.getElementById('rq-el-q').textContent=q.q;document.getElementById('rq-el-a').textContent=q.a;document.getElementById('rq-el-reveal').style.display='none';document.getElementById('rq-el-tap').style.display='block';}
+function updateRQCounter(){var n=RQ.filter(function(q){return rqUnits.has(q.section);}).length;var el=document.getElementById('rq-counter');if(el)el.textContent=n?n+' questions available':'';}
+function generateRQ(){var pool=shuffle(RQ.filter(function(q){return rqUnits.has(q.section);}));if(pool.length<1){alert('No questions loaded — check rq-Y13.json is in the data/ folder.');return;}document.getElementById('rq-setup').style.display='none';document.getElementById('rq-out').style.display='none';document.getElementById('rq-one').style.display='none';document.getElementById('rq-endless').style.display='none';
+if(rqMode==='batch'){var ten=pool.slice(0,10);document.getElementById('rq-grid').innerHTML=ten.map(function(q,i){return '<div class="rq-card" onclick="this.classList.toggle(\'revealed\')" style="border-left:4px solid '+(UNITS[q.section]?UNITS[q.section].colour:'#888')+'"><div class="rq-q">'+(i+1)+'. '+q.q+'</div><div class="rq-a">'+q.a+'</div><div class="rq-tap">Tap to reveal</div></div>';}).join('');document.getElementById('rq-out').style.display='block';}
+else if(rqMode==='one'){rqOnePool=pool.slice(0,10);rqOneIdx=0;rqOneOK=0;rqOneBad=0;rqOneMissed=[];rqOneStreak=0;document.getElementById('rq-one').style.display='block';document.getElementById('rq-one-end').style.display='none';document.getElementById('rq-one-card').style.display='block';document.getElementById('rq-one-exit').style.display='block';rqOneNext();}
+else{rqElPool=pool;rqElIdx=0;rqElOK=0;rqElBad=0;rqElStreak=0;document.getElementById('rq-endless').style.display='block';rqElNext();}}
+
 function rqMark(correct){document.getElementById('rq-answer-btns').style.display='none';if(!correct)rqWrong.push(rqPool[rqOneIdx]);rqOneIdx++;rqSinceWrong++;if(rqMode==='endless'&&rqSinceWrong>=4&&rqWrong.length>0){rqPool.splice(rqOneIdx,0,rqWrong.shift());rqSinceWrong=0;}renderRQOne();}
-function renderRQOne(){if(rqMode==='endless'&&rqOneIdx>=rqPool.length){rqPool=shuffle(FD.filter(function(c){return rqUnits.has(c.section);}));if(rqWrong.length){rqPool.splice(3,0,...rqWrong);rqWrong=[];}rqOneIdx=0;rqSinceWrong=0;}if(rqOneIdx>=rqPool.length){var tot=rqPool.length,cor=tot-rqWrong.length,pct=Math.round(cor/tot*100),card=document.getElementById('rq-one-card');card.className='rq-card revealed';card.style.cursor='default';card.onclick=null;card.innerHTML='<div style="text-align:center;padding:.5rem 0"><div style="font-size:2.2rem;font-weight:800">'+cor+'/'+tot+'</div><div style="font-size:.85rem;color:var(--muted);margin:.3rem 0 1rem">'+pct+'% correct</div><div style="display:flex;flex-direction:column;gap:8px"><button class="btn-go c-dark" style="margin-bottom:0" onclick="generateRQ()">Go again</button><button class="btn-go" style="background:var(--surface);color:var(--text);border:1.5px solid var(--border2);margin-bottom:0" onclick="showRapidSetup()">Change settings</button></div></div>';document.getElementById('rq-answer-btns').style.display='none';document.getElementById('rq-one-progress').textContent='';return;}var q=rqPool[rqOneIdx],c=document.getElementById('rq-one-card');c.className='rq-card';c.style.borderLeft='4px solid '+(UNITS[q.section]?UNITS[q.section].colour:'#888');c.onclick=rqRevealCard;document.getElementById('rq-one-q').textContent=(rqOneIdx+1)+'. '+q.front;document.getElementById('rq-one-a').textContent=q.p1;document.getElementById('rq-one-tap').style.display='block';document.getElementById('rq-answer-btns').style.display='none';document.getElementById('rq-one-progress').textContent=rqMode==='one'?(rqOneIdx+1)+'/'+rqPool.length:'Q '+(rqOneIdx+1)+(rqWrong.length?' - '+rqWrong.length+' to revisit':'');}
+
 var LS_M='cr_fd_mastered',LS_P='cr_fd_missed',LS_S='cr_fd_session',LS_H='cr_fd_hints';
 var fdDeck=[],fdMissed=[],fdGot=0,fdMissCount=0,fdCurrent=null,fdFlipped=false,fdHintsOn=false,fdTotal=0,fdOutstanding=[];
 function fdTodayStr(){return new Date().toISOString().slice(0,10);}
@@ -451,11 +578,12 @@ var KC=[],FD=[],DATES=[],ESSAY_QS=[],INTERP_QS=[];
 Promise.all([
   fetch('data/kc-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
   fetch('data/flashcards-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
+  fetch('data/rq-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
   fetch('data/dates-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
   fetch('data/essays-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
   fetch('data/interp-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];})
 ]).then(function(results){
-  KC=results[0]; FD=results[1]; DATES=results[2]; ESSAY_QS=results[3]; INTERP_QS=results[4];
+  KC=results[0]; FD=results[1]; RQ=results[2]; DATES=results[3]; ESSAY_QS=results[4]; INTERP_QS=results[5]; updateRQCounter(); applyDatesHardBtn();
   console.log('Data loaded — KC:',KC.length,'FD:',FD.length);
   renderFdWheels(); renderFdSetupWheel(); renderFdHubWheel(); fdPopulateCounts();
   var km=document.getElementById('mode-knowledge');
