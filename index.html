@@ -1,107 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Mr Rodker's Revision Hub</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Mr Rodker's Revision Hub</title>
 <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  max-width: 720px;
-  margin: auto;
-  padding: 1.5rem 1rem 3rem;
-  background: #f8f7f4;
-  color: #1a1a18;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#FBF7F2;
+  color:#2C1A0E;
+  min-height:100vh;
+  padding:2.25rem 1rem 5rem;
 }
 
-/* HEADER */
-.header {
-  text-align: center;
-  margin-bottom: 1.8rem;
+.app{max-width:480px;margin:0 auto;}
+
+.header{margin-bottom:2.25rem;}
+.greeting{
+  font-size:.72rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:#B87333;margin-bottom:.35rem;
+}
+.header h1{
+  font-size:1.55rem;font-weight:700;
+  line-height:1.1;margin-bottom:.25rem;color:#2C1A0E;white-space:nowrap;
+}
+.header-sub{font-size:.82rem;color:#A08060;font-style:italic;}
+
+.divider{
+  font-size:.67rem;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;
+  color:#A08060;margin:1.75rem 0 .9rem;
+  display:flex;align-items:center;gap:.7rem;
+}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:#E8DDD2;}
+
+/* ── CARD ── */
+.card{
+  display:block;text-decoration:none;color:#fff;
+  border-radius:18px;padding:1.5rem 1.4rem 1.4rem;
+  margin-bottom:.85rem;position:relative;overflow:hidden;
+  transition:transform .2s,box-shadow .2s;
+  border:2px solid rgba(0,0,0,.15);
 }
 
-h1 {
-  font-size: 1.6rem;
-  margin-bottom: 0.2rem;
+
+
+.card:active{transform:scale(.98);}
+
+.card-label{
+  font-size:.63rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  opacity:.6;margin-bottom:.5rem;
+}
+.card-title{font-size:1.2rem;font-weight:700;line-height:1.2;margin-bottom:.3rem;}
+.card-sub{font-size:.8rem;line-height:1.55;opacity:.75;}
+
+.card-arrow{
+  position:absolute;right:1.3rem;top:50%;
+  transform:translateY(-50%);
+  font-size:1.3rem;opacity:.35;
+  transition:opacity .18s,transform .18s;
+}
+.card:hover .card-arrow{opacity:.65;transform:translateY(-50%) translateX(4px);}
+
+/* Terracotta — Civil Rights */
+.card-civil{
+  background-color:#C1440E;
+  background-image:
+    radial-gradient(ellipse at 80% 20%, rgba(255,120,60,.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 10% 80%, rgba(100,10,0,.2) 0%, transparent 55%);
+  box-shadow:0 4px 18px rgba(193,68,14,.35);
+}
+.card-civil:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 32px rgba(193,68,14,.45);
 }
 
-.subtitle {
-  font-size: 0.9rem;
-  color: #6b6b68;
-  font-weight: 600;
+/* Sage green — Tudors & Cold War */
+.card-tudor{
+  background-color:#5A7A45;
+  background-image:
+    radial-gradient(ellipse at 75% 15%, rgba(140,200,100,.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 15% 85%, rgba(20,50,10,.2) 0%, transparent 55%);
+  box-shadow:0 4px 18px rgba(90,122,69,.35);
+}
+.card-tudor:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 32px rgba(90,122,69,.45);
 }
 
-/* CARDS */
-.section {
-  background: #ffffff;
-  border: 1px solid #e8e7e2;
-  border-radius: 14px;
-  padding: 1.25rem;
-  margin-bottom: 1rem;
+/* Amber gold — GCSE */
+.card-gcse{
+  background-color:#C47B1A;
+  background-image:
+    radial-gradient(ellipse at 80% 20%, rgba(255,210,80,.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 10% 80%, rgba(90,40,0,.2) 0%, transparent 55%);
+  box-shadow:0 4px 18px rgba(196,123,26,.35);
+}
+.card-gcse:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 32px rgba(196,123,26,.45);
 }
 
-/* BUTTON LINKS */
-.link-btn {
-  display: block;
-  padding: 1rem;
-  border-radius: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  margin-bottom: 0.6rem;
-  transition: 0.15s;
-}
-
-/* COLOUR THEMES (aligned with GCSE page) */
-.p1 { background:#FEF9E7; color:#9A6B00; border:1.5px solid #F0B429; }
-.p2 { background:#FBEAF0; color:#993556; border:1.5px solid #D4537E; }
-.p3 { background:#E6F1FB; color:#185FA5; border:1.5px solid #378ADD; }
-.gcse { background:#E1F5EE; color:#0F6E56; border:1.5px solid #1D9E75; }
-
-.link-btn:hover {
-  opacity: 0.9;
-}
-
-/* DISABLED */
-.disabled {
-  background:#eee;
-  color:#888;
-  border:1px solid #ddd;
-  pointer-events:none;
-}
-
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.header{animation:up .3s ease both;}
+.card-civil{animation:fadein .3s .07s ease forwards;opacity:0;}
+.card-tudor{animation:fadein .3s .14s ease forwards;opacity:0;}
+.card-gcse{animation:fadein .3s .21s ease forwards;opacity:0;}
 </style>
 </head>
-
 <body>
+<div class="app">
 
-<div class="header">
-  <h1>Mr Rodker's Revision Hub</h1>
-  <p class="subtitle">Knowledge is Porridge</p>
+  <div class="header">
+    <div class="greeting">History Revision</div>
+    <h1>Mr Rodker's Revision Hub</h1>
+  </div>
+
+  <div class="divider">A Level · OCR</div>
+
+  <a href="civil-rights.html" class="card card-civil">
+    <div class="card-label">Y319 · Paper 3</div>
+    <div class="card-title">Civil Rights in the USA</div>
+    <div class="card-sub">1865–1992 · African Americans, Labour,<br>Native Americans &amp; Women</div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <a href="Y12.html" class="card card-tudor">
+    <div class="card-label">Y107 &amp; Y223 · Papers 1 &amp; 2</div>
+    <div class="card-title">Later Tudors &amp; The Cold War</div>
+    <div class="card-sub">England 1547–1603 · Cold War 1941–1991</div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <div class="divider">GCSE · Edexcel</div>
+
+  <a href="GCSE.html" class="card card-gcse">
+    <div class="card-label">Four Papers</div>
+    <div class="card-title">GCSE History</div>
+    <div class="card-sub">Migration · Cold War · Elizabeth I · Weimar &amp; Nazi Germany</div>
+    <div class="card-arrow">→</div>
+  </a>
+
+  <p class="header-sub" style="text-align:center;margin-top:2rem;">Knowledge is porridge.</p>
+
 </div>
-
-<div class="section">
-  <h2>🎓 A Level History</h2>
-
-  <a href="Y12.html" class="link-btn p1">
-    👑 Paper 1 (Y107) The Later Tudors & ☢️ Paper 2 (Y223) The Cold War
-  </a>
-
-   <a href="CivilRights.html" class="link-btn p3">
-    ✊ Paper 3 (Y319) Civil Rights in the USA, 1865–1992 — Quick Quiz
-  </a>
-
-  <a href="Y13.html" class="link-btn p3" style="opacity:0.75">
-    🚧 Paper 3 (Y319) Civil Rights in the USA, 1865–1992 — In Progress
-  </a>
-</div>
-
-<div class="section">
-  <h2>🧠 GCSE History</h2>
-
-  <a href="GCSE.html" class="link-btn gcse">
-    🚢 Migration • 🚀 Cold War • 👑 Elizabeth • 🏛️ Germany
-  </a>
-</div>
-
 </body>
 </html>
