@@ -161,7 +161,7 @@
     "hints": [
       "King",
       "claim",
-      "war with France"
+      "France"
     ]
   },
   {
@@ -204,7 +204,7 @@
     "p2": "Henry instructed a Regency Council of 16 members, balanced between reformists (Seymour) and conservatives (Gardiner and Norfolk).",
     "p3": "'Unfulfilled gifts' clause → allowed Seymour and Paget to conspire and make Seymour Lord Protector, against Henry's wishes.",
     "hints": [
-      "Succession",
+      "illegitimacy",
       "Regency Council",
       "unfulfilled gifts"
     ]
@@ -236,7 +236,7 @@
     "hints": [
       "Gardiner",
       "Paget",
-      "Cardinal Pole"
+      "Pole"
     ]
   },
   {
@@ -309,7 +309,7 @@
     "p2": "Second Act of Repeal (November 1554) repealed all religious legislation since 1529. Compromise forced on ex-monastic land — not restored to the Church.",
     "p3": "Pole's 12 Decrees 1556 banned absenteeism, pluralism and simony → improving clerical quality, not just restoring Catholicism.",
     "hints": [
-      "First Act of Repeal",
+      "Repeal",
       "ex-monastic",
       "12 Decrees"
     ]
@@ -519,7 +519,7 @@
     "p2": "Courtenay revealed the plot to Gardiner → forced Wyatt's hand too early, in January. French support and the other three rebel forces never materialised. Hard to sustain in winter.",
     "p3": "Mary's decisive Guildhall speech secured London's loyalty → gates stayed shut. Wyatt and leaders executed; Elizabeth imprisoned in the Tower but released after Wyatt refused to implicate her under torture.",
     "hints": [
-      "We are all Englishmen",
+      "Englishmen",
       "Courtenay",
       "Guildhall"
     ]
@@ -646,8 +646,8 @@
     "p3": "Many Catholics viewed Elizabeth as illegitimate due to the Pope's refusal to grant Henry VIII's divorce. In 1559 Scottish Protestant Lords overthrew Mary of Guise → Scotland became Protestant.",
     "hints": [
       "Habsburg-Valois rivalry",
-      "Mary Queen of Scots",
-      "Henry II of France"
+      "Dauphin",
+      "Protestant Lords"
     ]
   },
   {
@@ -710,14 +710,14 @@
     "no": 49,
     "section": "elizabeth",
     "unit": "Unit 4 – Elizabeth I and Religion",
-    "front": "What were Grindal's and Whitgift's key actions as Archbishop?",
+    "front": "What were Grindal's key actions as Archbishop?",
     "p1": "Edmund Grindal (1575–83): former Marian exile, sympathetic to Puritan concerns. Came into conflict with Elizabeth over prophesyings — unlicensed meetings where clergy preached and discussed scripture.",
     "p2": "Ordered to suppress prophesyings 1576 → refused, writing that he must 'obey God rather than man'. Suspended 1577, confined to house arrest.",
     "p3": "Remained suspended until death 1583 — never restored to favour. Showed Elizabeth would tolerate no challenge to her control of the Church, however principled.",
     "hints": [
       "Grindal",
-      "Whitgift",
-      "Three Articles"
+      "obey God",
+      "tolerate"
     ]
   },
   {
@@ -767,9 +767,9 @@
     "section": "elizabeth",
     "unit": "Unit 4 – Elizabeth I and Religion",
     "front": "What were the three main Catholic plots against Elizabeth?",
-    "p1": "1571 Ridolfi Plot: Ridolfi plotted with Pope, Philip II and Duke of Norfolk to marry Mary to Norfolk and provoke a Catholic uprising. Discovered by Cecil. Norfolk executed 1572 — Elizabeth resisted calls to execute Mary.",
-    "p2": "1583 Throckmorton Plot: involved Duke of Guise, Philip II and seminary priests. Uncovered by Walsingham → Bond of Association 1584: Privy Council pledged to execute anyone implicated in future plots against Elizabeth.",
-    "p3": "1586 Babington Plot: planned Elizabeth's assassination and Spanish-French invasion. Walsingham found evidence directly implicating Mary → Parliament petitioned — Mary executed February 1587.",
+    "p1": "1571 Ridolfi Plot: plotted with Pope, Philip II and Norfolk to place Mary on the throne → Norfolk executed 1572.",
+    "p2": "1583 Throckmorton Plot: Duke of Guise, Philip II and seminary priests → uncovered by Walsingham → Bond of Association 1584: Privy Council pledged to execute anyone implicated in future plots.",
+    "p3": "1586 Babington Plot: planned Elizabeth's assassination and a Spanish-French invasion. Walsingham found evidence directly implicating Mary → Parliament petitioned — Mary executed February 1587.",
     "hints": [
       "Ridolfi",
       "Throckmorton",
@@ -795,12 +795,12 @@
     "section": "elizabeth",
     "unit": "Unit 5 – Government and Parliament",
     "front": "How effectively did Elizabeth manage faction on her Privy Council?",
-    "p1": "Elizabeth stayed aloof — delayed decisions; showed favour to no faction → forced councillors to compete for her approval. Used gender to manage loyalty: courtiers competed for her affection, giving her leverage no male monarch would have had.",
+    "p1": "Elizabeth stayed aloof: delayed decisions, showed favour to no faction → councillors competed for her approval. Used gender as leverage no male monarch could have.",
     "p2": "1565–66: Leicester came into dispute with Norfolk and Sussex over Amy Robsart's death — almost ended in violence. Elizabeth resolved it by making clear she would not marry Leicester.",
     "p3": "1578–85: Dutch Revolt divided the Council — Leicester and Walsingham urged intervention; Burghley counselled caution. Elizabeth delayed until assassination of William of Orange 1585 forced her hand.",
     "hints": [
       "gender",
-      "ribbons",
+      "Amy Robsart",
       "Dutch"
     ]
   },
@@ -814,7 +814,7 @@
     "p3": "Personal experience coloured her view: her mother executed; stepmother Catherine Howard executed; her sister's marriage brought war and humiliation. Marriage meant danger.",
     "hints": [
       "buried alive",
-      "resentment",
+      "faction",
       "personal experience"
     ]
   },
@@ -827,9 +827,9 @@
     "p2": "Despite never naming a successor, Elizabeth tacitly acknowledged James VI would succeed — managing expectations without the political cost of a formal declaration.",
     "p3": "Peaceful succession of James I in 1603 vindicated her strategy of deliberate ambiguity. Cecil had been in secret correspondence with James for years before Elizabeth's death.",
     "hints": [
-      "John Stubbs",
-      "Bond of Association",
-      "James VI"
+      "Bond",
+      "James VI",
+      "Cecil"
     ]
   },
   {
@@ -857,7 +857,7 @@
     "hints": [
       "advisors",
       "taxation",
-      "House of"
+      "Prerogative"
     ]
   },
   {
@@ -869,7 +869,7 @@
     "p2": "Helped draft the Religious Settlement; managed correspondence; created an intelligence service to discover plots; ran the Privy Council.",
     "p3": "By nature cautious and pragmatic — prudence often aligned with Elizabeth's instincts on difficult decisions. The most important figure in Elizabethan government.",
     "hints": [
-      "Secretary of State",
+      "Secretary",
       "Religious Settlement",
       "pragmatic"
     ]
@@ -911,7 +911,7 @@
     "p2": "1566 Parliament: demand to marry attached to the subsidy bill following Elizabeth's near-fatal smallpox 1562. Elizabeth reduced subsidy by a third but reaffirmed succession as her Royal Prerogative.",
     "p3": "Parliament vehemently hostile to Mary QoS, pushed for her execution for years. After Babington Plot, combined pressure of Lords, Commons and Privy Council → Mary executed February 1587.",
     "hints": [
-      "1559 and 1563",
+      "1559",
       "third",
       "Babington"
     ]
@@ -921,9 +921,9 @@
     "section": "elizabeth",
     "unit": "Unit 5 – Government and Parliament",
     "front": "Who were Elizabeth's main suitors?",
-    "p1": "Robert Dudley, Earl of Leicester — Elizabeth's likely personal preference. Scandalous choice: his father, brother and grandfather had all been executed as traitors. Amy Robsart's suspicious death 1560 made him unmarriageable in public eyes.",
-    "p2": "Habsburg candidates: Archduke Charles of Austria — promoted by Cecil 1567, but his insistence on practising Catholicism was a dealbreaker. Philip II proposed 1559 — wildly unpopular after Mary's reign.",
-    "p3": "Francis, Duke of Alençon — the only suitor to visit in person (1579). Elizabeth genuinely fond of him, calling him her 'frog'. Died 1584 — ending the last serious marriage negotiation.",
+    "p1": "Robert Dudley, Earl of Leicester — Elizabeth's likely personal preference; father, brother and grandfather all executed as traitors. Amy Robsart's suspicious death 1560 made him unmarriageable.",
+    "p2": "Habsburg candidates: Archduke Charles of Austria — insistence on practising Catholicism a dealbreaker. Philip II proposed 1559 — wildly unpopular after Mary's reign.",
+    "p3": "Francis, Duke of Alençon — the only suitor to visit in person (1579). Elizabeth called him her 'frog'. Died 1584 — ending the last serious marriage negotiation.",
     "hints": [
       "Dudley",
       "Archduke Charles",
@@ -954,8 +954,8 @@
     "p3": "Mary's revised Book of Rates dramatically boosted customs revenue. Elizabeth retained able administrators in Gresham and Lord Treasurer Paulet — a significant advantage she wisely used.",
     "hints": [
       "£227,000",
-      "Thomas Gresham",
-      "Book of Rates"
+      "Gresham",
+      "Rates"
     ]
   },
   {
@@ -1052,7 +1052,7 @@
     "p3": "William Paulet: highly effective Lord Treasurer. Excellent financial management helped Elizabeth clear the Marian debt by 1576.",
     "hints": [
       "debasement",
-      "Royal Exchange",
+      "Antwerp Exchange",
       "debt"
     ]
   },
@@ -1066,7 +1066,7 @@
     "p3": "Extraordinary revenue: parliamentary subsidies (~£100,000) and fifteenths and tenths (~£30,000). Taxes among the lowest in Europe — local gentry systematically undervalued their neighbours' lands.",
     "hints": [
       "Crown land",
-      "Book of Rates",
+      "Rates",
       "subsidies"
     ]
   },
@@ -1079,8 +1079,8 @@
     "p2": "Poor harvests — common due to the Little Ice Age — decreased supply of goods → increased prices.",
     "p3": "Bullion: huge quantities of gold and silver from the New World decreased the value of precious metals → coinage became less valuable, prices rose.",
     "hints": [
-      "population rise",
-      "Little Ice Age",
+      "population",
+      "Ice Age",
       "bullion"
     ]
   },
@@ -1095,7 +1095,7 @@
     "hints": [
       "recoinage",
       "fish days",
-      "did not understand"
+      "structural"
     ]
   },
   {
@@ -1107,9 +1107,9 @@
     "p2": "Pre-war surplus of £300,000 consumed almost entirely in the first year. Crown land sales accelerated in the 1590s. Elizabeth resorted to monopolies as patronage → price rises and parliamentary dissatisfaction.",
     "p3": "War taxation reached unprecedented levels — subsidies approved in 1589 and 1593. Even this insufficient → by end of reign England effectively bankrupt, debts passed to James I.",
     "hints": [
-      "Treaty of Nonsuch",
-      "£4.5 million",
-      "surplus"
+      "Nonsuch",
+      "surplus",
+      "subsidies"
     ]
   },
   {
@@ -1146,10 +1146,10 @@
     "unit": "Unit 6 – Financial, Economic and Social Affairs",
     "front": "How did government attitudes to poverty shift in Elizabeth's later reign?",
     "p1": "1576 Act for the Relief of the Poor: 'able-bodied' poor provided work, often in a House of Correction — first recognition that even the 'undeserving poor' required help, not just punishment.",
-    "p2": "1598 Act for the Relief of the Poor: begging forbidden; JPs to appoint materials to employ the able-bodied. 1598 Act for Punishment of Rogues: 'sturdy beggars' whipped and returned to their parish of birth.",
-    "p3": "1601 Poor Law: state assumed responsibility for the Poor Rate from the Church. 'Deserving' and 'undeserving' poor distinction codified — framework for English poor relief until the 19th century.",
+    "p2": "1598 Act for the Relief of the Poor: begging forbidden; JPs to employ the able-bodied. 1598 Act for Punishment of Rogues: 'sturdy beggars' whipped and returned to parish of birth.",
+    "p3": "1601 Poor Law: state assumed responsibility for the Poor Rate from the Church — 'deserving' and 'undeserving' poor distinction codified.",
     "hints": [
-      "House of Correction",
+      "Correction",
       "sturdy beggars",
       "responsibility"
     ]
@@ -1206,7 +1206,7 @@
     "p3": "Tilbury speech: 'I know I have the body of a weak, feeble woman; but I have the heart and stomach of a king.' Performance as much as reality — the threat was already receding when she spoke.",
     "hints": [
       "fireships",
-      "Gravelines",
+      "God blew",
       "Tilbury speech"
     ]
   },
@@ -1219,9 +1219,9 @@
     "p2": "Capture of the Madre de Dios 1592 → brought riches worth half the Crown's usual annual income. English support for Dutch rebels ensured their survival and eventual success.",
     "p3": "Henry of Navarre's coronation as Henry IV 1589 seemed a huge opportunity — Elizabeth sent £20,000 and 10,000 troops. But his conversion to Catholicism and unilateral peace with Spain 1598 → negated these gains.",
     "hints": [
-      "English Armada",
-      "Madre de Dios",
-      "Henry of Navarre"
+      "disaster",
+      "Madre",
+      "Navarre"
     ]
   },
   {
@@ -1234,7 +1234,7 @@
     "p3": "Elizabeth annulled the most contentious monopolies and delivered the Golden Speech — skilfully reframing the concession as a demonstration of her love for her people. MPs left satisfied.",
     "hints": [
       "1597",
-      "salt and starch",
+      "starch",
       "Golden Speech"
     ]
   },
@@ -1262,7 +1262,7 @@
     "p3": "War provided a common enemy around which Crown and Parliament united. Double subsidy granted 1589. Burghley secured a triple subsidy 1593.",
     "hints": [
       "Peter Wentworth",
-      "war with Spain",
+      "Spain",
       "triple subsidy"
     ]
   },
@@ -1285,13 +1285,13 @@
     "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
     "front": "What happened during the Nine Years' War?",
-    "p1": "1594: Hugh O'Neill, Earl of Tyrone, led rebellion of Gaelic chieftains against English rule. Victory at Yellow Ford 1598 — the worst English defeat in Ireland — left Tyrone controlling most of the island.",
-    "p2": "Essex sent 1599 with 17,000 men — the largest force Elizabeth ever dispatched. Failed disastrously: made an unauthorised truce with Tyrone; returned to London without permission and in disgrace. 4,000 Spanish troops landed at Kinsale 1600 to support Tyrone.",
-    "p3": "Lord Mountjoy defeated the Spanish at Kinsale 1601 and secured Tyrone's surrender 1603 — just days after Elizabeth's death. War cost ~£2 million → nearly broke Elizabethan finances.",
+    "p1": "1594: Hugh O'Neill, Earl of Tyrone, led Gaelic rebellion. Victory at Yellow Ford 1598 — worst English defeat in Ireland — left Tyrone controlling most of the island.",
+    "p2": "Essex sent 1599 with 16,000 men — the largest force Elizabeth ever dispatched. Made unauthorised truce with Tyrone; returned without permission and in disgrace. 4,000 Spanish landed at Kinsale 1600.",
+    "p3": "Mountjoy defeated Spanish at Kinsale 1601; Tyrone surrendered 1603 — just days after Elizabeth's death. War cost ~£2 million → nearly broke Elizabethan finances.",
     "hints": [
       "Yellow Ford",
       "Kinsale",
-      "Lord Mountjoy"
+      "Mountjoy"
     ]
   },
   {
@@ -1360,7 +1360,7 @@
     "p3": "War taxation (unprecedented subsidies 1589 and 1593) and Elizabeth's granting of monopolies further raised prices on staple goods. The 1590s crisis combined natural, economic and fiscal pressures simultaneously.",
     "hints": [
       "bad harvests",
-      "Malthusian Crisis",
+      "Malthusian",
       "monopolies"
     ]
   },
@@ -1402,7 +1402,7 @@
     "p3": "Marxism-Leninism opposed: religion ('opium of the masses'), private property, parliamentary democracy — dismissed as a camouflage for capitalism.",
     "hints": [
       "Marx",
-      "Lenin 1917",
+      "Bolshevik",
       "religion"
     ]
   },
@@ -1416,7 +1416,7 @@
     "p3": "Communism promised economic equality; capitalism produced political freedom but economic inequality — the core ideological clash of the Cold War.",
     "hints": [
       "private ownership",
-      "parliament",
+      "elected",
       "inequality"
     ]
   },
@@ -1429,7 +1429,7 @@
     "p2": "Comintern (1919) confirmed Western fears the USSR sought to export revolution. Stalin's 1930s show trials reinforced Western image of a brutal dictatorship.",
     "p3": "Nazi-Soviet Pact (1939) shocked the West — communism and fascism temporarily allied. Munich (1938) convinced Stalin the West wanted Germany and the USSR to destroy each other.",
     "hints": [
-      "Civil War intervention",
+      "Civil War",
       "Comintern",
       "Nazi-Soviet Pact"
     ]
@@ -1458,7 +1458,7 @@
     "p3": "Soviet FM Gromyko: 'The Cold War began as a secret Cold War when the Allies delayed the second front.' The delay hardened Stalin's suspicion of Western intentions.",
     "hints": [
       "North Africa",
-      "Churchill Balkans",
+      "Balkans",
       "Gromyko"
     ]
   },
@@ -1471,9 +1471,9 @@
     "p2": "USSR had invaded eastern Poland 1939 under the Nazi-Soviet Pact. Wanted a 'friendly' (communist) government as a buffer zone — invaded via Poland three times.",
     "p3": "Poland symbolised the fundamental clash of war aims: West wanted self-determination and free elections; USSR wanted security through compliant neighbours.",
     "hints": [
-      "government in exile",
+      "exile",
       "buffer zone",
-      "clash of war aims"
+      "war aims"
     ]
   },
   {
@@ -1485,9 +1485,9 @@
     "p2": "Churchill scribbled the percentages on a piece of paper and pushed it to Stalin, who ticked it. Churchill called it a 'naughty document'.",
     "p3": "Never formally enacted — USA would not have agreed. Revealed Churchill and Stalin were already dividing Europe, undermining later Western claims to be fighting for self-determination.",
     "hints": [
+      "Romania",
       "naughty document",
-      "percentages",
-      "USA excluded"
+      "self-determination"
     ]
   },
   {
@@ -1499,7 +1499,7 @@
     "p2": "Stalin agreed to declare war on Japan once Germany was defeated.",
     "p3": "Vague agreement Germany would remain weak. Most cooperative of the three wartime conferences — the common enemy still dominated.",
     "hints": [
-      "D-Day promise",
+      "D-Day",
       "Japan",
       "most cooperative"
     ]
@@ -1514,7 +1514,7 @@
     "p3": "Poland disputed: Stalin wanted the communist Lublin Committee; Britain hosted the government in exile. Vague language contained the seeds of future conflict.",
     "hints": [
       "occupation zones",
-      "free elections promise",
+      "free elections",
       "Poland disputed"
     ]
   },
@@ -1527,8 +1527,8 @@
     "p2": "Between Yalta and Potsdam, Stalin installed a communist puppet government in Poland — Truman strongly objected to this breach of the Yalta agreements.",
     "p3": "Truman informed Stalin of the atomic bomb. Bombs dropped on Hiroshima and Nagasaki without telling him — Stalin saw this as a direct threat.",
     "hints": [
-      "reparations dispute",
-      "Poland broken promise",
+      "reparations",
+      "puppet government",
       "atomic bomb"
     ]
   },
@@ -1556,7 +1556,7 @@
     "p3": "Despite tensions, the UN provided a diplomatic forum. Korean War (1950–53): USSR was boycotting the Security Council → USA secured a resolution authorising military action.",
     "hints": [
       "veto",
-      "first meeting 1946",
+      "first meeting",
       "Korean War"
     ]
   },
@@ -1569,9 +1569,9 @@
     "p2": "Churchill called for an Anglo-American alliance — Stalin admired strength and despised weakness. The West must negotiate from a position of strength.",
     "p3": "Stalin accused Churchill of being 'a firebrand of war'. Despite inaccuracies (Soviet control was not yet complete), the speech hardened attitudes and made the Cold War visible to ordinary people.",
     "hints": [
-      "iron curtain",
+      "Stettin",
       "Anglo-American alliance",
-      "firebrand of war"
+      "firebrand"
     ]
   },
   {
@@ -1583,7 +1583,7 @@
     "p2": "Methods: rigged elections using violence and intimidation; forced mergers of socialist and communist parties; arrests and murder of opposition leaders; secret police.",
     "p3": "By 1948 pro-Moscow communist leaders established across Eastern Europe and all opposition destroyed. Term coined by Hungarian communist Mátyás Rákosi.",
     "hints": [
-      "coalitions",
+      "coalition",
       "forced mergers",
       "Rákosi"
     ]
@@ -1597,9 +1597,9 @@
     "p2": "Czechoslovakia: free elections 1946 gave communists only 38%. February 1948: communist coup — foreign minister Jan Masaryk was defenestrated.",
     "p3": "Czech coup shocked the West — played on guilt (Britain had failed to stop Hitler taking Czechoslovakia in 1938–9) and directly accelerated the formation of NATO.",
     "hints": [
-      "80% rigged",
-      "Masaryk defenestrated",
-      "accelerated NATO"
+      "Gomulka",
+      "defenestrated",
+      "accelerated"
     ]
   },
   {
@@ -1612,8 +1612,8 @@
     "p3": "Both confirmed to each side that the other was their enemy. The Long Telegram became the intellectual basis for containment — firm pressure would make the Soviets back down.",
     "hints": [
       "Kennan",
-      "Novikov",
-      "basis for containment"
+      "dominate",
+      "containment"
     ]
   },
   {
@@ -1625,9 +1625,9 @@
     "p2": "Triggered by Britain's announcement it could no longer fund anti-communist forces in Greece. By 1947 Stalin was breaking his Yalta promises about free elections in Eastern Europe.",
     "p3": "Deliberately broad — committing America not just to Greece but to opposing communist expansion anywhere in the world. End of US isolationism.",
     "hints": [
-      "Greece and Turkey",
-      "Britain withdraws",
-      "end of isolationism"
+      "Greece",
+      "Britain",
+      "isolationism"
     ]
   },
   {
@@ -1639,7 +1639,7 @@
     "p2": "16 nations attended without the Soviet bloc. Aid funded re-industrialisation of West Germany and promoted stability — preventing desperation from driving countries towards communism.",
     "p3": "Stalin called it 'Dollar Imperialism'. Tightened control of Eastern Europe in response → created Cominform (1947) and Comecon (1949). Europe now split into two economic blocs.",
     "hints": [
-      "\\$13 billion",
+      "$13 billion",
       "16 nations",
       "Dollar Imperialism"
     ]
@@ -1654,8 +1654,8 @@
     "p3": "Together they tightened Soviet political and economic control — preventing satellite states from trading freely with the West or developing independent foreign policies.",
     "hints": [
       "Yugoslavia expelled",
-      "economic control",
-      "prevent Western trade"
+      "raw materials",
+      "satellite states"
     ]
   },
   {
@@ -1669,7 +1669,7 @@
     "hints": [
       "Bizonia",
       "Deutschmark",
-      "23 June 1948"
+      "23 June"
     ]
   },
   {
@@ -1682,8 +1682,8 @@
     "p3": "Led to two separate German states: Federal Republic of Germany (West, May 1949) and German Democratic Republic (East, October 1949).",
     "hints": [
       "8,000 tonnes",
-      "NATO accelerated",
-      "two German states"
+      "propaganda disaster",
+      "Federal Republic"
     ]
   },
   {
@@ -1710,8 +1710,8 @@
     "p3": "NATO expanded as threats grew: USSR tested atomic bomb (1949), North Korea invaded South Korea (1950), permanent Paris HQ established 1952 with 35 divisions. West Germany joined May 1955.",
     "hints": [
       "Article 5",
-      "end of isolationism",
-      "West Germany 1955"
+      "isolationism",
+      "West Germany"
     ]
   },
   {
@@ -1723,9 +1723,9 @@
     "p2": "Unlike NATO, not a genuine alliance of independent states — the USSR already controlled members' foreign and defence policies. Gave legal framework for stationing Soviet troops in Eastern Europe.",
     "p3": "A clause stated it would lapse if a 'general European treaty of Collective Security' were signed — more political than defensive. Suppression of dissent could now be labelled 'Warsaw Pact action'.",
     "hints": [
-      "one week after",
-      "not independent states",
-      "political not defensive"
+      "one week",
+      "legal framework",
+      "political"
     ]
   },
   {
@@ -1752,7 +1752,7 @@
     "p3": "Became less credible as Soviet nuclear capability grew — threatening total war over a limited Soviet move looked reckless. Replaced by Kennedy's 'flexible response' in the 1960s.",
     "hints": [
       "Dulles",
-      "New Look",
+      "Korean War",
       "flexible response"
     ]
   },
@@ -1763,10 +1763,10 @@
     "front": "What was Stalin's Peace Note (1952) and why was it rejected?",
     "p1": "March 1952: Stalin proposed a unified, democratic and neutral Germany — free elections, all occupation forces withdrawn, no alliance obligations. Timed to derail West German rearmament and NATO integration.",
     "p2": "West rejected it — feared a reunified Germany would drift Soviet. Adenauer, whose strategy depended on Western alignment, opposed reunification on these terms. West doubted Stalin would deliver genuine free elections.",
-    "p3": "Historians divided: Wilfried Loth argues it was genuine; Rolf Steininger sees it as propaganda. Rejection is one of the Cold War's great 'what-ifs' — reunification may have been achievable in 1952.",
+    "p3": "Historians divided: Loth argues genuine; Steininger sees it as propaganda. One of the Cold War's great 'what-ifs' — reunification may have been achievable in 1952.",
     "hints": [
       "neutral Germany",
-      "Adenauer opposed",
+      "Adenauer",
       "what-if"
     ]
   },
@@ -1779,7 +1779,7 @@
     "p2": "De-Stalinisation launched: political prisoners released, cult of personality dismantled. Called for 'peaceful co-existence' with the West. Brief reconciliation with Yugoslavia (Belgrade Declaration).",
     "p3": "Unintended consequences — raised expectations for reform Khrushchev could not satisfy. Directly triggered the Polish October and Hungarian Uprising of 1956.",
     "hints": [
-      "20th Party Congress",
+      "Party Congress",
       "Belgrade Declaration",
       "unintended consequences"
     ]
@@ -1818,12 +1818,12 @@
     "unit": "Chapter 3 – The Cold War 1956–1984",
     "front": "What happened during the Hungarian Uprising and what were its consequences?",
     "p1": "Over 1,000 Soviet tanks rolled into Budapest. 3,000 Hungarians killed; 180,000 fled west. Janos Kadar installed. Nagy fled to the Yugoslav embassy — arrested and executed 1958.",
-    "p2": "West failed to intervene — Suez Crisis had split the Western alliance. Britain and France had invaded Egypt; America condemned them. Could not denounce Soviet aggression in Hungary while supporting Western imperialism in Egypt. Nasser's role key.",
+    "p2": "West failed to intervene — Suez Crisis split the Western alliance: Britain and France had invaded Egypt; America condemned them. Could not denounce Soviet aggression while backing Western imperialism.",
     "p3": "Showed the limits of containment: NATO was defensive and would not enter the Soviet sphere. The Iron Curtain was a reality the West accepted, not merely declared.",
     "hints": [
-      "1000 tanks",
+      "Budapest",
       "Suez Crisis",
-      "limits of containment"
+      "containment"
     ]
   },
   {
@@ -1835,8 +1835,8 @@
     "p2": "René Pleven proposed the European Defence Community — an integrated European army. France rejected it August 1954. West Germany joined NATO directly May 1955; Bundeswehr barred from nuclear weapons.",
     "p3": "Hallstein Doctrine (1955): FRG would break diplomatic relations with any state recognising the GDR. Warsaw Pact signed just days after West Germany joined NATO — a direct Soviet response.",
     "hints": [
-      "Spofford Compromise",
-      "Pleven EDC",
+      "Spofford",
+      "Bundeswehr",
       "Hallstein Doctrine"
     ]
   },
@@ -1850,8 +1850,8 @@
     "p3": "Crisis attempts failed: Paris Summit (1960) collapsed when a U-2 spy plane was shot down over the USSR and Eisenhower refused to apologise. Vienna Summit (1961) failed when Khrushchev tried to bully Kennedy.",
     "hints": [
       "brain drain",
-      "Berlin Ultimatum",
-      "U-2 Paris Summit"
+      "six months",
+      "U-2"
     ]
   },
   {
@@ -1864,8 +1864,8 @@
     "p3": "USA condemned it but accepted it rather than risk war — tacitly acknowledging Germany's division as permanent. Wall became the Cold War's defining symbol of repression until November 1989.",
     "hints": [
       "death strip",
-      "Ich bin ein Berliner",
-      "accepted not challenged"
+      "Ich bin",
+      "tacitly"
     ]
   },
   {
@@ -1891,9 +1891,9 @@
     "p2": "July 1968: USSR and Warsaw Pact states sent the Warsaw Letter — warning the reforms threatened socialism. Dubček refused to reverse them.",
     "p3": "August 1968: 500,000 Warsaw Pact troops invaded. Dubček replaced by Gustáv Husák. Jan Palach self-immolated in protest.",
     "hints": [
-      "socialism with a human face",
+      "human face",
       "Warsaw Letter",
-      "invasion August 1968"
+      "Palach"
     ]
   },
   {
@@ -1907,7 +1907,7 @@
     "hints": [
       "Brezhnev Doctrine",
       "Albania left",
-      "Sinatra Doctrine link"
+      "Sinatra Doctrine"
     ]
   },
   {
@@ -1916,7 +1916,7 @@
     "unit": "Chapter 3 – The Cold War 1956–1984",
     "front": "How did espionage shape the early Cold War?",
     "p1": "Klaus Fuchs passed Manhattan Project atomic designs to the Soviets — accelerated their bomb by years. Julius and Ethel Rosenberg (executed 1953) passed related intelligence, inflaming McCarthyism in the USA.",
-    "p2": "Cambridge Five (Philby, Burgess, Maclean, Blunt, Cairncross): recruited at Cambridge in the 1930s, spied inside British intelligence for decades. Kim Philby — head of MI6's anti-Soviet section — destroyed Western spy networks and alerted Moscow to operations against it. Fled to USSR 1963.",
+    "p2": "Cambridge Five (Philby, Burgess, Maclean, Blunt, Cairncross): recruited at Cambridge in the 1930s. Philby — head of MI6's anti-Soviet section — destroyed Western spy networks. Fled to USSR 1963.",
     "p3": "U-2 spy plane (1960) shot down over the USSR — Eisenhower refused to apologise, wrecking the Paris Summit. Showed how espionage directly destroyed diplomacy.",
     "hints": [
       "Fuchs",
@@ -1948,8 +1948,8 @@
     "p3": "December 1981: General Jaruzelski declared martial law — Solidarity banned, Walesa imprisoned. Survived underground; Pope John Paul II (a Pole, elected 1979) crucial in sustaining Polish resolve.",
     "hints": [
       "Walesa",
-      "martial law",
-      "Pope John Paul II"
+      "strike",
+      "martial law"
     ]
   },
   {
@@ -1962,7 +1962,7 @@
     "p3": "Nuclear parity made confrontation too dangerous — by the late 1960s both sides had second-strike capability. Cuban Missile Crisis had shown the risks of brinkmanship.",
     "hints": [
       "Ussuri River",
-      "Nixon and Kissinger",
+      "Kissinger",
       "second-strike capability"
     ]
   },
@@ -1977,7 +1977,7 @@
     "hints": [
       "5-year freeze",
       "MIRVs",
-      "first formal agreement"
+      "Helsinki Accords"
     ]
   },
   {
@@ -1989,7 +1989,7 @@
     "p2": "Basket 3 ignored in practice by the USSR — but gave Eastern European dissidents a legal basis to demand their rights, increasingly important in the 1980s.",
     "p3": "Same year: Apollo-Soyuz mission — US and Soviet astronauts shaking hands in orbit, symbolising the spirit of détente.",
     "hints": [
-      "three baskets",
+      "Basket 1",
       "Basket 3",
       "Apollo-Soyuz"
     ]
@@ -2003,7 +2003,7 @@
     "p2": "Basic Treaty (1972) — FRG recognised the GDR as a sovereign state; both Germanies joined the UN. West Germany-Czechoslovakia Treaty (1973) revoked the Munich Agreement.",
     "p3": "Brandt won Nobel Peace Prize 1971. Resigned 1974 after aide Gunter Guillaume exposed as Stasi spy. Ostpolitik's achievements maintained by subsequent governments.",
     "hints": [
-      "Moscow and Warsaw Treaties",
+      "Moscow Treaty",
       "Basic Treaty",
       "Guillaume"
     ]
@@ -2018,7 +2018,7 @@
     "p3": "Christmas Day 1979: 100,000 Soviet forces invaded. Killed Afghan leader Amin, installed pro-Moscow Kamal. Red Army ill-prepared for mountain guerrilla warfare. USA's Operation Cyclone supplied Mujahedeen via Pakistan.",
     "hints": [
       "PDPA",
-      "Central Asia fear",
+      "Central Asian",
       "Operation Cyclone"
     ]
   },
@@ -2031,9 +2031,9 @@
     "p2": "War eroded Soviet willingness to use military intervention — directly influenced Gorbachev's decision not to use force to maintain communist regimes in 1989.",
     "p3": "When glasnost freed the press, Afghanistan's failures became public — fuelling demands for political change. Spiralling costs drained an economy already over-spending on defence.",
     "hints": [
-      "Carter Doctrine",
-      "Gorbachev 1989",
-      "glasnost exposure"
+      "Carter",
+      "Gorbachev",
+      "glasnost"
     ]
   },
   {
@@ -2047,7 +2047,7 @@
     "hints": [
       "evil empire",
       "Star Wars",
-      "Able Archer 83"
+      "Able Archer"
     ]
   },
   {
@@ -2073,9 +2073,9 @@
     "p2": "Poor living standards → unrest in satellite states (e.g. Solidarity in Poland). Reagan's SDI threatened to make Soviet ICBMs obsolete. Andropov and Chernenko — Brezhnev's two elderly successors — meant stagnation at a critical moment.",
     "p3": "When Gorbachev became leader 1985, radical change was universally understood to be necessary. USSR over-spending on defence, producing too few consumer goods, losing the technological race.",
     "hints": [
-      "era of stagnation",
+      "stagnation",
       "Andropov",
-      "Gorbachev 1985"
+      "over-spending"
     ]
   },
   {
@@ -2088,8 +2088,8 @@
     "p3": "Both policies undermined Soviet authority: glasnost exposed the depth of problems; perestroika created disruption without growth. Together they set in motion forces that destroyed the USSR.",
     "hints": [
       "private enterprise",
-      "media controls relaxed",
-      "undermined authority"
+      "openness",
+      "undermined Soviet"
     ]
   },
   {
@@ -2115,9 +2115,9 @@
     "p2": "Single most important decision enabling the 1989 revolutions — removed the threat of Soviet military intervention that had crushed Hungary (1956) and Czechoslovakia (1968).",
     "p3": "By 1989 Gorbachev would not bolster unpopular communist regimes unwilling to reform. Satellite states moved rapidly to exploit the new freedom.",
     "hints": [
-      "UN speech 1988",
-      "Hungary and Czechoslovakia",
-      "would not bolster"
+      "abandoned",
+      "crushed",
+      "bolster"
     ]
   },
   {
@@ -2127,11 +2127,11 @@
     "front": "What happened in Poland and Hungary in 1989?",
     "p1": "Poland: Round Table Agreements (April 1989) — Solidarity recognised as a party, allowed to contest 35% of parliamentary seats. June 1989 elections: Solidarity landslide — first non-communist government in Eastern Europe since 1948.",
     "p2": "Hungary: reformist Imre Pozsgay declared January 1989 the communist monopoly must end. Hungary opened its borders with Austria August 1989 — 150,000 East Germans fled West, triggering the crisis that brought down the Berlin Wall.",
-    "p3": "Both demonstrated the Sinatra Doctrine was real and that revolutions would not be crushed. Poland's success triggered a wave of revolutions across the Eastern bloc.",
+    "p3": "Both confirmed the Sinatra Doctrine was real — Poland's success triggered a wave of revolutions across the Eastern bloc.",
     "hints": [
       "Solidarity landslide",
       "Pozsgay",
-      "borders opened"
+      "revolutions"
     ]
   },
   {
@@ -2141,11 +2141,11 @@
     "front": "Why did the Berlin Wall fall on 9 November 1989?",
     "p1": "Hungary's open border allowed 150,000 East Germans to flee West → mass demonstrations in East German cities, especially Leipzig. Honecker could not count on Soviet support — Gorbachev told him to make changes.",
     "p2": "9 November 1989: government announced East Germans could travel freely. Border guards — overwhelmed by crowds — opened crossings. Crowds demolished the Wall with hammers and pickaxes that night.",
-    "p3": "Defining symbolic moment of the Cold War's end. Kennedy had pledged 'Ich bin ein Berliner' in 1963 — 26 years later the Wall was gone. Confirmed the Sinatra Doctrine was real.",
+    "p3": "Kennedy pledged 'Ich bin ein Berliner' 1963 — 26 years later the Wall fell. Confirmed the Sinatra Doctrine was real.",
     "hints": [
-      "Leipzig demonstrations",
-      "overwhelmed border guards",
-      "Ich bin ein Berliner"
+      "Leipzig",
+      "overwhelmed",
+      "Ich bin"
     ]
   },
   {
@@ -2158,7 +2158,7 @@
     "p3": "Velvet Divorce (1 January 1993): Czechoslovakia peacefully split into Czech Republic and Slovakia — agreed by Vaclav Klaus and Vladimir Meciar without a referendum.",
     "hints": [
       "Havel",
-      "Ceausescu executed",
+      "Timisoara",
       "Velvet Divorce"
     ]
   },
@@ -2172,8 +2172,8 @@
     "p3": "Gorbachev agreed to German NATO membership in exchange for assurances NATO would not expand eastwards — an assurance that became deeply controversial in later decades.",
     "hints": [
       "Kohl",
-      "Two Plus Four Treaty",
-      "NATO not expand"
+      "Two Plus",
+      "eastwards"
     ]
   },
   {
@@ -2182,12 +2182,12 @@
     "unit": "Chapter 4 – The End of the Cold War 1984–1995",
     "front": "What caused the coup of August 1991 and what were its consequences?",
     "p1": "Gorbachev's reforms unleashed forces he could not control. Soviet republics, seeing satellite states gain independence, demanded the same — Estonia, Latvia and Lithuania declared independence 1990.",
-    "p2": "August 1991: eight Communist hardliners staged a coup, fearing the imminent Union Treaty would dissolve the USSR. Boris Yeltsin led the resistance — standing on a tank outside parliament, he rallied popular opposition. Coup collapsed in three days.",
+    "p2": "August 1991: eight Communist hardliners staged a coup fearing the Union Treaty would dissolve the USSR. Boris Yeltsin rallied opposition on a tank outside parliament — coup collapsed in three days.",
     "p3": "Christmas Day 1991: Gorbachev resigned and dissolved the USSR. 15 independent states emerged. Russia inherited the UN Security Council seat and nuclear arsenal. USA emerged as the world's sole superpower.",
     "hints": [
-      "Baltic independence",
-      "Yeltsin on a tank",
-      "Christmas Day 1991"
+      "Estonia",
+      "Yeltsin",
+      "sole superpower"
     ]
   },
   {
@@ -2210,7 +2210,7 @@
     "unit": "Chapter 4 – The End of the Cold War 1984–1995",
     "front": "What caused the collapse of Yugoslavia?",
     "p1": "Tito had kept Yugoslavia independent from the USSR. After his death 1980 the federation fractured. Serbian nationalist Slobodan Milosevic became president 1989 and pressed Serbian interests across Yugoslavia.",
-    "p2": "Slovenia and Croatia declared independence June 1991 — war broke out immediately. In Bosnia: three-way conflict between Bosnian Muslims, Bosnian Serbs and Bosnian Croats. Serbian forces conducted 'ethnic cleansing'. Srebrenica massacre July 1995 — 8,000 Bosnian Muslim men and boys murdered.",
+    "p2": "Slovenia and Croatia declared independence June 1991 → war broke out immediately. Bosnia: three-way conflict; Serbian 'ethnic cleansing'. Srebrenica massacre 1995 — 8,000 Bosnian Muslim men and boys murdered.",
     "p3": "NATO bombing 1995 forced the Dayton Peace Agreement. Yugoslavia showed communism had suppressed rather than resolved ethnic nationalism — its removal unleashed catastrophic force.",
     "hints": [
       "Milosevic",
