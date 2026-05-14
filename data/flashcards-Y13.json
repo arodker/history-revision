@@ -1187,24 +1187,6 @@
     ]
   },
   {
-    "no": 72,
-    "section": "lab",
-    "period": "start",
-    "periods": [
-      "start"
-    ],
-    "isDepthStudy": false,
-    "front": "What was the position of labour and union rights in 1865?",
-    "p1": "No legal protections for unions — courts upheld employers' right to suppress organising. 20 state governments had laws allowing militias to intervene in labour disputes",
-    "p2": "NLU (1866): 300,000 members at peak — but collapsed after Sylvis's death (1869). Craft unions like Cigar Makers represented less than 10% of workers in any industry",
-    "p3": "Working conditions dire: 3,000 railroad workers killed and 20,000 injured annually in early 1870s. 750,000 children under 15 in industrial labour. Immigrants worked 60–70 hours/week for as little as $1/day",
-    "hints": [
-      "no protections",
-      "NLU 1866",
-      "5% union"
-    ]
-  },
-  {
     "no": 73,
     "section": "lab",
     "period": "early-industrialisation",
@@ -1512,24 +1494,6 @@
     ]
   },
   {
-    "no": 90,
-    "section": "lab",
-    "period": "end",
-    "periods": [
-      "end"
-    ],
-    "isDepthStudy": false,
-    "front": "What was the position of labour and union rights by 1992?",
-    "p1": "Union membership 16% of workforce — down from 35% (1945) and 24% (1979). Deindustrialisation, automation and globalisation eroded traditional union base. Manufacturing jobs declined 40% from 1970 peak.",
-    "p2": "Legal framework survived: Wagner Act, NLRB, OSHA, Civil Rights Act (1964), Equal Pay Act (1963) all in force. But employers routinely used union-busting consultants and relocated to right-to-work states",
-    "p3": "AFL-CIO members still earned more than non-unionised workers but gap narrowing. Women and minority workers still disproportionately in non-unionised, lower-paid roles",
-    "hints": [
-      "16% membership",
-      "right-to-work",
-      "survived"
-    ]
-  },
-  {
     "no": 91,
     "section": "lab",
     "period": "gilded-age-ds",
@@ -1728,25 +1692,6 @@
     ]
   },
   {
-    "no": 103,
-    "section": "lab",
-    "period": "start",
-    "periods": [
-      "start",
-      "early-industrialisation"
-    ],
-    "isDepthStudy": false,
-    "front": "What was the position of labour rights in 1865?",
-    "p1": "No legal protections: no minimum wage, no safety standards, no union recognition → 2,000 rail workers killed in 1889 alone → children worked 12-hour shifts → unskilled workers earned $1-3/week.",
-    "p2": "Unions in infancy: NLU (1866) — collapsed after leader Sylvis died (1869) → KOL (1869): 20,000 members growing → no federal labour legislation → workers entirely at employer mercy.",
-    "p3": "Wages: women earned half male wages → immigrants accepted lower → Black workers excluded from most unions → CNLU (1869) formed separately → fewer than 5% of workers unionised.",
-    "hints": [
-      "5% union",
-      "Molly Maguires",
-      "contract"
-    ]
-  },
-  {
     "no": 104,
     "section": "lab",
     "period": "early-industrialisation",
@@ -1911,24 +1856,6 @@
     ]
   },
   {
-    "no": 113,
-    "section": "lab",
-    "period": "wwii-taft-hartley",
-    "periods": [
-      "wwii-taft-hartley"
-    ],
-    "isDepthStudy": false,
-    "front": "What was the post-WWII strike wave (1946) and its consequences?",
-    "p1": "1946: 5,000 strikes, 4.6 million workers — largest strike wave in U.S. history → pent-up pressure from wartime no-strike pledges → steel, auto, coal, railways all struck.",
-    "p2": "Public backlash: disruption of essential services eroded sympathy → Republicans won Congress in 1946 mid-terms partly on anti-union platform.",
-    "p3": "Taft-Hartley (1947): passed over Truman's veto → banned secondary strikes and closed shops → allowed right-to-work laws → required anti-communist oaths from union leaders.",
-    "hints": [
-      "4.6 million",
-      "Truman",
-      "Taft-Hartley"
-    ]
-  },
-  {
     "no": 114,
     "section": "lab",
     "period": "fifties-seventies",
@@ -1994,7 +1921,7 @@
     "front": "What was the significance of Red Cloud's War and Fort Laramie?",
     "p1": "Red Cloud's War (1866-68): Lakota Sioux defeated U.S. Army in Powder River Country → Treaty of Fort Laramie (1868): guaranteed Black Hills 'in perpetuity'.",
     "p2": "Gold discovered (1874): government demanded sale → Sioux refused → 1877: Black Hills seized in violation of treaty → government threatened to stop rations.",
-    "p3": "Little Bighorn (1876): Crazy Horse and Sitting Bull annihilated Custer's 7th Cavalry → only major Native military victory → BUT federal response intensified → Wounded Knee (1890) followed.",
+    "p3": "Significance: first major Native military victory on Plains → only treaty USA ever signed that required it to abandon forts → BUT gold in Black Hills made treaty violation inevitable.",
     "hints": [
       "Red Cloud",
       "Fort Laramie",
@@ -2434,9 +2361,9 @@
     ],
     "isDepthStudy": false,
     "front": "What was the significance of AIRFA and the Indian Child Welfare Act?",
-    "p1": "AIRFA (1978): protected right to practice traditional religions → reversed decades of ceremony bans — Sun Dance, Ghost Dance suppressed since 1880s → allowed access to sacred sites.",
-    "p2": "ICWA (1978): prevented removal of Native children to non-Native homes → tribal authority over child welfare → addressed systematic removal that had destroyed cultural transmission.",
-    "p3": "BUT: AIRFA had no enforcement mechanism → 70% of Native religious leaders still reported struggles by 1992 → Graves Protection Act (1990): 10,000 sacred items and remains returned.",
+    "p1": "AIRFA (American Indian Religious Freedom Act, 1978): protected right to practice traditional religions → reversed decades of ceremony bans — Sun Dance, Ghost Dance suppressed since 1880s → allowed access to sacred sites.",
+    "p2": "ICWA (Indian Child Welfare Act, 1978): prevented removal of Native children to non-Native homes → tribal authority over child welfare → addressed systematic removal since boarding school era.",
+    "p3": "AIRFA had no enforcement mechanism → 70% of Native religious leaders still struggled accessing sacred sites by 1992 → Graves Protection Act (1990) returned 10,000 sacred items.",
     "hints": [
       "AIRFA",
       "ICWA",
@@ -2459,24 +2386,6 @@
       "150 casinos",
       "25% poverty",
       "Sioux refused"
-    ]
-  },
-  {
-    "no": 143,
-    "section": "na",
-    "period": "na-start",
-    "periods": [
-      "na-start"
-    ],
-    "isDepthStudy": false,
-    "front": "What was the position of Native American rights in 1865?",
-    "p1": "By 1865: Plains tribes — Sioux, Cheyenne, Comanche — still controlled vast territories → buffalo herds: 30 million → treaty system theoretically recognised tribal sovereignty.",
-    "p2": "Manifest Destiny ideology: white settlement divinely ordained → Social Darwinism: Natives 'backward' → Indian Appropriations Act (1871) would end treaty-making — not yet passed.",
-    "p3": "Economy: buffalo central — food, clothing, shelter, spiritual practice → before railroad and systematic slaughter → before Dawes Act → before boarding schools → about to collapse entirely.",
-    "hints": [
-      "wards state",
-      "Homestead",
-      "missionaries"
     ]
   },
   {
@@ -2513,24 +2422,6 @@
       "Sioux Nation",
       "$106m refused",
       "Oneida"
-    ]
-  },
-  {
-    "no": 146,
-    "section": "na",
-    "period": "na-end",
-    "periods": [
-      "na-end"
-    ],
-    "isDepthStudy": false,
-    "front": "What was the position of Native American rights by 1992?",
-    "p1": "By 1992: per capita income half national average → unemployment 50-80% on many reservations → 25% below poverty line → 60% economically reliant on federal assistance.",
-    "p2": "Political: Self-Determination Act (1975): 200+ tribes administering own programmes → Gaming Act (1988): economic opportunity for some → sovereignty legally recognised but practically limited.",
-    "p3": "Cultural: AIRFA (1978) protected religious practices → ICWA (1978): tribal child welfare jurisdiction → Graves Protection Act (1990): 10,000 items returned → languages partially revived.",
-    "hints": [
-      "25% poverty",
-      "casinos",
-      "Sioux refused"
     ]
   },
   {
@@ -2916,7 +2807,7 @@
     "front": "What was the significance of Crazy Horse and Sitting Bull?",
     "p1": "Sitting Bull (Hunkpapa Lakota): spiritual leader → refused to sign treaties → led Black Hills resistance → vision at Little Bighorn inspired warriors → killed by Indian police 1890.",
     "p2": "Crazy Horse (Oglala Lakota): military leader → refused reservation life → led warriors at Little Bighorn — annihilated Custer's 7th Cavalry → surrendered 1877 → killed at Fort Robinson.",
-    "p3": "Little Bighorn (1876): only major Native military victory → BUT both killed after surrender → Black Hills lost → Wounded Knee Massacre (1890) followed.",
+    "p3": "Significance: both refused to sign away lands → both killed after eventual surrender → showed military resistance could achieve tactical victories but federal resources were ultimately overwhelming.",
     "hints": [
       "Little Bighorn",
       "refused treaties",
@@ -3253,32 +3144,13 @@
     ],
     "isDepthStudy": false,
     "front": "What was the significance of NARF and Oneida v Oneida (1974)?",
-    "p1": "NARF (Native American Rights Fund, 1970): provided legal representation for tribes → fighting for treaty enforcement, land claims and sovereignty in federal courts.",
-    "p2": "Oneida v Oneida (1974): Oneida Nation could sue for land claims under federal treaties → precedent for dozens of tribal land claims → NARF used this to pursue land rights.",
-    "p3": "Fisher v Montana (1976): tribal courts decide on adoptions → Bryan v Itasca (1976): states cannot tax reservations → built tribal sovereignty case by case.",
+    "p1": "NARF (Native American Rights Fund, 1970): provided legal representation for tribes → first organisation dedicated to pursuing Native rights through federal courts → funded cases that established key precedents.",
+    "p2": "NARF victories: Menominee Restoration Act (1973) — first terminated tribe restored → cases challenging termination across 20+ tribes → built legal infrastructure for self-determination era.",
+    "p3": "By 1992: over 200 treaty rights cases pursued → sovereignty affirmed case by case in courts → but slow progress and inconsistent enforcement → legal victories not always translated into practical rights.",
     "hints": [
-      "NARF",
-      "Oneida",
-      "Fisher Bryan"
-    ]
-  },
-  {
-    "no": 188,
-    "section": "na",
-    "period": "na-red-power-ds",
-    "periods": [
-      "na-red-power-ds",
-      "na-self-determination"
-    ],
-    "isDepthStudy": false,
-    "front": "What was the significance of the Indian Child Welfare Act (1978)?",
-    "p1": "Context: since boarding school era, Native children systematically removed → placed in white foster and adoptive homes → by 1970s: 25-35% of all Native children separated from families.",
-    "p2": "ICWA (1978): prevented removal of Native children to non-Native homes → tribal authority over child welfare cases → required active efforts to keep children within extended family and community.",
-    "p3": "Fisher v Montana (1976) had established tribal court adoption jurisdiction → ICWA built on this → addressed ongoing cultural destruction that boarding schools had represented in a new form.",
-    "hints": [
-      "25-35% removed",
-      "tribal jurisdiction",
-      "ICWA"
+      "NARF 1970",
+      "Menominee",
+      "200 cases"
     ]
   },
   {
@@ -3528,24 +3400,6 @@
     ]
   },
   {
-    "no": 202,
-    "section": "wom",
-    "period": "wom-start",
-    "periods": [
-      "wom-start"
-    ],
-    "isDepthStudy": false,
-    "front": "What was the position of women in 1865?",
-    "p1": "No vote at any level → coverture: husband controlled all property, contracts and wages → 5-7 children → 1 in 5 died in childbirth → only 3% attended college vs 25% of men.",
-    "p2": "15% employed outside home → 17% at half male wages → immigrant women: 70 hours/week in sweatshops → 40% of Black women in domestic service → 400,000+ Civil War widows with no safety net.",
-    "p3": "KOL only union welcoming women → Comstock Laws (1873): criminalised contraceptive information → suffrage campaigns confined to 'moral' sphere.",
-    "hints": [
-      "coverture",
-      "5-7 children",
-      "KOL"
-    ]
-  },
-  {
     "no": 203,
     "section": "wom",
     "period": "wom-reconstruction",
@@ -3561,24 +3415,6 @@
       "15th excluded",
       "Happersett",
       "NWSA AWSA"
-    ]
-  },
-  {
-    "no": 204,
-    "section": "wom",
-    "period": "wom-gilded-age",
-    "periods": [
-      "wom-gilded-age"
-    ],
-    "isDepthStudy": false,
-    "front": "What were the educational and employment gains for women in the Gilded Age?",
-    "p1": "Education: 111,000 in higher education by 1870 (21%) → 32% by 1880 → by 1900 half of all high school graduates were female",
-    "p2": "Domestic technology: plumbing, heating, commercial laundries reduced household burdens → birth rate: 5.42 per family (1850) → 3.56 (1900) → some women entering professional roles.",
-    "p3": "BUT: immigrant women: 70 hours/week for $5 → only 2% of trade unionists → education for middle-class women framed as preparation for marriage",
-    "hints": [
-      "32% 1880",
-      "clerical tenfold",
-      "2% unionists"
     ]
   },
   {
@@ -3688,24 +3524,6 @@
       "white middle-class",
       "80% Gallup",
       "Shepherd-Towner"
-    ]
-  },
-  {
-    "no": 211,
-    "section": "wom",
-    "period": "wom-new-deal",
-    "periods": [
-      "wom-new-deal"
-    ],
-    "isDepthStudy": false,
-    "front": "What were the gains for women during the New Deal?",
-    "p1": "Perkins: first female Cabinet member → FLSA (1938): minimum wage, 44-hour week, child labour ban → WPA employed 400,000 women by 1938 → women union members 800,000 by 1940.",
-    "p2": "Eleanor Roosevelt pushed FDR on appointments → Florence Allen: first female Circuit Court judge → Bethune: led NYA Negro Affairs → Aid to Dependent Children (1935): first federal support for single mothers.",
-    "p3": "CIO more inclusive → 1937 Steelworkers' Strike: women played central organising roles → New Deal legal framework (NLRB, FLSA) later supported equal pay campaigns.",
-    "hints": [
-      "Perkins FLSA",
-      "WPA 400,000",
-      "800,000 unions"
     ]
   },
   {
@@ -3946,24 +3764,6 @@
     ]
   },
   {
-    "no": 225,
-    "section": "wom",
-    "period": "wom-end",
-    "periods": [
-      "wom-end"
-    ],
-    "isDepthStudy": false,
-    "front": "What was the position of women by 1992?",
-    "p1": "Political: 55% women voted vs 49% men → 24 women to House (11%), 6 to Senate (5%) → O'Connor: first female Supreme Court Justice (1981) → ERA unratified.",
-    "p2": "Social: 60% of women employed → average 2.2 children — lowest since 19th century → outpacing men in graduation: 84% vs 78% → 40% of law and medical degrees.",
-    "p3": "Economic: women 40% of workforce → 75 cents per dollar → glass ceiling: only 10% of management → Roe under threat — Planned Parenthood v Casey (1992) allowed state restrictions.",
-    "hints": [
-      "ERA unratified",
-      "75 cents",
-      "60% employed"
-    ]
-  },
-  {
     "no": 226,
     "section": "wom",
     "period": "wom-new-feminism",
@@ -4010,7 +3810,7 @@
     "front": "What were the limits on women's progress during the Gilded Age?",
     "p1": "No federal suffrage → Minor v Happersett (1875) blocked route → only 4 states by 1900 → women paid half male wages → immigrant women: 70 hours/week for $5.",
     "p2": "Education gains for white middle class only → Black women excluded from mainstream suffrage → Comstock Laws blocked reproductive rights.",
-    "p3": "1882 Lawrence: no male union support → AFL excluded women → only 2% of trade unionists → temperance imposed middle-class values on working-class immigrant communities.",
+    "p3": "Temperance movement: WCTU imposed middle-class values → alienated working-class immigrant women → divided potential coalition → suffrage framed as 'moral' reform rather than political right.",
     "hints": [
       "Happersett",
       "2% unionists",
@@ -4146,24 +3946,6 @@
     ]
   },
   {
-    "no": 236,
-    "section": "wom",
-    "period": "wom-new-deal",
-    "periods": [
-      "wom-new-deal"
-    ],
-    "isDepthStudy": true,
-    "front": "How did the New Deal fail women?",
-    "p1": "FLSA (1938): female teachers earned 20% less than male in 1939 → CCC excluded women entirely → WPA: one-family-member policy favoured men.",
-    "p2": "Social Security excluded domestic and agricultural workers — majority of women of colour → 80% Gallup poll (1936) opposed married women working → male breadwinner assumed throughout.",
-    "p3": "Black women excluded by white-administered Southern relief → Mexican American women vulnerable to deportation → rural women had least access.",
-    "hints": [
-      "CCC excluded",
-      "pay gap",
-      "women colour"
-    ]
-  },
-  {
     "no": 237,
     "section": "wom",
     "period": "wom-new-deal",
@@ -4270,5 +4052,405 @@
       "Black dismissed",
       "slow practice"
     ]
+  },
+  {
+    "no": 255,
+    "section": "wom",
+    "period": "wom-start",
+    "periods": [
+      "wom-start"
+    ],
+    "front": "What were the political rights of women in 1865?",
+    "p1": "No vote at any level → Seneca Falls (1848) had demanded suffrage but gains minimal → NWSA and AWSA not yet formed (both 1869) → 15th Amendment (1870) would give Black men the vote but exclude women entirely.",
+    "p2": "No right to sit on juries, hold public office or stand for election → Minor v Happersett (1875) would confirm citizenship did not guarantee vote.",
+    "p3": "Some women beginning to organise: Susan B. Anthony and Elizabeth Cady Stanton campaigning → WCTU formed 1874 → Wyoming Territory granted female suffrage 1869.",
+    "hints": [
+      "no vote",
+      "15th excluded",
+      "Seneca Falls"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 256,
+    "section": "wom",
+    "period": "wom-start",
+    "periods": [
+      "wom-start"
+    ],
+    "front": "What was the social position of women in 1865?",
+    "p1": "Coverture: husband controlled all property, contracts and wages → average 5-7 children → 1 in 5 died in childbirth → only 3% attended college vs 25% of men.",
+    "p2": "Cult of domesticity: women confined to 'private sphere' — home, family, religion → any paid work seen as failure of husband's duty → immigrant women 70 hours/week in sweatshops.",
+    "p3": "Comstock Laws (1873) would criminalise contraceptive information → no reproductive rights → divorce almost impossible → domestic violence not recognised as crime.",
+    "hints": [
+      "coverture",
+      "1 in 5 died",
+      "private sphere"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 257,
+    "section": "wom",
+    "period": "wom-start",
+    "periods": [
+      "wom-start"
+    ],
+    "front": "What was the economic position of women in 1865?",
+    "p1": "15% employed outside home → 17% in industrial jobs at half male wages → 40% of Black women in South in domestic service — no legal protection or union membership.",
+    "p2": "AFL-CIO not yet formed but predecessor unions excluded women → KOL (1869) only major union to welcome women → 400,000+ Civil War widows with no financial safety net.",
+    "p3": "No minimum wage, no maternity rights, no equal pay legislation → women could not own property or sign contracts independently under coverture.",
+    "hints": [
+      "half wages",
+      "KOL only",
+      "no property"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 258,
+    "section": "wom",
+    "period": "wom-end",
+    "periods": [
+      "wom-end"
+    ],
+    "front": "What were the political rights of women by 1992?",
+    "p1": "Year of the Woman: 24 women elected to House (11%), 6 to Senate → O'Connor: first female Supreme Court Justice (1981) → Ferraro: first female VP nominee (1984).",
+    "p2": "55% women voted vs 49% men → political participation exceeded men's → BUT ERA unratified — no constitutional guarantee of sex equality → Roe under threat from Casey (1992).",
+    "p3": "Women's Political Caucus (1971) had built pipeline → BUT only 10% of elected federal officials were women → glass ceiling in politics as well as workplace.",
+    "hints": [
+      "24 to House",
+      "ERA unratified",
+      "10% elected"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 259,
+    "section": "wom",
+    "period": "wom-end",
+    "periods": [
+      "wom-end"
+    ],
+    "front": "What was the social position of women by 1992?",
+    "p1": "60% of women employed — working mothers the norm → average 2.2 children — lowest since 19th century → women outpacing men in graduation: 84% vs 78%.",
+    "p2": "40% of law and medical degrees → Title IX (1972) transformed girls' sports and education → BUT domestic violence still underreported and underprosecuted → rape shield laws still developing.",
+    "p3": "Roe v Wade (1973) gave reproductive rights → BUT Hyde Amendment (1976) restricted funding → Planned Parenthood v Casey (1992) allowed state restrictions → rights fragile.",
+    "hints": [
+      "60% employed",
+      "40% law degrees",
+      "Roe fragile"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 260,
+    "section": "wom",
+    "period": "wom-end",
+    "periods": [
+      "wom-end"
+    ],
+    "front": "What was the economic position of women by 1992?",
+    "p1": "Women 40% of workforce → 75 cents per dollar (up from 59 cents in 1963) → glass ceiling: only 10% of senior management were women.",
+    "p2": "Equal Pay Act (1963) + Title VII (1964) gave legal foundation → EEOC enforced → BUT enforcement slow and glass ceiling entrenched → CLUW (1974) pushed unions on equal pay.",
+    "p3": "Deindustrialisation hit women in manufacturing → but service sector growth created new employment → women dominated healthcare, education, retail — often lower-paid sectors.",
+    "hints": [
+      "75 cents",
+      "10% management",
+      "glass ceiling"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 261,
+    "section": "lab",
+    "period": "start",
+    "periods": [
+      "start"
+    ],
+    "front": "What was the right to exist and collectively bargain in 1865?",
+    "p1": "No legal protections for unions → courts upheld employers' right to suppress organising → 20 state governments had laws allowing militias to intervene in labour disputes.",
+    "p2": "NLU (1866): first national federation, 300,000 at peak — but collapsed after Sylvis died (1869) → craft unions represented less than 10% of workers in any industry.",
+    "p3": "No obligation for employers to recognise unions → KOL (1869) growing but excluded from political power → collective bargaining had no legal standing.",
+    "hints": [
+      "no legal rights",
+      "NLU collapsed",
+      "10% craft"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 262,
+    "section": "lab",
+    "period": "start",
+    "periods": [
+      "start"
+    ],
+    "front": "What was the right to strike in 1865?",
+    "p1": "Fewer than 5% of strikes led to concessions → scab labour widespread: 20-30 replacements per 100 strikers → blacklisting common — in Pennsylvania shared among 50 mine operators.",
+    "p2": "Courts issued injunctions against strikes in railroads and mining → Molly Maguires: violence demonised the labour movement → 10 members arrested and executed 1876.",
+    "p3": "Public hostility high: newspapers called strikers 'rioters' or 'anarchists' → no legal right to strike recognised → strikes treated as criminal conspiracies restraining trade.",
+    "hints": [
+      "5% success",
+      "blacklisting",
+      "criminal conspiracy"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 263,
+    "section": "lab",
+    "period": "start",
+    "periods": [
+      "start"
+    ],
+    "front": "What were fair and safe working conditions in 1865?",
+    "p1": "3,000 railroad workers killed and 20,000 injured annually → children as young as 8 worked 12-hour shifts for $1/week → 750,000 children under 15 in industrial labour.",
+    "p2": "Women 15% of industrial workforce → female textile workers: $3-6/week vs $7-10 for men → immigrants 60-70 hours/week in sweatshops for $1/day.",
+    "p3": "No minimum wage, no safety legislation, no compensation for injury → no legal framework for employer-provided benefits → injured workers simply dismissed.",
+    "hints": [
+      "3,000 killed",
+      "child labour",
+      "no safety"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 264,
+    "section": "lab",
+    "period": "end",
+    "periods": [
+      "end"
+    ],
+    "front": "What was the right to exist and collectively bargain by 1992?",
+    "p1": "Wagner Act (1935) legally protected collective bargaining → NLRB enforced → but Taft-Hartley (1947) allowed right-to-work laws in 21 states → union membership collapsed: 35% (1945) → 16% (1992).",
+    "p2": "PATCO (1981): Reagan fired 11,000 striking air traffic controllers → emboldened employers to adopt anti-union stances → union-busting consultants and outsourcing standard practice.",
+    "p3": "AFL-CIO members still earned 20% more than non-unionised equivalents → collective bargaining legally protected but practically weakened → private sector unions near collapse.",
+    "hints": [
+      "16% membership",
+      "PATCO",
+      "20% premium"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 265,
+    "section": "lab",
+    "period": "end",
+    "periods": [
+      "end"
+    ],
+    "front": "What was the right to strike by 1992?",
+    "p1": "Right to strike legally protected but heavily restricted: Taft-Hartley banned secondary strikes and closed shops → Norris-LaGuardia (1932) had removed injunctions but Taft-Hartley reintroduced restrictions.",
+    "p2": "PATCO (1981): government demonstrated strikes could be broken with mass dismissals → strikes declined sharply: 381 major strikes (1970) → 40 (1992).",
+    "p3": "Right-to-work laws in 21 states undermined solidarity → outsourcing and automation reduced workers' bargaining leverage → strike weapon largely neutered by 1992.",
+    "hints": [
+      "Taft-Hartley",
+      "40 strikes 1992",
+      "right-to-work"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 266,
+    "section": "lab",
+    "period": "end",
+    "periods": [
+      "end"
+    ],
+    "front": "What were fair and safe working conditions by 1992?",
+    "p1": "OSHA (1970): workplace fatalities fell from 14,000+ to 4,500 annually → FLSA established minimum wage, 40-hour week, child labour ban → Equal Pay Act (1963) and Title VII (1964) prohibited pay discrimination.",
+    "p2": "BUT: Reagan cut OSHA funding → safety violations persisted in agriculture and construction → agricultural workers still excluded from key FLSA provisions.",
+    "p3": "Glass ceiling persisted: women and minority workers underrepresented in management → Black workers still earned $2,000 less than white equivalents → enforcement of equal pay legislation remained weak.",
+    "hints": [
+      "OSHA 4,500",
+      "FLSA",
+      "$2,000 gap"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 267,
+    "section": "na",
+    "period": "na-start",
+    "periods": [
+      "na-start"
+    ],
+    "front": "What was the right to land for Native Americans in 1865?",
+    "p1": "Plains tribes — Sioux, Cheyenne, Comanche — still controlled vast territories → buffalo herds 30 million → Treaty of Fort Laramie (1868) theoretically guaranteed Black Hills to Sioux 'in perpetuity'.",
+    "p2": "BUT: Homestead Act (1862) granted settlers 160-acre plots directly encroaching on Native lands → Transcontinental railroad (1869) incoming → government granted railway companies land taken from tribes.",
+    "p3": "Dawes Act (1887) still 22 years away → communal landholding intact → but Indian Removal Act (1830s) had already relocated southeastern tribes → Plains tribes next.",
+    "hints": [
+      "30m buffalo",
+      "Homestead Act",
+      "Dawes incoming"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 268,
+    "section": "na",
+    "period": "na-start",
+    "periods": [
+      "na-start"
+    ],
+    "front": "What was the right to self-determination for Native Americans in 1865?",
+    "p1": "Tribes legally recognised as sovereign nations → capable of making treaties with federal government → own governance systems with tribal chiefs holding authority.",
+    "p2": "BUT: Indian Appropriations Act (1871) would end treaty-making — tribes no longer recognised as independent nations → BIA managed Native affairs paternalistically and corruptly.",
+    "p3": "Plains Wars (1854-77) ongoing → federal troops and militias used systematically → Manifest Destiny ideology: white settlement divinely ordained → self-determination about to be dismantled.",
+    "hints": [
+      "sovereign nations",
+      "BIA paternalism",
+      "Manifest Destiny"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 269,
+    "section": "na",
+    "period": "na-start",
+    "periods": [
+      "na-start"
+    ],
+    "front": "What were cultural and religious freedoms for Native Americans in 1865?",
+    "p1": "Traditional cultures, languages and governance largely intact → buffalo central to spiritual and cultural life → ceremonies and practices continued freely on still-controlled territories.",
+    "p2": "BUT: Christian missionaries already on reservations → assimilation promoted as 'civilising' mission → Carlisle boarding school system coming (1879): 'kill the Indian, save the man'.",
+    "p3": "Ghost Dance suppression (1890) still 25 years away → no federal ban on ceremonies yet → cultural destruction systematically planned but not yet fully implemented.",
+    "hints": [
+      "cultures intact",
+      "missionaries",
+      "Carlisle incoming"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 270,
+    "section": "na",
+    "period": "na-end",
+    "periods": [
+      "na-end"
+    ],
+    "front": "What was the right to land for Native Americans by 1992?",
+    "p1": "Indian Claims Commission (1946): awarded $800 million in compensation — but only money, not land → Sioux refused $106 million for Black Hills: 'not for sale' → fund grown to $600m+ unclaimed.",
+    "p2": "NARF secured legal victories: Oneida (1974), Fisher (1976), Bryan (1976) → some land returned through settlements → BUT 30% of Native Americans still on reservations facing land loss.",
+    "p3": "Gaming Act (1988): economic use of reservation land → 150 casinos generating $1 billion+ → but land sovereignty still limited by federal oversight and inconsistent legal protections.",
+    "hints": [
+      "$106m refused",
+      "Oneida",
+      "casinos $1bn"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 271,
+    "section": "na",
+    "period": "na-end",
+    "periods": [
+      "na-end"
+    ],
+    "front": "What was the right to self-determination for Native Americans by 1992?",
+    "p1": "Indian Self-Determination Act (1975): 200+ tribes administering own federal programmes → tribal courts recognised → AIM had forced political visibility through Alcatraz (1969) and Wounded Knee (1973).",
+    "p2": "Bryan v Itasca (1976): states cannot tax reservations → tribal sovereignty affirmed in court → BUT 60% of tribes still economically reliant on federal funding → sovereignty practically limited.",
+    "p3": "All citizens since 1924 → voting in all states since Laveen (1948) → BUT only 50% registered to vote in 1992 → voter turnout low → political influence marginal.",
+    "hints": [
+      "200 tribes",
+      "Bryan v Itasca",
+      "50% registered"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 272,
+    "section": "na",
+    "period": "na-end",
+    "periods": [
+      "na-end"
+    ],
+    "front": "What were cultural and religious freedoms for Native Americans by 1992?",
+    "p1": "AIRFA (1978): protected traditional religious practices → reversed decades of ceremony bans → BUT 70% of Native religious leaders still reported struggles accessing sacred sites by 1992.",
+    "p2": "ICWA (1978): prevented removal of Native children → addressed systematic removal that had destroyed cultural transmission → Graves Protection Act (1990): 10,000 items returned.",
+    "p3": "Over 100 Native language programmes active by 1992 → AIM promoted pan-tribal identity → Indian Arts and Crafts Act (1990) protected cultural expressions → but boarding school trauma multigenerational.",
+    "hints": [
+      "AIRFA 70%",
+      "ICWA",
+      "100 language"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 273,
+    "section": "na",
+    "period": "na-start",
+    "periods": [
+      "na-start"
+    ],
+    "front": "What were the broader political and economic rights of Native Americans in 1865?",
+    "p1": "No U.S. citizenship → no vote → no legal standing in federal courts → tribes had no representation in Congress → BIA managed all relations, acting as both administrator and judge.",
+    "p2": "Economy: buffalo-based subsistence — entirely self-sufficient → communal land ownership → no dependence on federal rations or employment → but Homestead Act (1862) already threatening economic base.",
+    "p3": "Tax: no tax obligations as non-citizens → BUT no access to federal economic programmes → no wage labour opportunities except on settlers' terms → economic independence about to be systematically destroyed.",
+    "hints": [
+      "no citizenship",
+      "buffalo economy",
+      "no federal access"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
+  },
+  {
+    "no": 274,
+    "section": "na",
+    "period": "na-end",
+    "periods": [
+      "na-end"
+    ],
+    "front": "What were the broader political and economic rights of Native Americans by 1992?",
+    "p1": "U.S. citizens since 1924, voting in all states since Laveen (1948) → but only 50% registered to vote → voter turnout low → political influence marginal at federal level.",
+    "p2": "Indian Gaming Regulatory Act (1988): 150 casinos generating $1 billion+ annually → first major economic opportunity → BUT 25% of Native families still below poverty line → 60% reliant on federal assistance.",
+    "p3": "Education: less than 60% graduated high school → only 10% held college degrees → life expectancy 5-10 years below national average.",
+    "hints": [
+      "50% registered",
+      "casinos $1bn",
+      "25% poverty"
+    ],
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false
   }
 ]
