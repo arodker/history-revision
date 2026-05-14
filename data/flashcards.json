@@ -20,7 +20,7 @@
     "front": "What happened in November 1918?",
     "p1": "Kaiser Wilhelm had lost control over the army and there was a collapse of law and order by late 1918.",
     "p2": "Wilhelm abdicated 9 November 1918; Weimar Republic declared the same day by leading politicians.",
-    "p3": "Armistice signed 11 November 1918 — no Allied soldier had entered Germany, so many Germans refused to believe they were losing.",
+    "p3": "Armistice signed 11 November 1918 — over 11 million Germans had served; 2 million died. No Allied soldier had entered Germany → 'stab-in-the-back' myth began.",
     "hints": [
       "Control",
       "Wilhelm",
@@ -79,7 +79,7 @@
     "p3": "The Weimar Republic was created out of violence in the aftermath of WWI. Violence was always seen as an acceptable part of politics in Germany.",
     "hints": [
       "48",
-      "Coalitions",
+      "coalition",
       "Violence"
     ]
   },
@@ -159,7 +159,7 @@
     "unit": "Unit 1 – Weimar Republic",
     "front": "How did Stresemann stabilise Germany's economy?",
     "p1": "1923: Rentenmark introduced to replace the worthless mark and end hyperinflation. Later strengthened to Reichsmark.",
-    "p2": "1924: Dawes Plan — reparations reduced to £50 million/year; USA began $2.5 billion in loans to Germany.",
+    "p2": "1924: Dawes Plan — reparations reduced to £50 million/year; $200 million US loans secured; Weimar recovery begins.",
     "p3": "1929: Young Plan reduced total reparations to £2 billion and extended the deadline to 1988.",
     "hints": [
       "Rentenmark",
@@ -186,7 +186,7 @@
     "paper": "p3",
     "unit": "Unit 1 – Weimar Republic",
     "front": "How stable was the Weimar Republic between 1924–1928?",
-    "p1": "Support for extremist parties dropped from 40% in 1924 to 28% in 1928 as the economy recovered.",
+    "p1": "Support for extremist parties dropped from 40% in 1924 to 28% in 1928 as the economy recovered — Nazis won only 12 seats in 1928.",
     "p2": "Election of war hero Paul von Hindenburg as President in 1925 increased nationalist support for the republic.",
     "p3": "But German economy dangerously reliant on American loans; underlying mistrust of government remained.",
     "hints": [
@@ -242,7 +242,7 @@
     "paper": "p3",
     "unit": "Unit 2 – Hitler's Rise",
     "front": "How did Hitler join the Nazi Party?",
-    "p1": "After WWI Hitler was employed as a military spy to investigate the German Workers' Party (DAP) in Munich, run by Anton Drexler.",
+    "p1": "After WWI Hitler was employed as a military spy to investigate the German Workers' Party (DAP) in Munich — led by Anton Drexler with only 23 members.",
     "p2": "Hitler became attracted to the DAP's ideas and joined in 1919.",
     "p3": "Within two years Hitler had taken control of the DAP and transformed it into the Nazi Party (NSDAP).",
     "hints": [
@@ -298,7 +298,7 @@
     "paper": "p3",
     "unit": "Unit 2 – Hitler's Rise",
     "front": "What was the aftermath of the Munich Putsch?",
-    "p1": "Nazi Party and SA banned; Hitler sentenced to 5 years in Landsberg Castle (released after 10 months).",
+    "p1": "Nazi Party and SA banned; Hitler sentenced to 5 years in Landsberg Castle (released after 9 months).",
     "p2": "Hitler used his defence speech to gain national publicity; wrote Mein Kampf in prison outlining Nazi ideology.",
     "p3": "Direct revolution had failed → decided to win power through elections instead.",
     "hints": [
@@ -328,7 +328,7 @@
     "front": "Why did the Nazis not gain much support in 1924–29?",
     "p1": "Stresemann's economic recovery restored faith in Weimar — only 2.6% of the vote in 1928.",
     "p2": "Germany's improved international standing (League of Nations, Locarno) cut support for nationalist parties.",
-    "p3": "Stresemann's economic recovery → only 2.6% of the Nazi vote in 1928.",
+    "p3": "Election of war hero Hindenburg as President in 1925 → increased public trust in Weimar; even opponents of the republic more willing to support it.",
     "hints": [
       "2.6%",
       "League",
@@ -340,12 +340,12 @@
     "paper": "p3",
     "unit": "Unit 2 – Hitler's Rise",
     "front": "What was the impact of the Wall St. Crash (1929) on Germany?",
-    "p1": "US loans recalled immediately; German banks ran out of money and demanded businesses repay loans.",
+    "p1": "Wall Street crashed — £14 billion lost in a single day; US loans recalled immediately; German banks collapsed and demanded businesses repay loans.",
     "p2": "Mass unemployment: 6 million unemployed by 1933 — 50% of all people aged 16–30.",
     "p3": "Savings lost in banking crisis; homelessness surged; 24% increase in theft in Berlin.",
     "hints": [
       "loans",
-      "6 milloin",
+      "6 million",
       "Berlin"
     ]
   },
@@ -354,13 +354,13 @@
     "paper": "p3",
     "unit": "Unit 2 – Hitler's Rise",
     "front": "How did the Great Depression affect the Nazis?",
-    "p1": "Nazis rose from 2.6% (1928) to 37% of the vote and 230 seats by July 1932 — largest party in Reichstag.",
+    "p1": "Nazis rose from 2.6% (1928) to 37% and 230 seats by July 1932; Hitler won 13 million votes in the 1932 presidential election — came second to Hindenburg.",
     "p2": "Economic desperation drove millions to extremist ideas - Weimar was failing to deal with the crisis so support for moderates collapsed.",
     "p3": "Communists (KPD) also became popular; terrified the wealthy middle class → many backed the Nazis as protection.",
     "hints": [
       "230",
       "extremist",
-      "KPD'"
+      "KPD"
     ]
   },
   {
@@ -374,7 +374,7 @@
     "hints": [
       "Newspapers",
       "Plane",
-      "Work and Bread's"
+      "Work and Bread"
     ]
   },
   {
@@ -485,7 +485,7 @@
     "p3": "Berlin Olympics 1936 used as a global propaganda showcase; Germany topped the medal table.",
     "hints": [
       "Radio",
-      "Nuremburg",
+      "Nuremberg",
       "Olympics"
     ]
   },
@@ -610,7 +610,7 @@
     "p2": "League of German Maidens (10–21 girls): same political and physical training but military replaced with housework and racial hygiene.",
     "p3": "All other youth groups banned; aim was to create loyal, physically strong Nazis who would sustain the 1,000-year Reich beyond Hitler's lifetime.",
     "hints": [
-      "Youth",
+      "compulsory",
       "Maidens",
       "1,000"
     ]
@@ -626,7 +626,7 @@
     "hints": [
       "RAD",
       "Rearmament",
-      "Rearmament"
+      "hidden"
     ]
   },
   {
@@ -635,11 +635,11 @@
     "unit": "Unit 4 – Life in Nazi Germany",
     "front": "How did KdF, DAF, and SdA affect German workers?",
     "p1": "DAF (German Labour Front): replaced trade unions; workers lost right to negotiate pay; DAF could punish workers who disrupted production.",
-    "p2": "KdF (Strength through Joy): provided cinema, sports, foreign travel; KdF Wagon promised to workers for 5 marks/week — none delivered, factories used for armaments.",
+    "p2": "KdF (Strength through Joy): 35 million members by 1936; provided cinema, sports, foreign travel; KdF Wagon promised workers a Volkswagen but money taken for rearmament.",
     "p3": "SdA (Beauty of Labour): improved workplace facilities → toilets, canteens, changing rooms; workers had to do the construction themselves.",
     "hints": [
       "trade unions",
-      "leisure",
+      "KdF",
       "facilities"
     ]
   },
@@ -667,7 +667,7 @@
     "p3": "Jews also banned from inheriting land, serving in the army, and many professions; Nazi propaganda portrayed Jews as subhuman.",
     "hints": [
       "boycott",
-      "Nuremburg",
+      "Nuremberg",
       "propaganda"
     ]
   },
@@ -676,7 +676,7 @@
     "paper": "p3",
     "unit": "Unit 4 – Life in Nazi Germany",
     "front": "What happened on Kristallnacht?",
-    "p1": "9–10 November 1938: assassination of German official → used as pretext for organised violence.",
+    "p1": "9–10 November 1938: assassination of a German official in Paris → used as pretext for organised violence.",
     "p2": "Thousands of synagogues and Jewish businesses burned; over 100 Jews killed; 30,000 arrested and sent to concentration camps.",
     "p3": "SA, SS and ordinary Germans participated; Jews fined 1 billion marks → arrested when they couldn't pay.",
     "hints": [
@@ -807,7 +807,7 @@
     "p3": "Both telegrams hardened attitudes on each side and shaped Cold War strategy. contributed to Truman Doctrine.",
     "hints": [
       "Kennan",
-      "ambassador",
+      "dominate",
       "Truman"
     ]
   },
@@ -934,7 +934,7 @@
     "hints": [
       "Khrushchev",
       "secret speech",
-      "coexistance"
+      "coexistence"
     ]
   },
   {
@@ -986,7 +986,7 @@
     "front": "Why did the summits of 1959–61 fail to solve the Berlin Crisis?",
     "p1": "Geneva (May 1959) and Camp David (September 1959): little achieved, though Khrushchev postponed the six-month deadline.",
     "p2": "Paris Summit (1960): collapsed when Khrushchev demanded Eisenhower apologise for U2 spy plane incident; Eisenhower refused; Khrushchev stormed out.",
-    "p3": "Vienna Summit (1961): Khrushchev tried to bully Kennedy by reissuing the ultimatum; Kennedy responded by increasing US military spending by $3 billion.",
+    "p3": "Vienna Summit (1961): Khrushchev tried to bully Kennedy; Kennedy responded by increasing US military spending by $2 billion and reinforcing West Berlin troops.",
     "hints": [
       "Camp David",
       "U2",
@@ -1003,7 +1003,7 @@
     "p3": "German families and friends separated overnight — not reunited for 28 years; those attempting to cross were shot, like 18-year-old Peter Fechter.",
     "hints": [
       "Ulbricht",
-      "West Berlin",
+      "barbed wire",
       "28 years"
     ]
   },
@@ -1222,11 +1222,11 @@
     "paper": "p2a",
     "unit": "Unit 3 – End of Cold War 1970–91",
     "front": "What were the Helsinki Accords? (1975)",
-    "p1": "33 nations agreed; Basket 1 — European borders inviolable; Basket 2 — economic and scientific cooperation; Basket 3 — human rights to be respected.",
+    "p1": "35 nations agreed; Basket 1 — European borders inviolable; Basket 2 — economic and scientific cooperation; Basket 3 — human rights to be respected.",
     "p2": "Followed by Apollo-Soyuz Mission — US and Soviet spacecraft docked in orbit, symbolising the spirit of détente.",
     "p3": "Seen as the peak of détente but in practice 'just a piece of paper' — human rights basket largely ignored by USSR.",
     "hints": [
-      "baskets",
+      "Basket",
       "Apollo-Soyuz",
       "piece of paper"
     ]
@@ -1255,7 +1255,7 @@
     "p3": "Partly inspired by Iranian revolution where fundamentalist Shia cleric had overthrown the US - backed monachy.",
     "hints": [
       "PDPA",
-      "Muslims",
+      "Muslim",
       "Iranian"
     ]
   },
@@ -1268,7 +1268,7 @@
     "p2": "Christmas Day 1979: USSR invaded to prop up the communist government.",
     "p3": "Soviets killed the unpopular President Amin and replaced him with the more pro-Moscow but still unpopular Kamal.",
     "hints": [
-      "South of USSR",
+      "Brezhnev",
       "Christmas",
       "Amin"
     ]
@@ -1283,7 +1283,7 @@
     "p3": "War deeply unpopular at home in the USSR — compared by critics to America's Vietnam.",
     "hints": [
       "$8 billion",
-      "guerilla",
+      "guerrilla",
       "Vietnam"
     ]
   },
@@ -1380,7 +1380,7 @@
     "p2": "Poland abandoned communism June 1989 → Solidarity won elections; Gorbachev sent no tanks → other states followed rapidly.",
     "p3": "Hungary, Czechoslovakia, Bulgaria, Romania all became capitalist by end of 1989; Romania involved violent revolution.",
     "hints": [
-      "New Thinking",
+      "Glasnost",
       "Poland",
       "capitalist"
     ]
@@ -1450,7 +1450,7 @@
     "p2": "Parliament: needed to approve taxation; Elizabeth reluctant to call it too often.",
     "p3": "Royal prerogative: Elizabeth alone decided foreign policy, religion, succession and marriage.",
     "hints": [
-      "Council",
+      "Cecil",
       "taxation",
       "prerogative"
     ]
@@ -1492,7 +1492,7 @@
     "p2": "John Knox wrote 'The first blast of the trumpet against the monstrous regiment of women' claiming women ruling was 'the blind leading those who can see'.",
     "p3": "It was expected Elizabeth would marry; a Tudor wife was legally required to obey her husband — unacceptable for a monarch.",
     "hints": [
-      "patriachal",
+      "patriarchal",
       "Knox",
       "marry"
     ]
@@ -1521,7 +1521,7 @@
     "p3": "Crown lands sold to raise quick income; reduced the Crown's long-term revenues.",
     "hints": [
       "debt",
-      "Cateau-Cambresis",
+      "Cateau",
       "crown lands"
     ]
   },
@@ -1534,9 +1534,9 @@
     "p2": "Mary I burned 284 Protestants at the stake; over 800 extreme Protestants fled to Europe. They returned as Puritans.",
     "p3": "Elizabeth inherited Catholic bishops and clergy from Mary I; majority of the population — especially in the North — were Catholic.",
     "hints": [
-      "25 years ",
+      "25 years",
       "Puritans",
-      "Catholics"
+      "Catholic"
     ]
   },
   {
@@ -1619,8 +1619,8 @@
     "p3": "Most priests complied under pressure → Puritan win was partial; vestments kept.",
     "hints": [
       "1566",
-      "37 suspended",
-      "Parker"
+      "37",
+      "complied"
     ]
   },
   {
@@ -1661,7 +1661,7 @@
     "p3": "York Conference → Elizabeth chose imprisonment; prevented Mary becoming a rallying point for Catholic invasion.",
     "hints": [
       "Darnley",
-      "escaped",
+      "fled",
       "imprisonment"
     ]
   },
@@ -1688,7 +1688,7 @@
     "p2": "Foreign Spanish support didn't appear despite capture of Hartlepool. Papal excommunication came months too late.",
     "p3": "Elizabeth's army of 14,000 faced them; the earls fled to Scotland. 450 rebels executed; Northumberland's head displayed at York.",
     "hints": [
-      "English nobles",
+      "Catholic nobles",
       "Spanish",
       "14,000"
     ]
@@ -1770,7 +1770,7 @@
     "front": "Why did England and Spain become rivals?",
     "p1": "Religious rivalry; 1570 Papal excommunication; 1584 Treaty of Joinville — France and Spain pledged to destroy Protestantism.",
     "p2": "Commercial rivalry: English cloth trade collapse in 1550s forced merchants to seek new markets; Spanish controlled the most valuable New World trade routes.",
-    "p3": "Drake raided Spanish ports and treasure ships; £400,000 during circumnavigation 1577–80. Elizabeth's knighting of Drake in 1580 inflamed Spain.",
+    "p3": "1572: Drake captured £40,000 from Spanish Panama; £400,000 during circumnavigation 1577–80 → Elizabeth knighted Drake on the Golden Hind.",
     "hints": [
       "Joinville",
       "Commercial",
@@ -1870,9 +1870,9 @@
     "p2": "40 ships shipwrecked in storms; fewer than 80 ships and fewer than 10,000 men returned to Spain.",
     "p3": "English galleons were faster and more manoeuvrable than Spanish transport ships — better suited to rough English waters.",
     "hints": [
-      "wind",
+      "Scotland",
       "storms",
-      "waters"
+      "manoeuvrable"
     ]
   },
   {
@@ -2123,8 +2123,8 @@
     "p3": "1016: Cnut → Viking king of all England; kept English laws; promoted assimilation with English population.",
     "hints": [
       "Alfred",
-      "Cnut",
-      "St. Brice's Day"
+      "St Brice's Day",
+      "Cnut"
     ]
   },
   {
@@ -2276,7 +2276,7 @@
     "p2": "1381: foreign merchants attacked during the Peasants' Revolt — 150 murdered.",
     "p3": "Craft guilds resented migrants as job competition — especially hostile to Flemish weavers; 1440: alien taxes introduced.",
     "hints": [
-      "Denization",
+      "Denizen",
       "Peasants'",
       "Alien taxes"
     ]
@@ -2327,7 +2327,7 @@
     "no": 164,
     "paper": "p1",
     "unit": "Unit 2 – Early Modern",
-    "front": "Case Study: What was the experience of Huguenot migrants in the 17th Century?",
+    "front": "What was the experience of Huguenot migrants?",
     "p1": "1681: Charles II granted Denizen status → legal protection and residency rights.",
     "p2": "1680s: tensions in Spitalfields between Huguenots and English workers who accused them of stealing jobs.",
     "p3": "1600s: many English people donated money to help Huguenots settle — viewed with sympathy as Protestant victims of persecution.",
@@ -2389,7 +2389,7 @@
     "p3": "Pragmatic reasons: Jewish financiers would help turn London into a major financial centre; Cromwell was aware of their contribution to the Dutch economy.",
     "hints": [
       "Manasseh ben Israel",
-      "Oliver Cromwell",
+      "Puritan",
       "Financiers"
     ]
   },
@@ -2470,11 +2470,11 @@
     "front": "Why did Irish migrants come to Britain in the 1840s?",
     "p1": "1845–46: Potato Blight → famine; approximately 2 million fled Ireland; 1 million died.",
     "p2": "Ireland lacked industrial cities → economic migration to British industrial cities for factory and construction work.",
-    "p3": "In Ireland Protestant minority owned 90% of the land and had all the power. After 1829 - Catholics had more freedoms on the British mainland.",
+    "p3": "Protestant minority (10%) owned 86% of the land; Catholic majority (90% of population) owned just 14% — despite Catholic Emancipation 1829, land stayed in Protestant hands.",
     "hints": [
       "Blight",
-      "Belfast",
-      "Catholics"
+      "industrial cities",
+      "Catholic"
     ]
   },
   {
@@ -2511,7 +2511,7 @@
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "Why did Asian migrants come to Britain in the 18th and 19th centuries?",
     "p1": "East Indian Company (EIC) took control over India. EIC elite employed Indian nannies (Ayahs) and often brought them back to England.",
-    "p2": "1869: Suez Canal opened → increased shipping between Europe and India; greater demand for Lascars.",
+    "p2": "1869: Suez Canal opened → halved travel times between Britain and India; increased shipping; greater demand for Lascars.",
     "p3": "1858: Britain took direct control of India → Indian elite came to Britain for education.",
     "hints": [
       "Ayahs",
@@ -2594,12 +2594,12 @@
     "paper": "p1",
     "unit": "Unit 3 – 18th & 19th Centuries",
     "front": "Why did 150,000 Ashkenazi Jews come to Britain in the 1880s?",
-    "p1": "1880s: violent pogroms in Russian Empire → forced mass flight of Jewish communities.",
+    "p1": "1880s: violent pogroms in Russian Empire → ~150,000 Ashkenazi Jews fled to Britain.",
     "p2": "Britain's relative lack of anti-Semitism and greater democracy made it a safe destination.",
     "p3": "Britain's pre-existing Sephardic Jewish community helped welcome Ashkenazi Jews.",
     "hints": [
       "pogroms",
-      "safe destination ",
+      "safe destination",
       "pre-existing"
     ]
   },
@@ -2651,7 +2651,7 @@
     "unit": "Unit 4 – Modern",
     "front": "How did WWI (1914-18) affect migration?",
     "p1": "Millions of colonial soldiers from Africa, India and the Caribbean served in the British armed forces.",
-    "p2": "'Enemy aliens' (mainly Germans) interned on the Isle of Man.",
+    "p2": "'Enemy aliens' (mainly Germans and Austro-Hungarians) interned on the Isle of Man — approximately 32,000 people, many of whom had lived in Britain for decades.",
     "p3": "1919: race riots broke out in port cities — Cardiff and Liverpool. Charles Wootton lynched in Liverpool docks.",
     "hints": [
       "soldiers",
@@ -2720,11 +2720,11 @@
     "paper": "p1",
     "unit": "Unit 4 – Modern",
     "front": "How did Windrush migrants impact Britain?",
-    "p1": "Windrush Generation rebuilt post-war Britain → by 1960s, 12% of London Transport from ethnic minorities.",
+    "p1": "Windrush Generation rebuilt post-war Britain → by 1960s, 12% of London Transport from ethnic minorities; by 2003, 30% of NHS doctors and 44% of nurses were migrants.",
     "p2": "Work of black migrants in Bristol Bus Boycott (1963) helped remove colour bar and lead to Race Relations Act.",
     "p3": "Black migrants introduced new music genres including jazz, calypso, ska, reggae and grime.",
     "hints": [
-      "rebuild",
+      "rebuilt",
       "Race Relations",
       "music"
     ]
@@ -2794,7 +2794,7 @@
     "p2": "After decolonisation - Kenyan and Ugandan leaders wanted to 'Africanise'. 1972: Idi Amin expelled all Asians from Uganda.",
     "p3": "British Nationality Act meant that South Asians had British passports - 27,000 come to Britain.",
     "hints": [
-      "Asians",
+      "Empire",
       "Amin",
       "passports"
     ]
@@ -2819,7 +2819,7 @@
     "unit": "Unit 4 – Modern",
     "front": "How did Britain's relationship with the European Union change?",
     "p1": "1992: Maastricht Treaty formed the European Union — guaranteed 'free movement of people' between member states.",
-    "p2": "2004: eight former communist states joined EU → large-scale migration to Britain.",
+    "p2": "2004: eight former communist states (including Poland) joined EU → large-scale migration to Britain.",
     "p3": "2016 Brexit vote; 2019: Britain left the EU — free movement of EU citizens to Britain ended.",
     "hints": [
       "Maastricht",
@@ -2866,7 +2866,7 @@
     "hints": [
       "Kenrick",
       "NHHT",
-      "Pardner"
+      "Sam King"
     ]
   },
   {
@@ -2958,11 +2958,11 @@
     "paper": "p1",
     "unit": "Unit 5 – Notting Hill",
     "front": "What happened during and after the murder of Kelso Cochrane (1959)?",
-    "p1": "Kelso Cochrane, was stabbed to death by a gang of white youths in Notting Hill. Despite witnesses, the murderers were never brought to justice",
+    "p1": "Kelso Cochrane — 32-year-old Antiguan carpenter — stabbed to death by white youths. 97% of police were white men; no anti-discrimination laws; no one convicted despite witnesses.",
     "p2": "Over 1,200 people attended Cochrane's funeral in a powerful demonstration of community solidarity.",
     "p3": "Government allowed the White Defence League to host a rally in Trafalgar Square days after the funeral.",
     "hints": [
-      "justice",
+      "convicted",
       "1,200",
       "Trafalgar Square"
     ]
@@ -2990,8 +2990,8 @@
     "p2": "Organised 1970 protest march → directly challenged police harassment.",
     "p3": "Darcus Howe was one of the Mangrove Nine who defended himself in court and helped expose police racism.",
     "hints": [
-      "Black",
-      "Mangrove",
+      "American movement",
+      "1970",
       "Howe"
     ]
   },
