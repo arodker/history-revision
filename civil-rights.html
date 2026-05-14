@@ -50,7 +50,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .kc-summary{font-size:.86rem;font-style:italic;color:var(--muted);margin-bottom:.75rem;line-height:1.6}
 .factor-key{font-size:.7rem;color:var(--muted);background:var(--subtle);border-radius:7px;padding:.4rem .65rem;margin-bottom:.75rem;line-height:1.6}
 .card ul{padding-left:1.2rem;margin:0}.card li{font-size:.86rem;line-height:1.6;margin-bottom:.55rem}.card li:last-child{margin-bottom:0}
-.kc-sub{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:1rem 0 .35rem;padding-bottom:.2rem;border-bottom:1px solid var(--subtle)}.kc-sub:first-child{margin-top:.25rem}
+.kc-sub{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:1rem 0 .35rem;padding-bottom:.2rem;border-bottom:1px solid var(--subtle)}.kc-sub:first-child{margin-top:.25rem}.kc-group{font-size:.8rem;font-weight:700;color:var(--text);margin:1.1rem 0 .1rem;padding-bottom:.3rem;border-bottom:2px solid var(--border)}.kc-group:first-child{margin-top:.35rem}.kc-sublabel{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:.6rem 0 .25rem;padding-left:.1rem}
 .btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:.9rem}
 .empty{padding:2rem;text-align:center;color:var(--muted);font-size:.85rem;border:1px dashed var(--border2);border-radius:12px}
 .quiz-prog{height:4px;background:var(--subtle);border-radius:2px;margin-bottom:1rem;overflow:hidden}.quiz-fill{height:100%;border-radius:2px;transition:width .3s}
@@ -172,8 +172,9 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     <div class="filter-row" id="k-fac-row" style="display:none"><select id="k-fac" onchange="jumpToFac()"><option value="">-- select a factor --</option></select></div>
     <div class="filter-row" id="k-obs-row" style="display:none"><select id="k-obs" onchange="jumpToObs()"><option value="">-- select an obstacle --</option></select></div>
     <div class="filter-row" id="k-ds-row" style="display:none"><select id="k-ds" onchange="jumpToDs()"><option value="">-- select a depth study debate --</option></select></div>
+    <div style="display:flex;gap:8px;margin-bottom:.5rem"><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(-1)">← Prev</button><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(1)">Next →</button></div>
     <div id="k-out"><div class="empty">Select a period above to begin.</div></div>
-    <div style="display:flex;gap:8px;margin-top:.5rem"><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(-1)">Prev</button><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(1)">Next</button></div>
+    <div style="display:flex;gap:8px;margin-top:.5rem"><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(-1)">← Prev</button><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(1)">Next →</button></div>
   </div>
   <div id="mode-flashcard" style="display:none">
     <div id="fd-setup">
@@ -401,7 +402,25 @@ function buildPeriodDropdown(){
 function jumpToDs(){var sel=document.getElementById('k-ds');if(sel.value==='')return;document.getElementById('k-period').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
 function jumpToPeriod(){var sel=document.getElementById('k-period');if(sel.value==='')return;document.getElementById('k-ds').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
 function stepPeriod(dir){if(!KC.length)return;var eraIdxs=KC.map(function(c,i){return(!c.isDepthStudy||c.period.indexOf('-ds')===-1)?i:-1;}).filter(function(i){return i>=0;});var cur=eraIdxs.indexOf(kPeriodIdx);if(cur===-1)cur=0;var next=eraIdxs[(cur+dir+eraIdxs.length)%eraIdxs.length];kPeriodIdx=next;document.getElementById('k-period').value=next;document.getElementById('k-ds').value='';renderKCard(kPeriodIdx);}
-function renderKCard(idx){var card=KC[idx];if(!card){document.getElementById('k-out').innerHTML='<div class="empty">Content coming soon.</div>';return;}var u=UNITS[currentUnit],badges='';if(card.isDepthStudy)badges+='<span class="tag t-ds">🔑 Depth Study</span>';if(card.isObstacle)badges+='<span class="tag t-obs">🛑 Obstacle</span>';if(card.isFactor)badges+='<span class="tag t-fac">⚙️ Factor</span>';var sub=(card.subheadings||[]).map(function(s){return '<div class="kc-sub">'+s.label+'</div><ul>'+(s.facts||[]).map(function(f){return '<li>'+f+'</li>';}).join('')+'</ul>';}).join('');document.getElementById('k-out').innerHTML='<div class="card"><div class="stripe s-'+currentUnit+'"></div><div class="inner"><div class="meta"><span class="tag t-'+currentUnit+'">'+u.short+'</span>'+badges+'</div><div class="card-heading">'+card.heading+'</div>'+(card.summary?'<p class="kc-summary">'+card.summary+'</p>':'')+(card.factorKey?'<div class="factor-key">'+card.factorKey+'</div>':'')+sub+'</div></div>';}
+function renderKCard(idx){var card=KC[idx];if(!card){document.getElementById('k-out').innerHTML='<div class="empty">Content coming soon.</div>';return;}var u=UNITS[currentUnit],badges='';if(card.isDepthStudy)badges+='<span class="tag t-ds">🔑 Depth Study</span>';if(card.isObstacle)badges+='<span class="tag t-obs">🛑 Obstacle</span>';if(card.isFactor)badges+='<span class="tag t-fac">⚙️ Factor</span>';var sub=(function(){
+  var subs=card.subheadings||[];
+  var html='';
+  var lastGroup=null;
+  subs.forEach(function(s){
+    var grp=s.group&&s.group!=='NONE'?s.group:null;
+    if(grp&&grp!==lastGroup){
+      html+='<div class="kc-group">'+grp+'</div>';
+      lastGroup=grp;
+    }
+    if(grp){
+      html+='<div class="kc-sublabel">'+s.label+'</div>';
+    } else {
+      html+='<div class="kc-sub">'+s.label+'</div>';
+    }
+    html+='<ul>'+(s.facts||[]).map(function(f){return '<li>'+f+'</li>';}).join('')+'</ul>';
+  });
+  return html;
+})();document.getElementById('k-out').innerHTML='<div class="card"><div class="stripe s-'+currentUnit+'"></div><div class="inner"><div class="meta"><span class="tag t-'+currentUnit+'">'+u.short+'</span>'+badges+'</div><div class="card-heading">'+card.heading+'</div>'+(card.summary?'<p class="kc-summary">'+card.summary+'</p>':'')+(card.factorKey?'<div class="factor-key">'+card.factorKey+'</div>':'')+sub+'</div></div>';}
 var quizPool=[],quizIdx=0,quizOK=0,quizBad=0;
 function getHardDates(section){return JSON.parse(localStorage.getItem('cr_hard_dates_'+(section||'all'))||'[]');}
 function saveHardDates(section,arr){localStorage.setItem('cr_hard_dates_'+(section||'all'),JSON.stringify(arr));}
