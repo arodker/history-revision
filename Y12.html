@@ -424,7 +424,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     <div id="fd-setup">
       <div style="margin-bottom:.75rem">
         <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Choose unit</label>
-        <select id="fd-unit" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--input-bg);color:var(--text)">
+        <select id="fd-unit" onchange="fdUpdateStartBtn()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--input-bg);color:var(--text)">
           <option value="">— select a unit —</option>
           <option value="all">All units</option>
         </select>
@@ -495,10 +495,22 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     </div>
     <!-- Complete -->
     <div id="fd-complete" style="display:none;text-align:center;padding:2rem 1rem">
-      <div style="font-size:2.5rem;margin-bottom:.5rem">🎉</div>
-      <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">All cards mastered!</div>
-      <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem" id="fd-complete-note"></div>
-      <button class="btn-go" onclick="fdFinish()">← Back to unit picker</button>
+      <div style="margin-bottom:.75rem">
+        <svg viewBox="0 0 80 90" width="90" height="100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="28,48 20,88 35,78 40,90 40,48" fill="#C0392B"/>
+          <polygon points="52,48 60,88 45,78 40,90 40,48" fill="#E74C3C"/>
+          <circle cx="40" cy="36" r="32" fill="#F39C12"/>
+          <circle cx="40" cy="36" r="28" fill="#F1C40F"/>
+          <circle cx="40" cy="36" r="24" fill="#F39C12" opacity=".35"/>
+          <text x="40" y="43" text-anchor="middle" font-size="24" fill="#fff" font-family="serif">★</text>
+        </svg>
+      </div>
+      <div style="font-size:1.3rem;font-weight:800;margin-bottom:.3rem">Unit Complete!</div>
+      <div style="font-size:.9rem;font-weight:600;color:#F39C12;margin-bottom:.3rem" id="fd-complete-count"></div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:.5rem">Your progress resets automatically tomorrow —<br>come back then to start a fresh session.</div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:1.5rem">Want to drill again <em>today</em>? Use the button below.</div>
+      <button class="btn-go" onclick="fdResetUnit()" style="background:#F39C12;color:#fff;margin-bottom:.65rem">🔄 Reset &amp; drill again today</button>
+      <button class="btn-go" onclick="fdFinish()" style="background:#374151;color:#fff">← Back to unit picker</button>
     </div>
   </div>
 </div>
@@ -1290,8 +1302,17 @@ function fdRecordSessionCard(sec, got) {
   }
   fdSetSession(s);
 }
-function fdGetMastered() { return JSON.parse(localStorage.getItem(LS_MASTERED) || '{}'); }
-function fdSetMastered(o) { localStorage.setItem(LS_MASTERED, JSON.stringify(o)); }
+function fdGetMastered() {
+  const raw = JSON.parse(localStorage.getItem(LS_MASTERED) || '{}');
+  const today = new Date().toISOString().slice(0, 10);
+  // New envelope format: {date, cards}. Old flat format has no .date — treat as stale.
+  if (!raw.date || raw.date !== today) return {};
+  return raw.cards || {};
+}
+function fdSetMastered(obj) {
+  const today = new Date().toISOString().slice(0, 10);
+  localStorage.setItem(LS_MASTERED, JSON.stringify({ date: today, cards: obj }));
+}
 function fdGetOutstanding() { return JSON.parse(localStorage.getItem(LS_MISSED) || '[]'); }
 function fdSetOutstanding(a) { localStorage.setItem(LS_MISSED, JSON.stringify(a)); }
 function fdKey(card) { return card.section + '|' + card.no; }
@@ -1355,14 +1376,31 @@ function fdSetup() {
   document.getElementById('fd-drill').style.display = 'none';
   document.getElementById('fd-summary').style.display = 'none';
   document.getElementById('fd-complete').style.display = 'none';
+  fdUpdateStartBtn();
 }
 
 function fdStart() {
   if (!FD.length) { alert('Flashcard data not loaded yet — please wait and try again.'); return; }
   const unit = document.getElementById('fd-unit').value;
   if (!unit) { alert('Please select a unit first.'); return; }
+  const mastered = fdGetMastered();
   let base = FD.filter(c => c.section === currentSection);
   if (unit !== 'all') base = base.filter(c => c.unit === unit);
+  const unitTotal = base.length;
+
+  // Filter out already-mastered cards (mastered state resets daily)
+  base = base.filter(c => !mastered[fdKey(c)]);
+
+  // If all mastered today — show Unit Complete screen instead of starting
+  if (base.length === 0 && unitTotal > 0) {
+    document.getElementById('fd-setup').style.display    = 'none';
+    document.getElementById('fd-drill').style.display    = 'none';
+    document.getElementById('fd-summary').style.display  = 'none';
+    document.getElementById('fd-complete').style.display = 'block';
+    document.getElementById('fd-complete-count').textContent =
+      `All ${unitTotal} card${unitTotal !== 1 ? 's' : ''} mastered ✅`;
+    return;
+  }
   fdOutstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
   const outCards = fdOutstanding.map(k => FD.find(c => fdKey(c) === k)).filter(Boolean).filter(c => {
     if (c.section !== currentSection) return true;
@@ -1493,6 +1531,7 @@ function fdAnswer(got) {
     if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
     if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
     renderFdSetupWheel();
+    fdUpdateStartBtn();
   }, 200);
 }
 
@@ -1506,6 +1545,21 @@ function fdUpdateProgress() {
 }
 
 function fdShowSummary() {
+  // Check if the whole unit is now mastered — show gold medal instead of summary
+  const unit = document.getElementById('fd-unit').value;
+  const mastered = fdGetMastered();
+  let unitCards = FD.filter(c => c.section === currentSection);
+  if (unit !== 'all') unitCards = unitCards.filter(c => c.unit === unit);
+  const unitTotal = unitCards.length;
+  if (unitTotal > 0 && unitCards.every(c => mastered[fdKey(c)])) {
+    document.getElementById('fd-drill').style.display    = 'none';
+    document.getElementById('fd-summary').style.display  = 'none';
+    document.getElementById('fd-complete').style.display = 'block';
+    document.getElementById('fd-complete-count').textContent =
+      `All ${unitTotal} card${unitTotal !== 1 ? 's' : ''} mastered ✅`;
+    fdFireConfetti();
+    return;
+  }
   document.getElementById('fd-drill').style.display   = 'none';
   document.getElementById('fd-summary').style.display = 'block';
   document.getElementById('fd-sum-got').textContent   = fdGot;
@@ -1552,18 +1606,61 @@ function fdDrillMissed() {
 }
 
 function fdShowComplete() {
-  document.getElementById('fd-summary').style.display='none';
-  document.getElementById('fd-complete').style.display='block';
-  const mastered = fdGetMastered();
-  const total = FD.filter(c => c.section === currentSection).length;
-  const mastCount = Object.keys(mastered).filter(k => k.startsWith(currentSection + '|')).length;
-  document.getElementById('fd-complete-note').textContent = `${mastCount} of ${total} ${S[currentSection].label} cards mastered overall.`;
+  document.getElementById('fd-summary').style.display  = 'none';
+  document.getElementById('fd-complete').style.display = 'block';
+  const unit = document.getElementById('fd-unit').value;
+  let unitCards = FD.filter(c => c.section === currentSection);
+  if (unit !== 'all') unitCards = unitCards.filter(c => c.unit === unit);
+  document.getElementById('fd-complete-count').textContent =
+    `All ${unitCards.length} card${unitCards.length !== 1 ? 's' : ''} mastered ✅`;
 }
 
 function fdFinish() {
   document.getElementById('fd-summary').style.display='none';
   document.getElementById('fd-complete').style.display='none';
   fdSetup();
+}
+
+function fdResetUnit() {
+  const unit = document.getElementById('fd-unit').value;
+  const mastered = fdGetMastered();
+  let toReset = FD.filter(c => c.section === currentSection);
+  if (unit !== 'all') toReset = toReset.filter(c => c.unit === unit);
+  toReset.forEach(c => delete mastered[fdKey(c)]);
+  fdSetMastered(mastered);
+  document.getElementById('fd-complete').style.display = 'none';
+  renderFdSetupWheel();
+  fdStart();
+}
+
+function fdUpdateStartBtn() {
+  const btn  = document.getElementById('fd-start-btn');
+  if (!btn) return;
+  const unit = (document.getElementById('fd-unit') || {}).value || '';
+  if (!unit || !FD.length) {
+    btn.textContent = '⚡ Start Flashcard Mode';
+    return;
+  }
+  const mastered = fdGetMastered();
+
+  // Unmastered cards in this unit/section
+  let base = FD.filter(c => c.section === currentSection);
+  if (unit !== 'all') base = base.filter(c => c.unit === unit);
+  const unmastered = base.filter(c => !mastered[fdKey(c)]).length;
+
+  // Pinned cards from other units/sections that will be woven in
+  const outstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
+  const pinned = outstanding.filter(k => {
+    const c = FD.find(c => fdKey(c) === k);
+    if (!c) return false;
+    if (c.section !== currentSection) return true;
+    if (unit === 'all') return false;
+    return c.unit !== unit;
+  }).length;
+
+  let label = `⚡ Start — ${unmastered} card${unmastered !== 1 ? 's' : ''}`;
+  if (pinned > 0) label += ` + ${pinned} pinned`;
+  btn.textContent = label;
 }
 
 function fdWheelLaunch(sec) { pickSection(sec); enterMode('flashcard'); }
@@ -1666,7 +1763,7 @@ function renderFdSetupWheel() {
     breakdownEl.innerHTML = units.map(unit => {
       const unitTotal = FD.filter(c=>c.section===sec&&c.unit===unit).length;
       const uk = sec + '|' + unit;
-      const gotToday = session.unitGot[uk] || 0;
+      const gotToday = Math.min(session.unitGot[uk] || 0, unitTotal);
       const colour = gotToday>=unitTotal&&unitTotal>0?'#1D9E75':gotToday>0?'#F0B429':'var(--muted)';
       const dot = gotToday>=unitTotal&&unitTotal>0?'🥇':gotToday>0?'◑':'○';
       return `<div style="display:flex;align-items:center;gap:.4rem;padding:.2rem 0;border-bottom:1px solid var(--subtle);font-size:.72rem"><span style="color:${colour};font-size:.65rem;flex-shrink:0">${dot}</span><span style="flex:1;color:var(--text)">${unit}</span><span style="font-weight:700;color:${colour};flex-shrink:0;margin-left:.3rem">${gotToday}/${unitTotal}</span></div>`;
