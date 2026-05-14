@@ -79,7 +79,7 @@
     "heading": "Gilded Age c.1877–1900",
     "summary": "The Gilded Age saw the systematic dismantling of Reconstruction gains through Jim Crow legislation, disenfranchisement and racial terror — yet African Americans built parallel institutions and a small professional class.",
     "isTurningPoint": false,
-    "isDepthStudy": true,
+    "isDepthStudy": false,
     "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
     "subheadings": [
       {
@@ -286,7 +286,7 @@
     "heading": "The New Deal 1933–1941",
     "summary": "New Deal programmes offered significant but often discriminatory and exclusionary relief to African Americans. The period saw the political shift to the Democratic Party and the creation of an informal 'Black Cabinet'.",
     "isTurningPoint": false,
-    "isDepthStudy": true,
+    "isDepthStudy": false,
     "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
     "subheadings": [
       {
@@ -481,7 +481,7 @@
     "heading": "Black Power 1965–1970",
     "summary": "The Black Power movement challenged the limits of integration and demanded economic justice, self-determination and Black pride — but divisions, FBI repression and violent rhetoric undermined its impact.",
     "isTurningPoint": false,
-    "isDepthStudy": true,
+    "isDepthStudy": false,
     "factorKey": "✊ African Americans · 🦅 Federal Gov · 🏛️ State Gov · 🔥 Opposition · ⚔️ War · 📺 Media & Attitudes · 💰 Socioeconomic",
     "subheadings": [
       {
@@ -700,28 +700,32 @@
         "facts": [
           "Reconstruction: 15th Amendment (1870) prohibited denial of vote by race — enforced by union troops. Enforcement Acts (1870–71) targeted KKK. BUT Compromise of 1877 withdrew troops — Redeemer governments dismantled every Reconstruction gain. Mississippi v Williams (1898): Supreme Court upheld poll taxes and literacy tests — 90% disenfranchised by 1900. 🏛️",
           "VRA (1965): LBJ used 'Johnson treatment' to force Voting Rights Act — banned all voter suppression. Mississippi Black voter registration 6% (1964) → 60% (1969). US v Guinn (1915) earlier struck down grandfather clauses. Post-1965: gerrymandering limited impact of VRA — Milliken v Bradley (1974) weakened bussing. 🦅"
-        ]
+        ],
+        "group": "Political Rights"
       },
       {
         "label": "Political Representation",
         "facts": [
           "Federal government slow to appoint African Americans — Washington first informal advisor to TR (1901). FDR's Black Cabinet led by Mary McLeod Bethune influenced New Deal. LBJ appointed Thurgood Marshall first Black Supreme Court Justice (1967) and Robert Weaver first Black Cabinet member. 🦅",
           "Limitations: Wilson (1913–21) segregated federal government and praised Birth of a Nation. Long period of federal disinterest 1877–1933. 8,000 African Americans held office by 1992 — progress but still underrepresentation. 🦅"
-        ]
+        ],
+        "group": "Political Rights"
       },
       {
         "label": "Influence in Government",
         "facts": [
           "Cold War context forced federal action: Soviet propaganda publicised racial violence internationally. Kennedy after Birmingham (1963): 'We preach freedom around the world... but are we to say to the world this is the land of the free — except for the negroes?' Decolonisation movements inspired African Americans — Gandhi and Nkrumah. 🦅",
           "Great Society (LBJ 1964–68): Medicare, Medicaid, Food Stamp Act, Head Start — transformed economic rights. By 1970 Black Americans with health insurance: 25% → 75%. BUT Reagan (1981–89) cut welfare programmes disproportionately affecting Black Americans. Bakke (1978) weakened affirmative action. 🦅"
-        ]
+        ],
+        "group": "Political Rights"
       },
       {
         "label": "Education",
         "facts": [
           "Freedmen's Bureau (1865–72): 1,000+ schools, 250,000 enrolled, Howard University (1867) founded. BUT Bureau closed 1872 — left freedmen without educational infrastructure. Brown v Board (1954): Warren Court overturned Plessy — segregated schools unconstitutional. Little Rock (1957): Eisenhower deployed 101st Airborne to enforce integration. 🏛️",
           "Limitations: Brown II (1955) set no deadline beyond 'all deliberate speed' — 98% of Black Southern students still in segregated schools by 1964. Milliken v Bradley (1974) ruled suburban schools could not be forced into bussing — re-segregation accelerated. By 1992 40% of Black students attended majority-Black schools. 🦅"
-        ]
+        ],
+        "group": "Social Rights"
       },
       {
         "label": "Jobs, Wages and Economic Support",
@@ -1176,7 +1180,8 @@
       {
         "label": "Employer power",
         "facts": [
-          "Blacklisting, Pinkerton agents, yellow-dog contracts, company unions. Carnegie Steel used private militias at Homestead. Company towns like Pullman controlled workers' housing, rents and wages. Employer-sponsored newspapers and churchmen influenced workforce. 💼"
+          "Blacklisting, Pinkerton agents, yellow-dog contracts, company unions. Carnegie Steel used private militia — 300 Pinkerton agents at Homestead (1892) — keeping steel union-free until 1930s.",
+          "Company towns (e.g. Pullman): companies controlled workers' rents, wages, newspapers and even churchmen — total economic and social control. Workers had no independent space to organise."
         ]
       },
       {
@@ -1487,6 +1492,44 @@
         ]
       }
     ]
+  },
+  {
+    "section": "lab",
+    "period": "black-power",
+    "heading": "Black Power and Labour 1965–1975",
+    "summary": "The Black Power era transformed labour politics — DRUM and the LRBW challenged racial inequality within unions, while deindustrialisation began eroding union power.",
+    "isTurningPoint": false,
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false,
+    "factorKey": "",
+    "subheadings": [
+      {
+        "group": "NONE",
+        "label": "Right to Exist and Collectively Bargain",
+        "facts": [
+          "AFL-CIO merger (1955) created 16 million-strong federation but remained largely white-dominated — Black workers underrepresented in leadership. Kennedy EO 10988 (1962) gave federal workers right to organise.",
+          "Civil Rights Act (1964) Title VII: prohibited employment discrimination by race — EEOC established to enforce → BUT initial enforcement weak, NOW formed 1966 partly to pressure EEOC."
+        ]
+      },
+      {
+        "group": "NONE",
+        "label": "Right to Strike",
+        "facts": [
+          "DRUM (1968): organised wildcat strikes at Chrysler Dodge Main — demanded Black representation in UAW leadership. LRBW coordinated wider Black workers' movement across Detroit auto plants.",
+          "UFW Salad Bowl Strike (1970): Filipino and Mexican American workers struck California lettuce fields — linked racial justice and labour rights — California ALRA (1975) resulted."
+        ]
+      },
+      {
+        "group": "NONE",
+        "label": "Right to Fair and Safe Working Conditions",
+        "facts": [
+          "OSHA (1970): first comprehensive federal workplace safety law — deaths fell from 14,000+ to 4,500 annually. Equal Pay Act (1963) and Civil Rights Act Title VII gave legal basis for pay equality claims.",
+          "Black workers still earned $2,000 less annually than white equivalents → racial pay gap persisted despite legislation → deindustrialisation beginning to hit unionised Black workers hardest."
+        ]
+      }
+    ],
+    "facts": []
   },
   {
     "section": "lab",
@@ -2181,13 +2224,15 @@
       {
         "label": "Cultural motivation",
         "facts": [
-          "Social Darwinism and Manifest Destiny: framed Native Americans as a 'backward' people who needed 'civilising'. Religious influences: white missionary groups like the Indian Rights Association (IRA, 1882) viewed Native assimilation as part of Christian duty to 'uplift' them. 🤠"
+          "Social Darwinism and Manifest Destiny: framed Native Americans as a 'backward' people who needed 'civilising' — white settlement of continent divinely ordained — justified dispossession as progress.",
+          "Indian Rights Association (IRA, 1882): white Christian missionaries viewed Native assimilation as part of a Christian duty to 'uplift' Native peoples — religious ideology underpinned boarding school policy."
         ]
       },
       {
         "label": "Political motivation",
         "facts": [
-          "Control and Sovereignty: 1871 Indian Appropriations Bill stripped tribes of sovereignty — ensuring federal authority over Native affairs. Post-Conflict Retaliation: after Battle of Little Bighorn (1876), federal policy hardened, further reducing Native lands and autonomy. 🦅"
+          "Control and Sovereignty: Indian Appropriations Act (1871) stripped tribes of sovereignty — ensuring federal authority over all Native affairs — tribes became 'wards of the state' with no legal standing.",
+          "Post-conflict retaliation: after Little Bighorn (1876), federal policy hardened — Curtis Act (1898) ended Five Civilised Tribes' exemptions from Dawes Act, allowing further expansion into Oklahoma."
         ]
       }
     ]
@@ -2232,7 +2277,8 @@
       {
         "label": "Strengths",
         "facts": [
-          "Indian Citizenship Act (1924): granted U.S. citizenship to all Native Americans — though two-thirds had already gained citizenship. Meriam Report (1928): exposed federal failures and proposed reform — built pressure for change. AIDA successfully blocked Leavitt Bill (1926). Growing native organisations — SAI (1911) and early advocacy groups. 🤝 🤠"
+          "Indian Citizenship Act (1924): granted U.S. citizenship to all Native Americans — though two-thirds were already citizens through Dawes Act allotments, military service or individual treaties.",
+          "Meriam Report (1928): documented shocking poverty, disease and death rates on reservations — directly triggered federal acknowledgement that assimilation policy had failed and reform was necessary."
         ]
       },
       {
@@ -2643,7 +2689,7 @@
     "isDepthStudy": false,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Political Rights",
@@ -2728,7 +2774,7 @@
     "isDepthStudy": false,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Political Rights",
@@ -2813,7 +2859,7 @@
     "isDepthStudy": false,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Political Rights",
@@ -2899,7 +2945,7 @@
     "isDepthStudy": false,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Political Rights",
@@ -2984,7 +3030,7 @@
     "isDepthStudy": false,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Political Rights",
@@ -3070,7 +3116,7 @@
     "isDepthStudy": false,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Political Rights",
@@ -3156,7 +3202,7 @@
     "isDepthStudy": false,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Political Rights",
@@ -3241,7 +3287,7 @@
     "isDepthStudy": false,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Political Rights",
@@ -3327,7 +3373,7 @@
     "isDepthStudy": false,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Political Rights",
@@ -3412,7 +3458,7 @@
     "isDepthStudy": false,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Political Rights",
@@ -3497,7 +3543,7 @@
     "isDepthStudy": true,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Gains",
@@ -3526,7 +3572,7 @@
     "isDepthStudy": true,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Effective",
@@ -3556,7 +3602,7 @@
     "isDepthStudy": true,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "United",
@@ -3585,7 +3631,7 @@
     "isDepthStudy": true,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Strengths",
@@ -3614,7 +3660,7 @@
     "isDepthStudy": true,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Major Improvements",
@@ -3643,7 +3689,7 @@
     "isDepthStudy": true,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Universal Experiences",
@@ -3666,13 +3712,43 @@
   },
   {
     "section": "wom",
+    "period": "wom-black-power",
+    "heading": "Black Power and Women's Rights 1965–1975",
+    "summary": "The Black Power era had a complex relationship with women's rights — inspiring radical feminism while exposing deep divisions between mainstream and Black feminist movements.",
+    "isTurningPoint": false,
+    "isDepthStudy": false,
+    "isFactor": false,
+    "isObstacle": false,
+    "factorKey": "",
+    "subheadings": [
+      {
+        "group": "NONE",
+        "label": "Advances",
+        "facts": [
+          "Intersectionality: Black Power highlighted race, gender and class intersections — foundational concept for Black feminism. Angela Davis, Fannie Lou Hamer and Ella Baker gained national recognition.",
+          "Radical tactics: Black Power's direct action inspired second-wave feminism — Miss America protest (1968), CR consciousness-raising groups. NOW pressured EEOC on sex discrimination alongside racial discrimination."
+        ]
+      },
+      {
+        "group": "NONE",
+        "label": "Limitations",
+        "facts": [
+          "Male chauvinism within BPP: women relegated to secondary roles — 'Revolutionary first, Sister second.' NOI rejected birth control and challenged women in leadership.",
+          "Mainstream feminist movement (NOW) continued to focus on white middle-class issues — Black women's triple oppression (race, gender, class) not addressed until Third Wave feminism."
+        ]
+      }
+    ],
+    "facts": []
+  },
+  {
+    "section": "wom",
     "period": "wom-black-power-ds3-1",
     "heading": "🔑 DS3.1 — How far did Black Power advance the position of Black women?",
     "summary": "Black Power raised the profile of Black women's triple oppression of race, gender and class — but male chauvinism within the movement meant women were simultaneously celebrated and subordinated.",
     "isDepthStudy": true,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Gains",
@@ -3701,7 +3777,7 @@
     "isDepthStudy": true,
     "isFactor": false,
     "isObstacle": false,
-    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💥 Division",
+    "factorKey": "📢 Women's Campaigns · 🦅 Federal Government · ⚔️ War · 💰 Socioeconomic Change · 💭 Attitudes in Society · 💥 Division and Conservative Opposition",
     "subheadings": [
       {
         "group": "Major Influence",
