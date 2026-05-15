@@ -162,11 +162,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 /* PRINT MODE */
   :root.dark #rq-one-a { color:#6EE7B7 !important; }
   :root.dark .btn-sm[onclick*="rqOneAnswer(true)"] { background:#1a3d2e !important; color:#6EE7B7 !important; border-color:#6EE7B7 !important; }
-  /* Mixed Retrieval — dark mode answer reveals */
-  :root.dark .rq-a { background:#1a3d2e !important; color:#6EE7B7 !important; }
-  :root.dark .rq-card.revealed { border-color:#6EE7B7 !important; }
-  :root.dark #rq-el-a { color:#6EE7B7 !important; }
-  :root.dark .btn-sm[onclick*="rqElAnswer(true)"] { background:#1a3d2e !important; color:#6EE7B7 !important; border-color:#6EE7B7 !important; }
 /* KC mode readability */
 #mode-knowledge .card-heading { font-size:1.05rem; margin-bottom:.75rem; line-height:1.4; text-decoration:underline; text-underline-offset:3px; }
 #mode-knowledge ul { margin:.25rem 0 0; padding-left:1.1rem; }
@@ -176,9 +171,50 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 @keyframes cd-pop { 0%{transform:scale(.7);opacity:0} 40%{transform:scale(1.15)} 70%{transform:scale(.95)} 100%{transform:scale(1);opacity:1} }
 #d-countdown-num { animation:cd-pop .35s ease forwards; }
 
+/* ── SEARCH ── */
+#search-btn{padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
+#search-btn:hover{background:var(--subtle);color:var(--text)}
+.search-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:5vh 1rem 1rem;overflow-y:auto}
+.search-overlay.open{display:flex}
+:root.dark .search-overlay{background:rgba(0,0,0,.7)}
+.search-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;width:100%;max-width:560px;box-shadow:0 12px 32px rgba(0,0,0,.18);overflow:hidden;animation:search-slide .18s ease}
+@keyframes search-slide{from{transform:translateY(-12px);opacity:0}to{transform:translateY(0);opacity:1}}
+.search-head{display:flex;align-items:center;gap:8px;padding:.8rem 1rem;border-bottom:1px solid var(--border)}
+.search-input{flex:1;padding:8px 12px;font-size:.95rem;border:1.5px solid var(--border2);border-radius:8px;background:var(--input-bg);color:var(--text);font-family:inherit;outline:none}
+.search-input:focus{border-color:#888}
+.search-close{padding:6px 10px;font-size:1rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;line-height:1}
+.search-close:hover{background:var(--subtle)}
+.search-hint{padding:.6rem 1rem;font-size:.72rem;color:var(--muted);border-bottom:1px solid var(--border);background:var(--card)}
+.search-results{max-height:60vh;overflow-y:auto;padding:.4rem}
+.search-empty{padding:1.25rem 1rem;text-align:center;font-size:.85rem;color:var(--muted)}
+.search-count{padding:.5rem .75rem .3rem;font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.search-result{padding:.7rem .85rem;border-radius:10px;cursor:pointer;border:1px solid transparent;margin-bottom:4px;transition:background .12s,border-color .12s}
+.search-result:hover{background:var(--subtle);border-color:var(--border2)}
+.search-result-meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.35rem;align-items:center}
+.search-result-heading{font-size:.92rem;font-weight:600;line-height:1.35;margin-bottom:.25rem;color:var(--text)}
+.search-result-snippet{font-size:.78rem;color:var(--muted);line-height:1.5}
+.search-result-snippet mark{background:#fff3a8;color:inherit;padding:0 2px;border-radius:2px;font-weight:600}
+:root.dark .search-result-snippet mark{background:#7a6500;color:#fff}
+.search-result-where{font-size:.66rem;color:var(--muted);font-style:italic;margin-top:.25rem;opacity:.85}
+
+/* ── INLINE SEARCH BAR (on s-pick) ── */
+.inline-search-wrap{margin:1.1rem 0}
+.inline-search-bar{display:flex;align-items:center;gap:8px;padding:.55rem .8rem;background:var(--surface);border:1.5px solid var(--border2);border-radius:12px;transition:border-color .15s,box-shadow .15s}
+.inline-search-bar:focus-within{border-color:#888;box-shadow:0 0 0 3px rgba(120,120,120,.08)}
+.inline-search-icon{font-size:1.05rem;opacity:.55;flex-shrink:0}
+#inline-search-input{flex:1;border:none;outline:none;background:transparent;color:var(--text);font-size:.95rem;font-family:inherit;padding:8px 0;min-width:0}
+#inline-search-input::placeholder{color:var(--muted)}
+.inline-search-clear{display:none;background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer;padding:0 6px;line-height:1;font-family:inherit}
+.inline-search-clear:hover{color:var(--text)}
+.inline-search-clear.show{display:inline-block}
+.inline-search-results{margin-top:.6rem}
+.inline-search-results:empty{display:none}
+.inline-search-results .search-result{background:var(--card);border:1px solid var(--border)}
+.inline-search-results .search-count{padding-top:.3rem}
+
 @media print {
   /* Hide all chrome — navigation, buttons, screens other than s-main */
-  #dark-toggle, #hub-link, .mode-grid, .back-btn, .paper-grid, .rq-section,
+  #dark-toggle, #hub-link, #search-btn, .search-overlay, .mode-grid, .back-btn, .paper-grid, .rq-section,
   .btn-row, .btn-go, .btn-sm, .filter-row, .mode-header,
   .screen:not(#s-main), #mode-dates, #mode-flashcard,
   #k-card, #e-type, #e-directory,
@@ -273,9 +309,24 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 <canvas id="fd-confetti-canvas" style="display:none"></canvas>
 <div class="app">
 <div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;margin-bottom:.5rem">
+  <button id="search-btn" onclick="openSearch()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit" title="Search topics">🔍</button>
   <button id="print-btn" onclick="window.print()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;display:none" title="Print">🖨️</button>
   <button id="dark-toggle" onclick="toggleDark()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit" title="Toggle dark mode">🌙</button>
   <a href="index.html" id="hub-link" style="font-size:.78rem;font-weight:600;padding:6px 12px;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);text-decoration:none">← Hub</a>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-panel">
+    <div class="search-head">
+      <input type="text" class="search-input" id="search-input" placeholder="Search topics, people, events..." autocomplete="off" oninput="runSearch()" onkeydown="searchKeyHandler(event)">
+      <button class="search-close" onclick="closeSearch()" title="Close">×</button>
+    </div>
+    <div class="search-hint">Try: <em>Mangrove</em>, <em>Berlin Wall</em>, <em>Treaty of Versailles</em>, <em>Spanish Armada</em></div>
+    <div class="search-results" id="search-results">
+      <div class="search-empty">Start typing to search across all four papers.</div>
+    </div>
+  </div>
 </div>
 
 <!-- SCREEN 1: PAPER PICKER -->
@@ -287,6 +338,15 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <button class="paper-btn pb-p2a" onclick="pickPaper('p2a')"><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
     <button class="paper-btn pb-p2b" onclick="pickPaper('p2b')"><span class="plabel">Paper 2b</span>👑 Early Elizabethan England</button>
     <button class="paper-btn pb-p3" onclick="pickPaper('p3')"><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
+  </div>
+  <!-- Inline search bar -->
+  <div class="inline-search-wrap">
+    <div class="inline-search-bar">
+      <span class="inline-search-icon">🔍</span>
+      <input type="text" id="inline-search-input" placeholder="Search any topic, person or event…" autocomplete="off" oninput="runInlineSearch()" onkeydown="inlineSearchKey(event)">
+      <button class="inline-search-clear" id="inline-search-clear" onclick="clearInlineSearch()" title="Clear">×</button>
+    </div>
+    <div class="inline-search-results" id="inline-search-results"></div>
   </div>
   <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #e8e7e2">
     <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
@@ -417,7 +477,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
       <div style="margin-bottom:.75rem">
         <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Choose unit</label>
-        <select id="fd-unit" onchange="fdUpdateStartBtn()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
+        <select id="fd-unit" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
           <option value="">— select a unit —</option>
           <option value="all">All units</option>
         </select>
@@ -504,26 +564,10 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
     <!-- Completion state -->
     <div id="fd-complete" style="display:none;text-align:center;padding:2rem 1rem">
-      <div style="margin-bottom:.75rem">
-        <svg viewBox="0 0 80 90" width="90" height="100" xmlns="http://www.w3.org/2000/svg">
-          <!-- Ribbon left -->
-          <polygon points="28,48 20,88 35,78 40,90 40,48" fill="#C0392B"/>
-          <!-- Ribbon right -->
-          <polygon points="52,48 60,88 45,78 40,90 40,48" fill="#E74C3C"/>
-          <!-- Medal circle -->
-          <circle cx="40" cy="36" r="32" fill="#F39C12"/>
-          <circle cx="40" cy="36" r="28" fill="#F1C40F"/>
-          <circle cx="40" cy="36" r="24" fill="#F39C12" opacity=".35"/>
-          <!-- Star -->
-          <text x="40" y="43" text-anchor="middle" font-size="24" fill="#fff" font-family="serif">★</text>
-        </svg>
-      </div>
-      <div style="font-size:1.3rem;font-weight:800;margin-bottom:.3rem">Unit Complete!</div>
-      <div style="font-size:.9rem;font-weight:600;color:#F39C12;margin-bottom:.3rem" id="fd-complete-count"></div>
-      <div style="font-size:.82rem;color:var(--muted);margin-bottom:.5rem">Your progress resets automatically tomorrow —<br>come back then to start a fresh session.</div>
-      <div style="font-size:.82rem;color:var(--muted);margin-bottom:1.5rem">Want to drill again <em>today</em>? Use the button below.</div>
-      <button class="btn-go" onclick="fdResetUnit()" style="background:#F39C12;color:#fff;margin-bottom:.65rem">🔄 Reset &amp; drill again today</button>
-      <button class="btn-go" onclick="fdFinish()" style="background:#374151;color:#fff">← Back to unit picker</button>
+      <div style="font-size:2.5rem;margin-bottom:.5rem">🎉</div>
+      <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">All cards mastered!</div>
+      <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem" id="fd-complete-note"></div>
+      <button class="btn-go" onclick="fdFinish()">← Back to unit picker</button>
     </div>
   </div>
 </div>
@@ -723,6 +767,7 @@ function showScreen(id) {
   document.getElementById(id).classList.add('active');
   const hubLink = document.getElementById('hub-link');
   if (hubLink) hubLink.style.display = id === 's-pick' ? 'inline-block' : 'none';
+  // Search button now always visible — no toggling
   // print btn handled by setMode; hide when leaving s-main
   if (id !== 's-main') {
     const printBtn = document.getElementById('print-btn');
@@ -737,6 +782,205 @@ function showScreen(id) {
 function enterMode(m) {
   showScreen('s-main');
   setMode(m);
+}
+
+// ═══════════════════════════════════════════
+// SEARCH
+// ═══════════════════════════════════════════
+const PAPER_LABEL = {p1:'Paper 1', p2a:'Paper 2a', p2b:'Paper 2b', p3:'Paper 3'};
+
+function openSearch() {
+  const ov = document.getElementById('search-overlay');
+  if (!ov) return;
+  ov.classList.add('open');
+  const input = document.getElementById('search-input');
+  if (input) {
+    input.value = '';
+    setTimeout(() => input.focus(), 50);
+  }
+  renderSearchEmpty();
+}
+
+function closeSearch() {
+  const ov = document.getElementById('search-overlay');
+  if (ov) ov.classList.remove('open');
+}
+
+function searchKeyHandler(e) {
+  if (e.key === 'Escape') { closeSearch(); return; }
+  if (e.key === 'Enter') {
+    const first = document.querySelector('.search-result');
+    if (first) first.click();
+  }
+}
+
+function renderSearchEmpty() {
+  const out = document.getElementById('search-results');
+  if (out) out.innerHTML = '<div class="search-empty">Start typing to search across all four papers.</div>';
+}
+
+function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+function escHtml(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+function highlightMatch(text, q) {
+  const safe = escHtml(text);
+  if (!q) return safe;
+  const re = new RegExp('(' + escRe(q) + ')', 'gi');
+  return safe.replace(re, '<mark>$1</mark>');
+}
+
+function snippet(text, q, len = 160) {
+  if (!text) return '';
+  const lower = text.toLowerCase();
+  const i = lower.indexOf(q.toLowerCase());
+  if (i === -1) return text.length > len ? text.slice(0, len) + '…' : text;
+  const start = Math.max(0, i - 40);
+  const end = Math.min(text.length, i + q.length + len - 40);
+  let out = text.slice(start, end);
+  if (start > 0) out = '…' + out;
+  if (end < text.length) out = out + '…';
+  return out;
+}
+
+function searchKC(query) {
+  const q = query.trim().toLowerCase();
+  if (!q || q.length < 2 || !KC.length) return [];
+  const results = [];
+  for (const card of KC) {
+    let where = null;
+    let snip = null;
+    let rank = 99;
+    // Highest priority: heading match
+    if (card.heading && card.heading.toLowerCase().includes(q)) {
+      where = 'in title'; rank = 0; snip = card.summary || (card.facts && card.facts[0]) || '';
+    } else {
+      // Hint match
+      const hint = (card.hints || []).find(h => h.toLowerCase().includes(q));
+      if (hint) {
+        where = 'keyword: ' + hint; rank = 1;
+        const factMatch = (card.facts || []).find(f => f.toLowerCase().includes(q));
+        snip = factMatch || card.summary || (card.facts && card.facts[0]) || '';
+      } else if (card.summary && card.summary.toLowerCase().includes(q)) {
+        where = 'in summary'; rank = 2; snip = card.summary;
+      } else {
+        const factMatch = (card.facts || []).find(f => f.toLowerCase().includes(q));
+        if (factMatch) { where = 'in detail'; rank = 3; snip = factMatch; }
+      }
+    }
+    if (where !== null) results.push({card, where, snip, rank});
+  }
+  results.sort((a, b) => a.rank - b.rank);
+  return results.slice(0, 25);
+}
+
+function runSearch() {
+  const input = document.getElementById('search-input');
+  const out = document.getElementById('search-results');
+  if (!input || !out) return;
+  const q = input.value.trim();
+  if (q.length < 2) { renderSearchEmpty(); return; }
+  if (!KC.length) {
+    out.innerHTML = '<div class="search-empty">⏳ Loading data… try again in a moment.</div>';
+    return;
+  }
+  const results = searchKC(q);
+  if (!results.length) {
+    out.innerHTML = `<div class="search-empty">No matches for <strong>${escHtml(q)}</strong>.<br><span style="font-size:.75rem;opacity:.8">Try a shorter or different term.</span></div>`;
+    return;
+  }
+  const html = `<div class="search-count">${results.length} result${results.length === 1 ? '' : 's'}</div>` +
+    results.map(r => {
+      const c = r.card;
+      const headingHtml = highlightMatch(c.heading, q);
+      const snippetHtml = r.snip ? highlightMatch(snippet(r.snip, q), q) : '';
+      return `<div class="search-result" data-paper="${c.paper}" data-heading="${escHtml(c.heading)}">
+        <div class="search-result-meta">
+          <span class="tag t-${c.paper}">${PAPER_LABEL[c.paper]}</span>
+          <span class="tag t-grey">${escHtml(c.unit)}</span>
+        </div>
+        <div class="search-result-heading">${headingHtml}</div>
+        ${snippetHtml ? `<div class="search-result-snippet">${snippetHtml}</div>` : ''}
+        <div class="search-result-where">Match ${escHtml(r.where)}</div>
+      </div>`;
+    }).join('');
+  out.innerHTML = html;
+  // Wire up click handlers (delegation would also work; direct is fine for ≤25 items)
+  out.querySelectorAll('.search-result').forEach(el => {
+    el.addEventListener('click', () => {
+      goToSearchResult(el.dataset.paper, el.dataset.heading);
+    });
+  });
+}
+
+function goToSearchResult(paper, heading) {
+  closeSearch();
+  pickPaper(paper);           // sets currentPaper, navigates to s-hub
+  enterMode('knowledge');     // navigates to s-main, knowledge mode
+  // Set unit dropdown to 'all' so the card is in pool regardless of unit
+  const unitSel = document.getElementById('k-unit');
+  if (unitSel) unitSel.value = 'all';
+  buildKPool();
+  const i = kPool.findIndex(e => e.card.heading === heading && e.card.paper === paper);
+  if (i !== -1) {
+    kIdx = i;
+    renderKCard(kPool[kIdx]);
+    updateNavUI();
+  }
+}
+
+// Inline search bar (on s-pick) — shares searchKC and goToSearchResult with the overlay
+function runInlineSearch() {
+  const input = document.getElementById('inline-search-input');
+  const out = document.getElementById('inline-search-results');
+  const clear = document.getElementById('inline-search-clear');
+  if (!input || !out) return;
+  const q = input.value.trim();
+  if (clear) clear.classList.toggle('show', q.length > 0);
+  if (q.length < 2) { out.innerHTML = ''; return; }
+  if (!KC.length) {
+    out.innerHTML = '<div class="search-empty">⏳ Loading data… try again in a moment.</div>';
+    return;
+  }
+  const results = searchKC(q).slice(0, 10);
+  if (!results.length) {
+    out.innerHTML = `<div class="search-empty">No matches for <strong>${escHtml(q)}</strong>.</div>`;
+    return;
+  }
+  const html = `<div class="search-count">${results.length} result${results.length === 1 ? '' : 's'}</div>` +
+    results.map(r => {
+      const c = r.card;
+      const headingHtml = highlightMatch(c.heading, q);
+      const snippetHtml = r.snip ? highlightMatch(snippet(r.snip, q), q) : '';
+      return `<div class="search-result" data-paper="${c.paper}" data-heading="${escHtml(c.heading)}">
+        <div class="search-result-meta">
+          <span class="tag t-${c.paper}">${PAPER_LABEL[c.paper]}</span>
+          <span class="tag t-grey">${escHtml(c.unit)}</span>
+        </div>
+        <div class="search-result-heading">${headingHtml}</div>
+        ${snippetHtml ? `<div class="search-result-snippet">${snippetHtml}</div>` : ''}
+        <div class="search-result-where">Match ${escHtml(r.where)}</div>
+      </div>`;
+    }).join('');
+  out.innerHTML = html;
+  out.querySelectorAll('.search-result').forEach(el => {
+    el.addEventListener('click', () => {
+      goToSearchResult(el.dataset.paper, el.dataset.heading);
+    });
+  });
+}
+
+function clearInlineSearch() {
+  const input = document.getElementById('inline-search-input');
+  if (input) { input.value = ''; input.focus(); }
+  runInlineSearch();
+}
+
+function inlineSearchKey(e) {
+  if (e.key === 'Escape') { clearInlineSearch(); return; }
+  if (e.key === 'Enter') {
+    const first = document.querySelector('#inline-search-results .search-result');
+    if (first) first.click();
+  }
 }
 
 function setMode(m) {
@@ -1550,7 +1794,7 @@ function renderQ() {
         <div class="quiz-fb" id="qfb"></div>
       </div>`;
   } else {
-    const others = shuffle(DATES.filter(d => d.paper === currentPaper && d.event !== item.event && d.date !== item.date)).slice(0, 3).map(d => d.event);
+    const others = shuffle(DATES.filter(d => d.paper === currentPaper && d.event !== item.event)).slice(0, 3).map(d => d.event);
     const opts = shuffle([item.event, ...others]);
     const optsHtml = opts.map((o, i) => {
       const formatted = o.replace(/^([^—–-]+)(—|–|-)/, '<strong>$1</strong>$2');
@@ -1910,50 +2154,16 @@ function fdKey(card) {
 }
 
 function fdGetMastered() {
-  const raw = JSON.parse(localStorage.getItem(LS_MASTERED) || '{}');
-  const today = new Date().toISOString().slice(0, 10);
-  // New envelope format: {date, cards}. Old flat format has no .date — treat as stale.
-  if (!raw.date || raw.date !== today) return {};
-  return raw.cards || {};
+  return JSON.parse(localStorage.getItem(LS_MASTERED) || '{}');
 }
 function fdSetMastered(obj) {
-  const today = new Date().toISOString().slice(0, 10);
-  localStorage.setItem(LS_MASTERED, JSON.stringify({ date: today, cards: obj }));
+  localStorage.setItem(LS_MASTERED, JSON.stringify(obj));
 }
 function fdGetOutstanding() {
   return JSON.parse(localStorage.getItem(LS_MISSED) || '[]');
 }
 function fdSetOutstanding(arr) {
   localStorage.setItem(LS_MISSED, JSON.stringify(arr));
-}
-
-function fdUpdateStartBtn() {
-  const btn  = document.getElementById('fd-start-btn');
-  const unit = (document.getElementById('fd-unit') || {}).value || '';
-  if (!unit || !FD.length) {
-    btn.textContent = '⚡ Start Flashcard Mode';
-    return;
-  }
-  const mastered = fdGetMastered();
-
-  // Unmastered cards in this unit/paper
-  let base = FD.filter(c => c.paper === currentPaper);
-  if (unit !== 'all') base = base.filter(c => c.unit === unit);
-  const unmastered = base.filter(c => !mastered[fdKey(c)]).length;
-
-  // Pinned cards from other units/papers that will be woven in
-  const outstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
-  const pinned = outstanding.filter(k => {
-    const c = FD.find(c => fdKey(c) === k);
-    if (!c) return false;
-    if (c.paper !== currentPaper) return true;
-    if (unit === 'all') return false;
-    return c.unit !== unit;
-  }).length;
-
-  let label = `⚡ Start — ${unmastered} card${unmastered !== 1 ? 's' : ''}`;
-  if (pinned > 0) label += ` + ${pinned} pinned`;
-  btn.textContent = label;
 }
 
 function fdSetup() {
@@ -2017,7 +2227,6 @@ function fdSetup() {
   document.getElementById('fd-drill').style.display = 'none';
   document.getElementById('fd-summary').style.display = 'none';
   document.getElementById('fd-complete').style.display = 'none';
-  fdUpdateStartBtn();
 }
 
 function fdStart() {
@@ -2035,21 +2244,6 @@ function fdStart() {
   // Build base deck for this paper/unit
   let base = FD.filter(c => c.paper === currentPaper);
   if (unit !== 'all') base = base.filter(c => c.unit === unit);
-  const unitTotal = base.length;
-
-  // Filter out already-mastered cards
-  base = base.filter(c => !mastered[fdKey(c)]);
-
-  // If all mastered — show unit complete screen
-  if (base.length === 0 && unitTotal > 0) {
-    document.getElementById('fd-setup').style.display    = 'none';
-    document.getElementById('fd-drill').style.display    = 'none';
-    document.getElementById('fd-summary').style.display  = 'none';
-    document.getElementById('fd-complete').style.display = 'block';
-    document.getElementById('fd-complete-count').textContent =
-      `All ${unitTotal} card${unitTotal !== 1 ? 's' : ''} mastered ✅`;
-    return;
-  }
 
   // Separate outstanding missed cards not already in the deck
   fdOutstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
@@ -2229,7 +2423,6 @@ function fdAnswer(got) {
     if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
     if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
     renderFdSetupWheel();
-    fdUpdateStartBtn();
   }, 220);
 }
 
@@ -2245,23 +2438,6 @@ function fdUpdateProgress() {
 }
 
 function fdShowSummary() {
-  // Check if the whole unit is now mastered — show gold medal instead of summary
-  const unit = document.getElementById('fd-unit').value;
-  const mastered = fdGetMastered();
-  let unitCards = FD.filter(c => c.paper === currentPaper);
-  if (unit !== 'all') unitCards = unitCards.filter(c => c.unit === unit);
-  const unitTotal = unitCards.length;
-  if (unitTotal > 0 && unitCards.every(c => mastered[fdKey(c)])) {
-    document.getElementById('fd-drill').style.display    = 'none';
-    document.getElementById('fd-summary').style.display  = 'none';
-    document.getElementById('fd-complete').style.display = 'block';
-    document.getElementById('fd-complete-count').textContent =
-      `All ${unitTotal} card${unitTotal !== 1 ? 's' : ''} mastered ✅`;
-    fdFireConfetti();
-    fdUpdateStreak();
-    return;
-  }
-
   document.getElementById('fd-drill').style.display   = 'none';
   document.getElementById('fd-summary').style.display = 'block';
   document.getElementById('fd-sum-got').textContent   = fdGot;
@@ -2361,11 +2537,11 @@ function fdDrillMissed() {
 function fdShowComplete() {
   document.getElementById('fd-summary').style.display  = 'none';
   document.getElementById('fd-complete').style.display = 'block';
-  const unit = document.getElementById('fd-unit').value;
-  let unitCards = FD.filter(c => c.paper === currentPaper);
-  if (unit !== 'all') unitCards = unitCards.filter(c => c.unit === unit);
-  document.getElementById('fd-complete-count').textContent =
-    `All ${unitCards.length} card${unitCards.length !== 1 ? 's' : ''} mastered ✅`;
+  const mastered = fdGetMastered();
+  const total = FD.filter(c => c.paper === currentPaper).length;
+  const mastCount = Object.keys(mastered).filter(k => k.startsWith(currentPaper + '|')).length;
+  document.getElementById('fd-complete-note').textContent =
+    `${mastCount} of ${total} ${P[currentPaper].label} cards mastered overall.`;
 }
 
 function fdFinish() {
@@ -2373,18 +2549,6 @@ function fdFinish() {
   document.getElementById('fd-summary').style.display  = 'none';
   document.getElementById('fd-complete').style.display = 'none';
   fdSetup();
-}
-
-function fdResetUnit() {
-  const unit = document.getElementById('fd-unit').value;
-  const mastered = fdGetMastered();
-  let toReset = FD.filter(c => c.paper === currentPaper);
-  if (unit !== 'all') toReset = toReset.filter(c => c.unit === unit);
-  toReset.forEach(c => delete mastered[fdKey(c)]);
-  fdSetMastered(mastered);
-  document.getElementById('fd-complete').style.display = 'none';
-  fdUpdateSetupWheel();
-  fdStart();
 }
 
 function fdUpdateStreak() {
@@ -2447,7 +2611,7 @@ function renderFdSetupWheel() {
     breakdownEl.innerHTML = units.map(unit => {
       const unitTotal = FD.filter(c => c.paper === paper && c.unit === unit).length;
       const uk = paper + '|' + unit;
-      const gotToday  = Math.min(session.unitGot[uk] || 0, unitTotal);
+      const gotToday  = session.unitGot[uk]   || 0;
       const colour = gotToday >= unitTotal && unitTotal > 0 ? '#1D9E75' : gotToday > 0 ? '#F0B429' : 'var(--muted)';
       const dot = gotToday >= unitTotal && unitTotal > 0 ? '🥇' : gotToday > 0 ? '◑' : '○';
       return `<div style="display:flex;align-items:center;gap:.4rem;padding:.2rem 0;border-bottom:1px solid var(--subtle);font-size:.72rem">
