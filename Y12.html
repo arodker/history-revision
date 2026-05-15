@@ -89,6 +89,20 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .card li:last-child{margin-bottom:0}
 .kc-sub{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:1rem 0 .35rem;padding-bottom:.2rem;border-bottom:1px solid var(--subtle)}
 .kc-sub:first-child{margin-top:.25rem}
+.debate-section{margin:1.1rem 0 .25rem;padding:.85rem;background:var(--bg);border:1px solid var(--border);border-radius:10px}
+.debate-q{font-size:.82rem;font-weight:700;text-align:center;margin-bottom:.75rem;padding-bottom:.55rem;border-bottom:1px solid var(--border);line-height:1.4}
+.debate-q::before{content:"⚖️ ";font-size:.95rem}
+.debate-cols{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
+.debate-col{padding:.55rem .7rem;border-radius:8px}
+.debate-col-l{background:rgba(59,109,17,.07);border:1px solid rgba(59,109,17,.22)}
+.debate-col-r{background:rgba(180,60,60,.07);border:1px solid rgba(180,60,60,.22)}
+:root.dark .debate-col-l{background:rgba(120,180,80,.09);border-color:rgba(120,180,80,.28)}
+:root.dark .debate-col-r{background:rgba(220,110,110,.09);border-color:rgba(220,110,110,.28)}
+.debate-col-h{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.45rem;padding-bottom:.3rem;border-bottom:1px solid currentColor;opacity:.75;text-align:center}
+.debate-col ul{padding-left:1rem;margin:0}
+.debate-col li{font-size:.78rem;margin-bottom:.4rem;line-height:1.45}
+.debate-col li:last-child{margin-bottom:0}
+@media (max-width:540px){.debate-cols{grid-template-columns:1fr}}
 .btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:.9rem}
 .reveal{display:none;border-top:1px solid var(--subtle);margin-top:.9rem;padding-top:.9rem}
 .reveal.open{display:block}
@@ -1156,9 +1170,12 @@ function renderKCard(entry) {
   const colKey = card.reign || card.section || currentSection;
   let bodyHtml = '';
   if (card.subheadings && card.subheadings.length) {
-    bodyHtml = card.subheadings.map(s =>
-      `<div class="kc-sub">${s.label}</div><ul>${s.facts.map(f => `<li>${f}</li>`).join('')}</ul>`
-    ).join('');
+    bodyHtml = card.subheadings.map(s => {
+      if (s.label && s.label.indexOf('Debate') === 0) {
+        return renderDebate(s);
+      }
+      return `<div class="kc-sub">${s.label}</div><ul>${s.facts.map(f => `<li>${f}</li>`).join('')}</ul>`;
+    }).join('');
   } else {
     bodyHtml = '<ul>' + (card.facts||[]).map(f => `<li>${f}</li>`).join('') + '</ul>';
   }
@@ -1173,6 +1190,41 @@ function renderKCard(entry) {
         <div class="card-heading">${card.heading}</div>
         ${card.summary ? `<p class="kc-summary">${card.summary}</p>` : ''}
         ${bodyHtml}
+      </div>
+    </div>`;
+}
+
+function renderDebate(sub) {
+  // Question: strip "Debate:" prefix
+  const question = (sub.label || '').replace(/^Debate:\s*/i, '').trim();
+  // Group facts by PREFIX before the first colon
+  const groups = {};
+  const order = [];
+  (sub.facts || []).forEach(fact => {
+    const m = fact.match(/^([A-Z][A-Z'\/\s]+):\s*(.+)$/);
+    if (m) {
+      const k = m[1].trim();
+      if (!groups[k]) { groups[k] = []; order.push(k); }
+      groups[k].push(m[2].trim());
+    }
+  });
+  // Fallback if no prefix format found
+  if (order.length < 2) {
+    return `<div class="kc-sub">${sub.label}</div><ul>${(sub.facts||[]).map(f => `<li>${f}</li>`).join('')}</ul>`;
+  }
+  const [lk, rk] = order;
+  return `
+    <div class="debate-section">
+      <div class="debate-q">${question}</div>
+      <div class="debate-cols">
+        <div class="debate-col debate-col-l">
+          <div class="debate-col-h">${lk}</div>
+          <ul>${groups[lk].map(a => `<li>${a}</li>`).join('')}</ul>
+        </div>
+        <div class="debate-col debate-col-r">
+          <div class="debate-col-h">${rk}</div>
+          <ul>${groups[rk].map(a => `<li>${a}</li>`).join('')}</ul>
+        </div>
       </div>
     </div>`;
 }
