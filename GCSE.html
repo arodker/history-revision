@@ -477,7 +477,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
       <div style="margin-bottom:.75rem">
         <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Choose unit</label>
-        <select id="fd-unit" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
+        <select id="fd-unit" onchange="fdUpdateStartBtn()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
           <option value="">— select a unit —</option>
           <option value="all">All units</option>
         </select>
@@ -564,10 +564,22 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
     <!-- Completion state -->
     <div id="fd-complete" style="display:none;text-align:center;padding:2rem 1rem">
-      <div style="font-size:2.5rem;margin-bottom:.5rem">🎉</div>
-      <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">All cards mastered!</div>
-      <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem" id="fd-complete-note"></div>
-      <button class="btn-go" onclick="fdFinish()">← Back to unit picker</button>
+      <div style="margin-bottom:.75rem">
+        <svg viewBox="0 0 80 90" width="90" height="100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="28,48 20,88 35,78 40,90 40,48" fill="#C0392B"/>
+          <polygon points="52,48 60,88 45,78 40,90 40,48" fill="#E74C3C"/>
+          <circle cx="40" cy="36" r="32" fill="#F39C12"/>
+          <circle cx="40" cy="36" r="28" fill="#F1C40F"/>
+          <circle cx="40" cy="36" r="24" fill="#F39C12" opacity=".35"/>
+          <text x="40" y="43" text-anchor="middle" font-size="24" fill="#fff" font-family="serif">★</text>
+        </svg>
+      </div>
+      <div style="font-size:1.3rem;font-weight:800;margin-bottom:.3rem">Unit Complete!</div>
+      <div style="font-size:.9rem;font-weight:600;color:#F39C12;margin-bottom:.3rem" id="fd-complete-count"></div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:.5rem">Your progress resets automatically tomorrow —<br>come back then to start a fresh session.</div>
+      <div style="font-size:.82rem;color:var(--muted);margin-bottom:1.5rem">Want to drill again <em>today</em>? Use the button below.</div>
+      <button class="btn-go" onclick="fdResetUnit()" style="background:#F39C12;color:#fff;margin-bottom:.65rem">🔄 Reset &amp; drill again today</button>
+      <button class="btn-go" onclick="fdFinish()" style="background:#374151;color:#fff">← Back to unit picker</button>
     </div>
   </div>
 </div>
@@ -2188,10 +2200,14 @@ function fdKey(card) {
 }
 
 function fdGetMastered() {
-  return JSON.parse(localStorage.getItem(LS_MASTERED) || '{}');
+  const raw = JSON.parse(localStorage.getItem(LS_MASTERED) || '{}');
+  const today = new Date().toISOString().slice(0, 10);
+  if (!raw.date || raw.date !== today) return {};
+  return raw.cards || {};
 }
 function fdSetMastered(obj) {
-  localStorage.setItem(LS_MASTERED, JSON.stringify(obj));
+  const today = new Date().toISOString().slice(0, 10);
+  localStorage.setItem(LS_MASTERED, JSON.stringify({ date: today, cards: obj }));
 }
 function fdGetOutstanding() {
   return JSON.parse(localStorage.getItem(LS_MISSED) || '[]');
@@ -2261,6 +2277,7 @@ function fdSetup() {
   document.getElementById('fd-drill').style.display = 'none';
   document.getElementById('fd-summary').style.display = 'none';
   document.getElementById('fd-complete').style.display = 'none';
+  fdUpdateStartBtn();
 }
 
 function fdStart() {
@@ -2278,6 +2295,21 @@ function fdStart() {
   // Build base deck for this paper/unit
   let base = FD.filter(c => c.paper === currentPaper);
   if (unit !== 'all') base = base.filter(c => c.unit === unit);
+  const unitTotal = base.length;
+
+  // Filter out already-mastered cards
+  base = base.filter(c => !mastered[fdKey(c)]);
+
+  // If all mastered today — show Unit Complete screen immediately
+  if (base.length === 0 && unitTotal > 0) {
+    document.getElementById('fd-setup').style.display    = 'none';
+    document.getElementById('fd-drill').style.display    = 'none';
+    document.getElementById('fd-summary').style.display  = 'none';
+    document.getElementById('fd-complete').style.display = 'block';
+    document.getElementById('fd-complete-count').textContent =
+      `All ${unitTotal} card${unitTotal !== 1 ? 's' : ''} mastered ✅`;
+    return;
+  }
 
   // Separate outstanding missed cards not already in the deck
   fdOutstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
@@ -2457,6 +2489,7 @@ function fdAnswer(got) {
     if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
     if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
     renderFdSetupWheel();
+    fdUpdateStartBtn();
   }, 220);
 }
 
@@ -2472,6 +2505,27 @@ function fdUpdateProgress() {
 }
 
 function fdShowSummary() {
+  // Clean sweep (no misses) or all unit cards mastered → gold medal
+  const unit = document.getElementById('fd-unit').value;
+  const mastered = fdGetMastered();
+  let unitCards = FD.filter(c => c.paper === currentPaper);
+  if (unit !== 'all') unitCards = unitCards.filter(c => c.unit === unit);
+  const unitTotal = unitCards.length;
+  const allMastered = unitTotal > 0 && unitCards.every(c => mastered[fdKey(c)]);
+  const cleanSweep  = fdMissCount === 0 && fdGot > 0;
+
+  if (allMastered || cleanSweep) {
+    document.getElementById('fd-drill').style.display    = 'none';
+    document.getElementById('fd-summary').style.display  = 'none';
+    document.getElementById('fd-complete').style.display = 'block';
+    document.getElementById('fd-complete-count').textContent = allMastered
+      ? `All ${unitTotal} card${unitTotal !== 1 ? 's' : ''} mastered ✅`
+      : `${fdGot} card${fdGot !== 1 ? 's' : ''} — clean sweep! ✅`;
+    fdFireConfetti();
+    fdUpdateStreak();
+    return;
+  }
+
   document.getElementById('fd-drill').style.display   = 'none';
   document.getElementById('fd-summary').style.display = 'block';
   document.getElementById('fd-sum-got').textContent   = fdGot;
@@ -2571,11 +2625,11 @@ function fdDrillMissed() {
 function fdShowComplete() {
   document.getElementById('fd-summary').style.display  = 'none';
   document.getElementById('fd-complete').style.display = 'block';
-  const mastered = fdGetMastered();
-  const total = FD.filter(c => c.paper === currentPaper).length;
-  const mastCount = Object.keys(mastered).filter(k => k.startsWith(currentPaper + '|')).length;
-  document.getElementById('fd-complete-note').textContent =
-    `${mastCount} of ${total} ${P[currentPaper].label} cards mastered overall.`;
+  const unit = document.getElementById('fd-unit').value;
+  let unitCards = FD.filter(c => c.paper === currentPaper);
+  if (unit !== 'all') unitCards = unitCards.filter(c => c.unit === unit);
+  document.getElementById('fd-complete-count').textContent =
+    `All ${unitCards.length} card${unitCards.length !== 1 ? 's' : ''} mastered ✅`;
 }
 
 function fdFinish() {
@@ -2583,6 +2637,41 @@ function fdFinish() {
   document.getElementById('fd-summary').style.display  = 'none';
   document.getElementById('fd-complete').style.display = 'none';
   fdSetup();
+}
+
+function fdResetUnit() {
+  const unit = document.getElementById('fd-unit').value;
+  const mastered = fdGetMastered();
+  let toReset = FD.filter(c => c.paper === currentPaper);
+  if (unit !== 'all') toReset = toReset.filter(c => c.unit === unit);
+  toReset.forEach(c => delete mastered[fdKey(c)]);
+  fdSetMastered(mastered);
+  document.getElementById('fd-complete').style.display = 'none';
+  renderFdSetupWheel();
+  fdUpdateStartBtn();
+  fdStart();
+}
+
+function fdUpdateStartBtn() {
+  const btn  = document.getElementById('fd-start-btn');
+  const unit = (document.getElementById('fd-unit') || {}).value || '';
+  if (!btn) return;
+  if (!unit || !FD.length) { btn.textContent = '⚡ Start Flashcard Mode'; return; }
+  const mastered = fdGetMastered();
+  let base = FD.filter(c => c.paper === currentPaper);
+  if (unit !== 'all') base = base.filter(c => c.unit === unit);
+  const unmastered = base.filter(c => !mastered[fdKey(c)]).length;
+  const outstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
+  const pinned = outstanding.filter(k => {
+    const c = FD.find(c => fdKey(c) === k);
+    if (!c) return false;
+    if (c.paper !== currentPaper) return true;
+    if (unit === 'all') return false;
+    return c.unit !== unit;
+  }).length;
+  let label = `⚡ Start — ${unmastered} card${unmastered !== 1 ? 's' : ''}`;
+  if (pinned > 0) label += ` + ${pinned} pinned`;
+  btn.textContent = label;
 }
 
 function fdUpdateStreak() {
@@ -2645,7 +2734,7 @@ function renderFdSetupWheel() {
     breakdownEl.innerHTML = units.map(unit => {
       const unitTotal = FD.filter(c => c.paper === paper && c.unit === unit).length;
       const uk = paper + '|' + unit;
-      const gotToday  = session.unitGot[uk]   || 0;
+      const gotToday  = Math.min(session.unitGot[uk] || 0, unitTotal);
       const colour = gotToday >= unitTotal && unitTotal > 0 ? '#1D9E75' : gotToday > 0 ? '#F0B429' : 'var(--muted)';
       const dot = gotToday >= unitTotal && unitTotal > 0 ? '🥇' : gotToday > 0 ? '◑' : '○';
       return `<div style="display:flex;align-items:center;gap:.4rem;padding:.2rem 0;border-bottom:1px solid var(--subtle);font-size:.72rem">
