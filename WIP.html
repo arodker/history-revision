@@ -1,0 +1,2750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>if(localStorage.getItem('gcse_dark')=='1')document.documentElement.classList.add('dark');</script>
+<title>Mr Rodker's Revision Hub - GCSE</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8f7f4;--surface:#fff;--card:#fafaf8;--border:#e8e7e2;--border2:#ddddd8;
+  --text:#1a1a18;--muted:#6b6b68;--muted2:#5f5e5a;--subtle:#eeede8;
+  --tag-bg:#eeede8;--tag-col:#5f5e5a;--input-bg:#fff;
+}
+:root.dark body{
+  --bg:#1a1a1e;--surface:#26262b;--card:#2e2e34;--border:#3a3a42;--border2:#3a3a42;
+  --text:#e8e8e6;--muted:#9a9a96;--muted2:#8a8a86;--subtle:#2e2e34;
+  --tag-bg:#2e2e34;--tag-col:#aaa;--input-bg:#2e2e34;
+}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .2s,color .2s}
+.app{max-width:720px;margin:0 auto;padding:1.5rem 1rem 4rem}
+h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;margin-bottom:.2rem}
+.subtitle{font-size:.82rem;color:var(--muted);margin-bottom:1.75rem}
+
+/* SCREENS */
+.screen{display:none}.screen.active{display:block}
+
+/* PAPER PICKER */
+.paper-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem}
+.paper-btn{padding:1.4rem 1rem;border:1.5px solid transparent;border-radius:14px;cursor:pointer;font-family:inherit;font-weight:600;font-size:.95rem;text-align:left;transition:all .15s;line-height:1.3}
+.paper-btn .plabel{font-size:.72rem;font-weight:500;opacity:.75;display:block;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.04em}
+.pb-p1{background:#FEF9E7;color:#9A6B00;border-color:#F0B429}
+.pb-p2a{background:#FBEAF0;color:#993556;border-color:#D4537E}
+.pb-p2b{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
+.pb-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
+.pb-p1:hover{background:#fef3c7}.pb-p2a:hover{background:#f4d4e0}
+.pb-p2b:hover{background:#c8edde}.pb-p3:hover{background:#cde3f7}
+
+/* MODE PICKER */
+.mode-header{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+.back-btn{padding:6px 12px;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
+.back-btn:hover{background:var(--subtle)}
+.paper-badge{font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:20px}
+.bg-p1{background:#FEF9E7;color:#9A6B00}.bg-p2a{background:#FBEAF0;color:#993556}
+.bg-p2b{background:#E1F5EE;color:#0F6E56}.bg-p3{background:#E6F1FB;color:#185FA5}
+.mode-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.25rem}
+.mode-btn{padding:1.2rem .75rem;border:1.5px solid var(--border2);border-top:1.5px solid var(--border2);border-radius:12px;cursor:pointer;font-family:inherit;font-size:.85rem;font-weight:600;text-align:center;background:var(--surface);color:var(--text);transition:all .15s;border-left-width:4px}
+.mode-btn .icon{font-size:1.4rem;display:block;margin-bottom:.4rem}
+.mode-btn:hover{border-color:#aaa;background:var(--subtle)}
+.mode-btn.sel{border-color:#555;background:#555;color:#fff}
+.mode-btn.stripe-p1{border-left-color:#F0B429}
+.mode-btn.stripe-p2a{border-left-color:#D4537E}
+.mode-btn.stripe-p2b{border-left-color:#1D9E75}
+.mode-btn.stripe-p3{border-left-color:#378ADD}
+
+/* FILTERS */
+.filter-row{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
+select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:8px;background:#fff;color:var(--text);cursor:pointer;flex:1;min-width:140px;font-family:inherit}
+select.sel-p1{background:#FEF9E7;color:#9A6B00;border-color:#F0B429}
+select.sel-p2a{background:#FBEAF0;color:#993556;border-color:#D4537E}
+select.sel-p2b{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
+select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
+
+/* GO BUTTON */
+.btn-go{width:100%;padding:13px;font-size:.95rem;font-weight:600;border:none;border-radius:10px;cursor:pointer;margin-bottom:1.25rem;transition:opacity .15s;color:#fff;font-family:inherit}
+.btn-go:hover{opacity:.9}
+.c-p1{background:#F0B429}.c-p2a{background:#D4537E}
+.c-p2b{background:#1D9E75}.c-p3{background:#378ADD}
+
+/* CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:.75rem;position:relative;overflow:hidden}
+.stripe{position:absolute;left:0;top:0;bottom:0;width:4px}
+.s-p1{background:#F0B429}.s-p2a{background:#D4537E}.s-p2b{background:#1D9E75}.s-p3{background:#378ADD}
+.inner{padding-left:.5rem}
+.meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.6rem}
+.tag{font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px}
+.t-grey{background:var(--tag-bg);color:var(--tag-col)}
+.t-p1{background:#FEF9E7;color:#9A6B00}.t-p2a{background:#FBEAF0;color:#993556}
+.t-p2b{background:#E1F5EE;color:#0F6E56}.t-p3{background:#E6F1FB;color:#185FA5}
+.card-heading{font-family:'DM Serif Display',serif;font-size:1.05rem;font-weight:400;margin-bottom:.5rem;line-height:1.3}
+.card-q{font-size:.88rem;line-height:1.65}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:.9rem}
+.btn-sm{padding:7px 14px;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer;transition:background .12s;font-family:inherit}
+.btn-sm:hover{background:var(--subtle)}
+
+/* REVEAL */
+.reveal{display:none;border-top:1px solid var(--subtle);margin-top:.9rem;padding-top:.9rem}
+.reveal.open{display:block}
+.rhead{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:.7rem 0 .3rem}
+.rhead:first-child{margin-top:0}
+.rhead.agree{color:#3B6D11}.rhead.disagree{color:#A32D2D}
+.reveal ul{padding-left:1.1rem}
+.reveal li{font-size:.84rem;line-height:1.6;color:var(--text);margin-bottom:.2rem}
+.hint-item{font-size:.82rem;color:var(--muted2);padding:4px 0;border-bottom:1px solid var(--subtle)}
+.hint-item:last-child{border-bottom:none}
+.hint-kw{font-size:.7rem;font-weight:700;color:#bbb;text-transform:uppercase;letter-spacing:.04em;margin-right:5px}
+
+/* EMPTY */
+.empty{padding:2rem;text-align:center;color:var(--muted);font-size:.85rem;border:1px dashed var(--border2);border-radius:12px}
+
+/* QUIZ */
+.quiz-prog{height:4px;background:var(--subtle);border-radius:2px;margin-bottom:1rem;overflow:hidden}
+.quiz-fill{height:100%;border-radius:2px;transition:width .3s}
+.fill-p1{background:#F0B429}.fill-p2a{background:#D4537E}.fill-p2b{background:#1D9E75}.fill-p3{background:#378ADD}
+.quiz-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
+.quiz-hdr-l{font-size:.8rem;color:var(--muted)}
+.sc-row{display:flex;gap:6px}
+.sc{font-size:.8rem;font-weight:600;padding:4px 10px;border-radius:20px}
+.sc-c{background:#EAF3DE;color:#3B6D11}.sc-w{background:#FCEBEB;color:#A32D2D}
+.quiz-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;margin-bottom:.75rem}
+.quiz-date{font-family:'DM Serif Display',serif;font-size:2.8rem;font-weight:400;margin-bottom:.3rem}
+.quiz-prompt{font-size:.82rem;color:var(--muted);margin-bottom:1.2rem}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opt{padding:10px 8px;font-size:.8rem;font-weight:500;border:1.5px solid var(--border2);border-radius:9px;background:var(--card);color:var(--text);cursor:pointer;text-align:left;line-height:1.4;transition:all .15s;font-family:inherit}
+.opt:hover:not(:disabled){background:var(--subtle);border-color:#aaa}
+.opt:disabled{cursor:default}
+.opt.correct{background:#EAF3DE!important;border-color:#3B6D11!important;color:#3B6D11!important}
+.opt.wrong{background:#FCEBEB!important;border-color:#A32D2D!important;color:#A32D2D!important}
+.opt.show-c{background:#EAF3DE!important;border-color:#3B6D11!important;color:#3B6D11!important;opacity:.8}
+.quiz-fb{font-size:.85rem;font-weight:600;padding:8px;border-radius:8px;margin-top:.75rem;display:none;text-align:center}
+.fb-c{background:#EAF3DE;color:#3B6D11}.fb-w{background:#FCEBEB;color:#A32D2D}
+.quiz-end{text-align:center;padding:2rem 1rem}
+.end-score{font-family:'DM Serif Display',serif;font-size:3.5rem;font-weight:400}
+.end-sub{font-size:.9rem;color:var(--muted);margin:.3rem 0 1.2rem}
+.end-grade{font-size:.9rem;font-weight:600;padding:8px 20px;border-radius:20px;display:inline-block;margin-bottom:1.2rem}
+.grade-a{background:#EAF3DE;color:#3B6D11}.grade-b{background:#FAEEDA;color:#854F0B}.grade-c{background:#FCEBEB;color:#A32D2D}
+
+/* RAPID FIRE QUIZ */
+.rq-section{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #e8e7e2}
+.rq-section-label{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+.rq-paper-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.9rem}
+.rq-pill{padding:6px 12px;font-size:.78rem;font-weight:600;border:1.5px solid var(--border2);border-radius:20px;cursor:pointer;background:var(--surface);color:var(--muted);font-family:inherit;transition:all .15s}
+.rq-pill.on-p1{background:#FEF9E7;color:#9A6B00;border-color:#F0B429}
+.rq-pill.on-p2a{background:#FBEAF0;color:#993556;border-color:#D4537E}
+.rq-pill.on-p2b{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
+.rq-pill.on-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
+.rq-stars{display:flex;gap:6px;margin-bottom:1rem}
+.rq-star{padding:6px 14px;font-size:.82rem;font-weight:600;border:1.5px solid var(--border2);border-radius:20px;cursor:pointer;background:var(--surface);color:var(--muted);font-family:inherit;transition:all .15s}
+.rq-star.sel{background:#555;color:#fff;border-color:#555}
+.rq-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.rq-card{background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:.85rem;cursor:pointer;min-height:90px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .15s}
+.rq-card:hover{border-color:var(--muted)}
+.rq-card.revealed{border-color:#3B6D11;cursor:default}
+.rq-q{font-size:.78rem;line-height:1.5;color:var(--text);font-weight:500}
+.rq-a{display:none;margin-top:.55rem;padding:.45rem .55rem;background:#EAF3DE;border-radius:7px;font-size:.78rem;font-weight:700;color:#3B6D11;line-height:1.4}
+.rq-card.revealed .rq-a{display:block}
+.rq-tap{font-size:.68rem;color:#bbb;margin-top:.4rem}
+.rq-card.revealed .rq-tap{display:none}
+.rq-btn-row{display:flex;gap:8px;flex-wrap:wrap}
+.rq-btn-row .btn-sm{background:var(--subtle);color:var(--text);border-color:var(--border2)}
+.rq-btn-row .btn-sm:hover{background:var(--border)}
+/* EXAM FULLSCREEN */
+.fs-blurred{filter:blur(6px);user-select:none;pointer-events:none}
+
+.fs-timer{font-size:1.6rem;font-weight:700;text-align:center;margin-bottom:.5rem;font-variant-numeric:tabular-nums;transition:color .3s}
+.fs-timer.warn{color:#D4537E}
+.fs-bar{height:6px;border-radius:3px;background:var(--border);margin-bottom:1.5rem;overflow:hidden}
+.fs-bar-fill{height:100%;border-radius:3px;background:#4a7c59;transition:width 1s linear,background .3s}
+.fs-q{font-size:1.05rem;font-weight:600;line-height:1.5;margin-bottom:1rem}
+.fs-hints{font-size:.85rem;color:var(--muted);margin-bottom:1.5rem}
+
+/* PRINT MODE */
+  :root.dark #rq-one-a { color:#6EE7B7 !important; }
+  :root.dark .btn-sm[onclick*="rqOneAnswer(true)"] { background:#1a3d2e !important; color:#6EE7B7 !important; border-color:#6EE7B7 !important; }
+/* KC mode readability */
+#mode-knowledge .card-heading { font-size:1.05rem; margin-bottom:.75rem; line-height:1.4; text-decoration:underline; text-underline-offset:3px; }
+#mode-knowledge ul { margin:.25rem 0 0; padding-left:1.1rem; }
+#mode-knowledge li { font-size:.88rem; line-height:1.75; margin-bottom:.35rem; }
+#mode-knowledge .kc-summary { font-size:.88rem; font-style:italic; color:var(--muted); margin-bottom:.9rem; line-height:1.6; }
+
+@keyframes cd-pop { 0%{transform:scale(.7);opacity:0} 40%{transform:scale(1.15)} 70%{transform:scale(.95)} 100%{transform:scale(1);opacity:1} }
+#d-countdown-num { animation:cd-pop .35s ease forwards; }
+
+/* ── SEARCH ── */
+#search-btn{padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
+#search-btn:hover{background:var(--subtle);color:var(--text)}
+.search-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:5vh 1rem 1rem;overflow-y:auto}
+.search-overlay.open{display:flex}
+:root.dark .search-overlay{background:rgba(0,0,0,.7)}
+.search-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;width:100%;max-width:560px;box-shadow:0 12px 32px rgba(0,0,0,.18);overflow:hidden;animation:search-slide .18s ease}
+@keyframes search-slide{from{transform:translateY(-12px);opacity:0}to{transform:translateY(0);opacity:1}}
+.search-head{display:flex;align-items:center;gap:8px;padding:.8rem 1rem;border-bottom:1px solid var(--border)}
+.search-input{flex:1;padding:8px 12px;font-size:.95rem;border:1.5px solid var(--border2);border-radius:8px;background:var(--input-bg);color:var(--text);font-family:inherit;outline:none}
+.search-input:focus{border-color:#888}
+.search-close{padding:6px 10px;font-size:1rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;line-height:1}
+.search-close:hover{background:var(--subtle)}
+.search-hint{padding:.6rem 1rem;font-size:.72rem;color:var(--muted);border-bottom:1px solid var(--border);background:var(--card)}
+.search-results{max-height:60vh;overflow-y:auto;padding:.4rem}
+.search-empty{padding:1.25rem 1rem;text-align:center;font-size:.85rem;color:var(--muted)}
+.search-count{padding:.5rem .75rem .3rem;font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.search-result{padding:.7rem .85rem;border-radius:10px;cursor:pointer;border:1px solid transparent;margin-bottom:4px;transition:background .12s,border-color .12s}
+.search-result:hover{background:var(--subtle);border-color:var(--border2)}
+.search-result-meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.35rem;align-items:center}
+.search-result-heading{font-size:.92rem;font-weight:600;line-height:1.35;margin-bottom:.25rem;color:var(--text)}
+.search-result-snippet{font-size:.78rem;color:var(--muted);line-height:1.5}
+.search-result-snippet mark{background:#fff3a8;color:inherit;padding:0 2px;border-radius:2px;font-weight:600}
+:root.dark .search-result-snippet mark{background:#7a6500;color:#fff}
+.search-result-where{font-size:.66rem;color:var(--muted);font-style:italic;margin-top:.25rem;opacity:.85}
+
+@media print {
+  /* Hide all chrome — navigation, buttons, screens other than s-main */
+  #dark-toggle, #hub-link, #search-btn, .search-overlay, .mode-grid, .back-btn, .paper-grid, .rq-section,
+  .btn-row, .btn-go, .btn-sm, .filter-row, .mode-header,
+  .screen:not(#s-main), #mode-dates, #mode-flashcard,
+  #k-card, #e-type, #e-directory,
+  div[style*="display:flex;gap:8px;margin-bottom"] {
+    display:none !important;
+  }
+  body { background:#fff !important; color:#000 !important; }
+  .app { max-width:100%; padding:.5rem; }
+  /* KB: show current card with hints and facts revealed */
+  #mode-knowledge .card { break-inside:avoid; border:1px solid #ccc; margin-bottom:.75rem; box-shadow:none; }
+  #mode-knowledge .reveal { display:block !important; }
+  #mode-knowledge .card-heading { font-size:1.1rem; font-weight:700; }
+  #mode-knowledge .reveal li { font-size:.85rem; }
+  #mode-knowledge .stripe { display:none; }
+  #mode-knowledge .inner { padding-left:0; }
+  /* Exam: show question card with indicative content revealed */
+  #mode-exam .card { break-inside:avoid; border:1px solid #ccc; margin-bottom:.75rem; box-shadow:none; }
+  #mode-exam .reveal { display:block !important; }
+  #mode-exam .card-q { font-size:1rem; font-weight:700; margin-bottom:.5rem; }
+  #mode-exam .rhead { font-size:.75rem; font-weight:700; text-transform:uppercase; color:#555; margin:.5rem 0 .2rem; }
+  #mode-exam .stripe { display:none; }
+  #mode-exam .inner { padding-left:0; }
+  /* Hints as plain text for print */
+  .hint-item { font-size:.82rem; padding:2px 0; border:none; }
+  .tag { border:1px solid #ccc; }
+  h1 { font-size:1.2rem; margin-bottom:.2rem; }
+}
+
+/* ── FLASHCARD DRILL ── */
+.fd-scene { width:100%; margin-bottom:1rem; cursor:pointer; overflow:hidden; border-radius:14px; }
+.fd-card-inner { position:relative; width:100%; border-radius:14px; transition:transform .2s cubic-bezier(.4,0,.2,1), opacity .2s; }
+.fd-card-inner.slide-out-right { transform:translateX(110%) !important; opacity:0; }
+.fd-card-inner.slide-out-left  { transform:translateX(-110%) !important; opacity:0; }
+.fd-card-inner.slide-in { transform:translateX(0) !important; opacity:1; }
+.fd-card-inner.from-right { transform:translateX(110%); opacity:0; }
+.fd-card-inner.from-left  { transform:translateX(-110%); opacity:0; }
+.fd-front { display:block; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; box-sizing:border-box; transition:background .25s; }
+.fd-back  { display:none; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem 1.25rem 1.5rem 1.5rem; border-left-width:4px; box-sizing:border-box; }
+.fd-card-inner.flipped .fd-front { display:none; }
+.fd-card-inner.flipped .fd-back  { display:block; }
+
+.fd-tag { display:inline-block; font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:2px 8px; border-radius:20px; margin-bottom:.75rem; }
+.fd-question { font-size:1.15rem; font-weight:700; line-height:1.5; color:var(--text); text-align:center; padding:.5rem 0; }
+.fd-tap-hint { font-size:.72rem; color:var(--muted); margin-top:.75rem; text-align:center; }
+.fd-points { list-style:none; padding:0; margin:.5rem 0 0 0; }
+.fd-points li { font-size:1rem; line-height:1.6; padding:.55rem 0; border-bottom:1px solid var(--subtle); color:var(--text); opacity:0; transform:translateY(6px); transition:opacity .3s ease, transform .3s ease; }
+.fd-points li.fd-pt-show { opacity:1; transform:translateY(0); }
+.fd-points li:last-child { border-bottom:none; }
+.fd-points li::before { content:'•'; color:var(--muted); margin-right:.5rem; }
+.fd-hint-chips { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.6rem; }
+.fd-hint-chip { font-size:.7rem; font-weight:700; padding:.2rem .55rem; border-radius:20px; background:var(--subtle); color:var(--muted); border:1px solid var(--border); }
+.fd-hint-chips .tag { font-weight:700; }
+.fd-hints-toggle { display:flex; align-items:center; gap:.6rem; font-size:.78rem; font-weight:600; color:var(--muted); margin-bottom:.75rem; }
+.fd-hints-toggle input[type=checkbox] { width:1.1rem; height:1.1rem; cursor:pointer; accent-color:var(--accent); }
+.fd-btn-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:.5rem; }
+.fd-btn { padding:14px 8px; border-radius:12px; border:none; font-family:inherit; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .15s; }
+.fd-got  { background:#d1fae5; color:#065f46; }
+.fd-got:hover  { background:#a7f3d0; }
+.fd-miss { background:#fee2e2; color:#991b1b; }
+.fd-miss:hover { background:#fecaca; }
+.fd-progress-wrap { margin-bottom:.75rem; }
+.fd-progress-text { font-size:.75rem; color:var(--muted); margin-bottom:4px; display:flex; justify-content:space-between; }
+.fd-bar-bg { background:#e5e5e3; border-radius:99px; height:6px; }
+.fd-bar-fill { height:6px; border-radius:99px; transition:width .3s; }
+.fd-summary-card { background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:1.5rem; text-align:center; margin-bottom:1rem; }
+.fd-summary-stat { font-size:2rem; font-weight:800; }
+.fd-summary-label { font-size:.78rem; color:var(--muted); margin-top:.2rem; }
+.fd-summary-row { display:flex; gap:1rem; justify-content:center; margin:.75rem 0; }
+.fd-badge-got  { background:#d1fae5; color:#065f46; padding:4px 12px; border-radius:20px; font-size:.82rem; font-weight:700; }
+.fd-badge-miss { background:#fee2e2; color:#991b1b; padding:4px 12px; border-radius:20px; font-size:.82rem; font-weight:700; }
+.fd-outstanding-note { font-size:.78rem; color:var(--text); background:var(--subtle); border-radius:8px; padding:.5rem .75rem; margin-top:.75rem; line-height:1.45; }
+
+/* FLASHCARD TRACKER WHEELS */
+.fd-wheel { width:64px; height:64px; display:block; margin:0 auto .4rem; transition:transform .15s; }
+.fd-wheel-cell { text-align:center; flex:1; cursor:pointer; padding:.25rem; border-radius:10px; transition:background .15s; }
+.fd-wheel-cell:hover .fd-wheel { transform:scale(1.08); }
+.fd-wheel-cell:hover { background:var(--subtle); }
+.fd-wheel-label { font-size:.68rem; font-weight:600; color:var(--muted); }
+.fd-wheel-hint { font-size:.62rem; color:var(--muted); opacity:.7; margin-top:.2rem; }
+@keyframes fd-pulse { 0%{transform:scale(1)} 40%{transform:scale(1.18)} 70%{transform:scale(.95)} 100%{transform:scale(1)} }
+.fd-wheel-pulse { animation:fd-pulse .5s ease; }
+.fd-wheel-done circle.fd-ring-gold { stroke:#F0B429; }
+#fd-toast { position:fixed; bottom:1.5rem; left:50%; transform:translateX(-50%) translateY(80px); background:#1a1a18; color:#fff; padding:.65rem 1.2rem; border-radius:12px; font-size:.82rem; font-weight:600; z-index:9999; opacity:0; transition:opacity .3s, transform .3s; pointer-events:none; white-space:nowrap; }
+#fd-toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+#fd-confetti-canvas { position:fixed; inset:0; pointer-events:none; z-index:9998; }
+.fd-summary-card.is-perfect { border-color:#F0B429; background:linear-gradient(135deg,#fffbeb,#fff); }
+:root.dark .fd-summary-card.is-perfect { background:linear-gradient(135deg,#2a2510,#2e2e34); border-color:#c49a1a; }
+</style>
+</head>
+<body>
+<div id="fd-toast"></div>
+<canvas id="fd-confetti-canvas" style="display:none"></canvas>
+<div class="app">
+<div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;margin-bottom:.5rem">
+  <button id="search-btn" onclick="openSearch()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit" title="Search topics">🔍</button>
+  <button id="print-btn" onclick="window.print()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;display:none" title="Print">🖨️</button>
+  <button id="dark-toggle" onclick="toggleDark()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit" title="Toggle dark mode">🌙</button>
+  <a href="index.html" id="hub-link" style="font-size:.78rem;font-weight:600;padding:6px 12px;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);text-decoration:none">← Hub</a>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-panel">
+    <div class="search-head">
+      <input type="text" class="search-input" id="search-input" placeholder="Search topics, people, events..." autocomplete="off" oninput="runSearch()" onkeydown="searchKeyHandler(event)">
+      <button class="search-close" onclick="closeSearch()" title="Close">×</button>
+    </div>
+    <div class="search-hint">Try: <em>Mangrove</em>, <em>Berlin Wall</em>, <em>Treaty of Versailles</em>, <em>Spanish Armada</em></div>
+    <div class="search-results" id="search-results">
+      <div class="search-empty">Start typing to search across all four papers.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 1: PAPER PICKER -->
+<div class="screen active" id="s-pick">
+  <h1 style="margin-bottom:.5rem;font-size:1.25rem">Mr Rodker's GCSE History Hub</h1>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:.9rem">What are you revising today?</p>
+  <div class="paper-grid">
+    <button class="paper-btn pb-p1" onclick="pickPaper('p1')"><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
+    <button class="paper-btn pb-p2a" onclick="pickPaper('p2a')"><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
+    <button class="paper-btn pb-p2b" onclick="pickPaper('p2b')"><span class="plabel">Paper 2b</span>👑 Early Elizabethan England</button>
+    <button class="paper-btn pb-p3" onclick="pickPaper('p3')"><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
+  </div>
+  <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #e8e7e2">
+    <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
+  </div>
+  <!-- Flashcard tracker wheels -->
+  <div class="rq-section" style="margin-bottom:1rem">
+    <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem">⚡ Your progress today</p>
+    <div id="fd-tracker" style="display:flex;justify-content:space-around;align-items:flex-start;padding:.75rem .5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:14px">
+      <div class="fd-wheel-cell" data-paper="p1" onclick="fdWheelLaunch('p1')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg><div class="fd-wheel-label">Migrants</div></div>
+      <div class="fd-wheel-cell" data-paper="p2a" onclick="fdWheelLaunch('p2a')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg><div class="fd-wheel-label">Cold War</div></div>
+      <div class="fd-wheel-cell" data-paper="p2b" onclick="fdWheelLaunch('p2b')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2b" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg><div class="fd-wheel-label">Elizabeth</div></div>
+      <div class="fd-wheel-cell" data-paper="p3" onclick="fdWheelLaunch('p3')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p3" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg><div class="fd-wheel-label">Germany</div></div>
+    </div>
+  </div>
+  <div id="home-pinned-link" style="display:none;text-align:center;margin-top:.5rem">
+    <button onclick="goToPinnedReview()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer">📌 Review pinned cards</button>
+  </div>
+</div>
+
+<!-- SCREEN 2: PAPER HUB (mode selector) -->
+<div class="screen" id="s-hub">
+  <div class="mode-header">
+    <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
+    <span class="paper-badge" id="hub-paper-badge"></span>
+  </div>
+  <!-- Primary: Flashcard Drill with wheel -->
+  <div style="display:flex;align-items:center;gap:1rem;background:var(--surface);border:1.5px solid var(--border2);border-left-width:4px;border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;cursor:pointer" id="fd-primary-btn" onclick="enterMode('flashcard')">
+    <div id="fd-hub-wheel-cell" title="Flashcard progress today" style="flex-shrink:0;text-align:center">
+      <svg id="fd-hub-wheel" class="fd-wheel" viewBox="0 0 60 60" style="width:64px;height:64px;display:block">
+        <circle id="fd-hub-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
+        <circle id="fd-hub-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
+        <circle id="fd-hub-ring-got" cx="30" cy="30" r="24" fill="none" stroke="#888" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
+        <circle id="fd-hub-ring-fill" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/>
+        <text id="fd-hub-pct" x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)">0%</text>
+      </svg>
+      <div id="fd-hub-label" class="fd-wheel-label" style="margin-top:.2rem;font-size:.6rem"></div>
+    </div>
+    <div style="flex:1">
+      <div style="font-size:1rem;font-weight:700;margin-bottom:.2rem">⚡ Flashcard Mode</div>
+      <div style="font-size:.75rem;color:var(--muted);line-height:1.4">Test yourself card by card — the best way to revise. Missed cards come back until you know them.</div>
+      <div style="font-size:.68rem;color:var(--muted);margin-top:.4rem;opacity:.75">Tap to start · wheel shows today's progress</div>
+    </div>
+  </div>
+  <!-- Secondary modes -->
+  <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Also available</p>
+  <div class="mode-grid" style="grid-template-columns:1fr 1fr 1fr;margin-bottom:.75rem">
+    <button class="mode-btn" onclick="enterMode('knowledge')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">🧠</span>Revision Guide</button>
+    <button class="mode-btn" onclick="enterMode('dates')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">📅</span>Key Dates Quiz</button>
+    <button class="mode-btn" onclick="enterMode('exam')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">✏️</span>Exam Practice</button>
+  </div>
+</div>
+
+<!-- SCREEN 3: MODE CONTENT -->
+<div class="screen" id="s-main">
+  <div class="mode-header" style="margin-bottom:1rem">
+    <div style="display:flex;gap:6px">
+      <button class="back-btn" onclick="showScreen('s-hub')">← Back</button>
+      <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="paper-badge" id="paper-badge"></span>
+      <span id="mode-title" style="font-size:.8rem;font-weight:600;color:var(--muted)"></span>
+    </div>
+  </div>
+
+  <!-- KNOWLEDGE -->
+  <div id="mode-knowledge" style="display:none">
+    <div class="filter-row" style="margin-bottom:.75rem">
+      <select id="k-unit" onchange="onUnitChange()"><option value="">— select a unit —</option><option value="all">All units</option></select>
+      <select id="k-card" onchange="jumpToCard()"><option value="">— select a topic —</option></select>
+    </div>
+    <div id="k-out" style="margin-bottom:.75rem"></div>
+    <div style="display:flex;gap:8px;margin-bottom:.75rem">
+      <button class="btn-sm" onclick="stepCard(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
+      <button class="btn-sm" onclick="stepCard(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
+    </div>
+    <span id="k-card-num" style="display:none"></span>
+  </div>
+
+  <!-- DATES -->
+  <div id="mode-dates" style="display:none">
+    <!-- Setup: choose mode before countdown -->
+    <div id="d-setup" style="margin-bottom:1rem">
+      <p style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Mode</p>
+      <div style="display:flex;gap:8px;margin-bottom:.75rem">
+        <button id="d-mode-pick" class="rq-star sel" onclick="setDatesMode('pick')" style="flex:1;border-radius:8px;padding:8px">📋 Pick answer</button>
+        <button id="d-mode-type" class="rq-star" onclick="setDatesMode('type')" style="flex:1;border-radius:8px;padding:8px">⌨️ Type the year</button>
+      </div>
+      <button class="btn-go" id="d-go" style="background:#555;margin-bottom:0" onclick="startQuizCountdown()">▶ Start quiz</button>
+    </div>
+    <div id="d-countdown" style="display:none;text-align:center;padding:2rem 0">
+      <div id="d-countdown-num" style="font-size:5rem;font-weight:800;font-family:'DM Serif Display',serif;line-height:1;color:var(--accent)">3</div>
+      <div style="font-size:.85rem;color:var(--muted);margin-top:.5rem">Get ready…</div>
+    </div>
+    <div id="d-out"></div>
+  </div>
+
+  <!-- EXAM -->
+  <div id="mode-exam" style="display:none">
+    <div id="e-out" style="margin-bottom:.75rem"></div>
+    <div style="margin-bottom:.75rem">
+      <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Question type</label>
+      <select id="e-type" onchange="updateExamDirectory()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px">
+        <option value="all">All question types</option>
+        <option value="4mark">4-mark similarity/difference</option>
+        <option value="4mark-consequence">4-mark consequence</option>
+        <option value="8mark-narrative">8-mark narrative</option>
+        <option value="8mark-importance">8-mark importance</option>
+        <option value="12mark">12-mark explain why</option>
+        <option value="16mark">16-mark debate</option>
+      </select>
+      <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-top:.5rem;margin-bottom:4px">Question</label>
+      <select id="e-directory" onchange="loadSelectedExam()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px">
+        <option value="">— select a question —</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:.75rem">
+      <button class="btn-sm" onclick="stepExam(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
+      <button class="btn-sm" id="e-random" onclick="drawExam()" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">🔀 Shuffle</button>
+      <button class="btn-sm" onclick="stepExam(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
+    </div>
+  </div>
+
+  <!-- FLASHCARD DRILL -->
+  <div id="mode-flashcard" style="display:none">
+    <!-- Setup state -->
+    <div id="fd-setup">
+
+      <div style="margin-bottom:.75rem">
+        <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Choose unit</label>
+        <select id="fd-unit" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
+          <option value="">— select a unit —</option>
+          <option value="all">All units</option>
+        </select>
+      </div>
+      <div class="fd-hints-toggle">
+        <input type="checkbox" id="fd-hints-on" onchange="fdToggleHints()">
+        <label for="fd-hints-on">💡 Show keyword hints on cards</label>
+      </div>
+      <div id="fd-outstanding-banner" style="display:none;font-size:.78rem;color:var(--muted);background:var(--subtle);border-radius:8px;padding:.6rem .75rem;margin-bottom:.75rem"></div>
+      <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start Flashcard Mode</button>
+      <button id="fd-pinned-btn" onclick="fdStartPinned()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer;display:none;width:100%;text-align:center;margin-top:.5rem">📌 Review pinned cards</button>
+      <!-- Single paper wheel + unit breakdown -->
+      <div style="display:flex;align-items:flex-start;gap:1rem;padding:.75rem .5rem .25rem;margin-top:.75rem">
+        <div id="fd-setup-wheel-cell" style="text-align:center;flex-shrink:0">
+          <svg id="fd-setup-wheel" viewBox="0 0 60 60" style="width:64px;height:64px;display:block;margin:0 auto .3rem">
+            <circle id="fd-setup-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
+            <circle id="fd-setup-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
+            <circle id="fd-setup-ring-got" cx="30" cy="30" r="24" fill="none" stroke="#888" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
+            <circle id="fd-setup-ring-fill" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/>
+            <text id="fd-setup-pct" x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)">0%</text>
+          </svg>
+          <div id="fd-setup-label" class="fd-wheel-label"></div>
+        </div>
+        <div id="fd-unit-breakdown" style="flex:1;font-size:.72rem;margin-top:.1rem"></div>
+      </div>
+    </div>
+
+    <!-- Drill state -->
+    <div id="fd-drill" style="display:none">
+      <div class="fd-progress-wrap">
+        <div class="fd-progress-text">
+          <span id="fd-prog-text"></span>
+          <span id="fd-prog-count"></span>
+        </div>
+        <div class="fd-bar-bg">
+          <div class="fd-bar-fill" id="fd-bar" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="fd-hints-toggle" style="margin-bottom:.5rem;margin-top:-.25rem">
+        <input type="checkbox" id="fd-hints-on-drill" onchange="fdSyncHints(this.checked)">
+        <label for="fd-hints-on-drill">💡 Hints</label>
+      </div>
+      <div class="fd-scene" id="fd-scene" onclick="fdFlip()">
+        <div class="fd-card-inner" id="fd-card-inner">
+          <div class="fd-front" id="fd-front">
+            <div class="fd-tag" id="fd-tag"></div>
+            <div class="fd-question" id="fd-question"></div>
+            <div class="fd-hint-chips" id="fd-hint-chips" style="display:none"></div>
+            <div class="fd-tap-hint" id="fd-tap-hint">Tap to reveal answer</div>
+          </div>
+          <div class="fd-back" id="fd-back">
+            <div class="fd-tag" id="fd-tag-back"></div>
+            <ul class="fd-points" id="fd-points"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="fd-btn-row" id="fd-btn-row" style="display:none">
+        <button class="fd-btn fd-miss" onclick="fdAnswer(false)">❌ Missed</button>
+        <button class="fd-btn fd-got"  onclick="fdAnswer(true)">✅ Got it</button>
+      </div>
+    </div>
+
+    <!-- Summary state -->
+    <div id="fd-summary" style="display:none">
+      <div class="fd-summary-card">
+        <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Session complete! 🏁</div>
+        <div class="fd-summary-row">
+          <div>
+            <div class="fd-summary-stat" id="fd-sum-got">0</div>
+            <div class="fd-badge-got" style="margin-top:.3rem">✅ Got it</div>
+          </div>
+          <div>
+            <div class="fd-summary-stat" id="fd-sum-miss">0</div>
+            <div class="fd-badge-miss" style="margin-top:.3rem">❌ Missed</div>
+          </div>
+        </div>
+        <div class="fd-outstanding-note" id="fd-sum-note"></div>
+      </div>
+      <button class="btn-go" id="fd-drill-again-btn" onclick="fdDrillMissed()" style="margin-bottom:.75rem;background:#1D9E75">🔁 Review missed cards now</button>
+      <button class="btn-go" onclick="fdFinish()" style="background:#374151;color:#fff">✓ Finish &amp; return to menu</button>
+    </div>
+
+    <!-- Completion state -->
+    <div id="fd-complete" style="display:none;text-align:center;padding:2rem 1rem">
+      <div style="font-size:2.5rem;margin-bottom:.5rem">🎉</div>
+      <div style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem">All cards mastered!</div>
+      <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem" id="fd-complete-note"></div>
+      <button class="btn-go" onclick="fdFinish()">← Back to unit picker</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 3: RAPID FIRE -->
+<div class="screen" id="s-rapid">
+  <div class="mode-header">
+    <button class="btn-go" onclick="showScreen('s-pick')" style="background:#555;padding:6px 14px;font-size:.82rem;width:auto;margin-bottom:0">🏠 Home</button>
+    <span style="font-size:.85rem;font-weight:600;color:var(--muted)">🎯 Mixed Retrieval Quiz</span>
+  </div>
+  <div id="rq-setup">
+    <p class="rq-section-label">Which papers? (tap to remove from quiz)</p>
+    <div class="rq-paper-pills">
+      <button class="rq-pill" id="rqp-p1" onclick="toggleRQPaper('p1')">🚢 Migration</button>
+      <button class="rq-pill" id="rqp-p2a" onclick="toggleRQPaper('p2a')">🚀 Cold War</button>
+      <button class="rq-pill" id="rqp-p2b" onclick="toggleRQPaper('p2b')">👑 Elizabeth I</button>
+      <button class="rq-pill" id="rqp-p3" onclick="toggleRQPaper('p3')">🏛️ Weimar &amp; Nazi</button>
+    </div>
+    <p class="rq-section-label">Maximum difficulty?</p>
+    <div class="rq-stars">
+      <button class="rq-star" id="rqs-1" onclick="setRQDiff(1)">⭐</button>
+      <button class="rq-star" id="rqs-2" onclick="setRQDiff(2)">⭐⭐</button>
+      <button class="rq-star" id="rqs-3" onclick="setRQDiff(3)">⭐⭐⭐</button>
+    </div>
+    <p class="rq-section-label">Mode?</p>
+    <div style="display:flex;gap:8px;margin-bottom:1rem">
+      <button class="rq-star sel" id="rq-mode-grid" onclick="setRQMode('grid')" style="flex:1;border-radius:8px;padding:8px">All at once</button>
+      <button class="rq-star" id="rq-mode-one" onclick="setRQMode('one')" style="flex:1;border-radius:8px;padding:8px">One at a time</button>
+      <button class="rq-star" id="rq-mode-endless" onclick="setRQMode('endless')" style="flex:1;border-radius:8px;padding:8px">♾️ Endless</button>
+    </div>
+    <button class="btn-go" id="rq-go" style="background:var(--subtle);color:var(--muted);cursor:not-allowed" onclick="generateRQ()">🎯 Let's go</button>
+    <p id="rq-counter" style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:-.75rem;margin-bottom:.5rem"></p>
+    <div id="rq-err" class="empty" style="display:none">Not enough questions match these filters. Try adding more papers or increasing difficulty.</div>
+    <button id="rq-resume-btn" class="btn-sm" onclick="resumeRQ()" style="width:100%;margin-top:.5rem;display:none">↩️ Resume unfinished quiz</button>
+  </div>
+  <!-- Grid mode output -->
+  <div id="rq-out" style="display:none">
+    <div class="rq-grid" id="rq-grid"></div>
+    <div class="rq-btn-row">
+      <button class="btn-sm" onclick="rqInProgress=false;generateRQ()">🔄 New questions</button>
+      <button class="btn-sm" onclick="revealAll()">👁 Reveal all</button>
+      <button class="btn-sm" onclick="rqBackToSetup()">⚙️ Settings</button>
+    </div>
+  </div>
+  <!-- Endless mode output -->
+  <div id="rq-endless" style="display:none">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
+      <span id="rq-el-hdr" style="font-size:.8rem;color:var(--muted)">Question 1</span>
+      <div class="sc-row"><span id="rq-el-streak" style="font-size:.8rem;color:#F0B429;font-weight:600"></span><span class="sc sc-c" id="rq-el-ok">✓ 0</span><span class="sc sc-w" id="rq-el-bad">✗ 0</span></div>
+    </div>
+    <div class="rq-card" id="rq-el-card" style="position:relative;overflow:hidden;min-height:unset;cursor:default;padding:1rem">
+      <div id="rq-el-stripe" style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#ddd"></div>
+      <div style="padding-left:.75rem">
+        <div style="font-size:1rem;font-weight:600;line-height:1.5;margin-bottom:1rem" id="rq-el-q"></div>
+        <div id="rq-el-reveal" style="display:none;border-top:1px solid var(--border);padding-top:.75rem;margin-top:.25rem">
+          <div style="font-size:1.05rem;font-weight:700;color:#3B6D11;margin-bottom:.75rem" id="rq-el-a"></div>
+          <div style="font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem">Self mark:</div>
+          <div style="display:flex;gap:8px">
+            <button class="btn-sm" onclick="rqElAnswer(true)" style="flex:1;font-size:1.1rem;background:#EAF3DE;color:#3B6D11;border-color:#3B6D11">✓</button>
+            <button class="btn-sm" onclick="rqElAnswer(false)" style="flex:1;font-size:1.1rem;background:#FCEBEB;color:#A32D2D;border-color:#A32D2D">✗</button>
+          </div>
+        </div>
+        <button id="rq-el-tap" onclick="rqElReveal()" class="btn-sm" style="width:100%;margin-top:.5rem">👁 Reveal answer</button>
+      </div>
+    </div>
+    <button class="btn-sm" onclick="rqBackToSetup()" style="width:100%;margin-top:.5rem">⚙️ Settings</button>
+  </div>
+  <!-- One at a time mode output -->
+  <div id="rq-one" style="display:none">
+    <div class="quiz-prog"><div class="quiz-fill" id="rq-one-prog" style="width:0%;background:#555"></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
+      <span id="rq-one-hdr" style="font-size:.8rem;color:var(--muted)"></span>
+      <div class="sc-row"><span id="rq-one-streak" style="font-size:.8rem;color:#F0B429;font-weight:600"></span><span class="sc sc-c" id="rq-one-ok">✓ 0</span><span class="sc sc-w" id="rq-one-bad">✗ 0</span></div>
+    </div>
+    <div class="rq-card" id="rq-one-card" style="position:relative;overflow:hidden;min-height:unset;cursor:default;padding:1rem">
+      <div id="rq-one-stripe" style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#ddd"></div>
+      <div style="padding-left:.75rem">
+      <div style="font-size:1rem;font-weight:600;line-height:1.5;margin-bottom:1rem" id="rq-one-q"></div>
+      <div id="rq-one-reveal" style="display:none;border-top:1px solid var(--border);padding-top:.75rem;margin-top:.25rem">
+        <div style="font-size:1.05rem;font-weight:700;color:#3B6D11;margin-bottom:.75rem" id="rq-one-a"></div>
+        <div style="font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem">Self mark:</div>
+        <div style="display:flex;gap:8px">
+          <button class="btn-sm" onclick="rqOneAnswer(true)" style="flex:1;font-size:1.1rem;background:#EAF3DE;color:#3B6D11;border-color:#3B6D11">✓</button>
+          <button class="btn-sm" onclick="rqOneAnswer(false)" style="flex:1;font-size:1.1rem;background:#FCEBEB;color:#A32D2D;border-color:#A32D2D">✗</button>
+        </div>
+      </div>
+      <button id="rq-one-tap" onclick="rqOneReveal()" class="btn-sm" style="width:100%;margin-top:.5rem">👁 Reveal answer</button>
+      </div>
+    </div>
+    <div id="rq-one-end" style="display:none;text-align:center;padding:1.5rem">
+      <div style="font-size:2rem;margin-bottom:.5rem">🎯</div>
+      <div style="font-size:1.1rem;font-weight:700;margin-bottom:.25rem" id="rq-one-score"></div>
+      <div style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem" id="rq-one-msg"></div>
+      <div id="rq-one-missed-list" style="text-align:left;margin-bottom:1rem"></div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <button class="btn-sm" onclick="generateRQ()" style="width:100%">🔄 New questions</button>
+        <button class="btn-sm" onclick="rqRetryMissed()" id="rq-retry-btn" style="width:100%;display:none">↩️ Retry missed</button>
+        <button class="btn-sm" onclick="rqBackToSetup()" style="width:100%">⚙️ Settings</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════
+// DARK MODE
+// ═══════════════════════════════════════════
+function toggleDark() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('gcse_dark', isDark ? '1' : '0');
+  document.getElementById('dark-toggle').textContent = isDark ? '☀️' : '🌙';
+}
+// Apply on load
+(function() {
+  if (localStorage.getItem('gcse_dark') === '1') {
+    document.documentElement.classList.add('dark');
+    const btn = document.getElementById('dark-toggle');
+    if (btn) btn.textContent = '☀️';
+  }
+})();
+
+// ═══════════════════════════════════════════
+// PAPER CONFIG
+// ═══════════════════════════════════════════
+const P = {
+  p1:  {label:'Paper 1 – Migration',       badge:'bg-p1',  go:'c-p1',  fill:'fill-p1',
+        units:['Unit 1 – Medieval','Unit 2 – Early Modern','Unit 3 – 18th & 19th Centuries','Unit 4 – Modern','Unit 5 – Notting Hill'],
+        qtypes:[['all','All question types'],['4mark','4-mark similarity/difference'],['12mark','12-mark explain why'],['16mark','16-mark debate']]},
+  p2a: {label:'Paper 2a – Cold War',        badge:'bg-p2a', go:'c-p2a', fill:'fill-p2a',
+        units:['Unit 1 – Origins 1941–58','Unit 2 – Crises 1958–70','Unit 3 – End of Cold War 1970–91'],
+        qtypes:[['all','All question types'],['4mark-consequence','4-mark consequence'],['8mark-narrative','8-mark narrative'],['8mark-importance','8-mark importance']]},
+  p2b: {label:'Paper 2b – Elizabeth I',     badge:'bg-p2b', go:'c-p2b', fill:'fill-p2b',
+        units:['Unit 1 – Queen & Religion','Unit 2 – Challenges 1569–88','Unit 3 – Elizabethan Society'],
+        qtypes:[['all','All question types'],['12mark','12-mark explain why'],['16mark','16-mark debate']]},
+  p3:  {label:'Paper 3 – Weimar & Nazi',    badge:'bg-p3',  go:'c-p3',  fill:'fill-p3',
+        units:['Unit 1 – Weimar Republic','Unit 2 – Hitler\'s Rise','Unit 3 – Nazi Control','Unit 4 – Life in Nazi Germany'],
+        qtypes:[['all','All question types'],['12mark','12-mark explain why']]},
+};
+
+let currentPaper = 'p1';
+let quizPool = [], quizIdx = 0, quizOK = 0, quizBad = 0;
+
+// ═══════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════
+function pickPaper(p) {
+  currentPaper = p;
+  const info = P[p];
+  document.getElementById('paper-badge').textContent = info.label;
+  document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
+  [].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.className = 'btn-go ' + info.go;
+  });
+  const sel = document.getElementById('k-unit');
+  sel.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>' +
+    info.units.map(u => `<option value="${u}">${u}</option>`).join('');
+  const esel = document.getElementById('e-type');
+  esel.innerHTML = info.qtypes.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
+  examHistory = [];
+  examHistoryIdx = -1;
+  buildKPool();
+  document.getElementById('k-out').innerHTML = '';
+  updateNavUI();
+  updateExamDirectory();
+  // Update hub badge
+  // Apply paper stripe to mode buttons
+  document.querySelectorAll('.mode-btn').forEach(btn => {
+    btn.classList.remove('stripe-p1','stripe-p2a','stripe-p2b','stripe-p3');
+    btn.classList.add('stripe-' + p);
+  });
+  // Apply paper colour to all selects
+  document.querySelectorAll('select').forEach(sel => {
+    sel.classList.remove('sel-p1','sel-p2a','sel-p2b','sel-p3');
+    sel.classList.add('sel-' + p);
+  });
+  document.getElementById('hub-paper-badge').textContent = info.label;
+  document.getElementById('hub-paper-badge').className = 'paper-badge ' + info.badge;
+  document.getElementById('paper-badge').textContent = info.label;
+  document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
+  showScreen('s-hub');
+  renderFdHubWheel();
+  const primaryBtn = document.getElementById('fd-primary-btn');
+  if (primaryBtn) primaryBtn.style.borderLeftColor = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'}[p] || '#888';
+}
+
+function goBack() {
+  showScreen('s-hub');
+  document.getElementById('d-out').innerHTML = '';
+  document.getElementById('k-out').innerHTML = '';
+  document.getElementById('e-out').innerHTML = '';
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const hubLink = document.getElementById('hub-link');
+  if (hubLink) hubLink.style.display = id === 's-pick' ? 'inline-block' : 'none';
+  // Search button visible on pick and hub screens only
+  const searchBtn = document.getElementById('search-btn');
+  if (searchBtn) searchBtn.style.display = (id === 's-pick' || id === 's-hub') ? 'inline-block' : 'none';
+  // print btn handled by setMode; hide when leaving s-main
+  if (id !== 's-main') {
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) printBtn.style.display = 'none';
+  }
+  // update flagged button on hub
+  if (id === 's-pick') renderFdWheels();
+  if (id === 's-hub')  renderFdHubWheel();
+  if (id === 's-main' && currentPaper) renderFdSetupWheel();
+}
+
+function enterMode(m) {
+  showScreen('s-main');
+  setMode(m);
+}
+
+// ═══════════════════════════════════════════
+// SEARCH
+// ═══════════════════════════════════════════
+const PAPER_LABEL = {p1:'Paper 1', p2a:'Paper 2a', p2b:'Paper 2b', p3:'Paper 3'};
+
+function openSearch() {
+  const ov = document.getElementById('search-overlay');
+  if (!ov) return;
+  ov.classList.add('open');
+  const input = document.getElementById('search-input');
+  if (input) {
+    input.value = '';
+    setTimeout(() => input.focus(), 50);
+  }
+  renderSearchEmpty();
+}
+
+function closeSearch() {
+  const ov = document.getElementById('search-overlay');
+  if (ov) ov.classList.remove('open');
+}
+
+function searchKeyHandler(e) {
+  if (e.key === 'Escape') { closeSearch(); return; }
+  if (e.key === 'Enter') {
+    const first = document.querySelector('.search-result');
+    if (first) first.click();
+  }
+}
+
+function renderSearchEmpty() {
+  const out = document.getElementById('search-results');
+  if (out) out.innerHTML = '<div class="search-empty">Start typing to search across all four papers.</div>';
+}
+
+function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+function escHtml(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+function highlightMatch(text, q) {
+  const safe = escHtml(text);
+  if (!q) return safe;
+  const re = new RegExp('(' + escRe(q) + ')', 'gi');
+  return safe.replace(re, '<mark>$1</mark>');
+}
+
+function snippet(text, q, len = 160) {
+  if (!text) return '';
+  const lower = text.toLowerCase();
+  const i = lower.indexOf(q.toLowerCase());
+  if (i === -1) return text.length > len ? text.slice(0, len) + '…' : text;
+  const start = Math.max(0, i - 40);
+  const end = Math.min(text.length, i + q.length + len - 40);
+  let out = text.slice(start, end);
+  if (start > 0) out = '…' + out;
+  if (end < text.length) out = out + '…';
+  return out;
+}
+
+function searchKC(query) {
+  const q = query.trim().toLowerCase();
+  if (!q || q.length < 2 || !KC.length) return [];
+  const results = [];
+  for (const card of KC) {
+    let where = null;
+    let snip = null;
+    let rank = 99;
+    // Highest priority: heading match
+    if (card.heading && card.heading.toLowerCase().includes(q)) {
+      where = 'in title'; rank = 0; snip = card.summary || (card.facts && card.facts[0]) || '';
+    } else {
+      // Hint match
+      const hint = (card.hints || []).find(h => h.toLowerCase().includes(q));
+      if (hint) {
+        where = 'keyword: ' + hint; rank = 1;
+        const factMatch = (card.facts || []).find(f => f.toLowerCase().includes(q));
+        snip = factMatch || card.summary || (card.facts && card.facts[0]) || '';
+      } else if (card.summary && card.summary.toLowerCase().includes(q)) {
+        where = 'in summary'; rank = 2; snip = card.summary;
+      } else {
+        const factMatch = (card.facts || []).find(f => f.toLowerCase().includes(q));
+        if (factMatch) { where = 'in detail'; rank = 3; snip = factMatch; }
+      }
+    }
+    if (where !== null) results.push({card, where, snip, rank});
+  }
+  results.sort((a, b) => a.rank - b.rank);
+  return results.slice(0, 25);
+}
+
+function runSearch() {
+  const input = document.getElementById('search-input');
+  const out = document.getElementById('search-results');
+  if (!input || !out) return;
+  const q = input.value.trim();
+  if (q.length < 2) { renderSearchEmpty(); return; }
+  if (!KC.length) {
+    out.innerHTML = '<div class="search-empty">⏳ Loading data… try again in a moment.</div>';
+    return;
+  }
+  const results = searchKC(q);
+  if (!results.length) {
+    out.innerHTML = `<div class="search-empty">No matches for <strong>${escHtml(q)}</strong>.<br><span style="font-size:.75rem;opacity:.8">Try a shorter or different term.</span></div>`;
+    return;
+  }
+  const html = `<div class="search-count">${results.length} result${results.length === 1 ? '' : 's'}</div>` +
+    results.map(r => {
+      const c = r.card;
+      const headingHtml = highlightMatch(c.heading, q);
+      const snippetHtml = r.snip ? highlightMatch(snippet(r.snip, q), q) : '';
+      return `<div class="search-result" data-paper="${c.paper}" data-heading="${escHtml(c.heading)}">
+        <div class="search-result-meta">
+          <span class="tag t-${c.paper}">${PAPER_LABEL[c.paper]}</span>
+          <span class="tag t-grey">${escHtml(c.unit)}</span>
+        </div>
+        <div class="search-result-heading">${headingHtml}</div>
+        ${snippetHtml ? `<div class="search-result-snippet">${snippetHtml}</div>` : ''}
+        <div class="search-result-where">Match ${escHtml(r.where)}</div>
+      </div>`;
+    }).join('');
+  out.innerHTML = html;
+  // Wire up click handlers (delegation would also work; direct is fine for ≤25 items)
+  out.querySelectorAll('.search-result').forEach(el => {
+    el.addEventListener('click', () => {
+      goToSearchResult(el.dataset.paper, el.dataset.heading);
+    });
+  });
+}
+
+function goToSearchResult(paper, heading) {
+  closeSearch();
+  pickPaper(paper);           // sets currentPaper, navigates to s-hub
+  enterMode('knowledge');     // navigates to s-main, knowledge mode
+  // Set unit dropdown to 'all' so the card is in pool regardless of unit
+  const unitSel = document.getElementById('k-unit');
+  if (unitSel) unitSel.value = 'all';
+  buildKPool();
+  const i = kPool.findIndex(e => e.card.heading === heading && e.card.paper === paper);
+  if (i !== -1) {
+    kIdx = i;
+    renderKCard(kPool[kIdx]);
+    updateNavUI();
+  }
+}
+
+function setMode(m) {
+  const titles = {knowledge:'🧠 Revision Guide', dates:'📅 Key Dates Quiz', exam:'✏️ Exam Practice', flashcard:'⚡ Flashcard Mode'};
+  const titleEl = document.getElementById('mode-title');
+  if (titleEl) titleEl.textContent = titles[m] || '';
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) printBtn.style.display = (m === 'knowledge' || m === 'exam') ? 'inline-block' : 'none';
+  ['knowledge','dates','exam','flashcard'].forEach(mode => {
+    const modeEl = document.getElementById('mode-' + mode);
+    if (modeEl) modeEl.style.display = mode === m ? 'block' : 'none';
+  });
+  // reset outputs when switching
+  if (m !== 'knowledge') document.getElementById('k-out').innerHTML = '';
+  document.getElementById('d-out').innerHTML = '';
+  document.getElementById('e-out').innerHTML = '';
+  if (m === 'knowledge') { if (!kPool.length && KC.length) buildKPool(); updateNavUI(); }
+  if (m === 'exam') updateExamDirectory();
+  if (m === 'flashcard') fdSetup();
+  if (m === 'dates') {
+    // Show setup screen — user picks mode then presses Start
+    quizTypeMode = 'pick';
+    setDatesMode('pick');
+    applyDatesStartBtn();
+  }
+}
+
+// ═══════════════════════════════════════════
+// UTILITIES
+// ═══════════════════════════════════════════
+function rand(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function shuffle(a) {
+  const b = [...a];
+  for (let i = b.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [b[i], b[j]] = [b[j], b[i]];
+  }
+  return b;
+}
+function tog(id) { const el = document.getElementById(id); if (el) el.classList.toggle('open'); }
+function esc(s) { return s.replace(/'/g, "&#39;").replace(/"/g, "&quot;"); }
+
+function paperTagClass(p) {
+  return 't-' + p;
+}
+
+// ═══════════════════════════════════════════
+// KNOWLEDGE RECALL
+// ═══════════════════════════════════════════
+let kPool = [];
+let kIdx = 0;
+
+function buildKPool() {
+  const unit = document.getElementById('k-unit').value;
+  const cardSel = document.getElementById('k-card');
+  if (!unit) {
+    kPool = [];
+    if (cardSel) cardSel.innerHTML = '<option value="">— select a topic —</option>';
+    return;
+  }
+  let all = KC.filter(c => c.paper === currentPaper);
+  const units = P[currentPaper].units;
+  all.sort((a, b) => {
+    const ui = units.indexOf(a.unit);
+    const vi = units.indexOf(b.unit);
+    if (ui !== vi) return ui - vi;
+    return KC.indexOf(a) - KC.indexOf(b);
+  });
+  if (unit !== 'all') all = all.filter(c => c.unit === unit);
+  const unitCounts = {};
+  // All cards for dropdown (including flagged)
+  const allEntries = all.map(c => {
+    const uIdx = units.indexOf(c.unit) + 1;
+    unitCounts[uIdx] = (unitCounts[uIdx] || 0) + 1;
+    return { card: c, num: `${uIdx}.${unitCounts[uIdx]}` };
+  });
+  kPool = allEntries;
+  if (cardSel) {
+    cardSel.innerHTML = '<option value="">— select a topic —</option>' +
+      allEntries.map((entry, i) =>
+        `<option value="dd-${i}">${entry.num} – ${entry.card.heading}</option>`
+      ).join('');
+    cardSel._allEntries = allEntries;
+  }
+}
+
+function onUnitChange() {
+  buildKPool();
+  kIdx = 0;
+  document.getElementById('k-out').innerHTML = '<div style="font-size:.85rem;color:var(--muted);padding:.75rem 0">Select a topic from the dropdown above to begin.</div>';
+  // Reset topic dropdown to placeholder
+  const cardSel = document.getElementById('k-card');
+  if (cardSel) cardSel.value = '';
+}
+
+function updateNavUI() {
+  const cardSel = document.getElementById('k-card');
+  if (cardSel && kPool.length) {
+    const current = kPool[kIdx];
+    const allEntries = cardSel._allEntries || [];
+    const ddIdx = allEntries.findIndex(e => e.card.paper === current.card.paper && e.card.heading === current.card.heading);
+    if (ddIdx !== -1) cardSel.value = 'dd-' + ddIdx;
+  }
+}
+
+function stepCard(dir) {
+  if (!kPool.length) return;
+  kIdx = (kIdx + dir + kPool.length) % kPool.length;
+  renderKCard(kPool[kIdx]);
+  updateNavUI();
+}
+
+function updateCardSelect() {} // kept for compatibility
+
+function boldHints(text, hints) {
+  let out = text;
+  hints.forEach(h => {
+    // escape special regex chars
+    const escaped = h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp('(' + escaped + ')', 'gi');
+    out = out.replace(re, '<strong>$1</strong>');
+  });
+  return out;
+}
+
+function renderKCard(entry, isInterleaved) {
+  const card = entry.card;
+  const num = entry.num;
+  const factsHtml = '<ul>' + card.facts.map(f =>
+    `<li>${boldHints(f, card.hints)}</li>`
+  ).join('') + '</ul>';
+  document.getElementById('k-out').innerHTML = `
+    <div class="card" data-paper="${card.paper}">
+      <div class="stripe s-${card.paper}"></div>
+      <div class="inner">
+        <div class="meta">
+          <span class="tag t-grey">${num}</span>
+          <span class="tag t-${card.paper}">${card.unit}</span>
+        </div>
+        <div class="card-heading">${card.heading}</div>
+        ${card.summary ? `<p class="kc-summary">${card.summary}</p>` : ''}
+        ${factsHtml}
+      </div>
+    </div>`;
+}
+
+function jumpToCard() {
+  const val = document.getElementById('k-card').value;
+  if (!val || val === '') return;
+  const cardSel = document.getElementById('k-card');
+  const allEntries = cardSel._allEntries;
+  if (val.startsWith('dd-') && allEntries) {
+    const i = parseInt(val.replace('dd-', ''));
+    if (isNaN(i)) return;
+    const entry = allEntries[i];
+    if (!entry) return;
+    // Find in kPool or render directly (for flagged cards)
+    const poolIdx = kPool.findIndex(e => e.card.paper === entry.card.paper && e.card.heading === entry.card.heading);
+    if (poolIdx !== -1) {
+      kIdx = poolIdx;
+      renderKCard(kPool[kIdx]);
+    } else {
+      // Flagged card - render directly without affecting kIdx
+      renderKCard(entry);
+    }
+    updateNavUI();
+  }
+}
+// ═══════════════════════════════════════════
+// RAPID FIRE DATA
+// difficulty: 'easy' | 'medium' | 'hard'
+// ═══════════════════════════════════════════
+let RQ = []; // loaded from data/rq.json
+
+// ── Mixed Retrieval Quiz state ──
+let rqPapers = {p1:true, p2a:true, p2b:true, p3:true};
+let rqDiff = 2; // single value: 1=easy only, 2=easy+medium, 3=all
+let rqMode = 'grid'; // 'grid' or 'one'
+let rqOnePool = [], rqOneIdx = 0, rqOneOK = 0, rqOneBad = 0, rqOneMissed = [], rqOneStreak = 0;
+let rqElPool = [], rqElIdx = 0, rqElOK = 0, rqElBad = 0, rqElStreak = 0, rqElTotal = 0;
+let rqInProgress = false; // tracks if a quiz is mid-session
+let rqInProgressMode = 'grid';
+
+function setRQMode(m) {
+  rqMode = m;
+  document.getElementById('rq-mode-grid').classList.toggle('sel', m === 'grid');
+  document.getElementById('rq-mode-one').classList.toggle('sel', m === 'one');
+  document.getElementById('rq-mode-endless').classList.toggle('sel', m === 'endless');
+}
+
+function rqBackToSetup() {
+  document.getElementById('rq-setup').style.display = 'block';
+  document.getElementById('rq-out').style.display = 'none';
+  document.getElementById('rq-one').style.display = 'none';
+  document.getElementById('rq-endless').style.display = 'none';
+  document.getElementById('rq-one-end').style.display = 'none';
+  document.getElementById('rq-one-card').style.display = 'block';
+}
+
+function rqOneReveal() {
+  document.getElementById('rq-one-reveal').style.display = 'block';
+  document.getElementById('rq-one-tap').style.display = 'none';
+}
+
+function rqOneAnswer(correct) {
+  if (correct) {
+    rqOneOK++;
+    rqOneStreak++;
+  } else {
+    rqOneBad++;
+    rqOneStreak = 0;
+    rqOneMissed.push(rqOnePool[rqOneIdx]);
+  }
+  rqOneIdx++;
+  rqOneNext();
+}
+
+function rqOneNext() {
+  if (rqOneIdx >= rqOnePool.length) { rqOneEnd(); return; }
+  const q = rqOnePool[rqOneIdx];
+  const total = rqOnePool.length;
+  const pct = Math.round((rqOneIdx / total) * 100);
+  document.getElementById('rq-one-prog').style.width = pct + '%';
+  document.getElementById('rq-one-hdr').textContent = `Question ${rqOneIdx + 1} of ${total}`;
+  document.getElementById('rq-one-ok').textContent = `✓ ${rqOneOK}`;
+  document.getElementById('rq-one-bad').textContent = `✗ ${rqOneBad}`;
+  const streakEl = document.getElementById('rq-one-streak');
+  if (streakEl) streakEl.textContent = rqOneStreak >= 3 ? `🔥 ${rqOneStreak}` : '';
+  document.getElementById('rq-one-q').textContent = q.q;
+  const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
+  const stripe = document.getElementById('rq-one-stripe');
+  if (stripe) stripe.style.background = colours[q.paper] || '#ddd';
+  document.getElementById('rq-one-a').textContent = q.a;
+  document.getElementById('rq-one-reveal').style.display = 'none';
+  document.getElementById('rq-one-tap').style.display = 'block';
+}
+
+function rqOneEnd() {
+  rqInProgress = false;
+  document.getElementById('rq-one-card').style.display = 'none';
+  const total = rqOnePool.length;
+  const pct = Math.round((rqOneOK / total) * 100);
+  document.getElementById('rq-one-score').textContent = `${rqOneOK} of ${total} correct`;
+  const rqMsg = pct === 100 ? 'Perfect score! Every question nailed. 🏆'
+    : pct >= 80 ? 'Excellent — almost perfect! 🎯'
+    : pct >= 60 ? 'Good effort, keep at the tricky ones. ⭐'
+    : pct >= 40 ? 'A solid start — retry the missed ones. 📚'
+    : 'Keep drilling — it gets easier. 💪';
+  document.getElementById('rq-one-msg').textContent = rqMsg;
+  const missedList = document.getElementById('rq-one-missed-list');
+  if (rqOneMissed.length) {
+    missedList.innerHTML = '<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem">Missed:</div>' +
+      rqOneMissed.map(q => `<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.4rem .6rem;margin-bottom:.3rem;font-size:.82rem"><strong>${q.q}</strong><br><span style="color:var(--muted)">${q.a}</span></div>`).join('');
+    document.getElementById('rq-retry-btn').style.display = 'block';
+  } else {
+    missedList.innerHTML = '';
+    document.getElementById('rq-retry-btn').style.display = 'none';
+  }
+  document.getElementById('rq-one-end').style.display = 'block';
+}
+
+function rqRetryMissed() {
+  rqOnePool = shuffle([...rqOneMissed]);
+  rqOneIdx = 0; rqOneOK = 0; rqOneBad = 0; rqOneMissed = []; rqOneStreak = 0;
+  document.getElementById('rq-one-end').style.display = 'none';
+  document.getElementById('rq-one-card').style.display = 'block';
+  rqOneNext();
+}
+
+// ── Endless mode ──
+function rqElNext() {
+  // Reshuffle and loop when pool exhausted
+  if (rqElIdx >= rqElPool.length) {
+    rqElPool = shuffle([...rqElPool]);
+    rqElIdx = 0;
+  }
+  const q = rqElPool[rqElIdx];
+  const num = rqElOK + rqElBad + 1;
+  document.getElementById('rq-el-hdr').textContent = `Question ${num}`;
+  document.getElementById('rq-el-ok').textContent = `✓ ${rqElOK}`;
+  document.getElementById('rq-el-bad').textContent = `✗ ${rqElBad}`;
+  const streakEl = document.getElementById('rq-el-streak');
+  if (streakEl) streakEl.textContent = rqElStreak >= 3 ? `🔥 ${rqElStreak}` : '';
+  document.getElementById('rq-el-q').textContent = q.q;
+  document.getElementById('rq-el-a').textContent = q.a;
+  const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
+  const stripe = document.getElementById('rq-el-stripe');
+  if (stripe) stripe.style.background = colours[q.paper] || '#ddd';
+  document.getElementById('rq-el-reveal').style.display = 'none';
+  document.getElementById('rq-el-tap').style.display = 'block';
+}
+
+function rqElReveal() {
+  document.getElementById('rq-el-reveal').style.display = 'block';
+  document.getElementById('rq-el-tap').style.display = 'none';
+}
+
+function rqElAnswer(correct) {
+  if (correct) { rqElOK++; rqElStreak++; }
+  else { rqElBad++; rqElStreak = 0; }
+  rqElIdx++;
+  rqElNext();
+}
+
+function printRQ(questions) {
+  const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
+  const paperNames = {p1:'Migrants',p2a:'Cold War',p2b:'Elizabeth',p3:'Germany'};
+  const rows = (questions || rqOnePool || []).map((q, i) =>
+    `<div class="row">
+      <span class="dot" style="background:${colours[q.paper]}"></span>
+      <div class="q">
+        <span class="paper">${paperNames[q.paper]}</span>
+        <span class="qtext">${i+1}. ${q.q}</span>
+        <div class="line"></div>
+      </div>
+    </div>`
+  ).join('');
+  const win = window.open('', '_blank');
+  win.document.write(`<!DOCTYPE html><html><head><title>Do Now — Mixed Retrieval Quiz</title>
+    <style>
+      * { box-sizing:border-box; margin:0; padding:0; }
+      body { font-family:Georgia,serif; font-size:9.5pt; color:#111; padding:.6cm .9cm; }
+      h2 { font-size:9pt; font-weight:700; color:#555; margin-bottom:.4cm; }
+      .row { display:flex; align-items:flex-start; gap:5px; margin-bottom:.28cm; padding-bottom:.28cm; border-bottom:1px solid #ddd; }
+      .dot { flex-shrink:0; width:8px; height:8px; border-radius:50%; margin-top:3px; }
+      .q { flex:1; }
+      .paper { display:block; font-size:7pt; color:#888; text-transform:uppercase; letter-spacing:.04em; margin-bottom:1px; }
+      .qtext { display:block; line-height:1.35; margin-bottom:.15cm; }
+      .line { border-bottom:1px solid #ddd; margin-top:.15cm; height:.55cm; }
+      @media print { @page { size:A4; margin:.8cm .9cm; } body { padding:0; } }
+    </style></head>
+    <body>
+    <h2>Do Now — Mixed Retrieval Quiz &nbsp;|&nbsp; ${new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})}</h2>
+    ${rows}
+    <script>window.onload=()=>{window.print()}<\/script></body></html>`);
+  win.document.close();
+}
+
+function showRapidSetup() {
+  showScreen('s-rapid');
+  document.getElementById('rq-setup').style.display = 'block';
+  document.getElementById('rq-out').style.display = 'none';
+  document.getElementById('rq-one').style.display = 'none';
+  document.getElementById('rq-err').style.display = 'none';
+  // Show resume button if quiz in progress
+  const resumeBtn = document.getElementById('rq-resume-btn');
+  if (resumeBtn) resumeBtn.style.display = rqInProgress ? 'block' : 'none';
+  ['p1','p2a','p2b','p3'].forEach(p => {
+    const btn = document.getElementById('rqp-' + p);
+    if (rqPapers[p]) btn.classList.add('on-' + p);
+    else btn.classList.remove('on-' + p);
+  });
+  [1,2,3].forEach(i => {
+    document.getElementById('rqs-' + i).classList.toggle('sel', i === rqDiff);
+  });
+  updateRQCounter();
+}
+
+function resumeRQ() {
+  document.getElementById('rq-setup').style.display = 'none';
+  document.getElementById('rq-out').style.display = rqInProgressMode === 'grid' ? 'block' : 'none';
+  document.getElementById('rq-one').style.display = rqInProgressMode === 'one' ? 'block' : 'none';
+  document.getElementById('rq-endless').style.display = rqInProgressMode === 'endless' ? 'block' : 'none';
+  if (rqInProgressMode === 'grid') {
+    const pb = document.getElementById('print-btn');
+    if (pb) pb.style.display = 'inline-block';
+  }
+}
+
+function toggleRQPaper(p) {
+  rqPapers[p] = !rqPapers[p];
+  const btn = document.getElementById('rqp-' + p);
+  if (rqPapers[p]) {
+    btn.classList.add('on-' + p);
+  } else {
+    btn.classList.remove('on-' + p);
+  }
+  updateRQCounter();
+}
+
+function setRQDiff(n) {
+  rqDiff = n;
+  [1,2,3].forEach(i => document.getElementById('rqs-' + i).classList.toggle('sel', i === n));
+  updateRQCounter();
+}
+
+function updateRQCounter() {
+  const activePapers = Object.keys(rqPapers).filter(p => rqPapers[p]);
+  const allowed = ['easy'];
+  if (rqDiff >= 2) allowed.push('medium');
+  if (rqDiff >= 3) allowed.push('hard');
+  const count = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d)).length;
+  const counter = document.getElementById('rq-counter');
+  if (counter) counter.textContent = count >= 10 ? count + ' questions available' : count > 0 ? count + ' questions (need at least 10)' : '';
+  const goBtn = document.getElementById('rq-go');
+  if (goBtn) {
+    const ready = count >= 10;
+    goBtn.style.background = ready ? '#555' : 'var(--subtle)';
+    goBtn.style.color = ready ? '#fff' : 'var(--muted)';
+    goBtn.style.cursor = ready ? 'pointer' : 'not-allowed';
+  }
+}
+
+function generateRQ() {
+  const activePapers = Object.keys(rqPapers).filter(p => rqPapers[p]);
+  if (!activePapers.length) {
+    document.getElementById('rq-err').style.display = 'block';
+    document.getElementById('rq-err').textContent = 'Please select at least one paper.';
+    return;
+  }
+  const allowed = ['easy'];
+  if (rqDiff >= 2) allowed.push('medium');
+  if (rqDiff >= 3) allowed.push('hard');
+  let pool = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d));
+  if (pool.length < 10) {
+    document.getElementById('rq-err').style.display = 'block';
+    document.getElementById('rq-err').textContent = 'Not enough questions match these filters. Try adding more papers or increasing difficulty.';
+    return;
+  }
+  document.getElementById('rq-err').style.display = 'none';
+  const ten = shuffle(pool).slice(0, 10);
+  window._rqCurrentPool = ten; // for printing
+  const grid = document.getElementById('rq-grid');
+  const counter = document.getElementById('rq-counter');
+  if (counter) counter.textContent = pool.length + ' questions available';
+  const colours = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
+  grid.innerHTML = ten.map((q, i) => `
+    <div class="rq-card" id="rqc${i}" onclick="revealRQ(${i})" style="border-left:4px solid ${colours[q.paper]}">
+      <div class="rq-q">${i+1}. ${q.q}</div>
+      <div class="rq-a">${q.a}</div>
+      <div class="rq-tap">Tap to reveal</div>
+    </div>`).join('');
+  document.getElementById('rq-setup').style.display = 'none';
+  rqInProgress = true; rqInProgressMode = rqMode;
+  if (rqMode === 'one') {
+    rqOnePool = shuffle(pool).slice(0, 10);
+    rqOneIdx = 0; rqOneOK = 0; rqOneBad = 0; rqOneMissed = []; rqOneStreak = 0;
+    document.getElementById('rq-one').style.display = 'block';
+    document.getElementById('rq-out').style.display = 'none';
+    document.getElementById('rq-one-end').style.display = 'none';
+    document.getElementById('rq-one-card').style.display = 'block';
+    rqOneNext();
+    return;
+  }
+  if (rqMode === 'endless') {
+    rqElPool = shuffle([...pool]);
+    rqElIdx = 0; rqElOK = 0; rqElBad = 0; rqElStreak = 0; rqElTotal = rqElPool.length;
+    document.getElementById('rq-setup').style.display = 'none';
+    document.getElementById('rq-out').style.display = 'none';
+    document.getElementById('rq-one').style.display = 'none';
+    document.getElementById('rq-endless').style.display = 'block';
+    rqElNext();
+    return;
+  }
+  // Add print button for grid/do-now mode
+  const rqOutEl = document.getElementById('rq-out');
+  rqOutEl.style.display = 'block';
+  // Insert print button above grid if not already there
+  if (!document.getElementById('rq-print-btn')) {
+    const printDiv = document.createElement('div');
+    printDiv.style.cssText = 'text-align:right;margin-bottom:.5rem';
+    printDiv.innerHTML = '<button id="rq-print-btn" onclick="printRQ(window._rqCurrentPool)" class="btn-sm" style="font-size:.75rem">🖨️ Print as do-now</button>';
+    rqOutEl.insertBefore(printDiv, rqOutEl.firstChild);
+  }
+}
+
+function revealRQ(i) {
+  document.getElementById('rqc' + i).classList.toggle('revealed');
+}
+
+function revealAll() {
+  const allRevealed = Array.from({length:10}, (_,i) => document.getElementById('rqc'+i))
+    .filter(Boolean).every(c => c.classList.contains('revealed'));
+  for (let i = 0; i < 10; i++) {
+    const card = document.getElementById('rqc' + i);
+    if (card) {
+      if (allRevealed) card.classList.remove('revealed');
+      else card.classList.add('revealed');
+    }
+  }
+  const btn = document.getElementById('rq-reveal-all');
+  if (btn) btn.textContent = allRevealed ? '👁️ Reveal all' : '🙈 Hide all';
+}
+// ═══════════════════════════════════════════
+// EXAM PRACTICE
+// ═══════════════════════════════════════════
+let examHistory = [];
+let examHistoryIdx = -1;
+let fsInterval = null;
+let fsTotal = 0;
+let fsElapsed = 0;
+
+function enterFullscreen(q) {
+  const timings = {
+    '2mark': 2, '4mark': 5, '4mark-consequence': 5,
+    '8mark-importance': 12, '8mark-narrative': 15,
+    '12mark': 15, '16mark': 25
+  };
+  const mins = timings[q.type] || 10;
+  fsTotal = mins * 60;
+  fsElapsed = 0;
+
+  const typeLabel = {
+    '2mark':'2-mark describe','4mark':'4-mark similarity/difference',
+    '4mark-consequence':'4-mark consequence','8mark-narrative':'8-mark narrative',
+    '8mark-importance':'8-mark importance','12mark':'12-mark explain why','16mark':'16-mark debate'
+  }[q.type] || q.type;
+
+  document.getElementById('fs-type').textContent = typeLabel + ' · ' + mins + ' minutes';
+  const qText = q.q.replace(/\nHints:.*/,'').trim();
+  document.getElementById('fs-q').textContent = qText;
+  document.getElementById('fs-q-blur').textContent = qText;
+
+  const hintsEl = document.getElementById('fs-hints');
+  hintsEl.innerHTML = (q.hints && q.hints.length) ? '<strong>You may use:</strong><ul style="margin:.3rem 0 0 1rem;padding:0">' + q.hints.map(h => `<li style="font-weight:400">${h}</li>`).join('') + '</ul>' : '';
+
+  updateFsTimer();
+  // Paper colours for start button
+  const paperStyles = {
+    p1:  {bg:'#FEF9E7', color:'#9A6B00', border:'#F0B429'},
+    p2a: {bg:'#FBEAF0', color:'#993556', border:'#D4537E'},
+    p2b: {bg:'#E1F5EE', color:'#0F6E56', border:'#1D9E75'},
+    p3:  {bg:'#E6F1FB', color:'#185FA5', border:'#378ADD'},
+  };
+  const ps = paperStyles[q.paper] || {bg:'var(--subtle)', color:'var(--text)', border:'var(--border2)'};
+  const startBtn = document.getElementById('fs-start-btn');
+  if (startBtn) {
+    startBtn.style.background = ps.bg;
+    startBtn.style.color = ps.color;
+    startBtn.style.borderColor = ps.border;
+  }
+  document.getElementById('fs-pre').style.display = 'block';
+  document.getElementById('fs-active').style.display = 'none';
+  const fsEl = document.getElementById('exam-fullscreen');
+  fsEl.style.display = 'block';
+  fsEl.style.visibility = 'visible';
+  document.body.style.overflow = 'hidden';
+}
+
+function startFsClock() {
+  document.getElementById('fs-pre').style.display = 'none';
+  document.getElementById('fs-active').style.display = 'block';
+  if (fsInterval) clearInterval(fsInterval);
+  fsInterval = setInterval(() => {
+    fsElapsed++;
+    updateFsTimer();
+    if (fsElapsed >= fsTotal) {
+      clearInterval(fsInterval);
+      fsInterval = null;
+    }
+  }, 1000);
+}
+
+function updateFsTimer() {
+  const remaining = Math.max(0, fsTotal - fsElapsed);
+  const m = Math.floor(remaining / 60);
+  const s = remaining % 60;
+  const timerEl = document.getElementById('fs-timer');
+  timerEl.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  timerEl.classList.toggle('warn', remaining < 60);
+  const pct = fsTotal > 0 ? Math.max(0, (fsTotal - fsElapsed) / fsTotal * 100) : 100;
+  const fill = document.getElementById('fs-bar-fill');
+  fill.style.width = pct + '%';
+  fill.style.background = remaining < 60 ? '#D4537E' : remaining < fsTotal * 0.25 ? '#F0B429' : '#4a7c59';
+}
+
+// Wire exit button safely after DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+  const exitBtn = document.getElementById('fs-exit-btn');
+  if (exitBtn) exitBtn.addEventListener('click', exitFullscreen);
+  const startBtn = document.getElementById('fs-start-btn');
+  if (startBtn) startBtn.addEventListener('click', startFsClock);
+});
+
+function exitFullscreen() {
+  if (fsInterval) { clearInterval(fsInterval); fsInterval = null; }
+  const el = document.getElementById('exam-fullscreen');
+  el.style.display = 'none';
+  el.style.visibility = 'hidden';
+  document.body.style.overflow = '';
+  // Reset for next use
+  document.getElementById('fs-pre').style.display = 'block';
+  document.getElementById('fs-active').style.display = 'none';
+  fsElapsed = 0;
+}
+// ═══════════════════════════════════════════
+function drawExam() {
+  const sel = document.getElementById('e-directory');
+  const type = document.getElementById('e-type').value;
+  let pool = EQ.filter(q => q.paper === currentPaper);
+  if (type !== 'all') pool = pool.filter(q => q.type === type);
+  if (!pool.length) {
+    document.getElementById('e-out').innerHTML = '<div class="empty">No questions match these filters.</div>';
+    return;
+  }
+  const randIdx = Math.floor(Math.random() * pool.length);
+  examPoolIdx = randIdx;
+  if (sel) { sel._pool = pool; sel.value = String(randIdx); }
+  drawExamCard(pool[randIdx]);
+}
+
+function updateExamDirectory() {
+  const type = document.getElementById('e-type').value;
+  let pool = EQ.filter(q => q.paper === currentPaper);
+  if (type !== 'all') pool = pool.filter(q => q.type === type);
+  const typeShort = {
+    '4mark':'[4m]','4mark-consequence':'[4m]',
+    '8mark-narrative':'[8m]','8mark-importance':'[8m]',
+    '12mark':'[12m]','16mark':'[16m]'
+  };
+  const sel = document.getElementById('e-directory');
+  sel.innerHTML = '<option value="">— select a question —</option>' +
+    pool.map((q, i) => `<option value="${i}">${typeShort[q.type]||''} ${q.name || q.q.substring(0,55)}</option>`).join('');
+  sel._pool = pool;
+}
+
+let examPoolIdx = -1; // index into current filtered pool
+
+function loadSelectedExam() {
+  const sel = document.getElementById('e-directory');
+  const idx = sel.value;
+  if (idx === '') { drawExam(); return; }
+  examPoolIdx = parseInt(idx);
+  const q = sel._pool[examPoolIdx];
+  if (q) drawExamCard(q);
+}
+
+let currentExamQ = null;
+function stepExam(dir) {
+  const sel = document.getElementById('e-directory');
+  const pool = sel._pool;
+  if (!pool || !pool.length) return;
+  examPoolIdx = Math.max(0, Math.min(pool.length - 1, examPoolIdx + dir));
+  // Sync the dropdown
+  sel.value = String(examPoolIdx);
+  drawExamCard(pool[examPoolIdx]);
+}
+
+function drawExamCard(q) {
+  currentExamQ = q;
+  const typeLabel = {
+    '2mark': '2-mark describe',
+    '4mark': '4-mark similarity/difference',
+    '4mark-consequence': '4-mark consequence',
+    '8mark-narrative': '8-mark narrative',
+    '8mark-importance': '8-mark importance',
+    '12mark': '12-mark explain why',
+    '16mark': '16-mark debate'
+  }[q.type] || q.type;
+
+  let contentHtml = '';
+  if (q.type === '16mark') {
+    const agreeItems = q.content.filter(p => p.agree === true);
+    const disagreeItems = q.content.filter(p => p.agree === false);
+    agreeItems.forEach(p => {
+      contentHtml += `<div class="rhead agree">✓ Agree – ${p.h}</div><ul>${p.pts.map(pt => `<li>${pt}</li>`).join('')}</ul>`;
+    });
+    disagreeItems.forEach((p, i) => {
+      contentHtml += `<div class="rhead disagree">✗ Disagree ${['A','B'][i]} – ${p.h}</div><ul>${p.pts.map(pt => `<li>${pt}</li>`).join('')}</ul>`;
+    });
+  } else {
+    q.content.forEach(p => {
+      contentHtml += `<div class="rhead">${p.h}</div><ul>${p.pts.map(pt => `<li>${pt}</li>`).join('')}</ul>`;
+    });
+  }
+
+  document.getElementById('e-out').innerHTML = `
+    <div class="card">
+      <div class="stripe s-${q.paper}"></div>
+      <div class="inner">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem">
+          <div class="meta" style="margin-bottom:0">
+            <span class="tag t-grey">${typeLabel}</span>
+          </div>
+          <button class="btn-sm" onclick="enterFullscreen(currentExamQ)" style="font-size:.72rem;padding:4px 8px;white-space:nowrap">⏱ Try it timed</button>
+        </div>
+        <div class="card-q" style="font-weight:600">${q.q}</div>
+        ${q.hints && q.hints.length ? `<div style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem"><span style="font-style:italic">You may use:</span><ul style="margin:.35rem 0 0 1rem;padding:0">${q.hints.map(h => `<li style="font-weight:400">${h}</li>`).join('')}</ul></div>` : ''}
+       <div class="btn-row">
+          <button class="btn-sm" onclick="tog('er');this.textContent=this.textContent==='🔍 Show indicative content'?'🔍 Hide indicative content':'🔍 Show indicative content'">🔍 Show indicative content</button>
+
+        </div>
+        <div class="reveal" id="er">${contentHtml}</div>
+      </div>
+    </div>`;
+}
+
+// ═══════════════════════════════════════════
+// KEY DATES QUIZ
+// ═══════════════════════════════════════════
+// ── Dates quiz state ──
+let quizStreak = 0;
+let quizMissed = []; // dates got wrong this session
+let quizHardMode = false;
+let quizTypeMode = 'pick'; // 'pick' | 'type' — hard mode (type the year)
+let quizHistory = []; // [{item, wasCorrect}] — answered questions in order
+let quizViewIdx = 0; // which question is currently displayed (may be < quizIdx when reviewing)
+
+function getHardDates() {
+  return JSON.parse(localStorage.getItem('gcse_hard_dates_' + currentPaper) || '[]');
+}
+function saveHardDates(arr) {
+  localStorage.setItem('gcse_hard_dates_' + currentPaper, JSON.stringify(arr));
+}
+
+function applyDatesStartBtn() {
+  const goBtn = document.getElementById('d-go');
+  if (!goBtn) return;
+  const solid = {p1:'#F0B429',p2a:'#D4537E',p2b:'#1D9E75',p3:'#378ADD'};
+  goBtn.style.background = solid[currentPaper] || '#555';
+}
+
+function setDatesMode(m) {
+  quizTypeMode = m;
+  const colours = {p1:{bg:'#FEF9E7',color:'#9A6B00',border:'#F0B429'},p2a:{bg:'#FBEAF0',color:'#993556',border:'#D4537E'},p2b:{bg:'#E1F5EE',color:'#0F6E56',border:'#1D9E75'},p3:{bg:'#E6F1FB',color:'#185FA5',border:'#378ADD'}};
+  const c = colours[currentPaper] || {bg:'#f0f0ee',color:'#555',border:'#aaa'};
+  ['pick','type'].forEach(mode => {
+    const btn = document.getElementById('d-mode-' + mode);
+    if (!btn) return;
+    if (mode === m) {
+      btn.style.background = c.bg;
+      btn.style.color = c.color;
+      btn.style.borderColor = c.border;
+    } else {
+      btn.style.background = 'var(--surface)';
+      btn.style.color = 'var(--muted)';
+      btn.style.borderColor = 'var(--border2)';
+    }
+  });
+}
+
+function datesShowSetup() {
+  document.getElementById('d-out').innerHTML = '';
+  document.getElementById('d-countdown').style.display = 'none';
+  const setupEl = document.getElementById('d-setup');
+  if (setupEl) setupEl.style.display = 'block';
+  setDatesMode(quizTypeMode);
+  applyDatesStartBtn();
+}
+
+function startQuizCountdown(hardMode) {
+  // Hide setup
+  const setupEl = document.getElementById('d-setup');
+  if (setupEl) setupEl.style.display = 'none';
+  // Show countdown
+  const cdEl = document.getElementById('d-countdown');
+  const numEl = document.getElementById('d-countdown-num');
+  cdEl.style.display = 'block';
+  let count = 3;
+  numEl.textContent = count;
+  // Re-trigger animation each tick
+  function tick() {
+    numEl.style.animation = 'none';
+    void numEl.offsetWidth; // reflow
+    numEl.style.animation = 'cd-pop .35s ease forwards';
+    numEl.textContent = count;
+    if (count === 0) {
+      numEl.textContent = 'Go!';
+      setTimeout(() => {
+        cdEl.style.display = 'none';
+        startQuiz(hardMode, quizTypeMode);
+      }, 500);
+      return;
+    }
+    count--;
+    setTimeout(tick, 700);
+  }
+  setTimeout(tick, 100);
+}
+
+function startQuiz(hardMode, typeMode) {
+  const all = DATES.filter(d => d.paper === currentPaper);
+  if (!all.length) {
+    document.getElementById('d-out').innerHTML = '<div class="empty">No dates for this paper.</div>';
+    return;
+  }
+  quizHardMode = !!hardMode;
+  quizTypeMode = typeMode || 'pick';
+  let pool = hardMode
+    ? all.filter(d => getHardDates().includes(d.event))
+    : all;
+  if (!pool.length) pool = all; // fallback if no hard dates yet
+  quizPool = shuffle([...pool]).slice(0, Math.min(pool.length, 15));
+  quizIdx = 0; quizOK = 0; quizBad = 0; quizStreak = 0; quizMissed = []; quizHistory = []; quizViewIdx = 0;
+  renderQ();
+}
+
+function renderQ() {
+  // If viewing a previously answered question (quizViewIdx < quizIdx)
+  if (quizViewIdx < quizIdx) {
+    renderHistoricalQ();
+    return;
+  }
+  // Live unanswered question
+  if (quizIdx >= quizPool.length) { showQuizEnd(); return; }
+  const item = quizPool[quizIdx];
+  const total = quizPool.length;
+  const pct = Math.round((quizIdx / total) * 100);
+  const streakHtml = quizStreak >= 3 ? `<span style="font-size:.8rem;color:#F0B429;font-weight:600">🔥 ${quizStreak}</span>` : '';
+  const prevBtn = quizHistory.length > 0
+    ? `<button onclick="quizGoBack()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">← Prev</button>`
+    : `<span></span>`;
+
+  let answerHtml;
+  if (quizTypeMode === 'type') {
+    answerHtml = `
+      <div style="margin-top:.75rem">
+        <input id="quiz-year-input" type="text" inputmode="numeric" placeholder="Type the year and press Enter…"
+          style="width:100%;padding:10px;font-size:1.1rem;font-weight:700;text-align:center;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text);font-family:inherit"
+          onkeydown="if(event.key==='Enter')checkYearAns()">
+        <div class="quiz-fb" id="qfb"></div>
+      </div>`;
+  } else {
+    const others = shuffle(DATES.filter(d => d.paper === currentPaper && d.event !== item.event)).slice(0, 3).map(d => d.event);
+    const opts = shuffle([item.event, ...others]);
+    const optsHtml = opts.map((o, i) => {
+      const formatted = o.replace(/^([^—–-]+)(—|–|-)/, '<strong>$1</strong>$2');
+      return `<button class="opt" id="opt${i}" data-val="${esc(o)}" data-correct="${esc(item.event)}" onclick="checkAns(this)">${formatted}</button>`;
+    }).join('');
+    answerHtml = `<div class="opts">${optsHtml}</div><div class="quiz-fb" id="qfb"></div>`;
+  }
+
+  document.getElementById('d-out').innerHTML = `
+    <div class="quiz-prog"><div class="quiz-fill ${P[currentPaper].fill}" style="width:${pct}%"></div></div>
+    <div class="quiz-hdr">
+      <div style="display:flex;align-items:center;gap:8px">
+        ${prevBtn}
+        <span class="quiz-hdr-l">Question ${quizIdx + 1} of ${total}</span>
+      </div>
+      <div class="sc-row">${streakHtml}<span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-date" style="${quizTypeMode === 'type' ? "font-family:Arial,Helvetica,sans-serif;font-size:1.05rem;font-weight:600;line-height:1.4;margin-bottom:.5rem" : ''}">${quizTypeMode === 'type' ? item.event : item.date}</div>
+      <div class="quiz-prompt">${quizTypeMode === 'type' ? 'What year did this happen?' : 'What happened?'}</div>
+      ${answerHtml}
+    </div>`;
+
+  if (quizTypeMode === 'type') {
+    const inp = document.getElementById('quiz-year-input');
+    if (inp) setTimeout(() => inp.focus(), 50);
+  }
+}
+
+function renderHistoricalQ() {
+  // Show a previously answered question — locked, result visible, with Prev/Next nav
+  const hist = quizHistory[quizViewIdx];
+  const item = hist.item;
+  const total = quizPool.length;
+  const pct = Math.round((quizViewIdx / total) * 100);
+
+  const prevBtn = quizViewIdx > 0
+    ? `<button onclick="quizGoBack()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">← Prev</button>`
+    : `<span></span>`;
+  const nextBtn = `<button onclick="quizGoForward()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">Next →</button>`;
+
+  let resultHtml;
+  if (quizTypeMode === 'type') {
+    const correctDate = item.date;
+    resultHtml = `
+      <div style="margin-top:.75rem">
+        <div class="quiz-fb ${hist.wasCorrect ? 'fb-c' : 'fb-w'}" style="display:block">
+          ${hist.wasCorrect ? `✓ Correct — ${correctDate}` : `✗ Answer was ${correctDate}`}
+        </div>
+      </div>`;
+  } else {
+    // Show all options locked — correct highlighted, wrong highlighted if they got it wrong
+    const others = hist.otherOpts || [];
+    const allOpts = hist.allOpts || [item.event, ...others];
+    const optsHtml = allOpts.map(o => {
+      const formatted = o.replace(/^([^—–-]+)(—|–|-)/, '<strong>$1</strong>$2');
+      let cls = 'opt';
+      if (o === item.event) cls += ' show-c';
+      if (!hist.wasCorrect && o === hist.chosen) cls += ' wrong';
+      return `<button class="${cls}" disabled>${formatted}</button>`;
+    }).join('');
+    resultHtml = `
+      <div class="opts">${optsHtml}</div>
+      <div class="quiz-fb ${hist.wasCorrect ? 'fb-c' : 'fb-w'}" style="display:block">
+        ${hist.wasCorrect ? 'Correct!' : 'Not quite — correct answer highlighted.'}
+      </div>`;
+  }
+
+  document.getElementById('d-out').innerHTML = `
+    <div class="quiz-prog"><div class="quiz-fill ${P[currentPaper].fill}" style="width:${pct}%"></div></div>
+    <div class="quiz-hdr">
+      <div style="display:flex;align-items:center;gap:8px">
+        ${prevBtn}
+        <span class="quiz-hdr-l">Question ${quizViewIdx + 1} of ${total} <span style="font-size:.7rem;color:var(--muted)">(reviewing)</span></span>
+        ${nextBtn}
+      </div>
+      <div class="sc-row"><span class="sc sc-c">✓ ${quizOK}</span><span class="sc sc-w">✗ ${quizBad}</span></div>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-date" style="${quizTypeMode === 'type' ? "font-family:Arial,Helvetica,sans-serif;font-size:1.05rem;font-weight:600;line-height:1.4;margin-bottom:.5rem" : ''}">${quizTypeMode === 'type' ? item.event : item.date}</div>
+      <div class="quiz-prompt">${quizTypeMode === 'type' ? 'What year did this happen?' : 'What happened?'}</div>
+      ${resultHtml}
+    </div>`;
+}
+
+function checkAns(btn) {
+  const chosen = btn.dataset.val;
+  const correct = btn.dataset.correct;
+  const item = quizPool[quizIdx];
+  document.querySelectorAll('.opt').forEach(b => b.disabled = true);
+  const fb = document.getElementById('qfb');
+  const wasCorrect = chosen === correct;
+  // Capture all option values for history replay
+  const allOpts = Array.from(document.querySelectorAll('.opt')).map(b => b.dataset.val);
+  if (wasCorrect) {
+    quizOK++;
+    quizStreak++;
+    btn.classList.add('correct');
+    fb.textContent = 'Correct!';
+    fb.className = 'quiz-fb fb-c';
+    const hard = getHardDates().filter(e => e !== item.event);
+    saveHardDates(hard);
+  } else {
+    quizBad++;
+    quizStreak = 0;
+    quizMissed.push(item);
+    btn.classList.add('wrong');
+    fb.textContent = 'Not quite — correct answer highlighted.';
+    fb.className = 'quiz-fb fb-w';
+    document.querySelectorAll('.opt').forEach(b => {
+      if (b.dataset.val === correct) b.classList.add('show-c');
+    });
+    const hard = getHardDates();
+    if (!hard.includes(item.event)) hard.push(item.event);
+    saveHardDates(hard);
+  }
+  fb.style.display = 'block';
+  quizHistory.push({ item, wasCorrect, chosen, allOpts });
+  setTimeout(() => { quizIdx++; quizViewIdx = quizIdx; renderQ(); }, 1700);
+}
+
+function checkYearAns() {
+  const inp = document.getElementById('quiz-year-input');
+  if (!inp || inp.disabled) return;
+  const typed = inp.value.trim();
+  if (!typed) return;
+  const item = quizPool[quizIdx];
+  const fb = document.getElementById('qfb');
+  const correctDate = item.date;
+  // Extract ALL year tokens — handles 865, 1708-09, 1880s, c.1850, 1941–45 etc.
+  const allYears = [];
+  const fullYearMatches = correctDate.match(/\b([0-9]{2,4})s?\b/g) || [];
+  fullYearMatches
+    .map(y => y.replace(/s$/, ''))
+    .filter(y => { const n = parseInt(y); return n >= 100 && n <= 2099; })
+    .forEach(y => allYears.push(y));
+  // Expand shorthand ranges: "865-70" → 870, "1708-09" → 1709, "1941–45" → 1945
+  const rangeMatch = correctDate.match(/\b([0-9]{3,4})[-–]([0-9]{2})\b/);
+  if (rangeMatch) {
+    const base = rangeMatch[1];
+    const expanded = base.slice(0, base.length - 2) + rangeMatch[2];
+    if (!allYears.includes(expanded)) allYears.push(expanded);
+  }
+  if (!allYears.length) {
+    fb.textContent = 'Answer: ' + correctDate;
+    fb.className = 'quiz-fb fb-w';
+    fb.style.display = 'block';
+    return;
+  }
+  const typedNorm = (() => {
+    const t = typed.trim();
+    // If user typed a range like 1577-80, expand it the same way as the date
+    const rm = t.match(/^([0-9]{3,4})[-–]([0-9]{2})$/);
+    if (rm) {
+      // Return both ends so either matches
+      const base = rm[1];
+      const expanded = base.slice(0, base.length - 2) + rm[2];
+      return [base, expanded];
+    }
+    return [t.replace(/s$/, '').replace(/[^0-9]/g, '')];
+  })();
+  const wasCorrect = typedNorm.some(tn => allYears.some(y => tn === y));
+  inp.disabled = true;
+  if (wasCorrect) {
+    quizOK++; quizStreak++;
+    fb.textContent = `✓ Correct — ${correctDate}`;
+    fb.className = 'quiz-fb fb-c';
+    const hard = getHardDates().filter(e => e !== item.event);
+    saveHardDates(hard);
+  } else {
+    quizBad++; quizStreak = 0;
+    quizMissed.push(item);
+    fb.textContent = `✗ The answer was ${correctDate}`;
+    fb.className = 'quiz-fb fb-w';
+    const hard = getHardDates();
+    if (!hard.includes(item.event)) hard.push(item.event);
+    saveHardDates(hard);
+  }
+  fb.style.display = 'block';
+  quizHistory.push({ item, wasCorrect });
+  setTimeout(() => { quizIdx++; quizViewIdx = quizIdx; renderQ(); }, 2000);
+}
+
+function quizGoBack() {
+  if (quizViewIdx <= 0) return;
+  quizViewIdx--;
+  renderQ();
+}
+
+function quizGoForward() {
+  if (quizViewIdx >= quizIdx) return;
+  quizViewIdx++;
+  renderQ();
+}
+
+function showQuizEnd() {
+  const total = quizPool.length;
+  const pct = Math.round((quizOK / total) * 100);
+  const celebrations_dates = [
+    'History is all about timing — and yours is excellent. 🏆',
+    'Top marks! Every date nailed. 🎯',
+    'Outstanding! You clearly know your chronology. ⭐',
+  ];
+  const [grade, cls] = pct === 100
+    ? [celebrations_dates[Math.floor(Math.random()*celebrations_dates.length)], 'grade-a']
+    : pct >= 80 ? ['Excellent work — nearly there! 🏆', 'grade-a']
+    : pct >= 60 ? ['Good effort, keep drilling the tricky ones. ⭐', 'grade-b']
+    : pct >= 40 ? ['A solid start — use hardest dates mode to focus. 📚', 'grade-c']
+    : ['Keep at it — chronology takes practice. 💪', 'grade-c'];
+  const hardCount = getHardDates().length;
+
+  // Missed dates review
+  const missedHtml = quizMissed.length ? `
+    <div style="margin:.75rem 0;text-align:left">
+      <div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem">Review — dates to learn:</div>
+      ${quizMissed.map(d => `
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.5rem .75rem;margin-bottom:.4rem;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem">
+          <span style="font-size:.85rem;font-weight:700">${d.date}</span>
+          <span style="font-size:.8rem;color:var(--muted);flex:1;text-align:right">${d.event}</span>
+        </div>`).join('')}
+    </div>` : '';
+
+  const hardBtn = hardCount > 0 && !quizHardMode
+    ? `<button class="btn-sm" onclick="startQuizCountdown(true)" style="width:100%;margin-top:.25rem">🎯 Hardest dates only (${hardCount})</button>`
+    : '';
+
+  document.getElementById('d-out').innerHTML = `
+    <div class="quiz-end">
+      <div class="end-score">${quizOK}/${total}</div>
+      <div class="end-sub">${pct}% correct</div>
+      <div class="end-grade ${cls}">${grade}</div>
+      ${missedHtml}
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:.5rem">
+        <button class="btn-sm" style="width:100%" onclick="datesShowSetup()">🔄 New quiz</button>
+        ${hardBtn}
+      </div>
+    </div>`;
+}
+let KC = []; // loaded from data/kc.json
+let EQ = []; // loaded from data/eq.json
+
+let DATES = []; // loaded from data/dates.json
+
+// ═══════════════════════════════════════════
+// LOAD EXTERNAL DATA
+// ═══════════════════════════════════════════
+let FD = []; // loaded from data/flashcards.json
+
+Promise.all([
+  fetch('data/eq.json').then(r => { if (!r.ok) throw new Error('eq.json: ' + r.status); return r.json(); }),
+  fetch('data/rq.json').then(r => { if (!r.ok) throw new Error('rq.json: ' + r.status); return r.json(); }),
+  fetch('data/dates.json').then(r => { if (!r.ok) throw new Error('dates.json: ' + r.status); return r.json(); }),
+  fetch('data/flashcards.json').then(r => { if (!r.ok) throw new Error('flashcards.json: ' + r.status); return r.json(); }),
+  fetch('data/kc.json').then(r => { if (!r.ok) throw new Error('kc.json: ' + r.status); return r.json(); }),
+]).then(([eq, rq, dates, fd, kc]) => {
+  EQ = eq;
+  RQ = rq;
+  DATES = dates;
+  FD = fd;
+  KC = kc;
+  // Refresh any visible modes
+  const examMode = document.getElementById('mode-exam');
+  if (examMode && examMode.style.display !== 'none') updateExamDirectory();
+  const kbMode = document.getElementById('mode-knowledge');
+  if (kbMode && kbMode.style.display !== 'none') { buildKPool(); updateNavUI(); }
+  console.log('Data loaded — EQ:', EQ.length, 'RQ:', RQ.length, 'DATES:', DATES.length, 'FD:', FD.length, 'KC:', KC.length);
+  renderFdWheels(); // update picker screen wheels once data is ready
+  renderFdSetupWheel();
+  renderFdHubWheel();
+}).catch(err => {
+  console.error('Data load failed:', err);
+  const eOut = document.getElementById('e-out');
+  if (eOut) eOut.innerHTML = '<div class="empty">📌 Could not load data files. Make sure data/eq.json, rq.json, dates.json, flashcards.json and kc.json are in your repository.</div>';
+});
+
+// ═══════════════════════════════════════════
+// FLASHCARD DRILL
+// ═══════════════════════════════════════════
+
+// localStorage keys
+const LS_MASTERED   = 'gcse_fd_mastered';    // {cardKey: true} — cards ever ticked ✅
+const LS_MISSED     = 'gcse_fd_missed';       // [cardKey, ...] — outstanding missed cards (cross-session)
+const LS_STREAK     = 'gcse_fd_streak';       // {date:'YYYY-MM-DD', count:N}
+const LS_SESSION    = 'gcse_fd_session';      // {date:'YYYY-MM-DD', got:{p1:N,...}, total:{p1:N,...}}
+const LS_HINTS      = 'gcse_fd_hints';         // boolean — remembered hint preference
+
+// State
+let fdDeck       = [];   // current round deck (card objects, may include outstanding)
+let fdSeen       = [];   // cards seen this round (in order)
+let fdMissed     = [];   // missed this round (to recycle)
+let fdGot        = 0;    // ✅ count this round
+let fdMissCount  = 0;    // ❌ count this round
+let fdCurrent    = null; // card currently shown
+let fdFlipped    = false;
+let fdHintsOn    = false; // persists across cards within a session
+let fdTotal      = 0;    // original deck size (for progress bar)
+let fdOutstanding = [];  // outstanding missed keys loaded from localStorage
+
+function fdTodayStr() {
+  return new Date().toISOString().slice(0, 10);
+}
+function fdGetSession() {
+  const s = JSON.parse(localStorage.getItem(LS_SESSION) || 'null');
+  const today = fdTodayStr();
+  if (!s || s.date !== today) {
+    const fresh = { date: today, got: {p1:0,p2a:0,p2b:0,p3:0}, total: {p1:0,p2a:0,p2b:0,p3:0}, unitGot:{}, unitTotal:{} };
+    localStorage.setItem(LS_SESSION, JSON.stringify(fresh));
+    return fresh;
+  }
+  // Ensure unitGot/unitTotal exist for older sessions
+  if (!s.unitGot)   s.unitGot   = {};
+  if (!s.unitTotal) s.unitTotal = {};
+  return s;
+}
+function fdSetSession(s) {
+  localStorage.setItem(LS_SESSION, JSON.stringify(s));
+}
+function fdRecordSessionCard(paper, got) {
+  const s = fdGetSession();
+  s.total[paper] = (s.total[paper] || 0) + 1;
+  if (got) s.got[paper] = (s.got[paper] || 0) + 1;
+  // Track per unit
+  if (fdCurrent && fdCurrent.unit) {
+    const uk = paper + '|' + fdCurrent.unit;
+    s.unitTotal[uk] = (s.unitTotal[uk] || 0) + 1;
+    if (got) s.unitGot[uk] = (s.unitGot[uk] || 0) + 1;
+  }
+  fdSetSession(s);
+}
+
+function fdSyncHints(on) {
+  fdHintsOn = on;
+  localStorage.setItem(LS_HINTS, on ? '1' : '0');
+  const setup = document.getElementById('fd-hints-on');
+  const drill = document.getElementById('fd-hints-on-drill');
+  if (setup) setup.checked = on;
+  if (drill) drill.checked = on;
+  // Re-render chips on current card
+  if (!fdCurrent) return;
+  const chipsEl = document.getElementById('fd-hint-chips');
+  if (fdHintsOn && fdCurrent.hints && fdCurrent.hints.length) {
+    chipsEl.innerHTML = fdCurrent.hints.map(h => `<span class="tag t-${fdCurrent.paper}">${h}</span>`).join('');
+    chipsEl.style.display = 'flex';
+  } else {
+    chipsEl.innerHTML = '';
+    chipsEl.style.display = 'none';
+  }
+}
+
+function fdToggleHints() {
+  const on = document.getElementById('fd-hints-on').checked;
+  fdSyncHints(on);
+}
+
+function fdKey(card) {
+  return card.paper + '|' + card.no;
+}
+
+function fdGetMastered() {
+  return JSON.parse(localStorage.getItem(LS_MASTERED) || '{}');
+}
+function fdSetMastered(obj) {
+  localStorage.setItem(LS_MASTERED, JSON.stringify(obj));
+}
+function fdGetOutstanding() {
+  return JSON.parse(localStorage.getItem(LS_MISSED) || '[]');
+}
+function fdSetOutstanding(arr) {
+  localStorage.setItem(LS_MISSED, JSON.stringify(arr));
+}
+
+function fdSetup() {
+  renderFdWheels();
+  renderFdSetupWheel();
+  // Restore remembered hints preference
+  fdHintsOn = localStorage.getItem(LS_HINTS) === '1';
+  const hintsChk = document.getElementById('fd-hints-on');
+  const hintsDrill = document.getElementById('fd-hints-on-drill');
+  if (hintsChk) hintsChk.checked = fdHintsOn;
+  if (hintsDrill) hintsDrill.checked = fdHintsOn;
+  // Populate unit dropdown for current paper
+  const sel = document.getElementById('fd-unit');
+  sel.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>';
+  P[currentPaper].units.forEach(u => {
+    const opt = document.createElement('option');
+    opt.value = u;
+    opt.textContent = u;
+    sel.appendChild(opt);
+  });
+  // Colour the select
+  sel.className = 'sel-' + currentPaper;
+
+  // Colour start button to current paper
+  // Show pinned review button if there are any pinned cards
+  const pinnedBtn = document.getElementById('fd-pinned-btn');
+  if (pinnedBtn) {
+    const outstanding = fdGetOutstanding();
+    const hasPinned = outstanding.some(k => FD.find(c => fdKey(c) === k));
+    pinnedBtn.style.display = hasPinned ? 'block' : 'none';
+    if (hasPinned) pinnedBtn.textContent = '📌 Review pinned cards';
+  }
+  const startBtn = document.getElementById('fd-start-btn');
+  const goClasses = {p1:'c-p1', p2a:'c-p2a', p2b:'c-p2b', p3:'c-p3'};
+  startBtn.className = 'btn-go ' + (goClasses[currentPaper] || '');
+
+  // Show outstanding banner
+  fdOutstanding = fdGetOutstanding();
+  const banner = document.getElementById('fd-outstanding-banner');
+  // Filter outstanding to cards that exist in FD
+  fdOutstanding = fdOutstanding.filter(k => FD.find(c => fdKey(c) === k));
+  fdSetOutstanding(fdOutstanding);
+
+  const unit = document.getElementById('fd-unit') ? (document.getElementById('fd-unit').value || 'all') : 'all';
+  const outNotInDeck = fdOutstanding.filter(k => {
+    const c = FD.find(c => fdKey(c) === k);
+    if (!c) return false;
+    if (c.paper !== currentPaper) return true; // other paper
+    if (unit === 'all') return false; // same paper, drilling all units — already included
+    return c.unit !== unit; // same paper, different unit
+  });
+  if (outNotInDeck.length > 0) {
+    banner.style.display = 'block';
+    banner.textContent = `📌 ${outNotInDeck.length} pinned card${outNotInDeck.length > 1 ? 's' : ''} from other units/papers will be woven in.`;
+  } else {
+    banner.style.display = 'none';
+  }
+
+  // Show setup, hide others
+  document.getElementById('fd-setup').style.display = 'block';
+  document.getElementById('fd-drill').style.display = 'none';
+  document.getElementById('fd-summary').style.display = 'none';
+  document.getElementById('fd-complete').style.display = 'none';
+}
+
+function fdStart() {
+  if (!FD.length) {
+    alert('Flashcard data not loaded yet — please wait a moment and try again.');
+    return;
+  }
+  const unit = document.getElementById('fd-unit').value;
+  if (!unit) {
+    alert('Please select a unit first.');
+    return;
+  }
+  const mastered = fdGetMastered();
+
+  // Build base deck for this paper/unit
+  let base = FD.filter(c => c.paper === currentPaper);
+  if (unit !== 'all') base = base.filter(c => c.unit === unit);
+
+  // Separate outstanding missed cards not already in the deck
+  fdOutstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
+  const outCards = fdOutstanding
+    .map(k => FD.find(c => fdKey(c) === k))
+    .filter(Boolean)
+    .filter(c => {
+      // Exclude if already in base deck (same paper + same unit, or same paper + drilling all)
+      if (c.paper !== currentPaper) return true; // other paper — always include
+      if (unit === 'all') return false;           // same paper, all units — base already covers it
+      return c.unit !== unit;                     // same paper, different unit — include
+    });
+
+  // Combine: base deck + outstanding from other papers
+  // Interleave outstanding: insert one every ~6 base cards
+  const combined = [...base];
+  if (outCards.length > 0) {
+    const interval = 6;
+    outCards.forEach((oc, i) => {
+      const pos = Math.min(Math.max((i + 1) * interval, 2), combined.length);
+      combined.splice(pos, 0, oc);
+    });
+  }
+
+  if (!combined.length) {
+    alert('No flashcards found for this selection.');
+    return;
+  }
+
+  // Shuffle
+  for (let i = combined.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [combined[i], combined[j]] = [combined[j], combined[i]];
+  }
+
+  fdDeck      = [...combined];
+  fdSeen      = [];
+  fdMissed    = [];
+  fdGot       = 0;
+  fdMissCount = 0;
+  fdTotal     = combined.length;
+
+  document.getElementById('fd-setup').style.display   = 'none';
+  document.getElementById('fd-drill').style.display   = 'block';
+  document.getElementById('fd-summary').style.display = 'none';
+  document.getElementById('fd-complete').style.display = 'none';
+
+  fdNext();
+}
+
+function fdNext() {
+  if (fdDeck.length === 0) {
+    // Round over
+    fdShowSummary();
+    return;
+  }
+
+  fdCurrent = fdDeck.shift();
+  fdFlipped = false;
+
+  // Update card UI
+  const paperColour = currentPaper; // may differ for outstanding cards
+  const cardPaper = fdCurrent.paper;
+  const paperNames = {p1:'Migrants', p2a:'Cold War', p2b:'Elizabeth I', p3:'Germany'};
+  const tag = `${paperNames[cardPaper] || cardPaper} · ${fdCurrent.unit}`;
+
+  const tagClasses = {p1:'bg-p1', p2a:'bg-p2a', p2b:'bg-p2b', p3:'bg-p3'};
+  const stripeColours = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'};
+
+  document.getElementById('fd-tag').className = 'fd-tag ' + (tagClasses[cardPaper] || '');
+  document.getElementById('fd-tag').textContent = tag;
+  document.getElementById('fd-tag-back').className = 'fd-tag ' + (tagClasses[cardPaper] || '');
+  document.getElementById('fd-tag-back').textContent = tag;
+
+  // Show 📌 on cards that are outstanding (previously missed in an earlier session)
+  const outstandingCheck = fdGetOutstanding();
+  const isOutstandingCard = outstandingCheck.includes(fdKey(fdCurrent));
+  document.getElementById('fd-question').textContent =
+    (isOutstandingCard ? '📌 ' : '') + fdCurrent.front;
+
+  const pts = document.getElementById('fd-points');
+  const hints = fdCurrent.hints || [];
+  pts.innerHTML = ['p1','p2','p3'].map((k, i) =>
+    fdCurrent[k] ? `<li>${boldHints(fdCurrent[k], hints[i] ? [hints[i]] : [])}</li>` : ''
+  ).join('');
+  // Reset stagger state
+  document.querySelectorAll('#fd-points li').forEach(li => li.classList.remove('fd-pt-show'));
+
+  // Hint chips on front face
+  const chipsEl = document.getElementById('fd-hint-chips');
+  const hintsOn = fdHintsOn;
+  if (hintsOn && fdCurrent.hints && fdCurrent.hints.length) {
+    chipsEl.innerHTML = fdCurrent.hints.map(h => `<span class="tag t-${fdCurrent.paper}">${h}</span>`).join('');
+    chipsEl.style.display = 'flex';
+  } else {
+    chipsEl.innerHTML = '';
+    chipsEl.style.display = 'none';
+  }
+
+  // Paper stripe colour on both faces
+  const col = stripeColours[cardPaper] || '#888';
+  document.getElementById('fd-front').style.borderLeftColor = col;
+  document.getElementById('fd-back').style.borderLeftColor  = col;
+
+  // Reset flip
+  document.getElementById('fd-card-inner').classList.remove('flipped');
+  document.getElementById('fd-btn-row').style.display = 'none';
+  fdUpdateProgress();
+}
+
+function fdFlip() {
+  const inner = document.getElementById('fd-card-inner');
+  if (!fdFlipped) {
+    // First reveal — stagger animation
+    fdFlipped = true;
+    inner.classList.add('flipped');
+    const items = document.querySelectorAll('#fd-points li');
+    items.forEach((li, i) => {
+      setTimeout(() => li.classList.add('fd-pt-show'), 300 + i * 700);
+    });
+    const delay = 300 + items.length * 700 + 400;
+    setTimeout(() => {
+      document.getElementById('fd-btn-row').style.display = 'grid';
+    }, delay);
+  } else if (inner.classList.contains('flipped')) {
+    // Flip back to question — buttons stay, no animation reset
+    inner.classList.remove('flipped');
+  } else {
+    // Flip forward again instantly — already revealed
+    inner.classList.add('flipped');
+  }
+}
+
+function fdAnswer(got) {
+  const key = fdKey(fdCurrent);
+  const mastered = fdGetMastered();
+  const outstanding = fdGetOutstanding();
+
+  // Record in today's session tally
+  fdRecordSessionCard(fdCurrent.paper, got);
+
+  if (got) {
+    fdGot++;
+    mastered[key] = true;
+    fdSetMastered(mastered);
+    // Remove from outstanding if present
+    const idx = outstanding.indexOf(key);
+    if (idx !== -1) outstanding.splice(idx, 1);
+    fdSetOutstanding(outstanding);
+    fdOutstanding = outstanding;
+  } else {
+    fdMissCount++;
+    fdMissed.push(fdCurrent);
+    // Add to outstanding cross-session list
+    if (!outstanding.includes(key)) outstanding.push(key);
+    fdSetOutstanding(outstanding);
+    fdOutstanding = outstanding;
+    // Remove from mastered if they previously got it
+    if (mastered[key]) {
+      delete mastered[key];
+      fdSetMastered(mastered);
+    }
+  }
+
+  // Animate card out, then advance
+  const inner = document.getElementById('fd-card-inner');
+  inner.classList.add(got ? 'slide-out-right' : 'slide-out-left');
+  setTimeout(() => {
+    inner.classList.remove('slide-out-right','slide-out-left','flipped');
+    inner.classList.add(got ? 'from-left' : 'from-right');
+    fdNext();
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      inner.classList.remove('from-left','from-right');
+      inner.classList.add('slide-in');
+      setTimeout(() => inner.classList.remove('slide-in'), 250);
+    }));
+    if (document.getElementById('s-pick').classList.contains('active')) renderFdWheels();
+    if (document.getElementById('s-hub').classList.contains('active'))  renderFdHubWheel();
+    renderFdSetupWheel();
+  }, 220);
+}
+
+function fdUpdateProgress() {
+  const seen = fdGot + fdMissCount;
+  const pct  = fdTotal > 0 ? Math.round((seen / fdTotal) * 100) : 0;
+  const bar  = document.getElementById('fd-bar');
+  const col  = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'}[currentPaper] || '#555';
+  bar.style.width      = pct + '%';
+  bar.style.background = col;
+  document.getElementById('fd-prog-text').textContent  = `${seen} of ${fdTotal} cards`;
+  document.getElementById('fd-prog-count').textContent = `✅ ${fdGot}  ❌ ${fdMissCount}`;
+}
+
+function fdShowSummary() {
+  document.getElementById('fd-drill').style.display   = 'none';
+  document.getElementById('fd-summary').style.display = 'block';
+  document.getElementById('fd-sum-got').textContent   = fdGot;
+  document.getElementById('fd-sum-miss').textContent  = fdMissCount;
+
+  const outstanding = fdGetOutstanding();
+  const note = document.getElementById('fd-sum-note');
+  if (outstanding.length > 0) {
+    note.innerHTML = `📌 <strong>${outstanding.length} card${outstanding.length > 1 ? 's' : ''} missed</strong> — these will be woven into your future flashcard modes automatically (marked 📌).`;
+  } else {
+    note.textContent = '';
+  }
+
+  const drillBtn = document.getElementById('fd-drill-again-btn');
+  drillBtn.style.display = fdMissCount > 0 ? 'block' : 'none';
+
+  // Check if this paper hit 100% today
+  const session = fdGetSession();
+  const paperTotal = FD.filter(c => c.paper === currentPaper).length;
+  const sessionGot = session.got[currentPaper] || 0;
+  const sessionSeen = session.total[currentPaper] || 0;
+  const isPerfect = fdMissCount === 0 && sessionGot >= paperTotal;
+
+  const summaryCard = document.querySelector('#fd-summary .fd-summary-card');
+  const summaryHeading = document.querySelector('#fd-summary .fd-summary-card div:first-child');
+  if (isPerfect) {
+    summaryCard.classList.add('is-perfect');
+    summaryHeading.textContent = 'All cards mastered today! 🏆';
+    fdFireConfetti();
+  } else {
+    summaryCard.classList.remove('is-perfect');
+    summaryHeading.textContent = 'Session complete! 🏁';
+  }
+
+  // Update streak
+  fdUpdateStreak();
+}
+
+function fdStartPinned() {
+  const outstanding = fdGetOutstanding();
+  const pinnedCards = outstanding
+    .map(k => FD.find(c => fdKey(c) === k))
+    .filter(Boolean);
+  if (!pinnedCards.length) {
+    alert('No pinned cards to review!');
+    return;
+  }
+  // Shuffle pinned
+  for (let i = pinnedCards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pinnedCards[i], pinnedCards[j]] = [pinnedCards[j], pinnedCards[i]];
+  }
+  fdDeck      = [...pinnedCards];
+  fdSeen      = [];
+  fdMissed    = [];
+  fdGot       = 0;
+  fdMissCount = 0;
+  fdTotal     = pinnedCards.length;
+  document.getElementById('fd-setup').style.display   = 'none';
+  document.getElementById('fd-drill').style.display   = 'block';
+  document.getElementById('fd-summary').style.display = 'none';
+  document.getElementById('fd-complete').style.display = 'none';
+  fdNext();
+}
+
+function fdDrillMissed() {
+  // Start a new round with only the missed cards from this session
+  // Pull fresh from outstanding (which was updated during this round)
+  const outstanding = fdGetOutstanding();
+  const missedCards = outstanding
+    .map(k => FD.find(c => fdKey(c) === k))
+    .filter(Boolean);
+
+  if (!missedCards.length) {
+    fdShowComplete();
+    return;
+  }
+
+  fdDeck      = [...missedCards];
+  fdSeen      = [];
+  fdMissed    = [];
+  fdGot       = 0;
+  fdMissCount = 0;
+  fdTotal     = missedCards.length;
+
+  // Shuffle
+  for (let i = fdDeck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [fdDeck[i], fdDeck[j]] = [fdDeck[j], fdDeck[i]];
+  }
+
+  document.getElementById('fd-summary').style.display = 'none';
+  document.getElementById('fd-drill').style.display   = 'block';
+  fdNext();
+}
+
+function fdShowComplete() {
+  document.getElementById('fd-summary').style.display  = 'none';
+  document.getElementById('fd-complete').style.display = 'block';
+  const mastered = fdGetMastered();
+  const total = FD.filter(c => c.paper === currentPaper).length;
+  const mastCount = Object.keys(mastered).filter(k => k.startsWith(currentPaper + '|')).length;
+  document.getElementById('fd-complete-note').textContent =
+    `${mastCount} of ${total} ${P[currentPaper].label} cards mastered overall.`;
+}
+
+function fdFinish() {
+  // Reset to setup view
+  document.getElementById('fd-summary').style.display  = 'none';
+  document.getElementById('fd-complete').style.display = 'none';
+  fdSetup();
+}
+
+function fdUpdateStreak() {
+  const today = new Date().toISOString().slice(0, 10);
+  let streak = JSON.parse(localStorage.getItem(LS_STREAK) || '{"date":"","count":0}');
+  if (streak.date === today) return; // already counted today
+  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  streak.count = (streak.date === yesterday) ? streak.count + 1 : 1;
+  streak.date  = today;
+  localStorage.setItem(LS_STREAK, JSON.stringify(streak));
+}
+
+// ═══════════════════════════════════════════
+// FLASHCARD TRACKER WHEELS
+// ═══════════════════════════════════════════
+const paperColours = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'};
+const paperLabels  = {p1:'Migrants', p2a:'Cold War', p2b:'Elizabeth', p3:'Germany'};
+
+function renderFdSetupWheel() {
+  if (!FD || !FD.length || !currentPaper) return;
+  const session    = fdGetSession();
+  const circ       = 2 * Math.PI * 24;
+  const paper      = currentPaper;
+  const paperTotal = FD.filter(c => c.paper === paper).length;
+  if (!paperTotal) return;
+  const sessionGot   = session.got[paper]   || 0;
+  const sessionTotal = session.total[paper] || 0;
+  const gotPct  = Math.min(1, sessionGot / paperTotal);
+  const missedToday = Math.max(0, sessionTotal - sessionGot);
+  const missPct = Math.min(missedToday / paperTotal, 1 - gotPct);
+  const isDone  = gotPct >= 1 && sessionTotal > 0;
+  const col     = paperColours[paper] || '#888';
+  const gotDash  = gotPct  * circ;
+  const missDash = missPct * circ;
+  const gotEl   = document.getElementById('fd-setup-ring-got');
+  const missEl  = document.getElementById('fd-setup-ring-miss');
+  const fillEl  = document.getElementById('fd-setup-ring-fill');
+  const txtEl   = document.getElementById('fd-setup-pct');
+  const bgEl    = document.getElementById('fd-setup-bg');
+  const labelEl = document.getElementById('fd-setup-label');
+  if (gotEl)   { gotEl.setAttribute('stroke', col); gotEl.setAttribute('stroke-dasharray', gotDash + ' ' + (circ - gotDash)); }
+  if (missEl)  { missEl.setAttribute('stroke-dasharray', missDash + ' ' + (circ - missDash)); missEl.setAttribute('transform', `rotate(${-90 + gotPct * 360} 30 30)`); }
+  if (fillEl)  fillEl.setAttribute('r', isDone ? '18' : '0');
+  if (bgEl)    bgEl.setAttribute('stroke', isDone ? col : 'var(--subtle)');
+  if (txtEl)   {
+    if (isDone) { txtEl.textContent = '🥇'; txtEl.setAttribute('font-size','14'); }
+    else        { txtEl.textContent = Math.round(gotPct * 100) + '%'; txtEl.setAttribute('font-size','10'); }
+    txtEl.setAttribute('fill', 'var(--text)');
+  }
+  if (labelEl) labelEl.textContent = paperLabels[paper] || '';
+
+  // Unit breakdown
+  const breakdownEl = document.getElementById('fd-unit-breakdown');
+  if (breakdownEl) {
+    if (!FD.length) {
+      breakdownEl.innerHTML = '<div style="color:var(--muted);font-style:italic">Unit breakdown loads with flashcard data.</div>';
+    } else {
+    const session = fdGetSession();
+    const units = [...new Set(FD.filter(c => c.paper === paper).map(c => c.unit))];
+    breakdownEl.innerHTML = units.map(unit => {
+      const unitTotal = FD.filter(c => c.paper === paper && c.unit === unit).length;
+      const uk = paper + '|' + unit;
+      const gotToday  = session.unitGot[uk]   || 0;
+      const colour = gotToday >= unitTotal && unitTotal > 0 ? '#1D9E75' : gotToday > 0 ? '#F0B429' : 'var(--muted)';
+      const dot = gotToday >= unitTotal && unitTotal > 0 ? '🥇' : gotToday > 0 ? '◑' : '○';
+      return `<div style="display:flex;align-items:center;gap:.4rem;padding:.2rem 0;border-bottom:1px solid var(--subtle);font-size:.72rem">
+        <span style="color:${colour};font-size:.65rem">${dot}</span>
+        <span style="flex:1;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${unit}</span>
+        <span style="font-weight:700;color:${colour};flex-shrink:0">${gotToday}/${unitTotal}</span>
+      </div>`;
+    }).join('');
+    }
+  }
+}
+
+function renderFdHubWheel() {
+  if (!FD || !FD.length || !currentPaper) return;
+  const session    = fdGetSession();
+  const outstanding = fdGetOutstanding();
+  const circ       = 2 * Math.PI * 24;
+  const paper      = currentPaper;
+  const paperTotal = FD.filter(c => c.paper === paper).length;
+  if (!paperTotal) return;
+
+  const sessionGot   = session.got[paper]   || 0;
+  const sessionTotal = session.total[paper] || 0;
+  const gotPct  = Math.min(1, sessionGot / paperTotal);
+  const missedToday = Math.max(0, sessionTotal - sessionGot);
+  const missPct = Math.min(missedToday / paperTotal, 1 - gotPct);
+  const isDone  = gotPct >= 1 && sessionTotal > 0;
+  const col     = paperColours[paper] || '#888';
+
+  const gotDash  = gotPct  * circ;
+  const missDash = missPct * circ;
+
+  const gotEl   = document.getElementById('fd-hub-ring-got');
+  const missEl  = document.getElementById('fd-hub-ring-miss');
+  const fillEl  = document.getElementById('fd-hub-ring-fill');
+  const txtEl   = document.getElementById('fd-hub-pct');
+  const bgEl    = document.getElementById('fd-hub-bg');
+  const labelEl = document.getElementById('fd-hub-label');
+
+  if (gotEl)   { gotEl.setAttribute('stroke', col); gotEl.setAttribute('stroke-dasharray', gotDash + ' ' + (circ - gotDash)); }
+  if (missEl)  { missEl.setAttribute('stroke-dasharray', missDash + ' ' + (circ - missDash)); missEl.setAttribute('transform', `rotate(${-90 + gotPct * 360} 30 30)`); }
+  if (fillEl)  fillEl.setAttribute('r', isDone ? '18' : '0');
+  if (bgEl)    bgEl.setAttribute('stroke', isDone ? col : 'var(--subtle)');
+  if (txtEl)   { 
+    if (isDone) { txtEl.textContent = '🥇'; txtEl.setAttribute('font-size', '14'); }
+    else        { txtEl.textContent = Math.round(gotPct * 100) + '%'; txtEl.setAttribute('font-size', '10'); }
+    txtEl.setAttribute('fill', 'var(--text)');
+  }
+  if (labelEl) labelEl.textContent = paperLabels[paper] || '';
+}
+function renderFdWheels() {
+  if (!FD || !FD.length) return;
+  const session = fdGetSession();
+  const outstanding = fdGetOutstanding();
+  const circ = 2 * Math.PI * 24; // ~150.8
+  const paperNames = {p1:'Migrants', p2a:'Cold War', p2b:'Elizabeth', p3:'Germany'};
+
+  ['p1','p2a','p2b','p3'].forEach(paper => {
+    const paperTotal = FD.filter(c => c.paper === paper).length;
+    if (!paperTotal) return;
+
+    const sessionGot   = session.got[paper]   || 0;
+    const sessionTotal = session.total[paper] || 0;
+    // Got % = cards got right today / all cards in this paper
+    const gotPct  = Math.min(1, sessionGot / paperTotal);
+    // Missed arc = cards seen today but wrong / total (capped so arcs don't exceed full circle)
+    const missedToday = Math.max(0, sessionTotal - sessionGot);
+    const missPct = Math.min(missedToday / paperTotal, 1 - gotPct);
+    // Pinned arc = outstanding pinned cards / total (shown in remaining space)
+    const pinnedCount = outstanding.filter(k => k.startsWith(paper + '|')).length;
+    // We use grey arc for missed-today only (cleaner)
+
+    const gotDash  = gotPct  * circ;
+    const missDash = missPct * circ;
+
+    const gotEl  = document.querySelector('.fd-ring-got-'  + paper);
+    const missEl = document.querySelector('.fd-ring-miss-' + paper);
+    const txtEl  = document.querySelector('.fd-pct-'       + paper);
+
+    if (gotEl)  gotEl.setAttribute('stroke-dasharray', gotDash + ' ' + (circ - gotDash));
+    if (missEl) {
+      missEl.setAttribute('stroke-dasharray', missDash + ' ' + (circ - missDash));
+      missEl.setAttribute('transform', `rotate(${-90 + gotPct * 360} 30 30)`);
+    }
+    const isDone = gotPct >= 1 && sessionTotal > 0;
+
+    // Text: always show percentage
+    if (txtEl) {
+      if (isDone) {
+        txtEl.textContent = '🥇';
+        txtEl.setAttribute('font-size', '14');
+        txtEl.setAttribute('fill', 'var(--text)');
+      } else {
+        txtEl.textContent = Math.round(gotPct * 100) + '%';
+        txtEl.setAttribute('font-size', '10');
+        txtEl.setAttribute('fill', 'var(--text)');
+      }
+    }
+
+    // Gold filled circle behind text when complete
+    const bgEl = document.querySelector(`.fd-wheel-cell[data-paper="${paper}"] svg circle:first-child`);
+    if (bgEl) bgEl.setAttribute('stroke', isDone ? '#F0B429' : 'var(--subtle)');
+
+    // Gold fill circle (second element = fill indicator)
+    const fillEl = document.querySelector(`.fd-ring-fill-${paper}`);
+    if (fillEl) fillEl.setAttribute('r', isDone ? '18' : '0');
+  });
+
+  // Show/hide home pinned link
+  const homePinned = document.getElementById('home-pinned-link');
+  if (homePinned) {
+    const outstanding = fdGetOutstanding();
+    homePinned.style.display = outstanding.length > 0 ? 'block' : 'none';
+  }
+}
+
+function fdShowToast(msg) {
+  const t = document.getElementById('fd-toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4000);
+}
+
+function goToPinnedReview() {
+  // Go to flashcard mode and trigger pinned review directly
+  // Pick any paper first (doesn't matter for pinned — all papers included)
+  if (!currentPaper) pickPaper('p1');
+  enterMode('flashcard');
+  // Small delay for setup to render, then trigger
+  setTimeout(() => fdStartPinned(), 100);
+}
+
+function fdWheelLaunch(paper) {
+  // Navigate to flashcard mode for this paper
+  pickPaper(paper);
+  enterMode('flashcard');
+}
+
+function fdFireConfetti() {
+  const canvas = document.getElementById('fd-confetti-canvas');
+  canvas.style.display = 'block';
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const ctx = canvas.getContext('2d');
+  const colours = ['#F0B429','#D4537E','#1D9E75','#378ADD','#fff','#f9a8d4','#86efac'];
+  const pieces = Array.from({length: 120}, () => ({
+    x: Math.random() * canvas.width,
+    y: -20 - Math.random() * 80,
+    r: 4 + Math.random() * 5,
+    d: 2 + Math.random() * 3,
+    col: colours[Math.floor(Math.random() * colours.length)],
+    tilt: Math.random() * 10 - 5,
+    tiltAngle: 0,
+    tiltSpeed: 0.05 + Math.random() * 0.1,
+  }));
+  let frame = 0;
+  const maxFrames = 130;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pieces.forEach(p => {
+      p.tiltAngle += p.tiltSpeed;
+      p.y += p.d + Math.sin(frame * 0.04) * 0.8;
+      p.x += Math.sin(p.tiltAngle) * 1.5;
+      p.tilt = Math.sin(p.tiltAngle) * 12;
+      const alpha = frame < 90 ? 1 : 1 - (frame - 90) / 40;
+      ctx.globalAlpha = Math.max(0, alpha);
+      ctx.fillStyle = p.col;
+      ctx.beginPath();
+      ctx.ellipse(p.x, p.y, p.r, p.r * 0.5, p.tilt * Math.PI / 180, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    frame++;
+    if (frame < maxFrames) {
+      requestAnimationFrame(draw);
+    } else {
+      canvas.style.display = 'none';
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+  requestAnimationFrame(draw);
+}
+
+
+</script>
+<!-- EXAM FULLSCREEN OVERLAY -->
+<div id="exam-fullscreen" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;padding:2rem 1.5rem;overflow-y:auto">
+  <span id="fs-type" style="display:block;font-size:.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem"></span>
+  <div class="fs-timer" id="fs-timer">00:00</div>
+  <div class="fs-bar"><div class="fs-bar-fill" id="fs-bar-fill" style="width:100%"></div></div>
+
+  <!-- Pre-start state: blurred question + ready button -->
+  <div id="fs-pre">
+    <div class="fs-q fs-blurred" id="fs-q-blur" style="margin-top:1rem"></div>
+    <div style="text-align:center;margin-top:1.5rem">
+      <div style="font-size:.8rem;color:var(--muted);margin-bottom:.75rem">Question hidden — press to begin</div>
+      <button id="fs-start-btn" style="padding:10px 28px;font-size:.85rem;font-weight:600;border:1.5px solid;border-radius:10px;cursor:pointer;font-family:inherit">I'm ready</button>
+    </div>
+  </div>
+
+  <!-- Active state: clear question -->
+  <div id="fs-active" style="display:none">
+    <div class="fs-q" id="fs-q" style="margin-top:1rem"></div>
+    <div class="fs-hints" id="fs-hints" style="margin-top:.5rem"></div>
+  </div>
+
+  <!-- Always-visible exit at bottom -->
+  <div style="text-align:center;margin-top:2rem">
+    <button id="fs-exit-btn" style="padding:10px 24px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">✕ Exit fullscreen</button>
+  </div>
+</div>
+</body>
+</html>
