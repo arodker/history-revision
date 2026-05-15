@@ -773,6 +773,11 @@ function showScreen(id) {
     const printBtn = document.getElementById('print-btn');
     if (printBtn) printBtn.style.display = 'none';
   }
+  // Clear the inline search bar when returning home
+  if (id === 's-pick') {
+    const ii = document.getElementById('inline-search-input');
+    if (ii && ii.value) { ii.value = ''; runInlineSearch(); }
+  }
   // update flagged button on hub
   if (id === 's-pick') renderFdWheels();
   if (id === 's-hub')  renderFdHubWheel();
@@ -822,20 +827,49 @@ function renderSearchEmpty() {
 function escRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 function escHtml(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
+// Strip diacritics so e.g. searching "Dubcek" or "Rakosi" matches "Dubček" / "Rákosi".
+// Combining-marks range [\u0300-\u036f] covers all standard European diacritics.
+function normSearch(s) {
+  return (s || '').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
 function highlightMatch(text, q) {
   const safe = escHtml(text);
   if (!q) return safe;
-  const re = new RegExp('(' + escRe(q) + ')', 'gi');
-  return safe.replace(re, '<mark>$1</mark>');
+  const normT = normSearch(text);
+  const normQ = normSearch(q);
+  if (!normQ) return safe;
+  // Find all match positions in the normalized text. Because stripping combining marks
+  // preserves character offsets for precomposed diacritic chars (č→c, ü→u etc.),
+  // positions in normT map 1:1 onto positions in the original text.
+  const positions = [];
+  let i = 0;
+  while (true) {
+    const idx = normT.indexOf(normQ, i);
+    if (idx === -1) break;
+    positions.push([idx, idx + normQ.length]);
+    i = idx + normQ.length;
+  }
+  if (!positions.length) return safe;
+  let out = '';
+  let last = 0;
+  for (const [start, end] of positions) {
+    out += escHtml(text.slice(last, start));
+    out += '<mark>' + escHtml(text.slice(start, end)) + '</mark>';
+    last = end;
+  }
+  out += escHtml(text.slice(last));
+  return out;
 }
 
 function snippet(text, q, len = 160) {
   if (!text) return '';
-  const lower = text.toLowerCase();
-  const i = lower.indexOf(q.toLowerCase());
+  const normT = normSearch(text);
+  const normQ = normSearch(q);
+  const i = normT.indexOf(normQ);
   if (i === -1) return text.length > len ? text.slice(0, len) + '…' : text;
   const start = Math.max(0, i - 40);
-  const end = Math.min(text.length, i + q.length + len - 40);
+  const end = Math.min(text.length, i + normQ.length + len - 40);
   let out = text.slice(start, end);
   if (start > 0) out = '…' + out;
   if (end < text.length) out = out + '…';
@@ -843,7 +877,7 @@ function snippet(text, q, len = 160) {
 }
 
 function searchKC(query) {
-  const q = query.trim().toLowerCase();
+  const q = normSearch(query.trim());
   if (!q || q.length < 2 || !KC.length) return [];
   const results = [];
   for (const card of KC) {
@@ -851,19 +885,19 @@ function searchKC(query) {
     let snip = null;
     let rank = 99;
     // Highest priority: heading match
-    if (card.heading && card.heading.toLowerCase().includes(q)) {
+    if (card.heading && normSearch(card.heading).includes(q)) {
       where = 'in title'; rank = 0; snip = card.summary || (card.facts && card.facts[0]) || '';
     } else {
       // Hint match
-      const hint = (card.hints || []).find(h => h.toLowerCase().includes(q));
+      const hint = (card.hints || []).find(h => normSearch(h).includes(q));
       if (hint) {
         where = 'keyword: ' + hint; rank = 1;
-        const factMatch = (card.facts || []).find(f => f.toLowerCase().includes(q));
+        const factMatch = (card.facts || []).find(f => normSearch(f).includes(q));
         snip = factMatch || card.summary || (card.facts && card.facts[0]) || '';
-      } else if (card.summary && card.summary.toLowerCase().includes(q)) {
+      } else if (card.summary && normSearch(card.summary).includes(q)) {
         where = 'in summary'; rank = 2; snip = card.summary;
       } else {
-        const factMatch = (card.facts || []).find(f => f.toLowerCase().includes(q));
+        const factMatch = (card.facts || []).find(f => normSearch(f).includes(q));
         if (factMatch) { where = 'in detail'; rank = 3; snip = factMatch; }
       }
     }
