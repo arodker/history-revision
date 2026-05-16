@@ -33,7 +33,7 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
 .mode-btn .icon{font-size:1.3rem;display:block;margin-bottom:.35rem}.mode-btn:hover{border-color:#aaa;background:var(--subtle)}
 .btn-go{width:100%;padding:13px;font-size:.95rem;font-weight:700;border:none;border-radius:10px;cursor:pointer;margin-bottom:1.25rem;transition:opacity .15s;color:#fff;font-family:inherit}.btn-go:hover{opacity:.9}
 .pill.active-aa{background:var(--aa-bg);color:var(--aa);border-color:var(--aa-mid)}.pill.active-lab{background:var(--lab-bg);color:var(--lab);border-color:var(--lab-mid)}.pill.active-na{background:var(--na-bg);color:var(--na);border-color:var(--na-mid)}.pill.active-wom{background:var(--wom-bg);color:var(--wom);border-color:var(--wom-mid)}
-.c-aa{background:var(--aa)}.c-lab{background:var(--lab)}.c-na{background:var(--na)}.c-wom{background:var(--wom)}.c-dark{background:#374151}
+.c-aa{background:var(--aa)}.c-lab{background:var(--lab)}.c-na{background:var(--na)}.c-wom{background:var(--wom)}.c-dark{background:#374151}.c-mixed{background:#3E4651;color:#fff;border:1.5px solid #2D343D}.c-stat{background:#BC5A2A;color:#fff;border:1.5px solid #934323}
 .t-ds{background:#F0FDF4;color:#166534}.t-obs{background:#FEE2E2;color:#991b1b}.t-fac{background:#EEF3FB;color:#1B4B8A}.t-tp{background:#FEF9C3;color:#7a5900}
 .btn-sm{padding:7px 14px;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer;transition:background .12s;font-family:inherit}.btn-sm:hover{background:var(--subtle)}
 .filter-row{display:flex;gap:8px;margin-bottom:.9rem;flex-wrap:wrap}
@@ -70,6 +70,13 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .end-score{font-size:3.5rem;font-weight:800}.end-sub{font-size:.9rem;color:var(--muted);margin:.3rem 0 1.2rem}
 .end-grade{font-size:.9rem;font-weight:600;padding:8px 20px;border-radius:20px;display:inline-block;margin-bottom:1.2rem}.grade-a{background:var(--c-ok-bg);color:var(--c-ok-txt)}.grade-b{background:#FAEEDA;color:#854F0B}.grade-c{background:var(--c-err-bg);color:var(--c-err-txt)}
 @keyframes cd-pop{0%{transform:scale(.7);opacity:0}40%{transform:scale(1.15)}70%{transform:scale(.95)}100%{transform:scale(1);opacity:1}}
+.nf-badge{position:absolute;top:-9px;right:12px;font-size:.6rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;background:#FACC15;color:#1a1a18;padding:3px 9px;border-radius:20px;box-shadow:0 2px 6px rgba(0,0,0,.2);animation:nf-pulse 2s ease-in-out infinite}
+@keyframes nf-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.stat-blank{display:inline-block;min-width:74px;text-align:center;font-weight:800;color:var(--muted);border-bottom:2.5px dashed var(--border2);padding:0 6px;margin:0 2px}
+.stat-blank.filled{color:var(--c-ok-txt);border-bottom-style:solid;border-bottom-color:var(--c-ok-border)}
+.stat-blank.filled-w{color:var(--c-err-txt);border-bottom-style:solid;border-bottom-color:var(--c-err-border)}
+.stat-sentence{font-size:1.05rem;font-weight:600;line-height:1.7;margin-bottom:1rem}
+.stat-debate{font-size:.72rem;font-weight:700;color:var(--muted);margin-bottom:.6rem;line-height:1.4}
 .fd-wheel{width:56px;height:56px;display:block}.fd-wheel-cell{display:flex;flex-direction:column;align-items:center;cursor:pointer;gap:.25rem}
 .fd-wheel-label{font-size:.62rem;font-weight:600;color:var(--muted);text-align:center;max-width:60px}
 .fd-hints-toggle{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;font-size:.8rem;color:var(--muted)}.fd-hints-toggle input{width:16px;height:16px;cursor:pointer}
@@ -102,6 +109,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .pill{padding:6px 13px;font-size:.78rem;font-weight:600;border:1.5px solid var(--border2);border-radius:20px;cursor:pointer;background:var(--surface);color:var(--muted);font-family:inherit;transition:all .15s}
 .active-ds{background:#FEF3DC;color:#7a4e00;border-color:#C47B1A}
 .on-aa{background:var(--aa-bg);color:var(--aa);border-color:var(--aa-mid)}.on-lab{background:var(--lab-bg);color:var(--lab);border-color:var(--lab-mid)}.on-na{background:var(--na-bg);color:var(--na);border-color:var(--na-mid)}.on-wom{background:var(--wom-bg);color:var(--wom);border-color:var(--wom-mid)}
+.on-ds{background:#EDE7F8;color:#6B3494;border-color:#9B5EC7}:root.dark .on-ds{background:#2a1f3a;color:#c7a6e8;border-color:#7C3AED}
 .count-row{display:flex;gap:8px;margin-bottom:1rem}.count-btn{flex:1;padding:10px;font-size:.9rem;font-weight:700;border:1.5px solid var(--border2);border-radius:10px;cursor:pointer;background:var(--surface);color:var(--text);font-family:inherit;text-align:center;transition:all .15s}.count-btn:hover{border-color:#aaa;background:var(--subtle)}.count-btn.sel{background:#555;color:#fff;border-color:#555}
 .rq-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
 .rq-card{background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:.85rem;cursor:pointer;min-height:90px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .15s}.rq-card:hover{border-color:var(--muted)}.rq-card.revealed{border-color:var(--c-ok-border)}
@@ -189,10 +197,10 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
   </div>
   <p class="subtitle">Y319 1865-1992 - Select a unit</p>
   <div class="pick-grid">
-    <button class="pick-btn pb-aa" onclick="pickUnit('aa')"><span class="plabel">Unit 1</span>African American Rights</button>
-    <button class="pick-btn pb-lab" onclick="pickUnit('lab')"><span class="plabel">Unit 2</span>Labour and Trade Union Rights</button>
-    <button class="pick-btn pb-na" onclick="pickUnit('na')"><span class="plabel">Unit 3</span>Native American Rights</button>
-    <button class="pick-btn pb-wom" onclick="pickUnit('wom')"><span class="plabel">Unit 4</span>Women's Rights</button>
+    <button class="pick-btn pb-aa" onclick="pickUnit('aa')"><span class="plabel">Unit 1</span>✊ African American Rights</button>
+    <button class="pick-btn pb-lab" onclick="pickUnit('lab')"><span class="plabel">Unit 2</span>🔨 Labour and Trade Union Rights</button>
+    <button class="pick-btn pb-na" onclick="pickUnit('na')"><span class="plabel">Unit 3</span>🏹 Native American Rights</button>
+    <button class="pick-btn pb-wom" onclick="pickUnit('wom')"><span class="plabel">Unit 4</span>📢 Women's Rights</button>
   </div>
   <!-- Inline search bar -->
   <div class="inline-search-wrap">
@@ -204,8 +212,11 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     <div class="inline-search-results" id="inline-search-results"></div>
   </div>
   <div style="margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--border)">
-    <button class="btn-go c-dark" style="margin-bottom:1rem" onclick="showRapidSetup()">Mixed Retrieval Quiz</button>
-    <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem">Your progress today</p>
+    <div style="display:flex;gap:8px;margin-bottom:1rem">
+      <button class="btn-go c-mixed" style="flex:1;margin-bottom:0" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
+      <button class="btn-go c-stat" style="flex:1;margin-bottom:0;position:relative" onclick="showStatSetup()"><span class="nf-badge">New</span>📊 Depth Study Stat Attack</button>
+    </div>
+    <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem">⚡ Your progress today</p>
     <div style="display:flex;justify-content:space-around;align-items:flex-start;padding:.75rem .5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:14px">
       <div class="fd-wheel-cell" onclick="fdWheelLaunch('aa')"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-aa" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-aa" cx="30" cy="30" r="24" fill="none" stroke="#4A7EC7" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-aa">0%</text></svg><div class="fd-wheel-label">African Am.</div></div>
       <div class="fd-wheel-cell" onclick="fdWheelLaunch('lab')"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-lab" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-lab" cx="30" cy="30" r="24" fill="none" stroke="#C94A5A" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-lab">0%</text></svg><div class="fd-wheel-label">Labour</div></div>
@@ -397,10 +408,41 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     <button class="btn-sm" onclick="showRapidSetup()" style="width:100%;margin-top:.5rem">⚙️ Settings</button>
   </div>
 </div>
+<div class="screen" id="s-stat">
+  <div class="mode-header"><button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button><span style="font-size:.85rem;font-weight:600;color:var(--muted)">📊 Depth Study Stat Attack</span></div>
+  <div id="st-setup">
+    <p class="rf-section-label">Which strands?</p>
+    <div class="rf-pills" style="margin-bottom:.9rem">
+      <button class="rf-pill on-aa" id="stp-aa" onclick="toggleStatUnit('aa')">African Americans</button>
+      <button class="rf-pill on-lab" id="stp-lab" onclick="toggleStatUnit('lab')">Labour</button>
+      <button class="rf-pill on-na" id="stp-na" onclick="toggleStatUnit('na')">Native Americans</button>
+      <button class="rf-pill on-wom" id="stp-wom" onclick="toggleStatUnit('wom')">Women</button>
+    </div>
+    <p class="rf-section-label">Which depth studies?</p>
+    <div class="rf-pills" style="margin-bottom:.9rem">
+      <button class="rf-pill on-ds" id="stds-gilded-age" onclick="toggleStatDS('gilded-age')">Gilded Age</button>
+      <button class="rf-pill on-ds" id="stds-new-deal" onclick="toggleStatDS('new-deal')">New Deal</button>
+      <button class="rf-pill on-ds" id="stds-black-power" onclick="toggleStatDS('black-power')">Black Power</button>
+    </div>
+    <p class="rf-section-label">Mode</p>
+    <div class="count-row" style="margin-bottom:1rem">
+      <button class="count-btn sel" id="stm-pick" onclick="setStatMode('pick')">📋 Pick the figure</button>
+      <button class="count-btn" id="stm-type" onclick="setStatMode('type')">⌨️ Type the figure</button>
+    </div>
+    <p id="st-counter" style="font-size:.75rem;color:var(--muted);text-align:center;margin-bottom:.5rem"></p>
+    <button class="btn-go c-dark" id="st-go" onclick="startStat()">🎯 Start Stat Attack</button>
+  </div>
+  <div id="st-countdown" style="display:none;text-align:center;padding:2rem">
+    <div id="st-countdown-num" style="font-size:4rem;font-weight:900;line-height:1"></div>
+  </div>
+  <div id="st-out"></div>
+</div>
 </div>
 <script>
 var UNITS={aa:{label:'African American Rights',short:'African Americans',colour:'#4A7EC7',cls:'aa',rights:['Political Rights','Social Rights','Economic Rights']},lab:{label:'Labour and Trade Union Rights',short:'Labour',colour:'#C94A5A',cls:'lab',rights:['Right to Organise','Right to Strike','Right to Fair Wages and Conditions']},na:{label:'Native American Rights',short:'Native Americans',colour:'#2A9E80',cls:'na',rights:['Right to Land','Right to Self-Determination','Religious and Cultural Rights']},wom:{label:"Women's Rights",short:'Women',colour:'#9B5EC7',cls:'wom',rights:['Political Rights','Social and Economic Rights','Reproductive and Personal Rights']}};
-var currentUnit='aa',KC=[],FD=[],RQ=[],DATES=[],ESSAY_QS=[],INTERP_QS=[],kPeriodIdx=0;
+var currentUnit='aa',KC=[],FD=[],RQ=[],DATES=[],ESSAY_QS=[],INTERP_QS=[],STATS=[],kPeriodIdx=0;
+var statUnits=new Set(['aa','lab','na','wom']),statDS=new Set(['gilded-age','new-deal','black-power']),statMode='pick';
+var stPool=[],stIdx=0,stOK=0,stBad=0,stStreak=0,stMissed=[],stStatFilteredPoolCache=[];
 // RQ state
 var rqMode='batch',rqUnits=new Set(['aa','lab','na','wom']);
 var rqOnePool=[],rqOneIdx=0,rqOneOK=0,rqOneBad=0,rqOneMissed=[],rqOneStreak=0;
@@ -853,6 +895,27 @@ function renderFdHubWheel(){var deckSize=FD.filter(function(c){return c.section=
 function renderFdSetupWheel(){var deckSize=FD.filter(function(c){return c.section===currentUnit;}).length;var s=fdGetSession(),got=s.got[currentUnit]||0,missCount=(s.total[currentUnit]||0)-got,pct=deckSize?Math.round(got/deckSize*100):0;var d=fdWheelDash(got,missCount,deckSize);var miss=document.getElementById('fd-setup-ring-miss'),ring=document.getElementById('fd-setup-ring-got'),pe=document.getElementById('fd-setup-pct'),lbl=document.getElementById('fd-setup-label');if(miss)miss.setAttribute('stroke-dasharray',d.miss);if(ring){ring.setAttribute('stroke-dasharray',d.got);ring.setAttribute('stroke',UNITS[currentUnit].colour);}if(pe)pe.textContent=pct+'%';if(lbl)lbl.textContent=UNITS[currentUnit].short;var bd=document.getElementById('fd-unit-breakdown');if(bd){var dsTotal=FD.filter(function(c){return c.section===currentUnit&&c.isDepthStudy;}).length;var themTotal=FD.filter(function(c){return c.section===currentUnit&&!c.isDepthStudy;}).length;var dsGot=s.ds_got&&s.ds_got[currentUnit]||0;var themGot=s.them_got&&s.them_got[currentUnit]||0;bd.innerHTML='<div style="line-height:2;font-size:.72rem"><div><span style="color:var(--muted)">1865–1992 cards: </span><strong>'+themGot+' / '+themTotal+'</strong></div><div><span style="color:var(--muted)">🔑 Depth Study: </span><strong>'+dsGot+' / '+dsTotal+'</strong></div><div style="margin-top:.2rem;color:var(--muted)">'+got+' correct of '+deckSize+' total today</div></div>';}}
 function fdWheelLaunch(unit){pickUnit(unit);enterMode('flashcard');}
 
+/* ===== Depth Study Stat Attack ===== */
+function statFilteredPool(){return STATS.filter(function(s){return statUnits.has(s.section)&&statDS.has(s.depthStudy);});}
+function statDSAvailable(){var o={};STATS.forEach(function(x){o[x.depthStudy]=1;});return o;}
+function updateStatCounter(){var n=statFilteredPool().length,el=document.getElementById('st-counter'),go=document.getElementById('st-go');if(el)el.textContent=n?(n+' figures available — quiz picks up to 15'):'No figures match these filters';if(go){go.disabled=n===0;go.style.opacity=n===0?'.5':'1';go.style.cursor=n===0?'default':'pointer';}}
+function showStatSetup(){var avail=statDSAvailable();['aa','lab','na','wom'].forEach(function(u){var el=document.getElementById('stp-'+u);if(el)el.className='rf-pill'+(statUnits.has(u)?' on-'+u:'');});['gilded-age','new-deal','black-power'].forEach(function(d){var el=document.getElementById('stds-'+d);if(!el)return;if(!avail[d]){statDS.delete(d);el.disabled=true;el.style.opacity='.4';el.style.cursor='default';el.title='Coming soon';el.className='rf-pill';}else{el.disabled=false;el.style.opacity='1';el.style.cursor='pointer';el.title='';el.className='rf-pill'+(statDS.has(d)?' on-ds':'');}});setStatMode(statMode);document.getElementById('st-setup').style.display='block';document.getElementById('st-countdown').style.display='none';document.getElementById('st-out').innerHTML='';updateStatCounter();showScreen('s-stat');}
+function toggleStatUnit(u){if(statUnits.has(u)){if(statUnits.size>1)statUnits.delete(u);}else statUnits.add(u);var el=document.getElementById('stp-'+u);if(el)el.className='rf-pill'+(statUnits.has(u)?' on-'+u:'');updateStatCounter();}
+function toggleStatDS(d){var el=document.getElementById('stds-'+d);if(el&&el.disabled)return;if(statDS.has(d)){if(statDS.size>1)statDS.delete(d);}else statDS.add(d);if(el)el.className='rf-pill'+(statDS.has(d)?' on-ds':'');updateStatCounter();}
+function setStatMode(m){statMode=m;['pick','type'].forEach(function(x){var el=document.getElementById('stm-'+x);if(el)el.classList.toggle('sel',x===m);});}
+function statNorm(s){return String(s).toLowerCase().trim().replace(/[,$%]/g,'').replace(/\bdr\b\.?/g,'').replace(/\./g,'').replace(/\s+/g,' ').replace(/(\d+(?:\.\d+)?)\s*(m|mn|million)\b/g,function(_,n){return String(Math.round(parseFloat(n)*1e6));}).replace(/(\d+(?:\.\d+)?)\s*(bn|billion)\b/g,function(_,n){return String(Math.round(parseFloat(n)*1e9));}).replace(/(\d+(?:\.\d+)?)\s*(k|thousand)\b/g,function(_,n){return String(Math.round(parseFloat(n)*1e3));}).replace(/\s+/g,' ').trim();}
+function statParseNum(a){var pre='',suf='',word='',t=String(a).trim();if(t.charAt(0)==='$'){pre='$';t=t.slice(1);}var wm=t.match(/\s*(billion|million|thousand)$/i);if(wm){word=' '+wm[1].toLowerCase();t=t.slice(0,wm.index).trim();}if(t.slice(-1)==='%'){suf='%';t=t.slice(0,-1);}var comma=t.indexOf(',')!==-1,clean=t.replace(/,/g,'');if(!/^-?\d+(\.\d+)?$/.test(clean))return {ok:false};var dec=(clean.split('.')[1]||'').length;return {ok:true,val:parseFloat(clean),pre:pre,suf:suf,word:word,dec:dec,comma:comma};}
+function statFmt(v,p){var s;if(p.dec>0)s=v.toFixed(p.dec);else s=String(Math.round(v));if(p.comma){var parts=s.split('.');parts[0]=Number(parts[0]).toLocaleString('en-US');s=parts.join('.');}else if(p.dec===0&&Math.abs(v)>=1000&&p.word===''){s=Number(s).toLocaleString('en-US');}return p.pre+s+p.word+p.suf;}
+function statIsYear(a){return /^(1[5-9]\d{2}|20\d{2})$/.test(String(a).trim());}
+function statNumDistractors(answer){if(statIsYear(answer)){var y=parseInt(answer,10),offs=shuffle([-9,-7,-6,-5,-4,-3,-2,2,3,4,5,6,7,9]),out=[],i;for(i=0;i<offs.length&&out.length<3;i++){var c=String(y+offs[i]);if(out.indexOf(c)===-1&&c!==String(y))out.push(c);}return out;}var p=statParseNum(answer);if(!p.ok)return [];var mults=shuffle([0.4,0.5,0.6,0.67,0.75,0.8,1.2,1.25,1.33,1.5,1.6,2,2.5]),out=[],seen={};seen[statFmt(p.val,p)]=1;for(var i=0;i<mults.length&&out.length<3;i++){var raw=p.val*mults[i],v;if(p.dec>0){var f=Math.pow(10,p.dec);v=Math.round(raw*f)/f;}else if(p.val>=1000){var mag=Math.pow(10,Math.max(0,Math.floor(Math.log10(raw))-1));v=Math.round(raw/mag)*mag;}else if(p.val>=100){v=Math.round(raw/5)*5;}else{v=Math.round(raw);}if(v<=0)continue;if(p.suf==='%'&&v>100)continue;var ff=statFmt(v,p);if(!seen[ff]){seen[ff]=1;out.push(ff);}}return out;}
+function statBuildOptions(item,pool){var ans=item.answer,opts=[ans],i,seen={};seen[statNorm(ans)]=1;if(item.options&&item.options.length){return shuffle([ans].concat(item.options.slice(0,3)));}if(item.type==='people'){var same=pool.filter(function(p){return p.type==='people'&&p.answer!==ans&&p.depthStudy===item.depthStudy;}).map(function(p){return p.answer;});var any=pool.filter(function(p){return p.type==='people'&&p.answer!==ans;}).map(function(p){return p.answer;});var src=shuffle(same.length>=3?same:any);for(i=0;i<src.length&&opts.length<4;i++){if(!seen[statNorm(src[i])]){seen[statNorm(src[i])]=1;opts.push(src[i]);}}var pad=['Booker T. Washington','W.E.B. Du Bois','Ida B. Wells','Frances Willard','Jane Addams'];for(i=0;i<pad.length&&opts.length<4;i++){if(!seen[statNorm(pad[i])]){seen[statNorm(pad[i])]=1;opts.push(pad[i]);}}return shuffle(opts);}var ap=statParseNum(ans);if(ap.ok){var reals=pool.filter(function(p){if(p.answer===ans||p.type==='people')return false;var pp=statParseNum(p.answer);if(!pp.ok)return false;var r=pp.val/ap.val;return r>=0.2&&r<=5;}).map(function(p){return p.answer;});reals=shuffle(reals);for(i=0;i<reals.length&&opts.length<3;i++){if(!seen[statNorm(reals[i])]){seen[statNorm(reals[i])]=1;opts.push(reals[i]);}}}var gen=statNumDistractors(ans);for(i=0;i<gen.length&&opts.length<4;i++){if(!seen[statNorm(gen[i])]){seen[statNorm(gen[i])]=1;opts.push(gen[i]);}}var guard=0;while(opts.length<4&&guard<20){guard++;var extra=ap.ok?statFmt(ap.val*(1+(guard*0.13)),ap):(ans+' ');if(!seen[statNorm(extra)]){seen[statNorm(extra)]=1;opts.push(extra);}}return shuffle(opts.slice(0,4));}
+function startStat(){var full=statFilteredPool();if(!full.length){updateStatCounter();return;}stStatFilteredPoolCache=full;stPool=shuffle(full.slice()).slice(0,Math.min(full.length,15));stIdx=0;stOK=0;stBad=0;stStreak=0;stMissed=[];document.getElementById('st-setup').style.display='none';document.getElementById('st-out').innerHTML='';var cd=document.getElementById('st-countdown'),num=document.getElementById('st-countdown-num');cd.style.display='block';var c=3;(function tick(){num.style.animation='none';void num.offsetWidth;num.style.animation='cd-pop .35s ease forwards';num.textContent=c;if(c===0){num.textContent='Go!';setTimeout(function(){cd.style.display='none';renderStat();},480);return;}c--;setTimeout(tick,650);})();}
+function renderStat(){if(stIdx>=stPool.length){showStatEnd();return;}var item=stPool[stIdx],total=stPool.length,pct=Math.round(stIdx/total*100);var col=UNITS[item.section]?UNITS[item.section].colour:'#7C3AED';var dsl={'gilded-age':'Gilded Age','new-deal':'New Deal','black-power':'Black Power'}[item.depthStudy]||'';var strk=stStreak>=3?'<span style="font-size:.8rem;color:#F0B429;font-weight:600">\uD83D\uDD25 '+stStreak+'</span>':'';var sentence=esc(item.prompt).replace('____','<span class="stat-blank" id="st-blank">?</span>');var ansHtml;if(statMode==='type'){ansHtml='<div style="margin-top:.25rem"><input id="st-input" type="text" autocomplete="off" placeholder="Type the missing figure and press Enter\u2026" style="width:100%;padding:11px;font-size:1.05rem;font-weight:700;text-align:center;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text);font-family:inherit" onkeydown="if(event.key===\'Enter\')checkStatType()"><div class="quiz-fb" id="st-fb"></div></div>';}else{var opts=statBuildOptions(item,stStatFilteredPoolCache);ansHtml='<div class="opts">'+opts.map(function(o){return '<button class="opt" data-val="'+esc(o)+'" onclick="checkStatPick(this)">'+esc(o)+'</button>';}).join('')+'</div><div class="quiz-fb" id="st-fb"></div>';}document.getElementById('st-out').innerHTML='<div class="quiz-prog"><div class="quiz-fill" id="st-prog" style="width:'+pct+'%;background:'+col+'"></div></div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.85rem"><span style="font-size:.8rem;color:var(--muted)">Question '+(stIdx+1)+' of '+total+'</span><div class="sc-row">'+strk+'<span class="sc sc-c" id="st-ok">\u2713 '+stOK+'</span><span class="sc sc-w" id="st-bad">\u2717 '+stBad+'</span></div></div><div style="background:var(--card);border:1.5px solid var(--border);border-left:4px solid '+col+';border-radius:12px;padding:1.1rem"><div class="stat-debate"><span class="section-badge bg-'+item.section+'" style="font-size:.62rem;padding:3px 9px">'+esc(dsl)+'</span> &nbsp;'+esc(item.debate)+'</div><div class="stat-sentence">'+sentence+'</div>'+ansHtml+'</div>';if(statMode==='type'){var inp=document.getElementById('st-input');if(inp)setTimeout(function(){inp.focus();},60);}}
+function checkStatPick(btn){var chosen=btn.dataset.val,item=stPool[stIdx],ans=item.answer;document.querySelectorAll('#st-out .opt').forEach(function(b){b.disabled=true;});var ok=statNorm(chosen)===statNorm(ans);var blank=document.getElementById('st-blank'),fb=document.getElementById('st-fb');blank.textContent=ans;blank.className='stat-blank filled';if(ok){stOK++;stStreak++;btn.classList.add('correct');fb.textContent='Correct!';fb.className='quiz-fb fb-c';}else{stBad++;stStreak=0;stMissed.push(item);btn.classList.add('wrong');document.querySelectorAll('#st-out .opt').forEach(function(b){if(statNorm(b.dataset.val)===statNorm(ans))b.classList.add('show-c');});fb.innerHTML='Not quite \u2014 the answer was <strong>'+esc(ans)+'</strong>';fb.className='quiz-fb fb-w';}fb.style.display='block';setTimeout(function(){stIdx++;renderStat();},1650);}
+function checkStatType(){var inp=document.getElementById('st-input');if(!inp||inp.disabled)return;var typed=inp.value.trim();if(!typed)return;var item=stPool[stIdx],ans=item.answer,accepts=[ans].concat(item.accept||[]).map(statNorm),ok=accepts.indexOf(statNorm(typed))!==-1;inp.disabled=true;var blank=document.getElementById('st-blank'),fb=document.getElementById('st-fb');blank.textContent=ans;blank.className='stat-blank filled';if(ok){stOK++;stStreak++;fb.innerHTML='\u2713 Correct \u2014 <strong>'+esc(ans)+'</strong>';fb.className='quiz-fb fb-c';}else{stBad++;stStreak=0;stMissed.push(item);fb.innerHTML='\u2717 The answer was <strong>'+esc(ans)+'</strong>';fb.className='quiz-fb fb-w';}fb.style.display='block';setTimeout(function(){stIdx++;renderStat();},1900);}
+function showStatEnd(){var total=stPool.length,pct=total?Math.round(stOK/total*100):0;var msg=pct===100?'Flawless recall! \uD83C\uDFC6':pct>=80?'Excellent \u2014 figures locked in \uD83C\uDFAF':pct>=60?'Solid \u2014 drill the slips \u2B50':pct>=40?'Getting there \u2014 go again \uD83D\uDCDA':'Keep drilling \u2014 precision comes \uD83D\uDCAA';var missed='';if(stMissed.length){missed='<div style="text-align:left;margin-bottom:1.25rem"><div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem">Review these:</div>'+stMissed.map(function(x){var col=UNITS[x.section]?UNITS[x.section].colour:'#7C3AED';return '<div style="background:var(--card);border:1px solid var(--border);border-left:3px solid '+col+';border-radius:8px;padding:.5rem .75rem;margin-bottom:.35rem;font-size:.82rem;line-height:1.55">'+esc(x.prompt).replace('____','<strong style="color:'+col+'">'+esc(x.answer)+'</strong>')+'</div>';}).join('')+'</div>';}document.getElementById('st-out').innerHTML='<div style="padding:1.5rem 0"><div style="text-align:center;margin-bottom:1.25rem"><div style="font-size:3rem;font-weight:900">'+stOK+'/'+total+'</div><div style="font-size:.85rem;color:var(--muted);margin-bottom:.5rem">'+pct+'% correct</div><div style="font-size:.95rem;font-weight:700">'+msg+'</div></div>'+missed+'<div style="display:flex;flex-direction:column;gap:8px"><button class="btn-go c-dark" style="margin-bottom:0" onclick="startStat()">Play again</button>'+(stMissed.length?'<button class="btn-sm" onclick="startStatMissed()">\uD83D\uDD01 Drill the '+stMissed.length+' I missed</button>':'')+'<button class="btn-sm" onclick="showStatSetup()">\u2699\uFE0F Settings</button></div></div>';}
+function startStatMissed(){if(!stMissed.length)return;stPool=shuffle(stMissed.slice());stIdx=0;stOK=0;stBad=0;stStreak=0;stMissed=[];document.getElementById('st-setup').style.display='none';document.getElementById('st-countdown').style.display='none';renderStat();}
+
 var KC=[],FD=[],DATES=[],ESSAY_QS=[],INTERP_QS=[];
 Promise.all([
   fetch('data/kc-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
@@ -860,10 +923,11 @@ Promise.all([
   fetch('data/rq-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
   fetch('data/dates-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
   fetch('data/essays-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
-  fetch('data/interp-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];})
+  fetch('data/interp-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
+  fetch('data/stats-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];})
 ]).then(function(results){
-  KC=results[0]; FD=results[1]; RQ=results[2]; DATES=results[3]; ESSAY_QS=results[4]; INTERP_QS=results[5]; updateRQCounter(); applyDatesHardBtn();
-  console.log('Data loaded — KC:',KC.length,'FD:',FD.length);
+  KC=results[0]; FD=results[1]; RQ=results[2]; DATES=results[3]; ESSAY_QS=results[4]; INTERP_QS=results[5]; STATS=results[6]||[]; updateRQCounter(); applyDatesHardBtn(); updateStatCounter();
+  console.log('Data loaded — KC:',KC.length,'FD:',FD.length,'STATS:',STATS.length);
   renderFdWheels(); renderFdSetupWheel(); renderFdHubWheel(); fdPopulateCounts();
   var km=document.getElementById('mode-knowledge');
   if(km&&km.style.display!=='none')buildPeriodDropdown();
