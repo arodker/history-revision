@@ -653,21 +653,20 @@ function buildPeriodDropdown(){
   var dsRow=document.getElementById('k-ds-row');
   // Filter by current unit
   var unitKC=KC.filter(function(c){return c.section===currentUnit;});
-  var eraCards=unitKC.filter(function(c){return !c.isDepthStudy&&!c.isFactor&&!c.isObstacle&&!c.isTurningPoint;});
   var dsCards=unitKC.filter(function(c){return c.isDepthStudy;});
   var factorCards=unitKC.filter(function(c){return c.isFactor;});
   var obstacleCards=unitKC.filter(function(c){return c.isObstacle;});
   sel.innerHTML='<option value="">-- select a card --</option>';
-  // Helper to get emoji prefix
-  function prefix(c){return c.isObstacle?'🛑 ':c.isFactor?'⚙️ ':'';}
-  // Add era (period) cards
+  // Era and TP cards in JSON order — TPs appear inline with era cards
   KC.forEach(function(c,i){
     if(c.section!==currentUnit)return;
-    if(!c.isDepthStudy&&!c.isFactor&&!c.isObstacle&&!c.isTurningPoint){
-      var o=document.createElement('option');o.value=i;o.textContent=c.heading;sel.appendChild(o);
+    if(!c.isDepthStudy&&!c.isFactor&&!c.isObstacle){
+      var o=document.createElement('option');o.value=i;
+      o.textContent=(c.isTurningPoint?'🔄 ':'')+c.heading;
+      sel.appendChild(o);
     }
   });
-  // Add factor cards to period dropdown with emoji
+  // Factors as a grouped section
   if(factorCards.length){
     var grp=document.createElement('optgroup');grp.label='⚙️ Factors';
     KC.forEach(function(c,i){
@@ -677,7 +676,7 @@ function buildPeriodDropdown(){
     });
     sel.appendChild(grp);
   }
-  // Add obstacle cards to period dropdown with emoji
+  // Obstacles as a grouped section
   if(obstacleCards.length){
     var grp2=document.createElement('optgroup');grp2.label='🛑 Obstacles';
     KC.forEach(function(c,i){
@@ -686,16 +685,6 @@ function buildPeriodDropdown(){
       }
     });
     sel.appendChild(grp2);
-  }
-  var tpCards=unitKC.filter(function(c){return c.isTurningPoint;});
-  if(tpCards.length){
-    var grp3=document.createElement('optgroup');grp3.label='🔄 Turning Points';
-    KC.forEach(function(c,i){
-      if(c.section===currentUnit&&c.isTurningPoint){
-        var o=document.createElement('option');o.value=i;o.textContent='🔄 '+c.heading;grp3.appendChild(o);
-      }
-    });
-    sel.appendChild(grp3);
   }
   // DS dropdown
   if(dsCards.length){
