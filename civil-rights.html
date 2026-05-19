@@ -552,6 +552,7 @@ function runSearch(){
     if(c.isDepthStudy)flags+='<span class="tag t-ds">🔑</span>';
     if(c.isFactor)flags+='<span class="tag t-fac">⚙️</span>';
     if(c.isObstacle)flags+='<span class="tag t-obs">🛑</span>';
+    if(c.isTurningPoint)flags+='<span class="tag t-tp">🔄</span>';
     return '<div class="search-result" data-unit="'+unit+'" data-idx="'+r.idx+'">'+
       '<div class="search-result-meta">'+
         '<span class="tag t-'+unit+'">'+escHtml(unitLabel)+'</span>'+flags+
@@ -612,6 +613,7 @@ function runInlineSearch(){
     if(c.isDepthStudy)flags+='<span class="tag t-ds">🔑</span>';
     if(c.isFactor)flags+='<span class="tag t-fac">⚙️</span>';
     if(c.isObstacle)flags+='<span class="tag t-obs">🛑</span>';
+    if(c.isTurningPoint)flags+='<span class="tag t-tp">🔄</span>';
     return '<div class="search-result" data-unit="'+unit+'" data-idx="'+r.idx+'">'+
       '<div class="search-result-meta">'+
         '<span class="tag t-'+unit+'">'+escHtml(unitLabel)+'</span>'+flags+
@@ -651,7 +653,7 @@ function buildPeriodDropdown(){
   var dsRow=document.getElementById('k-ds-row');
   // Filter by current unit
   var unitKC=KC.filter(function(c){return c.section===currentUnit;});
-  var eraCards=unitKC.filter(function(c){return !c.isDepthStudy&&!c.isFactor&&!c.isObstacle;});
+  var eraCards=unitKC.filter(function(c){return !c.isDepthStudy&&!c.isFactor&&!c.isObstacle&&!c.isTurningPoint;});
   var dsCards=unitKC.filter(function(c){return c.isDepthStudy;});
   var factorCards=unitKC.filter(function(c){return c.isFactor;});
   var obstacleCards=unitKC.filter(function(c){return c.isObstacle;});
@@ -661,7 +663,7 @@ function buildPeriodDropdown(){
   // Add era (period) cards
   KC.forEach(function(c,i){
     if(c.section!==currentUnit)return;
-    if(!c.isDepthStudy&&!c.isFactor&&!c.isObstacle){
+    if(!c.isDepthStudy&&!c.isFactor&&!c.isObstacle&&!c.isTurningPoint){
       var o=document.createElement('option');o.value=i;o.textContent=c.heading;sel.appendChild(o);
     }
   });
@@ -685,6 +687,16 @@ function buildPeriodDropdown(){
     });
     sel.appendChild(grp2);
   }
+  var tpCards=unitKC.filter(function(c){return c.isTurningPoint;});
+  if(tpCards.length){
+    var grp3=document.createElement('optgroup');grp3.label='🔄 Turning Points';
+    KC.forEach(function(c,i){
+      if(c.section===currentUnit&&c.isTurningPoint){
+        var o=document.createElement('option');o.value=i;o.textContent='🔄 '+c.heading;grp3.appendChild(o);
+      }
+    });
+    sel.appendChild(grp3);
+  }
   // DS dropdown
   if(dsCards.length){
     dsRow.style.display='';
@@ -701,8 +713,8 @@ function buildPeriodDropdown(){
 }
 function jumpToDs(){var sel=document.getElementById('k-ds');if(sel.value==='')return;document.getElementById('k-period').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
 function jumpToPeriod(){var sel=document.getElementById('k-period');if(sel.value==='')return;document.getElementById('k-ds').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
-function stepPeriod(dir){if(!KC.length)return;var eraIdxs=KC.map(function(c,i){return(!c.isDepthStudy||c.period.indexOf('-ds')===-1)?i:-1;}).filter(function(i){return i>=0;});var cur=eraIdxs.indexOf(kPeriodIdx);if(cur===-1)cur=0;var next=eraIdxs[(cur+dir+eraIdxs.length)%eraIdxs.length];kPeriodIdx=next;document.getElementById('k-period').value=next;document.getElementById('k-ds').value='';renderKCard(kPeriodIdx);}
-function renderKCard(idx){var card=KC[idx];if(!card){document.getElementById('k-out').innerHTML='<div class="empty">Content coming soon.</div>';return;}var u=UNITS[currentUnit],badges='';if(card.isDepthStudy)badges+='<span class="tag t-ds">🔑 Depth Study</span>';if(card.isObstacle)badges+='<span class="tag t-obs">🛑 Obstacle</span>';if(card.isFactor)badges+='<span class="tag t-fac">⚙️ Factor</span>';var sub=(function(){
+function stepPeriod(dir){if(!KC.length)return;var eraIdxs=KC.map(function(c,i){return(!c.isDepthStudy&&!c.isFactor&&!c.isObstacle&&!c.isTurningPoint)?i:-1;}).filter(function(i){return i>=0;});var cur=eraIdxs.indexOf(kPeriodIdx);if(cur===-1)cur=0;var next=eraIdxs[(cur+dir+eraIdxs.length)%eraIdxs.length];kPeriodIdx=next;document.getElementById('k-period').value=next;document.getElementById('k-ds').value='';renderKCard(kPeriodIdx);}
+function renderKCard(idx){var card=KC[idx];if(!card){document.getElementById('k-out').innerHTML='<div class="empty">Content coming soon.</div>';return;}var u=UNITS[currentUnit],badges='';if(card.isDepthStudy)badges+='<span class="tag t-ds">🔑 Depth Study</span>';if(card.isObstacle)badges+='<span class="tag t-obs">🛑 Obstacle</span>';if(card.isFactor)badges+='<span class="tag t-fac">⚙️ Factor</span>';if(card.isTurningPoint)badges+='<span class="tag t-tp">🔄 Turning Point</span>';var sub=(function(){
   var subs=card.subheadings||[];
   var html='';
   var lastGroup=null;
