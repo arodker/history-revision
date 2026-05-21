@@ -2267,7 +2267,7 @@ Promise.all([
   fetch('data/flashcards-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/dates-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/rq-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
-  fetch('data/sources.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/sources-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/essays.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
 ]).then(([kc,fd,dates,rq,sources,essays]) => {
   KC = kc; FD = fd; DATES = dates; RQ = rq;
