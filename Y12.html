@@ -328,6 +328,19 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .ic-but strong{color:#C84B4B}
 .ic-yes ul,.ic-but ul{margin:.3rem 0 0 1rem;padding:0}
 .ic-yes li,.ic-but li{font-size:.8rem;color:var(--text);margin-bottom:.25rem;line-height:1.45}
+
+/* Essay unit pills */
+.essay-unit-pill{display:inline-block;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:.65rem;letter-spacing:.03em}
+.pill-general{background:#e5e7eb;color:#374151}
+.pill-unit4{background:#FEF3C7;color:#92400E}
+.pill-unit5{background:#DBEAFE;color:#1E40AF}
+.pill-unit6{background:#D1FAE5;color:#065F46}
+.pill-unit7{background:#EDE9FE;color:#4C1D95}
+:root.dark .pill-general{background:#374151;color:#D1D5DB}
+:root.dark .pill-unit4{background:#451A03;color:#FCD34D}
+:root.dark .pill-unit5{background:#1E3A5F;color:#93C5FD}
+:root.dark .pill-unit6{background:#064E3B;color:#6EE7B7}
+:root.dark .pill-unit7{background:#2E1065;color:#C4B5FD}
 </style>
 </head>
 <body>
@@ -1611,8 +1624,27 @@ function randomEssay() {
   renderEssay(q);
 }
 
+const UNIT_PILL_CLASS = {
+  'General':'pill-general',
+  'Unit 4':'pill-unit4',
+  'Unit 5':'pill-unit5',
+  'Unit 6':'pill-unit6',
+  'Unit 7':'pill-unit7'
+};
+const UNIT_LABEL = {
+  'General':'General',
+  'Unit 4':'Unit 4 — Religion',
+  'Unit 5':'Unit 5 — Government & Parliament',
+  'Unit 6':'Unit 6 — Finance & Economy',
+  'Unit 7':'Unit 7 — Later Years'
+};
+
 function renderEssay(q) {
   const uid = 'eq_' + Math.random().toString(36).slice(2,6);
+  const unit = q.unit || q.topic || '';
+  const pillClass = UNIT_PILL_CLASS[unit] || 'pill-general';
+  const pillLabel = UNIT_LABEL[unit] || unit;
+  const levelTag = q.level === 'AS' ? ' · AS' : '';
   const indicHtml = (q.paragraphs || []).map((p, i) => `
     <div class="ic-para">
       <div class="ic-factor">Paragraph ${i+1}: ${p.factor}</div>
@@ -1621,11 +1653,10 @@ function renderEssay(q) {
     </div>`).join('');
   document.getElementById('essay-out').innerHTML = `
     <div class="essay-card">
+      <span class="essay-unit-pill ${pillClass}">${pillLabel}</span>
       <div class="essay-q">${q.question || q.q}</div>
-      <div class="essay-meta">${q.year}${q.level==='AS'?' · AS':''} · ${q.unit||q.topic||''} · 20 marks</div>
-      <div class="btn-row" style="margin-top:.75rem">
-        <button class="btn-sm" onclick="toggleIndicative('${uid}_ic','${uid}_ic_btn')" id="${uid}_ic_btn">🔍 Show indicative content</button>
-      </div>
+      <div class="essay-meta">${q.year}${levelTag} · 20 marks</div>
+      <button class="btn-sm" onclick="toggleIndicative('${uid}_ic','${uid}_ic_btn')" id="${uid}_ic_btn" style="margin-top:.5rem;width:100%;text-align:center">🔍 Show indicative content</button>
       <div id="${uid}_ic" style="display:none;margin-top:.9rem">${indicHtml}</div>
     </div>`;
 }
