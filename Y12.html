@@ -1571,6 +1571,11 @@ function filterEssayQuestions() {
   const unit = document.getElementById('essay-unit').value;
   const picker = document.getElementById('essay-picker');
   const pool = ESSAY_QS.filter(q => q.section === 'elizabeth' && (unit === 'all' || q.unit === unit));
+  if (!pool.length && !ESSAY_QS.length) {
+    picker.innerHTML = '<option value="">— essays-y12.json not loaded —</option>';
+    document.getElementById('essay-out').innerHTML = '<div class="empty" style="color:#C84B4B;font-size:.83rem">Essay data not found. Check data/essays-y12.json is uploaded to the server.</div>';
+    return;
+  }
   picker.innerHTML = '<option value="">— select a question —</option>' +
     pool.map(q => `<option value="${q.id}">[${q.year}${q.level==='AS'?' AS':''}] ${q.title}</option>`).join('');
   document.getElementById('essay-out').innerHTML = '';
@@ -1586,7 +1591,7 @@ function loadSelectedEssay() {
 function randomEssay() {
   const unit = document.getElementById('essay-unit').value;
   const pool = ESSAY_QS.filter(q => q.section === 'elizabeth' && (unit === 'all' || q.unit === unit));
-  if (!pool.length) return;
+  if (!pool.length) { filterEssayQuestions(); return; }
   const q = rand(pool);
   const picker = document.getElementById('essay-picker');
   if (picker) picker.value = q.id;
@@ -2355,7 +2360,7 @@ Promise.all([
   KC = kc; FD = fd; DATES = dates; RQ = rq;
   SOURCE_SETS = (sources && Array.isArray(sources.sources)) ? sources.sources : (Array.isArray(sources) ? sources : []);
   ESSAY_QS = essays;
-  console.log('Data loaded — KC:', KC.length, 'FD:', FD.length, 'DATES:', DATES.length, 'RQ:', RQ.length);
+  console.log('Data loaded — KC:', KC.length, 'FD:', FD.length, 'DATES:', DATES.length, 'RQ:', RQ.length, 'ESSAYS:', ESSAY_QS.length);
   renderFdWheels(); renderFdSetupWheel(); renderFdHubWheel();
   // Refresh visible modes if already on screen
   const km = document.getElementById('mode-knowledge');
