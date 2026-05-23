@@ -530,6 +530,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
       <button class="btn-sm muted-btn" style="margin-top:.5rem" onclick="backToExamRoutes()">← Back</button>
     </div>
     <div id="exam-essay" style="display:none">
+      <div id="essay-status" style="font-size:.75rem;color:var(--muted);margin-bottom:.5rem;display:none"></div>
       <div style="margin-bottom:.75rem">
         <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Unit</label>
         <select id="essay-unit" onchange="filterEssayQuestions()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit">
@@ -1560,6 +1561,13 @@ function showEssayModeNew() {
   document.getElementById('exam-pick').style.display = 'none';
   document.getElementById('exam-source').style.display = 'none';
   document.getElementById('exam-essay').style.display = 'block';
+  console.log('showEssayModeNew called — ESSAY_QS length:', ESSAY_QS.length);
+  const statusEl = document.getElementById('essay-status');
+  if (statusEl) {
+    statusEl.style.display = 'block';
+    statusEl.textContent = ESSAY_QS.length ? ESSAY_QS.length + ' questions loaded' : 'No essay data — check data/essays-y12.json is uploaded';
+    statusEl.style.color = ESSAY_QS.length ? 'var(--muted)' : '#C84B4B';
+  }
   buildEssayPicker();
 }
 
@@ -1570,7 +1578,9 @@ function buildEssayPicker() {
 function filterEssayQuestions() {
   const unit = document.getElementById('essay-unit').value;
   const picker = document.getElementById('essay-picker');
+  console.log('filterEssayQuestions — ESSAY_QS:', ESSAY_QS.length, 'unit:', unit);
   const pool = ESSAY_QS.filter(q => q.section === 'elizabeth' && (unit === 'all' || q.unit === unit));
+  console.log('pool size:', pool.length);
   if (!pool.length && !ESSAY_QS.length) {
     picker.innerHTML = '<option value="">— essays-y12.json not loaded —</option>';
     document.getElementById('essay-out').innerHTML = '<div class="empty" style="color:#C84B4B;font-size:.83rem">Essay data not found. Check data/essays-y12.json is uploaded to the server.</div>';
