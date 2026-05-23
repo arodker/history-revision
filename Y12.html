@@ -226,13 +226,31 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .essay-struct tr:last-child td{border-bottom:none}
 
 /* Source toolkit — prompts list (label-less) and worked examples */
-.src-prompts-title{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:.6rem 0 .45rem}
+.src-prompts-toggle{display:flex;align-items:center;gap:.4rem;width:100%;background:transparent;border:none;padding:.65rem 0 .45rem;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);cursor:pointer;font-family:inherit;text-align:left}
+.src-prompts-toggle:hover{color:var(--text)}
+.src-prompts-toggle .caret{display:inline-block;transition:transform .15s;font-size:.7rem}
+.src-prompts-toggle.open .caret{transform:rotate(90deg)}
+.src-prompts-panel{display:none;padding-bottom:.35rem}
+.src-prompts-panel.open{display:block}
 .src-prompt-list{list-style:none;padding:0;margin:0 0 .25rem}
 .src-prompt-list li{font-size:.86rem;line-height:1.6;padding:.5rem 0;border-bottom:1px dashed var(--border);display:flex;gap:.55rem}
 .src-prompt-list li:last-child{border-bottom:none}
 .src-prompt-list li::before{content:'→';color:var(--muted);flex-shrink:0;font-weight:700}
-.src-examples-title{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:1.2rem 0 .5rem;padding-top:.85rem;border-top:1px solid var(--border)}
-.src-example{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:.85rem 1rem;margin-bottom:.7rem}
+.src-random-btn{display:flex;align-items:center;justify-content:center;gap:.4rem;width:100%;padding:.45rem .85rem;margin:.5rem 0 .65rem;background:rgba(123,63,200,.1);color:var(--mtc);border:1px solid var(--mtc);border-radius:8px;font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s,color .15s,border-color .15s;letter-spacing:.01em}
+.src-random-btn:hover{background:var(--mtc);color:#fff}
+.src-random-btn:active{transform:scale(.99)}
+:root.dark .src-random-btn{background:rgba(151,95,215,.18);color:#C5A8EE;border-color:#9B72D8}
+:root.dark .src-random-btn:hover{background:var(--mtc);color:#fff;border-color:var(--mtc)}
+.src-random-banner{display:flex;align-items:center;gap:.5rem;padding:.55rem .85rem;margin-bottom:.7rem;background:var(--subtle);border:1px dashed var(--border2);border-radius:8px;font-size:.78rem;font-weight:600;color:var(--muted2)}
+.src-random-controls{display:flex;gap:.55rem;margin-top:.9rem}
+.src-random-controls button{flex:1}
+.src-examples-section{margin-top:.85rem}
+.src-examples-section-title{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:0 0 .55rem;padding:0 .25rem}
+.src-example-card{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:.7rem;overflow:hidden}
+.src-example-pill-row{padding:.7rem .95rem .15rem}
+.src-example-pill{display:inline-block;font-size:.7rem;font-weight:700;padding:4px 11px;border-radius:6px;background:var(--subtle);color:var(--muted);letter-spacing:.02em;border:1px solid var(--border)}
+.src-example-pill.illustrative{background:#FEF3D8;color:#854F0B;border-color:#E8C172}
+.src-example-body{padding:.5rem .95rem 1rem}
 .src-example-meta{font-size:.7rem;color:var(--muted);text-align:right;margin-bottom:.3rem}
 .src-example-q{font-size:.88rem;font-weight:600;font-style:italic;color:var(--text);margin-bottom:.55rem;line-height:1.5}
 .src-example-source{background:var(--subtle);border-radius:8px;padding:.65rem .85rem;margin-bottom:.6rem}
@@ -559,13 +577,13 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
         <button class="src-cat-pill" data-cat="edward" onclick="selectSourceCategory('edward')">🤴 Edward</button>
         <button class="src-cat-pill" data-cat="mary" onclick="selectSourceCategory('mary')">👑 Mary</button>
       </div>
+      <button class="src-random-btn" id="src-random-btn" onclick="randomSource()">🎲 Random source</button>
       <div class="src-picker-row">
         <select id="src-picker" onchange="selectSource(this.value)"></select>
         <button class="btn-sm" onclick="stepSource(-1)" style="padding:9px 12px" title="Previous source">←</button>
         <button class="btn-sm" onclick="stepSource(1)" style="padding:9px 12px" title="Next source">→</button>
       </div>
       <div id="source-out"></div>
-      <button class="btn-sm muted-btn" style="margin-top:.5rem" onclick="backToExamRoutes()">← Back</button>
     </div>
     <div id="exam-essay" style="display:none">
       <div id="essay-status" style="font-size:.75rem;color:var(--muted);margin-bottom:.5rem;display:none"></div>
@@ -1542,19 +1560,20 @@ function selectSourceCategory(cat) {
   const picker = document.getElementById('src-picker');
   const list = (SOURCE_SETS || []).filter(s => s.category === cat);
   picker.innerHTML = list.length
-    ? list.map(s => `<option value="${s.id}">${s.name}</option>`).join('')
+    ? '<option value="">— select a source —</option>' + list.map(s => `<option value="${s.id}">${s.name}</option>`).join('')
     : '<option value="">— no sources available —</option>';
   picker.className = 'cat-' + cat;
-  if (list.length) {
-    currentSrcId = list[0].id;
-    picker.value = currentSrcId;
-    renderSourceCard(list[0]);
-  } else {
-    document.getElementById('source-out').innerHTML = '<div class="empty">No sources available in this category.</div>';
-  }
+  picker.value = '';
+  currentSrcId = null;
+  document.getElementById('source-out').innerHTML = '';
 }
 
 function selectSource(id) {
+  if (!id) {
+    document.getElementById('source-out').innerHTML = '';
+    currentSrcId = null;
+    return;
+  }
   const s = (SOURCE_SETS || []).find(x => x.id === id);
   if (!s) return;
   currentSrcId = id;
@@ -1578,11 +1597,9 @@ function renderSourceCard(src) {
     `<li>${escHtml(p)}</li>`
   ).join('');
   const examples = src.examples || [];
-  const examplesHtml = examples.length
-    ? `<div class="src-examples-title">Worked examples (${examples.length})</div>` +
-      examples.map((ex, idx) => renderExample(ex, idx, src.id)).join('')
-    : `<div class="src-examples-title">Worked examples</div><div class="empty" style="padding:.85rem;font-size:.82rem">No examples yet for this source type.</div>`;
-  document.getElementById('source-out').innerHTML =
+
+  // ── Info card: name + summary + collapsible prompts ──
+  let html =
     `<div class="src-card">
        <div class="src-card-stripe" style="background:${meta.stripe}"></div>
        <div class="src-card-inner">
@@ -1591,34 +1608,122 @@ function renderSourceCard(src) {
            <span class="tag ${meta.tag}">${meta.label}</span>
          </div>
          <div class="src-card-what">${escHtml(src.whatIsIt || '')}</div>
-         <div class="src-prompts-title">Things to think about</div>
-         <ul class="src-prompt-list">${promptsHtml}</ul>
-         ${examplesHtml}
+         <button class="src-prompts-toggle" id="prompts-toggle-${src.id}" onclick="toggleSrcPrompts('${src.id}')"><span class="caret">▸</span>Things to think about</button>
+         <div class="src-prompts-panel" id="prompts-panel-${src.id}"><ul class="src-prompt-list">${promptsHtml}</ul></div>
        </div>
      </div>`;
+
+  // ── Practice examples: each its own card with year pill ──
+  if (examples.length) {
+    html += `<div class="src-examples-section">
+      <div class="src-examples-section-title">Practice examples · ${examples.length}</div>
+      ${examples.map((ex, idx) => renderExample(ex, idx, src.id)).join('')}
+    </div>`;
+  } else {
+    html += `<div class="src-examples-section">
+      <div class="src-examples-section-title">Practice examples</div>
+      <div class="empty" style="padding:.85rem;font-size:.82rem">No examples yet for this source type.</div>
+    </div>`;
+  }
+
+  document.getElementById('source-out').innerHTML = html;
+}
+
+function toggleSrcPrompts(sid) {
+  const panel = document.getElementById(`prompts-panel-${sid}`);
+  const btn   = document.getElementById(`prompts-toggle-${sid}`);
+  if (!panel || !btn) return;
+  const isOpen = panel.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+}
+
+function randomSource() {
+  if (typeof sourcesData === 'undefined' || !sourcesData || !sourcesData.sources) return;
+  const all = [];
+  sourcesData.sources.forEach(s => {
+    (s.examples || []).forEach((_, idx) => all.push({src: s, idx: idx}));
+  });
+  if (!all.length) return;
+  const pick = all[Math.floor(Math.random() * all.length)];
+  // Hide picker UI
+  const catRow = document.querySelector('#exam-source .src-cat-row');
+  const pickRow = document.querySelector('#exam-source .src-picker-row');
+  const btn = document.getElementById('src-random-btn');
+  if (catRow) catRow.style.display = 'none';
+  if (pickRow) pickRow.style.display = 'none';
+  if (btn) btn.style.display = 'none';
+  // Render single source + single example
+  const src = pick.src;
+  const ex = src.examples[pick.idx];
+  const meta = SRC_CAT_META[src.category] || SRC_CAT_META.generic;
+  const promptsHtml = (src.prompts || []).map(p => `<li>${escHtml(p)}</li>`).join('');
+  const html = `
+    <div class="src-random-banner">🎲 Random source &middot; ${escHtml(meta.label)}</div>
+    <div class="src-card">
+      <div class="src-card-stripe" style="background:${meta.stripe}"></div>
+      <div class="src-card-inner">
+        <div class="src-card-head">
+          <span class="src-card-name">${escHtml(src.name)}</span>
+          <span class="tag ${meta.tag}">${meta.label}</span>
+        </div>
+        <div class="src-card-what">${escHtml(src.whatIsIt || '')}</div>
+        <button class="src-prompts-toggle" id="prompts-toggle-${src.id}" onclick="toggleSrcPrompts('${src.id}')"><span class="caret">▸</span>Things to think about</button>
+        <div class="src-prompts-panel" id="prompts-panel-${src.id}"><ul class="src-prompt-list">${promptsHtml}</ul></div>
+      </div>
+    </div>
+    <div class="src-examples-section">
+      <div class="src-examples-section-title">Practice example</div>
+      ${renderExample(ex, pick.idx, src.id)}
+    </div>
+    <div class="src-random-controls">
+      <button class="btn-sm" onclick="randomSource()">🎲 Another random</button>
+      <button class="btn-sm muted-btn" onclick="exitRandomMode()">← Back to browsing</button>
+    </div>`;
+  document.getElementById('source-out').innerHTML = html;
+}
+
+function exitRandomMode() {
+  const catRow = document.querySelector('#exam-source .src-cat-row');
+  const pickRow = document.querySelector('#exam-source .src-picker-row');
+  const btn = document.getElementById('src-random-btn');
+  if (catRow) catRow.style.display = '';
+  if (pickRow) pickRow.style.display = '';
+  if (btn) btn.style.display = '';
+  // Re-render currently selected source
+  const picker = document.getElementById('src-picker');
+  if (picker && picker.value) {
+    selectSource(picker.value);
+  } else {
+    document.getElementById('source-out').innerHTML = '';
+  }
 }
 
 function renderExample(ex, idx, srcId) {
   const exId = `${srcId}-ex${idx}`;
-  const paper = ex.paper ? `<div class="src-example-meta">${escHtml(ex.paper)}</div>` : '';
+  const paper = ex.paper || '';
+  const isIllustrative = paper.toLowerCase().indexOf('illustrative') !== -1;
+  const pillClass = isIllustrative ? 'src-example-pill illustrative' : 'src-example-pill';
+  const pillHtml = paper ? `<span class="${pillClass}">${escHtml(paper)}</span>` : '';
   const provBullets = (ex.provenance || []).map(b => `<li>${escHtml(b)}</li>`).join('');
   const knowBullets = (ex.knowledge   || []).map(b => `<li>${escHtml(b)}</li>`).join('');
   const hasProv = (ex.provenance || []).length > 0;
   const hasKnow = (ex.knowledge   || []).length > 0;
   return `
-    <div class="src-example">
-      ${paper}
-      <div class="src-example-q">${escHtml(ex.question || '')}</div>
-      <div class="src-example-source">
-        <div class="src-example-attr">${escHtml(ex.attribution || '')}</div>
-        <div class="src-example-excerpt">${escHtml(ex.excerpt || '')}</div>
+    <div class="src-example-card">
+      <div class="src-example-pill-row">${pillHtml}</div>
+      <div class="src-example-body">
+        <div class="src-example-q">${escHtml(ex.question || '')}</div>
+        <div class="src-example-source">
+          <div class="src-example-attr">${escHtml(ex.attribution || '')}</div>
+          <div class="src-example-excerpt">${escHtml(ex.excerpt || '')}</div>
+        </div>
+        <div class="src-reveal-row">
+          ${hasProv ? `<button class="src-reveal-btn" id="btn-${exId}-prov" onclick="toggleSrcPanel('${exId}','prov')">👁 See provenance</button>` : ''}
+          ${hasKnow ? `<button class="src-reveal-btn" id="btn-${exId}-know" onclick="toggleSrcPanel('${exId}','know')">💡 Apply your knowledge</button>` : ''}
+        </div>
+        ${hasProv ? `<div class="src-panel" id="panel-${exId}-prov"><div class="src-panel-title">Provenance</div><ul class="src-panel-list">${provBullets}</ul></div>` : ''}
+        ${hasKnow ? `<div class="src-panel" id="panel-${exId}-know"><div class="src-panel-title">Knowledge</div><ul class="src-panel-list">${knowBullets}</ul></div>` : ''}
       </div>
-      <div class="src-reveal-row">
-        ${hasProv ? `<button class="src-reveal-btn" id="btn-${exId}-prov" onclick="toggleSrcPanel('${exId}','prov')">👁 See provenance</button>` : ''}
-        ${hasKnow ? `<button class="src-reveal-btn" id="btn-${exId}-know" onclick="toggleSrcPanel('${exId}','know')">💡 Apply your knowledge</button>` : ''}
-      </div>
-      ${hasProv ? `<div class="src-panel" id="panel-${exId}-prov"><div class="src-panel-title">Provenance</div><ul class="src-panel-list">${provBullets}</ul></div>` : ''}
-      ${hasKnow ? `<div class="src-panel" id="panel-${exId}-know"><div class="src-panel-title">Knowledge</div><ul class="src-panel-list">${knowBullets}</ul></div>` : ''}
     </div>`;
 }
 
