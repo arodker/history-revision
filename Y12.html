@@ -1638,9 +1638,9 @@ function toggleSrcPrompts(sid) {
 }
 
 function randomSource() {
-  if (typeof sourcesData === 'undefined' || !sourcesData || !sourcesData.sources) return;
+  if (typeof SOURCE_SETS === 'undefined' || !SOURCE_SETS || !SOURCE_SETS.length) return;
   const all = [];
-  sourcesData.sources.forEach(s => {
+  SOURCE_SETS.forEach(s => {
     (s.examples || []).forEach((_, idx) => all.push({src: s, idx: idx}));
   });
   if (!all.length) return;
