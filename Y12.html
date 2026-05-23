@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<script>if(localStorage.getItem('alevel_dark')=='1')document.documentElement.classList.add('dark');</script>
+<script>if(localStorage.getItem('alevel_dark')!=='0')document.documentElement.classList.add('dark');</script>
 <title>Mr Rodker's A Level History Hub</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -319,6 +319,15 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .inline-search-results:empty{display:none}
 .inline-search-results .search-result{background:var(--card);border:1px solid var(--border)}
 .inline-search-results .search-count{padding-top:.3rem}
+
+/* Essay indicative content */
+.ic-para{margin-bottom:1rem;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.ic-factor{background:var(--subtle);padding:.55rem .85rem;font-size:.8rem;font-weight:700;color:var(--text);border-bottom:1px solid var(--border)}
+.ic-yes,.ic-but{padding:.55rem .85rem .3rem}
+.ic-yes strong{color:#1D9E75}
+.ic-but strong{color:#C84B4B}
+.ic-yes ul,.ic-but ul{margin:.3rem 0 0 1rem;padding:0}
+.ic-yes li,.ic-but li{font-size:.8rem;color:var(--text);margin-bottom:.25rem;line-height:1.45}
 </style>
 </head>
 <body>
@@ -521,9 +530,24 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
       <button class="btn-sm muted-btn" style="margin-top:.5rem" onclick="backToExamRoutes()">← Back</button>
     </div>
     <div id="exam-essay" style="display:none">
-      <button class="btn-go c-liz" onclick="drawEssay()">🔀 Random 20-marker</button>
+      <div style="margin-bottom:.75rem">
+        <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Unit</label>
+        <select id="essay-unit" onchange="filterEssayQuestions()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit">
+          <option value="all">All units</option>
+          <option value="General">General</option>
+          <option value="Unit 4">Unit 4 — Elizabeth I and Religion</option>
+          <option value="Unit 5">Unit 5 — Government and Parliament</option>
+          <option value="Unit 6">Unit 6 — Financial, Economic and Social Affairs</option>
+          <option value="Unit 7">Unit 7 — Later Years 1588–1603</option>
+        </select>
+        <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-top:.5rem;margin-bottom:4px">Question</label>
+        <select id="essay-picker" onchange="loadSelectedEssay()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit">
+          <option value="">— select a question —</option>
+        </select>
+      </div>
+      <button class="btn-go c-liz" onclick="randomEssay()" style="margin-bottom:.75rem">🔀 Random question</button>
       <div id="essay-out"></div>
-      <button class="btn-sm muted-btn" style="margin-top:.5rem" onclick="backToExamRoutes()">← Back</button>
+      <button class="btn-sm muted-btn" style="margin-top:.5rem" onclick="backToExamRoutes()">← Back to hub</button>
     </div>
   </div>
 
@@ -719,7 +743,7 @@ function toggleDark() {
   document.getElementById('dark-toggle').textContent = isDark ? '☀️' : '🌙';
 }
 (function(){
-  if (localStorage.getItem('alevel_dark') === '1') {
+  if (localStorage.getItem('alevel_dark') !== '0') {
     document.documentElement.classList.add('dark');
     const btn = document.getElementById('dark-toggle');
     if (btn) btn.textContent = '☀️';
@@ -741,7 +765,8 @@ const S = {
     label: 'Elizabeth I',
     badge: 'bg-liz', go: 'c-liz', fill: 'fill-liz', colour: '#1D9E75',
     units: ['Unit 4 – Elizabeth I and Religion','Unit 5 – Government and Parliament','Unit 6 – Financial, Economic and Social Affairs','Unit 7 – Later Years 1588–1603'],
-    hasSource: false, hasEssay: true, hasCWEssay: false
+    hasSource: false, hasEssay: true, hasCWEssay: false,
+    examActive: true
   },
   coldwar: {
     label: 'Cold War in Europe',
@@ -1072,7 +1097,7 @@ function setMode(m) {
   if (m !== 'knowledge') document.getElementById('k-out').innerHTML = '';
   document.getElementById('d-out').innerHTML = '';
   if (m === 'knowledge') { buildKPool(); updateNavUI(); }
-  if (m === 'exam') backToExamRoutes();
+  if (m === 'exam') { if (currentSection==='mtc') showSourceMode(); else if (currentSection==='elizabeth') showEssayModeNew(); else backToExamRoutes(); }
   if (m === 'flashcard') fdSetup();
   if (m === 'dates') { datesShowSetup(); applyDatesHardBtn(); }
 }
@@ -1098,9 +1123,13 @@ function buildExamRoutes(sec) {
 }
 
 function backToExamRoutes() {
-  document.getElementById('exam-pick').style.display = 'block';
-  document.getElementById('exam-source').style.display = 'none';
-  document.getElementById('exam-essay').style.display = 'none';
+  if (currentSection === 'coldwar') {
+    document.getElementById('exam-pick').style.display = 'block';
+    document.getElementById('exam-source').style.display = 'none';
+    document.getElementById('exam-essay').style.display = 'none';
+  } else {
+    showScreen('s-hub');
+  }
 }
 function showSourceMode() {
   document.getElementById('exam-pick').style.display = 'none';
@@ -1527,21 +1556,74 @@ function renderSourceCard(src) {
 // ═══════════════════════════════════
 // ESSAY QUESTIONS
 // ═══════════════════════════════════
-function showEssayMode(marks) {
+function showEssayModeNew() {
   document.getElementById('exam-pick').style.display = 'none';
   document.getElementById('exam-source').style.display = 'none';
   document.getElementById('exam-essay').style.display = 'block';
-  drawEssay(marks);
+  buildEssayPicker();
 }
 
-function drawEssay(marks) {
-  const pool = ESSAY_QS.filter(q => q.section === currentSection && (!marks || String(q.marks) === String(marks)));
-  if (!pool.length) { document.getElementById('essay-out').innerHTML = '<div class="empty">No essay questions available yet.</div>'; return; }
-  const q = rand(pool);
-  const uid = 'eq_' + Math.random().toString(36).slice(2,6);
-  const marksLabel = q.marks ? `${q.marks} marks` : '20 marks';
-  document.getElementById('essay-out').innerHTML = `<div class="essay-card"><div class="essay-q">${q.q}</div><div class="essay-meta">${q.year} · ${q.topic} · ${marksLabel}</div><div class="btn-row"><button class="btn-sm" onclick="drawEssay('${marks||''}')">🔀 New question</button><button class="btn-sm" onclick="tog('${uid}_str');this.textContent=this.textContent.includes('Show')?'Hide essay structure':'Show essay structure'">Show essay structure</button></div><div class="essay-struct" id="${uid}_str"><div class="essay-struct-title">Structure: Factor – Yes – But – So (×3)</div><table><tr><td>Intro</td><td>Deconstruct question. Set criteria for analysis. State thesis.</td></tr><tr><td>Factor 1</td><td><strong>Yes</strong> — specific knowledge. <strong>But</strong> — limitations. <strong>So</strong> — mini-judgement with relative significance.</td></tr><tr><td>Factor 2</td><td>Repeat Factor–Yes–But–So.</td></tr><tr><td>Factor 3</td><td>Repeat Factor–Yes–But–So.</td></tr><tr><td>Conclusion</td><td>Sum up argument. Link back to thesis.</td></tr></table></div></div>`;
+function buildEssayPicker() {
+  filterEssayQuestions();
 }
+
+function filterEssayQuestions() {
+  const unit = document.getElementById('essay-unit').value;
+  const picker = document.getElementById('essay-picker');
+  const pool = ESSAY_QS.filter(q => q.section === 'elizabeth' && (unit === 'all' || q.unit === unit));
+  picker.innerHTML = '<option value="">— select a question —</option>' +
+    pool.map(q => `<option value="${q.id}">[${q.year}${q.level==='AS'?' AS':''}] ${q.title}</option>`).join('');
+  document.getElementById('essay-out').innerHTML = '';
+}
+
+function loadSelectedEssay() {
+  const id = parseInt(document.getElementById('essay-picker').value);
+  if (!id) return;
+  const q = ESSAY_QS.find(q => q.id === id);
+  if (q) renderEssay(q);
+}
+
+function randomEssay() {
+  const unit = document.getElementById('essay-unit').value;
+  const pool = ESSAY_QS.filter(q => q.section === 'elizabeth' && (unit === 'all' || q.unit === unit));
+  if (!pool.length) return;
+  const q = rand(pool);
+  const picker = document.getElementById('essay-picker');
+  if (picker) picker.value = q.id;
+  renderEssay(q);
+}
+
+function renderEssay(q) {
+  const uid = 'eq_' + Math.random().toString(36).slice(2,6);
+  const indicHtml = q.paragraphs.map((p, i) => `
+    <div class="ic-para">
+      <div class="ic-factor">Paragraph ${i+1}: ${p.factor}</div>
+      <div class="ic-yes"><strong>Yes</strong><ul>${p.yes.map(b=>`<li>${b}</li>`).join('')}</ul></div>
+      <div class="ic-but"><strong>But</strong><ul>${p.but.map(b=>`<li>${b}</li>`).join('')}</ul></div>
+    </div>`).join('');
+  document.getElementById('essay-out').innerHTML = `
+    <div class="essay-card">
+      <div class="essay-q">${q.question}</div>
+      <div class="essay-meta">${q.year} · ${q.unit} · ${q.level} · 20 marks</div>
+      <div class="btn-row" style="margin-top:.75rem">
+        <button class="btn-sm" onclick="randomEssay()">🔀 New random</button>
+        <button class="btn-sm" id="${uid}_ic_btn" onclick="toggleIndicative('${uid}_ic','${uid}_ic_btn')">Show indicative content</button>
+      </div>
+      <div id="${uid}_ic" style="display:none;margin-top:.9rem">${indicHtml}</div>
+    </div>`;
+}
+
+function toggleIndicative(contentId, btnId) {
+  const el = document.getElementById(contentId);
+  const btn = document.getElementById(btnId);
+  if (!el || !btn) return;
+  const hidden = el.style.display === 'none';
+  el.style.display = hidden ? 'block' : 'none';
+  btn.textContent = hidden ? 'Hide indicative content' : 'Show indicative content';
+}
+
+function drawEssay(marks) { randomEssay(); }
+function showEssayMode(marks) { showEssayModeNew(); }
 
 // ═══════════════════════════════════
 // RAPID FIRE
@@ -2268,7 +2350,7 @@ Promise.all([
   fetch('data/dates-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/rq-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/sources-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
-  fetch('data/essays.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
+  fetch('data/essays-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
 ]).then(([kc,fd,dates,rq,sources,essays]) => {
   KC = kc; FD = fd; DATES = dates; RQ = rq;
   SOURCE_SETS = (sources && Array.isArray(sources.sources)) ? sources.sources : (Array.isArray(sources) ? sources : []);
