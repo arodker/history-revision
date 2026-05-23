@@ -1,299 +1,1417 @@
 {
   "sources": [
-
     {
       "id": "gen-001",
       "category": "generic",
       "name": "Chronicle",
-      "whatIsIt": "Narrative accounts of events written by contemporaries — clergy, merchants, court servants.",
+      "whatIsIt": "Narrative accounts of events written by contemporaries  -  clergy, merchants, court servants.",
       "prompts": [
-        "Who: Identify the author's religion, social position, and who they were writing for. A court servant sees very different things from a parish priest.",
-        "What: Chronicles are narrative accounts — they tell a story, which means they make choices about what to include and how to frame it.",
-        "Context: Chronicles tend to reflect the politics of when they were written, not just when the events happened. A chronicle written under Elizabeth carries Protestant assumptions about Mary's reign.",
-        "How informed: Were they eyewitnesses, or writing from other accounts? Chroniclers frequently copied from each other and repeated rumour.",
-        "Nature: Often written years after events. Memory fades and the political climate changes — both shape what gets written."
+        "Identify the author's religion, social position, and who they were writing for. A court servant sees very different things from a parish priest.",
+        "Chronicles are narrative accounts  -  they tell a story, which means they make choices about what to include and how to frame it.",
+        "Chronicles reflect the dominant narrative of their time, not a neutral record of events. A chronicle written under Elizabeth carries Protestant assumptions and frames Mary's reign as a dark interlude. One written under Mary presents Protestant reform as heresy. The political climate of composition shapes every choice of what to include and how to frame it.",
+        "Were they eyewitnesses, or writing from other accounts? Chroniclers frequently copied from each other and repeated rumour.",
+        "Often written years after events. Memory fades and the political climate changes  -  both shape what gets written."
+      ],
+      "examples": [
+        {
+          "paper": "Y107 Oct 2021",
+          "question": "How far do they support the view that Somerset was to blame for political instability?",
+          "attribution": "Richard Grafton, Chronicle entry for 1549, written in 1568",
+          "excerpt": "After these revolts were pacified, many lords and councillors, disliking the government of the Lord Protector, started to plot to replace him. Each lord and councillor went through London armed...",
+          "provenance": [
+            "On the surface this supports the view. Grafton puts Somerset's 'government' at the centre of the trouble and shows the council arming against him.",
+            "But Grafton wrote in 1568, nearly twenty years after the events. He was not an eyewitness, and chronicles are usually second or third hand accounts built from earlier writings and what people said happened.",
+            "After Somerset's fall in October 1549, Northumberland's council controlled the official record. They had every reason to blame Somerset to justify their coup.",
+            "Everything Grafton could read or hear about 1549 reflects the information the government allowed to be known at the time. He is repeating Northumberland's version, not delivering a neutral judgement.",
+            "The detail about councillors arming themselves may be real, but the framing is loaded. The source tells us as much about what Northumberland's council wanted people to believe as about who was actually to blame."
+          ],
+          "knowledge": [
+            "On 'many lords and councillors disliking the government of the Lord Protector' - the Anti-Somerset faction was a real coalition of reformers and conservatives (Warwick, Wriothesley, Paget) who feared his sympathy for commoners had encouraged the 1549 unrest. The 'disliking' is accurate, but the framing makes it sound spontaneous when it was a coordinated political move.",
+            "On the lords going 'armed' through London - the events of October 1549 were a coup. Somerset took possession of Edward and called for loyal subjects to defend the King. The Council moved against him at Windsor. Grafton compresses a tense political crisis into one image.",
+            "On Somerset's blame for instability - the evidence suggests the 1552 treason charges against him were fabricated to remove him as a rival to Northumberland. The actual cause of his fall was factional politics, not the unrest itself."
+          ]
+        },
+        {
+          "paper": "Y107 Jun 2023",
+          "question": "How far do they support the view that there was resistance and opposition to Mary's religious policies?",
+          "attribution": "Robert Parkyn, Narrative of the Reformation, 1553",
+          "excerpt": "Queen Mary was proclaimed at York on the 21st day of July... where everyone in all places in the north parts greatly rejoiced, making great fires, drinking wine and ale, praising God.",
+          "provenance": [
+            "On the surface this challenges the view, showing joy in the north at Mary's accession rather than resistance.",
+            "Parkyn was a Yorkshire priest and firm supporter of Roman Catholicism. He had every reason to celebrate Mary's arrival and may well have seen what he wanted to see.",
+            "Chronicles like this are usually second or third hand for anything outside the writer's immediate parish. His claim about 'everyone in all places in the north parts' goes well beyond what one priest could actually know.",
+            "A Protestant observer watching the same crowds might have described them very differently.",
+            "The source is good evidence of northern Catholic enthusiasm for Mary, but it cannot be used to claim her accession was universally welcomed."
+          ],
+          "knowledge": [
+            "On the joy in 'the north parts' - Mary's strongest power base was actually East Anglia. The widespread acclamation of her accession reflected commitment to hereditary succession under Henry VIII's Third Act of Succession, with most accepting Mary's right as the lawful heir.",
+            "On the celebrations - Northumberland's troops deserted to Mary and councillors broke ranks to declare for her. The whole Jane Grey affair collapsed in nine days. The popular reaction was real, but it was about legitimacy as much as religion.",
+            "On using 'the north parts' as evidence for the country - Edwardian Protestantism had taken hold most strongly in London, the south-east and East Anglia. The north and west had stayed more conservative. Parkyn's joy at York cannot stand for England as a whole."
+          ]
+        },
+        {
+          "paper": "Y107 Jun 2023",
+          "question": "How far do they support the view that there was resistance and opposition to Mary's religious policies?",
+          "attribution": "Charles Wriothesley, Wriothesley's Chronicle, April 1554",
+          "excerpt": "On Sunday, a villainous event took place in Cheapside. A dead cat was hanged on the post of the gallows, dressed in cloth like the vestment of a priest at mass with crosses front and back.",
+          "provenance": [
+            "On the surface this strongly supports the view. Mock vestments hung on a dead cat in Cheapside is open Protestant mockery of the Catholic mass in the heart of London.",
+            "Wriothesley was a London chronicler with reformist sympathies. The incident probably stuck in his mind because it confirmed his own sense of what was happening in the capital.",
+            "Calling it a 'villainous event' is the official Marian framing. He records the regime's outrage even where his own sympathies might have been more mixed.",
+            "Chronicles are second or third hand for anywhere outside the writer's setting. London was the most reformed area in England, and what happened in Cheapside was not happening in Devon.",
+            "The source is strong evidence of London Protestant hostility to the Catholic restoration in 1554, but London was not England."
+          ],
+          "knowledge": [
+            "On the mockery in Cheapside - London was the most Protestant area of England by 1554. Cheapside is in the heart of the City. This is exactly the kind of place where Protestant resistance was concentrated.",
+            "On open Protestant defiance - by early 1554 around 800 Protestants had already fled to Germany and Switzerland to escape the restoration. Those who stayed and were committed Protestants would express their hostility in incidents like this.",
+            "On reading this as nationwide resistance - in conservative areas like the south-west, parishioners were welcoming the return of Catholic worship. Most church records show Catholic restoration was accepted more readily than the earlier Edwardian Reformation had been."
+          ]
+        },
+        {
+          "paper": "Y107 Jun 2023",
+          "question": "How far do they support the view that there was resistance and opposition to Mary's religious policies?",
+          "attribution": "Henry Machyn, diary, February 1555",
+          "excerpt": "The fourth day of February the bishop of London went into Newgate prison with other doctors to degrade Hooper and Rogers... The same day was Rogers carried, between 10 and 11 o'clock, into Smithfield and burned for his critical opinions.",
+          "provenance": [
+            "On the surface this neither supports nor challenges the view. It is a flat factual record of the first Marian burning.",
+            "Machyn was a London merchant and a conservative Catholic. He records the event without praise or condemnation, which is itself revealing about how it was received.",
+            "His diary is one of the few non-official daily records of London life under Mary. The detail of times and names suggests genuine eyewitness or near-eyewitness knowledge.",
+            "Crucially he does not record crowds weeping or cheering. That absence is significant given what other ambassadors and chroniclers claim about public reaction.",
+            "The source is useful evidence of what happened and when, but says little directly about how Londoners actually felt."
+          ],
+          "knowledge": [
+            "On 'Rogers was carried... and burned' - Rogers, a biblical translator, was the first of 284 Protestants burnt between 1555 and 1558. Choosing a high-profile figure first was a deliberate regime decision to make an example.",
+            "On the absence of crowd reaction in Machyn's account - other sources record large crowds at the burnings. Foxe presents them as sympathetic to the victims; some contemporaries report them attending as entertainment. Machyn's flat description cuts against both.",
+            "On the timing - Gardiner, who opposed the burnings as counter-productive, was still alive in February 1555. After his death in November 1555 the pace increased sharply under Cardinal Pole's direction."
+          ]
+        },
+        {
+          "paper": "Y137 May 2022",
+          "question": "How far do they support the view that Mary Tudor's government was weak?",
+          "attribution": "Charles Wriothesley, Wriothesley's Chronicle for 1554",
+          "excerpt": "On 1 February the Queen went to the Guildhall and declared to the audience the wicked plan of the traitor Wyatt... She spoke so nobly, with so good spirit, and with so loud a voice, that all the people might hear her Majesty.",
+          "provenance": [
+            "On the surface this challenges the view of weakness, showing Mary rallying London personally during Wyatt's rebellion.",
+            "Wriothesley was a London chronicler writing soon after the events. He probably witnessed the speech or knew people who did, so the basic detail is likely accurate.",
+            "His framing of Wyatt as a 'traitor' and Mary speaking 'nobly' reflects the official line after the rebellion was crushed. Successful regimes shape how their crises are remembered.",
+            "The detail that 'all the people might hear her' is part of the bravery narrative being constructed around Mary's response to the crisis.",
+            "The source is good evidence of Mary's personal courage in that moment, but one successful speech cannot prove her government was strong overall."
+          ],
+          "knowledge": [
+            "On Mary speaking 'so nobly' at the Guildhall - Mary refused her Council's advice to flee the city, and her speech personally secured Londoners' loyalty. The bravery and impact described here are factually borne out, not just chronicler praise.",
+            "On the rebellion - Wyatt had raised 3,000 men and reached the gates of London. Government troops under Norfolk had deserted to him, declaring 'We are all Englishmen!' Mary's speech was the turning point in a genuinely serious crisis.",
+            "On reading this as evidence of strong government overall - one successful speech in one moment does not prove general strength. The marriage that caused the rebellion was deeply unpopular, and the loss of Calais in 1558 came as a direct consequence of the Spanish alliance."
+          ]
+        },
+        {
+          "paper": "Y107 Jun 2025",
+          "question": "How far do they support the view that there was widespread opposition to religious changes under Edward VI?",
+          "attribution": "Chronicle of Grey Friars of London (Catholic chronicle)",
+          "excerpt": "The 5th of September 1547 began the king's visitation at St Paul's, and all the images were pulled down... and so all images pulled down through all England at that time, and all churches new white-limed.",
+          "provenance": [
+            "On the surface this challenges the view of opposition, suggesting smooth nationwide compliance with the removal of images.",
+            "The Grey Friars chronicle was written by London-based Catholic friars who watched these events with horror. Their hostility to the changes is the lens.",
+            "The phrase 'all images pulled down through all England' is impossible for any London friar to have known. He is generalising from what he saw in his own city.",
+            "Chronicles are second or third hand for events outside the writer's setting. London was the most heavily reformed area. Parishes far from the capital often did not comply nearly as quickly.",
+            "The source is good evidence for the visitation's impact at St Paul's and in the City of London. It cannot be used to claim nationwide compliance."
+          ],
+          "knowledge": [
+            "On 'all images pulled down through all England' - de jure England was being made Protestant fast, but de facto compliance was patchy. Evidence from wills shows little support for Protestant changes outside London, the south-east and East Anglia.",
+            "On the iconoclasm at St Paul's - this is the centre of London, the most receptive area to reform. In Bishop Hooper's diocese of Gloucester, 171 of 311 clergymen could not even repeat the Ten Commandments. The pace of change varied enormously.",
+            "On the friars' framing of universal change - the rapid restoration of Catholicism under Mary suggests traditional religion had retained popularity at the local level in most parts of the country. The friars' horror is genuine but unrepresentative."
+          ]
+        },
+        {
+          "paper": "Y137 May 2026",
+          "question": "How far do they support the view that Wyatt's rebellion was a serious threat to Mary?",
+          "attribution": "Charles Wriothesley, Chronicle of England, 1554",
+          "excerpt": "On 29 January the duke of Norfolk tried to attack Rochester castle, where the traitor Wyatt and his rebels lay, but he was forced to flee, and the rebels captured his artillery.",
+          "provenance": [
+            "On the surface this strongly supports the view. The royal commander defeated and the rebels capturing his artillery is a serious military reverse.",
+            "Wriothesley was a London chronicler with access to court news. The detail of Norfolk's flight and the lost artillery is specific and probably accurate.",
+            "He uses 'the traitor Wyatt' framing, the official line after the rebellion was crushed. But the underlying military facts cannot be hidden behind that language.",
+            "Chronicles tend to focus on dramatic reverses because they make better stories. Norfolk's defeat is exactly the kind of incident that gets remembered.",
+            "The source is strong evidence of the immediate military danger to Mary's regime in late January 1554, before her Guildhall speech rallied London."
+          ],
+          "knowledge": [
+            "On Norfolk forced to flee and the rebels capturing his artillery - government troops under Norfolk deserted to Wyatt's side, declaring 'We are all Englishmen!' The military reverse Wriothesley describes is real and serious.",
+            "On Wyatt's threat - he raised 3,000 men and reached the gates of London. The rebellion was only defeated after Mary's Guildhall speech secured Londoners' loyalty and the city gates remained shut.",
+            "On reading the rebellion as catastrophically dangerous - only one of the four planned uprisings actually rose. The discovery of the plot forced winter timing, when fewer peasants would join. Rochester was a moment in a rebellion ultimately undone by its own discovery."
+          ]
+        },
+        {
+          "paper": "Y137 May 2026",
+          "question": "How far do they support the view that Wyatt's rebellion was a serious threat to Mary?",
+          "attribution": "John Proctor, A History of Wyatt's Rebellion, 1554 [government-commissioned account]",
+          "excerpt": "Wyatt, proceeding in his detestable purpose, armed himself and as many as he could. And, considering that the restoring of the newly-forged religion was not a cause general enough to attract all sorts to support him, he determined to speak no word of religion.",
+          "provenance": [
+            "On the surface this challenges the view by making Wyatt look manipulative and politically weak rather than militarily dangerous.",
+            "Proctor's history was commissioned by Mary's government after the rebellion. Its job is to explain and justify the regime's view of what happened.",
+            "The argument that Wyatt hid his real Protestant motives is exactly what the government wanted people to believe. It turns the rebellion into a religious plot rather than a popular protest against the Spanish marriage.",
+            "'Detestable purpose' and 'newly-forged religion' are loaded language. This is not a neutral account, it is official propaganda dressed as history.",
+            "The source tells us what Mary's regime needed people to believe about Wyatt's motives, not what those motives actually were."
+          ],
+          "knowledge": [
+            "On 'newly-forged religion was not a cause general enough... he determined to speak no word of religion' - Proctor is right that the rebellion's manifestos focused on the Spanish marriage. But the timing immediately followed Mary's marriage announcement, and Wyatt had been loyal during the Jane Grey affair. The marriage looks like the real trigger, not a smokescreen.",
+            "On Wyatt as manipulative - Proctor was the government's chronicler and would be 'unlikely to accept popular opposition to Philip'. Framing Wyatt as hiding his real Protestant motive lets the regime avoid admitting the unpopularity of the marriage.",
+            "On the rebellion's threat - 3,000 men, Norfolk's troops defecting, the gates of London reached. The rebellion was a serious threat in scale and reach, regardless of how Proctor wants to frame its motives."
+          ]
+        },
+        {
+          "paper": "Guide Source Practice 3",
+          "question": "How far do they support the view that ambition was the main cause of Somerset's downfall?",
+          "attribution": "A chronicle outlines the charges against Somerset, October 1549",
+          "excerpt": "First that through his malicious and evil government, the Lord Protector had caused all the recent unrest in the country. Second, he was ambitious and sought his own glory. Third, that he had ignored the advice of his councillors.",
+          "provenance": [
+            "On the surface this strongly supports the view. The charges blame Somerset for the unrest and accuse him of ambition.",
+            "These charges were drafted by Northumberland's council after the coup against Somerset. They are not a neutral assessment, they are the justification for the coup.",
+            "Northumberland's regime needed Somerset's government to look like the cause of all the trouble. That framing made the coup look necessary rather than self-interested.",
+            "Even where it ends up written into a chronicle, this is essentially official propaganda from the new regime being recorded as if it were a neutral account.",
+            "The source tells us how the post-coup council needed Somerset's fall to be understood, not whether his ambition was actually the main cause of his downfall."
+          ],
+          "knowledge": [
+            "On 'malicious and evil government... caused all the recent unrest' - the 1549 unrest covered over 25 counties, the most widespread of the Tudor period. The deeper causes were inflation, debasement, population pressure (rising from 2.3 to 3 million between 1525 and 1551), and enclosure, none of which Somerset created.",
+            "On Somerset being 'ambitious' - the evidence suggests the 1552 treason charges against him were fabricated to remove him as a rival to Northumberland. The 'ambition' charge was the political case the coup needed to make, not a measured judgement.",
+            "On 'he had ignored the advice of his councillors' - Paget had warned Somerset in July 1549 that the King's subjects were 'out of all discipline'. There was real contemporary frustration with his approach, but turning that into formal treason charges was a political act."
+          ]
+        }
       ]
     },
-
     {
       "id": "gen-002",
       "category": "generic",
       "name": "Ambassador Report",
       "whatIsIt": "Letters sent by foreign ambassadors to their governments, reporting on English politics and court affairs.",
       "prompts": [
-        "Who: The ambassador's nationality determines their priorities. A Spanish ambassador focuses on Habsburg interests; a Venetian on trade and European power. There is no neutral observer.",
-        "What: Diplomatic dispatches are written to inform and impress. Admitting uncertainty or missing key events would damage their career.",
-        "Context: Ambassadors relied on local informants with their own agendas. 'Popular discontent' may reflect one contact's anxiety, not general opinion.",
-        "How informed: Foreign observers often misread English political culture. Being an outsider does not make you more objective.",
-        "Nature: Crises are over-reported, stability is under-reported. Ambassadors needed to seem useful to their masters."
+        "The ambassador's nationality determines their priorities. A Spanish ambassador focuses on Habsburg interests; a Venetian on trade and European power. There is no neutral observer.",
+        "Diplomatic dispatches are written to inform and impress. Admitting uncertainty or missing key events would damage their career.",
+        "Ambassadors relied on local informants with their own agendas. 'Popular discontent' may reflect one contact's anxiety, not general opinion.",
+        "Foreign observers often misread English political culture. Being an outsider does not make you more objective.",
+        "Crises are over-reported, stability is under-reported. Ambassadors needed to seem useful to their masters."
+      ],
+      "examples": [
+        {
+          "paper": "Y107 Jun 2022",
+          "question": "How far do they support the view that the succession never seriously threatened political stability?",
+          "attribution": "Christophe d'Assonleville, letter to King Philip of Spain, 7 November 1558",
+          "excerpt": "As the Queen continues to be ill, the Privy Council spoke to her yesterday in order to persuade her to declare the Lady Elizabeth her heir. Her Majesty agreed.",
+          "provenance": [
+            "On the surface this challenges the view, showing a smooth and orderly succession arrangement at the end of Mary's reign.",
+            "D'Assonleville was a Spanish ambassador with strong Habsburg interests in the succession going cleanly to Elizabeth, who Philip then hoped to marry.",
+            "His report is short and matter-of-fact. He has no incentive to dramatise problems here, because the outcome suited Spain.",
+            "Ambassadors learn what their court contacts choose to tell them. He is repeating the version of events the Council wanted Spain to receive.",
+            "The source supports the view that the 1558 transition was handled without serious instability, but the Spanish ambassador's interest in that being the story should be borne in mind."
+          ],
+          "knowledge": [
+            "On the Council persuading Mary to declare Elizabeth - the succession did pass peacefully to Elizabeth despite Catholic concerns about her legitimacy. Philip of Spain, who could have pressed a Catholic claim, chose not to.",
+            "On the orderly handover - Mary died on 17 November 1558. Cardinal Pole died the same day, leaving the Church without an Archbishop. England had lost Calais. Beneath d'Assonleville's tidy report was an inherited crisis.",
+            "On reading this as 'no serious threat' - Mary's failure to produce an heir had left Catholic restoration vulnerable from the start. Mary Queen of Scots had a strong alternative claim. The peaceful succession in November did not mean the succession question had never threatened stability."
+          ]
+        },
+        {
+          "paper": "Y107 Oct 2021",
+          "question": "How far do they support the view that Somerset was to blame for political instability?",
+          "attribution": "Francis Bourgoyne, letter to John Calvin, 22 January 1552",
+          "excerpt": "Somerset was the head of a conspiracy against the whole Council, and more particularly against the Duke of Northumberland, whom Somerset pursued with a deadly hatred.",
+          "provenance": [
+            "On the surface this strongly supports the view that Somerset was to blame for the political instability of 1551-52.",
+            "Bourgoyne was a French Protestant pastor writing to Calvin in Geneva. He was not in England witnessing events, he was reporting English news at distance.",
+            "His information came from the English Protestant network, which by 1552 was aligned with Northumberland's regime. He is repeating their framing.",
+            "'Deadly hatred' is the language of the post-coup case against Somerset. It reflects the version Northumberland's council was putting out.",
+            "The source tells us what the Protestant network around Northumberland wanted Calvin to believe about Somerset, not whether Somerset was actually conspiring."
+          ],
+          "knowledge": [
+            "On Somerset 'the head of a conspiracy against the whole Council' - Somerset had been arrested in October 1549. The 1552 case was a second prosecution after his initial release. The evidence suggests the charges were fabricated to remove him as Northumberland's rival.",
+            "On 'deadly hatred' against Northumberland - Somerset had been allowed back onto the Council in the hope he would support Northumberland. The relationship broke down because Northumberland saw him as a continuing threat, not because Somerset launched a genuine conspiracy.",
+            "On reading Calvin's correspondent as a guide to English politics - Bourgoyne is reporting what the English Protestant network told him. By 1552 that network was aligned with Northumberland's regime, which needed Somerset to look conspiratorial."
+          ]
+        },
+        {
+          "paper": "Y107 Jun 2024",
+          "question": "How far do they support the view that the Marian burnings created opposition?",
+          "attribution": "Simon Renard, report to Philip of Spain, 5 February 1555 [Imperial/Spanish ambassador]",
+          "excerpt": "The people of London are murmuring about the cruel enforcement of the recent acts of Parliament against heresy... Some of the onlookers wept. Others prayed to God to give them strength. The haste with which the bishops have proceeded in this matter may well cause a revolt.",
+          "provenance": [
+            "On the surface this strongly supports the view, suggesting the burnings were creating real public anger in London.",
+            "Renard was a Spanish ambassador with a vested interest in Mary's regime succeeding. He has no reason to invent opposition.",
+            "But Renard's job was to flag risks to his masters in Brussels. He tended to dramatise threats because that was what kept him useful.",
+            "'May well cause a revolt' is his speculation, not a fact. His informants were close to him in London. He was not watching the burnings in other parts of the country.",
+            "The source is good evidence of London hostility to the first burnings in early 1555. The talk of 'revolt' reflects Renard's instinct to flag danger, not necessarily reality."
+          ],
+          "knowledge": [
+            "On 'the people of London are murmuring' - the burnings were concentrated in London, Kent and Essex, the Protestant strongholds. Renard's report of London anger matches the geographical reality of where the burnings were happening.",
+            "On 'may well cause a revolt' - no popular revolt followed. The burnings continued for nearly three more years, ending only with Mary's death in 1558. Renard's predicted danger never materialised.",
+            "On the early-stage reaction - Renard is writing about the first major burning (John Rogers, 4 February 1555). Gardiner was still alive and opposed the burnings as counter-productive. Mary herself had already advised the Council in December 1554 to act 'without rashness', showing regime awareness of the risk."
+          ]
+        },
+        {
+          "paper": "Y137 May 2022",
+          "question": "How far do they support the view that Mary Tudor's government was weak?",
+          "attribution": "Simon Renard, letter to Charles V, 18 September 1554 [Imperial/Spanish ambassador]",
+          "excerpt": "No attention is paid to the law; the Queen and her council are neither respected nor obeyed nor feared. The people say that King Philip is not going to employ Englishmen, though he agreed to do so in the marriage treaty.",
+          "provenance": [
+            "On the surface this strongly supports the view of weakness.",
+            "Renard's job was to flag problems for Philip and the Emperor. Crises were over-reported in his dispatches because that was what kept him useful.",
+            "'The people say' covers his London contacts, who were anxious about the Spanish marriage. It is not a measured assessment of national opinion.",
+            "He had personal influence over Mary and reasons to argue that her regime needed continued Spanish support. Painting things as bleak helped that case.",
+            "The source is evidence of Renard's view of the autumn 1554 mood. It is not a reliable measure of how weak Mary's government actually was."
+          ],
+          "knowledge": [
+            "On 'neither respected nor obeyed nor feared' - Mary had defeated the Jane Grey coup in nine days, suppressed Wyatt's Rebellion personally, and negotiated a marriage treaty that significantly restricted Philip's power. Her record by autumn 1554 cuts against Renard's bleak framing.",
+            "On 'King Philip is not going to employ Englishmen' - the marriage treaty explicitly forbade Spaniards holding office in England. Mary kept total control of all offices, lands and revenues. The popular rumour Renard reports was unfounded.",
+            "On the wider regime - Mary streamlined the Council and her inner council 'worked effectively together for most of her reign' and 'successfully carried out her wishes'. Renard's snapshot of one moment of anxiety is not the whole picture."
+          ]
+        },
+        {
+          "paper": "Y137 May 2026",
+          "question": "How far do they support the view that Wyatt's rebellion was a serious threat to Mary?",
+          "attribution": "Simon Renard, dispatch, 27 January 1554 [Imperial/Spanish ambassador]",
+          "excerpt": "Wyatt's men have rebelled in Kent, proclaiming that they will not consent to a foreign marriage... Although the rebels use the foreign marriage as an excuse, their real causes are religion and to favour Elizabeth.",
+          "provenance": [
+            "On the surface this strongly supports the view of a serious threat. Renard reports Kent in rebellion and warns of religion and Elizabeth as the real motives behind the stated complaint against the Spanish marriage.",
+            "Renard was writing from the middle of the Spanish contingent at court, who were genuinely frightened by Wyatt's advance on London. The dispatch reflects their anxieties, and he was asking Charles V for help in the same letters.",
+            "He had every reason to recast the rebellion as religious and pro-Elizabeth. That framing made the rebels look illegitimate and helped defend the Spanish marriage, which was the source of his own influence.",
+            "His information came from his court contacts in the very early days of the rising. He was not in Kent observing the rebels themselves.",
+            "The source is genuine evidence of the alarm inside the Spanish bubble at court in late January 1554, not a reliable measure of the rebels' real motives."
+          ],
+          "knowledge": [
+            "On 'Wyatt's men have rebelled in Kent' - the rebellion raised 3,000 men and reached the gates of London. Government troops under Norfolk deserted to join the rebels, declaring 'We are all Englishmen!' Renard's alarm is not overstated.",
+            "On 'their real causes are religion and to favour Elizabeth' - the rebellion's timing immediately followed Mary's marriage proposal in Parliament, and Wyatt had been loyal to Mary during the Jane Grey affair. He only turned after the marriage was announced. Religion is the convenient reading, not the most likely cause.",
+            "On Renard's framing - Proctor's government-commissioned history also blamed religion, exactly because the regime could not afford to admit popular opposition to Philip. The Spanish ambassador and the regime's chronicler reach the same conclusion for the same reasons."
+          ]
+        },
+        {
+          "paper": "Y137 May 2022",
+          "question": "How far do they support the view that Mary Tudor's government was weak?",
+          "attribution": "The Venetian ambassador, report to the Senate of Venice, 1557",
+          "excerpt": "She is not only brave and valiant, but so courageous and resolute that neither in adversity nor peril did she ever display cowardice... In government and public affairs she is compelled to refer many matters to her councillors and ministers.",
+          "provenance": [
+            "On the surface this both supports and challenges the view. It praises Mary's courage but says she relies heavily on her councillors.",
+            "The Venetian ambassador had no direct stake in English politics. Venice valued accurate information for diplomatic decisions in the Mediterranean.",
+            "The professional and measured tone is the source's biggest danger. Calm prose makes it sound reliable, but the ambassador is still reporting court gossip and surface impressions.",
+            "The line about Mary being 'compelled' to refer to her councillors reflects assumptions about female rule shared across Europe in the 1550s. It is interpretation, not fact.",
+            "The source gives a balanced contemporary judgement on Mary's personal qualities, but it cannot tell us how her government was actually performing day to day."
+          ],
+          "knowledge": [
+            "On Mary 'compelled... to refer matters to her councillors' - Mary did rely on her Council, but she streamlined it (casual councillors excluded from key committees in 1554; inner council established in 1555). The Council 'worked effectively together for most of her reign'.",
+            "On Mary's 'courageous and resolute' character - this matches her refusal to flee London during Wyatt's Rebellion, her personal Guildhall speech, and her willingness to push through Catholic restoration despite Council resistance. The personal qualities described are not just praise.",
+            "On the wider judgement - Mary 'in practice demonstrated that a woman could govern effectively'. She streamlined the Privy Council, passed major religious legislation, managed marriage negotiations, and suppressed Wyatt's Rebellion."
+          ]
+        }
       ]
     },
-
     {
       "id": "gen-003",
       "category": "generic",
       "name": "Government Records",
-      "whatIsIt": "Documents produced by royal government — Acts of the Privy Council, royal proclamations, parliamentary statutes.",
+      "whatIsIt": "Documents produced by royal government  -  Acts of the Privy Council, royal proclamations, parliamentary statutes.",
       "prompts": [
-        "Who: Whoever dominated the council controlled what got recorded. Somerset's arrest was written down by the men who arrested him.",
-        "What: Records decisions, not the arguments and deals behind them. The real politics happened before the clerk picked up his pen.",
-        "Context: A proclamation shows what the government intended, not what actually happened. Check local sources to see if it was enforced.",
-        "Nature: If something had to be proclaimed, it probably wasn't happening naturally on its own.",
-        "How informed: Official records speak in the language of authority — they tell us how the government wanted its actions to appear, not the full reality."
+        "Whoever dominated the council controlled what got recorded. Somerset's arrest was written down by the men who arrested him.",
+        "Records decisions, not the arguments and deals behind them. The real politics happened before the clerk picked up his pen.",
+        "A proclamation shows what the government intended, not what actually happened. Check local sources to see if it was enforced.",
+        "If something had to be proclaimed, it probably wasn't happening naturally on its own.",
+        "Official records speak in the language of authority  -  they tell us how the government wanted its actions to appear, not the full reality."
+      ],
+      "examples": [
+        {
+          "paper": "Y107 Jun 2022",
+          "question": "How far do they support the view that the succession never seriously threatened political stability?",
+          "attribution": "The Privy Council, letter to Mary Tudor, 9 July 1553",
+          "excerpt": "We advise you that our Sovereign Lady Queen Jane is possessed of the crown, not only by good order of old ancient records of this realm, but also by the late King Edward's letters signed with his own hand.",
+          "provenance": [
+            "On the surface this supports the view of an orderly succession through Jane, framed in legal language.",
+            "The letter is dated 9 July, two days before the Council switched sides and proclaimed Mary. By 19 July they had all sworn loyalty to Mary instead.",
+            "This is the document the Council needed Mary to receive to legitimise Jane. It reflects the version of authority they were trying to enforce in that moment.",
+            "'Good order of old ancient records' is doing a lot of work to disguise the fact that Edward's Devise was on shaky legal ground.",
+            "The source tells us what Northumberland's regime needed to be true about the succession, not whether the succession was genuinely under their control."
+          ],
+          "knowledge": [
+            "On 'our Sovereign Lady, Queen Jane is invested and possessed' - the Council had proclaimed Jane on 10 July, but by 19 July they had all switched sides and sworn loyalty to Mary. The 'invested and possessed' framing collapsed in nine days.",
+            "On Edward's 'letters signed with his own hand' - the Devise had no legal basis and went against Henry VIII's Third Act of Succession. Most people believed in hereditary succession as divinely ordained. The Council's legal language could not overcome that.",
+            "On reading this as evidence of a serious succession threat - Mary's accession was widely accepted, Northumberland's troops deserted, and the principle of hereditary succession was reinforced. The threat was contained because the Devise had no popular legitimacy."
+          ]
+        },
+        {
+          "paper": "Y107 Jun 2024",
+          "question": "How far do they support the view that the Marian burnings created opposition to Mary's religious policies?",
+          "attribution": "Mary Tudor to the Privy Council, December 1554",
+          "excerpt": "Touching punishment of heretics, we thinketh it ought to be done without rashness... And especially within London I would wish none to be burnt without some of the Council's presence and – both there and everywhere – good sermons at the same.",
+          "provenance": [
+            "On the surface this challenges the view that the burnings were creating uncontrolled opposition. Mary herself is calling for restraint and managed publicity.",
+            "This is Mary's private instruction to her Council. It shows the regime knew the politics of the burnings were sensitive.",
+            "The insistence that Council members must attend executions in London suggests they understood London as a particular flashpoint.",
+            "The call for 'good sermons' alongside the burnings is propaganda awareness. They knew the executions alone might create the wrong impression.",
+            "The source is strong evidence that Mary herself was conscious of opposition. It does not show how successful her precautions actually were on the ground."
+          ],
+          "knowledge": [
+            "On 'without rashness' - this came just before the burnings began (John Rogers, February 1555). The Council's awareness of risk matches Renard's later report of London murmuring.",
+            "On Council members attending in London - London was the centre of Protestant resistance and the geographical heart of where the burnings were concentrated. The Council understood London as the specific flashpoint Mary identifies.",
+            "On reading Mary's caution as evidence the burnings did not create opposition - Gardiner himself opposed the burnings as 'counter-productive'. After his death in November 1555 the pace increased sharply under Pole. The careful instructions here did not prevent the regime from creating Foxe's martyrs."
+          ]
+        },
+        {
+          "paper": "Y107 Jun 2022",
+          "question": "How far do they support the view that the succession never seriously threatened political stability?",
+          "attribution": "Mary I, last will and testament, 28 October 1558",
+          "excerpt": "My will was written when I thought I was pregnant, leaving the crown to my children ruled by my dearest husband if underage. As I have no heir, I wish my successor under my father's will and Act to fulfil my will.",
+          "provenance": [
+            "On the surface this challenges the view of a serious succession crisis, showing Mary preparing for a lawful transition at the end of her reign.",
+            "This is Mary's revision of her earlier will, made when she knew she was dying. The acknowledgement 'as I have no heir' comes very late.",
+            "The original will was written assuming pregnancy. That delay in facing the reality of the succession itself created political instability throughout her reign.",
+            "The reference to her father's 'will and Act' sidesteps the difficult question of whether Elizabeth is named as heir. It defers the answer.",
+            "The source shows how the regime handled the succession at the last moment, but says nothing about how stable the succession had been throughout Mary's reign."
+          ],
+          "knowledge": [
+            "On 'as I have no heir' - this is Mary acknowledging the structural failure of her reign at the last moment. Her phantom pregnancy in 1555 had raised hopes that were quickly dashed, and Philip had largely abandoned England after 1555.",
+            "On 'my successor under my father's will and Act' - Mary will not name Elizabeth directly. Many Catholics viewed Elizabeth as illegitimate, due to the Pope's refusal of Henry VIII's divorce. Mary's reference to her father's will sidesteps that uncomfortable truth.",
+            "On reading this as 'stable transition' - the succession did pass peacefully to Elizabeth, but she inherited an immediate Catholic challenge to her legitimacy and a country weakened by war and debt. The peaceful handover does not mean the succession had not been an instability throughout Mary's reign."
+          ]
+        },
+        {
+          "paper": "Y137 May 2025",
+          "question": "How far do they support the view that Somerset was responsible for his own downfall?",
+          "attribution": "William Paget, letter to Protector Somerset, 7 July 1549",
+          "excerpt": "I told your grace the truth and was not believed. The king's subjects are out of all discipline, out of obedience, caring neither for protector nor king. And what is the cause? Your own softness?",
+          "provenance": [
+            "On the surface this strongly supports the view that Somerset was responsible for the situation.",
+            "Paget was a senior councillor and close adviser to Somerset, writing in the middle of the 1549 risings. This is contemporary criticism from within Somerset's own circle.",
+            "He had warned Somerset earlier and was now reminding him of it. His tone reflects frustration and the desire to shape policy in the moment.",
+            "Paget was politically aligned with the conservatives. His framing of 'softness' reflects a specific position on how the government should have responded to social unrest.",
+            "The source is genuine evidence of contemporary criticism of Somerset from within his own council, but it is partisan advice and not a neutral judgement."
+          ],
+          "knowledge": [
+            "On 'the king's subjects are out of all discipline' - 1549 saw the most widespread unrest of the Tudor period, over 25 counties. Paget's alarm matches the scale of the actual crisis.",
+            "On 'what is the cause? Your own softness?' - Somerset had earned a reputation as the 'Good Duke' through the Hales enclosure commission and his apparent sympathy for the commons. The Anti-Somerset faction blamed this sympathy for encouraging the unrest. Paget reflects that view directly.",
+            "On reading this as proof Somerset caused the unrest - the deeper causes were structural: inflation, debasement, population pressure rising from 2.3 to 3 million between 1525 and 1551, enclosure, and bad harvests. Somerset's softness made him a target for blame, but he did not create these forces."
+          ]
+        },
+        {
+          "paper": "Y137 May 2025",
+          "question": "How far do they support the view that Somerset was responsible for his own downfall?",
+          "attribution": "Privy Council charges against the Duke of Somerset, 6 October 1549",
+          "excerpt": "The great disobedience remaining among the king's subjects consider that if speedy remedy is not provided, both his majesty's royal person and the whole state might be brought into peril... this and other great disorders had proceeded from the ill government of the lord protector.",
+          "provenance": [
+            "On the surface this strongly supports the view that Somerset's government caused the unrest.",
+            "These charges were drafted by the council that was overthrowing Somerset. They are the justification for the coup, not a neutral account.",
+            "The framing of 'ill government of the lord protector' reflects the information Northumberland's faction allowed to be known at the time.",
+            "The charges had to argue Somerset was uniquely dangerous to justify removing the Protector. Whatever his actual record, the charges had to make the strongest case.",
+            "The source tells us how the post-coup government needed Somerset's downfall to be understood, not whether he was truly to blame."
+          ],
+          "knowledge": [
+            "On 'great disobedience remaining among the king's subjects' - 1549 saw unrest in over 25 counties, including Kett's 16,000 rebels at Norwich and the Western Rebellion in Devon and Cornwall. The unrest was real and serious.",
+            "On 'ill government of the lord protector' - the Anti-Somerset faction (Warwick, Wriothesley, Paget) needed this framing to justify the coup. The evidence suggests the 1552 treason charges against Somerset were fabricated. The October 1549 charges were the opening salvo of the same political process.",
+            "On underlying causes - inflation, debasement, population pressure and enclosure were European-wide problems Somerset did not create. The Vagrancy Act of 1547, with slavery as punishment, reflected fear rather than effective policy. These were structural failings, not personal ones."
+          ]
+        },
+        {
+          "paper": "Y107/Y137 Specimen",
+          "question": "How far do they support the view that female rule was a serious problem in the 1550s?",
+          "attribution": "Act for the Marriage of Queen Mary to Philip of Spain, 1554",
+          "excerpt": "This treaty greatly honours and benefits England. The prince shall enjoy, jointly, the style and honour of king. He shall happily help administer England, preserving its rights, laws, privileges and customs. The Queen shall have total control of all offices, lands and revenues.",
+          "provenance": [
+            "On the surface this challenges the view, presenting a balanced marriage that protects English sovereignty.",
+            "This is a Parliamentary statute drafted to reassure English elites worried about the Spanish marriage.",
+            "The very fact that all these restrictions had to be written into law shows how deep the worry was about female rule and a foreign king.",
+            "'Shall happily help administer' is reassurance language. Acts of Parliament are political documents, not neutral descriptions of how the marriage would actually work.",
+            "The source is strong evidence of how Mary's government tried to manage the political problem of her marriage. The size of the reassurance package itself reveals the scale of the underlying concern."
+          ],
+          "knowledge": [
+            "On 'shall happily help administer England, preserving its rights' - the treaty was the product of careful negotiation by Paget. Philip was named King but had no power in his own right. The treaty's restrictions (no Spaniards in office, no claim after Mary's death, no involvement in Spain's wars) were largely respected.",
+            "On 'the Queen shall have total control of all offices' - this was a real protection of English sovereignty. The marriage still triggered Wyatt's Rebellion in January 1554, but the rebellion was defeated and Mary proceeded with the marriage on these terms.",
+            "On the marriage as evidence of the female rule problem - the elaborate treaty was needed because of anxieties about female rule. But Mary 'in practice demonstrated that a woman could govern effectively' - the structural problem was managed by the treaty, not exposed by it."
+          ]
+        },
+        {
+          "paper": "Y107 Jun 2025",
+          "question": "How far do they support the view that there was widespread opposition to religious changes under Edward VI?",
+          "attribution": "An Act for the abolition and putting away of images and various books, 1549",
+          "excerpt": "The king has issued through Parliament a uniform, quiet and godly order of service called the Book of Common Prayer... However, alongside it are still practised corrupt, untrue and superstitious ceremonies.",
+          "provenance": [
+            "On the surface this supports the view of opposition, since the Act admits Catholic practices were continuing despite the new Prayer Book.",
+            "The Act describes the religious changes as 'uniform, quiet and godly' but then has to explain why further legislation is needed.",
+            "That contradiction is the source's most useful feature. The government was forced to admit non-compliance even while claiming the new order was already settled.",
+            "'Corrupt, untrue and superstitious' is the official Protestant framing of what most parishes were still doing. It does not mean those practices were unpopular with parishioners.",
+            "The source is strong evidence that Protestant reform was running into significant continuing resistance in parishes across the country in 1549."
+          ],
+          "knowledge": [
+            "On 'corrupt, untrue and superstitious ceremonies' continuing - the 1549 Prayer Book was a deliberate compromise so vague on the Eucharist that it 'pleased nobody'. Its ambiguity prompted the Western Rebellion in early 1549.",
+            "On the Act admitting non-compliance - at parish level compliance was 'patchy and often superficial'. Evidence from wills shows little support for Protestant changes except in London, the south-east and East Anglia. Many parishes removed images when required but continued private Catholic devotion.",
+            "On reading this as widespread opposition - 1549 also saw 25 counties in unrest. The Western Rebellion of that year was triggered specifically by the First Prayer Book. The Act's concern about continuing Catholic practice and the religious rebellion were happening at the same moment."
+          ]
+        },
+        {
+          "paper": "Guide Source Practice 5",
+          "question": "How far do they support the view that enclosure was the most important cause of unrest in 1549?",
+          "attribution": "Protector Somerset, letter to Philip Hoby, 24 August 1549",
+          "excerpt": "Some rebels wish to pull down enclosures and parks; some want to recover their common land; others pretend religion is their motive... all have a great hatred of gentlemen and regard them as their enemies. The ruffians among them, and the soldiers, who are the leaders, look for loot.",
+          "provenance": [
+            "On the surface this supports the view by putting enclosure and common land first in the rebels' complaints.",
+            "This is Somerset's private explanation to a close adviser, written during the rebellions. He had every reason to understand the causes correctly.",
+            "But Somerset was the Protector responsible for managing the situation. His framing of the rebels as motivated by hatred of gentlemen and looting was politically convenient.",
+            "He plays down religion as the rebels just 'pretending' their cause, which fits the official line that the Western Rising was not a real religious protest.",
+            "The source gives the government's own analysis of motive in summer 1549. It tells us how Somerset wanted the rebellions understood as much as what was actually driving them."
+          ],
+          "knowledge": [
+            "On 'some rebels wish to pull down enclosures and parks' - Kett's Rebellion drew 16,000 rebels in Norfolk explicitly focused on enclosure and high rents. In Norwich, 6% of the population owned 60% of the land. The grievance was real.",
+            "On 'others pretend religion is their motive' - this is Somerset playing down the Western Rebellion. Its demands were almost entirely religious, drawn up by literate local clergy and triggered by the First Prayer Book. Somerset is dismissing the religious cause that does not fit his preferred explanation.",
+            "On 'great hatred of gentlemen' - Lord Sheffield was beaten to death by rebels at Norwich. At Bodmin the Western rebels chanted 'Kill all the gentlemen!' The hatred Somerset describes was real, but it was a symptom of structural inequality, not loot-seeking by 'ruffians'."
+          ]
+        },
+        {
+          "paper": "Guide Source Practice / Y107 past papers",
+          "question": "How far do they support the view that the introduction of Protestantism under Edward VI was difficult?",
+          "attribution": "Second Act of Uniformity, 1552",
+          "excerpt": "In spite of the introduction of the First Common Prayer Book by Parliament, a great number of people in this realm wilfully and damnably refuse to come to their parish churches on Sundays and holy days... Anyone who uses another form of worship shall be imprisoned for six months.",
+          "provenance": [
+            "On the surface this strongly supports the view that Protestantism was difficult to introduce.",
+            "The Act itself admits that 'a great number of people' were refusing to attend their parish churches in 1552.",
+            "The very fact that a Second Act of Uniformity was needed three years after the first shows the government knew the religious changes were not landing.",
+            "The threat of six months in prison for non-conforming worship is the kind of penalty regimes only reach for when softer methods have failed.",
+            "The source is very strong evidence that Protestant reform was genuinely difficult to enforce at parish level in Edward's reign."
+          ],
+          "knowledge": [
+            "On 'a great number of people... wilfully refuse to come to their parish churches' - this is the government admitting the problem in its own legislation. Bishop Hooper's visitations of Gloucester found 171 of 311 clergy could not repeat the Ten Commandments. The clerical resistance was as much an obstacle as the lay one.",
+            "On the threat of six months' imprisonment - the lack of punishment for non-attendance under the First Act had encouraged non-conformity. The Second Act tightened enforcement, but Edward died in 1553. There was no time for the policy to bed in.",
+            "On wider de facto change - evidence from wills shows little support for Protestant changes except in London, the south-east and East Anglia. The rapid restoration of Catholicism under Mary suggests traditional religion had retained popularity."
+          ]
+        }
       ]
     },
-
     {
       "id": "gen-004",
       "category": "generic",
       "name": "Legal Records",
-      "whatIsIt": "Court proceedings, attainders, and execution records — including the Seymour attainders and Marian heresy trials.",
+      "whatIsIt": "Court proceedings, attainders, and execution records  -  including the Seymour attainders and Marian heresy trials.",
       "prompts": [
-        "Who: Charges were constructed by political enemies. Read them as evidence of what those enemies needed people to believe.",
-        "What: Tudor treason trials confirmed outcomes already decided. Parliamentary attainder needed no evidence at all.",
-        "Context: Somerset's original charges were so weak Northumberland had to retry him on the lesser charge of felony — that tells us something important about the strength of the case.",
-        "Nature: Confessions from condemned prisoners were often written by others and read aloud as the price of a less painful death.",
-        "How informed: These documents tell us what the government needed people to believe, not what the accused actually did."
+        "Charges were constructed by political enemies. Read them as evidence of what those enemies needed people to believe.",
+        "Tudor treason trials confirmed outcomes already decided. Parliamentary attainder needed no evidence at all.",
+        "Somerset's original charges were so weak Northumberland had to retry him on the lesser charge of felony  -  that tells us something important about the strength of the case.",
+        "Confessions from condemned prisoners were often written by others and read aloud as the price of a less painful death.",
+        "These documents tell us what the government needed people to believe, not what the accused actually did."
+      ],
+      "examples": [
+        {
+          "paper": "Y107 Oct 2021",
+          "question": "How far do they support the view that Somerset was to blame for political instability?",
+          "attribution": "Proceedings in Parliament, 17 January 1549 [Act of Attainder against Thomas Seymour]",
+          "excerpt": "In the first year of King Edward's reign, the Lord Protector bears witness that the admiral, out of his great pride and ambition, would have seized control of his Majesty, to the King's peril and the overthrow of the state.",
+          "provenance": [
+            "On the surface this strongly supports the view that the Seymour brothers' rivalry created political instability.",
+            "This is an Act of Attainder drafted by Somerset against his own brother. Parliamentary attainder required no evidence and no trial.",
+            "'Pride and ambition' and 'overthrow of the state' is the maximum case Somerset needed to make to justify executing Thomas.",
+            "The 'Lord Protector bears witness' line is Somerset using his official position to give evidence in a process he himself controlled.",
+            "The source tells us how Somerset chose to destroy his brother in 1549, not what Thomas Seymour had actually done."
+          ],
+          "knowledge": [
+            "On Thomas Seymour's 'great pride and ambition' - he had courted Edward, married Katherine Parr, and was suspected of plotting to seize the King. The case had political logic, but Parliamentary attainder needed no evidence.",
+            "On Somerset acting against instability - executing his own brother in January 1549 set a 'dangerous precedent of faction leading to execution of an enemy'. The same precedent would be used against Somerset himself three years later.",
+            "On the Seymour rivalry as evidence of political instability - the events expose the structural problem of Edward's minority: powerful uncles competing for influence over a child king with no strong royal presence to balance them. Henry's Regency Council solution had already collapsed by 1547."
+          ]
+        },
+        {
+          "paper": "Y107 Oct 2021 / Y137 May 2025",
+          "question": "How far do they support the view that Somerset was to blame for / responsible for his own downfall?",
+          "attribution": "Parliamentary record of charges made against the Duke of Somerset, January 1552",
+          "excerpt": "Northumberland feared Somerset as the only person who might take away his control of the King. The duke planned to charge Somerset with treason for assembling men to kill him. The Lords debated but would not find Somerset guilty of any charge except 'conspiring to imprison Northumberland'.",
+          "provenance": [
+            "On the surface this challenges the view. The Lords would not convict Somerset of treason.",
+            "This is the parliamentary record of Somerset's trial. Tudor treason trials usually confirmed an outcome already decided, so the Lords' refusal here is significant.",
+            "Northumberland had to retry Somerset on the lesser charge of felony to get an execution. The original case was so weak even a sympathetic court would not accept it.",
+            "'Northumberland feared Somerset as the only person who might take away his control of the King' is the source itself naming the political motive for the prosecution.",
+            "The source is strong evidence that the case against Somerset in 1551-52 was constructed for political reasons by Northumberland, not because of genuine treason."
+          ],
+          "knowledge": [
+            "On the Lords refusing to find Somerset guilty of treason - the evidence suggests the charges against Somerset were fabricated to remove him as a rival to Northumberland. The Lords' refusal to convict on treason confirms the political construction of the case.",
+            "On 'Northumberland feared Somerset as the only person who might take away his control of the King' - this is the source itself identifying the political motive. Somerset had been allowed back on the Council in the hope he would support Northumberland; the relationship broke down when Northumberland saw him as a continuing threat.",
+            "On the conviction for felony - this was a 'dangerous precedent of faction leading to execution of an enemy'. The same political logic would shape Northumberland's own execution after Mary's accession the following year."
+          ]
+        },
+        {
+          "paper": "Y107 Jun 2024",
+          "question": "How far do they support the view that the Marian burnings created opposition?",
+          "attribution": "Chelmsford Justices of the Peace, letter to Bishop Bonner, 27 April 1555",
+          "excerpt": "In our opinion he is one of the most arrogant heretics that hath been heard speak, or ever came before you, and not fit to be kept here in any jail, as well for fear of corrupting others.",
+          "provenance": [
+            "On the surface this challenges the view of opposition to the burnings, showing local officials enthusiastically pushing heresy prosecutions.",
+            "These are Essex JPs writing to Bishop Bonner. They are conservative Catholics taking the regime's policy seriously.",
+            "The framing of the prisoner as 'arrogant' and dangerous to others is the standard government language for justifying harsh treatment.",
+            "JPs were the local face of regime policy. Their enthusiasm is genuine but unrepresentative of the wider population. A Protestant labourer in the same village might have written a very different letter.",
+            "The source is good evidence of how the regime's policy was enforced locally in conservative areas, but it cannot stand for popular opinion as a whole."
+          ],
+          "knowledge": [
+            "On the JPs calling the prisoner 'one of the most arrogant heretics' - by April 1555 the burnings had begun (Rogers, February). Essex was one of the Protestant strongholds where burnings would be concentrated. The JPs are local conservatives within the geographic heart of Protestant resistance.",
+            "On 'fear of corrupting others' - the regime's whole strategy assumed visible burnings would deter, not radicalise. Foxe's later Book of Martyrs would show this was mistaken. The JPs are echoing a regime line that turned out to be wrong.",
+            "On reading JP enthusiasm as evidence of popular support - Essex saw significant Protestant flight; around 800 Protestants had fled abroad by early 1554. JPs were the local face of regime policy, not a cross-section of opinion."
+          ]
+        },
+        {
+          "paper": "Y107 Jun 2022",
+          "question": "How far do they support the view that the succession never seriously threatened political stability?",
+          "attribution": "Lady Jane Dudley, letter to Queen Mary I, August 1553",
+          "excerpt": "The Duke of Northumberland announced King Edward's death. He said the King had considered it treason to acknowledge Mary, Your most serene Majesty, or Lady Elizabeth, as true heirs of the Crown... I was amazed and troubled, overcome by sudden grief and fell to the ground, weeping very bitterly.",
+          "provenance": [
+            "On the surface this challenges the view of a serious succession threat, presenting Jane as an unwilling pawn.",
+            "Jane was writing to Mary while a prisoner in the Tower. She was writing to save her life.",
+            "Presenting herself as overcome by grief and amazement deliberately shifts blame onto Northumberland. Whether she really felt this is unknowable.",
+            "This is also a religious appeal. Jane is positioning herself as a victim of Northumberland's ambition, not as Mary's enemy.",
+            "The source tells us what a prisoner needed Mary to believe about her role in the succession crisis, not whether she was genuinely as passive as she claims."
+          ],
+          "knowledge": [
+            "On Jane's claim that Northumberland forced the succession - Northumberland did orchestrate the plot, marrying Jane to his son Guildford Dudley in May 1553 and keeping Edward's death secret for two days. Jane's account of being pushed is consistent with that.",
+            "On Jane being 'overcome by sudden grief' - Jane was 16 and writing from the Tower as Mary's prisoner. The presentation is calculated to position herself as Northumberland's victim. Mary did initially show leniency to many opponents, and the letter is shaped to that audience.",
+            "On reading this as 'no serious threat' - the affair required military mobilization, resulted in multiple executions, and exposed how a determined faction could attempt to seize the throne. Mary's leniency in resolving it does not mean the threat had not been real."
+          ]
+        },
+        {
+          "paper": "Guide Source Practice 4",
+          "question": "How far do they support the view that Mary's government was weak and divided?",
+          "attribution": "Sir Nicholas Throckmorton, evidence given at his trial for treason, 1554",
+          "excerpt": "I did see the whole realm was against it [the marriage] and although I counselled caution and urged restraint on those who would do mischief, it is I who is brought here before you. My Lords, in no wise am I guilty of treason because it was no treason to talk against the coming hither of the Spaniards.",
+          "provenance": [
+            "On the surface this supports the view of a weak and divided government, with prominent figures openly criticising the Spanish marriage.",
+            "This is Throckmorton's defence at his own treason trial. He had every reason to present himself as a moderate voice rather than a conspirator.",
+            "The claim that 'the whole realm was against' the marriage is a defence strategy. He needed to normalise his own views as widespread, not subversive.",
+            "He was acquitted, which is rare in Tudor treason trials. That acquittal itself is the most striking piece of evidence about the political mood.",
+            "The source is strong evidence that opposition to the Spanish marriage extended into government circles, but Throckmorton's framing is shaped by his immediate need to save his life."
+          ],
+          "knowledge": [
+            "On 'the whole realm was against' the marriage - the marriage triggered Wyatt's Rebellion, with 3,000 men and Norfolk's troops deserting. There was real and widespread opposition. Throckmorton is not inventing this, but he is using it as a defence.",
+            "On Throckmorton's acquittal - this was rare in Tudor treason trials. The acquittal itself shows there was significant elite sympathy with opposition to the marriage, even among judges.",
+            "On reading this as evidence of weak government - despite the rebellion, Mary proceeded with the marriage on the agreed treaty terms. The Council 'worked effectively together for most of her reign' and 'successfully carried out her wishes'. Internal opposition was vocal but contained."
+          ]
+        }
       ]
     },
-
     {
       "id": "gen-005",
       "category": "generic",
       "name": "Churchwarden Accounts",
-      "whatIsIt": "Parish financial records — spending on church upkeep, buying Bibles, whitewashing images, restoring rood screens.",
+      "whatIsIt": "Parish financial records  -  spending on church upkeep, buying Bibles, whitewashing images, restoring rood screens.",
       "prompts": [
-        "Who: Written by local officials doing their administrative duty — not making theological statements.",
-        "What: Their value is in their mundanity. Written to record spending, not to persuade. When a parish records whitewashing images, that is real behaviour — not just an intention.",
-        "Nature: Never read belief from compliance. A churchwarden who buys a Protestant Bible under Edward and restores a rood screen under Mary is following the law.",
-        "Context: They reveal huge regional variation. London looked very different from Cornwall — be careful about national generalisations.",
-        "How informed: These are the most direct evidence we have of what actually happened at parish level, rather than what the government wanted to happen."
+        "Written by local officials doing their administrative duty  -  not making theological statements.",
+        "Their value is in their mundanity. Written to record spending, not to persuade. When a parish records whitewashing images, that is real behaviour  -  not just an intention.",
+        "Never read belief from compliance. A churchwarden who buys a Protestant Bible under Edward and restores a rood screen under Mary is following the law.",
+        "They reveal huge regional variation. London looked very different from Cornwall  -  be careful about national generalisations.",
+        "These are the most direct evidence we have of what actually happened at parish level, rather than what the government wanted to happen."
+      ],
+      "examples": [
+        {
+          "paper": "Illustrative source",
+          "question": "How far do these sources support the view that the religious changes of Edward and Mary were welcomed at parish level?",
+          "attribution": "Illustrative churchwarden accounts in the style of an East Anglian parish, 1547-1555",
+          "excerpt": "1547: Paid for the taking down of the rood and the whitening of the church walls by King's order, vij shillings. 1548: Paid for an English Bible chained at the lectern, xviij pence. 1549: Paid to John Cookes for the safe keeping of the silver chalice and silver pyx, iij shillings. 1551: Paid to the parish clerk for reading the new Prayer Book at the Sundays and Holy Days, xii pence. 1554: Paid for setting up again the high altar and for the cleaning of the chalice and pyx, v shillings. 1555: Paid for the painter to make new the rood loft and the figures thereon, xx shillings.",
+          "provenance": [
+            "On the surface this challenges the view of welcome. The careful keeping of the chalice and pyx in 1549 shows a parish that complied outwardly with Edward's reforms but kept Catholic equipment ready in case the changes were reversed.",
+            "Churchwarden accounts were written to record spending, not to make theological statements. The neutrality of the form is what makes them so useful for showing what parishes actually did rather than what they said.",
+            "The reappearance of the chalice and pyx in 1554 and the restoration of the rood in 1555 suggests the parish never really committed to the Protestant changes.",
+            "The entry to John Cookes for safe keeping in 1549 is the most telling: this was a parish that expected the Reformation to be reversed.",
+            "The source is excellent evidence of parish-level pragmatism, but a single parish's accounts cannot tell us how representative this pattern was."
+          ],
+          "knowledge": [
+            "On 'safe keeping of the silver chalice and silver pyx' in 1549 - de facto change under Edward was patchy. Evidence from wills shows little support for Protestant changes outside London, the south-east and East Anglia. Many parishes removed images when required but continued private Catholic devotion.",
+            "On 'setting up again the high altar' in 1554 - Catholic worship returned speedily across the country under Mary. Most church records identify Catholic practice resumed within months of Mary's accession, and people were 'willing to spend their minimal funds' on restoration.",
+            "On reading this as evidence of universal welcome - the parish complied with both regimes. Bishop Hooper's visitations of Gloucester found 171 of 311 clergymen could not even repeat the Ten Commandments. Compliance at parish level often reflected pragmatism more than belief, on both sides of the Reformation."
+          ]
+        },
+        {
+          "paper": "Illustrative source",
+          "question": "How far do these sources support the view that the Reformation was welcomed in London and the south-east?",
+          "attribution": "Illustrative churchwarden accounts in the style of a London parish, 1547-1558",
+          "excerpt": "1547: Paid to John Smith and his man for the taking down of the rood and the breaking of the high altar, xviij shillings. Paid for the painter to whiten over the wall paintings of saints, vj shillings. 1548: Paid for the English Bible chained at the lectern, ij shillings. 1551: Paid for the new communion table and a fair cloth for the same, viij shillings. 1552: Paid for the Second Book of Common Prayer for the use of the parish, iij shillings. 1554: Paid to set up a temporary altar as required by the bishop's officer, ij shillings vj pence. 1556: Paid to the painter for the figure of the rood, viij shillings; we had no money for the loft. 1558: Paid for cleaning and storing the communion table for safe keeping.",
+          "provenance": [
+            "On the surface this strongly supports the view. The parish removes the rood, whitens the wall paintings, buys the Bible and the prayer book promptly under Edward, and restores Catholic equipment under Mary only at the minimum required.",
+            "This is one London parish's spending record over eleven years. Churchwarden accounts were written to track money, not to make statements about faith, which is what makes them so useful.",
+            "The contrast with parishes in the north and west could not be sharper. The fast Edwardian compliance shows what was possible where reform had genuine local backing.",
+            "The Marian restoration entries are revealing. The 'temporary altar' of 1554, the rood figure with no loft in 1556, and the storing of the communion table in 1558 all suggest minimal grudging compliance, not enthusiasm.",
+            "The source is strong evidence of London's Protestant character, but London was the most Protestant area in the country. A single London parish cannot stand for England."
+          ],
+          "knowledge": [
+            "On the speed of Edwardian compliance - de facto change under Edward was patchy nationally, but London, the south-east and East Anglia were the strongholds where Protestant change took hold most fully. Evidence from wills supports this geographical pattern.",
+            "On the minimal Marian restoration - around 800 Protestants fled abroad by early 1554, many of them from London. Those who stayed often complied with Mary's restoration outwardly while waiting for the regime to end.",
+            "On the 1558 'storing of the communion table' - Mary died on 17 November 1558. A parish storing rather than destroying its communion table was preparing for a swift Elizabethan reversal, which came in 1559."
+          ]
+        },
+        {
+          "paper": "Illustrative source",
+          "question": "How far do these sources support the view that there was widespread enthusiasm for the Catholic restoration under Mary?",
+          "attribution": "Illustrative churchwarden accounts in the style of a Lancashire parish, 1554-1558",
+          "excerpt": "1554: Paid for the setting up of the high altar with new linen, x shillings. Paid to William the carver for the figure of Our Lady and Saint John for the rood loft, xxvi shillings viij pence. 1555: Paid for the great banner of the patron saint, used in procession, xv shillings. Paid for new candles before the rood and at the altar of Our Lady, iv shillings. 1556: Paid to the players of the Corpus Christi play, xii shillings. Paid to the priest for the trental of the souls of those parishioners deceased without proper rites under the late king, x shillings. 1557: Paid for the visitation by my Lord Cardinal's officer and for the banquet of the same, xxx shillings. Paid for the gilding of the chalice and the new pyx, xviij shillings.",
+          "provenance": [
+            "On the surface this strongly supports the view. The parish is spending substantial sums on rood figures, banners, candles, the Corpus Christi play, and even retrospective masses for those who died under Edward. This is investment, not compliance.",
+            "These are routine financial records of one Lancashire parish, but the scale and choice of expenditure are themselves the most useful evidence. Money for the Corpus Christi play and the priest's banquet at the visitation are choices, not requirements.",
+            "The entry for the trental for parishioners who died under Edward 'without proper rites' is unusually revealing. The parish was paying retrospectively to make good what it saw as a religious wrong.",
+            "The northwest was the most conservative part of the country. Lancashire churchwarden accounts of this kind would look very different from London accounts of the same period.",
+            "The source is strong evidence of genuine Catholic enthusiasm in one Lancashire parish, but the regional contrast with London means this cannot be used to claim national enthusiasm."
+          ],
+          "knowledge": [
+            "On the parish spending substantial money on restoration - Catholic worship returned speedily across the country, and in the North and West restoration was 'welcomed rather than merely accepted'. Lancashire fits the geographical pattern of strongest enthusiasm.",
+            "On the trental for those who died under Edward - this implies belief in purgatory and the efficacy of masses for the dead, which Protestants rejected. Retrospective masses suggest the parish saw Edwardian religion as a temporary disaster they were now correcting.",
+            "On the Corpus Christi play - the great medieval mystery plays had largely been suppressed or fallen away under Edward. Their revival under Mary signalled real local Catholic life, not just official compliance with the Royal Injunctions of 1554."
+          ]
+        }
       ]
     },
-
     {
       "id": "gen-006",
       "category": "generic",
       "name": "Visitation Records",
-      "whatIsIt": "Records of bishops inspecting parishes — checking equipment, services, and whether clergy were teaching correctly.",
+      "whatIsIt": "Records of bishops inspecting parishes  -  checking equipment, services, and whether clergy were teaching correctly.",
       "prompts": [
-        "Who: Written by bishops and their officials — reflects the priorities of church authority, not ordinary parishioners.",
-        "What: Standard questions produce standard answers. This creates a false impression of uniformity across very different parishes.",
-        "Context: Non-compliance recorded here is some of the best evidence for the gap between what reform intended and what it actually achieved.",
-        "How informed: The view from above. Tells us what bishops were looking for, not what ordinary people experienced.",
-        "Nature: Most useful when combined with churchwarden accounts and wills. No single local source gives the full picture."
+        "Written by bishops and their officials  -  reflects the priorities of church authority, not ordinary parishioners.",
+        "Standard questions produce standard answers. This creates a false impression of uniformity across very different parishes.",
+        "Non-compliance recorded here is some of the best evidence for the gap between what reform intended and what it actually achieved.",
+        "The view from above. Tells us what bishops were looking for, not what ordinary people experienced.",
+        "Parishes learned to give the right answers. Compliance recorded here often means a parish that knew what its bishop wanted to hear, not one that had actually reformed."
+      ],
+      "examples": [
+        {
+          "paper": "Y107 Jun 2023",
+          "question": "How far do they support the view that there was resistance and opposition to Mary's religious policies?",
+          "attribution": "Archdeacon Harpsfield's Visitation, 1557 [Canterbury diocese parishes ordered to fit out churches for Catholic worship]",
+          "excerpt": "The Church of Goodnestone: First, front cloths for the altar for the holidays and a canopy and veil against Lent. The reparations as tiling and glazing to be done upon the Chancel at the said Michaelmas.",
+          "provenance": [
+            "On the surface this challenges the view of resistance, showing parishes complying with Catholic requirements for liturgical equipment.",
+            "Visitation records were produced by bishops and their officials. They reflect what the church authorities were looking for, not what parishioners actually felt.",
+            "The fact that these items had to be ordered in 1557, four years into Mary's reign, suggests the parish was behind on the basic equipment needed for Catholic worship.",
+            "Visitations work to a standard checklist. Parishes learn the right answers to give. Compliance recorded here often means a parish that knew what the visitor wanted to hear.",
+            "The source is more useful as evidence of the gap between Catholic policy and parish reality in Kent in 1557 than as evidence of genuine religious revival."
+          ],
+          "knowledge": [
+            "On items being ordered in 1557 - Mary's reign had begun in 1553. The Royal Injunctions of 1554 had restored traditional Catholic practices, and the Second Act of Repeal had reversed all post-1529 religious legislation. The fact that basic equipment still needed ordering four years in shows that restoration at parish level was a slow practical process.",
+            "On the parish's compliance - the wider picture is that Catholic worship returned speedily and people were 'willing to spend their minimal funds' on restoration. Even in Protestant areas like Kent, parishes returned to Catholic practice without visible opposition.",
+            "On reading this as evidence of resistance - over 800 clergy were deprived for failing to return to Catholic practice, but this was clerical resistance rather than parish revolt. Mary's restoration was 'more successful than the Edwardian Reformation had been'; the slowness in particular parishes shows the gap between policy and patchwork local implementation, not opposition."
+          ]
+        },
+        {
+          "paper": "Illustrative source",
+          "question": "How far do these sources support the view that the Edwardian Reformation was difficult to enforce in practice?",
+          "attribution": "Illustrative visitation findings in the style of Bishop Hooper's visitation of the diocese of Gloucester, 1551-52",
+          "excerpt": "The Vicar of Bisley: Could not repeat the Lord's Prayer in English. Said that he had been ordained under King Henry and was now too old to learn. The parish: The altar yet standing as it had been. No communion table provided. The English Bible chained at the lectern but the parishioners cannot read it and the priest does not read from it. The Rector of Dursley: Could repeat the Lord's Prayer but did not know who was the author of it. The parish: The wall paintings whitened over by command, but the rood loft yet standing with the figures hidden behind a curtain.",
+          "provenance": [
+            "On the surface this strongly supports the view. The findings record clerical ignorance, parishes ignoring the order to replace altars, hidden Catholic equipment, and Bibles that go unread.",
+            "Visitation records were produced by bishops and their officials, not by ordinary parishioners. They reflect what church authorities were looking for: equipment, services, clerical knowledge.",
+            "The format of findings against named parishes and priests was the standard administrative tool of Tudor religious enforcement. The records exist because the bishop wanted leverage to improve compliance.",
+            "Bishops who were committed reformers would compile findings that showed how far there was to go. A more conservative bishop in the same diocese might have recorded the same parishes very differently.",
+            "The source is strong evidence of widespread non-compliance with Edwardian reform in one diocese in 1551-52, but the bishop's choice of what to investigate and how to record it shapes the picture as much as the parishes' actual practice."
+          ],
+          "knowledge": [
+            "On the vicar who could not repeat the Lord's Prayer - Bishop Hooper's actual visitation of Gloucester in 1551 found 171 of 311 clergymen unable to repeat the Ten Commandments and 40 unable to find the Lord's Prayer in the Bible. Clerical ignorance was a structural obstacle to Protestant reform, not an isolated problem.",
+            "On 'the altar yet standing' - the order to replace altars with communion tables had gone out by 1550. Two years later, parishes were still resisting. Evidence from churchwarden accounts confirms that altars were often the last thing to be removed.",
+            "On the rood loft figures hidden behind a curtain - this fits a pattern of parishes complying outwardly while keeping Catholic equipment in case the regime changed. The speed of restoration under Mary in 1553-54 confirms that much of this hidden equipment came back into use very quickly."
+          ]
+        }
       ]
     },
-
     {
       "id": "gen-007",
       "category": "generic",
       "name": "Wills",
       "whatIsIt": "Legal documents recording last wishes, including religious preambles that can indicate Catholic or Protestant beliefs. Survive in very large numbers.",
       "prompts": [
-        "Who: A wealthy merchant dictating their own will is a very different source from a labourer whose parish priest wrote it for them. The agency of the testator matters enormously.",
-        "What: Their evidential power is statistical, not anecdotal. One will proves almost nothing — hundreds from one area tracked over time can reveal real patterns.",
-        "Context: Were testators writing their own words, or repeating phrases the scribe suggested? The two are very different things.",
-        "How informed: Most students only see a handful of examples. That is not enough to draw conclusions from.",
-        "Nature: Religious preambles can reflect genuine belief, legal convention, or simply whatever formula the local clergyman offered."
+        "A wealthy merchant dictating their own will is a very different source from a labourer whose parish priest wrote it for them. The agency of the testator matters enormously.",
+        "Religious preambles read as personal belief. In reality, the same phrasing appears across dozens of wills written by the same scribe. The surface is intimate. The reality is often formulaic.",
+        "Were testators writing their own words, or repeating phrases the scribe suggested? The two are very different things.",
+        "Most students only see a handful of examples. That is not enough to draw conclusions from.",
+        "Religious preambles can reflect genuine belief, legal convention, or simply whatever formula the local clergyman offered."
+      ],
+      "examples": [
+        {
+          "paper": "Illustrative source",
+          "question": "How far do these sources support the view that traditional Catholic beliefs remained strong in northern England under Edward VI?",
+          "attribution": "Illustrative will of a Yorkshire husbandman, proved 1551",
+          "excerpt": "In the name of God, Amen. I, Robert Hodgson of the parish of [X], husbandman, being whole of mind and remembrance, do make this my last will. First, I bequeath my soul unto Almighty God my Maker and Redeemer, and to Our Blessed Lady Saint Mary, and to all the saints and holy company of heaven, trusting through their intercession to be saved. My body to be buried within the churchyard of my said parish. I give unto my parish priest to sing a trental of masses for my soul, vj shillings viij pence. I give unto the high altar of my parish church for tithes forgotten, xij pence. I give to the poor men of the said parish, that they pray for me, iij shillings. The residue of all my goods, after my debts and funeral expenses are paid, I give to my wife Margaret, whom I make my sole executrix.",
+          "provenance": [
+            "On the surface this strongly supports the view. The invocation of the Virgin Mary and the saints, the trust in their intercession, the trental of masses paid for, the bequest to the high altar, and alms to the poor for prayers all signal unmistakably Catholic belief.",
+            "But this is the will of one Yorkshire husbandman in 1551, almost certainly drafted by his parish priest. The wording reflects the scribe's preferred formula more than Hodgson's personal theology.",
+            "The same phrases appear across dozens of wills written by the same scribe in the same parish. What looks intimate is often formulaic legal language imposed by the priest at the bedside.",
+            "The specific bequests reveal a parish openly ignoring central reform. The trental of masses had been outlawed in principle by the dissolution of the chantries in 1547, and high altars had been ordered replaced with communion tables in 1550.",
+            "The source is strong evidence of continuing Catholic practice in one Yorkshire parish in 1551, but a handful of wills cannot stand for a whole region, and the formula does not necessarily reflect Hodgson's own beliefs."
+          ],
+          "knowledge": [
+            "On 'Our Blessed Lady Saint Mary' and 'the saints and holy company of heaven' - invocation of the Virgin and the saints, and the doctrine of saintly intercession, were core Catholic beliefs that Protestants rejected. In Yorkshire and the north, traditional religion remained strong under Edward. Evidence from wills shows little support for Protestant changes outside London, the south-east and East Anglia.",
+            "On 'a trental of masses for my soul' - paying a priest to say masses for the dead implied belief in purgatory, which Protestants rejected. The chantries had been dissolved in 1547 partly to eliminate this practice. Conservative parishes ignored the dissolution and continued these formulas in wills well into Edward's reign.",
+            "On 'the high altar of my parish church' - altars had been ordered replaced with communion tables by 1550. The formula continues here in 1551, which shows the parish dragging its feet on central reform. This was common in the north and west, where de facto compliance with the Edwardian Reformation was patchy."
+          ]
+        },
+        {
+          "paper": "Illustrative source",
+          "question": "How far do these sources support the view that the Edwardian Reformation had transformed religious belief among ordinary English people?",
+          "attribution": "Illustrative will of a London merchant, proved 1551",
+          "excerpt": "In the name of God, Amen. I, Thomas Marsh of the parish of St Mary Aldermary in the City of London, mercer, being of whole and perfect mind, do make this my last will and testament. First, I bequeath my soul unto Almighty God my Maker and my only Saviour Jesus Christ, by whose precious blood alone I trust to be saved, and to no creature nor saint, and my body to be buried without pomp or candle in the churchyard of my said parish. I will that no dirge nor month's mind be kept for me, but that the cost thereof be given to the poor. I bequeath to my apprentice John Walker two English Bibles, that he may read them and instruct his household. The residue of my goods I leave to my wife Joan, whom I make my sole executrix, charging her to bring up our children in the true knowledge of God's Word.",
+          "provenance": [
+            "On the surface this strongly supports the view. The will rejects saintly intercession explicitly, refuses Catholic funeral rites, redirects funeral expenses to the poor, and bequeaths English Bibles. The Protestant theology is unmistakable.",
+            "This is the will of one London merchant in 1551. Merchants tended to be more literate, more independent of parish clergy, and more likely to have dictated their own words than husbandmen further from the capital.",
+            "The explicit rejection of saints and funeral rites is unusual. Most Protestant wills of this period are less direct, often using the formula 'trusting through Christ alone' without naming what is being rejected. Marsh's wording is unusually emphatic.",
+            "St Mary Aldermary was in the heart of the City of London, the most Protestant area in the country. The audience for this will, including the parish priest who would witness it, would have been broadly sympathetic.",
+            "The source is strong evidence of committed Protestant belief in one London merchant in 1551, but London was the most Protestant area in England, and a wealthy merchant's will is not typical of how ordinary people made their bequests."
+          ],
+          "knowledge": [
+            "On 'to no creature nor saint' - this explicit rejection of saintly intercession was core Reformed theology. Evidence from wills shows that London, the south-east and East Anglia were the strongholds where Protestant ideas took genuine hold. This will fits the geographical pattern.",
+            "On 'no dirge nor month's mind' - dirges and month's mind masses were Catholic practices for the souls of the dead. Their explicit rejection here goes further than most Protestant wills of the period, which often simply omit such requests rather than forbid them.",
+            "On the bequest of two English Bibles - the English Bible had been chained in every parish church under Henry VIII's 1538 injunction and confirmed under Edward. By 1551 English Bibles were widely available in London, but their use in family instruction marks Marsh as an actively practising Protestant, not just a passive conformist."
+          ]
+        }
       ]
     },
-
     {
       "id": "edw-001",
       "category": "edward",
       "name": "Edward VI's Chronicle",
-      "whatIsIt": "Edward VI's personal journal from around 1549 — recording council decisions, rebellions, and religious change in a terse, factual style.",
+      "whatIsIt": "Edward VI's personal journal from around 1549  -  recording council decisions, rebellions, and religious change in a terse, factual style.",
       "prompts": [
-        "Who: Written by a boy raised by Protestant humanist tutors. His view of events reflects their values as much as his own.",
-        "What: Presented as a private diary — but may have been written to show Edward as an active, capable ruler despite his age.",
-        "How informed: After 1549, Edward's information came largely through Northumberland. He is probably repeating Northumberland's version of events without questioning it.",
-        "Context: He records Somerset's coming execution with almost no emotion. Reading alongside ambassador reports reveals how much the Chronicle leaves out.",
-        "Typicality: Edward never questions Northumberland's actions or the pace and purpose of the Reformation. That absence of doubt is itself revealing."
+        "Written by a boy raised by Protestant humanist tutors. His view of events reflects their values as much as his own.",
+        "Presented as a private diary, but the formal style and likely audience suggest it was always intended to be read. Almost certainly meant to demonstrate Edward's capability as a future ruler.",
+        "After 1549, Edward's information came largely through Northumberland. He is probably repeating Northumberland's version of events without questioning it.",
+        "After 1549, Edward's information and framing came largely through Northumberland. The Chronicle reflects Northumberland's dominant narrative  -  Somerset is condemned without sympathy, Protestant reform is presented as inevitable progress. What is absent is as telling as what is present.",
+        "Edward never questions Northumberland's actions or the pace and purpose of the Reformation. That absence of doubt is itself revealing."
+      ],
+      "examples": [
+        {
+          "paper": "Y137 May 2023",
+          "question": "How far do they support the view that the gentry and nobility were responsible for the unrest in 1549?",
+          "attribution": "Edward VI's Journal, 1549",
+          "excerpt": "The people rebelled in Sussex, Hampshire and Kent, where, by fair persuasions, partly from honest men among the rebels, and partly by local governors, they were satisfied and went home. After that, the people rose in Oxfordshire, the West Country and Norfolk.",
+          "provenance": [
+            "On the surface this challenges the view of gentry and nobility responsibility, presenting the people as the agents of rebellion and the local governors as the ones restoring order.",
+            "Edward was 12 in 1549 and almost entirely dependent on Northumberland and his tutors for his understanding of events. He was not making independent observations.",
+            "His information about the rebellions came through Northumberland, who had defeated Kett and was about to remove Somerset. Edward records the version that suited Northumberland.",
+            "The entry is terse and factual in style, which makes it sound objective. But the choice of what to record is shaped by his sources at court, not by the rebels themselves.",
+            "The source tells us what the young king at Westminster understood about the 1549 rebellions, not whether the gentry were really to blame."
+          ],
+          "knowledge": [
+            "On the rebels being 'satisfied and went home' - this fits the Privy Council's preferred narrative that the unrest was being managed. The reality was over 25 counties in unrest, 16,000 rebels at Kett's Norwich camp, and a Western Rebellion that took 8,000 troops to suppress.",
+            "On the rebellions being settled 'by fair persuasions' - Kett's rebels were ultimately massacred at Dussindale: 3,000 killed and 49 leaders executed. Over 3,000 Western rebels were executed after Sampford Courtenay. The persuasions were not fair.",
+            "On the framing as 'the people' rising against 'local governors' - Edward's framing puts blame on the commons. But Lord Sheffield was beaten to death at Norwich and Bodmin rebels chanted 'Kill all the gentlemen!' The rebellions targeted gentry specifically, suggesting gentry behaviour was at least part of the cause."
+          ]
+        },
+        {
+          "paper": "Illustrative source",
+          "question": "How far do these sources support the view that religion was the most serious cause of division between Edward's government and Mary in 1551?",
+          "attribution": "Edward VI's Chronicle, entry for 18 March 1551",
+          "excerpt": "The Lady Mary, my sister, came to me at Westminster, where after salutations she was called with my Council into a chamber where it was declared to her how long I had suffered her mass against my will, and how I was now resolved that her mass should no longer be celebrated. She answered that her soul was God's and her faith she would not change, nor she would not dissimulate her opinion with contrary doings. To this I said I would not constrain her faith, but I willed her not as a king to rule but as a subject to obey. After much discourse she went away. Her servants who had said her mass were ordered to be committed to the Tower.",
+          "provenance": [
+            "On the surface this strongly supports the view. Edward records his half-sister Mary defying his religious authority in person, with her servants imprisoned as a direct consequence.",
+            "Edward was 13 when this entry was written. The framing of the exchange (Mary called before 'me' and 'my Council') presents the king as the active centre, which Northumberland's regime needed him to appear.",
+            "The Chronicle was written in Edward's own hand but the political framing reflects Northumberland's preferred narrative. By 1551 Edward's information about court politics came almost entirely through Northumberland and his tutors.",
+            "The wording given to Mary ('her soul was God's') is dignified and theological, but the wording given to Edward ('not as a king to rule but as a subject to obey') is the regime's preferred line on Mary's status as Edward's subject.",
+            "The source is good evidence of the regime's view of the Mary-Edward religious dispute, but the framing reflects Northumberland's preferred presentation as much as Edward's independent judgement."
+          ],
+          "knowledge": [
+            "On Mary's defiance - Mary's commitment to the Catholic mass was the central religious issue of her relationship with Edward's government. Her position as next in line under Henry VIII's Third Act of Succession meant she could not be set aside easily, which made her defiance politically dangerous.",
+            "On her servants committed to the Tower - the regime targeted Mary's household priests rather than Mary herself, which was the limit of what they could safely do. Mary's status as heir constrained the government's options.",
+            "On reading this as evidence of serious division - the religious dispute was real, but it was Edward and Northumberland's response to it (drafting the Devise for the Succession in 1553 to exclude Mary altogether) that turned a continuing tension into a constitutional crisis."
+          ]
+        }
       ]
     },
-
     {
       "id": "edw-002",
       "category": "edward",
       "name": "The Devise for the Succession",
-      "whatIsIt": "A document in Edward's handwriting trying to pass the crown to Lady Jane Grey — altered from 'Jane's male heirs' to 'Jane and her heirs male'.",
+      "whatIsIt": "A document in Edward's handwriting trying to pass the crown to Lady Jane Grey  -  altered from 'Jane's male heirs' to 'Jane and her heirs male'.",
       "prompts": [
-        "Who: Edward was a dying teenager surrounded by powerful men with strong reasons to stop a Catholic succession. Genuine belief and political manipulation are not mutually exclusive.",
-        "What: A legal document — but legally impossible. It could not override the 1544 Act of Succession. Tells us about desperation as much as intent.",
-        "How informed: Northumberland signed it knowing it would keep him in power. His self-interest shapes the whole document.",
-        "Context: Who changed the wording from 'Jane's male heirs' to 'Jane and her heirs male'? Edward, Northumberland's agents, or someone after Edward's death? Never settled.",
-        "Nature: The handwriting dispute means we cannot even be certain what Edward himself wrote versus what was added later."
+        "Edward was a dying teenager surrounded by powerful men with strong reasons to stop a Catholic succession. Genuine belief and political manipulation are not mutually exclusive.",
+        "Presents itself as a sovereign act of royal will. In reality, the king is fifteen and dying, surrounded by men who need him to write what they need him to write.",
+        "Northumberland signed it knowing it would keep him in power. His self-interest shapes the whole document.",
+        "Who changed the wording from 'Jane's male heirs' to 'Jane and her heirs male'? Edward, Northumberland's agents, or someone after Edward's death? Never settled.",
+        "The handwriting dispute means we cannot even be certain what Edward himself wrote versus what was added later."
+      ],
+      "examples": [
+        {
+          "paper": "Y107/Y137 Specimen",
+          "question": "How far do they support the view that female rule was a serious problem in the 1550s?",
+          "attribution": "Letters Patent for the limitation of the Crown, 21 June 1553",
+          "excerpt": "As Lady Mary and Lady Elizabeth are both illegitimate they have no claim to the crown... Were the said Mary or Elizabeth to have the crown of England and marry a foreigner, he would practise his own country's laws and customs within this realm. This would utterly subvert the commonwealth of this our realm.",
+          "provenance": [
+            "On the surface this supports the view, since the Devise treats female rule plus a foreign marriage as so dangerous that the established succession has to be set aside.",
+            "Edward was 15 and dying. The Devise was drafted in the months before his death in July 1553, by a king completely dependent on those around him.",
+            "Northumberland had every reason to support the Devise. Mary's accession would mean the end of his power and the restoration of Catholicism. He signed it knowing it kept him in control.",
+            "The argument that a foreign marriage 'would utterly subvert the commonwealth' is a legal pretext for excluding Mary specifically. The willingness to make Jane Grey queen shows female rule itself was not the real objection.",
+            "The source tells us what Northumberland and a dying teenage king needed people to accept about the succession, not whether female rule itself was the constitutional problem they claimed."
+          ],
+          "knowledge": [
+            "On the foreign marriage clause - the actual marriage treaty negotiated for Mary and Philip in 1554 restricted Philip from holding office, prevented English involvement in Spain's wars, and gave Mary total control of offices and revenues. The 'subversion of the commonwealth' the Devise predicts is the danger the treaty was carefully designed to prevent.",
+            "On Lady Jane Grey as the alternative - Northumberland strengthened his grip by marrying Jane to his son Guildford Dudley in May 1553. The Devise was as much about keeping Northumberland in power as preventing Catholic succession.",
+            "On reading this as evidence of the female rule problem - the willingness to make Jane Grey queen actually shows gender mattered less than religion. The objection was specifically to Mary, not to female rule in principle."
+          ]
+        }
       ]
     },
-
     {
       "id": "edw-003",
       "category": "edward",
       "name": "The Books of Common Prayer",
-      "whatIsIt": "Cranmer's Prayer Books — the deliberately vague 1549 version and the clearly Protestant 1552 revision.",
+      "whatIsIt": "Cranmer's Prayer Books  -  the deliberately vague 1549 version and the clearly Protestant 1552 revision.",
       "prompts": [
-        "Who: Written by Cranmer, an expert on religious language who knew exactly how to be deliberately ambiguous. Expertise is not the same as objectivity.",
-        "What: Official religious texts — telling us what the government wanted people to believe, not how congregations responded.",
-        "Context: The 1549 language on the Eucharist was a political calculation — written to keep both Catholics and Protestants on board in a divided country.",
-        "Nature: Compare 1549 and 1552 side by side. The removal of almost all Catholic ceremony in 1552 shows how fast the Reformation was actually moving.",
-        "How informed: The Western Rebellion was directly triggered by the 1549 Prayer Book. The source and the resistance it caused must be read together."
+        "Written by Cranmer, an expert on religious language who knew exactly how to be deliberately ambiguous. Expertise is not the same as objectivity.",
+        "Official religious texts  -  telling us what the government wanted people to believe, not how congregations responded.",
+        "On the surface, a single national church. Underneath, the 1549 wording on the Eucharist is so ambiguous that Catholics and Protestants could both attend the same service while believing entirely different things about what was happening.",
+        "Compare 1549 and 1552 side by side. The removal of almost all Catholic ceremony in 1552 shows how fast the Reformation was actually moving.",
+        "The Western Rebellion was directly triggered by the 1549 Prayer Book. The source and the resistance it caused must be read together."
+      ],
+      "examples": [
+        {
+          "paper": "Illustrative source",
+          "question": "How far do these sources support the view that the religious changes under Edward were intended to be moderate in 1549?",
+          "attribution": "Illustrative rubric in the style of the 1549 First Book of Common Prayer",
+          "excerpt": "When the minister delivereth the bread to the people, he shall say: The Body of our Lord Jesus Christ which was given for thee, preserve thy body and soul unto everlasting life. And the people shall receive standing, or kneeling as they have been accustomed, as the bishop in his discretion shall appoint. Let nothing be done that giveth scandal to the weaker brethren or that may seem to overthrow the customs of the Church too suddenly.",
+          "provenance": [
+            "On the surface this strongly supports the view, with explicit instructions to avoid scandalising parishioners and to allow customary practice.",
+            "The 1549 Prayer Book was written by Cranmer, an expert in religious language who knew exactly how to make doctrine deliberately ambiguous.",
+            "Phrases like 'as the bishop in his discretion shall appoint' do important political work, leaving local practice flexible while giving the impression of a single national church.",
+            "The compromise was designed so that both Catholics and Protestants could attend the same service while believing different things about what was happening.",
+            "The source tells us about the regime's strategy in 1549, a careful first step intended to look moderate while preparing the ground for further change."
+          ],
+          "knowledge": [
+            "On 'standing, or kneeling as they have been accustomed' - the 1549 Prayer Book was a deliberate compromise that 'pleased nobody'. Its ambiguity on the Eucharist directly triggered the Western Rebellion in early 1549, with over 3,000 rebels executed.",
+            "On 'nothing be done that giveth scandal' - the moderation was tactical. By 1552, with Northumberland in power, the Second Prayer Book removed almost all Catholic ceremony and confirmed Calvin's purely symbolic doctrine. The moderation of 1549 was a stepping stone, not the end point.",
+            "On 'the bishop in his discretion shall appoint' - at parish level, evidence from wills shows little support for Protestant changes outside London, the south-east and East Anglia. The flexibility built into the 1549 settlement allowed parishes to drag their feet."
+          ]
+        },
+        {
+          "paper": "Illustrative source",
+          "question": "How far do these sources support the view that by 1552 the Edwardian Reformation had moved decisively in a Protestant direction?",
+          "attribution": "Illustrative rubric in the style of the 1552 Second Book of Common Prayer",
+          "excerpt": "When the minister delivereth the bread, he shall say to every one severally: Take and eat this in remembrance that Christ died for thee, and feed on him in thy heart by faith with thanksgiving. And the minister that delivereth the cup shall say: Drink this in remembrance that Christ's blood was shed for thee, and be thankful. And the people shall receive the same kneeling. Such ornaments of the church and of the ministers thereof at all times of their ministration as were retained under King Edward in the second year shall be taken away.",
+          "provenance": [
+            "On the surface this strongly supports the view. The Communion wording is now memorial and symbolic, the ornaments of the 1549 version are removed, and the theological compromise of three years earlier is gone.",
+            "The 1552 Prayer Book was drafted by Cranmer at the height of Northumberland's regime, when Protestant reformers had unprecedented influence at court. The text reflects what was now politically possible.",
+            "The new wording ('in remembrance' rather than 'the body of our Lord') confirms Calvin's purely symbolic doctrine of Communion. This was a deliberate doctrinal choice, not a stylistic preference.",
+            "The removal of ornaments retained in 1549 ends the visual compromise that had allowed both Catholics and Protestants to attend the same service while believing different things.",
+            "The source is strong evidence of how far the regime's Protestant vision had advanced by 1552, but the text tells us what the regime intended for parishes, not how parishes received it."
+          ],
+          "knowledge": [
+            "On the memorial language - this is Calvin's purely symbolic doctrine, the most radical Reformed position on the Eucharist. The change from 1549 marks the moment when the Edwardian Reformation moved beyond ambiguity into clearly Reformed theology.",
+            "On the removal of ornaments - the 1552 settlement also brought the Second Act of Uniformity, threatening six months in prison for non-attendance. Both moves reflect the regime's confidence that it could push much harder than in 1549.",
+            "On reading this as decisive Protestantism - Edward died in July 1553, less than a year after the 1552 Prayer Book came into use. The Forty-Two Articles were drafted in 1552 but never passed by Parliament. The decisive shift was on paper; whether it had time to embed at parish level is a separate question."
+          ]
+        }
       ]
     },
-
     {
       "id": "edw-004",
       "category": "edward",
       "name": "The Edwardian Homilies",
-      "whatIsIt": "Twelve sermons issued by royal authority in 1547, to be read aloud in churches — written because clergy could not be trusted to preach the new theology themselves.",
+      "whatIsIt": "Twelve sermons issued by royal authority in 1547, to be read aloud in churches  -  written because clergy could not be trusted to preach the new theology themselves.",
       "prompts": [
-        "Who: Produced by the Edwardian government — an official statement of what the regime wanted every English person to believe.",
-        "What: The fact these were needed shows how little the government trusted parish priests in 1547. That itself tells us something important about the state of the clergy.",
-        "Context: Far more theologically direct than the 1549 Prayer Book — different documents, different audiences, different strategies.",
-        "Nature: Tells us what the government wanted people to believe about salvation and scripture. Not whether they believed it.",
-        "How informed: Use visitation records and churchwarden accounts alongside — they show whether the homilies were actually being read in churches."
+        "Produced by the Edwardian government  -  an official statement of what the regime wanted every English person to believe.",
+        "The fact these were needed shows how little the government trusted parish priests in 1547. That itself tells us something important about the state of the clergy.",
+        "Far more theologically direct than the 1549 Prayer Book  -  different documents, different audiences, different strategies.",
+        "Tells us what the government wanted people to believe about salvation and scripture. Not whether they believed it.",
+        "Use visitation records and churchwarden accounts alongside  -  they show whether the homilies were actually being read in churches."
+      ],
+      "examples": [
+        {
+          "paper": "Illustrative source",
+          "question": "How far do these sources support the view that the Edwardian government sought to introduce Protestant doctrine clearly and directly?",
+          "attribution": "Illustrative extract in the style of the Edwardian Book of Homilies, 1547 (Homily on Justification)",
+          "excerpt": "Whoever therefore believeth in Christ shall be saved, and not by his own works, nor by any merits of his own, but by the free mercy of God in Jesus Christ alone. Let no man think that good works are not necessary, for good works do follow true faith as fruit follows the tree. But it is faith alone, and not any work of man, that maketh us righteous before Almighty God. This doctrine doth not destroy good works, but rather establish them, for he that loveth God will keep His commandments.",
+          "provenance": [
+            "On the surface this strongly supports the view. The doctrine of justification by faith alone, with works as a fruit not a cause of righteousness, is unambiguously Protestant.",
+            "This is an official text issued by royal authority in 1547. It tells us what the regime wanted parishioners to be taught, not what they actually understood or believed.",
+            "The Homilies were written precisely because parish clergy could not be trusted to preach the new theology themselves. The very existence of an official sermon to be read aloud reflects clerical ignorance and resistance.",
+            "Compare the directness here with the deliberately ambiguous wording of the 1549 Prayer Book on the Eucharist. The Homilies and the Prayer Book were doing different jobs for different audiences.",
+            "The source tells us what the Edwardian government wanted English people to believe about salvation in 1547. Whether the sermon was actually read in every parish, and whether listeners absorbed its theology, is a separate question."
+          ],
+          "knowledge": [
+            "On 'faith alone... maketh us righteous before Almighty God' - this is justification by faith, the central Protestant doctrine. Its inclusion in the Homilies from 1547 shows the regime was prepared to teach core Reformed theology directly from the start.",
+            "On the need for an official sermon to be read aloud - Bishop Hooper's visitations of Gloucester found 171 of 311 clergymen could not repeat the Ten Commandments and 40 could not find the Lord's Prayer. The Homilies existed because clergy could not be trusted to preach the new doctrine themselves.",
+            "On reading the Homilies as evidence of effective religious change - de facto change at parish level was patchy. Evidence from wills shows little support for Protestant changes outside London, the south-east and East Anglia. The clarity of the Homilies cannot tell us how clearly they were being received."
+          ]
+        }
       ]
     },
-
     {
       "id": "edw-005",
       "category": "edward",
       "name": "The Zurich Letters",
-      "whatIsIt": "Letters between English Protestant reformers and theologians in Zurich — especially Heinrich Bullinger — reporting on the English Reformation.",
+      "whatIsIt": "Letters between English Protestant reformers and theologians in Zurich  -  especially Heinrich Bullinger  -  reporting on the English Reformation.",
       "prompts": [
-        "Who: Committed Protestant reformers writing to their theological heroes abroad. They had every reason to present England positively.",
-        "What: Letters between allies — achievements are emphasised, setbacks ignored. They construct the picture of England that reformers wanted Bullinger to see.",
-        "Context: Not truly private — writers knew letters could be intercepted. They wrote with that in mind.",
-        "How informed: Reformers had real access to events but filtered everything through a Protestant lens that assumed reform was right and necessary.",
-        "Typicality: They never question the pace or purpose of the Reformation — only complain it is moving too slowly. That one-sidedness is the point."
+        "Committed Protestant reformers writing to their theological heroes abroad. They had every reason to present England positively.",
+        "Letters between allies  -  achievements are emphasised, setbacks ignored. They construct the picture of England that reformers wanted Bullinger to see.",
+        "Not truly private  -  writers knew letters could be intercepted. They wrote with that in mind.",
+        "Reformers had real access to events but filtered everything through a Protestant lens that assumed reform was right and necessary.",
+        "They never question the pace or purpose of the Reformation  -  only complain it is moving too slowly. That one-sidedness is the point."
+      ],
+      "examples": [
+        {
+          "paper": "Y107 Jun 2025",
+          "question": "How far do they support the view that there was widespread opposition to religious changes under Edward VI?",
+          "attribution": "Sir John Cheke, letter to a Protestant reformer in Switzerland, 1553",
+          "excerpt": "The king has accomplished more in his youth than many have done in their adult life. He has repealed the Act of Six Articles. He has removed images from churches. He has overthrown image worship. He has abolished the mass and destroyed almost every kind of superstition.",
+          "provenance": [
+            "On the surface this challenges the view of widespread opposition. Cheke presents the Edwardian Reformation as a series of triumphs.",
+            "Cheke was Edward's tutor and a committed Protestant reformer. He had every reason to celebrate what the regime had achieved.",
+            "He was writing to a Protestant ally in Switzerland. Letters between reformers were a form of mutual encouragement, where achievements were emphasised and setbacks ignored.",
+            "His list of accomplishments is real (Six Articles repealed, images removed, the mass abolished) but it is told as a story of forward progress, not as a record of how it was received.",
+            "The source tells us how committed Edwardian reformers wanted the Continental Protestant network to view the English Reformation, not how the country actually received it."
+          ],
+          "knowledge": [
+            "On 'the Six Articles' being repealed - this happened in 1547, opening 'a Pandora's box of radical ideas' as Calvinism, Zwinglism and Lutheranism were all preached openly. The repeal was more chaotic than triumphal.",
+            "On images being removed and the mass abolished - de jure England was Protestant by 1553, but de facto compliance was patchy. Bishop Hooper found 171 of 311 clergymen in Gloucester could not repeat the Ten Commandments.",
+            "On the achievement being 'in his youth' - Edward died in July 1553. The Second Prayer Book and Forty-Two Articles came only in the final months. Cheke's celebration covers a Reformation that had barely had time to embed."
+          ]
+        },
+        {
+          "paper": "Guide Source Practice / Y107 past papers",
+          "question": "How far do they support the view that the introduction of Protestantism under Edward VI was difficult?",
+          "attribution": "Martin Bucer, letter to John Calvin, June 1550 [German Protestant theologian, taught at Cambridge]",
+          "excerpt": "The Bishops have not yet agreed on Christian doctrine, let alone the rules of the Church, and very few parishes have qualified clergymen. Sometimes the clergy read the service rapidly, so that the ordinary people have no more understanding of it than if it were still in Latin rather than English.",
+          "provenance": [
+            "On the surface this strongly supports the view of difficulty, listing very specific problems with bishops, clergy and Parliament.",
+            "Bucer was a German Protestant theologian teaching at Cambridge, brought in to support the Reformation. He had high expectations of how it should work in practice.",
+            "His complaints are detailed because he was an insider trying to push reform forward, frustrated at the slow pace. He was writing to Calvin to pressure the regime through the Continental network.",
+            "His remedy is to urge Somerset to do more, which fits the wider pattern of reformers complaining the Reformation was not moving fast enough.",
+            "The source is strong contemporary evidence of practical obstacles to Protestant reform, from a committed reformer who wanted it to succeed."
+          ],
+          "knowledge": [
+            "On 'very few parishes have qualified clergymen' - Bishop Hooper's visitations of Gloucester found 171 of 311 clergymen could not repeat the Ten Commandments and 40 could not find the Lord's Prayer. Clerical ignorance was a real structural obstacle.",
+            "On the clergy reading the services 'rapidly' so people did not understand - this was happening in English by 1550, but de facto change was patchy. Evidence from wills shows little support for Protestant changes outside London, the south-east and East Anglia.",
+            "On urging Somerset to push reform - Somerset fell from power in October 1549 (Bucer's letter was June 1550, before Northumberland's rise was complete). The pace of reform did accelerate from 1550 once Northumberland took over."
+          ]
+        },
+        {
+          "paper": "Guide Source Practice 1",
+          "question": "How far do they support the view that Mary's restoration of Catholicism was popular?",
+          "attribution": "John Jewel, letter to Henry Bullinger, 20 March 1559 [Protestant bishop, former Marian exile]",
+          "excerpt": "Our universities are so depressed and ruined that at Oxford there are scarcely two individuals who think with us. Some despicable friars have reduced the vineyard of the Lord into a wilderness. You would scarcely believe that so much desolation could have been effected in so short a time.",
+          "provenance": [
+            "On the surface this strongly supports the view that Mary's restoration had been popular, by describing the universities under Mary as ruined.",
+            "Jewel was a Protestant bishop and a former Marian exile, writing only months after Elizabeth's accession in 1558.",
+            "His audience is Bullinger in Zurich, the centre of the exiles' Continental network. The letter is part of building the Elizabethan case for renewed Protestant reform.",
+            "His description of Oxford as 'depressed and ruined' with 'despicable friars' is rhetorical Protestant framing of the Marian university. It expresses a partisan view of what restoration meant.",
+            "The source tells us how a returning Marian exile presented Mary's restoration to his Continental allies in 1559. It is not a measured assessment of how popular Catholic restoration had been."
+          ],
+          "knowledge": [
+            "On Oxford being 'depressed and ruined' - over 800 clergy were deprived during Mary's reign for refusing to return to Catholic practice. Catholic restoration was 'more successful than the Edwardian Reformation had been', particularly in conservative areas.",
+            "On 'despicable friars' reducing the universities - this is exile rhetoric. The 12 Decrees of 1556 had aimed at clerical reform: bans on absenteeism, pluralism and simony. The Marian Church was not simply degraded.",
+            "On Marian restoration as ruin - the fact that Elizabeth needed her own Reformation, with significant time required to re-establish Protestantism, suggests Mary's regime had actually been more successful at the local level than Jewel admits."
+          ]
+        }
       ]
     },
-
     {
       "id": "edw-006",
       "category": "edward",
       "name": "Kett's Rebellion Articles",
-      "whatIsIt": "Twenty-nine formal demands from Kett's Rebellion in Norfolk, 1549 — focused on economic grievances like enclosure and excessive rents.",
+      "whatIsIt": "Twenty-nine formal demands from Kett's Rebellion in Norfolk, 1549  -  focused on economic grievances like enclosure and excessive rents.",
       "prompts": [
-        "Who: The careful legal drafting shows this was written by gentry, not ordinary Norfolk peasants. Kett himself was a landowner.",
-        "What: Formal written demands — presenting the rebels as loyal subjects with legitimate grievances, not troublemakers.",
-        "Context: Shows that ordinary people engaged with national politics in more sophisticated ways than we might expect.",
-        "Nature: No religious demands at all. The contrast with the Western rebels' articles is the most important thing about this source.",
-        "How informed: The gentry leadership shaped what grievances were articulated. Ordinary rebels may have had different or additional concerns that never made it into the articles."
+        "The careful legal drafting shows this was written by gentry, not ordinary Norfolk peasants. Kett himself was a landowner.",
+        "Formal written demands  -  presenting the rebels as loyal subjects with legitimate grievances, not troublemakers.",
+        "Shows that ordinary people engaged with national politics in more sophisticated ways than we might expect.",
+        "No religious demands at all. The contrast with the Western rebels' articles is the most important thing about this source.",
+        "The gentry leadership shaped what grievances were articulated. Ordinary rebels may have had different or additional concerns that never made it into the articles."
+      ],
+      "examples": [
+        {
+          "paper": "Guide Unit 3 Source Practice / Y107 past papers",
+          "question": "How far do they support the view that the main cause of rebellions 1547-58 was religion?",
+          "attribution": "Five of the twenty-nine Articles drawn up by Robert Kett, July 1549",
+          "excerpt": "We pray your grace that from now on no man shall enclose any more... We pray that ministers that cannot preach God's Word be dismissed, and replaced by others, chosen by the parishioners... We pray that all bond man may be made free, for God made all free with his precious blood.",
+          "provenance": [
+            "On the surface this challenges the view that rebellions were primarily about religion, since the articles are dominated by enclosure, rents and clerical complaints.",
+            "The careful legal drafting shows this was written by gentry, not ordinary Norfolk peasants. Kett himself was a landowner.",
+            "The framing presents the rebels as loyal subjects with legitimate grievances, not as troublemakers. This was a deliberate strategy to make the rebellion harder to dismiss.",
+            "The religious demands are about clerical reform, not Catholic restoration. This is a Reformed-leaning rebellion, the opposite of the Western Rising in the same year.",
+            "The source is strong evidence that economic grievances drove this rebellion. The gentry leadership shaped what was articulated, which means it tells us as much about what the leaders chose to record as what ordinary rebels actually felt."
+          ],
+          "knowledge": [
+            "On 'no man shall enclose any more' - Kett's 16,000 rebels gathered explicitly around enclosure and high rents. In Norwich, 6% of the population owned 60% of the land. The grievance was acute and concrete.",
+            "On 'ministers that cannot preach... be dismissed' - Bishop Hooper's later visitations found 171 of 311 clergymen in Gloucester could not repeat the Ten Commandments. Kett's clerical complaint matches a documented national problem.",
+            "On framing this as a religious rebellion - the Kett articles are dominated by enclosure and rent, with religion appearing only as concern about clerical quality. This is the opposite of the Western Rebellion in the same year, which was almost entirely religious."
+          ]
+        }
       ]
     },
-
     {
       "id": "edw-007",
       "category": "edward",
       "name": "The Western Rebels' Articles",
-      "whatIsIt": "Demands from the Western (Prayer Book) rebels of 1549 — calling for the Latin Mass, Six Articles, and traditional Catholic practice.",
+      "whatIsIt": "Demands from the Western (Prayer Book) rebels of 1549  -  calling for the Latin Mass, Six Articles, and traditional Catholic practice.",
       "prompts": [
-        "Who: Written by conservative clergy, not ordinary Cornish and Devon people. The church leadership shaped what this rebellion was about.",
-        "What: Formal demands presenting rebels as loyal subjects — but the clergy were using the commons to fight their own battle.",
-        "How informed: Many Western rebels didn't speak English and had no opinion on Reformed theology. The clergy were speaking for them — and for themselves.",
-        "Context: Compare directly with Kett's Articles. One rebellion is about religion, one about economics. That contrast is central to understanding 1549.",
-        "Nature: The rebels called the new Prayer Book 'a Christmas game' — the voice of educated clergy, not ordinary farmers."
+        "Written by conservative clergy, not ordinary Cornish and Devon people. The church leadership shaped what this rebellion was about.",
+        "Formal demands presenting rebels as loyal subjects  -  but the clergy were using the commons to fight their own battle.",
+        "Many Western rebels didn't speak English and had no opinion on Reformed theology. The clergy were speaking for them  -  and for themselves.",
+        "Compare directly with Kett's Articles. One rebellion is about religion, one about economics. That contrast is central to understanding 1549.",
+        "The rebels called the new Prayer Book 'a Christmas game'  -  the voice of educated clergy, not ordinary farmers."
+      ],
+      "examples": [
+        {
+          "paper": "Y107 Jun 2025",
+          "question": "How far do they support the view that there was widespread opposition to religious changes under Edward VI?",
+          "attribution": "The demands of the Western rebels, 1549",
+          "excerpt": "Item, we will have the Laws of our Sovereign Lord King Henry VIII concerning the Six Articles, to be in use again. Item, we will have the mass in Latin, as it was before... Item, we will not receive the new service because it is like a Christmas game.",
+          "provenance": [
+            "On the surface this strongly supports the view of opposition, with explicit demands for Latin mass, the Six Articles, and rejection of the new Prayer Book.",
+            "The demands were drawn up by literate local clergy, not by ordinary Cornish and Devon people. The rebellion's religious framing was the clergy's, even where the rebels' real grievances were broader.",
+            "Many of the rebels in Cornwall spoke Cornish rather than English. They had no theological position on Reformed doctrine, but they did know that the new service was unfamiliar.",
+            "Calling the new service 'like a Christmas game' is the voice of educated clergy ridiculing what they saw as theatrical innovation.",
+            "The source is strong evidence that the clergy who shaped the rebellion framed it religiously. It is less reliable as evidence of what ordinary rebels thought, where wider grievances about taxes, rents and gentry power were also present."
+          ],
+          "knowledge": [
+            "On 'we will have the mass in Latin' - the Western Rebellion was triggered specifically by the First Book of Common Prayer enforced in early 1549. Many Cornishmen were more familiar with Latin than English, so the new service felt alien on both religious and linguistic grounds.",
+            "On 'we will have the Laws... concerning the Six Articles' - the Six Articles (Henry VIII's Catholic doctrine) had been repealed in 1547. The rebels' demand for their return is a clear reversal of the Edwardian Reformation.",
+            "On reading this as a purely religious rising - at Bodmin the rebels chanted 'Kill all the gentlemen!' Earlier demands included high taxes and rents. The rebels' real motives were broader than the clergy's drafted articles allow, and the brutal government response (over 3,000 executed) shows how seriously the regime took both dimensions."
+          ]
+        }
       ]
     },
-
     {
       "id": "edw-008",
       "category": "edward",
       "name": "Commonwealth Writers",
       "whatIsIt": "Protestant writers like Robert Crowley and Thomas Lever who attacked enclosure, rack-renting, and the exploitation of the poor in Edward's reign.",
       "prompts": [
-        "Who: Educated Protestant preachers writing for wealthy, literate audiences — not for the poor they were describing.",
-        "What: Moral campaigners, not neutral observers. Their descriptions of poverty are vivid but deliberately shaped to shame the powerful into action.",
-        "Context: Writing during a period of real economic hardship — their anger reflects genuine anxiety even if the detail is overstated.",
-        "Nature: Protestant social criticism directed upward, toward those with power — not outward toward the commons themselves.",
-        "Typicality: They never admit that Protestant religious reform itself might be causing popular unrest. That is a significant blind spot that tells us about the limits of their thinking."
+        "Educated Protestant preachers writing for wealthy, literate audiences  -  not for the poor they were describing.",
+        "Moral campaigners, not neutral observers. Their descriptions of poverty are vivid but deliberately shaped to shame the powerful into action.",
+        "Writing during a period of real economic hardship  -  their anger reflects genuine anxiety even if the detail is overstated.",
+        "Protestant social criticism directed upward, toward those with power  -  not outward toward the commons themselves.",
+        "They never admit that Protestant religious reform itself might be causing popular unrest. Their social criticism operates entirely within a Protestant framework  -  they are constructing a narrative in which economic suffering has a moral cause (greedy landlords) rather than a structural one. This is itself a dominant narrative."
+      ],
+      "examples": [
+        {
+          "paper": "Y137 May 2024",
+          "question": "How far do they support the view that price inflation was the main cause of unrest in 1549?",
+          "attribution": "Thomas Becon, The Jewel of Joy, 1547-48 [chaplain to Protector Somerset]",
+          "excerpt": "See how landlords, especially sheep owners, oppress the king's subjects by enclosing the common pasture and filling it with their sheep. How many sheep they have! Yet when was wool so expensive or mutton so great a price?",
+          "provenance": [
+            "On the surface this supports the view that inflation and economic grievance were behind the 1549 unrest, with greedy sheep-owning landlords as the villains.",
+            "Becon was chaplain to Protector Somerset. His criticisms reflect Somerset's own preferred explanation: blame the gentry, not government policy.",
+            "He is writing as a Protestant social critic, not as an economist. The emphasis on the moral failings of landlords lets him explain hardship without confronting the structural causes of inflation.",
+            "His audience is wealthy and literate, the very people he is attacking. The aim is to shame them into action, not to give a neutral diagnosis.",
+            "The source is good evidence of how Edwardian Protestant social criticism framed economic hardship, but the framing serves a political argument rather than describing the causes accurately."
+          ],
+          "knowledge": [
+            "On 'how many sheep they have' - enclosure had picked up pace because of the growing cloth market in the Netherlands. Gentry were transforming agricultural land to livestock, producing less food and requiring fewer farm hands. The grievance Becon describes was real.",
+            "On 'when was wool so expensive or mutton so great a price' - food prices had doubled since the start of the century. The Great Price Rise was driven by inflation, debasement (Somerset's own policy), and population pressure rising from 2.3 to 3 million between 1525 and 1551.",
+            "On blaming landlords for high prices - the Commonwealth writers like Becon did not understand the real causes (debasement, bullion from the New World, population pressure). Blaming greedy landlords was morally satisfying but economically wrong."
+          ]
+        },
+        {
+          "paper": "Y137 May 2024",
+          "question": "How far do they support the view that price inflation was the main cause of unrest in 1549?",
+          "attribution": "Hugh Latimer, Sermon, preached in 1550",
+          "excerpt": "You preachers, I urge you to speak against greed and to criticise those great men and men of power who oppress the poor. For greed is the cause of rebellion. Greed was the cause of rebellion last year, by both gentlemen and common people.",
+          "provenance": [
+            "On the surface this supports the view that greed and inflation drove the 1549 rebellions, with both gentlemen and commoners blamed.",
+            "Latimer was one of the most prominent Protestant preachers of the day, a senior figure in the Edwardian Reformation. His sermon is a moral diagnosis of rebellion, not an economic one.",
+            "Preached in 1550, in the immediate aftermath of the previous year's risings, his sermon is part of the broader Commonwealth writers' project of pinning the unrest on personal greed.",
+            "His call to preachers to attack the powerful echoes the Edwardian regime's preferred explanation: the rebellions were a moral problem, not a failure of policy.",
+            "The source tells us how leading reformers wanted the 1549 rebellions to be understood. It is less useful as evidence of what actually caused them."
+          ],
+          "knowledge": [
+            "On 'greed was the cause of rebellion last year, by both gentlemen and common people' - 1549 saw the most widespread unrest of the Tudor period, with over 25 counties affected. The scale was real, even if Latimer's diagnosis was moral rather than structural.",
+            "On preachers being urged to criticise the powerful - the Commonwealth writers were preaching to wealthy literate audiences. Their criticism worked within a Protestant framework that blamed personal greed rather than the structural problems of inflation and debasement.",
+            "On reading 'greed' as the cause - 1549 was driven by inflation, population pressure (rising from 2.3 to 3 million between 1525 and 1551), debasement, and bad harvests linked to the Little Ice Age. Greed was a symptom of economic dislocation, not its origin."
+          ]
+        },
+        {
+          "paper": "Y137 May 2023 / Y137 May 2024",
+          "question": "How far do they support the view that the gentry were responsible for unrest / that price inflation was the main cause?",
+          "attribution": "Robert Crowley, The Way to Wealth, 1550",
+          "excerpt": "Contrary to the law against oppression and extortion, you have now enclosed from the poor their common land, levied greater entry fees payable on new leases, excluded them from their rightful use of the common land, and raised their rents.",
+          "provenance": [
+            "On the surface this supports the view that gentry responsibility, especially around enclosure and rents, was central to the 1549 unrest.",
+            "Crowley was a leading Commonwealth writer, attacking those who profited from the dissolution of the monasteries and the booming wool trade.",
+            "His list of specific grievances (enclosure, higher entry fees, raised rents) is detailed and largely accurate. The grievances did exist.",
+            "But his entire framing assumes the cause of suffering is gentry greed rather than structural inflation, debasement, or population pressure. That moral framing was the Commonwealth writers' political project.",
+            "The source is good evidence of contemporary Protestant criticism of the gentry, but it consistently misses the wider economic forces that the Commonwealth writers did not understand."
+          ],
+          "knowledge": [
+            "On 'enclosed from the poor their common land' - Kett's 16,000 rebels in Norfolk gathered explicitly around enclosure and rents. In Norwich, 6% of the population owned 60% of the land. The gentry behaviour Crowley attacks was documented.",
+            "On 'levied greater entry fees... raised their rents' - rising population (2.3 to 3 million between 1525 and 1551) created huge demand for land, allowing landlords to charge more. The actions Crowley describes are correctly observed, but the underlying cause is demographic, not moral.",
+            "On laying responsibility on the gentry - this misses that Spain's New World silver was flooding European markets, debasement (Somerset's policy) reduced confidence in the currency, and harvests were failing because of the Little Ice Age. Gentry behaviour worsened things but did not cause them."
+          ]
+        }
       ]
     },
-
     {
       "id": "mary-001",
       "category": "mary",
       "name": "Foxe's Acts and Monuments",
       "whatIsIt": "John Foxe's martyrology published 1563, recording Protestant persecution under Mary. Under Elizabeth, every parish was ordered to display it alongside the Bible.",
       "prompts": [
-        "Who: A Protestant exile writing to legitimise his faith by casting its followers as heroic martyrs. Every editorial choice serves that argument.",
-        "What: Ordered into every parish under Elizabeth — state-sponsored Protestant propaganda that tells us as much about Elizabeth's reign as Mary's.",
-        "Context: Is this a source about Mary's reign, or about how Elizabethan Protestants wanted it remembered? Those are not the same thing.",
-        "How informed: Some accounts are second or third hand, already shaped by earlier retellings before they reached Foxe.",
-        "Typicality: When Foxe records hostile crowds or difficult deaths, those details are probably accurate — they damage his own argument, so he had no reason to include them."
+        "A Protestant exile writing to legitimise his faith by casting its followers as heroic martyrs. Every editorial choice serves that argument.",
+        "Ordered into every parish under Elizabeth  -  state-sponsored Protestant propaganda that tells us as much about Elizabeth's reign as Mary's.",
+        "Ask whether this is a source about Mary's reign or about how Elizabethan Protestants needed Mary's reign to be remembered. Foxe was constructing a dominant Protestant narrative  -  the idea that England was always a Protestant nation temporarily corrupted by a Catholic queen. That narrative had enormous political uses under Elizabeth.",
+        "Some accounts are second or third hand, already shaped by earlier retellings before they reached Foxe.",
+        "When Foxe records hostile crowds or difficult deaths, those details are probably accurate  -  they damage his own argument, so he had no reason to include them."
+      ],
+      "examples": [
+        {
+          "paper": "Y107 Jun 2024",
+          "question": "How far do they support the view that the Marian burnings created opposition to Mary's religious policies?",
+          "attribution": "John Foxe, Acts and Monuments ('The Book of Martyrs'), 1563",
+          "excerpt": "On his way to St. Albans there was a great gathering of people to see and hear the prisoner; some were very sorry to see so godly a man brought to be burned. There were, however, some who said it was a pity he did stand in such opinions... But George Tankervil did speak to them so effectually that God softened their hardened hearts.",
+          "provenance": [
+            "On the surface this supports the view that the burnings created opposition, with sympathetic crowds and a martyr framing.",
+            "Foxe was a Protestant exile during Mary's reign, writing his Acts and Monuments under Elizabeth and publishing in 1563.",
+            "The book was ordered to be displayed in every parish church under Elizabeth, making it state-sponsored Protestant propaganda for an Elizabethan as well as a Marian audience.",
+            "The detail of the crowd being 'softened' by Tankervil's words fits the martyrology structure: holy man, hostile world, divine vindication. Every scene is shaped by that argument.",
+            "The source tells us how Elizabethan Protestants needed the Marian burnings to be remembered. Where Foxe records hostile or mixed crowds at burnings, those details are probably reliable because they damage his own argument."
+          ],
+          "knowledge": [
+            "On the 'great gathering of people' at the burnings - this matches contemporary reports. Large crowds did attend the burnings, but there is little evidence they converted the audience to Protestantism; many treated burnings as entertainment.",
+            "On Tankervil's words 'softening' hardened hearts - this is the martyrology structure at work. Even where Foxe records crowds containing both sympathy and hostility, his framing always closes with vindication. The structure shapes every scene.",
+            "On reading Foxe as evidence of widespread opposition - 284 Protestants were burnt over three years. Cranmer, Ridley, Latimer and Hooper were eliminated. The exiles' printing presses kept Protestant works in circulation (19,000 copies of the Second Prayer Book survive). Foxe's later reach matters: under Elizabeth, every parish was ordered to display his Book of Martyrs."
+          ]
+        },
+        {
+          "paper": "Illustrative source",
+          "question": "How far do these sources support the view that the Marian burnings created opposition to Mary's religious policies?",
+          "attribution": "John Foxe, Acts and Monuments, account of the burning of Bishops Latimer and Ridley at Oxford, 16 October 1555",
+          "excerpt": "Doctor Ridley and Master Latimer were brought forth to the place of execution. When they came to the stake, Master Latimer ran to it and embraced it. They were both stripped to their shirts. The fire was kindled. Then Master Latimer spake unto Master Ridley these words: 'Be of good comfort, Master Ridley, and play the man. We shall this day light such a candle, by God's grace, in England, as I trust shall never be put out.' Master Latimer received the flame with both his hands, and bathing his face with it, gave up the ghost. Master Ridley, by reason of the evil making of the fire, was long in burning, but at length the flame burst forth and consumed him.",
+          "provenance": [
+            "On the surface this strongly supports the view. The scene is constructed as martyrdom: dignified bishops, defiant words, a 'candle' that will never go out, all witnessed before a crowd at Oxford.",
+            "Foxe was a Protestant exile during Mary's reign, writing under Elizabeth and publishing in 1563. Every editorial choice serves the argument that Mary's victims were holy martyrs.",
+            "The Latimer speech was probably real in substance but is unlikely to have been recorded exactly as Foxe gives it. Martyrology depends on memorable last words, and Foxe's text became their standard form.",
+            "The detail of Ridley's slow burning 'by reason of the evil making of the fire' is the kind of detail Foxe includes because it intensifies the martyrdom rather than undermining it. The suffering becomes the proof.",
+            "Under Elizabeth, Foxe's Acts and Monuments was ordered into every parish church. This scene was being recited as scripture by 1570. The source tells us how the burnings were remembered as much as how they happened."
+          ],
+          "knowledge": [
+            "On the burning of Latimer and Ridley at Oxford - the burnings began with John Rogers in February 1555 and continued until Mary's death in 1558, with 284 Protestants burnt in total. Latimer and Ridley were among the most senior figures. Cranmer would follow in March 1556.",
+            "On the 'candle in England' speech - even if Foxe sharpened the wording, the broader Protestant cause did survive Mary's reign. Around 800 Protestants had already fled abroad by early 1554, and their printing presses kept Cranmer's Prayer Book and other Reformed works in circulation across Europe.",
+            "On the public reaction - large crowds did attend the burnings, but contemporary evidence is mixed about how they responded. Some viewed burnings as entertainment, some as religious atrocity. Foxe's narrative focuses on the moments of sympathy, which fits his argument but cannot stand alone as a measure of national feeling."
+          ]
+        }
       ]
     },
-
     {
       "id": "mary-002",
       "category": "mary",
       "name": "Renard's Diplomatic Dispatches",
-      "whatIsIt": "Letters from Simon Renard, the Spanish ambassador, to Charles V and Philip II — covering Mary's court, the Spanish marriage, and crises like Wyatt's Rebellion.",
+      "whatIsIt": "Letters from Simon Renard, the Spanish ambassador, to Charles V and Philip II  -  covering Mary's court, the Spanish marriage, and crises like Wyatt's Rebellion.",
       "prompts": [
-        "Who: A Spanish diplomat advancing Habsburg interests — not a neutral observer. He highlighted threats and opportunities that mattered to Spain.",
-        "What: Diplomatic dispatches written to impress his masters and protect his career. Crises are over-reported, stability ignored.",
-        "How informed: Trapped in a Spanish bubble — his contacts shared his anxieties, making him prone to overestimating threats like Wyatt's Rebellion. He also had unusual personal influence over Mary, meaning he was shaping events, not just reporting them.",
-        "Context: Repeatedly misread English politics — overestimated the Protestant threat, underestimated noble loyalty to Mary.",
-        "Typicality: When he reports something damaging to his own case — like English hostility to Philip — that detail is probably true. He had every reason to leave it out."
+        "A Spanish diplomat advancing Habsburg interests  -  not a neutral observer. He highlighted threats and opportunities that mattered to Spain.",
+        "Diplomatic dispatches written to impress his masters and protect his career. Crises are over-reported, stability ignored.",
+        "Trapped in a Spanish bubble  -  his contacts shared his anxieties, making him prone to overestimating threats like Wyatt's Rebellion. He also had unusual personal influence over Mary, meaning he was shaping events, not just reporting them.",
+        "Repeatedly misread English politics  -  overestimated the Protestant threat, underestimated noble loyalty to Mary.",
+        "When he reports something damaging to his own case  -  like English hostility to Philip  -  that detail is probably true. He had every reason to leave it out."
+      ],
+      "examples": [
+        {
+          "paper": "Y107 Jun 2024",
+          "question": "How far do they support the view that the Marian burnings created opposition?",
+          "attribution": "Simon Renard, report to Philip of Spain, 5 February 1555",
+          "excerpt": "The people of London are murmuring about the cruel enforcement of the recent acts of Parliament against heresy... Some of the onlookers wept. Others prayed to God to give them strength... The haste with which the bishops have proceeded in this matter may well cause a revolt.",
+          "provenance": [
+            "On the surface this strongly supports the view, suggesting the burnings were creating real public anger in London.",
+            "Renard was a Spanish ambassador with a vested interest in Mary's regime succeeding. He has no reason to invent opposition.",
+            "But Renard's job was to flag risks to his masters in Brussels. He tended to dramatise threats because that was what kept him useful.",
+            "'May well cause a revolt' is his speculation, not a fact. His informants were close to him in London. He was not watching the burnings in other parts of the country.",
+            "The source is good evidence of London hostility to the first burnings in early 1555. The talk of 'revolt' reflects Renard's instinct to flag danger, not necessarily reality."
+          ],
+          "knowledge": [
+            "On 'the people of London are murmuring' - the burnings were concentrated in London, Kent and Essex, the Protestant strongholds. Renard's report of London anger matches the geographical reality.",
+            "On 'may well cause a revolt' - no popular revolt followed. The burnings continued for nearly three more years, ending only with Mary's death in 1558. Renard's predicted danger never materialised.",
+            "On the early-stage reaction - Renard is writing about the first major burning (John Rogers, 4 February 1555). Gardiner was still alive and opposed the burnings as counter-productive. Mary had already advised the Council in December 1554 to act 'without rashness', showing regime awareness of the risk."
+          ]
+        },
+        {
+          "paper": "Y137 May 2022",
+          "question": "How far do they support the view that Mary Tudor's government was weak?",
+          "attribution": "Simon Renard, letter to Charles V, 18 September 1554",
+          "excerpt": "No attention is paid to the law; the Queen and her council are neither respected nor obeyed nor feared. The people say that King Philip is not going to employ Englishmen, though he agreed to do so in the marriage treaty.",
+          "provenance": [
+            "On the surface this strongly supports the view of weakness.",
+            "Renard's job was to flag problems for Philip and the Emperor. Crises were over-reported in his dispatches because that was what kept him useful.",
+            "'The people say' covers his London contacts, who were anxious about the Spanish marriage. It is not a measured assessment of national opinion.",
+            "He had personal influence over Mary and reasons to argue that her regime needed continued Spanish support. Painting things as bleak helped that case.",
+            "The source is evidence of Renard's view of the autumn 1554 mood. It is not a reliable measure of how weak Mary's government actually was."
+          ],
+          "knowledge": [
+            "On 'neither respected nor obeyed nor feared' - Mary had defeated the Jane Grey coup in nine days, suppressed Wyatt's Rebellion personally, and negotiated a marriage treaty that significantly restricted Philip's power. Her record by autumn 1554 cuts against Renard's bleak framing.",
+            "On 'King Philip is not going to employ Englishmen' - the marriage treaty explicitly forbade Spaniards holding office in England. Mary kept total control of all offices, lands and revenues. The popular rumour Renard reports was unfounded.",
+            "On the wider regime - Mary streamlined the Council and her inner council 'worked effectively together for most of her reign' and 'successfully carried out her wishes'. Renard's snapshot of one moment of anxiety is not the whole picture."
+          ]
+        },
+        {
+          "paper": "Y137 May 2026",
+          "question": "How far do they support the view that Wyatt's rebellion was a serious threat to Mary?",
+          "attribution": "Simon Renard, dispatch, 27 January 1554",
+          "excerpt": "Wyatt's men have rebelled in Kent, proclaiming that they will not consent to a foreign marriage... Although the rebels use the foreign marriage as an excuse, like Carew, their real causes are religion and to favour Elizabeth.",
+          "provenance": [
+            "On the surface this strongly supports the view of a serious threat. Renard reports Kent in rebellion and warns of religion and Elizabeth as the real motives behind the stated complaint against the Spanish marriage.",
+            "Renard was writing from the middle of the Spanish contingent at court, who were genuinely frightened by Wyatt's advance on London. The dispatch reflects their anxieties, and he was asking Charles V for help in the same letters.",
+            "He had every reason to recast the rebellion as religious and pro-Elizabeth. That framing made the rebels look illegitimate and helped defend the Spanish marriage, which was the source of his own influence.",
+            "His information came from his court contacts in the very early days of the rising. He was not in Kent observing the rebels themselves.",
+            "The source is genuine evidence of the alarm inside the Spanish bubble at court in late January 1554, not a reliable measure of the rebels' real motives."
+          ],
+          "knowledge": [
+            "On 'Wyatt's men have rebelled in Kent' - the rebellion raised 3,000 men and reached the gates of London. Government troops under Norfolk deserted to join the rebels, declaring 'We are all Englishmen!' Renard's alarm is not overstated.",
+            "On 'their real causes are religion and to favour Elizabeth' - the rebellion's timing immediately followed Mary's marriage proposal in Parliament, and Wyatt had been loyal to Mary during the Jane Grey affair. He only turned after the marriage was announced. Religion is the convenient reading, not the most likely cause.",
+            "On Renard's framing - Proctor's government-commissioned history also blamed religion, exactly because the regime could not afford to admit popular opposition to Philip. The Spanish ambassador and the regime's chronicler reach the same conclusion for the same reasons."
+          ]
+        }
       ]
     },
-
     {
       "id": "mary-003",
       "category": "mary",
       "name": "The Venetian Ambassador Reports",
       "whatIsIt": "Diplomatic reports from Venetian ambassadors to the Senate of Venice on Mary's reign and the Spanish marriage.",
       "prompts": [
-        "Who: Venice had the most professional diplomatic service in Europe — trained observers sent to report accurately, not to advance a dynastic agenda.",
-        "What: No stake in English politics — less biased than Renard, but also less well connected to what was really happening at court.",
-        "Context: Venice cared about Mediterranean trade and the European balance of power. That shapes what they noticed and what they ignored.",
-        "How informed: Most useful when read alongside Renard's dispatches — two observers from opposite sides interpreting the same events very differently. That contrast is the point.",
-        "Nature: Professional does not mean infallible. They sometimes applied Italian political thinking to English situations where it didn't fit."
+        "Venice had the most professional diplomatic service in Europe  -  trained observers sent to report accurately, not to advance a dynastic agenda.",
+        "No stake in English politics  -  less biased than Renard, but also less well connected to what was really happening at court.",
+        "Venice cared about Mediterranean trade and the European balance of power. That shapes what they noticed and what they ignored.",
+        "Most useful when read alongside Renard's dispatches  -  two observers from opposite sides interpreting the same events very differently. That contrast is the point.",
+        "Sober and professional in tone, which is the source's biggest danger. Their calm prose can read as reliable when they are simply reporting court gossip with better grammar than Renard."
+      ],
+      "examples": [
+        {
+          "paper": "Y137 May 2022",
+          "question": "How far do they support the view that Mary Tudor's government was weak?",
+          "attribution": "The Venetian ambassador, report to the Senate of Venice, 1557",
+          "excerpt": "She is not only brave and valiant, but so courageous and resolute that neither in adversity nor peril did she ever display cowardice, maintaining always a wonderful grandeur and dignity... In government and public affairs she is compelled to refer many matters to her councillors and ministers.",
+          "provenance": [
+            "On the surface this both supports and challenges the view. It praises Mary's courage but says she relies heavily on her councillors.",
+            "The Venetian ambassador had no direct stake in English politics. Venice valued accurate information for diplomatic decisions in the Mediterranean.",
+            "The professional and measured tone is the source's biggest danger. Calm prose makes it sound reliable, but the ambassador is still reporting court gossip and surface impressions.",
+            "The line about Mary being 'compelled' to refer to her councillors reflects assumptions about female rule shared across Europe in the 1550s. It is interpretation, not fact.",
+            "The source gives a balanced contemporary judgement on Mary's personal qualities, but it cannot tell us how her government was actually performing day to day."
+          ],
+          "knowledge": [
+            "On Mary 'compelled... to refer matters to her councillors' - Mary did rely on her Council, but she streamlined it (casual councillors excluded from key committees in 1554; inner council established in 1555). The Council 'worked effectively together for most of her reign'.",
+            "On Mary's 'courageous and resolute' character - this matches her refusal to flee London during Wyatt's Rebellion, her personal Guildhall speech, and her willingness to push through Catholic restoration despite Council resistance. The personal qualities described are not just praise.",
+            "On the wider judgement - Mary 'in practice demonstrated that a woman could govern effectively'. She streamlined the Privy Council, passed major religious legislation, managed marriage negotiations, and suppressed Wyatt's Rebellion."
+          ]
+        },
+        {
+          "paper": "Guide Source Practice 1",
+          "question": "How far do they support the view that Mary's restoration of Catholicism was popular?",
+          "attribution": "Giovanni Michiel, letter to the Senate of Venice, 13 May 1557",
+          "excerpt": "The Catholic religion seems daily to increase and take root, through the Queen's authority and the Cardinal's diligence. Monasteries are being built, churches are full, the ancient rites and ceremonies are again performed. But except for a few, most pretend to reject Protestantism and on the first opportunity would return to it.",
+          "provenance": [
+            "On the surface this challenges the view that the restoration was popular, since Michiel says most people would return to Protestantism on the first opportunity.",
+            "Michiel was a Venetian ambassador writing in May 1557, three and a half years into Mary's reign. He had no Habsburg axe to grind.",
+            "The cautious framing (most 'pretend to reject Protestantism') reflects court gossip and is hard for any outside observer to verify. He is reporting an impression, not a survey.",
+            "His underlying claim, that Catholic restoration was widely accepted but shallow, is the kind of judgement a Venetian ambassador could plausibly form from court contact but could not test in the parishes.",
+            "The source gives a thoughtful contemporary assessment that captures both the visible success of restoration and the suspicion that compliance was thin. The 'thinness' is interpretation, not evidence."
+          ],
+          "knowledge": [
+            "On 'monasteries are being built, churches are full' - the visible signs of restoration were real. Catholic worship returned speedily across the country, with most parishes welcoming the return rather than just accepting it.",
+            "On 'most pretend to reject Protestantism and on the first opportunity would return to it' - around 800 Protestants had fled abroad by early 1554, and their printing presses kept Protestant works in circulation. The exiles would return as Puritan agitators under Elizabeth. Michiel's suspicion captured a real concern.",
+            "On the geography - in the North and West, restoration was genuinely 'welcomed rather than merely accepted'. Michiel's claim of widespread pretence reflects what court contacts told him about London and the south-east, where Protestant strongholds were concentrated, more than the country as a whole."
+          ]
+        },
+        {
+          "paper": "Guide Source Practice 5",
+          "question": "How far do they support the view that enclosure was the most important cause of unrest in 1549?",
+          "attribution": "Matteo Dandolo, letter to the Senate of Venice, 20 July 1549",
+          "excerpt": "There is news of major risings against the government in England... The cause of this is the common land, as the great landowners occupy the pastures of the poor people. The rebels also require the return of the mass, together with the religion as it stood on the death of Henry VIII.",
+          "provenance": [
+            "On the surface this supports the view that enclosure was the main cause of unrest, putting common land first in the list of grievances.",
+            "Dandolo was Venice's ambassador in 1549, reporting events at distance from his own diplomatic post. He was not in the affected counties.",
+            "His information came from London contacts. The detail that the rebels also wanted the return of the mass shows he was hearing about the Western Rebellion (religion) and Kett's Rebellion (enclosure) and combining them into one picture.",
+            "The figure of 500 killed 'sparing neither women nor children' fits the pattern of foreign ambassadors dramatising English unrest for their masters.",
+            "The source is useful evidence of how the 1549 unrest looked from a distance, but it merges different rebellions with different causes into a single account."
+          ],
+          "knowledge": [
+            "On 'the common land, as the great landowners occupy the pastures of the poor' - Kett's 16,000 rebels in Norfolk did gather around enclosure and high rents. In Norwich, 6% of the population owned 60% of the land. The grievance Dandolo identifies was real.",
+            "On the rebels also wanting 'the return of the mass' - this conflates Kett's Rebellion (enclosure) with the Western Rebellion (religion). They had very different causes. Dandolo is hearing about both at a distance and merging them.",
+            "On '500 persons put to the sword' - the actual suppression was much larger. 3,000 rebels were killed at Dussindale and 49 leaders executed; over 3,000 Western rebels were executed after Sampford Courtenay. Dandolo's figure dramatically understates the violence."
+          ]
+        }
       ]
     },
-
     {
       "id": "mary-004",
       "category": "mary",
       "name": "The French Ambassador Dispatches",
-      "whatIsIt": "Reports from French ambassadors — especially Antoine de Noailles — to Henri II, covering the Spanish marriage and English politics.",
+      "whatIsIt": "Reports from French ambassadors  -  especially Antoine de Noailles  -  to Henri II, covering the Spanish marriage and English politics.",
       "prompts": [
-        "Who: French diplomats with a direct interest in destabilising England. Anything that weakened a Spanish-allied England served French interests.",
-        "What: De Noailles was in contact with Wyatt's rebels — he was not observing the rebellion, he was helping to cause it.",
-        "Context: Most useful when read against Renard's dispatches. Same events, completely opposite agendas — the contrast reveals how national interest shapes what observers claim to see.",
-        "How informed: Well connected but deeply partisan. Their reports on English opposition to the Spanish marriage are likely exaggerated.",
-        "Nature: French pressure eventually helped drag England into the Habsburg-Valois war and the loss of Calais in 1558. These dispatches are part of that story."
+        "French diplomats with a direct interest in destabilising England. Anything that weakened a Spanish-allied England served French interests.",
+        "De Noailles was in contact with Wyatt's rebels  -  he was not observing the rebellion, he was helping to cause it.",
+        "Most useful when read against Renard's dispatches. Same events, completely opposite agendas  -  the contrast reveals how national interest shapes what observers claim to see.",
+        "Well connected but deeply partisan. Their reports on English opposition to the Spanish marriage are likely exaggerated.",
+        "French pressure eventually helped drag England into the Habsburg-Valois war and the loss of Calais in 1558. These dispatches are part of that story."
+      ],
+      "examples": [
+        {
+          "paper": "Illustrative source",
+          "question": "How far do these sources support the view that the Spanish marriage was unpopular with the English people?",
+          "attribution": "Illustrative French ambassadorial dispatch in the style of Antoine de Noailles, summer 1554",
+          "excerpt": "The Spaniards are hated wherever they go in this kingdom. In London, members of the queen's Spanish household are insulted and stones are thrown at their lodgings. Merchants complain that English ships are no longer safe from the Emperor's fleet, and gentlemen who once spoke for the queen now murmur openly against the marriage. The queen herself is reported to be thin and unwell. If your Majesty wishes to weaken this country's tie to the Habsburgs, no better moment will come.",
+          "provenance": [
+            "On the surface this strongly supports the view, presenting universal hostility to the Spaniards across multiple sections of English society.",
+            "The dispatch is written by a French ambassador, whose explicit role was to weaken an England allied with Spain. The framing is shaped by French strategic interests.",
+            "French ambassadors of this period, especially Noailles, were in active contact with English opposition figures. They were not simply observing discontent, they were helping to organise it.",
+            "The closing line 'no better moment will come' reveals the purpose. This is intelligence written to argue for French intervention, not a measured report on public opinion.",
+            "The source is genuine evidence of what French diplomats believed about English opposition to the Spanish marriage, but the picture is shaped by their need to make the case for action."
+          ],
+          "knowledge": [
+            "On 'the Spaniards are hated wherever they go' - opposition to the Spanish marriage was real and had triggered Wyatt's Rebellion in January 1554, with 3,000 men and Norfolk's troops deserting. But 'wherever' overstates the geography: opposition was concentrated in London and the south-east, not nationwide.",
+            "On 'gentlemen now murmur openly against the marriage' - Throckmorton's acquittal at his treason trial in 1554 confirmed elite sympathy with opposition to the marriage. But Mary's Council 'worked effectively together for most of her reign' and the marriage proceeded on the agreed treaty terms.",
+            "On the call for French intervention - the marriage treaty restricted Philip from holding office, prevented English entanglement in Spain's wars, and gave Mary total control of offices and revenues. By summer 1554 the political moment for French disruption had largely passed."
+          ]
+        }
       ]
     },
-
     {
       "id": "mary-005",
       "category": "mary",
       "name": "Knox's First Blast of the Trumpet",
       "whatIsIt": "A pamphlet by Scottish Protestant John Knox, published in Geneva 1558, arguing that female rule was against God, nature, and law. Aimed mainly at Mary I.",
       "prompts": [
-        "Who: Knox was a powerful, charismatic Calvinist preacher with a zealous congregation behind him. His ideas were widely shared among committed Protestants — this was not just one man's view.",
-        "What: A carefully structured theological argument using scripture and classical authorities — designed to be difficult to argue against within the thinking of the time.",
-        "Context: Written in Geneva because it could not safely be written in England. What could only be said from abroad tells us about the limits of free expression under Mary.",
-        "How informed: Knox was a Protestant exile with strong connections to the reforming network across Europe — well informed about the wider Protestant cause if not always about English politics specifically.",
-        "Nature: Backfired badly when Elizabeth became queen — she was furious. This shows Knox was speaking for a committed Calvinist fringe, not mainstream English Protestant opinion."
+        "Knox was a powerful, charismatic Calvinist preacher with a zealous congregation behind him. His ideas were widely shared among committed Protestants  -  this was not just one man's view.",
+        "A carefully structured theological argument using scripture and classical authorities  -  designed to be difficult to argue against within the thinking of the time.",
+        "Written in Geneva because it could not safely be written in England. What could only be said from abroad tells us about the limits of free expression under Mary.",
+        "Knox was a Protestant exile with strong connections to the reforming network across Europe  -  well informed about the wider Protestant cause if not always about English politics specifically.",
+        "Backfired badly when Elizabeth became queen  -  she was furious. This shows Knox was speaking for a committed Calvinist fringe, not mainstream English Protestant opinion."
+      ],
+      "examples": [
+        {
+          "paper": "Y107 Specimen",
+          "question": "How far do they support the view that female rule was a serious problem in the 1550s?",
+          "attribution": "John Knox, The First Blast of the Trumpet Against the Monstrous Regiment of Women, 1558",
+          "excerpt": "To promote a woman to rule a nation is unnatural and insulting to God as contrary to his revealed will and law... No one can deny that it is repugnant to nature that the blind shall lead those who can see, the weak protect the strong, or the foolish and mad govern the discreet.",
+          "provenance": [
+            "On the surface this strongly supports the view, calling female rule unnatural and against God.",
+            "Knox was writing from Geneva in 1558, not England, because the pamphlet could not safely be written under Mary. That fact alone cuts against the view: if Mary's government was really that weak, he could have written it at home.",
+            "Knox was a Calvinist preacher writing for fellow Protestant exiles. He is not a neutral observer of English politics, he is a religious campaigner with strong views.",
+            "Most English Protestants actually accepted Mary as queen even when they disagreed with her religion. Knox spoke for a committed Calvinist fringe, not the mainstream.",
+            "When Elizabeth came to the throne just months after publication, the pamphlet backfired badly. The source tells us more about Knox's religious opposition to women rulers in general than about whether female rule was actually a serious problem in the 1550s."
+          ],
+          "knowledge": [
+            "On 'unnatural and insulting to God' - Mary actually demonstrated that a woman could govern effectively. She streamlined the Privy Council, passed major religious legislation, managed the Spanish marriage on tightly restrictive terms, and suppressed Wyatt's Rebellion personally.",
+            "On female rule as 'subversion of good order' - the willingness of Edward and Northumberland to make Jane Grey queen showed gender was seen as less important than religion even within Protestant circles. Knox represents a fringe Calvinist position, not mainstream Protestant thinking.",
+            "On the pamphlet's reception - Knox published in 1558, but Elizabeth came to the throne months later. She was furious, and the pamphlet damaged Knox's standing badly. The work that was meant to undermine female rule ended up confirming that radical Calvinism was politically marginal in England."
+          ]
+        }
       ]
     },
-
     {
       "id": "mary-006",
       "category": "mary",
       "name": "Wyatt's Rebel Documents",
-      "whatIsIt": "Manifestos and proclamations from Wyatt's rebellion of 1554 — a Kent-based rising against the Spanish marriage.",
+      "whatIsIt": "Manifestos and proclamations from Wyatt's rebellion of 1554  -  a Kent-based rising against the Spanish marriage.",
       "prompts": [
-        "Who: Written by rebel leaders trying to build the broadest possible coalition. The language had to be unifying, not divisive.",
-        "What: Manifestos are designed to win support — the stated cause was opposition to the Spanish marriage, not Mary's religion. A Protestant rebellion would have attracted far fewer people.",
-        "Context: Mary needed it to look like a religious plot to justify her response. Wyatt needed it to look constitutional to maximise support. Both sides had reasons to misrepresent it.",
-        "How informed: The rebellion nearly succeeded — Mary only held London after her personal speech at the Guildhall. That near-success shows how fragile her position really was.",
-        "Typicality: The documents never mention Protestant motivation — even though it almost certainly existed. That deliberate omission is itself the most important thing about them."
+        "Written by rebel leaders trying to build the broadest possible coalition. The language had to be unifying, not divisive.",
+        "Manifestos are designed to win support  -  the stated cause was opposition to the Spanish marriage, not Mary's religion. A Protestant rebellion would have attracted far fewer people.",
+        "Mary needed it to look like a religious plot to justify her response. Wyatt needed it to look constitutional to maximise support. Both sides had reasons to misrepresent it.",
+        "The rebellion nearly succeeded  -  Mary only held London after her personal speech at the Guildhall. That near-success shows how fragile her position really was.",
+        "The documents never mention Protestant motivation  -  even though it almost certainly existed. That deliberate omission is itself the most important thing about them."
+      ],
+      "examples": [
+        {
+          "paper": "Guide Unit 3 Source Practice",
+          "question": "How far do they support the view that the main cause of rebellions was religion?",
+          "attribution": "Sir Thomas Wyatt, proclamation to the people of Kent, January 1554",
+          "excerpt": "We write to you as friends, neighbours and Englishmen, concerning Queen Mary's declared intention to marry a foreigner, and request you to join us to prevent this. We swear to you before God that we seek no harm to the Queen, but merely wish her better advice. Our wealth and health depend on it.",
+          "provenance": [
+            "On the surface this challenges the view that religion was the main cause of rebellions in this period. The proclamation focuses entirely on the foreign marriage.",
+            "This is a rebel leader's public manifesto, designed to attract the broadest possible support in Kent. The language has to be unifying, not divisive.",
+            "Wyatt was himself a Protestant, but he knew that a religious appeal would attract far fewer recruits than xenophobic opposition to the Spanish marriage. The omission of religion is deliberate.",
+            "Calling the rebels 'friends, neighbours and Englishmen' is the same nationalist appeal the regime's own forces would later turn on Wyatt when government troops under Norfolk deserted to him declaring 'We are all Englishmen!'",
+            "The source tells us how the rebel leadership chose to frame the rebellion. Whether religion was the real underlying motive is precisely what the proclamation is constructed to disguise."
+          ],
+          "knowledge": [
+            "On 'concerning Queen Mary's declared intention to marry a foreigner' - the timing of the rebellion (immediately after Mary proposed the marriage in Parliament) supports the marriage as the real trigger. Wyatt had been loyal to Mary during the Jane Grey affair.",
+            "On 'we seek no harm to the Queen' - despite this disavowal, part of the plot was to replace Mary with Elizabeth, who would defend Protestantism. The proclamation's restraint is rebel strategy, not actual intention.",
+            "On 'friends, neighbours and Englishmen' - this xenophobic framing was the most effective recruiting tool the rebels had. Religion would have attracted far fewer recruits. The proclamation omits religion deliberately, but Wyatt and many leaders were themselves Protestant, and Kent was a Protestant area with trading links to Northern Europe."
+          ]
+        }
       ]
     }
-
   ]
 }
