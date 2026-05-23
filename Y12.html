@@ -531,9 +531,10 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     </div>
     <div id="exam-essay" style="display:none">
       <div id="essay-status" style="font-size:.75rem;color:var(--muted);margin-bottom:.5rem;display:none"></div>
+      <div id="essay-out" style="margin-bottom:.75rem"></div>
       <div style="margin-bottom:.75rem">
         <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Unit</label>
-        <select id="essay-unit" onchange="filterEssayQuestions()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit">
+        <select id="essay-unit" onchange="filterEssayQuestions()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px">
           <option value="all">All units</option>
           <option value="General">General</option>
           <option value="Unit 4">Unit 4 — Elizabeth I and Religion</option>
@@ -542,13 +543,15 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
           <option value="Unit 7">Unit 7 — Later Years 1588–1603</option>
         </select>
         <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-top:.5rem;margin-bottom:4px">Question</label>
-        <select id="essay-picker" onchange="loadSelectedEssay()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit">
+        <select id="essay-picker" onchange="loadSelectedEssay()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px">
           <option value="">— select a question —</option>
         </select>
       </div>
-      <button class="btn-go c-liz" onclick="randomEssay()" style="margin-bottom:.75rem">🔀 Random question</button>
-      <div id="essay-out"></div>
-      <button class="btn-sm muted-btn" style="margin-top:.5rem" onclick="backToExamRoutes()">← Back to hub</button>
+      <div style="display:flex;gap:8px;margin-bottom:.75rem">
+        <button class="btn-sm" onclick="stepEssay(-1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">← Prev</button>
+        <button class="btn-sm" onclick="randomEssay()" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">🔀 Shuffle</button>
+        <button class="btn-sm" onclick="stepEssay(1)" style="flex:1;padding:9px;font-size:.85rem;font-weight:600;text-align:center">Next →</button>
+      </div>
     </div>
   </div>
 
@@ -1587,7 +1590,7 @@ function filterEssayQuestions() {
     return;
   }
   picker.innerHTML = '<option value="">— select a question —</option>' +
-    pool.map(q => `<option value="${q.id}">[${q.year}${q.level==='AS'?' AS':''}] ${q.title}</option>`).join('');
+    pool.map(q => `<option value="${q.id}">[${q.year}${q.level==='AS'?' AS':''}] ${q.title || q.question}</option>`).join('');
   document.getElementById('essay-out').innerHTML = '';
 }
 
@@ -1610,7 +1613,7 @@ function randomEssay() {
 
 function renderEssay(q) {
   const uid = 'eq_' + Math.random().toString(36).slice(2,6);
-  const indicHtml = q.paragraphs.map((p, i) => `
+  const indicHtml = (q.paragraphs || []).map((p, i) => `
     <div class="ic-para">
       <div class="ic-factor">Paragraph ${i+1}: ${p.factor}</div>
       <div class="ic-yes"><strong>Yes</strong><ul>${p.yes.map(b=>`<li>${b}</li>`).join('')}</ul></div>
@@ -1618,14 +1621,24 @@ function renderEssay(q) {
     </div>`).join('');
   document.getElementById('essay-out').innerHTML = `
     <div class="essay-card">
-      <div class="essay-q">${q.question}</div>
-      <div class="essay-meta">${q.year} · ${q.unit} · ${q.level} · 20 marks</div>
+      <div class="essay-q">${q.question || q.q}</div>
+      <div class="essay-meta">${q.year}${q.level==='AS'?' · AS':''} · ${q.unit||q.topic||''} · 20 marks</div>
       <div class="btn-row" style="margin-top:.75rem">
-        <button class="btn-sm" onclick="randomEssay()">🔀 New random</button>
-        <button class="btn-sm" id="${uid}_ic_btn" onclick="toggleIndicative('${uid}_ic','${uid}_ic_btn')">Show indicative content</button>
+        <button class="btn-sm" onclick="toggleIndicative('${uid}_ic','${uid}_ic_btn')" id="${uid}_ic_btn">🔍 Show indicative content</button>
       </div>
       <div id="${uid}_ic" style="display:none;margin-top:.9rem">${indicHtml}</div>
     </div>`;
+}
+
+function stepEssay(dir) {
+  const picker = document.getElementById('essay-picker');
+  if (!picker) return;
+  const opts = Array.from(picker.options).filter(o => o.value !== '');
+  if (!opts.length) return;
+  const cur = opts.findIndex(o => o.value === picker.value);
+  const next = (cur + dir + opts.length) % opts.length;
+  picker.value = opts[next].value;
+  loadSelectedEssay();
 }
 
 function toggleIndicative(contentId, btnId) {
