@@ -225,6 +225,31 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .essay-struct td:first-child{font-weight:700;color:#0F6E56;white-space:nowrap;padding-right:.75rem}
 .essay-struct tr:last-child td{border-bottom:none}
 
+/* Source toolkit — prompts list (label-less) and worked examples */
+.src-prompts-title{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:.6rem 0 .45rem}
+.src-prompt-list{list-style:none;padding:0;margin:0 0 .25rem}
+.src-prompt-list li{font-size:.86rem;line-height:1.6;padding:.5rem 0;border-bottom:1px dashed var(--border);display:flex;gap:.55rem}
+.src-prompt-list li:last-child{border-bottom:none}
+.src-prompt-list li::before{content:'→';color:var(--muted);flex-shrink:0;font-weight:700}
+.src-examples-title{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:1.2rem 0 .5rem;padding-top:.85rem;border-top:1px solid var(--border)}
+.src-example{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:.85rem 1rem;margin-bottom:.7rem}
+.src-example-meta{font-size:.7rem;color:var(--muted);text-align:right;margin-bottom:.3rem}
+.src-example-q{font-size:.88rem;font-weight:600;font-style:italic;color:var(--text);margin-bottom:.55rem;line-height:1.5}
+.src-example-source{background:var(--subtle);border-radius:8px;padding:.65rem .85rem;margin-bottom:.6rem}
+.src-example-attr{font-size:.72rem;font-weight:700;color:var(--muted);margin-bottom:.35rem}
+.src-example-excerpt{font-size:.86rem;line-height:1.7;font-family:Georgia,'Times New Roman',serif}
+.src-reveal-row{display:flex;gap:6px;margin-top:.5rem;flex-wrap:wrap}
+.src-reveal-btn{flex:1;min-width:130px;padding:.5rem .55rem;font-size:.76rem;font-weight:600;border:1.5px solid var(--border2);border-radius:7px;background:var(--surface);color:var(--text);cursor:pointer;font-family:inherit;transition:all .15s}
+.src-reveal-btn:hover{background:var(--subtle);border-color:#aaa}
+.src-reveal-btn.open{background:var(--subtle);border-color:var(--border2)}
+.src-panel{display:none;margin-top:.5rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.7rem .9rem}
+.src-panel.open{display:block}
+.src-panel-title{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.45rem}
+.src-panel-list{list-style:none;padding:0;margin:0}
+.src-panel-list li{font-size:.8rem;line-height:1.6;padding:.35rem 0;border-bottom:1px solid var(--border);display:flex;gap:.5rem}
+.src-panel-list li:last-child{border-bottom:none}
+.src-panel-list li::before{content:'•';color:var(--muted);flex-shrink:0;font-weight:700}
+
 /* FLASHCARD DRILL */
 .fd-scene{perspective:1200px;margin-bottom:.75rem;cursor:pointer}
 .fd-card-inner{position:relative;width:100%;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.4,0,.2,1)}
@@ -1549,25 +1574,69 @@ function stepSource(dir) {
 
 function renderSourceCard(src) {
   const meta = SRC_CAT_META[src.category] || SRC_CAT_META.generic;
-  const promptsHtml = (src.prompts || []).map(p => {
-    const ci = p.indexOf(':');
-    const label = ci > 0 ? p.slice(0, ci).trim() : '';
-    const text  = ci > 0 ? p.slice(ci + 1).trim() : p;
-    return `<div class="src-prompt"><div class="src-prompt-label" style="color:${meta.labelColour}">${label}</div><div class="src-prompt-text">${text}</div></div>`;
-  }).join('');
+  const promptsHtml = (src.prompts || []).map(p =>
+    `<li>${escHtml(p)}</li>`
+  ).join('');
+  const examples = src.examples || [];
+  const examplesHtml = examples.length
+    ? `<div class="src-examples-title">Worked examples (${examples.length})</div>` +
+      examples.map((ex, idx) => renderExample(ex, idx, src.id)).join('')
+    : `<div class="src-examples-title">Worked examples</div><div class="empty" style="padding:.85rem;font-size:.82rem">No examples yet for this source type.</div>`;
   document.getElementById('source-out').innerHTML =
     `<div class="src-card">
        <div class="src-card-stripe" style="background:${meta.stripe}"></div>
        <div class="src-card-inner">
          <div class="src-card-head">
-           <span class="src-card-name">${src.name}</span>
+           <span class="src-card-name">${escHtml(src.name)}</span>
            <span class="tag ${meta.tag}">${meta.label}</span>
          </div>
-         <div class="src-card-what">${src.whatIsIt || ''}</div>
-         <div class="src-prompts-title">How to interrogate it</div>
-         ${promptsHtml}
+         <div class="src-card-what">${escHtml(src.whatIsIt || '')}</div>
+         <div class="src-prompts-title">Things to think about</div>
+         <ul class="src-prompt-list">${promptsHtml}</ul>
+         ${examplesHtml}
        </div>
      </div>`;
+}
+
+function renderExample(ex, idx, srcId) {
+  const exId = `${srcId}-ex${idx}`;
+  const paper = ex.paper ? `<div class="src-example-meta">${escHtml(ex.paper)}</div>` : '';
+  const provBullets = (ex.provenance || []).map(b => `<li>${escHtml(b)}</li>`).join('');
+  const knowBullets = (ex.knowledge   || []).map(b => `<li>${escHtml(b)}</li>`).join('');
+  const hasProv = (ex.provenance || []).length > 0;
+  const hasKnow = (ex.knowledge   || []).length > 0;
+  return `
+    <div class="src-example">
+      ${paper}
+      <div class="src-example-q">${escHtml(ex.question || '')}</div>
+      <div class="src-example-source">
+        <div class="src-example-attr">${escHtml(ex.attribution || '')}</div>
+        <div class="src-example-excerpt">${escHtml(ex.excerpt || '')}</div>
+      </div>
+      <div class="src-reveal-row">
+        ${hasProv ? `<button class="src-reveal-btn" id="btn-${exId}-prov" onclick="toggleSrcPanel('${exId}','prov')">👁 See provenance</button>` : ''}
+        ${hasKnow ? `<button class="src-reveal-btn" id="btn-${exId}-know" onclick="toggleSrcPanel('${exId}','know')">💡 Apply your knowledge</button>` : ''}
+      </div>
+      ${hasProv ? `<div class="src-panel" id="panel-${exId}-prov"><div class="src-panel-title">Provenance</div><ul class="src-panel-list">${provBullets}</ul></div>` : ''}
+      ${hasKnow ? `<div class="src-panel" id="panel-${exId}-know"><div class="src-panel-title">Knowledge</div><ul class="src-panel-list">${knowBullets}</ul></div>` : ''}
+    </div>`;
+}
+
+function toggleSrcPanel(exId, kind) {
+  const panel = document.getElementById(`panel-${exId}-${kind}`);
+  const btn   = document.getElementById(`btn-${exId}-${kind}`);
+  if (!panel || !btn) return;
+  const isOpen = panel.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  if (kind === 'prov') {
+    btn.innerHTML = isOpen ? '👁 Hide provenance' : '👁 See provenance';
+  } else {
+    btn.innerHTML = isOpen ? '💡 Hide knowledge' : '💡 Apply your knowledge';
+  }
+}
+
+function escHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
 // ═══════════════════════════════════
