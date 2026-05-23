@@ -226,9 +226,10 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .essay-struct tr:last-child td{border-bottom:none}
 
 /* Source toolkit — prompts list (label-less) and worked examples */
-.src-prompts-toggle{display:flex;align-items:center;gap:.4rem;width:100%;background:transparent;border:none;padding:.65rem 0 .45rem;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);cursor:pointer;font-family:inherit;text-align:left}
-.src-prompts-toggle:hover{color:var(--text)}
-.src-prompts-toggle .caret{display:inline-block;transition:transform .15s;font-size:.7rem}
+.src-prompts-toggle{display:flex;align-items:center;gap:.55rem;width:100%;background:var(--subtle);border:1px solid var(--border);padding:.55rem .85rem;margin:.7rem 0 .4rem;font-size:.84rem;font-weight:600;color:var(--text);cursor:pointer;font-family:inherit;text-align:left;border-radius:8px;transition:background .15s,border-color .15s}
+.src-prompts-toggle:hover{background:var(--card);border-color:var(--border2)}
+.src-prompts-toggle.open{background:var(--card);border-color:var(--border2)}
+.src-prompts-toggle .caret{display:inline-block;transition:transform .15s;font-size:.82rem;color:var(--muted);width:.7rem;text-align:center}
 .src-prompts-toggle.open .caret{transform:rotate(90deg)}
 .src-prompts-panel{display:none;padding-bottom:.35rem}
 .src-prompts-panel.open{display:block}
@@ -1195,6 +1196,13 @@ function showSourceMode() {
   document.getElementById('exam-pick').style.display = 'none';
   document.getElementById('exam-source').style.display = 'block';
   document.getElementById('exam-essay').style.display = 'none';
+  // Restore picker UI in case randomSource() previously hid it
+  const catRow = document.querySelector('#exam-source .src-cat-row');
+  const pickRow = document.querySelector('#exam-source .src-picker-row');
+  const randBtn = document.getElementById('src-random-btn');
+  if (catRow) catRow.style.display = '';
+  if (pickRow) pickRow.style.display = '';
+  if (randBtn) randBtn.style.display = '';
   buildSourcePool(); drawSource();
 }
 
