@@ -1579,7 +1579,7 @@ function filterEssayQuestions() {
   const unit = document.getElementById('essay-unit').value;
   const picker = document.getElementById('essay-picker');
   console.log('filterEssayQuestions — ESSAY_QS:', ESSAY_QS.length, 'unit:', unit);
-  const pool = ESSAY_QS.filter(q => q.section === 'elizabeth' && (unit === 'all' || q.unit === unit));
+  const pool = ESSAY_QS.filter(q => unit === 'all' || q.unit === unit);
   console.log('pool size:', pool.length);
   if (!pool.length && !ESSAY_QS.length) {
     picker.innerHTML = '<option value="">— essays-y12.json not loaded —</option>';
@@ -1600,7 +1600,7 @@ function loadSelectedEssay() {
 
 function randomEssay() {
   const unit = document.getElementById('essay-unit').value;
-  const pool = ESSAY_QS.filter(q => q.section === 'elizabeth' && (unit === 'all' || q.unit === unit));
+  const pool = ESSAY_QS.filter(q => unit === 'all' || q.unit === unit);
   if (!pool.length) { filterEssayQuestions(); return; }
   const q = rand(pool);
   const picker = document.getElementById('essay-picker');
