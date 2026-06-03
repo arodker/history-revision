@@ -1834,9 +1834,10 @@ function renderQ() {
   if (quizTypeMode === 'type') {
     answerHtml = `
       <div style="margin-top:.75rem">
-        <input id="quiz-year-input" type="text" inputmode="numeric" placeholder="Type the year and press Enter…"
+        <input id="quiz-year-input" type="text" inputmode="numeric" placeholder="Type the year…"
           style="width:100%;padding:10px;font-size:1.1rem;font-weight:700;text-align:center;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text);font-family:inherit"
           onkeydown="if(event.key==='Enter')checkYearAns()">
+        <button id="quiz-year-check" class="btn-go ${P[currentPaper].go}" style="margin-top:.6rem;margin-bottom:0;padding:11px" onclick="checkYearAns()">Check answer</button>
         <div class="quiz-fb" id="qfb"></div>
       </div>`;
   } else {
@@ -2004,6 +2005,8 @@ function checkYearAns() {
   })();
   const wasCorrect = typedNorm.some(tn => allYears.some(y => tn === y));
   inp.disabled = true;
+  const checkBtn = document.getElementById('quiz-year-check');
+  if (checkBtn) { checkBtn.disabled = true; checkBtn.style.opacity = '.45'; checkBtn.style.cursor = 'default'; }
   if (wasCorrect) {
     quizOK++; quizStreak++;
     fb.textContent = `✓ Correct — ${correctDate}`;
