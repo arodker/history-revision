@@ -721,6 +721,7 @@ const P = {
 };
 
 let currentPaper = 'p1';
+let currentMode = null;
 let quizPool = [], quizIdx = 0, quizOK = 0, quizBad = 0;
 
 // ═══════════════════════════════════════════
@@ -768,6 +769,7 @@ function pickPaper(p) {
 }
 
 function goBack() {
+  currentMode = null;
   showScreen('s-hub');
   document.getElementById('d-out').innerHTML = '';
   document.getElementById('k-out').innerHTML = '';
@@ -777,6 +779,7 @@ function goBack() {
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  if (id !== 's-main') currentMode = null;
   const hubLink = document.getElementById('hub-link');
   if (hubLink) hubLink.style.display = id === 's-pick' ? 'inline-block' : 'none';
   // Search button now always visible — no toggling
@@ -1030,6 +1033,7 @@ function inlineSearchKey(e) {
 }
 
 function setMode(m) {
+  currentMode = m;
   const titles = {knowledge:'🧠 Revision Guide', dates:'📅 Key Dates Quiz', exam:'✏️ Exam Practice', flashcard:'⚡ Flashcard Mode'};
   const titleEl = document.getElementById('mode-title');
   if (titleEl) titleEl.textContent = titles[m] || '';
@@ -1049,8 +1053,7 @@ function setMode(m) {
   if (m === 'dates') {
     // Show setup screen — user picks mode then presses Start
     quizTypeMode = 'pick';
-    setDatesMode('pick');
-    applyDatesStartBtn();
+    datesShowSetup();
   }
 }
 
@@ -1960,7 +1963,7 @@ function checkAns(btn) {
   }
   fb.style.display = 'block';
   quizHistory.push({ item, wasCorrect, chosen, allOpts });
-  setTimeout(() => { quizIdx++; quizViewIdx = quizIdx; renderQ(); }, 1700);
+  setTimeout(() => { if (currentMode !== 'dates') return; quizIdx++; quizViewIdx = quizIdx; renderQ(); }, 1700);
 }
 
 function checkYearAns() {
@@ -2024,7 +2027,7 @@ function checkYearAns() {
   }
   fb.style.display = 'block';
   quizHistory.push({ item, wasCorrect });
-  setTimeout(() => { quizIdx++; quizViewIdx = quizIdx; renderQ(); }, 2000);
+  setTimeout(() => { if (currentMode !== 'dates') return; quizIdx++; quizViewIdx = quizIdx; renderQ(); }, 2000);
 }
 
 function quizGoBack() {
@@ -2481,6 +2484,7 @@ function fdAnswer(got) {
   const inner = document.getElementById('fd-card-inner');
   inner.classList.add(got ? 'slide-out-right' : 'slide-out-left');
   setTimeout(() => {
+    if (currentMode !== 'flashcard') return;
     inner.classList.remove('slide-out-right','slide-out-left','flipped');
     inner.classList.add(got ? 'from-left' : 'from-right');
     fdNext();
