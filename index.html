@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mr Rodker's Revision Hub</title>
+<meta name="theme-color" content="#f8f7f4">
+<title>Mr Rodker's Revision Hub | A Level and GCSE History</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}html{font-size:17px}
 
@@ -14,7 +15,6 @@
   --lab:#9B2335;--lab-bg:#FBEEF0;--lab-mid:#C94A5A;
   --na:#1A6B5A;--na-bg:#E5F5F0;--na-mid:#2A9E80;
   --wom:#6B3494;--wom-bg:#F3EEF9;--wom-mid:#9B5EC7;
-  --tudor:#7A450A;--tudor-bg:#FEF3E2;--tudor-mid:#C47B1A;
   --gcse:#0F6E56;--gcse-bg:#E1F5EE;--gcse-mid:#1D9E75;
 }
 
@@ -24,55 +24,83 @@ body{
   min-height:100vh;
 }
 
-.app{max-width:540px;margin:0 auto;padding:1.5rem 1.25rem 4rem}
+.app{max-width:760px;margin:0 auto;padding:2rem 1.25rem 4rem}
 
 h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
 .subtitle{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
 
-/* Section divider — matches app style */
+/* Section divider */
 .section-lbl{
   font-size:.72rem;font-weight:700;
   color:var(--muted);text-transform:uppercase;
   letter-spacing:.06em;
-  margin:1.5rem 0 .65rem;
+  margin:1.5rem 0 1.5rem;
   display:flex;align-items:center;gap:.6rem;
 }
 .section-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
 
-/* Cards — pick-btn style from app */
-.pick-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:.5rem}
+/* Card grid: wide gap between rows leaves room for the year flags */
+.pick-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px 12px;
+  margin-bottom:.5rem;
+}
 
 .pick-btn{
-  padding:1.2rem 1rem;
+  position:relative;
+  padding:1.3rem 2.6rem 1.3rem 1.1rem;
   border:2px solid transparent;
   border-radius:14px;
   cursor:pointer;
-  font-family:inherit;font-weight:700;font-size:.9rem;
+  font-family:inherit;font-weight:700;font-size:1.05rem;
   text-align:left;
-  transition:all .15s;
+  transition:transform .15s,box-shadow .15s,background .15s;
   line-height:1.35;
   text-decoration:none;
   display:block;
   color:inherit;
+  box-shadow:0 1px 2px rgba(0,0,0,.05);
 }
+.pick-btn::after{
+  content:'\2192';
+  position:absolute;right:1.1rem;top:50%;
+  transform:translateY(-50%);
+  opacity:.45;
+  transition:opacity .15s,right .15s;
+}
+.pick-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.pick-btn:hover::after{opacity:1;right:.9rem}
+.pick-btn:focus-visible{outline:3px solid var(--text);outline-offset:2px}
 
 .pick-btn .plabel{
-  font-size:.64rem;font-weight:600;opacity:.65;
+  font-size:.68rem;font-weight:700;opacity:.85;
   display:block;margin-bottom:.25rem;
   text-transform:uppercase;letter-spacing:.06em;
 }
 
 .pick-btn .pdesc{
-  font-size:.7rem;font-weight:400;opacity:.7;
-  display:block;margin-top:.3rem;line-height:1.4;
+  font-size:.78rem;font-weight:400;opacity:.85;
+  display:block;margin-top:.35rem;line-height:1.45;
 }
 
-/* Colour themes matching app exactly */
+/* Year group flags sitting on the top edge of each card */
+.flag{
+  position:absolute;bottom:100%;right:1.05rem;
+  padding:.3rem .7rem .25rem;
+  font-size:.7rem;font-weight:700;letter-spacing:.04em;line-height:1.2;
+  border-radius:8px 8px 0 0;
+}
+.fl-gcse{background:#C2315B;color:#fff}
+.fl-civil{background:#F28C28;color:#2b1400}
+.fl-tudor{background:#1A6B5A;color:#fff}
+
+/* Colour themes */
 .pb-civil{background:var(--aa-bg);color:var(--aa);border-color:var(--aa-mid)}
 .pb-civil:hover{background:#dce8f7}
 
-.pb-tudor{background:var(--tudor-bg);color:var(--tudor);border-color:var(--tudor-mid)}
-.pb-tudor:hover{background:#f5e4cc}
+.pb-tudor{background:var(--lab-bg);color:var(--lab);border-color:var(--lab-mid)}
+.pb-tudor:hover{background:#f5dde1}
 
 .pb-gcse{background:var(--gcse-bg);color:var(--gcse);border-color:var(--gcse-mid)}
 .pb-gcse:hover{background:#cdeee3}
@@ -84,44 +112,56 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
   font-style:italic;
 }
 
-/* Fade in */
+/* Fade in (backwards fill so the hover lift still works afterwards) */
 @keyframes up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-h1{animation:up .3s ease both}
-.pick-btn{animation:up .3s ease both}
+h1{animation:up .3s ease backwards}
+.pick-btn{animation:up .3s ease backwards}
 .pick-btn:nth-child(1){animation-delay:.05s}
 .pick-btn:nth-child(2){animation-delay:.1s}
-.pick-btn:nth-child(3){animation-delay:.15s}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+
+@media print{
+  body{background:#fff}
+  .pick-btn{box-shadow:none;animation:none}
+  .pick-btn::after{display:none}
+}
 </style>
 </head>
 <body>
 <div class="app">
 
   <h1>Mr Rodker's Revision Hub</h1>
-  <p class="subtitle"></p>
+  <p class="subtitle">A Level and GCSE History</p>
+
+  <div class="section-lbl">GCSE · Edexcel</div>
+
+  <div class="pick-grid">
+    <a href="GCSE.html" class="pick-btn pb-gcse">
+      <span class="flag fl-gcse">Y9-11</span>
+      <span class="plabel">Papers 1 to 3</span>
+      GCSE History
+      <span class="pdesc">Migration · Cold War · Elizabeth I · Weimar &amp; Nazi Germany</span>
+    </a>
+  </div>
 
   <div class="section-lbl">A Level · OCR</div>
 
   <div class="pick-grid">
     <a href="civil-rights.html" class="pick-btn pb-civil">
+      <span class="flag fl-civil">Y13</span>
       <span class="plabel">Y319 · Paper 3</span>
       Civil Rights in the USA
       <span class="pdesc">1865–1992 · African Americans · Labour · Native Americans · Women</span>
     </a>
 
     <a href="Y12.html" class="pick-btn pb-tudor">
+      <span class="flag fl-tudor">Y12</span>
       <span class="plabel">Y107 &amp; Y223 · Papers 1 &amp; 2</span>
       Later Tudors &amp; The Cold War
-      <span class="pdesc">England 1547–1603 · Cold War 1941–1991</span>
-    </a>
-  </div>
-
-  <div class="section-lbl">GCSE · Edexcel</div>
-
-  <div class="pick-grid">
-    <a href="GCSE.html" class="pick-btn pb-gcse">
-      <span class="plabel">
-      GCSE History
-      <span class="pdesc">Migration · Cold War · Elizabeth I · Weimar &amp; Nazi Germany</span>
+      <span class="pdesc">England 1547–1603 · Cold War 1941–1995</span>
     </a>
   </div>
 
