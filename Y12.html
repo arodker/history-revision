@@ -7,7 +7,7 @@
 <title>Mr Rodker's A Level History Hub</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html{font-size:17px}
+html{font-size:clamp(17px,.9vw + 8px,24px)}
 :root{
   --bg:#f8f7f4;--surface:#fff;--card:#fafaf8;--border:#e8e7e2;--border2:#ddddd8;
   --text:#1a1a18;--muted:#6b6b68;--muted2:#5f5e5a;--subtle:#eeede8;
@@ -21,19 +21,31 @@ html{font-size:17px}
 }
 body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .2s,color .2s}
 input,select,textarea{font-size:max(16px,1em)}
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--text);outline-offset:2px}
+#mode-knowledge li{max-width:75ch}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
-.app{max-width:780px;margin:0 auto;padding:1.5rem 1.25rem 4rem}
+.app{max-width:46rem;margin:0 auto;padding:1.5rem 1.25rem 4rem}
 h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
 .subtitle{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
 .screen{display:none}.screen.active{display:block}
+@keyframes up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.screen.active{animation:up .2s ease backwards}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 /* SECTION PICKER */
-.pick-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1rem}
-.pick-btn{padding:1.2rem .85rem;border:1.5px solid transparent;border-radius:14px;cursor:pointer;font-family:inherit;font-weight:700;font-size:.88rem;text-align:left;transition:all .15s;line-height:1.3}
-.pick-btn .plabel{font-size:.67rem;font-weight:500;opacity:.75;display:block;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.04em}
-.pick-btn .reign-dots{display:flex;gap:5px;margin-top:.4rem}
-.reign-dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.pick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:.5rem}
+.pick-btn{position:relative;padding:1.2rem 2.4rem 1.2rem 1rem;border:2px solid transparent;border-radius:14px;cursor:pointer;font-family:inherit;font-weight:700;font-size:1rem;text-align:left;line-height:1.3;box-shadow:0 1px 2px rgba(0,0,0,.05);transition:transform .15s,box-shadow .15s,background .15s}
+.pick-btn::after{content:'\2192';position:absolute;right:1rem;top:50%;transform:translateY(-50%);opacity:.45;transition:opacity .15s}
+.pick-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.pick-btn:hover::after{opacity:1}
+.pick-btn .plabel{font-size:.68rem;font-weight:700;opacity:.85;display:block;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.06em}
+.pick-btn .pdesc{font-size:.78rem;font-weight:400;opacity:.85;display:block;margin-top:.35rem}
+.section-lbl{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:1.5rem 0 .65rem;display:flex;align-items:center;gap:.6rem}
+.section-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.tb-btn{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;padding:0 .7rem;font-size:.85rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;text-decoration:none;transition:background .15s,color .15s}
+.tb-btn:hover{background:var(--subtle);color:var(--text)}
+.yr-pill{background:#1A6B5A;color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.25rem .6rem;border-radius:8px}
 .pb-mtc{background:#F3EEFB;color:#5B1B9A;border-color:#A96BE8}
 .pb-mtc:hover{background:#ebe3f7}
 .pb-liz{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
@@ -43,7 +55,7 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
 
 /* HUB */
 .mode-header{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
-.back-btn{padding:6px 12px;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
+.back-btn{padding:.35rem .7rem;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
 .back-btn:hover{background:var(--subtle)}
 .section-badge{font-size:.8rem;font-weight:700;padding:5px 12px;border-radius:20px}
 .bg-mtc{background:#F3EEFB;color:#5B1B9A}
@@ -52,20 +64,20 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
 .mode-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.25rem}
 .mode-btn{padding:1.2rem .75rem;border:1.5px solid var(--border2);border-left-width:4px;border-radius:12px;cursor:pointer;font-family:inherit;font-size:.85rem;font-weight:600;text-align:center;background:var(--surface);color:var(--text);transition:all .15s}
 .mode-btn .icon{font-size:1.4rem;display:block;margin-bottom:.4rem}
-.mode-btn:hover{border-color:#aaa;background:var(--subtle)}
+.mode-btn:hover{border-color:#aaa;background:var(--subtle);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
 .btn-new-badge{position:absolute;top:-6px;right:-6px;background:#E11D48;color:#fff;font-size:.58rem;font-weight:800;padding:2px 7px;border-radius:10px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 1px 4px rgba(0,0,0,.15);line-height:1.3}
 
 /* FILTERS */
 .filter-row{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
-select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-radius:8px;background:var(--input-bg);color:var(--text);cursor:pointer;flex:1;min-width:140px;font-family:inherit}
+select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);border-radius:8px;background:var(--input-bg);color:var(--text);cursor:pointer;flex:1;min-width:140px;font-family:inherit}
 .sel-mtc{background:#F3EEFB;color:#5B1B9A;border-color:#A96BE8}
 .sel-liz{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
 
 /* BUTTONS */
-.btn-go{width:100%;padding:13px;font-size:.95rem;font-weight:700;border:none;border-radius:10px;cursor:pointer;margin-bottom:1.25rem;transition:opacity .15s;color:#fff;font-family:inherit}
+.btn-go{width:100%;padding:.77rem;font-size:.95rem;font-weight:700;border:none;border-radius:10px;cursor:pointer;margin-bottom:1.25rem;transition:opacity .15s;color:#fff;font-family:inherit}
 .btn-go:hover{opacity:.9}
 .c-mtc{background:#7B3FC8}.c-liz{background:#1D9E75}.c-cw{background:#C47B1A}
-.btn-sm{padding:7px 14px;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer;transition:background .12s;font-family:inherit}
+.btn-sm{padding:.41rem .82rem;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer;transition:background .12s;font-family:inherit}
 .btn-sm:hover{background:var(--subtle)}
 .btn-sm.muted-btn{background:var(--subtle);color:var(--text);border-color:var(--border2)}
 
@@ -118,13 +130,13 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .quiz-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
 .quiz-hdr-l{font-size:.8rem;color:var(--muted)}
 .sc-row{display:flex;gap:6px}
-.sc{font-size:.8rem;font-weight:600;padding:4px 10px;border-radius:20px}
+.sc{font-size:.8rem;font-weight:600;padding:.24rem .59rem;border-radius:20px}
 .sc-c{background:#EAF3DE;color:#3B6D11}.sc-w{background:#FCEBEB;color:#A32D2D}
 .quiz-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;margin-bottom:.75rem}
 .quiz-date{font-size:2.8rem;font-weight:800;margin-bottom:.3rem}
 .quiz-prompt{font-size:.82rem;color:var(--muted);margin-bottom:1.2rem}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.opt{padding:10px 8px;font-size:.8rem;font-weight:500;border:1.5px solid var(--border2);border-radius:9px;background:var(--card);color:var(--text);cursor:pointer;text-align:left;line-height:1.4;transition:all .15s;font-family:inherit}
+.opt{padding:.59rem .47rem;font-size:.8rem;font-weight:500;border:1.5px solid var(--border2);border-radius:9px;background:var(--card);color:var(--text);cursor:pointer;text-align:left;line-height:1.4;transition:all .15s;font-family:inherit}
 .opt:hover:not(:disabled){background:var(--subtle);border-color:#aaa}
 .opt:disabled{cursor:default}
 .opt.correct{background:#EAF3DE!important;border-color:#3B6D11!important;color:#3B6D11!important}
@@ -286,7 +298,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .fd-hints-toggle{display:flex;align-items:center;gap:.6rem;font-size:.78rem;font-weight:600;color:var(--muted);margin-bottom:.75rem}
 .fd-hints-toggle input[type=checkbox]{width:1.1rem;height:1.1rem;cursor:pointer}
 .fd-btn-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:.5rem}
-.fd-btn{padding:14px 8px;border-radius:12px;border:none;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .15s}
+.fd-btn{padding:.82rem .47rem;border-radius:12px;border:none;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .15s}
 .fd-got{background:#d1fae5;color:#065f46}.fd-got:hover{background:#a7f3d0}
 .fd-miss{background:#fee2e2;color:#991b1b}.fd-miss:hover{background:#fecaca}
 .fd-progress-wrap{margin-bottom:.75rem}
@@ -310,7 +322,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 .fd-card-inner.slide-in-l{animation:slide-in-l .22s ease forwards}
 
 /* TRACKER WHEELS */
-.fd-wheel{width:64px;height:64px;display:block;margin:0 auto .4rem;transition:transform .15s}
+.fd-wheel{width:3.75rem;height:3.75rem;display:block;margin:0 auto .4rem;transition:transform .15s}
 .fd-wheel-cell{text-align:center;flex:1;cursor:pointer;padding:.25rem;border-radius:10px;transition:background .15s}
 .fd-wheel-cell:hover .fd-wheel{transform:scale(1.08)}
 .fd-wheel-cell:hover{background:var(--subtle)}
@@ -324,12 +336,10 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 :root.dark .fd-summary-card.is-perfect{background:linear-gradient(135deg,#2a2510,#2e2e34);border-color:#c49a1a}
 
 /* ── SEARCH ── */
-#search-btn{padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
-#search-btn:hover{background:var(--subtle);color:var(--text)}
 .search-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:5vh 1rem 1rem;overflow-y:auto}
 .search-overlay.open{display:flex}
 :root.dark .search-overlay{background:rgba(0,0,0,.7)}
-.search-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;width:100%;max-width:560px;box-shadow:0 12px 32px rgba(0,0,0,.18);overflow:hidden;animation:search-slide .18s ease}
+.search-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;width:100%;max-width:35rem;box-shadow:0 12px 32px rgba(0,0,0,.18);overflow:hidden;animation:search-slide .18s ease}
 @keyframes search-slide{from{transform:translateY(-12px);opacity:0}to{transform:translateY(0);opacity:1}}
 .search-head{display:flex;align-items:center;gap:8px;padding:.8rem 1rem;border-bottom:1px solid var(--border)}
 .search-input{flex:1;padding:8px 12px;font-size:.95rem;border:1.5px solid var(--border2);border-radius:8px;background:var(--input-bg);color:var(--text);font-family:inherit;outline:none}
@@ -393,9 +403,9 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 <div class="app">
 
 <div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;margin-bottom:.5rem">
-  <button id="search-btn" onclick="openSearch()" title="Search topics">🔍</button>
-  <button id="dark-toggle" onclick="toggleDark()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit" title="Toggle dark mode">🌙</button>
-  <a href="index.html" style="font-size:.78rem;font-weight:600;padding:6px 12px;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);text-decoration:none">← Hub</a>
+  <button id="search-btn" class="tb-btn" onclick="openSearch()" title="Search topics">🔍</button>
+  <button id="dark-toggle" class="tb-btn" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+  <a href="index.html" class="tb-btn">← Hub</a>
 </div>
 
 <!-- SEARCH OVERLAY -->
@@ -414,28 +424,32 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
 
 <!-- ══ SCREEN 1: SECTION PICKER ══ -->
 <div class="screen active" id="s-pick">
-  <h1 style="margin-bottom:.3rem">Mr Rodker's A Level History Hub</h1>
-  <p style="font-size:.85rem;color:var(--muted);margin-bottom:.9rem">A Level Revision — Year 12 Content</p>
-
-  <div style="display:grid;grid-template-columns:2fr 1fr;gap:8px">
-    <div style="border:1.5px solid var(--border2);border-radius:12px;padding:.6rem .6rem .5rem">
-      <div style="font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.45rem;padding-left:.1rem">Paper 1</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-        <button class="pick-btn pb-mtc" onclick="pickSection('mtc')">
-          <span class="plabel">1547–1558</span>⚔️ Mid Tudor Crisis
-        </button>
-        <button class="pick-btn pb-liz" onclick="pickSection('elizabeth')">
-          <span class="plabel">1558–1603</span>⚜️ Elizabeth I
-        </button>
-      </div>
-    </div>
-    <div style="border:1.5px solid var(--border2);border-radius:12px;padding:.6rem .6rem .5rem">
-      <div style="font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.45rem;padding-left:.1rem">Paper 2</div>
-      <button class="pick-btn pb-cw" onclick="pickSection('coldwar')" style="width:100%;height:calc(100% - 1.4rem)">
-        <span class="plabel">1941–1995</span>☢️ Cold War
-      </button>
-    </div>
+  <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.3rem">
+    <h1 style="margin:0">Mr Rodker's A Level History Hub</h1>
+    <span class="yr-pill">Y12</span>
   </div>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:.4rem">OCR A Level revision</p>
+
+  <div class="section-lbl">Paper 1 · England 1547–1603</div>
+  <div class="pick-grid">
+    <button class="pick-btn pb-mtc" onclick="pickSection('mtc')">
+      <span class="plabel">1547–1558</span>⚔️ Mid Tudor Crisis
+      <span class="pdesc">3 units</span>
+    </button>
+    <button class="pick-btn pb-liz" onclick="pickSection('elizabeth')">
+      <span class="plabel">1558–1603</span>⚜️ Elizabeth I
+      <span class="pdesc">4 units</span>
+    </button>
+  </div>
+
+  <div class="section-lbl">Paper 2 · The Cold War in Europe 1941–1995</div>
+  <div class="pick-grid">
+    <button class="pick-btn pb-cw" onclick="pickSection('coldwar')">
+      <span class="plabel">1941–1995</span>☢️ Cold War
+      <span class="pdesc">4 chapters</span>
+    </button>
+  </div>
+
   <!-- Inline search bar -->
   <div class="inline-search-wrap">
     <div class="inline-search-bar">
@@ -446,8 +460,8 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     <div class="inline-search-results" id="inline-search-results"></div>
   </div>
   <!-- Tracker wheels -->
-  <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border)">
-    <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem">⚡ Your progress today</p>
+  <div style="margin-top:.5rem">
+    <div class="section-lbl">⚡ Your progress today</div>
     <div id="fd-tracker" style="display:flex;justify-content:space-around;align-items:flex-start;padding:.75rem .5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:14px">
       <div class="fd-wheel-cell" onclick="fdWheelLaunch('mtc')">
         <svg class="fd-wheel" viewBox="0 0 60 60">
@@ -482,7 +496,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
     </div>
   </div>
   <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border)">
-    <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
+    <button class="btn-go" style="background:var(--text);color:var(--bg);margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
     <div id="home-pinned-link" style="display:none;text-align:center">
       <button onclick="goToPinnedReview()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer">📌 Review pinned cards</button>
     </div>
@@ -498,7 +512,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
   <!-- Primary: Flashcard with wheel -->
   <div style="display:flex;align-items:center;gap:1rem;background:var(--surface);border:1.5px solid var(--border2);border-left-width:4px;border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;cursor:pointer" id="fd-primary-btn" onclick="enterMode('flashcard')">
     <div style="flex-shrink:0;text-align:center">
-      <svg id="fd-hub-wheel" class="fd-wheel" viewBox="0 0 60 60" style="width:64px;height:64px;display:block">
+      <svg id="fd-hub-wheel" class="fd-wheel" viewBox="0 0 60 60" style="width:3.75rem;height:3.75rem;display:block">
         <circle id="fd-hub-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
         <circle id="fd-hub-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
         <circle id="fd-hub-ring-got" cx="30" cy="30" r="24" fill="none" stroke="#888" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
@@ -633,7 +647,7 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
       <!-- Wheel + unit breakdown -->
       <div style="display:flex;align-items:flex-start;gap:1rem;padding:.75rem .5rem .25rem;margin-top:.75rem">
         <div style="text-align:center;flex-shrink:0">
-          <svg id="fd-setup-wheel" viewBox="0 0 60 60" style="width:64px;height:64px;display:block;margin:0 auto .3rem">
+          <svg id="fd-setup-wheel" viewBox="0 0 60 60" style="width:3.75rem;height:3.75rem;display:block;margin:0 auto .3rem">
             <circle id="fd-setup-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
             <circle id="fd-setup-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
             <circle id="fd-setup-ring-got" cx="30" cy="30" r="24" fill="none" stroke="#888" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
@@ -792,9 +806,8 @@ select{padding:8px 10px;font-size:.82rem;border:1px solid var(--border2);border-
   </div>
 </div>
 
-</div><!-- /app -->
+<!-- /app -->
 <script>
-
 // ═══════════════════════════════════
 // DARK MODE
 // ═══════════════════════════════════
@@ -2334,12 +2347,15 @@ function fdShowSummary() {
   let unitCards = FD.filter(c => c.section === currentSection);
   if (unit !== 'all') unitCards = unitCards.filter(c => c.unit === unit);
   const unitTotal = unitCards.length;
-  if (unitTotal > 0 && unitCards.every(c => mastered[fdKey(c)])) {
+  const allMastered = unitTotal > 0 && unitCards.every(c => mastered[fdKey(c)]);
+  const cleanSweep  = fdMissCount === 0 && fdGot > 0;
+  if (allMastered || cleanSweep) {
     document.getElementById('fd-drill').style.display    = 'none';
     document.getElementById('fd-summary').style.display  = 'none';
     document.getElementById('fd-complete').style.display = 'block';
-    document.getElementById('fd-complete-count').textContent =
-      `All ${unitTotal} card${unitTotal !== 1 ? 's' : ''} mastered ✅`;
+    document.getElementById('fd-complete-count').textContent = allMastered
+      ? `All ${unitTotal} card${unitTotal !== 1 ? 's' : ''} mastered ✅`
+      : `${fdGot} card${fdGot !== 1 ? 's' : ''} — clean sweep! ✅`;
     fdFireConfetti();
     return;
   }
