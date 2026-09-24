@@ -7,6 +7,7 @@
 <title>Mr Rodker's Revision Hub - GCSE</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+html{font-size:clamp(16px,.9vw + 7px,24px)}
 :root{
   --bg:#f8f7f4;--surface:#fff;--card:#fafaf8;--border:#e8e7e2;--border2:#ddddd8;
   --text:#1a1a18;--muted:#6b6b68;--muted2:#5f5e5a;--subtle:#eeede8;
@@ -18,17 +19,31 @@
   --tag-bg:#2e2e34;--tag-col:#aaa;--input-bg:#2e2e34;
 }
 body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .2s,color .2s}
-.app{max-width:720px;margin:0 auto;padding:1.5rem 1rem 4rem}
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--text);outline-offset:2px}
+#mode-knowledge li{max-width:75ch}
+.app{max-width:45rem;margin:0 auto;padding:1.5rem 1rem 4rem}
 h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;margin-bottom:.2rem}
 .subtitle{font-size:.82rem;color:var(--muted);margin-bottom:1.75rem}
 
 /* SCREENS */
 .screen{display:none}.screen.active{display:block}
+@keyframes up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.screen.active{animation:up .2s ease backwards}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 /* PAPER PICKER */
 .paper-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem}
-.paper-btn{padding:1.4rem 1rem;border:1.5px solid transparent;border-radius:14px;cursor:pointer;font-family:inherit;font-weight:600;font-size:.95rem;text-align:left;transition:all .15s;line-height:1.3}
-.paper-btn .plabel{font-size:.72rem;font-weight:500;opacity:.75;display:block;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.04em}
+.paper-btn{position:relative;padding:1.2rem 2.4rem 1.2rem 1rem;border:2px solid transparent;border-radius:14px;cursor:pointer;font-family:inherit;font-weight:700;font-size:1rem;text-align:left;line-height:1.3;box-shadow:0 1px 2px rgba(0,0,0,.05);transition:transform .15s,box-shadow .15s,background .15s}
+.paper-btn::after{content:'\2192';position:absolute;right:1rem;top:50%;transform:translateY(-50%);opacity:.45;transition:opacity .15s}
+.paper-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.paper-btn:hover::after{opacity:1}
+.paper-btn .plabel{font-size:.68rem;font-weight:700;opacity:.85;display:block;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.06em}
+.paper-btn .pdesc{font-size:.78rem;font-weight:400;opacity:.85;display:block;margin-top:.35rem}
+.section-lbl{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:1.5rem 0 .65rem;display:flex;align-items:center;gap:.6rem}
+.section-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.tb-btn{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;padding:0 .7rem;font-size:.85rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;text-decoration:none;transition:background .15s,color .15s}
+.tb-btn:hover{background:var(--subtle);color:var(--text)}
+.yr-pill{background:#C2315B;color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.25rem .6rem;border-radius:8px}
 .pb-p1{background:#FEF9E7;color:#9A6B00;border-color:#F0B429}
 .pb-p2a{background:#FBEAF0;color:#993556;border-color:#D4537E}
 .pb-p2b{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
@@ -38,7 +53,7 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 
 /* MODE PICKER */
 .mode-header{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
-.back-btn{padding:6px 12px;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
+.back-btn{padding:.4rem .75rem;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
 .back-btn:hover{background:var(--subtle)}
 .paper-badge{font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:20px}
 .bg-p1{background:#FEF9E7;color:#9A6B00}.bg-p2a{background:#FBEAF0;color:#993556}
@@ -46,7 +61,7 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 .mode-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.25rem}
 .mode-btn{padding:1.2rem .75rem;border:1.5px solid var(--border2);border-top:1.5px solid var(--border2);border-radius:12px;cursor:pointer;font-family:inherit;font-size:.85rem;font-weight:600;text-align:center;background:var(--surface);color:var(--text);transition:all .15s;border-left-width:4px}
 .mode-btn .icon{font-size:1.4rem;display:block;margin-bottom:.4rem}
-.mode-btn:hover{border-color:#aaa;background:var(--subtle)}
+.mode-btn:hover{border-color:#aaa;background:var(--subtle);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
 .mode-btn.sel{border-color:#555;background:#555;color:#fff}
 .mode-btn.stripe-p1{border-left-color:#F0B429}
 .mode-btn.stripe-p2a{border-left-color:#D4537E}
@@ -55,14 +70,14 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 
 /* FILTERS */
 .filter-row{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
-select{padding:8px 10px;font-size:.82rem;border:1px solid #ddddd8;border-radius:8px;background:#fff;color:var(--text);cursor:pointer;flex:1;min-width:140px;font-family:inherit}
+select{padding:.5rem .65rem;font-size:.82rem;border:1px solid #ddddd8;border-radius:8px;background:#fff;color:var(--text);cursor:pointer;flex:1;min-width:140px;font-family:inherit}
 select.sel-p1{background:#FEF9E7;color:#9A6B00;border-color:#F0B429}
 select.sel-p2a{background:#FBEAF0;color:#993556;border-color:#D4537E}
 select.sel-p2b{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
 select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
 /* GO BUTTON */
-.btn-go{width:100%;padding:13px;font-size:.95rem;font-weight:600;border:none;border-radius:10px;cursor:pointer;margin-bottom:1.25rem;transition:opacity .15s;color:#fff;font-family:inherit}
+.btn-go{width:100%;padding:.8rem;font-size:.95rem;font-weight:600;border:none;border-radius:10px;cursor:pointer;margin-bottom:1.25rem;transition:opacity .15s;color:#fff;font-family:inherit}
 .btn-go:hover{opacity:.9}
 .c-p1{background:#F0B429}.c-p2a{background:#D4537E}
 .c-p2b{background:#1D9E75}.c-p3{background:#378ADD}
@@ -80,7 +95,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .card-heading{font-family:'DM Serif Display',serif;font-size:1.05rem;font-weight:400;margin-bottom:.5rem;line-height:1.3}
 .card-q{font-size:.88rem;line-height:1.65}
 .btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:.9rem}
-.btn-sm{padding:7px 14px;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer;transition:background .12s;font-family:inherit}
+.btn-sm{padding:.45rem .9rem;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer;transition:background .12s;font-family:inherit}
 .btn-sm:hover{background:var(--subtle)}
 
 /* REVEAL */
@@ -105,13 +120,13 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .quiz-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
 .quiz-hdr-l{font-size:.8rem;color:var(--muted)}
 .sc-row{display:flex;gap:6px}
-.sc{font-size:.8rem;font-weight:600;padding:4px 10px;border-radius:20px}
+.sc{font-size:.8rem;font-weight:600;padding:.25rem .65rem;border-radius:20px}
 .sc-c{background:#EAF3DE;color:#3B6D11}.sc-w{background:#FCEBEB;color:#A32D2D}
 .quiz-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;margin-bottom:.75rem}
 .quiz-date{font-family:'DM Serif Display',serif;font-size:2.8rem;font-weight:400;margin-bottom:.3rem}
 .quiz-prompt{font-size:.82rem;color:var(--muted);margin-bottom:1.2rem}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.opt{padding:10px 8px;font-size:.8rem;font-weight:500;border:1.5px solid var(--border2);border-radius:9px;background:var(--card);color:var(--text);cursor:pointer;text-align:left;line-height:1.4;transition:all .15s;font-family:inherit}
+.opt{padding:.65rem .5rem;font-size:.8rem;font-weight:500;border:1.5px solid var(--border2);border-radius:9px;background:var(--card);color:var(--text);cursor:pointer;text-align:left;line-height:1.4;transition:all .15s;font-family:inherit}
 .opt:hover:not(:disabled){background:var(--subtle);border-color:#aaa}
 .opt:disabled{cursor:default}
 .opt.correct{background:#EAF3DE!important;border-color:#3B6D11!important;color:#3B6D11!important}
@@ -172,12 +187,10 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 #d-countdown-num { animation:cd-pop .35s ease forwards; }
 
 /* ── SEARCH ── */
-#search-btn{padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
-#search-btn:hover{background:var(--subtle);color:var(--text)}
 .search-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:5vh 1rem 1rem;overflow-y:auto}
 .search-overlay.open{display:flex}
 :root.dark .search-overlay{background:rgba(0,0,0,.7)}
-.search-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;width:100%;max-width:560px;box-shadow:0 12px 32px rgba(0,0,0,.18);overflow:hidden;animation:search-slide .18s ease}
+.search-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;width:100%;max-width:35rem;box-shadow:0 12px 32px rgba(0,0,0,.18);overflow:hidden;animation:search-slide .18s ease}
 @keyframes search-slide{from{transform:translateY(-12px);opacity:0}to{transform:translateY(0);opacity:1}}
 .search-head{display:flex;align-items:center;gap:8px;padding:.8rem 1rem;border-bottom:1px solid var(--border)}
 .search-input{flex:1;padding:8px 12px;font-size:.95rem;border:1.5px solid var(--border2);border-radius:8px;background:var(--input-bg);color:var(--text);font-family:inherit;outline:none}
@@ -270,7 +283,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .fd-hints-toggle { display:flex; align-items:center; gap:.6rem; font-size:.78rem; font-weight:600; color:var(--muted); margin-bottom:.75rem; }
 .fd-hints-toggle input[type=checkbox] { width:1.1rem; height:1.1rem; cursor:pointer; accent-color:var(--accent); }
 .fd-btn-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:.5rem; }
-.fd-btn { padding:14px 8px; border-radius:12px; border:none; font-family:inherit; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .15s; }
+.fd-btn { padding:.9rem .5rem; border-radius:12px; border:none; font-family:inherit; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .15s; }
 .fd-got  { background:#d1fae5; color:#065f46; }
 .fd-got:hover  { background:#a7f3d0; }
 .fd-miss { background:#fee2e2; color:#991b1b; }
@@ -288,7 +301,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .fd-outstanding-note { font-size:.78rem; color:var(--text); background:var(--subtle); border-radius:8px; padding:.5rem .75rem; margin-top:.75rem; line-height:1.45; }
 
 /* FLASHCARD TRACKER WHEELS */
-.fd-wheel { width:64px; height:64px; display:block; margin:0 auto .4rem; transition:transform .15s; }
+.fd-wheel { width:4rem; height:4rem; display:block; margin:0 auto .4rem; transition:transform .15s; }
 .fd-wheel-cell { text-align:center; flex:1; cursor:pointer; padding:.25rem; border-radius:10px; transition:background .15s; }
 .fd-wheel-cell:hover .fd-wheel { transform:scale(1.08); }
 .fd-wheel-cell:hover { background:var(--subtle); }
@@ -309,10 +322,10 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 <canvas id="fd-confetti-canvas" style="display:none"></canvas>
 <div class="app">
 <div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;margin-bottom:.5rem">
-  <button id="search-btn" onclick="openSearch()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit" title="Search topics">🔍</button>
-  <button id="print-btn" onclick="window.print()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;display:none" title="Print">🖨️</button>
-  <button id="dark-toggle" onclick="toggleDark()" style="padding:6px 10px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit" title="Toggle dark mode">🌙</button>
-  <a href="index.html" id="hub-link" style="font-size:.78rem;font-weight:600;padding:6px 12px;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);text-decoration:none">← Hub</a>
+  <button id="search-btn" class="tb-btn" onclick="openSearch()" title="Search topics">🔍</button>
+  <button id="print-btn" class="tb-btn" onclick="window.print()" style="display:none" title="Print">🖨️</button>
+  <button id="dark-toggle" class="tb-btn" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+  <a href="index.html" id="hub-link" class="tb-btn">← Hub</a>
 </div>
 
 <!-- SEARCH OVERLAY -->
@@ -331,8 +344,11 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
 <!-- SCREEN 1: PAPER PICKER -->
 <div class="screen active" id="s-pick">
-  <h1 style="margin-bottom:.5rem;font-size:1.25rem">Mr Rodker's GCSE History Hub</h1>
-  <p style="font-size:.85rem;color:var(--muted);margin-bottom:.9rem">What are you revising today?</p>
+  <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.3rem">
+    <h1 style="margin:0;font-size:1.45rem;font-weight:700">Mr Rodker's GCSE History Hub</h1>
+    <span class="yr-pill">Y9-11</span>
+  </div>
+  <p style="font-size:.85rem;color:var(--muted);margin-bottom:1rem">What are you revising today?</p>
   <div class="paper-grid">
     <button class="paper-btn pb-p1" onclick="pickPaper('p1')"><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
     <button class="paper-btn pb-p2a" onclick="pickPaper('p2a')"><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
@@ -349,12 +365,12 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <div class="inline-search-results" id="inline-search-results"></div>
   </div>
    <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #e8e7e2">
-    <button class="btn-go" style="background:#555;margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
+    <button class="btn-go" style="background:var(--text);color:var(--bg);margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
   </div>
     <a href="https://mossbourneacademy-my.sharepoint.com/:f:/g/personal/arodker_mca_mossbourne_org/IgAZ08GN5heHQqZyOGPBdp46AS6otY5Twn_VYu8TGHoiFQ8?e=OQdODG" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.75rem;padding:.7rem 1rem;background:#F1EBFA;color:#6B4E9E;border:1.5px solid #D6C4EF;border-radius:12px;font-size:.85rem;font-weight:600;text-decoration:none;text-align:center">🔗 More Resources<span style="background:#6B4E9E;color:#fff;font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:20px;letter-spacing:.03em">NEW</span></a>
   <!-- Flashcard tracker wheels -->
-  <div class="rq-section" style="margin-bottom:1rem">
-    <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem">⚡ Your progress today</p>
+  <div class="rq-section" style="margin-bottom:1rem;border-top:none;padding-top:0">
+    <div class="section-lbl">⚡ Your progress today</div>
     <div id="fd-tracker" style="display:flex;justify-content:space-around;align-items:flex-start;padding:.75rem .5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:14px">
       <div class="fd-wheel-cell" data-paper="p1" onclick="fdWheelLaunch('p1')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg><div class="fd-wheel-label">Migrants</div></div>
       <div class="fd-wheel-cell" data-paper="p2a" onclick="fdWheelLaunch('p2a')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg><div class="fd-wheel-label">Cold War</div></div>
@@ -376,7 +392,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   <!-- Primary: Flashcard Drill with wheel -->
   <div style="display:flex;align-items:center;gap:1rem;background:var(--surface);border:1.5px solid var(--border2);border-left-width:4px;border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;cursor:pointer" id="fd-primary-btn" onclick="enterMode('flashcard')">
     <div id="fd-hub-wheel-cell" title="Flashcard progress today" style="flex-shrink:0;text-align:center">
-      <svg id="fd-hub-wheel" class="fd-wheel" viewBox="0 0 60 60" style="width:64px;height:64px;display:block">
+      <svg id="fd-hub-wheel" class="fd-wheel" viewBox="0 0 60 60" style="width:4rem;height:4rem;display:block">
         <circle id="fd-hub-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
         <circle id="fd-hub-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
         <circle id="fd-hub-ring-got" cx="30" cy="30" r="24" fill="none" stroke="#888" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
@@ -493,7 +509,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       <!-- Single paper wheel + unit breakdown -->
       <div style="display:flex;align-items:flex-start;gap:1rem;padding:.75rem .5rem .25rem;margin-top:.75rem">
         <div id="fd-setup-wheel-cell" style="text-align:center;flex-shrink:0">
-          <svg id="fd-setup-wheel" viewBox="0 0 60 60" style="width:64px;height:64px;display:block;margin:0 auto .3rem">
+          <svg id="fd-setup-wheel" viewBox="0 0 60 60" style="width:4rem;height:4rem;display:block;margin:0 auto .3rem">
             <circle id="fd-setup-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
             <circle id="fd-setup-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
             <circle id="fd-setup-ring-got" cx="30" cy="30" r="24" fill="none" stroke="#888" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
@@ -2929,7 +2945,7 @@ function fdFireConfetti() {
 
 </script>
 <!-- EXAM FULLSCREEN OVERLAY -->
-<div id="exam-fullscreen" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;padding:2rem 1.5rem;overflow-y:auto">
+<div id="exam-fullscreen" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:9999;padding:2rem max(1.5rem,calc((100vw - 46rem)/2));overflow-y:auto">
   <span id="fs-type" style="display:block;font-size:.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem"></span>
   <div class="fs-timer" id="fs-timer">00:00</div>
   <div class="fs-bar"><div class="fs-bar-fill" id="fs-bar-fill" style="width:100%"></div></div>
