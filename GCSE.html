@@ -343,6 +343,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .fd-streak-more{display:inline-flex;align-items:center;justify-content:center;min-width:1.4rem;height:1rem;padding:0 .3rem;margin-left:.15rem;border-radius:999px;background:var(--subtle);color:var(--muted);font-size:.68rem;font-weight:800}
 .fd-streak-dot.today svg{outline:1.5px solid var(--muted);outline-offset:1px;border-radius:3px}
 .fd-streak-label{font-size:.76rem;font-weight:600;color:var(--muted);text-align:center}
+.fd-bowl-wrap-compact{margin-top:0;margin-bottom:.85rem}
 /* ===== Stamps ===== */
 :root{--stamp-g:#2E7D32;--stamp-r:#B83227;--stamp-gold:#B7791F}
 :root.dark body{--stamp-g:#6fcf6f;--stamp-r:#e07070;--stamp-gold:#E6C77E}
@@ -402,6 +403,9 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     </div>
     <div class="inline-search-results" id="inline-search-results"></div>
   </div>
+  <div style="margin-top:1.1rem;padding-top:1rem;border-top:1px solid #e8e7e2">
+    <button class="btn-go" style="background:var(--text);color:var(--bg);margin-bottom:0" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
+  </div>
   <div style="margin-top:1.1rem">
   <div class="fd-bowl-wrap" id="fd-bowl-wrap">
     <div class="fd-bowl-title">Knowledge is Porridge</div>
@@ -416,7 +420,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       <ellipse cx="80" cy="46" rx="52" ry="9" fill="none" id="fd-bowl-top" stroke="var(--muted)" stroke-width="3"/>
       <rect x="62" y="100" width="36" height="5" rx="2.5" fill="var(--muted)"/>
     </svg></div>
-    <div class="fd-bowl-label" id="fd-bowl-label">0 of 25 today</div>
+    <div class="fd-bowl-label" id="fd-bowl-label">0 of 25 flashcards</div>
     <div class="fd-streak-wrap">
       <div class="fd-streak-row" id="fd-streak-row"></div>
       <div class="fd-streak-label" id="fd-streak-label">Start a streak today</div>
@@ -432,9 +436,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       <div class="fd-wheel-cell" data-paper="p2b" onclick="fdWheelLaunch('p2b')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2b" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg><div class="fd-wheel-label">Elizabeth</div></div>
       <div class="fd-wheel-cell" data-paper="p3" onclick="fdWheelLaunch('p3')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p3" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg><div class="fd-wheel-label">Germany</div></div>
     </div>
-  </div>
-  <div style="margin-top:0;padding-top:1rem;border-top:1px solid #e8e7e2">
-    <button class="btn-go" style="background:var(--text);color:var(--bg);margin-bottom:.75rem" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
   </div>
     <div id="home-pinned-link" style="display:none;text-align:center;margin-top:.5rem">
     <button onclick="goToPinnedReview()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer">📌 Review pinned cards</button>
@@ -473,6 +474,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <button class="mode-btn" onclick="enterMode('dates')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">📅</span>Key Dates Quiz</button>
     <button class="mode-btn" onclick="enterMode('exam')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">✏️</span>Exam Practice</button>
   </div>
+  <div class="fd-bowl-wrap fd-bowl-wrap-compact" id="fd-bowl-hub-wrap" style="margin-top:.5rem"></div>
 </div>
 
 <!-- SCREEN 3: MODE CONTENT -->
@@ -550,7 +552,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   <div id="mode-flashcard" style="display:none">
     <!-- Setup state -->
     <div id="fd-setup">
-
       <div style="margin-bottom:.75rem">
         <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Choose unit</label>
         <select id="fd-unit" onchange="fdUpdateStartBtn()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
@@ -579,6 +580,8 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
         </div>
         <div id="fd-unit-breakdown" style="flex:1;font-size:.72rem;margin-top:.1rem"></div>
       </div>
+
+      <div class="fd-bowl-wrap fd-bowl-wrap-compact" id="fd-bowl-setup-wrap" style="margin-top:.5rem"></div>
     </div>
 
     <!-- Drill state -->
@@ -612,6 +615,8 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
           <div class="fd-stamp" id="fd-stamp" aria-hidden="true"></div>
         </div>
       </div>
+
+      <div class="fd-bowl-wrap fd-bowl-wrap-compact" id="fd-bowl-drill-wrap"></div>
 
       <div class="fd-btn-row" id="fd-btn-row" style="display:none">
         <button class="fd-btn fd-miss" onclick="fdAnswer(false)">❌ Missed</button>
@@ -2538,6 +2543,7 @@ function fdAnswer(got) {
 
   // Record in today's session tally
   fdRecordSessionCard(fdCurrent.paper, got);
+  fdBowlPaint('fd-bowl-drill');
 
   if (got) {
     fdGot++;
@@ -2838,6 +2844,7 @@ const paperColours = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'};
 const paperLabels  = {p1:'Migrants', p2a:'Cold War', p2b:'Elizabeth', p3:'Germany'};
 
 function renderFdSetupWheel() {
+  fdBowlPaint('fd-bowl-setup');
   if (!FD || !FD.length || !currentPaper) return;
   const session    = fdGetSession();
   const circ       = 2 * Math.PI * 24;
@@ -2895,6 +2902,7 @@ function renderFdSetupWheel() {
 }
 
 function renderFdHubWheel() {
+  fdBowlPaint('fd-bowl-hub');
   if (!FD || !FD.length || !currentPaper) return;
   const session    = fdGetSession();
   const outstanding = fdGetOutstanding();
@@ -2941,9 +2949,31 @@ function fdBowlTodayCount() {
   return ['p1','p2a','p2b','p3'].reduce((sum, p) => sum + (s.got[p] || 0), 0);
 }
 
-function renderFdBowl() {
-  const wrap = document.getElementById('fd-bowl-wrap');
-  if (!wrap) return;
+function fdBowlBuildHtml(prefix, w, h) {
+  return '<div class="fd-bowl-svg-wrap"><span class="fd-bowl-badge" id="' + prefix + '-badge" style="display:none"></span>' +
+    '<svg id="' + prefix + '-svg" viewBox="0 0 160 128" width="' + w + '" height="' + h + '" aria-hidden="true">' +
+    '<g id="' + prefix + '-steam" class="fd-steam"><path d="M62 40 Q56 28 62 18 Q68 8 62 -2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M80 36 Q74 24 80 14 Q86 4 80 -6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M98 40 Q92 28 98 18 Q104 8 98 -2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></g>' +
+    '<path d="M28 46 Q28 100 80 100 Q132 100 132 46 Z" fill="var(--paper)" stroke="var(--paper-edge)" stroke-width="2"/>' +
+    '<defs><clipPath id="' + prefix + '-clip"><path d="M28 46 Q28 100 80 100 Q132 100 132 46 Z"/></clipPath></defs>' +
+    '<rect id="' + prefix + '-fill" x="20" y="90" width="120" height="0" fill="#E7CF9C" clip-path="url(#' + prefix + '-clip)"/>' +
+    '<ellipse id="' + prefix + '-fill-top" cx="80" cy="90" rx="52" ry="7" fill="#F0DDB0" clip-path="url(#' + prefix + '-clip)"/>' +
+    '<path id="' + prefix + '-rim" d="M28 46 Q28 100 80 100 Q132 100 132 46" fill="none" stroke="var(--muted)" stroke-width="3"/>' +
+    '<ellipse cx="80" cy="46" rx="52" ry="9" fill="none" stroke="var(--muted)" stroke-width="3"/>' +
+    '<rect x="62" y="100" width="36" height="5" rx="2.5" fill="var(--muted)"/>' +
+    '</svg></div>' +
+    '<div class="fd-bowl-label" id="' + prefix + '-label">0 of 25 flashcards</div>';
+}
+(function fdBowlBuildCompactBowls() {
+  var s1 = document.getElementById('fd-bowl-setup-wrap');
+  if (s1) s1.innerHTML = fdBowlBuildHtml('fd-bowl-setup', 84, 68);
+  var s2 = document.getElementById('fd-bowl-drill-wrap');
+  if (s2) s2.innerHTML = fdBowlBuildHtml('fd-bowl-drill', 84, 68);
+  var s3 = document.getElementById('fd-bowl-hub-wrap');
+  if (s3) s3.innerHTML = fdBowlBuildHtml('fd-bowl-hub', 84, 68);
+})();
+function fdBowlPaint(prefix) {
+  const wrap = document.getElementById(prefix + '-wrap');
+  if (!wrap) return undefined;
   const target = fdBowlGetTarget();
   const count = fdBowlTodayCount();
   const pct = Math.min(1, count / target);
@@ -2951,25 +2981,25 @@ function renderFdBowl() {
   const full = tier >= 1;
   const topY = 46, botY = 100;
   const fillY = botY - pct * (botY - topY);
-  const fillEl = document.getElementById('fd-bowl-fill');
+  const fillEl = document.getElementById(prefix + '-fill');
   if (fillEl) { fillEl.setAttribute('y', fillY); fillEl.setAttribute('height', Math.max(0, botY - fillY)); }
-  const topEl = document.getElementById('fd-bowl-fill-top');
+  const topEl = document.getElementById(prefix + '-fill-top');
   if (topEl) { topEl.setAttribute('cy', fillY); topEl.style.opacity = pct > 0.02 ? '1' : '0'; }
   const rimColours = { 0: 'var(--muted)', 1: '#F0B429', 2: '#8B95A1', 3: '#D4AF37', 4: '#6B3494' };
-  const rimEl = document.getElementById('fd-bowl-rim');
+  const rimEl = document.getElementById(prefix + '-rim');
   if (rimEl) rimEl.setAttribute('stroke', rimColours[tier]);
-  const steamEl = document.getElementById('fd-bowl-steam');
+  const steamEl = document.getElementById(prefix + '-steam');
   if (steamEl) steamEl.style.opacity = full ? '1' : '0';
-  const labelEl = document.getElementById('fd-bowl-label');
+  const labelEl = document.getElementById(prefix + '-label');
   const labels = {
-    0: count + ' of ' + target + ' today',
+    0: count + ' of ' + target + ' flashcards',
     1: 'Bowl full — nice work! 🥣',
     2: 'Silver bowl — brilliant! 🥈',
     3: 'Gold bowl — incredible! 🥇',
     4: 'Purple bowl — legendary! 💜'
   };
   if (labelEl) labelEl.textContent = labels[tier];
-  const badgeEl = document.getElementById('fd-bowl-badge');
+  const badgeEl = document.getElementById(prefix + '-badge');
   if (badgeEl) {
     if (tier >= 2) { badgeEl.textContent = tier === 2 ? '50' : tier === 3 ? '75' : '100'; badgeEl.style.display = 'flex'; }
     else { badgeEl.style.display = 'none'; }
@@ -2978,9 +3008,17 @@ function renderFdBowl() {
   wrap.classList.toggle('silver', tier >= 2);
   wrap.classList.toggle('gold', tier >= 3);
   wrap.classList.toggle('purple', tier >= 4);
+  return tier;
+}
+function renderFdBowl() {
+  const tier = fdBowlPaint('fd-bowl');
+  if (tier === undefined) return;
   if (tier >= 2 && tier > fdBowlSeenTier) fdFireConfetti();
   fdBowlSeenTier = tier;
   renderFdStreak();
+  fdBowlPaint('fd-bowl-setup');
+  fdBowlPaint('fd-bowl-drill');
+  fdBowlPaint('fd-bowl-hub');
 }
 function renderFdWheels() {
   renderFdBowl();
