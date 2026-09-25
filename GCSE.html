@@ -2977,10 +2977,11 @@ function fdBowlPaint(prefix) {
   const full = tier >= 1;
   const topY = 46, botY = 100;
   const fillY = botY - pct * (botY - topY);
+  const fillColours = { 0: ['#E7CF9C', '#F0DDB0'], 1: ['#E7CF9C', '#F0DDB0'], 2: ['#C7CCD3', '#DDE1E6'], 3: ['#D4AF37', '#E8CC6B'], 4: ['#9B5EC7', '#C29BDB'] };
   const fillEl = document.getElementById(prefix + '-fill');
-  if (fillEl) { fillEl.setAttribute('y', fillY); fillEl.setAttribute('height', Math.max(0, botY - fillY)); }
+  if (fillEl) { fillEl.setAttribute('y', fillY); fillEl.setAttribute('height', Math.max(0, botY - fillY)); fillEl.setAttribute('fill', fillColours[tier][0]); }
   const topEl = document.getElementById(prefix + '-fill-top');
-  if (topEl) { topEl.setAttribute('cy', fillY); topEl.style.opacity = pct > 0.02 ? '1' : '0'; }
+  if (topEl) { topEl.setAttribute('cy', fillY); topEl.style.opacity = pct > 0.02 ? '1' : '0'; topEl.setAttribute('fill', fillColours[tier][1]); }
   const rimColours = { 0: 'var(--muted)', 1: '#F0B429', 2: '#8B95A1', 3: '#D4AF37', 4: '#6B3494' };
   const rimEl = document.getElementById(prefix + '-rim');
   if (rimEl) rimEl.setAttribute('stroke', rimColours[tier]);
@@ -3011,6 +3012,7 @@ function renderFdBowl() {
   if (tier === undefined) return;
   if (tier >= 2 && tier > fdBowlSeenTier) fdFireConfetti();
   fdBowlSeenTier = tier;
+  if (fdBowlTodayCount() > 0) fdUpdateStreak();
   renderFdStreak();
   fdBowlPaint('fd-bowl-setup');
   fdBowlPaint('fd-bowl-hub');
