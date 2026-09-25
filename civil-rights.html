@@ -117,6 +117,47 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .slide-out-right{animation:sout-r .2s ease forwards}.slide-out-left{animation:sout-l .2s ease forwards}
 .slide-in-r{animation:sin-r .25s ease forwards}.slide-in-l{animation:sin-l .25s ease forwards}
 
+
+/* ===== Revision Guide map ===== */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.k-toggle{display:flex;margin-bottom:.9rem;border:1.5px solid var(--border2);border-radius:10px;overflow:hidden;background:var(--surface)}
+.k-toggle button{flex:1;padding:.55rem .5rem;border:0;background:transparent;font-family:inherit;font-size:.85rem;font-weight:700;color:var(--muted);cursor:pointer}
+.k-toggle button.on{background:var(--text);color:var(--bg)}
+.k-prog{font-size:.8rem;color:var(--muted);margin:0 0 .5rem .2rem}.k-prog b{color:var(--text)}
+.k-line{position:relative;margin-bottom:1rem}
+.k-st{position:relative}
+.k-st::before{content:'';position:absolute;left:calc(.75rem - 1.5px);top:0;bottom:0;border-left:3px dotted var(--uc);opacity:.5}
+.k-st.read::before{border-left-style:solid;opacity:1}
+.k-st:first-child::before{top:1.3rem}
+.k-st:last-child::before{bottom:auto;height:1.3rem}
+.k-hit{display:flex;align-items:flex-start;gap:.7rem;width:100%;padding:.5rem .55rem .5rem 0;background:none;border:0;font-family:inherit;font-size:inherit;color:inherit;text-align:left;cursor:pointer;border-radius:10px;position:relative}
+.k-hit:hover,.k-st.sel .k-hit{background:var(--subtle)}
+.k-mark{position:relative;flex:none;width:1.5rem;height:1.6rem;display:flex;align-items:center;justify-content:center;z-index:1}
+.k-mark i{display:block;width:.95rem;height:.95rem;border-radius:50%;background:var(--surface);border:3px solid var(--uc);box-sizing:border-box;position:relative}
+.k-st.read .k-mark i{background:var(--uc)}
+.k-st.tp .k-mark i{border-radius:2px;transform:rotate(45deg);width:.85rem;height:.85rem}
+.k-st.ds .k-mark::before{content:'';position:absolute;left:50%;top:50%;width:1.35rem;height:2.3rem;transform:translate(-50%,-50%);border:2.5px solid var(--text);border-radius:.7rem;background:var(--surface)}
+.k-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:.1rem;padding-top:.1rem}
+.k-name{font-size:.92rem;font-weight:700;line-height:1.3}
+.k-meta{font-size:.75rem;color:var(--muted)}
+.k-tick{flex:none;width:1.1rem;padding-top:.1rem;font-size:.85rem;color:var(--text);font-weight:800}
+.k-st.read .k-tick::after{content:'\2713'}
+.k-debs{margin:0 0 .4rem 2.2rem;display:flex;flex-direction:column;gap:.3rem}
+.k-deb{display:block;text-align:left;font-family:inherit;font-size:.78rem;line-height:1.4;padding:.45rem .65rem;border:1.5px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer}
+.k-deb.read{border-color:var(--uc);border-left-width:4px}
+.k-dcode{font-weight:800}
+.k-themes{margin:.2rem 0 1rem}.k-tl{font-size:.78rem;font-weight:700;color:var(--muted);margin:0 0 .45rem .2rem}
+.k-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.k-chip{font-family:inherit;font-size:.78rem;font-weight:600;padding:.45rem .8rem;border:1.5px solid var(--border2);border-radius:20px;background:var(--surface);color:var(--text);cursor:pointer;text-align:left}
+.k-chip.read{border-color:var(--uc);border-width:2px}
+#k-minibar{margin-bottom:.75rem}
+.k-dots{display:flex;flex-wrap:wrap;align-items:center}
+.k-dot{width:1.6rem;height:1.6rem;display:flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;padding:0}
+.k-dot i{display:block;width:.72rem;height:.72rem;border-radius:50%;background:var(--surface);border:2.5px solid var(--uc);box-sizing:border-box}
+.k-dot.read i{background:var(--uc)}
+.k-dot.tp i{border-radius:2px;transform:rotate(45deg);width:.64rem;height:.64rem}
+.k-dot.cur i{outline:2px solid var(--text);outline-offset:2px}
+.k-mb{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--muted);margin-top:.25rem}
 /* ===== Index-card flashcards and stamps ===== */
 :root{--paper:#FBF6E9;--paper2:#F3EBD2;--paper-edge:#E1D6B6;--rule:#CFDCE8;--margin:#E9A3A3;--stamp-g:#2E7D32;--stamp-r:#B83227;--stamp-gold:#B7791F;--rl:1.5rem}
 :root.dark body{--paper:#2f2d29;--paper2:#292723;--paper-edge:#48443b;--rule:#3b4452;--margin:#7c4646;--stamp-g:#6fcf6f;--stamp-r:#e07070;--stamp-gold:#E6C77E}
@@ -281,13 +322,18 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 <div class="screen" id="s-main">
   <div class="mode-header"><div style="display:flex;gap:6px"><button class="back-btn" onclick="showScreen('s-hub')">← Back</button><button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button></div><span class="section-badge" id="main-badge"></span><span id="mode-title" style="font-size:.8rem;font-weight:600;color:var(--muted)"></span></div>
   <div id="mode-knowledge" style="display:none">
+    <div class="k-toggle" role="group" aria-label="Revision guide view"><button type="button" id="k-btn-map" onclick="kSetView('map')">Map</button><button type="button" id="k-btn-list" onclick="kSetView('list')">List</button></div>
+    <div id="k-map"></div>
+    <div id="k-minibar" style="display:none"></div>
+    <div id="k-listview" style="display:none">
     <div class="filter-row"><select id="k-period" onchange="jumpToPeriod()"><option value="">-- select a period --</option></select></div>
     <div class="filter-row" id="k-ds-row" style="display:none"><select id="k-ds" onchange="jumpToDs()"><option value="">-- select a depth study debate --</option></select></div>
     <div class="filter-row" id="k-fac-row" style="display:none"><select id="k-fac" onchange="jumpToFac()"><option value="">-- select a factor --</option></select></div>
     <div class="filter-row" id="k-obs-row" style="display:none"><select id="k-obs" onchange="jumpToObs()"><option value="">-- select an obstacle --</option></select></div>
-    <div style="display:flex;gap:8px;margin-bottom:.5rem"><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(-1)">← Prev</button><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(1)">Next →</button></div>
+    </div>
+    <div id="k-nav-top" style="display:flex;gap:8px;margin-bottom:.5rem"><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(-1)">← Prev</button><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(1)">Next →</button></div>
     <div id="k-out"><div class="empty">Select a period above to begin.</div></div>
-    <div style="display:flex;gap:8px;margin-top:.5rem"><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(-1)">← Prev</button><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(1)">Next →</button></div>
+    <div id="k-nav-bot" style="display:flex;gap:8px;margin-top:.5rem"><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(-1)">← Prev</button><button class="btn-sm" style="flex:1;text-align:center;padding:9px" onclick="stepPeriod(1)">Next →</button></div>
   </div>
   <div id="mode-flashcard" style="display:none">
     <div id="fd-setup">
@@ -736,12 +782,74 @@ function buildPeriodDropdown(){
   } else {
     dsRow.style.display='none';
   }
-  kPeriodIdx=0;document.getElementById('k-out').innerHTML='<div class="empty">Select a card above to begin.</div>';
+  kPeriodIdx=-1;kMapOpen=true;document.getElementById('k-out').innerHTML='<div class="empty">Select a card above to begin.</div>';
+  kRenderMap();
 }
+
+/* ===== Revision Guide map ===== */
+var K_READ_LS='cr_kc_read',K_VIEW_LS='cr_k_view',kView=(function(){try{return localStorage.getItem(K_VIEW_LS)==='list'?'list':'map';}catch(e){return 'map';}})(),kMapOpen=true;
+var K_DS_ANCHOR={aa:{1:'tp-gilded-age',2:'tp-new-deal-aa',3:'tp-black-power'},lab:{1:'tp-1880s-1890s',2:'tp-new-deal-wagner',3:'black-power'},na:{1:'tp-dawes-boarding-schools',2:'tp-ira-1934',3:'tp-red-power-1970s'},wom:{1:'tp-industrialisation-wom',2:'wom-new-deal',3:'wom-black-power'}};
+function kReadGet(){try{return JSON.parse(localStorage.getItem(K_READ_LS)||'{}')||{};}catch(e){return {};}}
+function kReadKey(c){return c.section+'|'+c.period;}
+function kMarkRead(c){try{var r=kReadGet(),k=kReadKey(c);if(!r[k]){r[k]=1;localStorage.setItem(K_READ_LS,JSON.stringify(r));}}catch(e){}}
+function kStations(){var out=[];KC.forEach(function(c,i){if(c.section!==currentUnit||c.isDepthStudy||c.isFactor||c.isObstacle)return;out.push({i:i,c:c});});return out;}
+function kDebates(){var out=[];KC.forEach(function(c,i){if(c.section===currentUnit&&c.isDepthStudy)out.push({i:i,c:c});});return out;}
+function kThemes(){var f=[],o=[];KC.forEach(function(c,i){if(c.section!==currentUnit)return;if(c.isFactor)f.push({i:i,c:c,t:'f'});else if(c.isObstacle)o.push({i:i,c:c,t:'o'});});return f.concat(o);}
+function kDsNum(c){var m=String(c.period||'').match(/ds([123])/);return m?parseInt(m[1],10):0;}
+function kSplit(h){h=String(h||'').replace(/^\s+|\s+$/g,'');var m=h.match(/^(.*?)\s*(?:\(\s*((?:c\.\s?)?\d{4}(?:\s?[-\u2013]\s?\d{2,4})?)\s*\)|(\d{4}\s?[-\u2013]\s?\d{2,4}))$/);if(!m)return{name:h,years:''};var y=(m[2]||m[3]||'').replace(/\s+/g,'').replace('-','\u2013');var p=y.split('\u2013');if(p.length===2&&p[1].length===4&&p[0].slice(0,2)===p[1].slice(0,2))y=p[0]+'\u2013'+p[1].slice(2);var name=m[1].replace(/[\s\u2014-]+$/,'');return{name:name||h,years:y};}
+function kDsSplit(h){var t=String(h||'').replace(/^\uD83D\uDD11\s*/,'');var m=t.match(/^(DS\d\.\d)\s*[\u2014\u2013-]\s*(.*)$/);return m?{code:m[1],q:m[2]}:{code:'DS',q:t};}
+function kDone(st){var r=kReadGet();return st.filter(function(s){return r[kReadKey(s.c)];}).length;}
+function kRenderMap(){
+  var host=document.getElementById('k-map');if(!host)return;
+  var st=kStations();
+  if(!st.length){host.innerHTML='<div class="empty">Revision guide loading…</div>';kRenderMini();kApplyView();return;}
+  var read=kReadGet(),u=UNITS[currentUnit],anch=K_DS_ANCHOR[currentUnit]||{};
+  var dsBy={1:[],2:[],3:[]};kDebates().forEach(function(d){var n=kDsNum(d.c);if(dsBy[n])dsBy[n].push(d);});
+  var anchorOf={};[1,2,3].forEach(function(n){if(anch[n]&&dsBy[n].length)anchorOf[anch[n]]=n;});
+  var h='<div class="k-prog"><b>'+kDone(st)+' of '+st.length+'</b> read</div><div class="k-line" style="--uc:'+u.colour+'">';
+  st.forEach(function(s){
+    var c=s.c,sp=kSplit(c.heading),isRead=!!read[kReadKey(c)],n=anchorOf[c.period]||0,sel=(s.i===kPeriodIdx&&!kMapOpen);
+    var cls='k-st'+(isRead?' read':'')+(c.isTurningPoint?' tp':'')+(n?' ds':'')+(sel?' sel':'');
+    var meta=sp.years+(sp.years&&c.isTurningPoint?' \u00b7 ':'')+(c.isTurningPoint?'Turning point':'');
+    h+='<div class="'+cls+'"><button type="button" class="k-hit" onclick="kOpen('+s.i+')"'+(sel?' aria-current="true"':'')+'><span class="k-mark"><i></i></span><span class="k-txt"><span class="k-name">'+esc(sp.name)+'</span>'+(meta?'<span class="k-meta">'+esc(meta)+'</span>':'')+'</span><span class="k-tick" aria-hidden="true"></span>'+(isRead?'<span class="sr-only">read</span>':'')+'</button>';
+    if(n){h+='<div class="k-debs">';dsBy[n].forEach(function(d){var dc=kDsSplit(d.c.heading);h+='<button type="button" class="k-deb'+(read[kReadKey(d.c)]?' read':'')+'" onclick="kOpen('+d.i+')"><span class="k-dcode">\ud83d\udd11 '+esc(dc.code)+'</span> '+esc(dc.q)+'</button>';});h+='</div>';}
+    h+='</div>';
+  });
+  h+='</div>';
+  var th=kThemes();
+  if(th.length){
+    h+='<div class="k-themes" style="--uc:'+u.colour+'"><div class="k-tl">Themes across the whole period</div><div class="k-chips">';
+    th.forEach(function(t){h+='<button type="button" class="k-chip'+(read[kReadKey(t.c)]?' read':'')+'" onclick="kOpen('+t.i+')">'+(t.t==='f'?'\u2699\ufe0f ':'\ud83d\uded1 ')+esc(t.c.heading)+'</button>';});
+    h+='</div></div>';
+  }
+  host.innerHTML=h;kRenderMini();kApplyView();
+}
+function kRenderMini(){
+  var host=document.getElementById('k-minibar');if(!host)return;
+  var st=kStations(),read=kReadGet(),u=UNITS[currentUnit];
+  if(!st.length){host.innerHTML='';return;}
+  var h='<div class="k-dots" style="--uc:'+u.colour+'">';
+  st.forEach(function(s){h+='<button type="button" class="k-dot'+(read[kReadKey(s.c)]?' read':'')+(s.c.isTurningPoint?' tp':'')+(s.i===kPeriodIdx?' cur':'')+'" onclick="kOpen('+s.i+')" aria-label="'+esc(s.c.heading)+'"><i></i></button>';});
+  h+='</div><div class="k-mb"><span>'+kDone(st)+' of '+st.length+' read</span><button type="button" class="btn-sm" onclick="kToggleMap()">Show map</button></div>';
+  host.innerHTML=h;
+}
+function kApplyView(){
+  var map=kView==='map',open=map&&kMapOpen;
+  function show(id,on,disp){var el=document.getElementById(id);if(el)el.style.display=on?(disp||'block'):'none';}
+  show('k-map',open);show('k-minibar',map&&!kMapOpen);show('k-listview',!map);
+  show('k-nav-top',!open,'flex');show('k-nav-bot',!open,'flex');show('k-out',!open);
+  var bm=document.getElementById('k-btn-map'),bl=document.getElementById('k-btn-list');
+  if(bm){bm.className=map?'on':'';bm.setAttribute('aria-pressed',map?'true':'false');}
+  if(bl){bl.className=map?'':'on';bl.setAttribute('aria-pressed',map?'false':'true');}
+}
+function kSetView(v){kView=v==='list'?'list':'map';try{localStorage.setItem(K_VIEW_LS,kView);}catch(e){}kApplyView();}
+function kToggleMap(){kMapOpen=!kMapOpen;kRenderMap();window.scrollTo(0,0);}
+function kOpen(i){var c=KC[i];if(!c)return;kPeriodIdx=i;var ps=document.getElementById('k-period'),ds=document.getElementById('k-ds');if(c.isDepthStudy){if(ps)ps.value='';if(ds)ds.value=String(i);}else{if(ps)ps.value=String(i);if(ds)ds.value='';}renderKCard(i);window.scrollTo(0,0);}
+function kOnOpen(idx){var c=KC[idx];if(!c)return;kPeriodIdx=idx;kMapOpen=false;kMarkRead(c);kRenderMap();}
 function jumpToDs(){var sel=document.getElementById('k-ds');if(sel.value==='')return;document.getElementById('k-period').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
 function jumpToPeriod(){var sel=document.getElementById('k-period');if(sel.value==='')return;document.getElementById('k-ds').value='';kPeriodIdx=parseInt(sel.value);renderKCard(kPeriodIdx);}
-function stepPeriod(dir){if(!KC.length)return;var eraIdxs=KC.map(function(c,i){return(!c.isDepthStudy&&!c.isFactor&&!c.isObstacle&&!c.isTurningPoint)?i:-1;}).filter(function(i){return i>=0;});var cur=eraIdxs.indexOf(kPeriodIdx);if(cur===-1)cur=0;var next=eraIdxs[(cur+dir+eraIdxs.length)%eraIdxs.length];kPeriodIdx=next;document.getElementById('k-period').value=next;document.getElementById('k-ds').value='';renderKCard(kPeriodIdx);}
-function renderKCard(idx){var card=KC[idx];if(!card){document.getElementById('k-out').innerHTML='<div class="empty">Content coming soon.</div>';return;}var u=UNITS[currentUnit],badges='';if(card.isDepthStudy)badges+='<span class="tag t-ds">🔑 Depth Study</span>';if(card.isObstacle)badges+='<span class="tag t-obs">🛑 Obstacle</span>';if(card.isFactor)badges+='<span class="tag t-fac">⚙️ Factor</span>';if(card.isTurningPoint)badges+='<span class="tag t-tp">🔄 Turning Point</span>';var sub=(function(){
+function stepPeriod(dir){if(!KC.length)return;var st=kStations().map(function(x){return x.i;}),ds=kDebates().map(function(x){return x.i;}),th=kThemes().map(function(x){return x.i;});var list=st;if(ds.indexOf(kPeriodIdx)!==-1)list=ds;else if(th.indexOf(kPeriodIdx)!==-1)list=th;if(!list.length)return;var cur=list.indexOf(kPeriodIdx);var next=cur===-1?(dir>0?list[0]:list[list.length-1]):list[(cur+dir+list.length)%list.length];kOpen(next);}
+function renderKCard(idx){var card=KC[idx];if(!card){document.getElementById('k-out').innerHTML='<div class="empty">Content coming soon.</div>';return;}kOnOpen(idx);var u=UNITS[currentUnit],badges='';if(card.isDepthStudy)badges+='<span class="tag t-ds">🔑 Depth Study</span>';if(card.isObstacle)badges+='<span class="tag t-obs">🛑 Obstacle</span>';if(card.isFactor)badges+='<span class="tag t-fac">⚙️ Factor</span>';if(card.isTurningPoint)badges+='<span class="tag t-tp">🔄 Turning Point</span>';var sub=(function(){
   var subs=card.subheadings||[];
   var html='';
   var lastGroup=null;
