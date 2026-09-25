@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>if(localStorage.getItem('gcse_dark')=='1')document.documentElement.classList.add('dark');</script>
-<title>🥣 Mr Rodker's Revision Hub - GCSE</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥣</text></svg>">
+<title>Mr Rodker's Revision Hub - GCSE</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%A5%A3%3C/text%3E%3C/svg%3E">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{font-size:clamp(16px,.9vw + 7px,24px)}
@@ -388,7 +388,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <h1 style="margin:0;font-size:1.45rem;font-weight:700">Mr Rodker's GCSE History Hub</h1>
     <span class="yr-pill">Y9-11</span>
   </div>
-  <p style="font-size:.85rem;color:var(--muted);margin-bottom:.15rem">What are you revising today?</p>
   <p style="font-size:.72rem;color:#8A5A3C;font-style:italic;margin-bottom:1rem">Knowledge is Porridge 🥣</p>
   <div class="paper-grid">
     <button class="paper-btn pb-p1" onclick="pickPaper('p1')"><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
@@ -1755,4 +1754,5 @@ function drawExamCard(q) {
   currentExamQ = q;
   const typeLabel = {
     '2mark': '2-mark describe',
-    '4mark':
+    '4mark': '4-mark similarity/difference',
+    '4mark-consequence'
