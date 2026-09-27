@@ -190,8 +190,8 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .k-dot-ds.cur i{outline:2px solid var(--text);outline-offset:1px}
 .k-mb{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--muted);margin-top:.25rem}
 /* ===== Stamps ===== */
-:root{--stamp-g:#2E7D32;--stamp-r:#B83227;--stamp-gold:#B7791F}
-:root.dark body{--stamp-g:#6fcf6f;--stamp-r:#e07070;--stamp-gold:#E6C77E}
+:root{--stamp-g:#2E7D32;--stamp-r:#B83227;--stamp-gold:#B7791F;--paper:#FBF6E9;--paper-edge:#E1D6B6}
+:root.dark body{--stamp-g:#6fcf6f;--stamp-r:#e07070;--stamp-gold:#E6C77E;--paper:#2f2d29;--paper-edge:#48443b}
 .fd-scene{perspective:1200px;margin-bottom:.75rem;cursor:pointer;position:relative}
 .fd-stamp{position:absolute;right:.7rem;bottom:1.2rem;z-index:6;pointer-events:none;font-family:Impact,'Arial Black',sans-serif;font-size:1.3rem;letter-spacing:.08em;line-height:1;padding:.25rem .65rem .2rem;border:3px solid currentColor;border-radius:.35rem;outline:1.5px solid currentColor;outline-offset:2px;opacity:0;transform:rotate(-11deg)}
 .fd-stamp.got{color:var(--stamp-g)}.fd-stamp.miss{color:var(--stamp-r)}
@@ -343,7 +343,6 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 </div>
 <div class="screen" id="s-hub">
   <div class="mode-header"><button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button><span class="section-badge" id="hub-badge"></span></div>
-  <div class="fd-bowl-wrap fd-bowl-wrap-compact" id="fd-bowl-hub-wrap"></div>
   <button id="hub-pinned-btn" onclick="enterMode('flashcard');setTimeout(fdStartPinned,100)" style="display:none;width:100%;padding:10px;font-size:.85rem;font-weight:600;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;margin-bottom:1rem">📌 Review pinned cards</button>
   <div style="display:flex;align-items:center;gap:1rem;background:var(--surface);border:1.5px solid var(--border2);border-left-width:4px;border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;cursor:pointer" id="fd-primary-btn" onclick="enterMode('flashcard')">
     <div style="flex-shrink:0;text-align:center"><svg id="fd-hub-wheel" viewBox="0 0 60 60" style="width:3.65rem;height:3.65rem;display:block"><circle id="fd-hub-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle id="fd-hub-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle id="fd-hub-ring-got" cx="30" cy="30" r="24" fill="none" stroke="#888" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle id="fd-hub-ring-fill" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text id="fd-hub-pct" x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)">0%</text></svg></div>
@@ -355,6 +354,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     <button class="mode-btn" id="hub-btn-dates" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz</button>
     <button class="mode-btn" id="hub-btn-exam" disabled style="opacity:.45;cursor:default;border-left-color:var(--border2)!important"><span class="icon">✏️</span>Exam Practice<br><span style="font-size:.65rem;font-weight:400;opacity:.7">🚧 Coming soon</span></button>
   </div>
+  <div class="fd-bowl-wrap fd-bowl-wrap-compact" id="fd-bowl-hub-wrap" style="margin-top:.5rem"></div>
 </div>
 <div class="screen" id="s-main">
   <div class="mode-header"><div style="display:flex;gap:6px"><button class="back-btn" onclick="showScreen('s-hub')">← Back</button><button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button></div><span class="section-badge" id="main-badge"></span><span id="mode-title" style="font-size:.8rem;font-weight:600;color:var(--muted)"></span></div>
