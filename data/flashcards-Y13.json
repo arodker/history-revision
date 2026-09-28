@@ -8,9 +8,9 @@
     "p2": "Black Codes introduced by Southern states → restricted movement, labour, property rights → de facto re-enslavement.",
     "p3": "Johnson actively opposed 14th and 15th Amendments → vetoed both → Congress overruled him.",
     "hints": [
-      "Johnson",
-      "Codes",
-      "Amendments"
+      "mass pardons",
+      "Black Codes",
+      "vetoed"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -26,9 +26,9 @@
     "p2": "Reconstruction Act (1867) → South divided into military districts → Black Codes removed → elections enforced.",
     "p3": "1,500+ African Americans held public office → 22 in Congress → Blanche Bruce: full Senate term for Mississippi.",
     "hints": [
-      "1868",
-      "1867",
-      "Congress"
+      "Ammendment",
+      "military districts",
+      "1,500"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -44,7 +44,7 @@
     "p2": "Deaths of Sumner and Stevens + Panic of 1873 → Northern attention shifts → Radical Republican majority diluted.",
     "p3": "Slaughterhouse Case (1873) → civil rights ruled a state issue → Supreme Court undermined 14th Amendment.",
     "hints": [
-      "1877",
+      "Hayes-Tilden",
       "1873",
       "Slaughterhouse"
     ],
@@ -63,7 +63,7 @@
     "p3": "Plessy v Ferguson (1896) → 'separate but equal' constitutional → gave legal cover to all Jim Crow legislation.",
     "hints": [
       "segregated",
-      "literacy",
+      "Mississippi",
       "Plessy"
     ],
     "isDepthStudy": true,
@@ -80,9 +80,9 @@
     "p2": "Showed that even legitimate political power could be destroyed by organised white violence without federal protection.",
     "p3": "Mississippi v Williams (1898) same year → Supreme Court ruled voter suppression didn't violate 15th Amendment → over 90% disenfranchised by 1900.",
     "hints": [
-      "Wilmington",
-      "destroyed",
-      "1898"
+      "Overthrew",
+      "white violence",
+      "Williams"
     ],
     "isDepthStudy": true,
     "periods": [
@@ -98,8 +98,8 @@
     "p2": "Negro Business League (1900): 600 chapters in 34 states → promoted parallel Black economy → secretly funded legal challenges to disenfranchisement while maintaining public accommodation",
     "p3": "Influence: trusted adviser to President Roosevelt → secured federal appointments for Black Americans → BUT criticised by Du Bois and Trotter for conceding political and social rights",
     "hints": [
-      "1895",
-      "1900",
+      "Atlanta",
+      "Business",
       "Roosevelt"
     ],
     "isDepthStudy": true,
@@ -117,8 +117,8 @@
     "p3": "Niagara Movement (1905): Du Bois launched immediate alternative demanding full civil rights — direct predecessor to organised resistance; Washington's strategy left most African Americans in poverty and subjugation",
     "hints": [
       "Bois",
-      "1898",
-      "1905"
+      "Trotter",
+      "Niagara"
     ],
     "isDepthStudy": true,
     "periods": [
@@ -135,7 +135,7 @@
     "p3": "Membership grew to 500,000 → established presence in North and South → laid infrastructure for future campaigns — but limited impact on Southern Jim Crow in this period",
     "hints": [
       "1909",
-      "1915",
+      "Us v Guinn",
       "500,000"
     ],
     "isDepthStudy": false,
@@ -157,7 +157,7 @@
     "p3": "Decline: 'Garvey Must Go' campaign (1922) after he met KKK → mail fraud conviction → deported to Jamaica (1927) → UNIA collapsed → BUT influence persisted in NOI and later Black nationalism",
     "hints": [
       "UNIA",
-      "1919",
+      "Black Star",
       "KKK"
     ],
     "isDepthStudy": false,
@@ -173,11 +173,11 @@
     "front": "What was the role of State Governments in resisting desegregation?",
     "p1": "'State Rights' ideology: Southern governors argued states should manage affairs without federal interference → massive resistance to Brown (1954) → Southern Manifesto signed by 101 congressmen",
     "p2": "Orval Faubus (Arkansas, 1957): deployed National Guard to block Little Rock Nine → Eisenhower forced to send 101st Airborne → showed federal power required to enforce desegregation",
-    "p3": "Closure of schools: Virginia closed Prince Edward County schools rather than desegregate (1959) → James F. Byrnes (South Carolina) threatened to abolish all public schools → state governors coordinated resistance through the Southern Manifesto",
+    "p3": "Ole Miss Riot (1962): Mississippi governor Ross Barnett attempts to block enrolment of James Meredith at collge → race riot at the campus → Kennedy sends 30,000 troops to restore order and escort Meredith to class. ",
     "hints": [
       "Manifesto",
       "Faubus",
-      "Prince"
+      "Ole Miss"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -191,12 +191,12 @@
     "period": "new-deal-ds",
     "front": "What was the New Deal's impact on African American political rights?",
     "p1": "FDR created informal 'Black Cabinet' → led by Mary McLeod Bethune → influenced New Deal programmes for Black Americans.",
-    "p2": "Eleanor Roosevelt advocated for civil rights + supported anti-lynching bills. African Americans began voting Democratic in large numbers → major long-term political shift.",
-    "p3": "Anti-Communist Red Scare → organisations improving AA rights suspected of communism → Du Bois surveilled + harassed → CIO lost funding.",
+    "p2": "Eleanor Roosevelt advocated for civil rights + supported anti-lynching bills + symbolic gestures like resigning from DAR.",
+    "p3": "African Americans began voting Democratic in large numbers → major long-term political shift. 1932 - 3/4 voted Republican. 1936 - 3/4 voted Democrat.",
     "hints": [
-      "FDR",
+      "Black Cabinet",
       "Eleanor",
-      "CIO"
+      "voting"
     ],
     "isDepthStudy": true,
     "periods": [
@@ -212,7 +212,7 @@
     "p2": "Brown v Board (1954) → overturned Plessy — 'separate but equal' unconstitutional in education → Brown II (1955): desegregation 'with all deliberate speed'",
     "p3": "Browder v Gayle (1956) → segregated buses unconstitutional → triggered end of Montgomery Bus Boycott → Boynton v Virginia (1960) → segregation on interstate buses unconstitutional",
     "hints": [
-      "Warren",
+      "liberal",
       "Brown",
       "Browder"
     ],
@@ -230,9 +230,9 @@
     "p2": "Supreme Court unanimous: school segregation unconstitutional → overturned Plessy v Ferguson (1896) → ordered desegregation 'with all deliberate speed' (Brown II, 1955)",
     "p3": "Impact limited by massive resistance → 1% of Southern Black children in integrated schools by 1957 → BUT galvanised civil rights movement + established precedent that segregation was unconstitutional",
     "hints": [
-      "NAACP",
-      "1896",
-      "1957"
+      "$43",
+      "Plessy",
+      "1%"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -248,8 +248,8 @@
     "p2": "Birmingham Campaign (1963) → Bull Connor's violence vs peaceful protesters → broadcast nationwide → Kennedy announces moral duty to act → Civil Rights Act 1964.",
     "p3": "Selma March (1965) → 50% Black population, 1% electorate → Bloody Sunday broadcast nationally → directly led to Voting Rights Act 1965.",
     "hints": [
-      "nonviolent",
-      "Connor",
+      "non-violent",
+      "Birmingham",
       "Selma"
     ],
     "isDepthStudy": false,
@@ -266,8 +266,8 @@
     "p2": "Selma March (1965) → John Lewis led marchers onto Edmund Pettus Bridge → 'Bloody Sunday' → Voting Rights Act.",
     "p3": "1966 under Stokely Carmichael → rejected non-violence + integration → embraced Black Power → 'Black Power' slogan coined.",
     "hints": [
-      "SCLC",
-      "1965",
+      "sit-ins",
+      "John Lewis",
       "1966"
     ],
     "isDepthStudy": false,
@@ -285,8 +285,8 @@
     "p3": "Key lesson → non-violent direct action only worked when it provoked visible repression on camera → shaped Birmingham Campaign strategy.",
     "hints": [
       "SCLC",
-      "single",
-      "Birmingham"
+      "media",
+      "lesson"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -302,9 +302,9 @@
     "p2": "Over 70,000 students engaged in sit-ins across the South co-ordinated by SNCC → more than 1,000 businesses desegregated lunch counters.",
     "p3": "Demonstrated power of youth-led spontaneous protest → led to founding of SNCC → showed NAACP's legal approach could be complemented by direct action.",
     "hints": [
-      "NC",
-      "SNCC",
-      "NAACP"
+      "Greensboro",
+      "1,000",
+      "SNCC"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -318,9 +318,9 @@
     "front": "What were the Freedom Rides (1961) and what did they achieve?",
     "p1": "CORE + SNCC → Black and white activists rode interstate buses from Washington D.C. into the Deep South → testing Boynton v Virginia (1960).",
     "p2": "Met with violent mobs including fire-bombings in Alabama → national outrage → federal government forced to respond.",
-    "p3": "Ole Miss (1962): James Meredith attempted to enrol at University of Mississippi → Governor Barnett physically blocked him → JFK sent 30,000 federal troops, 2 killed in riots. Browder v Gayle (1956): NAACP challenged Montgomery bus segregation in Supreme Court — legally confirmed unconstitutionality, ending the boycott",
+    "p3": "JFK's administration set up up insterstate commission to enforce integration on interstate busses - enforcing Boynton v Virginia.",
     "hints": [
-      "CORE",
+      "Boynton",
       "Alabama",
       "JFK"
     ],
@@ -338,9 +338,9 @@
     "p2": "Kennedy announced America had a 'moral duty' to intervene → directly led to Civil Rights Act 1964.",
     "p3": "Baptist Church bombings (1963) → KKK killed four young girls → no convictions → highlighted state government complicity in racial terror.",
     "hints": [
-      "SCLC",
-      "1964",
-      "KKK"
+      "Bull Connor",
+      "Civil Rights Act",
+      "Baptist"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -357,7 +357,7 @@
     "p3": "Malcolm X dismissed it as a 'farce' → highlighted divisions between integrationist and nationalist wings of the movement.",
     "hints": [
       "King",
-      "NAACP",
+      "coalition",
       "Malcolm"
     ],
     "isDepthStudy": false,
@@ -392,9 +392,9 @@
     "p2": "Bloody Sunday → John Lewis led marchers → violent police attack on Edmund Pettus Bridge → broadcast nationwide.",
     "p3": "Directly led to Voting Rights Act (1965) → banned all voter suppression → Mississippi Black voter registration: 6% (1964) → 60% (1969).",
     "hints": [
-      "SCLC",
+      "1%",
       "Bloody",
-      "1965"
+      "Voting Rights"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -410,9 +410,9 @@
     "p2": "NOI grew from 400 members (1952) → 40,000 (1960) under Malcolm X → addressed Northern urban poverty King's movement neglected.",
     "p3": "Post-Hajj (1964) → Malcolm X adopted more inclusive vision → broke from NOI → assassinated by NOI members 1965 → became martyr for Black Power.",
     "hints": [
-      "NOI",
-      "1952",
-      "1964"
+      "Black nationalism",
+      "urban poverty",
+      "Post-Hajj"
     ],
     "isDepthStudy": true,
     "periods": [
@@ -428,9 +428,9 @@
     "p2": "Black Power = self-determination, Black pride, economic self-sufficiency, community control — not dependence on white liberals.",
     "p3": "Alienated white allies + moderate African Americans → CORE lost white funding 1969 → weakened cross-racial coalition that had passed 1964/65 legislation.",
     "hints": [
-      "SNCC",
-      "Power",
-      "CORE"
+      "rejected",
+      "self-determination",
+      "white allies"
     ],
     "isDepthStudy": true,
     "periods": [
@@ -446,9 +446,9 @@
     "p2": "Vietnam War → African Americans disproportionately drafted → returned radicalised → war severed King–LBJ relationship → media attention shifted.",
     "p3": "Long Hot Summers → Watts (1965) $40m damage → 150 riots (1967) → showed non-violence couldn't address systemic Northern inequality.",
     "hints": [
-      "CRM",
-      "LBJ",
-      "1965"
+      "North",
+      "Vietnam",
+      "riots"
     ],
     "isDepthStudy": true,
     "periods": [
@@ -483,9 +483,9 @@
     "p2": "Jesse Jackson: won 7 million votes in 1984 and 1988 presidential campaigns. CBC grew to 36 members",
     "p3": "Voter turnout 54% vs 61% white. Unofficial suppression persisted: gerrymandering, insufficient polling stations",
     "hints": [
-      "1992",
-      "1984",
-      "VP"
+      "8,000",
+      "Jesse Jackson",
+      "Turnout"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -501,8 +501,8 @@
     "p2": "Distributed 21 million rations of food to freedmen → provided basic housing, medical care and legal support.",
     "p3": "Closure 1872 → gains immediately reversed → educational and social progress lost without federal infrastructure to sustain it.",
     "hints": [
-      "1865",
-      "Distributed",
+      "schools",
+      "rations",
       "1872"
     ],
     "isDepthStudy": false,
@@ -514,14 +514,14 @@
     "no": 29,
     "section": "aa",
     "period": "reconstruction",
-    "front": "What was the impact of KKK terror during and after Reconstruction?",
+    "front": "What was the impact of KKK terror during Reconstruction?",
     "p1": "KKK founded Tennessee 1865 → used violence to intimidate African Americans from voting, education, asserting rights.",
     "p2": "Colfax Massacre (1873) → c.100 African Americans killed in Louisiana following contested elections → federal government failed to help. New Orleans Massacre (1866): 40–200 killed.",
     "p3": "Enforcement Acts (1870–71) → Grant suppressed 1st KKK → over 600 prosecuted. But after 1877 troop withdrawal → KKK resurgent + unpunished.",
     "hints": [
-      "KKK",
-      "1873",
-      "1870"
+      "intimidate",
+      "Colfax",
+      "Enforcement"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -537,9 +537,9 @@
     "p2": "Ida B. Wells → 'Southern Horrors' (1892) → documented frequency + disproved myth it was response to violent crime → national + international campaign.",
     "p3": "Southern Democratic politicians repeatedly defeated anti-lynching bills in Congress. In 1900, Governor Tillman of South Carolina openly defended lynching.",
     "hints": [
-      "Lynching",
-      "1892",
-      "1900"
+      "1890s",
+      "Southern Horros",
+      "anti-lynching bills"
     ],
     "isDepthStudy": true,
     "periods": [
@@ -555,9 +555,9 @@
     "p2": "Grew across the South in the 1880s → effectively recreated slavery → dangerous conditions, no pay, no rights.",
     "p3": "System designed to control Black population + provide cheap labour to Southern economies → continued into early 20th century.",
     "hints": [
-      "Exploited",
-      "Grew",
-      "System"
+      "13th amendment",
+      "1880s",
+      "cheap labour"
     ],
     "isDepthStudy": true,
     "periods": [
@@ -568,14 +568,14 @@
     "no": 32,
     "section": "aa",
     "period": "gilded-age-ds",
-    "front": "What was the role of anti-civil rights groups?",
+    "front": "What was the role of anti-civil rights groups in the 19th century?",
     "p1": "KKK (founded 1865): violence at poll booths, lynching, destruction of Black organisations → Colfax Massacre (1873): 100+ killed to prevent voting → Enforcement Acts (1870-1) suppressed KKK briefly",
     "p2": "Rifle clubs and Red Shirts: paramilitary groups in Carolinas and Mississippi → intimidated Black voters at gunpoint → Redeemer governments rewarded this violence by removing federal protections post-1877",
     "p3": "United Daughters of the Confederacy → Lost Cause myth → romanticised slavery and Confederacy → justified Jim Crow → shaped Southern white opinion for generations",
     "hints": [
       "KKK",
-      "1877",
-      "United"
+      "Redeemer governments",
+      "Lost Cause"
     ],
     "isDepthStudy": true,
     "periods": [
@@ -591,8 +591,8 @@
     "p2": "Social Darwinism: framed African Americans as 'backward' on inferior civilisation rung → eugenic theories seen as modern science → justified racial separation as natural order",
     "p3": "Religious justification: Richmond Times editor: 'God almighty drew the colour line' → churches actively supported segregation → three pillars: Lost Cause (historical), Social Darwinism (scientific), religion (divine)",
     "hints": [
-      "Lost",
-      "Social",
+      "States' rights",
+      "Social Darwinism",
       "Religious"
     ],
     "isDepthStudy": true,
@@ -609,9 +609,9 @@
     "p2": "Second KKK: membership reached 5 million by 1920s — 15% of population → unlike first KKK, national not just Southern → included politicians, police chiefs, judges across North and West.",
     "p3": "1925: Klan burned crosses outside NAACP offices → KKK members in public office undermined law enforcement → showed white supremacy was national not uniquely Southern.",
     "hints": [
-      "KKK",
-      "Second",
-      "NAACP"
+      "Wilson",
+      "5 million",
+      "crosses"
     ],
     "isDepthStudy": false,
     "periods": [
@@ -619,7 +619,25 @@
     ]
   },
   {
-    "no": 35,
+    "no": 35a,
+    "section": "aa",
+    "period": "progressive-wwi",
+    "front": "What was the impact of WWI on African Americans?",
+    "p1": "380,000 African Americans served in segregated units → Harlem Hellfighters → less racial segregation in Europe. ",
+    "p2": "Great Migration began with approx. 2 million African Americans moving from south to northern/western cities by 1940 in search of industrial work.",
+    "p3": "Post-war violence: Red Summer of 1919 saw race riots in Chicago (38 killed) and similar in over 30 cities. Elaine Massacre (1919): 200+ Black sharecroppers killed in Arkansas for organising. ",
+    "hints": [
+      "Hellfighters",
+      "NAACP",
+      "1928"
+    ],
+    "isDepthStudy": false,
+    "periods": [
+      "progressive-wwi"
+    ]
+  },
+  {
+    "no": 35b,
     "section": "aa",
     "period": "progressive-wwi",
     "front": "What was the impact of WWI on African Americans?",
@@ -627,7 +645,7 @@
     "p2": "NAACP membership surged in Northern cities → Northern Black voting blocs created political power → by 1920s Harlem had 200,000 Black residents",
     "p3": "Oscar De Priest elected first Northern Black congressman (Chicago, 1928) → demonstrated political power of Great Migration. BUT de facto segregation and racial violence persisted in North",
     "hints": [
-      "1919",
+      "Hellfighters",
       "NAACP",
       "1928"
     ],
