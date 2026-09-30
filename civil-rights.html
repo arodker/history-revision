@@ -974,33 +974,43 @@ function buildFdSelects(){}
 function fdSyncHints(on){fdHintsOn=on;localStorage.setItem(LS_H,on?'1':'0');['fd-hints-on','fd-hints-on-drill'].forEach(function(id){var el=document.getElementById(id);if(el)el.checked=on;});if(!fdCurrent)return;var chips=document.getElementById('fd-hint-chips');if(fdHintsOn&&fdCurrent.hints&&fdCurrent.hints.length){chips.innerHTML=fdCurrent.hints.map(function(h){return '<span class="tag t-'+currentUnit+'">'+h+'</span>';}).join('');chips.style.display='flex';}else{chips.innerHTML='';chips.style.display='none';}}
 function fdSetup(){rebuildEraUI();fdHintsOn=localStorage.getItem(LS_H)==='1';['fd-hints-on','fd-hints-on-drill'].forEach(function(id){var el=document.getElementById(id);if(el)el.checked=fdHintsOn;});document.getElementById('fd-start-btn').style.background=UNITS[currentUnit].colour;fdOutstanding=fdGetOutstanding().filter(function(k){return FD.find(function(c){return fdKey(c)===k;});});fdSetOutstanding(fdOutstanding);var pb=document.getElementById('fd-pinned-btn');if(pb)pb.style.display=fdOutstanding.length>0?'block':'none';var bn=document.getElementById('fd-outstanding-banner');if(fdOutstanding.length>0){bn.style.display='block';bn.textContent=fdOutstanding.length+' pinned card'+(fdOutstanding.length>1?'s':'')+' will be woven in.';}else bn.style.display='none';['fd-setup','fd-drill','fd-summary','fd-complete'].forEach(function(id,i){document.getElementById(id).style.display=i===0?'block':'none';});fdPopulateCounts();renderFdSetupWheel();}
 // Per-unit era definitions
-var UNIT_ERAS={
-  aa:{
-    keys:['reconstruction','gilded-age-ds','progressive-wwi','boom-bust','new-deal-ds','wwii-postwar','civil-rights-movement','black-power-ds','after-black-power'],
-    labels:{'reconstruction':'Reconstruction 1865–77','gilded-age-ds':'🔑 Gilded Age 1877–1900','progressive-wwi':'Progressive Era 1900–19','boom-bust':'1920s–32','new-deal-ds':'🔑 New Deal 1933–41','wwii-postwar':'WWII & Post-War 1941–54','civil-rights-movement':'Civil Rights 1954–65','black-power-ds':'🔑 Black Power 1965–70','after-black-power':'After Black Power 1970–92'},
-    pairs:{'gilded-age-ds':'gilded-age','new-deal-ds':'new-deal','black-power-ds':'black-power'},
-    all:['reconstruction','gilded-age-ds','gilded-age','progressive-wwi','boom-bust','new-deal-ds','new-deal','wwii-postwar','civil-rights-movement','black-power-ds','black-power','after-black-power']
-  },
-  lab:{
-    keys:['start','early-industrialisation','gilded-age-ds','progressive-era','wwi-red-summer','twenties','new-deal-ds','wwii-taft-hartley','fifties-seventies','black-power-ds','reagan-era','end'],
-    labels:{'start':'Position 1865','early-industrialisation':'Early Industrialisation 1865–77','gilded-age-ds':'🔑 Gilded Age 1877–1900','progressive-era':'Progressive Era 1900–17','wwi-red-summer':'WWI & Red Summer 1917–19','twenties':'1920s','new-deal-ds':'🔑 New Deal 1933–41','wwii-taft-hartley':'WWII & Taft-Hartley 1941–50','fifties-seventies':'1950s–70s','black-power-ds':'🔑 Black Power Era','reagan-era':'Reagan Era 1981–92','end':'Position 1992'},
-    pairs:{'gilded-age-ds':'gilded-age','new-deal-ds':'new-deal','black-power-ds':'black-power'},
-    all:['start','early-industrialisation','gilded-age-ds','gilded-age','progressive-era','wwi-red-summer','twenties','new-deal-ds','new-deal','wwii-taft-hartley','fifties-seventies','black-power-ds','black-power','reagan-era','end']
-  },
-  na:{
-    keys:['na-start','na-plains-wars','na-gilded-age-ds','na-progressive-twenties','na-new-deal-ds','na-wwii-postwar','na-termination','na-red-power-ds','na-self-determination','na-end'],
-    labels:{'na-start':'Position 1865','na-plains-wars':'Plains Wars 1854–77','na-gilded-age-ds':'🔑 Gilded Age 1877–1905','na-progressive-twenties':'1910s–1932','na-new-deal-ds':'🔑 New Deal 1933–41','na-wwii-postwar':'WWII & Post-War 1941–53','na-termination':'Termination 1953–68','na-red-power-ds':'🔑 Red Power 1968–75','na-self-determination':'Self-Determination 1975–92','na-end':'Position 1992'},
-    pairs:{'na-gilded-age-ds':'na-gilded-age','na-new-deal-ds':'na-new-deal','na-red-power-ds':'na-red-power'},
-    all:['na-start','na-plains-wars','na-gilded-age-ds','na-gilded-age','na-progressive-twenties','na-new-deal-ds','na-new-deal','na-wwii-postwar','na-termination','na-red-power-ds','na-red-power','na-self-determination','na-end']
-  },
-  wom:{
-    keys:['wom-start','wom-reconstruction','wom-gilded-age-ds','wom-progressive','wom-twenties','wom-new-deal-ds','wom-wwii-postwar','wom-new-feminism','wom-black-power-ds','wom-backlash','wom-end'],
-    labels:{'wom-start':'Position 1865','wom-reconstruction':'Reconstruction 1865–77','wom-gilded-age-ds':'🔑 Gilded Age 1877–1900','wom-progressive':'Progressive Era & WWI 1900–20','wom-twenties':'1920s–32','wom-new-deal-ds':'🔑 New Deal 1933–41','wom-wwii-postwar':'WWII & Post-War 1941–63','wom-new-feminism':'New Feminism 1963–73','wom-black-power-ds':'\ud83d\udd11 Black Power 1965–75','wom-backlash':'Backlash Era 1973–92','wom-end':'Position 1992'},
-    pairs:{'wom-gilded-age-ds':'wom-gilded-age','wom-new-deal-ds':'wom-new-deal','wom-black-power-ds':'wom-black-power'},
-    all:['wom-start','wom-reconstruction','wom-gilded-age-ds','wom-gilded-age','wom-progressive','wom-twenties','wom-new-deal-ds','wom-new-deal','wom-wwii-postwar','wom-new-feminism','wom-black-power-ds','wom-black-power','wom-backlash','wom-end']
-  }
+var UNIT_ERA_LABELS={
+  aa:{'reconstruction':[1,'Reconstruction 1865–77'],'gilded-age-ds':[2,'🔑 Gilded Age 1877–1900'],'progressive-wwi':[3,'Progressive Era 1900–19'],'boom-bust':[4,'1920s–32'],'new-deal-ds':[5,'🔑 New Deal 1933–41'],'wwii-postwar':[6,'WWII & Post-War 1941–54'],'civil-rights-movement':[7,'Civil Rights 1954–65'],'black-power-ds':[8,'🔑 Black Power 1965–70'],'after-black-power':[9,'After Black Power 1970–92']},
+  lab:{'start':[1,'Position 1865'],'early-industrialisation':[2,'Early Industrialisation 1865–77'],'gilded-age-ds':[3,'🔑 Gilded Age 1877–1900'],'progressive-era':[4,'Progressive Era 1900–17'],'wwi-red-summer':[5,'WWI & Red Summer 1917–19'],'twenties':[6,'1920s'],'new-deal-ds':[7,'🔑 New Deal 1933–41'],'wwii-taft-hartley':[8,'WWII & Taft-Hartley 1941–50'],'fifties-seventies':[9,'1950s–70s'],'black-power-ds':[10,'🔑 Black Power Era'],'reagan-era':[11,'Reagan Era 1981–92'],'end':[12,'Position 1992']},
+  na:{'na-start':[1,'Position 1865'],'na-plains-wars':[2,'Plains Wars 1854–77'],'na-gilded-age-ds':[3,'🔑 Gilded Age 1877–1905'],'na-progressive-twenties':[4,'1910s–1932'],'na-new-deal-ds':[5,'🔑 New Deal 1933–41'],'na-wwii-postwar':[6,'WWII & Post-War 1941–53'],'na-termination':[7,'Termination 1953–68'],'na-red-power-ds':[8,'🔑 Red Power 1968–75'],'na-self-determination':[9,'Self-Determination 1975–92'],'na-end':[10,'Position 1992']},
+  wom:{'wom-start':[1,'Position 1865'],'wom-reconstruction':[2,'Reconstruction 1865–77'],'wom-gilded-age-ds':[3,'🔑 Gilded Age 1877–1900'],'wom-progressive':[4,'Progressive Era & WWI 1900–20'],'wom-twenties':[5,'1920s–32'],'wom-new-deal-ds':[6,'🔑 New Deal 1933–41'],'wom-wwii-postwar':[7,'WWII & Post-War 1941–63'],'wom-new-feminism':[8,'New Feminism 1963–73'],'wom-black-power-ds':[9,'🔑 Black Power 1965–75'],'wom-backlash':[10,'Backlash Era 1973–92'],'wom-end':[11,'Position 1992']}
 };
-function getUnitEras(){return UNIT_ERAS[currentUnit]||UNIT_ERAS.aa;}
+function fdAutoLabel(key){
+  var base=key.replace(/-(aa|lab|na|wom)$/,'');
+  return base.split('-').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1);}).join(' ');
+}
+function getUnitEras(){
+  var unit=currentUnit;
+  var labelMap=UNIT_ERA_LABELS[unit]||{};
+  var present=new Set();
+  FD.forEach(function(c){
+    if(c.section!==unit)return;
+    var ps=c.periods&&c.periods.length?c.periods:[c.period];
+    ps.forEach(function(p){if(p)present.add(p);});
+  });
+  var pairs={};
+  present.forEach(function(p){
+    if(p.slice(-3)==='-ds'){
+      var plain=p.slice(0,-3);
+      if(present.has(plain))pairs[p]=plain;
+    }
+  });
+  var pairTargets=new Set(Object.keys(pairs).map(function(k){return pairs[k];}));
+  var keys=Array.from(present).filter(function(p){return!pairTargets.has(p);});
+  keys.sort(function(a,b){
+    var oa=labelMap[a]?labelMap[a][0]:Infinity, ob=labelMap[b]?labelMap[b][0]:Infinity;
+    if(oa!==ob)return oa-ob;
+    return a<b?-1:a>b?1:0;
+  });
+  var labels={};
+  keys.forEach(function(k){labels[k]=labelMap[k]?labelMap[k][1]:fdAutoLabel(k);});
+  return {keys:keys,labels:labels,pairs:pairs,all:Array.from(present)};
+}
 var ALL_ERAS=getUnitEras().all;
 var ERA_PILL_KEYS=getUnitEras().keys;
 var DS_PAIRS=getUnitEras().pairs;
