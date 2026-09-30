@@ -14,11 +14,13 @@ html{font-size:clamp(17px,.9vw + 8px,24px)}
   --text:#1a1a18;--muted:#6b6b68;--muted2:#5f5e5a;--subtle:#eeede8;
   --tag-bg:#eeede8;--tag-col:#5f5e5a;--input-bg:#fff;
   --mtc:#7B3FC8;--edward:#2A6BC8;--mary:#C82A2A;--elizabeth:#1D9E75;--coldwar:#C47B1A;
+  --paper:#FBF6E9;--paper-edge:#E1D6B6;
 }
 :root.dark body{
   --bg:#1a1a1e;--surface:#26262b;--card:#2e2e34;--border:#3a3a42;--border2:#3a3a42;
   --text:#e8e8e6;--muted:#9a9a96;--muted2:#8a8a86;--subtle:#2e2e34;
   --tag-bg:#2e2e34;--tag-col:#aaa;--input-bg:#2e2e34;
+  --paper:#2f2d29;--paper-edge:#48443b;
 }
 body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background .2s,color .2s}
 input,select,textarea{font-size:max(16px,1em)}
@@ -556,7 +558,6 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
     <span class="section-badge" id="hub-badge"></span>
   </div>
-  <div class="fd-bowl-wrap fd-bowl-wrap-compact" id="fd-bowl-hub-wrap"></div>
   <!-- Primary: Flashcard with wheel -->
   <div style="display:flex;align-items:center;gap:1rem;background:var(--surface);border:1.5px solid var(--border2);border-left-width:4px;border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;cursor:pointer" id="fd-primary-btn" onclick="enterMode('flashcard')">
     <div style="flex-shrink:0;text-align:center">
@@ -582,6 +583,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     <button class="mode-btn" id="hub-btn-dates" onclick="enterMode('dates')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">📅</span>Key Dates Quiz</button>
     <button class="mode-btn" id="hub-btn-exam" style="padding:.9rem .5rem;position:relative"><span class="btn-new-badge" id="hub-exam-new" style="display:none">New</span><span class="icon" style="font-size:1.2rem">✏️</span>Exam Practice<br><small id="hub-exam-caption" style="font-size:.65rem;font-weight:400;opacity:.8">Coming soon</small></button>
   </div>
+  <div class="fd-bowl-wrap fd-bowl-wrap-compact" id="fd-bowl-hub-wrap" style="margin-top:.5rem"></div>
 </div>
 
 <!-- ══ SCREEN 3: MODE CONTENT ══ -->
