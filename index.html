@@ -4,170 +4,145 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <meta name="theme-color" content="#f8f7f4">
-<title>Mr Rodker's Revision Hub | A Level and GCSE History</title>
+<title>Mr Rodker's Revision Hub</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%A5%A3%3C/text%3E%3C/svg%3E">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}html{font-size:clamp(17px,.9vw + 8px,24px)}
 
 :root{
-  --bg:#f8f7f4;--surface:#fff;--border:#e8e7e2;--border2:#ddddd8;
-  --text:#1a1a18;--muted:#6b6b68;--subtle:#eeede8;
+  --bg:#f8f7f4;--text:#1a1a18;--muted:#6b6b68;--border:#e8e7e2;
+  --gcse:#0F6E56;--gcse-bg:#E1F5EE;--gcse-mid:#1D9E75;
+  --hist-stamp:#E8821E;
   --aa:#1B4B8A;--aa-bg:#EEF3FB;--aa-mid:#4A7EC7;
   --lab:#9B2335;--lab-bg:#FBEEF0;--lab-mid:#C94A5A;
-  --na:#1A6B5A;--na-bg:#E5F5F0;--na-mid:#2A9E80;
-  --wom:#6B3494;--wom-bg:#F3EEF9;--wom-mid:#9B5EC7;
-  --gcse:#0F6E56;--gcse-bg:#E1F5EE;--gcse-mid:#1D9E75;
+  --geo:#2E8B57;--geo-bg:#EAF0FB;
+  --rs:#2A6BC8;--rs-bg:#F3EEF9;
 }
 
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);color:var(--text);
-  min-height:100vh;
-}
-
-.app{max-width:46rem;margin:0 auto;padding:2rem 1.25rem 4rem}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.app{max-width:52rem;margin:0 auto;padding:2rem 1.25rem 4rem}
 
 h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
-.subtitle{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
+.subtitle{font-size:.8rem;color:var(--muted);margin-bottom:2.3rem}
 
-/* Section divider */
-.section-lbl{
-  font-size:.72rem;font-weight:700;
-  color:var(--muted);text-transform:uppercase;
-  letter-spacing:.06em;
-  margin:1.5rem 0 1.5rem;
-  display:flex;align-items:center;gap:.6rem;
-}
-.section-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
-
-/* Card grid: wide gap between rows leaves room for the year flags */
-.pick-grid{
+.subject-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px 12px;
-  margin-bottom:.5rem;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+}
+@media (max-width:640px){
+  .subject-grid{grid-template-columns:1fr}
 }
 
-.pick-btn{
-  position:relative;
-  padding:1.3rem 2.6rem 1.3rem 1.1rem;
-  border:2px solid transparent;
-  border-radius:14px;
-  cursor:pointer;
-  font-family:inherit;font-weight:700;font-size:1.05rem;
-  text-align:left;
-  transition:transform .15s,box-shadow .15s,background .15s;
-  line-height:1.35;
-  text-decoration:none;
-  display:block;
-  color:inherit;
-  box-shadow:0 1px 2px rgba(0,0,0,.05);
+.subject-box{
+  background:var(--surface,#fff);border:1.5px solid var(--border);border-radius:16px;
+  padding:1.3rem 1.1rem 1.1rem;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  animation:up .3s ease backwards;cursor:pointer;
 }
-.pick-btn::after{
-  content:'\2192';
-  position:absolute;right:1.1rem;top:50%;
-  transform:translateY(-50%);
-  opacity:.45;
-  transition:opacity .15s,right .15s;
+.subject-box:nth-child(1){animation-delay:.05s}
+.subject-box:nth-child(2){animation-delay:.1s}
+.subject-box:nth-child(3){animation-delay:.15s}
+
+.stamp-circle{
+  width:58px;height:58px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:1.55rem;
+  border:3px solid var(--sc,var(--border));position:relative;color:var(--sc,var(--muted));
+  margin-bottom:.6rem;background:none;cursor:pointer;
+  transition:transform .15s;
+  font-family:inherit;padding:0;
 }
-.pick-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
-.pick-btn:hover::after{opacity:1;right:.9rem}
-.pick-btn:focus-visible{outline:3px solid var(--text);outline-offset:2px}
+.stamp-circle::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--sc,var(--border));opacity:.35}
+.stamp-circle.soon{opacity:.45}
+.stamp-circle:hover{transform:scale(1.06)}
+.stamp-circle:focus-visible{outline:3px solid var(--text);outline-offset:3px}
 
-.pick-btn .plabel{
-  font-size:.68rem;font-weight:700;opacity:.85;
-  display:block;margin-bottom:.25rem;
-  text-transform:uppercase;letter-spacing:.06em;
+.subj-name2{font-size:1.02rem;font-weight:700;margin-bottom:.1rem}
+.subj-tag{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.4rem;display:flex;align-items:center;gap:.25rem}
+.subj-tag::after{content:'▾';font-size:.6rem;opacity:.6;transition:transform .2s}
+.subject-box.expanded .subj-tag::after{transform:rotate(180deg)}
+
+.ticket-list{
+  display:flex;flex-direction:column;gap:.55rem;width:100%;
+  max-height:0;opacity:0;overflow:hidden;
+  transition:max-height .3s ease,opacity .25s ease,margin-top .3s ease;
 }
-
-.pick-btn .pdesc{
-  font-size:.78rem;font-weight:400;opacity:.85;
-  display:block;margin-top:.35rem;line-height:1.45;
+.subject-box.expanded .ticket-list,
+.subject-box:hover .ticket-list,
+.subject-box:focus-within .ticket-list{
+  max-height:260px;opacity:1;margin-top:.3rem;
 }
-
-/* Year group flags sitting on the top edge of each card */
-.flag{
-  position:absolute;bottom:100%;right:1.05rem;
-  padding:.3rem .7rem .25rem;
-  font-size:.7rem;font-weight:700;letter-spacing:.04em;line-height:1.2;
-  border-radius:8px 8px 0 0;
+.ticket{
+  position:relative;background:var(--tc-bg,#fff);color:var(--tc,var(--muted));
+  border:2px solid var(--tc-mid,var(--border));border-radius:8px;
+  padding:.55rem .7rem;font-size:.76rem;font-weight:700;
+  text-decoration:none;display:block;line-height:1.3;text-align:center;
+  transition:transform .15s,box-shadow .15s;box-shadow:0 1px 2px rgba(0,0,0,.05);
 }
-.fl-gcse{background:#C2315B;color:#fff}
-.fl-civil{background:#F28C28;color:#2b1400}
-.fl-tudor{background:#1A6B5A;color:#fff}
+.ticket:hover{transform:translateY(-2px);box-shadow:0 5px 12px rgba(0,0,0,.09)}
+.ticket:focus-visible{outline:3px solid var(--text);outline-offset:2px}
 
-/* Colour themes */
-.pb-civil{background:var(--aa-bg);color:var(--aa);border-color:var(--aa-mid)}
-.pb-civil:hover{background:#dce8f7}
-
-.pb-tudor{background:var(--lab-bg);color:var(--lab);border-color:var(--lab-mid)}
-.pb-tudor:hover{background:#f5dde1}
-
-.pb-gcse{background:var(--gcse-bg);color:var(--gcse);border-color:var(--gcse-mid)}
-.pb-gcse:hover{background:#cdeee3}
-
-/* Bottom tagline */
-.tagline{
-  font-size:.8rem;color:var(--muted);
-  text-align:center;margin-top:2.5rem;
-  font-style:italic;
+.ticket-soon{
+  background:transparent;color:#aaa;border:2px dashed var(--border);cursor:default;box-shadow:none;
+  text-align:center;
 }
+.ticket-soon:hover{transform:none;box-shadow:none}
 
-/* Fade in (backwards fill so the hover lift still works afterwards) */
 @keyframes up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 h1{animation:up .3s ease backwards}
-.pick-btn{animation:up .3s ease backwards}
-.pick-btn:nth-child(1){animation-delay:.05s}
-.pick-btn:nth-child(2){animation-delay:.1s}
 
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-}
-
-@media print{
-  body{background:#fff}
-  .pick-btn{box-shadow:none;animation:none}
-  .pick-btn::after{display:none}
-}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div class="app">
 
   <h1>Mr Rodker's Revision Hub</h1>
-  <p class="subtitle">A Level and GCSE History</p>
+  <p class="subtitle">MCA Humanities Learning Area</p>
 
-  <div class="section-lbl">GCSE · Edexcel</div>
+  <div class="subject-grid">
 
-  <div class="pick-grid">
-    <a href="GCSE.html" class="pick-btn pb-gcse">
-      <span class="flag fl-gcse">Y9-11</span>
-      <span class="plabel">Papers 1 to 3</span>
-      GCSE History
-      <span class="pdesc">Migration · Cold War · Elizabeth I · Weimar &amp; Nazi Germany</span>
-    </a>
+    <div class="subject-box">
+      <button type="button" class="stamp-circle" style="--sc:var(--hist-stamp)" aria-label="Toggle History courses">🏛️</button>
+      <div class="subj-name2">History</div>
+      <div class="subj-tag">3 courses</div>
+      <div class="ticket-list">
+        <a href="GCSE.html" class="ticket" style="--tc:var(--gcse);--tc-bg:var(--gcse-bg);--tc-mid:var(--gcse-mid)">GCSE History</a>
+        <a href="Y12.html" class="ticket" style="--tc:var(--lab);--tc-bg:var(--lab-bg);--tc-mid:var(--lab-mid)">Y12 History</a>
+        <a href="civil-rights.html" class="ticket" style="--tc:var(--aa);--tc-bg:var(--aa-bg);--tc-mid:var(--aa-mid)">Y13 History</a>
+      </div>
+    </div>
+
+    <div class="subject-box">
+      <button type="button" class="stamp-circle soon" style="--sc:var(--rs)" aria-label="Toggle Religious Studies courses">🕊️</button>
+      <div class="subj-name2" style="color:var(--muted)">Religious Studies</div>
+      <div class="subj-tag">Coming soon</div>
+      <div class="ticket-list">
+        <div class="ticket ticket-soon">GCSE RS</div>
+        <div class="ticket ticket-soon">Philosophy and Ethics</div>
+      </div>
+    </div>
+
+    <div class="subject-box">
+      <button type="button" class="stamp-circle soon" style="--sc:var(--geo)" aria-label="Toggle Geography courses">🌍</button>
+      <div class="subj-name2" style="color:var(--muted)">Geography</div>
+      <div class="subj-tag">Coming soon</div>
+      <div class="ticket-list">
+        <div class="ticket ticket-soon">GCSE Geography</div>
+        <div class="ticket ticket-soon">A Level Geography</div>
+      </div>
+    </div>
+
   </div>
-
-  <div class="section-lbl">A Level · OCR</div>
-
-  <div class="pick-grid">
-    <a href="civil-rights.html" class="pick-btn pb-civil">
-      <span class="flag fl-civil">Y13</span>
-      <span class="plabel">Y319 · Paper 3</span>
-      Civil Rights in the USA
-      <span class="pdesc">1865–1992 · African Americans · Labour · Native Americans · Women</span>
-    </a>
-
-    <a href="Y12.html" class="pick-btn pb-tudor">
-      <span class="flag fl-tudor">Y12</span>
-      <span class="plabel">Y107 &amp; Y223 · Papers 1 &amp; 2</span>
-      Later Tudors &amp; The Cold War
-      <span class="pdesc">England 1547–1603 · Cold War 1941–1995</span>
-    </a>
-  </div>
-
-  <p class="tagline">Knowledge is porridge.</p>
 
 </div>
+<script>
+document.querySelectorAll('.subject-box').forEach(function(box){
+  box.addEventListener('click', function(e){
+    if (e.target.closest('.ticket-list')) return; // let the real course links navigate normally
+    box.classList.toggle('expanded');
+  });
+});
+</script>
 </body>
 </html>
