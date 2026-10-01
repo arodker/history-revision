@@ -113,12 +113,12 @@
   "period": "gilded-age-ds",
   "front": "What was the impact of Jim Crow laws on African Americans?",
   "p1": "Spread across South from 1877 \u2192 segregated schools, transport, hospitals, parks, restaurants, churches.",
-  "p2": "Voter suppression from 1890 \u2192 literacy tests, poll taxes, grandfather clauses \u2192 Mississippi Black voter registration: 90% (1867) \u2192 6% (1892).",
-  "p3": "Plessy v Ferguson (1896) \u2192 'separate but equal' constitutional \u2192 gave legal cover to all Jim Crow legislation.",
+  "p2": "Black schools systematically underfunded under Jim Crow - worsening economic opportunity.",
+  "p3": "Emergence of all-black towns and districts did provide economic alternative e.g. Greenwood district of Tulsa, or Mound Bayou.",
   "hints": [
-   "segregated",
-   "Mississippi",
-   "Plessy"
+   "1877",
+   "schools",
+   "All-black towns"
   ],
   "isDepthStudy": true,
   "periods": [
@@ -216,24 +216,6 @@
   ]
  },
  {
-  "no": 13,
-  "section": "aa",
-  "period": "gilded-age-ds",
-  "front": "What was the role of anti-civil rights groups in the 19th century?",
-  "p1": "KKK (founded 1865): violence at poll booths, lynching, destruction of Black organisations \u2192 Colfax Massacre (1873): 100+ killed to prevent voting \u2192 Enforcement Acts (1870-1) suppressed KKK briefly",
-  "p2": "Rifle clubs and Red Shirts: paramilitary groups in Carolinas and Mississippi \u2192 intimidated Black voters at gunpoint \u2192 Redeemer governments rewarded this violence by removing federal protections post-1877",
-  "p3": "United Daughters of the Confederacy \u2192 Lost Cause myth \u2192 romanticised slavery and Confederacy \u2192 justified Jim Crow \u2192 shaped Southern white opinion for generations",
-  "hints": [
-   "KKK",
-   "Redeemer governments",
-   "Lost Cause"
-  ],
-  "isDepthStudy": true,
-  "periods": [
-   "gilded-age-ds"
-  ]
- },
- {
   "no": 14,
   "section": "aa",
   "period": "gilded-age-ds",
@@ -292,13 +274,13 @@
   "period": "gilded-age-ds",
   "isDepthStudy": true,
   "front": "What were the key Supreme Court cases during the Gilded Age?",
-  "p1": "States' Rights doctrine \u2192 Supreme Court ruled 14th Amendment only protected national citizenship \u2192 states free to discriminate \u2192 gave constitutional backing to white supremacy throughout the Gilded Age",
-  "p2": "Plessy v Ferguson (1896) \u2192 'separate but equal' constitutional \u2192 Jim Crow legal cover for 58 years",
-  "p3": "Mississippi v Williams (1898) \u2192 upheld literacy tests + poll taxes \u2192 by 1900, 90% of Southern African Americans disenfranchised \u2192 Supreme Court = instrument of oppression, not protection",
+  "p1": "Plessy v Ferguson (1896): SC rejected Homer Plessy's claim of unfair treatment under 14th ammendment after segregation on train. 'Separate but equal' doctrine established. 8-1 decision.",
+  "p2": "Mississippi v Williams (1898): SC upheld literacy tests and poll taxes. Legitimises voter suppressios across south. By 1900 90% of AAs are disenfranchished.",
+  "p3": "Cummmings v Board of Education (1899): Unanimous decision, racial segregation can be extended into schools.",
   "hints": [
-   "States",
-   "1896",
-   "1898"
+   "Plessy",
+   "Mississippi",
+   "Cummings"
   ],
   "periods": [
    "gilded-age-ds"
@@ -313,14 +295,14 @@
    "gilded-age-ds"
   ],
   "isDepthStudy": true,
-  "front": "What was the role of State Governments in hindering AA rights?",
-  "p1": "Black Codes (1865\u20136) \u2192 restricted movement, labour and assembly of freedmen \u2192 de facto re-enslavement before federal repeal",
+  "front": "What was the role of State Governments in hindering AA rights in the Gilded Age?",
+  "p1": "After 1877 Democratic redeemer govenrments regained control. Swept away reconstruction rights and introduced Jim Crow Laws.",
   "p2": "Voter suppression: Mississippi (1890) \u2192 literacy tests, poll taxes, grandfather clauses \u2192 Black voter registration: 90% (1867) \u2192 6% (1892) \u2192 spread across South",
   "p3": "State govts took no action on racial violence \u2192 Governor Tillman SC openly defended lynching (1900) \u2192 1,875 lynchings in 1890s alone",
   "hints": [
-   "1865",
-   "1890",
-   "SC"
+   "Redeemer",
+   "Mississippi",
+   "Lynchings"
   ]
  },
  {
@@ -334,10 +316,11 @@
   "front": "Why did Southern elites introduce voter suppression in the Gilded Age?",
   "p1": "Populist Party threat: 1892 election \u2014 Populists won 5 states, 8.5% of vote. Dividing white vote",
   "p2": "Economic control: disenfranchising African Americans maintained dependence on white landowners as sharecroppers \u2014 political exclusion enforced economic exploitation. Racial hierarchy underpinned plantation economy.",
-  "p3": "Legal cover: Mississippi v Williams (1898)",
+  "p3": "Some African Americans had gained public office e.g. Wilmington NC. Led to violent coup and white supremacist desire for supression.",
   "hints": [
-   "1892",
-   "Economic"
+   "Populist",
+   "economic",
+   "Wilmington"
   ]
  },
  {
@@ -355,7 +338,7 @@
   "hints": [
    "literacy",
    "grandfather",
-   "Wilmington"
+   "violence"
   ]
  },
  {
@@ -439,12 +422,12 @@
   "no": 25,
   "section": "aa",
   "period": "progressive-wwi",
-  "front": "What was the impact of WWI on African Americans?",
-  "p1": "380,000 African Americans served in segregated units \u2192 Harlem Hellfighters \u2192 less racial segregation in Europe. Elaine Massacre (1919): 200+ Black sharecroppers killed in Arkansas for organising",
+  "front": "How far did black political rights develop in the 1920s?",
+  "p1": "Majority of African Americans remain in south - voter supression embedded. Removal of Grandfather Clauses in US V. Guinn (1915) had achieved very little",
   "p2": "NAACP membership surged in Northern cities \u2192 Northern Black voting blocs created political power \u2192 by 1920s Harlem had 200,000 Black residents",
   "p3": "Oscar De Priest elected first Northern Black congressman (Chicago, 1928) \u2192 demonstrated political power of Great Migration. BUT de facto segregation and racial violence persisted in North",
   "hints": [
-   "Hellfighters",
+   "Voter supression",
    "NAACP",
    "De Priest"
   ],
@@ -486,7 +469,7 @@
   "hints": [
    "NAACP",
    "1903",
-   "FBI"
+   "Washington"
   ],
   "periods": [
    "progressive-wwi",
@@ -1154,13 +1137,13 @@
   "section": "aa",
   "period": "black-power-ds",
   "front": "What was the negative impact of Nixon's and Reagan's policies on African Americans?",
-  "p1": "Nixon's 'Law and Order' (1968) \u2192 War on Drugs \u2192 disproportionately targeted Black communities. Reagan (1981\u201389) \u2192 welfare cuts deepened economic disparities",
-  "p2": "Supreme Court became increasingly conservative under Reagan \u2192 affirmative action weakened \u2192 Bakke (1978) precedent extended. Reagan and Bush labelled affirmative action 'reverse discrimination' and reduced federal enforcement.",
-  "p3": "By 1992 \u2192 25% of Black men in prison, on parole or probation",
+  "p1": "Nixon's 'Law and Order' (1968) \u2192 War on Drugs \u2192 disproportionately targeted Black communities. By 1992 25% of black men are in prison, on parole, or probation.",
+  "p2": "Supreme Court became increasingly conservative under Reagan \u2192 claimed his administration was colour blind. Fewer black judges appointed. Clashed with Congress over further civil rights legislation.",
+  "p3": "Reagan (1981\u201389) \u2192 welfare cuts deepened economic disparities",
   "hints": [
    "drugs",
    "conservative",
-   "prison"
+   "welfare"
   ],
   "isDepthStudy": false,
   "periods": [
@@ -1324,30 +1307,12 @@
   "p3": "Bifurcation: 40% middle class by 1980s BUT persistent underclass in inner cities \u2192 War on Drugs disproportionately targeted Black Americans",
   "hints": [
    "60%",
-   "1992",
-   "Housing"
+   "homeownership",
+   "bifurcation"
   ],
   "isDepthStudy": false,
   "periods": [
    "after-black-power"
-  ]
- },
- {
-  "no": 74,
-  "section": "aa",
-  "period": "after-black-power",
-  "periods": [
-   "after-black-power"
-  ],
-  "isDepthStudy": false,
-  "front": "What was the impact of bifurcation on African American society?",
-  "p1": "Affirmative action + CRM \u2192 growing Black middle class: 40% of African Americans middle class by 1980s. White-collar jobs: 5% (1960)",
-  "p2": "But gains deeply uneven: bifurcation created socioeconomic divide within Black community. Many concentrated in ghettoes \u2014 high unemployment, poor housing, underfunded schools. By 1992: Black families earned 60% of white income. Black unemployment 14.2% vs 6.6% white.",
-  "p3": "War on Drugs (Nixon 1971, expanded Reagan 1980s): disproportionately targeted Black communities",
-  "hints": [
-   "CRM",
-   "1992",
-   "1971"
   ]
  },
  {
