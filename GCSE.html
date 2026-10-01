@@ -2793,8 +2793,10 @@ function fdUpdateStreak() {
   const today = new Date().toISOString().slice(0, 10);
   let streak = JSON.parse(localStorage.getItem(LS_STREAK) || '{"date":"","count":0,"days":{}}');
   if (!streak.days) streak.days = {};
-  // A day counts as active the moment a round is completed; its tier can still rise later that day
-  streak.days[today] = Math.max(streak.days[today] || 0, fdBowlTierNow());
+  // Record progress toward today's tier regardless of whether the daily target is met yet
+  const tierNow = fdBowlTierNow();
+  streak.days[today] = Math.max(streak.days[today] || 0, tierNow);
+  if (tierNow < 1) { localStorage.setItem(LS_STREAK, JSON.stringify(streak)); return; } // daily target (25) not yet reached
   if (streak.date === today) { localStorage.setItem(LS_STREAK, JSON.stringify(streak)); return; } // already counted today
   const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
   streak.count = (streak.date === yesterday) ? streak.count + 1 : 1;
@@ -2808,7 +2810,7 @@ function fdStreakLastDays(n) {
   for (let i = n - 1; i >= 0; i--) {
     const d = new Date(); d.setDate(d.getDate() - i);
     const ds = d.toISOString().slice(0, 10);
-    out.push({ met: Object.prototype.hasOwnProperty.call(days, ds), tier: days[ds] || 0, today: i === 0 });
+    out.push({ met: (days[ds] || 0) >= 1, tier: days[ds] || 0, today: i === 0 });
   }
   return out;
 }
