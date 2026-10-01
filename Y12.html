@@ -454,7 +454,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 <!-- ══ SCREEN 1: SECTION PICKER ══ -->
 <div class="screen active" id="s-pick">
   <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.3rem">
-    <h1 style="margin:0">Mr Rodker's A Level History Hub - Tudors and Cold War</h1>
+    <h1 style="margin:0">Mr Rodker's A Level History Hub</h1>
     <span class="yr-pill">Y12</span>
   </div>
   <p style="font-size:.85rem;color:var(--muted);margin-bottom:.15rem">OCR A Level revision</p>
@@ -2613,7 +2613,9 @@ function fdUpdateStreak() {
   const today = fdTodayStr();
   let streak = JSON.parse(localStorage.getItem(LS_STREAK) || '{"date":"","count":0,"days":{}}');
   if (!streak.days) streak.days = {};
-  streak.days[today] = Math.max(streak.days[today] || 0, fdBowlTierNow());
+  const tierNow = fdBowlTierNow();
+  streak.days[today] = Math.max(streak.days[today] || 0, tierNow);
+  if (tierNow < 1) { localStorage.setItem(LS_STREAK, JSON.stringify(streak)); return; } // daily target (25) not yet reached
   if (streak.date === today) { localStorage.setItem(LS_STREAK, JSON.stringify(streak)); return; }
   const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
   streak.count = (streak.date === yesterday) ? streak.count + 1 : 1;
@@ -2627,7 +2629,7 @@ function fdStreakLastDays(n) {
   for (let i = n - 1; i >= 0; i--) {
     const d = new Date(); d.setDate(d.getDate() - i);
     const ds = d.toISOString().slice(0, 10);
-    out.push({ met: Object.prototype.hasOwnProperty.call(days, ds), tier: days[ds] || 0, today: i === 0 });
+    out.push({ met: (days[ds] || 0) >= 1, tier: days[ds] || 0, today: i === 0 });
   }
   return out;
 }
