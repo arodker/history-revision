@@ -1505,24 +1505,6 @@
   ]
  },
  {
-  "no": 85,
-  "section": "lab",
-  "period": "gilded-age-ds",
-  "periods": [
-   "gilded-age-ds"
-  ],
-  "isDepthStudy": true,
-  "front": "What was the significance of the Homestead Strike (1892)?",
-  "p1": "Carnegie Steel locked out Amalgamated Association workers (1892) \u2014 wage cuts + anti-union stance \u2192 hired 300 Pinkerton agents to retake plant \u2192 workers held off Pinkertons on barges, 12 killed",
-  "p2": "Governor Pattison sent 8,000 state militia \u2192 strike crushed \u2192 union destroyed in steel industry \u2192 Carnegie's victory enabled him to cut wages further and extend hours",
-  "p3": "Legacy: steel remained union-free for 40 years \u2192 demonstrated corporations could use private armies and state militias against workers with impunity \u2192 shocked public and strengthened case for regulation",
-  "hints": [
-   "1892",
-   "Governor",
-   "Legacy"
-  ]
- },
- {
   "no": 86,
   "section": "lab",
   "period": "gilded-age-ds",
@@ -1661,13 +1643,13 @@
   ],
   "isDepthStudy": true,
   "front": "What was the Sherman Antitrust Act and how was it used against unions?",
-  "p1": "Sherman Antitrust Act (1890): passed to break up monopolies \u2014 Carnegie, Rockefeller \u2014 but rarely used against corporations",
+  "p1": "Sherman Antitrust Act (1890): passed to break up monopolies deemed 'restraint to trade' \u2014 Carnegie, Rockefeller \u2014 but rarely used against corporations",
   "p2": "Turned against unions: Pullman Strike (1894) \u2192 Attorney General Olney used Sherman to declare strike an illegal restraint of trade \u2192 injunction issued \u2192 Debs imprisoned",
-  "p3": "Irony: act designed to protect public from monopolies became primary legal weapon against workers \u2192 established that federal government would side with capital over labour",
+  "p3": "Irony: act designed to protect public from monopolies became primary legal weapon against workers \u2192 established that federal government would side with capital over labour. Lasted until Clayton Anti-Trust Act 1914.",
   "hints": [
-   "1890",
-   "1894",
-   "Irony"
+   "monopolies",
+   "Pullman",
+   "Lasted"
   ]
  },
  {
@@ -1679,13 +1661,13 @@
   ],
   "isDepthStudy": true,
   "front": "What was the story of the Homestead Strike (1892)?",
-  "p1": "July 1892: Carnegie left for Scotland; Frick cut wages and locked out workers. Amalgamated Association organised defence of plant",
-  "p2": "Workers fought back with rifles and cannons \u2014 12 killed, Pinkertons surrendered. Governor Pattison then deployed 8,000 state militia \u2014 workers lost control of plant",
-  "p3": "Strike collapsed November 1892. All rehired without union recognition. Carnegie praised Frick in private. Publicly maintained he supported workers \u2014 hypocrisy exposed by strike. Alexander Berkman imprisoned 22 years.",
+  "p1": "Andrew Carnegie and Henry Frick tried to break the Amalgamated Association of Iron and Steel workers. Built up surplus of steel, then locked out workers - sparking mass strike.",
+  "p2": "Frick hired 300 Pinkertons to break strike - battle on the Monongahela riva. Workers fought back with rifles and cannons \u2014 12 killed, Pinkertons surrendered. Governor Pattison then deployed 8,000 state militia \u2014 workers lost control of plant",
+  "p3": "Strike collapsed November 1892. All rehired without union recognition. Carnegie praised Frick in private. Anarchist tried to assassinate Frick (failed) - increased public support fro Frick.",
   "hints": [
-   "1892",
-   "Workers",
-   "Strike"
+   "surplus",
+   "Pinkertons",
+   "Anarchist"
   ]
  },
  {
@@ -1697,13 +1679,13 @@
   ],
   "isDepthStudy": true,
   "front": "What was the story and significance of the Pullman Strike (1894)?",
-  "p1": "Pullman Palace Car cut wages 25% \u2014 did not reduce rents in company housing. Debs' ARU boycotted Pullman cars",
-  "p2": "12,000 federal troops sent despite Governor Altgeld's objection. 30 deaths. Debs imprisoned for contempt. AFL refused to support ARU \u2014 exposed skilled/unskilled division.",
-  "p3": "First use of federal injunction to break a strike \u2014 precedent used for decades. Federal government sided with corporations through courts and troops. Debs' imprisonment radicalised him",
+  "p1": "Pullman Palace Car cut wages 25% \u2014 did not reduce rents in company housing. Expanded into nationwide protest when Eugene Debs' ARU refused to handle Pullman train cars.",
+  "p2": "Federal government became involved as mail cars were not being transported - affecting all communications. 12,000 Federal militia sent by President Cleveland to break strike. 30 deaths. AFL refused to support ARU \u2014 exposed skilled/unskilled division.",
+  "p3": "Impact: First use of federal injunction to break a strike \u2014 precedent used for decades. Federal government sided with corporations through courts and troops. Debs' imprisonment radicalised him",
   "hints": [
-   "ARU",
-   "AFL",
-   "Debs"
+   "25%",
+   "Mail",
+   "injunction"
   ]
  },
  {
@@ -1929,8 +1911,8 @@
   "isDepthStudy": true,
   "front": "What was the significance of the CIO and Flint Sit-Down Strike?",
   "p1": "John Lewis formed CIO (1935) as part of AFL \u2014 focused on industrial workers regardless of skill, including women and African Americans",
-  "p2": "Flint Sit-Down Strike (1936\u201337): 40,000 workers at General Motors \u2014 CIO-led. Workers occupied the factory rather than picketing outside \u2014 harder to replace. Forced recognition of UAW",
-  "p3": "US Steel unionised 1937 without a strike \u2014 over 40 years after Homestead failure. NLRB v Fansteel (1939): sit-down strikes ruled illegal",
+  "p2": "Flint Sit-Down Strike (1936\u201337): 40,000 workers at General Motors \u2014 CIO-led. Workers occupied the factory rather than picketing outside \u2014 harder to replace. Effectively resisted National Guard forced. UAW recognised after 44 days.",
+  "p3": "Turning point for industrial unions. Led to further 200 sit-down strikes. US Steel unionised 1937 without a strike \u2014 over 40 years after Homestead failure. NLRB v Fansteel (1939): sit-down strikes ruled illegal",
   "hints": [
    "CIO",
    "UAW",
@@ -2042,24 +2024,6 @@
    "NLRB",
    "UAW",
    "Together"
-  ]
- },
- {
-  "no": 115,
-  "section": "lab",
-  "period": "new-deal-ds",
-  "periods": [
-   "new-deal-ds"
-  ],
-  "isDepthStudy": true,
-  "front": "What was the story of the Flint Sit-Down Strike (1936\u201337)?",
-  "p1": "General Motors, Flint, Michigan \u2014 CIO organised sit-down strike December 1936 \u2192 workers occupied factory rather than picketing \u2192 impossible to bring in replacements without destroying machinery.",
-  "p2": "40,000 workers \u2192 Michigan Governor Murphy refused to deploy National Guard \u2192 GM sought court injunction \u2014 judge revealed he owned GM stock \u2192 'Battle of Bulls Run' repulsed.",
-  "p3": "After 44 days GM recognised UAW \u2192 inspired 200 more sit-down strikes in 1937 \u2192 NLRB v Fansteel (1939) later ruled sit-downs illegal.",
-  "hints": [
-   "CIO",
-   "GM",
-   "UAW"
   ]
  },
  {
