@@ -1698,13 +1698,13 @@
   ],
   "isDepthStudy": true,
   "front": "How did courts obstruct union rights? (Lochner, Coppage, Deering, Adkins)",
-  "p1": "Freedom of contract doctrine: courts ruled employers and workers had equal right to set terms \u2192 ignored massive power imbalance \u2192 Lochner v New York (1905): struck down bakers' hours law",
-  "p2": "Coppage v Kansas (1915): upheld yellow-dog contracts \u2192 Duplex v Deering (1921): upheld injunctions against secondary boycotts \u2192 Adkins v Children's Hospital (1923): struck down minimum wage for women",
-  "p3": "Consistent pattern: judicial hostility to labour legislation \u2192 Norris-LaGuardia (1932) finally banned yellow-dog contracts \u2192 court obstruction lasted five decades before New Deal shifted balance",
+  "p1": "Freedom of contract doctrine: courts ruled workers could choose to work unregulated hours/wages. Lochner v New York (1905): struck down 10 hour day. Adkins v Children's Hospital (1923) struck down miminum wage.",
+  "p2": "Coppage v Kansas (1915): upheld yellow-dog contracts. Kept in place until the Norris-LaGuardia Act (1932). \u2192 Duplex v Deering (1921): upheld injunctions against secondary boycotts \u2192 Adkins v Children's Hospital (1923): struck down minimum wage for women",
+  "p3": "Duplex V. Deering (1921) upheld injunctions against secondary boycotts. Weakened protections of the Clayton Anti-Trust Act.",
   "hints": [
    "Lochner",
    "Coppage",
-   "Norris"
+   "Duplex"
   ]
  },
  {
@@ -1739,24 +1739,6 @@
   "hints": [
    "IWW",
    "1912"
-  ]
- },
- {
-  "no": 99,
-  "section": "lab",
-  "period": "progressive-era",
-  "periods": [
-   "progressive-era"
-  ],
-  "isDepthStudy": false,
-  "front": "How did the courts shape labour rights in the Progressive Era?",
-  "p1": "Lochner v New York (1905): Supreme Court struck down law limiting bakers' hours to 10/day \u2192 'freedom of contract' \u2014 state cannot interfere in employment terms",
-  "p2": "Coppage v Kansas (1915): upheld yellow-dog contracts \u2192 workers could be forced to sign away union rights as condition of employment \u2192 systematic judicial hostility to labour legislation",
-  "p3": "Wilson's response: Clayton Antitrust Act (1914) attempted to exempt unions \u2014 but courts undermined it \u2192 NWLB (1918): temporary wartime protection \u2014 expired after war \u2192 courts reverted",
-  "hints": [
-   "1905",
-   "1915",
-   "NWLB"
   ]
  },
  {
@@ -1955,25 +1937,7 @@
    "gender"
   ]
  },
- {
-  "no": 111,
-  "section": "lab",
-  "period": "new-deal-ds",
-  "periods": [
-   "new-deal-ds"
-  ],
-  "isDepthStudy": true,
-  "front": "How significant was opposition to New Deal labour reforms?",
-  "p1": "Employer resistance: many employers resisted Wagner Act through blacklisting, spy networks and private security \u2192 Henry Ford: Battle of the Overpass (1937) \u2014 Ford thugs beat UAW organisers",
-  "p2": "Internal divisions: AFL-CIO split (1938) \u2014 AFL expelled CIO \u2192 exposed fractures \u2192 AFL promoted closed shops that inadvertently excluded Black workers",
-  "p3": "Limits of opposition: union membership surged 3.7 million (1933) \u2192 9 million (1938) despite resistance \u2192 US Steel unionised 1937 without strike \u2192 Ford finally recognised UAW 1941",
-  "hints": [
-   "UAW",
-   "AFL",
-   "1933"
-  ]
- },
- {
+{
   "no": 112,
   "section": "lab",
   "period": "new-deal-ds",
@@ -2008,25 +1972,7 @@
    "1937"
   ]
  },
- {
-  "no": 114,
-  "section": "lab",
-  "period": "new-deal-ds",
-  "periods": [
-   "new-deal-ds"
-  ],
-  "isDepthStudy": true,
-  "front": "What was the significance of NLRB v Fansteel and Ford UAW (1941)?",
-  "p1": "NLRB v Fansteel (1939): Supreme Court ruled sit-down strikes were illegal \u2192 undermined key CIO tactic that had won GM recognition at Flint",
-  "p2": "Ford recognition (1941): Henry Ford \u2014 last major industrial employer to accept union power \u2192 recognised UAW after NLRB elections showed overwhelming majority support \u2192 ended 20-year battle",
-  "p3": "Together: sit-down strikes outlawed BUT NLRB elections proved effective \u2192 showed New Deal framework could deliver union recognition even without most militant tactics",
-  "hints": [
-   "NLRB",
-   "UAW",
-   "Together"
-  ]
- },
- {
+{
   "no": 116,
   "section": "lab",
   "period": "wwii-taft-hartley",
@@ -2125,13 +2071,13 @@
   ],
   "isDepthStudy": false,
   "front": "What was the significance of Cesar Chavez and the UFW?",
-  "p1": "UFW (1966): Chavez organised Filipino and Mexican American farm workers \u2014 historically without union representation, excluded from most labour legislation",
-  "p2": "Salad Bowl Strike (1970): led by Filipino workers, supported by Mexican and other ethnic groups. Success \u2014 strengthened UFW's position, led to better wages and union recognition for farm workers",
-  "p3": "Showed power of nonviolent strikes and consumer boycotts beyond the workplace. Expanded labour movement beyond its traditional white male industrial base \u2014 major increase in Hispanic union membership",
+  "p1": "United Farm Workers (1966): Chavez organised Filipino and Mexican American farm workers \u2014 historically without union representation, excluded from most labour legislation",
+  "p2": "Tactics: nonviolent strikes, consumer boycotts and hunger strikes \u2014 modelled on Gandhi. Delano Grape Strike (1965\u201370): nationwide grape boycott built broad public support. Fasting drew Robert Kennedy's support",
+  "p3": "Salad Bowl Strike (1970): led by Filipino workers, supported by Mexican and other ethnic groups. Success \u2014 strengthened UFW's position, led to better wages and union recognition for farm workers.Legacy: California Agricultural Labor Relations Act (1975) \u2014 first U.S. law protecting farm workers' collective bargaining rights"p",
   "hints": [
-   "UFW",
-   "1970",
-   "Expanded"
+   "Mexican American",
+   "tactics",
+   "Salad Bowl"
   ]
  },
  {
@@ -2222,25 +2168,6 @@
    "OSHA",
    "14,000",
    "Reagan"
-  ]
- },
- {
-  "no": 127,
-  "section": "lab",
-  "period": "fifties-seventies",
-  "periods": [
-   "fifties-seventies",
-   "black-power-ds"
-  ],
-  "isDepthStudy": false,
-  "front": "What made Cesar Chavez a significant leader?",
-  "p1": "Chavez organised Filipino and Mexican American farm workers \u2014 historically excluded from NLRA, no union representation. UFW (1966): first successful farm workers' union",
-  "p2": "Tactics: nonviolent strikes, consumer boycotts and fasting \u2014 modelled on Gandhi. Delano Grape Strike (1965\u201370): nationwide grape boycott built broad public support. Fasting drew Robert Kennedy's support",
-  "p3": "Legacy: California Agricultural Labor Relations Act (1975) \u2014 first U.S. law protecting farm workers' collective bargaining rights. Direct product of UFW pressure. Expanded labour movement beyond white male industrial base",
-  "hints": [
-   "NLRA",
-   "1965",
-   "UFW"
   ]
  },
  {
@@ -2539,14 +2466,14 @@
    "na-gilded-age-ds"
   ],
   "isDepthStudy": false,
-  "front": "What was the significance of Red Cloud's War and Fort Laramie?",
-  "p1": "Red Cloud's War (1866-68): Lakota Sioux defeated U.S. Army in Powder River Country \u2192 Treaty of Fort Laramie (1868): guaranteed Black Hills 'in perpetuity'.",
-  "p2": "Gold discovered (1874): government demanded sale \u2192 Sioux refused \u2192 1877: Black Hills seized in violation of treaty \u2192 government threatened to stop rations.",
-  "p3": "Significance: first major Native military victory on Plains \u2192 only treaty USA ever signed that required it to abandon forts \u2192 BUT gold in Black Hills made treaty violation inevitable.",
+  "front": "What was the impact of treaty-making with Native Americans?",
+  "p1": "Prior to 1871, Native Tribes treated as foreign states. Treaties made to agree land and create reservations, usually after conflict. Treaties often signed under influence of alcohol or with poor translation, or withour chief.",
+  "p2": "First Treaty of Fort Laramie (1851) created Great Sioux Reservation - violated by white settlers and prospecters. Led to Red Cloud's War (1866-68). Native Victory. New Treaty of Fort Laramie (1868) - granting Black Hills to Sioux forever.",
+  "p3": "Second Treaty of Fort Laramie also violated after gold discovered in Black Hills in 1874 by General Custer.",
   "hints": [
-   "1866",
-   "1874",
-   "USA"
+   "reservations",
+   "Fort Laramie",
+   "gold"
   ]
  },
  {
@@ -2577,13 +2504,13 @@
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Battle of Little Bighorn (1876)?",
-  "p1": "Little Bighorn (1876): Crazy Horse and Sitting Bull led 2,000+ warriors \u2192 annihilated Custer's 7th Cavalry (268 dead) \u2192 largest Native military victory of the Plains Wars",
+  "p1": "Little Bighorn (1876): Crazy Horse and Sitting Bull led 2,000+ Sioux warriors \u2192 annihilated Custer's 7th Cavalry (268 dead) \u2192 largest Native military victory of the Plains Wars",
   "p2": "Aftermath: Army flooded Plains with reinforcements \u2192 Sitting Bull fled to Canada \u2192 Crazy Horse surrendered and was killed in custody (1877) \u2192 Black Hills seized in violation of Fort Laramie Treaty",
   "p3": "Significance: briefly raised morale but accelerated federal military response \u2192 proved Natives could win battles but could not win the war \u2192 by 1877 major armed resistance effectively ended",
   "hints": [
-   "1876",
-   "1877",
-   "morale"
+   "Custer",
+   "Black Hills",
+   "accelerated"
   ]
  },
  {
@@ -2641,46 +2568,7 @@
    "1868"
   ]
  },
- {
-  "no": 149,
-  "section": "na",
-  "period": "na-plains-wars",
-  "periods": [
-   "na-plains-wars",
-   "na-gilded-age-ds"
-  ],
-  "isDepthStudy": false,
-  "front": "What was the significance of Crazy Horse and Sitting Bull?",
-  "p1": "Sitting Bull (Hunkpapa Lakota): spiritual leader \u2192 refused to sign treaties \u2192 led resistance against US expansion \u2192 key figure at Little Bighorn (1876)",
-  "p2": "Crazy Horse (Oglala Lakota): greatest military tactician \u2192 never signed a treaty \u2192 led warriors at Little Bighorn \u2192 surrendered 1877 \u2192 killed in custody by US soldiers",
-  "p3": "Significance: demonstrated united resistance could defeat US Army \u2192 inspired Native resistance movements \u2192 BUT US Army ultimately overwhelmed all military resistance by 1877",
-  "hints": [
-   "1876",
-   "1877",
-   "inspired"
-  ]
- },
- {
-  "no": 150,
-  "section": "na",
-  "period": "na-plains-wars",
-  "periods": [
-   "na-plains-wars",
-   "na-gilded-age-ds",
-   "na-self-determination"
-  ],
-  "isDepthStudy": false,
-  "front": "What was the significance of the Black Hills to the Sioux?",
-  "p1": "Black Hills (Paha Sapa): sacred to Sioux \u2192 Treaty of Fort Laramie (1868): guaranteed Black Hills 'in perpetuity' \u2192 gold discovered 1874 \u2192 Sioux refused to sell.",
-  "p2": "1877: Black Hills seized in violation of treaty \u2192 government threatened to stop rations \u2192 Mount Rushmore (1927-41) carved into sacred land without consent.",
-  "p3": "US v Sioux Nation (1980): $106 million awarded \u2192 Sioux refused \u2192 fund grown to $600m+ by 1992, still unclaimed.",
-  "hints": [
-   "Laramie",
-   "seized",
-   "refused"
-  ]
- },
- {
+{
   "no": 151,
   "section": "na",
   "period": "na-plains-wars",
@@ -2764,13 +2652,13 @@
   ],
   "isDepthStudy": true,
   "front": "What was the Ghost Dance Movement (1889) and what did it represent?",
-  "p1": "Ghost Dance Movement (1889): founded by Wovoka (Paiute prophet) \u2192 combined traditional beliefs with hope of driving away white settlers and restoring Native lands",
-  "p2": "Federal government alarmed: mass gatherings seen as military threat \u2192 Sitting Bull arrested and killed by Indian police (December 1890) \u2192 7th Cavalry surrounded Lakota at Wounded Knee Creek",
+  "p1": "Ghost Dance Movement (1889): founded by Wovoka (Paiute prophet) \u2192 5 days of intense painful dancing combined traditional beliefs with Christian hope of a messiah driving away white settlers and restoring Native lands and buffalo.",
+  "p2": "Federal government alarmed: mass gatherings seen as military threat \u2192 Sitting Bull arrested and killed \u2192 7th Cavalry surrounded Lakota at Wounded Knee (1890). 250 men, women, children killed.",
   "p3": "Significance: end of armed Plains Indian resistance \u2192 Ghost Dance suppressed \u2014 last major cultural resistance movement of the period \u2192 Wounded Knee became enduring symbol of Native suffering",
   "hints": [
-   "1889",
-   "1890",
-   "suppressed"
+   "Wovoka",
+   "Wounded Knee",
+   "Symbol"
   ]
  },
  {
@@ -2882,25 +2770,7 @@
    "Social"
   ]
  },
- {
-  "no": 162,
-  "section": "na",
-  "period": "na-gilded-age-ds",
-  "periods": [
-   "na-gilded-age-ds"
-  ],
-  "isDepthStudy": true,
-  "front": "What was the Wounded Knee Massacre (1890) and why was it significant?",
-  "p1": "Ghost Dance (1889): Wovoka \u2014 5 days of dance to reconnect with ancestors and restore lost lands \u2192 spread rapidly across Plains \u2192 US Army alarmed by mass gatherings",
-  "p2": "December 1890: 7th Cavalry surrounded Lakota at Wounded Knee Creek \u2192 shot fired, possibly accidentally \u2192 cavalry opened fire \u2192 250+ Lakota killed \u2014 men, women and children",
-  "p3": "Significance: end of armed Plains Indian resistance \u2192 Ghost Dance suppressed \u2192 last major cultural and military resistance movement of the 19th century \u2192 confirmed US military dominance",
-  "hints": [
-   "1889",
-   "1890",
-   "confirmed"
-  ]
- },
- {
+{
   "no": 163,
   "section": "na",
   "period": "na-gilded-age-ds",
@@ -3227,14 +3097,14 @@
    "na-end"
   ],
   "isDepthStudy": false,
-  "front": "What was the impact of reservation poverty as a structural condition?",
+  "front": "What was life like on the reservations in the mid-20th century?",
   "p1": "1960s: per capita income on reservations half the national average \u2192 unemployment on many reservations 40-80% \u2192 infant mortality three times higher than national average",
   "p2": "BIA dependence: tribes had little control over their own resources \u2192 federal funding inadequate and subject to political winds \u2192 termination (1953) devastated already-weak tribal economies",
   "p3": "Urban relocation: Indian Relocation Act (1956) \u2192 BIA offered one-way tickets to cities \u2192 without community support many fell into poverty in urban ghettos \u2192 relocation failed to solve reservation poverty",
   "hints": [
-   "half",
+   "income",
    "BIA",
-   "1956"
+   "relocation"
   ]
  },
  {
@@ -3256,44 +3126,7 @@
    "NCAI"
   ]
  },
- {
-  "no": 182,
-  "section": "na",
-  "period": "na-termination",
-  "periods": [
-   "na-termination",
-   "na-red-power-ds"
-  ],
-  "isDepthStudy": true,
-  "front": "How did Black Power influence Red Power?",
-  "p1": "Direct influence: AIM (1968) modelled on Black Panthers \u2014 red berets, leather jackets \u2192 'Red Power' directly inspired by 'Black Power'",
-  "p2": "Limits: Native activism pre-dated Black Power \u2192 NIYC (1961) fish-ins already underway \u2192 NCAI (1944) established \u2192 Great Society and War on Poverty laid groundwork independently",
-  "p3": "Alcatraz (1969): 10,000 Natives visited \u2014 media impact mirrored Panthers' \u2192 BUT sovereignty claims were specifically about land and treaty rights \u2014 not civil rights integration",
-  "hints": [
-   "AIM",
-   "NIYC",
-   "1969"
-  ]
- },
- {
-  "no": 183,
-  "section": "na",
-  "period": "na-red-power-ds",
-  "periods": [
-   "na-red-power-ds"
-  ],
-  "isDepthStudy": true,
-  "front": "What was the significance of AIM's founding (1968) and early actions?",
-  "p1": "AIM (1968): founded Minneapolis \u2192 urban Natives patrolled police to document brutality \u2192 demanded sovereignty and treaty rights through direct action",
-  "p2": "LBJ's 'Forgotten Americans' speech (1968). Dee Brown's Bury My Heart at Wounded Knee (1970) raised public awareness. Nixon returned Taos Blue Lake to Pueblo (1970)",
-  "p3": "Indian Civil Rights Act (1968): extended constitutional protections to Natives under tribal governments \u2014 sovereignty concerns remained",
-  "hints": [
-   "AIM",
-   "LBJ",
-   "1968"
-  ]
- },
- {
+{
   "no": 184,
   "section": "na",
   "period": "na-red-power-ds",
@@ -3366,62 +3199,7 @@
    "AIRFA"
   ]
  },
- {
-  "no": 188,
-  "section": "na",
-  "period": "na-red-power-ds",
-  "periods": [
-   "na-red-power-ds",
-   "na-self-determination"
-  ],
-  "isDepthStudy": false,
-  "front": "What was the significance of NARF and Oneida v Oneida (1974)?",
-  "p1": "NARF (Native American Rights Fund, 1970): provided legal representation for tribes \u2192 handled landmark cases on sovereignty, water rights, religious freedom and treaty rights",
-  "p2": "Oneida v Oneida (1974): tribes could sue states for land taken in violation of treaties \u2192 opened door to land claims across eastern US \u2192 multiple tribes pursued cases",
-  "p3": "US v Sioux Nation (1980): Supreme Court awarded $106 million for Black Hills taken in violation of Fort Laramie Treaty \u2192 Sioux refused \u2014 demanded land return \u2192 money sat in trust unclaimed",
-  "hints": [
-   "NARF",
-   "1974",
-   "1980"
-  ]
- },
- {
-  "no": 189,
-  "section": "na",
-  "period": "na-self-determination",
-  "periods": [
-   "na-self-determination"
-  ],
-  "isDepthStudy": false,
-  "front": "What was the significance of AIRFA and the Indian Child Welfare Act?",
-  "p1": "AIRFA (American Indian Religious Freedom Act, 1978): protected right to practice traditional religions \u2192 reversed decades of ceremony bans \u2014 Sun Dance, Ghost Dance suppressed since 1880s \u2192 allowed access to sacred sites.",
-  "p2": "ICWA (Indian Child Welfare Act, 1978): prevented removal of Native children to non-Native homes \u2192 tribal authority over child welfare \u2192 addressed systematic removal since boarding school era.",
-  "p3": "AIRFA had no enforcement mechanism \u2192 70% of Native religious leaders still struggled accessing sacred sites by 1992 \u2192 Graves Protection Act (1990) returned 10,000 sacred items.",
-  "hints": [
-   "AIRFA",
-   "ICWA",
-   "1992"
-  ]
- },
- {
-  "no": 190,
-  "section": "na",
-  "period": "na-self-determination",
-  "periods": [
-   "na-self-determination"
-  ],
-  "isDepthStudy": false,
-  "front": "What was the Indian Gaming Regulatory Act and position by 1992?",
-  "p1": "Indian Gaming Regulatory Act (1988): tribes could establish casinos \u2192 150 Native American-run casinos by early 1990s generating over $1 billion annually",
-  "p2": "Languages Act (1990): 100+ programmes active. Charrier v Bell (1986): burial sites protected. Indian Education Act (1972): tribal education control. Columbus 500th (1992): widespread protests",
-  "p3": "Continuing challenges: 25% below poverty line \u2192 less than 60% graduated high school \u2192 50% registered to vote \u2192 federal funding inadequate",
-  "hints": [
-   "Gaming",
-   "Languages",
-   "poverty"
-  ]
- },
- {
+{
   "no": 191,
   "section": "na",
   "period": "na-self-determination",
@@ -3429,14 +3207,14 @@
    "na-self-determination"
   ],
   "isDepthStudy": false,
-  "front": "What was the significance of US v Sioux Nation (1980) and NARF (1970)?",
-  "p1": "US v Sioux Nation (1980): Black Hills illegally seized in 1877 \u2192 $106 million awarded \u2192 Sioux refused: 'The Black Hills are not for sale'",
-  "p2": "Oneida v Oneida (1974): Oneida Nation could sue for land claims under federal treaties \u2192 precedent for dozens of tribal land claims",
-  "p3": "Fisher v Montana (1976): tribes decide on adoptions \u2192 Bryan v Itasca (1976): states cannot tax reservations \u2192 Seminole v Butterworth (1982): tribal casino sovereignty",
+  "front": "How did the supreme court impact Native Rights in the 1970s and 1980s?",
+  "p1": "Oneida v Oneida (1974): Oneida Nation could sue for land claims under federal treaties - US v Sioux (1980): SC ruled Black Hills illegally seized in 1877 \u2192 $106 million awarded \u2192 Sioux refused.",
+  "p2": "Self determination: Fisher v Montana (1976): tribes decide on adoptions \u2192 Bryan v Itasca (1976): states cannot tax reservations \u2192 Seminole v Butterworth (1982): tribal casino sovereignty",
+  "p3": "Culture: Charrier v Bell (1986): burial sites protected",
   "hints": [
-   "Sioux",
    "Oneida",
-   "Fisher"
+   "Fisher",
+   "Charier"
   ]
  },
  {
