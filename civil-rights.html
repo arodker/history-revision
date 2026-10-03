@@ -1224,18 +1224,36 @@ function showStatEnd(){var total=stPool.length,pct=total?Math.round(stOK/total*1
 function startStatMissed(){if(!stMissed.length)return;stPool=shuffle(stMissed.slice());stIdx=0;stOK=0;stBad=0;stStreak=0;stMissed=[];document.getElementById('st-setup').style.display='none';document.getElementById('st-countdown').style.display='none';renderStat();}
 
 var KC=[],FD=[],DATES=[],ESSAY_QS=[],INTERP_QS=[];
+var DATA_LOAD_ERRORS=[];
+function fdLoadJSON(url){
+  return fetch(url).then(function(r){
+    if(!r.ok){DATA_LOAD_ERRORS.push(url+': HTTP '+r.status);return [];}
+    return r.text().then(function(txt){
+      try{return JSON.parse(txt);}
+      catch(e){DATA_LOAD_ERRORS.push(url+': '+e.message);return [];}
+    });
+  }).catch(function(e){DATA_LOAD_ERRORS.push(url+': '+e.message);return [];});
+}
+function fdShowLoadErrorBanner(){
+  if(!DATA_LOAD_ERRORS.length)return;
+  var b=document.createElement('div');
+  b.style.cssText='position:sticky;top:0;z-index:999;background:#FCEBEB;color:#A32D2D;border-bottom:2px solid #A32D2D;padding:.6rem 1rem;font-size:.78rem;font-family:monospace;white-space:pre-wrap';
+  b.textContent='⚠ Data failed to load:\n'+DATA_LOAD_ERRORS.join('\n');
+  document.body.insertBefore(b,document.body.firstChild);
+}
 Promise.all([
-  fetch('data/kc-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
-  fetch('data/flashcards-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
-  fetch('data/rq-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
-  fetch('data/dates-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
-  fetch('data/essays-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
-  fetch('data/interp-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];}),
-  fetch('data/stats-Y13.json').then(function(r){return r.ok?r.json():[];}).catch(function(){return [];})
+  fdLoadJSON('data/kc-Y13.json'),
+  fdLoadJSON('data/flashcards-Y13.json'),
+  fdLoadJSON('data/rq-Y13.json'),
+  fdLoadJSON('data/dates-Y13.json'),
+  fdLoadJSON('data/essays-Y13.json'),
+  fdLoadJSON('data/interp-Y13.json'),
+  fdLoadJSON('data/stats-Y13.json')
 ]).then(function(results){
   KC=results[0]; FD=results[1]; RQ=results[2]; DATES=results[3]; ESSAY_QS=results[4]; INTERP_QS=results[5]; STATS=results[6]||[]; updateRQCounter(); applyDatesHardBtn(); updateStatCounter();
   console.log('Data loaded — KC:',KC.length,'FD:',FD.length,'STATS:',STATS.length);
   renderFdWheels(); renderFdSetupWheel(); renderFdHubWheel(); fdPopulateCounts();
+  fdShowLoadErrorBanner();
   var km=document.getElementById('mode-knowledge');
   if(km&&km.style.display!=='none')buildPeriodDropdown();
 }).catch(function(err){console.warn('Data load issue:',err);});
