@@ -1245,12 +1245,10 @@ Promise.all([
   fdLoadJSON('data/kc-Y13.json'),
   fdLoadJSON('data/flashcards-Y13.json'),
   fdLoadJSON('data/rq-Y13.json'),
-  fdLoadJSON('data/dates-Y13.json'),
   fdLoadJSON('data/essays-Y13.json'),
-  fdLoadJSON('data/interp-Y13.json'),
   fdLoadJSON('data/stats-Y13.json')
 ]).then(function(results){
-  KC=results[0]; FD=results[1]; RQ=results[2]; DATES=results[3]; ESSAY_QS=results[4]; INTERP_QS=results[5]; STATS=results[6]||[]; updateRQCounter(); applyDatesHardBtn(); updateStatCounter();
+  KC=results[0]; FD=results[1]; RQ=results[2]; DATES=[]; ESSAY_QS=results[3]; INTERP_QS=[]; STATS=results[4]||[]; updateRQCounter(); applyDatesHardBtn(); updateStatCounter();
   console.log('Data loaded — KC:',KC.length,'FD:',FD.length,'STATS:',STATS.length);
   renderFdWheels(); renderFdSetupWheel(); renderFdHubWheel(); fdPopulateCounts();
   fdShowLoadErrorBanner();
