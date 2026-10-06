@@ -1403,14 +1403,14 @@
    "early-industrialisation"
   ],
   "isDepthStudy": false,
-  "front": "What was the significance of the NLU, CNLU and KOL?",
-  "p1": "NLU (1866): first national federation, 300,000 at peak — collapsed after Panic of 1873. CNLU (1869): formed by Black workers excluded from NLU",
-  "p2": "KOL (1869): included women, Black Americans and unskilled workers → peaked at 700,000 (1886) → collapsed after Haymarket, associated with radicalism",
-  "p3": "Contract system left workers vulnerable → Coxey's Army (1894): 500 unemployed marched to Washington. Asian Exclusion Act (1882): AFL supported — exposed nativist divisions",
+  "front": "What was the significance of the NLU and CNLU?",
+  "p1": "Founded 1866 by William Sylvis — first national labour federation, 300,000 at peak (though likely including loosely affiliated workers, not all fully paid members).",
+  "p2": "Pushed for legislative reforms including the 8-hour workday → but over-reliant on Sylvis personally → collapsed following his death in 1869.",
+  "p3": "Excluded Black workers → CNLU formed separately in 1869 in response → short-lived, lacking the NLU's reach.",
   "hints": [
-   "300,000",
-   "700,000",
-   "AFL"
+   "Sylvis",
+   "8-hour workday",
+   "Black workers"
   ]
  },
  {
@@ -1422,14 +1422,14 @@
    "gilded-age-ds"
   ],
   "isDepthStudy": false,
-  "front": "What was the impact of the Panic of 1873 on labour?",
-  "p1": "Panic of 1873: railroad overexpansion → financial collapse → 25% unemployment in industrial cities → wages halved → NLU collapsed under pressure",
-  "p2": "Workers had no bargaining power: no savings, no union protection → blacklisting endemic → employers cut wages without negotiation → strikes failed for lack of funds",
-  "p3": "Political impact: Northern attention shifted from Reconstruction to economic recovery → federal support for Black rights in the South weakened → long-term effect: set back labour organisation for a decade",
+  "front": "What was the significance of the Knights of Labor (KOL)?",
+  "p1": "Founded 1869 — the largest labour organisation of the late 19th century, known for inclusivity: welcomed skilled and unskilled workers, women, African Americans and immigrants.",
+  "p2": "Peaked at 700,000 members (1886) — far surpassing the NLU's reach.",
+  "p3": "Collapsed after the Haymarket Affair (1886), tainted by association with anarchism and radicalism in the public mind.",
   "hints": [
-   "NLU",
-   "blacklisting endemic",
-   "long-term effect"
+   "largest labour",
+   "700,000",
+   "Haymarket Affair"
   ]
  },
  {
@@ -1497,11 +1497,11 @@
   "isDepthStudy": true,
   "front": "What were working conditions like during the Gilded Age?",
   "p1": "2,000 rail workers killed in accidents in 1889 alone → by 1900: 35,000 workplace deaths annually → no federal safety legislation → no compensation for injury or death",
-  "p2": "Women: 15% of industrial workforce → earned $3-6/week vs $7-10 for men → immigrants: 15-20% of urban industrial workforce → worked 10-12 hours/day, 6 days/week",
+  "p2": "Overall industrial wages rose 48% during the period — from $380 a year (1880) to $564 (1890) — but the gender gap persisted unchanged: women still earned $3-6/week against $7-10 for men. Immigrants made up 15-20% of the urban industrial workforce, working 10-12 hours a day, six days a week.",
   "p3": "2% of population owned 30% of wealth → no legal framework for workers' rights → no minimum wage, no safety standards, no union recognition",
   "hints": [
    "2,000",
-   "industrial",
+   "48%",
    "30%"
   ]
  },
@@ -1571,13 +1571,13 @@
   ],
   "isDepthStudy": true,
   "front": "How did employers suppress unions in the Gilded Age?",
-  "p1": "Pinkertons: Carnegie Steel employed 300 armed Pinkerton agents at Homestead (1892) — arrived by barge, violent clash, 12 men dead. Companies hired private militias to break strikes",
-  "p2": "Blacklisting: shared among 50 mine operators in Pennsylvania — known union organisers could not find work",
-  "p3": "Company towns: Pullman controlled housing, rents and wages — could evict strikers. Welfare capitalism (1920s): employer-provided pensions and healthcare",
+  "p1": "Private militias: companies hired armed agents like the Pinkertons to break strikes by force → Carnegie Steel used them at Homestead (1892).",
+  "p2": "Blacklisting: known union organisers shared among employers, unable to find work elsewhere.",
+  "p3": "Company towns: Pullman controlled housing, rents and wages — could evict strikers. Employers also used sponsored newspapers and clergy to influence workers directly.",
   "hints": [
    "Carnegie Steel",
-   "Blacklisting",
-   "Welfare capitalism"
+   "shared among",
+   "sponsored newspapers"
   ]
  },
  {
@@ -1789,13 +1789,13 @@
   ],
   "isDepthStudy": false,
   "front": "What was the impact of welfare capitalism in the 1920s?",
-  "p1": "Employers introduced pensions, healthcare and benefits — reduced perceived need for unions. Yellow-dog contracts widespread — workers signed away right to join unions as condition of employment",
-  "p2": "Union membership declined from peak of 5 million (1920). Deering v Duplex (1921): restricted secondary boycotts",
-  "p3": "BSCP founded 1925 by Philip Randolph — first successful Black union, sought recognition from Pullman Company and AFL. Would not achieve it until 1937",
+  "p1": "Employers introduced pensions, healthcare and benefits — reduced perceived need for unions. Ford raised his minimum wage to $6 a day during the 1920s, extending the high-wage strategy he'd pioneered in 1914 to discourage unionisation.",
+  "p2": "Yellow-dog contracts widespread — workers signed away right to join unions as condition of employment. Despite this hostile climate, Philip Randolph founded the BSCP (1925) → but it would not win recognition from the Pullman Company until 1937.",
+  "p3": "Union membership declined from peak of 5 million (1920). Deering v Duplex (1921): restricted secondary boycotts.",
   "hints": [
-   "Yellow-dog contracts",
-   "secondary boycotts",
-   "Philip Randolph"
+   "$6",
+   "Philip Randolph",
+   "Deering"
   ]
  },
  {
@@ -1807,11 +1807,11 @@
   ],
   "isDepthStudy": false,
   "front": "What was the impact of the Great Depression on labour rights?",
-  "p1": "Wall St Crash (1929)",
+  "p1": "Wall Street Crash (1929) triggered mass bank failures and industrial collapse → national unemployment reached 25%, with some industrial cities far higher → workers' bargaining position collapsed entirely.",
   "p2": "Norris-LaGuardia Act (1932): prohibited federal courts from using injunctions against peaceful strikes and banned yellow-dog contracts — first significant legislative gain in decades. Unions had only 3 million members by 1932 — a fraction of the workforce.",
   "p3": "Great Depression created conditions for New Deal — showed welfare capitalism had failed. Workers' desperation drove Flint sit-down strikes and pressure for Wagner Act. In 1932, ¾ of African Americans still voted Republican — political realignment not yet complete.",
   "hints": [
-   "Wall St",
+   "Wall Street",
    "Norris-LaGuardia",
    "Wagner Act"
   ]
@@ -2116,11 +2116,11 @@
   "front": "What was the impact of Reaganomics on labour rights?",
   "p1": "Deregulation and tax cuts for business — union-busting became standard practice. Employers used legal challenges, outsourcing and non-unionised temporary workers to weaken unions. Relocating to right-to-work states normalised.",
   "p2": "Reagan reduced OSHA funding — workplace safety declined, safety violations persisted especially in agriculture and construction. Judicial appointments shifted courts in a more employer-friendly direction — weakened NLRB enforcement.",
-  "p3": "Union membership: 24% (1979)",
+  "p3": "By 1992, union membership had dropped to 16% of the workforce — down from 24% in 1979, showing the longer-term trajectory PATCO helped set in motion.",
   "hints": [
    "Deregulation",
    "OSHA",
-   "24%"
+   "16%"
   ]
  },
  {
@@ -2427,11 +2427,11 @@
   "front": "What was the Dawes Severalty Act (1887) and how did it work?",
   "p1": "Dawes Severalty Act (1887): divided communal tribal lands into 160-acre allotments. 'Surplus' land sold to white settlers. Curtis Act (1898) extended to Five Civilised Tribes",
   "p2": "Land loss: Native-owned land fell from 156 million acres (1887) to 78 million by 1900 → most allotments lost through sale, fraud or inheritance division",
-  "p3": "Cultural impact: undermined communal structure → matriarchal tribes lost power as land given to male heads of families → most failed to farm — sold for survival",
+  "p3": "Most allottees lacked farming experience or capital to work the land successfully → many sold their allotments simply to survive, undermining the policy's own stated goal of creating self-sufficient farmers.",
   "hints": [
    "160-acre",
    "156 million",
-   "communal structure"
+   "self-sufficient farmers"
   ]
  },
  {
@@ -2442,14 +2442,14 @@
    "na-gilded-age-ds"
   ],
   "isDepthStudy": true,
-  "front": "What was the cultural and gendered impact of the Dawes Act?",
+  "front": "What was the cultural impact of the Dawes Act?",
   "p1": "Imposed male-headed family ownership onto matriarchal tribes → Iroquois and Cherokee women traditionally managed land → Dawes Act stripped this role",
   "p2": "Allotment scattered families across individual plots → broke up spatial concentration of tribes → undermined communal ceremonies, governance and economic co-operation",
-  "p3": "Land sold to speculators: most allotted land poor quality → arid, infertile, unsuitable for farming → most sold allotments → left destitute",
+  "p3": "A small number of Native Americans successfully adapted to the new system and prospered as individual landowners — but this was the rare exception, not the rule, for the vast majority who lost their land.",
   "hints": [
    "matriarchal tribes",
    "Allotment",
-   "left destitute"
+   "rare exception"
   ]
  },
  {
@@ -2552,31 +2552,13 @@
   ],
   "isDepthStudy": true,
   "front": "What was the impact of reservations on Native Americans? (limitations)",
-  "p1": "Land infertile, difficult to farm → many dependent on insufficient government rations → late 1880s: government cut meat subsidies to Sioux — starvation → by 1900 only 100,000 of 240,000 Plains Indians remained.",
+  "p1": "Land infertile, difficult to farm → many dependent on insufficient government rations, which were frequently cut or mismanaged → by 1900 only 100,000 of 240,000 Plains Indians remained.",
   "p2": "BIA corrupt: agents stole rations, manipulated accounts → 1871 Act abolished tribal sovereignty → no legal recourse → reservations became 'ghettos in the wilderness'.",
-  "p3": "Cultural destruction: hunting and leadership roles removed → matriarchal tribes: women lost status as Dawes Act gave land to male heads of families → Sun Dance, Ghost Dance suppressed.",
+  "p3": "Reservation life disrupted Native Americans' intimate spiritual connection with the environment — hunting grounds, sacred sites and traditional land-based practices all became inaccessible once confined within reservation boundaries.",
   "hints": [
    "100,000",
    "BIA",
-   "Ghost Dance"
-  ]
- },
- {
-  "no": 142,
-  "section": "na",
-  "period": "na-gilded-age-ds",
-  "periods": [
-   "na-gilded-age-ds"
-  ],
-  "isDepthStudy": true,
-  "front": "What were the positive effects of assimilation policies on Native Americans?",
-  "p1": "Boarding schools: vocational training — domestic skills for girls, trade skills for boys → Carlisle Indian Industrial School (1879): Colonel Pratt's model → some graduates gained employment in white economy",
-  "p2": "Dawes Act (1887): some Native Americans used 160-acre allotments successfully → access to agricultural markets → Five Civilised Tribes had established schools, newspapers and governments before Curtis Act",
-  "p3": "Limited integration: some Native Americans adapted to white economic structures → educated elite emerged (doctors, lawyers) → BUT success was exception not rule — most allotments lost or unworkable",
-  "hints": [
-   "Colonel Pratt",
-   "agricultural markets",
-   "educated elite"
+   "sacred sites"
   ]
  },
  {
@@ -2629,7 +2611,7 @@
   "isDepthStudy": true,
   "front": "What was the role of BIA corruption and paternalism?",
   "p1": "BIA (Bureau of Indian Affairs): tribes became 'wards of state' after Indian Appropriations Act (1871) → no legal standing → BIA agents controlled access to schools, healthcare, employment and housing",
-  "p2": "Corruption: agents took commissions from contractors → misallocated rations → late 1880s: government cut meat subsidies to Sioux reservations → starvation → Dawes allotment poorly administered",
+  "p2": "Corruption: agents took commissions from contractors → misallocated rations → late 1880s: government cut meat subsidies to Sioux reservations, just as disease had already devastated their cattle herds → starvation → Dawes allotment poorly administered",
   "p3": "Paternalism: BIA assumed Native Americans incapable of self-governance → decisions made without tribal consultation → reinforced dependency → reservation conditions deteriorated throughout the period",
   "hints": [
    "Appropriations Act",
@@ -2665,12 +2647,12 @@
   "isDepthStudy": false,
   "front": "What was the impact of WWI service on Native Americans?",
   "p1": "WWI: 12,000 Native Americans served (some estimates 17,000) → many not yet citizens → demonstrated loyalty to nation that denied them rights → used as scouts and code communicators",
-  "p2": "Indian Citizenship Act (1924): citizenship granted to all Native Americans partly in recognition of WWI service → BUT many states still barred Native Americans from voting through poll taxes and tests",
-  "p3": "Limited gains: citizenship did not bring equality → BIA retained control → reservations remained impoverished → citizenship without rights — a largely symbolic gesture",
+  "p2": "This wartime service directly contributed to the Indian Citizenship Act (1924), which finally granted citizenship to all Native Americans.",
+  "p3": "400 Native American soldiers were awarded the Medal of Honor for their bravery → raised their status in American society → BUT this recognition did not translate into improved rights at home.",
   "hints": [
    "code communicators",
-   "poll taxes",
-   "BIA"
+   "Citizenship Act",
+   "American society"
   ]
  },
  {
@@ -2699,33 +2681,14 @@
    "na-progressive-twenties"
   ],
   "isDepthStudy": false,
-  "front": "What was the significance of AIDA, the Leavitt Bill and Meriam Report?",
-  "p1": "AIDA (1923): Collier founded → blocked Leavitt Bill (1926) which sought to ban traditional Pueblo dances — significant cultural preservation victory",
-  "p2": "Meriam Report (1928): documented appalling poverty, disease and death rates on reservations — triggered federal acknowledgement that assimilation had failed",
-  "p3": "AAIA (1922): opposed sale of Native lands — aligned with campaigns against termination in 1950s-60s. Non-Native groups divided: IRA promoted assimilation; AIDA/AAIA supported preservation",
+  "front": "How did reformers' attitudes towards Native Americans change in the 1920s?",
+  "p1": "John Collier lived among Pueblo communities in New Mexico during the 1920s, shaping his belief that Native cultures should be preserved, not erased → founded AIDA (1923) to defend Native cultural practices.",
+  "p2": "AIDA blocked the Leavitt Bill (1926), which sought to ban traditional Pueblo dances — a direct cultural preservation victory, and a sign reformers were shifting from assimilation towards protection.",
+  "p3": "The Meriam Report (1928) culminated this shift — exposing the Dawes Act era's failures (poverty, disease, death rates on reservations) and turning federal opinion decisively against assimilation.",
   "hints": [
-   "Pueblo dances",
-   "federal acknowledgement",
-   "AAIA"
-  ]
- },
- {
-  "no": 150,
-  "section": "na",
-  "period": "na-progressive-twenties",
-  "periods": [
-   "na-progressive-twenties",
-   "na-new-deal-ds"
-  ],
-  "isDepthStudy": false,
-  "front": "What was the significance of John Collier and the AIDA?",
-  "p1": "John Collier: lived among Pueblo communities in New Mexico 1920s → founded AIDA (1923) → blocked Leavitt Bill (1926): 'Dance Order' seeking to ban Pueblo religious dances.",
-  "p2": "Commissioner for Indian Affairs (1933-45): drove Indian Reorganization Act (1934) → ended allotment, encouraged tribal self-governance, protected cultural practices.",
-  "p3": "Limits: policies based on Pueblo and Navajo experience → didn't suit all tribes → Navajo rejected IRA due to livestock reduction → 25% of tribes rejected IRA outright.",
-  "hints": [
-   "Dance Order",
-   "Indian Affairs",
-   "IRA"
+   "Pueblo communities",
+   "Leavitt Bill",
+   "Meriam Report"
   ]
  },
  {
@@ -2739,11 +2702,11 @@
   "isDepthStudy": true,
   "front": "What did the Indian Reorganization Act (Wheeler-Howard Act, 1934) do?",
   "p1": "Wheeler-Howard Act (1934): halted Dawes Act allotment → recovered unallocated land → restored 4 million of 90 million acres lost → established tribal constitutions and elected tribal councils",
-  "p2": "Economic improvements: CCC-ID employed 85,000 Native Americans 1933-42 → planted 25 million trees, built 6,500 miles of road",
+  "p2": "Established tribal corporations to manage resources → provided direct funding for farming, healthcare and infrastructure to tribal governments.",
   "p3": "Significance: decisive ideological shift from assimilation to self-determination → reversed 50 years of federal policy → BUT 82% of Native Americans still below poverty line by 1940",
   "hints": [
    "tribal constitutions",
-   "CCC",
+   "tribal corporations",
    "82%"
   ]
  },
@@ -2758,12 +2721,12 @@
   "isDepthStudy": true,
   "front": "What were the limitations of the Indian Reorganization Act (1934)?",
   "p1": "Collier's approach ignored Native diversity → imposed secret-ballot constitutions → alienated tribes used to open council discussion. Of 252 tribes that voted, 174 accepted (25%+ rejected outright) — only 92 adopted formal constitutions.",
-  "p2": "Navajo rejected IRA: livestock reduction 1933-36 → 150,000 sheep, goats and horses killed → sheep were women's property in matrilineal society → economic and cultural devastation.",
-  "p3": "Chronic underfunding: 82% below poverty line by 1940 → only $2m annually for land buyback → boarding schools continued → paternalism didn't end with Collier.",
+  "p2": "Navajo rejected the Wheeler-Howard Act: livestock reduction 1933-36 → 150,000 sheep, goats and horses killed → sheep were women's property in matrilineal society → economic and cultural devastation.",
+  "p3": "Chronic underfunding: 82% below poverty line by 1940 → only $2m annually for land buyback → Navajo students received just 13¢/day for lunch against a recommended 50¢ → paternalism didn't end with Collier.",
   "hints": [
    "secret-ballot",
    "150,000 sheep",
-   "82%"
+   "13¢"
   ]
  },
  {
@@ -2774,14 +2737,14 @@
    "na-new-deal-ds"
   ],
   "isDepthStudy": true,
-  "front": "What was the role of the IECW/CCC-ID in the New Deal?",
-  "p1": "IECW/CCC-ID: New Deal employment for Native Americans → 85,000 employed 1933-42 → planted 25 million trees, built 6,500 miles of road → surplus army clothing distributed",
-  "p2": "Cultural: Indian Arts and Crafts Board (1935): revived Native arts as economic ventures → cultural education funding up 65% (1935-40) → tribal councils reinstated → ceremonial dance bans overturned",
-  "p3": "Limits: Navajo students 13¢/day for lunch vs recommended 50¢ → only $2 million annually to buy back lost land",
+  "front": "What was the role of the IECW and CCC-ID in the New Deal?",
+  "p1": "Indian Emergency Conservation Work (IECW) and Civilian Conservation Corps-Indian Division (CCC-ID) provided New Deal employment for Native Americans.",
+  "p2": "85,000 employed 1933-42 → planted 25 million trees, built 6,500 miles of road → surplus army clothing distributed.",
+  "p3": "Cultural: Indian Arts and Crafts Board (1935): revived Native arts as economic ventures → cultural education funding up 65% (1935-40) → tribal councils reinstated → ceremonial dance bans overturned.",
   "hints": [
-   "25 million",
-   "ceremonial dance",
-   "13¢"
+   "Civilian Conservation",
+   "85,000",
+   "ceremonial dance"
   ]
  },
  {
@@ -2812,14 +2775,14 @@
    "na-termination"
   ],
   "isDepthStudy": false,
-  "front": "What was the significance of the Navajo Code Talkers and Ira Hayes?",
-  "p1": "Navajo Code Talkers: 400-500 Navajo marines used Navajo language as unbreakable military code → Major Howard Connor: 'Were it not for the Navajos, the Marines would never have taken Iwo Jima'",
-  "p2": "Native Americans in WWII: over 25,000 served → fought for democracy abroad while denied rights at home → Japanese American internment camps built on Native land",
-  "p3": "Limited post-war gains: veterans returned to reservations still facing poverty, BIA control and disenfranchisement → GI Bill benefits difficult to access on reservations → Truman's civil rights focus did not extend to Natives",
+  "front": "What was the significance of Native American service in WWII?",
+  "p1": "Native Americans in WWII: over 25,000 served → fought for democracy abroad while denied rights at home → Japanese American internment camps built on Native land",
+  "p2": "Navajo Code Talkers: 400-500 Navajo marines used Navajo language as unbreakable military code → Major Howard Connor: \"Were it not for the Navajos, the Marines would never have taken Iwo Jima\"",
+  "p3": "Service did not translate into equality: veterans returned to reservations still facing poverty and BIA control → GI Bill benefits — education, housing loans — were difficult to access on reservations, administered through a system not designed for tribal land.",
   "hints": [
+   "25,000",
    "Iwo Jima",
-   "WWII",
-   "BIA"
+   "GI Bill"
   ]
  },
  {
