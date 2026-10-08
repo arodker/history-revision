@@ -288,8 +288,9 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .fd-scene{perspective:1200px;margin-bottom:.75rem;cursor:pointer}
 .fd-card-inner{position:relative;width:100%;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.4,0,.2,1)}
 .fd-card-inner.flipped{transform:rotateY(180deg)}
-.fd-front,.fd-back{width:100%;min-height:180px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;box-sizing:border-box}
+.fd-front,.fd-back{position:relative;width:100%;min-height:180px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;box-sizing:border-box}
 .fd-back{position:absolute;top:0;left:0;transform:rotateY(180deg)}
+.fd-card-no{position:absolute;top:.55rem;right:.85rem;font-size:.68rem;font-weight:600;color:var(--muted);opacity:.45;letter-spacing:.02em;pointer-events:none}
 .fd-tag{font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:.75rem;max-width:100%;white-space:normal;line-height:1.4}
 .fd-question{font-size:1rem;font-weight:700;line-height:1.45;margin-bottom:.75rem}
 .fd-hint-chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
@@ -723,12 +724,14 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
       <div class="fd-scene" id="fd-scene" onclick="fdFlip()">
         <div class="fd-card-inner" id="fd-card-inner">
           <div class="fd-front" id="fd-front">
+            <div class="fd-card-no" id="fd-card-no"></div>
             <div class="fd-tag" id="fd-tag"></div>
             <div class="fd-question" id="fd-question"></div>
             <div class="fd-hint-chips" id="fd-hint-chips" style="display:none"></div>
             <div class="fd-tap-hint" id="fd-tap-hint">Tap to reveal answer</div>
           </div>
           <div class="fd-back" id="fd-back">
+            <div class="fd-card-no" id="fd-card-no-back"></div>
             <div class="fd-tag" id="fd-tag-back"></div>
             <ul class="fd-points" id="fd-points"></ul>
           </div>
@@ -2288,6 +2291,9 @@ function fdNext() {
   document.getElementById('fd-tag').textContent = tag;
   document.getElementById('fd-tag-back').className = 'fd-tag ' + tagCls;
   document.getElementById('fd-tag-back').textContent = tag;
+  const cardNo = fdCurrent.no != null ? '#' + fdCurrent.no : '';
+  document.getElementById('fd-card-no').textContent = cardNo;
+  document.getElementById('fd-card-no-back').textContent = cardNo;
   const outstanding = fdGetOutstanding();
   const isOut = outstanding.includes(fdKey(fdCurrent));
   document.getElementById('fd-question').textContent = (isOut ? '📌 ' : '') + fdCurrent.front;
