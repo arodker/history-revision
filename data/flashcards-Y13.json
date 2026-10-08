@@ -15,7 +15,8 @@
   "isDepthStudy": false,
   "periods": [
    "reconstruction"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 2,
@@ -33,7 +34,8 @@
   "isDepthStudy": false,
   "periods": [
    "reconstruction"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 3,
@@ -51,7 +53,8 @@
   "isDepthStudy": false,
   "periods": [
    "reconstruction"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 4,
@@ -69,7 +72,8 @@
   "isDepthStudy": false,
   "periods": [
    "reconstruction"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 5,
@@ -87,7 +91,8 @@
   "isDepthStudy": false,
   "periods": [
    "reconstruction"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 6,
@@ -105,12 +110,13 @@
   "isDepthStudy": false,
   "periods": [
    "reconstruction"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 7,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "front": "What was the impact of Jim Crow laws on African Americans?",
   "p1": "Spread across South from 1877 → segregated schools, transport, hospitals, parks, restaurants, churches.",
   "p2": "Black schools systematically underfunded under Jim Crow - worsening economic opportunity.",
@@ -122,13 +128,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "gilded-age-ds"
-  ]
+   "gilded-age"
+  ],
+  "depthStudy": "gilded-age"
  },
  {
   "no": 8,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "front": "What was the significance of the Wilmington Coup (1898)?",
   "p1": "White supremacists violently overthrew the biracial elected government of Wilmington, North Carolina.",
   "p2": "Showed that even legitimate political power could be destroyed by organised white violence without federal protection.",
@@ -140,13 +147,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "gilded-age-ds"
-  ]
+   "gilded-age"
+  ],
+  "depthStudy": "gilded-age"
  },
  {
   "no": 9,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "front": "What was the significance of Booker T. Washington?",
   "p1": "Atlanta Compromise (1895): accepted social segregation in exchange for economic co-operation with whites → founded Tuskegee Institute (1881) → trained 1,500 artisans by 1900",
   "p2": "Negro Business League (1900): 600 chapters in 34 states → promoted parallel Black economy → secretly funded legal challenges to disenfranchisement while maintaining public accommodation",
@@ -158,13 +166,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "gilded-age-ds"
-  ]
+   "gilded-age"
+  ],
+  "depthStudy": "gilded-age"
  },
  {
   "no": 10,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "front": "What were the criticisms of Booker T. Washington's Atlanta Compromise?",
   "p1": "Du Bois argued Atlanta Compromise sacrificed political and social rights — 'the hands of ten million men' → accommodation to white supremacy legitimised segregation",
   "p2": "William Monroe Trotter: Washington's autocratic control of Black organisations stifled debate → Wilmington Coup (1898) showed accommodation failed to protect Black communities from violence",
@@ -176,13 +185,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "gilded-age-ds"
-  ]
+   "gilded-age"
+  ],
+  "depthStudy": "gilded-age"
  },
  {
   "no": 11,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "front": "What was the impact of lynching on African American social rights?",
   "p1": "Lynching epidemic → 100+ per year in early 1890s → used as tool of racial terror to enforce social hierarchy and deter political participation.",
   "p2": "Ida B. Wells → 'Southern Horrors' (1892) → documented frequency + disproved myth it was response to violent crime → national + international campaign.",
@@ -194,13 +204,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "gilded-age-ds"
-  ]
+   "gilded-age"
+  ],
+  "depthStudy": "gilded-age"
  },
  {
   "no": 12,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "front": "What was the impact of convict leasing on African Americans?",
   "p1": "Exploited 13th Amendment loophole → 'except as punishment for crime' → Southern states arrested African Americans on trivial charges → leased to private companies as unpaid labour.",
   "p2": "Grew across the South in the 1880s → effectively recreated slavery → dangerous conditions, no pay, no rights.",
@@ -212,13 +223,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "gilded-age-ds"
-  ]
+   "gilded-age"
+  ],
+  "depthStudy": "gilded-age"
  },
  {
   "no": 13,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "front": "What ideas and attitudes were used to justify Jim Crow?",
   "p1": "Lost Cause myth: United Daughters of the Confederacy romanticised slavery — Civil War framed as states' rights struggle → Confederate monuments erected → spread through education and culture",
   "p2": "Social Darwinism: framed African Americans as 'backward' on inferior civilisation rung → eugenic theories seen as modern science → justified racial separation as natural order",
@@ -230,13 +242,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "gilded-age-ds"
-  ]
+   "gilded-age"
+  ],
+  "depthStudy": "gilded-age"
  },
  {
   "no": 14,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "front": "What evidence is there of Black economic success during the Gilded Age?",
   "p1": "Tuskegee Institute (1881): Washington trained artisans and professionals → by 1900: 50,000 Black professionals — doctors, lawyers, teachers → literacy rate rose from 10% (1865) to 50% by 1900",
   "p2": "Parallel economy: barbershops, undertakers, small shops formed basis of Black middle class → by 1890s over 50,000 Black-owned businesses → 15 million acres of land owned by early 1900s",
@@ -248,13 +261,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "gilded-age-ds"
-  ]
+   "gilded-age"
+  ],
+  "depthStudy": "gilded-age"
  },
  {
   "no": 15,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "isDepthStudy": true,
   "front": "How different were AA experiences outside the South in the Gilded Age?",
   "p1": "North → better industrial jobs + education → growing Black middle class → BUT de facto segregation — Chicago 5,000 confined to one area; NY Harlem separate district for 23,000",
@@ -266,13 +280,14 @@
    "Exoduster movement"
   ],
   "periods": [
-   "gilded-age-ds"
-  ]
+   "gilded-age"
+  ],
+  "depthStudy": "gilded-age"
  },
  {
   "no": 16,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "isDepthStudy": true,
   "front": "What were the key Supreme Court cases during the Gilded Age?",
   "p1": "Plessy v Ferguson (1896): SC rejected Homer Plessy's claim of unfair treatment under 14th amendment after segregation on train. 'Separate but equal' doctrine established. 8-1 decision.",
@@ -284,19 +299,20 @@
    "Cumming"
   ],
   "periods": [
-   "gilded-age-ds"
-  ]
+   "gilded-age"
+  ],
+  "depthStudy": "gilded-age"
  },
  {
   "no": 17,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "reconstruction",
   "periods": [
    "reconstruction",
-   "gilded-age-ds"
+   "gilded-age"
   ],
-  "isDepthStudy": true,
-  "front": "What was the role of State Governments in hindering AA rights in the Gilded Age?",
+  "isDepthStudy": false,
+  "front": "How did state governments hinder Black rights in the Gilded Age?",
   "p1": "After 1877 Democratic redeemer governments regained control. Swept away reconstruction rights and introduced Jim Crow Laws.",
   "p2": "Voter suppression: Mississippi (1890) → literacy tests, poll taxes, grandfather clauses → Black voter registration: 90% (1867) → 6% (1892) → spread across South",
   "p3": "State govts took no action on racial violence → Governor Tillman SC openly defended lynching (1900) → 1,875 lynchings in 1890s alone",
@@ -304,14 +320,15 @@
    "Redeemer",
    "Mississippi",
    "Lynchings"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 18,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "Why did Southern elites introduce voter suppression in the Gilded Age?",
@@ -322,14 +339,15 @@
    "Populist",
    "plantation economy",
    "Wilmington"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
   "no": 19,
   "section": "aa",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "How was voter suppression implemented in the Gilded Age?",
@@ -340,7 +358,8 @@
    "constitutional clauses",
    "grandfather",
    "Wilmington Coup"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
   "no": 20,
@@ -357,12 +376,9 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "progressive-wwi",
-   "boom-bust",
-   "new-deal",
-   "wwii-postwar",
-   "civil-rights-movement"
-  ]
+   "progressive-wwi"
+  ],
+  "depthStudy": null
  },
  {
   "no": 21,
@@ -381,7 +397,8 @@
   "periods": [
    "progressive-wwi",
    "boom-bust"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 22,
@@ -399,7 +416,8 @@
   "isDepthStudy": false,
   "periods": [
    "progressive-wwi"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 23,
@@ -417,7 +435,8 @@
   "isDepthStudy": false,
   "periods": [
    "progressive-wwi"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 24,
@@ -435,7 +454,8 @@
   "isDepthStudy": false,
   "periods": [
    "progressive-wwi"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 25,
@@ -453,10 +473,9 @@
   "isDepthStudy": false,
   "periods": [
    "progressive-wwi",
-   "boom-bust",
-   "wwii-postwar",
-   "civil-rights-movement"
-  ]
+   "boom-bust"
+  ],
+  "depthStudy": null
  },
  {
   "no": 26,
@@ -475,7 +494,8 @@
   "periods": [
    "progressive-wwi",
    "boom-bust"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 27,
@@ -493,7 +513,8 @@
   "isDepthStudy": false,
   "periods": [
    "boom-bust"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 28,
@@ -511,7 +532,8 @@
   "isDepthStudy": false,
   "periods": [
    "boom-bust"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 29,
@@ -529,12 +551,13 @@
   "isDepthStudy": false,
   "periods": [
    "boom-bust"
-  ]
+  ],
+  "depthStudy": null
  },
  {
   "no": 30,
   "section": "aa",
-  "period": "new-deal-ds",
+  "period": "new-deal",
   "front": "What was the New Deal's impact on African American political rights?",
   "p1": "FDR created informal 'Black Cabinet' → led by Mary McLeod Bethune → influenced New Deal programmes for Black Americans.",
   "p2": "Eleanor Roosevelt advocated for civil rights + supported anti-lynching bills + symbolic gestures like resigning from DAR.",
@@ -546,13 +569,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "new-deal-ds"
-  ]
+   "new-deal"
+  ],
+  "depthStudy": "new-deal"
  },
  {
   "no": 31,
   "section": "aa",
-  "period": "new-deal-ds",
+  "period": "new-deal",
   "front": "How did the First New Deal affect African Americans economically?",
   "p1": "FERA → direct relief → 20–30% of recipients were African American. CCC → employed c.200,000 African Americans (10% of enrolment). PWA → 65,000+ in infrastructure jobs by 1940.",
   "p2": "Some Black sharecroppers became independent farmers through federal assistance → Black Cabinet influenced programme delivery.",
@@ -564,13 +588,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "new-deal-ds"
-  ]
+   "new-deal"
+  ],
+  "depthStudy": "new-deal"
  },
  {
   "no": 32,
   "section": "aa",
-  "period": "new-deal-ds",
+  "period": "new-deal",
   "front": "How did the Second New Deal affect African Americans?",
   "p1": "WPA → infrastructure jobs → 15% of workers were African American. Social Security Act → pensions + unemployment insurance for the first time.",
   "p2": "Wagner Act (1935) → recognised BSCP → first Black union to win AFL recognition → but inadvertently created 'closed shops' → white-only unions could dominate.",
@@ -582,13 +607,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "new-deal-ds"
-  ]
+   "new-deal"
+  ],
+  "depthStudy": "new-deal"
  },
  {
   "no": 33,
   "section": "aa",
-  "period": "new-deal-ds",
+  "period": "new-deal",
   "front": "What were the economic limitations of the New Deal for African Americans?",
   "p1": "Social Security excluded agricultural + domestic workers → 65% of Black workers → most significant exclusion from New Deal economic protection.",
   "p2": "Aid administered by Southern states → whites controlled distribution → African Americans discriminated against in application of relief policies.",
@@ -600,13 +626,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "new-deal-ds"
-  ]
+   "new-deal"
+  ],
+  "depthStudy": "new-deal"
  },
  {
   "no": 34,
   "section": "aa",
-  "period": "new-deal-ds",
+  "period": "new-deal",
   "isDepthStudy": true,
   "front": "How strong was the position of African Americans by 1932?",
   "p1": "Progress: literacy 10% (1865) → 85% (1930) → 300,000 in Northern schools → NAACP won US v Guinn (1915) removing grandfather clauses → Great Migration created Harlem Renaissance",
@@ -618,13 +645,14 @@
    "anti-lynching bills"
   ],
   "periods": [
-   "new-deal-ds"
-  ]
+   "new-deal"
+  ],
+  "depthStudy": "new-deal"
  },
  {
   "no": 35,
   "section": "aa",
-  "period": "new-deal-ds",
+  "period": "new-deal",
   "isDepthStudy": true,
   "front": "Was Roosevelt's administration an effective supporter of African American rights?",
   "p1": "Effective: appointed more Black Americans to gov than any predecessor → Black Cabinet led by Bethune → William H. Hastie became first Black federal judge (1937) → Eleanor Roosevelt resigned DAR to support Marian Anderson (1939)",
@@ -636,14 +664,15 @@
    "AAA"
   ],
   "periods": [
-   "new-deal-ds"
-  ]
+   "new-deal"
+  ],
+  "depthStudy": "new-deal"
  },
  {
   "no": 36,
   "section": "aa",
-  "period": "wwii-postwar",
-  "front": "What was the role of State Governments in resisting desegregation?",
+  "period": "wwii-1950s",
+  "front": "How did state governments resist desegregation in the 1950s and 60s?",
   "p1": "'State Rights' ideology: Southern governors argued states should manage affairs without federal interference → massive resistance to Brown (1954) → Southern Manifesto signed by 101 congressmen",
   "p2": "Orval Faubus (Arkansas, 1957): deployed National Guard to block Little Rock Nine → Eisenhower forced to send 101st Airborne → showed federal power required to enforce desegregation",
   "p3": "Ole Miss Riot (1962): Mississippi governor Ross Barnett attempts to block enrolment of James Meredith at collge → race riot at the campus → Kennedy sends 30,000 troops to restore order and escort Meredith to class. ",
@@ -654,14 +683,15 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "wwii-postwar",
-   "civil-rights-movement"
-  ]
+   "wwii-1950s",
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
   "no": 37,
   "section": "aa",
-  "period": "wwii-postwar",
+  "period": "wwii-1950s",
   "front": "What was the impact of Brown v Board of Education (1954)?",
   "p1": "Built on Gaines v Canada (1938), which first ruled facilities had to be genuinely equal → Thurgood Marshall proved Southern states spent $43/yr on Black students vs $179 for white → NAACP legal strategy: challenged 'separate but equal' as impossible in practice",
   "p2": "Supreme Court unanimous: school segregation unconstitutional → overturned Plessy v Ferguson (1896) → ordered desegregation 'with all deliberate speed' (Brown II, 1955)",
@@ -673,13 +703,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "wwii-postwar"
-  ]
+   "wwii-1950s"
+  ],
+  "depthStudy": null
  },
  {
   "no": 38,
   "section": "aa",
-  "period": "wwii-postwar",
+  "period": "wwii-1950s",
   "front": "What was the impact of WWII on African Americans?",
   "p1": "Over 1 million African Americans served, in segregated units throughout → many stationed in Britain experienced a society without Jim Crow, raising expectations for change at home → Tuskegee Airmen proved combat skill, challenging white supremacist assumptions.",
   "p2": "Randolph's threatened 100,000-strong March on Washington pressured FDR into Executive Order 8802 (1941), banning discrimination in defence industries → 2 million+ African Americans employed in defence jobs by war's end.",
@@ -691,13 +722,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "wwii-postwar"
-  ]
+   "wwii-1950s"
+  ],
+  "depthStudy": null
  },
  {
   "no": 39,
   "section": "aa",
-  "period": "wwii-postwar",
+  "period": "wwii-1950s",
   "front": "What was the impact of the Emmett Till case (1955)?",
   "p1": "Emmett Till (1955): 14-year-old from Chicago visiting Mississippi → accused of whistling at white woman → abducted, tortured, shot, thrown in Tallahatchie River",
   "p2": "Mother Mamie Till insisted on open casket in Chicago → 50,000+ viewed body → Jet magazine published photographs → murderers Roy Bryant and J.W. Milam acquitted in 67 minutes",
@@ -709,14 +741,15 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "wwii-postwar"
-  ]
+   "wwii-1950s"
+  ],
+  "depthStudy": null
  },
  {
   "no": 40,
   "section": "aa",
-  "period": "wwii-postwar",
-  "front": "What was the role of Cold War context in advancing civil rights?",
+  "period": "vietnam-years",
+  "front": "How did the Cold War help advance civil rights?",
   "p1": "Soviet propaganda publicised US racial violence to discredit America internationally → Birmingham Campaign broadcast globally.",
   "p2": "Federal Government increasingly conscious of Cold War optics → Kennedy: 'land of the free — except for the negroes?' after Birmingham.",
   "p3": "Decolonisation movements: Gandhi's non-violent resistance in India directly inspired King's philosophy — Montgomery protesters studied Gandhi's tactics. Kwame Nkrumah's Ghana independence (1957) inspired Pan-African consciousness → African Americans saw their struggle as part of global anti-colonial movement",
@@ -727,14 +760,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "wwii-postwar",
-   "civil-rights-movement"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 42,
+  "no": 41,
   "section": "aa",
-  "period": "wwii-postwar",
+  "period": "wwii-1950s",
   "front": "What were the post-war economic challenges facing African Americans?",
   "p1": "GI Bill (1944): provided education, housing loans and job training to veterans — but administered locally in the South",
   "p2": "Automation: post-WWII manufacturing shift disproportionately hit African Americans concentrated in low-skill manual jobs. Black unemployment double white unemployment. Manufacturing jobs eliminated were precisely those gained during Great Migration and wartime production.",
@@ -746,15 +779,16 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "wwii-postwar"
-  ]
+   "wwii-1950s"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 43,
+  "no": 42,
   "section": "aa",
-  "period": "wwii-postwar",
+  "period": "wwii-1950s",
   "periods": [
-   "wwii-postwar"
+   "wwii-1950s"
   ],
   "front": "What was the role of anti-civil rights groups in the 1950s/60s?",
   "p1": "White Citizens' Council (WCC, 1954): formed immediately after Brown v Board, also known as the \"Uptown Klan\" → grew to 60,000+ members across the South, often prominent local figures (bankers, lawyers, teachers) → used economic pressure — fired workers, refused loans, evicted tenants — rather than open violence.",
@@ -766,12 +800,13 @@
    "3,500"
   ],
   "isDepthStudy": false,
-  "isFactor": false
+  "isFactor": false,
+  "depthStudy": null
  },
  {
-  "no": 45,
+  "no": 43,
   "section": "aa",
-  "period": "wwii-postwar",
+  "period": "wwii-1950s",
   "front": "What was the significance of the Montgomery Bus Boycott (1955–56)?",
   "p1": "381-day boycott by 40,000 Black residents of Montgomery, sparked by Rosa Parks' arrest and led by a young Martin Luther King.",
   "p2": "Cost the bus company $3,000 a day in lost fares — the economic pressure that actually forced desegregation, alongside Browder v Gayle.",
@@ -783,14 +818,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "wwii-postwar",
-   "civil-rights-movement"
-  ]
+   "wwii-1950s"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 46,
+  "no": 44,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "wwii-1950s",
   "front": "What was the significance of the Warren Court (1953–1969)?",
   "p1": "Warren Court (1953–69) → considered most liberal Supreme Court in US history → transformed federal protection of civil rights through judicial activism",
   "p2": "Brown v Board (1954) → overturned Plessy — 'separate but equal' unconstitutional in education → Brown II (1955): desegregation 'with all deliberate speed'",
@@ -802,13 +837,15 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement"
-  ]
+   "wwii-1950s",
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 47,
+  "no": 45,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "vietnam-years",
   "front": "What was the strategy and significance of the SCLC?",
   "p1": "Founded 1957 → led by Martin Luther King → non-violent direct action → used media + moral pressure to force federal response.",
   "p2": "Deliberately targeted locations where violent segregationist response was likely → Birmingham and Selma among its most consequential campaigns → used the resulting media coverage to force federal intervention.",
@@ -820,13 +857,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 48,
+  "no": 46,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "vietnam-years",
   "front": "What was the strategy and significance of SNCC?",
   "p1": "Founded 1960 → grassroots, student-led → more radical than SCLC → organised sit-ins, Freedom Rides, voter registration drives.",
   "p2": "John Lewis served as SNCC's chairman, leading its most visible campaigns including Selma → his frontline role embodied SNCC's more confrontational style compared to SCLC's negotiation-focused approach.",
@@ -838,13 +876,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 49,
+  "no": 47,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "vietnam-years",
   "front": "What was the Albany Campaign (1962) and why did it fail?",
   "p1": "SCLC and King targeted Albany, Georgia → Police Chief Laurie Pritchett used non-violent policing → denied King media images of brutality.",
   "p2": "No single dramatic confrontation → media lost interest → federal government had no reason to intervene → no legislation resulted.",
@@ -856,13 +895,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 50,
+  "no": 48,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "vietnam-years",
   "front": "What were the Greensboro Sit-ins (1960) and why were they significant?",
   "p1": "4 Black students sat at 'white-only' lunch counter in Greensboro, NC → spontaneous non-violent direct action.",
   "p2": "Over 70,000 students engaged in sit-ins across the South co-ordinated by SNCC → more than 1,000 businesses desegregated lunch counters.",
@@ -874,13 +914,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 51,
+  "no": 49,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "vietnam-years",
   "front": "What were the Freedom Rides (1961) and what did they achieve?",
   "p1": "CORE + SNCC → Black and white activists rode interstate buses from Washington D.C. into the Deep South → testing Boynton v Virginia (1960).",
   "p2": "Met with violent mobs including fire-bombings in Alabama → national outrage → federal government forced to respond.",
@@ -892,13 +933,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 52,
+  "no": 50,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "vietnam-years",
   "front": "What was the significance of the Birmingham Campaign (1963)?",
   "p1": "King + SCLC targeted Birmingham → Bull Connor used police dogs + fire hoses against peaceful protesters including children → images broadcast worldwide.",
   "p2": "Kennedy announced America had a 'moral duty' to intervene → directly led to Civil Rights Act 1964.",
@@ -910,13 +952,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 53,
+  "no": 51,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "vietnam-years",
   "front": "What was the significance of the March on Washington (1963)?",
   "p1": "250,000 marched for jobs and freedom → King's 'I Have a Dream' speech → largest civil rights demonstration in US history.",
   "p2": "Organised by Randolph + Rustin → brought together NAACP, SCLC, SNCC, CORE, NUL → demonstrated broad coalition.",
@@ -928,13 +971,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 54,
+  "no": 52,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "vietnam-years",
   "front": "What was the impact of the Civil Rights Act (1964)?",
   "p1": "Removed all Jim Crow segregation across the South → prohibited employment discrimination based on race.",
   "p2": "Pushed through by LBJ using 'Johnson treatment' → most significant federal civil rights legislation since Reconstruction.",
@@ -946,13 +990,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 55,
+  "no": 53,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "vietnam-years",
   "front": "What happened during the Selma March and what did it achieve?",
   "p1": "Selma: 50% Black population but only 1% of electorate → SCLC + SNCC march to expose voter suppression.",
   "p2": "Bloody Sunday → John Lewis led marchers → violent police attack on Edmund Pettus Bridge → broadcast nationwide.",
@@ -964,14 +1009,15 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 56,
+  "no": 54,
   "section": "aa",
-  "period": "civil-rights-movement",
-  "front": "What was the role of media in advancing the Civil Rights Movement?",
+  "period": "wwii-1950s",
+  "front": "How did the media help advance the Civil Rights Movement in the 1950s and 60s?",
   "p1": "Televised images of Bloody Sunday (1965) + Birmingham Campaign (1963) shocked international audiences → generated massive support for movement.",
   "p2": "King adept at exploiting television cameras → chose Birmingham deliberately because Bull Connor guaranteed visible brutality → forced federal response.",
   "p3": "Emmett Till's open casket (1955) → media images of body spread outrage. Contrast with 19th century press → had perpetuated stereotypes + justified lynching.",
@@ -982,13 +1028,15 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement"
-  ]
+   "wwii-1950s",
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 57,
+  "no": 55,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "vietnam-years",
   "front": "What was the impact of the Vietnam War on the Civil Rights Movement?",
   "p1": "African Americans disproportionately drafted → returned radicalised + disillusioned → fed Black Power ethos of militancy.",
   "p2": "King's 'Beyond Vietnam' speech (1967) → severed relationship with LBJ → ended federal momentum on civil rights reforms.",
@@ -1000,14 +1048,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement",
-   "black-power"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 58,
+  "no": 56,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "vietnam-years",
   "front": "What was the impact of the Great Society on African Americans?",
   "p1": "Great Society: Medicare and Medicaid (1965) — African American hospital access 25%→75%. Food Stamps → 33% of recipients Black. War on Poverty/OEO funded community programmes",
   "p2": "Civil Rights Act (1964) → EEOC enforcement → Black white-collar workers 5%→15%. Adam Clayton Powell chaired House Education and Labor Committee. Robert Weaver: first Black Cabinet member (1966). Whitney Young/NUL advised LBJ",
@@ -1019,17 +1067,16 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "civil-rights-movement",
-   "black-power"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 59,
+  "no": 57,
   "section": "aa",
-  "period": "civil-rights-movement",
+  "period": "vietnam-years",
   "periods": [
-   "civil-rights-movement",
-   "black-power-ds"
+   "vietnam-years"
   ],
   "front": "What was the role of Bull Connor and George Wallace as opponents of civil rights?",
   "p1": "Bull Connor (Birmingham): deployed fire hoses and police dogs against peaceful protesters (1963) → footage broadcast globally → shocked public → directly pressured Kennedy to act",
@@ -1041,12 +1088,13 @@
    "moral crisis"
   ],
   "isDepthStudy": false,
-  "isFactor": false
+  "isFactor": false,
+  "depthStudy": null
  },
  {
-  "no": 60,
+  "no": 58,
   "section": "aa",
-  "period": "black-power-ds",
+  "period": "vietnam-years",
   "front": "What were Malcolm X's key ideas and the Nation of Islam?",
   "p1": "NOI → Black nationalism + separatism → rejected integration → 'by any means necessary' → self-defence against white supremacy.",
   "p2": "NOI grew from 400 members (1952) → 40,000 (1960) under Malcolm X → addressed Northern urban poverty King's movement neglected.",
@@ -1058,13 +1106,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "black-power-ds"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 61,
+  "no": 59,
   "section": "aa",
-  "period": "black-power-ds",
+  "period": "vietnam-years",
   "front": "What were the key ideas of Stokely Carmichael and Black Power?",
   "p1": "1966 → took over SNCC → rejected non-violence + integration → coined 'Black Power' slogan during Meredith March.",
   "p2": "Black Power = self-determination, Black pride, economic self-sufficiency, community control — not dependence on white liberals.",
@@ -1076,13 +1125,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "black-power-ds"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 62,
+  "no": 60,
   "section": "aa",
-  "period": "black-power-ds",
+  "period": "vietnam-years",
   "front": "Why did Black Power rise to prominence in the late 1960s?",
   "p1": "Failures of CRM in North → SCLC/NAACP focused on Southern desegregation → Northern urban communities still faced poverty + police violence. King's Chicago (1966) failed.",
   "p2": "Vietnam War → African Americans disproportionately drafted → returned radicalised and disillusioned with non-violent appeals to the very government sending them to fight.",
@@ -1094,13 +1144,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "black-power-ds"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 63,
+  "no": 61,
   "section": "aa",
-  "period": "black-power-ds",
+  "period": "vietnam-years",
   "front": "What was the negative impact of Nixon's and Reagan's policies on African Americans?",
   "p1": "Nixon's 'Law and Order' (1968) → War on Drugs → disproportionately targeted Black communities. By 1992 25% of black men are in prison, on parole, or probation.",
   "p2": "Supreme Court became increasingly conservative under Reagan → claimed his administration was colour blind. Fewer black judges appointed. Clashed with Congress over further civil rights legislation.",
@@ -1112,14 +1163,15 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "black-power",
-   "after-black-power"
-  ]
+   "vietnam-years",
+   "after-vietnam"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 64,
+  "no": 62,
   "section": "aa",
-  "period": "black-power-ds",
+  "period": "vietnam-years",
   "front": "What was the impact of the Black Panther Party's community programmes?",
   "p1": "Founded 1966 by Huey Newton and Bobby Seale → Free breakfast programmes → fed 20,000 children per day → 'survival programmes' addressed poverty the civil rights legislation had not solved.",
   "p2": "13 health clinics established → screened thousands for sickle cell anaemia → People's Free Medical Centres in 13 deprived areas. 60+ community schools.",
@@ -1131,13 +1183,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "black-power-ds"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 65,
+  "no": 63,
   "section": "aa",
-  "period": "black-power-ds",
+  "period": "vietnam-years",
   "front": "What were the Long Hot Summers (1967) and what caused them?",
   "p1": "150 race riots in 1967 → largest in Detroit and Newark → response to poverty, police brutality and de facto segregation in Northern cities.",
   "p2": "Watts (1965) $40m property damage → exposed failure of non-violence + civil rights legislation to address systemic Northern inequality.",
@@ -1149,13 +1202,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "black-power-ds"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 66,
+  "no": 64,
   "section": "aa",
-  "period": "black-power-ds",
+  "period": "vietnam-years",
   "front": "What was the impact of COINTELPRO on Black Power organisations?",
   "p1": "FBI infiltrated Black Power groups → planted informants → manufactured evidence → created internal suspicion + divisions.",
   "p2": "Arrests + assassinations: Fred Hampton (Black Panther leader) killed in FBI-orchestrated raid 1969 → Panthers collapsed by 1982.",
@@ -1167,13 +1221,14 @@
   ],
   "isDepthStudy": true,
   "periods": [
-   "black-power-ds"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 67,
+  "no": 65,
   "section": "aa",
-  "period": "black-power-ds",
+  "period": "vietnam-years",
   "front": "What was the impact of affirmative action on African Americans?",
   "p1": "First introduced Philadelphia 1969 → Griggs v Duke Power Co. (1971) confirmed it was constitutional → spread nationally → African Americans in white-collar jobs: 5% (1960) → 15% (mid-1970s) → growing Black middle class.",
   "p2": "Regents of University of California v Bakke (1978) → racial quotas unconstitutional → weakened programme. Reagan/Bush labelled it 'reverse discrimination' → federal enforcement reduced.",
@@ -1185,14 +1240,15 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "black-power",
-   "after-black-power"
-  ]
+   "vietnam-years",
+   "after-vietnam"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 68,
+  "no": 66,
   "section": "aa",
-  "period": "black-power-ds",
+  "period": "vietnam-years",
   "isDepthStudy": true,
   "front": "What was the cultural impact of Black Power?",
   "p1": "Black Arts Movement (1965–75): Amiri Baraka founded Black Arts Repertory Theatre 1965 — 'cultural wing of Black Power' → 500+ Black arts organisations",
@@ -1204,15 +1260,16 @@
    "ghettos"
   ],
   "periods": [
-   "black-power-ds"
-  ]
+   "vietnam-years"
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 69,
+  "no": 67,
   "section": "aa",
-  "period": "black-power-ds",
+  "period": "vietnam-years",
   "periods": [
-   "black-power-ds"
+   "vietnam-years"
   ],
   "front": "What was the Poor People's Campaign (1968) and why did it fail?",
   "p1": "Came from failure of Chicago Campaign (1966). Poor People's Campaign (1968): demanded $30 billion federal anti-poverty programme → multiracial coalition — King assassinated before it launched",
@@ -1224,12 +1281,13 @@
    "white allies"
   ],
   "isDepthStudy": false,
-  "isFactor": false
+  "isFactor": false,
+  "depthStudy": null
  },
  {
-  "no": 70,
+  "no": 68,
   "section": "aa",
-  "period": "after-black-power",
+  "period": "after-vietnam",
   "front": "What was the political position of African Americans by 1992?",
   "p1": "8,000+ African Americans held public office by 1992. Douglas Wilder: first Black governor (Virginia, 1989). Shirley Chisholm: first Black woman in Congress (1968)",
   "p2": "Jesse Jackson: won 7 million votes in 1984 and 1988 presidential campaigns. CBC grew to 36 members",
@@ -1241,13 +1299,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "after-black-power"
-  ]
+   "after-vietnam"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 71,
+  "no": 69,
   "section": "aa",
-  "period": "after-black-power",
+  "period": "after-vietnam",
   "front": "What was the significance of the Los Angeles Riots (1992)?",
   "p1": "Erupted after acquittal of LAPD officers for beating Rodney King by all-white jury → $1 billion of damage → 63 killed.",
   "p2": "Demonstrated that police brutality + racial injustice remained systemic → civil rights legislation had not changed ground realities for urban Black communities.",
@@ -1259,13 +1318,14 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "after-black-power"
-  ]
+   "after-vietnam"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 72,
+  "no": 70,
   "section": "aa",
-  "period": "after-black-power",
+  "period": "after-vietnam",
   "front": "What was the economic position of African Americans by 1992?",
   "p1": "African Americans earned 60% of average white income → Black unemployment 14.2% vs 6% white by 1992",
   "p2": "Homeownership 43% vs 70% white → legacy of redlining and blockbusting — homes resold to Black families at inflated prices. Urban renewal displaced communities",
@@ -1277,15 +1337,16 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "after-black-power"
-  ]
+   "after-vietnam"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 73,
+  "no": 71,
   "section": "aa",
-  "period": "after-black-power",
+  "period": "after-vietnam",
   "periods": [
-   "after-black-power"
+   "after-vietnam"
   ],
   "front": "What was bussing and what was its impact?",
   "p1": "Swann v Charlotte-Mecklenburg (1971): Supreme Court upheld bussing as constitutional remedy for school segregation → federal courts began ordering cross-boundary bussing",
@@ -1297,12 +1358,13 @@
    "resegregation"
   ],
   "isDepthStudy": false,
-  "isFactor": false
+  "isFactor": false,
+  "depthStudy": null
  },
  {
-  "no": 74,
+  "no": 72,
   "section": "aa",
-  "period": "after-black-power",
+  "period": "after-vietnam",
   "front": "How did the Michael Donald case (1981) end differently from earlier lynchings?",
   "p1": "19-year-old Michael Donald murdered by Klansmen in Mobile, Alabama — a rare lynching so late in the century.",
   "p2": "Unlike historic lynchings, resulted in a strong federal response — the murderer was found guilty and executed.",
@@ -1314,15 +1376,16 @@
   ],
   "isDepthStudy": false,
   "periods": [
-   "after-black-power"
-  ]
+   "after-vietnam"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 75,
+  "no": 73,
   "section": "lab",
-  "period": "start",
+  "period": "reconstruction",
   "periods": [
-   "start"
+   "reconstruction"
   ],
   "front": "What was the right to exist and collectively bargain in 1865?",
   "p1": "No legal protections for unions → courts upheld employers' right to suppress organising → 20 state governments had laws allowing militias to intervene in labour disputes.",
@@ -1335,14 +1398,15 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 76,
+  "no": 74,
   "section": "lab",
-  "period": "start",
+  "period": "reconstruction",
   "periods": [
-   "start"
+   "reconstruction"
   ],
   "front": "What was the right to strike in 1865?",
   "p1": "Fewer than 5% of strikes led to concessions → scab labour widespread: 20-30 replacements per 100 strikers → blacklisting common — in Pennsylvania shared among 50 mine operators.",
@@ -1355,14 +1419,15 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 77,
+  "no": 75,
   "section": "lab",
-  "period": "start",
+  "period": "reconstruction",
   "periods": [
-   "start"
+   "reconstruction"
   ],
   "front": "What were fair and safe working conditions in 1865?",
   "p1": "3,000 railroad workers killed and 20,000 injured annually → children as young as 8 worked 12-hour shifts for $1/week → 750,000 children under 15 in industrial labour.",
@@ -1375,14 +1440,15 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 78,
+  "no": 76,
   "section": "lab",
-  "period": "early-industrialisation",
+  "period": "reconstruction",
   "periods": [
-   "early-industrialisation"
+   "reconstruction"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Great Railroad Strike (1877)?",
@@ -1393,14 +1459,15 @@
    "West Virginia",
    "100 workers",
    "default response"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 79,
+  "no": 77,
   "section": "lab",
-  "period": "early-industrialisation",
+  "period": "reconstruction",
   "periods": [
-   "early-industrialisation"
+   "reconstruction"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the NLU and CNLU?",
@@ -1411,17 +1478,18 @@
    "Sylvis",
    "8-hour workday",
    "Black workers"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 80,
+  "no": 78,
   "section": "lab",
-  "period": "early-industrialisation",
+  "period": "reconstruction",
   "periods": [
-   "early-industrialisation",
-   "gilded-age-ds"
+   "reconstruction",
+   "gilded-age"
   ],
-  "isDepthStudy": false,
+  "isDepthStudy": true,
   "front": "What was the significance of the Knights of Labor (KOL)?",
   "p1": "Founded 1869 — the largest labour organisation of the late 19th century, known for inclusivity: welcomed skilled and unskilled workers, women, African Americans and immigrants.",
   "p2": "Peaked at 700,000 members (1886) — far surpassing the NLU's reach.",
@@ -1430,17 +1498,18 @@
    "largest labour",
    "700,000",
    "Haymarket Affair"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 81,
+  "no": 79,
   "section": "lab",
-  "period": "early-industrialisation",
+  "period": "reconstruction",
   "periods": [
-   "early-industrialisation",
-   "gilded-age-ds"
+   "reconstruction",
+   "gilded-age"
   ],
-  "isDepthStudy": false,
+  "isDepthStudy": true,
   "front": "What was the role of racial divisions in early labour?",
   "p1": "Chinese workers arrived for railroad construction → white workers saw them as wage competitors → AFL and KOL both supported the Chinese Exclusion Act (1882) — even the more inclusive KOL drew a line at Chinese workers.",
   "p2": "Black workers excluded from the NLU → formed the CNLU separately in 1869, though it lacked the NLU's reach and soon faded. The AFL, founded later in 1886, continued the same exclusionary pattern regardless of skill level.",
@@ -1449,14 +1518,15 @@
    "Chinese Exclusion",
    "CNLU",
    "strikebreakers"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 82,
+  "no": 80,
   "section": "lab",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What was the significance of the Haymarket Affair (1886)?",
@@ -1467,14 +1537,15 @@
    "KOL",
    "AFL",
    "anarchism"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 83,
+  "no": 81,
   "section": "lab",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What was the role of the AFL during the Gilded Age?",
@@ -1485,14 +1556,15 @@
    "Samuel Gompers",
    "unskilled labourers",
    "Sherman Antitrust"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 84,
+  "no": 82,
   "section": "lab",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What were working conditions like during the Gilded Age?",
@@ -1503,17 +1575,18 @@
    "2,000",
    "48%",
    "30%"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 85,
+  "no": 83,
   "section": "lab",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
-  "front": "What was the role of skilled/unskilled divisions in the Gilded Age labour movement?",
+  "front": "What was the role of skilled/unskilled divisions in the Gilded Age?",
   "p1": "AFL under Gompers focused exclusively on skilled workers → craft unionism favoured a small elite → excluded the unskilled majority of the workforce.",
   "p2": "KOL, by contrast, welcomed unskilled workers → broader base but less bargaining power → collapsed after Haymarket (1886), leaving AFL's narrower model dominant.",
   "p3": "Pullman Strike (1894) exposed the cost of this division — AFL refused solidarity with the ARU, which organised workers across all grades — contributing to the strike's failure.",
@@ -1521,15 +1594,16 @@
    "Gompers",
    "Haymarket",
    "ARU"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 86,
+  "no": 84,
   "section": "lab",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds",
-   "early-industrialisation"
+   "gilded-age",
+   "reconstruction"
   ],
   "isDepthStudy": true,
   "front": "What was the impact of the government's laissez-faire attitude in the 19th century?",
@@ -1540,15 +1614,16 @@
    "minimum wage",
    "Carnegie",
    "Carnegie"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 87,
+  "no": 85,
   "section": "lab",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds",
-   "new-deal-ds"
+   "gilded-age",
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "What was collective bargaining and why did it matter?",
@@ -1559,15 +1634,16 @@
    "union representatives",
    "AFL",
    "Homestead"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 88,
+  "no": 86,
   "section": "lab",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds",
-   "early-industrialisation"
+   "gilded-age",
+   "reconstruction"
   ],
   "isDepthStudy": true,
   "front": "How did employers suppress unions in the Gilded Age?",
@@ -1578,15 +1654,16 @@
    "Carnegie Steel",
    "shared among",
    "sponsored newspapers"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 89,
+  "no": 87,
   "section": "lab",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds",
-   "progressive-era"
+   "gilded-age",
+   "progressive-wwi"
   ],
   "isDepthStudy": true,
   "front": "What was the Sherman Antitrust Act and how was it used against unions?",
@@ -1597,14 +1674,15 @@
    "Rockefeller",
    "Olney",
    "Clayton"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 90,
+  "no": 88,
   "section": "lab",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What was the story of the Homestead Strike (1892)?",
@@ -1615,14 +1693,15 @@
    "Henry Frick",
    "Pinkertons",
    "Anarchist"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 91,
+  "no": 89,
   "section": "lab",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What was the story and significance of the Pullman Strike (1894)?",
@@ -1633,15 +1712,16 @@
    "25%",
    "Cleveland",
    "Socialist"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 92,
+  "no": 90,
   "section": "lab",
-  "period": "gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "gilded-age-ds",
-   "progressive-era"
+   "gilded-age",
+   "progressive-wwi"
   ],
   "isDepthStudy": true,
   "front": "How did the Supreme Court hinder union and labour rights in the early 20th century?",
@@ -1652,14 +1732,15 @@
    "Lochner",
    "yellow-dog",
    "Duplex"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 93,
+  "no": 91,
   "section": "lab",
-  "period": "progressive-era",
+  "period": "progressive-wwi",
   "periods": [
-   "progressive-era"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Great Coal Strike (1902)?",
@@ -1670,14 +1751,15 @@
    "140,000 miners",
    "UMWA",
    "Progressive Era"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 94,
+  "no": 92,
   "section": "lab",
-  "period": "progressive-era",
+  "period": "progressive-wwi",
   "periods": [
-   "progressive-era"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the IWW and Lawrence Textile Strike?",
@@ -1688,14 +1770,15 @@
    "Wobblies",
    "15% pay",
    "ethnic lines"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 95,
+  "no": 93,
   "section": "lab",
-  "period": "progressive-era",
+  "period": "progressive-wwi",
   "periods": [
-   "progressive-era"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Triangle Shirtwaist Factory Fire (1911)?",
@@ -1706,14 +1789,15 @@
    "146 garment",
    "York",
    "WTUL"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 96,
+  "no": 94,
   "section": "lab",
-  "period": "progressive-era",
+  "period": "progressive-wwi",
   "periods": [
-   "progressive-era"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "How significant was legislation of the Progressive Era for union and labour rights?",
@@ -1724,14 +1808,15 @@
    "Magna Carta",
    "Keating-Owen",
    "Cabinet department"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 97,
+  "no": 95,
   "section": "lab",
-  "period": "progressive-era",
+  "period": "progressive-wwi",
   "periods": [
-   "progressive-era"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Women's Trade Union League (1903)?",
@@ -1742,32 +1827,34 @@
    "middle-class reformers",
    "AFL",
    "Triangle Shirtwaist"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 98,
+  "no": 96,
   "section": "lab",
-  "period": "wwi-red-summer",
+  "period": "progressive-wwi",
   "periods": [
-   "wwi-red-summer"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of WWI and the Red Scare on labour?",
   "p1": "NWLB (1918): Wilson agreement with AFL to maintain wartime production → unions accepted no-strike pledges. AFL membership grew from 2m to 3.2m during WWI",
-  "p2": "Red Scare: Seattle General Strike (1919) crushed — labelled Bolshevist plot. Union activity associated with communism → anti-radical purges weakened AFL",
-  "p3": "Membership declined from 5 million (1920) to 3.5 million by 1929 → Smith-Connally (1943) and McCarthyism continued this pattern in later decades",
+  "p2": "NWLB dissolved at war's end → pent-up wartime grievances erupted into a post-war strike wave, most notably the Seattle General Strike (1919).",
+  "p3": "Red Scare: the Bolshevik Revolution in Russia fuelled fears of communist revolution at home → Seattle's strike was branded a Bolshevist plot and crushed → union activity associated with communism, triggering anti-radical purges that weakened the AFL.",
   "hints": [
    "NWLB",
-   "AFL",
-   "Smith-Connally"
-  ]
+   "strike wave",
+   "Bolshevik Revolution"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 99,
+  "no": 97,
   "section": "lab",
-  "period": "wwi-red-summer",
+  "period": "progressive-wwi",
   "periods": [
-   "wwi-red-summer"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Seattle General Strike (1919)?",
@@ -1778,14 +1865,15 @@
    "65,000 workers",
    "Ole Hanson",
    "Bolshevik Revolution"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 100,
+  "no": 98,
   "section": "lab",
-  "period": "twenties",
+  "period": "boom-bust",
   "periods": [
-   "twenties"
+   "boom-bust"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of welfare capitalism in the 1920s?",
@@ -1796,14 +1884,15 @@
    "$6",
    "Philip Randolph",
    "Deering"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 101,
+  "no": 99,
   "section": "lab",
-  "period": "twenties",
+  "period": "boom-bust",
   "periods": [
-   "twenties"
+   "boom-bust"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of the Great Depression on labour rights?",
@@ -1814,14 +1903,15 @@
    "Wall Street",
    "Norris-LaGuardia",
    "Wagner Act"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 102,
+  "no": 100,
   "section": "lab",
-  "period": "new-deal-ds",
+  "period": "new-deal",
   "periods": [
-   "new-deal-ds"
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "What was the significance of the Wagner Act (1935)?",
@@ -1832,14 +1922,15 @@
    "NLRB",
    "AFL",
    "Southern Democrats"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 103,
+  "no": 101,
   "section": "lab",
-  "period": "new-deal-ds",
+  "period": "new-deal",
   "periods": [
-   "new-deal-ds"
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "What was the significance of the CIO and Flint Sit-Down Strike?",
@@ -1850,14 +1941,15 @@
    "John Lewis",
    "UAW",
    "NLRB"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 104,
+  "no": 102,
   "section": "lab",
-  "period": "new-deal-ds",
+  "period": "new-deal",
   "periods": [
-   "new-deal-ds"
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "What was the significance of Philip Randolph and the BSCP?",
@@ -1868,14 +1960,15 @@
    "first successful",
    "EO",
    "New Deal"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 105,
+  "no": 103,
   "section": "lab",
-  "period": "new-deal-ds",
+  "period": "new-deal",
   "periods": [
-   "new-deal-ds"
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "What was the significance of the Fair Labor Standards Act (1938)?",
@@ -1886,14 +1979,15 @@
    "$25 weekly",
    "business groups",
    "gender"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 106,
+  "no": 104,
   "section": "lab",
-  "period": "new-deal-ds",
+  "period": "new-deal",
   "periods": [
-   "new-deal-ds"
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "What was the NIRA/NRA (1933) and why did it fail?",
@@ -1904,14 +1998,15 @@
    "Blue Eagle",
    "ignoring codes",
    "NLRB"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 107,
+  "no": 105,
   "section": "lab",
-  "period": "new-deal-ds",
+  "period": "new-deal",
   "periods": [
-   "new-deal-ds"
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "What was employer and state resistance to New Deal labour reforms?",
@@ -1922,14 +2017,15 @@
    "NLRB",
    "Memorial Day",
    "US Steel"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 108,
+  "no": 106,
   "section": "lab",
-  "period": "wwii-taft-hartley",
+  "period": "wwii-1950s",
   "periods": [
-   "wwii-taft-hartley"
+   "wwii-1950s"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of McCarthyism on the labour movement?",
@@ -1940,14 +2036,15 @@
    "NLRB",
    "CIO",
    "FBI"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 109,
+  "no": 107,
   "section": "lab",
-  "period": "wwii-taft-hartley",
+  "period": "wwii-1950s",
   "periods": [
-   "wwii-taft-hartley"
+   "wwii-1950s"
   ],
   "isDepthStudy": false,
   "front": "What was the experience of workers during WWII?",
@@ -1958,14 +2055,15 @@
    "NWLB",
    "FDR",
    "AFL"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 110,
+  "no": 108,
   "section": "lab",
-  "period": "wwii-taft-hartley",
+  "period": "wwii-1950s",
   "periods": [
-   "wwii-taft-hartley"
+   "wwii-1950s"
   ],
   "isDepthStudy": false,
   "front": "What was the post-WWII strike wave and how did it lead to Taft-Hartley?",
@@ -1976,14 +2074,16 @@
    "4.6 million",
    "cooling-off period",
    "McCarthyism"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 111,
+  "no": 109,
   "section": "lab",
-  "period": "fifties-seventies",
+  "period": "wwii-1950s",
   "periods": [
-   "fifties-seventies"
+   "wwii-1950s",
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What was the right to exist and collectively bargain in the 1950s–60s?",
@@ -1994,14 +2094,15 @@
    "16 million",
    "EO 10988",
    "40%"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 112,
+  "no": 110,
   "section": "lab",
-  "period": "fifties-seventies",
+  "period": "vietnam-years",
   "periods": [
-   "fifties-seventies"
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of Cesar Chavez and the UFW?",
@@ -2012,14 +2113,16 @@
    "Mexican American",
    "Robert Kennedy",
    "Salad Bowl"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 113,
+  "no": 111,
   "section": "lab",
-  "period": "fifties-seventies",
+  "period": "vietnam-years",
   "periods": [
-   "fifties-seventies"
+   "vietnam-years",
+   "after-vietnam"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of automation and deindustrialisation?",
@@ -2030,14 +2133,15 @@
    "blue-collar",
    "Rust Belt",
    "PATCO"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 114,
+  "no": 112,
   "section": "lab",
-  "period": "fifties-seventies",
+  "period": "vietnam-years",
   "periods": [
-   "fifties-seventies"
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What labour legislation came out of the Kennedy and LBJ administrations?",
@@ -2048,14 +2152,15 @@
    "59¢",
    "NOW",
    "Great Society"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 115,
+  "no": 113,
   "section": "lab",
-  "period": "fifties-seventies",
+  "period": "vietnam-years",
   "periods": [
-   "fifties-seventies"
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of OSHA (1970)?",
@@ -2066,15 +2171,15 @@
    "workplace safety",
    "14,000",
    "Reagan"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 116,
+  "no": 114,
   "section": "lab",
-  "period": "black-power-ds",
+  "period": "vietnam-years",
   "periods": [
-   "black-power-ds",
-   "fifties-seventies"
+   "vietnam-years"
   ],
   "isDepthStudy": true,
   "front": "What was the significance of DRUM and the LRBW?",
@@ -2085,14 +2190,15 @@
    "wildcat strikes",
    "$2,000",
    "UAW"
-  ]
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 117,
+  "no": 115,
   "section": "lab",
-  "period": "reagan-era",
+  "period": "after-vietnam",
   "periods": [
-   "reagan-era"
+   "after-vietnam"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of the PATCO Strike (1981)?",
@@ -2103,14 +2209,15 @@
    "Reagan",
    "Union-busting",
    "24%"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 118,
+  "no": 116,
   "section": "lab",
-  "period": "reagan-era",
+  "period": "after-vietnam",
   "periods": [
-   "reagan-era"
+   "after-vietnam"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of Reaganomics on labour rights?",
@@ -2121,14 +2228,15 @@
    "Deregulation",
    "OSHA",
    "16%"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 119,
+  "no": 117,
   "section": "lab",
-  "period": "end",
+  "period": "after-vietnam",
   "periods": [
-   "end"
+   "after-vietnam"
   ],
   "front": "What was the right to exist and collectively bargain by 1992?",
   "p1": "Wagner Act (1935) legally protected collective bargaining → NLRB enforced → but Taft-Hartley (1947) allowed right-to-work laws in 21 states → union membership collapsed: 35% (1945) → 16% (1992).",
@@ -2141,14 +2249,15 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 120,
+  "no": 118,
   "section": "lab",
-  "period": "end",
+  "period": "after-vietnam",
   "periods": [
-   "end"
+   "after-vietnam"
   ],
   "front": "What was the right to strike by 1992?",
   "p1": "Right to strike legally protected but heavily restricted: Taft-Hartley banned secondary strikes and closed shops → Norris-LaGuardia (1932) had removed injunctions but Taft-Hartley reintroduced restrictions.",
@@ -2161,14 +2270,15 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 121,
+  "no": 119,
   "section": "lab",
-  "period": "end",
+  "period": "after-vietnam",
   "periods": [
-   "end"
+   "after-vietnam"
   ],
   "front": "What were fair and safe working conditions by 1992?",
   "p1": "OSHA (1970): workplace fatalities fell from 14,000+ to 4,500 annually → FLSA established minimum wage, 40-hour week, child labour ban → Equal Pay Act (1963) and Title VII (1964) prohibited pay discrimination.",
@@ -2181,18 +2291,18 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 122,
+  "no": 120,
   "section": "na",
-  "period": "na-start",
+  "period": "reconstruction",
   "periods": [
-   "na-start",
-   "na-plains-wars",
-   "na-gilded-age-ds"
+   "reconstruction",
+   "gilded-age"
   ],
-  "isDepthStudy": false,
+  "isDepthStudy": true,
   "front": "What was Manifest Destiny and its impact on Native Americans?",
   "p1": "Manifest Destiny: 19th century ideology — white American settlement of continent from coast to coast divinely ordained → provided moral and religious justification for Native displacement.",
   "p2": "Social Darwinism: framed Native Americans as 'backward' on inferior civilisation rung → eugenic theories seen as modern science → justified racial separation and cultural destruction as progress.",
@@ -2201,16 +2311,15 @@
    "divinely ordained",
    "eugenic theories",
    "IRA"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 123,
+  "no": 121,
   "section": "na",
-  "period": "na-start",
+  "period": "gilded-age",
   "periods": [
-   "na-start",
-   "na-gilded-age-ds",
-   "na-termination"
+   "gilded-age"
   ],
   "isDepthStudy": false,
   "front": "What was the reservation system and how did it work?",
@@ -2221,14 +2330,15 @@
    "BIA",
    "Natives",
    "100,000"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 124,
+  "no": 122,
   "section": "na",
-  "period": "na-start",
+  "period": "reconstruction",
   "periods": [
-   "na-start"
+   "reconstruction"
   ],
   "front": "What was the right to land for Native Americans in 1865?",
   "p1": "Legacy of Indian Removal Act (1830s): southeastern tribes already relocated to Indian Territory (Oklahoma). Plains tribes like the Sioux still held vast territories but under pressure from westward expansion",
@@ -2241,14 +2351,15 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 125,
+  "no": 123,
   "section": "na",
-  "period": "na-start",
+  "period": "reconstruction",
   "periods": [
-   "na-start"
+   "reconstruction"
   ],
   "front": "What was the right to self-determination for Native Americans in 1865?",
   "p1": "Tribes legally recognised as sovereign nations → capable of making treaties with federal government → own governance systems with tribal chiefs holding authority.",
@@ -2261,14 +2372,15 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 126,
+  "no": 124,
   "section": "na",
-  "period": "na-start",
+  "period": "reconstruction",
   "periods": [
-   "na-start"
+   "reconstruction"
   ],
   "front": "What were cultural and religious freedoms for Native Americans in 1865?",
   "p1": "Traditional cultures, languages and governance largely intact → buffalo central to spiritual and cultural life → ceremonies and practices continued freely on still-controlled territories.",
@@ -2281,14 +2393,15 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 127,
+  "no": 125,
   "section": "na",
-  "period": "na-start",
+  "period": "reconstruction",
   "periods": [
-   "na-start"
+   "reconstruction"
   ],
   "front": "What were the broader political and economic rights of Native Americans in 1865?",
   "p1": "No U.S. citizenship → no vote → no legal standing in federal courts → tribes had no representation in Congress → BIA managed all relations, acting as both administrator and judge.",
@@ -2301,17 +2414,18 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 128,
+  "no": 126,
   "section": "na",
-  "period": "na-plains-wars",
+  "period": "reconstruction",
   "periods": [
-   "na-plains-wars",
-   "na-gilded-age-ds"
+   "reconstruction",
+   "gilded-age"
   ],
-  "isDepthStudy": false,
+  "isDepthStudy": true,
   "front": "What was the impact of treaty-making with Native Americans?",
   "p1": "Prior to 1871, Native Tribes treated as foreign states. Treaties made to agree land and create reservations, usually after conflict. Treaties often signed under influence of alcohol or with poor translation, or withour chief.",
   "p2": "First Treaty of Fort Laramie (1851) created Great Sioux Reservation - violated by white settlers and prospecters. Led to Red Cloud's War (1866-68). Native Victory. New Treaty of Fort Laramie (1868) - granting Black Hills to Sioux forever.",
@@ -2320,17 +2434,18 @@
    "reservations",
    "Fort Laramie",
    "gold"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 129,
+  "no": 127,
   "section": "na",
-  "period": "na-plains-wars",
+  "period": "reconstruction",
   "periods": [
-   "na-plains-wars",
-   "na-gilded-age-ds"
+   "reconstruction",
+   "gilded-age"
   ],
-  "isDepthStudy": false,
+  "isDepthStudy": true,
   "front": "What was the impact of the Civil War and Plains Wars on Natives?",
   "p1": "Civil War (1861–65) meant the regular US Army was consumed fighting the Confederacy → frontier defence left to volunteer militias, often less disciplined and more prone to atrocity than professional troops.",
   "p2": "Sand Creek Massacre (1864): one such militia killed 150+ Cheyenne while federal attention was on the Confederacy. Plains Wars (1854–77) escalated as settler pressure grew. Some tribes allied with the Confederacy → weakened their position post-war.",
@@ -2339,14 +2454,15 @@
    "volunteer militias",
    "Sand Creek",
    "Native tribes"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 130,
+  "no": 128,
   "section": "na",
-  "period": "na-plains-wars",
+  "period": "reconstruction",
   "periods": [
-   "na-plains-wars"
+   "reconstruction"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Battle of Little Bighorn (1876)?",
@@ -2357,14 +2473,15 @@
    "Custer",
    "Black Hills",
    "military response"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 131,
+  "no": 129,
   "section": "na",
-  "period": "na-plains-wars",
+  "period": "reconstruction",
   "periods": [
-   "na-plains-wars"
+   "reconstruction"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of the Homestead Act and railroad on Natives?",
@@ -2375,14 +2492,15 @@
    "270 million",
    "10 million",
    "territorial integrity"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 132,
+  "no": 130,
   "section": "na",
-  "period": "na-plains-wars",
+  "period": "reconstruction",
   "periods": [
-   "na-plains-wars"
+   "reconstruction"
   ],
   "isDepthStudy": false,
   "front": "What was the Long Walk of the Navajo (1864–66)?",
@@ -2393,15 +2511,16 @@
    "Carson",
    "BIA",
    "treaty victories"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 133,
+  "no": 131,
   "section": "na",
-  "period": "na-plains-wars",
+  "period": "reconstruction",
   "periods": [
-   "na-plains-wars",
-   "na-gilded-age-ds"
+   "reconstruction",
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What was the Indian Appropriations Act (1871)?",
@@ -2412,18 +2531,17 @@
    "independent nations",
    "BIA",
    "treaty obligations"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 134,
+  "no": 132,
   "section": "na",
-  "period": "na-gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "na-gilded-age-ds",
-   "na-progressive-twenties",
-   "na-new-deal-ds"
+   "gilded-age"
   ],
-  "isDepthStudy": true,
+  "isDepthStudy": false,
   "front": "What was the Dawes Severalty Act (1887) and how did it work?",
   "p1": "Dawes Severalty Act (1887): divided communal tribal lands into 160-acre allotments. 'Surplus' land sold to white settlers. Curtis Act (1898) extended to Five Civilised Tribes",
   "p2": "Land loss: Native-owned land fell from 156 million acres (1887) to 78 million by 1900 → most allotments lost through sale, fraud or inheritance division",
@@ -2432,14 +2550,15 @@
    "160-acre",
    "156 million",
    "self-sufficient farmers"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 135,
+  "no": 133,
   "section": "na",
-  "period": "na-gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "na-gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What was the cultural impact of the Dawes Act?",
@@ -2450,14 +2569,15 @@
    "matriarchal tribes",
    "Allotment",
    "rare exception"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 136,
+  "no": 134,
   "section": "na",
-  "period": "na-gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "na-gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What were the key court cases and laws that destroyed Native sovereignty after 1883?",
@@ -2468,14 +2588,15 @@
    "Crow Dog",
    "Cherokee Nation",
    "inherited allotment"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 137,
+  "no": 135,
   "section": "na",
-  "period": "na-gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "na-gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What was the Ghost Dance Movement (1889) and what did it represent?",
@@ -2486,17 +2607,17 @@
    "Wovoka",
    "Wounded Knee",
    "Wounded Knee"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 138,
+  "no": 136,
   "section": "na",
-  "period": "na-gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "na-gilded-age-ds",
-   "na-progressive-twenties"
+   "gilded-age"
   ],
-  "isDepthStudy": true,
+  "isDepthStudy": false,
   "front": "What was the boarding school system in the Gilded Age?",
   "p1": "Carlisle Indian Industrial School (Pennsylvania, 1879): Colonel Richard Pratt — 'kill the Indian, save the man' → model for the wider federal boarding school system → children forbidden to speak languages, practice traditions or wear traditional clothing.",
   "p2": "Scale: 100,000+ children forced into boarding schools nationwide by early 1900s → death rates 30-50% from neglect, abuse and malnutrition.",
@@ -2505,14 +2626,15 @@
    "Pratt",
    "100,000+",
    "matriarchal structures"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 139,
+  "no": 137,
   "section": "na",
-  "period": "na-gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "na-gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What was the role of Helen Hunt Jackson and the Indian Rights Association?",
@@ -2523,14 +2645,15 @@
    "broken treaties",
    "IRA",
    "Dawes"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 140,
+  "no": 138,
   "section": "na",
-  "period": "na-gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "na-gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What was the impact of reservations on Native Americans? (positives)",
@@ -2541,14 +2664,15 @@
    "Indian Agency",
    "demographic recovery",
    "BIA"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 141,
+  "no": 139,
   "section": "na",
-  "period": "na-gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "na-gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What was the impact of reservations on Native Americans? (limitations)",
@@ -2559,14 +2683,15 @@
    "100,000",
    "BIA",
    "sacred sites"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 143,
+  "no": 140,
   "section": "na",
-  "period": "na-gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "na-gilded-age-ds"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What were the damaging effects of assimilation policies in the Gilded Age?",
@@ -2577,17 +2702,17 @@
    "Dawes Act",
    "Sun Dance",
    "government rations"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 144,
+  "no": 141,
   "section": "na",
-  "period": "na-gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "na-gilded-age-ds",
-   "na-progressive-twenties"
+   "gilded-age"
   ],
-  "isDepthStudy": true,
+  "isDepthStudy": false,
   "front": "What was the role of the Five Civilised Tribes and Sequoyah Convention?",
   "p1": "Five Civilised Tribes (Cherokee, Choctaw, Chickasaw, Creek, Seminole): written constitutions, elected governments, mixed economy → occupied Indian Territory (Oklahoma) → exempt from Dawes Act allotment until Curtis Act (1898).",
   "p2": "Curtis Act (1898): destroyed Five Civilised Tribes' governments — allotment imposed without consent → Muskogee/Sequoyah Convention (1905): tribal leaders proposed all-Native state of Sequoyah — own governor and Congress representatives — direct democratic response to dispossession",
@@ -2596,17 +2721,15 @@
    "constitutions",
    "Curtis",
    "Oklahoma Territory"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 145,
+  "no": 142,
   "section": "na",
-  "period": "na-gilded-age-ds",
+  "period": "gilded-age",
   "periods": [
-   "na-gilded-age-ds",
-   "na-progressive-twenties",
-   "na-new-deal-ds",
-   "na-termination"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What was the role of BIA corruption and paternalism?",
@@ -2617,14 +2740,15 @@
    "Appropriations Act",
    "meat subsidies",
    "tribal consultation"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 146,
+  "no": 143,
   "section": "na",
-  "period": "na-progressive-twenties",
+  "period": "progressive-wwi",
   "periods": [
-   "na-progressive-twenties"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Society of American Indians (SAI, 1911)?",
@@ -2635,14 +2759,15 @@
    "land reform",
    "BIA",
    "peyote use"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 147,
+  "no": 144,
   "section": "na",
-  "period": "na-progressive-twenties",
+  "period": "progressive-wwi",
   "periods": [
-   "na-progressive-twenties"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of WWI service on Native Americans?",
@@ -2653,14 +2778,15 @@
    "code communicators",
    "Citizenship Act",
    "American society"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 148,
+  "no": 145,
   "section": "na",
-  "period": "na-progressive-twenties",
+  "period": "boom-bust",
   "periods": [
-   "na-progressive-twenties"
+   "boom-bust"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Indian Citizenship Act (1924)?",
@@ -2671,14 +2797,15 @@
    "two-thirds",
    "Arizona",
    "BIA"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 149,
+  "no": 146,
   "section": "na",
-  "period": "na-progressive-twenties",
+  "period": "boom-bust",
   "periods": [
-   "na-progressive-twenties"
+   "boom-bust"
   ],
   "isDepthStudy": false,
   "front": "How did reformers' attitudes towards Native Americans change in the 1920s?",
@@ -2689,15 +2816,15 @@
    "Pueblo communities",
    "Leavitt Bill",
    "Meriam Report"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 151,
+  "no": 147,
   "section": "na",
-  "period": "na-new-deal-ds",
+  "period": "new-deal",
   "periods": [
-   "na-new-deal-ds",
-   "na-wwii-postwar"
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "What did the Indian Reorganization Act (Wheeler-Howard Act, 1934) do?",
@@ -2708,15 +2835,15 @@
    "tribal constitutions",
    "tribal corporations",
    "82%"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 152,
+  "no": 148,
   "section": "na",
-  "period": "na-new-deal-ds",
+  "period": "new-deal",
   "periods": [
-   "na-new-deal-ds",
-   "na-wwii-postwar"
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "What were the limitations of the Indian Reorganization Act (1934)?",
@@ -2727,14 +2854,15 @@
    "secret-ballot",
    "150,000 sheep",
    "13¢"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 153,
+  "no": 149,
   "section": "na",
-  "period": "na-new-deal-ds",
+  "period": "new-deal",
   "periods": [
-   "na-new-deal-ds"
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "What was the role of the IECW and CCC-ID in the New Deal?",
@@ -2745,17 +2873,17 @@
    "Civilian Conservation",
    "85,000",
    "ceremonial dance"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 154,
+  "no": 150,
   "section": "na",
-  "period": "na-wwii-postwar",
+  "period": "wwii-1950s",
   "periods": [
-   "na-wwii-postwar",
-   "na-termination"
+   "wwii-1950s"
   ],
-  "isDepthStudy": true,
+  "isDepthStudy": false,
   "front": "What was the role of the NCAI and Indian Claims Commission?",
   "p1": "NCAI (National Congress of American Indians, 1944): first large-scale pan-tribal advocacy organisation → opposed termination policy → lobbied Congress for treaty rights",
   "p2": "Indian Claims Commission (1946): established to compensate for land taken → awarded cash, not land return → by 1950s, $1.3 billion in claims filed → slow process, many denied",
@@ -2764,15 +2892,15 @@
    "treaty rights",
    "$1.3 billion",
    "ICC"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 155,
+  "no": 151,
   "section": "na",
-  "period": "na-wwii-postwar",
+  "period": "wwii-1950s",
   "periods": [
-   "na-wwii-postwar",
-   "na-termination"
+   "wwii-1950s"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of Native American service in WWII?",
@@ -2783,33 +2911,16 @@
    "25,000",
    "Iwo Jima",
    "GI Bill"
-  ]
- },
- {
-  "no": 156,
-  "section": "na",
-  "period": "na-wwii-postwar",
-  "periods": [
-   "na-wwii-postwar"
   ],
-  "isDepthStudy": false,
-  "front": "What was the impact of Japanese internment on Native lands?",
-  "p1": "WWII Japanese internment: Poston internment camp built on Colorado River Indian Reservation without tribal consent → 17,000 Japanese Americans housed on Navajo and Mohave lands.",
-  "p2": "Harrison v Laveen (1948): Arizona recognised Native voting rights — last state to do so → 44,000 Native Americans had served in WWII, strengthening citizenship claims.",
-  "p3": "BUT Termination Policy (1953) immediately reversed post-war progress → 109 tribes terminated → economic base destroyed.",
-  "hints": [
-   "WWII",
-   "44,000",
-   "Termination Policy"
-  ]
+  "depthStudy": null
  },
  {
-  "no": 157,
+  "no": 152,
   "section": "na",
-  "period": "na-termination",
+  "period": "wwii-1950s",
   "periods": [
-   "na-termination",
-   "na-red-power-ds"
+   "wwii-1950s",
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What was the Termination Policy (1953) and what were its consequences?",
@@ -2820,14 +2931,15 @@
    "109 tribes",
    "Menominee hospital",
    "NCAI"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 158,
+  "no": 153,
   "section": "na",
-  "period": "na-termination",
+  "period": "wwii-1950s",
   "periods": [
-   "na-termination"
+   "wwii-1950s"
   ],
   "isDepthStudy": false,
   "front": "What was the Indian Relocation Act (1956) and what were its consequences?",
@@ -2838,17 +2950,17 @@
    "BIA",
    "cultural isolation",
    "AIM"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 159,
+  "no": 154,
   "section": "na",
-  "period": "na-termination",
+  "period": "vietnam-years",
   "periods": [
-   "na-termination",
-   "na-red-power-ds"
+   "vietnam-years"
   ],
-  "isDepthStudy": false,
+  "isDepthStudy": true,
   "front": "What was the significance of the NIYC (1961) and the fish-ins?",
   "p1": "NIYC (National Indian Youth Council, 1961): first militant pan-tribal youth organisation → fish-ins in Pacific Northwest to assert treaty fishing rights — deliberately modelled on Black civil rights sit-ins",
   "p2": "Fish-ins: Native Americans exercised treaty rights in defiance of state fishing laws → arrested → publicised in national media → demonstrated treaty rights could be asserted through civil disobedience",
@@ -2857,36 +2969,35 @@
    "Pacific Northwest",
    "fishing laws",
    "NCAI"
-  ]
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 160,
+  "no": 155,
   "section": "na",
-  "period": "na-termination",
+  "period": "wwii-1950s",
   "periods": [
-   "na-termination",
-   "na-red-power-ds",
-   "na-self-determination",
-   "na-end"
+   "wwii-1950s",
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What was life like on the reservations in the mid-20th century?",
   "p1": "1960s: per capita income on reservations half the national average → unemployment on many reservations 40-80% → infant mortality three times higher than national average",
   "p2": "BIA dependence: tribes had little control over their own resources → federal funding inadequate and subject to political winds → termination (1953) devastated already-weak tribal economies",
-  "p3": "Urban relocation: Indian Relocation Act (1956) → BIA offered one-way tickets to cities → without community support many fell into poverty in urban ghettos → relocation failed to solve reservation poverty",
+  "p3": "Urban relocation offered one route out → but moving to cities did not solve reservation poverty, since those who left received little ongoing support.",
   "hints": [
    "income",
    "BIA",
-   "relocation"
-  ]
+   "ongoing support"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 161,
+  "no": 156,
   "section": "na",
-  "period": "na-termination",
+  "period": "vietnam-years",
   "periods": [
-   "na-termination",
-   "na-red-power-ds"
+   "vietnam-years"
   ],
   "isDepthStudy": true,
   "front": "What was Red Power and how did it differ from earlier activism?",
@@ -2897,14 +3008,15 @@
    "treaty rights",
    "AIM",
    "NCAI"
-  ]
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 162,
+  "no": 157,
   "section": "na",
-  "period": "na-red-power-ds",
+  "period": "vietnam-years",
   "periods": [
-   "na-red-power-ds"
+   "vietnam-years"
   ],
   "isDepthStudy": true,
   "front": "What was the significance of the Alcatraz Occupation (1969–71)?",
@@ -2915,14 +3027,15 @@
    "Richard Oakes",
    "Natives",
    "Red Power"
-  ]
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 163,
+  "no": 158,
   "section": "na",
-  "period": "na-red-power-ds",
+  "period": "vietnam-years",
   "periods": [
-   "na-red-power-ds"
+   "vietnam-years"
   ],
   "isDepthStudy": true,
   "front": "What was the significance of the Wounded Knee Occupation (1973)?",
@@ -2933,14 +3046,15 @@
    "AIM",
    "Pine",
    "BIA"
-  ]
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 164,
+  "no": 159,
   "section": "na",
-  "period": "na-red-power-ds",
+  "period": "vietnam-years",
   "periods": [
-   "na-red-power-ds"
+   "vietnam-years"
   ],
   "isDepthStudy": true,
   "front": "What was the significance of the Trail of Broken Treaties (1972)?",
@@ -2951,17 +3065,18 @@
    "DC",
    "BIA",
    "Wounded Knee"
-  ]
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 165,
+  "no": 160,
   "section": "na",
-  "period": "na-red-power-ds",
+  "period": "vietnam-years",
   "periods": [
-   "na-red-power-ds",
-   "na-self-determination"
+   "vietnam-years",
+   "after-vietnam"
   ],
-  "isDepthStudy": false,
+  "isDepthStudy": true,
   "front": "What was the significance of Nixon ending termination and the Self-Determination Act?",
   "p1": "Nixon (1970): formally ended termination policy — acknowledged it had been wrong. Federal government began restoring recognition to terminated tribes. Menominee restored 1973.",
   "p2": "Indian Self-Determination and Education Assistance Act (1975): tribes allowed to administer their own federal programmes → BIA contracts transferred to tribal control → 200+ tribes administering own services by late 1970s",
@@ -2970,14 +3085,15 @@
    "Menominee restored",
    "BIA",
    "AIRFA"
-  ]
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 166,
+  "no": 161,
   "section": "na",
-  "period": "na-self-determination",
+  "period": "after-vietnam",
   "periods": [
-   "na-self-determination"
+   "after-vietnam"
   ],
   "isDepthStudy": false,
   "front": "How did the Supreme Court impact Native rights in the 1970s and 1980s?",
@@ -2988,14 +3104,15 @@
    "Oneida",
    "Fisher",
    "Charrier"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 167,
+  "no": 162,
   "section": "na",
-  "period": "na-end",
+  "period": "after-vietnam",
   "periods": [
-   "na-end"
+   "after-vietnam"
   ],
   "front": "What was the right to land for Native Americans by 1992?",
   "p1": "Indian Claims Commission (1946): awarded $800 million in compensation — but only money, not land → Sioux refused $106 million for Black Hills: 'not for sale' → fund grown to $600m+ unclaimed.",
@@ -3008,34 +3125,36 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 168,
+  "no": 163,
   "section": "na",
-  "period": "na-end",
+  "period": "after-vietnam",
   "periods": [
-   "na-end"
+   "after-vietnam"
   ],
   "front": "What was the right to self-determination for Native Americans by 1992?",
   "p1": "Indian Self-Determination Act (1975): 200+ tribes administering own federal programmes → tribal courts recognised → AIM had forced political visibility through Alcatraz (1969) and Wounded Knee (1973).",
   "p2": "Bryan v Itasca (1976): states cannot tax reservations → tribal sovereignty affirmed in court → BUT 60% of tribes still economically reliant on federal funding → sovereignty practically limited.",
-  "p3": "All citizens since 1924 → voting in all states since Laveen (1948) → BUT only 50% registered to vote in 1992 → voter turnout low → political influence marginal.",
+  "p3": "All citizens since 1924 → voting in all states since Harrison v Laveen (1948) → BUT only 50% registered to vote in 1992 → voter turnout low → political influence marginal.",
   "hints": [
    "AIM",
    "60%",
-   "Laveen"
+   "Harrison v"
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 169,
+  "no": 164,
   "section": "na",
-  "period": "na-end",
+  "period": "after-vietnam",
   "periods": [
-   "na-end"
+   "after-vietnam"
   ],
   "front": "What were cultural and religious freedoms for Native Americans by 1992?",
   "p1": "AIRFA (1978): protected traditional practices — but 70% of Native religious leaders reported ongoing struggles accessing sacred lands by 1992",
@@ -3048,35 +3167,37 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 170,
+  "no": 165,
   "section": "na",
-  "period": "na-end",
+  "period": "after-vietnam",
   "periods": [
-   "na-end"
+   "after-vietnam"
   ],
   "front": "What were the broader political and economic rights of Native Americans by 1992?",
-  "p1": "U.S. citizens since 1924, voting in all states since Laveen (1948) → but only 50% registered to vote → voter turnout low → political influence marginal at federal level.",
-  "p2": "Indian Gaming Regulatory Act (1988): 150 casinos generating $1 billion+ annually → first major economic opportunity → BUT 25% of Native families still below poverty line → 60% reliant on federal assistance.",
+  "p1": "Citizens and voters in all states by 1948 → but only 50% registered to vote by 1992 → voter turnout low → political influence marginal at federal level.",
+  "p2": "Economic opportunities remained limited → 25% of Native families still below poverty line → 60% reliant on federal assistance.",
   "p3": "Education: less than 60% graduated high school → only 10% held college degrees → life expectancy 5-10 years below national average.",
   "hints": [
-   "Laveen",
-   "25%",
+   "1948",
+   "60% reliant",
    "Education"
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 171,
+  "no": 166,
   "section": "wom",
-  "period": "wom-start",
+  "period": "reconstruction",
   "periods": [
-   "wom-start",
-   "wom-gilded-age"
+   "reconstruction",
+   "gilded-age"
   ],
   "isDepthStudy": false,
   "front": "What was coverture?",
@@ -3087,15 +3208,16 @@
    "deeply stigmatised",
    "husbands",
    "ERA"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 172,
+  "no": 167,
   "section": "wom",
-  "period": "wom-start",
+  "period": "reconstruction",
   "periods": [
-   "wom-start",
-   "wom-gilded-age"
+   "reconstruction",
+   "gilded-age"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of separate spheres rhetoric on women in the 19th century?",
@@ -3106,14 +3228,15 @@
    "morally superior",
    "moral guardianship",
    "settlement-house"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 173,
+  "no": 168,
   "section": "wom",
-  "period": "wom-start",
+  "period": "reconstruction",
   "periods": [
-   "wom-start"
+   "reconstruction"
   ],
   "front": "What were the political rights of women in 1865?",
   "p1": "No vote at any level → Seneca Falls (1848) had demanded suffrage but gains minimal → NWSA and AWSA not yet formed (both 1869) → 15th Amendment (1870) would give Black men the vote but exclude women entirely.",
@@ -3126,14 +3249,15 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 174,
+  "no": 169,
   "section": "wom",
-  "period": "wom-start",
+  "period": "reconstruction",
   "periods": [
-   "wom-start"
+   "reconstruction"
   ],
   "front": "What was the social position of women in 1865?",
   "p1": "Coverture: husband controlled all property, contracts and wages → average 5-7 children → 1 in 5 died in childbirth → only 3% attended college vs 25% of men.",
@@ -3146,14 +3270,15 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 175,
+  "no": 170,
   "section": "wom",
-  "period": "wom-start",
+  "period": "reconstruction",
   "periods": [
-   "wom-start"
+   "reconstruction"
   ],
   "front": "What was the economic position of women in 1865?",
   "p1": "15% employed outside home → 17% in industrial jobs at half male wages → 40% of Black women in South in domestic service — no legal protection or union membership.",
@@ -3166,15 +3291,16 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 176,
+  "no": 171,
   "section": "wom",
-  "period": "wom-reconstruction",
+  "period": "reconstruction",
   "periods": [
-   "wom-reconstruction",
-   "wom-gilded-age"
+   "reconstruction",
+   "gilded-age"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of Susan B. Anthony?",
@@ -3185,33 +3311,35 @@
    "NWSA",
    "Rochester",
    "Amendment"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 177,
+  "no": 172,
   "section": "wom",
-  "period": "wom-reconstruction",
+  "period": "reconstruction",
   "periods": [
-   "wom-reconstruction"
+   "reconstruction"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of Reconstruction on women's rights?",
   "p1": "15th Amendment (1870): vote granted to Black men — excluded women → NWSA (Anthony/Stanton) opposed it → AWSA (Stone) supported it → split weakened suffrage movement for 20 years",
-  "p2": "Anthony arrested voting in Rochester (1872) → $100 fine refused → Wyoming Territory granted female suffrage (1869) → Women's Crusade (1873): 50,000 marched → WCTU founded (1874)",
+  "p2": "Anthony's arrest for voting became a rallying point for the suffrage movement → Wyoming Territory granted female suffrage (1869) → Women's Crusade (1873): 50,000 marched → WCTU founded (1874)",
   "p3": "Black women excluded from both NWSA and AWSA → Reconstruction Congress focused entirely on African American male rights → women's suffrage treated as separate, secondary question",
   "hints": [
    "NWSA",
-   "WCTU",
+   "rallying point",
    "AWSA"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 178,
+  "no": 173,
   "section": "wom",
-  "period": "wom-gilded-age",
+  "period": "gilded-age",
   "periods": [
-   "wom-gilded-age",
-   "wom-reconstruction"
+   "gilded-age",
+   "reconstruction"
   ],
   "isDepthStudy": false,
   "front": "What were the Comstock Laws (1873)?",
@@ -3222,15 +3350,16 @@
    "4,000 arrests",
    "reproductive",
    "Emma Goldman"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 179,
+  "no": 174,
   "section": "wom",
-  "period": "wom-gilded-age",
+  "period": "gilded-age",
   "periods": [
-   "wom-gilded-age",
-   "wom-progressive"
+   "gilded-age",
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of Frances Willard and the WCTU?",
@@ -3241,15 +3370,16 @@
    "Do Everything",
    "prison reform",
    "Protestant values"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 180,
+  "no": 175,
   "section": "wom",
-  "period": "wom-gilded-age",
+  "period": "gilded-age",
   "periods": [
-   "wom-gilded-age",
-   "wom-progressive"
+   "gilded-age",
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of Jane Addams and Hull House?",
@@ -3260,14 +3390,15 @@
    "2,000+",
    "Consumers League",
    "cross-class solidarity"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 181,
+  "no": 176,
   "section": "wom",
-  "period": "wom-gilded-age",
+  "period": "gilded-age",
   "periods": [
-   "wom-gilded-age"
+   "gilded-age"
   ],
   "isDepthStudy": false,
   "front": "What were working conditions like for women in the Gilded Age?",
@@ -3278,14 +3409,15 @@
    "$3-5/week",
    "Triangle Shirtwaist",
    "AFL"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 182,
+  "no": 177,
   "section": "wom",
-  "period": "wom-gilded-age",
+  "period": "gilded-age",
   "periods": [
-   "wom-gilded-age"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What were the gains for women during the Gilded Age?",
@@ -3296,14 +3428,15 @@
    "111,000",
    "4 states",
    "domestic burden"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 183,
+  "no": 178,
   "section": "wom",
-  "period": "wom-gilded-age",
+  "period": "gilded-age",
   "periods": [
-   "wom-gilded-age"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "What were the limits on women's progress during the Gilded Age?",
@@ -3314,32 +3447,34 @@
    "70 hours",
    "Education",
    "Comstock Laws"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 184,
+  "no": 179,
   "section": "wom",
-  "period": "wom-gilded-age",
+  "period": "gilded-age",
   "periods": [
-   "wom-gilded-age"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "How effective were women's movements in the Gilded Age?",
-  "p1": "Anthony's civil disobedience — arrested attempting to vote (1872), refused the $100 fine — generated national publicity. AWSA's state-by-state campaigning won real victories where NWSA's federal push could not.",
+  "p1": "NWSA's militant tactics generated national publicity for the cause → AWSA's state-by-state campaigning won real victories where NWSA's federal push could not.",
   "p2": "Women's Crusade (1873) built the momentum that founded the WCTU (1874) — a mass social campaign reaching women nationwide.",
   "p3": "Jane Addams founded Hull House (1889), offering social services to immigrant women in Chicago. YWCA (1867) did similar practical work for urban women.",
   "hints": [
-   "NWSA",
-   "Women's Crusade",
+   "militant tactics",
+   "WCTU",
    "Hull House"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 185,
+  "no": 180,
   "section": "wom",
-  "period": "wom-gilded-age",
+  "period": "gilded-age",
   "periods": [
-   "wom-gilded-age"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "How ineffective were women's movements in the Gilded Age?",
@@ -3350,14 +3485,15 @@
    "AFL",
    "Happersett",
    "30 years"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 186,
+  "no": 181,
   "section": "wom",
-  "period": "wom-gilded-age",
+  "period": "gilded-age",
   "periods": [
-   "wom-gilded-age"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "How united were women in the Gilded Age?",
@@ -3368,14 +3504,15 @@
    "NWSA",
    "WCTU",
    "1 million"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 187,
+  "no": 182,
   "section": "wom",
-  "period": "wom-gilded-age",
+  "period": "gilded-age",
   "periods": [
-   "wom-gilded-age"
+   "gilded-age"
   ],
   "isDepthStudy": true,
   "front": "How divided were women in the Gilded Age?",
@@ -3386,15 +3523,16 @@
    "sweatshops",
    "NAWSA",
    "NWSA"
-  ]
+  ],
+  "depthStudy": "gilded-age"
  },
  {
-  "no": 188,
+  "no": 183,
   "section": "wom",
-  "period": "wom-progressive",
+  "period": "progressive-wwi",
   "periods": [
-   "wom-progressive",
-   "wom-twenties"
+   "progressive-wwi",
+   "boom-bust"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of Carrie Chapman Catt and NAWSA?",
@@ -3405,17 +3543,16 @@
    "Winning Plan",
    "19th Amendment",
    "Suffrage Parade"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 189,
+  "no": 184,
   "section": "wom",
-  "period": "wom-progressive",
+  "period": "progressive-wwi",
   "periods": [
-   "wom-progressive",
-   "wom-twenties",
-   "wom-new-feminism",
-   "wom-backlash"
+   "progressive-wwi",
+   "boom-bust"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of Alice Paul?",
@@ -3426,14 +3563,15 @@
    "CUWS",
    "Silent Sentinels",
    "ERA"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 190,
+  "no": 185,
   "section": "wom",
-  "period": "wom-progressive",
+  "period": "progressive-wwi",
   "periods": [
-   "wom-progressive"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Triangle Shirtwaist Fire (1911)?",
@@ -3444,14 +3582,15 @@
    "locked exit",
    "York",
    "lethal consequences"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 191,
+  "no": 186,
   "section": "wom",
-  "period": "wom-progressive",
+  "period": "progressive-wwi",
   "periods": [
-   "wom-progressive"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Bread and Roses Strike (1912)?",
@@ -3462,14 +3601,15 @@
    "IWW",
    "Gurley Flynn",
    "15%"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 192,
+  "no": 187,
   "section": "wom",
-  "period": "wom-progressive",
+  "period": "progressive-wwi",
   "periods": [
-   "wom-progressive"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of WWI on women's rights?",
@@ -3480,15 +3620,16 @@
    "40%",
    "Wilson",
    "wages dropped"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 193,
+  "no": 188,
   "section": "wom",
-  "period": "wom-progressive",
+  "period": "progressive-wwi",
   "periods": [
-   "wom-progressive",
-   "wom-twenties"
+   "progressive-wwi",
+   "boom-bust"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of the 19th Amendment (1920)?",
@@ -3499,14 +3640,15 @@
    "1/3",
    "South",
    "Nellie Tayloe"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 194,
+  "no": 189,
   "section": "wom",
-  "period": "wom-twenties",
+  "period": "boom-bust",
   "periods": [
-   "wom-twenties"
+   "boom-bust"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of Margaret Sanger?",
@@ -3517,32 +3659,34 @@
    "Brooklyn clinic",
    "222 clinics",
    "ABCL"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 195,
+  "no": 190,
   "section": "wom",
-  "period": "wom-twenties",
+  "period": "boom-bust",
   "periods": [
-   "wom-twenties"
+   "boom-bust"
   ],
   "isDepthStudy": false,
   "front": "What was flapper culture and what did it represent?",
   "p1": "Flapper culture: young, urban, white, middle-class women — dancing, smoking, drinking, short hair, short skirts → challenge to Victorian femininity → birth rate falling, marriage age rising",
   "p2": "BUT: limited to white urban middle class → rural, working-class, Black and immigrant women unaffected or hostile",
-  "p3": "80% of Americans in 1936 Gallup poll: married women should not take men's jobs → Comstock Laws still in force",
+  "p3": "Marriage age rising and birth rate falling reflected real cultural change — but widespread public opposition to women working, especially once married, limited how far that change could go. Comstock Laws still in force.",
   "hints": [
    "Victorian femininity",
    "middle class",
-   "Gallup poll"
-  ]
+   "cultural change"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 196,
+  "no": 191,
   "section": "wom",
-  "period": "wom-new-deal",
+  "period": "new-deal",
   "periods": [
-   "wom-new-deal"
+   "new-deal"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of leading political women in the New Deal?",
@@ -3553,33 +3697,35 @@
    "Perkins",
    "Marian Anderson",
    "Florence Allen"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 197,
+  "no": 192,
   "section": "wom",
-  "period": "wom-new-deal",
+  "period": "new-deal",
   "periods": [
-   "wom-new-deal"
+   "new-deal"
   ],
   "isDepthStudy": false,
   "front": "What were the limitations of the New Deal for women?",
   "p1": "FLSA (1938): minimum wage/max hours set, but reinforced gender pay gap — no equal pay mandate → female teachers earned 20% less than male (1939). CCC excluded women entirely → WPA's one-family-member policy favoured men → Social Security excluded domestic/agricultural workers — majority women of colour.",
-  "p2": "Cultural resistance: 80% (1936 Gallup) opposed married women working → Aid to Dependent Children reinforced motherhood role over independence → New Deal assumed male breadwinner throughout.",
+  "p2": "Cultural resistance: widespread public opposition to married women working → Aid to Dependent Children reinforced motherhood role over independence → New Deal assumed male breadwinner throughout.",
   "p3": "Compounded by race and location: Black women excluded by white-administered Southern relief → Mexican American women vulnerable to deportation → rural women had least access of all.",
   "hints": [
    "CCC excluded",
-   "1936 Gallup",
+   "Dependent Children",
    "Mexican"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 198,
+  "no": 193,
   "section": "wom",
-  "period": "wom-new-deal",
+  "period": "new-deal",
   "periods": [
-   "wom-new-deal",
-   "wom-twenties"
+   "new-deal",
+   "boom-bust"
   ],
   "isDepthStudy": true,
   "front": "What were the strengths of women's position by 1932?",
@@ -3590,33 +3736,35 @@
    "ERA",
    "WTUL",
    "state legislatures"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 199,
+  "no": 194,
   "section": "wom",
-  "period": "wom-new-deal",
+  "period": "new-deal",
   "periods": [
-   "wom-new-deal",
-   "wom-twenties"
+   "new-deal",
+   "boom-bust"
   ],
   "isDepthStudy": true,
   "front": "What were the weaknesses of women's position by 1932?",
   "p1": "Suffrage limited: only 1/3 voted in 1920s → Black women faced voter suppression in South → ERA rejected repeatedly → women earned half male wages",
-  "p2": "Depression (1929): women first targeted for job losses → 80% of Americans in 1936 Gallup poll opposed married women working → Comstock Laws still in force",
+  "p2": "Depression (1929): women first targeted for job losses → public opinion strongly opposed married women working → Comstock Laws still in force",
   "p3": "Structural inequality unchanged: gender pay gap entrenched → professional barriers to law, medicine, business remained strong → cultural pressure for domestic sphere intensified by Depression",
   "hints": [
    "ERA",
    "job losses",
    "professional barriers"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 200,
+  "no": 195,
   "section": "wom",
-  "period": "wom-new-deal",
+  "period": "new-deal",
   "periods": [
-   "wom-new-deal"
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "How did women benefit from the New Deal?",
@@ -3627,14 +3775,15 @@
    "400,000",
    "44-hour week",
    "Equal pay"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 201,
+  "no": 196,
   "section": "wom",
-  "period": "wom-new-deal",
+  "period": "new-deal",
   "periods": [
-   "wom-new-deal"
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "What was universal about women's experience during the New Deal?",
@@ -3645,14 +3794,15 @@
    "80%",
    "WPA",
    "CCC"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 202,
+  "no": 197,
   "section": "wom",
-  "period": "wom-new-deal",
+  "period": "new-deal",
   "periods": [
-   "wom-new-deal"
+   "new-deal"
   ],
   "isDepthStudy": true,
   "front": "How different were women's experiences during the New Deal?",
@@ -3663,14 +3813,15 @@
    "relief programmes",
    "WPA",
    "CIO"
-  ]
+  ],
+  "depthStudy": "new-deal"
  },
  {
-  "no": 203,
+  "no": 198,
   "section": "wom",
-  "period": "wom-wwii-postwar",
+  "period": "wwii-1950s",
   "periods": [
-   "wom-wwii-postwar"
+   "wwii-1950s"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of WWII on women's employment?",
@@ -3681,14 +3832,15 @@
    "Lanham Act",
    "75%",
    "GI Bill"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 204,
+  "no": 199,
   "section": "wom",
-  "period": "wom-wwii-postwar",
+  "period": "wwii-1950s",
   "periods": [
-   "wom-wwii-postwar"
+   "wwii-1950s"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of Dr Spock and the post-war housewife ideal?",
@@ -3699,15 +3851,16 @@
    "23 million",
    "GI Bill",
    "Feminine Mystique"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 205,
+  "no": 200,
   "section": "wom",
-  "period": "wom-wwii-postwar",
+  "period": "wwii-1950s",
   "periods": [
-   "wom-wwii-postwar",
-   "wom-new-feminism"
+   "wwii-1950s",
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What was the Kennedy Commission on the Status of Women (1961)?",
@@ -3718,15 +3871,16 @@
    "Eleanor Roosevelt",
    "Equal Pay",
    "legislative agenda"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 206,
+  "no": 201,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "vietnam-years",
   "periods": [
-   "wom-new-feminism",
-   "wom-wwii-postwar"
+   "vietnam-years",
+   "wwii-1950s"
   ],
   "isDepthStudy": false,
   "front": "What were the key ideas of the Feminine Mystique (1963)?",
@@ -3737,32 +3891,34 @@
    "Friedan",
    "Freudian psychologists",
    "NOW"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 207,
+  "no": 202,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "vietnam-years",
   "periods": [
-   "wom-new-feminism"
+   "vietnam-years"
   ],
   "isDepthStudy": false,
-  "front": "What was the significance of Betty Friedan and NOW?",
-  "p1": "NOW (1966): founded by Friedan → Miss America protest (1968): crowned a pig, symbolically rejected objectification → Women's Strike for Equality (1970): 50,000 marched in New York",
-  "p2": "Lobbied for: Equal Pay Act (1963), Title VII enforcement, Title IX (1972), ERA ratification and reproductive rights",
-  "p3": "Growing momentum: Women's Strike for Equality (1970): 50,000+ marched in New York demanding equal pay, childcare, abortion rights → National Women's Political Caucus (1971): organised women's political power → by 1972, NOW had 40,000 members — mainstream feminist organisation exerting real political pressure",
+  "front": "What was the significance of NOW?",
+  "p1": "NOW (1966): founded by Friedan and other feminists → Miss America protest (1968): crowned a pig, symbolically rejected objectification",
+  "p2": "Lobbied for: Title VII (employment discrimination) enforcement, Title IX (education discrimination), ERA ratification and reproductive rights",
+  "p3": "NOW organised the Women's Strike for Equality (1970): 50,000+ marched in New York demanding equal pay, childcare, abortion rights → by 1972, NOW had 40,000 members — mainstream feminist organisation exerting real political pressure",
   "hints": [
    "Miss America",
-   "VII",
-   "40,000 members"
-  ]
+   "Lobbied",
+   "Strike"
+  ],
+  "depthStudy": null
  },
  {
-  "no": 208,
+  "no": 203,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "vietnam-years",
   "periods": [
-   "wom-new-feminism"
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Civil Rights Act (1964) Title VII?",
@@ -3773,14 +3929,15 @@
    "Alice Paul",
    "EEOC",
    "sue employers"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 209,
+  "no": 204,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "vietnam-years",
   "periods": [
-   "wom-new-feminism"
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of second-wave and radical feminism?",
@@ -3791,14 +3948,15 @@
    "NOW",
    "Miss America",
    "ERA"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 210,
+  "no": 205,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "vietnam-years",
   "periods": [
-   "wom-new-feminism"
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of the Pill (1960)?",
@@ -3809,14 +3967,15 @@
    "FDA",
    "sexual revolution",
    "Catholic Church"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 211,
+  "no": 206,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "vietnam-years",
   "periods": [
-   "wom-new-feminism"
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What were Griswold v Connecticut (1965) and Eisenstadt v Baird (1972)?",
@@ -3827,14 +3986,15 @@
    "marital privacy",
    "unmarried",
    "Sanger"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 212,
+  "no": 207,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "vietnam-years",
   "periods": [
-   "wom-new-feminism"
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of Title IX (1972)?",
@@ -3845,14 +4005,15 @@
    "equal opportunities",
    "athletic scholarships",
    "budget cuts"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 213,
+  "no": 208,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "vietnam-years",
   "periods": [
-   "wom-new-feminism"
+   "vietnam-years"
   ],
   "isDepthStudy": false,
   "front": "What was the significance of Roe v Wade (1973)?",
@@ -3863,32 +4024,34 @@
    "constitutional right",
    "Repeal",
    "Hyde"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 214,
+  "no": 209,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "progressive-wwi",
   "periods": [
-   "wom-new-feminism"
+   "progressive-wwi"
   ],
   "isDepthStudy": false,
-  "front": "What was the significance of WTUL and women in the labour movement?",
+  "front": "What was the position of women in organised labour in the early 20th century?",
   "p1": "WTUL (1903): first sustained effort to organise women workers → Bread and Roses Strike (1912): 20,000 immigrant women in Lawrence won 15% pay rise → model of cross-ethnic solidarity",
-  "p2": "Triangle Shirtwaist (1911): 146 killed → Frances Perkins present → galvanised support for workplace safety → led to 36 labour laws in New York → transformed public attitude to women workers",
+  "p2": "Triangle Shirtwaist (1911) also galvanised the movement, transforming public attitude to women workers and feeding into WTUL's safety campaigns.",
   "p3": "Limits: AFL consistently excluded women from skilled unions → women concentrated in non-unionised clerical and domestic work → FLSA (1938) excluded domestic workers → progress slow and contested",
   "hints": [
    "15% pay",
-   "Frances Perkins",
+   "public attitude",
    "AFL"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 215,
+  "no": 210,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "vietnam-years",
   "periods": [
-   "wom-new-feminism"
+   "vietnam-years"
   ],
   "isDepthStudy": true,
   "front": "How did Black Power advance Black women's position?",
@@ -3899,32 +4062,34 @@
    "BPP",
    "Afro hairstyle",
    "survival programmes"
-  ]
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 216,
+  "no": 211,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "vietnam-years",
   "periods": [
-   "wom-new-feminism"
+   "vietnam-years"
   ],
   "isDepthStudy": true,
   "front": "How did Black Power limit the position of Black women?",
   "p1": "Male chauvinism in BPP: women relegated to typing, cooking, logistics → ideas ignored unless proposed by men (Cleaver) → 'revolutionary first, Sister second'",
   "p2": "NOI: rejected birth control → criticised women challenging traditional gender roles → Black Power leaders viewed feminism as 'white women's issue' → focus on reclaiming Black masculinity limited gender equality.",
-  "p3": "NOW focused on white middle-class concerns → Black women's triple oppression only slowly incorporated → white feminists rarely engaged with racial justice",
+  "p3": "Even prominent women faced dismissal — Angela Davis criticised for doing \"a man's job\" → domestic service roles (cooking, serving) treated as expected subjugation rather than leadership, regardless of standing.",
   "hints": [
    "BPP",
    "NOI",
-   "NOW"
-  ]
+   "man's job"
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 217,
+  "no": 212,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "vietnam-years",
   "periods": [
-   "wom-new-feminism"
+   "vietnam-years"
   ],
   "isDepthStudy": true,
   "front": "How did Black Power influence the wider women's movement?",
@@ -3935,14 +4100,15 @@
    "Intersectionality",
    "NOW",
    "confrontational media"
-  ]
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 218,
+  "no": 213,
   "section": "wom",
-  "period": "wom-new-feminism",
+  "period": "vietnam-years",
   "periods": [
-   "wom-new-feminism"
+   "vietnam-years"
   ],
   "isDepthStudy": true,
   "front": "How limited was Black Power's influence on the women's movement?",
@@ -3953,15 +4119,15 @@
    "NOW",
    "masculinity",
    "Radical"
-  ]
+  ],
+  "depthStudy": "black-power"
  },
  {
-  "no": 219,
+  "no": 214,
   "section": "wom",
-  "period": "wom-backlash",
+  "period": "after-vietnam",
   "periods": [
-   "wom-backlash",
-   "wom-new-feminism"
+   "after-vietnam"
   ],
   "isDepthStudy": false,
   "front": "What were Phyllis Schlafly's arguments against the ERA?",
@@ -3972,15 +4138,15 @@
    "protective legislation",
    "combat roles",
    "traditional family"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 220,
+  "no": 215,
   "section": "wom",
-  "period": "wom-backlash",
+  "period": "after-vietnam",
   "periods": [
-   "wom-backlash",
-   "wom-new-feminism"
+   "after-vietnam"
   ],
   "isDepthStudy": false,
   "front": "What was the political polarisation over abortion after Roe v Wade?",
@@ -3991,15 +4157,15 @@
    "both parties",
    "Republican Party",
    "Planned Parenthood"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 221,
+  "no": 216,
   "section": "wom",
-  "period": "wom-backlash",
+  "period": "after-vietnam",
   "periods": [
-   "wom-backlash",
-   "wom-new-feminism"
+   "after-vietnam"
   ],
   "isDepthStudy": false,
   "front": "What was the ERA and why did it fail?",
@@ -4010,14 +4176,15 @@
    "Alice Paul",
    "constitutional guarantee",
    "1982 deadline"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 222,
+  "no": 217,
   "section": "wom",
-  "period": "wom-backlash",
+  "period": "after-vietnam",
   "periods": [
-   "wom-backlash"
+   "after-vietnam"
   ],
   "isDepthStudy": false,
   "front": "What was the impact of the anti-feminist backlash?",
@@ -4028,14 +4195,15 @@
    "Moral Majority",
    "Hyde Amendment",
    "political realignment"
-  ]
+  ],
+  "depthStudy": null
  },
  {
-  "no": 223,
+  "no": 218,
   "section": "wom",
-  "period": "wom-end",
+  "period": "after-vietnam",
   "periods": [
-   "wom-end"
+   "after-vietnam"
   ],
   "front": "What were the political rights of women by 1992?",
   "p1": "Year of the Woman: 24 women elected to House (11%), 6 to Senate → O'Connor: first female Supreme Court Justice (1981) → Ferraro: first female VP nominee (1984).",
@@ -4048,14 +4216,15 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 224,
+  "no": 219,
   "section": "wom",
-  "period": "wom-end",
+  "period": "after-vietnam",
   "periods": [
-   "wom-end"
+   "after-vietnam"
   ],
   "front": "What was the social position of women by 1992?",
   "p1": "60% of women employed — working mothers the norm → average 2.2 children — lowest since 19th century → women outpacing men in graduation: 84% vs 78%.",
@@ -4068,14 +4237,15 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  },
  {
-  "no": 225,
+  "no": 220,
   "section": "wom",
-  "period": "wom-end",
+  "period": "after-vietnam",
   "periods": [
-   "wom-end"
+   "after-vietnam"
   ],
   "front": "What was the economic position of women by 1992?",
   "p1": "Women 40% of workforce → 75¢ per $1 (up from 59¢ in 1963) → glass ceiling: only 10% of senior management were women.",
@@ -4088,6 +4258,7 @@
   ],
   "isDepthStudy": false,
   "isFactor": false,
-  "isObstacle": false
+  "isObstacle": false,
+  "depthStudy": null
  }
 ]
