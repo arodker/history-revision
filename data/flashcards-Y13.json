@@ -903,32 +903,13 @@
   "no": 48,
   "section": "aa",
   "period": "vietnam-years",
-  "front": "What were the Greensboro Sit-ins (1960) and why were they significant?",
-  "p1": "4 Black students sat at 'white-only' lunch counter in Greensboro, NC → spontaneous non-violent direct action.",
-  "p2": "Over 70,000 students engaged in sit-ins across the South co-ordinated by SNCC → more than 1,000 businesses desegregated lunch counters.",
-  "p3": "Demonstrated power of youth-led spontaneous protest → led to founding of SNCC → showed NAACP's legal approach could be complemented by direct action.",
+  "front": "What were the sit-ins and Freedom Rides of 1960–61?",
+  "p1": "Sit-ins (1960): 4 Black students sat at a 'white-only' lunch counter in Greensboro, NC → spread to 70,000 students across the South, coordinated by SNCC → over 1,000 businesses desegregated.",
+  "p2": "Freedom Rides (1961): CORE + SNCC sent Black and white activists on interstate buses into the Deep South to test Boynton v Virginia → met with violent mobs, including fire-bombings in Alabama.",
+  "p3": "Both showed the power of direct action beyond the NAACP's legal strategy → national outrage forced JFK's administration to set up an interstate commission enforcing bus desegregation.",
   "hints": [
    "lunch counter",
-   "1,000",
-   "SNCC"
-  ],
-  "isDepthStudy": false,
-  "periods": [
-   "vietnam-years"
-  ],
-  "depthStudy": null
- },
- {
-  "no": 49,
-  "section": "aa",
-  "period": "vietnam-years",
-  "front": "What were the Freedom Rides (1961) and what did they achieve?",
-  "p1": "CORE + SNCC → Black and white activists rode interstate buses from Washington D.C. into the Deep South → testing Boynton v Virginia (1960).",
-  "p2": "Met with violent mobs including fire-bombings in Alabama → national outrage → federal government forced to respond.",
-  "p3": "JFK's administration set up an interstate commission to enforce integration on interstate buses - enforcing Boynton v Virginia.",
-  "hints": [
    "Boynton",
-   "Alabama",
    "JFK"
   ],
   "isDepthStudy": false,
@@ -938,7 +919,7 @@
   "depthStudy": null
  },
  {
-  "no": 50,
+  "no": 49,
   "section": "aa",
   "period": "vietnam-years",
   "front": "What was the significance of the Birmingham Campaign (1963)?",
@@ -957,7 +938,7 @@
   "depthStudy": null
  },
  {
-  "no": 51,
+  "no": 50,
   "section": "aa",
   "period": "vietnam-years",
   "front": "What was the significance of the March on Washington (1963)?",
@@ -976,7 +957,7 @@
   "depthStudy": null
  },
  {
-  "no": 52,
+  "no": 51,
   "section": "aa",
   "period": "vietnam-years",
   "front": "What was the impact of the Civil Rights Act (1964)?",
@@ -995,7 +976,7 @@
   "depthStudy": null
  },
  {
-  "no": 53,
+  "no": 52,
   "section": "aa",
   "period": "vietnam-years",
   "front": "What happened during the Selma March and what did it achieve?",
@@ -1014,7 +995,7 @@
   "depthStudy": null
  },
  {
-  "no": 54,
+  "no": 53,
   "section": "aa",
   "period": "wwii-1950s",
   "front": "How did the media help advance the Civil Rights Movement in the 1950s and 60s?",
@@ -1034,7 +1015,7 @@
   "depthStudy": null
  },
  {
-  "no": 55,
+  "no": 54,
   "section": "aa",
   "period": "vietnam-years",
   "front": "What was the impact of the Vietnam War on the Civil Rights Movement?",
@@ -1053,7 +1034,7 @@
   "depthStudy": null
  },
  {
-  "no": 56,
+  "no": 55,
   "section": "aa",
   "period": "vietnam-years",
   "front": "What was the impact of the Great Society on African Americans?",
@@ -1072,27 +1053,7 @@
   "depthStudy": null
  },
  {
-  "no": 57,
-  "section": "aa",
-  "period": "vietnam-years",
-  "periods": [
-   "vietnam-years"
-  ],
-  "front": "What was the role of Bull Connor and George Wallace as opponents of civil rights?",
-  "p1": "Bull Connor (Birmingham): deployed fire hoses and police dogs against peaceful protesters (1963) → footage broadcast globally → shocked public → directly pressured Kennedy to act",
-  "p2": "George Wallace (Alabama): 'Segregation now, segregation tomorrow, segregation forever' (1963) → blocked University of Alabama doorway → ordered troopers to attack Selma marchers (1965) → ran for President 1968: won 5 states on pro-segregation platform",
-  "p3": "Both men essential to movement's success — their brutality generated the moral crisis Kennedy and Johnson needed to justify federal legislation → King chose Birmingham because of Connor",
-  "hints": [
-   "fire hoses",
-   "segregation forever",
-   "moral crisis"
-  ],
-  "isDepthStudy": false,
-  "isFactor": false,
-  "depthStudy": null
- },
- {
-  "no": 58,
+  "no": 56,
   "section": "aa",
   "period": "vietnam-years",
   "front": "What were Malcolm X's key ideas and the Nation of Islam?",
@@ -1111,7 +1072,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 59,
+  "no": 57,
   "section": "aa",
   "period": "vietnam-years",
   "front": "What were the key ideas of Stokely Carmichael and Black Power?",
@@ -1130,17 +1091,17 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 60,
+  "no": 58,
   "section": "aa",
   "period": "vietnam-years",
   "front": "Why did Black Power rise to prominence in the late 1960s?",
-  "p1": "Failures of CRM in North → SCLC/NAACP focused on Southern desegregation → Northern urban communities still faced poverty + police violence. King's Chicago (1966) failed.",
+  "p1": "Failures of CRM in North → SCLC/NAACP focused on Southern desegregation, leaving urban poverty and police violence unaddressed. Malcolm X's ideas of Black nationalism and self-defence had already taken root in Northern communities before his assassination (1965).",
   "p2": "Vietnam War → African Americans disproportionately drafted → returned radicalised and disillusioned with non-violent appeals to the very government sending them to fight.",
-  "p3": "Long Hot Summers (1967) exposed how non-violence had failed to address systemic Northern inequality — poverty and police brutality untouched by Southern-focused civil rights legislation.",
+  "p3": "Long Hot Summers (1967): 150 race riots, largest in Detroit and Newark, following Watts (1965, $40m damage) → exposed failure of non-violence and Southern-focused legislation to address Northern poverty and police brutality.",
   "hints": [
    "North",
    "disillusioned",
-   "Long Hot"
+   "Watts"
   ],
   "isDepthStudy": true,
   "periods": [
@@ -1149,7 +1110,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 61,
+  "no": 59,
   "section": "aa",
   "period": "vietnam-years",
   "front": "What was the negative impact of Nixon's and Reagan's policies on African Americans?",
@@ -1169,7 +1130,7 @@
   "depthStudy": null
  },
  {
-  "no": 62,
+  "no": 60,
   "section": "aa",
   "period": "vietnam-years",
   "front": "What was the impact of the Black Panther Party's community programmes?",
@@ -1188,26 +1149,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 63,
-  "section": "aa",
-  "period": "vietnam-years",
-  "front": "What were the Long Hot Summers (1967) and what caused them?",
-  "p1": "150 race riots in 1967 → largest in Detroit and Newark → response to poverty, police brutality and de facto segregation in Northern cities.",
-  "p2": "Watts (1965) $40m property damage → exposed failure of non-violence + civil rights legislation to address systemic Northern inequality.",
-  "p3": "Showed CRM had not resolved economic grievances → MLK's assassination (1968) triggered new wave of riots → Nixon won on 'Law and Order' ticket.",
-  "hints": [
-   "police brutality",
-   "Watts",
-   "MLK"
-  ],
-  "isDepthStudy": true,
-  "periods": [
-   "vietnam-years"
-  ],
-  "depthStudy": "black-power"
- },
- {
-  "no": 64,
+  "no": 61,
   "section": "aa",
   "period": "vietnam-years",
   "front": "What was the impact of COINTELPRO on Black Power organisations?",
@@ -1226,7 +1168,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 65,
+  "no": 62,
   "section": "aa",
   "period": "vietnam-years",
   "front": "What was the impact of affirmative action on African Americans?",
@@ -1246,7 +1188,7 @@
   "depthStudy": null
  },
  {
-  "no": 66,
+  "no": 63,
   "section": "aa",
   "period": "vietnam-years",
   "isDepthStudy": true,
@@ -1265,7 +1207,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 67,
+  "no": 64,
   "section": "aa",
   "period": "vietnam-years",
   "periods": [
@@ -1285,7 +1227,7 @@
   "depthStudy": null
  },
  {
-  "no": 68,
+  "no": 65,
   "section": "aa",
   "period": "after-vietnam",
   "front": "What was the political position of African Americans by 1992?",
@@ -1304,7 +1246,7 @@
   "depthStudy": null
  },
  {
-  "no": 69,
+  "no": 66,
   "section": "aa",
   "period": "after-vietnam",
   "front": "What was the significance of the Los Angeles Riots (1992)?",
@@ -1323,7 +1265,7 @@
   "depthStudy": null
  },
  {
-  "no": 70,
+  "no": 67,
   "section": "aa",
   "period": "after-vietnam",
   "front": "What was the economic position of African Americans by 1992?",
@@ -1342,7 +1284,7 @@
   "depthStudy": null
  },
  {
-  "no": 71,
+  "no": 68,
   "section": "aa",
   "period": "after-vietnam",
   "periods": [
@@ -1362,7 +1304,7 @@
   "depthStudy": null
  },
  {
-  "no": 72,
+  "no": 69,
   "section": "aa",
   "period": "after-vietnam",
   "front": "How did the Michael Donald case (1981) end differently from earlier lynchings?",
@@ -1381,7 +1323,7 @@
   "depthStudy": null
  },
  {
-  "no": 73,
+  "no": 70,
   "section": "lab",
   "period": "reconstruction",
   "periods": [
@@ -1402,7 +1344,7 @@
   "depthStudy": null
  },
  {
-  "no": 74,
+  "no": 71,
   "section": "lab",
   "period": "reconstruction",
   "periods": [
@@ -1423,7 +1365,7 @@
   "depthStudy": null
  },
  {
-  "no": 75,
+  "no": 72,
   "section": "lab",
   "period": "reconstruction",
   "periods": [
@@ -1444,7 +1386,7 @@
   "depthStudy": null
  },
  {
-  "no": 76,
+  "no": 73,
   "section": "lab",
   "period": "reconstruction",
   "periods": [
@@ -1463,7 +1405,7 @@
   "depthStudy": null
  },
  {
-  "no": 77,
+  "no": 74,
   "section": "lab",
   "period": "reconstruction",
   "periods": [
@@ -1482,7 +1424,7 @@
   "depthStudy": null
  },
  {
-  "no": 78,
+  "no": 75,
   "section": "lab",
   "period": "reconstruction",
   "periods": [
@@ -1502,7 +1444,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 79,
+  "no": 76,
   "section": "lab",
   "period": "reconstruction",
   "periods": [
@@ -1522,7 +1464,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 80,
+  "no": 77,
   "section": "lab",
   "period": "gilded-age",
   "periods": [
@@ -1541,7 +1483,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 81,
+  "no": 78,
   "section": "lab",
   "period": "gilded-age",
   "periods": [
@@ -1560,7 +1502,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 82,
+  "no": 79,
   "section": "lab",
   "period": "gilded-age",
   "periods": [
@@ -1579,7 +1521,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 83,
+  "no": 80,
   "section": "lab",
   "period": "gilded-age",
   "periods": [
@@ -1598,7 +1540,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 84,
+  "no": 81,
   "section": "lab",
   "period": "gilded-age",
   "periods": [
@@ -1618,7 +1560,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 85,
+  "no": 82,
   "section": "lab",
   "period": "gilded-age",
   "periods": [
@@ -1638,7 +1580,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 86,
+  "no": 83,
   "section": "lab",
   "period": "gilded-age",
   "periods": [
@@ -1658,7 +1600,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 87,
+  "no": 84,
   "section": "lab",
   "period": "gilded-age",
   "periods": [
@@ -1678,7 +1620,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 88,
+  "no": 85,
   "section": "lab",
   "period": "gilded-age",
   "periods": [
@@ -1697,7 +1639,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 89,
+  "no": 86,
   "section": "lab",
   "period": "gilded-age",
   "periods": [
@@ -1716,7 +1658,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 90,
+  "no": 87,
   "section": "lab",
   "period": "gilded-age",
   "periods": [
@@ -1736,7 +1678,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 91,
+  "no": 88,
   "section": "lab",
   "period": "progressive-wwi",
   "periods": [
@@ -1755,7 +1697,7 @@
   "depthStudy": null
  },
  {
-  "no": 92,
+  "no": 89,
   "section": "lab",
   "period": "progressive-wwi",
   "periods": [
@@ -1774,7 +1716,7 @@
   "depthStudy": null
  },
  {
-  "no": 93,
+  "no": 90,
   "section": "lab",
   "period": "progressive-wwi",
   "periods": [
@@ -1793,7 +1735,7 @@
   "depthStudy": null
  },
  {
-  "no": 94,
+  "no": 91,
   "section": "lab",
   "period": "progressive-wwi",
   "periods": [
@@ -1812,7 +1754,7 @@
   "depthStudy": null
  },
  {
-  "no": 95,
+  "no": 92,
   "section": "lab",
   "period": "progressive-wwi",
   "periods": [
@@ -1831,7 +1773,7 @@
   "depthStudy": null
  },
  {
-  "no": 96,
+  "no": 93,
   "section": "lab",
   "period": "progressive-wwi",
   "periods": [
@@ -1850,7 +1792,7 @@
   "depthStudy": null
  },
  {
-  "no": 97,
+  "no": 94,
   "section": "lab",
   "period": "progressive-wwi",
   "periods": [
@@ -1869,7 +1811,7 @@
   "depthStudy": null
  },
  {
-  "no": 98,
+  "no": 95,
   "section": "lab",
   "period": "boom-bust",
   "periods": [
@@ -1888,7 +1830,7 @@
   "depthStudy": null
  },
  {
-  "no": 99,
+  "no": 96,
   "section": "lab",
   "period": "boom-bust",
   "periods": [
@@ -1907,7 +1849,7 @@
   "depthStudy": null
  },
  {
-  "no": 100,
+  "no": 97,
   "section": "lab",
   "period": "new-deal",
   "periods": [
@@ -1926,7 +1868,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 101,
+  "no": 98,
   "section": "lab",
   "period": "new-deal",
   "periods": [
@@ -1945,7 +1887,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 102,
+  "no": 99,
   "section": "lab",
   "period": "new-deal",
   "periods": [
@@ -1964,7 +1906,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 103,
+  "no": 100,
   "section": "lab",
   "period": "new-deal",
   "periods": [
@@ -1983,7 +1925,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 104,
+  "no": 101,
   "section": "lab",
   "period": "new-deal",
   "periods": [
@@ -2002,7 +1944,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 105,
+  "no": 102,
   "section": "lab",
   "period": "new-deal",
   "periods": [
@@ -2021,7 +1963,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 106,
+  "no": 103,
   "section": "lab",
   "period": "wwii-1950s",
   "periods": [
@@ -2040,7 +1982,7 @@
   "depthStudy": null
  },
  {
-  "no": 107,
+  "no": 104,
   "section": "lab",
   "period": "wwii-1950s",
   "periods": [
@@ -2059,7 +2001,7 @@
   "depthStudy": null
  },
  {
-  "no": 108,
+  "no": 105,
   "section": "lab",
   "period": "wwii-1950s",
   "periods": [
@@ -2078,7 +2020,7 @@
   "depthStudy": null
  },
  {
-  "no": 109,
+  "no": 106,
   "section": "lab",
   "period": "wwii-1950s",
   "periods": [
@@ -2098,7 +2040,7 @@
   "depthStudy": null
  },
  {
-  "no": 110,
+  "no": 107,
   "section": "lab",
   "period": "vietnam-years",
   "periods": [
@@ -2117,7 +2059,7 @@
   "depthStudy": null
  },
  {
-  "no": 111,
+  "no": 108,
   "section": "lab",
   "period": "vietnam-years",
   "periods": [
@@ -2137,7 +2079,7 @@
   "depthStudy": null
  },
  {
-  "no": 112,
+  "no": 109,
   "section": "lab",
   "period": "vietnam-years",
   "periods": [
@@ -2156,7 +2098,7 @@
   "depthStudy": null
  },
  {
-  "no": 113,
+  "no": 110,
   "section": "lab",
   "period": "vietnam-years",
   "periods": [
@@ -2175,7 +2117,7 @@
   "depthStudy": null
  },
  {
-  "no": 114,
+  "no": 111,
   "section": "lab",
   "period": "vietnam-years",
   "periods": [
@@ -2194,7 +2136,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 115,
+  "no": 112,
   "section": "lab",
   "period": "after-vietnam",
   "periods": [
@@ -2213,7 +2155,7 @@
   "depthStudy": null
  },
  {
-  "no": 116,
+  "no": 113,
   "section": "lab",
   "period": "after-vietnam",
   "periods": [
@@ -2232,7 +2174,7 @@
   "depthStudy": null
  },
  {
-  "no": 117,
+  "no": 114,
   "section": "lab",
   "period": "after-vietnam",
   "periods": [
@@ -2253,7 +2195,7 @@
   "depthStudy": null
  },
  {
-  "no": 118,
+  "no": 115,
   "section": "lab",
   "period": "after-vietnam",
   "periods": [
@@ -2274,7 +2216,7 @@
   "depthStudy": null
  },
  {
-  "no": 119,
+  "no": 116,
   "section": "lab",
   "period": "after-vietnam",
   "periods": [
@@ -2295,7 +2237,7 @@
   "depthStudy": null
  },
  {
-  "no": 120,
+  "no": 117,
   "section": "na",
   "period": "reconstruction",
   "periods": [
@@ -2315,7 +2257,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 121,
+  "no": 118,
   "section": "na",
   "period": "gilded-age",
   "periods": [
@@ -2334,7 +2276,7 @@
   "depthStudy": null
  },
  {
-  "no": 122,
+  "no": 119,
   "section": "na",
   "period": "reconstruction",
   "periods": [
@@ -2355,7 +2297,7 @@
   "depthStudy": null
  },
  {
-  "no": 123,
+  "no": 120,
   "section": "na",
   "period": "reconstruction",
   "periods": [
@@ -2376,7 +2318,7 @@
   "depthStudy": null
  },
  {
-  "no": 124,
+  "no": 121,
   "section": "na",
   "period": "reconstruction",
   "periods": [
@@ -2397,7 +2339,7 @@
   "depthStudy": null
  },
  {
-  "no": 125,
+  "no": 122,
   "section": "na",
   "period": "reconstruction",
   "periods": [
@@ -2418,7 +2360,7 @@
   "depthStudy": null
  },
  {
-  "no": 126,
+  "no": 123,
   "section": "na",
   "period": "reconstruction",
   "periods": [
@@ -2438,7 +2380,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 127,
+  "no": 124,
   "section": "na",
   "period": "reconstruction",
   "periods": [
@@ -2458,7 +2400,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 128,
+  "no": 125,
   "section": "na",
   "period": "reconstruction",
   "periods": [
@@ -2477,7 +2419,7 @@
   "depthStudy": null
  },
  {
-  "no": 129,
+  "no": 126,
   "section": "na",
   "period": "reconstruction",
   "periods": [
@@ -2496,7 +2438,7 @@
   "depthStudy": null
  },
  {
-  "no": 130,
+  "no": 127,
   "section": "na",
   "period": "reconstruction",
   "periods": [
@@ -2515,7 +2457,7 @@
   "depthStudy": null
  },
  {
-  "no": 131,
+  "no": 128,
   "section": "na",
   "period": "reconstruction",
   "periods": [
@@ -2535,7 +2477,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 132,
+  "no": 129,
   "section": "na",
   "period": "gilded-age",
   "periods": [
@@ -2554,7 +2496,7 @@
   "depthStudy": null
  },
  {
-  "no": 133,
+  "no": 130,
   "section": "na",
   "period": "gilded-age",
   "periods": [
@@ -2573,7 +2515,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 134,
+  "no": 131,
   "section": "na",
   "period": "gilded-age",
   "periods": [
@@ -2592,7 +2534,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 135,
+  "no": 132,
   "section": "na",
   "period": "gilded-age",
   "periods": [
@@ -2611,7 +2553,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 136,
+  "no": 133,
   "section": "na",
   "period": "gilded-age",
   "periods": [
@@ -2630,7 +2572,7 @@
   "depthStudy": null
  },
  {
-  "no": 137,
+  "no": 134,
   "section": "na",
   "period": "gilded-age",
   "periods": [
@@ -2649,7 +2591,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 138,
+  "no": 135,
   "section": "na",
   "period": "gilded-age",
   "periods": [
@@ -2668,7 +2610,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 139,
+  "no": 136,
   "section": "na",
   "period": "gilded-age",
   "periods": [
@@ -2687,7 +2629,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 140,
+  "no": 137,
   "section": "na",
   "period": "gilded-age",
   "periods": [
@@ -2706,7 +2648,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 141,
+  "no": 138,
   "section": "na",
   "period": "gilded-age",
   "periods": [
@@ -2725,7 +2667,7 @@
   "depthStudy": null
  },
  {
-  "no": 142,
+  "no": 139,
   "section": "na",
   "period": "gilded-age",
   "periods": [
@@ -2744,7 +2686,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 143,
+  "no": 140,
   "section": "na",
   "period": "progressive-wwi",
   "periods": [
@@ -2763,7 +2705,7 @@
   "depthStudy": null
  },
  {
-  "no": 144,
+  "no": 141,
   "section": "na",
   "period": "progressive-wwi",
   "periods": [
@@ -2782,7 +2724,7 @@
   "depthStudy": null
  },
  {
-  "no": 145,
+  "no": 142,
   "section": "na",
   "period": "boom-bust",
   "periods": [
@@ -2801,7 +2743,7 @@
   "depthStudy": null
  },
  {
-  "no": 146,
+  "no": 143,
   "section": "na",
   "period": "boom-bust",
   "periods": [
@@ -2820,7 +2762,7 @@
   "depthStudy": null
  },
  {
-  "no": 147,
+  "no": 144,
   "section": "na",
   "period": "new-deal",
   "periods": [
@@ -2839,7 +2781,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 148,
+  "no": 145,
   "section": "na",
   "period": "new-deal",
   "periods": [
@@ -2858,7 +2800,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 149,
+  "no": 146,
   "section": "na",
   "period": "new-deal",
   "periods": [
@@ -2877,7 +2819,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 150,
+  "no": 147,
   "section": "na",
   "period": "wwii-1950s",
   "periods": [
@@ -2896,7 +2838,7 @@
   "depthStudy": null
  },
  {
-  "no": 151,
+  "no": 148,
   "section": "na",
   "period": "wwii-1950s",
   "periods": [
@@ -2915,7 +2857,7 @@
   "depthStudy": null
  },
  {
-  "no": 152,
+  "no": 149,
   "section": "na",
   "period": "wwii-1950s",
   "periods": [
@@ -2935,7 +2877,7 @@
   "depthStudy": null
  },
  {
-  "no": 153,
+  "no": 150,
   "section": "na",
   "period": "wwii-1950s",
   "periods": [
@@ -2954,7 +2896,7 @@
   "depthStudy": null
  },
  {
-  "no": 154,
+  "no": 151,
   "section": "na",
   "period": "vietnam-years",
   "periods": [
@@ -2973,7 +2915,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 155,
+  "no": 152,
   "section": "na",
   "period": "wwii-1950s",
   "periods": [
@@ -2993,7 +2935,7 @@
   "depthStudy": null
  },
  {
-  "no": 156,
+  "no": 153,
   "section": "na",
   "period": "vietnam-years",
   "periods": [
@@ -3012,7 +2954,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 157,
+  "no": 154,
   "section": "na",
   "period": "vietnam-years",
   "periods": [
@@ -3031,7 +2973,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 158,
+  "no": 155,
   "section": "na",
   "period": "vietnam-years",
   "periods": [
@@ -3050,7 +2992,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 159,
+  "no": 156,
   "section": "na",
   "period": "vietnam-years",
   "periods": [
@@ -3069,7 +3011,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 160,
+  "no": 157,
   "section": "na",
   "period": "vietnam-years",
   "periods": [
@@ -3089,7 +3031,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 161,
+  "no": 158,
   "section": "na",
   "period": "after-vietnam",
   "periods": [
@@ -3108,7 +3050,7 @@
   "depthStudy": null
  },
  {
-  "no": 162,
+  "no": 159,
   "section": "na",
   "period": "after-vietnam",
   "periods": [
@@ -3129,7 +3071,7 @@
   "depthStudy": null
  },
  {
-  "no": 163,
+  "no": 160,
   "section": "na",
   "period": "after-vietnam",
   "periods": [
@@ -3150,7 +3092,7 @@
   "depthStudy": null
  },
  {
-  "no": 164,
+  "no": 161,
   "section": "na",
   "period": "after-vietnam",
   "periods": [
@@ -3171,7 +3113,7 @@
   "depthStudy": null
  },
  {
-  "no": 165,
+  "no": 162,
   "section": "na",
   "period": "after-vietnam",
   "periods": [
@@ -3192,7 +3134,7 @@
   "depthStudy": null
  },
  {
-  "no": 166,
+  "no": 163,
   "section": "wom",
   "period": "reconstruction",
   "periods": [
@@ -3212,7 +3154,7 @@
   "depthStudy": null
  },
  {
-  "no": 167,
+  "no": 164,
   "section": "wom",
   "period": "reconstruction",
   "periods": [
@@ -3232,7 +3174,7 @@
   "depthStudy": null
  },
  {
-  "no": 168,
+  "no": 165,
   "section": "wom",
   "period": "reconstruction",
   "periods": [
@@ -3253,7 +3195,7 @@
   "depthStudy": null
  },
  {
-  "no": 169,
+  "no": 166,
   "section": "wom",
   "period": "reconstruction",
   "periods": [
@@ -3274,7 +3216,7 @@
   "depthStudy": null
  },
  {
-  "no": 170,
+  "no": 167,
   "section": "wom",
   "period": "reconstruction",
   "periods": [
@@ -3295,7 +3237,7 @@
   "depthStudy": null
  },
  {
-  "no": 171,
+  "no": 168,
   "section": "wom",
   "period": "reconstruction",
   "periods": [
@@ -3315,7 +3257,7 @@
   "depthStudy": null
  },
  {
-  "no": 172,
+  "no": 169,
   "section": "wom",
   "period": "reconstruction",
   "periods": [
@@ -3334,7 +3276,7 @@
   "depthStudy": null
  },
  {
-  "no": 173,
+  "no": 170,
   "section": "wom",
   "period": "gilded-age",
   "periods": [
@@ -3354,7 +3296,7 @@
   "depthStudy": null
  },
  {
-  "no": 174,
+  "no": 171,
   "section": "wom",
   "period": "gilded-age",
   "periods": [
@@ -3374,7 +3316,7 @@
   "depthStudy": null
  },
  {
-  "no": 175,
+  "no": 172,
   "section": "wom",
   "period": "gilded-age",
   "periods": [
@@ -3394,7 +3336,7 @@
   "depthStudy": null
  },
  {
-  "no": 176,
+  "no": 173,
   "section": "wom",
   "period": "gilded-age",
   "periods": [
@@ -3413,7 +3355,7 @@
   "depthStudy": null
  },
  {
-  "no": 177,
+  "no": 174,
   "section": "wom",
   "period": "gilded-age",
   "periods": [
@@ -3432,7 +3374,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 178,
+  "no": 175,
   "section": "wom",
   "period": "gilded-age",
   "periods": [
@@ -3451,7 +3393,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 179,
+  "no": 176,
   "section": "wom",
   "period": "gilded-age",
   "periods": [
@@ -3470,7 +3412,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 180,
+  "no": 177,
   "section": "wom",
   "period": "gilded-age",
   "periods": [
@@ -3489,7 +3431,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 181,
+  "no": 178,
   "section": "wom",
   "period": "gilded-age",
   "periods": [
@@ -3508,7 +3450,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 182,
+  "no": 179,
   "section": "wom",
   "period": "gilded-age",
   "periods": [
@@ -3527,7 +3469,7 @@
   "depthStudy": "gilded-age"
  },
  {
-  "no": 183,
+  "no": 180,
   "section": "wom",
   "period": "progressive-wwi",
   "periods": [
@@ -3547,7 +3489,7 @@
   "depthStudy": null
  },
  {
-  "no": 184,
+  "no": 181,
   "section": "wom",
   "period": "progressive-wwi",
   "periods": [
@@ -3567,7 +3509,7 @@
   "depthStudy": null
  },
  {
-  "no": 185,
+  "no": 182,
   "section": "wom",
   "period": "progressive-wwi",
   "periods": [
@@ -3586,7 +3528,7 @@
   "depthStudy": null
  },
  {
-  "no": 186,
+  "no": 183,
   "section": "wom",
   "period": "progressive-wwi",
   "periods": [
@@ -3605,7 +3547,7 @@
   "depthStudy": null
  },
  {
-  "no": 187,
+  "no": 184,
   "section": "wom",
   "period": "progressive-wwi",
   "periods": [
@@ -3624,7 +3566,7 @@
   "depthStudy": null
  },
  {
-  "no": 188,
+  "no": 185,
   "section": "wom",
   "period": "progressive-wwi",
   "periods": [
@@ -3644,7 +3586,7 @@
   "depthStudy": null
  },
  {
-  "no": 189,
+  "no": 186,
   "section": "wom",
   "period": "boom-bust",
   "periods": [
@@ -3663,7 +3605,7 @@
   "depthStudy": null
  },
  {
-  "no": 190,
+  "no": 187,
   "section": "wom",
   "period": "boom-bust",
   "periods": [
@@ -3682,7 +3624,7 @@
   "depthStudy": null
  },
  {
-  "no": 191,
+  "no": 188,
   "section": "wom",
   "period": "new-deal",
   "periods": [
@@ -3701,7 +3643,7 @@
   "depthStudy": null
  },
  {
-  "no": 192,
+  "no": 189,
   "section": "wom",
   "period": "new-deal",
   "periods": [
@@ -3720,7 +3662,7 @@
   "depthStudy": null
  },
  {
-  "no": 193,
+  "no": 190,
   "section": "wom",
   "period": "new-deal",
   "periods": [
@@ -3740,7 +3682,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 194,
+  "no": 191,
   "section": "wom",
   "period": "new-deal",
   "periods": [
@@ -3760,7 +3702,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 195,
+  "no": 192,
   "section": "wom",
   "period": "new-deal",
   "periods": [
@@ -3779,7 +3721,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 196,
+  "no": 193,
   "section": "wom",
   "period": "new-deal",
   "periods": [
@@ -3798,7 +3740,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 197,
+  "no": 194,
   "section": "wom",
   "period": "new-deal",
   "periods": [
@@ -3817,7 +3759,7 @@
   "depthStudy": "new-deal"
  },
  {
-  "no": 198,
+  "no": 195,
   "section": "wom",
   "period": "wwii-1950s",
   "periods": [
@@ -3836,7 +3778,7 @@
   "depthStudy": null
  },
  {
-  "no": 199,
+  "no": 196,
   "section": "wom",
   "period": "wwii-1950s",
   "periods": [
@@ -3855,7 +3797,7 @@
   "depthStudy": null
  },
  {
-  "no": 200,
+  "no": 197,
   "section": "wom",
   "period": "wwii-1950s",
   "periods": [
@@ -3875,7 +3817,7 @@
   "depthStudy": null
  },
  {
-  "no": 201,
+  "no": 198,
   "section": "wom",
   "period": "vietnam-years",
   "periods": [
@@ -3895,7 +3837,7 @@
   "depthStudy": null
  },
  {
-  "no": 202,
+  "no": 199,
   "section": "wom",
   "period": "vietnam-years",
   "periods": [
@@ -3914,7 +3856,7 @@
   "depthStudy": null
  },
  {
-  "no": 203,
+  "no": 200,
   "section": "wom",
   "period": "vietnam-years",
   "periods": [
@@ -3933,7 +3875,7 @@
   "depthStudy": null
  },
  {
-  "no": 204,
+  "no": 201,
   "section": "wom",
   "period": "vietnam-years",
   "periods": [
@@ -3952,7 +3894,7 @@
   "depthStudy": null
  },
  {
-  "no": 205,
+  "no": 202,
   "section": "wom",
   "period": "vietnam-years",
   "periods": [
@@ -3971,7 +3913,7 @@
   "depthStudy": null
  },
  {
-  "no": 206,
+  "no": 203,
   "section": "wom",
   "period": "vietnam-years",
   "periods": [
@@ -3990,7 +3932,7 @@
   "depthStudy": null
  },
  {
-  "no": 207,
+  "no": 204,
   "section": "wom",
   "period": "vietnam-years",
   "periods": [
@@ -4009,7 +3951,7 @@
   "depthStudy": null
  },
  {
-  "no": 208,
+  "no": 205,
   "section": "wom",
   "period": "vietnam-years",
   "periods": [
@@ -4028,7 +3970,7 @@
   "depthStudy": null
  },
  {
-  "no": 209,
+  "no": 206,
   "section": "wom",
   "period": "progressive-wwi",
   "periods": [
@@ -4047,7 +3989,7 @@
   "depthStudy": null
  },
  {
-  "no": 210,
+  "no": 207,
   "section": "wom",
   "period": "vietnam-years",
   "periods": [
@@ -4066,7 +4008,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 211,
+  "no": 208,
   "section": "wom",
   "period": "vietnam-years",
   "periods": [
@@ -4085,7 +4027,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 212,
+  "no": 209,
   "section": "wom",
   "period": "vietnam-years",
   "periods": [
@@ -4104,7 +4046,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 213,
+  "no": 210,
   "section": "wom",
   "period": "vietnam-years",
   "periods": [
@@ -4123,7 +4065,7 @@
   "depthStudy": "black-power"
  },
  {
-  "no": 214,
+  "no": 211,
   "section": "wom",
   "period": "after-vietnam",
   "periods": [
@@ -4142,7 +4084,7 @@
   "depthStudy": null
  },
  {
-  "no": 215,
+  "no": 212,
   "section": "wom",
   "period": "after-vietnam",
   "periods": [
@@ -4161,7 +4103,7 @@
   "depthStudy": null
  },
  {
-  "no": 216,
+  "no": 213,
   "section": "wom",
   "period": "after-vietnam",
   "periods": [
@@ -4180,7 +4122,7 @@
   "depthStudy": null
  },
  {
-  "no": 217,
+  "no": 214,
   "section": "wom",
   "period": "after-vietnam",
   "periods": [
@@ -4199,7 +4141,7 @@
   "depthStudy": null
  },
  {
-  "no": 218,
+  "no": 215,
   "section": "wom",
   "period": "after-vietnam",
   "periods": [
@@ -4220,7 +4162,7 @@
   "depthStudy": null
  },
  {
-  "no": 219,
+  "no": 216,
   "section": "wom",
   "period": "after-vietnam",
   "periods": [
@@ -4241,7 +4183,7 @@
   "depthStudy": null
  },
  {
-  "no": 220,
+  "no": 217,
   "section": "wom",
   "period": "after-vietnam",
   "periods": [
