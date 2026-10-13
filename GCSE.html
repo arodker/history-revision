@@ -1473,9 +1473,12 @@ function printFlashcards() {
   </div>`;
   const backCell = c => {
     const pts = ['p1','p2','p3'].filter(k => c[k]).map(k => `<li>${escHtml(c[k])}</li>`).join('');
+    const hints = (c.hints || []).filter(Boolean);
+    const hintsHtml = hints.length ? `<div class="fcard-hints">Hints: ${hints.map(escHtml).join(' / ')}</div>` : '';
     return `<div class="fcard">
       <div class="fcard-no">${c.no != null ? '#' + c.no : ''}</div>
       <ul>${pts}</ul>
+      ${hintsHtml}
     </div>`;
   };
   const blankCell = '<div class="fcard fcard-blank"></div>';
@@ -1514,6 +1517,7 @@ function printFlashcards() {
       .fcard-q { font-size:12.5pt; font-weight:700; line-height:1.4; text-align:center; }
       .fcard ul { padding-left:.5cm; }
       .fcard li { font-size:10pt; line-height:1.45; margin-bottom:.3cm; }
+      .fcard-hints { font-size:7pt; color:#aaa; text-align:center; margin-top:.2cm; font-style:italic; }
       @media print { @page { size:A4; margin:.6cm; } }
     </style></head>
     <body>
