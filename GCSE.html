@@ -1461,38 +1461,63 @@ function printFlashcards() {
   const paperLabel = paperNames[currentPaper] || currentPaper;
   const unitLabel = unit === 'all' ? 'All units' : unit;
 
-  const cardsHtml = cards.map(c => {
+  // 4 cards per page, 2x2 grid
+  const PER_PAGE = 4;
+  const pages = [];
+  for (let i = 0; i < cards.length; i += PER_PAGE) pages.push(cards.slice(i, i + PER_PAGE));
+
+  const frontCell = c => `<div class="fcard">
+    <div class="fcard-no">${c.no != null ? '#' + c.no : ''}</div>
+    <div class="fcard-tag">${escHtml(c.unit || '')}</div>
+    <div class="fcard-q">${escHtml(c.front)}</div>
+  </div>`;
+  const backCell = c => {
     const pts = ['p1','p2','p3'].filter(k => c[k]).map(k => `<li>${escHtml(c[k])}</li>`).join('');
     return `<div class="fcard">
-      <div class="fcard-front">
-        <div class="fcard-tag">${escHtml(c.unit || '')}</div>
-        <div class="fcard-q">${escHtml(c.front)}</div>
-      </div>
-      <div class="fcard-fold">✂ fold or cut here ✂</div>
-      <div class="fcard-back">
-        <ul>${pts}</ul>
-      </div>
+      <div class="fcard-no">${c.no != null ? '#' + c.no : ''}</div>
+      <ul>${pts}</ul>
     </div>`;
+  };
+  const blankCell = '<div class="fcard fcard-blank"></div>';
+
+  // Backs are mirrored left-right within each row so they line up with
+  // their fronts when duplex-printed with "flip on long edge" (the
+  // standard book-style duplex flip most printers default to).
+  const mirrorRow = (arr) => {
+    const out = arr.slice();
+    for (let r = 0; r < out.length; r += 2) {
+      if (r + 1 < out.length) { const t = out[r]; out[r] = out[r+1]; out[r+1] = t; }
+    }
+    return out;
+  };
+
+  const pagesHtml = pages.map(group => {
+    const front = group.map(frontCell);
+    while (front.length < PER_PAGE) front.push(blankCell);
+    const backGroup = mirrorRow(group.slice());
+    const back = backGroup.map(c => c ? backCell(c) : blankCell);
+    while (back.length < PER_PAGE) back.push(blankCell);
+    return `<div class="page">${front.join('')}</div><div class="page">${back.join('')}</div>`;
   }).join('');
 
   const win = window.open('', '_blank');
   win.document.write(`<!DOCTYPE html><html><head><title>Flashcards — ${escHtml(paperLabel)}</title>
     <style>
       * { box-sizing:border-box; margin:0; padding:0; }
-      body { font-family:Georgia,serif; color:#111; padding:.6cm; }
-      h2 { font-size:10pt; font-weight:700; color:#555; margin-bottom:.4cm; }
-      .grid { display:grid; grid-template-columns:1fr 1fr; gap:.5cm; }
-      .fcard { border:1.5px dashed #999; border-radius:6px; padding:.4cm; break-inside:avoid; display:flex; flex-direction:column; min-height:7.5cm; }
-      .fcard-tag { font-size:7pt; text-transform:uppercase; letter-spacing:.04em; color:#888; margin-bottom:.15cm; }
-      .fcard-q { font-size:10.5pt; font-weight:700; line-height:1.35; }
-      .fcard-fold { text-align:center; font-size:7pt; color:#bbb; border-top:1px dashed #ccc; border-bottom:1px dashed #ccc; margin:.3cm 0; padding:.1cm 0; }
-      .fcard-back ul { padding-left:.45cm; }
-      .fcard-back li { font-size:9pt; line-height:1.4; margin-bottom:.2cm; }
-      @media print { @page { size:A4; margin:.8cm; } body { padding:0; } .grid { gap:.4cm; } }
+      body { font-family:Georgia,serif; color:#111; }
+      .page { page-break-after:always; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:.5cm; height:26.5cm; padding:.3cm; }
+      .page:last-child { page-break-after:auto; }
+      .fcard { border:1.5px dashed #999; border-radius:8px; padding:.6cm; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden; }
+      .fcard-blank { border:none; }
+      .fcard-no { position:absolute; top:.3cm; right:.4cm; font-size:7pt; color:#bbb; font-weight:600; }
+      .fcard-tag { font-size:7pt; text-transform:uppercase; letter-spacing:.04em; color:#888; margin-bottom:.25cm; text-align:center; }
+      .fcard-q { font-size:12.5pt; font-weight:700; line-height:1.4; text-align:center; }
+      .fcard ul { padding-left:.5cm; }
+      .fcard li { font-size:10pt; line-height:1.45; margin-bottom:.3cm; }
+      @media print { @page { size:A4; margin:.6cm; } }
     </style></head>
     <body>
-    <h2>Flashcards — ${escHtml(paperLabel)} · ${escHtml(unitLabel)}</h2>
-    <div class="grid">${cardsHtml}</div>
+    ${pagesHtml}
     <script>window.onload=()=>{window.print()}<\/script></body></html>`);
   win.document.close();
 }
