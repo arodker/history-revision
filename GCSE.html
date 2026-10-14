@@ -1466,34 +1466,46 @@ function printFlashcards() {
   const pages = [];
   for (let i = 0; i < cards.length; i += PER_PAGE) pages.push(cards.slice(i, i + PER_PAGE));
 
+  // Fixed card boxes (needed for front/back duplex alignment) mean long
+  // text must shrink to fit rather than overflow. Pick a font size by
+  // content length rather than leaving every card at one fixed size.
+  const sizeFor = (len, tiers) => {
+    for (const [max, size] of tiers) if (len <= max) return size;
+    return tiers[tiers.length - 1][1];
+  };
   const frontCell = c => {
     const hints = (c.hints || []).filter(Boolean);
     const hintsHtml = hints.length ? `<div class="fcard-hints">Hints: ${hints.map(escHtml).join(' / ')}</div>` : '';
+    const qSize = sizeFor(c.front.length, [[55,'17pt'],[85,'14.5pt'],[120,'12.5pt'],[999,'11pt']]);
     return `<div class="fcard">
     <div class="fcard-no">${c.no != null ? '#' + c.no : ''}</div>
     <div class="fcard-tag">${escHtml(paperLabel)} · ${escHtml(c.unit || '')}</div>
-    <div class="fcard-q">${escHtml(c.front)}</div>
+    <div class="fcard-q" style="font-size:${qSize}">${escHtml(c.front)}</div>
     ${hintsHtml}
   </div>`;
   };
   const backCell = c => {
-    const pts = ['p1','p2','p3'].filter(k => c[k]).map(k => `<li>${escHtml(c[k])}</li>`).join('');
+    const parts = ['p1','p2','p3'].filter(k => c[k]);
+    const totalLen = parts.reduce((n,k) => n + c[k].length, 0);
+    const liSize = sizeFor(totalLen, [[220,'13pt'],[320,'11.5pt'],[420,'10pt'],[9999,'8.5pt']]);
+    const pts = parts.map(k => `<li>${escHtml(c[k])}</li>`).join('');
     return `<div class="fcard">
       <div class="fcard-no">${c.no != null ? '#' + c.no : ''}</div>
-      <ul>${pts}</ul>
+      <ul style="font-size:${liSize}">${pts}</ul>
     </div>`;
   };
   const blankCell = '<div class="fcard fcard-blank"></div>';
 
-  // Backs are mirrored left-right within each row so they line up with
-  // their fronts when duplex-printed with "flip on long edge" (the
-  // standard book-style duplex flip most printers default to).
+  // Backs are mirrored top-to-bottom (rows swapped) so they line up with
+  // their fronts when duplex-printed with "flip on long edge" — the
+  // printer default, and correct here because the page is landscape: the
+  // paper's long physical edge stays the top/bottom edge, so the flip
+  // rotates top-to-bottom rather than left-to-right.
   const mirrorRow = (arr) => {
-    const out = arr.slice();
-    for (let r = 0; r < out.length; r += 2) {
-      if (r + 1 < out.length) { const t = out[r]; out[r] = out[r+1]; out[r+1] = t; }
-    }
-    return out;
+    const rows = [];
+    for (let r = 0; r < arr.length; r += 2) rows.push(arr.slice(r, r + 2));
+    rows.reverse();
+    return rows.flat();
   };
 
   const pagesHtml = pages.map(group => {
@@ -1516,9 +1528,9 @@ function printFlashcards() {
       .fcard-blank { border:none; }
       .fcard-no { position:absolute; top:.3cm; left:.4cm; font-size:8pt; color:#bbb; font-weight:600; }
       .fcard-tag { position:absolute; top:.3cm; right:.4cm; font-size:8pt; text-transform:uppercase; letter-spacing:.04em; color:#888; text-align:right; }
-      .fcard-q { font-size:17pt; font-weight:700; line-height:1.4; text-align:center; }
+      .fcard-q { font-weight:700; line-height:1.4; text-align:center; }
       .fcard ul { padding-left:.6cm; }
-      .fcard li { font-size:13pt; line-height:1.5; margin-bottom:.35cm; }
+      .fcard li { line-height:1.5; margin-bottom:.35cm; }
       .fcard-hints { position:absolute; bottom:.35cm; left:.4cm; font-size:8pt; color:#aaa; font-style:italic; }
       @media print { @page { size:A4 landscape; margin:.6cm; } }
     </style></head>
