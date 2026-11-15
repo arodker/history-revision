@@ -4265,7 +4265,7 @@ function arcMenu() {
     '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Type the answer. Right answers hurt the boss, misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
     '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>60 seconds. Tap the true dates, ignore the false ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
     '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
-    '<div class="arc-note">Timed: 7 seconds a pair in Match the dates, 5 a block in Stack it, 20 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
+    '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 20 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
 }
 function arcShort(msg) { fdShowToast(msg); }
 function arcFrame(inner, head) {
@@ -4301,7 +4301,7 @@ function mtRound(msg) {
   }
   g.items = items; g.dates = shuffle(items.map((it, i) => i)); g.done = {}; g.selE = -1; g.selD = -1; g.bad = '';
   g.msg = msg || ''; g.busy = false;
-  arcTimerStart(g.n * 7, mtLate);
+  arcTimerStart(30, mtLate);
   mtRender();
 }
 function mtRender() {
@@ -4490,12 +4490,23 @@ function bossStart() {
 }
 function bossQ() { const g = ARC.g; if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; } return g.pool[g.i]; }
 // ----- typed answer marking -----
-const BS_STOP = new Set(['the','a','an','of','and','or','to','in','on','at','for','by','with','was','were','is','are','as','his','her','its','their']);
+const BS_STOP = new Set(['the','a','an','of','and','or','to','in','on','at','for','by','with','was','were','is','are','as','his','her','its','their','they','them','he','she','it','be','been','being','had','has','have','did','do','does','that','this','who','which']);
 const BS_GENERIC = new Set(['act','treaty','plan','party','league','law','laws','conference','summit','pact','crisis','war','republic','government','state','states','united','british','britain','national','people','peoples','nazi','nazis']);
 function bsNorm(t) {
   return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/(\d)[,\s](?=\d{3}\b)/g, '$1').replace(/&/g, ' and ').replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
 }
-function bsStem(w) { return w.length > 3 && /s$/.test(w) && !/ss$/.test(w) ? w.slice(0, -1) : w; }
+const BS_IRR = {burnt:'burn', learnt:'learn', dreamt:'dream', spelt:'spell', swore:'swear', sworn:'swear', fled:'flee', fought:'fight', led:'lead', built:'build', sold:'sell', won:'win', ran:'run', rose:'rise', risen:'rise', took:'take', taken:'take', gave:'give', given:'give', wrote:'write', written:'write', began:'begin', begun:'begin', broke:'break', broken:'break', brought:'bring', held:'hold', kept:'keep', left:'leave', lost:'lose', made:'make', met:'meet', paid:'pay', saw:'see', seen:'see', sent:'send', stood:'stand', taught:'teach', told:'tell', thought:'think', women:'woman', men:'man', children:'child', people:'person'};
+function bsStem(w) {
+  if (BS_IRR[w]) return BS_IRR[w];
+  if (w.length > 4 && /ied$/.test(w)) w = w.slice(0, -3) + 'y';
+  else if (w.length > 5 && /ing$/.test(w)) w = w.slice(0, -3);
+  else if (w.length > 4 && /ed$/.test(w)) w = w.slice(0, -2);
+  else if (w.length > 4 && /(ch|sh|ss|x|z)es$/.test(w)) w = w.slice(0, -2);
+  else if (w.length > 3 && /s$/.test(w) && !/(ss|us|is)$/.test(w)) w = w.slice(0, -1);
+  if (w.length > 3 && /(.)\1$/.test(w) && !/(ss|ll)$/.test(w)) w = w.slice(0, -1);
+  if (w.length > 3 && /e$/.test(w)) w = w.slice(0, -1);
+  return BS_IRR[w] || w;
+}
 function bsToks(t) { return bsNorm(t).split(' ').filter(w => w && !BS_STOP.has(w)).map(bsStem); }
 function bsLev(a, b) {
   const m = a.length, n = b.length;
