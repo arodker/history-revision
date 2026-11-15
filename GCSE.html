@@ -690,6 +690,9 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .mt-b:disabled{cursor:default}
 
 .boss-hintline{min-height:1.1rem;text-align:center;font-size:.78rem;font-weight:600;color:var(--muted);margin:.35rem 0 .1rem}
+.boss-auto{height:4px;border-radius:2px;background:var(--subtle);overflow:hidden;margin:.5rem 0 .2rem}
+.boss-auto i{display:block;height:100%;background:#B5473A;animation:bossauto 3s linear forwards}
+@keyframes bossauto{from{width:100%}to{width:0}}
 .boss-right{display:block;margin:.5rem auto 0;background:none;border:1px solid var(--border2);color:var(--muted);border-radius:999px;padding:.25rem .8rem;font-family:inherit;font-size:.7rem;font-weight:600;cursor:pointer}
 
 #bn-banner{position:fixed;left:50%;bottom:4rem;transform:translate(-50%,20px);background:var(--text);color:var(--bg);font-size:.8rem;font-weight:700;padding:.4rem .9rem;border-radius:20px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:9998;white-space:nowrap}
@@ -4318,7 +4321,7 @@ function arcMenu() {
     '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Type the answer. Right answers hurt the boss, misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
     '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>60 seconds. Tap right answers, ignore wrong ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
     '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
-    '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 25 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
+    '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 12 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
 }
 function arcShort(msg) { fdShowToast(msg); }
 function arcFrame(inner, head) {
@@ -4537,7 +4540,7 @@ function stOver() {
 }
 // ----- Boss battle -----
 const BOSSES = [['Revision Gremlin','👹'], ['Date Dragon','🐉'], ['The Sphinx','🦁'], ['Chief Examiner','🧌'], ['Mock Exam Kraken','🦑'], ['Mr Rodker','🧑‍🏫']];
-const BOSS_HP = [12, 15, 18, 21, 24, 30], BOSS_SECS = 25;
+const BOSS_HP = [12, 15, 18, 21, 24, 30], BOSS_SECS = 12;
 function bossStart() {
   const pool = shuffle(arcRqPool());
   if (pool.length < 10) { arcShort('Not enough questions for this paper yet.'); return; }
@@ -4652,7 +4655,7 @@ function bossRender() {
     low = '<div class="boss-res no">' + (g.late && !g.typed ? '&#9200; Time\'s up' : '&#10007; Not quite') + '</div>' +
       (g.typed ? '<div class="boss-typed">You wrote: ' + escHtml(g.typed) + '</div>' : '') +
       '<div class="boss-a">' + escHtml(q.a) + '</div>' +
-      '<button class="arc-btn" onclick="bossMark(false)">Next</button><button class="boss-right" onclick="bossMark(true)">I was right</button>';
+      '<div class="boss-auto"><i></i></div><button class="arc-btn" onclick="bossMark(false)">Next</button><button class="boss-right" onclick="bossMark(true)">I was right</button>';
   }
   arcFrame(
     '<div class="boss-box"><span class="boss-em" id="boss-em">' + B[1] + '</span><div class="boss-r"><div class="boss-nm">' + B[0] + ' <small>Lv ' + (g.lv + 1) + '</small></div><div class="boss-bar"><i style="width:' + pct + '%"></i></div><div class="boss-hp">' + g.hp + ' of ' + g.max + ' HP</div></div></div>' +
@@ -4674,7 +4677,10 @@ function bossResolve(late) {
   if (ok) {
     g.phase = 'ok'; bossRender();
     ARC.t = setTimeout(() => { if (ARC.g === g) bossMark(true); }, 1100);
-  } else { g.phase = 'no'; bossRender(); }
+  } else {
+    g.phase = 'no'; bossRender();
+    clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g && g.phase === 'no') bossMark(false); }, 3000);
+  }
 }
 function bossLate() { const g = ARC.g; if (!g || g.type !== 'boss' || g.phase !== 'ask') return; bossResolve(true); }
 function bossSubmit() { const g = ARC.g; if (!g || g.type !== 'boss' || g.phase !== 'ask') return; arcTimerStop(); bossResolve(false); }
@@ -4703,8 +4709,9 @@ function bossWin() {
     return;
   }
   arcFrame('<div class="arc-end"><div class="arc-big">🏆</div><div class="arc-h">' + B[0] + ' defeated</div><div class="arc-sub2">' + g.score + ' hits so far · ' + g.lives + ' heart' + (g.lives === 1 ? '' : 's') + ' left</div>' +
-    '<button class="arc-btn" onclick="bossNext()">Next boss</button><button class="arc-btn sec" onclick="bossOver()">Stop here</button></div>', '');
+    '<div class="arc-sub2">Next up: ' + BOSSES[(g.lv + 1) % BOSSES.length][1] + ' ' + BOSSES[(g.lv + 1) % BOSSES.length][0] + '</div></div>', '');
   if (typeof fdFireConfetti === 'function') fdFireConfetti();
+  clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g) bossNext(); }, 2200);
 }
 function bossNext() {
   const g = ARC.g;
