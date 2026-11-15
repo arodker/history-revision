@@ -602,6 +602,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .eol-ev{font-size:1rem;font-weight:700;line-height:1.35}
 .eol-yr{font-family:'Courier New',monospace;font-size:1.5rem;font-weight:800;margin-top:.3rem}
 .eol-yr.q{color:var(--muted)}.eol-yr.ok{color:#2E7D32}.eol-yr.no{color:#C0392B}
+.eol-q{text-align:center;font-weight:800;font-size:.95rem;margin:.7rem 0 0}
 .eol-vs{text-align:center;font-size:.74rem;color:var(--muted);font-weight:700;margin:.5rem 0}
 .eol-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:.8rem}
 .eol-btns button{padding:1rem .5rem;border:none;border-radius:14px;font-family:inherit;font-size:1rem;font-weight:800;color:#fff;background:#5B3FB5;cursor:pointer}
@@ -628,12 +629,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .arc-tile.t3{background:linear-gradient(135deg,#0E3B43,#1D9E75)}
 .arc-tile.t4{background:linear-gradient(135deg,#5A3200,#E08A1E)}
 .arc-tile.t5{background:linear-gradient(135deg,#1B2F4F,#378ADD)}
-.era-field{position:relative;height:250px;border:2px dashed var(--border2);border-radius:14px;overflow:hidden;background:var(--card);margin-bottom:.6rem}
-.era-card{position:absolute;left:8%;right:8%;top:0;background:var(--surface);border:2px solid var(--border2);border-radius:12px;padding:.6rem .8rem;font-weight:700;font-size:.92rem;line-height:1.35;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.12)}
-.era-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.era-b{border:3px solid var(--c);background:color-mix(in srgb,var(--c) 14%,var(--surface));color:var(--text);border-radius:12px;padding:.8rem .4rem;font-family:inherit;font-weight:800;font-size:.82rem;cursor:pointer;line-height:1.25}
-.era-b.good{background:#2E7D32;border-color:#2E7D32;color:#fff}
-.era-b.bad{background:#B5473A;border-color:#B5473A;color:#fff}
 .wh-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .wh-hole{height:104px;border-radius:50% / 22%;border:3px solid var(--border2);background:var(--subtle);font-family:inherit;color:var(--text);padding:.4rem .6rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;overflow:hidden;cursor:pointer;transition:background .1s}
 .wh-hole.up{background:var(--surface);border-color:#E08A1E;animation:whpop .15s}
@@ -650,6 +645,39 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .st-opts{display:flex;flex-direction:column;gap:6px}
 .st-opt{text-align:left;border:2px solid var(--c);background:var(--surface);color:var(--text);border-radius:10px;padding:.65rem .8rem;font-family:inherit;font-weight:700;font-size:.86rem;cursor:pointer;line-height:1.3}
 .st-opt.shake{animation:pbshake .35s;background:#FBE9E7}
+
+/* compact home so it fits one phone screen */
+#s-pick h1{font-size:1.2rem!important}
+#s-pick .yr-pill{font-size:.68rem;padding:.15rem .5rem}
+#s-pick .up-card{margin:.4rem 0;padding:.4rem .7rem .45rem}
+#s-pick .start-line{font-size:.85rem;margin:.1rem 0 .4rem}
+#s-pick .paper-grid{gap:8px;margin-bottom:.4rem}
+#s-pick .paper-btn{padding:.65rem 3.2rem .65rem .75rem;font-size:.84rem;line-height:1.2;border-width:1.5px}
+#s-pick .paper-btn .plabel{font-size:.6rem;margin-bottom:.15rem}
+#s-pick .paper-btn .pbw{width:2.2rem;right:.4rem}
+#s-pick .paper-btn .pbw .fd-wheel{width:2.2rem;height:2.2rem}
+#s-pick .or-line{margin:.2rem 0 .25rem;font-size:.62rem}
+#s-pick .home-row{margin:0 0 .5rem}
+#s-pick .home-row .btn-go{font-size:.8rem;padding:.55rem .4rem}
+#s-pick .xp-card{padding:.5rem .75rem;margin-bottom:.4rem}
+#s-pick .xp-card .xp-streak{margin-top:.4rem;padding-top:.4rem}
+#s-pick .xp-bar{margin:.35rem 0 .15rem}
+#s-pick .home-foot{margin-top:.4rem}
+#s-pick .home-foot a,#s-pick .home-foot button{padding:.45rem .4rem}
+#s-pick .home-pinned-link{margin-top:.3rem}
+
+.arc-tbar{position:relative;height:22px;border-radius:11px;background:var(--subtle);overflow:hidden;margin:0 0 .6rem}
+.arc-tbar i{position:absolute;left:0;top:0;bottom:0;width:100%;background:#378ADD;transition:width .1s linear}
+.arc-tbar.low i{background:#D4533E}
+.arc-tbar b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-family:'Courier New',monospace;color:var(--text)}
+.arc-xp{display:inline-block;margin:.5rem auto .9rem;padding:.35rem .9rem;border-radius:999px;background:#FEF3C7;color:#7A5200;font-weight:800;font-size:.95rem}
+:root.dark .arc-xp{background:#4A3A10;color:#F6D77A}
+
+.boss-in{width:100%;box-sizing:border-box;padding:.85rem 1rem;border:2px solid var(--border2);border-radius:12px;background:var(--surface);color:var(--text);font-family:inherit;font-size:1rem;margin:.2rem 0 .6rem}
+.boss-in:focus{outline:none;border-color:#5B3FB5}
+.boss-res{text-align:center;font-weight:800;font-size:1.05rem;margin:.4rem 0}
+.boss-res.ok{color:#2E7D32}.boss-res.no{color:#C0392B}
+.boss-typed{text-align:center;font-size:.8rem;color:var(--muted);margin-bottom:.3rem}
 </style>
 </head>
 <body>
@@ -3763,8 +3791,8 @@ function xpPop(text) {
   clearTimeout(xpPopTimer);
   xpPopTimer = setTimeout(() => el.classList.remove('show'), 900);
 }
-function xpAfter(r, x, label) {
-  if (r.gain > 0) xpPop('+' + r.gain + ' XP' + (label ? ' · ' + label : ''));
+function xpAfter(r, x, label, quiet) {
+  if (r.gain > 0 && !quiet) xpPop('+' + r.gain + ' XP' + (label ? ' · ' + label : ''));
   else if (!xpCapShown && (x.days[localDate()] || 0) >= XP_RULE.cap) {
     xpCapShown = true;
     fdShowToast('Daily XP limit reached. Your answers are still saved.');
@@ -3776,7 +3804,7 @@ function xpAfter(r, x, label) {
 // Level-up panel. It waits for the current card to finish, and for a parent round to end.
 let xpPendingUp = -1, xpFlushTimer = null;
 function xpFlushLater() {
-  if (xpPendingUp < 0 || PV.midRound) return;
+  if (xpPendingUp < 0 || PV.midRound || (typeof ARC !== 'undefined' && ARC.g && !ARC.g.over)) return;
   clearTimeout(xpFlushTimer);
   xpFlushTimer = setTimeout(xpShowLevelUp, 900);
 }
@@ -3813,13 +3841,17 @@ function xpAward(mode, ok, key, label, paper, unit) {
   const ub = x.units[uk] || (x.units[uk] = {ok:0, n:0, last:''});
   ub.n++; if (ok) ub.ok++; ub.last = localDate();
   let n = 0, bonus = '';
+  const arc = typeof ARC !== 'undefined' && !!ARC.g && !ARC.g.over;
   if (ok) {
     a.ok++;
-    xpRun++;
     const repeat = key && x.seen.keys[key];
     if (key) x.seen.keys[key] = 1;
-    n = repeat ? XP_RULE.repeat : XP_RULE[mode];
-    if (xpRun % XP_RULE.runLen === 0) { n += XP_RULE.runBonus; bonus = 'streak'; }
+    if (arc) n = repeat ? 1 : 2;
+    else {
+      xpRun++;
+      n = repeat ? XP_RULE.repeat : XP_RULE[mode];
+      if (xpRun % XP_RULE.runLen === 0) { n += XP_RULE.runBonus; bonus = 'streak'; }
+    }
   } else {
     xpRun = 0;
     n = XP_RULE.wrong;
@@ -3829,9 +3861,10 @@ function xpAward(mode, ok, key, label, paper, unit) {
     }
   }
   const r = xpAdd(x, n);
+  if (arc) ARC.g.xp = (ARC.g.xp || 0) + r.gain;
   if (r.gain) { const dd = x.dayu[localDate()] || (x.dayu[localDate()] = {}); dd[uk] = (dd[uk] || 0) + r.gain; }
   xpSave(x);
-  xpAfter(r, x, bonus);
+  xpAfter(r, x, bonus, arc);
   return r.gain;
 }
 
@@ -4170,23 +4203,38 @@ function pvEnd() {
 // ARCADE
 // ═══════════════════════════════════════════
 const LS_ARC = 'gcse_arcade_hs';
-const ARC = {sel:{}, g:null, t:null, iv:null};
-function arcStop() { clearTimeout(ARC.t); clearInterval(ARC.iv); ARC.iv = null; ARC.g = null; }
+const ARC = {paper:null, g:null, t:null, iv:null};
+function arcStop() { clearTimeout(ARC.t); clearInterval(ARC.iv); ARC.iv = null; ARC.tm = null; ARC.g = null; xpFlushLater(); }
+function arcTimerStop() { clearInterval(ARC.iv); ARC.iv = null; ARC.tm = null; }
+function arcTimerStart(secs, fn) {
+  arcTimerStop();
+  ARC.tm = {end: Date.now() + secs * 1000, secs, fn};
+  ARC.iv = setInterval(arcTimerTick, 100);
+}
+function arcTimerTick() {
+  const t = ARC.tm;
+  if (!t) return;
+  const left = Math.max(0, t.end - Date.now());
+  const f = document.getElementById('arc-tfill'), n = document.getElementById('arc-tnum');
+  if (f) { f.style.width = (left / (t.secs * 1000) * 100) + '%'; f.parentNode.classList.toggle('low', left < 3000); }
+  if (n) n.textContent = Math.ceil(left / 1000);
+  if (left <= 0) { const fn = t.fn; arcTimerStop(); fn(); }
+}
 function arcHS() { try { return JSON.parse(localStorage.getItem(LS_ARC) || '{}'); } catch (e) { return {}; } }
 function arcSetHS(k, v) {
   const h = arcHS();
   if (v > (h[k] || 0)) { h[k] = v; try { localStorage.setItem(LS_ARC, JSON.stringify(h)); } catch (e) {} return true; }
   return false;
 }
-function arcPapers() { return COURSE_ORDER.filter(p => paperReached(p) && ARC.sel[p] !== false); }
+function arcCur() { return ARC.paper && paperReached(ARC.paper) ? ARC.paper : (COURSE_ORDER.find(p => paperReached(p)) || COURSE_ORDER[0]); }
+function arcPapers() { return [arcCur()]; }
 function arcYear(d) { const s = String(d.date), m = s.match(/\d{4}/) || s.match(/\d{3}/); return m ? parseInt(m[0], 10) : null; }
 function arcDatePool() { const ps = arcPapers(); return DATES.filter(d => ps.includes(d.paper) && inScope(d) && arcYear(d) !== null); }
 function arcRqPool() { const ps = arcPapers(); return RQ.filter(q => ps.includes(q.paper) && inScope(q)); }
 function arcOpen() { arcStop(); showScreen('s-arcade'); arcMenu(); }
 function arcTogglePaper(p) {
   if (!paperReached(p)) return;
-  ARC.sel[p] = ARC.sel[p] === false;
-  if (!arcPapers().length) ARC.sel[p] = true;
+  ARC.paper = p;
   arcMenu();
 }
 function arcHearts(n) { return '<span class="arc-hearts">' + '❤️'.repeat(Math.max(0, n)) + '<i>' + '🖤'.repeat(Math.max(0, 3 - n)) + '</i></span>'; }
@@ -4195,23 +4243,35 @@ function arcMenu() {
   document.getElementById('s-arcade').classList.remove('ingame');
   const hs = arcHS();
   const pills = COURSE_ORDER.map(p => {
-    const lock = !paperReached(p), on = !lock && ARC.sel[p] !== false;
+    const lock = !paperReached(p), on = !lock && p === arcCur();
     return '<button class="arc-pill' + (on ? ' on' : '') + (lock ? ' lock' : '') + '" style="--c:' + PAPER_COL[p] + '" onclick="arcTogglePaper(\'' + p + '\')">' + PAPER_NAME[p].replace(' & Nazi Germany', '') + (lock ? ' 🔒' : '') + '</button>';
   }).join('');
   document.getElementById('arc-body').innerHTML =
-    '<div class="arc-sub">Draws from the papers you pick, up to the point you have studied.</div>' +
+    '<div class="arc-sub">Pick one paper. Questions come from that paper, up to the point you have studied.</div>' +
     '<div class="arc-pills">' + pills + '</div>' +
-    '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">⏳</span><span class="arc-tx"><b>Earlier or later</b><small>Which came first? Chain them up. Three lives.</small></span><span class="arc-hi">HI ' + (hs.eol || 0) + '</span></button>' +
-    '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Every right answer hurts the boss. Misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
-    '<button class="arc-tile t3" onclick="eraChoose()"><span class="arc-ic">🌠</span><span class="arc-tx"><b>Catch the era</b><small>Events fall. Tap the unit they belong to before they land.</small></span><span class="arc-hi">HI ' + (hs.era || 0) + '</span></button>' +
+    '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">⏳</span><span class="arc-tx"><b>Earlier or later</b><small>Was event B before or after event A? Three lives.</small></span><span class="arc-hi">HI ' + (hs.eol || 0) + '</span></button>' +
+    '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Type the answer. Right answers hurt the boss, misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
     '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>60 seconds. Tap the true dates, ignore the false ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
     '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
-    '<div class="arc-note">Right answers earn XP like the rest of the app. Misses earn none.</div>';
+    '<div class="arc-note">Timed: 10 seconds in Earlier or later, 20 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
 }
 function arcShort(msg) { fdShowToast(msg); }
 function arcFrame(inner, head) {
   document.getElementById('s-arcade').classList.add('ingame');
-  document.getElementById('arc-body').innerHTML = '<div class="arc-top"><button class="arc-quit" onclick="arcMenu()">✕ Quit</button>' + head + '</div>' + inner;
+  if (inner.indexOf('arc-end') >= 0) {
+    arcTimerStop();
+    const g = ARC.g;
+    if (g) {
+      g.over = true;
+      const xpl = '<div class="arc-xp">+' + (g.xp || 0) + ' XP earned</div>';
+      const k = inner.indexOf('<button class="arc-btn"');
+      inner = k >= 0 ? inner.slice(0, k) + xpl + inner.slice(k) : inner + xpl;
+      xpFlushLater();
+    }
+  }
+  const bar = ARC.tm ? '<div class="arc-tbar"><i id="arc-tfill"></i><b id="arc-tnum"></b></div>' : '';
+  document.getElementById('arc-body').innerHTML = '<div class="arc-top"><button class="arc-quit" onclick="arcMenu()">✕ Quit</button>' + head + '</div>' + bar + inner;
+  if (ARC.tm) arcTimerTick();
 }
 // ----- Earlier or later -----
 function eolStart() {
@@ -4225,6 +4285,7 @@ function eolNext() {
   while (g.i < g.pool.length && arcYear(g.pool[g.i]) === arcYear(g.anchor)) g.i++;
   if (g.i >= g.pool.length) { eolOver(true); return; }
   g.ch = g.pool[g.i++]; g.busy = false;
+  arcTimerStart(10, () => eolPick(0));
   eolRender(null);
 }
 function eolRender(res) {
@@ -4233,19 +4294,20 @@ function eolRender(res) {
   const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Score <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.eol || 0, g.score) + '</b></span></div>';
   const cy = res ? '<div class="eol-yr ' + (res.ok ? 'ok' : 'no') + '">' + escHtml(String(c.date)) + '</div>' : '<div class="eol-yr q">?</div>';
   arcFrame(
-    '<div class="eol-card" style="--c:' + (PAPER_COL[a.paper] || '#888') + '"><div class="eol-lab">Already placed</div><div class="eol-ev">' + escHtml(a.event) + '</div><div class="eol-yr">' + escHtml(String(a.date)) + '</div></div>' +
-    '<div class="eol-vs">Did this happen earlier or later?</div>' +
-    '<div class="eol-card ch" style="--c:' + col + '"><div class="eol-ev">' + escHtml(c.event) + '</div>' + cy + '</div>' +
-    '<div class="eol-btns"><button ' + (g.busy ? 'disabled ' : '') + 'onclick="eolPick(-1)">⬅ Earlier</button><button ' + (g.busy ? 'disabled ' : '') + 'onclick="eolPick(1)">Later ➡</button></div>', head);
+    '<div class="eol-card" style="--c:' + (PAPER_COL[a.paper] || '#888') + '"><div class="eol-lab">Event A (date known)</div><div class="eol-ev">' + escHtml(a.event) + '</div><div class="eol-yr">' + escHtml(String(a.date)) + '</div></div>' +
+    '<div class="eol-vs">&#11015; Now look at event B &#11015;</div>' +
+    '<div class="eol-card ch" style="--c:' + col + '"><div class="eol-lab">Event B (guess its date)</div><div class="eol-ev">' + escHtml(c.event) + '</div>' + cy + '</div>' +
+    '<div class="eol-q">' + (res && res.late ? '&#9200; Time\'s up' : 'Did event B happen before or after event A?') + '</div>' +
+    '<div class="eol-btns"><button ' + (g.busy ? 'disabled ' : '') + 'onclick="eolPick(-1)">&#11013; B was BEFORE A</button><button ' + (g.busy ? 'disabled ' : '') + 'onclick="eolPick(1)">B was AFTER A &#10145;</button></div>', head);
 }
 function eolPick(dir) {
   const g = ARC.g;
   if (!g || g.busy) return;
-  g.busy = true;
-  const ok = (arcYear(g.ch) > arcYear(g.anchor) ? 1 : -1) === dir;
+  g.busy = true; arcTimerStop();
+  const ok = dir !== 0 && (arcYear(g.ch) > arcYear(g.anchor) ? 1 : -1) === dir;
   xpAward('date', ok, g.ch.paper + '|' + g.ch.event, g.ch.event, g.ch.paper, g.ch.unit);
   if (ok) g.score++; else g.lives--;
-  eolRender({ok});
+  eolRender({ok, late: dir === 0});
   ARC.t = setTimeout(() => {
     if (g.lives <= 0) { eolOver(false); return; }
     g.anchor = g.ch; eolNext();
@@ -4257,62 +4319,6 @@ function eolOver(cleared) {
     '<div class="arc-end"><div class="arc-big">' + (cleared ? '🏆' : '💥') + '</div><div class="arc-h">' + (cleared ? 'You ran out of dates' : 'Game over') + '</div>' +
     '<div class="arc-score">' + g.score + '</div><div class="arc-sub2">in a row' + (isBest ? ' · new best' : '') + '</div>' +
     '<button class="arc-btn" onclick="eolStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
-  if (isBest && g.score >= 5 && typeof fdFireConfetti === 'function') fdFireConfetti();
-}
-// ----- Catch the era -----
-function eraChoose() {
-  const ps = arcPapers();
-  if (ps.length === 1) { eraGo(ps[0]); return; }
-  arcFrame('<div class="arc-h" style="text-align:center;margin:1rem 0 .4rem">Which paper?</div>' +
-    ps.map(p => '<button class="arc-btn" style="background:' + PAPER_COL[p] + '" onclick="eraGo(\'' + p + '\')">' + PAPER_NAME[p] + '</button>').join(''), '');
-}
-function eraGo(p) {
-  const all = DATES.filter(d => d.paper === p && inScope(d) && arcYear(d) !== null);
-  const cnt = {}; all.forEach(d => { cnt[d.unit] = (cnt[d.unit] || 0) + 1; });
-  const units = P[p].units.filter(u => cnt[u] >= 3).slice(0, 4);
-  if (units.length < 2) { arcShort('Not enough units for this choice yet.'); return; }
-  ARC.g = {type:'era', p, units, pool:shuffle(all.filter(d => units.includes(d.unit))), i:0, lives:3, score:0, y:0, speed:34, busy:false, cur:null};
-  eraBuild(); eraNext();
-}
-function eraStatsHtml() { const g = ARC.g, hs = arcHS(); return arcHearts(g.lives) + '<span>Score <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.era || 0, g.score) + '</b></span>'; }
-function eraBuild() {
-  const g = ARC.g;
-  arcFrame('<div class="arc-sub" style="text-align:center">Tap the unit each event belongs to before it lands.</div><div id="era-field" class="era-field"></div><div class="era-btns">' +
-    g.units.map((u, k) => '<button class="era-b" id="era-b' + k + '" style="--c:' + unitCol(g.p + '|' + u) + '" onclick="eraTap(' + k + ')">' + escHtml(u.replace(/^Unit (\d+) – /, '$1. ')) + '</button>').join('') + '</div>',
-    '<div class="arc-stats" id="era-stats">' + eraStatsHtml() + '</div>');
-}
-function eraNext() {
-  const g = ARC.g;
-  if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; }
-  g.cur = g.pool[g.i++]; g.y = 0; g.busy = false;
-  document.getElementById('era-field').innerHTML = '<div id="era-card" class="era-card">' + escHtml(g.cur.event) + '</div>';
-  clearInterval(ARC.iv); ARC.iv = setInterval(eraTick, 50);
-}
-function eraTick() {
-  const g = ARC.g;
-  if (!g || g.type !== 'era' || g.busy) return;
-  const f = document.getElementById('era-field'), c = document.getElementById('era-card');
-  if (!f || !c) return;
-  g.y += g.speed * 0.05;
-  c.style.transform = 'translateY(' + g.y + 'px)';
-  if (g.y >= f.clientHeight - c.offsetHeight) eraResolve(-1);
-}
-function eraTap(k) { const g = ARC.g; if (g && g.type === 'era' && !g.busy) eraResolve(k); }
-function eraResolve(k) {
-  const g = ARC.g; g.busy = true; clearInterval(ARC.iv);
-  const right = g.units.indexOf(g.cur.unit), ok = k === right;
-  xpAward('date', ok, g.cur.paper + '|' + g.cur.event, g.cur.event, g.cur.paper, g.cur.unit);
-  if (ok) { g.score++; g.speed = Math.min(95, g.speed + 3); } else g.lives--;
-  const bR = document.getElementById('era-b' + right), bK = document.getElementById('era-b' + k);
-  if (bR) bR.classList.add('good');
-  if (bK && !ok) bK.classList.add('bad');
-  document.getElementById('era-stats').innerHTML = eraStatsHtml();
-  ARC.t = setTimeout(() => { if (g.lives <= 0) eraOver(); else eraNext(); }, ok ? 450 : 1100);
-}
-function eraOver() {
-  const g = ARC.g, isBest = arcSetHS('era', g.score);
-  arcFrame('<div class="arc-end"><div class="arc-big">🌠</div><div class="arc-h">Game over</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">caught' + (isBest ? ' · new best' : '') + '</div>' +
-    '<button class="arc-btn" onclick="eraGo(\'' + g.p + '\')">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
   if (isBest && g.score >= 5 && typeof fdFireConfetti === 'function') fdFireConfetti();
 }
 // ----- Whack-a-fact -----
@@ -4346,7 +4352,7 @@ function whTick() {
       g.holes[i] = null; whRender(i);
     }
   }
-  const every = Math.max(6, 11 - Math.floor(g.score / 6));
+  const every = Math.max(11, 20 - Math.floor(g.score / 8));
   if (g.tick % every === 0) {
     const free = [0,1,2,3,4,5].filter(i => !g.holes[i]);
     if (free.length) {
@@ -4358,7 +4364,7 @@ function whTick() {
         const others = g.pool.filter(o => arcYear(o) !== arcYear(item));
         shown = others[Math.floor(Math.random() * others.length)].date;
       }
-      g.holes[i] = {item, t:isTrue, shown, die: g.tick + Math.max(15, Math.round((2600 - g.score * 40) / 100))};
+      g.holes[i] = {item, t:isTrue, shown, die: g.tick + Math.max(38, Math.round((6500 - g.score * 50) / 100))};
       whRender(i);
     }
   }
@@ -4391,14 +4397,15 @@ function stStart() {
   ARC.g = {type:'st', pool, lives:3, score:0, n:4};
   stRound();
 }
-function stRound() {
+function stRound(msg) {
   const g = ARC.g, used = new Set(), items = [];
   for (const it of shuffle(g.pool)) {
     const y = arcYear(it);
     if (!used.has(y)) { used.add(y); items.push(it); }
     if (items.length === g.n) break;
   }
-  g.items = items; g.order = items.slice().sort((a, b) => arcYear(a) - arcYear(b)); g.placed = 0; g.shake = -1; g.msg = '';
+  g.items = items; g.order = items.slice().sort((a, b) => arcYear(a) - arcYear(b)); g.placed = 0; g.shake = -1; g.msg = msg || '';
+  arcTimerStart(g.items.length * 5, stLate);
   stRender();
 }
 function stRender() {
@@ -4410,6 +4417,13 @@ function stRender() {
     '<div class="st-stack">' + (stack || '<div class="st-empty">Your stack builds here, oldest at the bottom</div>') + '</div><div class="st-opts">' + opts + '</div>',
     '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Stacked <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.st || 0, g.score) + '</b></span></div>');
 }
+function stLate() {
+  const g = ARC.g;
+  if (!g || g.type !== 'st') return;
+  g.lives--;
+  if (g.lives <= 0) { stOver(); return; }
+  stRound('&#9200; Time\'s up. New tower');
+}
 function stTap(i) {
   const g = ARC.g;
   if (!g || g.type !== 'st' || g.busy) return;
@@ -4418,7 +4432,7 @@ function stTap(i) {
   if (ok) {
     g.placed++; g.score++; g.shake = -1;
     if (g.placed === g.items.length) {
-      g.busy = true; g.msg = 'Stacked!'; g.n = Math.min(7, g.n + 1);
+      g.busy = true; g.msg = 'Stacked!'; g.n = Math.min(7, g.n + 1); arcTimerStop();
       stRender();
       ARC.t = setTimeout(() => { g.busy = false; stRound(); }, 1000);
       return;
@@ -4439,30 +4453,97 @@ function stOver() {
 const BOSSES = [['Revision Gremlin','👹'], ['Date Dragon','🐉'], ['The Sphinx','🦁'], ['Chief Examiner','🧌'], ['Mock Exam Kraken','🦑']];
 function bossStart() {
   const pool = shuffle(arcRqPool());
-  if (pool.length < 10) { arcShort('Not enough questions for this choice yet.'); return; }
-  ARC.g = {type:'boss', pool, i:0, lives:3, lv:0, max:8, hp:8, score:0, shown:false, between:false};
-  bossRender();
+  if (pool.length < 10) { arcShort('Not enough questions for this paper yet.'); return; }
+  ARC.g = {type:'boss', pool, i:0, lives:3, lv:0, max:8, hp:8, score:0, phase:'ask', typed:''};
+  bossAsk();
 }
 function bossQ() { const g = ARC.g; if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; } return g.pool[g.i]; }
+// ----- typed answer marking -----
+const BS_STOP = new Set(['the','a','an','of','and','or','to','in','on','at','for','by','with','was','were','is','are']);
+function bsNorm(t) {
+  return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+function bsLev(a, b) {
+  const m = a.length, n = b.length;
+  if (Math.abs(m - n) > 2) return 3;
+  let prev = [], cur = [];
+  for (let j = 0; j <= n; j++) prev[j] = j;
+  for (let i = 1; i <= m; i++) {
+    cur = [i];
+    for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[n];
+}
+function bsTokenHit(tok, have) {
+  if (have.has(tok)) return true;
+  if (/\d/.test(tok) || tok.length < 5) return false;
+  for (const h of have) if (bsLev(tok, h) <= (tok.length >= 8 ? 2 : 1)) return true;
+  return false;
+}
+function bsCheck(typed, answer) {
+  const t = bsNorm(typed);
+  if (!t) return false;
+  const alts = String(answer).split(/\s*\/\s*|;\s*/).filter(Boolean);
+  const have = new Set(t.split(' ').filter(Boolean));
+  for (const alt of alts) {
+    const al = bsNorm(alt);
+    if (!al) continue;
+    if (al === t) return true;
+    const toks = al.split(' ').filter(w => !BS_STOP.has(w));
+    if (!toks.length) continue;
+    const hit = toks.filter(w => bsTokenHit(w, have)).length;
+    const nums = toks.filter(w => /\d/.test(w));
+    if (nums.some(w => !have.has(w))) continue;
+    if (toks.length === 1 ? hit === 1 : hit / toks.length >= 0.7) return true;
+  }
+  return false;
+}
 function bossRender() {
   const g = ARC.g, q = bossQ(), B = BOSSES[g.lv % BOSSES.length], hs = arcHS();
   const pct = Math.max(0, Math.round(g.hp / g.max * 100));
   const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Hits <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.boss || 0, g.score) + '</b></span></div>';
+  let low;
+  if (g.phase === 'ask') {
+    low = '<input id="boss-in" class="boss-in" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" onkeydown="if(event.key===\'Enter\')bossSubmit()">' +
+      '<button class="arc-btn" onclick="bossSubmit()">Attack</button>';
+  } else if (g.phase === 'ok') {
+    low = '<div class="boss-res ok">&#10003; Correct</div><div class="boss-a">' + escHtml(q.a) + '</div>';
+  } else {
+    low = '<div class="boss-res no">' + (g.late && !g.typed ? '&#9200; Time\'s up' : '&#10007; Not quite') + '</div>' +
+      (g.typed ? '<div class="boss-typed">You wrote: ' + escHtml(g.typed) + '</div>' : '') +
+      '<div class="boss-a">' + escHtml(q.a) + '</div>' +
+      '<div class="eol-btns"><button class="yes" onclick="bossMark(true)">I was right</button><button class="no" onclick="bossMark(false)">Next</button></div>';
+  }
   arcFrame(
     '<div class="boss-box"><span class="boss-em" id="boss-em">' + B[1] + '</span><div class="boss-r"><div class="boss-nm">' + B[0] + ' <small>Lv ' + (g.lv + 1) + '</small></div><div class="boss-bar"><i style="width:' + pct + '%"></i></div><div class="boss-hp">' + g.hp + ' of ' + g.max + ' HP</div></div></div>' +
-    '<div class="boss-q" style="--c:' + (PAPER_COL[q.paper] || '#888') + '"><div class="eol-lab">' + PAPER_NAME[q.paper] + '</div>' + escHtml(q.q) + '</div>' +
-    (g.shown ? '<div class="boss-a">' + escHtml(q.a) + '</div><div class="eol-btns"><button class="no" onclick="bossMark(false)">✗ Missed</button><button class="yes" onclick="bossMark(true)">⚔️ Got it</button></div>'
-             : '<button class="arc-btn" onclick="bossShow()">Show answer</button>'), head);
+    '<div class="boss-q" style="--c:' + (PAPER_COL[q.paper] || '#888') + '"><div class="eol-lab">' + PAPER_NAME[q.paper] + '</div>' + escHtml(q.q) + '</div>' + low, head);
+  if (g.phase === 'ask') setTimeout(() => { const el = document.getElementById('boss-in'); if (el && ARC.g === g) el.focus(); }, 60);
 }
-function bossShow() { ARC.g.shown = true; bossRender(); }
+function bossAsk() { const g = ARC.g; g.phase = 'ask'; g.typed = ''; g.late = false; arcTimerStart(20, bossLate); bossRender(); }
+function bossResolve(late) {
+  const g = ARC.g, q = bossQ(), el = document.getElementById('boss-in');
+  g.typed = el ? el.value.trim() : '';
+  g.late = late;
+  const ok = bsCheck(g.typed, q.a);
+  if (ok) {
+    g.phase = 'ok'; bossRender();
+    ARC.t = setTimeout(() => { if (ARC.g === g) bossMark(true); }, 1100);
+  } else { g.phase = 'no'; bossRender(); }
+}
+function bossLate() { const g = ARC.g; if (!g || g.type !== 'boss' || g.phase !== 'ask') return; bossResolve(true); }
+function bossSubmit() { const g = ARC.g; if (!g || g.type !== 'boss' || g.phase !== 'ask') return; arcTimerStop(); bossResolve(false); }
 function bossMark(ok) {
   const g = ARC.g, q = bossQ();
+  if (g.marking) return;
+  g.marking = true; clearTimeout(ARC.t); arcTimerStop();
   xpAward('rapid', ok, 'rq|' + q.q, q.q, q.paper, q.unit);
-  g.i++; g.shown = false;
+  g.i++;
   if (ok) { g.score++; g.hp--; } else g.lives--;
+  g.marking = false;
   if (g.lives <= 0) { bossOver(); return; }
   if (g.hp <= 0) { bossWin(); return; }
-  bossRender();
+  bossAsk();
   const em = document.getElementById('boss-em');
   if (em) em.classList.add(ok ? 'boss-hit' : 'boss-laugh');
 }
@@ -4475,8 +4556,8 @@ function bossWin() {
 }
 function bossNext() {
   const g = ARC.g;
-  g.lv++; g.max = Math.min(8 + g.lv * 2, 14); g.hp = g.max; g.lives = Math.min(3, g.lives + 1);
-  bossRender();
+  g.lv++; g.max = Math.min(8 + g.lv * 2, 14); g.hp = g.max; g.lives = Math.min(3, g.lives + 1); g.over = false;
+  bossAsk();
 }
 function bossOver() {
   const g = ARC.g, isBest = arcSetHS('boss', g.score);
