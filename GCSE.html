@@ -678,6 +678,18 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .boss-res{text-align:center;font-weight:800;font-size:1.05rem;margin:.4rem 0}
 .boss-res.ok{color:#2E7D32}.boss-res.no{color:#C0392B}
 .boss-typed{text-align:center;font-size:.8rem;color:var(--muted);margin-bottom:.3rem}
+
+.mt-wrap{display:grid;grid-template-columns:1fr 5.4rem;gap:10px}
+.mt-col{display:flex;flex-direction:column;gap:8px}
+.mt-b{border:2px solid var(--border2);background:var(--surface);color:var(--text);border-radius:12px;padding:.6rem .6rem;font-family:inherit;font-size:.82rem;font-weight:700;text-align:left;cursor:pointer;line-height:1.3}
+.mt-ev{border-left:5px solid var(--c,#888)}
+.mt-dt{text-align:center;font-family:'Courier New',monospace;font-size:.95rem;display:flex;align-items:center;justify-content:center}
+.mt-b.sel{border-color:#5B3FB5;background:color-mix(in srgb,#5B3FB5 14%,var(--surface))}
+.mt-b.ok{background:#2E7D32;border-color:#2E7D32;color:#fff;opacity:.9}
+.mt-b.no{border-color:#C0392B;background:#FCEBEB;animation:pbshake .35s}
+.mt-b:disabled{cursor:default}
+
+.boss-right{display:block;margin:.5rem auto 0;background:none;border:1px solid var(--border2);color:var(--muted);border-radius:999px;padding:.25rem .8rem;font-family:inherit;font-size:.7rem;font-weight:600;cursor:pointer}
 </style>
 </head>
 <body>
@@ -4249,11 +4261,11 @@ function arcMenu() {
   document.getElementById('arc-body').innerHTML =
     '<div class="arc-sub">Pick one paper. Questions come from that paper, up to the point you have studied.</div>' +
     '<div class="arc-pills">' + pills + '</div>' +
-    '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">⏳</span><span class="arc-tx"><b>Earlier or later</b><small>Was event B before or after event A? Three lives.</small></span><span class="arc-hi">HI ' + (hs.eol || 0) + '</span></button>' +
+    '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">🧩</span><span class="arc-tx"><b>Match the dates</b><small>Pair each event with its date. Three lives.</small></span><span class="arc-hi">HI ' + (hs.mt || 0) + '</span></button>' +
     '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Type the answer. Right answers hurt the boss, misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
     '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>60 seconds. Tap the true dates, ignore the false ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
     '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
-    '<div class="arc-note">Timed: 10 seconds in Earlier or later, 20 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
+    '<div class="arc-note">Timed: 7 seconds a pair in Match the dates, 5 a block in Stack it, 20 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
 }
 function arcShort(msg) { fdShowToast(msg); }
 function arcFrame(inner, head) {
@@ -4273,53 +4285,72 @@ function arcFrame(inner, head) {
   document.getElementById('arc-body').innerHTML = '<div class="arc-top"><button class="arc-quit" onclick="arcMenu()">✕ Quit</button>' + head + '</div>' + bar + inner;
   if (ARC.tm) arcTimerTick();
 }
-// ----- Earlier or later -----
+// ----- Match the dates -----
 function eolStart() {
-  const pool = shuffle(arcDatePool());
-  if (pool.length < 8) { arcShort('Not enough dates for this choice yet.'); return; }
-  ARC.g = {type:'eol', pool, i:1, anchor:pool[0], ch:null, lives:3, score:0, busy:false};
-  eolNext();
+  const pool = arcDatePool();
+  if (new Set(pool.map(arcYear)).size < 10) { arcShort('Not enough dates for this choice yet.'); return; }
+  ARC.g = {type:'mt', pool, lives:3, score:0, n:4, rounds:0};
+  mtRound();
 }
-function eolNext() {
+function mtRound(msg) {
+  const g = ARC.g, used = new Set(), items = [];
+  for (const it of shuffle(g.pool)) {
+    const y = arcYear(it);
+    if (!used.has(y)) { used.add(y); items.push(it); }
+    if (items.length === g.n) break;
+  }
+  g.items = items; g.dates = shuffle(items.map((it, i) => i)); g.done = {}; g.selE = -1; g.selD = -1; g.bad = '';
+  g.msg = msg || ''; g.busy = false;
+  arcTimerStart(g.n * 7, mtLate);
+  mtRender();
+}
+function mtRender() {
+  const g = ARC.g, hs = arcHS();
+  const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Matched <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.mt || 0, g.score) + '</b></span></div>';
+  const evs = g.items.map((it, i) => '<button class="mt-b mt-ev' + (g.done[i] ? ' ok' : '') + (g.selE === i ? ' sel' : '') + (g.bad === 'e' + i ? ' no' : '') + '" style="--c:' + (PAPER_COL[it.paper] || '#888') + '" ' + (g.done[i] || g.busy ? 'disabled ' : '') + 'onclick="mtPick(\'e\',' + i + ')">' + escHtml(it.event) + '</button>').join('');
+  const dts = g.dates.map(i => '<button class="mt-b mt-dt' + (g.done[i] ? ' ok' : '') + (g.selD === i ? ' sel' : '') + (g.bad === 'd' + i ? ' no' : '') + '" ' + (g.done[i] || g.busy ? 'disabled ' : '') + 'onclick="mtPick(\'d\',' + i + ')">' + escHtml(String(g.items[i].date)) + '</button>').join('');
+  arcFrame('<div class="arc-sub" style="text-align:center">' + (g.msg || 'Tap an event, then the date it happened. Match them all.') + '</div>' +
+    '<div class="mt-wrap"><div class="mt-col">' + evs + '</div><div class="mt-col">' + dts + '</div></div>', head);
+}
+function mtPick(side, i) {
   const g = ARC.g;
-  while (g.i < g.pool.length && arcYear(g.pool[g.i]) === arcYear(g.anchor)) g.i++;
-  if (g.i >= g.pool.length) { eolOver(true); return; }
-  g.ch = g.pool[g.i++]; g.busy = false;
-  arcTimerStart(10, () => eolPick(0));
-  eolRender(null);
+  if (!g || g.type !== 'mt' || g.busy || g.done[i]) return;
+  if (side === 'e') g.selE = g.selE === i ? -1 : i; else g.selD = g.selD === i ? -1 : i;
+  if (g.selE >= 0 && g.selD >= 0) {
+    const e = g.selE, d = g.selD, it = g.items[e];
+    const ok = e === d || arcYear(g.items[e]) === arcYear(g.items[d]);
+    xpAward('date', ok, it.paper + '|' + it.event, it.event, it.paper, it.unit);
+    g.selE = -1; g.selD = -1;
+    if (ok) {
+      g.done[e] = 1; g.done[d] = 1; g.score++; g.msg = '';
+      if (Object.keys(g.done).length >= g.items.length) {
+        g.busy = true; arcTimerStop(); g.n = Math.min(6, g.n + 1); g.msg = 'All matched!';
+        mtRender();
+        ARC.t = setTimeout(() => { if (ARC.g === g) mtRound(); }, 1000);
+        return;
+      }
+    } else {
+      g.lives--; g.bad = 'e' + e; g.msg = 'Not that one. Try again.';
+      if (g.lives <= 0) { mtOver(); return; }
+      mtRender();
+      ARC.t = setTimeout(() => { if (ARC.g === g) { g.bad = ''; mtRender(); } }, 700);
+      return;
+    }
+  }
+  mtRender();
 }
-function eolRender(res) {
-  const g = ARC.g, a = g.anchor, c = g.ch, hs = arcHS();
-  const col = PAPER_COL[c.paper] || '#888';
-  const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Score <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.eol || 0, g.score) + '</b></span></div>';
-  const cy = res ? '<div class="eol-yr ' + (res.ok ? 'ok' : 'no') + '">' + escHtml(String(c.date)) + '</div>' : '<div class="eol-yr q">?</div>';
-  arcFrame(
-    '<div class="eol-card" style="--c:' + (PAPER_COL[a.paper] || '#888') + '"><div class="eol-lab">Event A (date known)</div><div class="eol-ev">' + escHtml(a.event) + '</div><div class="eol-yr">' + escHtml(String(a.date)) + '</div></div>' +
-    '<div class="eol-vs">&#11015; Now look at event B &#11015;</div>' +
-    '<div class="eol-card ch" style="--c:' + col + '"><div class="eol-lab">Event B (guess its date)</div><div class="eol-ev">' + escHtml(c.event) + '</div>' + cy + '</div>' +
-    '<div class="eol-q">' + (res && res.late ? '&#9200; Time\'s up' : 'Did event B happen before or after event A?') + '</div>' +
-    '<div class="eol-btns"><button ' + (g.busy ? 'disabled ' : '') + 'onclick="eolPick(-1)">&#11013; B was BEFORE A</button><button ' + (g.busy ? 'disabled ' : '') + 'onclick="eolPick(1)">B was AFTER A &#10145;</button></div>', head);
-}
-function eolPick(dir) {
+function mtLate() {
   const g = ARC.g;
-  if (!g || g.busy) return;
-  g.busy = true; arcTimerStop();
-  const ok = dir !== 0 && (arcYear(g.ch) > arcYear(g.anchor) ? 1 : -1) === dir;
-  xpAward('date', ok, g.ch.paper + '|' + g.ch.event, g.ch.event, g.ch.paper, g.ch.unit);
-  if (ok) g.score++; else g.lives--;
-  eolRender({ok, late: dir === 0});
-  ARC.t = setTimeout(() => {
-    if (g.lives <= 0) { eolOver(false); return; }
-    g.anchor = g.ch; eolNext();
-  }, ok ? 1000 : 1700);
+  if (!g || g.type !== 'mt') return;
+  g.lives--;
+  if (g.lives <= 0) { mtOver(); return; }
+  mtRound('&#9200; Time\'s up. New set');
 }
-function eolOver(cleared) {
-  const g = ARC.g, isBest = arcSetHS('eol', g.score);
-  arcFrame(
-    '<div class="arc-end"><div class="arc-big">' + (cleared ? '🏆' : '💥') + '</div><div class="arc-h">' + (cleared ? 'You ran out of dates' : 'Game over') + '</div>' +
-    '<div class="arc-score">' + g.score + '</div><div class="arc-sub2">in a row' + (isBest ? ' · new best' : '') + '</div>' +
+function mtOver() {
+  const g = ARC.g, isBest = arcSetHS('mt', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">🧩</div><div class="arc-h">Game over</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">pairs matched' + (isBest ? ' · new best' : '') + '</div>' +
     '<button class="arc-btn" onclick="eolStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
-  if (isBest && g.score >= 5 && typeof fdFireConfetti === 'function') fdFireConfetti();
+  if (isBest && g.score >= 8 && typeof fdFireConfetti === 'function') fdFireConfetti();
 }
 // ----- Whack-a-fact -----
 function whStart() {
@@ -4459,10 +4490,13 @@ function bossStart() {
 }
 function bossQ() { const g = ARC.g; if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; } return g.pool[g.i]; }
 // ----- typed answer marking -----
-const BS_STOP = new Set(['the','a','an','of','and','or','to','in','on','at','for','by','with','was','were','is','are']);
+const BS_STOP = new Set(['the','a','an','of','and','or','to','in','on','at','for','by','with','was','were','is','are','as','his','her','its','their']);
+const BS_GENERIC = new Set(['act','treaty','plan','party','league','law','laws','conference','summit','pact','crisis','war','republic','government','state','states','united','british','britain','national','people','peoples','nazi','nazis']);
 function bsNorm(t) {
-  return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+  return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/(\d)[,\s](?=\d{3}\b)/g, '$1').replace(/&/g, ' and ').replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
 }
+function bsStem(w) { return w.length > 3 && /s$/.test(w) && !/ss$/.test(w) ? w.slice(0, -1) : w; }
+function bsToks(t) { return bsNorm(t).split(' ').filter(w => w && !BS_STOP.has(w)).map(bsStem); }
 function bsLev(a, b) {
   const m = a.length, n = b.length;
   if (Math.abs(m - n) > 2) return 3;
@@ -4481,21 +4515,58 @@ function bsTokenHit(tok, have) {
   for (const h of have) if (bsLev(tok, h) <= (tok.length >= 8 ? 2 : 1)) return true;
   return false;
 }
-function bsCheck(typed, answer) {
+// Every way of writing the answer that should be accepted: the main text, anything in brackets,
+// each side of a dash, and the text with the brackets removed.
+function bsAlts(answer) {
+  const out = [];
+  String(answer).split(/\s*\/\s*|;\s*/).forEach(part => {
+    out.push(part.replace(/\s*\([^)]*\)/g, '').trim());
+    (part.match(/\(([^)]*)\)/g) || []).forEach(g => out.push(g.slice(1, -1)));
+    part.split(/\s+[–—-]\s+/).forEach(seg => out.push(seg.replace(/\s*\([^)]*\)/g, '')));
+    out.push(part.replace(/[()]/g, ' '));
+  });
+  return out.filter((x, i) => x && out.indexOf(x) === i);
+}
+function bsCheck(typed, answer, question) {
   const t = bsNorm(typed);
   if (!t) return false;
-  const alts = String(answer).split(/\s*\/\s*|;\s*/).filter(Boolean);
-  const have = new Set(t.split(' ').filter(Boolean));
+  const asked = String(question || '');
+  const tt = bsToks(typed), have = new Set(tt), alts = bsAlts(answer);
   for (const alt of alts) {
-    const al = bsNorm(alt);
-    if (!al) continue;
-    if (al === t) return true;
-    const toks = al.split(' ').filter(w => !BS_STOP.has(w));
-    if (!toks.length) continue;
-    const hit = toks.filter(w => bsTokenHit(w, have)).length;
-    const nums = toks.filter(w => /\d/.test(w));
+    const at = bsToks(alt);
+    if (!at.length) continue;
+    if (bsNorm(alt) === t) return true;
+    const nums = at.filter(w => /\d/.test(w));
     if (nums.some(w => !have.has(w))) continue;
-    if (toks.length === 1 ? hit === 1 : hit / toks.length >= 0.7) return true;
+    const hit = at.filter(w => bsTokenHit(w, have)).length;
+    if (at.length === 1 ? hit === 1 : at.length === 2 ? hit === 2 : hit / at.length >= 0.6) return true;
+    // part of a longer answer, as long as it is not just a generic word like "act" or "treaty"
+    const core = at.filter(w => !BS_GENERIC.has(w));
+    const tcore = tt.filter(w => !BS_GENERIC.has(w));
+    if (tcore.length && at.length >= 2 && tt.every(w => bsTokenHit(w, new Set(at))) && tcore.filter(w => bsTokenHit(w, new Set(core))).length >= Math.max(1, Math.ceil(core.length / 2))) return true;
+    // initials, e.g. MAD or ICBM
+    if (tt.length === 1 && t.indexOf(' ') < 0 && t.length >= 2 && at.length >= 2) {
+      const ini = bsNorm(alt).split(' ').filter(w => w && !BS_STOP.has(w)).map(w => w[0]).join('');
+      const ini2 = bsNorm(alt).split(' ').filter(Boolean).map(w => w[0]).join('');
+      if (t === ini || t === ini2) return true;
+      const sub = (ini2.length >= 3 && t.length <= ini2.length + 2 && t[0] === ini2[0] && t[t.length - 1] === ini2[ini2.length - 1]) && (() => { let k = 0; for (const ch of t) if (ch === ini2[k]) k++; return k === ini2.length; })();
+      if (sub) return true;
+    }
+  }
+  // just the year, for questions about when something happened
+  if (/^\d{3,4}$/.test(t)) {
+    const yrs = String(answer).match(/\b\d{3,4}\b/g) || [];
+    const dateLike = /^when\b|what year|which year/i.test(asked) || /^\s*(\d{1,2}\s+)?(january|february|march|april|may|june|july|august|september|october|november|december)\b/i.test(answer) || /^\s*\d{3,4}\b/.test(answer);
+    if (yrs.indexOf(t) !== -1 && dateLike) return true;
+  }
+  // just a surname, for questions about who
+  if (/^who\b|^whose\b/i.test(asked) && have.size === 1) {
+    for (const alt of alts) {
+      for (const seg of String(alt).split(/,|\band\b/)) {
+        const toks = bsNorm(seg).split(' ').filter(Boolean);
+        if (toks.length && bsTokenHit(bsStem(toks[toks.length - 1]), have)) return true;
+      }
+    }
   }
   return false;
 }
@@ -4513,7 +4584,7 @@ function bossRender() {
     low = '<div class="boss-res no">' + (g.late && !g.typed ? '&#9200; Time\'s up' : '&#10007; Not quite') + '</div>' +
       (g.typed ? '<div class="boss-typed">You wrote: ' + escHtml(g.typed) + '</div>' : '') +
       '<div class="boss-a">' + escHtml(q.a) + '</div>' +
-      '<div class="eol-btns"><button class="yes" onclick="bossMark(true)">I was right</button><button class="no" onclick="bossMark(false)">Next</button></div>';
+      '<button class="arc-btn" onclick="bossMark(false)">Next</button><button class="boss-right" onclick="bossMark(true)">I was right</button>';
   }
   arcFrame(
     '<div class="boss-box"><span class="boss-em" id="boss-em">' + B[1] + '</span><div class="boss-r"><div class="boss-nm">' + B[0] + ' <small>Lv ' + (g.lv + 1) + '</small></div><div class="boss-bar"><i style="width:' + pct + '%"></i></div><div class="boss-hp">' + g.hp + ' of ' + g.max + ' HP</div></div></div>' +
@@ -4525,7 +4596,7 @@ function bossResolve(late) {
   const g = ARC.g, q = bossQ(), el = document.getElementById('boss-in');
   g.typed = el ? el.value.trim() : '';
   g.late = late;
-  const ok = bsCheck(g.typed, q.a);
+  const ok = bsCheck(g.typed, q.a, q.q);
   if (ok) {
     g.phase = 'ok'; bossRender();
     ARC.t = setTimeout(() => { if (ARC.g === g) bossMark(true); }, 1100);
