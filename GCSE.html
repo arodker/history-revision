@@ -689,6 +689,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .mt-b.no{border-color:#C0392B;background:#FCEBEB;animation:pbshake .35s}
 .mt-b:disabled{cursor:default}
 
+.boss-hintline{min-height:1.1rem;text-align:center;font-size:.78rem;font-weight:600;color:var(--muted);margin:.35rem 0 .1rem}
 .boss-right{display:block;margin:.5rem auto 0;background:none;border:1px solid var(--border2);color:var(--muted);border-radius:999px;padding:.25rem .8rem;font-family:inherit;font-size:.7rem;font-weight:600;cursor:pointer}
 
 #bn-banner{position:fixed;left:50%;bottom:4rem;transform:translate(-50%,20px);background:var(--text);color:var(--bg);font-size:.8rem;font-weight:700;padding:.4rem .9rem;border-radius:20px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:9998;white-space:nowrap}
@@ -4243,7 +4244,8 @@ function pvEnd() {
 // ARCADE
 // ═══════════════════════════════════════════
 const LS_ARC = 'gcse_arcade_hs';
-const ARC = {paper:null, g:null, t:null, iv:null};
+const ARC = {sel:null, g:null, t:null, iv:null};
+const PAPER_EMO = {p1:'🚢', p2a:'🚀', p2b:'👑', p3:'🏛️'};
 function arcStop() { clearTimeout(ARC.t); clearInterval(ARC.iv); ARC.iv = null; ARC.tm = null; ARC.g = null; xpFlushLater(); }
 function arcTimerStop() { clearInterval(ARC.iv); ARC.iv = null; ARC.tm = null; }
 function arcTimerStart(secs, fn) {
@@ -4266,8 +4268,12 @@ function arcSetHS(k, v) {
   if (v > (h[k] || 0)) { h[k] = v; try { localStorage.setItem(LS_ARC, JSON.stringify(h)); } catch (e) {} return true; }
   return false;
 }
-function arcCur() { return ARC.paper && paperReached(ARC.paper) ? ARC.paper : (COURSE_ORDER.find(p => paperReached(p)) || COURSE_ORDER[0]); }
-function arcPapers() { return [arcCur()]; }
+function arcPapers() {
+  const r = COURSE_ORDER.filter(p => paperReached(p));
+  if (!r.length) return [COURSE_ORDER[0]];
+  const s = ARC.sel ? r.filter(p => ARC.sel.includes(p)) : r;
+  return s.length ? s : r;
+}
 function arcYear(d) { const s = String(d.date), m = s.match(/\d{4}/) || s.match(/\d{3}/); return m ? parseInt(m[0], 10) : null; }
 function arcDatesOnly() { const ps = arcPapers(); return DATES.filter(d => ps.includes(d.paper) && inScope(d) && arcYear(d) !== null); }
 function arcRqPool() { const ps = arcPapers(); return RQ.filter(q => ps.includes(q.paper) && inScope(q)); }
@@ -4290,7 +4296,10 @@ function arcMixOrder(pool) {
 function arcOpen() { arcStop(); showScreen('s-arcade'); arcMenu(); }
 function arcTogglePaper(p) {
   if (!paperReached(p)) return;
-  ARC.paper = p;
+  const cur = arcPapers(), all = COURSE_ORDER.filter(x => paperReached(x));
+  if (cur.includes(p)) { if (cur.length > 1) ARC.sel = cur.filter(x => x !== p); }
+  else ARC.sel = cur.concat(p);
+  if (ARC.sel && all.every(x => ARC.sel.includes(x))) ARC.sel = null;
   arcMenu();
 }
 function arcHearts(n) { return '<span class="arc-hearts">' + '❤️'.repeat(Math.max(0, n)) + '<i>' + '🖤'.repeat(Math.max(0, 3 - n)) + '</i></span>'; }
@@ -4299,17 +4308,17 @@ function arcMenu() {
   document.getElementById('s-arcade').classList.remove('ingame');
   const hs = arcHS();
   const pills = COURSE_ORDER.map(p => {
-    const lock = !paperReached(p), on = !lock && p === arcCur();
-    return '<button class="arc-pill' + (on ? ' on' : '') + (lock ? ' lock' : '') + '" style="--c:' + PAPER_COL[p] + '" onclick="arcTogglePaper(\'' + p + '\')">' + PAPER_NAME[p].replace(' & Nazi Germany', '') + (lock ? ' 🔒' : '') + '</button>';
+    const lock = !paperReached(p), on = !lock && arcPapers().includes(p);
+    return '<button class="arc-pill' + (on ? ' on' : '') + (lock ? ' lock' : '') + '" style="--c:' + PAPER_COL[p] + '" onclick="arcTogglePaper(\'' + p + '\')">' + PAPER_EMO[p] + ' ' + PAPER_NAME[p].replace(' & Nazi Germany', '') + (lock ? ' 🔒' : '') + '</button>';
   }).join('');
   document.getElementById('arc-body').innerHTML =
-    '<div class="arc-sub">Pick one paper. Questions come from that paper, up to the point you have studied.</div>' +
+    '<div class="arc-sub">Pick one paper or several. Questions come from every paper selected, up to the point you have studied.</div>' +
     '<div class="arc-pills">' + pills + '</div>' +
     '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">🧩</span><span class="arc-tx"><b>Match the dates</b><small>Pair each event with its date. Three lives.</small></span><span class="arc-hi">HI ' + (hs.mt || 0) + '</span></button>' +
     '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Type the answer. Right answers hurt the boss, misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
     '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>60 seconds. Tap right answers, ignore wrong ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
     '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
-    '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 20 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
+    '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 25 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
 }
 function arcShort(msg) { fdShowToast(msg); }
 function arcFrame(inner, head) {
@@ -4527,11 +4536,12 @@ function stOver() {
   if (isBest && g.score >= 8 && typeof fdFireConfetti === 'function') fdFireConfetti();
 }
 // ----- Boss battle -----
-const BOSSES = [['Revision Gremlin','👹'], ['Date Dragon','🐉'], ['The Sphinx','🦁'], ['Chief Examiner','🧌'], ['Mock Exam Kraken','🦑']];
+const BOSSES = [['Revision Gremlin','👹'], ['Date Dragon','🐉'], ['The Sphinx','🦁'], ['Chief Examiner','🧌'], ['Mock Exam Kraken','🦑'], ['Mr Rodker','🧑‍🏫']];
+const BOSS_HP = [12, 15, 18, 21, 24, 30], BOSS_SECS = 25;
 function bossStart() {
   const pool = shuffle(arcRqPool());
   if (pool.length < 10) { arcShort('Not enough questions for this paper yet.'); return; }
-  ARC.g = {type:'boss', pool, i:0, lives:3, lv:0, max:8, hp:8, score:0, phase:'ask', typed:''};
+  ARC.g = {type:'boss', pool, i:0, lives:3, lv:0, max:BOSS_HP[0], hp:BOSS_HP[0], score:0, phase:'ask', typed:''};
   bossAsk();
 }
 function bossQ() { const g = ARC.g; if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; } return g.pool[g.i]; }
@@ -4596,7 +4606,7 @@ function bsCheck(typed, answer, question) {
     const nums = at.filter(w => /\d/.test(w));
     if (nums.some(w => !have.has(w))) continue;
     const hit = at.filter(w => bsTokenHit(w, have)).length;
-    if (at.length === 1 ? hit === 1 : at.length === 2 ? hit === 2 : hit / at.length >= 0.6) return true;
+    if (at.length === 1 ? hit === 1 : at.length === 2 ? hit === 2 : hit / at.length >= 0.5) return true;
     // part of a longer answer, as long as it is not just a generic word like "act" or "treaty"
     const core = at.filter(w => !BS_GENERIC.has(w));
     const tcore = tt.filter(w => !BS_GENERIC.has(w));
@@ -4633,8 +4643,9 @@ function bossRender() {
   const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Hits <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.boss || 0, g.score) + '</b></span></div>';
   let low;
   if (g.phase === 'ask') {
-    low = '<input id="boss-in" class="boss-in" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" onkeydown="if(event.key===\'Enter\')bossSubmit()">' +
-      '<button class="arc-btn" onclick="bossSubmit()">Attack</button>';
+    low = '<input id="boss-in" class="boss-in" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" enterkeyhint="go" onkeydown="if(event.key===\'Enter\')bossSubmit()">' +
+      '<div class="boss-hintline" id="boss-hint"></div>' +
+      '<button class="arc-btn" onclick="bossSubmit()">Attack</button><button class="boss-right" onclick="bossHint()">💡 Hint</button>';
   } else if (g.phase === 'ok') {
     low = '<div class="boss-res ok">&#10003; Correct</div><div class="boss-a">' + escHtml(q.a) + '</div>';
   } else {
@@ -4648,7 +4659,13 @@ function bossRender() {
     '<div class="boss-q" style="--c:' + (PAPER_COL[q.paper] || '#888') + '"><div class="eol-lab">' + PAPER_NAME[q.paper] + '</div>' + escHtml(q.q) + '</div>' + low, head);
   if (g.phase === 'ask') setTimeout(() => { const el = document.getElementById('boss-in'); if (el && ARC.g === g) el.focus(); }, 60);
 }
-function bossAsk() { const g = ARC.g; g.phase = 'ask'; g.typed = ''; g.late = false; arcTimerStart(20, bossLate); bossRender(); }
+function bossHint() {
+  const g = ARC.g, q = bossQ(), el = document.getElementById('boss-hint');
+  if (!g || g.type !== 'boss' || g.phase !== 'ask' || !el) return;
+  const a = String(q.a).replace(/\s*\(.*?\)/g, '').split(/;|\/| or /)[0].trim(), w = a.split(/\s+/).filter(Boolean);
+  el.textContent = 'Starts with "' + a.charAt(0).toUpperCase() + '" · ' + w.length + ' word' + (w.length === 1 ? '' : 's');
+}
+function bossAsk() { const g = ARC.g; g.phase = 'ask'; g.typed = ''; g.late = false; arcTimerStart(BOSS_SECS, bossLate); bossRender(); }
 function bossResolve(late) {
   const g = ARC.g, q = bossQ(), el = document.getElementById('boss-in');
   g.typed = el ? el.value.trim() : '';
@@ -4678,13 +4695,20 @@ function bossMark(ok) {
 function bossWin() {
   const g = ARC.g, B = BOSSES[g.lv % BOSSES.length];
   arcSetHS('boss', g.score);
+  if (g.lv >= BOSSES.length - 1) {
+    g.over = true; g.lv++;
+    arcFrame('<div class="arc-end"><div class="arc-big">👑</div><div class="arc-h">You beat ' + B[0] + '!</div><div class="arc-sub2">Every boss defeated · ' + g.score + ' hits · ' + g.lives + ' heart' + (g.lives === 1 ? '' : 's') + ' left</div>' +
+      '<button class="arc-btn" onclick="bossStart()">Fight again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
+    if (typeof fdFireConfetti === 'function') fdFireConfetti();
+    return;
+  }
   arcFrame('<div class="arc-end"><div class="arc-big">🏆</div><div class="arc-h">' + B[0] + ' defeated</div><div class="arc-sub2">' + g.score + ' hits so far · ' + g.lives + ' heart' + (g.lives === 1 ? '' : 's') + ' left</div>' +
     '<button class="arc-btn" onclick="bossNext()">Next boss</button><button class="arc-btn sec" onclick="bossOver()">Stop here</button></div>', '');
   if (typeof fdFireConfetti === 'function') fdFireConfetti();
 }
 function bossNext() {
   const g = ARC.g;
-  g.lv++; g.max = Math.min(8 + g.lv * 2, 14); g.hp = g.max; g.lives = Math.min(3, g.lives + 1); g.over = false;
+  g.lv++; g.max = BOSS_HP[Math.min(g.lv, BOSS_HP.length - 1)]; g.hp = g.max; g.lives = Math.min(3, g.lives + 1); g.over = false;
   bossAsk();
 }
 function bossOver() {
