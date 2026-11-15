@@ -512,7 +512,12 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .xp-flame{font-size:.78rem;font-weight:700}
 .xp-sdots{display:flex;gap:3px;margin-left:auto}
 .xp-sdots i{font-style:normal;width:20px;height:20px;border-radius:6px;background:var(--subtle);color:var(--muted);font-size:.58rem;font-weight:700;display:flex;align-items:center;justify-content:center}
-.xp-sdots i.on{background:#F0803C;color:#fff}
+.xp-sdots i.on{background:#C9824B;color:#fff}
+.xp-sdots i.t2{background:#9AA3AD;color:#fff}
+.xp-sdots i.t3{background:#E0A81E;color:#fff}
+.xp-sdots i.t4{background:#8E5CD6;color:#fff}
+.xp-key{width:100%;font-size:.6rem;color:var(--muted);display:flex;gap:.7rem;justify-content:flex-end;flex-wrap:wrap}
+.xp-key s{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:3px;vertical-align:baseline}
 .xp-sdots i.today{outline:2px solid var(--text);outline-offset:1px}
 .xp-best{font-size:.68rem;color:var(--muted)}
 .pr-note{font-size:.72rem;color:var(--muted);margin-top:.6rem}
@@ -3500,8 +3505,10 @@ function openPaper(p) {
 function lockFlash(p) {
   const b = document.querySelector('.paper-btn.pb-' + p);
   if (!b) return;
-  const n = b.querySelector('.pb-note');
-  if (n) { n.textContent = '🔒 Move the slider to unlock'; setTimeout(() => { if (n.isConnected) n.textContent = '🔒 Not covered in class yet'; }, 2200); }
+  let n = b.querySelector('.pb-note');
+  if (!n) { n = document.createElement('span'); n.className = 'pb-note'; b.appendChild(n); }
+  n.textContent = 'Move the slider to unlock';
+  clearTimeout(b._nt); b._nt = setTimeout(() => { if (n.isConnected) n.remove(); }, 2200);
   b.classList.remove('pb-shake'); void b.offsetWidth; b.classList.add('pb-shake');
 }
 function weakNudgeRender() {
@@ -3519,9 +3526,8 @@ function lockRender() {
     if (!b) return;
     const lock = !paperReached(p);
     b.classList.toggle('pb-locked', lock);
-    let n = b.querySelector('.pb-note');
-    if (lock && !n) { n = document.createElement('span'); n.className = 'pb-note'; n.textContent = '🔒 Not covered in class yet'; b.appendChild(n); }
-    if (!lock && n) n.remove();
+    const n = b.querySelector('.pb-note');
+    if (n && !lock) n.remove();
   });
 }
 function uptoRender() {
@@ -3564,7 +3570,7 @@ const XP_LEVELS = [
   {t:'Sixties rockstar',e:'🎸',xp:16500}, {t:'Modern Briton',e:'📱',xp:23000}, {t:'Space age pioneer',e:'🚀',xp:34000}
 ];
 // Change a number here to retune the game.
-const XP_RULE = {flash:20, date:5, rapid:5, wrong:2, repeat:2, runLen:5, runBonus:5, parent:20, cap:400};
+const XP_RULE = {flash:10, date:5, rapid:5, wrong:0, repeat:2, runLen:5, runBonus:5, parent:20, cap:500};
 const LS_XP = 'gcse_xp';
 let xpRun = 0, xpCapShown = false, xpPopTimer = null;
 
@@ -3777,7 +3783,8 @@ function xpStreakHtml(x) {
   let dots = '';
   for (let i = 6; i >= 0; i--) {
     const d = new Date(); d.setDate(d.getDate() - i);
-    dots += '<i class="' + ((x.days[ymd(d)] || 0) > 0 ? 'on' : '') + (i === 0 ? ' today' : '') + '" title="' + ymd(d) + '">' + 'SMTWTFS'[d.getDay()] + '</i>';
+    const v = x.days[ymd(d)] || 0;
+    dots += '<i class="' + (v >= 500 ? 'on t4' : v >= 300 ? 'on t3' : v >= 100 ? 'on t2' : v > 0 ? 'on' : '') + (i === 0 ? ' today' : '') + '" title="' + ymd(d) + ': ' + v + ' XP">' + 'SMTWTFS'[d.getDay()] + '</i>';
   }
   return '<div class="xp-streak"><span class="xp-flame">🔥 ' + (n ? n + ' day' + (n > 1 ? 's' : '') + ' in a row' : 'Start a streak today') + '</span><span class="xp-sdots">' + dots + '</span><span class="xp-best">Best ' + Math.max(n, xpBest(x)) + '</span></div>';
 }
@@ -3894,18 +3901,18 @@ function pvBuild(n, excl) {
   const dts = shuffle(DATES.filter(d => ps.includes(d.paper)).map(d =>
     ({kind:'date', paper:d.paper, q:'When did this happen: ' + d.event + '?', ans:d.date, key:d.paper + '|' + d.event, label:d.event, unit:d.unit})).filter(i => !excl[i.key]));
   let rqs = RQ.filter(q => ps.includes(q.paper) && !excl['rq|' + q.q]);
-  const nFlash = Math.round(n * 0.4), nDate = Math.round(n * 0.3), nRq = n - nFlash - nDate;
+  const nFlash = 0, nDate = Math.round(n * 0.5), nRq = n - nDate; // parent view: no flashcards (too hard to mark for a non-specialist)
   const easy = rqs.filter(q => q.d !== 'hard');
   if (easy.length >= nRq) rqs = easy;
   rqs = shuffle(rqs.map(q => ({kind:'rq', paper:q.paper, q:q.q, ans:q.a, key:'rq|' + q.q, label:q.q, unit:q.unit})));
   const pinned = shuffle(fcs.filter(c => out.includes(fdKey(c))));
   const fresh = shuffle(fcs.filter(c => !out.includes(fdKey(c)) && !mast[fdKey(c)]));
   const done = shuffle(fcs.filter(c => !out.includes(fdKey(c)) && mast[fdKey(c)]));
-  const fl = pinned.slice(0, Math.max(3, Math.round(nFlash * 0.75))).concat(fresh, done).map(asFlash);
+  const fl = [];
   const deck = fl.splice(0, nFlash).concat(dts.splice(0, nDate), rqs.splice(0, nRq));
-  const rest = [fl, dts, rqs];
+  const rest = [dts, rqs];
   let k = 0;
-  while (deck.length < n && rest.some(a => a.length)) { const a = rest[k++ % 3]; if (a.length) deck.push(a.shift()); }
+  while (deck.length < n && rest.some(a => a.length)) { const a = rest[k++ % 2]; if (a.length) deck.push(a.shift()); }
   return shuffle(deck);
 }
 function parentStart() {
