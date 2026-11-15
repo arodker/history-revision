@@ -630,13 +630,13 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .arc-tile.t4{background:linear-gradient(135deg,#5A3200,#E08A1E)}
 .arc-tile.t5{background:linear-gradient(135deg,#1B2F4F,#378ADD)}
 .wh-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.wh-hole{height:104px;border-radius:50% / 22%;border:3px solid var(--border2);background:var(--subtle);font-family:inherit;color:var(--text);padding:.4rem .6rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;overflow:hidden;cursor:pointer;transition:background .1s}
+.wh-hole{height:116px;border-radius:50% / 22%;border:3px solid var(--border2);background:var(--subtle);font-family:inherit;color:var(--text);padding:.4rem .6rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;overflow:hidden;cursor:pointer;transition:background .1s}
 .wh-hole.up{background:var(--surface);border-color:#E08A1E;animation:whpop .15s}
 .wh-hole.hit{background:#2E7D32;border-color:#2E7D32;color:#fff}
 .wh-hole.miss{background:#B5473A;border-color:#B5473A;color:#fff}
 @keyframes whpop{from{transform:scale(.8)}to{transform:scale(1)}}
-.wh-ev{font-size:.7rem;font-weight:700;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-align:center}
-.wh-yr{font-family:'Courier New',monospace;font-weight:800;font-size:1.05rem}
+.wh-ev{font-size:.7rem;font-weight:700;line-height:1.25;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;text-align:center}
+.wh-yr{font-family:'Courier New',monospace;font-weight:800;font-size:.92rem;line-height:1.15;text-align:center;overflow:hidden;max-height:2.35em}
 .st-stack{display:flex;flex-direction:column-reverse;gap:4px;min-height:120px;border-bottom:4px solid var(--border2);padding-bottom:6px;margin-bottom:.8rem}
 .st-empty{color:var(--muted);font-size:.75rem;text-align:center;align-self:center;margin:auto}
 .st-blk{display:flex;justify-content:space-between;gap:.6rem;align-items:center;background:color-mix(in srgb,var(--c) 20%,var(--surface));border:2px solid var(--c);border-radius:8px;padding:.45rem .7rem;font-size:.8rem;font-weight:700;animation:stdrop .25s}
@@ -777,10 +777,10 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   </div>
   <div id="hub-weak"></div>
   <div class="hub-fc" id="hub-fc"></div>
-  <div class="mode-grid" style="grid-template-columns:1fr 1fr 1fr;margin:.9rem 0 .75rem">
-    <button class="mode-btn" onclick="enterMode('knowledge')" style="padding:1.3rem .5rem"><span class="icon" style="font-size:1.6rem">🧠</span>Revision Guide</button>
-    <button class="mode-btn" onclick="enterMode('dates')" style="padding:1.3rem .5rem"><span class="icon" style="font-size:1.6rem">📅</span>Key Dates Quiz</button>
-    <button class="mode-btn" onclick="enterMode('exam')" style="padding:1.3rem .5rem"><span class="icon" style="font-size:1.6rem">✏️</span>Exam Practice</button>
+  <div class="mode-grid" style="grid-template-columns:1fr 1fr 1fr;gap:8px;margin:.7rem 0 .6rem">
+    <button class="mode-btn" onclick="enterMode('knowledge')" style="padding:.65rem .4rem;font-size:.78rem;border-radius:10px"><span class="icon" style="font-size:1.25rem;margin-bottom:.2rem">🧠</span>Revision Guide</button>
+    <button class="mode-btn" onclick="enterMode('dates')" style="padding:.65rem .4rem;font-size:.78rem;border-radius:10px"><span class="icon" style="font-size:1.25rem;margin-bottom:.2rem">📅</span>Key Dates Quiz</button>
+    <button class="mode-btn" onclick="enterMode('exam')" style="padding:.65rem .4rem;font-size:.78rem;border-radius:10px"><span class="icon" style="font-size:1.25rem;margin-bottom:.2rem">✏️</span>Exam Practice</button>
   </div>
 </div>
 
@@ -4241,8 +4241,24 @@ function arcSetHS(k, v) {
 function arcCur() { return ARC.paper && paperReached(ARC.paper) ? ARC.paper : (COURSE_ORDER.find(p => paperReached(p)) || COURSE_ORDER[0]); }
 function arcPapers() { return [arcCur()]; }
 function arcYear(d) { const s = String(d.date), m = s.match(/\d{4}/) || s.match(/\d{3}/); return m ? parseInt(m[0], 10) : null; }
-function arcDatePool() { const ps = arcPapers(); return DATES.filter(d => ps.includes(d.paper) && inScope(d) && arcYear(d) !== null); }
+function arcDatesOnly() { const ps = arcPapers(); return DATES.filter(d => ps.includes(d.paper) && inScope(d) && arcYear(d) !== null); }
 function arcRqPool() { const ps = arcPapers(); return RQ.filter(q => ps.includes(q.paper) && inScope(q)); }
+function arcDatePool() { return arcDatesOnly().map(d => Object.assign({}, d, {src: 'dt'})).concat(arcRqYears()); }
+
+const ARC_DATE_RE = /^(\d{1,2}(–\d{1,2})? )?([A-Z][a-z]+ )?\d{3,4}$/;
+const ARC_WHEN_RE = /^(when|in which year|in what year|what year)\b/i;
+function arcRqItem(q) { return Object.assign({}, q, {date: String(q.a).trim(), event: q.q, src: 'rq'}); }
+function arcRqYears() { return arcRqPool().filter(q => ARC_WHEN_RE.test(q.q) && ARC_DATE_RE.test(String(q.a).trim())).map(arcRqItem); }
+function arcKind(it) { const s = String(it.date); return it.src !== 'rq' ? 'y' : (ARC_WHEN_RE.test(it.q) && ARC_DATE_RE.test(s) ? 'y' : (/^[\d,.%]+$/.test(s) ? 'n' : 't')); }
+function arcWhPool() { return arcDatesOnly().map(d => Object.assign({}, d, {src: 'dt'})).concat(arcRqPool().filter(q => { const a = String(q.a).trim(); return a.length > 0 && a.length <= 30; }).map(arcRqItem)); }
+function arcMode(it) { return it.src === 'rq' ? 'rapid' : 'date'; }
+function arcMixOrder(pool) {
+  const a = shuffle(pool.filter(x => x.src !== 'rq')), b = shuffle(pool.filter(x => x.src === 'rq'));
+  if (!b.length) return a;
+  const out = []; let t = Math.random() < 0.5;
+  while (a.length || b.length) { const s = ((t && b.length) || !a.length) ? b : a; out.push(s.shift()); t = !t; }
+  return out;
+}
 function arcOpen() { arcStop(); showScreen('s-arcade'); arcMenu(); }
 function arcTogglePaper(p) {
   if (!paperReached(p)) return;
@@ -4263,7 +4279,7 @@ function arcMenu() {
     '<div class="arc-pills">' + pills + '</div>' +
     '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">🧩</span><span class="arc-tx"><b>Match the dates</b><small>Pair each event with its date. Three lives.</small></span><span class="arc-hi">HI ' + (hs.mt || 0) + '</span></button>' +
     '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Type the answer. Right answers hurt the boss, misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
-    '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>60 seconds. Tap the true dates, ignore the false ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
+    '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>60 seconds. Tap right answers, ignore wrong ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
     '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
     '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 20 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
 }
@@ -4294,7 +4310,7 @@ function eolStart() {
 }
 function mtRound(msg) {
   const g = ARC.g, used = new Set(), items = [];
-  for (const it of shuffle(g.pool)) {
+  for (const it of arcMixOrder(g.pool)) {
     const y = arcYear(it);
     if (!used.has(y)) { used.add(y); items.push(it); }
     if (items.length === g.n) break;
@@ -4319,7 +4335,7 @@ function mtPick(side, i) {
   if (g.selE >= 0 && g.selD >= 0) {
     const e = g.selE, d = g.selD, it = g.items[e];
     const ok = e === d || arcYear(g.items[e]) === arcYear(g.items[d]);
-    xpAward('date', ok, it.paper + '|' + it.event, it.event, it.paper, it.unit);
+    xpAward(arcMode(it), ok, it.paper + '|' + it.event, it.event, it.paper, it.unit);
     g.selE = -1; g.selD = -1;
     if (ok) {
       g.done[e] = 1; g.done[d] = 1; g.score++; g.msg = '';
@@ -4354,15 +4370,15 @@ function mtOver() {
 }
 // ----- Whack-a-fact -----
 function whStart() {
-  const pool = arcDatePool();
+  const pool = arcWhPool();
   if (pool.length < 12) { arcShort('Not enough dates for this choice yet.'); return; }
-  ARC.g = {type:'wh', pool:shuffle(pool), i:0, holes:[null,null,null,null,null,null], lives:3, score:0, tick:0, total:600};
+  ARC.g = {type:'wh', pool:arcMixOrder(pool), i:0, holes:[null,null,null,null,null,null], lives:3, score:0, tick:0, total:600};
   whBuild();
   clearInterval(ARC.iv); ARC.iv = setInterval(whTick, 100);
 }
 function whStatsHtml() { const g = ARC.g, hs = arcHS(); return arcHearts(g.lives) + '<span>Time <b>' + Math.max(0, Math.ceil((g.total - g.tick) / 10)) + '</b></span><span>Score <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.wh || 0, g.score) + '</b></span>'; }
 function whBuild() {
-  arcFrame('<div class="arc-sub" style="text-align:center">Tap the TRUE statements. Leave the false ones alone.</div><div class="wh-grid">' +
+  arcFrame('<div class="arc-sub" style="text-align:center">Tap when the answer shown is right. Leave wrong answers alone.</div><div class="wh-grid">' +
     [0,1,2,3,4,5].map(i => '<button class="wh-hole" id="wh-h' + i + '" onclick="whHit(' + i + ')"></button>').join('') + '</div>',
     '<div class="arc-stats" id="wh-stats">' + whStatsHtml() + '</div>');
 }
@@ -4370,7 +4386,7 @@ function whRender(i, flash) {
   const g = ARC.g, h = g.holes[i], el = document.getElementById('wh-h' + i);
   if (!el) return;
   el.className = 'wh-hole' + (h ? ' up' : '') + (flash ? ' ' + flash : '');
-  el.innerHTML = h ? '<span class="wh-ev">' + escHtml(h.item.event) + '</span><span class="wh-yr">' + escHtml(String(h.shown)) + '</span>' : '';
+  el.innerHTML = h ? '<span class="wh-ev">' + escHtml(h.item.src === 'rq' ? h.item.q : 'When was: ' + h.item.event + '?') + '</span><span class="wh-yr">' + escHtml(String(h.shown)) + '</span>' : '';
 }
 function whTick() {
   const g = ARC.g;
@@ -4379,7 +4395,7 @@ function whTick() {
   for (let i = 0; i < 6; i++) {
     const h = g.holes[i];
     if (h && g.tick >= h.die) {
-      if (h.t) xpAward('date', false, h.item.paper + '|' + h.item.event, h.item.event, h.item.paper, h.item.unit);
+      if (h.t) xpAward(arcMode(h.item), false, h.item.paper + '|' + h.item.event, h.item.event, h.item.paper, h.item.unit);
       g.holes[i] = null; whRender(i);
     }
   }
@@ -4388,11 +4404,13 @@ function whTick() {
     const free = [0,1,2,3,4,5].filter(i => !g.holes[i]);
     if (free.length) {
       const i = free[Math.floor(Math.random() * free.length)];
-      if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; }
+      if (g.i >= g.pool.length) { g.pool = arcMixOrder(g.pool); g.i = 0; }
       const item = g.pool[g.i++], isTrue = Math.random() < 0.5;
       let shown = item.date;
       if (!isTrue) {
-        const others = g.pool.filter(o => arcYear(o) !== arcYear(item));
+        let others = g.pool.filter(o => arcKind(o) === arcKind(item) && String(o.date) !== String(item.date) && (arcKind(item) !== 'y' || arcYear(o) !== arcYear(item)));
+        if (!others.length) others = g.pool.filter(o => String(o.date) !== String(item.date));
+        if (arcKind(item) === 't') { const L = String(item.date).length; others = others.slice().sort((a, b) => Math.abs(String(a.date).length - L) - Math.abs(String(b.date).length - L)).slice(0, 8); }
         shown = others[Math.floor(Math.random() * others.length)].date;
       }
       g.holes[i] = {item, t:isTrue, shown, die: g.tick + Math.max(38, Math.round((6500 - g.score * 50) / 100))};
@@ -4408,8 +4426,8 @@ function whHit(i) {
   const h = g.holes[i];
   if (!h) return;
   g.holes[i] = null;
-  if (h.t) { g.score++; xpAward('date', true, h.item.paper + '|' + h.item.event, h.item.event, h.item.paper, h.item.unit); whRender(i, 'hit'); }
-  else { g.lives--; xpAward('date', false, h.item.paper + '|' + h.item.event, h.item.event, h.item.paper, h.item.unit); whRender(i, 'miss'); }
+  if (h.t) { g.score++; xpAward(arcMode(h.item), true, h.item.paper + '|' + h.item.event, h.item.event, h.item.paper, h.item.unit); whRender(i, 'hit'); }
+  else { g.lives--; xpAward(arcMode(h.item), false, h.item.paper + '|' + h.item.event, h.item.event, h.item.paper, h.item.unit); whRender(i, 'miss'); }
   setTimeout(() => { if (ARC.g === g && !g.holes[i]) whRender(i); }, 300);
   document.getElementById('wh-stats').innerHTML = whStatsHtml();
   if (g.lives <= 0) whOver();
@@ -4430,7 +4448,7 @@ function stStart() {
 }
 function stRound(msg) {
   const g = ARC.g, used = new Set(), items = [];
-  for (const it of shuffle(g.pool)) {
+  for (const it of arcMixOrder(g.pool)) {
     const y = arcYear(it);
     if (!used.has(y)) { used.add(y); items.push(it); }
     if (items.length === g.n) break;
@@ -4459,7 +4477,7 @@ function stTap(i) {
   const g = ARC.g;
   if (!g || g.type !== 'st' || g.busy) return;
   const it = g.items[i], ok = it === g.order[g.placed];
-  xpAward('date', ok, it.paper + '|' + it.event, it.event, it.paper, it.unit);
+  xpAward(arcMode(it), ok, it.paper + '|' + it.event, it.event, it.paper, it.unit);
   if (ok) {
     g.placed++; g.score++; g.shake = -1;
     if (g.placed === g.items.length) {
