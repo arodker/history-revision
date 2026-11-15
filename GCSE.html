@@ -539,6 +539,14 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .xp-lu-t{font-size:1.45rem;font-weight:800;margin:.1rem 0 .4rem}
 .xp-lu-from{font-size:.75rem;color:var(--muted);margin-bottom:.9rem}
 .xp-lu-btn{display:block;width:100%;padding:.8rem;border:none;border-radius:12px;background:#378ADD;color:#fff;font-size:.95rem;font-weight:700;font-family:inherit;cursor:pointer}
+.hub-row{gap:.65rem}
+.hub-row .hub-nm{flex:1;text-align:left}
+.hub-dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--border2);background:var(--surface);position:relative;transition:border-color .15s}
+.hub-dot.on{border-color:var(--c,#378ADD)}
+.hub-dot.on::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--c,#378ADD)}
+.hub-row.lock .hub-dot{border-style:dashed}
+.hub-all{border-top:none!important;font-weight:700;margin-top:.2rem}
+.hub-row:not(.lock):active{background:var(--subtle)}
 </style>
 </head>
 <body>
@@ -720,6 +728,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
         <select id="fd-unit" onchange="fdUpdateStartBtn()" style="width:100%;padding:10px;font-size:.9rem;border-radius:8px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text)">
           <option value="">— select a unit —</option>
           <option value="all">All units</option>
+          <option value="multi">Chosen units</option>
         </select>
       </div>
       <div class="fd-hints-toggle">
@@ -2564,7 +2573,7 @@ function fdSetup() {
   if (hintsDrill) hintsDrill.checked = fdHintsOn;
   // Populate unit dropdown for current paper
   const sel = document.getElementById('fd-unit');
-  sel.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>';
+  sel.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option><option value="multi">Chosen units</option>';
   P[currentPaper].units.forEach(u => {
     const opt = document.createElement('option');
     opt.value = u;
@@ -2599,8 +2608,7 @@ function fdSetup() {
     const c = FD.find(c => fdKey(c) === k);
     if (!c) return false;
     if (c.paper !== currentPaper) return true; // other paper
-    if (unit === 'all') return false; // same paper, drilling all units — already included
-    return c.unit !== unit; // same paper, different unit
+    return !fdUnitOk(c); // same paper: only pinned cards outside the chosen units
   });
   if (outNotInDeck.length > 0) {
     banner.style.display = 'block';
@@ -2617,6 +2625,14 @@ function fdSetup() {
   fdUpdateStartBtn();
 }
 
+// 'all', one unit name, or 'multi' (the units ticked on the hub, held in fdSel)
+let fdSel = [];
+function fdUnitOk(c) {
+  const v = (document.getElementById('fd-unit') || {}).value || 'all';
+  if (v === 'all') return true;
+  if (v === 'multi') return fdSel.includes(c.unit);
+  return c.unit === v;
+}
 function fdStart() {
   if (!FD.length) {
     alert('Flashcard data not loaded yet — please wait a moment and try again.');
@@ -2630,8 +2646,7 @@ function fdStart() {
   const mastered = fdGetMastered();
 
   // Build base deck for this paper/unit
-  let base = FD.filter(c => c.paper === currentPaper && (unit !== 'all' || inScope(c)));
-  if (unit !== 'all') base = base.filter(c => c.unit === unit);
+  let base = FD.filter(c => c.paper === currentPaper && (unit !== 'all' || inScope(c)) && fdUnitOk(c));
   const unitTotal = base.length;
 
   // Filter out already-mastered cards
@@ -2656,8 +2671,7 @@ function fdStart() {
     .filter(c => {
       // Exclude if already in base deck (same paper + same unit, or same paper + drilling all)
       if (c.paper !== currentPaper) return true; // other paper — always include
-      if (unit === 'all') return false;           // same paper, all units — base already covers it
-      return c.unit !== unit;                     // same paper, different unit — include
+      return !fdUnitOk(c);                        // same paper: include only if outside the chosen units
     });
 
   // Combine: base deck + outstanding from other papers
@@ -2863,7 +2877,7 @@ function fdShowSummary() {
   const unit = document.getElementById('fd-unit').value;
   const mastered = fdGetMastered();
   let unitCards = FD.filter(c => c.paper === currentPaper);
-  if (unit !== 'all') unitCards = unitCards.filter(c => c.unit === unit);
+  unitCards = unitCards.filter(fdUnitOk);
   const unitTotal = unitCards.length;
   const allMastered = unitTotal > 0 && unitCards.every(c => mastered[fdKey(c)]);
   const cleanSweep  = fdMissCount === 0 && fdGot > 0;
@@ -2981,7 +2995,7 @@ function fdShowComplete() {
   document.getElementById('fd-complete').style.display = 'block';
   const unit = document.getElementById('fd-unit').value;
   let unitCards = FD.filter(c => c.paper === currentPaper);
-  if (unit !== 'all') unitCards = unitCards.filter(c => c.unit === unit);
+  unitCards = unitCards.filter(fdUnitOk);
   document.getElementById('fd-complete-count').textContent =
     `All ${unitCards.length} card${unitCards.length !== 1 ? 's' : ''} mastered ✅`;
 }
@@ -2998,7 +3012,7 @@ function fdResetUnit() {
   const unit = document.getElementById('fd-unit').value;
   const mastered = fdGetMastered();
   let toReset = FD.filter(c => c.paper === currentPaper);
-  if (unit !== 'all') toReset = toReset.filter(c => c.unit === unit);
+  toReset = toReset.filter(fdUnitOk);
   toReset.forEach(c => delete mastered[fdKey(c)]);
   fdSetMastered(mastered);
   document.getElementById('fd-complete').style.display = 'none';
@@ -3013,16 +3027,14 @@ function fdUpdateStartBtn() {
   if (!btn) return;
   if (!unit || !FD.length) { btn.textContent = '⚡ Start Flashcard Mode'; return; }
   const mastered = fdGetMastered();
-  let base = FD.filter(c => c.paper === currentPaper && (unit !== 'all' || inScope(c)));
-  if (unit !== 'all') base = base.filter(c => c.unit === unit);
+  let base = FD.filter(c => c.paper === currentPaper && (unit !== 'all' || inScope(c)) && fdUnitOk(c));
   const unmastered = base.filter(c => !mastered[fdKey(c)]).length;
   const outstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
   const pinned = outstanding.filter(k => {
     const c = FD.find(c => fdKey(c) === k);
     if (!c) return false;
     if (c.paper !== currentPaper) return true;
-    if (unit === 'all') return false;
-    return c.unit !== unit;
+    return !fdUnitOk(c);
   }).length;
   let label = `⚡ Start — ${unmastered} card${unmastered !== 1 ? 's' : ''}`;
   if (pinned > 0) label += ` + ${pinned} pinned`;
@@ -3461,26 +3473,47 @@ function hubRender2(p) {
   const w = unitFlags(xpLoad()).filter(u => u.c.paper === p && u.flag && !(u.flag === 'stale' && u.text === 'Not started yet'))
     .sort((a, b) => (a.flag === b.flag ? a.rank - b.rank : (a.flag === 'weak' ? -1 : 1)))[0];
   document.getElementById('hub-weak').innerHTML = w ? '<div class="wk-nudge" style="margin:0 0 .8rem;border-left-color:' + (w.flag === 'weak' ? '#D9534F' : '#C98A00') + '"><div style="min-width:0"><b>' + (w.flag === 'weak' ? 'Needs work: ' : 'Revisit: ') + escHtml(w.c.unit) + '</b><small>' + escHtml(w.text) + '</small></div><button onclick="practiseUnit(' + w.i + ')">Practise</button></div>' : '';
+  if (hubSel.paper !== p) hubSel = {paper:p, all:true, set:[]};
+  const open = P[p].units.map((u, k) => (idx0 + k) < pos ? u : null);
+  hubSel.set = hubSel.set.filter(u => open.includes(u));
+  if (!hubSel.all && !hubSel.set.length) hubSel.all = true;
+  const cardsOf = u => FD.filter(c => c.paper === p && c.unit === u && !/^Case Study/i.test(c.front));
+  const allCards = open.filter(Boolean).reduce((a, u) => a.concat(cardsOf(u)), []);
   const rows = P[p].units.map((u, k) => {
-    const cards = FD.filter(c => c.paper === p && c.unit === u && !/^Case Study/i.test(c.front));
-    const done = cards.filter(c => mast[fdKey(c)]).length;
+    const cards = cardsOf(u), done = cards.filter(c => mast[fdKey(c)]).length;
     const lock = (idx0 + k) >= pos;
-    return '<button class="hub-row' + (lock ? ' lock' : '') + '" ' + (lock ? 'onclick="lockFlashUnit()"' : 'onclick="hubStart(' + k + ')"') + '><span>' + escHtml(u) + '</span><span>' + (lock ? '🔒' : done + '/' + cards.length) + '</span></button>';
+    const on = !lock && !hubSel.all && hubSel.set.includes(u);
+    return '<button class="hub-row' + (lock ? ' lock' : '') + (on ? ' on' : '') + '" ' + (lock ? 'onclick="lockFlashUnit()"' : 'onclick="hubTog(' + k + ')" role="checkbox" aria-checked="' + on + '"') + '><span class="hub-dot' + (on ? ' on' : '') + '"></span><span class="hub-nm">' + escHtml(u) + '</span><span>' + (lock ? '🔒' : done + '/' + cards.length) + '</span></button>';
   }).join('');
+  const allRow = '<button class="hub-row hub-all' + (hubSel.all ? ' on' : '') + '" onclick="hubAll()" role="checkbox" aria-checked="' + hubSel.all + '"><span class="hub-dot' + (hubSel.all ? ' on' : '') + '"></span><span class="hub-nm">All units</span><span>' + allCards.filter(c => mast[fdKey(c)]).length + '/' + allCards.length + '</span></button>';
   const pins = fdGetOutstanding().length;
+  const nSel = hubSel.all ? open.filter(Boolean).length : hubSel.set.length;
   document.getElementById('hub-fc').style.borderLeftColor = col;
-  document.getElementById('hub-fc').innerHTML = '<h3>⚡ Flashcards</h3><div class="sub">Tap a unit to start, or revise them all.' + (pins ? ' Your ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + ' will be mixed in.' : '') + '</div>' +
-    '<button class="hub-pill' + (fdHintsOn ? ' on' : '') + '" id="hub-hints" onclick="hubHints()">💡 Hints ' + (fdHintsOn ? 'on' : 'off') + '</button>' + rows +
-    '<button class="hub-start" style="background:' + col + '" onclick="hubStart(-1)">Start all units</button>' +
+  document.getElementById('hub-fc').style.setProperty('--c', col);
+  document.getElementById('hub-fc').innerHTML = '<h3>⚡ Flashcards</h3><div class="sub">Choose one unit, several, or all of them.' + (pins ? ' Your ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + ' will be mixed in.' : '') + '</div>' +
+    '<button class="hub-pill' + (fdHintsOn ? ' on' : '') + '" id="hub-hints" onclick="hubHints()">💡 Hints ' + (fdHintsOn ? 'on' : 'off') + '</button>' + allRow + rows +
+    '<button class="hub-start" style="background:' + col + '" onclick="hubGo()">Start flashcards' + (hubSel.all ? '' : ' · ' + nSel + ' unit' + (nSel > 1 ? 's' : '')) + '</button>' +
     '<div style="display:flex;gap:10px;flex-wrap:wrap">' + (pins ? '<button class="hub-link" onclick="goToPinnedReview()">📌 Review ' + pins + ' pinned (all papers)</button>' : '') + '<button class="hub-link" onclick="hubPrint()">🖨️ Print cards as PDF</button></div>';
+}
+let hubSel = {paper:'', all:true, set:[]};
+function hubAll() { hubSel.all = true; hubSel.set = []; hubRender(); }
+function hubTog(k) {
+  const u = P[currentPaper].units[k];
+  if (hubSel.all) { hubSel.all = false; hubSel.set = [u]; }
+  else if (hubSel.set.includes(u)) { hubSel.set = hubSel.set.filter(x => x !== u); if (!hubSel.set.length) hubSel.all = true; }
+  else hubSel.set.push(u);
+  hubRender();
+}
+function hubGo() {
+  enterMode('flashcard');
+  const sel = document.getElementById('fd-unit');
+  if (hubSel.all) sel.value = 'all';
+  else if (hubSel.set.length === 1) sel.value = hubSel.set[0];
+  else { fdSel = hubSel.set.slice(); sel.value = 'multi'; }
+  fdStart();
 }
 function hubHints() { fdSyncHints(!fdHintsOn); hubRender(); }
 function lockFlashUnit() {}
-function hubStart(k) {
-  enterMode('flashcard');
-  document.getElementById('fd-unit').value = k < 0 ? 'all' : P[currentPaper].units[k];
-  fdStart();
-}
 function hubPrint() {
   enterMode('flashcard'); document.getElementById('fd-unit').value = 'all';
   printFlashcards(); goBack();
@@ -3563,11 +3596,11 @@ function uptoSave(v) {
 // XP & LEVELS
 // ═══════════════════════════════════════════
 const XP_LEVELS = [
-  {t:'Stone Age hunter',e:'🦴',xp:0}, {t:'Roman Briton',e:'🛡️',xp:100}, {t:'Anglo-Saxon monk',e:'⛪',xp:250},
-  {t:'Viking raider',e:'🪓',xp:500}, {t:'Norman knight',e:'🐎',xp:850}, {t:'Medieval merchant',e:'⚓',xp:1300},
-  {t:'Tudor courtier',e:'🌹',xp:2000}, {t:'Civil War pikeman',e:'⚔️',xp:3000}, {t:'Industrial inventor',e:'🚂',xp:4400},
-  {t:'Victorian explorer',e:'🧭',xp:6300}, {t:'WWI Tommy',e:'🪖',xp:8800}, {t:'Spitfire pilot',e:'✈️',xp:12000},
-  {t:'Sixties rockstar',e:'🎸',xp:16500}, {t:'Modern Briton',e:'📱',xp:23000}, {t:'Space age pioneer',e:'🚀',xp:34000}
+  {t:'Stone Age hunter',e:'🦴',xp:0}, {t:'Roman Briton',e:'🛡️',xp:250}, {t:'Anglo-Saxon monk',e:'⛪',xp:600},
+  {t:'Viking raider',e:'🪓',xp:1100}, {t:'Norman knight',e:'🐎',xp:1800}, {t:'Medieval merchant',e:'⚓',xp:2700},
+  {t:'Tudor courtier',e:'🌹',xp:3900}, {t:'Civil War pikeman',e:'⚔️',xp:5500}, {t:'Industrial inventor',e:'🚂',xp:7600},
+  {t:'Victorian explorer',e:'🧭',xp:10200}, {t:'WWI Tommy',e:'🪖',xp:13500}, {t:'Spitfire pilot',e:'✈️',xp:17500},
+  {t:'Sixties rockstar',e:'🎸',xp:22500}, {t:'Modern Briton',e:'📱',xp:28500}, {t:'Space age pioneer',e:'🚀',xp:36000}, {t:'God of History',e:'🌌',xp:50000}
 ];
 // Change a number here to retune the game.
 const XP_RULE = {flash:10, date:5, rapid:5, wrong:0, repeat:2, runLen:5, runBonus:5, parent:20, cap:500};
@@ -3825,17 +3858,18 @@ function progressRender() {
     const v = x.days[ymd(d)] || 0, du = x.dayu[ymd(d)] || {};
     const H = Math.round(Math.min(1, v / XP_RULE.cap) * 66);
     let tracked = 0, segs = '';
-    Object.keys(du).sort((a, b) => (UNIT_IDX[a] === undefined ? 99 : UNIT_IDX[a]) - (UNIT_IDX[b] === undefined ? 99 : UNIT_IDX[b])).forEach(k => {
-      tracked += du[k]; seenU[k] = 1;
-      segs += '<b style="flex:' + du[k] + ' 0 0;background:' + unitCol(k) + '"></b>';
+    const dp = {};
+    Object.keys(du).forEach(k => { const pp = k.split('|')[0]; if (COURSE_ORDER.includes(pp)) dp[pp] = (dp[pp] || 0) + du[k]; });
+    COURSE_ORDER.forEach(pp => {
+      if (!dp[pp]) return;
+      tracked += dp[pp]; seenU[pp] = 1;
+      segs += '<b style="flex:' + dp[pp] + ' 0 0;background:' + PAPER_COL[pp] + '"></b>';
     });
-    if (v - tracked > 0) segs += '<b style="flex:' + (v - tracked) + ' 0 0;background:' + unitCol('') + '"></b>';
+    if (v - tracked > 0) segs += '<b style="flex:' + (v - tracked) + ' 0 0;background:#9AA0A6"></b>';
     days += '<div class="pg-day" title="' + ymd(d) + ': ' + v + ' XP"><i style="height:' + (v ? Math.max(H, 3) : 0) + 'px">' + segs + '</i>' + 'SMTWTFS'[d.getDay()] + '</div>';
   }
-  const leg = Object.keys(seenU).sort((a, b) => UNIT_IDX[a] - UNIT_IDX[b]).map(k => {
-    const c = COURSE_FLAT[UNIT_IDX[k]];
-    return c ? '<span class="pg-leg"><s style="background:' + unitCol(k) + '"></s>' + escHtml(c.unit.replace(/ – .*/, '')) + ' ' + PAPER_NAME[c.paper] + '</span>' : '';
-  }).join('');
+  const leg = COURSE_ORDER.filter(pp => seenU[pp]).map(pp =>
+    '<span class="pg-leg"><s style="background:' + PAPER_COL[pp] + '"></s>' + PAPER_NAME[pp].replace(' & Nazi Germany', '') + '</span>').join('');
   document.getElementById('pg-days').innerHTML = days;
   document.getElementById('pg-legend').innerHTML = leg;
   const names = {flash:'Flashcards', date:'Key dates', rapid:'Rapid fire'};
