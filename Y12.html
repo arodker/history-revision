@@ -694,6 +694,8 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .up-pair .up-pos{font-size:.66rem}
 .up-pair .up-ticks span{font-size:.5rem;padding-left:0;padding-right:0}
 #up-ticks-t span{font-size:.44rem;letter-spacing:-.02em}
+.step-lbl{display:flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:700;margin:.5rem 0 .2rem}
+.step-n{display:inline-flex;align-items:center;justify-content:center;width:1.2rem;height:1.2rem;border-radius:50%;background:var(--text);color:var(--bg);font-size:.7rem;font-weight:800;flex:none}
 </style>
 </head>
 <body>
@@ -728,7 +730,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.3rem">
     <h1 style="margin:0;font-size:1.2rem;font-weight:700">Mr Rodker's Revision Hub - A Level</h1><span class="yr-pill">Y12</span>
   </div>
-  <div class="up-pair"><div class="up-card" id="up-card-t">
+  <div class="step-lbl"><span class="step-n">1</span>Set your progress</div><div class="up-pair"><div class="up-card" id="up-card-t">
     <div class="up-head"><span class="up-title">Tudors</span><span class="up-pos" id="up-pos-t"></span></div>
     <input type="range" id="up-range-t" min="0" max="6" step="1" value="6" oninput="uptoPreview('t',this.value)" onchange="uptoSave('t',this.value)" aria-label="Tudors">
     <div class="up-ticks" id="up-ticks-t"></div>
@@ -738,7 +740,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     <input type="range" id="up-range-c" min="0" max="4" step="1" value="4" oninput="uptoPreview('c',this.value)" onchange="uptoSave('c',this.value)" aria-label="Cold War">
     <div class="up-ticks" id="up-ticks-c"></div>
   </div></div>
-  <div class="start-line">Pick a section to start revising</div>
+  <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
   <div class="pick-grid">
     <button class="pick-btn pb-mtc" onclick="openSection('mtc')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60">
           <circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
@@ -764,6 +766,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   </div>
   <div class="or-line">or</div>
   <div class="home-row"><button class="btn-go" style="background:#3E4651;border:1.5px solid #2D343D" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button><button class="btn-go btn-arc" onclick="arcOpen()"><span class="new-flag">NEW</span>🕹️ Arcade Games</button></div>
+  <div class="step-lbl"><span class="step-n">3</span>See your progress</div>
   <div class="xp-card" id="xp-card" onclick="openProgress()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProgress()" title="See your progress"></div>
   <div id="weak-nudge"></div>
 </div>
