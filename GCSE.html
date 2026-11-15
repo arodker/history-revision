@@ -547,6 +547,109 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .hub-row.lock .hub-dot{border-style:dashed}
 .hub-all{border-top:none!important;font-weight:700;margin-top:.2rem}
 .hub-row:not(.lock):active{background:var(--subtle)}
+.start-line{font-size:.95rem;font-weight:600;margin:.1rem 0 .6rem;color:var(--text)}
+.or-line{text-align:center;font-size:.72rem;color:var(--muted);margin:.5rem 0 .4rem;text-transform:uppercase;letter-spacing:.06em}
+.up-tog{width:100%;background:none;border:none;padding:0;font-family:inherit;color:inherit;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;text-align:left}
+.up-tog .up-pos{flex:1;text-align:right}
+.up-chg{font-size:.68rem;font-weight:700;color:var(--muted);white-space:nowrap}
+.xp-card.xp-mini{padding:.55rem .8rem;margin:.9rem 0 .6rem}
+.xp-card.xp-mini .xp-emoji{font-size:1.4rem}
+.xp-mini-t{flex:1;min-width:0;font-size:.82rem}
+.xp-mini-t b{display:block;font-size:.88rem}
+.xp-mini-t span{color:var(--muted);font-size:.72rem}
+.paper-btn{padding:1rem 3.6rem 1rem .85rem;font-size:.9rem}
+.paper-btn .plabel{font-size:.62rem}
+.paper-btn::after{display:none}
+.paper-btn.pb-locked::after{display:block;right:1.1rem}
+.paper-btn .pbw{position:absolute;right:.5rem;top:50%;transform:translateY(-50%);width:2.7rem;flex:none;padding:0;background:none!important;cursor:inherit}
+.paper-btn .pbw:hover{background:none}
+.paper-btn .pbw .fd-wheel{width:2.7rem;height:2.7rem;margin:0}
+.paper-btn.pb-locked .pbw{display:none}
+.home-row{display:flex;gap:8px;margin:0 0 .9rem}
+.home-row .btn-go{flex:1;margin:0!important;position:relative;font-size:.88rem;line-height:1.25;padding:.85rem .5rem}
+.btn-arc{background:#2B2350;color:#fff;border:2px solid #7C5CD6}
+:root.dark .btn-arc{background:#3A2F6B}
+.new-flag{position:absolute;top:-8px;right:-3px;background:#F0B429;color:#3B2A00;font-size:.6rem;font-weight:800;padding:2px 8px;border-radius:10px;letter-spacing:.04em;animation:newpulse 1.5s ease-in-out infinite}
+@keyframes newpulse{50%{transform:scale(1.12)}}
+#arc-body{padding-bottom:1rem}
+#s-arcade.ingame > .back-btn,#s-arcade.ingame > .arc-title{display:none}
+.arc-title{font-size:1.35rem;font-weight:800;letter-spacing:.04em;margin:.2rem 0 .1rem}
+.arc-sub{font-size:.76rem;color:var(--muted);margin:0 0 .6rem}
+.arc-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.9rem}
+.arc-pill{border:2px solid var(--border2);background:var(--surface);color:var(--muted);border-radius:20px;padding:.3rem .8rem;font-family:inherit;font-size:.76rem;font-weight:700;cursor:pointer}
+.arc-pill.on{border-color:var(--c);background:color-mix(in srgb,var(--c) 16%,var(--surface));color:var(--text)}
+.arc-pill.lock{opacity:.45;border-style:dashed;cursor:not-allowed}
+.arc-tile{display:flex;align-items:center;gap:.9rem;width:100%;text-align:left;border:none;border-radius:16px;padding:1rem;margin-bottom:.7rem;font-family:inherit;color:#fff;cursor:pointer;position:relative;overflow:hidden}
+.arc-tile.t1{background:linear-gradient(135deg,#2B2350,#5B3FB5)}
+.arc-tile.t2{background:linear-gradient(135deg,#4A1A2C,#C0392B)}
+.arc-tile:active{transform:scale(.985)}
+.arc-ic{font-size:2.3rem;line-height:1}
+.arc-tx{flex:1;min-width:0}
+.arc-tx b{display:block;font-size:1.05rem;letter-spacing:.02em}
+.arc-tx small{display:block;font-size:.72rem;opacity:.85;margin-top:.15rem;line-height:1.35}
+.arc-hi{font-family:'Courier New',monospace;font-weight:800;font-size:.72rem;background:rgba(255,255,255,.18);border-radius:8px;padding:3px 7px;white-space:nowrap}
+.arc-soon{display:flex;flex-wrap:wrap;gap:6px;margin:.4rem 0 .8rem}
+.arc-soon span{font-size:.72rem;font-weight:700;color:var(--muted);border:1.5px dashed var(--border2);border-radius:12px;padding:.35rem .7rem}
+.arc-note{font-size:.7rem;color:var(--muted)}
+.arc-top{display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem}
+.arc-quit{border:1px solid var(--border2);background:var(--surface);color:var(--muted);border-radius:8px;padding:.35rem .7rem;font-family:inherit;font-size:.76rem;font-weight:700;cursor:pointer}
+.arc-stats{flex:1;display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--muted);font-family:'Courier New',monospace}
+.arc-stats b{color:var(--text)}
+.arc-hearts{font-size:.95rem;letter-spacing:1px}.arc-hearts i{font-style:normal;opacity:.35}
+.eol-card{background:var(--card);border:1px solid var(--border);border-left:5px solid var(--c);border-radius:14px;padding:.8rem 1rem;margin-bottom:.4rem}
+.eol-card.ch{border-width:2px;border-left-width:5px;border-color:var(--c);background:color-mix(in srgb,var(--c) 8%,var(--card))}
+.eol-lab{font-size:.62rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.2rem}
+.eol-ev{font-size:1rem;font-weight:700;line-height:1.35}
+.eol-yr{font-family:'Courier New',monospace;font-size:1.5rem;font-weight:800;margin-top:.3rem}
+.eol-yr.q{color:var(--muted)}.eol-yr.ok{color:#2E7D32}.eol-yr.no{color:#C0392B}
+.eol-vs{text-align:center;font-size:.74rem;color:var(--muted);font-weight:700;margin:.5rem 0}
+.eol-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:.8rem}
+.eol-btns button{padding:1rem .5rem;border:none;border-radius:14px;font-family:inherit;font-size:1rem;font-weight:800;color:#fff;background:#5B3FB5;cursor:pointer}
+.eol-btns button:disabled{opacity:.5}
+.eol-btns button.no{background:#B5473A}.eol-btns button.yes{background:#2E7D32}
+.arc-end{text-align:center;padding:1rem 0}
+.arc-big{font-size:3.4rem}.arc-h{font-size:1.25rem;font-weight:800;margin:.3rem 0}
+.arc-score{font-family:'Courier New',monospace;font-size:3rem;font-weight:800}
+.arc-sub2{font-size:.82rem;color:var(--muted);margin-bottom:1rem}
+.arc-btn{display:block;width:100%;padding:.9rem;border:none;border-radius:12px;background:#5B3FB5;color:#fff;font-family:inherit;font-size:.95rem;font-weight:800;cursor:pointer;margin-top:.6rem}
+.arc-btn.sec{background:var(--surface);color:var(--text);border:1.5px solid var(--border2)}
+.boss-box{display:flex;align-items:center;gap:.9rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:.8rem 1rem;margin-bottom:.7rem}
+.boss-em{font-size:3rem;line-height:1;display:inline-block}
+.boss-hit{animation:bosshit .45s}.boss-laugh{animation:bosslaugh .5s}
+@keyframes bosshit{25%{transform:translateX(-8px) rotate(-10deg);filter:brightness(2)}60%{transform:translateX(8px) rotate(8deg)}}
+@keyframes bosslaugh{50%{transform:scale(1.25)}}
+.boss-r{flex:1;min-width:0}
+.boss-nm{font-weight:800;font-size:.95rem}.boss-nm small{color:var(--muted);font-weight:700;font-family:'Courier New',monospace}
+.boss-bar{height:12px;background:var(--subtle);border-radius:8px;overflow:hidden;margin:.35rem 0 .2rem}
+.boss-bar i{display:block;height:100%;background:#C0392B;border-radius:8px;transition:width .4s}
+.boss-hp{font-size:.68rem;color:var(--muted);font-family:'Courier New',monospace}
+.boss-q{background:var(--card);border:1px solid var(--border);border-left:5px solid var(--c);border-radius:14px;padding:.9rem 1rem;font-size:1.02rem;font-weight:700;line-height:1.4}
+.boss-a{margin-top:.6rem;background:var(--bg-ok,#EAF3DE);color:var(--text);border:1.5px solid #3B6D11;border-radius:12px;padding:.75rem 1rem;font-weight:700}
+.arc-tile.t3{background:linear-gradient(135deg,#0E3B43,#1D9E75)}
+.arc-tile.t4{background:linear-gradient(135deg,#5A3200,#E08A1E)}
+.arc-tile.t5{background:linear-gradient(135deg,#1B2F4F,#378ADD)}
+.era-field{position:relative;height:250px;border:2px dashed var(--border2);border-radius:14px;overflow:hidden;background:var(--card);margin-bottom:.6rem}
+.era-card{position:absolute;left:8%;right:8%;top:0;background:var(--surface);border:2px solid var(--border2);border-radius:12px;padding:.6rem .8rem;font-weight:700;font-size:.92rem;line-height:1.35;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.era-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.era-b{border:3px solid var(--c);background:color-mix(in srgb,var(--c) 14%,var(--surface));color:var(--text);border-radius:12px;padding:.8rem .4rem;font-family:inherit;font-weight:800;font-size:.82rem;cursor:pointer;line-height:1.25}
+.era-b.good{background:#2E7D32;border-color:#2E7D32;color:#fff}
+.era-b.bad{background:#B5473A;border-color:#B5473A;color:#fff}
+.wh-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.wh-hole{height:104px;border-radius:50% / 22%;border:3px solid var(--border2);background:var(--subtle);font-family:inherit;color:var(--text);padding:.4rem .6rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;overflow:hidden;cursor:pointer;transition:background .1s}
+.wh-hole.up{background:var(--surface);border-color:#E08A1E;animation:whpop .15s}
+.wh-hole.hit{background:#2E7D32;border-color:#2E7D32;color:#fff}
+.wh-hole.miss{background:#B5473A;border-color:#B5473A;color:#fff}
+@keyframes whpop{from{transform:scale(.8)}to{transform:scale(1)}}
+.wh-ev{font-size:.7rem;font-weight:700;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-align:center}
+.wh-yr{font-family:'Courier New',monospace;font-weight:800;font-size:1.05rem}
+.st-stack{display:flex;flex-direction:column-reverse;gap:4px;min-height:120px;border-bottom:4px solid var(--border2);padding-bottom:6px;margin-bottom:.8rem}
+.st-empty{color:var(--muted);font-size:.75rem;text-align:center;align-self:center;margin:auto}
+.st-blk{display:flex;justify-content:space-between;gap:.6rem;align-items:center;background:color-mix(in srgb,var(--c) 20%,var(--surface));border:2px solid var(--c);border-radius:8px;padding:.45rem .7rem;font-size:.8rem;font-weight:700;animation:stdrop .25s}
+.st-blk b{font-family:'Courier New',monospace;white-space:nowrap}
+@keyframes stdrop{from{transform:translateY(-16px);opacity:0}to{transform:none;opacity:1}}
+.st-opts{display:flex;flex-direction:column;gap:6px}
+.st-opt{text-align:left;border:2px solid var(--c);background:var(--surface);color:var(--text);border-radius:10px;padding:.65rem .8rem;font-family:inherit;font-weight:700;font-size:.86rem;cursor:pointer;line-height:1.3}
+.st-opt.shake{animation:pbshake .35s;background:#FBE9E7}
 </style>
 </head>
 <body>
@@ -582,30 +685,23 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <span class="yr-pill">Y9-11</span>
   </div>
   <div style="margin-bottom:.6rem"></div>
-  <div class="xp-card" id="xp-card" onclick="openProgress()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProgress()" title="See your progress"></div>
-  <div id="weak-nudge"></div>
   <div class="up-card">
-    <div class="up-head"><span class="up-title">Course progress</span><span class="up-pos" id="up-pos"></span></div>
+    <div class="up-head" id="up-tog"><span class="up-title">Set how much you have studied</span><span class="up-pos" id="up-pos"></span></div><div id="up-body">
     <input type="range" id="up-range" min="1" max="15" step="1" value="15" oninput="uptoPreview(this.value)" onchange="uptoSave(this.value)" aria-label="Course position">
     <div class="up-ticks" id="up-ticks"></div>
-  </div>
-  <div class="paper-grid">
-    <button class="paper-btn pb-p1" onclick="openPaper('p1')"><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
-    <button class="paper-btn pb-p2a" onclick="openPaper('p2a')"><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
-    <button class="paper-btn pb-p2b" onclick="openPaper('p2b')"><span class="plabel">Paper 2b</span>👑 Early Elizabethan England</button>
-    <button class="paper-btn pb-p3" onclick="openPaper('p3')"><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
-  </div>
-  <button class="btn-go btn-mix" style="margin:1rem 0 0" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
-  <!-- Flashcard tracker wheels -->
-  <div class="rq-section" style="margin-bottom:.4rem;border-top:none;padding-top:0">
-    <button class="wh-toggle" id="wh-toggle" onclick="wheelsToggle()" aria-expanded="false"><span>⚡ Flashcards today</span><span id="wh-chev">▾</span></button>
-    <div id="fd-tracker" style="display:none;margin-top:.5rem;justify-content:space-around;align-items:flex-start;padding:.75rem .5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:14px">
-      <div class="fd-wheel-cell" data-paper="p1" onclick="fdWheelLaunch('p1')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg><div class="fd-wheel-label">Migration</div></div>
-      <div class="fd-wheel-cell" data-paper="p2a" onclick="fdWheelLaunch('p2a')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg><div class="fd-wheel-label">Cold War</div></div>
-      <div class="fd-wheel-cell" data-paper="p2b" onclick="fdWheelLaunch('p2b')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2b" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg><div class="fd-wheel-label">Elizabeth</div></div>
-      <div class="fd-wheel-cell" data-paper="p3" onclick="fdWheelLaunch('p3')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p3" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg><div class="fd-wheel-label">Germany</div></div>
     </div>
   </div>
+  <div class="start-line">Pick a paper to start revising</div>
+  <div class="paper-grid">
+    <button class="paper-btn pb-p1" onclick="openPaper('p1')"><span class="fd-wheel-cell pbw" data-paper="p1" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg></span><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
+    <button class="paper-btn pb-p2a" onclick="openPaper('p2a')"><span class="fd-wheel-cell pbw" data-paper="p2a" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg></span><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
+    <button class="paper-btn pb-p2b" onclick="openPaper('p2b')"><span class="fd-wheel-cell pbw" data-paper="p2b" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2b" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg></span><span class="plabel">Paper 2b</span>👑 Early Elizabethan England</button>
+    <button class="paper-btn pb-p3" onclick="openPaper('p3')"><span class="fd-wheel-cell pbw" data-paper="p3" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p3" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg></span><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
+  </div>
+  <div class="or-line">or</div>
+  <div class="home-row"><button class="btn-go btn-mix" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button><button class="btn-go btn-arc" onclick="arcOpen()"><span class="new-flag">NEW</span>🕹️ Arcade Games</button></div>
+  <div class="xp-card" id="xp-card" onclick="openProgress()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProgress()" title="See your progress"></div>
+  <div id="weak-nudge"></div>
     <div id="home-pinned-link" style="display:none;text-align:center;margin-top:.5rem">
     <button onclick="goToPinnedReview()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer">📌 Review pinned cards</button>
   </div>
@@ -937,7 +1033,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 <!-- ═══ PARENT VIEW ═══ -->
 <div class="screen" id="s-parent">
   <button class="back-btn" onclick="parentExit()">← Back</button>
-  <div class="pr-hero" id="pr-hero"><div class="pr-hero-ic">👪</div><div><div class="pr-title">Quiz your child</div><div class="pr-sub">No prep needed. Read each question aloud, let them answer from memory, then check.</div></div></div>
+  <div class="pr-hero" id="pr-hero"><div class="pr-hero-ic">👪</div><div><div class="pr-title">Quiz your child</div></div></div>
   <div id="pv-setup">
     <div class="pr-step">Which papers? <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Tap to include or leave out</span></div>
     <div id="pv-papers"></div>
@@ -951,6 +1047,12 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 </div>
 
 <!-- ═══ PROGRESS ═══ -->
+<div class="screen" id="s-arcade">
+  <button class="back-btn" onclick="showScreen('s-pick')">← Back</button>
+  <div class="arc-title">🕹️ ARCADE</div>
+  <div id="arc-body"></div>
+</div>
+
 <div class="screen" id="s-progress">
   <button class="back-btn" onclick="showScreen('s-pick')">← Back</button>
   <div class="pv-h">Your progress</div>
@@ -3771,7 +3873,7 @@ function unitsRender(x) {
   const el = document.getElementById('pg-units');
   if (!el) return;
   const all = unitFlags(x);
-  if (!all.length) { el.innerHTML = '<div class="empty">Move the “Course progress” slider on the home screen to show the units you have covered.</div>'; return; }
+  if (!all.length) { el.innerHTML = '<div class="empty">Move the “Set how much you have studied” slider on the home screen to show the units you have covered.</div>'; return; }
   const bad = all.filter(u => u.flag).sort((a, b) => (a.flag === b.flag ? a.rank - b.rank : (a.flag === 'weak' ? -1 : 1)));
   const good = all.length - bad.length;
   let h = '<div style="font-size:.78rem;color:var(--muted);margin-bottom:8px">' + good + ' of ' + all.length + ' units covered in class are on track.</div>';
@@ -3835,12 +3937,27 @@ function xpBlock(x, link) {
 }
 function xpRender() {
   const el = document.getElementById('xp-card');
-  if (el) el.innerHTML = xpBlock(xpLoad(), true);
+  if (el) {
+    const x = xpLoad(), mini = false;
+    el.classList.toggle('xp-mini', mini);
+    el.innerHTML = mini
+      ? '<div class="xp-top"><span class="xp-emoji">' + XP_LEVELS[0].e + '</span><div class="xp-mini-t"><b>Level 1 · ' + XP_LEVELS[0].t + '</b><span>Earn XP as you revise</span></div><span class="xp-next" style="white-space:nowrap">Progress ›</span></div>'
+      : xpBlock(x, true);
+  }
   weakNudgeRender();
   const pg = document.getElementById('pg-level');
   if (pg && document.getElementById('s-progress').classList.contains('active')) progressRender();
 }
 function openProgress() { showScreen('s-progress'); }
+function uptoToggle(force) {
+  return;
+  const b = document.getElementById('up-body'), t = document.getElementById('up-tog');
+  if (!b) return;
+  const open = typeof force === 'boolean' ? force : b.style.display === 'none';
+  b.style.display = open ? 'block' : 'none';
+  t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  
+}
 
 // ═══════════════════════════════════════════
 // PROGRESS SCREEN
@@ -4046,6 +4163,326 @@ function pvEnd() {
     '<button class="pr-sec" onclick="parentShowSetup()">Change papers</button>' +
     '<button class="pr-sec" onclick="parentExit()">Done</button></div>';
   end.style.display = 'block';
+}
+
+
+// ═══════════════════════════════════════════
+// ARCADE
+// ═══════════════════════════════════════════
+const LS_ARC = 'gcse_arcade_hs';
+const ARC = {sel:{}, g:null, t:null, iv:null};
+function arcStop() { clearTimeout(ARC.t); clearInterval(ARC.iv); ARC.iv = null; ARC.g = null; }
+function arcHS() { try { return JSON.parse(localStorage.getItem(LS_ARC) || '{}'); } catch (e) { return {}; } }
+function arcSetHS(k, v) {
+  const h = arcHS();
+  if (v > (h[k] || 0)) { h[k] = v; try { localStorage.setItem(LS_ARC, JSON.stringify(h)); } catch (e) {} return true; }
+  return false;
+}
+function arcPapers() { return COURSE_ORDER.filter(p => paperReached(p) && ARC.sel[p] !== false); }
+function arcYear(d) { const s = String(d.date), m = s.match(/\d{4}/) || s.match(/\d{3}/); return m ? parseInt(m[0], 10) : null; }
+function arcDatePool() { const ps = arcPapers(); return DATES.filter(d => ps.includes(d.paper) && inScope(d) && arcYear(d) !== null); }
+function arcRqPool() { const ps = arcPapers(); return RQ.filter(q => ps.includes(q.paper) && inScope(q)); }
+function arcOpen() { arcStop(); showScreen('s-arcade'); arcMenu(); }
+function arcTogglePaper(p) {
+  if (!paperReached(p)) return;
+  ARC.sel[p] = ARC.sel[p] === false;
+  if (!arcPapers().length) ARC.sel[p] = true;
+  arcMenu();
+}
+function arcHearts(n) { return '<span class="arc-hearts">' + '❤️'.repeat(Math.max(0, n)) + '<i>' + '🖤'.repeat(Math.max(0, 3 - n)) + '</i></span>'; }
+function arcMenu() {
+  arcStop();
+  document.getElementById('s-arcade').classList.remove('ingame');
+  const hs = arcHS();
+  const pills = COURSE_ORDER.map(p => {
+    const lock = !paperReached(p), on = !lock && ARC.sel[p] !== false;
+    return '<button class="arc-pill' + (on ? ' on' : '') + (lock ? ' lock' : '') + '" style="--c:' + PAPER_COL[p] + '" onclick="arcTogglePaper(\'' + p + '\')">' + PAPER_NAME[p].replace(' & Nazi Germany', '') + (lock ? ' 🔒' : '') + '</button>';
+  }).join('');
+  document.getElementById('arc-body').innerHTML =
+    '<div class="arc-sub">Draws from the papers you pick, up to the point you have studied.</div>' +
+    '<div class="arc-pills">' + pills + '</div>' +
+    '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">⏳</span><span class="arc-tx"><b>Earlier or later</b><small>Which came first? Chain them up. Three lives.</small></span><span class="arc-hi">HI ' + (hs.eol || 0) + '</span></button>' +
+    '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Every right answer hurts the boss. Misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
+    '<button class="arc-tile t3" onclick="eraChoose()"><span class="arc-ic">🌠</span><span class="arc-tx"><b>Catch the era</b><small>Events fall. Tap the unit they belong to before they land.</small></span><span class="arc-hi">HI ' + (hs.era || 0) + '</span></button>' +
+    '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>60 seconds. Tap the true dates, ignore the false ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
+    '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
+    '<div class="arc-note">Right answers earn XP like the rest of the app. Misses earn none.</div>';
+}
+function arcShort(msg) { fdShowToast(msg); }
+function arcFrame(inner, head) {
+  document.getElementById('s-arcade').classList.add('ingame');
+  document.getElementById('arc-body').innerHTML = '<div class="arc-top"><button class="arc-quit" onclick="arcMenu()">✕ Quit</button>' + head + '</div>' + inner;
+}
+// ----- Earlier or later -----
+function eolStart() {
+  const pool = shuffle(arcDatePool());
+  if (pool.length < 8) { arcShort('Not enough dates for this choice yet.'); return; }
+  ARC.g = {type:'eol', pool, i:1, anchor:pool[0], ch:null, lives:3, score:0, busy:false};
+  eolNext();
+}
+function eolNext() {
+  const g = ARC.g;
+  while (g.i < g.pool.length && arcYear(g.pool[g.i]) === arcYear(g.anchor)) g.i++;
+  if (g.i >= g.pool.length) { eolOver(true); return; }
+  g.ch = g.pool[g.i++]; g.busy = false;
+  eolRender(null);
+}
+function eolRender(res) {
+  const g = ARC.g, a = g.anchor, c = g.ch, hs = arcHS();
+  const col = PAPER_COL[c.paper] || '#888';
+  const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Score <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.eol || 0, g.score) + '</b></span></div>';
+  const cy = res ? '<div class="eol-yr ' + (res.ok ? 'ok' : 'no') + '">' + escHtml(String(c.date)) + '</div>' : '<div class="eol-yr q">?</div>';
+  arcFrame(
+    '<div class="eol-card" style="--c:' + (PAPER_COL[a.paper] || '#888') + '"><div class="eol-lab">Already placed</div><div class="eol-ev">' + escHtml(a.event) + '</div><div class="eol-yr">' + escHtml(String(a.date)) + '</div></div>' +
+    '<div class="eol-vs">Did this happen earlier or later?</div>' +
+    '<div class="eol-card ch" style="--c:' + col + '"><div class="eol-ev">' + escHtml(c.event) + '</div>' + cy + '</div>' +
+    '<div class="eol-btns"><button ' + (g.busy ? 'disabled ' : '') + 'onclick="eolPick(-1)">⬅ Earlier</button><button ' + (g.busy ? 'disabled ' : '') + 'onclick="eolPick(1)">Later ➡</button></div>', head);
+}
+function eolPick(dir) {
+  const g = ARC.g;
+  if (!g || g.busy) return;
+  g.busy = true;
+  const ok = (arcYear(g.ch) > arcYear(g.anchor) ? 1 : -1) === dir;
+  xpAward('date', ok, g.ch.paper + '|' + g.ch.event, g.ch.event, g.ch.paper, g.ch.unit);
+  if (ok) g.score++; else g.lives--;
+  eolRender({ok});
+  ARC.t = setTimeout(() => {
+    if (g.lives <= 0) { eolOver(false); return; }
+    g.anchor = g.ch; eolNext();
+  }, ok ? 1000 : 1700);
+}
+function eolOver(cleared) {
+  const g = ARC.g, isBest = arcSetHS('eol', g.score);
+  arcFrame(
+    '<div class="arc-end"><div class="arc-big">' + (cleared ? '🏆' : '💥') + '</div><div class="arc-h">' + (cleared ? 'You ran out of dates' : 'Game over') + '</div>' +
+    '<div class="arc-score">' + g.score + '</div><div class="arc-sub2">in a row' + (isBest ? ' · new best' : '') + '</div>' +
+    '<button class="arc-btn" onclick="eolStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
+  if (isBest && g.score >= 5 && typeof fdFireConfetti === 'function') fdFireConfetti();
+}
+// ----- Catch the era -----
+function eraChoose() {
+  const ps = arcPapers();
+  if (ps.length === 1) { eraGo(ps[0]); return; }
+  arcFrame('<div class="arc-h" style="text-align:center;margin:1rem 0 .4rem">Which paper?</div>' +
+    ps.map(p => '<button class="arc-btn" style="background:' + PAPER_COL[p] + '" onclick="eraGo(\'' + p + '\')">' + PAPER_NAME[p] + '</button>').join(''), '');
+}
+function eraGo(p) {
+  const all = DATES.filter(d => d.paper === p && inScope(d) && arcYear(d) !== null);
+  const cnt = {}; all.forEach(d => { cnt[d.unit] = (cnt[d.unit] || 0) + 1; });
+  const units = P[p].units.filter(u => cnt[u] >= 3).slice(0, 4);
+  if (units.length < 2) { arcShort('Not enough units for this choice yet.'); return; }
+  ARC.g = {type:'era', p, units, pool:shuffle(all.filter(d => units.includes(d.unit))), i:0, lives:3, score:0, y:0, speed:34, busy:false, cur:null};
+  eraBuild(); eraNext();
+}
+function eraStatsHtml() { const g = ARC.g, hs = arcHS(); return arcHearts(g.lives) + '<span>Score <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.era || 0, g.score) + '</b></span>'; }
+function eraBuild() {
+  const g = ARC.g;
+  arcFrame('<div class="arc-sub" style="text-align:center">Tap the unit each event belongs to before it lands.</div><div id="era-field" class="era-field"></div><div class="era-btns">' +
+    g.units.map((u, k) => '<button class="era-b" id="era-b' + k + '" style="--c:' + unitCol(g.p + '|' + u) + '" onclick="eraTap(' + k + ')">' + escHtml(u.replace(/^Unit (\d+) – /, '$1. ')) + '</button>').join('') + '</div>',
+    '<div class="arc-stats" id="era-stats">' + eraStatsHtml() + '</div>');
+}
+function eraNext() {
+  const g = ARC.g;
+  if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; }
+  g.cur = g.pool[g.i++]; g.y = 0; g.busy = false;
+  document.getElementById('era-field').innerHTML = '<div id="era-card" class="era-card">' + escHtml(g.cur.event) + '</div>';
+  clearInterval(ARC.iv); ARC.iv = setInterval(eraTick, 50);
+}
+function eraTick() {
+  const g = ARC.g;
+  if (!g || g.type !== 'era' || g.busy) return;
+  const f = document.getElementById('era-field'), c = document.getElementById('era-card');
+  if (!f || !c) return;
+  g.y += g.speed * 0.05;
+  c.style.transform = 'translateY(' + g.y + 'px)';
+  if (g.y >= f.clientHeight - c.offsetHeight) eraResolve(-1);
+}
+function eraTap(k) { const g = ARC.g; if (g && g.type === 'era' && !g.busy) eraResolve(k); }
+function eraResolve(k) {
+  const g = ARC.g; g.busy = true; clearInterval(ARC.iv);
+  const right = g.units.indexOf(g.cur.unit), ok = k === right;
+  xpAward('date', ok, g.cur.paper + '|' + g.cur.event, g.cur.event, g.cur.paper, g.cur.unit);
+  if (ok) { g.score++; g.speed = Math.min(95, g.speed + 3); } else g.lives--;
+  const bR = document.getElementById('era-b' + right), bK = document.getElementById('era-b' + k);
+  if (bR) bR.classList.add('good');
+  if (bK && !ok) bK.classList.add('bad');
+  document.getElementById('era-stats').innerHTML = eraStatsHtml();
+  ARC.t = setTimeout(() => { if (g.lives <= 0) eraOver(); else eraNext(); }, ok ? 450 : 1100);
+}
+function eraOver() {
+  const g = ARC.g, isBest = arcSetHS('era', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">🌠</div><div class="arc-h">Game over</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">caught' + (isBest ? ' · new best' : '') + '</div>' +
+    '<button class="arc-btn" onclick="eraGo(\'' + g.p + '\')">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
+  if (isBest && g.score >= 5 && typeof fdFireConfetti === 'function') fdFireConfetti();
+}
+// ----- Whack-a-fact -----
+function whStart() {
+  const pool = arcDatePool();
+  if (pool.length < 12) { arcShort('Not enough dates for this choice yet.'); return; }
+  ARC.g = {type:'wh', pool:shuffle(pool), i:0, holes:[null,null,null,null,null,null], lives:3, score:0, tick:0, total:600};
+  whBuild();
+  clearInterval(ARC.iv); ARC.iv = setInterval(whTick, 100);
+}
+function whStatsHtml() { const g = ARC.g, hs = arcHS(); return arcHearts(g.lives) + '<span>Time <b>' + Math.max(0, Math.ceil((g.total - g.tick) / 10)) + '</b></span><span>Score <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.wh || 0, g.score) + '</b></span>'; }
+function whBuild() {
+  arcFrame('<div class="arc-sub" style="text-align:center">Tap the TRUE statements. Leave the false ones alone.</div><div class="wh-grid">' +
+    [0,1,2,3,4,5].map(i => '<button class="wh-hole" id="wh-h' + i + '" onclick="whHit(' + i + ')"></button>').join('') + '</div>',
+    '<div class="arc-stats" id="wh-stats">' + whStatsHtml() + '</div>');
+}
+function whRender(i, flash) {
+  const g = ARC.g, h = g.holes[i], el = document.getElementById('wh-h' + i);
+  if (!el) return;
+  el.className = 'wh-hole' + (h ? ' up' : '') + (flash ? ' ' + flash : '');
+  el.innerHTML = h ? '<span class="wh-ev">' + escHtml(h.item.event) + '</span><span class="wh-yr">' + escHtml(String(h.shown)) + '</span>' : '';
+}
+function whTick() {
+  const g = ARC.g;
+  if (!g || g.type !== 'wh') return;
+  g.tick++;
+  for (let i = 0; i < 6; i++) {
+    const h = g.holes[i];
+    if (h && g.tick >= h.die) {
+      if (h.t) xpAward('date', false, h.item.paper + '|' + h.item.event, h.item.event, h.item.paper, h.item.unit);
+      g.holes[i] = null; whRender(i);
+    }
+  }
+  const every = Math.max(6, 11 - Math.floor(g.score / 6));
+  if (g.tick % every === 0) {
+    const free = [0,1,2,3,4,5].filter(i => !g.holes[i]);
+    if (free.length) {
+      const i = free[Math.floor(Math.random() * free.length)];
+      if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; }
+      const item = g.pool[g.i++], isTrue = Math.random() < 0.5;
+      let shown = item.date;
+      if (!isTrue) {
+        const others = g.pool.filter(o => arcYear(o) !== arcYear(item));
+        shown = others[Math.floor(Math.random() * others.length)].date;
+      }
+      g.holes[i] = {item, t:isTrue, shown, die: g.tick + Math.max(15, Math.round((2600 - g.score * 40) / 100))};
+      whRender(i);
+    }
+  }
+  document.getElementById('wh-stats').innerHTML = whStatsHtml();
+  if (g.tick >= g.total) whOver();
+}
+function whHit(i) {
+  const g = ARC.g;
+  if (!g || g.type !== 'wh') return;
+  const h = g.holes[i];
+  if (!h) return;
+  g.holes[i] = null;
+  if (h.t) { g.score++; xpAward('date', true, h.item.paper + '|' + h.item.event, h.item.event, h.item.paper, h.item.unit); whRender(i, 'hit'); }
+  else { g.lives--; xpAward('date', false, h.item.paper + '|' + h.item.event, h.item.event, h.item.paper, h.item.unit); whRender(i, 'miss'); }
+  setTimeout(() => { if (ARC.g === g && !g.holes[i]) whRender(i); }, 300);
+  document.getElementById('wh-stats').innerHTML = whStatsHtml();
+  if (g.lives <= 0) whOver();
+}
+function whOver() {
+  const g = ARC.g; clearInterval(ARC.iv);
+  const isBest = arcSetHS('wh', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">🔨</div><div class="arc-h">' + (g.lives > 0 ? 'Time up' : 'Too many false ones') + '</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">true facts whacked' + (isBest ? ' · new best' : '') + '</div>' +
+    '<button class="arc-btn" onclick="whStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
+  if (isBest && g.score >= 5 && typeof fdFireConfetti === 'function') fdFireConfetti();
+}
+// ----- Stack it -----
+function stStart() {
+  const pool = arcDatePool();
+  if (new Set(pool.map(arcYear)).size < 10) { arcShort('Not enough dates for this choice yet.'); return; }
+  ARC.g = {type:'st', pool, lives:3, score:0, n:4};
+  stRound();
+}
+function stRound() {
+  const g = ARC.g, used = new Set(), items = [];
+  for (const it of shuffle(g.pool)) {
+    const y = arcYear(it);
+    if (!used.has(y)) { used.add(y); items.push(it); }
+    if (items.length === g.n) break;
+  }
+  g.items = items; g.order = items.slice().sort((a, b) => arcYear(a) - arcYear(b)); g.placed = 0; g.shake = -1; g.msg = '';
+  stRender();
+}
+function stRender() {
+  const g = ARC.g, hs = arcHS();
+  const stack = g.order.slice(0, g.placed).map(it => '<div class="st-blk" style="--c:' + (PAPER_COL[it.paper] || '#888') + '"><span>' + escHtml(it.event) + '</span><b>' + escHtml(String(it.date)) + '</b></div>').join('');
+  const opts = g.items.map((it, i) => g.order.indexOf(it) < g.placed ? '' :
+    '<button class="st-opt' + (g.shake === i ? ' shake' : '') + '" style="--c:' + (PAPER_COL[it.paper] || '#888') + '" onclick="stTap(' + i + ')">' + escHtml(it.event) + '</button>').join('');
+  arcFrame('<div class="arc-sub" style="text-align:center">' + (g.msg || 'Tap the oldest event first, then the next oldest.') + '</div>' +
+    '<div class="st-stack">' + (stack || '<div class="st-empty">Your stack builds here, oldest at the bottom</div>') + '</div><div class="st-opts">' + opts + '</div>',
+    '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Stacked <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.st || 0, g.score) + '</b></span></div>');
+}
+function stTap(i) {
+  const g = ARC.g;
+  if (!g || g.type !== 'st' || g.busy) return;
+  const it = g.items[i], ok = it === g.order[g.placed];
+  xpAward('date', ok, it.paper + '|' + it.event, it.event, it.paper, it.unit);
+  if (ok) {
+    g.placed++; g.score++; g.shake = -1;
+    if (g.placed === g.items.length) {
+      g.busy = true; g.msg = 'Stacked!'; g.n = Math.min(7, g.n + 1);
+      stRender();
+      ARC.t = setTimeout(() => { g.busy = false; stRound(); }, 1000);
+      return;
+    }
+  } else {
+    g.lives--; g.shake = i;
+    if (g.lives <= 0) { stOver(); return; }
+  }
+  stRender();
+}
+function stOver() {
+  const g = ARC.g, isBest = arcSetHS('st', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">🧱</div><div class="arc-h">Tower toppled</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">events stacked' + (isBest ? ' · new best' : '') + '</div>' +
+    '<button class="arc-btn" onclick="stStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
+  if (isBest && g.score >= 8 && typeof fdFireConfetti === 'function') fdFireConfetti();
+}
+// ----- Boss battle -----
+const BOSSES = [['Revision Gremlin','👹'], ['Date Dragon','🐉'], ['The Sphinx','🦁'], ['Chief Examiner','🧌'], ['Mock Exam Kraken','🦑']];
+function bossStart() {
+  const pool = shuffle(arcRqPool());
+  if (pool.length < 10) { arcShort('Not enough questions for this choice yet.'); return; }
+  ARC.g = {type:'boss', pool, i:0, lives:3, lv:0, max:8, hp:8, score:0, shown:false, between:false};
+  bossRender();
+}
+function bossQ() { const g = ARC.g; if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; } return g.pool[g.i]; }
+function bossRender() {
+  const g = ARC.g, q = bossQ(), B = BOSSES[g.lv % BOSSES.length], hs = arcHS();
+  const pct = Math.max(0, Math.round(g.hp / g.max * 100));
+  const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Hits <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.boss || 0, g.score) + '</b></span></div>';
+  arcFrame(
+    '<div class="boss-box"><span class="boss-em" id="boss-em">' + B[1] + '</span><div class="boss-r"><div class="boss-nm">' + B[0] + ' <small>Lv ' + (g.lv + 1) + '</small></div><div class="boss-bar"><i style="width:' + pct + '%"></i></div><div class="boss-hp">' + g.hp + ' of ' + g.max + ' HP</div></div></div>' +
+    '<div class="boss-q" style="--c:' + (PAPER_COL[q.paper] || '#888') + '"><div class="eol-lab">' + PAPER_NAME[q.paper] + '</div>' + escHtml(q.q) + '</div>' +
+    (g.shown ? '<div class="boss-a">' + escHtml(q.a) + '</div><div class="eol-btns"><button class="no" onclick="bossMark(false)">✗ Missed</button><button class="yes" onclick="bossMark(true)">⚔️ Got it</button></div>'
+             : '<button class="arc-btn" onclick="bossShow()">Show answer</button>'), head);
+}
+function bossShow() { ARC.g.shown = true; bossRender(); }
+function bossMark(ok) {
+  const g = ARC.g, q = bossQ();
+  xpAward('rapid', ok, 'rq|' + q.q, q.q, q.paper, q.unit);
+  g.i++; g.shown = false;
+  if (ok) { g.score++; g.hp--; } else g.lives--;
+  if (g.lives <= 0) { bossOver(); return; }
+  if (g.hp <= 0) { bossWin(); return; }
+  bossRender();
+  const em = document.getElementById('boss-em');
+  if (em) em.classList.add(ok ? 'boss-hit' : 'boss-laugh');
+}
+function bossWin() {
+  const g = ARC.g, B = BOSSES[g.lv % BOSSES.length];
+  arcSetHS('boss', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">🏆</div><div class="arc-h">' + B[0] + ' defeated</div><div class="arc-sub2">' + g.score + ' hits so far · ' + g.lives + ' heart' + (g.lives === 1 ? '' : 's') + ' left</div>' +
+    '<button class="arc-btn" onclick="bossNext()">Next boss</button><button class="arc-btn sec" onclick="bossOver()">Stop here</button></div>', '');
+  if (typeof fdFireConfetti === 'function') fdFireConfetti();
+}
+function bossNext() {
+  const g = ARC.g;
+  g.lv++; g.max = Math.min(8 + g.lv * 2, 14); g.hp = g.max; g.lives = Math.min(3, g.lives + 1);
+  bossRender();
+}
+function bossOver() {
+  const g = ARC.g, isBest = arcSetHS('boss', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">' + (g.lives > 0 ? '🛡️' : '💀') + '</div><div class="arc-h">' + (g.lives > 0 ? 'Well fought' : 'The boss wins this one') + '</div>' +
+    '<div class="arc-score">' + g.score + '</div><div class="arc-sub2">hits landed · ' + g.lv + ' boss' + (g.lv === 1 ? '' : 'es') + ' beaten' + (isBest ? ' · new best' : '') + '</div>' +
+    '<button class="arc-btn" onclick="bossStart()">Fight again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
 }
 
 // First paint
