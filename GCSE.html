@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>if(localStorage.getItem('gcse_dark')=='1')document.documentElement.classList.add('dark');</script>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#7C5CD6">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="GCSE History">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Mr Rodker's Revision Hub - GCSE</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%A5%A3%3C/text%3E%3C/svg%3E">
 <style>
@@ -38,6 +45,34 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 .paper-btn::after{content:'\2192';position:absolute;right:1rem;top:50%;transform:translateY(-50%);opacity:.45;transition:opacity .15s}
 .paper-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
 .paper-btn:hover::after{opacity:1}
+.hub-fc{background:var(--card);border:1.5px solid var(--border2);border-left-width:4px;border-radius:12px;padding:.9rem 1rem}
+.hub-fc h3{font-size:1.05rem;font-weight:700;margin:0}
+.hub-fc .sub{font-size:.75rem;color:var(--muted);margin:.15rem 0 .6rem}
+.hub-row{display:flex;justify-content:space-between;align-items:center;width:100%;background:none;border:none;border-top:1px solid var(--border);padding:.65rem .1rem;font-family:inherit;font-size:.86rem;color:var(--text);cursor:pointer;text-align:left}
+.hub-row span:last-child{color:var(--muted);font-size:.78rem;font-weight:600}
+.hub-row.lock{opacity:.45;cursor:not-allowed}
+.hub-pill{display:inline-flex;align-items:center;gap:.35rem;border:1.5px solid var(--border2);background:var(--surface);color:var(--muted);border-radius:20px;padding:.25rem .7rem;font-family:inherit;font-size:.74rem;font-weight:700;cursor:pointer;margin-bottom:.4rem}
+.hub-pill.on{background:#FEF3C7;border-color:#F0B429;color:#7A5200}
+.hub-start{width:100%;margin-top:.7rem;padding:.8rem;border:none;border-radius:10px;color:#fff;font-family:inherit;font-weight:700;font-size:.95rem;cursor:pointer}
+.hub-link{background:none;border:none;color:var(--muted);font-family:inherit;font-size:.76rem;font-weight:600;cursor:pointer;margin-top:.6rem;padding:.2rem}
+#fd-setup{display:none !important}
+.btn-mix{background:#454B5C;color:#fff}
+:root.dark .btn-mix{background:#5B6276}
+.wh-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.55rem .8rem;font-family:inherit;font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;cursor:pointer;margin-top:1rem}
+.home-foot{display:flex;gap:8px;margin-top:.8rem}
+.home-foot a,.home-foot button{flex:1;display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.6rem .5rem;background:#F1EBFA;color:#6B4E9E;border:1.5px solid #D6C4EF;border-radius:12px;font-family:inherit;font-size:.8rem;font-weight:600;text-decoration:none;cursor:pointer}
+.rq-pill.rq-locked{opacity:.45;cursor:not-allowed;filter:grayscale(.6);border-style:dashed}
+.rq-pill.rq-locked::after{content:' \1F512'}
+.paper-btn.pb-locked{opacity:.5;border-style:dashed;cursor:not-allowed;filter:grayscale(.6)}
+.paper-btn.pb-locked:hover{transform:none;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.paper-btn.pb-locked::after{content:'\1F512';opacity:.7}
+.paper-btn.pb-shake{animation:pbshake .35s}
+@keyframes pbshake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.paper-btn .pb-note{display:block;font-size:.68rem;font-weight:600;margin-top:.3rem}
+.wk-nudge{display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-left:4px solid #D9534F;border-radius:10px;padding:.5rem .75rem;margin:.6rem 0 0;font-size:.8rem}
+.wk-nudge b{display:block;font-size:.82rem}
+.wk-nudge small{color:var(--muted);font-size:.72rem}
+.wk-nudge button{flex:none;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit;font-weight:700;font-size:.78rem;border-radius:9px;padding:.4rem .8rem;cursor:pointer}
 .paper-btn .plabel{font-size:.68rem;font-weight:700;opacity:.85;display:block;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.06em}
 .paper-btn .pdesc{font-size:.78rem;font-weight:400;opacity:.85;display:block;margin-top:.35rem}
 .section-lbl{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:1.5rem 0 .65rem;display:flex;align-items:center;gap:.6rem}
@@ -53,10 +88,10 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 .pb-p2b:hover{background:#c8edde}.pb-p3:hover{background:#cde3f7}
 
 /* MODE PICKER */
-.mode-header{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
-.back-btn{padding:.4rem .75rem;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
+.mode-header{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;margin-bottom:1.25rem}
+.back-btn{white-space:nowrap;padding:.4rem .75rem;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
 .back-btn:hover{background:var(--subtle)}
-.paper-badge{font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:20px}
+.paper-badge{white-space:nowrap;font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:20px}
 .bg-p1{background:#FEF9E7;color:#9A6B00}.bg-p2a{background:#FBEAF0;color:#993556}
 .bg-p2b{background:#E1F5EE;color:#0F6E56}.bg-p3{background:#E6F1FB;color:#185FA5}
 .mode-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.25rem}
@@ -212,19 +247,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .search-result-where{font-size:.66rem;color:var(--muted);font-style:italic;margin-top:.25rem;opacity:.85}
 
 /* ── INLINE SEARCH BAR (on s-pick) ── */
-.inline-search-wrap{margin:1.1rem 0}
-.inline-search-bar{display:flex;align-items:center;gap:8px;padding:.55rem .8rem;background:var(--surface);border:1.5px solid var(--border2);border-radius:12px;transition:border-color .15s,box-shadow .15s}
-.inline-search-bar:focus-within{border-color:#888;box-shadow:0 0 0 3px rgba(120,120,120,.08)}
-.inline-search-icon{font-size:1.05rem;opacity:.55;flex-shrink:0}
-#inline-search-input{flex:1;border:none;outline:none;background:transparent;color:var(--text);font-size:.95rem;font-family:inherit;padding:8px 0;min-width:0}
-#inline-search-input::placeholder{color:var(--muted)}
-.inline-search-clear{display:none;background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer;padding:0 6px;line-height:1;font-family:inherit}
-.inline-search-clear:hover{color:var(--text)}
-.inline-search-clear.show{display:inline-block}
-.inline-search-results{margin-top:.6rem}
-.inline-search-results:empty{display:none}
-.inline-search-results .search-result{background:var(--card);border:1px solid var(--border)}
-.inline-search-results .search-count{padding-top:.3rem}
 
 @media print {
   /* Hide all chrome — navigation, buttons, screens other than s-main */
@@ -355,17 +377,175 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .fd-stamp-static{display:inline-block;font-family:Impact,'Arial Black',sans-serif;font-size:1.6rem;letter-spacing:.09em;line-height:1;color:var(--stamp-gold);border:4px solid currentColor;border-radius:.4rem;outline:2px solid currentColor;outline-offset:3px;padding:.35rem .9rem .3rem;margin:.6rem 0 1rem;transform:rotate(-5deg);opacity:.92;animation:stampin2 .4s cubic-bezier(.2,1.3,.4,1) both}
 @keyframes stampin2{0%{opacity:0;transform:rotate(-5deg) scale(1.8)}60%{opacity:.95;transform:rotate(-5deg) scale(.94)}100%{opacity:.92;transform:rotate(-5deg) scale(1)}}
 
+/* ── XP, levels, course slider, Parent view, Progress ── */
+.xp-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:.8rem .9rem;margin-bottom:.9rem;cursor:pointer}
+.xp-card:hover{border-color:var(--border2)}
+.xp-top{display:flex;align-items:center;gap:.7rem}
+.xp-emoji{font-size:2rem;line-height:1}
+.xp-mid{flex:1;min-width:0}
+.xp-name{font-size:1rem;font-weight:700}
+.xp-sub{font-size:.72rem;color:var(--muted)}
+.xp-today{text-align:right;font-size:.7rem;color:var(--muted);line-height:1.2}
+.xp-today b{display:block;font-size:1.1rem;color:var(--text)}
+.xp-bar{height:8px;border-radius:6px;background:var(--subtle);overflow:hidden;margin:.6rem 0 .25rem}
+.xp-fill{height:100%;width:0;background:#378ADD;border-radius:6px;transition:width .4s}
+.xp-next{font-size:.7rem;color:var(--muted);display:flex;justify-content:space-between;gap:.5rem}
+#xp-pop{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,20px);background:var(--text);color:var(--bg);font-size:.8rem;font-weight:700;padding:.4rem .9rem;border-radius:20px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:9998}
+#xp-pop.show{opacity:.92;transform:translate(-50%,0)}
+.up-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.5rem .8rem .55rem;margin:.7rem 0}
+.up-head{display:flex;justify-content:space-between;align-items:baseline;gap:.1rem .6rem;flex-wrap:wrap}
+.up-title{font-size:.78rem;font-weight:700}
+.up-pos{font-size:.72rem;color:var(--muted);text-align:right;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.up-title{white-space:nowrap}
+.up-card input[type=range]{width:100%;margin:.3rem 0 .1rem;accent-color:#378ADD}
+.up-ticks{display:flex;gap:2px;font-size:.62rem;color:var(--muted)}
+.up-ticks span{text-align:center;border-top:3px solid;padding-top:2px;overflow:hidden;white-space:nowrap;line-height:1.25;font-size:.58rem}
+.up-ticks em{font-style:normal;font-weight:700;opacity:.8}
+.pv-h{font-size:1.3rem;font-weight:700;margin:.6rem 0 .2rem}
+.pv-sub{font-size:.8rem;color:var(--muted);margin-bottom:1rem}
+.pv-opts{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
+.pv-opt{text-align:left;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:12px;background:var(--card);color:var(--text);font-family:inherit;font-size:.9rem;font-weight:600;cursor:pointer}
+.pv-opt small{display:block;font-weight:400;color:var(--muted);font-size:.72rem;margin-top:2px}
+.pv-opt.sel{border-color:var(--text);background:var(--subtle)}
+.pv-opt:disabled{opacity:.45;cursor:not-allowed}
+.pv-week{margin-top:1.2rem;padding-top:.8rem;border-top:1px solid var(--border);font-size:.78rem;color:var(--muted);line-height:1.6}
+.pv-card{background:var(--card);border:1.5px solid var(--border);border-left-width:5px;border-radius:14px;padding:1.2rem 1.1rem;margin:.6rem 0 1rem}
+.pv-lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.4rem}
+.pv-q{font-size:1.2rem;font-weight:700;line-height:1.35}
+.pv-ans{margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--border);font-size:.92rem;line-height:1.5}
+.pv-ans ul{margin:.3rem 0 0 1.1rem;padding:0}
+.pv-row{display:flex;gap:10px}
+.pv-btn{flex:1;padding:.8rem;font-size:.95rem;font-weight:700;border-radius:12px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit;cursor:pointer}
+.pv-btn.no{border-color:#D4537E;color:#D4537E}
+.pv-btn.yes{background:#1D9E75;border-color:#1D9E75;color:#fff}
+.pv-btn.main{background:var(--text);color:var(--bg);border-color:var(--text)}
+.pv-prog{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}
+.pv-miss{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.5rem .75rem;margin-bottom:.4rem;font-size:.82rem;text-align:left}
+.pg-h{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:1.2rem 0 .5rem}
+.pg-ladder{display:flex;flex-direction:column;gap:4px}
+.pg-lv{display:flex;align-items:center;gap:.6rem;padding:.4rem .6rem;border:1px solid var(--border);border-radius:10px;font-size:.85rem;opacity:.5}
+.pg-lv.done{opacity:1}
+.pg-lv.now{opacity:1;border-color:var(--text);background:var(--subtle);font-weight:700}
+.pg-lv span:last-child{margin-left:auto;font-size:.7rem;color:var(--muted)}
+.pg-days{display:flex;align-items:flex-end;gap:4px;height:90px}
+.pg-day{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font-size:.6rem;color:var(--muted)}
+.pg-day i{display:flex;flex-direction:column-reverse;width:100%;border-radius:3px 3px 0 0;overflow:hidden}
+.pg-day i b{display:block;width:100%;min-height:1px}
+.pg-legend{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:8px;font-size:.68rem;color:var(--muted)}
+.pg-leg{display:inline-flex;align-items:center;gap:5px}
+.pg-leg s{display:inline-block;width:10px;height:10px;border-radius:3px}
+.pg-bar{display:flex;align-items:center;gap:.5rem;font-size:.78rem;margin-bottom:.4rem}
+.pg-bar .t{width:5.5rem;flex-shrink:0}
+.pg-bar .b{flex:1;height:8px;background:var(--subtle);border-radius:6px;overflow:hidden}
+.pg-bar .b i{display:block;height:100%;background:#1D9E75}
+.pg-bar .n{width:5.5rem;text-align:right;font-size:.7rem;color:var(--muted)}
+
+/* ── Parent view (redesign) ── */
+.pr-hero{display:flex;gap:.8rem;align-items:center;margin:.8rem 0 1rem;padding:.9rem 1rem;border-radius:16px;background:linear-gradient(135deg,#E6F1FB,#E1F5EE);color:#1a1a18}
+.pr-hero-ic{font-size:2rem}
+.pr-title{font-size:1.25rem;font-weight:800}
+.pr-sub{font-size:.78rem;line-height:1.4;color:#444;margin-top:2px}
+.pr-step{display:flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:700;margin:1.1rem 0 .5rem}
+.pr-step span{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--text);color:var(--bg);font-size:.72rem}
+.pr-modes{display:flex;flex-direction:column;gap:8px}
+.pr-mode{display:flex;align-items:center;gap:.8rem;text-align:left;padding:.75rem .9rem;border:1.5px solid var(--border);border-radius:14px;background:var(--card);color:var(--text);font-family:inherit;cursor:pointer}
+.pr-mode.sel{border-color:#378ADD;background:#E6F1FB;color:#1a1a18}
+.pr-mode-ic{font-size:1.5rem}
+.pr-mode-tx{flex:1;display:flex;flex-direction:column;gap:2px}
+.pr-mode-tx b{font-size:.92rem}
+.pr-mode-tx em{font-style:normal;font-size:.62rem;background:#378ADD;color:#fff;border-radius:10px;padding:1px 7px;margin-left:4px;vertical-align:1px}
+.pr-mode-tx small{font-size:.72rem;opacity:.75}
+.pr-tick{width:22px;height:22px;border-radius:50%;border:2px solid var(--border2);flex-shrink:0}
+.sel>.pr-tick{border-color:#378ADD;background:#378ADD url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/80% no-repeat}
+.pr-mix{display:block;width:100%;text-align:left;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:14px;background:var(--card);color:var(--text);font-family:inherit;cursor:pointer;margin-bottom:8px}
+.pr-mix b{font-size:.9rem}
+.pr-mix small{display:block;font-size:.72rem;opacity:.7;margin-top:2px}
+.pr-mix.sel{border-color:#378ADD;background:#E6F1FB;color:#1a1a18}
+.pr-papers{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pr-paper{text-align:left;padding:.7rem .8rem;border:1.5px solid var(--border);border-left:5px solid var(--c);border-radius:12px;background:var(--card);color:var(--text);font-family:inherit;cursor:pointer;min-height:56px}
+.pr-paper b{font-size:.84rem;line-height:1.25;display:block}
+.pr-paper small{display:block;font-size:.68rem;opacity:.7;margin-top:2px}
+.pr-paper.sel{background:color-mix(in srgb,var(--c) 18%,var(--card));border-color:var(--c);color:var(--text)}
+.pr-paper:disabled{opacity:.4;cursor:not-allowed}
+.pr-start{display:block;width:100%;margin-top:1.2rem;padding:.95rem;border:none;border-radius:14px;background:#1D9E75;color:#fff;font-size:1rem;font-weight:800;font-family:inherit;cursor:pointer}
+.pr-sec{display:block;width:100%;padding:.8rem;border:1.5px solid var(--border2);border-radius:14px;background:var(--surface);color:var(--text);font-size:.9rem;font-weight:600;font-family:inherit;cursor:pointer}
+.pr-week{margin-top:1.3rem;padding:.8rem .9rem;border:1px solid var(--border);border-radius:14px;background:var(--card)}
+.pr-week-h{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:.5rem}
+.pr-dots{display:flex;gap:6px;margin-bottom:.5rem}
+.pr-dot{flex:1;text-align:center;font-size:.65rem;font-weight:700;padding:.35rem 0;border-radius:8px;background:var(--subtle);color:var(--muted)}
+.pr-dot.on{background:#1D9E75;color:#fff}
+.pr-week-t{font-size:.78rem;color:var(--muted);line-height:1.5}
+.pr-week-t b{color:var(--text)}
+.pr-prog{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--muted);margin-top:.9rem}
+.pr-pill{background:color-mix(in srgb,var(--c) 20%,transparent);color:var(--text);font-weight:700;border-radius:20px;padding:2px 10px;font-size:.72rem}
+.pr-bar{height:6px;border-radius:6px;background:var(--subtle);overflow:hidden;margin:.5rem 0 .9rem}
+.pr-bar i{display:block;height:100%;background:#378ADD;border-radius:6px;transition:width .3s}
+.pr-card{padding:1.3rem 1.2rem;border-radius:18px;border:1.5px solid var(--border);border-top:6px solid var(--c);background:var(--card)}
+.pr-kind{font-size:.72rem;font-weight:700;color:var(--muted)}
+.pr-say{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:.9rem 0 .35rem}
+.pr-q{font-size:1.4rem;font-weight:800;line-height:1.3}
+.pr-reveal{margin-top:.8rem;padding:1rem 1.1rem;border-radius:16px;background:#E1F5EE;color:#0b3d2e;font-size:.95rem;line-height:1.5}
+.pr-lbl{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#0F6E56;margin-bottom:.3rem}
+.pr-reveal ul{margin:0;padding-left:1.1rem}
+.pr-reveal li{margin-bottom:.35rem}
+.pr-hint{text-align:center;font-size:.78rem;color:var(--muted);margin:1rem 0 .5rem}
+.pr-row{display:flex;gap:10px}
+.pr-yes,.pr-no{flex:1;padding:1rem;border-radius:14px;font-size:1rem;font-weight:800;font-family:inherit;cursor:pointer}
+.pr-yes{background:#1D9E75;border:none;color:#fff}
+.pr-no{background:var(--surface);border:2px solid #D4537E;color:#D4537E}
+.pr-score{text-align:center;padding:1rem 0 .4rem}
+.pr-ring{--p:0;width:130px;height:130px;margin:0 auto;border-radius:50%;background:conic-gradient(#1D9E75 calc(var(--p)*1%),var(--subtle) 0);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.pr-ring::before{content:'';position:absolute;inset:11px;border-radius:50%;background:var(--bg)}
+.pr-ring b,.pr-ring small{position:relative}
+.pr-ring b{font-size:1.7rem}
+.pr-ring small{font-size:.68rem;color:var(--muted)}
+.pr-msg{font-size:1rem;font-weight:700;margin-top:.8rem}
+.pr-xp{display:inline-block;margin-top:.5rem;background:#E6F1FB;color:#185FA5;font-weight:800;font-size:.8rem;border-radius:20px;padding:3px 12px}
+.pr-miss{border:1px solid var(--border);border-left:5px solid var(--c);border-radius:12px;background:var(--card);padding:.6rem .8rem;margin-bottom:.5rem;font-size:.84rem}
+.pr-miss b{display:block}
+.pr-miss span{display:block;color:var(--muted);font-size:.78rem;margin-top:3px}
+.pr-endbtns{display:flex;flex-direction:column;gap:8px;margin-top:1.2rem}
+.pr-endbtns .pr-start{margin-top:0}
+
+.up-card{transition:background .2s,border-color .2s}
+.xp-streak{display:flex;align-items:center;gap:.6rem;margin-top:.7rem;padding-top:.6rem;border-top:1px solid var(--border);flex-wrap:wrap}
+.xp-flame{font-size:.78rem;font-weight:700}
+.xp-sdots{display:flex;gap:3px;margin-left:auto}
+.xp-sdots i{font-style:normal;width:20px;height:20px;border-radius:6px;background:var(--subtle);color:var(--muted);font-size:.58rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.xp-sdots i.on{background:#F0803C;color:#fff}
+.xp-sdots i.today{outline:2px solid var(--text);outline-offset:1px}
+.xp-best{font-size:.68rem;color:var(--muted)}
+.pr-note{font-size:.72rem;color:var(--muted);margin-top:.6rem}
+.pr-paper{position:relative;padding-left:2.1rem}
+.pr-ptick{position:absolute;left:.65rem;top:.75rem;width:16px;height:16px;border-radius:5px;border:2px solid var(--border2)}
+.pr-paper.sel .pr-ptick{background:var(--c) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/85% no-repeat;border-color:var(--c)}
+
+.pr-chips{display:flex;gap:8px}
+.pr-chip:last-child{flex:1.7}
+.pr-chip{flex:1;padding:.65rem 0;border:1.5px solid var(--border);border-radius:12px;background:var(--card);color:var(--text);font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer}
+.pr-chip.sel{background:#378ADD;border-color:#378ADD;color:#fff}
+
+.xp-lu-back{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9990;display:flex;align-items:center;justify-content:center;padding:20px}
+.xp-lu-card{background:var(--card);color:var(--text);border-radius:18px;padding:1.4rem 1.3rem 1.2rem;width:100%;max-width:300px;text-align:center;border:1px solid var(--border);animation:xpLuIn .25s ease-out}
+@keyframes xpLuIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.xp-lu-k{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.xp-lu-ic{width:88px;height:88px;border-radius:50%;background:#E6F1FB;margin:.9rem auto .6rem;display:flex;align-items:center;justify-content:center;font-size:2.8rem}
+.xp-lu-lv{font-size:.78rem;color:var(--muted)}
+.xp-lu-t{font-size:1.45rem;font-weight:800;margin:.1rem 0 .4rem}
+.xp-lu-from{font-size:.75rem;color:var(--muted);margin-bottom:.9rem}
+.xp-lu-btn{display:block;width:100%;padding:.8rem;border:none;border-radius:12px;background:#378ADD;color:#fff;font-size:.95rem;font-weight:700;font-family:inherit;cursor:pointer}
 </style>
 </head>
 <body>
 <div id="fd-toast"></div>
+<div id="xp-pop"></div>
 <canvas id="fd-confetti-canvas" style="display:none"></canvas>
 <div class="app">
 <div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;margin-bottom:.5rem">
+  <a href="index.html" id="hub-link" class="tb-btn" style="margin-right:auto">← Hub</a>
   <button id="search-btn" class="tb-btn" onclick="openSearch()" title="Search topics">🔍</button>
   <button id="print-btn" class="tb-btn" onclick="window.print()" style="display:none" title="Print">🖨️</button>
   <button id="dark-toggle" class="tb-btn" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
-  <a href="index.html" id="hub-link" class="tb-btn">← Hub</a>
 </div>
 
 <!-- SEARCH OVERLAY -->
@@ -388,51 +568,26 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <h1 style="margin:0;font-size:1.45rem;font-weight:700">Mr Rodker's GCSE History Hub</h1>
     <span class="yr-pill">Y9-11</span>
   </div>
-  <p style="font-size:.72rem;color:#8A5A3C;font-style:italic;margin-bottom:1rem">Knowledge is Porridge 🥣</p>
+  <div style="margin-bottom:.6rem"></div>
+  <div class="xp-card" id="xp-card" onclick="openProgress()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProgress()" title="See your progress"></div>
+  <div id="weak-nudge"></div>
+  <div class="up-card">
+    <div class="up-head"><span class="up-title">Course progress</span><span class="up-pos" id="up-pos"></span></div>
+    <input type="range" id="up-range" min="1" max="15" step="1" value="15" oninput="uptoPreview(this.value)" onchange="uptoSave(this.value)" aria-label="Course position">
+    <div class="up-ticks" id="up-ticks"></div>
+  </div>
   <div class="paper-grid">
-    <button class="paper-btn pb-p1" onclick="pickPaper('p1')"><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
-    <button class="paper-btn pb-p2a" onclick="pickPaper('p2a')"><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
-    <button class="paper-btn pb-p2b" onclick="pickPaper('p2b')"><span class="plabel">Paper 2b</span>👑 Early Elizabethan England</button>
-    <button class="paper-btn pb-p3" onclick="pickPaper('p3')"><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
+    <button class="paper-btn pb-p1" onclick="openPaper('p1')"><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
+    <button class="paper-btn pb-p2a" onclick="openPaper('p2a')"><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
+    <button class="paper-btn pb-p2b" onclick="openPaper('p2b')"><span class="plabel">Paper 2b</span>👑 Early Elizabethan England</button>
+    <button class="paper-btn pb-p3" onclick="openPaper('p3')"><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
   </div>
-  <!-- Inline search bar -->
-  <div class="inline-search-wrap">
-    <div class="inline-search-bar">
-      <span class="inline-search-icon">🔍</span>
-      <input type="text" id="inline-search-input" placeholder="Search any topic, person or event…" autocomplete="off" oninput="runInlineSearch()" onkeydown="inlineSearchKey(event)">
-      <button class="inline-search-clear" id="inline-search-clear" onclick="clearInlineSearch()" title="Clear">×</button>
-    </div>
-    <div class="inline-search-results" id="inline-search-results"></div>
-  </div>
-  <div style="margin-top:1.1rem;padding-top:1rem;border-top:1px solid #e8e7e2">
-    <button class="btn-go" style="background:var(--text);color:var(--bg);margin-bottom:0" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
-  </div>
-  <div style="margin-top:1.1rem">
-  <div class="fd-bowl-wrap" id="fd-bowl-wrap">
-    <div class="fd-bowl-title">Knowledge is Porridge</div>
-    <div class="fd-bowl-svg-wrap"><span class="fd-bowl-badge" id="fd-bowl-badge" style="display:none"></span>
-    <svg id="fd-bowl-svg" viewBox="0 0 160 128" width="108" height="86" aria-hidden="true">
-      <g id="fd-bowl-steam" class="fd-steam"><path d="M62 40 Q56 28 62 18 Q68 8 62 -2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M80 36 Q74 24 80 14 Q86 4 80 -6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M98 40 Q92 28 98 18 Q104 8 98 -2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></g>
-      <path d="M28 46 Q28 100 80 100 Q132 100 132 46 Z" fill="var(--paper)" stroke="var(--paper-edge)" stroke-width="2"/>
-      <defs><clipPath id="fd-bowl-clip"><path d="M28 46 Q28 100 80 100 Q132 100 132 46 Z"/></clipPath></defs>
-      <rect id="fd-bowl-fill" x="20" y="90" width="120" height="0" fill="#E7CF9C" clip-path="url(#fd-bowl-clip)"/>
-      <ellipse id="fd-bowl-fill-top" cx="80" cy="90" rx="52" ry="7" fill="#F0DDB0" clip-path="url(#fd-bowl-clip)"/>
-      <path id="fd-bowl-rim" d="M28 46 Q28 100 80 100 Q132 100 132 46" fill="none" stroke="var(--muted)" stroke-width="3"/>
-      <ellipse cx="80" cy="46" rx="52" ry="9" fill="none" id="fd-bowl-top" stroke="var(--muted)" stroke-width="3"/>
-      <rect x="62" y="100" width="36" height="5" rx="2.5" fill="var(--muted)"/>
-    </svg></div>
-    <div class="fd-bowl-label" id="fd-bowl-label">0 of 25 flashcards</div>
-    <div class="fd-streak-wrap">
-      <div class="fd-streak-row" id="fd-streak-row"></div>
-      <div class="fd-streak-label" id="fd-streak-label">Start a streak today</div>
-    </div>
-  </div>
-  </div>
+  <button class="btn-go btn-mix" style="margin:1rem 0 0" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
   <!-- Flashcard tracker wheels -->
-  <div class="rq-section" style="margin-bottom:1rem;border-top:none;padding-top:0">
-    <div class="section-lbl">⚡ Your progress today</div>
-    <div id="fd-tracker" style="display:flex;justify-content:space-around;align-items:flex-start;padding:.75rem .5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:14px">
-      <div class="fd-wheel-cell" data-paper="p1" onclick="fdWheelLaunch('p1')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg><div class="fd-wheel-label">Migrants</div></div>
+  <div class="rq-section" style="margin-bottom:.4rem;border-top:none;padding-top:0">
+    <button class="wh-toggle" id="wh-toggle" onclick="wheelsToggle()" aria-expanded="false"><span>⚡ Flashcards today</span><span id="wh-chev">▾</span></button>
+    <div id="fd-tracker" style="display:none;margin-top:.5rem;justify-content:space-around;align-items:flex-start;padding:.75rem .5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:14px">
+      <div class="fd-wheel-cell" data-paper="p1" onclick="fdWheelLaunch('p1')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg><div class="fd-wheel-label">Migration</div></div>
       <div class="fd-wheel-cell" data-paper="p2a" onclick="fdWheelLaunch('p2a')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg><div class="fd-wheel-label">Cold War</div></div>
       <div class="fd-wheel-cell" data-paper="p2b" onclick="fdWheelLaunch('p2b')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2b" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg><div class="fd-wheel-label">Elizabeth</div></div>
       <div class="fd-wheel-cell" data-paper="p3" onclick="fdWheelLaunch('p3')" title="Launch flashcard mode"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p3" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg><div class="fd-wheel-label">Germany</div></div>
@@ -441,7 +596,10 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <div id="home-pinned-link" style="display:none;text-align:center;margin-top:.5rem">
     <button onclick="goToPinnedReview()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer">📌 Review pinned cards</button>
   </div>
-  <a href="https://mossbourneacademy-my.sharepoint.com/:f:/g/personal/arodker_mca_mossbourne_org/IgAZ08GN5heHQqZyOGPBdp46AS6otY5Twn_VYu8TGHoiFQ8?e=OQdODG" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.75rem;padding:.7rem 1rem;background:#F1EBFA;color:#6B4E9E;border:1.5px solid #D6C4EF;border-radius:12px;font-size:.85rem;font-weight:600;text-decoration:none;text-align:center">🔗 More Resources<span style="background:#6B4E9E;color:#fff;font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:20px;letter-spacing:.03em">NEW</span></a>
+  <div class="home-foot">
+    <button id="parent-btn" onclick="showScreen('s-parent')" title="Quiz your child">👪 Parent view</button>
+    <a href="https://mossbourneacademy-my.sharepoint.com/:f:/g/personal/arodker_mca_mossbourne_org/IgAZ08GN5heHQqZyOGPBdp46AS6otY5Twn_VYu8TGHoiFQ8?e=OQdODG" target="_blank" rel="noopener noreferrer">🔗 More resources</a>
+  </div>
 </div>
 
 <!-- SCREEN 2: PAPER HUB (mode selector) -->
@@ -450,8 +608,8 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button>
     <span class="paper-badge" id="hub-paper-badge"></span>
   </div>
-  <!-- Primary: Flashcard Drill with wheel -->
-  <div style="display:flex;align-items:center;gap:1rem;background:var(--surface);border:1.5px solid var(--border2);border-left-width:4px;border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;cursor:pointer" id="fd-primary-btn" onclick="enterMode('flashcard')">
+  <!-- Primary: Flashcard Drill with wheel (kept hidden; new hub below) -->
+  <div style="display:none;align-items:center;gap:1rem;background:var(--surface);border:1.5px solid var(--border2);border-left-width:4px;border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;cursor:pointer" id="fd-primary-btn" onclick="enterMode('flashcard')">
     <div id="fd-hub-wheel-cell" title="Flashcard progress today" style="flex-shrink:0;text-align:center">
       <svg id="fd-hub-wheel" class="fd-wheel" viewBox="0 0 60 60" style="width:4rem;height:4rem;display:block">
         <circle id="fd-hub-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
@@ -468,14 +626,13 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       <div style="font-size:.68rem;color:var(--muted);margin-top:.4rem;opacity:.75">Tap to start · wheel shows today's progress</div>
     </div>
   </div>
-  <!-- Secondary modes -->
-  <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Also available</p>
-  <div class="mode-grid" style="grid-template-columns:1fr 1fr 1fr;margin-bottom:.75rem">
-    <button class="mode-btn" onclick="enterMode('knowledge')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">🧠</span>Revision Guide</button>
-    <button class="mode-btn" onclick="enterMode('dates')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">📅</span>Key Dates Quiz</button>
-    <button class="mode-btn" onclick="enterMode('exam')" style="padding:.9rem .5rem"><span class="icon" style="font-size:1.2rem">✏️</span>Exam Practice</button>
+  <div id="hub-weak"></div>
+  <div class="hub-fc" id="hub-fc"></div>
+  <div class="mode-grid" style="grid-template-columns:1fr 1fr 1fr;margin:.9rem 0 .75rem">
+    <button class="mode-btn" onclick="enterMode('knowledge')" style="padding:1.3rem .5rem"><span class="icon" style="font-size:1.6rem">🧠</span>Revision Guide</button>
+    <button class="mode-btn" onclick="enterMode('dates')" style="padding:1.3rem .5rem"><span class="icon" style="font-size:1.6rem">📅</span>Key Dates Quiz</button>
+    <button class="mode-btn" onclick="enterMode('exam')" style="padding:1.3rem .5rem"><span class="icon" style="font-size:1.6rem">✏️</span>Exam Practice</button>
   </div>
-  <div class="fd-bowl-wrap fd-bowl-wrap-compact" id="fd-bowl-hub-wrap" style="margin-top:.5rem"></div>
 </div>
 
 <!-- SCREEN 3: MODE CONTENT -->
@@ -487,7 +644,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     </div>
     <div style="display:flex;align-items:center;gap:8px">
       <span class="paper-badge" id="paper-badge"></span>
-      <span id="mode-title" style="font-size:.8rem;font-weight:600;color:var(--muted)"></span>
+      <span id="mode-title" style="white-space:nowrap;font-size:.8rem;font-weight:600;color:var(--muted)"></span>
     </div>
   </div>
 
@@ -583,7 +740,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
         <div id="fd-unit-breakdown" style="flex:1;font-size:.72rem;margin-top:.1rem"></div>
       </div>
 
-      <div class="fd-bowl-wrap fd-bowl-wrap-compact" id="fd-bowl-setup-wrap" style="margin-top:.5rem"></div>
     </div>
 
     <!-- Drill state -->
@@ -764,9 +920,48 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     </div>
   </div>
 </div>
+<!-- ═══ PARENT VIEW ═══ -->
+<div class="screen" id="s-parent">
+  <button class="back-btn" onclick="parentExit()">← Back</button>
+  <div class="pr-hero" id="pr-hero"><div class="pr-hero-ic">👪</div><div><div class="pr-title">Quiz your child</div><div class="pr-sub">No prep needed. Read each question aloud, let them answer from memory, then check.</div></div></div>
+  <div id="pv-setup">
+    <div class="pr-step">Which papers? <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Tap to include or leave out</span></div>
+    <div id="pv-papers"></div>
+    <div class="pr-step" style="margin-top:1.2rem">How many questions? <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Endless keeps going until you finish</span></div>
+    <div class="pr-chips" id="pv-count"></div>
+    <button class="pr-start" id="pv-start" onclick="parentStart()">Start quiz</button>
+    <div class="pr-week" id="pv-week"></div>
+  </div>
+  <div id="pv-round" style="display:none"></div>
+  <div id="pv-end" style="display:none"></div>
+</div>
+
+<!-- ═══ PROGRESS ═══ -->
+<div class="screen" id="s-progress">
+  <button class="back-btn" onclick="showScreen('s-pick')">← Back</button>
+  <div class="pv-h">Your progress</div>
+  <div class="xp-card" style="cursor:default" id="pg-level"></div>
+  <div class="pg-h">Units to revisit</div>
+  <div id="pg-units"></div>
+  <div class="pg-h">Most missed questions</div>
+  <div id="pg-weak"></div>
+  <div class="pg-h">Levels</div>
+  <div class="pg-ladder" id="pg-ladder"></div>
+  <div class="pg-h">XP in the last 14 days</div>
+  <div class="pg-days" id="pg-days"></div>
+  <div id="pg-legend" class="pg-legend"></div>
+  <div class="pg-h">Accuracy</div>
+  <div id="pg-acc"></div>
+  <div class="pg-h">Flashcards mastered today</div>
+  <div id="pg-mastery"></div>
+</div>
 </div>
 
 <script>
+// Local dates (the old UTC version rolled over at 1am in British Summer Time)
+function ymd(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+function localDate(offsetDays) { const d = new Date(); if (offsetDays) d.setDate(d.getDate() + offsetDays); return ymd(d); }
+
 // ═══════════════════════════════════════════
 // DARK MODE
 // ═══════════════════════════════════════════
@@ -814,10 +1009,6 @@ function pickPaper(p) {
   const info = P[p];
   document.getElementById('paper-badge').textContent = info.label;
   document.getElementById('paper-badge').className = 'paper-badge ' + info.badge;
-  [].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.className = 'btn-go ' + info.go;
-  });
   const sel = document.getElementById('k-unit');
   sel.innerHTML = '<option value="">— select a unit —</option><option value="all">All units</option>' +
     info.units.map(u => `<option value="${u}">${u}</option>`).join('');
@@ -863,20 +1054,17 @@ function showScreen(id) {
   document.getElementById(id).classList.add('active');
   if (id !== 's-main') currentMode = null;
   const hubLink = document.getElementById('hub-link');
-  if (hubLink) hubLink.style.display = id === 's-pick' ? 'inline-block' : 'none';
-  // Search button now always visible — no toggling
+  if (hubLink) hubLink.style.display = id === 's-pick' ? 'inline-flex' : 'none';
   // print btn handled by setMode; hide when leaving s-main
   if (id !== 's-main') {
     const printBtn = document.getElementById('print-btn');
     if (printBtn) printBtn.style.display = 'none';
   }
-  // Clear the inline search bar when returning home
-  if (id === 's-pick') {
-    const ii = document.getElementById('inline-search-input');
-    if (ii && ii.value) { ii.value = ''; runInlineSearch(); }
-  }
   // update flagged button on hub
-  if (id === 's-pick') renderFdWheels();
+  if (id === 's-pick') { renderFdWheels(); xpRender(); uptoRender(); }
+  if (id === 's-hub') { hubRender(); renderFdHubWheel(); }
+  if (id === 's-progress') progressRender();
+  if (id === 's-parent' && !PV.midRound) parentShowSetup();
   if (id === 's-hub')  renderFdHubWheel();
   if (id === 's-main' && currentPaper) renderFdSetupWheel();
 }
@@ -1045,6 +1233,7 @@ function runSearch() {
 
 function goToSearchResult(paper, heading) {
   closeSearch();
+  if (!paperReached(paper)) { showScreen('s-pick'); lockFlash(paper); return; }
   pickPaper(paper);           // sets currentPaper, navigates to s-hub
   enterMode('knowledge');     // navigates to s-main, knowledge mode
   // Set unit dropdown to 'all' so the card is in pool regardless of unit
@@ -1056,61 +1245,6 @@ function goToSearchResult(paper, heading) {
     kIdx = i;
     renderKCard(kPool[kIdx]);
     updateNavUI();
-  }
-}
-
-// Inline search bar (on s-pick) — shares searchKC and goToSearchResult with the overlay
-function runInlineSearch() {
-  const input = document.getElementById('inline-search-input');
-  const out = document.getElementById('inline-search-results');
-  const clear = document.getElementById('inline-search-clear');
-  if (!input || !out) return;
-  const q = input.value.trim();
-  if (clear) clear.classList.toggle('show', q.length > 0);
-  if (q.length < 2) { out.innerHTML = ''; return; }
-  if (!KC.length) {
-    out.innerHTML = '<div class="search-empty">⏳ Loading data… try again in a moment.</div>';
-    return;
-  }
-  const results = searchKC(q).slice(0, 10);
-  if (!results.length) {
-    out.innerHTML = `<div class="search-empty">No matches for <strong>${escHtml(q)}</strong>.</div>`;
-    return;
-  }
-  const html = `<div class="search-count">${results.length} result${results.length === 1 ? '' : 's'}</div>` +
-    results.map(r => {
-      const c = r.card;
-      const headingHtml = highlightMatch(c.heading, q);
-      const snippetHtml = r.snip ? highlightMatch(snippet(r.snip, q), q) : '';
-      return `<div class="search-result" data-paper="${c.paper}" data-heading="${escHtml(c.heading)}">
-        <div class="search-result-meta">
-          <span class="tag t-${c.paper}">${PAPER_LABEL[c.paper]}</span>
-          <span class="tag t-grey">${escHtml(c.unit)}</span>
-        </div>
-        <div class="search-result-heading">${headingHtml}</div>
-        ${snippetHtml ? `<div class="search-result-snippet">${snippetHtml}</div>` : ''}
-        <div class="search-result-where">Match ${escHtml(r.where)}</div>
-      </div>`;
-    }).join('');
-  out.innerHTML = html;
-  out.querySelectorAll('.search-result').forEach(el => {
-    el.addEventListener('click', () => {
-      goToSearchResult(el.dataset.paper, el.dataset.heading);
-    });
-  });
-}
-
-function clearInlineSearch() {
-  const input = document.getElementById('inline-search-input');
-  if (input) { input.value = ''; input.focus(); }
-  runInlineSearch();
-}
-
-function inlineSearchKey(e) {
-  if (e.key === 'Escape') { clearInlineSearch(); return; }
-  if (e.key === 'Enter') {
-    const first = document.querySelector('#inline-search-results .search-result');
-    if (first) first.click();
   }
 }
 
@@ -1172,7 +1306,7 @@ function buildKPool() {
     if (cardSel) cardSel.innerHTML = '<option value="">— select a topic —</option>';
     return;
   }
-  let all = KC.filter(c => c.paper === currentPaper);
+  let all = KC.filter(c => c.paper === currentPaper && (unit !== 'all' || inScope(c)));
   const units = P[currentPaper].units;
   all.sort((a, b) => {
     const ui = units.indexOf(a.unit);
@@ -1288,6 +1422,7 @@ let RQ = []; // loaded from data/rq.json
 
 // ── Mixed Retrieval Quiz state ──
 let rqPapers = {p1:true, p2a:true, p2b:true, p3:true};
+let rqAutoOff = {};
 let rqDiff = 2; // single value: 1=easy only, 2=easy+medium, 3=all
 let rqMode = 'grid'; // 'grid' or 'one'
 let rqOnePool = [], rqOneIdx = 0, rqOneOK = 0, rqOneBad = 0, rqOneMissed = [], rqOneStreak = 0;
@@ -1317,6 +1452,8 @@ function rqOneReveal() {
 }
 
 function rqOneAnswer(correct) {
+  const rqCur = rqOnePool[rqOneIdx];
+  xpAward('rapid', correct, 'rq|' + rqCur.q, rqCur.q, rqCur.paper, rqCur.unit);
   if (correct) {
     rqOneOK++;
     rqOneStreak++;
@@ -1410,6 +1547,8 @@ function rqElReveal() {
 }
 
 function rqElAnswer(correct) {
+  const rqCur = rqElPool[rqElIdx];
+  xpAward('rapid', correct, 'rq|' + rqCur.q, rqCur.q, rqCur.paper, rqCur.unit);
   if (correct) { rqElOK++; rqElStreak++; }
   else { rqElBad++; rqElStreak = 0; }
   rqElIdx++;
@@ -1551,6 +1690,11 @@ function showRapidSetup() {
   if (resumeBtn) resumeBtn.style.display = rqInProgress ? 'block' : 'none';
   ['p1','p2a','p2b','p3'].forEach(p => {
     const btn = document.getElementById('rqp-' + p);
+    const lock = !paperReached(p);
+    if (lock) { rqPapers[p] = false; rqAutoOff[p] = true; }
+    else if (rqAutoOff[p]) { rqPapers[p] = true; rqAutoOff[p] = false; }
+    btn.classList.toggle('rq-locked', lock);
+    btn.title = lock ? 'Not covered in class yet' : '';
     if (rqPapers[p]) btn.classList.add('on-' + p);
     else btn.classList.remove('on-' + p);
   });
@@ -1572,6 +1716,7 @@ function resumeRQ() {
 }
 
 function toggleRQPaper(p) {
+  if (!paperReached(p)) return;
   rqPapers[p] = !rqPapers[p];
   const btn = document.getElementById('rqp-' + p);
   if (rqPapers[p]) {
@@ -1593,7 +1738,7 @@ function updateRQCounter() {
   const allowed = ['easy'];
   if (rqDiff >= 2) allowed.push('medium');
   if (rqDiff >= 3) allowed.push('hard');
-  const count = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d)).length;
+  const count = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d) && inScope(q)).length;
   const counter = document.getElementById('rq-counter');
   if (counter) counter.textContent = count >= 10 ? count + ' questions available' : count > 0 ? count + ' questions (need at least 10)' : '';
   const goBtn = document.getElementById('rq-go');
@@ -1615,7 +1760,7 @@ function generateRQ() {
   const allowed = ['easy'];
   if (rqDiff >= 2) allowed.push('medium');
   if (rqDiff >= 3) allowed.push('hard');
-  let pool = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d));
+  let pool = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d) && inScope(q));
   if (pool.length < 10) {
     document.getElementById('rq-err').style.display = 'block';
     document.getElementById('rq-err').textContent = 'Not enough questions match these filters. Try adding more papers or increasing difficulty.';
@@ -1974,7 +2119,7 @@ function startQuizCountdown(hardMode) {
 }
 
 function startQuiz(hardMode, typeMode) {
-  const all = DATES.filter(d => d.paper === currentPaper);
+  const all = DATES.filter(d => d.paper === currentPaper && inScope(d));
   if (!all.length) {
     document.getElementById('d-out').innerHTML = '<div class="empty">No dates for this paper.</div>';
     return;
@@ -2110,6 +2255,7 @@ function checkAns(btn) {
   document.querySelectorAll('.opt').forEach(b => b.disabled = true);
   const fb = document.getElementById('qfb');
   const wasCorrect = chosen === correct;
+  xpAward('date', wasCorrect, item.paper + '|' + item.event, item.event, item.paper, item.unit);
   // Capture all option values for history replay
   const allOpts = Array.from(document.querySelectorAll('.opt')).map(b => b.dataset.val);
   if (wasCorrect) {
@@ -2180,6 +2326,7 @@ function checkYearAns() {
     return [t.replace(/s$/, '').replace(/[^0-9]/g, '')];
   })();
   const wasCorrect = typedNorm.some(tn => allYears.some(y => tn === y));
+  xpAward('date', wasCorrect, item.paper + '|' + item.event, item.event, item.paper, item.unit);
   inp.disabled = true;
   const checkBtn = document.getElementById('quiz-year-check');
   if (checkBtn) { checkBtn.disabled = true; checkBtn.style.opacity = '.45'; checkBtn.style.cursor = 'default'; }
@@ -2289,8 +2436,11 @@ Promise.all([
   renderFdWheels(); // update picker screen wheels once data is ready
   renderFdSetupWheel();
   renderFdHubWheel();
+  try { hubRender(); } catch (e) {}
 }).catch(err => {
   console.error('Data load failed:', err);
+  window._dataErr = String(err && err.message || err);
+  try { hubRender(); } catch (e) {}
   const eOut = document.getElementById('e-out');
   if (eOut) eOut.innerHTML = '<div class="empty">📌 Could not load data files. Make sure data/eq.json, rq.json, dates.json, flashcards.json and kc.json are in your repository.</div>';
 });
@@ -2315,14 +2465,14 @@ let fdGot        = 0;    // ✅ count this round
 let fdMissCount  = 0;    // ❌ count this round
 let fdCurrent    = null; // card currently shown
 let fdFlipped    = false;
-let fdHintsOn    = false; // persists across cards within a session
+let fdHintsOn    = localStorage.getItem('gcse_fd_hints') !== '0'; // persists across cards within a session
 let fdTotal      = 0;    // original deck size (for progress bar)
 let fdBusy = false;
 let fdBowlSeenTier = 0; // highest helpings tier already celebrated this page load
 let fdOutstanding = [];  // outstanding missed keys loaded from localStorage
 
 function fdTodayStr() {
-  return new Date().toISOString().slice(0, 10);
+  return localDate();
 }
 function fdGetSession() {
   const s = JSON.parse(localStorage.getItem(LS_SESSION) || 'null');
@@ -2383,12 +2533,12 @@ function fdKey(card) {
 
 function fdGetMastered() {
   const raw = JSON.parse(localStorage.getItem(LS_MASTERED) || '{}');
-  const today = new Date().toISOString().slice(0, 10);
+  const today = localDate();
   if (!raw.date || raw.date !== today) return {};
   return raw.cards || {};
 }
 function fdSetMastered(obj) {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = localDate();
   localStorage.setItem(LS_MASTERED, JSON.stringify({ date: today, cards: obj }));
 }
 function fdGetOutstanding() {
@@ -2402,7 +2552,7 @@ function fdSetup() {
   renderFdWheels();
   renderFdSetupWheel();
   // Restore remembered hints preference
-  fdHintsOn = localStorage.getItem(LS_HINTS) === '1';
+  fdHintsOn = localStorage.getItem(LS_HINTS) !== '0';
   const hintsChk = document.getElementById('fd-hints-on');
   const hintsDrill = document.getElementById('fd-hints-on-drill');
   if (hintsChk) hintsChk.checked = fdHintsOn;
@@ -2475,7 +2625,7 @@ function fdStart() {
   const mastered = fdGetMastered();
 
   // Build base deck for this paper/unit
-  let base = FD.filter(c => c.paper === currentPaper);
+  let base = FD.filter(c => c.paper === currentPaper && (unit !== 'all' || inScope(c)));
   if (unit !== 'all') base = base.filter(c => c.unit === unit);
   const unitTotal = base.length;
 
@@ -2633,6 +2783,7 @@ function fdAnswer(got) {
 
   // Record in today's session tally
   fdRecordSessionCard(fdCurrent.paper, got);
+  xpAward('flash', got, key, fdCurrent.front, fdCurrent.paper, fdCurrent.unit);
 
   if (got) {
     fdGot++;
@@ -2835,6 +2986,7 @@ function fdFinish() {
   document.getElementById('fd-summary').style.display  = 'none';
   document.getElementById('fd-complete').style.display = 'none';
   fdSetup();
+  goBack();
 }
 
 function fdResetUnit() {
@@ -2856,7 +3008,7 @@ function fdUpdateStartBtn() {
   if (!btn) return;
   if (!unit || !FD.length) { btn.textContent = '⚡ Start Flashcard Mode'; return; }
   const mastered = fdGetMastered();
-  let base = FD.filter(c => c.paper === currentPaper);
+  let base = FD.filter(c => c.paper === currentPaper && (unit !== 'all' || inScope(c)));
   if (unit !== 'all') base = base.filter(c => c.unit === unit);
   const unmastered = base.filter(c => !mastered[fdKey(c)]).length;
   const outstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
@@ -2881,7 +3033,7 @@ function fdBowlTierNow() {
   return 0;
 }
 function fdUpdateStreak() {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = localDate();
   let streak = JSON.parse(localStorage.getItem(LS_STREAK) || '{"date":"","count":0,"days":{}}');
   if (!streak.days) streak.days = {};
   // Record progress toward today's tier regardless of whether the daily target is met yet
@@ -2889,7 +3041,7 @@ function fdUpdateStreak() {
   streak.days[today] = Math.max(streak.days[today] || 0, tierNow);
   if (tierNow < 1) { localStorage.setItem(LS_STREAK, JSON.stringify(streak)); return; } // daily target (25) not yet reached
   if (streak.date === today) { localStorage.setItem(LS_STREAK, JSON.stringify(streak)); return; } // already counted today
-  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  const yesterday = localDate(-1);
   streak.count = (streak.date === yesterday) ? streak.count + 1 : 1;
   streak.date  = today;
   localStorage.setItem(LS_STREAK, JSON.stringify(streak));
@@ -2900,7 +3052,7 @@ function fdStreakLastDays(n) {
   const out = [];
   for (let i = n - 1; i >= 0; i--) {
     const d = new Date(); d.setDate(d.getDate() - i);
-    const ds = d.toISOString().slice(0, 10);
+    const ds = ymd(d);
     out.push({ met: (days[ds] || 0) >= 1, tier: days[ds] || 0, today: i === 0 });
   }
   return out;
@@ -2917,8 +3069,8 @@ function renderFdStreak() {
   const labelEl = document.getElementById('fd-streak-label');
   if (!row || !labelEl) return;
   const streak = JSON.parse(localStorage.getItem(LS_STREAK) || '{"date":"","count":0}');
-  const today = new Date().toISOString().slice(0, 10);
-  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  const today = localDate();
+  const yesterday = localDate(-1);
   const count = (streak.date === today || streak.date === yesterday) ? (streak.count || 0) : 0;
   let html = fdStreakLastDays(7).map(d =>
     '<span class="fd-streak-dot' + (d.met ? ' met' : '') + (d.tier >= 2 ? ' silver' : '') + (d.tier >= 3 ? ' gold' : '') + (d.tier >= 4 ? ' purple' : '') + (d.today ? ' today' : '') + '" title="' + (d.tier >= 4 ? 'Purple bowl' : d.tier >= 3 ? 'Gold bowl' : d.tier >= 2 ? 'Silver bowl' : d.met ? 'Bowl met' : '') + '">' + fdMiniBowlSvg(d.met, d.tier) + '</span>'
@@ -3194,6 +3346,7 @@ function goToPinnedReview() {
 }
 
 function fdWheelLaunch(paper) {
+  if (!paperReached(paper)) { lockFlash(paper); return; }
   // Navigate to flashcard mode for this paper
   pickPaper(paper);
   enterMode('flashcard');
@@ -3244,6 +3397,619 @@ function fdFireConfetti() {
   requestAnimationFrame(draw);
 }
 
+
+// ═══════════════════════════════════════════
+// SHARED LOOKUPS (new code uses these)
+// ═══════════════════════════════════════════
+const PAPER_COL  = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'};
+const PAPER_NAME = {p1:'Migration', p2a:'Cold War', p2b:'Elizabeth', p3:'Weimar & Nazi Germany'};
+
+// ═══════════════════════════════════════════
+// COURSE SLIDER  (15 units in teaching order)
+// ═══════════════════════════════════════════
+const COURSE_ORDER = ['p3','p2a','p2b','p1'];
+const LS_UPTO = 'gcse_course_pos';
+const COURSE_FLAT = [];
+COURSE_ORDER.forEach(p => P[p].units.forEach(u => COURSE_FLAT.push({paper:p, unit:u})));
+const UNIT_IDX = {};
+COURSE_FLAT.forEach((c, i) => { UNIT_IDX[c.paper + '|' + c.unit] = i; });
+
+function uptoPos() {
+  const v = parseInt(localStorage.getItem(LS_UPTO), 10);
+  return (v >= 1 && v <= COURSE_FLAT.length) ? v : COURSE_FLAT.length;
+}
+function paperReached(p) {
+  return COURSE_FLAT.findIndex(c => c.paper === p) < uptoPos();
+}
+// Cards and topics have a unit; dates and quiz questions only have a paper.
+function inScope(it) {
+  const pos = uptoPos();
+  if (pos >= COURSE_FLAT.length) return true;
+  const i = UNIT_IDX[it.paper + '|' + it.unit];
+  if (it.unit && i !== undefined) return i < pos;
+  return paperReached(it.paper);
+}
+function uptoLabel(pos) {
+  pos = parseInt(pos, 10);
+  if (pos >= COURSE_FLAT.length) return 'Whole course';
+  const c = COURSE_FLAT[pos - 1];
+  return ({p3:'Weimar', p2a:'Cold War', p2b:'Elizabeth', p1:'Migration'})[c.paper] + ', ' + c.unit;
+}
+function hubRender() {
+  const p = currentPaper;
+  if (!p) return;
+  const fc = document.getElementById('hub-fc');
+  if (!FD.length) {
+    document.getElementById('hub-weak').innerHTML = '';
+    fc.innerHTML = '<h3>⚡ Flashcards</h3><div class="sub" style="margin:.4rem 0 0">' + (window._dataErr
+      ? 'Flashcards could not be loaded (' + escHtml(window._dataErr) + '). Check that all five files are in the data folder, then refresh.'
+      : 'Loading flashcards…') + '</div>';
+    return;
+  }
+  try { hubRender2(p); } catch (e) {
+    fc.innerHTML = '<h3>⚡ Flashcards</h3><div class="sub" style="margin:.4rem 0 0">Something went wrong building this screen (' + escHtml(String(e && e.message || e)) + ').</div>';
+  }
+}
+function hubRender2(p) {
+  const col = PAPER_COL[p], mast = fdGetMastered();
+  const idx0 = COURSE_FLAT.findIndex(c => c.paper === p), pos = uptoPos();
+  const w = unitFlags(xpLoad()).filter(u => u.c.paper === p && u.flag && !(u.flag === 'stale' && u.text === 'Not started yet'))
+    .sort((a, b) => (a.flag === b.flag ? a.rank - b.rank : (a.flag === 'weak' ? -1 : 1)))[0];
+  document.getElementById('hub-weak').innerHTML = w ? '<div class="wk-nudge" style="margin:0 0 .8rem;border-left-color:' + (w.flag === 'weak' ? '#D9534F' : '#C98A00') + '"><div style="min-width:0"><b>' + (w.flag === 'weak' ? 'Needs work: ' : 'Revisit: ') + escHtml(w.c.unit) + '</b><small>' + escHtml(w.text) + '</small></div><button onclick="practiseUnit(' + w.i + ')">Practise</button></div>' : '';
+  const rows = P[p].units.map((u, k) => {
+    const cards = FD.filter(c => c.paper === p && c.unit === u && !/^Case Study/i.test(c.front));
+    const done = cards.filter(c => mast[fdKey(c)]).length;
+    const lock = (idx0 + k) >= pos;
+    return '<button class="hub-row' + (lock ? ' lock' : '') + '" ' + (lock ? 'onclick="lockFlashUnit()"' : 'onclick="hubStart(' + k + ')"') + '><span>' + escHtml(u) + '</span><span>' + (lock ? '🔒' : done + '/' + cards.length) + '</span></button>';
+  }).join('');
+  const pins = fdGetOutstanding().length;
+  document.getElementById('hub-fc').style.borderLeftColor = col;
+  document.getElementById('hub-fc').innerHTML = '<h3>⚡ Flashcards</h3><div class="sub">Tap a unit to start, or revise them all.' + (pins ? ' Your ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + ' will be mixed in.' : '') + '</div>' +
+    '<button class="hub-pill' + (fdHintsOn ? ' on' : '') + '" id="hub-hints" onclick="hubHints()">💡 Hints ' + (fdHintsOn ? 'on' : 'off') + '</button>' + rows +
+    '<button class="hub-start" style="background:' + col + '" onclick="hubStart(-1)">Start all units</button>' +
+    '<div style="display:flex;gap:10px;flex-wrap:wrap">' + (pins ? '<button class="hub-link" onclick="goToPinnedReview()">📌 Review ' + pins + ' pinned (all papers)</button>' : '') + '<button class="hub-link" onclick="hubPrint()">🖨️ Print cards as PDF</button></div>';
+}
+function hubHints() { fdSyncHints(!fdHintsOn); hubRender(); }
+function lockFlashUnit() {}
+function hubStart(k) {
+  enterMode('flashcard');
+  document.getElementById('fd-unit').value = k < 0 ? 'all' : P[currentPaper].units[k];
+  fdStart();
+}
+function hubPrint() {
+  enterMode('flashcard'); document.getElementById('fd-unit').value = 'all';
+  printFlashcards(); goBack();
+}
+function wheelsToggle(force) {
+  const t = document.getElementById('fd-tracker');
+  if (!t) return;
+  const open = typeof force === 'boolean' ? force : t.style.display === 'none';
+  t.style.display = open ? 'flex' : 'none';
+  document.getElementById('wh-chev').textContent = open ? '▴' : '▾';
+  document.getElementById('wh-toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
+  try { localStorage.setItem('gcse_wheels', open ? '1' : '0'); } catch (e) {}
+}
+if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
+wheelsToggle(localStorage.getItem('gcse_wheels') === '1');
+function openPaper(p) {
+  if (!paperReached(p)) { lockFlash(p); return; }
+  pickPaper(p);
+}
+function lockFlash(p) {
+  const b = document.querySelector('.paper-btn.pb-' + p);
+  if (!b) return;
+  const n = b.querySelector('.pb-note');
+  if (n) { n.textContent = '🔒 Move the slider to unlock'; setTimeout(() => { if (n.isConnected) n.textContent = '🔒 Not covered in class yet'; }, 2200); }
+  b.classList.remove('pb-shake'); void b.offsetWidth; b.classList.add('pb-shake');
+}
+function weakNudgeRender() {
+  const el = document.getElementById('weak-nudge');
+  if (!el) return;
+  const bad = unitFlags(xpLoad()).filter(u => u.flag && !(u.flag === 'stale' && u.text === 'Not started yet'))
+    .sort((a, b) => (a.flag === b.flag ? a.rank - b.rank : (a.flag === 'weak' ? -1 : 1)));
+  if (!bad.length) { el.innerHTML = ''; return; }
+  const u = bad[0];
+  el.innerHTML = '<div class="wk-nudge" style="border-left-color:' + (u.flag === 'weak' ? '#D9534F' : '#C98A00') + '"><div style="min-width:0"><b>' + (u.flag === 'weak' ? 'Needs work: ' : 'Revisit: ') + escHtml(u.c.unit) + '</b><small>' + escHtml(u.text) + (bad.length > 1 ? ' · <a href="#" onclick="openProgress();return false" style="color:inherit">+' + (bad.length - 1) + ' more</a>' : '') + '</small></div><button onclick="practiseUnit(' + u.i + ')">Practise</button></div>';
+}
+function lockRender() {
+  COURSE_ORDER.forEach(p => {
+    const b = document.querySelector('.paper-btn.pb-' + p);
+    if (!b) return;
+    const lock = !paperReached(p);
+    b.classList.toggle('pb-locked', lock);
+    let n = b.querySelector('.pb-note');
+    if (lock && !n) { n = document.createElement('span'); n.className = 'pb-note'; n.textContent = '🔒 Not covered in class yet'; b.appendChild(n); }
+    if (!lock && n) n.remove();
+  });
+}
+function uptoRender() {
+  const r = document.getElementById('up-range');
+  if (!r) return;
+  lockRender(); weakNudgeRender();
+  r.value = uptoPos();
+  document.getElementById('up-pos').textContent = uptoLabel(uptoPos());
+  uptoPaint(uptoPos());
+  const t = document.getElementById('up-ticks');
+  if (!t.children.length) {
+    t.innerHTML = COURSE_ORDER.map(p =>
+      '<span style="flex:' + P[p].units.length + ';border-color:' + PAPER_COL[p] + '">' + PAPER_NAME[p].replace(' & Nazi Germany', '') + ' <em>' + COURSE_YEAR[p] + '</em></span>').join('');
+  }
+}
+const COURSE_YEAR = {p3:'Y9', p2a:'Y10', p2b:'Y10', p1:'Y11'};
+const UPTO_COL = '#7C5CD6'; // fixed purple, deliberately not one of the paper colours
+function uptoPaint() {
+  const col = UPTO_COL;
+  const r = document.getElementById('up-range');
+  if (r) r.style.accentColor = col;
+  const card = r && r.closest('.up-card');
+  if (card) { card.style.borderColor = col; card.style.background = 'color-mix(in srgb,' + col + ' 9%,var(--card))'; }
+}
+function uptoPreview(v) { document.getElementById('up-pos').textContent = uptoLabel(v); uptoPaint(v); }
+function uptoSave(v) {
+  localStorage.setItem(LS_UPTO, String(parseInt(v, 10)));
+  uptoRender();
+  if (typeof buildKPool === 'function' && currentPaper) buildKPool();
+}
+
+// ═══════════════════════════════════════════
+// XP & LEVELS
+// ═══════════════════════════════════════════
+const XP_LEVELS = [
+  {t:'Stone Age hunter',e:'🦴',xp:0}, {t:'Roman Briton',e:'🛡️',xp:100}, {t:'Anglo-Saxon monk',e:'⛪',xp:250},
+  {t:'Viking raider',e:'🪓',xp:500}, {t:'Norman knight',e:'🐎',xp:850}, {t:'Medieval merchant',e:'⚓',xp:1300},
+  {t:'Tudor courtier',e:'🌹',xp:2000}, {t:'Civil War pikeman',e:'⚔️',xp:3000}, {t:'Industrial inventor',e:'🚂',xp:4400},
+  {t:'Victorian explorer',e:'🧭',xp:6300}, {t:'WWI Tommy',e:'🪖',xp:8800}, {t:'Spitfire pilot',e:'✈️',xp:12000},
+  {t:'Sixties rockstar',e:'🎸',xp:16500}, {t:'Modern Briton',e:'📱',xp:23000}, {t:'Space age pioneer',e:'🚀',xp:34000}
+];
+// Change a number here to retune the game.
+const XP_RULE = {flash:20, date:5, rapid:5, wrong:2, repeat:2, runLen:5, runBonus:5, parent:20, cap:400};
+const LS_XP = 'gcse_xp';
+let xpRun = 0, xpCapShown = false, xpPopTimer = null;
+
+function xpLoad() {
+  let x = null;
+  try { x = JSON.parse(localStorage.getItem(LS_XP) || 'null'); } catch (e) { x = null; }
+  if (!x || typeof x !== 'object') x = {};
+  x.total = x.total || 0;
+  x.days = x.days || {};
+  x.seen = x.seen || {date:'', keys:{}};
+  x.acc = x.acc || {};
+  ['flash','date','rapid'].forEach(m => { x.acc[m] = x.acc[m] || {ok:0, n:0}; });
+  x.miss = x.miss || {};
+  x.units = x.units || {};
+  x.dayu = x.dayu || {};
+  const t = localDate();
+  if (x.seen.date !== t) x.seen = {date:t, keys:{}};
+  return x;
+}
+function xpSave(x) {
+  const ks = Object.keys(x.days).sort();
+  while (ks.length > 400) delete x.days[ks.shift()];
+  const dk = Object.keys(x.dayu || {}).sort();
+  while (dk.length > 60) delete x.dayu[dk.shift()];
+  const mk = Object.keys(x.miss);
+  if (mk.length > 300) mk.sort((a, b) => x.miss[a].n - x.miss[b].n).slice(0, mk.length - 300).forEach(k => delete x.miss[k]);
+  try { localStorage.setItem(LS_XP, JSON.stringify(x)); } catch (e) {}
+}
+function xpLevelIdx(total) {
+  let i = 0;
+  XP_LEVELS.forEach((l, k) => { if (total >= l.xp) i = k; });
+  return i;
+}
+// Adds XP to x (not saved), respecting the daily cap.
+function xpAdd(x, n) {
+  const t = localDate();
+  const used = x.days[t] || 0;
+  const g = Math.max(0, Math.min(n, XP_RULE.cap - used));
+  const before = xpLevelIdx(x.total);
+  x.total += g;
+  x.days[t] = used + g;
+  const after = xpLevelIdx(x.total);
+  return {gain:g, up: after > before ? after : -1};
+}
+function xpStreak(x) {
+  let n = 0, off = (x.days[localDate()] || 0) > 0 ? 0 : -1;
+  while ((x.days[localDate(off)] || 0) > 0) { n++; off--; }
+  return n;
+}
+function xpPop(text) {
+  const el = document.getElementById('xp-pop');
+  if (!el) return;
+  el.textContent = text;
+  el.classList.add('show');
+  clearTimeout(xpPopTimer);
+  xpPopTimer = setTimeout(() => el.classList.remove('show'), 900);
+}
+function xpAfter(r, x, label) {
+  if (r.gain > 0) xpPop('+' + r.gain + ' XP' + (label ? ' · ' + label : ''));
+  else if (!xpCapShown && (x.days[localDate()] || 0) >= XP_RULE.cap) {
+    xpCapShown = true;
+    fdShowToast('Daily XP limit reached. Your answers are still saved.');
+  }
+  if (r.up >= 0) xpPendingUp = Math.max(xpPendingUp, r.up);
+  xpFlushLater();
+  xpRender();
+}
+// Level-up panel. It waits for the current card to finish, and for a parent round to end.
+let xpPendingUp = -1, xpFlushTimer = null;
+function xpFlushLater() {
+  if (xpPendingUp < 0 || PV.midRound) return;
+  clearTimeout(xpFlushTimer);
+  xpFlushTimer = setTimeout(xpShowLevelUp, 900);
+}
+function xpShowLevelUp() {
+  if (xpPendingUp < 0 || PV.midRound || document.getElementById('xp-lu')) return;
+  const i = xpPendingUp; xpPendingUp = -1;
+  const x = xpLoad(), L = XP_LEVELS[i], prev = XP_LEVELS[i - 1], nx = XP_LEVELS[i + 1];
+  const pct = nx ? Math.max(2, Math.round((x.total - L.xp) / (nx.xp - L.xp) * 100)) : 100;
+  const el = document.createElement('div');
+  el.id = 'xp-lu'; el.className = 'xp-lu-back';
+  el.onclick = e => { if (e.target === el) xpCloseLevelUp(); };
+  el.innerHTML = '<div class="xp-lu-card" role="dialog" aria-label="Level up">' +
+    '<div class="xp-lu-k">Level up</div><div class="xp-lu-ic">' + L.e + '</div>' +
+    '<div class="xp-lu-lv">Level ' + (i + 1) + '</div><div class="xp-lu-t">' + L.t + '</div>' +
+    (prev ? '<div class="xp-lu-from">Up from ' + prev.e + ' ' + prev.t + '</div>' : '') +
+    '<div class="xp-bar"><div class="xp-fill" style="width:' + pct + '%"></div></div>' +
+    '<div class="xp-next" style="margin:.3rem 0 1rem"><span>' + (nx ? 'Next: ' + nx.t : 'Top level reached') + '</span><span>' + (nx ? nx.xp.toLocaleString() + ' XP' : '') + '</span></div>' +
+    '<button class="xp-lu-btn" onclick="xpCloseLevelUp()">Keep going</button></div>';
+  document.body.appendChild(el);
+  if (typeof fdFireConfetti === 'function') fdFireConfetti();
+}
+function xpCloseLevelUp() {
+  const el = document.getElementById('xp-lu');
+  if (el) el.remove();
+  xpFlushLater();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') xpCloseLevelUp(); });
+// mode: 'flash' | 'date' | 'rapid'. key identifies the item for repeats and weak spots.
+function xpAward(mode, ok, key, label, paper, unit) {
+  const x = xpLoad();
+  const a = x.acc[mode] || (x.acc[mode] = {ok:0, n:0});
+  a.n++;
+  const uk = (paper || '') + '|' + (unit || '');
+  const ub = x.units[uk] || (x.units[uk] = {ok:0, n:0, last:''});
+  ub.n++; if (ok) ub.ok++; ub.last = localDate();
+  let n = 0, bonus = '';
+  if (ok) {
+    a.ok++;
+    xpRun++;
+    const repeat = key && x.seen.keys[key];
+    if (key) x.seen.keys[key] = 1;
+    n = repeat ? XP_RULE.repeat : XP_RULE[mode];
+    if (xpRun % XP_RULE.runLen === 0) { n += XP_RULE.runBonus; bonus = 'streak'; }
+  } else {
+    xpRun = 0;
+    n = XP_RULE.wrong;
+    if (key) {
+      const m = x.miss[key] || (x.miss[key] = {n:0, label:String(label || '').slice(0, 90), paper:paper || ''});
+      m.n++;
+    }
+  }
+  const r = xpAdd(x, n);
+  if (r.gain) { const dd = x.dayu[localDate()] || (x.dayu[localDate()] = {}); dd[uk] = (dd[uk] || 0) + r.gain; }
+  xpSave(x);
+  xpAfter(r, x, bonus);
+  return r.gain;
+}
+
+const STALE_DAYS = 7, WEAK_ACC = 0.7, WEAK_MIN = 10, UNIT_ROWS = 5;
+function unitCol(uk) {
+  const i = UNIT_IDX[uk];
+  if (i === undefined) return '#9AA0A6';
+  const c = COURSE_FLAT[i], units = P[c.paper].units, k = units.indexOf(c.unit), n = units.length;
+  const pct = n > 1 ? 100 - Math.round(k * 55 / (n - 1)) : 100;
+  return 'color-mix(in srgb, ' + PAPER_COL[c.paper] + ' ' + pct + '%, ' + (document.documentElement.classList.contains('dark') ? '#000' : '#fff') + ')';
+}
+function xpDaysSince(ds) {
+  if (!ds) return null;
+  const a = new Date(ds + 'T12:00:00'), b = new Date(localDate() + 'T12:00:00');
+  return Math.round((b - a) / 86400000);
+}
+function unitFlags(x) {
+  const pos = uptoPos(), out = [];
+  COURSE_FLAT.forEach((c, i) => {
+    if (i >= pos) return;
+    const rows = Object.keys(x.units).filter(k => k.split('|')[0] === c.paper && (k.split('|')[1] === c.unit)).map(k => x.units[k]);
+    let n = 0, ok = 0, last = '';
+    rows.forEach(r => { n += r.n; ok += r.ok; if (r.last > last) last = r.last; });
+    const gap = xpDaysSince(last), acc = n ? ok / n : null;
+    let flag = '', text = '', rank = 0;
+    if (n >= WEAK_MIN && acc < WEAK_ACC) {
+      flag = 'weak'; rank = acc;
+      text = Math.round(acc * 100) + '% correct over ' + n + ' answers' + (gap >= STALE_DAYS ? ' · last studied ' + gap + ' days ago' : '');
+    } else if (!n) {
+      flag = 'stale'; rank = 1; text = 'Not started yet';
+    } else if (gap >= STALE_DAYS) {
+      flag = 'stale'; rank = 2 + (1 / (1 + gap)); text = 'Not studied for ' + gap + ' days';
+    }
+    out.push({i, c, flag, text, rank});
+  });
+  return out;
+}
+function unitsRender(x) {
+  const el = document.getElementById('pg-units');
+  if (!el) return;
+  const all = unitFlags(x);
+  if (!all.length) { el.innerHTML = '<div class="empty">Move the “Course progress” slider on the home screen to show the units you have covered.</div>'; return; }
+  const bad = all.filter(u => u.flag).sort((a, b) => (a.flag === b.flag ? a.rank - b.rank : (a.flag === 'weak' ? -1 : 1)));
+  const good = all.length - bad.length;
+  let h = '<div style="font-size:.78rem;color:var(--muted);margin-bottom:8px">' + good + ' of ' + all.length + ' units covered in class are on track.</div>';
+  h += bad.slice(0, UNIT_ROWS).map(u => '<div class="pv-miss" style="border-left:4px solid ' + PAPER_COL[u.c.paper] + ';display:flex;align-items:center;gap:10px;justify-content:space-between">' +
+    '<div style="min-width:0"><div style="font-weight:600">' + escHtml(u.c.unit) + '</div><div style="font-size:.72rem;color:var(--muted)">' + PAPER_NAME[u.c.paper] + '</div>' +
+    '<div style="font-size:.74rem;font-weight:600;color:' + (u.flag === 'weak' ? '#D9534F' : '#C98A00') + '">' + escHtml(u.text) + '</div></div>' +
+    '<button class="pv-btn" style="flex:none;padding:.5rem .9rem;white-space:nowrap" onclick="practiseUnit(' + u.i + ')">Practise</button></div>').join('');
+  if (bad.length > UNIT_ROWS) h += '<div style="font-size:.74rem;color:var(--muted);margin-top:6px">+' + (bad.length - UNIT_ROWS) + ' more</div>';
+  if (!bad.length) h = '<div class="empty">All covered units are on track. Nice work.</div>';
+  el.innerHTML = h;
+}
+function practiseUnit(i) {
+  const c = COURSE_FLAT[i];
+  if (!c) return;
+  pickPaper(c.paper);
+  enterMode('flashcard');
+  const sel = document.getElementById('fd-unit');
+  sel.value = c.unit;
+  fdUpdateStartBtn();
+  fdStart();
+}
+function xpGrant(n, label) {
+  const x = xpLoad();
+  const r = xpAdd(x, n);
+  xpSave(x);
+  xpAfter(r, x, label);
+  return r.gain;
+}
+function xpBest(x) {
+  const ks = Object.keys(x.days).filter(k => x.days[k] > 0).sort();
+  let best = 0, run = 0, prev = null;
+  ks.forEach(k => {
+    const d = new Date(k + 'T00:00:00');
+    run = (prev && Math.round((d - prev) / 86400000) === 1) ? run + 1 : 1;
+    prev = d;
+    if (run > best) best = run;
+  });
+  return best;
+}
+function xpStreakHtml(x) {
+  const n = xpStreak(x);
+  let dots = '';
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    dots += '<i class="' + ((x.days[ymd(d)] || 0) > 0 ? 'on' : '') + (i === 0 ? ' today' : '') + '" title="' + ymd(d) + '">' + 'SMTWTFS'[d.getDay()] + '</i>';
+  }
+  return '<div class="xp-streak"><span class="xp-flame">🔥 ' + (n ? n + ' day' + (n > 1 ? 's' : '') + ' in a row' : 'Start a streak today') + '</span><span class="xp-sdots">' + dots + '</span><span class="xp-best">Best ' + Math.max(n, xpBest(x)) + '</span></div>';
+}
+function xpBlock(x, link) {
+  const i = xpLevelIdx(x.total), L = XP_LEVELS[i], nx = XP_LEVELS[i + 1];
+  const today = x.days[localDate()] || 0;
+  const pct = nx ? Math.round((x.total - L.xp) / (nx.xp - L.xp) * 100) : 100;
+  const next = nx ? 'Next: ' + nx.t + ' at ' + nx.xp.toLocaleString() + ' XP' : 'Top level reached';
+  return '<div class="xp-top"><span class="xp-emoji">' + L.e + '</span>' +
+    '<div class="xp-mid"><div class="xp-name">' + L.t + '</div><div class="xp-sub">Level ' + (i + 1) + ' · ' + x.total.toLocaleString() + ' XP</div></div>' +
+    '<div class="xp-today"><b>' + today + '</b>/ ' + XP_RULE.cap + ' XP today</div></div>' +
+    '<div class="xp-bar"><div class="xp-fill" style="width:' + pct + '%"></div></div>' +
+    '<div class="xp-next"><span>' + next + '</span>' + (link ? '<span>Tap for progress ›</span>' : '') + '</div>' +
+    xpStreakHtml(x);
+}
+function xpRender() {
+  const el = document.getElementById('xp-card');
+  if (el) el.innerHTML = xpBlock(xpLoad(), true);
+  weakNudgeRender();
+  const pg = document.getElementById('pg-level');
+  if (pg && document.getElementById('s-progress').classList.contains('active')) progressRender();
+}
+function openProgress() { showScreen('s-progress'); }
+
+// ═══════════════════════════════════════════
+// PROGRESS SCREEN
+// ═══════════════════════════════════════════
+function progressRender() {
+  const x = xpLoad();
+  const cur = xpLevelIdx(x.total);
+  document.getElementById('pg-level').innerHTML = xpBlock(x, false);
+  document.getElementById('pg-ladder').innerHTML = XP_LEVELS.map((l, i) =>
+    '<div class="pg-lv' + (i < cur ? ' done' : i === cur ? ' now' : '') + '"><span>' + l.e + '</span><span>Level ' + (i + 1) + ': ' + l.t + '</span><span>' + l.xp.toLocaleString() + ' XP</span></div>').join('');
+  let days = '';
+  const seenU = {};
+  for (let i = 13; i >= 0; i--) {
+    const d = new Date(); d.setDate(d.getDate() - i);
+    const v = x.days[ymd(d)] || 0, du = x.dayu[ymd(d)] || {};
+    const H = Math.round(Math.min(1, v / XP_RULE.cap) * 66);
+    let tracked = 0, segs = '';
+    Object.keys(du).sort((a, b) => (UNIT_IDX[a] === undefined ? 99 : UNIT_IDX[a]) - (UNIT_IDX[b] === undefined ? 99 : UNIT_IDX[b])).forEach(k => {
+      tracked += du[k]; seenU[k] = 1;
+      segs += '<b style="flex:' + du[k] + ' 0 0;background:' + unitCol(k) + '"></b>';
+    });
+    if (v - tracked > 0) segs += '<b style="flex:' + (v - tracked) + ' 0 0;background:' + unitCol('') + '"></b>';
+    days += '<div class="pg-day" title="' + ymd(d) + ': ' + v + ' XP"><i style="height:' + (v ? Math.max(H, 3) : 0) + 'px">' + segs + '</i>' + 'SMTWTFS'[d.getDay()] + '</div>';
+  }
+  const leg = Object.keys(seenU).sort((a, b) => UNIT_IDX[a] - UNIT_IDX[b]).map(k => {
+    const c = COURSE_FLAT[UNIT_IDX[k]];
+    return c ? '<span class="pg-leg"><s style="background:' + unitCol(k) + '"></s>' + escHtml(c.unit.replace(/ – .*/, '')) + ' ' + PAPER_NAME[c.paper] + '</span>' : '';
+  }).join('');
+  document.getElementById('pg-days').innerHTML = days;
+  document.getElementById('pg-legend').innerHTML = leg;
+  const names = {flash:'Flashcards', date:'Key dates', rapid:'Rapid fire'};
+  document.getElementById('pg-acc').innerHTML = Object.keys(names).map(m => {
+    const a = x.acc[m]; const p = a.n ? Math.round(a.ok / a.n * 100) : 0;
+    return '<div class="pg-bar"><span class="t">' + names[m] + '</span><span class="b"><i style="width:' + p + '%"></i></span><span class="n">' + (a.n ? p + '% of ' + a.n : 'no answers yet') + '</span></div>';
+  }).join('');
+  const mast = fdGetMastered(), out = fdGetOutstanding();
+  document.getElementById('pg-mastery').innerHTML = COURSE_ORDER.map(p => {
+    const tot = FD.filter(c => c.paper === p).length;
+    const got = Object.keys(mast).filter(k => k.startsWith(p + '|')).length;
+    const pin = out.filter(k => k.startsWith(p + '|')).length;
+    return '<div class="pg-bar"><span class="t">' + PAPER_NAME[p].replace(' & Nazi Germany', '') + '</span><span class="b"><i style="width:' + (tot ? Math.round(got / tot * 100) : 0) + '%;background:' + PAPER_COL[p] + '"></i></span><span class="n">' + got + ' of ' + tot + (pin ? ' · ' + pin + ' 📌' : '') + '</span></div>';
+  }).join('');
+  unitsRender(x);
+  const weak = Object.keys(x.miss).map(k => x.miss[k]).sort((a, b) => b.n - a.n).slice(0, 8);
+  document.getElementById('pg-weak').innerHTML = weak.length
+    ? weak.map(m => '<div class="pv-miss" style="border-left:4px solid ' + (PAPER_COL[m.paper] || '#888') + '">' + escHtml(m.label) + ' <span style="color:var(--muted)">· missed ' + m.n + '×</span></div>').join('')
+    : '<div class="empty">Nothing yet. Questions you miss will show up here.</div>';
+}
+
+// ═══════════════════════════════════════════
+// PARENT VIEW
+// ═══════════════════════════════════════════
+const PV = {sel:{}, n:10, endless:false, seen:{}, queue:[], i:0, first:true, total:0, ok:0, xp:0, missed:[], retry:[], cur:null, midRound:false};
+function parentExit() { PV.midRound = false; showScreen('s-pick'); xpFlushLater(); }
+function parentSetN(n) { PV.n = n; parentShowSetup(); }
+function parentTogglePaper(p) { PV.sel[p] = PV.sel[p] === false; parentShowSetup(); }
+function parentShowSetup() {
+  PV.midRound = false;
+  document.getElementById('pr-hero').style.display = 'flex';
+  document.getElementById('pv-setup').style.display = 'block';
+  document.getElementById('pv-round').style.display = 'none';
+  document.getElementById('pv-end').style.display = 'none';
+  document.getElementById('pv-papers').innerHTML = '<div class="pr-papers">' + COURSE_ORDER.map(p => {
+    const on = PV.sel[p] !== false;
+    return '<button class="pr-paper' + (on ? ' sel' : '') + '" style="--c:' + PAPER_COL[p] + '" onclick="parentTogglePaper(\'' + p + '\')">' +
+      '<span class="pr-ptick"></span><b>' + PAPER_NAME[p] + '</b></button>';
+  }).join('') + '</div><div class="pr-note">Draws from every unit of the papers you choose.</div>';
+  document.getElementById('pv-count').innerHTML = [5, 10, 20, 30, 0].map(n =>
+    '<button class="pr-chip' + (PV.n === n ? ' sel' : '') + '" onclick="parentSetN(' + n + ')">' + (n || '♾️ Endless') + '</button>').join('');
+  const x = xpLoad();
+  let n = 0, dots = '';
+  for (let i = 6; i >= 0; i--) {
+    const on = (x.days[localDate(-i)] || 0) > 0;
+    if (on) n++;
+    const d = new Date(); d.setDate(d.getDate() - i);
+    dots += '<span class="pr-dot' + (on ? ' on' : '') + '">' + 'SMTWTFS'[d.getDay()] + '</span>';
+  }
+  const L = XP_LEVELS[xpLevelIdx(x.total)];
+  document.getElementById('pv-week').innerHTML =
+    '<div class="pr-week-h">Their week</div><div class="pr-dots">' + dots + '</div>' +
+    '<div class="pr-week-t">Revised on <b>' + n + ' of the last 7 days</b><br>' + L.e + ' ' + L.t + ' · ' + (x.days[localDate()] || 0) + ' XP today</div>';
+}
+function pvPapers() { return COURSE_ORDER.filter(p => PV.sel[p] !== false); }
+function pvBuild(n, excl) {
+  excl = excl || {};
+  const ps = pvPapers();
+  const mast = fdGetMastered(), out = fdGetOutstanding();
+  const fcs = FD.filter(c => ps.includes(c.paper) && !excl[fdKey(c)] && !/^Case Study/i.test(c.front));
+  const asFlash = c => ({kind:'flash', paper:c.paper, q:c.front, key:fdKey(c), label:c.front, card:c, unit:c.unit,
+    points:['p1','p2','p3'].map((k, i) => c[k] ? boldHints(c[k], (c.hints && c.hints[i]) ? [c.hints[i]] : []) : '').filter(Boolean)});
+  const dts = shuffle(DATES.filter(d => ps.includes(d.paper)).map(d =>
+    ({kind:'date', paper:d.paper, q:'When did this happen: ' + d.event + '?', ans:d.date, key:d.paper + '|' + d.event, label:d.event, unit:d.unit})).filter(i => !excl[i.key]));
+  let rqs = RQ.filter(q => ps.includes(q.paper) && !excl['rq|' + q.q]);
+  const nFlash = Math.round(n * 0.4), nDate = Math.round(n * 0.3), nRq = n - nFlash - nDate;
+  const easy = rqs.filter(q => q.d !== 'hard');
+  if (easy.length >= nRq) rqs = easy;
+  rqs = shuffle(rqs.map(q => ({kind:'rq', paper:q.paper, q:q.q, ans:q.a, key:'rq|' + q.q, label:q.q, unit:q.unit})));
+  const pinned = shuffle(fcs.filter(c => out.includes(fdKey(c))));
+  const fresh = shuffle(fcs.filter(c => !out.includes(fdKey(c)) && !mast[fdKey(c)]));
+  const done = shuffle(fcs.filter(c => !out.includes(fdKey(c)) && mast[fdKey(c)]));
+  const fl = pinned.slice(0, Math.max(3, Math.round(nFlash * 0.75))).concat(fresh, done).map(asFlash);
+  const deck = fl.splice(0, nFlash).concat(dts.splice(0, nDate), rqs.splice(0, nRq));
+  const rest = [fl, dts, rqs];
+  let k = 0;
+  while (deck.length < n && rest.some(a => a.length)) { const a = rest[k++ % 3]; if (a.length) deck.push(a.shift()); }
+  return shuffle(deck);
+}
+function parentStart() {
+  if (!FD.length) { fdShowToast('Still loading. Try again in a moment.'); return; }
+  if (!pvPapers().length) { fdShowToast('Tap at least one paper first.'); return; }
+  PV.endless = PV.n === 0;
+  PV.seen = {};
+  const deck = pvBuild(PV.endless ? 10 : PV.n, {});
+  if (!deck.length) { fdShowToast('Nothing to ask for this choice yet.'); return; }
+  deck.forEach(i => { PV.seen[i.key] = 1; });
+  PV.queue = deck; PV.i = 0; PV.first = true; PV.total = deck.length; PV.ok = 0; PV.xp = 0; PV.missed = []; PV.retry = []; PV.midRound = true;
+  document.getElementById('pr-hero').style.display = 'none';
+  document.getElementById('pv-setup').style.display = 'none';
+  document.getElementById('pv-end').style.display = 'none';
+  document.getElementById('pv-round').style.display = 'block';
+  pvRender();
+}
+function pvRender() {
+  const it = PV.cur = PV.queue[PV.i];
+  const col = PAPER_COL[it.paper] || '#888';
+  const kind = {flash:'🧠 Flashcard', date:'📅 Key date', rq:'❓ Quiz question'}[it.kind];
+  const endlessNow = PV.endless && PV.first;
+  const label = !PV.first ? 'Second go · ' + (PV.i + 1) + ' of ' + PV.queue.length : endlessNow ? 'Question ' + (PV.i + 1) + ' · ' + PV.ok + ' right so far' : 'Question ' + (PV.i + 1) + ' of ' + PV.total;
+  const done = PV.first ? PV.i : PV.total;
+  document.getElementById('pv-round').innerHTML =
+    '<div class="pr-prog"><span>' + label + '</span><span class="pr-pill" style="--c:' + col + '">' + PAPER_NAME[it.paper] + '</span></div>' +
+    (endlessNow ? '<div style="height:.7rem"></div>' : '<div class="pr-bar"><i style="width:' + Math.round(done / PV.total * 100) + '%"></i></div>') +
+    '<div class="pr-card" style="--c:' + col + '"><div class="pr-kind">' + kind + '</div><div class="pr-say">Read this out loud</div><div class="pr-q">' + it.q + '</div></div>' +
+    '<div class="pr-reveal" id="pv-ans" style="display:none"></div>' +
+    '<div id="pv-btns"><button class="pr-start" onclick="pvShow()">Show answer</button></div>' +
+    (endlessNow ? '<button class="pr-sec" style="margin-top:.9rem" onclick="pvFinish()">Finish round' + (PV.i ? ' (' + PV.i + ' answered)' : '') + '</button>' : '');
+}
+function pvShow() {
+  const it = PV.cur;
+  const a = document.getElementById('pv-ans');
+  a.innerHTML = it.kind === 'flash'
+    ? '<div class="pr-lbl">Listen for</div><ul>' + it.points.map(p => '<li>' + p + '</li>').join('') + '</ul>'
+    : '<div class="pr-lbl">Answer</div><div class="pr-ans-t">' + it.ans + '</div>';
+  a.style.display = 'block';
+  document.getElementById('pv-btns').innerHTML =
+    '<div class="pr-hint">Did they get the main idea?</div>' +
+    '<div class="pr-row"><button class="pr-no" onclick="pvMark(false)">✗ Not yet</button><button class="pr-yes" onclick="pvMark(true)">✓ Got it</button></div>';
+}
+function pvMark(ok) {
+  const it = PV.cur;
+  if (PV.first) {
+    if (ok) PV.ok++; else PV.retry.push(it);
+    PV.xp += xpAward(it.kind === 'flash' ? 'flash' : it.kind === 'date' ? 'date' : 'rapid', ok, it.key, it.label, it.paper, it.unit);
+    if (it.kind === 'flash') {
+      const prev = fdCurrent; fdCurrent = it.card; fdRecordSessionCard(it.paper, ok); fdCurrent = prev;
+      const m = fdGetMastered(), o = fdGetOutstanding(), k = it.key;
+      if (ok) { m[k] = true; fdSetMastered(m); const ix = o.indexOf(k); if (ix !== -1) { o.splice(ix, 1); fdSetOutstanding(o); } }
+      else { if (!o.includes(k)) { o.push(k); fdSetOutstanding(o); } if (m[k]) { delete m[k]; fdSetMastered(m); } }
+      fdOutstanding = fdGetOutstanding();
+      renderFdBowl();
+    }
+  }
+  PV.i++;
+  if (PV.i >= PV.queue.length) {
+    if (PV.first && PV.endless) {
+      const more = pvBuild(10, PV.seen);
+      if (more.length) { more.forEach(i => { PV.seen[i.key] = 1; }); PV.queue = PV.queue.concat(more); pvRender(); return; }
+    }
+    if (PV.first) PV.total = PV.queue.length;
+    pvAfterFirstPass();
+    return;
+  }
+  pvRender();
+}
+function pvAfterFirstPass() {
+  if (PV.first && PV.retry.length) { PV.missed = PV.retry.slice(); PV.queue = PV.retry.slice(); PV.first = false; PV.i = 0; pvRender(); }
+  else pvEnd();
+}
+// Endless rounds: the parent stops when they like. The question on screen is not counted.
+function pvFinish() {
+  if (PV.first) PV.total = PV.i;
+  if (PV.total === 0) { parentShowSetup(); return; }
+  pvAfterFirstPass();
+}
+function pvEnd() {
+  PV.midRound = false;
+  PV.xp += xpGrant(XP_RULE.parent, 'round finished');
+  xpFlushLater();
+  document.getElementById('pv-round').style.display = 'none';
+  const end = document.getElementById('pv-end');
+  const pct = Math.round(PV.ok / PV.total * 100);
+  const msg = PV.ok === PV.total ? 'A clean sweep.' : pct >= 70 ? 'A strong round.' : 'Good practice. The misses are the useful bit.';
+  const miss = PV.missed.map(m => {
+    const a = m.kind === 'flash' ? (m.points[0] || '') : m.ans;
+    return '<div class="pr-miss" style="--c:' + (PAPER_COL[m.paper] || '#888') + '"><b>' + m.q + '</b><span>' + a + '</span></div>';
+  }).join('');
+  end.innerHTML =
+    '<div class="pr-score"><div class="pr-ring" style="--p:' + pct + '"><b>' + PV.ok + '/' + PV.total + '</b><small>first time</small></div>' +
+    '<div class="pr-msg">' + msg + '</div><div class="pr-xp">+' + PV.xp + ' XP earned</div></div>' +
+    (miss ? '<div class="pr-step" style="margin-top:1.2rem"><span>!</span>Worth another look</div>' + miss : '') +
+    '<div class="pr-endbtns"><button class="pr-start" onclick="parentStart()">Another round</button>' +
+    '<button class="pr-sec" onclick="parentShowSetup()">Change papers</button>' +
+    '<button class="pr-sec" onclick="parentExit()">Done</button></div>';
+  end.style.display = 'block';
+}
+
+// First paint
+xpRender();
+uptoRender();
 
 </script>
 <!-- EXAM FULLSCREEN OVERLAY -->
