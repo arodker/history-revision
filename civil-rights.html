@@ -439,13 +439,13 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .arc-tile.t4{background:linear-gradient(135deg,#5A3200,#E08A1E)}
 .arc-tile.t5{background:linear-gradient(135deg,#1B2F4F,#378ADD)}
 .wh-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.wh-hole{height:104px;border-radius:50% / 22%;border:3px solid var(--border2);background:var(--subtle);font-family:inherit;color:var(--text);padding:.4rem .6rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;overflow:hidden;cursor:pointer;transition:background .1s}
+.wh-hole{height:116px;border-radius:50% / 22%;border:3px solid var(--border2);background:var(--subtle);font-family:inherit;color:var(--text);padding:.4rem .6rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;overflow:hidden;cursor:pointer;transition:background .1s}
 .wh-hole.up{background:var(--surface);border-color:#E08A1E;animation:whpop .15s}
 .wh-hole.hit{background:#2E7D32;border-color:#2E7D32;color:#fff}
 .wh-hole.miss{background:#B5473A;border-color:#B5473A;color:#fff}
 @keyframes whpop{from{transform:scale(.8)}to{transform:scale(1)}}
-.wh-ev{font-size:.7rem;font-weight:700;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-align:center}
-.wh-yr{font-family:'Courier New',monospace;font-weight:800;font-size:1.05rem}
+.wh-ev{font-size:.7rem;font-weight:700;line-height:1.25;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;text-align:center}
+.wh-yr{font-family:'Courier New',monospace;font-weight:800;font-size:.92rem;line-height:1.15;text-align:center;overflow:hidden;max-height:2.35em}
 .st-stack{display:flex;flex-direction:column-reverse;gap:4px;min-height:120px;border-bottom:4px solid var(--border2);padding-bottom:6px;margin-bottom:.8rem}
 .st-empty{color:var(--muted);font-size:.75rem;text-align:center;align-self:center;margin:auto}
 .st-blk{display:flex;justify-content:space-between;gap:.6rem;align-items:center;background:color-mix(in srgb,var(--c) 20%,var(--surface));border:2px solid var(--c);border-radius:8px;padding:.45rem .7rem;font-size:.8rem;font-weight:700;animation:stdrop .25s}
@@ -477,6 +477,22 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .boss-right{display:block;margin:.5rem auto 0;background:none;border:1px solid var(--border2);color:var(--muted);border-radius:999px;padding:.25rem .8rem;font-family:inherit;font-size:.7rem;font-weight:600;cursor:pointer}
 
 
+
+#bn-banner{position:fixed;left:50%;bottom:4rem;transform:translate(-50%,20px);background:var(--text);color:var(--bg);font-size:.8rem;font-weight:700;padding:.4rem .9rem;border-radius:20px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:9998;white-space:nowrap}
+#bn-banner.show{opacity:.92;transform:translate(-50%,0)}
+#s-hub{zoom:.9}
+#fd-drill{zoom:.9}
+.boss-hintline{min-height:1.1rem;text-align:center;font-size:.78rem;font-weight:600;color:var(--muted);margin:.35rem 0 .1rem}
+.boss-auto{height:4px;border-radius:2px;background:var(--subtle);overflow:hidden;margin:.5rem 0 .2rem}
+.boss-auto i{display:block;height:100%;background:#B5473A;animation:bossauto 3s linear forwards}
+@keyframes bossauto{from{width:100%}to{width:0}}
+
+
+
+/* Y13: four stops, so inset the slider so each stop sits over the centre of its label */
+.up-card input[type=range]{width:75%;margin-left:12.5%;margin-right:12.5%}
+.up-ticks span{white-space:normal;font-size:.62rem;line-height:1.2;padding:3px 2px 0}
+.up-ticks em{display:block;margin-top:1px}
 #fd-toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(80px);background:#1a1a18;color:#fff;padding:.65rem 1.2rem;border-radius:12px;font-size:.82rem;font-weight:600;z-index:9999;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;max-width:90vw;text-align:center}
 #fd-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 #s-arcade.ingame > .back-btn,#s-arcade.ingame > .arc-title{display:none}
@@ -1694,6 +1710,7 @@ function xpCloseLevelUp() { var el = document.getElementById('xp-lu'); if (el) e
 document.addEventListener('keydown', function (e) { if (e.key === 'Escape') xpCloseLevelUp(); });
 // mode: flash | date | rapid | stat. key identifies the item for repeats and most-missed. unit is aa/lab/na/wom.
 function xpAward(mode, ok, key, label, unit) {
+  bnTrack(ok);
   var x = xpLoad();
   var a = x.acc[mode] || (x.acc[mode] = {ok:0, n:0});
   a.n++;
@@ -1964,6 +1981,7 @@ function hubHints() { fdSyncHints(!fdHintsOn); hubRender(); }
 // ---------- screen wiring ----------
 var _showScreen = showScreen;
 showScreen = function (id) {
+  bnRun = 0;
   if (id !== 's-arcade' && typeof ARC !== 'undefined' && ARC.g) arcStop();
   _showScreen(id);
   var hl = document.getElementById('hub-link');
@@ -1973,8 +1991,29 @@ showScreen = function (id) {
   if (id === 's-progress') progressRender();
 };
 
+
+// ---------- streak banners ----------
+var bnRun = 0, bnG = null, bnTimer = null;
+var BN_MSG = {3:'3 in a row!', 5:'5 in a row! 🔥', 7:'7 in a row!', 10:'10 in a row! ⚡', 15:'15 in a row! Unstoppable', 20:'20 in a row! Legend'};
+function bnShow(txt) {
+  var el = document.getElementById('bn-banner');
+  if (!el) { el = document.createElement('div'); el.id = 'bn-banner'; document.body.appendChild(el); }
+  el.textContent = txt; el.classList.remove('show'); void el.offsetWidth; el.classList.add('show');
+  clearTimeout(bnTimer); bnTimer = setTimeout(function () { el.classList.remove('show'); }, 1700);
+}
+function bnTrack(ok) {
+  var g = (typeof ARC !== 'undefined' && ARC.g && !ARC.g.over) ? ARC.g : null;
+  if (g !== bnG) { bnG = g; bnRun = 0; }
+  if (!ok) { bnRun = 0; return; }
+  bnRun++;
+  var m = BN_MSG[bnRun];
+  if (!m && bnRun > 20 && bnRun % 10 === 0) m = bnRun + ' in a row! Legend';
+  if (m) bnShow(m);
+}
+
 // ---------- arcade ----------
-var ARC = {unit:null, g:null, t:null, iv:null};
+var ARC = {sel:null, g:null, t:null, iv:null};
+var UNIT_EMO = {aa:'✊', lab:'🔨', na:'🏹', wom:'📢'};
 function arcStop() { clearTimeout(ARC.t); clearInterval(ARC.iv); ARC.iv = null; ARC.tm = null; ARC.g = null; xpFlushLater(); }
 function arcTimerStop() { clearInterval(ARC.iv); ARC.iv = null; ARC.tm = null; }
 function arcTimerStart(secs, fn) {
@@ -1997,14 +2036,33 @@ function arcSetHS(k, v) {
   if (v > (h[k] || 0)) { h[k] = v; try { localStorage.setItem(LS_ARC, JSON.stringify(h)); } catch (e) {} return true; }
   return false;
 }
-function arcCur() { return ARC.unit && unitReached(ARC.unit) ? ARC.unit : (COURSE_ORDER.find(unitReached) || COURSE_ORDER[0]); }
+function arcPapers() { var r = COURSE_ORDER.filter(unitReached); if (!r.length) return [COURSE_ORDER[0]]; var s = ARC.sel ? r.filter(function (p) { return ARC.sel.indexOf(p) >= 0; }) : r; return s.length ? s : r; }
 function arcYear(d) { const s = String(d.date), m = s.match(/\d{4}/) || s.match(/\d{3}/); return m ? parseInt(m[0], 10) : null; }
-function arcDatePool() { var u = arcCur(); return DATES.filter(d => d.section === u && arcYear(d) !== null); }
-function arcRqPool() { var u = arcCur(); return RQ.filter(q => q.section === u); }
+function arcDatesOnly() { const ps = arcPapers(); return DATES.filter(d => ps.includes(d.section) && arcYear(d) !== null); }
+function arcRqPool() { const ps = arcPapers(); return RQ.filter(q => ps.includes(q.section)); }
+function arcDatePool() { return arcDatesOnly().map(d => Object.assign({}, d, {src: 'dt'})).concat(arcRqYears()); }
+
+const ARC_DATE_RE = /^(\d{1,2}(–\d{1,2})? )?([A-Z][a-z]+ )?\d{3,4}$/;
+const ARC_WHEN_RE = /^(when|in which year|in what year|what year)\b/i;
+function arcRqItem(q) { return Object.assign({}, q, {date: String(q.a).trim(), event: q.q, src: 'rq'}); }
+function arcRqYears() { return arcRqPool().filter(q => ARC_WHEN_RE.test(q.q) && ARC_DATE_RE.test(String(q.a).trim())).map(arcRqItem); }
+function arcKind(it) { const s = String(it.date); return it.src !== 'rq' ? 'y' : (ARC_WHEN_RE.test(it.q) && ARC_DATE_RE.test(s) ? 'y' : (/^[\d,.%]+$/.test(s) ? 'n' : 't')); }
+function arcWhPool() { return arcDatesOnly().map(d => Object.assign({}, d, {src: 'dt'})).concat(arcRqPool().filter(q => { const a = String(q.a).trim(); return a.length > 0 && a.length <= 30; }).map(arcRqItem)); }
+function arcMode(it) { return it.src === 'rq' ? 'rapid' : 'date'; }
+function arcMixOrder(pool) {
+  const a = shuffle(pool.filter(x => x.src !== 'rq')), b = shuffle(pool.filter(x => x.src === 'rq'));
+  if (!b.length) return a;
+  const out = []; let t = Math.random() < 0.5;
+  while (a.length || b.length) { const s = ((t && b.length) || !a.length) ? b : a; out.push(s.shift()); t = !t; }
+  return out;
+}
 function arcOpen() { arcStop(); showScreen('s-arcade'); arcMenu(); }
 function arcTogglePaper(p) {
   if (!unitReached(p)) return;
-  ARC.unit = p;
+  const cur = arcPapers(), all = COURSE_ORDER.filter(x => unitReached(x));
+  if (cur.includes(p)) { if (cur.length > 1) ARC.sel = cur.filter(x => x !== p); }
+  else ARC.sel = cur.concat(p);
+  if (ARC.sel && all.every(x => ARC.sel.includes(x))) ARC.sel = null;
   arcMenu();
 }
 function arcHearts(n) { return '<span class="arc-hearts">' + '❤️'.repeat(Math.max(0, n)) + '<i>' + '🖤'.repeat(Math.max(0, 3 - n)) + '</i></span>'; }
@@ -2013,17 +2071,17 @@ function arcMenu() {
   document.getElementById('s-arcade').classList.remove('ingame');
   const hs = arcHS();
   const pills = COURSE_ORDER.map(p => {
-    const lock = !unitReached(p), on = !lock && p === arcCur();
-    return '<button class="arc-pill' + (on ? ' on' : '') + (lock ? ' lock' : '') + '" style="--c:' + uCol(p) + '" onclick="arcTogglePaper(\'' + p + '\')">' + UNITS[p].short + (lock ? ' 🔒' : '') + '</button>';
+    const lock = !unitReached(p), on = !lock && arcPapers().includes(p);
+    return '<button class="arc-pill' + (on ? ' on' : '') + (lock ? ' lock' : '') + '" style="--c:' + uCol(p) + '" onclick="arcTogglePaper(\'' + p + '\')">' + UNIT_EMO[p] + ' ' + UNITS[p].short + (lock ? ' 🔒' : '') + '</button>';
   }).join('');
   document.getElementById('arc-body').innerHTML =
-    '<div class="arc-sub">Pick one unit. Questions come from that unit, so long as it is unlocked on the home slider.</div>' +
+    '<div class="arc-sub">Pick one unit or several. Questions come from every unit selected, so long as it is unlocked on the home slider.</div>' +
     '<div class="arc-pills">' + pills + '</div>' +
     '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">🧩</span><span class="arc-tx"><b>Match the dates</b><small>Pair each event with its date. Three lives.</small></span><span class="arc-hi">HI ' + (hs.mt || 0) + '</span></button>' +
     '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Type the answer. Right answers hurt the boss, misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
-    '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>60 seconds. Tap the true dates, ignore the false ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
+    '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>60 seconds. Tap right answers, ignore wrong ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
     '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
-    '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 20 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
+    '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 12 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
 }
 function arcShort(msg) { fdToast(msg); }
 function arcFrame(inner, head) {
@@ -2052,7 +2110,7 @@ function eolStart() {
 }
 function mtRound(msg) {
   const g = ARC.g, used = new Set(), items = [];
-  for (const it of shuffle(g.pool)) {
+  for (const it of arcMixOrder(g.pool)) {
     const y = arcYear(it);
     if (!used.has(y)) { used.add(y); items.push(it); }
     if (items.length === g.n) break;
@@ -2077,7 +2135,7 @@ function mtPick(side, i) {
   if (g.selE >= 0 && g.selD >= 0) {
     const e = g.selE, d = g.selD, it = g.items[e];
     const ok = e === d || arcYear(g.items[e]) === arcYear(g.items[d]);
-    xpAward('date', ok, 'dt|' + it.section + '|' + it.event, it.event, it.section);
+    xpAward(arcMode(it), ok, 'dt|' + it.section + '|' + it.event, it.event, it.section);
     g.selE = -1; g.selD = -1;
     if (ok) {
       g.done[e] = 1; g.done[d] = 1; g.score++; g.msg = '';
@@ -2112,15 +2170,15 @@ function mtOver() {
 }
 // ----- Whack-a-fact -----
 function whStart() {
-  const pool = arcDatePool();
+  const pool = arcWhPool();
   if (pool.length < 12) { arcShort('Not enough dates for this choice yet.'); return; }
-  ARC.g = {type:'wh', pool:shuffle(pool), i:0, holes:[null,null,null,null,null,null], lives:3, score:0, tick:0, total:600};
+  ARC.g = {type:'wh', pool:arcMixOrder(pool), i:0, holes:[null,null,null,null,null,null], lives:3, score:0, tick:0, total:600};
   whBuild();
   clearInterval(ARC.iv); ARC.iv = setInterval(whTick, 100);
 }
 function whStatsHtml() { const g = ARC.g, hs = arcHS(); return arcHearts(g.lives) + '<span>Time <b>' + Math.max(0, Math.ceil((g.total - g.tick) / 10)) + '</b></span><span>Score <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.wh || 0, g.score) + '</b></span>'; }
 function whBuild() {
-  arcFrame('<div class="arc-sub" style="text-align:center">Tap the TRUE statements. Leave the false ones alone.</div><div class="wh-grid">' +
+  arcFrame('<div class="arc-sub" style="text-align:center">Tap when the answer shown is right. Leave wrong answers alone.</div><div class="wh-grid">' +
     [0,1,2,3,4,5].map(i => '<button class="wh-hole" id="wh-h' + i + '" onclick="whHit(' + i + ')"></button>').join('') + '</div>',
     '<div class="arc-stats" id="wh-stats">' + whStatsHtml() + '</div>');
 }
@@ -2128,7 +2186,7 @@ function whRender(i, flash) {
   const g = ARC.g, h = g.holes[i], el = document.getElementById('wh-h' + i);
   if (!el) return;
   el.className = 'wh-hole' + (h ? ' up' : '') + (flash ? ' ' + flash : '');
-  el.innerHTML = h ? '<span class="wh-ev">' + escHtml(h.item.event) + '</span><span class="wh-yr">' + escHtml(String(h.shown)) + '</span>' : '';
+  el.innerHTML = h ? '<span class="wh-ev">' + escHtml(h.item.src === 'rq' ? h.item.q : 'When was: ' + h.item.event + '?') + '</span><span class="wh-yr">' + escHtml(String(h.shown)) + '</span>' : '';
 }
 function whTick() {
   const g = ARC.g;
@@ -2137,7 +2195,7 @@ function whTick() {
   for (let i = 0; i < 6; i++) {
     const h = g.holes[i];
     if (h && g.tick >= h.die) {
-      if (h.t) xpAward('date', false, 'dt|' + h.item.section + '|' + h.item.event, h.item.event, h.item.section);
+      if (h.t) xpAward(arcMode(h.item), false, 'dt|' + h.item.section + '|' + h.item.event, h.item.event, h.item.section);
       g.holes[i] = null; whRender(i);
     }
   }
@@ -2146,11 +2204,13 @@ function whTick() {
     const free = [0,1,2,3,4,5].filter(i => !g.holes[i]);
     if (free.length) {
       const i = free[Math.floor(Math.random() * free.length)];
-      if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; }
+      if (g.i >= g.pool.length) { g.pool = arcMixOrder(g.pool); g.i = 0; }
       const item = g.pool[g.i++], isTrue = Math.random() < 0.5;
       let shown = item.date;
       if (!isTrue) {
-        const others = g.pool.filter(o => arcYear(o) !== arcYear(item));
+        let others = g.pool.filter(o => arcKind(o) === arcKind(item) && String(o.date) !== String(item.date) && (arcKind(item) !== 'y' || arcYear(o) !== arcYear(item)));
+        if (!others.length) others = g.pool.filter(o => String(o.date) !== String(item.date));
+        if (arcKind(item) === 't') { const L = String(item.date).length; others = others.slice().sort((a, b) => Math.abs(String(a.date).length - L) - Math.abs(String(b.date).length - L)).slice(0, 8); }
         shown = others[Math.floor(Math.random() * others.length)].date;
       }
       g.holes[i] = {item, t:isTrue, shown, die: g.tick + Math.max(38, Math.round((6500 - g.score * 50) / 100))};
@@ -2166,8 +2226,8 @@ function whHit(i) {
   const h = g.holes[i];
   if (!h) return;
   g.holes[i] = null;
-  if (h.t) { g.score++; xpAward('date', true, 'dt|' + h.item.section + '|' + h.item.event, h.item.event, h.item.section); whRender(i, 'hit'); }
-  else { g.lives--; xpAward('date', false, 'dt|' + h.item.section + '|' + h.item.event, h.item.event, h.item.section); whRender(i, 'miss'); }
+  if (h.t) { g.score++; xpAward(arcMode(h.item), true, 'dt|' + h.item.section + '|' + h.item.event, h.item.event, h.item.section); whRender(i, 'hit'); }
+  else { g.lives--; xpAward(arcMode(h.item), false, 'dt|' + h.item.section + '|' + h.item.event, h.item.event, h.item.section); whRender(i, 'miss'); }
   setTimeout(() => { if (ARC.g === g && !g.holes[i]) whRender(i); }, 300);
   document.getElementById('wh-stats').innerHTML = whStatsHtml();
   if (g.lives <= 0) whOver();
@@ -2188,7 +2248,7 @@ function stStart() {
 }
 function stRound(msg) {
   const g = ARC.g, used = new Set(), items = [];
-  for (const it of shuffle(g.pool)) {
+  for (const it of arcMixOrder(g.pool)) {
     const y = arcYear(it);
     if (!used.has(y)) { used.add(y); items.push(it); }
     if (items.length === g.n) break;
@@ -2217,7 +2277,7 @@ function stTap(i) {
   const g = ARC.g;
   if (!g || g.type !== 'st' || g.busy) return;
   const it = g.items[i], ok = it === g.order[g.placed];
-  xpAward('date', ok, 'dt|' + it.section + '|' + it.event, it.event, it.section);
+  xpAward(arcMode(it), ok, 'dt|' + it.section + '|' + it.event, it.event, it.section);
   if (ok) {
     g.placed++; g.score++; g.shake = -1;
     if (g.placed === g.items.length) {
@@ -2239,11 +2299,12 @@ function stOver() {
   if (isBest && g.score >= 8 && typeof fdFireConfetti === 'function') fdFireConfetti();
 }
 // ----- Boss battle -----
-const BOSSES = [['Revision Gremlin','👹'], ['Date Dragon','🐉'], ['The Sphinx','🦁'], ['Chief Examiner','🧌'], ['Mock Exam Kraken','🦑']];
+const BOSSES = [['Revision Gremlin','👹'], ['Date Dragon','🐉'], ['The Sphinx','🦁'], ['Chief Examiner','🧌'], ['Mock Exam Kraken','🦑'], ['Mr Rodker','🧑‍🏫']];
+const BOSS_HP = [12, 15, 18, 21, 24, 30], BOSS_SECS = 12;
 function bossStart() {
   const pool = shuffle(arcRqPool());
   if (pool.length < 10) { arcShort('Not enough questions for this unit yet.'); return; }
-  ARC.g = {type:'boss', pool, i:0, lives:3, lv:0, max:8, hp:8, score:0, phase:'ask', typed:''};
+  ARC.g = {type:'boss', pool, i:0, lives:3, lv:0, max:BOSS_HP[0], hp:BOSS_HP[0], score:0, phase:'ask', typed:''};
   bossAsk();
 }
 function bossQ() { const g = ARC.g; if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; } return g.pool[g.i]; }
@@ -2308,7 +2369,7 @@ function bsCheck(typed, answer, question) {
     const nums = at.filter(w => /\d/.test(w));
     if (nums.some(w => !have.has(w))) continue;
     const hit = at.filter(w => bsTokenHit(w, have)).length;
-    if (at.length === 1 ? hit === 1 : at.length === 2 ? hit === 2 : hit / at.length >= 0.6) return true;
+    if (at.length === 1 ? hit === 1 : at.length === 2 ? hit === 2 : hit / at.length >= 0.5) return true;
     // part of a longer answer, as long as it is not just a generic word like "act" or "treaty"
     const core = at.filter(w => !BS_GENERIC.has(w));
     const tcore = tt.filter(w => !BS_GENERIC.has(w));
@@ -2345,22 +2406,29 @@ function bossRender() {
   const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Hits <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.boss || 0, g.score) + '</b></span></div>';
   let low;
   if (g.phase === 'ask') {
-    low = '<input id="boss-in" class="boss-in" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" onkeydown="if(event.key===\'Enter\')bossSubmit()">' +
-      '<button class="arc-btn" onclick="bossSubmit()">Attack</button>';
+    low = '<input id="boss-in" class="boss-in" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" enterkeyhint="go" onkeydown="if(event.key===\'Enter\')bossSubmit()">' +
+      '<div class="boss-hintline" id="boss-hint"></div>' +
+      '<button class="arc-btn" onclick="bossSubmit()">Attack</button><button class="boss-right" onclick="bossHint()">💡 Hint</button>';
   } else if (g.phase === 'ok') {
     low = '<div class="boss-res ok">&#10003; Correct</div><div class="boss-a">' + escHtml(q.a) + '</div>';
   } else {
     low = '<div class="boss-res no">' + (g.late && !g.typed ? '&#9200; Time\'s up' : '&#10007; Not quite') + '</div>' +
       (g.typed ? '<div class="boss-typed">You wrote: ' + escHtml(g.typed) + '</div>' : '') +
       '<div class="boss-a">' + escHtml(q.a) + '</div>' +
-      '<button class="arc-btn" onclick="bossMark(false)">Next</button><button class="boss-right" onclick="bossMark(true)">I was right</button>';
+      '<div class="boss-auto"><i></i></div><button class="arc-btn" onclick="bossMark(false)">Next</button><button class="boss-right" onclick="bossMark(true)">I was right</button>';
   }
   arcFrame(
     '<div class="boss-box"><span class="boss-em" id="boss-em">' + B[1] + '</span><div class="boss-r"><div class="boss-nm">' + B[0] + ' <small>Lv ' + (g.lv + 1) + '</small></div><div class="boss-bar"><i style="width:' + pct + '%"></i></div><div class="boss-hp">' + g.hp + ' of ' + g.max + ' HP</div></div></div>' +
     '<div class="boss-q" style="--c:' + (uCol(q.section)) + '"><div class="eol-lab">' + UNITS[q.section].short + '</div>' + escHtml(q.q) + '</div>' + low, head);
   if (g.phase === 'ask') setTimeout(() => { const el = document.getElementById('boss-in'); if (el && ARC.g === g) el.focus(); }, 60);
 }
-function bossAsk() { const g = ARC.g; g.phase = 'ask'; g.typed = ''; g.late = false; arcTimerStart(20, bossLate); bossRender(); }
+function bossHint() {
+  const g = ARC.g, q = bossQ(), el = document.getElementById('boss-hint');
+  if (!g || g.type !== 'boss' || g.phase !== 'ask' || !el) return;
+  const a = String(q.a).replace(/\s*\(.*?\)/g, '').split(/;|\/| or /)[0].trim(), w = a.split(/\s+/).filter(Boolean);
+  el.textContent = 'Starts with "' + a.charAt(0).toUpperCase() + '" · ' + w.length + ' word' + (w.length === 1 ? '' : 's');
+}
+function bossAsk() { const g = ARC.g; g.phase = 'ask'; g.typed = ''; g.late = false; arcTimerStart(BOSS_SECS, bossLate); bossRender(); }
 function bossResolve(late) {
   const g = ARC.g, q = bossQ(), el = document.getElementById('boss-in');
   g.typed = el ? el.value.trim() : '';
@@ -2369,7 +2437,10 @@ function bossResolve(late) {
   if (ok) {
     g.phase = 'ok'; bossRender();
     ARC.t = setTimeout(() => { if (ARC.g === g) bossMark(true); }, 1100);
-  } else { g.phase = 'no'; bossRender(); }
+  } else {
+    g.phase = 'no'; bossRender();
+    clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g && g.phase === 'no') bossMark(false); }, 3000);
+  }
 }
 function bossLate() { const g = ARC.g; if (!g || g.type !== 'boss' || g.phase !== 'ask') return; bossResolve(true); }
 function bossSubmit() { const g = ARC.g; if (!g || g.type !== 'boss' || g.phase !== 'ask') return; arcTimerStop(); bossResolve(false); }
@@ -2390,13 +2461,21 @@ function bossMark(ok) {
 function bossWin() {
   const g = ARC.g, B = BOSSES[g.lv % BOSSES.length];
   arcSetHS('boss', g.score);
+  if (g.lv >= BOSSES.length - 1) {
+    g.over = true; g.lv++;
+    arcFrame('<div class="arc-end"><div class="arc-big">👑</div><div class="arc-h">You beat ' + B[0] + '!</div><div class="arc-sub2">Every boss defeated · ' + g.score + ' hits · ' + g.lives + ' heart' + (g.lives === 1 ? '' : 's') + ' left</div>' +
+      '<button class="arc-btn" onclick="bossStart()">Fight again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
+    if (typeof fdFireConfetti === 'function') fdFireConfetti();
+    return;
+  }
   arcFrame('<div class="arc-end"><div class="arc-big">🏆</div><div class="arc-h">' + B[0] + ' defeated</div><div class="arc-sub2">' + g.score + ' hits so far · ' + g.lives + ' heart' + (g.lives === 1 ? '' : 's') + ' left</div>' +
-    '<button class="arc-btn" onclick="bossNext()">Next boss</button><button class="arc-btn sec" onclick="bossOver()">Stop here</button></div>', '');
+    '<div class="arc-sub2">Next up: ' + BOSSES[(g.lv + 1) % BOSSES.length][1] + ' ' + BOSSES[(g.lv + 1) % BOSSES.length][0] + '</div></div>', '');
   if (typeof fdFireConfetti === 'function') fdFireConfetti();
+  clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g) bossNext(); }, 2200);
 }
 function bossNext() {
   const g = ARC.g;
-  g.lv++; g.max = Math.min(8 + g.lv * 2, 14); g.hp = g.max; g.lives = Math.min(3, g.lives + 1); g.over = false;
+  g.lv++; g.max = BOSS_HP[Math.min(g.lv, BOSS_HP.length - 1)]; g.hp = g.max; g.lives = Math.min(3, g.lives + 1); g.over = false;
   bossAsk();
 }
 function bossOver() {
