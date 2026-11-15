@@ -2079,7 +2079,7 @@ function arcMenu() {
     '<div class="arc-pills">' + pills + '</div>' +
     '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">🧩</span><span class="arc-tx"><b>Match the dates</b><small>Pair each event with its date. Three lives.</small></span><span class="arc-hi">HI ' + (hs.mt || 0) + '</span></button>' +
     '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Type the answer. Right answers hurt the boss, misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
-    '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>60 seconds. Tap right answers, ignore wrong ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
+    '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>No time limit. Tap right dates, ignore wrong ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
     '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
     '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 12 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
 }
@@ -2169,15 +2169,15 @@ function mtOver() {
 }
 // ----- Whack-a-fact -----
 function whStart() {
-  const pool = arcWhPool();
+  const pool = arcDatesOnly().map(d => Object.assign({}, d, {src: 'dt'}));
   if (pool.length < 12) { arcShort('Not enough dates for this choice yet.'); return; }
-  ARC.g = {type:'wh', pool:arcMixOrder(pool), i:0, holes:[null,null,null,null,null,null], lives:3, score:0, tick:0, total:600};
+  ARC.g = {type:'wh', pool:arcMixOrder(pool), i:0, holes:[null,null,null,null,null,null], lives:3, score:0, tick:0};
   whBuild();
   clearInterval(ARC.iv); ARC.iv = setInterval(whTick, 100);
 }
-function whStatsHtml() { const g = ARC.g, hs = arcHS(); return arcHearts(g.lives) + '<span>Time <b>' + Math.max(0, Math.ceil((g.total - g.tick) / 10)) + '</b></span><span>Score <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.wh || 0, g.score) + '</b></span>'; }
+function whStatsHtml() { const g = ARC.g, hs = arcHS(); return arcHearts(g.lives) + '<span>Score <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.wh || 0, g.score) + '</b></span>'; }
 function whBuild() {
-  arcFrame('<div class="arc-sub" style="text-align:center">Tap when the answer shown is right. Leave wrong answers alone.</div><div class="wh-grid">' +
+  arcFrame('<div class="arc-sub" style="text-align:center">Tap the dates that are right. Leave wrong ones alone. A missed right one costs a heart.</div><div class="wh-grid">' +
     [0,1,2,3,4,5].map(i => '<button class="wh-hole" id="wh-h' + i + '" onclick="whHit(' + i + ')"></button>').join('') + '</div>',
     '<div class="arc-stats" id="wh-stats">' + whStatsHtml() + '</div>');
 }
@@ -2194,11 +2194,12 @@ function whTick() {
   for (let i = 0; i < 6; i++) {
     const h = g.holes[i];
     if (h && g.tick >= h.die) {
-      if (h.t) xpAward(arcMode(h.item), false, 'dt|' + h.item.section + '|' + h.item.event, h.item.event, h.item.section);
+      if (h.t) { xpAward(arcMode(h.item), false, 'dt|' + h.item.section + '|' + h.item.event, h.item.event, h.item.section); g.lives--; }
       g.holes[i] = null; whRender(i);
     }
   }
-  const every = Math.max(11, 20 - Math.floor(g.score / 8));
+  if (g.lives <= 0) { whOver(); return; }
+  const every = Math.max(8, 16 - Math.floor(g.score / 6));
   if (g.tick % every === 0) {
     const free = [0,1,2,3,4,5].filter(i => !g.holes[i]);
     if (free.length) {
@@ -2212,12 +2213,11 @@ function whTick() {
         if (arcKind(item) === 't') { const L = String(item.date).length; others = others.slice().sort((a, b) => Math.abs(String(a.date).length - L) - Math.abs(String(b.date).length - L)).slice(0, 8); }
         shown = others[Math.floor(Math.random() * others.length)].date;
       }
-      g.holes[i] = {item, t:isTrue, shown, die: g.tick + Math.max(38, Math.round((6500 - g.score * 50) / 100))};
+      g.holes[i] = {item, t:isTrue, shown, die: g.tick + Math.max(30, Math.round((5200 - g.score * 60) / 100))};
       whRender(i);
     }
   }
   document.getElementById('wh-stats').innerHTML = whStatsHtml();
-  if (g.tick >= g.total) whOver();
 }
 function whHit(i) {
   const g = ARC.g;
@@ -2234,12 +2234,12 @@ function whHit(i) {
 function whOver() {
   const g = ARC.g; clearInterval(ARC.iv);
   const isBest = arcSetHS('wh', g.score);
-  arcFrame('<div class="arc-end"><div class="arc-big">🔨</div><div class="arc-h">' + (g.lives > 0 ? 'Time up' : 'Too many false ones') + '</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">true facts whacked' + (isBest ? ' · new best' : '') + '</div>' +
+  arcFrame('<div class="arc-end"><div class="arc-big">🔨</div><div class="arc-h">' + 'Out of hearts' + '</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">true dates whacked' + (isBest ? ' · new best' : '') + '</div>' +
     '<button class="arc-btn" onclick="whStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
 }
 // ----- Stack it -----
 function stStart() {
-  const pool = arcDatePool();
+  const pool = arcDatesOnly().map(d => Object.assign({}, d, {src: 'dt'}));
   if (new Set(pool.map(arcYear)).size < 10) { arcShort('Not enough dates for this choice yet.'); return; }
   ARC.g = {type:'st', pool, lives:3, score:0, n:4};
   stRound();
