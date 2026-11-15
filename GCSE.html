@@ -4406,7 +4406,6 @@ function mtOver() {
   const g = ARC.g, isBest = arcSetHS('mt', g.score);
   arcFrame('<div class="arc-end"><div class="arc-big">🧩</div><div class="arc-h">Game over</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">pairs matched' + (isBest ? ' · new best' : '') + '</div>' +
     '<button class="arc-btn" onclick="eolStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
-  if (isBest && g.score >= 8 && typeof fdFireConfetti === 'function') fdFireConfetti();
 }
 // ----- Whack-a-fact -----
 function whStart() {
@@ -4477,7 +4476,6 @@ function whOver() {
   const isBest = arcSetHS('wh', g.score);
   arcFrame('<div class="arc-end"><div class="arc-big">🔨</div><div class="arc-h">' + (g.lives > 0 ? 'Time up' : 'Too many false ones') + '</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">true facts whacked' + (isBest ? ' · new best' : '') + '</div>' +
     '<button class="arc-btn" onclick="whStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
-  if (isBest && g.score >= 5 && typeof fdFireConfetti === 'function') fdFireConfetti();
 }
 // ----- Stack it -----
 function stStart() {
@@ -4536,11 +4534,10 @@ function stOver() {
   const g = ARC.g, isBest = arcSetHS('st', g.score);
   arcFrame('<div class="arc-end"><div class="arc-big">🧱</div><div class="arc-h">Tower toppled</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">events stacked' + (isBest ? ' · new best' : '') + '</div>' +
     '<button class="arc-btn" onclick="stStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
-  if (isBest && g.score >= 8 && typeof fdFireConfetti === 'function') fdFireConfetti();
 }
 // ----- Boss battle -----
 const BOSSES = [['Revision Gremlin','👹'], ['Date Dragon','🐉'], ['The Sphinx','🦁'], ['Chief Examiner','🧌'], ['Mock Exam Kraken','🦑'], ['Mr Rodker','🧑‍🏫']];
-const BOSS_HP = [12, 15, 18, 21, 24, 30], BOSS_SECS = 12;
+const BOSS_HP = [6, 8, 10, 12, 15, 20], BOSS_SECS = 12;
 function bossStart() {
   const pool = shuffle(arcRqPool());
   if (pool.length < 10) { arcShort('Not enough questions for this paper yet.'); return; }
@@ -4554,6 +4551,33 @@ const BS_GENERIC = new Set(['act','treaty','plan','party','league','law','laws',
 function bsNorm(t) {
   return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/(\d)[,\s](?=\d{3}\b)/g, '$1').replace(/&/g, ' and ').replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
 }
+function bsNormN(t) { return bsNumWords(bsNorm(t)); }
+
+const BS_NW = {zero:0, one:1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9, ten:10, eleven:11, twelve:12, thirteen:13, fourteen:14, fifteen:15, sixteen:16, seventeen:17, eighteen:18, nineteen:19, twenty:20, thirty:30, forty:40, fourty:40, fifty:50, sixty:60, seventy:70, eighty:80, ninety:90};
+const BS_SC = {hundred:100, thousand:1000, million:1000000, billion:1000000000};
+const BS_ORD = {first:'1st', second:'2nd', third:'3rd', fourth:'4th', fifth:'5th', sixth:'6th', seventh:'7th', eighth:'8th', ninth:'9th', tenth:'10th'};
+// "one thousand", "a thousand", "6 million", "twenty five" all become digits so they can be compared
+function bsNumWords(str) {
+  const w = str.split(' '), out = [];
+  const isNum = x => x in BS_NW || x in BS_SC || /^\d+$/.test(x);
+  for (let i = 0; i < w.length; i++) {
+    const x = w[i];
+    if (x in BS_ORD) { out.push(BS_ORD[x]); continue; }
+    const isWord = x in BS_NW || x in BS_SC, startsDigitScale = /^\d+$/.test(x) && w[i + 1] in BS_SC;
+    if (!isWord && !startsDigitScale) { out.push(x); continue; }
+    let total = 0, cur = 0, j = i, used = false;
+    while (j < w.length) {
+      let t = w[j];
+      if (t === 'and' && used && isNum(w[j + 1] || '') && !/^\d+$/.test(w[j + 1])) { j++; continue; }
+      if (/^\d+$/.test(t) && (j === i) && w[j + 1] in BS_SC) { cur += parseInt(t, 10); used = true; j++; continue; }
+      if (t in BS_NW) { cur += BS_NW[t]; used = true; j++; continue; }
+      if (t in BS_SC) { const m = BS_SC[t]; if (m === 100) cur = (cur || 1) * 100; else { total += (cur || 1) * m; cur = 0; } used = true; j++; continue; }
+      break;
+    }
+    out.push(String(total + cur)); i = j - 1;
+  }
+  return out.join(' ');
+}
 const BS_IRR = {burnt:'burn', learnt:'learn', dreamt:'dream', spelt:'spell', swore:'swear', sworn:'swear', fled:'flee', fought:'fight', led:'lead', built:'build', sold:'sell', won:'win', ran:'run', rose:'rise', risen:'rise', took:'take', taken:'take', gave:'give', given:'give', wrote:'write', written:'write', began:'begin', begun:'begin', broke:'break', broken:'break', brought:'bring', held:'hold', kept:'keep', left:'leave', lost:'lose', made:'make', met:'meet', paid:'pay', saw:'see', seen:'see', sent:'send', stood:'stand', taught:'teach', told:'tell', thought:'think', women:'woman', men:'man', children:'child', people:'person'};
 function bsStem(w) {
   if (BS_IRR[w]) return BS_IRR[w];
@@ -4566,23 +4590,23 @@ function bsStem(w) {
   if (w.length > 3 && /e$/.test(w)) w = w.slice(0, -1);
   return BS_IRR[w] || w;
 }
-function bsToks(t) { return bsNorm(t).split(' ').filter(w => w && !BS_STOP.has(w)).map(bsStem); }
+function bsToks(t) { return bsNormN(t).split(' ').filter(w => w && !BS_STOP.has(w)).map(bsStem); }
 function bsLev(a, b) {
   const m = a.length, n = b.length;
   if (Math.abs(m - n) > 2) return 3;
-  let prev = [], cur = [];
+  let prev = [], cur = [], prev2 = [];
   for (let j = 0; j <= n; j++) prev[j] = j;
   for (let i = 1; i <= m; i++) {
     cur = [i];
-    for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
-    prev = cur;
+    for (let j = 1; j <= n; j++) { cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) cur[j] = Math.min(cur[j], (prev2[j - 2] === undefined ? 9 : prev2[j - 2]) + 1); }
+    prev2 = prev; prev = cur;
   }
   return prev[n];
 }
 function bsTokenHit(tok, have) {
   if (have.has(tok)) return true;
-  if (/\d/.test(tok) || tok.length < 5) return false;
-  for (const h of have) if (bsLev(tok, h) <= (tok.length >= 8 ? 2 : 1)) return true;
+  if (/\d/.test(tok) || tok.length < 4) return false;
+  for (const h of have) if (!/\d/.test(h) && bsLev(tok, h) <= (tok.length >= 8 ? 2 : 1)) return true;
   return false;
 }
 // Every way of writing the answer that should be accepted: the main text, anything in brackets,
@@ -4601,11 +4625,13 @@ function bsCheck(typed, answer, question) {
   const t = bsNorm(typed);
   if (!t) return false;
   const asked = String(question || '');
-  const tt = bsToks(typed), have = new Set(tt), alts = bsAlts(answer);
+  const tt = bsToks(typed), have = new Set(tt), alts = bsAlts(answer), tj = bsNormN(typed).replace(/ /g, '');
   for (const alt of alts) {
     const at = bsToks(alt);
     if (!at.length) continue;
     if (bsNorm(alt) === t) return true;
+    const aj = bsNormN(alt).replace(/ /g, '');
+    if (tj.length >= 5 && (aj.match(/\d+/g) || []).join() === (tj.match(/\d+/g) || []).join() && (aj === tj || bsLev(aj, tj) <= (aj.length >= 10 ? 2 : 1))) return true;
     const nums = at.filter(w => /\d/.test(w));
     if (nums.some(w => !have.has(w))) continue;
     const hit = at.filter(w => bsTokenHit(w, have)).length;
@@ -4710,7 +4736,6 @@ function bossWin() {
   }
   arcFrame('<div class="arc-end"><div class="arc-big">🏆</div><div class="arc-h">' + B[0] + ' defeated</div><div class="arc-sub2">' + g.score + ' hits so far · ' + g.lives + ' heart' + (g.lives === 1 ? '' : 's') + ' left</div>' +
     '<div class="arc-sub2">Next up: ' + BOSSES[(g.lv + 1) % BOSSES.length][1] + ' ' + BOSSES[(g.lv + 1) % BOSSES.length][0] + '</div></div>', '');
-  if (typeof fdFireConfetti === 'function') fdFireConfetti();
   clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g) bossNext(); }, 2200);
 }
 function bossNext() {
