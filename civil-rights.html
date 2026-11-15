@@ -510,6 +510,8 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .rf-pill.rf-lock{opacity:.45;border-style:dashed;cursor:not-allowed}
 .home-stat{margin:0 0 .5rem!important;padding:.5rem!important;font-size:.8rem!important;position:relative}
 .start-line{font-size:.85rem;font-weight:600;margin:.1rem 0 .4rem}
+.step-lbl{display:flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:700;margin:.5rem 0 .2rem}
+.step-n{display:inline-flex;align-items:center;justify-content:center;width:1.2rem;height:1.2rem;border-radius:50%;background:var(--text);color:var(--bg);font-size:.7rem;font-weight:800;flex:none}
 .or-line{text-align:center;font-size:.62rem;color:var(--muted);margin:.2rem 0 .25rem;text-transform:uppercase;letter-spacing:.06em}
 .home-row{display:flex;gap:8px;margin:0 0 .5rem}
 .home-row .btn-go{flex:1;margin:0!important;position:relative;font-size:.8rem;line-height:1.25;padding:.55rem .4rem}
@@ -569,13 +571,14 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.3rem">
     <h1 style="margin:0;font-size:1.2rem;font-weight:700">Mr Rodker's Revision Hub - Civil Rights</h1><span class="yr-pill">Y13</span>
   </div>
+  <div class="step-lbl"><span class="step-n">1</span>Set your progress</div>
   <div class="up-card">
     <div class="up-head" id="up-tog"><span class="up-title">Set how much you have studied</span><span class="up-pos" id="up-pos"></span></div><div id="up-body">
     <input type="range" id="up-range" min="1" max="4" step="1" value="4" oninput="uptoPreview(this.value)" onchange="uptoSave(this.value)" aria-label="Course position">
     <div class="up-ticks" id="up-ticks"></div>
     </div>
   </div>
-  <div class="start-line">Pick a unit to start revising</div>
+  <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
   <div class="pick-grid">
     <button class="pick-btn pb-aa" onclick="openUnit('aa')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-aa" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-aa" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-aa" cx="30" cy="30" r="24" fill="none" stroke="#4A7EC7" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-aa" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-aa">0%</text></svg></span><span class="plabel">Unit 1</span>✊ African American Rights</button>
     <button class="pick-btn pb-lab" onclick="openUnit('lab')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-lab" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-lab" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-lab" cx="30" cy="30" r="24" fill="none" stroke="#C94A5A" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-lab" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-lab">0%</text></svg></span><span class="plabel">Unit 2</span>🔨 Labour and Trade Union Rights</button>
@@ -585,6 +588,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   <div class="or-line">or</div>
   <div class="home-row"><button class="btn-go c-mixed" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button><button class="btn-go btn-arc" onclick="arcOpen()"><span class="new-flag">NEW</span>🕹️ Arcade Games</button></div>
   <button class="btn-go c-stat home-stat" onclick="showStatSetup()">📊 Depth Study Stat Attack</button>
+  <div class="step-lbl"><span class="step-n">3</span>See your progress</div>
   <div class="xp-card" id="xp-card" onclick="openProgress()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProgress()" title="See your progress"></div>
   <div id="weak-nudge"></div>
 </div>
