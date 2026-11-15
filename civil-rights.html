@@ -264,14 +264,276 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .inline-search-results:empty{display:none}
 .inline-search-results .search-result{background:var(--card);border:1px solid var(--border)}
 .inline-search-results .search-count{padding-top:.3rem}
+.hub-fc{background:var(--card);border:1.5px solid var(--border2);border-left-width:4px;border-radius:12px;padding:.9rem 1rem}
+.hub-fc h3{font-size:1.05rem;font-weight:700;margin:0}
+.hub-fc .sub{font-size:.75rem;color:var(--muted);margin:.15rem 0 .6rem}
+.hub-row{display:flex;justify-content:space-between;align-items:center;width:100%;background:none;border:none;border-top:1px solid var(--border);padding:.65rem .1rem;font-family:inherit;font-size:.86rem;color:var(--text);cursor:pointer;text-align:left}
+.hub-row span:last-child{color:var(--muted);font-size:.78rem;font-weight:600}
+.hub-row.lock{opacity:.45;cursor:not-allowed}
+.hub-pill{display:inline-flex;align-items:center;gap:.35rem;border:1.5px solid var(--border2);background:var(--surface);color:var(--muted);border-radius:20px;padding:.25rem .7rem;font-family:inherit;font-size:.74rem;font-weight:700;cursor:pointer;margin-bottom:.4rem}
+.hub-pill.on{background:#FEF3C7;border-color:#F0B429;color:#7A5200}
+.hub-start{width:100%;margin-top:.7rem;padding:.8rem;border:none;border-radius:10px;color:#fff;font-family:inherit;font-weight:700;font-size:.95rem;cursor:pointer}
+.hub-link{background:none;border:none;color:var(--muted);font-family:inherit;font-size:.76rem;font-weight:600;cursor:pointer;margin-top:.6rem;padding:.2rem}
+.wh-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.55rem .8rem;font-family:inherit;font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;cursor:pointer;margin-top:1rem}
+.home-foot{display:flex;gap:8px;margin-top:.8rem}
+.home-foot a,.home-foot button{flex:1;display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.6rem .5rem;background:#F1EBFA;color:#6B4E9E;border:1.5px solid #D6C4EF;border-radius:12px;font-family:inherit;font-size:.8rem;font-weight:600;text-decoration:none;cursor:pointer}
+.paper-btn.pb-locked{opacity:.5;border-style:dashed;cursor:not-allowed;filter:grayscale(.6)}
+.paper-btn.pb-locked:hover{transform:none;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.paper-btn.pb-locked::after{content:'\1F512';opacity:.7}
+.paper-btn.pb-shake{animation:pbshake .35s}
+@keyframes pbshake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.wk-nudge{display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-left:4px solid #D9534F;border-radius:10px;padding:.5rem .75rem;margin:.6rem 0 0;font-size:.8rem}
+.wk-nudge b{display:block;font-size:.82rem}
+.wk-nudge small{color:var(--muted);font-size:.72rem}
+.wk-nudge button{flex:none;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit;font-weight:700;font-size:.78rem;border-radius:9px;padding:.4rem .8rem;cursor:pointer}
+@keyframes stampin{0%{opacity:0;transform:rotate(-11deg) scale(1.8)}60%{opacity:.95;transform:rotate(-11deg) scale(.93)}100%{opacity:.9;transform:rotate(-11deg) scale(1)}}
+@keyframes stampin2{0%{opacity:0;transform:rotate(-5deg) scale(1.8)}60%{opacity:.95;transform:rotate(-5deg) scale(.94)}100%{opacity:.92;transform:rotate(-5deg) scale(1)}}
+.xp-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:.8rem .9rem;margin-bottom:.9rem;cursor:pointer}
+.xp-card:hover{border-color:var(--border2)}
+.xp-top{display:flex;align-items:center;gap:.7rem}
+.xp-emoji{font-size:2rem;line-height:1}
+.xp-mid{flex:1;min-width:0}
+.xp-name{font-size:1rem;font-weight:700}
+.xp-sub{font-size:.72rem;color:var(--muted)}
+.xp-today{text-align:right;font-size:.7rem;color:var(--muted);line-height:1.2}
+.xp-today b{display:block;font-size:1.1rem;color:var(--text)}
+.xp-bar{height:8px;border-radius:6px;background:var(--subtle);overflow:hidden;margin:.6rem 0 .25rem}
+.xp-fill{height:100%;width:0;background:#378ADD;border-radius:6px;transition:width .4s}
+.xp-next{font-size:.7rem;color:var(--muted);display:flex;justify-content:space-between;gap:.5rem}
+#xp-pop{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,20px);background:var(--text);color:var(--bg);font-size:.8rem;font-weight:700;padding:.4rem .9rem;border-radius:20px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:9998}
+#xp-pop.show{opacity:.92;transform:translate(-50%,0)}
+.up-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.5rem .8rem .55rem;margin:.7rem 0}
+.up-head{display:flex;justify-content:space-between;align-items:baseline;gap:.1rem .6rem;flex-wrap:wrap}
+.up-title{font-size:.78rem;font-weight:700}
+.up-pos{font-size:.72rem;color:var(--muted);text-align:right;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.up-title{white-space:nowrap}
+.up-card input[type=range]{width:100%;margin:.3rem 0 .1rem;accent-color:#378ADD}
+.up-ticks{display:flex;gap:2px;font-size:.62rem;color:var(--muted)}
+.up-ticks span{text-align:center;border-top:3px solid;padding-top:2px;overflow:hidden;white-space:nowrap;line-height:1.25;font-size:.58rem}
+.up-ticks em{font-style:normal;font-weight:700;opacity:.8}
+.pv-h{font-size:1.3rem;font-weight:700;margin:.6rem 0 .2rem}
+.pv-btn{flex:1;padding:.8rem;font-size:.95rem;font-weight:700;border-radius:12px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit;cursor:pointer}
+.pv-btn.no{border-color:#D4537E;color:#D4537E}
+.pv-btn.yes{background:#1D9E75;border-color:#1D9E75;color:#fff}
+.pv-btn.main{background:var(--text);color:var(--bg);border-color:var(--text)}
+.pv-miss{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.5rem .75rem;margin-bottom:.4rem;font-size:.82rem;text-align:left}
+.pg-h{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:1.2rem 0 .5rem}
+.pg-ladder{display:flex;flex-direction:column;gap:4px}
+.pg-lv{display:flex;align-items:center;gap:.6rem;padding:.4rem .6rem;border:1px solid var(--border);border-radius:10px;font-size:.85rem;opacity:.5}
+.pg-lv.done{opacity:1}
+.pg-lv.now{opacity:1;border-color:var(--text);background:var(--subtle);font-weight:700}
+.pg-lv span:last-child{margin-left:auto;font-size:.7rem;color:var(--muted)}
+.pg-days{display:flex;align-items:flex-end;gap:4px;height:90px}
+.pg-day{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font-size:.6rem;color:var(--muted)}
+.pg-day i{display:flex;flex-direction:column-reverse;width:100%;border-radius:3px 3px 0 0;overflow:hidden}
+.pg-day i b{display:block;width:100%;min-height:1px}
+.pg-legend{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:8px;font-size:.68rem;color:var(--muted)}
+.pg-leg{display:inline-flex;align-items:center;gap:5px}
+.pg-leg s{display:inline-block;width:10px;height:10px;border-radius:3px}
+.pg-bar{display:flex;align-items:center;gap:.5rem;font-size:.78rem;margin-bottom:.4rem}
+.pg-bar .t{width:5.5rem;flex-shrink:0}
+.pg-bar .b{flex:1;height:8px;background:var(--subtle);border-radius:6px;overflow:hidden}
+.pg-bar .b i{display:block;height:100%;background:#1D9E75}
+.pg-bar .n{width:5.5rem;text-align:right;font-size:.7rem;color:var(--muted)}
+.up-card{transition:background .2s,border-color .2s}
+.xp-streak{display:flex;align-items:center;gap:.6rem;margin-top:.7rem;padding-top:.6rem;border-top:1px solid var(--border);flex-wrap:wrap}
+.xp-flame{font-size:.78rem;font-weight:700}
+.xp-sdots{display:flex;gap:3px;margin-left:auto}
+.xp-sdots i{font-style:normal;width:20px;height:20px;border-radius:6px;background:var(--subtle);color:var(--muted);font-size:.58rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.xp-sdots i.on{background:#C9824B;color:#fff}
+.xp-sdots i.t2{background:#9AA3AD;color:#fff}
+.xp-sdots i.t3{background:#E0A81E;color:#fff}
+.xp-sdots i.t4{background:#8E5CD6;color:#fff}
+.xp-key{width:100%;font-size:.6rem;color:var(--muted);display:flex;gap:.7rem;justify-content:flex-end;flex-wrap:wrap}
+.xp-key s{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:3px;vertical-align:baseline}
+.xp-sdots i.today{outline:2px solid var(--text);outline-offset:1px}
+.xp-best{font-size:.68rem;color:var(--muted)}
+.xp-lu-back{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9990;display:flex;align-items:center;justify-content:center;padding:20px}
+.xp-lu-card{background:var(--card);color:var(--text);border-radius:18px;padding:1.4rem 1.3rem 1.2rem;width:100%;max-width:300px;text-align:center;border:1px solid var(--border);animation:xpLuIn .25s ease-out}
+@keyframes xpLuIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.xp-lu-k{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.xp-lu-ic{width:88px;height:88px;border-radius:50%;background:#E6F1FB;margin:.9rem auto .6rem;display:flex;align-items:center;justify-content:center;font-size:2.8rem}
+.xp-lu-lv{font-size:.78rem;color:var(--muted)}
+.xp-lu-t{font-size:1.45rem;font-weight:800;margin:.1rem 0 .4rem}
+.xp-lu-from{font-size:.75rem;color:var(--muted);margin-bottom:.9rem}
+.xp-lu-btn{display:block;width:100%;padding:.8rem;border:none;border-radius:12px;background:#378ADD;color:#fff;font-size:.95rem;font-weight:700;font-family:inherit;cursor:pointer}
+.hub-row{gap:.65rem}
+.hub-row .hub-nm{flex:1;text-align:left}
+.hub-dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--border2);background:var(--surface);position:relative;transition:border-color .15s}
+.hub-dot.on{border-color:var(--c,#378ADD)}
+.hub-dot.on::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--c,#378ADD)}
+.hub-row.lock .hub-dot{border-style:dashed}
+.hub-all{border-top:none!important;font-weight:700;margin-top:.2rem}
+.hub-row:not(.lock):active{background:var(--subtle)}
+.start-line{font-size:.95rem;font-weight:600;margin:.1rem 0 .6rem;color:var(--text)}
+.or-line{text-align:center;font-size:.72rem;color:var(--muted);margin:.5rem 0 .4rem;text-transform:uppercase;letter-spacing:.06em}
+.up-tog{width:100%;background:none;border:none;padding:0;font-family:inherit;color:inherit;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;text-align:left}
+.up-tog .up-pos{flex:1;text-align:right}
+.up-chg{font-size:.68rem;font-weight:700;color:var(--muted);white-space:nowrap}
+.xp-card.xp-mini{padding:.55rem .8rem;margin:.9rem 0 .6rem}
+.xp-card.xp-mini .xp-emoji{font-size:1.4rem}
+.xp-mini-t{flex:1;min-width:0;font-size:.82rem}
+.xp-mini-t b{display:block;font-size:.88rem}
+.xp-mini-t span{color:var(--muted);font-size:.72rem}
+.paper-btn.pb-locked::after{display:block;right:1.1rem}
+.paper-btn.pb-locked .pbw{display:none}
+.home-row{display:flex;gap:8px;margin:0 0 .9rem}
+.home-row .btn-go{flex:1;margin:0!important;position:relative;font-size:.88rem;line-height:1.25;padding:.85rem .5rem}
+.btn-arc{background:#2B2350;color:#fff;border:2px solid #7C5CD6}
+:root.dark .btn-arc{background:#3A2F6B}
+.new-flag{position:absolute;top:-8px;right:-3px;background:#F0B429;color:#3B2A00;font-size:.6rem;font-weight:800;padding:2px 8px;border-radius:10px;letter-spacing:.04em;animation:newpulse 1.5s ease-in-out infinite}
+.arc-title{font-size:1.35rem;font-weight:800;letter-spacing:.04em;margin:.2rem 0 .1rem}
+.arc-sub{font-size:.76rem;color:var(--muted);margin:0 0 .6rem}
+.arc-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.9rem}
+.arc-pill{border:2px solid var(--border2);background:var(--surface);color:var(--muted);border-radius:20px;padding:.3rem .8rem;font-family:inherit;font-size:.76rem;font-weight:700;cursor:pointer}
+.arc-pill.on{border-color:var(--c);background:color-mix(in srgb,var(--c) 16%,var(--surface));color:var(--text)}
+.arc-pill.lock{opacity:.45;border-style:dashed;cursor:not-allowed}
+.arc-tile{display:flex;align-items:center;gap:.9rem;width:100%;text-align:left;border:none;border-radius:16px;padding:1rem;margin-bottom:.7rem;font-family:inherit;color:#fff;cursor:pointer;position:relative;overflow:hidden}
+.arc-tile.t1{background:linear-gradient(135deg,#2B2350,#5B3FB5)}
+.arc-tile.t2{background:linear-gradient(135deg,#4A1A2C,#C0392B)}
+.arc-tile:active{transform:scale(.985)}
+.arc-ic{font-size:2.3rem;line-height:1}
+.arc-tx{flex:1;min-width:0}
+.arc-tx b{display:block;font-size:1.05rem;letter-spacing:.02em}
+.arc-tx small{display:block;font-size:.72rem;opacity:.85;margin-top:.15rem;line-height:1.35}
+.arc-hi{font-family:'Courier New',monospace;font-weight:800;font-size:.72rem;background:rgba(255,255,255,.18);border-radius:8px;padding:3px 7px;white-space:nowrap}
+.arc-soon{display:flex;flex-wrap:wrap;gap:6px;margin:.4rem 0 .8rem}
+.arc-soon span{font-size:.72rem;font-weight:700;color:var(--muted);border:1.5px dashed var(--border2);border-radius:12px;padding:.35rem .7rem}
+.arc-note{font-size:.7rem;color:var(--muted)}
+.arc-top{display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem}
+.arc-quit{border:1px solid var(--border2);background:var(--surface);color:var(--muted);border-radius:8px;padding:.35rem .7rem;font-family:inherit;font-size:.76rem;font-weight:700;cursor:pointer}
+.arc-stats{flex:1;display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--muted);font-family:'Courier New',monospace}
+.arc-stats b{color:var(--text)}
+.arc-hearts{font-size:.95rem;letter-spacing:1px}.arc-hearts i{font-style:normal;opacity:.35}
+.eol-card{background:var(--card);border:1px solid var(--border);border-left:5px solid var(--c);border-radius:14px;padding:.8rem 1rem;margin-bottom:.4rem}
+.eol-card.ch{border-width:2px;border-left-width:5px;border-color:var(--c);background:color-mix(in srgb,var(--c) 8%,var(--card))}
+.eol-lab{font-size:.62rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.2rem}
+.eol-ev{font-size:1rem;font-weight:700;line-height:1.35}
+.eol-yr{font-family:'Courier New',monospace;font-size:1.5rem;font-weight:800;margin-top:.3rem}
+.eol-yr.q{color:var(--muted)}.eol-yr.ok{color:#2E7D32}.eol-yr.no{color:#C0392B}
+.eol-q{text-align:center;font-weight:800;font-size:.95rem;margin:.7rem 0 0}
+.eol-vs{text-align:center;font-size:.74rem;color:var(--muted);font-weight:700;margin:.5rem 0}
+.eol-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:.8rem}
+.eol-btns button{padding:1rem .5rem;border:none;border-radius:14px;font-family:inherit;font-size:1rem;font-weight:800;color:#fff;background:#5B3FB5;cursor:pointer}
+.eol-btns button:disabled{opacity:.5}
+.eol-btns button.no{background:#B5473A}.eol-btns button.yes{background:#2E7D32}
+.arc-end{text-align:center;padding:1rem 0}
+.arc-big{font-size:3.4rem}.arc-h{font-size:1.25rem;font-weight:800;margin:.3rem 0}
+.arc-score{font-family:'Courier New',monospace;font-size:3rem;font-weight:800}
+.arc-sub2{font-size:.82rem;color:var(--muted);margin-bottom:1rem}
+.arc-btn{display:block;width:100%;padding:.9rem;border:none;border-radius:12px;background:#5B3FB5;color:#fff;font-family:inherit;font-size:.95rem;font-weight:800;cursor:pointer;margin-top:.6rem}
+.arc-btn.sec{background:var(--surface);color:var(--text);border:1.5px solid var(--border2)}
+.boss-box{display:flex;align-items:center;gap:.9rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:.8rem 1rem;margin-bottom:.7rem}
+.boss-em{font-size:3rem;line-height:1;display:inline-block}
+.boss-hit{animation:bosshit .45s}.boss-laugh{animation:bosslaugh .5s}
+@keyframes bosshit{25%{transform:translateX(-8px) rotate(-10deg);filter:brightness(2)}60%{transform:translateX(8px) rotate(8deg)}}
+@keyframes bosslaugh{50%{transform:scale(1.25)}}
+.boss-r{flex:1;min-width:0}
+.boss-nm{font-weight:800;font-size:.95rem}.boss-nm small{color:var(--muted);font-weight:700;font-family:'Courier New',monospace}
+.boss-bar{height:12px;background:var(--subtle);border-radius:8px;overflow:hidden;margin:.35rem 0 .2rem}
+.boss-bar i{display:block;height:100%;background:#C0392B;border-radius:8px;transition:width .4s}
+.boss-hp{font-size:.68rem;color:var(--muted);font-family:'Courier New',monospace}
+.boss-q{background:var(--card);border:1px solid var(--border);border-left:5px solid var(--c);border-radius:14px;padding:.9rem 1rem;font-size:1.02rem;font-weight:700;line-height:1.4}
+.boss-a{margin-top:.6rem;background:var(--bg-ok,#EAF3DE);color:var(--text);border:1.5px solid #3B6D11;border-radius:12px;padding:.75rem 1rem;font-weight:700}
+.arc-tile.t3{background:linear-gradient(135deg,#0E3B43,#1D9E75)}
+.arc-tile.t4{background:linear-gradient(135deg,#5A3200,#E08A1E)}
+.arc-tile.t5{background:linear-gradient(135deg,#1B2F4F,#378ADD)}
+.wh-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.wh-hole{height:104px;border-radius:50% / 22%;border:3px solid var(--border2);background:var(--subtle);font-family:inherit;color:var(--text);padding:.4rem .6rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;overflow:hidden;cursor:pointer;transition:background .1s}
+.wh-hole.up{background:var(--surface);border-color:#E08A1E;animation:whpop .15s}
+.wh-hole.hit{background:#2E7D32;border-color:#2E7D32;color:#fff}
+.wh-hole.miss{background:#B5473A;border-color:#B5473A;color:#fff}
+@keyframes whpop{from{transform:scale(.8)}to{transform:scale(1)}}
+.wh-ev{font-size:.7rem;font-weight:700;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-align:center}
+.wh-yr{font-family:'Courier New',monospace;font-weight:800;font-size:1.05rem}
+.st-stack{display:flex;flex-direction:column-reverse;gap:4px;min-height:120px;border-bottom:4px solid var(--border2);padding-bottom:6px;margin-bottom:.8rem}
+.st-empty{color:var(--muted);font-size:.75rem;text-align:center;align-self:center;margin:auto}
+.st-blk{display:flex;justify-content:space-between;gap:.6rem;align-items:center;background:color-mix(in srgb,var(--c) 20%,var(--surface));border:2px solid var(--c);border-radius:8px;padding:.45rem .7rem;font-size:.8rem;font-weight:700;animation:stdrop .25s}
+.st-blk b{font-family:'Courier New',monospace;white-space:nowrap}
+@keyframes stdrop{from{transform:translateY(-16px);opacity:0}to{transform:none;opacity:1}}
+.st-opts{display:flex;flex-direction:column;gap:6px}
+.st-opt{text-align:left;border:2px solid var(--c);background:var(--surface);color:var(--text);border-radius:10px;padding:.65rem .8rem;font-family:inherit;font-weight:700;font-size:.86rem;cursor:pointer;line-height:1.3}
+.st-opt.shake{animation:pbshake .35s;background:#FBE9E7}
+.arc-tbar{position:relative;height:22px;border-radius:11px;background:var(--subtle);overflow:hidden;margin:0 0 .6rem}
+.arc-tbar i{position:absolute;left:0;top:0;bottom:0;width:100%;background:#378ADD;transition:width .1s linear}
+.arc-tbar.low i{background:#D4533E}
+.arc-tbar b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-family:'Courier New',monospace;color:var(--text)}
+.arc-xp{display:inline-block;margin:.5rem auto .9rem;padding:.35rem .9rem;border-radius:999px;background:#FEF3C7;color:#7A5200;font-weight:800;font-size:.95rem}
+:root.dark .arc-xp{background:#4A3A10;color:#F6D77A}
+.boss-in{width:100%;box-sizing:border-box;padding:.85rem 1rem;border:2px solid var(--border2);border-radius:12px;background:var(--surface);color:var(--text);font-family:inherit;font-size:1rem;margin:.2rem 0 .6rem}
+.boss-in:focus{outline:none;border-color:#5B3FB5}
+.boss-res{text-align:center;font-weight:800;font-size:1.05rem;margin:.4rem 0}
+.boss-res.ok{color:#2E7D32}.boss-res.no{color:#C0392B}
+.boss-typed{text-align:center;font-size:.8rem;color:var(--muted);margin-bottom:.3rem}.mt-wrap{display:grid;grid-template-columns:1fr 5.4rem;gap:10px}
+.mt-col{display:flex;flex-direction:column;gap:8px}
+.mt-b{border:2px solid var(--border2);background:var(--surface);color:var(--text);border-radius:12px;padding:.6rem .6rem;font-family:inherit;font-size:.82rem;font-weight:700;text-align:left;cursor:pointer;line-height:1.3}
+.mt-ev{border-left:5px solid var(--c,#888)}
+.mt-dt{text-align:center;font-family:'Courier New',monospace;font-size:.95rem;display:flex;align-items:center;justify-content:center}
+.mt-b.sel{border-color:#5B3FB5;background:color-mix(in srgb,#5B3FB5 14%,var(--surface))}
+.mt-b.ok{background:#2E7D32;border-color:#2E7D32;color:#fff;opacity:.9}
+.mt-b.no{border-color:#C0392B;background:#FCEBEB;animation:pbshake .35s}
+.mt-b:disabled{cursor:default}
+
+.boss-right{display:block;margin:.5rem auto 0;background:none;border:1px solid var(--border2);color:var(--muted);border-radius:999px;padding:.25rem .8rem;font-family:inherit;font-size:.7rem;font-weight:600;cursor:pointer}
+
+
+#fd-toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(80px);background:#1a1a18;color:#fff;padding:.65rem 1.2rem;border-radius:12px;font-size:.82rem;font-weight:600;z-index:9999;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;max-width:90vw;text-align:center}
+#fd-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#s-arcade.ingame > .back-btn,#s-arcade.ingame > .arc-title{display:none}
+#fd-setup{display:none !important}
+#hub-pinned-btn{display:none !important}
+.pick-btn .pbw{position:absolute;right:.5rem;top:50%;transform:translateY(-50%);width:2.7rem;flex:none;padding:0;background:none!important;cursor:inherit;display:block}
+.pick-btn .pbw .fd-wheel{width:2.7rem;height:2.7rem;margin:0}
+.pick-btn::after{display:none}
+.pick-btn.pb-locked{opacity:.5;border-style:dashed;cursor:not-allowed;filter:grayscale(.6)}
+.pick-btn.pb-locked:hover{transform:none;box-shadow:none}
+.pick-btn.pb-locked::after{display:block;content:'\1F512';opacity:.7;right:.9rem}
+.pick-btn.pb-locked .pbw{display:none}
+.pick-btn.pb-shake{animation:pbshake .35s}
+.pick-btn .pb-note{display:block;font-size:.68rem;font-weight:600;margin-top:.3rem}
+.rf-pill.rf-lock{opacity:.45;border-style:dashed;cursor:not-allowed}
+.home-stat{margin:0 0 .5rem!important;padding:.5rem!important;font-size:.8rem!important;position:relative}
+.start-line{font-size:.85rem;font-weight:600;margin:.1rem 0 .4rem}
+.or-line{text-align:center;font-size:.62rem;color:var(--muted);margin:.2rem 0 .25rem;text-transform:uppercase;letter-spacing:.06em}
+.home-row{display:flex;gap:8px;margin:0 0 .5rem}
+.home-row .btn-go{flex:1;margin:0!important;position:relative;font-size:.8rem;line-height:1.25;padding:.55rem .4rem}
+.btn-arc{background:#2B2350;color:#fff;border:2px solid #7C5CD6}
+:root.dark .btn-arc{background:#3A2F6B}
+.up-card{margin:.4rem 0;padding:.4rem .7rem .45rem}
+#s-pick .pick-grid{gap:8px;margin-bottom:.4rem}
+#s-pick .pick-btn{padding:.65rem 3.2rem .65rem .75rem;font-size:.84rem;line-height:1.2;border-width:1.5px}
+#s-pick .pick-btn .plabel{font-size:.6rem;margin-bottom:.15rem}
+#s-pick .pick-btn .pbw{width:2.2rem;right:.4rem}
+#s-pick .pick-btn .pbw .fd-wheel{width:2.2rem;height:2.2rem}
+#s-pick .xp-card{padding:.5rem .75rem;margin-bottom:.4rem}
+#s-pick .xp-card .xp-streak{margin-top:.4rem;padding-top:.4rem}
+#s-pick .xp-bar{margin:.35rem 0 .15rem}
+#s-pick h1{font-size:1rem!important}
+#s-pick .yr-pill{font-size:.64rem;padding:.12rem .45rem}
+#s-pick .pick-btn{padding:.5rem 2.8rem .5rem .65rem;font-size:.76rem;line-height:1.15}
+#s-pick .pick-btn .pbw{width:1.9rem;right:.35rem}
+#s-pick .pick-btn .pbw .fd-wheel{width:1.9rem;height:1.9rem}
+#s-pick .xp-emoji{font-size:1.5rem}
+#s-pick .xp-name{font-size:.9rem}
+#s-pick .home-stat{padding:.4rem!important;font-size:.75rem!important}
+#s-pick .home-row .btn-go{padding:.45rem .3rem;font-size:.75rem}
+#s-pick .up-card{margin:.3rem 0}
+.hub-big{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:.9rem 0 .75rem}
+.hub-big .mode-btn{padding:1.3rem .5rem}.hub-big .mode-btn .icon{font-size:1.6rem}
+.arc-title{font-size:1.4rem;font-weight:800;margin:.4rem 0 .2rem}
 </style>
 </head>
 <body>
 <canvas id="fd-confetti-canvas" style="display:none"></canvas>
+<div id="xp-pop"></div>
+<div id="fd-toast"></div>
 <div class="app">
-<div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;margin-bottom:.5rem">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:.5rem">
+  <a id="hub-link" href="index.html" class="tb-btn">&larr; Hub</a>
+  <div style="display:flex;gap:6px">
   <button id="search-btn" class="tb-btn" onclick="openSearch()" title="Search topics">🔍</button>
   <button id="dark-toggle" class="tb-btn" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+  </div>
 </div>
 
 <!-- SEARCH OVERLAY -->
@@ -288,74 +550,37 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   </div>
 </div>
 <div class="screen active" id="s-pick">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
-    <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap"><h1 style="margin-bottom:0">Mr Rodker's Revision Hub - Civil Rights</h1><span class="yr-pill">Y13</span></div>
-    <a href="index.html" class="tb-btn" style="flex-shrink:0">← Hub</a>
+  <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.3rem">
+    <h1 style="margin:0;font-size:1.2rem;font-weight:700">Mr Rodker's Revision Hub - Civil Rights</h1><span class="yr-pill">Y13</span>
   </div>
-  <p class="subtitle">OCR: Y319 - Civil Rights in the USA 1865-1992</p>
-  <p style="font-size:.72rem;color:#8A5A3C;font-style:italic;margin-bottom:.4rem">Knowledge is Porridge 🥣</p>
+  <div class="up-card">
+    <div class="up-head" id="up-tog"><span class="up-title">Set how much you have studied</span><span class="up-pos" id="up-pos"></span></div><div id="up-body">
+    <input type="range" id="up-range" min="1" max="4" step="1" value="4" oninput="uptoPreview(this.value)" onchange="uptoSave(this.value)" aria-label="Course position">
+    <div class="up-ticks" id="up-ticks"></div>
+    </div>
+  </div>
+  <div class="start-line">Pick a unit to start revising</div>
   <div class="pick-grid">
-    <button class="pick-btn pb-aa" onclick="pickUnit('aa')"><span class="plabel">Unit 1</span>✊ African American Rights</button>
-    <button class="pick-btn pb-lab" onclick="pickUnit('lab')"><span class="plabel">Unit 2</span>🔨 Labour and Trade Union Rights</button>
-    <button class="pick-btn pb-na" onclick="pickUnit('na')"><span class="plabel">Unit 3</span>🏹 Native American Rights</button>
-    <button class="pick-btn pb-wom" onclick="pickUnit('wom')"><span class="plabel">Unit 4</span>📢 Women's Rights</button>
+    <button class="pick-btn pb-aa" onclick="openUnit('aa')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-aa" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-aa" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-aa" cx="30" cy="30" r="24" fill="none" stroke="#4A7EC7" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-aa" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-aa">0%</text></svg></span><span class="plabel">Unit 1</span>✊ African American Rights</button>
+    <button class="pick-btn pb-lab" onclick="openUnit('lab')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-lab" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-lab" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-lab" cx="30" cy="30" r="24" fill="none" stroke="#C94A5A" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-lab" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-lab">0%</text></svg></span><span class="plabel">Unit 2</span>🔨 Labour and Trade Union Rights</button>
+    <button class="pick-btn pb-na" onclick="openUnit('na')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-na" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-na" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-na" cx="30" cy="30" r="24" fill="none" stroke="#2A9E80" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-na" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-na">0%</text></svg></span><span class="plabel">Unit 3</span>🏹 Native American Rights</button>
+    <button class="pick-btn pb-wom" onclick="openUnit('wom')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-wom" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-wom" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-wom" cx="30" cy="30" r="24" fill="none" stroke="#9B5EC7" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-wom" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-wom">0%</text></svg></span><span class="plabel">Unit 4</span>📢 Women's Rights</button>
   </div>
-  <!-- Inline search bar -->
-  <div class="inline-search-wrap">
-    <div class="inline-search-bar">
-      <span class="inline-search-icon">🔍</span>
-      <input type="text" id="inline-search-input" placeholder="Search any topic, person or event…" autocomplete="off" oninput="runInlineSearch()" onkeydown="inlineSearchKey(event)">
-      <button class="inline-search-clear" id="inline-search-clear" onclick="clearInlineSearch()" title="Clear">×</button>
-    </div>
-    <div class="inline-search-results" id="inline-search-results"></div>
-  </div>
-  <div style="margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--border)">
-    <div style="display:flex;gap:8px;margin-bottom:1rem">
-      <button class="btn-go c-mixed" style="flex:1;margin-bottom:0" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button>
-      <button class="btn-go c-stat" style="flex:1;margin-bottom:0;position:relative" onclick="showStatSetup()"><span class="nf-badge">New</span>📊 Depth Study Stat Attack</button>
-    </div>
-    <div class="section-lbl">⚡ Your progress today</div>
-    <div style="display:flex;justify-content:space-around;align-items:flex-start;padding:.75rem .5rem;background:var(--surface);border:1.5px solid var(--border);border-radius:14px">
-      <div class="fd-wheel-cell" onclick="fdWheelLaunch('aa')"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-aa" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-aa" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-aa" cx="30" cy="30" r="24" fill="none" stroke="#4A7EC7" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-aa" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-aa">0%</text></svg><div class="fd-wheel-label">African Am.</div></div>
-      <div class="fd-wheel-cell" onclick="fdWheelLaunch('lab')"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-lab" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-lab" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-lab" cx="30" cy="30" r="24" fill="none" stroke="#C94A5A" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-lab" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-lab">0%</text></svg><div class="fd-wheel-label">Labour</div></div>
-      <div class="fd-wheel-cell" onclick="fdWheelLaunch('na')"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-na" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-na" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-na" cx="30" cy="30" r="24" fill="none" stroke="#2A9E80" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-na" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-na">0%</text></svg><div class="fd-wheel-label">Native Am.</div></div>
-      <div class="fd-wheel-cell" onclick="fdWheelLaunch('wom')"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-wom" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-wom" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-wom" cx="30" cy="30" r="24" fill="none" stroke="#9B5EC7" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-wom" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-wom">0%</text></svg><div class="fd-wheel-label">Women</div></div>
-    </div>
-  </div>
-  <div class="fd-bowl-wrap" id="fd-bowl-wrap">
-    <div class="fd-bowl-title">Knowledge is Porridge</div>
-    <div class="fd-bowl-svg-wrap"><span class="fd-bowl-badge" id="fd-bowl-badge" style="display:none"></span>
-    <svg id="fd-bowl-svg" viewBox="0 0 160 128" width="108" height="86" aria-hidden="true">
-      <g id="fd-bowl-steam" class="fd-steam"><path d="M62 40 Q56 28 62 18 Q68 8 62 -2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M80 36 Q74 24 80 14 Q86 4 80 -6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M98 40 Q92 28 98 18 Q104 8 98 -2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></g>
-      <path d="M28 46 Q28 100 80 100 Q132 100 132 46 Z" fill="var(--paper,#FBF6E9)" stroke="var(--paper-edge,#E1D6B6)" stroke-width="2"/>
-      <defs><clipPath id="fd-bowl-clip"><path d="M28 46 Q28 100 80 100 Q132 100 132 46 Z"/></clipPath></defs>
-      <rect id="fd-bowl-fill" x="20" y="90" width="120" height="0" fill="#E7CF9C" clip-path="url(#fd-bowl-clip)"/>
-      <ellipse id="fd-bowl-fill-top" cx="80" cy="90" rx="52" ry="7" fill="#F0DDB0" clip-path="url(#fd-bowl-clip)"/>
-      <path id="fd-bowl-rim" d="M28 46 Q28 100 80 100 Q132 100 132 46" fill="none" stroke="var(--muted)" stroke-width="3"/>
-      <ellipse cx="80" cy="46" rx="52" ry="9" fill="none" id="fd-bowl-top" stroke="var(--muted)" stroke-width="3"/>
-      <rect x="62" y="100" width="36" height="5" rx="2.5" fill="var(--muted)"/>
-    </svg></div>
-    <div class="fd-bowl-label" id="fd-bowl-label">0 of 25 today</div>
-    <div class="fd-streak-wrap">
-      <div class="fd-streak-row" id="fd-streak-row"></div>
-      <div class="fd-streak-label" id="fd-streak-label">Start a streak today</div>
-    </div>
-  </div>
+  <div class="or-line">or</div>
+  <div class="home-row"><button class="btn-go c-mixed" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button><button class="btn-go btn-arc" onclick="arcOpen()"><span class="new-flag">NEW</span>🕹️ Arcade Games</button></div>
+  <button class="btn-go c-stat home-stat" onclick="showStatSetup()">📊 Depth Study Stat Attack</button>
+  <div class="xp-card" id="xp-card" onclick="openProgress()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProgress()" title="See your progress"></div>
+  <div id="weak-nudge"></div>
 </div>
 <div class="screen" id="s-hub">
   <div class="mode-header"><button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button><span class="section-badge" id="hub-badge"></span></div>
-  <button id="hub-pinned-btn" onclick="enterMode('flashcard');setTimeout(fdStartPinned,100)" style="display:none;width:100%;padding:10px;font-size:.85rem;font-weight:600;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;margin-bottom:1rem">📌 Review pinned cards</button>
-  <div style="display:flex;align-items:center;gap:1rem;background:var(--surface);border:1.5px solid var(--border2);border-left-width:4px;border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem;cursor:pointer" id="fd-primary-btn" onclick="enterMode('flashcard')">
-    <div style="flex-shrink:0;text-align:center"><svg id="fd-hub-wheel" viewBox="0 0 60 60" style="width:3.65rem;height:3.65rem;display:block"><circle id="fd-hub-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle id="fd-hub-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle id="fd-hub-ring-got" cx="30" cy="30" r="24" fill="none" stroke="#888" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle id="fd-hub-ring-fill" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text id="fd-hub-pct" x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)">0%</text></svg></div>
-    <div style="flex:1"><div style="font-size:1rem;font-weight:700;margin-bottom:.2rem">Flashcard Mode</div><div style="font-size:.75rem;color:var(--muted);line-height:1.4">Test yourself card by card. Missed cards come back until you know them.</div><div style="font-size:.67rem;color:var(--muted);margin-top:.3rem;opacity:.75">Tap to start - wheel shows today's progress</div></div>
-  </div>
-  <p style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Also available</p>
-  <div class="mode-grid">
+  <div id="hub-weak"></div>
+  <div class="hub-fc" id="hub-fc"></div>
+  <div class="hub-big">
     <button class="mode-btn" id="hub-btn-knowledge" onclick="enterMode('knowledge')"><span class="icon">&#x1F9E0;</span>Revision Guide</button>
     <button class="mode-btn" id="hub-btn-dates" onclick="enterMode('dates')"><span class="icon">📅</span>Key Dates Quiz</button>
     <button class="mode-btn" id="hub-btn-exam" disabled style="opacity:.45;cursor:default;border-left-color:var(--border2)!important"><span class="icon">✏️</span>Exam Practice<br><span style="font-size:.65rem;font-weight:400;opacity:.7">🚧 Coming soon</span></button>
   </div>
-  <div class="fd-bowl-wrap fd-bowl-wrap-compact" id="fd-bowl-hub-wrap" style="margin-top:.5rem"></div>
 </div>
 <div class="screen" id="s-main">
   <div class="mode-header"><div style="display:flex;gap:6px"><button class="back-btn" onclick="showScreen('s-hub')">← Back</button><button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button></div><span class="section-badge" id="main-badge"></span><span id="mode-title" style="font-size:.8rem;font-weight:600;color:var(--muted)"></span></div>
@@ -443,6 +668,31 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     </div>
   </div>
 </div>
+<div class="screen" id="s-arcade">
+  <button class="back-btn" onclick="showScreen('s-pick')">← Back</button>
+  <div class="arc-title">🕹️ ARCADE</div>
+  <div id="arc-body"></div>
+</div>
+
+<div class="screen" id="s-progress">
+  <button class="back-btn" onclick="showScreen('s-pick')">← Back</button>
+  <div class="pv-h">Your progress</div>
+  <div class="xp-card" style="cursor:default" id="pg-level"></div>
+  <div class="pg-h">Units to revisit</div>
+  <div id="pg-units"></div>
+  <div class="pg-h">Most missed questions</div>
+  <div id="pg-weak"></div>
+  <div class="pg-h">Levels</div>
+  <div class="pg-ladder" id="pg-ladder"></div>
+  <div class="pg-h">XP in the last 14 days</div>
+  <div class="pg-days" id="pg-days"></div>
+  <div id="pg-legend" class="pg-legend"></div>
+  <div class="pg-h">Accuracy</div>
+  <div id="pg-acc"></div>
+  <div class="pg-h">Flashcards mastered today</div>
+  <div id="pg-mastery"></div>
+</div>
+
 <div class="screen" id="s-rapid">
   <div class="mode-header"><button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button><span style="font-size:.85rem;font-weight:600;color:var(--muted)">Mixed Retrieval Quiz</span></div>
   <!-- Setup -->
@@ -962,12 +1212,12 @@ function rqMark(correct){document.getElementById('rq-answer-btns').style.display
 
 var LS_M='cr_fd_mastered',LS_P='cr_fd_missed',LS_S='cr_fd_session',LS_H='cr_fd_hints',LS_STREAK='cr_fd_streak';
 var fdDeck=[],fdMissed=[],fdGot=0,fdMissCount=0,fdCurrent=null,fdFlipped=false,fdHintsOn=false,fdTotal=0,fdOutstanding=[],fdBusy=false;
-function fdTodayStr(){return new Date().toISOString().slice(0,10);}
+function fdTodayStr(){return localDate();}
 function fdGetSession(){var s=JSON.parse(localStorage.getItem(LS_S)||'null'),t=fdTodayStr();if(!s||s.date!==t){var f={date:t,got:{aa:0,lab:0,na:0,wom:0},total:{aa:0,lab:0,na:0,wom:0},ds_got:{aa:0,lab:0,na:0,wom:0},them_got:{aa:0,lab:0,na:0,wom:0}};localStorage.setItem(LS_S,JSON.stringify(f));return f;}if(!s.ds_got)s.ds_got={aa:0,lab:0,na:0,wom:0};if(!s.them_got)s.them_got={aa:0,lab:0,na:0,wom:0};return s;}
 function fdSetSession(s){localStorage.setItem(LS_S,JSON.stringify(s));}
 function fdRecordCard(sec,got,isDS){var s=fdGetSession();s.total[sec]=(s.total[sec]||0)+1;if(got){s.got[sec]=(s.got[sec]||0)+1;if(isDS){s.ds_got[sec]=(s.ds_got[sec]||0)+1;}else{s.them_got[sec]=(s.them_got[sec]||0)+1;}}fdSetSession(s);}
-function fdGetMastered(){var raw=JSON.parse(localStorage.getItem(LS_M)||'{}');var today=new Date().toISOString().slice(0,10);if(!raw.date||raw.date!==today)return{};return raw.cards||{};}
-function fdSetMastered(o){var today=new Date().toISOString().slice(0,10);localStorage.setItem(LS_M,JSON.stringify({date:today,cards:o}));}
+function fdGetMastered(){var raw=JSON.parse(localStorage.getItem(LS_M)||'{}');var today=localDate();if(!raw.date||raw.date!==today)return{};return raw.cards||{};}
+function fdSetMastered(o){var today=localDate();localStorage.setItem(LS_M,JSON.stringify({date:today,cards:o}));}
 function fdGetOutstanding(){return JSON.parse(localStorage.getItem(LS_P)||'[]');}
 function fdSetOutstanding(a){localStorage.setItem(LS_P,JSON.stringify(a));}
 function fdKey(c){return c.section+'|'+c.no;}
@@ -1253,6 +1503,914 @@ Promise.all([
   if(km&&km.style.display!=='none')buildPeriodDropdown();
 }).catch(function(err){console.warn('Data load issue:',err);});
 
+</script>
+<script>
+/* ===================== PORT: XP, levels, slider, hub, arcade ===================== */
+// Local dates (the old UTC version rolled over at 1am in British Summer Time)
+function ymd(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+function localDate(offsetDays) { var d = new Date(); if (offsetDays) d.setDate(d.getDate() + offsetDays); return ymd(d); }
+function fdTodayStr() { return localDate(); }
+if (localStorage.getItem(LS_H) === null) { try { localStorage.setItem(LS_H, '1'); } catch (e) {} }
+fdHintsOn = localStorage.getItem(LS_H) === '1';
+function fdToast(msg) {
+  var t = document.getElementById('fd-toast');
+  if (!t) return;
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 3000);
+}
+function uCol(u) { return UNITS[u] ? UNITS[u].colour : '#888'; }
+
+// ---------- course slider and hard lock ----------
+var COURSE_ORDER = ['aa', 'lab', 'na', 'wom'], LS_UPTO = 'cr_course_pos';
+function uptoPos() { var v = parseInt(localStorage.getItem(LS_UPTO), 10); return (v >= 1 && v <= 4) ? v : 4; }
+function unitReached(u) { return COURSE_ORDER.indexOf(u) >= 0 && COURSE_ORDER.indexOf(u) < uptoPos(); }
+function inScope(it) { return unitReached(it.section); }
+function uptoLabel(pos) {
+  pos = parseInt(pos, 10);
+  if (pos >= 4) return 'Whole course';
+  return pos === 1 ? 'Unit 1 only' : 'Units 1–' + pos;
+}
+var UPTO_COL = '#7C5CD6';
+function uptoPaint() {
+  var r = document.getElementById('up-range');
+  if (r) r.style.accentColor = UPTO_COL;
+  var card = r && r.closest('.up-card');
+  if (card) { card.style.borderColor = UPTO_COL; card.style.background = 'color-mix(in srgb,' + UPTO_COL + ' 9%,var(--card))'; }
+}
+function uptoPreview(v) { document.getElementById('up-pos').textContent = uptoLabel(v); uptoPaint(); }
+function uptoSave(v) { try { localStorage.setItem(LS_UPTO, String(parseInt(v, 10))); } catch (e) {} uptoRender(); }
+function lockRender() {
+  COURSE_ORDER.forEach(function (u) {
+    var b = document.querySelector('.pick-btn.pb-' + u);
+    if (!b) return;
+    var lock = !unitReached(u);
+    b.classList.toggle('pb-locked', lock);
+    var n = b.querySelector('.pb-note');
+    if (n && !lock) n.remove();
+  });
+}
+function lockFlash(u) {
+  var b = document.querySelector('.pick-btn.pb-' + u);
+  if (!b) return;
+  var n = b.querySelector('.pb-note');
+  if (!n) { n = document.createElement('span'); n.className = 'pb-note'; b.appendChild(n); }
+  n.textContent = 'Move the slider to unlock';
+  clearTimeout(b._nt); b._nt = setTimeout(function () { if (n.isConnected) n.remove(); }, 2200);
+  b.classList.remove('pb-shake'); void b.offsetWidth; b.classList.add('pb-shake');
+}
+function uptoRender() {
+  var r = document.getElementById('up-range');
+  if (!r) return;
+  lockRender(); weakNudgeRender();
+  r.value = uptoPos();
+  document.getElementById('up-pos').textContent = uptoLabel(uptoPos());
+  uptoPaint();
+  var t = document.getElementById('up-ticks');
+  if (!t.children.length) {
+    t.innerHTML = COURSE_ORDER.map(function (u, i) {
+      return '<span style="flex:1;border-color:' + uCol(u) + '">' + UNITS[u].short + ' <em>U' + (i + 1) + '</em></span>';
+    }).join('');
+  }
+}
+function openUnit(u) { if (!unitReached(u)) { lockFlash(u); return; } pickUnit(u); }
+var _pickUnit = pickUnit;
+pickUnit = function (u) { if (!unitReached(u)) { lockFlash(u); return; } _pickUnit(u); };
+var _goSR = goToSearchResult;
+goToSearchResult = function (unit, idx) {
+  if (!unitReached(unit)) { closeSearch(); fdToast('That unit is locked. Move the slider on the home screen to unlock it.'); return; }
+  _goSR(unit, idx);
+};
+fdWheelLaunch = function (u) { if (!unitReached(u)) { lockFlash(u); return; } pickUnit(u); enterMode('flashcard'); };
+// locked units in Rapid Retrieval and Stat Attack
+function lockPills(prefix) {
+  COURSE_ORDER.forEach(function (u) {
+    var el = document.getElementById(prefix + u);
+    if (!el) return;
+    var lock = !unitReached(u);
+    el.classList.toggle('rf-lock', lock);
+    if (lock) { el.classList.remove('on-' + u); el.title = 'Move the slider to unlock'; } else el.title = '';
+  });
+}
+var _srs = showRapidSetup;
+showRapidSetup = function () {
+  var ok = Array.from(rqUnits).filter(unitReached);
+  rqUnits = new Set(ok.length ? ok : [COURSE_ORDER[0]]);
+  _srs(); lockPills('rqp-'); updateRQCounter();
+};
+var _tru = toggleRQUnit;
+toggleRQUnit = function (u) { if (!unitReached(u)) { fdToast('Move the slider to unlock this unit.'); return; } _tru(u); lockPills('rqp-'); };
+var _ssS = showStatSetup;
+showStatSetup = function () {
+  var ok = Array.from(statUnits).filter(unitReached);
+  statUnits = new Set(ok.length ? ok : [COURSE_ORDER[0]]);
+  _ssS(); lockPills('stp-'); updateStatCounter();
+};
+var _tsu = toggleStatUnit;
+toggleStatUnit = function (u) { if (!unitReached(u)) { fdToast('Move the slider to unlock this unit.'); return; } _tsu(u); lockPills('stp-'); };
+
+// ---------- XP and levels ----------
+var XP_LEVELS = [
+  {t:'Chipmunk',e:'🐿️',xp:0}, {t:'Bullfrog',e:'🐸',xp:250}, {t:'Mallard',e:'🦆',xp:600},
+  {t:'Skunk',e:'🦨',xp:1100}, {t:'Raccoon',e:'🦝',xp:1800}, {t:'Beaver',e:'🦫',xp:2700},
+  {t:'River otter',e:'🦦',xp:3900}, {t:'Alligator',e:'🐊',xp:5500}, {t:'Wild turkey',e:'🦃',xp:7600},
+  {t:'Buffalo',e:'🦬',xp:10200}, {t:'White-tailed deer',e:'🦌',xp:13500}, {t:'Grey wolf',e:'🐺',xp:17500},
+  {t:'Black bear',e:'🐻',xp:22500}, {t:'Mountain lion',e:'🐆',xp:28500}, {t:'Mustang',e:'🐎',xp:36000}, {t:'Bald eagle',e:'🦅',xp:50000}
+];
+var XP_RULE = {flash:10, date:5, rapid:5, stat:5, wrong:0, repeat:2, runLen:5, runBonus:5, cap:500};
+var LS_XP = 'cr_xp';
+var xpRun = 0, xpCapShown = false, xpPopTimer = null, xpPendingUp = -1, xpFlushTimer = null;
+var XP_MODES = ['flash', 'date', 'rapid', 'stat'];
+function xpLoad() {
+  var x = null;
+  try { x = JSON.parse(localStorage.getItem(LS_XP) || 'null'); } catch (e) { x = null; }
+  if (!x || typeof x !== 'object') x = {};
+  x.total = x.total || 0; x.days = x.days || {}; x.seen = x.seen || {date:'', keys:{}}; x.acc = x.acc || {};
+  XP_MODES.forEach(function (m) { x.acc[m] = x.acc[m] || {ok:0, n:0}; });
+  x.miss = x.miss || {}; x.units = x.units || {}; x.dayu = x.dayu || {};
+  var t = localDate();
+  if (x.seen.date !== t) x.seen = {date:t, keys:{}};
+  return x;
+}
+function xpSave(x) {
+  var ks = Object.keys(x.days).sort();
+  while (ks.length > 400) delete x.days[ks.shift()];
+  var dk = Object.keys(x.dayu || {}).sort();
+  while (dk.length > 60) delete x.dayu[dk.shift()];
+  var mk = Object.keys(x.miss);
+  if (mk.length > 300) mk.sort(function (a, b) { return x.miss[a].n - x.miss[b].n; }).slice(0, mk.length - 300).forEach(function (k) { delete x.miss[k]; });
+  try { localStorage.setItem(LS_XP, JSON.stringify(x)); } catch (e) {}
+}
+function xpLevelIdx(total) { var i = 0; XP_LEVELS.forEach(function (l, k) { if (total >= l.xp) i = k; }); return i; }
+function xpAdd(x, n) {
+  var t = localDate(), used = x.days[t] || 0;
+  var g = Math.max(0, Math.min(n, XP_RULE.cap - used));
+  var before = xpLevelIdx(x.total);
+  x.total += g; x.days[t] = used + g;
+  var after = xpLevelIdx(x.total);
+  return {gain:g, up: after > before ? after : -1};
+}
+function xpStreak(x) {
+  var n = 0, off = (x.days[localDate()] || 0) > 0 ? 0 : -1;
+  while ((x.days[localDate(off)] || 0) > 0) { n++; off--; }
+  return n;
+}
+function xpPop(text) {
+  var el = document.getElementById('xp-pop');
+  if (!el) return;
+  el.textContent = text; el.classList.add('show');
+  clearTimeout(xpPopTimer); xpPopTimer = setTimeout(function () { el.classList.remove('show'); }, 900);
+}
+function xpAfter(r, x, label, quiet) {
+  if (r.gain > 0 && !quiet) xpPop('+' + r.gain + ' XP' + (label ? ' · ' + label : ''));
+  else if (!xpCapShown && (x.days[localDate()] || 0) >= XP_RULE.cap) {
+    xpCapShown = true; fdToast('Daily XP limit reached. Your answers are still saved.');
+  }
+  if (r.up >= 0) xpPendingUp = Math.max(xpPendingUp, r.up);
+  xpFlushLater(); xpRender();
+}
+function xpFlushLater() {
+  if (xpPendingUp < 0 || (typeof ARC !== 'undefined' && ARC.g && !ARC.g.over)) return;
+  clearTimeout(xpFlushTimer); xpFlushTimer = setTimeout(xpShowLevelUp, 900);
+}
+function xpShowLevelUp() {
+  if (xpPendingUp < 0 || document.getElementById('xp-lu')) return;
+  var i = xpPendingUp; xpPendingUp = -1;
+  var x = xpLoad(), L = XP_LEVELS[i], prev = XP_LEVELS[i - 1], nx = XP_LEVELS[i + 1];
+  var pct = nx ? Math.max(2, Math.round((x.total - L.xp) / (nx.xp - L.xp) * 100)) : 100;
+  var el = document.createElement('div');
+  el.id = 'xp-lu'; el.className = 'xp-lu-back';
+  el.onclick = function (e) { if (e.target === el) xpCloseLevelUp(); };
+  el.innerHTML = '<div class="xp-lu-card" role="dialog" aria-label="Level up">' +
+    '<div class="xp-lu-k">Level up</div><div class="xp-lu-ic">' + L.e + '</div>' +
+    '<div class="xp-lu-lv">Level ' + (i + 1) + '</div><div class="xp-lu-t">' + L.t + '</div>' +
+    (prev ? '<div class="xp-lu-from">Up from ' + prev.e + ' ' + prev.t + '</div>' : '') +
+    '<div class="xp-bar"><div class="xp-fill" style="width:' + pct + '%"></div></div>' +
+    '<div class="xp-next" style="margin:.3rem 0 1rem"><span>' + (nx ? 'Next: ' + nx.t : 'Top level reached') + '</span><span>' + (nx ? nx.xp.toLocaleString() + ' XP' : '') + '</span></div>' +
+    '<button class="xp-lu-btn" onclick="xpCloseLevelUp()">Keep going</button></div>';
+  document.body.appendChild(el);
+  fdFireConfetti();
+}
+function xpCloseLevelUp() { var el = document.getElementById('xp-lu'); if (el) el.remove(); xpFlushLater(); }
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') xpCloseLevelUp(); });
+// mode: flash | date | rapid | stat. key identifies the item for repeats and most-missed. unit is aa/lab/na/wom.
+function xpAward(mode, ok, key, label, unit) {
+  var x = xpLoad();
+  var a = x.acc[mode] || (x.acc[mode] = {ok:0, n:0});
+  a.n++;
+  var uk = unit || '';
+  var ub = x.units[uk] || (x.units[uk] = {ok:0, n:0, last:''});
+  ub.n++; if (ok) ub.ok++; ub.last = localDate();
+  var n = 0, bonus = '';
+  var arc = typeof ARC !== 'undefined' && !!ARC.g && !ARC.g.over;
+  if (ok) {
+    a.ok++;
+    var repeat = key && x.seen.keys[key];
+    if (key) x.seen.keys[key] = 1;
+    if (arc) n = repeat ? 1 : 2;
+    else {
+      xpRun++;
+      n = repeat ? XP_RULE.repeat : XP_RULE[mode];
+      if (xpRun % XP_RULE.runLen === 0) { n += XP_RULE.runBonus; bonus = 'streak'; }
+    }
+  } else {
+    xpRun = 0; n = XP_RULE.wrong;
+    if (key) {
+      var m = x.miss[key] || (x.miss[key] = {n:0, label:String(label || '').slice(0, 90), unit:unit || ''});
+      m.n++;
+    }
+  }
+  var r = xpAdd(x, n);
+  if (arc) ARC.g.xp = (ARC.g.xp || 0) + r.gain;
+  if (r.gain) { var dd = x.dayu[localDate()] || (x.dayu[localDate()] = {}); dd[uk] = (dd[uk] || 0) + r.gain; }
+  xpSave(x);
+  xpAfter(r, x, bonus, arc);
+  return r.gain;
+}
+// hooks into the existing answer paths (they update their own counters synchronously)
+var _fdAnswer = fdAnswer;
+fdAnswer = function (got) {
+  var c = fdCurrent;
+  if (c) xpAward('flash', !!got, 'fd|' + fdKey(c), c.front, c.section);
+  _fdAnswer(got);
+};
+var _checkAns = checkAns;
+checkAns = function (btn) {
+  var item = quizPool[quizIdx], before = quizOK + quizBad;
+  _checkAns(btn);
+  if (item && quizOK + quizBad > before) xpAward('date', quizHistory[quizHistory.length - 1].wasCorrect, 'dt|' + item.section + '|' + item.event, item.event, item.section);
+};
+var _checkYearAns = checkYearAns;
+checkYearAns = function () {
+  var item = quizPool[quizIdx], before = quizOK + quizBad;
+  _checkYearAns();
+  if (item && quizOK + quizBad > before) xpAward('date', quizHistory[quizHistory.length - 1].wasCorrect, 'dt|' + item.section + '|' + item.event, item.event, item.section);
+};
+var _rqOneAnswer = rqOneAnswer;
+rqOneAnswer = function (c) { var q = rqOnePool[rqOneIdx]; if (q) xpAward('rapid', !!c, 'rq|' + q.q, q.q, q.section); _rqOneAnswer(c); };
+var _rqElAnswer = rqElAnswer;
+rqElAnswer = function (c) { var q = rqElPool[rqElIdx]; if (q) xpAward('rapid', !!c, 'rq|' + q.q, q.q, q.section); _rqElAnswer(c); };
+var _rqMark = rqMark;
+rqMark = function (c) { var q = rqPool[rqOneIdx]; if (q) xpAward('rapid', !!c, 'rq|' + q.q, q.q, q.section); _rqMark(c); };
+var _checkStatPick = checkStatPick;
+checkStatPick = function (btn) {
+  var item = stPool[stIdx], ok0 = stOK, b = stOK + stBad;
+  _checkStatPick(btn);
+  if (item && stOK + stBad > b) xpAward('stat', stOK > ok0, 'st|' + item.prompt, item.prompt, item.section);
+};
+var _checkStatType = checkStatType;
+checkStatType = function () {
+  var item = stPool[stIdx], ok0 = stOK, b = stOK + stBad;
+  _checkStatType();
+  if (item && stOK + stBad > b) xpAward('stat', stOK > ok0, 'st|' + item.prompt, item.prompt, item.section);
+};
+
+// ---------- weak spots by unit ----------
+var STALE_DAYS = 7, WEAK_ACC = 0.7, WEAK_MIN = 10, UNIT_ROWS = 5;
+function xpDaysSince(ds) {
+  if (!ds) return null;
+  var a = new Date(ds + 'T12:00:00'), b = new Date(localDate() + 'T12:00:00');
+  return Math.round((b - a) / 86400000);
+}
+function unitFlags(x) {
+  var out = [];
+  COURSE_ORDER.forEach(function (u) {
+    if (!unitReached(u)) return;
+    var r = x.units[u] || {ok:0, n:0, last:''};
+    var n = r.n, ok = r.ok, gap = xpDaysSince(r.last), acc = n ? ok / n : null;
+    var flag = '', text = '', rank = 0;
+    if (n >= WEAK_MIN && acc < WEAK_ACC) {
+      flag = 'weak'; rank = acc;
+      text = Math.round(acc * 100) + '% correct over ' + n + ' answers' + (gap >= STALE_DAYS ? ' · last studied ' + gap + ' days ago' : '');
+    } else if (!n) { flag = 'stale'; rank = 1; text = 'Not started yet'; }
+    else if (gap >= STALE_DAYS) { flag = 'stale'; rank = 2 + (1 / (1 + gap)); text = 'Not studied for ' + gap + ' days'; }
+    out.push({u: u, flag: flag, text: text, rank: rank});
+  });
+  return out;
+}
+function flagSort(a, b) { return a.flag === b.flag ? a.rank - b.rank : (a.flag === 'weak' ? -1 : 1); }
+function weakList(x, skipNew) {
+  return unitFlags(x).filter(function (u) { return u.flag && !(skipNew && u.flag === 'stale' && u.text === 'Not started yet'); }).sort(flagSort);
+}
+function nudgeHtml(w, margin) {
+  return '<div class="wk-nudge" style="' + (margin || '') + 'border-left-color:' + (w.flag === 'weak' ? '#D9534F' : '#C98A00') + '"><div style="min-width:0"><b>' +
+    (w.flag === 'weak' ? 'Needs work: ' : 'Revisit: ') + escHtml(UNITS[w.u].label) + '</b><small>' + escHtml(w.text) + '</small></div>' +
+    '<button onclick="practiseUnit(\'' + w.u + '\')">Practise</button></div>';
+}
+function weakNudgeRender() {
+  var el = document.getElementById('weak-nudge');
+  if (!el) return;
+  var bad = weakList(xpLoad(), true);
+  el.innerHTML = bad.length ? nudgeHtml(bad[0]) : '';
+}
+function practiseUnit(u) {
+  if (!unitReached(u)) return;
+  pickUnit(u); enterMode('flashcard'); fdStart();
+}
+function unitsRender(x) {
+  var el = document.getElementById('pg-units');
+  if (!el) return;
+  var all = unitFlags(x), bad = all.filter(function (u) { return u.flag; }).sort(flagSort);
+  var h = '<div style="font-size:.78rem;color:var(--muted);margin-bottom:8px">' + (all.length - bad.length) + ' of ' + all.length + ' units covered in class are on track.</div>';
+  if (!bad.length) h = '<div class="empty">All covered units are on track. Nice work.</div>';
+  else h += bad.slice(0, UNIT_ROWS).map(function (u) {
+    return '<div class="pv-miss" style="border-left:4px solid ' + uCol(u.u) + ';display:flex;align-items:center;gap:10px;justify-content:space-between">' +
+      '<div style="min-width:0"><div style="font-weight:600">' + escHtml(UNITS[u.u].label) + '</div>' +
+      '<div style="font-size:.74rem;font-weight:600;color:' + (u.flag === 'weak' ? '#D9534F' : '#C98A00') + '">' + escHtml(u.text) + '</div></div>' +
+      '<button class="pv-btn" style="flex:none;padding:.5rem .9rem;white-space:nowrap" onclick="practiseUnit(\'' + u.u + '\')">Practise</button></div>';
+  }).join('');
+  el.innerHTML = h;
+}
+
+// ---------- XP card, streak and progress screen ----------
+function xpBest(x) {
+  var ks = Object.keys(x.days).filter(function (k) { return x.days[k] > 0; }).sort(), best = 0, run = 0, prev = null;
+  ks.forEach(function (k) {
+    var d = new Date(k + 'T00:00:00');
+    run = (prev && Math.round((d - prev) / 86400000) === 1) ? run + 1 : 1;
+    prev = d; if (run > best) best = run;
+  });
+  return best;
+}
+function xpStreakHtml(x) {
+  var n = xpStreak(x), dots = '';
+  for (var i = 6; i >= 0; i--) {
+    var d = new Date(); d.setDate(d.getDate() - i);
+    var v = x.days[ymd(d)] || 0;
+    dots += '<i class="' + (v >= 500 ? 'on t4' : v >= 300 ? 'on t3' : v >= 100 ? 'on t2' : v > 0 ? 'on' : '') + (i === 0 ? ' today' : '') + '" title="' + ymd(d) + ': ' + v + ' XP">' + 'SMTWTFS'[d.getDay()] + '</i>';
+  }
+  return '<div class="xp-streak"><span class="xp-flame">🔥 ' + (n ? n + ' day' + (n > 1 ? 's' : '') + ' in a row' : 'Start a streak today') + '</span><span class="xp-sdots">' + dots + '</span><span class="xp-best">Best ' + Math.max(n, xpBest(x)) + '</span></div>';
+}
+function xpBlock(x, link) {
+  var i = xpLevelIdx(x.total), L = XP_LEVELS[i], nx = XP_LEVELS[i + 1];
+  var today = x.days[localDate()] || 0;
+  var pct = nx ? Math.round((x.total - L.xp) / (nx.xp - L.xp) * 100) : 100;
+  var next = nx ? 'Next: ' + nx.t + ' at ' + nx.xp.toLocaleString() + ' XP' : 'Top level reached';
+  return '<div class="xp-top"><span class="xp-emoji">' + L.e + '</span>' +
+    '<div class="xp-mid"><div class="xp-name">' + L.t + '</div><div class="xp-sub">Level ' + (i + 1) + ' · ' + x.total.toLocaleString() + ' XP</div></div>' +
+    '<div class="xp-today"><b>' + today + '</b>/ ' + XP_RULE.cap + ' XP today</div></div>' +
+    '<div class="xp-bar"><div class="xp-fill" style="width:' + pct + '%"></div></div>' +
+    '<div class="xp-next"><span>' + next + '</span>' + (link ? '<span>Tap for progress ›</span>' : '') + '</div>' + xpStreakHtml(x);
+}
+function xpRender() {
+  var el = document.getElementById('xp-card');
+  if (el) el.innerHTML = xpBlock(xpLoad(), true);
+  weakNudgeRender();
+  var pg = document.getElementById('pg-level');
+  if (pg && document.getElementById('s-progress').classList.contains('active')) progressRender();
+}
+function openProgress() { showScreen('s-progress'); }
+function progressRender() {
+  var x = xpLoad(), cur = xpLevelIdx(x.total);
+  document.getElementById('pg-level').innerHTML = xpBlock(x, false);
+  document.getElementById('pg-ladder').innerHTML = XP_LEVELS.map(function (l, i) {
+    return '<div class="pg-lv' + (i < cur ? ' done' : i === cur ? ' now' : '') + '"><span>' + l.e + '</span><span>Level ' + (i + 1) + ': ' + l.t + '</span><span>' + l.xp.toLocaleString() + ' XP</span></div>';
+  }).join('');
+  var days = '', seenU = {};
+  for (var i = 13; i >= 0; i--) {
+    var d = new Date(); d.setDate(d.getDate() - i);
+    var v = x.days[ymd(d)] || 0, du = x.dayu[ymd(d)] || {};
+    var H = Math.round(Math.min(1, v / XP_RULE.cap) * 66), tracked = 0, segs = '';
+    COURSE_ORDER.forEach(function (u) {
+      if (!du[u]) return;
+      tracked += du[u]; seenU[u] = 1;
+      segs += '<b style="flex:' + du[u] + ' 0 0;background:' + uCol(u) + '"></b>';
+    });
+    if (v - tracked > 0) segs += '<b style="flex:' + (v - tracked) + ' 0 0;background:#9AA0A6"></b>';
+    days += '<div class="pg-day" title="' + ymd(d) + ': ' + v + ' XP"><i style="height:' + (v ? Math.max(H, 3) : 0) + 'px">' + segs + '</i>' + 'SMTWTFS'[d.getDay()] + '</div>';
+  }
+  document.getElementById('pg-days').innerHTML = days;
+  document.getElementById('pg-legend').innerHTML = COURSE_ORDER.filter(function (u) { return seenU[u]; }).map(function (u) {
+    return '<span class="pg-leg"><s style="background:' + uCol(u) + '"></s>' + UNITS[u].short + '</span>';
+  }).join('');
+  var names = {flash:'Flashcards', date:'Key dates', rapid:'Rapid fire', stat:'Stat Attack'};
+  document.getElementById('pg-acc').innerHTML = Object.keys(names).map(function (m) {
+    var a = x.acc[m], p = a.n ? Math.round(a.ok / a.n * 100) : 0;
+    return '<div class="pg-bar"><span class="t">' + names[m] + '</span><span class="b"><i style="width:' + p + '%"></i></span><span class="n">' + (a.n ? p + '% of ' + a.n : 'no answers yet') + '</span></div>';
+  }).join('');
+  var mast = fdGetMastered(), out = fdGetOutstanding();
+  document.getElementById('pg-mastery').innerHTML = COURSE_ORDER.map(function (u) {
+    var tot = FD.filter(function (c) { return c.section === u; }).length;
+    var got = Object.keys(mast).filter(function (k) { return k.indexOf(u + '|') === 0; }).length;
+    var pin = out.filter(function (k) { return k.indexOf(u + '|') === 0; }).length;
+    return '<div class="pg-bar"><span class="t">' + UNITS[u].short + '</span><span class="b"><i style="width:' + (tot ? Math.round(got / tot * 100) : 0) + '%;background:' + uCol(u) + '"></i></span><span class="n">' + got + ' of ' + tot + (pin ? ' · ' + pin + ' 📌' : '') + '</span></div>';
+  }).join('');
+  unitsRender(x);
+  var weak = Object.keys(x.miss).map(function (k) { return x.miss[k]; }).sort(function (a, b) { return b.n - a.n; }).slice(0, 8);
+  document.getElementById('pg-weak').innerHTML = weak.length
+    ? weak.map(function (m) { return '<div class="pv-miss" style="border-left:4px solid ' + uCol(m.unit) + '">' + escHtml(m.label) + ' <span style="color:var(--muted)">· missed ' + m.n + '×</span></div>'; }).join('')
+    : '<div class="empty">Nothing yet. Questions you miss will show up here.</div>';
+}
+
+// ---------- bowl and old streak removed ----------
+renderFdBowl = function () {};
+fdUpdateStreak = function () {};
+renderFdStreak = function () {};
+fdBowlPaint = function () { return undefined; };
+
+// ---------- hub: multi-select eras ----------
+var hubSel = {unit:'', all:true, set:[]};
+function hubCards(u, ue, era) {
+  return FD.filter(function (c) {
+    if (c.section !== u) return false;
+    var ps = c.periods && c.periods.length ? c.periods : [c.period];
+    return ps.indexOf(era) !== -1 || (ue.pairs[era] && ps.indexOf(ue.pairs[era]) !== -1);
+  });
+}
+function hubRender() {
+  var u = currentUnit, fc = document.getElementById('hub-fc');
+  if (!fc || !u) return;
+  if (!FD.length) { document.getElementById('hub-weak').innerHTML = ''; fc.innerHTML = '<h3>⚡ Flashcards</h3><div class="sub" style="margin:.4rem 0 0">Loading flashcards…</div>'; return; }
+  var col = uCol(u), mast = fdGetMastered(), ue = getUnitEras();
+  var w = weakList(xpLoad(), true).filter(function (f) { return f.u === u; })[0];
+  document.getElementById('hub-weak').innerHTML = w ? nudgeHtml(w, 'margin:0 0 .8rem;') : '';
+  if (hubSel.unit !== u) hubSel = {unit:u, all:true, set:[]};
+  hubSel.set = hubSel.set.filter(function (k) { return ue.keys.indexOf(k) !== -1; });
+  if (!hubSel.all && !hubSel.set.length) hubSel.all = true;
+  var unitCards = FD.filter(function (c) { return c.section === u; });
+  var rows = ue.keys.map(function (k, i) {
+    var cards = hubCards(u, ue, k), done = cards.filter(function (c) { return mast[fdKey(c)]; }).length;
+    var on = !hubSel.all && hubSel.set.indexOf(k) !== -1;
+    return '<button class="hub-row' + (on ? ' on' : '') + '" onclick="hubTog(' + i + ')" role="checkbox" aria-checked="' + on + '"><span class="hub-dot' + (on ? ' on' : '') + '"></span><span class="hub-nm">' + escHtml(ue.labels[k]) + '</span><span>' + done + '/' + cards.length + '</span></button>';
+  }).join('');
+  var allRow = '<button class="hub-row hub-all' + (hubSel.all ? ' on' : '') + '" onclick="hubAll()" role="checkbox" aria-checked="' + hubSel.all + '"><span class="hub-dot' + (hubSel.all ? ' on' : '') + '"></span><span class="hub-nm">All eras</span><span>' + unitCards.filter(function (c) { return mast[fdKey(c)]; }).length + '/' + unitCards.length + '</span></button>';
+  var pins = fdGetOutstanding().length, nSel = hubSel.all ? ue.keys.length : hubSel.set.length;
+  fc.style.borderLeftColor = col; fc.style.setProperty('--c', col);
+  fc.innerHTML = '<h3>⚡ Flashcards</h3><div class="sub">Choose one era, several, or all of them.' + (pins ? ' Your ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + ' will be mixed in.' : '') + '</div>' +
+    '<button class="hub-pill' + (fdHintsOn ? ' on' : '') + '" id="hub-hints" onclick="hubHints()">💡 Hints ' + (fdHintsOn ? 'on' : 'off') + '</button>' + allRow + rows +
+    '<button class="hub-start" style="background:' + col + '" onclick="hubGo()">Start flashcards' + (hubSel.all ? '' : ' · ' + nSel + ' era' + (nSel > 1 ? 's' : '')) + '</button>' +
+    (pins ? '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="hub-link" onclick="enterMode(\'flashcard\');setTimeout(fdStartPinned,100)">📌 Review ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + '</button></div>' : '');
+}
+function hubAll() { hubSel.all = true; hubSel.set = []; hubRender(); }
+function hubTog(i) {
+  var k = getUnitEras().keys[i];
+  if (k === undefined) return;
+  if (hubSel.all) { hubSel.all = false; hubSel.set = [k]; }
+  else if (hubSel.set.indexOf(k) !== -1) { hubSel.set = hubSel.set.filter(function (x) { return x !== k; }); if (!hubSel.set.length) hubSel.all = true; }
+  else hubSel.set.push(k);
+  hubRender();
+}
+function hubGo() {
+  var ue = getUnitEras();
+  enterMode('flashcard');
+  if (!hubSel.all) {
+    var s = new Set();
+    hubSel.set.forEach(function (k) { s.add(k); if (ue.pairs[k]) s.add(ue.pairs[k]); });
+    fdActiveEras = s; fdAllOn = false;
+  }
+  fdStart();
+}
+function hubHints() { fdSyncHints(!fdHintsOn); hubRender(); }
+
+// ---------- screen wiring ----------
+var _showScreen = showScreen;
+showScreen = function (id) {
+  if (id !== 's-arcade' && typeof ARC !== 'undefined' && ARC.g) arcStop();
+  _showScreen(id);
+  var hl = document.getElementById('hub-link');
+  if (hl) hl.style.visibility = id === 's-pick' ? 'visible' : 'hidden';
+  if (id === 's-pick') { uptoRender(); xpRender(); }
+  if (id === 's-hub') hubRender();
+  if (id === 's-progress') progressRender();
+};
+
+// ---------- arcade ----------
+var ARC = {unit:null, g:null, t:null, iv:null};
+function arcStop() { clearTimeout(ARC.t); clearInterval(ARC.iv); ARC.iv = null; ARC.tm = null; ARC.g = null; xpFlushLater(); }
+function arcTimerStop() { clearInterval(ARC.iv); ARC.iv = null; ARC.tm = null; }
+function arcTimerStart(secs, fn) {
+  arcTimerStop();
+  ARC.tm = {end: Date.now() + secs * 1000, secs, fn};
+  ARC.iv = setInterval(arcTimerTick, 100);
+}
+function arcTimerTick() {
+  const t = ARC.tm;
+  if (!t) return;
+  const left = Math.max(0, t.end - Date.now());
+  const f = document.getElementById('arc-tfill'), n = document.getElementById('arc-tnum');
+  if (f) { f.style.width = (left / (t.secs * 1000) * 100) + '%'; f.parentNode.classList.toggle('low', left < 3000); }
+  if (n) n.textContent = Math.ceil(left / 1000);
+  if (left <= 0) { const fn = t.fn; arcTimerStop(); fn(); }
+}
+function arcHS() { try { return JSON.parse(localStorage.getItem(LS_ARC) || '{}'); } catch (e) { return {}; } }
+function arcSetHS(k, v) {
+  const h = arcHS();
+  if (v > (h[k] || 0)) { h[k] = v; try { localStorage.setItem(LS_ARC, JSON.stringify(h)); } catch (e) {} return true; }
+  return false;
+}
+function arcCur() { return ARC.unit && unitReached(ARC.unit) ? ARC.unit : (COURSE_ORDER.find(unitReached) || COURSE_ORDER[0]); }
+function arcYear(d) { const s = String(d.date), m = s.match(/\d{4}/) || s.match(/\d{3}/); return m ? parseInt(m[0], 10) : null; }
+function arcDatePool() { var u = arcCur(); return DATES.filter(d => d.section === u && arcYear(d) !== null); }
+function arcRqPool() { var u = arcCur(); return RQ.filter(q => q.section === u); }
+function arcOpen() { arcStop(); showScreen('s-arcade'); arcMenu(); }
+function arcTogglePaper(p) {
+  if (!unitReached(p)) return;
+  ARC.unit = p;
+  arcMenu();
+}
+function arcHearts(n) { return '<span class="arc-hearts">' + '❤️'.repeat(Math.max(0, n)) + '<i>' + '🖤'.repeat(Math.max(0, 3 - n)) + '</i></span>'; }
+function arcMenu() {
+  arcStop();
+  document.getElementById('s-arcade').classList.remove('ingame');
+  const hs = arcHS();
+  const pills = COURSE_ORDER.map(p => {
+    const lock = !unitReached(p), on = !lock && p === arcCur();
+    return '<button class="arc-pill' + (on ? ' on' : '') + (lock ? ' lock' : '') + '" style="--c:' + uCol(p) + '" onclick="arcTogglePaper(\'' + p + '\')">' + UNITS[p].short + (lock ? ' 🔒' : '') + '</button>';
+  }).join('');
+  document.getElementById('arc-body').innerHTML =
+    '<div class="arc-sub">Pick one unit. Questions come from that unit, so long as it is unlocked on the home slider.</div>' +
+    '<div class="arc-pills">' + pills + '</div>' +
+    '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">🧩</span><span class="arc-tx"><b>Match the dates</b><small>Pair each event with its date. Three lives.</small></span><span class="arc-hi">HI ' + (hs.mt || 0) + '</span></button>' +
+    '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Type the answer. Right answers hurt the boss, misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
+    '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>60 seconds. Tap the true dates, ignore the false ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
+    '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
+    '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 20 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
+}
+function arcShort(msg) { fdToast(msg); }
+function arcFrame(inner, head) {
+  document.getElementById('s-arcade').classList.add('ingame');
+  if (inner.indexOf('arc-end') >= 0) {
+    arcTimerStop();
+    const g = ARC.g;
+    if (g) {
+      g.over = true;
+      const xpl = '<div class="arc-xp">+' + (g.xp || 0) + ' XP earned</div>';
+      const k = inner.indexOf('<button class="arc-btn"');
+      inner = k >= 0 ? inner.slice(0, k) + xpl + inner.slice(k) : inner + xpl;
+      xpFlushLater();
+    }
+  }
+  const bar = ARC.tm ? '<div class="arc-tbar"><i id="arc-tfill"></i><b id="arc-tnum"></b></div>' : '';
+  document.getElementById('arc-body').innerHTML = '<div class="arc-top"><button class="arc-quit" onclick="arcMenu()">✕ Quit</button>' + head + '</div>' + bar + inner;
+  if (ARC.tm) arcTimerTick();
+}
+// ----- Match the dates -----
+function eolStart() {
+  const pool = arcDatePool();
+  if (new Set(pool.map(arcYear)).size < 10) { arcShort('Not enough dates for this choice yet.'); return; }
+  ARC.g = {type:'mt', pool, lives:3, score:0, n:4, rounds:0};
+  mtRound();
+}
+function mtRound(msg) {
+  const g = ARC.g, used = new Set(), items = [];
+  for (const it of shuffle(g.pool)) {
+    const y = arcYear(it);
+    if (!used.has(y)) { used.add(y); items.push(it); }
+    if (items.length === g.n) break;
+  }
+  g.items = items; g.dates = shuffle(items.map((it, i) => i)); g.done = {}; g.selE = -1; g.selD = -1; g.bad = '';
+  g.msg = msg || ''; g.busy = false;
+  arcTimerStart(30, mtLate);
+  mtRender();
+}
+function mtRender() {
+  const g = ARC.g, hs = arcHS();
+  const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Matched <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.mt || 0, g.score) + '</b></span></div>';
+  const evs = g.items.map((it, i) => '<button class="mt-b mt-ev' + (g.done[i] ? ' ok' : '') + (g.selE === i ? ' sel' : '') + (g.bad === 'e' + i ? ' no' : '') + '" style="--c:' + (uCol(it.section)) + '" ' + (g.done[i] || g.busy ? 'disabled ' : '') + 'onclick="mtPick(\'e\',' + i + ')">' + escHtml(it.event) + '</button>').join('');
+  const dts = g.dates.map(i => '<button class="mt-b mt-dt' + (g.done[i] ? ' ok' : '') + (g.selD === i ? ' sel' : '') + (g.bad === 'd' + i ? ' no' : '') + '" ' + (g.done[i] || g.busy ? 'disabled ' : '') + 'onclick="mtPick(\'d\',' + i + ')">' + escHtml(String(g.items[i].date)) + '</button>').join('');
+  arcFrame('<div class="arc-sub" style="text-align:center">' + (g.msg || 'Tap an event, then the date it happened. Match them all.') + '</div>' +
+    '<div class="mt-wrap"><div class="mt-col">' + evs + '</div><div class="mt-col">' + dts + '</div></div>', head);
+}
+function mtPick(side, i) {
+  const g = ARC.g;
+  if (!g || g.type !== 'mt' || g.busy || g.done[i]) return;
+  if (side === 'e') g.selE = g.selE === i ? -1 : i; else g.selD = g.selD === i ? -1 : i;
+  if (g.selE >= 0 && g.selD >= 0) {
+    const e = g.selE, d = g.selD, it = g.items[e];
+    const ok = e === d || arcYear(g.items[e]) === arcYear(g.items[d]);
+    xpAward('date', ok, 'dt|' + it.section + '|' + it.event, it.event, it.section);
+    g.selE = -1; g.selD = -1;
+    if (ok) {
+      g.done[e] = 1; g.done[d] = 1; g.score++; g.msg = '';
+      if (Object.keys(g.done).length >= g.items.length) {
+        g.busy = true; arcTimerStop(); g.n = Math.min(6, g.n + 1); g.msg = 'All matched!';
+        mtRender();
+        ARC.t = setTimeout(() => { if (ARC.g === g) mtRound(); }, 1000);
+        return;
+      }
+    } else {
+      g.lives--; g.bad = 'e' + e; g.msg = 'Not that one. Try again.';
+      if (g.lives <= 0) { mtOver(); return; }
+      mtRender();
+      ARC.t = setTimeout(() => { if (ARC.g === g) { g.bad = ''; mtRender(); } }, 700);
+      return;
+    }
+  }
+  mtRender();
+}
+function mtLate() {
+  const g = ARC.g;
+  if (!g || g.type !== 'mt') return;
+  g.lives--;
+  if (g.lives <= 0) { mtOver(); return; }
+  mtRound('&#9200; Time\'s up. New set');
+}
+function mtOver() {
+  const g = ARC.g, isBest = arcSetHS('mt', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">🧩</div><div class="arc-h">Game over</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">pairs matched' + (isBest ? ' · new best' : '') + '</div>' +
+    '<button class="arc-btn" onclick="eolStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
+  if (isBest && g.score >= 8 && typeof fdFireConfetti === 'function') fdFireConfetti();
+}
+// ----- Whack-a-fact -----
+function whStart() {
+  const pool = arcDatePool();
+  if (pool.length < 12) { arcShort('Not enough dates for this choice yet.'); return; }
+  ARC.g = {type:'wh', pool:shuffle(pool), i:0, holes:[null,null,null,null,null,null], lives:3, score:0, tick:0, total:600};
+  whBuild();
+  clearInterval(ARC.iv); ARC.iv = setInterval(whTick, 100);
+}
+function whStatsHtml() { const g = ARC.g, hs = arcHS(); return arcHearts(g.lives) + '<span>Time <b>' + Math.max(0, Math.ceil((g.total - g.tick) / 10)) + '</b></span><span>Score <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.wh || 0, g.score) + '</b></span>'; }
+function whBuild() {
+  arcFrame('<div class="arc-sub" style="text-align:center">Tap the TRUE statements. Leave the false ones alone.</div><div class="wh-grid">' +
+    [0,1,2,3,4,5].map(i => '<button class="wh-hole" id="wh-h' + i + '" onclick="whHit(' + i + ')"></button>').join('') + '</div>',
+    '<div class="arc-stats" id="wh-stats">' + whStatsHtml() + '</div>');
+}
+function whRender(i, flash) {
+  const g = ARC.g, h = g.holes[i], el = document.getElementById('wh-h' + i);
+  if (!el) return;
+  el.className = 'wh-hole' + (h ? ' up' : '') + (flash ? ' ' + flash : '');
+  el.innerHTML = h ? '<span class="wh-ev">' + escHtml(h.item.event) + '</span><span class="wh-yr">' + escHtml(String(h.shown)) + '</span>' : '';
+}
+function whTick() {
+  const g = ARC.g;
+  if (!g || g.type !== 'wh') return;
+  g.tick++;
+  for (let i = 0; i < 6; i++) {
+    const h = g.holes[i];
+    if (h && g.tick >= h.die) {
+      if (h.t) xpAward('date', false, 'dt|' + h.item.section + '|' + h.item.event, h.item.event, h.item.section);
+      g.holes[i] = null; whRender(i);
+    }
+  }
+  const every = Math.max(11, 20 - Math.floor(g.score / 8));
+  if (g.tick % every === 0) {
+    const free = [0,1,2,3,4,5].filter(i => !g.holes[i]);
+    if (free.length) {
+      const i = free[Math.floor(Math.random() * free.length)];
+      if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; }
+      const item = g.pool[g.i++], isTrue = Math.random() < 0.5;
+      let shown = item.date;
+      if (!isTrue) {
+        const others = g.pool.filter(o => arcYear(o) !== arcYear(item));
+        shown = others[Math.floor(Math.random() * others.length)].date;
+      }
+      g.holes[i] = {item, t:isTrue, shown, die: g.tick + Math.max(38, Math.round((6500 - g.score * 50) / 100))};
+      whRender(i);
+    }
+  }
+  document.getElementById('wh-stats').innerHTML = whStatsHtml();
+  if (g.tick >= g.total) whOver();
+}
+function whHit(i) {
+  const g = ARC.g;
+  if (!g || g.type !== 'wh') return;
+  const h = g.holes[i];
+  if (!h) return;
+  g.holes[i] = null;
+  if (h.t) { g.score++; xpAward('date', true, 'dt|' + h.item.section + '|' + h.item.event, h.item.event, h.item.section); whRender(i, 'hit'); }
+  else { g.lives--; xpAward('date', false, 'dt|' + h.item.section + '|' + h.item.event, h.item.event, h.item.section); whRender(i, 'miss'); }
+  setTimeout(() => { if (ARC.g === g && !g.holes[i]) whRender(i); }, 300);
+  document.getElementById('wh-stats').innerHTML = whStatsHtml();
+  if (g.lives <= 0) whOver();
+}
+function whOver() {
+  const g = ARC.g; clearInterval(ARC.iv);
+  const isBest = arcSetHS('wh', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">🔨</div><div class="arc-h">' + (g.lives > 0 ? 'Time up' : 'Too many false ones') + '</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">true facts whacked' + (isBest ? ' · new best' : '') + '</div>' +
+    '<button class="arc-btn" onclick="whStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
+  if (isBest && g.score >= 5 && typeof fdFireConfetti === 'function') fdFireConfetti();
+}
+// ----- Stack it -----
+function stStart() {
+  const pool = arcDatePool();
+  if (new Set(pool.map(arcYear)).size < 10) { arcShort('Not enough dates for this choice yet.'); return; }
+  ARC.g = {type:'st', pool, lives:3, score:0, n:4};
+  stRound();
+}
+function stRound(msg) {
+  const g = ARC.g, used = new Set(), items = [];
+  for (const it of shuffle(g.pool)) {
+    const y = arcYear(it);
+    if (!used.has(y)) { used.add(y); items.push(it); }
+    if (items.length === g.n) break;
+  }
+  g.items = items; g.order = items.slice().sort((a, b) => arcYear(a) - arcYear(b)); g.placed = 0; g.shake = -1; g.msg = msg || '';
+  arcTimerStart(g.items.length * 5, stLate);
+  stRender();
+}
+function stRender() {
+  const g = ARC.g, hs = arcHS();
+  const stack = g.order.slice(0, g.placed).map(it => '<div class="st-blk" style="--c:' + (uCol(it.section)) + '"><span>' + escHtml(it.event) + '</span><b>' + escHtml(String(it.date)) + '</b></div>').join('');
+  const opts = g.items.map((it, i) => g.order.indexOf(it) < g.placed ? '' :
+    '<button class="st-opt' + (g.shake === i ? ' shake' : '') + '" style="--c:' + (uCol(it.section)) + '" onclick="stTap(' + i + ')">' + escHtml(it.event) + '</button>').join('');
+  arcFrame('<div class="arc-sub" style="text-align:center">' + (g.msg || 'Tap the oldest event first, then the next oldest.') + '</div>' +
+    '<div class="st-stack">' + (stack || '<div class="st-empty">Your stack builds here, oldest at the bottom</div>') + '</div><div class="st-opts">' + opts + '</div>',
+    '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Stacked <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.st || 0, g.score) + '</b></span></div>');
+}
+function stLate() {
+  const g = ARC.g;
+  if (!g || g.type !== 'st') return;
+  g.lives--;
+  if (g.lives <= 0) { stOver(); return; }
+  stRound('&#9200; Time\'s up. New tower');
+}
+function stTap(i) {
+  const g = ARC.g;
+  if (!g || g.type !== 'st' || g.busy) return;
+  const it = g.items[i], ok = it === g.order[g.placed];
+  xpAward('date', ok, 'dt|' + it.section + '|' + it.event, it.event, it.section);
+  if (ok) {
+    g.placed++; g.score++; g.shake = -1;
+    if (g.placed === g.items.length) {
+      g.busy = true; g.msg = 'Stacked!'; g.n = Math.min(7, g.n + 1); arcTimerStop();
+      stRender();
+      ARC.t = setTimeout(() => { g.busy = false; stRound(); }, 1000);
+      return;
+    }
+  } else {
+    g.lives--; g.shake = i;
+    if (g.lives <= 0) { stOver(); return; }
+  }
+  stRender();
+}
+function stOver() {
+  const g = ARC.g, isBest = arcSetHS('st', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">🧱</div><div class="arc-h">Tower toppled</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">events stacked' + (isBest ? ' · new best' : '') + '</div>' +
+    '<button class="arc-btn" onclick="stStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
+  if (isBest && g.score >= 8 && typeof fdFireConfetti === 'function') fdFireConfetti();
+}
+// ----- Boss battle -----
+const BOSSES = [['Revision Gremlin','👹'], ['Date Dragon','🐉'], ['The Sphinx','🦁'], ['Chief Examiner','🧌'], ['Mock Exam Kraken','🦑']];
+function bossStart() {
+  const pool = shuffle(arcRqPool());
+  if (pool.length < 10) { arcShort('Not enough questions for this unit yet.'); return; }
+  ARC.g = {type:'boss', pool, i:0, lives:3, lv:0, max:8, hp:8, score:0, phase:'ask', typed:''};
+  bossAsk();
+}
+function bossQ() { const g = ARC.g; if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; } return g.pool[g.i]; }
+// ----- typed answer marking -----
+const BS_STOP = new Set(['the','a','an','of','and','or','to','in','on','at','for','by','with','was','were','is','are','as','his','her','its','their','they','them','he','she','it','be','been','being','had','has','have','did','do','does','that','this','who','which']);
+const BS_GENERIC = new Set(['act','treaty','plan','party','league','law','laws','conference','summit','pact','crisis','war','republic','government','state','states','united','british','britain','national','people','peoples','nazi','nazis']);
+function bsNorm(t) {
+  return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/(\d)[,\s](?=\d{3}\b)/g, '$1').replace(/&/g, ' and ').replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+}
+const BS_IRR = {burnt:'burn', learnt:'learn', dreamt:'dream', spelt:'spell', swore:'swear', sworn:'swear', fled:'flee', fought:'fight', led:'lead', built:'build', sold:'sell', won:'win', ran:'run', rose:'rise', risen:'rise', took:'take', taken:'take', gave:'give', given:'give', wrote:'write', written:'write', began:'begin', begun:'begin', broke:'break', broken:'break', brought:'bring', held:'hold', kept:'keep', left:'leave', lost:'lose', made:'make', met:'meet', paid:'pay', saw:'see', seen:'see', sent:'send', stood:'stand', taught:'teach', told:'tell', thought:'think', women:'woman', men:'man', children:'child', people:'person'};
+function bsStem(w) {
+  if (BS_IRR[w]) return BS_IRR[w];
+  if (w.length > 4 && /ied$/.test(w)) w = w.slice(0, -3) + 'y';
+  else if (w.length > 5 && /ing$/.test(w)) w = w.slice(0, -3);
+  else if (w.length > 4 && /ed$/.test(w)) w = w.slice(0, -2);
+  else if (w.length > 4 && /(ch|sh|ss|x|z)es$/.test(w)) w = w.slice(0, -2);
+  else if (w.length > 3 && /s$/.test(w) && !/(ss|us|is)$/.test(w)) w = w.slice(0, -1);
+  if (w.length > 3 && /(.)\1$/.test(w) && !/(ss|ll)$/.test(w)) w = w.slice(0, -1);
+  if (w.length > 3 && /e$/.test(w)) w = w.slice(0, -1);
+  return BS_IRR[w] || w;
+}
+function bsToks(t) { return bsNorm(t).split(' ').filter(w => w && !BS_STOP.has(w)).map(bsStem); }
+function bsLev(a, b) {
+  const m = a.length, n = b.length;
+  if (Math.abs(m - n) > 2) return 3;
+  let prev = [], cur = [];
+  for (let j = 0; j <= n; j++) prev[j] = j;
+  for (let i = 1; i <= m; i++) {
+    cur = [i];
+    for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[n];
+}
+function bsTokenHit(tok, have) {
+  if (have.has(tok)) return true;
+  if (/\d/.test(tok) || tok.length < 5) return false;
+  for (const h of have) if (bsLev(tok, h) <= (tok.length >= 8 ? 2 : 1)) return true;
+  return false;
+}
+// Every way of writing the answer that should be accepted: the main text, anything in brackets,
+// each side of a dash, and the text with the brackets removed.
+function bsAlts(answer) {
+  const out = [];
+  String(answer).split(/\s*\/\s*|;\s*/).forEach(part => {
+    out.push(part.replace(/\s*\([^)]*\)/g, '').trim());
+    (part.match(/\(([^)]*)\)/g) || []).forEach(g => out.push(g.slice(1, -1)));
+    part.split(/\s+[–—-]\s+/).forEach(seg => out.push(seg.replace(/\s*\([^)]*\)/g, '')));
+    out.push(part.replace(/[()]/g, ' '));
+  });
+  return out.filter((x, i) => x && out.indexOf(x) === i);
+}
+function bsCheck(typed, answer, question) {
+  const t = bsNorm(typed);
+  if (!t) return false;
+  const asked = String(question || '');
+  const tt = bsToks(typed), have = new Set(tt), alts = bsAlts(answer);
+  for (const alt of alts) {
+    const at = bsToks(alt);
+    if (!at.length) continue;
+    if (bsNorm(alt) === t) return true;
+    const nums = at.filter(w => /\d/.test(w));
+    if (nums.some(w => !have.has(w))) continue;
+    const hit = at.filter(w => bsTokenHit(w, have)).length;
+    if (at.length === 1 ? hit === 1 : at.length === 2 ? hit === 2 : hit / at.length >= 0.6) return true;
+    // part of a longer answer, as long as it is not just a generic word like "act" or "treaty"
+    const core = at.filter(w => !BS_GENERIC.has(w));
+    const tcore = tt.filter(w => !BS_GENERIC.has(w));
+    if (tcore.length && at.length >= 2 && tt.every(w => bsTokenHit(w, new Set(at))) && tcore.filter(w => bsTokenHit(w, new Set(core))).length >= Math.max(1, Math.ceil(core.length / 2))) return true;
+    // initials, e.g. MAD or ICBM
+    if (tt.length === 1 && t.indexOf(' ') < 0 && t.length >= 2 && at.length >= 2) {
+      const ini = bsNorm(alt).split(' ').filter(w => w && !BS_STOP.has(w)).map(w => w[0]).join('');
+      const ini2 = bsNorm(alt).split(' ').filter(Boolean).map(w => w[0]).join('');
+      if (t === ini || t === ini2) return true;
+      const sub = (ini2.length >= 3 && t.length <= ini2.length + 2 && t[0] === ini2[0] && t[t.length - 1] === ini2[ini2.length - 1]) && (() => { let k = 0; for (const ch of t) if (ch === ini2[k]) k++; return k === ini2.length; })();
+      if (sub) return true;
+    }
+  }
+  // just the year, for questions about when something happened
+  if (/^\d{3,4}$/.test(t)) {
+    const yrs = String(answer).match(/\b\d{3,4}\b/g) || [];
+    const dateLike = /^when\b|what year|which year/i.test(asked) || /^\s*(\d{1,2}\s+)?(january|february|march|april|may|june|july|august|september|october|november|december)\b/i.test(answer) || /^\s*\d{3,4}\b/.test(answer);
+    if (yrs.indexOf(t) !== -1 && dateLike) return true;
+  }
+  // just a surname, for questions about who
+  if (/^who\b|^whose\b/i.test(asked) && have.size === 1) {
+    for (const alt of alts) {
+      for (const seg of String(alt).split(/,|\band\b/)) {
+        const toks = bsNorm(seg).split(' ').filter(Boolean);
+        if (toks.length && bsTokenHit(bsStem(toks[toks.length - 1]), have)) return true;
+      }
+    }
+  }
+  return false;
+}
+function bossRender() {
+  const g = ARC.g, q = bossQ(), B = BOSSES[g.lv % BOSSES.length], hs = arcHS();
+  const pct = Math.max(0, Math.round(g.hp / g.max * 100));
+  const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Hits <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.boss || 0, g.score) + '</b></span></div>';
+  let low;
+  if (g.phase === 'ask') {
+    low = '<input id="boss-in" class="boss-in" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" onkeydown="if(event.key===\'Enter\')bossSubmit()">' +
+      '<button class="arc-btn" onclick="bossSubmit()">Attack</button>';
+  } else if (g.phase === 'ok') {
+    low = '<div class="boss-res ok">&#10003; Correct</div><div class="boss-a">' + escHtml(q.a) + '</div>';
+  } else {
+    low = '<div class="boss-res no">' + (g.late && !g.typed ? '&#9200; Time\'s up' : '&#10007; Not quite') + '</div>' +
+      (g.typed ? '<div class="boss-typed">You wrote: ' + escHtml(g.typed) + '</div>' : '') +
+      '<div class="boss-a">' + escHtml(q.a) + '</div>' +
+      '<button class="arc-btn" onclick="bossMark(false)">Next</button><button class="boss-right" onclick="bossMark(true)">I was right</button>';
+  }
+  arcFrame(
+    '<div class="boss-box"><span class="boss-em" id="boss-em">' + B[1] + '</span><div class="boss-r"><div class="boss-nm">' + B[0] + ' <small>Lv ' + (g.lv + 1) + '</small></div><div class="boss-bar"><i style="width:' + pct + '%"></i></div><div class="boss-hp">' + g.hp + ' of ' + g.max + ' HP</div></div></div>' +
+    '<div class="boss-q" style="--c:' + (uCol(q.section)) + '"><div class="eol-lab">' + UNITS[q.section].short + '</div>' + escHtml(q.q) + '</div>' + low, head);
+  if (g.phase === 'ask') setTimeout(() => { const el = document.getElementById('boss-in'); if (el && ARC.g === g) el.focus(); }, 60);
+}
+function bossAsk() { const g = ARC.g; g.phase = 'ask'; g.typed = ''; g.late = false; arcTimerStart(20, bossLate); bossRender(); }
+function bossResolve(late) {
+  const g = ARC.g, q = bossQ(), el = document.getElementById('boss-in');
+  g.typed = el ? el.value.trim() : '';
+  g.late = late;
+  const ok = bsCheck(g.typed, q.a, q.q);
+  if (ok) {
+    g.phase = 'ok'; bossRender();
+    ARC.t = setTimeout(() => { if (ARC.g === g) bossMark(true); }, 1100);
+  } else { g.phase = 'no'; bossRender(); }
+}
+function bossLate() { const g = ARC.g; if (!g || g.type !== 'boss' || g.phase !== 'ask') return; bossResolve(true); }
+function bossSubmit() { const g = ARC.g; if (!g || g.type !== 'boss' || g.phase !== 'ask') return; arcTimerStop(); bossResolve(false); }
+function bossMark(ok) {
+  const g = ARC.g, q = bossQ();
+  if (g.marking) return;
+  g.marking = true; clearTimeout(ARC.t); arcTimerStop();
+  xpAward('rapid', ok, 'rq|' + q.q, q.q, q.section);
+  g.i++;
+  if (ok) { g.score++; g.hp--; } else g.lives--;
+  g.marking = false;
+  if (g.lives <= 0) { bossOver(); return; }
+  if (g.hp <= 0) { bossWin(); return; }
+  bossAsk();
+  const em = document.getElementById('boss-em');
+  if (em) em.classList.add(ok ? 'boss-hit' : 'boss-laugh');
+}
+function bossWin() {
+  const g = ARC.g, B = BOSSES[g.lv % BOSSES.length];
+  arcSetHS('boss', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">🏆</div><div class="arc-h">' + B[0] + ' defeated</div><div class="arc-sub2">' + g.score + ' hits so far · ' + g.lives + ' heart' + (g.lives === 1 ? '' : 's') + ' left</div>' +
+    '<button class="arc-btn" onclick="bossNext()">Next boss</button><button class="arc-btn sec" onclick="bossOver()">Stop here</button></div>', '');
+  if (typeof fdFireConfetti === 'function') fdFireConfetti();
+}
+function bossNext() {
+  const g = ARC.g;
+  g.lv++; g.max = Math.min(8 + g.lv * 2, 14); g.hp = g.max; g.lives = Math.min(3, g.lives + 1); g.over = false;
+  bossAsk();
+}
+function bossOver() {
+  const g = ARC.g, isBest = arcSetHS('boss', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">' + (g.lives > 0 ? '🛡️' : '💀') + '</div><div class="arc-h">' + (g.lives > 0 ? 'Well fought' : 'The boss wins this one') + '</div>' +
+    '<div class="arc-score">' + g.score + '</div><div class="arc-sub2">hits landed · ' + g.lv + ' boss' + (g.lv === 1 ? '' : 'es') + ' beaten' + (isBest ? ' · new best' : '') + '</div>' +
+    '<button class="arc-btn" onclick="bossStart()">Fight again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
+}
+
+
+// ---------- start-up ----------
+var _rfw = renderFdWheels;
+renderFdWheels = function () { _rfw(); weakNudgeRender(); var h = document.getElementById('s-hub'); if (h && h.classList.contains('active')) hubRender(); };
+uptoRender(); xpRender();
 </script>
 </body>
 </html>
