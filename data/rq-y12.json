@@ -4,2011 +4,3433 @@
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "In what year did Edward VI become King?",
   "a": "1547",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "1547",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "How old was Edward VI when he became King?",
   "a": "9",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "9",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "What were the names of the two factions on the Privy Council at the end of Henry VIII's reign?",
-  "a": "Reformists and Conservatives"
+  "a": "Reformists and Conservatives",
+  "s": "Reformists and Conservatives",
+  "alt": [
+   "Conservatives and Reformists",
+   "Reformers and Conservatives"
+  ],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "How many earls did Henry state should be co-equal in the regency council of Edward VI?",
   "a": "16",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "16",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "With whom did Edward Seymour conspire to become Lord Protector?",
   "a": "William Paget",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Paget",
+  "alt": [
+   "William Paget",
+   "Sir William Paget"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "What did Somerset and Paget use to alter Henry VIII's will?",
   "a": "Dry Stamp",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Dry Stamp",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Who was the leading conservative figure in the Anti-Somerset Faction?",
   "a": "Thomas Wriothesley",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Wriothesley",
+  "alt": [
+   "Thomas Wriothesley"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Who was the leading reformist figure in the Anti-Somerset Faction?",
   "a": "John Dudley/Warwick",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Dudley",
+  "alt": [
+   "John Dudley",
+   "Warwick",
+   "Earl of Warwick",
+   "John Dudley/Warwick"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Who did the anti-Somerset faction suspect Somerset had sympathy for?",
   "a": "The common people",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "The common people",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "In which year did unrest increase opposition to Somerset?",
   "a": "1549",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "1549",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Where did Somerset take Edward VI in October 1549?",
   "a": "Windsor Castle",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Windsor Castle",
+  "alt": [
+   "Windsor"
+  ],
+  "t": "l"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "On what date did Somerset issue his general summons?",
   "a": "5th October 1549",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "5 October 1549",
+  "alt": [
+   "5th October 1549"
+  ],
+  "t": "y"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Whose support did Somerset lose in October 1549 that led to his fall from power?",
-  "a": "Edward VI",
-  "reign": "edward"
+  "a": "The Privy Council",
+  "reign": "edward",
+  "s": "The Privy Council",
+  "alt": [
+   "Privy Council",
+   "The Council",
+   "Council",
+   "Edward VI"
+  ],
+  "t": "o"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Who became Duke of Northumberland in 1550?",
   "a": "John Dudley/Warwick",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Dudley",
+  "alt": [
+   "John Dudley",
+   "Warwick",
+   "Northumberland",
+   "John Dudley/Warwick"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "What was Northumberland's official title from 1550–53?",
   "a": "Lord President of the Council",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Lord President of the Council",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Which member of the Privy Council was executed for treason in 1552?",
   "a": "Somerset",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Somerset",
+  "alt": [],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What legislation did Henry VIII pass in 1539 that confirmed Catholic practice and doctrine?",
   "a": "Act of Six Articles",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Act of Six Articles",
+  "alt": [],
+  "t": "c"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What miracle do Catholics believe occurs during Holy Communion?",
   "a": "Transubstantiation",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Transubstantiation",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "Protestants believed that forgiveness can be provided by what alone?",
-  "a": "Faith/God"
+  "a": "Faith/God",
+  "s": "Faith",
+  "alt": [
+   "God",
+   "Faith/God"
+  ],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "Protestants believed that all worship and religious activity should be based on what?",
-  "a": "The Bible"
+  "a": "The Bible",
+  "s": "Bible",
+  "alt": [
+   "The Bible"
+  ],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "Which German monk had begun the Protestant Reformation in 1517?",
-  "a": "Martin Luther"
+  "a": "Martin Luther",
+  "s": "Luther",
+  "alt": [
+   "Martin Luther"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "Which two theologians based in Switzerland developed more radical forms of Protestantism?",
-  "a": "Calvin/Zwingli"
+  "a": "Calvin/Zwingli",
+  "s": "Zwingli and Calvin",
+  "alt": [
+   "Calvin and Zwingli",
+   "Calvin",
+   "Zwingli",
+   "Calvin/Zwingli"
+  ],
+  "t": "x"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "Who was Edward VI's Archbishop of Canterbury?",
   "a": "Thomas Cranmer",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Cranmer",
+  "alt": [
+   "Thomas Cranmer"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What religious institutions were dissolved in 1547?",
   "a": "Chantries",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Chantries",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What religious practice was performed in a chantry?",
   "a": "Prayers for the dead",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Prayers for the dead",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What word means 'the destruction of religious images'?",
-  "a": "Iconoclasm"
+  "a": "Iconoclasm",
+  "s": "Iconoclasm",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What was repealed in 1547 that allowed radical preaching in England?",
   "a": "Treason Laws",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Treason Laws",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "In what year were the Six Articles repealed?",
   "a": "1547",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "1547",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What is the name of pre-written sermons distributed to churches?",
   "a": "Homilies",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Homilies",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "In what year was the First Book of Common Prayer enforced?",
   "a": "1549",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "1549",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What doctrine did the First Book of Common Prayer contain about the Holy Communion?",
   "a": "Vague wording",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Vague wording",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "When Bishop Hooper made visitations, how many of the 311 priests could not recite the 10 commandments?",
   "a": "171",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "171",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "When was the Second Book of Common Prayer introduced?",
   "a": "1552",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "1552",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What doctrine did the Second Book of Common Prayer contain about the Holy Communion?",
   "a": "Purely symbolic. Calvinist",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Purely symbolic",
+  "alt": [
+   "Symbolic",
+   "Calvinist",
+   "Purely symbolic. Calvinist"
+  ],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What piece of legislation, designed to cement a radical Protestant doctrine, were introduced to parliament in 1552?",
   "a": "42 Articles",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "42 Articles",
+  "alt": [
+   "Forty-Two Articles"
+  ],
+  "t": "c"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "Why were the 42 Articles never passed?",
   "a": "Edward died",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Edward died",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "Name either radical European Protestant made Professor of Theology at Oxford/Cambridge in the reign of Edward VI.",
   "a": "Martin Bucer/Peter Martyr",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Bucer",
+  "alt": [
+   "Martin Bucer",
+   "Peter Martyr",
+   "Martyr",
+   "Martin Bucer/Peter Martyr"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "What is the name of a period when population outstrips the available resources?",
-  "a": "Malthusian Crisis"
+  "a": "Malthusian Crisis",
+  "s": "Malthusian Crisis",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "How large was the population of England in 1550 (to the nearest million)?",
-  "a": "3"
+  "a": "3",
+  "s": "3",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "What mysterious disease struck England during the Tudor period?",
-  "a": "English Sweat"
+  "a": "English Sweat",
+  "s": "English Sweat",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "Who led the Enclosure Commission established by Somerset?",
   "a": "John Hales",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Hales",
+  "alt": [
+   "John Hales"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "In what year did Somerset establish the Enclosure Commission?",
   "a": "1548",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "1548",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "Which government official overseeing religious change was murdered in Helston in 1548?",
   "a": "William Body",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Body",
+  "alt": [
+   "William Body"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "What process saw the removal of precious metal from the coinage?",
-  "a": "Debasement"
+  "a": "Debasement",
+  "s": "Debasement",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "What group of writers blamed the Great Price Rise on gentry and merchants exploiting the poor?",
-  "a": "Commonwealth Men"
+  "a": "Commonwealth Men",
+  "s": "Commonwealth Men",
+  "alt": [],
+  "t": "o"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "The Tudor period coincided with the end of the Medieval Warm Period and the beginning of what climate event?",
-  "a": "Little Ice Age"
+  "a": "Little Ice Age",
+  "s": "Little Ice Age",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "To fund war with which country did Protector Somerset debase the coinage?",
   "a": "Scotland",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Scotland",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "In what year was the year of the many headed monster?",
   "a": "1549",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "1549",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "Whose enclosures were the first to be attacked in the Kett Rebellion?",
   "a": "John Flowerdew",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Flowerdew",
+  "alt": [
+   "John Flowerdew"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "In Norwich in 1549, what % of the population owned 60% of the land?",
   "a": "6%",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "6%",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "Where did the Kett rebels camp before storming Norwich?",
   "a": "Mousehold Heath",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Mousehold Heath",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "Which leading noble defeated the Kett Rebellion?",
   "a": "Warwick/Northumberland",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Warwick",
+  "alt": [
+   "Northumberland",
+   "Dudley",
+   "John Dudley",
+   "Warwick/Northumberland"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "How many rebels were executed in the aftermath of the Kett Rebellion?",
   "a": "49",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "49",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "Opposition to the introduction of what prompted the Western Rebellion of 1549?",
   "a": "1st Book of Common Prayer",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "First Book of Common Prayer",
+  "alt": [
+   "1st Book of Common Prayer",
+   "1549 Prayer Book",
+   "Book of Common Prayer",
+   "Prayer Book"
+  ],
+  "t": "c"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "Who wrote the demands of the Western rebels?",
   "a": "Clergy",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Clergy",
+  "alt": [
+   "The clergy",
+   "Priests",
+   "Local clergy"
+  ],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "What did some of the Western Rebels chant at Bodmin in 1549?",
   "a": "Kill the Gentlemen",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Kill the Gentlemen",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "Which leading noble defeated the Western Rebellion?",
   "a": "Lord John Russell",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Russell",
+  "alt": [
+   "Lord John Russell",
+   "John Russell",
+   "Earl of Bedford"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "How many rebels were killed in the suppression of the Western Rebellion?",
   "a": "3000",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "3000",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "In what year did Edward VI die?",
   "a": "1553",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "1553",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "What document named Lady Jane Grey and her 'heirs male' as Edward's heir?",
   "a": "Devise for the Succession",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Devise for the Succession",
+  "alt": [],
+  "t": "c"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Where was Mary's base of power during the Lady Jane Grey affair?",
   "a": "East Anglia",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "East Anglia",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Who forced the Privy Council to accept Lady Jane Grey as queen?",
   "a": "Northumberland",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Northumberland",
+  "alt": [],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Who wrote 'the first blast of the trumpet against the monstrous regiment of women' criticising female rule?",
   "a": "John Knox",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Knox",
+  "alt": [
+   "John Knox"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Who was married to Lady Jane Grey?",
   "a": "Guildford Dudley",
-  "reign": "edward"
+  "reign": "edward",
+  "s": "Guildford Dudley",
+  "alt": [
+   "Guildford"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Who was the English suitor that Bishop Gardiner argued Mary should marry?",
   "a": "Edward Courtenay, Earl of Devon",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Courtenay",
+  "alt": [
+   "Edward Courtenay",
+   "Earl of Devon",
+   "Edward Courtenay, Earl of Devon"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Who was the foreign suitor that William Paget argued Mary should marry?",
   "a": "Philip of Spain",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Philip of Spain",
+  "alt": [
+   "Philip",
+   "Philip II",
+   "Prince Philip"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "What word means 'hostility or prejudice towards foreigners'?",
-  "a": "Xenophobia"
+  "a": "Xenophobia",
+  "s": "Xenophobia",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Who was the father of Philip of Spain and cousin of Mary Tudor?",
   "a": "Charles V",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "V",
+  "alt": [
+   "Charles V"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Name one term of the marriage treaty between Mary and Philip.",
   "a": "England not involved in foreign wars / No positions for Spaniards / Philip has no claim / Mary not to leave England",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "England not involved in foreign wars",
+  "alt": [
+   "No positions for Spaniards"
+  ],
+  "t": "x"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "When did Wyatt's rebellion take place?",
   "a": "1554",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "1554",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "Along with Wyatt, which gentry were meant to lead rebellions in 1554?",
   "a": "Croft and Carew",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Croft and Carew",
+  "alt": [
+   "Carew and Croft",
+   "Croft",
+   "Carew"
+  ],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "In which county did Wyatt's rebellion begin?",
   "a": "Kent",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Kent",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "The collapse of what trade contributed to unemployment and Wyatt's rebellion?",
   "a": "Cloth trade",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Cloth trade",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "Wyatt's rebellion planned to replace Mary with Elizabeth, married to whom?",
   "a": "Edward Courtenay, Earl of Devon",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Courtenay",
+  "alt": [
+   "Edward Courtenay",
+   "Earl of Devon",
+   "Edward Courtenay, Earl of Devon"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "Which English noble was sent by Mary to face Wyatt's Rebellion?",
   "a": "Duke of Norfolk",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Norfolk",
+  "alt": [
+   "Duke of Norfolk",
+   "The Duke of Norfolk",
+   "Thomas Howard"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "What did the royal troops declare before joining Wyatt's rebellion?",
   "a": "We are all Englishmen",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "We are all Englishmen",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 3 – Rebellion and Unrest",
   "q": "Where did Mary do a speech to rally the support of Londoners during Wyatt's rebellion?",
   "a": "Guildhall",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Guildhall",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "Who were the 3 leading figures on Mary's Privy Council?",
   "a": "Paget/Gardiner/Pole",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Paget, Gardiner and Pole",
+  "alt": [
+   "Paget",
+   "Gardiner",
+   "Pole",
+   "Gardiner, Pole and Paget",
+   "Pole, Gardiner and Paget",
+   "Paget/Gardiner/Pole"
+  ],
+  "t": "x"
  },
  {
   "section": "mtc",
   "unit": "Unit 1 – Stability of the Monarchy",
   "q": "In what year did Cardinal Pole return to England?",
   "a": "1554",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "1554",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What was repealed by the 1st Act of Repeal in 1553?",
   "a": "Edwardian Reformation",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Edwardian Reformation",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What did Parliament refuse to repeal in October 1553?",
   "a": "Act of Supremacy",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Act of Supremacy",
+  "alt": [],
+  "t": "c"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "Where was an altar and cross first set up in London in August 1553?",
   "a": "St Nicholas Cole Abbey",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "St Nicholas Cole Abbey",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What laws did Parliament refuse to restore in 1554?",
   "a": "Heresy Laws",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Heresy Laws",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What one element of the Catholic restoration was Mary forced to compromise over?",
   "a": "Ex-Monastic Land",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Ex-Monastic Land",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "Who was the first Protestant to be burnt during Mary's reign?",
   "a": "John Rogers",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Rogers",
+  "alt": [
+   "John Rogers"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What was repealed by the 2nd Act of Repeal in 1554?",
   "a": "Henrician Reformation",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Henrician Reformation",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "Which conservative Privy Councillor's death in 1555 led to an increase in Marian burnings?",
   "a": "Stephen Gardiner",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Gardiner",
+  "alt": [
+   "Stephen Gardiner"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What reforms in 1556 banned absenteeism, pluralism and simony?",
   "a": "12 Decrees",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "12 Decrees",
+  "alt": [
+   "Twelve Decrees",
+   "Pole's 12 Decrees",
+   "Pole's Decrees"
+  ],
+  "t": "c"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "Who documented the deaths of all those burnt in Mary's reign?",
   "a": "John Foxe",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Foxe",
+  "alt": [
+   "John Foxe"
+  ],
+  "t": "p"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "What was the more common name of the book 'Acts and Monuments' written in exile in the 1550s?",
   "a": "Foxe's Book of Martyrs",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Foxe's Book of Martyrs",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "How many Protestants in total were burnt by Mary?",
   "a": "284",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "284",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "How many Protestants fled England into exile in Mary's reign?",
   "a": "c.800",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "800",
+  "alt": [
+   "c.800",
+   "About 800",
+   "Around 800"
+  ],
+  "t": "n"
  },
  {
   "section": "mtc",
   "unit": "Unit 2 – Religious Change",
   "q": "Which two leading Protestant bishops were burnt in Oxford in 1555?",
   "a": "Latimer and Ridley",
-  "reign": "mary"
+  "reign": "mary",
+  "s": "Latimer and Ridley",
+  "alt": [
+   "Ridley and Latimer",
+   "Latimer",
+   "Ridley"
+  ],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "In what year did Elizabeth become Queen of England?",
-  "a": "1558"
+  "a": "1558",
+  "s": "1558",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "What word means 'church hierarchy' and was hated by Calvin?",
-  "a": "Episcopy"
+  "a": "Episcopy",
+  "s": "Episcopy",
+  "alt": [
+   "Episcopacy"
+  ],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Why did Elizabeth leave chapel during Christmas 1558?",
-  "a": "Priest raised the host"
+  "a": "Priest raised the host",
+  "s": "Priest raised the host",
+  "alt": [
+   "Raised the host",
+   "The priest raised the host",
+   "Priest elevated the host"
+  ],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "What group of 800 returned to England at the start of Elizabeth's reign?",
-  "a": "Marian Exiles"
+  "a": "Marian Exiles",
+  "s": "Marian Exiles",
+  "alt": [],
+  "t": "o"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "What title did the 1559 Act of Supremacy grant to Elizabeth?",
-  "a": "Supreme Governor"
+  "a": "Supreme Governor",
+  "s": "Supreme Governor",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "What did the Black Rubric, removed from the Elizabethan prayer book, deny?",
-  "a": "Transubstantiation"
+  "a": "Transubstantiation",
+  "s": "Transubstantiation",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "What was the fine for recusancy in 1559?",
-  "a": "1 shilling a week"
+  "a": "1 shilling a week",
+  "s": "1 shilling",
+  "alt": [
+   "1 shilling a week",
+   "12d",
+   "12 pence",
+   "one shilling",
+   "1s"
+  ],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "How many Catholic bishops were arrested during the parliament of 1559?",
-  "a": "2"
+  "a": "2",
+  "s": "2",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Which Puritan MP introduced a bill in 1571 attempting to alter the Book of Common Prayer?",
-  "a": "Strickland"
+  "a": "Strickland",
+  "s": "Strickland",
+  "alt": [],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Which Puritan MP attempted to remove the episcopy in 1586?",
-  "a": "Cope"
+  "a": "Cope",
+  "s": "Cope",
+  "alt": [],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Which Archbishop of Canterbury compromised over Vestments in 1566?",
-  "a": "Matthew Parker"
+  "a": "Matthew Parker",
+  "s": "Parker",
+  "alt": [
+   "Matthew Parker"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "How many Puritan clergymen lost their positions during the Vestiarian controversy?",
-  "a": "37"
+  "a": "37",
+  "s": "37",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Which radical European leader urged English Puritans to back down over Vestments?",
-  "a": "Bullinger"
+  "a": "Bullinger",
+  "s": "Bullinger",
+  "alt": [],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "In what year were the 39 Articles agreed by the Church Convocation?",
-  "a": "1563"
+  "a": "1563",
+  "s": "1563",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Which Cambridge professor lost his position for denouncing the episcopy in 1570?",
-  "a": "Cartwright"
+  "a": "Cartwright",
+  "s": "Cartwright",
+  "alt": [],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Which two Puritan leaders wrote the 1572 Admonition to Parliament?",
-  "a": "Field and Wilcox"
+  "a": "Field and Wilcox",
+  "s": "Field and Wilcox",
+  "alt": [
+   "Wilcox and Field",
+   "Field",
+   "Wilcox",
+   "John Field and Thomas Wilcox"
+  ],
+  "t": "x"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "What radical Puritan pamphlets of 1588 alienated moderates?",
-  "a": "Marprelate Tracts"
+  "a": "Marprelate Tracts",
+  "s": "Marprelate Tracts",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Who led a separatist church movement in Norwich in 1581?",
-  "a": "Robert Browne"
+  "a": "Robert Browne",
+  "s": "Browne",
+  "alt": [
+   "Robert Browne"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Edmund Grindal was placed under house arrest for refusing to clamp down on what movement?",
-  "a": "Prophesyings"
+  "a": "Prophesyings",
+  "s": "Prophesyings",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "What were Whitgift's Three Articles designed to find?",
-  "a": "Puritan clergy"
+  "a": "Puritan clergy",
+  "s": "Puritan clergy",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Complete this sentence. Elizabeth promised 'Outward conformity....'",
-  "a": "Liberty of conscience"
+  "a": "Liberty of conscience",
+  "s": "Liberty of conscience",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Who persuaded Pius IV not to excommunicate Elizabeth in 1563?",
-  "a": "Philip of Spain"
+  "a": "Philip of Spain",
+  "s": "Philip of Spain",
+  "alt": [
+   "Philip",
+   "Philip II",
+   "King Philip"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "In what year did Mary Queen of Scots come to England?",
-  "a": "1568"
+  "a": "1568",
+  "s": "1568",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Who did English Catholics plot to marry Mary Queen of Scots to in 1569?",
-  "a": "Duke of Norfolk"
+  "a": "Duke of Norfolk",
+  "s": "Norfolk",
+  "alt": [
+   "Duke of Norfolk",
+   "Thomas Howard"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "In what year was the Rising of the North?",
-  "a": "1569"
+  "a": "1569",
+  "s": "1569",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Which two nobles led the Rising of the North?",
-  "a": "Earls of Northumberland and Westmoreland"
+  "a": "Earls of Northumberland and Westmoreland",
+  "s": "Northumberland and Westmoreland",
+  "alt": [
+   "Westmoreland and Northumberland",
+   "Northumberland and Westmorland",
+   "Westmorland and Northumberland",
+   "Earls of Northumberland and Westmoreland",
+   "Northumberland",
+   "Westmoreland",
+   "Westmorland"
+  ],
+  "t": "x"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "In what year did Pope Pius V excommunicate Elizabeth?",
-  "a": "1570"
+  "a": "1570",
+  "s": "1570",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Which major figure was executed following the Ridolfi Plot?",
-  "a": "Duke of Norfolk"
+  "a": "Duke of Norfolk",
+  "s": "Norfolk",
+  "alt": [
+   "Duke of Norfolk",
+   "Thomas Howard"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "What was made a treasonable offence in 1571?",
-  "a": "Possessing/spreading the Papal Bull"
+  "a": "Possessing/spreading the Papal Bull",
+  "s": "Possessing the Papal Bull",
+  "alt": [
+   "Spreading the Papal Bull",
+   "Possessing or spreading the Papal Bull",
+   "Possessing/spreading the Papal Bull",
+   "Papal Bull",
+   "Possessing a Papal Bull",
+   "Spreading a Papal Bull"
+  ],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "What was made a treasonable offence in 1581?",
-  "a": "Converting someone to Catholicism"
+  "a": "Converting someone to Catholicism",
+  "s": "Converting someone to Catholicism",
+  "alt": [
+   "Converting to Catholicism",
+   "Being converted to Catholicism",
+   "Converting people to Catholicism"
+  ],
+  "t": "x"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "What was made a treasonable offence in 1585?",
-  "a": "Being/sheltering a priest"
+  "a": "Being/sheltering a priest",
+  "s": "Being a priest",
+  "alt": [
+   "Sheltering a priest",
+   "Being or sheltering a priest",
+   "Being/sheltering a priest",
+   "Harbouring a priest",
+   "Being a Catholic priest"
+  ],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Where did William Allen found a seminary in 1568?",
-  "a": "Douai"
+  "a": "Douai",
+  "s": "Douai",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Who was the first seminary priest executed?",
-  "a": "Cuthbert Mayne"
+  "a": "Cuthbert Mayne",
+  "s": "Mayne",
+  "alt": [
+   "Cuthbert Mayne"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "In total how many seminary priests or Jesuits were executed?",
-  "a": "133"
+  "a": "133",
+  "s": "133",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "When were Recusancy fines increased to £20 a month?",
-  "a": "1581"
+  "a": "1581",
+  "s": "1581",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "After what plot was Mary Queen of Scots tried by Parliament?",
-  "a": "Babington Plot 1586"
+  "a": "Babington Plot 1586",
+  "s": "Babington Plot",
+  "alt": [
+   "Babington",
+   "Babington Plot 1586",
+   "The Babington Plot"
+  ],
+  "t": "e"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "In what year was Mary Queen of Scots executed?",
-  "a": "1587"
+  "a": "1587",
+  "s": "1587",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "q": "Who ran Elizabeth's spy network from the 1570s?",
-  "a": "Walsingham"
+  "a": "Walsingham",
+  "s": "Walsingham",
+  "alt": [],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "For what did the monarch need Parliament's approval?",
-  "a": "Taxation"
+  "a": "Taxation",
+  "s": "Taxation",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "How many times did Elizabeth call Parliament in her reign?",
-  "a": "10"
+  "a": "10",
+  "s": "10",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "What word meant the suspension of Parliament?",
-  "a": "Prorogation"
+  "a": "Prorogation",
+  "s": "Prorogation",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "How many members were there on the Privy Council at the start of Elizabeth's reign?",
-  "a": "19"
+  "a": "19",
+  "s": "19",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Who was Elizabeth's Secretary of State between 1558–72?",
-  "a": "William Cecil"
+  "a": "William Cecil",
+  "s": "Cecil",
+  "alt": [
+   "William Cecil"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "What title did William Cecil receive in 1572?",
-  "a": "Lord Burghley"
+  "a": "Lord Burghley",
+  "s": "Burghley",
+  "alt": [
+   "Lord Burghley",
+   "Baron Burghley",
+   "Baron of Burghley"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Who became Secretary of State in 1573?",
-  "a": "Walsingham"
+  "a": "Walsingham",
+  "s": "Walsingham",
+  "alt": [],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Which Privy Councillor danced his way to favour?",
-  "a": "Hatton"
+  "a": "Hatton",
+  "s": "Hatton",
+  "alt": [],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Which member of the Privy Council was executed for treason in 1572?",
-  "a": "Norfolk"
+  "a": "Norfolk",
+  "s": "Norfolk",
+  "alt": [],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "What event did Walsingham witness in France in 1572?",
-  "a": "St Bartholomew's Day Massacre"
+  "a": "St Bartholomew's Day Massacre",
+  "s": "St Bartholomew's Day Massacre",
+  "alt": [],
+  "t": "e"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Whose faction began wearing ribbons to show their opposition to Leicester's in the 1560s?",
-  "a": "Howards (Norfolk and Sussex)"
+  "a": "Howards (Norfolk and Sussex)",
+  "s": "Howards",
+  "alt": [
+   "Norfolk and Sussex",
+   "Howards (Norfolk and Sussex)",
+   "The Howards",
+   "Howard"
+  ],
+  "t": "o"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "When did the Privy Council first discuss sending aid to the Dutch Revolt?",
-  "a": "1575"
+  "a": "1575",
+  "s": "1575",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Who led the mercenary force Elizabeth sent to the Dutch Revolt in 1578?",
-  "a": "John Casimir"
+  "a": "John Casimir",
+  "s": "Casimir",
+  "alt": [
+   "John Casimir"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Which French noble led an army to support the Dutch Revolt in 1579?",
-  "a": "Duke of Alençon"
+  "a": "Duke of Alençon",
+  "s": "Alençon",
+  "alt": [
+   "Duke of Alençon",
+   "Alencon",
+   "Duke of Alencon",
+   "Francis, Duke of Alençon"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "When did William of Orange die?",
-  "a": "1584"
+  "a": "1584",
+  "s": "1584",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Who on the Privy Council campaigned for intervention in the Dutch Revolt?",
-  "a": "Walsingham and Leicester"
+  "a": "Walsingham and Leicester",
+  "s": "Walsingham and Leicester",
+  "alt": [
+   "Leicester and Walsingham",
+   "Walsingham",
+   "Leicester",
+   "Walsingham and Dudley"
+  ],
+  "t": "x"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "What secret agreement did the Privy Council agree in 1584?",
-  "a": "Bond of Association"
+  "a": "Bond of Association",
+  "s": "Bond of Association",
+  "alt": [
+   "The Bond of Association",
+   "Bond"
+  ],
+  "t": "c"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "What condition did Parliament attach to the subsidy bill of 1566?",
-  "a": "Elizabeth must marry"
+  "a": "Elizabeth must marry",
+  "s": "Elizabeth must marry",
+  "alt": [
+   "Elizabeth had to marry",
+   "She must marry",
+   "Parliament demanded she marry"
+  ],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "What did Elizabeth do to minimise pressure to marry from Parliament in 1566?",
-  "a": "Take 1/3 subsidy"
+  "a": "Take 1/3 subsidy",
+  "s": "Take 1/3 subsidy",
+  "alt": [
+   "Remit a third of the subsidy",
+   "Took a third off the subsidy",
+   "Take a third of the subsidy",
+   "Refused a third of the subsidy"
+  ],
+  "t": "x"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Which MP was imprisoned in the Tower of London for calling for free speech in 1576?",
-  "a": "Peter Wentworth"
+  "a": "Peter Wentworth",
+  "s": "Wentworth",
+  "alt": [
+   "Peter Wentworth"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Which MP was suspended from Parliament in 1571?",
-  "a": "William Strickland"
+  "a": "William Strickland",
+  "s": "Strickland",
+  "alt": [
+   "William Strickland"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Who did Cecil promote as a suitor for Elizabeth between 1563–8?",
-  "a": "Charles Archduke of Austria"
+  "a": "Charles Archduke of Austria",
+  "s": "Archduke Charles",
+  "alt": [
+   "Charles Archduke of Austria",
+   "Charles of Austria",
+   "Archduke Charles of Austria",
+   "Charles, Archduke of Austria"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Who did Cecil promote as a suitor for Elizabeth between 1570–72?",
-  "a": "Duke of Anjou"
+  "a": "Duke of Anjou",
+  "s": "Anjou",
+  "alt": [
+   "Duke of Anjou",
+   "Henry, Duke of Anjou",
+   "Henri of Anjou"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Who did Cecil promote as a suitor for Elizabeth between 1579–84?",
-  "a": "Duke of Alençon"
+  "a": "Duke of Alençon",
+  "s": "Alençon",
+  "alt": [
+   "Duke of Alençon",
+   "Alencon",
+   "Duke of Alencon"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "How did Leicester sabotage Cecil's attempts to find a marriage for Elizabeth?",
-  "a": "Anti-Catholic propaganda"
+  "a": "Anti-Catholic propaganda",
+  "s": "Anti-Catholic propaganda",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "q": "Which Puritan MP wrote a pamphlet opposing the Duke of Alençon as a suitor in 1579?",
-  "a": "John Stubbs"
+  "a": "John Stubbs",
+  "s": "Stubbs",
+  "alt": [
+   "John Stubbs"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "How much debt did Elizabeth inherit in 1558?",
-  "a": "£227,000"
+  "a": "£227,000",
+  "s": "£227,000",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "How much interest did Elizabeth owe on the debts she inherited to the Antwerp Exchange?",
-  "a": "14%"
+  "a": "14%",
+  "s": "14%",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "What form of parliamentary taxation taxed movable goods in the countryside and towns?",
-  "a": "Fifteenth and tenth"
+  "a": "Fifteenth and tenth",
+  "s": "Fifteenth and tenth",
+  "alt": [
+   "Fifteenths and tenths",
+   "15th and 10th",
+   "Fifteenth and Tenth"
+  ],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "What form of ordinary income taxed church salaries?",
-  "a": "First fruits and tenths"
+  "a": "First fruits and tenths",
+  "s": "First fruits and tenths",
+  "alt": [
+   "Firstfruits and tenths",
+   "First Fruits and Tenths"
+  ],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "Which financier founded the Royal Exchange in London?",
-  "a": "Sir Thomas Gresham"
+  "a": "Sir Thomas Gresham",
+  "s": "Gresham",
+  "alt": [
+   "Sir Thomas Gresham"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "When had Elizabeth paid off her debts?",
-  "a": "1576"
+  "a": "1576",
+  "s": "1576",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "By what year had Elizabeth accrued a surplus of £300,000?",
-  "a": "1584"
+  "a": "1584",
+  "s": "1584",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "In what year was recoinage completed by Elizabeth's government?",
-  "a": "1561"
+  "a": "1561",
+  "s": "1561",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "What did the Book of Orders in 1586 ban?",
-  "a": "Hoarding of grain"
+  "a": "Hoarding of grain",
+  "s": "Hoarding of grain",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "What two days did Elizabeth encourage to be fish days?",
-  "a": "Wednesday and Friday"
+  "a": "Wednesday and Friday",
+  "s": "Wednesday and Friday",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "At the start of Elizabeth's reign what trade accounted for 75% of exports?",
-  "a": "Cloth trade"
+  "a": "Cloth trade",
+  "s": "Cloth trade",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "Which Germanic trading confederation dominated wool exports from England?",
-  "a": "Hanseatic League"
+  "a": "Hanseatic League",
+  "s": "Hanseatic League",
+  "alt": [],
+  "t": "o"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "What trading company was established under the reign of Mary I to trade with Russia?",
-  "a": "Muscovy Company"
+  "a": "Muscovy Company",
+  "s": "Muscovy Company",
+  "alt": [],
+  "t": "o"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "What Elizabethan trading company operated in the Eastern Mediterranean?",
-  "a": "Levant Company"
+  "a": "Levant Company",
+  "s": "Levant Company",
+  "alt": [],
+  "t": "o"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "Which English sailor began the transatlantic slave trade in 1562?",
-  "a": "John Hawkins"
+  "a": "John Hawkins",
+  "s": "Hawkins",
+  "alt": [
+   "John Hawkins"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "In what year was the East India Company founded?",
-  "a": "1600"
+  "a": "1600",
+  "s": "1600",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "What group of refugees arrived in England from the Netherlands, bringing new industries and trades?",
-  "a": "Flemings"
+  "a": "Flemings",
+  "s": "Flemings",
+  "alt": [],
+  "t": "o"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "In what year did Elizabeth seize the Genoese loan?",
-  "a": "1568"
+  "a": "1568",
+  "s": "1568",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "How did Philip respond to Elizabeth's seizure of the Genoese loan?",
-  "a": "Trade embargo"
+  "a": "Trade embargo",
+  "s": "Trade embargo",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "How much money a year did the Treaty of Nonsuch obligate Elizabeth to commit to the Dutch Revolt?",
-  "a": "£126,000"
+  "a": "£126,000",
+  "s": "£126,000",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "How much money did Francis Drake seize during his circumnavigation?",
-  "a": "£400,000"
+  "a": "£400,000",
+  "s": "£400,000",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "In what year did the Spanish Fury impact the Antwerp Cloth Trade?",
-  "a": "1576"
+  "a": "1576",
+  "s": "1576",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "In what year was the Statute of Artificers passed?",
-  "a": "1563"
+  "a": "1563",
+  "s": "1563",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "How many years were young people tied into apprenticeships under the Statute of Artificers?",
-  "a": "7"
+  "a": "7",
+  "s": "7",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "What building in London became the pre-cursor to the House of Correction?",
-  "a": "Bridewell"
+  "a": "Bridewell",
+  "s": "Bridewell",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "Which city innovated the use of a compulsory levy for the poor?",
-  "a": "Norwich"
+  "a": "Norwich",
+  "s": "Norwich",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "In what year were Houses of Correction ordered to be built across England?",
-  "a": "1576"
+  "a": "1576",
+  "s": "1576",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "q": "In what year was the Elizabethan Poor Law passed?",
-  "a": "1601"
+  "a": "1601",
+  "s": "1601",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Who became the first Protestant King of France in 1589?",
-  "a": "Henry of Navarre (IV)"
+  "a": "Henry of Navarre (IV)",
+  "s": "Henry of Navarre",
+  "alt": [
+   "Henry IV",
+   "Henry IV of France",
+   "Henri of Navarre"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Who did Elizabeth give £20,000 as a gift to in 1589?",
-  "a": "Henry of Navarre (IV)"
+  "a": "Henry of Navarre (IV)",
+  "s": "Henry of Navarre",
+  "alt": [
+   "Henry IV",
+   "Henry IV of France",
+   "Henri of Navarre"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Which Dutch leader won victories against the Spanish in the 1590s?",
-  "a": "Maurice of Nassau"
+  "a": "Maurice of Nassau",
+  "s": "Maurice of Nassau",
+  "alt": [
+   "Maurice",
+   "Maurice of Orange",
+   "Prince Maurice"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Name one of the Spanish treasure fleet ships captured by the English.",
-  "a": "San Felipe/Madre de Dios"
+  "a": "San Felipe/Madre de Dios",
+  "s": "San Felipe",
+  "alt": [
+   "Madre de Dios",
+   "San Felipe/Madre de Dios"
+  ],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Which courtier sacked Cadiz in 1596?",
-  "a": "Essex"
+  "a": "Essex",
+  "s": "Essex",
+  "alt": [
+   "Earl of Essex",
+   "Robert Devereux",
+   "The Earl of Essex"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "In total, how much money did Elizabeth spend on war after 1585?",
-  "a": "£4.5 million"
+  "a": "£4.5 million",
+  "s": "£4.5 million",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Which MP wrote a 1591 pamphlet pushing Parliament's right to discuss the succession?",
-  "a": "Peter Wentworth"
+  "a": "Peter Wentworth",
+  "s": "Wentworth",
+  "alt": [
+   "Peter Wentworth"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "In what year did Parliament grant Elizabeth a double subsidy?",
-  "a": "1589"
+  "a": "1589",
+  "s": "1589",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "In what year did Parliament grant Elizabeth a triple subsidy?",
-  "a": "1593"
+  "a": "1593",
+  "s": "1593",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "What customary right of the monarch allowed them to purchase goods at lower than market value?",
-  "a": "Purveyance"
+  "a": "Purveyance",
+  "s": "Purveyance",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "What form of patronage did MPs protest against in 1597 and 1601?",
-  "a": "Monopolies"
+  "a": "Monopolies",
+  "s": "Monopolies",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "In what year did Elizabeth make her 'Golden Speech' to Parliament?",
-  "a": "1601"
+  "a": "1601",
+  "s": "1601",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "What was the area of Ireland where the English Crown exerted direct control?",
-  "a": "The Pale"
+  "a": "The Pale",
+  "s": "Pale",
+  "alt": [
+   "The Pale"
+  ],
+  "t": "l"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Which Gaelic Irish chief led a rebellion against the Crown in the 1560s?",
-  "a": "Shane O'Neill"
+  "a": "Shane O'Neill",
+  "s": "O'Neill",
+  "alt": [
+   "Shane O'Neill"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Which two Irish provinces were dominated by Gaelic chieftains?",
-  "a": "Ulster and Connaught"
+  "a": "Ulster and Connaught",
+  "s": "Ulster and Connaught",
+  "alt": [
+   "Connaught and Ulster",
+   "Ulster",
+   "Connaught",
+   "Connacht and Ulster"
+  ],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "What form of colonisation saw land confiscated from the native population and given to English settlers in Ireland?",
-  "a": "Plantation"
+  "a": "Plantation",
+  "s": "Plantation",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Who led Tyrone's Rebellion in the 1590s?",
-  "a": "Hugh O'Neill"
+  "a": "Hugh O'Neill",
+  "s": "O'Neill",
+  "alt": [
+   "Hugh O'Neill"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Where was Elizabeth's army defeated in 1598 during Tyrone's Rebellion?",
-  "a": "Battle of Yellow Ford"
+  "a": "Battle of Yellow Ford",
+  "s": "Yellow Ford",
+  "alt": [
+   "Battle of Yellow Ford",
+   "Battle of the Yellow Ford",
+   "The Yellow Ford"
+  ],
+  "t": "e"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Where did Spanish troops land in Ireland during Tyrone's Rebellion?",
-  "a": "Kinsale"
+  "a": "Kinsale",
+  "s": "Kinsale",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "How many men were sent with the Earl of Essex to deal with Tyrone's Rebellion?",
-  "a": "16,000"
+  "a": "16,000",
+  "s": "16,000",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Which English courtier finally defeated Tyrone's rebellion?",
-  "a": "Lord Mountjoy"
+  "a": "Lord Mountjoy",
+  "s": "Lord Mountjoy",
+  "alt": [],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Who became Elizabeth's principal secretary in 1596?",
-  "a": "Robert Cecil"
+  "a": "Robert Cecil",
+  "s": "Cecil",
+  "alt": [
+   "Robert Cecil"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Why did Elizabeth slap the Earl of Essex across the face?",
-  "a": "Refused to go to Ireland/Turned his back on her"
+  "a": "Refused to go to Ireland/Turned his back on her",
+  "s": "Refused to go to Ireland",
+  "alt": [
+   "Turned his back on her",
+   "Refused to go to Ireland/Turned his back on her"
+  ],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Whose faction prioritised a defensive approach to the war with Spain?",
-  "a": "Cecils"
+  "a": "Cecils",
+  "s": "Cecils",
+  "alt": [
+   "The Cecils",
+   "Cecil",
+   "Robert Cecil",
+   "Cecil faction"
+  ],
+  "t": "o"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Whose faction prioritised an aggressive approach to the war with Spain?",
-  "a": "Essex"
+  "a": "Essex",
+  "s": "Essex",
+  "alt": [
+   "Essex faction",
+   "The Essex faction",
+   "Earl of Essex"
+  ],
+  "t": "o"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Which member of the Privy Council was executed for treason in 1601?",
-  "a": "Earl of Essex"
+  "a": "Earl of Essex",
+  "s": "Essex",
+  "alt": [
+   "Earl of Essex",
+   "Robert Devereux"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "What play was performed by Essex's supporters prior to his rebellion?",
-  "a": "Richard II"
+  "a": "Richard II",
+  "s": "Richard II",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Which European monarch did Essex write to in the build up to his rebellion?",
-  "a": "James VI"
+  "a": "James VI",
+  "s": "VI",
+  "alt": [
+   "James VI"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Where was the Earl of Essex's power base during his rebellion?",
-  "a": "City of London"
+  "a": "City of London",
+  "s": "City of London",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "In what year was the Oxfordshire Rising?",
-  "a": "1596"
+  "a": "1596",
+  "s": "1596",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "How many would-be rebels showed up at Enslow Hill during the Oxfordshire Rising?",
-  "a": "4"
+  "a": "4",
+  "s": "4",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "By how much did the death rate in England increase between 1595–7?",
-  "a": "50%"
+  "a": "50%",
+  "s": "50%",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "What festival/holiday celebrated the anniversary of Elizabeth becoming queen?",
-  "a": "Accession Day"
+  "a": "Accession Day",
+  "s": "Accession Day",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "Who was the official portrait artist of Elizabeth?",
-  "a": "Nicholas Hilliard"
+  "a": "Nicholas Hilliard",
+  "s": "Hilliard",
+  "alt": [
+   "Nicholas Hilliard"
+  ],
+  "t": "p"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "In 1596 the Privy Council ordered that what were to be destroyed?",
-  "a": "Unseemly and improper portraits"
+  "a": "Unseemly and improper portraits",
+  "s": "Unseemly and improper portraits",
+  "alt": [],
+  "t": "x"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "What poem by Edmund Spenser helped glorify Elizabeth as 'Gloriana'?",
-  "a": "Faerie Queene"
+  "a": "Faerie Queene",
+  "s": "Faerie Queene",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "elizabeth",
   "unit": "Unit 7 – Later Years 1588–1603",
   "q": "In what year did Elizabeth die?",
-  "a": "1603"
+  "a": "1603",
+  "s": "1603",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "Between what years was the Bolshevik Civil War?",
-  "a": "1919–22"
+  "a": "1919–22",
+  "s": "1919–22",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "When was the Tehran Conference?",
-  "a": "November 1943"
+  "a": "November 1943",
+  "s": "November 1943",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "When was the Yalta Conference?",
-  "a": "February 1945"
+  "a": "February 1945",
+  "s": "February 1945",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "When was the Potsdam Conference?",
-  "a": "July–August 1945"
+  "a": "July–August 1945",
+  "s": "July–August 1945",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "What was the Treaty of Brest Litovsk?",
-  "a": "Agreement to withdraw Russia from WW1"
+  "a": "Agreement to withdraw Russia from WW1",
+  "s": "Russia withdrew from WW1",
+  "alt": [
+   "Agreement to withdraw Russia from WW1",
+   "Russia left WW1",
+   "Russia withdrew from the war",
+   "Peace treaty between Russia and Germany"
+  ],
+  "t": "x"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "Give the alternative name for the Molotov-Ribbentrop Pact.",
-  "a": "Nazi-Soviet Pact"
+  "a": "Nazi-Soviet Pact",
+  "s": "Nazi-Soviet Pact",
+  "alt": [
+   "Nazi Soviet Pact",
+   "Nazi-Soviet Non-Aggression Pact",
+   "Non-Aggression Pact",
+   "Hitler-Stalin Pact"
+  ],
+  "t": "c"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "Which diplomat sent a letter to Roosevelt in 1935 claiming that the USSR wanted a world revolution?",
-  "a": "William Bullitt"
+  "a": "William Bullitt",
+  "s": "Bullitt",
+  "alt": [
+   "William Bullitt"
+  ],
+  "t": "p"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "When was Operation Barbarossa?",
-  "a": "June 1941"
+  "a": "June 1941",
+  "s": "June 1941",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "Who famously said that if Hitler invaded hell they would 'make a favourable reference to the devil in the House of Commons'?",
-  "a": "Winston Churchill"
+  "a": "Winston Churchill",
+  "s": "Churchill",
+  "alt": [
+   "Winston Churchill"
+  ],
+  "t": "p"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "Which treaty ceded part of Czechoslovakia to Hitler?",
-  "a": "Munich Agreement 1938"
+  "a": "Munich Agreement 1938",
+  "s": "Munich Agreement",
+  "alt": [
+   "Munich Agreement 1938",
+   "Munich Pact",
+   "Treaty of Munich",
+   "Munich"
+  ],
+  "t": "c"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "What was the nickname given to Stalin by Churchill and Roosevelt after 1941?",
-  "a": "Uncle Joe"
+  "a": "Uncle Joe",
+  "s": "Uncle Joe",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "What prompted the USA to join the Grand Alliance in December 1941?",
-  "a": "Japanese bombing of Pearl Harbour"
+  "a": "Japanese bombing of Pearl Harbour",
+  "s": "Pearl Harbor",
+  "alt": [
+   "Pearl Harbour",
+   "Japanese bombing of Pearl Harbour",
+   "Japanese bombing of Pearl Harbor",
+   "Bombing of Pearl Harbor",
+   "Attack on Pearl Harbor"
+  ],
+  "t": "e"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "What did the USA set up with the Allied powers in March 1941?",
-  "a": "Lend-Lease programme"
+  "a": "Lend-Lease programme",
+  "s": "Lend-Lease programme",
+  "alt": [
+   "Lend Lease",
+   "Lend-Lease",
+   "Lend-Lease Act"
+  ],
+  "t": "c"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "When did Stalin first request a Second Front?",
-  "a": "1942"
+  "a": "1942",
+  "s": "1942",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "Where did Churchill want to open a Second Front?",
-  "a": "The Balkans"
+  "a": "The Balkans",
+  "s": "Balkans",
+  "alt": [
+   "The Balkans"
+  ],
+  "t": "l"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "When was the Second Front finally opened in the West?",
-  "a": "May 1944"
+  "a": "June 1944",
+  "s": "June 1944",
+  "alt": [
+   "6 June 1944",
+   "6th June 1944",
+   "D-Day",
+   "D-Day June 1944"
+  ],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "Approximately how many million tonnes of material did the USA supply the USSR with in the Lend-Lease programme by the end of 1944?",
-  "a": "10 million"
+  "a": "10 million",
+  "s": "10 million",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "Name the government installed in Poland by the USSR instead of the Western-backed London Poles.",
-  "a": "Lublin Poles"
+  "a": "Lublin Poles",
+  "s": "Lublin Poles",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "How many Polish ministers did the USSR torture in Moscow in 1945?",
-  "a": "16"
+  "a": "16",
+  "s": "16",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "Name the location of the Polish border agreed at the Yalta Conference.",
-  "a": "Oder-Neisse line"
+  "a": "Oder-Neisse line",
+  "s": "Oder-Neisse line",
+  "alt": [
+   "Oder–Neisse line",
+   "Oder Neisse",
+   "Oder-Neisse",
+   "Curzon Line",
+   "Curzon line"
+  ],
+  "t": "c"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "What amount of reparations was the USSR due to receive according to the negotiations at Yalta?",
-  "a": "$20 billion"
+  "a": "$20 billion",
+  "s": "$20 billion",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "In what year did Stalin and Churchill reach the 'Percentages Agreement'?",
-  "a": "October 1944"
+  "a": "October 1944",
+  "s": "October 1944",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "When was the failed Warsaw Uprising?",
-  "a": "July 1944"
+  "a": "August 1944",
+  "s": "August 1944",
+  "alt": [
+   "1 August 1944",
+   "August–October 1944",
+   "August to October 1944"
+  ],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "Which country liberated itself under Tito's partisan forces?",
-  "a": "Yugoslavia"
+  "a": "Yugoslavia",
+  "s": "Yugoslavia",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 1 – Origins of the Cold War to 1945",
   "q": "Which organisation did Roosevelt convince the USSR to join?",
-  "a": "United Nations"
+  "a": "United Nations",
+  "s": "United Nations",
+  "alt": [],
+  "t": "o"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "In what year was the Iron Curtain speech?",
-  "a": "1946"
+  "a": "1946",
+  "s": "1946",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "How many satellite states initially signed the Warsaw Pact Treaty?",
-  "a": "Seven — Albania, Poland, Hungary, Romania, East Germany, Czechoslovakia, Bulgaria"
+  "a": "Seven — Albania, Poland, Hungary, Romania, East Germany, Czechoslovakia, Bulgaria",
+  "s": "Seven",
+  "alt": [
+   "7"
+  ],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "What percentage of the vote did the Communists gain in Poland in January 1947?",
-  "a": "80%"
+  "a": "80%",
+  "s": "80%",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "Which satellite state considered taking Marshall Aid in the summer of 1947, enraging Stalin?",
-  "a": "Czechoslovakia"
+  "a": "Czechoslovakia",
+  "s": "Czechoslovakia",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "Name the organisation that Tito was President of from 1961–1964.",
-  "a": "Non-Aligned Movement"
+  "a": "Non-Aligned Movement",
+  "s": "Non-Aligned Movement",
+  "alt": [],
+  "t": "o"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "Which country did Churchill visit in December 1944 to try and assist in negotiating a peace settlement between Communists and the new government?",
-  "a": "Greece"
+  "a": "Greece",
+  "s": "Greece",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "When was Kennan's Long Telegram?",
-  "a": "February 1946"
+  "a": "February 1946",
+  "s": "February 1946",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "In February 1947, Britain announced that they would need to withdraw how many troops from Greece?",
-  "a": "40,000"
+  "a": "40,000",
+  "s": "40,000",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "UK, France, Italy and West Germany were the top four recipients of what?",
-  "a": "Marshall Aid"
+  "a": "Marshall Aid",
+  "s": "Marshall Aid",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "In September 1947, members of European Communist parties met to form which organisation?",
-  "a": "Cominform"
+  "a": "Cominform",
+  "s": "Cominform",
+  "alt": [],
+  "t": "o"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "How did Molotov refer to Marshall Aid?",
-  "a": "Dollar imperialism"
+  "a": "Dollar imperialism",
+  "s": "Dollar imperialism",
+  "alt": [
+   "Dollar Imperialism"
+  ],
+  "t": "t"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "When was the Deutschmark introduced to West Germany?",
-  "a": "June 1948"
+  "a": "June 1948",
+  "s": "June 1948",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "Who was the first Chancellor of West Germany?",
-  "a": "Konrad Adenauer"
+  "a": "Konrad Adenauer",
+  "s": "Adenauer",
+  "alt": [
+   "Konrad Adenauer"
+  ],
+  "t": "p"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "When was West Germany formed?",
-  "a": "May 1949"
+  "a": "May 1949",
+  "s": "May 1949",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "When was East Germany formed?",
-  "a": "October 1949"
+  "a": "October 1949",
+  "s": "October 1949",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "Which party was created in East Germany when the USSR forced the SDP to merge with the Communists?",
-  "a": "SED (Socialist Unity Party)"
+  "a": "SED (Socialist Unity Party)",
+  "s": "SED",
+  "alt": [
+   "Socialist Unity Party",
+   "Socialist Unity Party of Germany",
+   "SED (Socialist Unity Party)"
+  ],
+  "t": "o"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "How many tonnes of supplies were flown into West Berlin daily during the first month of the Berlin Blockade?",
-  "a": "1,000"
+  "a": "1,000",
+  "s": "1,000",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "Name the currency introduced in East Germany in response to the West German Deutschmark.",
-  "a": "Ostmark"
+  "a": "Ostmark",
+  "s": "Ostmark",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "Which event prompted Congress to approve Marshall Aid?",
-  "a": "The coup in Czechoslovakia"
+  "a": "The coup in Czechoslovakia",
+  "s": "Coup in Czechoslovakia",
+  "alt": [
+   "The coup in Czechoslovakia",
+   "Czech coup",
+   "Czechoslovak coup",
+   "Communist coup in Czechoslovakia",
+   "Prague coup"
+  ],
+  "t": "e"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "Which treaty signed by the Benelux countries is thought of as a precursor to NATO?",
-  "a": "Brussels Treaty"
+  "a": "Brussels Treaty",
+  "s": "Brussels Treaty",
+  "alt": [
+   "Treaty of Brussels",
+   "Brussels Pact"
+  ],
+  "t": "c"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "Who was expelled from Cominform in 1948?",
-  "a": "Yugoslavia"
+  "a": "Yugoslavia",
+  "s": "Yugoslavia",
+  "alt": [
+   "Tito",
+   "Tito's Yugoslavia"
+  ],
+  "t": "l"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "In what year was Comecon formed?",
-  "a": "1949"
+  "a": "1949",
+  "s": "1949",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "When was NATO formed?",
-  "a": "April 1949"
+  "a": "April 1949",
+  "s": "April 1949",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "Which event of 1955 triggered the formation of the Warsaw Pact?",
-  "a": "West Germany joining NATO"
+  "a": "West Germany joining NATO",
+  "s": "West Germany joining NATO",
+  "alt": [
+   "West German entry into NATO",
+   "West Germany joined NATO",
+   "West Germany's entry into NATO",
+   "Admission of West Germany to NATO"
+  ],
+  "t": "e"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "q": "What did the Stalin Peace Note of 1952 propose?",
-  "a": "A unified and neutral Germany"
+  "a": "A unified and neutral Germany",
+  "s": "A unified and neutral Germany",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "Name the first leader of East Germany.",
-  "a": "Walter Ulbricht"
+  "a": "Walter Ulbricht",
+  "s": "Ulbricht",
+  "alt": [
+   "Walter Ulbricht"
+  ],
+  "t": "p"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "Which conflict provoked discussion of West German rearmament?",
-  "a": "Korean War"
+  "a": "Korean War",
+  "s": "Korean War",
+  "alt": [],
+  "t": "e"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "Name two countries who opposed German rearmament the most strongly.",
-  "a": "USSR and France"
+  "a": "USSR and France",
+  "s": "USSR and France",
+  "alt": [],
+  "t": "t"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "What caused the East German Uprising in 1953?",
-  "a": "Strict collectivisation quotas"
+  "a": "Strict collectivisation quotas",
+  "s": "Strict collectivisation quotas",
+  "alt": [],
+  "t": "e"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "What proportion of the East German population left between 1949 and 1961?",
-  "a": "One sixth"
+  "a": "One sixth",
+  "s": "One sixth",
+  "alt": [
+   "1/6",
+   "A sixth",
+   "One-sixth",
+   "1 in 6"
+  ],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "What did Khrushchev declare when he visited Tito in Belgrade in 1956?",
-  "a": "The path to Socialism differs in different countries"
+  "a": "The path to Socialism differs in different countries",
+  "s": "The path to Socialism differs in different countries",
+  "alt": [],
+  "t": "x"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "Which leader forced Khrushchev to accept a reform package ending collectivisation in his country?",
-  "a": "Gomulka, Poland"
+  "a": "Gomulka, Poland",
+  "s": "Gomułka",
+  "alt": [
+   "Gomulka",
+   "Wladyslaw Gomulka",
+   "Władysław Gomułka",
+   "Gomulka, Poland",
+   "Gomułka, Poland"
+  ],
+  "t": "p"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "When was Khrushchev's secret speech?",
-  "a": "February 1956"
+  "a": "February 1956",
+  "s": "February 1956",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "In what year was the Solidarity union formed in Poland?",
-  "a": "1980"
+  "a": "1980",
+  "s": "1980",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "Name the group of British Secret Service agents who were spies for the USSR.",
-  "a": "Cambridge Five"
+  "a": "Cambridge Five",
+  "s": "Cambridge Five",
+  "alt": [],
+  "t": "o"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "In what year was the Nuclear Non-Proliferation Treaty signed?",
-  "a": "1968"
+  "a": "1968",
+  "s": "1968",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "What embarrassing fact was discovered about Willy Brandt's aide in 1974?",
-  "a": "He was a spy for the East German Stasi"
+  "a": "He was a spy for the East German Stasi",
+  "s": "He was a spy for the East German Stasi",
+  "alt": [
+   "Spy for the Stasi",
+   "He was a Stasi spy",
+   "Stasi spy"
+  ],
+  "t": "x"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "What did the Hallstein Doctrine state?",
-  "a": "Recognising East Germany was an unfriendly act"
+  "a": "Recognising East Germany was an unfriendly act",
+  "s": "Recognising East Germany was an unfriendly act",
+  "alt": [],
+  "t": "x"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "What was agreed in the Basic Treaty of 1972?",
-  "a": "East and West Germany to recognise each other; both to join the UN"
+  "a": "East and West Germany to recognise each other; both to join the UN",
+  "s": "East and West Germany to recognise each other; both to join the UN",
+  "alt": [],
+  "t": "x"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "When was the Soviet invasion of Afghanistan?",
-  "a": "December 1979"
+  "a": "December 1979",
+  "s": "December 1979",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "How many Hungarians fled across the border to Austria after the crushing of the Hungarian Uprising?",
-  "a": "200,000"
+  "a": "200,000",
+  "s": "200,000",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "When was the Brezhnev Doctrine published?",
-  "a": "September 1968"
+  "a": "September 1968",
+  "s": "September 1968",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "Which event in Western politics distracted the allies and prevented intervention in the Hungarian Uprising?",
-  "a": "Suez Crisis 1956"
+  "a": "Suez Crisis 1956",
+  "s": "Suez Crisis",
+  "alt": [
+   "Suez",
+   "Suez Crisis 1956",
+   "The Suez Crisis"
+  ],
+  "t": "e"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
-  "q": "Which President visited the USSR in 1973?",
-  "a": "Nixon"
+  "q": "Which US President visited the USSR in 1972?",
+  "a": "Nixon",
+  "s": "Nixon",
+  "alt": [
+   "Richard Nixon"
+  ],
+  "t": "p"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "In what year was SALT I signed?",
-  "a": "1972"
+  "a": "1972",
+  "s": "1972",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "When was the Cuban Missile Crisis?",
-  "a": "October 1962"
+  "a": "October 1962",
+  "s": "October 1962",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "In what year did the USA send troops into Vietnam?",
-  "a": "1965"
+  "a": "1965",
+  "s": "1965",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "In what year were the Helsinki Accords signed?",
-  "a": "1975"
+  "a": "1975",
+  "s": "1975",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "Name the collaborative space mission which took place in 1975.",
-  "a": "Apollo-Soyuz"
+  "a": "Apollo-Soyuz",
+  "s": "Apollo-Soyuz",
+  "alt": [],
+  "t": "c"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "q": "Where and when were the Olympic Boycotts?",
-  "a": "Moscow (1980), Los Angeles (1984)"
+  "a": "Moscow (1980), Los Angeles (1984)",
+  "s": "Moscow 1980 and Los Angeles 1984",
+  "alt": [
+   "Moscow (1980), Los Angeles (1984)",
+   "Moscow and Los Angeles",
+   "Moscow 1980, Los Angeles 1984"
+  ],
+  "t": "x"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "In which year was Gorbachev appointed General Secretary of the Communist Party?",
-  "a": "1985"
+  "a": "1985",
+  "s": "1985",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "How many East Germans fled across the border when Hungary opened the borders with Austria in 1989?",
-  "a": "150,000"
+  "a": "150,000",
+  "s": "150,000",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "Name the two ineffectual Soviet leaders who died in quick succession between Brezhnev and Gorbachev.",
-  "a": "Andropov and Chernenko"
+  "a": "Andropov and Chernenko",
+  "s": "Andropov and Chernenko",
+  "alt": [
+   "Chernenko and Andropov",
+   "Andropov",
+   "Chernenko"
+  ],
+  "t": "t"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "How much aid was sent to Cuba and Vietnam each year by 1980?",
-  "a": "$1 billion each"
+  "a": "$1 billion each",
+  "s": "$1 billion",
+  "alt": [
+   "$1 billion each",
+   "1 billion",
+   "1 billion dollars"
+  ],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "In total, how much did the USSR spend on the war in Afghanistan?",
-  "a": "$50 billion"
+  "a": "$50 billion",
+  "s": "$50 billion",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "Which countries refused conscription to Afghanistan in 1989?",
-  "a": "The Baltics and Georgia"
+  "a": "The Baltics and Georgia",
+  "s": "Baltics and Georgia",
+  "alt": [
+   "The Baltics and Georgia",
+   "Baltic states and Georgia",
+   "Georgia and the Baltics"
+  ],
+  "t": "t"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "What was Operation Cyclone?",
-  "a": "USA funded and armed Afghan Mujahedeen fighters"
+  "a": "USA funded and armed Afghan Mujahedeen fighters",
+  "s": "USA funded and armed Afghan Mujahedeen fighters",
+  "alt": [],
+  "t": "x"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "When did Gorbachev and Reagan first meet to discuss arms reduction?",
-  "a": "March 1985"
+  "a": "November 1985",
+  "s": "November 1985",
+  "alt": [
+   "Geneva 1985",
+   "Geneva Summit",
+   "November 1985 (Geneva)"
+  ],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "In what year were voters given a choice of parties in local elections under glasnost?",
-  "a": "1987"
+  "a": "1987",
+  "s": "1987",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "Under perestroika, what percentage of a Soviet business were foreign companies allowed to own?",
-  "a": "49%"
+  "a": "49%",
+  "s": "49%",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "When did Gorbachev announce the dropping of the Brezhnev Doctrine to the UN?",
-  "a": "December 1988"
+  "a": "December 1988",
+  "s": "December 1988",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "In June 1989 which political party won 160 of 161 freely elected seats?",
-  "a": "Solidarity, Poland"
+  "a": "Solidarity, Poland",
+  "s": "Solidarity",
+  "alt": [
+   "Solidarity, Poland",
+   "Solidarność"
+  ],
+  "t": "t"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "Which satellite state attempted to follow perestroika until their leader was asked to step down by their Communist Party in November 1989?",
-  "a": "Bulgaria"
+  "a": "Bulgaria",
+  "s": "Bulgaria",
+  "alt": [],
+  "t": "l"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "Name the East German leader who tried and failed to stop the immigration crisis and resigned in October 1989.",
-  "a": "Erich Honecker"
+  "a": "Erich Honecker",
+  "s": "Honecker",
+  "alt": [
+   "Erich Honecker"
+  ],
+  "t": "p"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "How many protesters marched through Leipzig in late 1989 to protest against the East German government?",
-  "a": "70,000"
+  "a": "70,000",
+  "s": "70,000",
+  "alt": [],
+  "t": "n"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "On what date was the Berlin Wall pulled down?",
-  "a": "9th November 1989"
+  "a": "9th November 1989",
+  "s": "9 November 1989",
+  "alt": [
+   "9th November 1989"
+  ],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "Which political figure spent the first 5 months of 1989 in prison and then found themselves leader of their newly free country?",
-  "a": "Vaclav Havel, Czechoslovakia"
+  "a": "Vaclav Havel, Czechoslovakia",
+  "s": "Havel",
+  "alt": [
+   "Vaclav Havel",
+   "Václav Havel",
+   "Vaclav Havel, Czechoslovakia"
+  ],
+  "t": "p"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "The unpopular leader of which country was executed on 25th December 1989?",
-  "a": "Romania (Ceausescu)"
+  "a": "Romania (Ceausescu)",
+  "s": "Romania",
+  "alt": [
+   "Ceausescu",
+   "Romania (Ceausescu)"
+  ],
+  "t": "l"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "When did West Germany formally absorb East Germany?",
-  "a": "October 1990"
+  "a": "October 1990",
+  "s": "October 1990",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "What did Gorbachev propose in April 1991 to try and prevent the collapse of the USSR?",
-  "a": "A voluntary Union Treaty"
+  "a": "A voluntary Union Treaty",
+  "s": "A voluntary Union Treaty",
+  "alt": [
+   "Union Treaty",
+   "New Union Treaty",
+   "A new Union Treaty"
+  ],
+  "t": "t"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "Name the first President of Russia after the fall of the USSR.",
-  "a": "Boris Yeltsin"
+  "a": "Boris Yeltsin",
+  "s": "Yeltsin",
+  "alt": [
+   "Boris Yeltsin"
+  ],
+  "t": "p"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "On what date was the USSR formally dissolved?",
-  "a": "25th December 1991"
+  "a": "26th December 1991",
+  "s": "26 December 1991",
+  "alt": [
+   "26th December 1991",
+   "December 1991"
+  ],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "Name the Serbian president who invaded Croatia, Slovenia and Bosnia.",
-  "a": "Slobodan Milosevic"
+  "a": "Slobodan Milosevic",
+  "s": "Milosevic",
+  "alt": [
+   "Slobodan Milosevic",
+   "Slobodan Milošević",
+   "Milošević"
+  ],
+  "t": "p"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "In what year were the Dayton Accords signed, ending the conflict in Yugoslavia?",
-  "a": "1995"
+  "a": "1995",
+  "s": "1995",
+  "alt": [],
+  "t": "y"
  },
  {
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "q": "How many people died in the Bosnian War?",
-  "a": "100,000"
+  "a": "100,000",
+  "s": "100,000",
+  "alt": [],
+  "t": "n"
  }
 ]
