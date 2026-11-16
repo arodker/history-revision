@@ -470,8 +470,8 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .boss-res{text-align:center;font-weight:800;font-size:1.05rem;margin:.4rem 0}
 .boss-res.ok{color:#2E7D32}.boss-res.no{color:#C0392B}
 .boss-typed{text-align:center;font-size:.8rem;color:var(--muted);margin-bottom:.3rem}.mt-wrap{display:flex;flex-direction:column;gap:10px}
-.mt-wrap .mt-col.dts{order:-1;flex-direction:row;flex-wrap:wrap;gap:6px}
-.mt-wrap .mt-col.dts .mt-dt{flex:1 1 4rem;padding:.55rem .3rem}
+.mt-wrap .mt-col.dts{order:-1;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:6px}
+.mt-wrap .mt-col.dts .mt-dt{flex:0 0 calc(20% - 5px);min-width:0;padding:.55rem .15rem;font-size:.78rem;overflow-wrap:anywhere}
 .mt-col{display:flex;flex-direction:column;gap:8px}
 .mt-b{border:2px solid var(--border2);background:var(--surface);color:var(--text);border-radius:12px;padding:.6rem .6rem;font-family:inherit;font-size:.82rem;font-weight:700;text-align:left;cursor:pointer;line-height:1.3}
 .mt-ev{border-left:5px solid var(--c,#888)}
@@ -2164,7 +2164,7 @@ function arcFrame(inner, head) {
 function eolStart() {
   const pool = arcDatePool();
   if (new Set(pool.map(arcYear)).size < 10) { arcShort('Not enough dates for this choice yet.'); return; }
-  ARC.g = {type:'mt', pool, lives:3, score:0, n:4, rounds:0};
+  ARC.g = {type:'mt', pool, lives:3, score:0, n:2, rounds:0};
   mtRound();
 }
 function mtRound(msg) {
@@ -2200,7 +2200,7 @@ function mtPick(side, i) {
     if (ok) {
       g.done[e] = 1; g.done[d] = 1; g.fresh = [e, d]; g.score++; g.msg = '';
       if (Object.keys(g.done).length >= g.items.length) {
-        g.busy = true; arcTimerStop(); g.n = Math.min(6, g.n + 1); g.msg = 'All matched!';
+        g.busy = true; arcTimerStop(); g.n = Math.min(10, g.n + 1); g.msg = 'All matched!';
         mtRender();
         ARC.t = setTimeout(() => { if (ARC.g === g) mtRound(); }, 1000);
         return;
@@ -2246,7 +2246,7 @@ function whBuild() {
 function whNext(msg) {
   const g = ARC.g;
   if (g.i >= g.pool.length) { g.pool = arcMixOrder(g.pool); g.i = 0; }
-  g.cur = g.pool[g.i++]; g.since = 0; g.hold = 6;
+  g.cur = g.pool[g.i++]; g.spawned = 0; g.tpos = Math.floor(Math.random() * 5); g.hold = 6;
   for (let k = 0; k < 6; k++) { g.holes[k] = null; whRender(k); }
   const q = document.getElementById('wh-q');
   if (q) { q.innerHTML = (msg ? '<div class="wh-msg">' + msg + '</div>' : '') + '<span>' + escHtml(whQText(g.cur)) + '</span>'; q.classList.remove('pop'); void q.offsetWidth; q.classList.add('pop'); }
@@ -2291,10 +2291,10 @@ function whTick() {
     if (free.length) {
       const i = free[Math.floor(Math.random() * free.length)];
       const hasT = g.holes.some(h => h && h.t);
-      const t = !hasT && (g.since >= 3 || Math.random() < 0.35);
+      const t = !hasT && g.spawned >= g.tpos;
       const text = t ? it.date : whDistractor(g);
       if (text != null) {
-        g.since = t ? 0 : g.since + 1;
+        g.spawned++;
         const life = Math.max(32, Math.round((6000 - g.score * 80) / 100));
         g.holes[i] = {text, t, life, die: g.tick + life};
         whRender(i);
