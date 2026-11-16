@@ -4830,7 +4830,7 @@ function bossWin() {
 }
 function bossNext() {
   const g = ARC.g;
-  g.lv++; g.max = BOSS_HP[Math.min(g.lv, BOSS_HP.length - 1)]; g.hp = g.max; g.lives = Math.min(3, g.lives + 1); g.over = false;
+  g.lv++; g.max = BOSS_HP[Math.min(g.lv, BOSS_HP.length - 1)]; g.hp = g.max; g.over = false;
   bossAsk();
 }
 function bossOver() {
@@ -4911,5 +4911,72 @@ uptoRender();
     <button id="fs-exit-btn" style="padding:10px 24px;font-size:.85rem;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">✕ Exit fullscreen</button>
   </div>
 </div>
+<style>
+#tour-card{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);width:calc(100% - 24px);max-width:420px;max-height:62vh;overflow-y:auto;background:var(--card,#fff);color:var(--text,#1a1a18);border:1px solid var(--border,#e8e7e2);border-radius:16px;padding:14px 16px;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,.28);font-family:inherit}
+#tour-card .tc-top{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--muted,#6b6b68)}
+#tour-card .tc-skip{background:none;border:0;color:var(--muted,#6b6b68);text-decoration:underline;cursor:pointer;font:inherit;padding:0}
+#tour-card .tc-em{font-size:2rem;line-height:1.2;margin:.35rem 0 .1rem;letter-spacing:.1em}
+#tour-card .tc-t{font-size:1.05rem;font-weight:700;margin:0 0 .25rem}
+#tour-card .tc-p{font-size:.84rem;line-height:1.5;margin:0 0 .55rem}
+#tour-card .tc-see{font-size:.78rem;line-height:1.45;background:var(--subtle,#eeede8);border-radius:8px;padding:.5rem .65rem;margin-bottom:.7rem}
+#tour-card .tc-bot{display:flex;justify-content:space-between;align-items:center}
+#tour-card .tc-dots{display:flex;gap:4px;flex-wrap:wrap;max-width:46%}#tour-card .tc-dots i{width:7px;height:7px;border-radius:50%;background:var(--border2,#ddd)}#tour-card .tc-dots i.on{background:var(--text,#555)}
+#tour-card .tc-btns{display:flex;gap:6px}
+#tour-card .tc-btns button{font:inherit;font-size:.82rem;font-weight:600;padding:7px 14px;border-radius:8px;border:1px solid var(--border2,#ddd);background:var(--surface,#fff);color:var(--text,#1a1a18);cursor:pointer}
+#tour-card .tc-btns button.go{background:#555;border-color:#555;color:#fff}
+.tour-hl{outline:3px solid #F0B429!important;outline-offset:3px;border-radius:12px;transition:outline-color .2s}
+</style>
+<script>
+(function(){
+  var KEY='hub_tour_done_'+location.pathname.split('/').pop();
+  var $=function(s){return document.querySelector(s)};
+  var steps,i=0,card,hl;
+    function STEPS(){var r=R(),l=L();return [
+    {e:'👋',t:'Welcome to the GCSE History Hub',p:'This hub covers all four Edexcel GCSE papers: Migrants in Britain, the Cold War, Early Elizabethan England and Weimar and Nazi Germany. This tour takes about a minute. Skip it now and replay it any time with the ❓ button at the top.',see:'A short card at the bottom of the screen. The part of the page it talks about is outlined in yellow.'},
+    {sel:'.up-card',e:'🎚️',t:'Set how much you have studied',p:'Drag the slider to where your class has reached. It runs from Weimar in Year 9, through Cold War and Elizabeth in Year 10, to Migration in Year 11. Arcade games and some quizzes only ask about what you have covered, and papers you have not reached show a 🔒.',see:'A slider with four labelled sections along it and your position written in the corner.'},
+    {sel:'.paper-grid',e:'🚢 🚀 👑 🏛️',t:'Choose your paper',p:'Paper 1 is Migrants in Britain (🚢), Paper 2a is the Cold War 1941 to 91 (🚀), Paper 2b is Early Elizabethan England (👑) and Paper 3 is Weimar and Nazi Germany (🏛️). Tap a tile to open it. Inside you will find ⚡ Flashcards first, then 🧠 Revision Guide, 📅 Key Dates Quiz and ✏️ Exam Practice with timed questions.',see:'Four coloured tiles, each with a ring that fills as you master flashcards. Tapping one opens that paper’s menu in the same colour.'},
+    {sel:'.fd-wheel-cell,#fd-tracker',e:'⚡ 📌',t:'Flashcards, rings and pins',p:'Flashcards are the best way to revise. A card you miss gets a 📌 and comes back in later sessions until you get it right. Get every card in a paper right in one day and the ring turns into a 🥇.',see:'A ring on each tile. It shows a percentage and becomes a gold medal at 100%.'},
+    {sel:'.btn-mix',e:'🎯',t:'Mixed Retrieval Quiz',p:'Short recall questions drawn from across the papers you choose. Pick the papers, the difficulty (⭐ to ⭐⭐⭐) and the style: all at once, one at a time, or endless. The all at once version can be printed as a do now.',see:'A setup screen with paper buttons, star difficulty and three styles, then your questions.'},
+    {sel:'.btn-arc',e:'🕹️ 🐉',t:'Arcade games and boss battles',p:'Four games built on dates and recall: 🧩 Match the dates, 🐉 Boss battle, 🔨 Whack-a-fact and 🧱 Stack it. In the boss battle you type the answer within 12 seconds. A right answer hurts the boss and a miss costs a heart. Hearts do not come back when the next boss arrives, so protect them.',see:'A menu of four games with your best score on each. In the boss battle: the boss, its health bar and your three hearts.'},
+    {sel:'#xp-card',e:'⭐',t:'XP and levels',p:'You earn '+r.flash+' XP for a flashcard you know and '+r.date+' for a date or quiz answer, up to '+r.cap+' XP a day. Repeating the same question earns less. Arcade answers earn 2 XP, or 1 for repeats. Your level climbs from '+(l?l[0].t:'Stone Age hunter')+' all the way to '+(l?l[l.length-1].t:'God of History')+'.',see:'A card with your level, a bar to the next level, today’s XP and a streak. Tap it for your full progress.'},
+    {sel:'#parent-btn',e:'👪',t:'Parent view',p:'This is for a parent or carer to quiz you out loud. They tick the papers, choose 5, 10, 20 or 30 questions or Endless, and tap ✓ Got it or ✗ Not yet for each answer as you say it.'+(r.parent?' A finished parent quiz earns you '+r.parent+' XP.':''),see:'A screen titled Quiz your child with paper buttons, a question count, a Start quiz button and a row of dots for the days this week you have revised.'},
+    {sel:'#search-btn',e:'🔍',t:'Search',p:'Looking for one person or event? Type a word such as Mangrove or Hindenburg. Results show which topic it is in and whether your word matched a keyword or a fact.',see:'A search box with a list of matching topics underneath.'},
+    {sel:'#dark-toggle',e:'🌙',t:'Dark mode',p:'Switch the page to dark if it is easier on your eyes. The hub remembers your choice.',see:'A button that swaps the page between light and dark.'},
+    {e:'🎉',t:'Where to start',p:'Open the paper you are studying now and do a round of ⚡ Flashcards. Then try a 🎯 Mixed Retrieval Quiz. Press ❓ whenever you want this tour again.',see:'The ❓ button sits at the top of the page, next to search and dark mode.'}
+  ]}
+
+  function R(){return (typeof XP_RULE!=='undefined')?XP_RULE:{flash:10,date:5,rapid:5,parent:20,cap:500}}
+  function L(){return (typeof XP_LEVELS!=='undefined')?XP_LEVELS:null}
+  function build(){steps=STEPS().filter(function(s){return !s.sel||$(s.sel)})}
+  function clear(){if(hl){hl.classList.remove('tour-hl');hl=null}}
+  function end(){clear();if(card){card.remove();card=null}try{localStorage.setItem(KEY,'1')}catch(e){}}
+  function show(){
+    clear();var s=steps[i];
+    if(s.sel){hl=$(s.sel);if(hl){hl.classList.add('tour-hl');hl.scrollIntoView({block:'start',behavior:'smooth'});window.scrollBy(0,-12)}}
+    else window.scrollTo({top:0,behavior:'smooth'});
+    if(!card){card=document.createElement('div');card.id='tour-card';card.setAttribute('role','dialog');card.setAttribute('aria-label','Tour');document.body.appendChild(card)}
+    var last=i===steps.length-1;
+    card.innerHTML='<div class="tc-top"><span>Step '+(i+1)+' of '+steps.length+'</span>'+(last?'':'<button class="tc-skip" data-a="skip">Skip tour</button>')+'</div>'+
+      '<div class="tc-em">'+s.e+'</div><p class="tc-t">'+s.t+'</p><p class="tc-p">'+s.p+'</p><div class="tc-see"><b>What you will see:</b> '+s.see+'</div>'+
+      '<div class="tc-bot"><div class="tc-dots">'+steps.map(function(_,k){return '<i class="'+(k===i?'on':'')+'"></i>'}).join('')+'</div><div class="tc-btns">'+(i?'<button data-a="back">Back</button>':'')+'<button class="go" data-a="'+(last?'skip':'next')+'">'+(last?'Done':'Next')+'</button></div></div>';
+  }
+  function start(){
+    if(typeof showScreen==='function'&&!$('#s-pick.active'))showScreen('s-pick');
+    build();i=0;show();
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.getAttribute&&e.target.getAttribute('data-a');
+    if(a==='next'){i++;show()}else if(a==='back'){i--;show()}else if(a==='skip')end();
+    else if(e.target&&e.target.id==='tour-btn')start();
+  });
+  document.addEventListener('keydown',function(e){if(card&&e.key==='Escape')end()});
+  window.addEventListener('DOMContentLoaded',function(){
+    var t=$('#dark-toggle');
+    if(t&&!$('#tour-btn')){var b=document.createElement('button');b.id='tour-btn';b.className=t.className;b.title='Take the tour';b.setAttribute('aria-label','Take the tour');b.textContent='❓';t.parentNode.insertBefore(b,t)}
+    var seen=false;try{seen=localStorage.getItem(KEY)==='1'}catch(e){}
+    if(!seen)setTimeout(function(){if($('#s-pick.active'))start()},900);
+  });
+})();
+</script>
 </body>
 </html>
