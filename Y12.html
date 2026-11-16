@@ -2555,7 +2555,7 @@ function fdStart() {
     return;
   }
   fdOutstanding = fdGetOutstanding().filter(k => FD.find(c => fdKey(c) === k));
-  const outCards = fdOutstanding.map(k => FD.find(c => fdKey(c) === k)).filter(Boolean).filter(c => {
+  const outCards = fdOutstanding.map(k => FD.find(c => fdKey(c) === k)).filter(Boolean).filter(inScope).filter(c => {
     if (c.section !== currentSection) return true;
     if (unit === 'all') return false;
     return c.unit !== unit;
@@ -3528,7 +3528,7 @@ fdFinish = function () { fdSetup(); showScreen('s-hub'); };
 
 // ---------- hub: multi-select units ----------
 var hubSel = {sec:'', all:true, set:[]};
-function hubCardsU(u, unit) { return FD.filter(function (c) { return secOf(c) === u && c.unit === unit; }); }
+function hubCardsU(u, unit) { return FD.filter(function (c) { return secOf(c) === u && c.unit === unit && inScope(c); }); }
 function hubRender() {
   var u = currentSection, fc = document.getElementById('hub-fc');
   if (!fc || !u) return;
@@ -3545,7 +3545,7 @@ function hubRender() {
     var on = !lock && !hubSel.all && hubSel.set.indexOf(k) !== -1;
     return '<button class="hub-row' + (lock ? ' lock' : '') + (on ? ' on' : '') + '" onclick="hubTog(' + i + ')" role="checkbox" aria-checked="' + on + '"><span class="hub-dot' + (on ? ' on' : '') + '"></span><span class="hub-nm">' + escHtml(k) + '</span><span>' + (lock ? '🔒' : done + '/' + cards.length) + '</span></button>';
   }).join('');
-  var allCards = FD.filter(function (c) { return secOf(c) === u && unitOK(u, c.unit); });
+  var allCards = FD.filter(function (c) { return secOf(c) === u && inScope(c); });
   var allRow = '<button class="hub-row hub-all' + (hubSel.all ? ' on' : '') + '" onclick="hubAll()" role="checkbox" aria-checked="' + hubSel.all + '"><span class="hub-dot' + (hubSel.all ? ' on' : '') + '"></span><span class="hub-nm">All units</span><span>' + allCards.filter(function (c) { return mast[fdKey(c)]; }).length + '/' + allCards.length + '</span></button>';
   var pins = fdGetOutstanding().length, nSel = hubSel.all ? reached.length : hubSel.set.length;
   fc.style.borderLeftColor = col; fc.style.setProperty('--c', col);
