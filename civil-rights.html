@@ -2656,17 +2656,17 @@ renderFdWheels = function () { _rfw(); weakNudgeRender(); var h = document.getEl
 uptoRender(); xpRender();
 </script>
 <style>
-#tour-card{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);width:calc(100% - 24px);max-width:420px;max-height:62vh;overflow-y:auto;background:var(--card,#fff);color:var(--text,#1a1a18);border:1px solid var(--border,#e8e7e2);border-radius:16px;padding:14px 16px;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,.28);font-family:inherit}
-#tour-card .tc-top{display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--muted,#6b6b68)}
+#tour-card{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;width:calc(100% - 24px);max-width:380px;background:var(--card,#fff);color:var(--text,#1a1a18);border:1px solid var(--border,#e8e7e2);border-radius:14px;padding:11px 14px;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,.3);font-family:inherit}
+#tour-card.top{bottom:auto;top:12px}
+#tour-card .tc-top{display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:var(--muted,#6b6b68)}
 #tour-card .tc-skip{background:none;border:0;color:var(--muted,#6b6b68);text-decoration:underline;cursor:pointer;font:inherit;padding:0}
-#tour-card .tc-em{font-size:2rem;line-height:1.2;margin:.35rem 0 .1rem;letter-spacing:.1em}
-#tour-card .tc-t{font-size:1.05rem;font-weight:700;margin:0 0 .25rem}
-#tour-card .tc-p{font-size:.84rem;line-height:1.5;margin:0 0 .55rem}
-#tour-card .tc-see{font-size:.78rem;line-height:1.45;background:var(--subtle,#eeede8);border-radius:8px;padding:.5rem .65rem;margin-bottom:.7rem}
+#tour-card .tc-t{font-size:1rem;font-weight:700;margin:.2rem 0 .15rem}
+#tour-card .tc-t span{margin-right:.35rem;letter-spacing:.08em}
+#tour-card .tc-p{font-size:.82rem;line-height:1.4;margin:0 0 .5rem}
 #tour-card .tc-bot{display:flex;justify-content:space-between;align-items:center}
-#tour-card .tc-dots{display:flex;gap:4px;flex-wrap:wrap;max-width:46%}#tour-card .tc-dots i{width:7px;height:7px;border-radius:50%;background:var(--border2,#ddd)}#tour-card .tc-dots i.on{background:var(--text,#555)}
+#tour-card .tc-dots{display:flex;gap:4px;flex-wrap:wrap;max-width:50%}#tour-card .tc-dots i{width:6px;height:6px;border-radius:50%;background:var(--border2,#ddd)}#tour-card .tc-dots i.on{background:var(--text,#555)}
 #tour-card .tc-btns{display:flex;gap:6px}
-#tour-card .tc-btns button{font:inherit;font-size:.82rem;font-weight:600;padding:7px 14px;border-radius:8px;border:1px solid var(--border2,#ddd);background:var(--surface,#fff);color:var(--text,#1a1a18);cursor:pointer}
+#tour-card .tc-btns button{font:inherit;font-size:.8rem;font-weight:600;padding:6px 13px;border-radius:8px;border:1px solid var(--border2,#ddd);background:var(--surface,#fff);color:var(--text,#1a1a18);cursor:pointer}
 #tour-card .tc-btns button.go{background:#555;border-color:#555;color:#fff}
 .tour-hl{outline:3px solid #F0B429!important;outline-offset:3px;border-radius:12px;transition:outline-color .2s}
 </style>
@@ -2674,51 +2674,130 @@ uptoRender(); xpRender();
 (function(){
   var KEY='hub_tour_done_'+location.pathname.split('/').pop();
   var $=function(s){return document.querySelector(s)};
-  var steps,i=0,card,hl;
-    function STEPS(){var r=R(),l=L();return [
-    {e:'👋',t:'Welcome to the Civil Rights hub',p:'This hub covers OCR Y319, Civil Rights USA 1865 to 1992, in four units. This tour takes about a minute. Skip it now and replay it any time with the ❓ button at the top.',see:'A short card at the bottom of the screen. The part of the page it talks about is outlined in yellow.'},
-    {sel:'.up-card',e:'🎚️',t:'Set how much you have studied',p:'Drag the slider to the unit your class has reached: African Americans (U1), Labour (U2), Native Americans (U3) or Women (U4). Arcade games and mixed quizzes only ask about the units you have reached.',see:'A slider with four labelled units along it and your position written in the corner.'},
-    {sel:'.pick-grid',e:'✊ 🔨 🏹 📢',t:'Choose a unit',p:'✊ African American Rights, 🔨 Labour and Trade Union Rights, 🏹 Native American Rights and 📢 Women’s Rights. Tap a unit for ⚡ Flashcards, then the 🧠 Revision Guide (switch between a Map and a List of periods and depth studies) and the 📅 Key Dates Quiz. Exam Practice is marked coming soon.',see:'Four coloured unit tiles with a ring on each. Tapping one opens that unit’s menu in the same colour.'},
-    {sel:'.fd-wheel-cell',e:'⚡ 📌',t:'Flashcards, rings and pins',p:'Each unit has its own flashcard deck. A card you miss gets a 📌 and comes back in later sessions until you get it right. Master every card in a unit in one day and the ring turns into a 🥇. Mastery resets each morning.',see:'A ring on each unit tile. It shows a percentage and becomes a gold medal at 100%.'},
-    {sel:'.c-mixed',e:'🎯',t:'Mixed Retrieval Quiz',p:'Short recall questions drawn from across the units you choose. Pick the units, the difficulty (⭐ to ⭐⭐⭐) and the style: all at once, one at a time, or endless.',see:'A setup screen with unit buttons, star difficulty and three styles, then your questions.'},
-    {sel:'.home-stat',e:'📊',t:'Depth Study Stat Attack',p:'A quiz on the figures from the depth study debates (revision guide pages 76 to 108). A number, percentage, person, organisation or key term is missing and you pick it from the options or type it. Pick which depth study and strand to attack.',see:'A setup screen with depth study filters in gold, then a sentence with a gap to fill.'},
-    {sel:'.btn-arc',e:'🕹️ 🐉',t:'Arcade games and boss battles',p:'Four games built on dates and recall: 🧩 Match the dates, 🐉 Boss battle, 🔨 Whack-a-fact and 🧱 Stack it. In the boss battle you type the answer within 12 seconds. A right answer hurts the boss and a miss costs a heart. Hearts do not come back when the next boss arrives, so protect them.',see:'A menu of four games with your best score on each. In the boss battle: the boss, its health bar and your three hearts.'},
-    {sel:'#xp-card',e:'⭐',t:'XP and levels',p:'You earn '+r.flash+' XP for a flashcard you know and '+r.date+' for a date or quiz answer, up to '+r.cap+' XP a day. Repeating the same question earns less. Arcade answers earn 2 XP, or 1 for repeats. Your level climbs through the animals of America, from '+(l?l[0].t:'Chipmunk')+' to '+(l?l[l.length-1].t:'Bald eagle')+'.',see:'A card with your animal, a bar to the next level, today’s XP and a streak. Tap it for your full progress.'},
-    {sel:'#search-btn',e:'🔍',t:'Search',p:'Looking for one person or event? Type a word such as Triangle Shirtwaist. Results show which topic it is in and whether your word matched a keyword or a fact.',see:'A search box with a list of matching topics underneath.'},
-    {sel:'#dark-toggle',e:'🌙',t:'Dark mode',p:'Switch the page to dark if it is easier on your eyes. The hub remembers your choice.',see:'A button that swaps the page between light and dark.'},
-    {e:'🎉',t:'Where to start',p:'Open the unit you are studying now and do a round of ⚡ Flashcards. Then try the 📊 Stat Attack on a depth study. Press ❓ whenever you want this tour again.',see:'The ❓ button sits at the top of the page, next to search and dark mode.'}
-  ]}
-
+  var steps=[],i=0,card,hl;
   function R(){return (typeof XP_RULE!=='undefined')?XP_RULE:{flash:10,date:5,rapid:5,parent:20,cap:500}}
   function L(){return (typeof XP_LEVELS!=='undefined')?XP_LEVELS:null}
-  function build(){steps=STEPS().filter(function(s){return !s.sel||$(s.sel)})}
+    function HOME(){var r=R(),l=L();return [
+    {first:1,e:'👋',t:'Welcome',p:'OCR Y319 Civil Rights USA 1865 to 1992 in one place. 30 seconds. ❓ gives tips for whichever page you are on.'},
+    {sel:'.up-card',e:'🎚️',t:'Set how far you have got',p:'Drag to the unit your class has reached. Games only ask what you have covered.'},
+    {sel:'.pick-grid',e:'✊ 🔨 🏹 📢',t:'Pick a unit',p:'African Americans, Labour, Native Americans or Women. Each has Flashcards, Guide and Dates.'},
+    {sel:'.fd-wheel-cell',e:'📌',t:'Rings and pins',p:'Missed flashcards get a 📌 and return. Master a unit in one day for a 🥇.'},
+    {sel:'.c-mixed',e:'🎯',t:'Mixed Retrieval Quiz',p:'Quick recall across units. Choose units, difficulty and style.'},
+    {sel:'.home-stat',e:'📊',t:'Depth Study Stat Attack',p:'Fill the missing figure, name or term from the depth study debates.'},
+    {sel:'.btn-arc',e:'🕹️ 🐉',t:'Arcade',p:'Four games. In the boss battle a miss costs a heart, and hearts do not come back.'},
+    {sel:'#xp-card',e:'⭐',t:'XP and levels',p:r.flash+' XP per flashcard, '+r.date+' per date or quiz answer, '+r.cap+' a day. Level up from '+(l?l[0].t:'Chipmunk')+' to '+(l?l[l.length-1].t:'Bald eagle')+'.'},
+    {sel:'#search-btn',e:'🔍',t:'Search and dark mode',p:'Search finds any person or event. 🌙 next to it switches dark mode.'},
+    {first:1,e:'🎉',t:'Start here',p:'Open a unit and do a round of ⚡ Flashcards.'}
+  ]}
+
+  function PAGES(){var r=R();return {
+    hub:[
+      {sel:'#hub-fc',e:'⚡',t:'Choose your units',p:'Tick one unit, several or all. 💡 Hints gives a nudge before you flip.'},
+      {sel:'.hub-start',e:'▶️',t:'Start flashcards',p:'Say each answer aloud, then flip. A miss gets a 📌 and returns. Right answers earn '+r.flash+' XP.'},
+      {sel:'#s-hub .mode-grid,#s-hub .hub-big',e:'🧠 📅 ✏️',t:'Three more ways to revise',p:'Read the Revision Guide, test yourself on Key Dates, or practise exam answers.'}
+    ],
+    fcsetup:[
+      {sel:'#fd-unit,#fd-era-pills',e:'📚',t:'Pick your units',p:'Choose what to drill. Units you have not studied yet are best left off.'},
+      {sel:'#fd-hints-on',e:'💡',t:'Hints',p:'Switch hints on if you want a nudge before you flip the card.'},
+      {sel:'#fd-start-btn',e:'⚡',t:'Start',p:'Say each answer aloud before you flip. Right answers earn '+r.flash+' XP.'}
+    ],
+    drill:[
+      {sel:'#fd-scene',e:'🃏',t:'Say it, then flip',p:'Answer out loud first, then tap the card to check.'},
+      {sel:'.fd-miss',par:1,e:'❌ ✅',t:'Be honest',p:'❌ Missed puts a 📌 on the card and brings it back. ✅ Got it earns XP.'}
+    ],
+    knowledge:[
+      {sel:'#k-unit',e:'📖',t:'Choose a topic',p:'Pick a unit to read through.'},
+      {sel:'#k-btn-map',par:1,e:'🗺️',t:'Map or List',p:'Switch between a map of the periods and a plain list.'},
+      {sel:'#k-card',e:'🧠',t:'One card at a time',p:'Use Prev and Next to move through the notes.'}
+    ],
+    dates:[
+      {sel:'#d-mode-pick,#d-mode-type,#rqm-x',par:1,e:'📅',t:'Pick the style',p:'Choose from options, or type the year from memory.'},
+      {sel:'#d-go,#d-start-btn',e:'▶️',t:'Start',p:'Dates you miss are saved as 📌 hard dates to practise again.'}
+    ],
+    exam:[
+      {sel:'#e-type,#exam-route-grid',e:'✏️',t:'Choose a question',p:'Pick a question type and write a full exam answer, then compare it with the indicative content.'},
+      {sel:'#src-picker',e:'📜',t:'Pick a source',p:'Choose a source type, or 🎲 take a random one.'}
+    ],
+    rapidsetup:[
+      {sel:'#rqp-p1,#rqp-aa,#rqp-mtc',par:1,e:'📚',t:'Choose papers',p:'Tick the papers or units you want mixed together.'},
+      {sel:'#rqs-1',par:1,e:'⭐',t:'Difficulty',p:'⭐ is gentle and ⭐⭐⭐ is tough.'},
+      {sel:'#rq-mode-grid',e:'🎛️',t:'Style',p:'All at once, one at a time, or endless.'},
+      {sel:'#rqm-batch',par:1,e:'🎛️',t:'Style',p:'Ten at once, one at a time, or endless.'},
+      {sel:'#rq-go,#rq-setup .btn-go',e:'🎯',t:'Go',p:'Reveal each answer, then tap ✓ or ✗.'}
+    ],
+    rapidplay:[
+      {e:'🎯',t:'Say it, then reveal',p:'Answer in your head first, reveal, then tap ✓ or ✗. ⚙️ Settings takes you back to the setup.'}
+    ],
+    arcade:[
+      {sel:'#arc-body',e:'🕹️',t:'Four games',p:'🧩 Match the dates, 🐉 Boss battle, 🔨 Whack-a-fact and 🧱 Stack it.'},
+      {sel:'#arc-body',e:'🐉',t:'Boss battle',p:'Type each answer in 12 seconds. A miss costs a heart, and hearts do not come back for the next boss.'}
+    ],
+    progress:[
+      {sel:'#pg-level',e:'⭐',t:'Your level',p:'XP, level and streak. '+r.flash+' XP per flashcard, '+r.date+' per date or quiz answer, '+r.cap+' a day at most.'},
+      {sel:'#pg-units',e:'🎯',t:'Units to revisit',p:'Your weakest units. Start your next session here.'},
+      {sel:'#pg-days',e:'📈',t:'Last 14 days',p:'Daily XP. Short and regular beats one long cram.'}
+    ],
+    parent:[
+      {sel:'#pv-papers',e:'👪',t:'Choose the papers',p:'A parent or carer quizzes you out loud.'},
+      {sel:'#pv-count',e:'🔢',t:'How many?',p:'5, 10, 20, 30 or Endless.'},
+      {sel:'#pv-start',e:'▶️',t:'Start',p:'They tap ✓ Got it or ✗ Not yet. A finished quiz earns '+r.parent+' XP.'}
+    ],
+    stat:[
+      {sel:'#st-setup',e:'📊',t:'Choose your target',p:'Pick a depth study and strand to attack.'},
+      {sel:'#st-go',e:'🎯',t:'Fill the gap',p:'Each sentence is missing a figure, name or term. Pick it or type it.'}
+    ]
+  }}
+  function vis(sel){var e=$(sel);return !!(e&&e.offsetHeight>0)}
+  function ctx(){
+    var a=$('.screen.active'),id=a?a.id:'s-pick';
+    if(id==='s-main'){
+      var m=['knowledge','flashcard','dates','exam'].filter(function(x){var e=$('#mode-'+x);return e&&getComputedStyle(e).display!=='none'})[0];
+      if(m==='flashcard')return getComputedStyle($('#fd-drill')).display!=='none'?'drill':'fcsetup';
+      return m||'main';
+    }
+    if(id==='s-rapid')return vis('#rq-setup')?'rapidsetup':'rapidplay';
+    return id.slice(2);
+  }
   function clear(){if(hl){hl.classList.remove('tour-hl');hl=null}}
-  function end(){clear();if(card){card.remove();card=null}try{localStorage.setItem(KEY,'1')}catch(e){}}
+  function end(done){clear();if(card){card.remove();card=null}if(done){try{localStorage.setItem(KEY,'1')}catch(e){}}}
   function show(){
     clear();var s=steps[i];
-    if(s.sel){hl=$(s.sel);if(hl){hl.classList.add('tour-hl');hl.scrollIntoView({block:'start',behavior:'smooth'});window.scrollBy(0,-12)}}
-    else window.scrollTo({top:0,behavior:'smooth'});
-    if(!card){card=document.createElement('div');card.id='tour-card';card.setAttribute('role','dialog');card.setAttribute('aria-label','Tour');document.body.appendChild(card)}
+    if(!card){card=document.createElement('div');card.id='tour-card';card.setAttribute('role','dialog');card.setAttribute('aria-label','Tips');document.body.appendChild(card)}
     var last=i===steps.length-1;
-    card.innerHTML='<div class="tc-top"><span>Step '+(i+1)+' of '+steps.length+'</span>'+(last?'':'<button class="tc-skip" data-a="skip">Skip tour</button>')+'</div>'+
-      '<div class="tc-em">'+s.e+'</div><p class="tc-t">'+s.t+'</p><p class="tc-p">'+s.p+'</p><div class="tc-see"><b>What you will see:</b> '+s.see+'</div>'+
+    card.className='';
+    card.innerHTML='<div class="tc-top"><span>'+(i+1)+' of '+steps.length+'</span>'+(last?'':'<button class="tc-skip" data-a="skip">Skip</button>')+'</div>'+
+      '<p class="tc-t"><span>'+s.e+'</span>'+s.t+'</p><p class="tc-p">'+s.p+'</p>'+
       '<div class="tc-bot"><div class="tc-dots">'+steps.map(function(_,k){return '<i class="'+(k===i?'on':'')+'"></i>'}).join('')+'</div><div class="tc-btns">'+(i?'<button data-a="back">Back</button>':'')+'<button class="go" data-a="'+(last?'skip':'next')+'">'+(last?'Done':'Next')+'</button></div></div>';
+    var vh=window.innerHeight,ch=card.offsetHeight;
+    if(s.sel){
+      hl=$(s.sel);if(hl&&s.par&&hl.parentElement)hl=hl.parentElement;
+      if(hl){
+        hl.classList.add('tour-hl');
+        var r=hl.getBoundingClientRect();
+        window.scrollTo({top:Math.max(0,r.top+window.pageYOffset-64),behavior:'instant'});
+        r=hl.getBoundingClientRect();
+        if(r.bottom>vh-ch-20&&r.top>=ch+24)card.className='top';
+      }
+    }else window.scrollTo({top:0,behavior:'instant'});
   }
-  function start(){
-    if(typeof showScreen==='function'&&!$('#s-pick.active'))showScreen('s-pick');
-    build();i=0;show();
+  function open(list){steps=list;i=0;if(steps.length)show()}
+  function startHere(auto){
+    var k=ctx(),list=(k==='pick'?HOME():(PAGES()[k]||[]));
+    list=list.filter(function(s){return (auto||!s.first)&&(!s.sel||vis(s.sel))});
+    if(!list.length)list=[{e:'💡',t:'Nothing to explain here',p:'Everything on this page is covered by the other pages. Press ❓ on the home page for the full set.'}];
+    open(list);
   }
   document.addEventListener('click',function(e){
-    var a=e.target&&e.target.getAttribute&&e.target.getAttribute('data-a');
-    if(a==='next'){i++;show()}else if(a==='back'){i--;show()}else if(a==='skip')end();
-    else if(e.target&&e.target.id==='tour-btn')start();
+    var t=e.target,a=t&&t.getAttribute&&t.getAttribute('data-a');
+    if(a==='next'){i++;show()}else if(a==='back'){i--;show()}else if(a==='skip')end(true);
+    else if(t&&t.id==='tour-btn'){if(card)end(true);else startHere(false)}
   });
-  document.addEventListener('keydown',function(e){if(card&&e.key==='Escape')end()});
+  document.addEventListener('keydown',function(e){if(card&&e.key==='Escape')end(true)});
   window.addEventListener('DOMContentLoaded',function(){
     var t=$('#dark-toggle');
-    if(t&&!$('#tour-btn')){var b=document.createElement('button');b.id='tour-btn';b.className=t.className;b.title='Take the tour';b.setAttribute('aria-label','Take the tour');b.textContent='❓';t.parentNode.insertBefore(b,t)}
+    if(t&&!$('#tour-btn')){var b=document.createElement('button');b.id='tour-btn';b.className=t.className;b.title='Tips for this page';b.setAttribute('aria-label','Tips for this page');b.textContent='❓';t.parentNode.insertBefore(b,t)}
     var seen=false;try{seen=localStorage.getItem(KEY)==='1'}catch(e){}
-    if(!seen)setTimeout(function(){if($('#s-pick.active'))start()},900);
+    if(!seen)setTimeout(function(){if($('#s-pick.active'))startHere(true)},900);
   });
 })();
 </script>
