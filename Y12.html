@@ -703,6 +703,9 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .arc-pop{display:inline-block;animation:arcpop .4s}
 @keyframes arcpop{0%{transform:scale(1)}40%{transform:scale(1.7);color:#2E9E6B}100%{transform:scale(1)}}
 
+.ico{display:inline-block;width:1.45em;height:1.1em;background-size:contain;background-repeat:no-repeat;background-position:center;vertical-align:-.15em}
+.ico-bison{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'><path d='M16 22C20 8 40 6 48 18C56 18 61 25 59 33L57 41L51 41L50 34L42 35L40 41L34 41L33 34L25 34L23 41L17 41L16 32Z' fill='%236B4A2F'/><path d='M8 20C10 12 20 10 26 16C30 22 28 34 24 38C20 44 12 44 8 38C3 32 4 26 8 20Z' fill='%233E2A1A'/><path d='M9 21C7 15 10 10 14 9C12 12 12 15 14 17Z' fill='%23E8D9B0'/><circle cx='14' cy='26' r='1.8' fill='%23fff'/><circle cx='14.4' cy='26.2' r='.8' fill='%23000'/><path d='M9 38C10 43 14 45 18 42L16 36Z' fill='%232B1D11'/></svg>")}
+
 #s-arcade.ingame > .back-btn,#s-arcade.ingame > .arc-title{display:none}
 #fd-setup{display:none !important}
 .pick-btn .pbw{position:absolute;right:.5rem;top:50%;transform:translateY(-50%);width:2.7rem;flex:none;padding:0;background:none!important;cursor:inherit;display:block}
@@ -3144,7 +3147,15 @@ function unitIdx(sec, unit) { if (!unit) return -1; return sec === 'coldwar' ? C
 function secReached(sec) { return sec === 'mtc' ? posTs() >= 1 : sec === 'elizabeth' ? posTs() >= 3 : posC() >= 1; }
 function unitReached(u) { return secReached(u); }
 function unitOK(sec, unit) { var i = unitIdx(sec, unit); if (i < 0) return secReached(sec); return i < (sec === 'coldwar' ? posC() : posT()); }
-function inScope(it) { if (it.reign === 'mary' && posTs() < 2) return false; return unitOK(secOf(it), it.unit); }
+var MARY_1553 = /Mary I enters|First Act of Repeal|Leading Protestants|Northumberland executed/i;
+function isMaryItem(it) {
+  if (it.reign === 'mary' || it.section === 'mary') return true;
+  if (secOf(it) !== 'mtc' || it.reign === 'edward' || it.section === 'edward') return false;
+  var y = parseInt(it.date, 10);
+  if (!(y > 0)) return false;
+  return y >= 1554 || (y === 1553 && MARY_1553.test(it.event || ''));
+}
+function inScope(it) { if (posTs() < 2 && isMaryItem(it)) return false; return unitOK(secOf(it), it.unit); }
 function tudLabel(p) { p = +p; var m = 2 + S.elizabeth.units.length; return p <= 0 ? 'Not started' : p === 1 ? 'Edward VI' : p === 2 ? 'Edward and Mary' : p >= m ? 'Whole Tudor course' : 'Up to Unit ' + (p + 1); }
 function cwLabel(p) { p = +p; if (p <= 0) return 'Not started'; if (p >= CWU.length) return 'Whole Cold War course'; return p === 1 ? 'Chapter 1 only' : 'Chapters 1–' + p; }
 var UPTO_COL = {t:'#1D9E75', c:'#C47B1A'};
@@ -3232,7 +3243,7 @@ var XP_LEVELS = [
   {t:'Hampton Court',e:'🏰',xp:0}, {t:'Guildhall',e:'⚖️',xp:250}, {t:'Smithfield',e:'🔥',xp:600},
   {t:'English Channel',e:'🌊',xp:1100}, {t:'Potsdam',e:'🤝',xp:1800}, {t:'Berlin',e:'🧱',xp:2700},
   {t:'Belgrade',e:'🏳️',f:'rs',xp:3900}, {t:'Prague',e:'🏳️',f:'cz',xp:5500}, {t:'Budapest',e:'🏳️',f:'hu',xp:7600},
-  {t:'Warsaw',e:'🏳️',f:'pl',xp:10200}, {t:'Gdańsk',e:'🚢',xp:13500}, {t:'Vilnius',e:'🏳️',f:'lt',xp:17500},
+  {t:'Warsaw',e:'🏳️',f:'pl',xp:10200}, {t:'Gdańsk',e:'⚓',xp:13500}, {t:'Vilnius',e:'🏳️',f:'lt',xp:17500},
   {t:'Riga',e:'🏳️',f:'lv',xp:22500}, {t:'Tallinn',e:'🏳️',f:'ee',xp:28500}, {t:'Red Square',e:'🔴',xp:36000}, {t:'The Kremlin',e:'⭐',xp:50000}
 ];
 function lvE(L) { return L.f ? '<span class="flg flg-' + L.f + '"></span>' : L.e; }
