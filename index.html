@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <meta name="theme-color" content="#f8f7f4">
-<title>Mr Rodker's Revision Hub</title>
+<title>Humanities Revision Hub</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%A5%A3%3C/text%3E%3C/svg%3E">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}html{font-size:clamp(17px,.9vw + 8px,24px)}
@@ -17,6 +17,7 @@
   --lab:#9B2335;--lab-bg:#FBEEF0;--lab-mid:#C94A5A;
   --geo:#2E8B57;--geo-bg:#EAF0FB;
   --rs:#2A6BC8;--rs-bg:#F3EEF9;
+  --psy:#7B3FA0;--psy-bg:#F4EAFA;--psy-mid:#A56CC9;--psy-stamp:#B06AD0;
 }
 
 body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
@@ -27,9 +28,12 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
 
 .subject-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:1rem;
   align-items:start;
+}
+@media (max-width:900px){
+  .subject-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:640px){
   .subject-grid{grid-template-columns:1fr}
@@ -44,6 +48,7 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
 .subject-box:nth-child(1){animation-delay:.05s}
 .subject-box:nth-child(2){animation-delay:.1s}
 .subject-box:nth-child(3){animation-delay:.15s}
+.subject-box:nth-child(4){animation-delay:.2s}
 
 .stamp-circle{
   width:58px;height:58px;border-radius:50%;flex-shrink:0;
@@ -98,19 +103,28 @@ h1{animation:up .3s ease backwards}
 <body>
 <div class="app">
 
-  <h1>Mr Rodker's Revision Hub</h1>
-  <p class="subtitle">MCA Humanities Learning Area</p>
+  <h1>Humanities Revision Hub</h1>
 
   <div class="subject-grid">
 
     <div class="subject-box">
       <button type="button" class="stamp-circle" style="--sc:var(--hist-stamp)" aria-label="Toggle History courses">🏛️</button>
-      <div class="subj-name2">History</div>
+      <div class="subj-name2">History - Mr Rodker</div>
       <div class="subj-tag">3 courses</div>
       <div class="ticket-list">
         <a href="GCSE.html" class="ticket" style="--tc:var(--gcse);--tc-bg:var(--gcse-bg);--tc-mid:var(--gcse-mid)">GCSE History</a>
         <a href="Y12.html" class="ticket" style="--tc:var(--lab);--tc-bg:var(--lab-bg);--tc-mid:var(--lab-mid)">Y12 History</a>
         <a href="civil-rights.html" class="ticket" style="--tc:var(--aa);--tc-bg:var(--aa-bg);--tc-mid:var(--aa-mid)">Y13 History</a>
+      </div>
+    </div>
+
+    <div class="subject-box">
+      <button type="button" class="stamp-circle" style="--sc:var(--psy-stamp)" aria-label="Toggle Psychology courses">🧠</button>
+      <div class="subj-name2">Psychology - Mr Wakefield</div>
+      <div class="subj-tag">2 courses</div>
+      <div class="ticket-list">
+        <a href="https://mrstwakefield.github.io/Mr-Wakefields-GCSE-Revision/" class="ticket" style="--tc:var(--psy);--tc-bg:var(--psy-bg);--tc-mid:var(--psy-mid)">GCSE Psychology</a>
+        <a href="https://mrstwakefield.github.io/Mr-Wakefields-Fount-of-Wisdom-Knowledge/" class="ticket" style="--tc:var(--psy);--tc-bg:var(--psy-bg);--tc-mid:var(--psy-mid)">A Level Psychology</a>
       </div>
     </div>
 
