@@ -542,6 +542,9 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .arc-pop{display:inline-block;animation:arcpop .4s}
 @keyframes arcpop{0%{transform:scale(1)}40%{transform:scale(1.7);color:#2E9E6B}100%{transform:scale(1)}}
 
+.ico{display:inline-block;width:1.45em;height:1.1em;background-size:contain;background-repeat:no-repeat;background-position:center;vertical-align:-.15em}
+.ico-bison{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'><path d='M16 22C20 8 40 6 48 18C56 18 61 25 59 33L57 41L51 41L50 34L42 35L40 41L34 41L33 34L25 34L23 41L17 41L16 32Z' fill='%236B4A2F'/><path d='M8 20C10 12 20 10 26 16C30 22 28 34 24 38C20 44 12 44 8 38C3 32 4 26 8 20Z' fill='%233E2A1A'/><path d='M9 21C7 15 10 10 14 9C12 12 12 15 14 17Z' fill='%23E8D9B0'/><circle cx='14' cy='26' r='1.8' fill='%23fff'/><circle cx='14.4' cy='26.2' r='.8' fill='%23000'/><path d='M9 38C10 43 14 45 18 42L16 36Z' fill='%232B1D11'/></svg>")}
+
 
 
 /* Y13: four stops, so inset the slider so each stop sits over the centre of its label */
@@ -1686,11 +1689,12 @@ toggleStatUnit = function (u) { if (!unitReached(u)) { fdToast('Move the slider 
 // ---------- XP and levels ----------
 var XP_LEVELS = [
   {t:'Chipmunk',e:'🐿️',xp:0}, {t:'Bullfrog',e:'🐸',xp:250}, {t:'Mallard',e:'🦆',xp:600},
-  {t:'Skunk',e:'🦨',xp:1100}, {t:'Raccoon',e:'🦝',xp:1800}, {t:'Beaver',e:'🦫',xp:2700},
-  {t:'River otter',e:'🦦',xp:3900}, {t:'Alligator',e:'🐊',xp:5500}, {t:'Wild turkey',e:'🦃',xp:7600},
-  {t:'Buffalo',e:'🦬',xp:10200}, {t:'White-tailed deer',e:'🦌',xp:13500}, {t:'Grey wolf',e:'🐺',xp:17500},
+  {t:'Rattlesnake',e:'🐍',xp:1100}, {t:'Great horned owl',e:'🦉',xp:1800}, {t:'Snapping turtle',e:'🐢',xp:2700},
+  {t:'Red fox',e:'🦊',xp:3900}, {t:'Alligator',e:'🐊',xp:5500}, {t:'Wild turkey',e:'🦃',xp:7600},
+  {t:'Texas longhorn',e:'🐂',xp:10200}, {t:'White-tailed deer',e:'🦌',xp:13500}, {t:'Grey wolf',e:'🐺',xp:17500},
   {t:'Black bear',e:'🐻',xp:22500}, {t:'Mountain lion',e:'🐆',xp:28500}, {t:'Mustang',e:'🐎',xp:36000}, {t:'Bald eagle',e:'🦅',xp:50000}
 ];
+function lvE(L) { return L.f ? '<span class="ico ico-' + L.f + '"></span>' : L.e; }
 var XP_RULE = {flash:10, date:5, rapid:5, stat:5, wrong:0, repeat:2, runLen:5, runBonus:5, cap:500};
 var LS_XP = 'cr_xp';
 var xpRun = 0, xpCapShown = false, xpPopTimer = null, xpPendingUp = -1, xpFlushTimer = null;
@@ -1756,9 +1760,9 @@ function xpShowLevelUp() {
   el.id = 'xp-lu'; el.className = 'xp-lu-back';
   el.onclick = function (e) { if (e.target === el) xpCloseLevelUp(); };
   el.innerHTML = '<div class="xp-lu-card" role="dialog" aria-label="Level up">' +
-    '<div class="xp-lu-k">Level up</div><div class="xp-lu-ic">' + L.e + '</div>' +
+    '<div class="xp-lu-k">Level up</div><div class="xp-lu-ic">' + lvE(L) + '</div>' +
     '<div class="xp-lu-lv">Level ' + (i + 1) + '</div><div class="xp-lu-t">' + L.t + '</div>' +
-    (prev ? '<div class="xp-lu-from">Up from ' + prev.e + ' ' + prev.t + '</div>' : '') +
+    (prev ? '<div class="xp-lu-from">Up from ' + lvE(prev) + ' ' + prev.t + '</div>' : '') +
     '<div class="xp-bar"><div class="xp-fill" style="width:' + pct + '%"></div></div>' +
     '<div class="xp-next" style="margin:.3rem 0 1rem"><span>' + (nx ? 'Next: ' + nx.t : 'Top level reached') + '</span><span>' + (nx ? nx.xp.toLocaleString() + ' XP' : '') + '</span></div>' +
     '<button class="xp-lu-btn" onclick="xpCloseLevelUp()">Keep going</button></div>';
@@ -1921,7 +1925,7 @@ function xpBlock(x, link) {
   var today = x.days[localDate()] || 0;
   var pct = nx ? Math.round((x.total - L.xp) / (nx.xp - L.xp) * 100) : 100;
   var next = nx ? 'Next: ' + nx.t + ' at ' + nx.xp.toLocaleString() + ' XP' : 'Top level reached';
-  return '<div class="xp-top"><span class="xp-emoji">' + L.e + '</span>' +
+  return '<div class="xp-top"><span class="xp-emoji">' + lvE(L) + '</span>' +
     '<div class="xp-mid"><div class="xp-name">' + L.t + '</div><div class="xp-sub">Level ' + (i + 1) + ' · ' + x.total.toLocaleString() + ' XP</div></div>' +
     '<div class="xp-today"><b>' + today + '</b>/ ' + XP_RULE.cap + ' XP today</div></div>' +
     '<div class="xp-bar"><div class="xp-fill" style="width:' + pct + '%"></div></div>' +
@@ -1939,7 +1943,7 @@ function progressRender() {
   var x = xpLoad(), cur = xpLevelIdx(x.total);
   document.getElementById('pg-level').innerHTML = xpBlock(x, false);
   document.getElementById('pg-ladder').innerHTML = XP_LEVELS.map(function (l, i) {
-    return '<div class="pg-lv' + (i < cur ? ' done' : i === cur ? ' now' : '') + '"><span>' + l.e + '</span><span>Level ' + (i + 1) + ': ' + l.t + '</span><span>' + l.xp.toLocaleString() + ' XP</span></div>';
+    return '<div class="pg-lv' + (i < cur ? ' done' : i === cur ? ' now' : '') + '"><span>' + lvE(l) + '</span><span>Level ' + (i + 1) + ': ' + l.t + '</span><span>' + l.xp.toLocaleString() + ' XP</span></div>';
   }).join('');
   var days = '', seenU = {};
   for (var i = 13; i >= 0; i--) {
