@@ -527,7 +527,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .arc-hearts{font-size:1.25rem!important}
 .mt-b{padding:.75rem .7rem;border-radius:14px;box-shadow:0 3px 0 var(--border2);font-size:.86rem}
 .mt-b:active:not(:disabled){transform:translateY(2px);box-shadow:0 1px 0 var(--border2)}
-.mt-b.ok{animation:mtok .45s;box-shadow:0 3px 0 #1f5e27}
+.mt-b.ok{box-shadow:0 3px 0 #1f5e27}.mt-b.ok.fresh{animation:mtok .45s}
 @keyframes mtok{0%{transform:scale(1);background:#5FD08A}40%{transform:scale(1.1)}100%{transform:scale(1)}}
 .boss-box{position:relative;overflow:visible}
 .boss-dmg{position:absolute;right:1.1rem;top:.2rem;font-size:1.7rem;font-weight:900;animation:bossdmg .9s ease-out forwards;pointer-events:none;text-shadow:0 2px 0 rgba(0,0,0,.25)}
@@ -2174,7 +2174,7 @@ function mtRound(msg) {
     if (!used.has(y)) { used.add(y); items.push(it); }
     if (items.length === g.n) break;
   }
-  g.items = items; g.dates = shuffle(items.map((it, i) => i)); g.done = {}; g.selE = -1; g.selD = -1; g.bad = '';
+  g.items = items; g.dates = items.map((it, i) => i).sort((a, b) => arcYear(items[a]) - arcYear(items[b])); g.done = {}; g.selE = -1; g.selD = -1; g.bad = '';
   g.msg = msg || ''; g.busy = false;
   arcTimerStart(30, mtLate);
   mtRender();
@@ -2182,14 +2182,15 @@ function mtRound(msg) {
 function mtRender() {
   const g = ARC.g, hs = arcHS();
   const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Matched <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.mt || 0, g.score) + '</b></span></div>';
-  const evs = g.items.map((it, i) => '<button class="mt-b mt-ev' + (g.done[i] ? ' ok' : '') + (g.selE === i ? ' sel' : '') + (g.bad === 'e' + i ? ' no' : '') + '" style="--c:' + (uCol(it.section)) + '" ' + (g.done[i] || g.busy ? 'disabled ' : '') + 'onclick="mtPick(\'e\',' + i + ')">' + escHtml(it.event) + '</button>').join('');
-  const dts = g.dates.map(i => '<button class="mt-b mt-dt' + (g.done[i] ? ' ok' : '') + (g.selD === i ? ' sel' : '') + (g.bad === 'd' + i ? ' no' : '') + '" ' + (g.done[i] || g.busy ? 'disabled ' : '') + 'onclick="mtPick(\'d\',' + i + ')">' + escHtml(String(g.items[i].date)) + '</button>').join('');
+  const evs = g.items.map((it, i) => '<button class="mt-b mt-ev' + (g.done[i] ? ' ok' + (g.fresh && g.fresh.indexOf(i) >= 0 ? ' fresh' : '') : '') + (g.selE === i ? ' sel' : '') + (g.bad === 'e' + i ? ' no' : '') + '" style="--c:' + (uCol(it.section)) + '" ' + (g.done[i] || g.busy ? 'disabled ' : '') + 'onclick="mtPick(\'e\',' + i + ')">' + escHtml(it.event) + '</button>').join('');
+  const dts = g.dates.map(i => '<button class="mt-b mt-dt' + (g.done[i] ? ' ok' + (g.fresh && g.fresh.indexOf(i) >= 0 ? ' fresh' : '') : '') + (g.selD === i ? ' sel' : '') + (g.bad === 'd' + i ? ' no' : '') + '" ' + (g.done[i] || g.busy ? 'disabled ' : '') + 'onclick="mtPick(\'d\',' + i + ')">' + escHtml(String(g.items[i].date)) + '</button>').join('');
   arcFrame('<div class="arc-sub" style="text-align:center">' + (g.msg || 'Tap an event, then the date it happened. Match them all.') + '</div>' +
     '<div class="mt-wrap"><div class="mt-col">' + evs + '</div><div class="mt-col dts">' + dts + '</div></div>', head);
 }
 function mtPick(side, i) {
   const g = ARC.g;
   if (!g || g.type !== 'mt' || g.busy || g.done[i]) return;
+  g.fresh = null;
   if (side === 'e') g.selE = g.selE === i ? -1 : i; else g.selD = g.selD === i ? -1 : i;
   if (g.selE >= 0 && g.selD >= 0) {
     const e = g.selE, d = g.selD, it = g.items[e];
@@ -2197,7 +2198,7 @@ function mtPick(side, i) {
     xpAward(arcMode(it), ok, 'dt|' + it.section + '|' + it.event, it.event, it.section);
     g.selE = -1; g.selD = -1;
     if (ok) {
-      g.done[e] = 1; g.done[d] = 1; g.score++; g.msg = '';
+      g.done[e] = 1; g.done[d] = 1; g.fresh = [e, d]; g.score++; g.msg = '';
       if (Object.keys(g.done).length >= g.items.length) {
         g.busy = true; arcTimerStop(); g.n = Math.min(6, g.n + 1); g.msg = 'All matched!';
         mtRender();
@@ -2388,7 +2389,7 @@ function stOver() {
     '<button class="arc-btn" onclick="stStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
 }
 // ----- Boss battle -----
-const BOSSES = [['Revision Gremlin','👹'], ['Date Dragon','🐉'], ['The Sphinx','🦁'], ['Chief Examiner','🧌'], ['Mock Exam Kraken','🦑'], ['Mr Rodker','🧑‍🏫']];
+const BOSSES = [['Revision Gremlin','👹'], ['Memory Mummy','🧟'], ['Stat Skeleton','💀'], ['Date Dragon','🐉'], ['Mock Exam Kraken','🦑'], ['Mr Rodker','👨‍🏫']];
 const BOSS_HP = [6, 8, 10, 12, 15, 20], BOSS_SECS = 12;
 function bossStart() {
   const pool = shuffle(arcRqPool());
