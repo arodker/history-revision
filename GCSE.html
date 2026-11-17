@@ -619,6 +619,17 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .boss-hit{animation:bosshit .45s}.boss-laugh{animation:bosslaugh .5s}
 @keyframes bosshit{25%{transform:translateX(-8px) rotate(-10deg);filter:brightness(2)}60%{transform:translateX(8px) rotate(8deg)}}
 @keyframes bosslaugh{50%{transform:scale(1.25)}}
+@keyframes bossenter{0%{transform:translateX(170px) rotate(8deg);opacity:0}25%{opacity:1}40%{transform:translateX(100px) rotate(-7deg)}55%{transform:translateX(58px) rotate(6deg)}70%{transform:translateX(28px) rotate(-5deg)}85%{transform:translateX(8px) rotate(3deg)}100%{transform:none}}
+.boss-enter{animation:bossenter 1.4s ease-out}
+.boss-intro{position:absolute;right:1.1rem;top:.2rem;font-weight:800;font-size:.8rem;color:#C0392B;animation:bossdmg 1.8s ease-out forwards;pointer-events:none}
+
+@keyframes bossdie{0%{transform:none;filter:none}12%{transform:translateX(-10px) rotate(-14deg) scale(1.15);filter:brightness(3)}26%{transform:translateX(10px) rotate(12deg) scale(1.2);filter:brightness(3) saturate(0)}40%{transform:translateX(-8px) rotate(-8deg) scale(1.1);filter:brightness(2.2)}55%{transform:translateY(-8px) scale(1.3);filter:brightness(3) saturate(0);opacity:1}100%{transform:translateY(70px) rotate(220deg) scale(.1);opacity:0;filter:grayscale(1)}}
+.boss-box.dead{position:relative;overflow:visible}.boss-die{animation:bossdie 1.5s ease-in forwards}.boss-box.dead .boss-bar i{background:#888}
+.boss-pt{position:absolute;left:2.4rem;top:1.7rem;font-size:1.4rem;pointer-events:none;opacity:0;animation:bosspt .9s ease-out .35s forwards}
+@keyframes bosspt{0%{opacity:1;transform:rotate(var(--a)) translateX(0) scale(.5)}100%{opacity:0;transform:rotate(var(--a)) translateX(var(--d)) scale(1.4)}}
+.boss-ko{text-align:center;font-size:3.2rem;font-weight:900;letter-spacing:.06em;color:#E8433A;margin:.4rem 0;text-shadow:0 3px 0 rgba(0,0,0,.2);animation:bossko .7s cubic-bezier(.2,1.6,.4,1) .5s both}
+@keyframes bossko{0%{transform:scale(3) rotate(-12deg);opacity:0}100%{transform:scale(1) rotate(-4deg);opacity:1}}
+
 .boss-r{flex:1;min-width:0}
 .boss-nm{font-weight:800;font-size:.95rem}.boss-nm small{color:var(--muted);font-weight:700;font-family:'Courier New',monospace}
 .boss-bar{height:12px;background:var(--subtle);border-radius:8px;overflow:hidden;margin:.35rem 0 .2rem}
@@ -4341,7 +4352,7 @@ const ARC_WHEN_RE = /^(when|in which year|in what year|what year)\b/i;
 function arcRqItem(q) { return Object.assign({}, q, {date: String(q.a).trim(), event: q.q, src: 'rq'}); }
 function arcRqYears() { return arcRqPool().filter(q => ARC_WHEN_RE.test(q.q) && ARC_DATE_RE.test(String(q.a).trim())).map(arcRqItem); }
 function arcKind(it) { const s = String(it.date); return it.src !== 'rq' ? 'y' : (ARC_WHEN_RE.test(it.q) && ARC_DATE_RE.test(s) ? 'y' : (/^[\d,.%]+$/.test(s) ? 'n' : 't')); }
-function arcWhPool() { return arcDatesOnly().map(d => Object.assign({}, d, {src: 'dt'})).concat(arcRqPool().filter(q => { const a = String(q.a).trim(); return a.length > 0 && a.length <= 30; }).map(arcRqItem)); }
+function arcWhPool() { return arcDatesOnly().map(d => Object.assign({}, d, {src: 'dt'})).concat(arcRqPool().filter(q => { const a = String(q.a).trim(); return a.length > 0 && a.length <= 30; }).map(arcRqItem).filter(it => arcKind(it) !== 't')); }
 function arcMode(it) { return it.src === 'rq' ? 'rapid' : 'date'; }
 function arcMixOrder(pool) {
   const a = shuffle(pool.filter(x => x.src !== 'rq')), b = shuffle(pool.filter(x => x.src === 'rq'));
@@ -4373,7 +4384,7 @@ function arcMenu() {
     '<div class="arc-pills">' + pills + '</div>' +
     '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">🧩</span><span class="arc-tx"><b>Match the dates</b><small>Pair each event with its date. Three lives.</small></span><span class="arc-hi">HI ' + (hs.mt || 0) + '</span></button>' +
     '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Type the answer. Right answers hurt the boss, misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
-    '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>No time limit. Tap right dates, ignore wrong ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
+    '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>No time limit. Tap the right date or number.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
     '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
     '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 12 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
 }
@@ -4759,6 +4770,7 @@ function bossRender() {
   const pct = Math.max(0, Math.round(g.hp / g.max * 100));
   const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Hits <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.boss || 0, g.score) + '</b></span></div>';
   let low;
+  if (g.phase === 'dead') { arcFrame(bossDeadHtml(B, g), head); return; }
   if (g.phase === 'ask') {
     low = '<input id="boss-in" class="boss-in" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" enterkeyhint="go" onkeydown="if(event.key===\'Enter\')bossSubmit()">' +
       '<div class="boss-hintline" id="boss-hint"></div>' +
@@ -4807,12 +4819,33 @@ function bossMark(ok) {
   if (ok) { g.score++; g.hp--; } else g.lives--;
   g.marking = false;
   if (g.lives <= 0) { bossOver(); return; }
-  if (g.hp <= 0) { bossWin(); return; }
+  if (g.hp <= 0) { bossDeath(); return; }
   bossAsk();
   const em = document.getElementById('boss-em');
   if (em) em.classList.add(ok ? 'boss-hit' : 'boss-laugh');
   const bb = document.querySelector('.boss-box');
   if (bb) { const d = document.createElement('span'); d.className = 'boss-dmg ' + (ok ? 'ok' : 'no'); d.textContent = ok ? '-1' : '💔'; bb.appendChild(d); }
+}
+function bossDeadHtml(B, g) {
+  const ps = ['💥','✨','⭐','💫','💥','✨','⭐','💫'].map((p, i) => '<span class="boss-pt" style="--a:' + (i * 45) + 'deg;--d:' + (62 + (i % 3) * 20) + 'px">' + p + '</span>').join('');
+  return '<div class="boss-box dead"><span class="boss-em boss-die">' + B[1] + '</span><div class="boss-r"><div class="boss-nm">' + B[0] + ' <small>Lv ' + (g.lv + 1) + '</small></div><div class="boss-bar"><i style="width:0%"></i></div><div class="boss-hp">0 of ' + g.max + ' HP</div></div>' + ps + '</div>' +
+    '<div class="boss-ko">K.O.</div><div class="boss-res ok" style="text-align:center">' + B[0] + ' is defeated</div>';
+}
+function bossDeath() {
+  const g = ARC.g;
+  g.phase = 'dead'; g.dying = true; bossRender();
+  const s = document.getElementById('s-arcade');
+  if (s) { s.classList.remove('arc-shake'); void s.offsetWidth; s.classList.add('arc-shake'); }
+  clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g) { g.dying = false; bossAdvance(); } }, 2000);
+}
+function bossAdvance() {
+  const g = ARC.g;
+  if (g.lv >= BOSSES.length - 1) { bossWin(); return; }
+  arcSetHS('boss', g.score);
+  bossNext();
+  const em = document.getElementById('boss-em'), bb = document.querySelector('.boss-box');
+  if (em) em.classList.add('boss-enter');
+  if (bb) { const d = document.createElement('span'); d.className = 'boss-intro'; d.textContent = 'Next up: ' + BOSSES[g.lv % BOSSES.length][0]; bb.appendChild(d); }
 }
 function bossWin() {
   const g = ARC.g, B = BOSSES[g.lv % BOSSES.length];
