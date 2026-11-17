@@ -1,3075 +1,3186 @@
 [
- {
-  "q": "Approximately how many former slaves were freed into society by the Thirteenth Amendment in 1865?",
-  "a": "4 million",
-  "s": "4 million",
-  "alt": [],
-  "t": "n",
-  "section": "aa"
- },
- {
-  "q": "What rights did the Fourteenth Amendment give to African Americans?",
-  "a": "Citizenship and equal protection under the law",
-  "s": "Citizenship",
-  "alt": [
-   "Equal protection",
-   "citizenship and equal protection"
-  ],
-  "t": "t",
-  "section": "aa"
- },
- {
-  "q": "What did the Fifteenth Amendment forbid denying on grounds of race?",
-  "a": "Denial of the vote on the basis of colour or previous servitude",
-  "s": "The vote",
-  "alt": [
-   "voting rights",
-   "right to vote",
-   "vote"
-  ],
-  "t": "t",
-  "section": "aa"
- },
- {
-  "q": "Name the President who tried to use his veto to oppose Congressional Reconstruction",
-  "a": "Andrew Johnson",
-  "s": "Andrew Johnson",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "How many African Americans were elected to Congress in the 1870s?",
-  "a": "Twenty two",
-  "s": "Twenty two",
-  "alt": [],
-  "t": "n",
-  "section": "aa"
- },
- {
-  "q": "Name the African American who sat a full six year term in Congress between 1875-81",
-  "a": "Blanche K. Bruce",
-  "s": "Blanche K. Bruce",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "Which organisation was set up by the Federal Government in 1865 to support freed slaves?",
-  "a": "The Freedmen's Bureau",
-  "s": "The Freedmen's Bureau",
-  "alt": [],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "In what year did the Freedmen's Bureau close?",
-  "a": "1872",
-  "s": "1872",
-  "alt": [],
-  "t": "y",
-  "section": "aa"
- },
- {
-  "q": "What was the most common agricultural path taken by former slaves in the Reconstruction era?",
-  "a": "Sharecropping",
-  "s": "Sharecropping",
-  "alt": [],
-  "t": "t",
-  "section": "aa"
- },
- {
-  "q": "Which Supreme Court case ruled that the rights of citizens should stay under state rather than federal control?",
-  "a": "Slaughterhouse Case, 1873",
-  "s": "Slaughterhouse Case",
-  "alt": [
-   "Slaughterhouse",
-   "Slaughter-House Cases"
-  ],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "What did the Southern states begin to implement from 1865 onwards to deprive African Americans of their de jure rights?",
-  "a": "Black Codes",
-  "s": "Black Codes",
-  "alt": [],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "According to most Black Code regulations, what was the definition of a 'negro'?",
-  "a": "Someone with 1/8th black blood",
-  "s": "1/8th black blood",
-  "alt": [
-   "one eighth",
-   "an eighth",
-   "1/8"
-  ],
-  "t": "n",
-  "section": "aa"
- },
- {
-  "q": "Which group was formed in December 1865 to oppose African American civil rights?",
-  "a": "The Ku Klux Klan",
-  "s": "The Ku Klux Klan",
-  "alt": [],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "What was the name for Democrat controlled governments developed in the southern states from 1870 onwards to oppose reconstruction?",
-  "a": "Redemption Governments",
-  "s": "Redemption Governments",
-  "alt": [],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "Which compromise ended Reconstruction in 1877?",
-  "a": "With the Hayes-Tilden Compromise of 1877",
-  "s": "Hayes-Tilden Compromise",
-  "alt": [
-   "Compromise of 1877",
-   "Hayes Tilden"
-  ],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "In 1900, what proportion of African Americans still lived in the South?",
-  "a": "90%",
-  "s": "90%",
-  "alt": [],
-  "t": "n",
-  "section": "aa"
- },
- {
-  "q": "What was the name of 19th Century African-American owned businesses that served the black community where white businesses wouldn’t?",
-  "a": "Parallel businesses",
-  "s": "Parallel businesses",
-  "alt": [],
-  "t": "t",
-  "section": "aa"
- },
- {
-  "q": "Name the district of New York where small groups of African Americans began migrating to from 1880s onwards?",
-  "a": "Harlem",
-  "s": "Harlem",
-  "alt": [],
-  "t": "l",
-  "section": "aa"
- },
- {
-  "q": "Which segregation laws developed rapidly between 1887 and 1891",
-  "a": "Jim Crow Laws",
-  "s": "Jim Crow Laws",
-  "alt": [],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "Which pseudo-Scientific theory prevalent in the 1900s asserted that African Americans were racially inferior?",
-  "a": "Social Darwinism",
-  "s": "Social Darwinism",
-  "alt": [],
-  "t": "t",
-  "section": "aa"
- },
- {
-  "q": "In what year was the landmark Plessy vs. Ferguson case passed?",
-  "a": "1896",
-  "s": "1896",
-  "alt": [],
-  "t": "y",
-  "section": "aa"
- },
- {
-  "q": "Name one measure used to undermine the Fifteenth Amendment.",
-  "a": "Poll tax, property qualifications, literacy tests, grandfather clauses",
-  "s": "Literacy tests",
-  "alt": [
-   "literacy test",
-   "poll tax",
-   "poll taxes",
-   "property qualifications",
-   "grandfather clauses"
-  ],
-  "t": "x",
-  "section": "aa"
- },
- {
-  "q": "Which Supreme Court case of 1898 ruled that poll taxes and measures were not unconstitutional and didn't breach the 15th Amendment?",
-  "a": "Mississippi vs. Williams",
-  "s": "Mississippi vs. Williams",
-  "alt": [],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "The period 1880-1910 saw the height of what kind of violent oppression against African Americans?",
-  "a": "Lynching",
-  "s": "Lynching",
-  "alt": [],
-  "t": "t",
-  "section": "aa"
- },
- {
-  "q": "Which 19th Century figure notably opposed lynching and promoted women's rights?",
-  "a": "Ida B Wells",
-  "s": "Ida B Wells",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "Which unethical practice allowed bankrupt governments to profit from selling labour of prisoners to businessmen for cash?",
-  "a": "Convict leasing",
-  "s": "Convict leasing",
-  "alt": [],
-  "t": "t",
-  "section": "aa"
- },
- {
-  "q": "Which civil rights leader advocated accepting white dominance and focusing on self-improvement?",
-  "a": "Booker T. Washington",
-  "s": "Booker T. Washington",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "Which African American training and educational organisation was set up in 1881?",
-  "a": "Tuskegee Institute",
-  "s": "Tuskegee Institute",
-  "alt": [],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "When was the Negro Business League set up?",
-  "a": "1900",
-  "s": "1900",
-  "alt": [],
-  "t": "y",
-  "section": "aa"
- },
- {
-  "q": "Which President frequently consulted with Booker T. Washington on 'African American issues'?",
-  "a": "Theodore Roosevelt",
-  "s": "Theodore Roosevelt",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "When was the NAACP set up?",
-  "a": "1909",
-  "s": "1909",
-  "alt": [],
-  "t": "y",
-  "section": "aa"
- },
- {
-  "q": "Which event triggered the founding of the NAACP?",
-  "a": "The Springfield Race Riot, 1908",
-  "s": "Springfield Race Riot",
-  "alt": [
-   "Springfield riot",
-   "Springfield"
-  ],
-  "t": "e",
-  "section": "aa"
- },
- {
-  "q": "What did the 1915 Guinn Vs. US Supreme Court case outlaw?",
-  "a": "Grandfather clauses (Oklahoma and Maryland)",
-  "s": "Grandfather clauses",
-  "alt": [
-   "grandfather clause"
-  ],
-  "t": "t",
-  "section": "aa"
- },
- {
-  "q": "What was a criticism of the early NAACP leadership?",
-  "a": "They were almost all white",
-  "s": "Almost all white",
-  "alt": [
-   "mostly white",
-   "white leadership",
-   "all white"
-  ],
-  "t": "x",
-  "section": "aa"
- },
- {
-  "q": "What was the alternative name for the 369th Infantry Division who served with distinction during WW1?",
-  "a": "The Harlem Hellfighters",
-  "s": "The Harlem Hellfighters",
-  "alt": [],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "How many African Americans served during WW1?",
-  "a": "350,000",
-  "s": "350,000",
-  "alt": [],
-  "t": "n",
-  "section": "aa"
- },
- {
-  "q": "Which northern city experienced the largest race riots in 1919 due to WW1 economic migration of African Americans?",
-  "a": "Chicago",
-  "s": "Chicago",
-  "alt": [],
-  "t": "l",
-  "section": "aa"
- },
- {
-  "q": "Which decade was known as the 'Jazz Age' and saw the Harlem Renaissance?",
-  "a": "1920s",
-  "s": "1920s",
-  "alt": [],
-  "t": "y",
-  "section": "aa"
- },
- {
-  "q": "Which Civil Rights leader came to the US in 1916 and advocated the 'back to Africa' movement?",
-  "a": "Marcus Garvey",
-  "s": "Marcus Garvey",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "What did Marcus Garvey controversially do in 1922 which caused his support to plummet dramatically?",
-  "a": "Meet with the KKK",
-  "s": "Met the KKK",
-  "alt": [
-   "meeting the KKK",
-   "met with the KKK",
-   "meet with the KKK"
-  ],
-  "t": "x",
-  "section": "aa"
- },
- {
-  "q": "Name the African American who was elected to congress in 1928 (the first since 1900)?",
-  "a": "Oscar De Priest",
-  "s": "Oscar De Priest",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "Which political party recruited 7,000 unemployed black supporters in the post-WW1 era?",
-  "a": "The American Communist Party",
-  "s": "The American Communist Party",
-  "alt": [],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "The release of 'Birth of A Nation' in 1915 marked the resurgence of who?",
-  "a": "The KKK",
-  "s": "The KKK",
-  "alt": [],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "At its peak in 1924, how many members did the KKK have?",
-  "a": "5 million",
-  "s": "5 million",
-  "alt": [],
-  "t": "n",
-  "section": "aa"
- },
- {
-  "q": "According to Franklin Roosevelt, why was he unable to focus his New Deal legislation specifically on African Americans?",
-  "a": "He claimed he needed southern Democratic support to get the programme through Congress",
-  "s": "Needed southern Democrats",
-  "alt": [
-   "southern Democrats",
-   "southern Democratic support",
-   "needed southern support"
-  ],
-  "t": "x",
-  "section": "aa"
- },
- {
-  "q": "Which African American group was not covered by the Social Security Act or the National Labour Relations Act?",
-  "a": "Sharecroppers",
-  "s": "Sharecroppers",
-  "alt": [],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "Name the African American athlete who won four gold medals at the 1936 Berlin Olympics?",
-  "a": "Jesse Owens",
-  "s": "Jesse Owens",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "Which Supreme Court case of 1938 ruled that separate but equal facilities must actually be equal?",
-  "a": "Gaines vs. Canada",
-  "s": "Gaines vs. Canada",
-  "alt": [],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "During WW2, approximately how many African Americans migrated to northern cities?",
-  "a": "500,000",
-  "s": "500,000",
-  "alt": [],
-  "t": "n",
-  "section": "aa"
- },
- {
-  "q": "Where were there serious race riots in 1943?",
-  "a": "Detroit",
-  "s": "Detroit",
-  "alt": [],
-  "t": "l",
-  "section": "aa"
- },
- {
-  "q": "Which Civil Rights organisation was set up in 1942?",
-  "a": "CORE (Congress of Racial Equality)",
-  "s": "CORE",
-  "alt": [
-   "Congress of Racial Equality"
-  ],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "Which anti-Communist policy meant that civil rights groups were under suspicion in the 1950s?",
-  "a": "McCarthyism",
-  "s": "McCarthyism",
-  "alt": [],
-  "t": "t",
-  "section": "aa"
- },
- {
-  "q": "Roosevelt issued Executive Order 8802 in 1941 barring racial discrimination in employment after lobbying by which figure?",
-  "a": "Philip Randolph",
-  "s": "Philip Randolph",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "In what year was the US military desegregated?",
-  "a": "1948",
-  "s": "1948",
-  "alt": [],
-  "t": "y",
-  "section": "aa"
- },
- {
-  "q": "Name the black lawyer who took cases to the Supreme Court on behalf of the NAACP and won almost all of them?",
-  "a": "Thurgood Marshall",
-  "s": "Thurgood Marshall",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "Which landmark Supreme Court case was decided in 1954?",
-  "a": "Brown v Board",
-  "s": "Brown v Board",
-  "alt": [],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "Which shocking event of 1955 publicised the continuing lack of justice for African Americans in the south?",
-  "a": "Murder of Emmett Till",
-  "s": "Murder of Emmett Till",
-  "alt": [],
-  "t": "e",
-  "section": "aa"
- },
- {
-  "q": "Which anti-civil rights organisations were set up from 1955 onwards?",
-  "a": "White Citizens Councils",
-  "s": "White Citizens Councils",
-  "alt": [],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "Where did the President send federal troops in 1957 to allow black children to attend school?",
-  "a": "Little Rock, 1957",
-  "s": "Little Rock",
-  "alt": [
-   "Little Rock Arkansas"
-  ],
-  "t": "l",
-  "section": "aa"
- },
- {
-  "q": "What protest did Rosa Parks set off in 1955?",
-  "a": "The Montgomery Bus Boycott",
-  "s": "The Montgomery Bus Boycott",
-  "alt": [],
-  "t": "e",
-  "section": "aa"
- },
- {
-  "q": "What did Browder vs. Gayle 1956 decide?",
-  "a": "Segregation on public buses unconstitutional",
-  "s": "Bus segregation unconstitutional",
-  "alt": [
-   "segregated buses unconstitutional",
-   "buses unconstitutional",
-   "unconstitutional",
-   "bus segregation illegal"
-  ],
-  "t": "x",
-  "section": "aa"
- },
- {
-  "q": "Which organisation was formed in 1957 with Martin Luther King as its President?",
-  "a": "SCLC (Southern Christian Leadership Conference)",
-  "s": "SCLC",
-  "alt": [
-   "Southern Christian Leadership Conference"
-  ],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "Which passive protest method was used in 1960 in Greensboro?",
-  "a": "Sit in",
-  "s": "Sit in",
-  "alt": [],
-  "t": "e",
-  "section": "aa"
- },
- {
-  "q": "Which organisation was set up in 1960 following the success of the sit-ins?",
-  "a": "SNCC (Student Non-Violent Co-ordinating Committee)",
-  "s": "SNCC",
-  "alt": [
-   "Student Non-Violent Co-ordinating Committee",
-   "Student Nonviolent Coordinating Committee"
-  ],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "Which passive protest of 1961 saw blacks and whites working together to increase support for civil rights?",
-  "a": "Freedom Rides",
-  "s": "Freedom Rides",
-  "alt": [],
-  "t": "e",
-  "section": "aa"
- },
- {
-  "q": "Who was the police chief of Birmingham Alabama in 1963?",
-  "a": "Eugene 'Bull' Connor",
-  "s": "Eugene 'Bull' Connor",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "At which protest were peaceful protestors subject to use of police dogs and water cannons?",
-  "a": "Birmingham Protest 1963",
-  "s": "Birmingham Protest 1963",
-  "alt": [],
-  "t": "e",
-  "section": "aa"
- },
- {
-  "q": "Approximately how many people marched on Washington in 1963 to hear the 'I have a dream' speech?",
-  "a": "250,000",
-  "s": "250,000",
-  "alt": [],
-  "t": "n",
-  "section": "aa"
- },
- {
-  "q": "In what year did Lyndon B. Johnson pass the Civil Rights Act?",
-  "a": "1964",
-  "s": "1964",
-  "alt": [],
-  "t": "y",
-  "section": "aa"
- },
- {
-  "q": "From where did MLK lead a march to Montgomery demanding Voting Rights in 1965?",
-  "a": "Selma",
-  "s": "Selma",
-  "alt": [],
-  "t": "l",
-  "section": "aa"
- },
- {
-  "q": "In what year did Lyndon B. Johnson pass the Voting Rights Act?",
-  "a": "1965",
-  "s": "1965",
-  "alt": [],
-  "t": "y",
-  "section": "aa"
- },
- {
-  "q": "Where were there serious riots following the passing of the Voting Rights Act?",
-  "a": "Los Angeles",
-  "s": "Los Angeles",
-  "alt": [],
-  "t": "l",
-  "section": "aa"
- },
- {
-  "q": "Which unethical practice saw white Americans encouraged to sell their houses cheaply, before they were sold to black families at a higher price?",
-  "a": "Blockbusting",
-  "s": "Blockbusting",
-  "alt": [],
-  "t": "t",
-  "section": "aa"
- },
- {
-  "q": "Which organisation was Malcolm X a prominent member of until 1963?",
-  "a": "Nation of Islam",
-  "s": "Nation of Islam",
-  "alt": [],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "Name one way Malcolm X was critical of Martin Luther King.",
-  "a": "Rejected non-violence, criticised King's lack of focus on socio-economic issues, rejected integration or working with whites",
-  "s": "Rejected non-violence",
-  "alt": [
-   "non-violence",
-   "lack of focus on socio-economic issues",
-   "socio-economic",
-   "rejected integration",
-   "rejected working with whites"
-  ],
-  "t": "x",
-  "section": "aa"
- },
- {
-  "q": "When was Malcolm X assassinated?",
-  "a": "1965",
-  "s": "1965",
-  "alt": [],
-  "t": "y",
-  "section": "aa"
- },
- {
-  "q": "Where did Martin Luther King run an unsuccessful anti-segregation campaign in 1966?",
-  "a": "Chicago",
-  "s": "Chicago",
-  "alt": [],
-  "t": "l",
-  "section": "aa"
- },
- {
-  "q": "Which former member of the SNCC became disillusioned and left to join the Black Panthers in 1967?",
-  "a": "Stokely Carmichael",
-  "s": "Stokely Carmichael",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "Which conflict forced African American civil rights to take a back seat in the American media in the late 1960s?",
-  "a": "Vietnam War",
-  "s": "Vietnam War",
-  "alt": [],
-  "t": "e",
-  "section": "aa"
- },
- {
-  "q": "Between which years were the 'long hot summers' of violence in cities with substantial African American populations?",
-  "a": "1965-68",
-  "s": "1965-68",
-  "alt": [],
-  "t": "y",
-  "section": "aa"
- },
- {
-  "q": "When were the Black Panthers set up?",
-  "a": "1966",
-  "s": "1966",
-  "alt": [],
-  "t": "y",
-  "section": "aa"
- },
- {
-  "q": "What was the Black Panther's manifesto called?",
-  "a": "10-point programme",
-  "s": "10-point programme",
-  "alt": [],
-  "t": "t",
-  "section": "aa"
- },
- {
-  "q": "The failed 'Poor People's Campaign' took place in which year?",
-  "a": "1968",
-  "s": "1968",
-  "alt": [],
-  "t": "y",
-  "section": "aa"
- },
- {
-  "q": "Which President took a strong line against the Black Panthers?",
-  "a": "Nixon",
-  "s": "Nixon",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "Which policy to promote economic opportunity for African Americans came into place under Nixon?",
-  "a": "Affirmative action",
-  "s": "Affirmative action",
-  "alt": [],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "Which Supreme Court case upheld the validity of affirmative action?",
-  "a": "Griggs vs. Duke Power Company, 1971",
-  "s": "Griggs v Duke Power",
-  "alt": [
-   "Griggs"
-  ],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "Which unpopular policy was implemented in the 1970s to try and force racial integration in schools?",
-  "a": "Bussing",
-  "s": "Bussing",
-  "alt": [],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "A 1978 Supreme Court judgement in favour of Allan Bakke represented a setback against what Federal Civil Rights policy?",
-  "a": "Affirmative action",
-  "s": "Affirmative action",
-  "alt": [],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "Which President alleged that his administration was 'colour-blind' as a way of trying to resist affirmative action?",
-  "a": "Reagan",
-  "s": "Reagan",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "Which policy enacted by Reagan in the 1980s hit African Americans the hardest?",
-  "a": "Welfare cuts",
-  "s": "Welfare cuts",
-  "alt": [],
-  "t": "c",
-  "section": "aa"
- },
- {
-  "q": "Which branch of the Federal Government made the most efforts to positively impact African American civil rights in the 1980s?",
-  "a": "Congress",
-  "s": "Congress",
-  "alt": [],
-  "t": "o",
-  "section": "aa"
- },
- {
-  "q": "Name the African American Democrat who attempted to run for Presidency in 1984 and 1988?",
-  "a": "Jesse Jackson",
-  "s": "Jesse Jackson",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "Which term describes the splitting of the black community along class lines?",
-  "a": "Bifurcation",
-  "s": "Bifurcation",
-  "alt": [],
-  "t": "t",
-  "section": "aa"
- },
- {
-  "q": "Name the African American whose attack by police officers was caught on video camera in 1991?",
-  "a": "Rodney King",
-  "s": "Rodney King",
-  "alt": [],
-  "t": "p",
-  "section": "aa"
- },
- {
-  "q": "What was significant about the acquittal of the policemen who assaulted Rodney King?",
-  "a": "Jury were all white",
-  "s": "All-white jury",
-  "alt": [
-   "jury were all white",
-   "white jury",
-   "all white jury"
-  ],
-  "t": "x",
-  "section": "aa"
- },
- {
-  "q": "By 1992, what percentage of young African American men were either in prison, on parole, or on probation?",
-  "a": "25%",
-  "s": "25%",
-  "alt": [],
-  "t": "n",
-  "section": "aa"
- },
- {
-  "q": "What term describes a factory or workplace dominated by one union which all workers are obliged to join?",
-  "a": "Closed shop",
-  "s": "Closed shop",
-  "alt": [],
-  "t": "o",
-  "section": "lab"
- },
- {
-  "q": "Which union did William H. Sylvis lead in 1866?",
-  "a": "The National Labor Union (NLU)",
-  "s": "National Labor Union",
-  "alt": [
-   "NLU",
-   "National Labour Union"
-  ],
-  "t": "o",
-  "section": "lab"
- },
- {
-  "q": "Which system of employment popular in the Gilded Age left labourers vulnerable to being laid off in slack periods?",
-  "a": "Contract system",
-  "s": "Contract system",
-  "alt": [],
-  "t": "t",
-  "section": "lab"
- },
- {
-  "q": "When were the Knights of Labor founded?",
-  "a": "1869",
-  "s": "1869",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "Name one group the Knights of Labor admitted that other unions excluded.",
-  "a": "Skilled and unskilled workers, African Americans and women were all allowed to join",
-  "s": "African Americans",
-  "alt": [
-   "women",
-   "unskilled workers",
-   "unskilled",
-   "black workers"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "Which event in 1886 destroyed the reputation of the KOL?",
-  "a": "Haymarket Affair",
-  "s": "Haymarket Affair",
-  "alt": [],
-  "t": "e",
-  "section": "lab"
- },
- {
-  "q": "In what year was the American Federation of Labor founded?",
-  "a": "1886",
-  "s": "1886",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "Who was the first leader of the American Federation of Labor",
-  "a": "Samuel Gompers",
-  "s": "Samuel Gompers",
-  "alt": [],
-  "t": "p",
-  "section": "lab"
- },
- {
-  "q": "Who did the AFL negotiate with during the Gilded Age order to win rights to mediation and conciliation?",
-  "a": "Big businessmen like JP Morgan and Marcus A Hanna",
-  "s": "JP Morgan",
-  "alt": [
-   "Marcus Hanna",
-   "Marcus A Hanna",
-   "Mark Hanna",
-   "big businessmen"
-  ],
-  "t": "p",
-  "section": "lab"
- },
- {
-  "q": "Which short-lived early twentieth century trade union was known for being more militant at defending the rights of immigrants?",
-  "a": "Industrial Workers of the World (IWW or Wobblies)",
-  "s": "IWW",
-  "alt": [
-   "Wobblies",
-   "Industrial Workers of the World"
-  ],
-  "t": "o",
-  "section": "lab"
- },
- {
-  "q": "Who was the Haymarket Affair blamed on?",
-  "a": "German Anarchists / KOL",
-  "s": "German anarchists",
-  "alt": [
-   "anarchists",
-   "KOL",
-   "Knights of Labor"
-  ],
-  "t": "o",
-  "section": "lab"
- },
- {
-  "q": "Approximately how many immigrants entered the US between 1900 and 1930?",
-  "a": "19 million",
-  "s": "19 million",
-  "alt": [],
-  "t": "n",
-  "section": "lab"
- },
- {
-  "q": "In what year were 20 of the Molly Maguires hanged?",
-  "a": "1877–79",
-  "s": "1877",
-  "alt": [
-   "1878",
-   "1879",
-   "1877-79"
-  ],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "Which organisation advised African Americans to organise, but in their own racially separate unions?",
-  "a": "National Labor Union",
-  "s": "National Labor Union",
-  "alt": [],
-  "t": "o",
-  "section": "lab"
- },
- {
-  "q": "How did employers exploit the division between African American and white labour during the gilded age?",
-  "a": "Used African Americans as scab labour",
-  "s": "As scab labour",
-  "alt": [
-   "scabs",
-   "scab labour",
-   "strikebreakers"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "What term describes the attitude that there should be no governmental interference in the organisation or operation of business?",
-  "a": "Laissez Faire Capitalism",
-  "s": "Laissez Faire Capitalism",
-  "alt": [],
-  "t": "o",
-  "section": "lab"
- },
- {
-  "q": "Which Supreme Court case stated that it was unconstitutional to impose a 10-hour working day?",
-  "a": "Lochner vs. New York 1905",
-  "s": "Lochner vs. New York 1905",
-  "alt": [],
-  "t": "c",
-  "section": "lab"
- },
- {
-  "q": "Which African American union was formed in 1869?",
-  "a": "National Negro Labor Union",
-  "s": "National Negro Labor Union",
-  "alt": [],
-  "t": "o",
-  "section": "lab"
- },
- {
-  "q": "When was the Homestead Strike?",
-  "a": "1892",
-  "s": "1892",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "How did Henry Frick suppress the Homestead Strike?",
-  "a": "Stockpiled steel and then locked out the workers",
-  "s": "Locked out the workers",
-  "alt": [
-   "lockout",
-   "locked out",
-   "stockpiled steel"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "How long did Carnegie Steel remain non-unionised for after the Homestead Strike?",
-  "a": "40 years",
-  "s": "40 years",
-  "alt": [],
-  "t": "n",
-  "section": "lab"
- },
- {
-  "q": "Who set up the militant American Railway Union in 1893 and later ran for President as a socialist 4 times?",
-  "a": "Eugene Debs",
-  "s": "Eugene Debs",
-  "alt": [],
-  "t": "p",
-  "section": "lab"
- },
- {
-  "q": "How was the Pullman Strike broken up?",
-  "a": "Cleveland sent in federal troops",
-  "s": "Federal troops",
-  "alt": [
-   "troops",
-   "Cleveland sent in troops"
-  ],
-  "t": "t",
-  "section": "lab"
- },
- {
-  "q": "What happened to the leaders of the Pullman Strike after it was resolved?",
-  "a": "They were not given their jobs back",
-  "s": "Not given jobs back",
-  "alt": [
-   "blacklisted",
-   "not rehired",
-   "lost their jobs"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "What powerful precedent was set by the federal response to the Pullman Strike?",
-  "a": "Use of injunctions against labour unions to prevent striking",
-  "s": "Injunctions against unions",
-  "alt": [
-   "injunctions",
-   "court injunctions"
-  ],
-  "t": "t",
-  "section": "lab"
- },
- {
-  "q": "By 1920, how many trade union members were there in the USA?",
-  "a": "5 million",
-  "s": "5 million",
-  "alt": [],
-  "t": "n",
-  "section": "lab"
- },
- {
-  "q": "Why was the Clayton Anti-Trust Act of 1914 significant?",
-  "a": "Limited the use of court injunctions against striking workers",
-  "s": "Limited injunctions against strikes",
-  "alt": [
-   "limited court injunctions",
-   "limited injunctions",
-   "injunctions"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "Which organisation was set up during WW1 to facilitate right to join unions and collective bargaining?",
-  "a": "National War Labor Board",
-  "s": "National War Labor Board",
-  "alt": [],
-  "t": "o",
-  "section": "lab"
- },
- {
-  "q": "Why were the 1919 spate of post-war strikes met with extreme fear and hysteria by employers?",
-  "a": "Red Scare",
-  "s": "Red Scare",
-  "alt": [],
-  "t": "e",
-  "section": "lab"
- },
- {
-  "q": "Which city saw an attempted general strike in 1919?",
-  "a": "Seattle",
-  "s": "Seattle",
-  "alt": [],
-  "t": "l",
-  "section": "lab"
- },
- {
-  "q": "What term describes the act of a company providing improved working conditions whilst preventing workers from calling strikes or negotiating wages?",
-  "a": "Welfare capitalism",
-  "s": "Welfare capitalism",
-  "alt": [],
-  "t": "t",
-  "section": "lab"
- },
- {
-  "q": "What is a yellow dog contract?",
-  "a": "A contract which prevents an employee from joining a union",
-  "s": "Bans joining a union",
-  "alt": [
-   "prevents joining a union",
-   "no union membership"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "What union did Randolph set up in 1925?",
-  "a": "BSCP",
-  "s": "BSCP",
-  "alt": [],
-  "t": "o",
-  "section": "lab"
- },
- {
-  "q": "When did Henry Ford's Ford Company agree to recognise unions?",
-  "a": "1941",
-  "s": "1941",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "Coppage vs. Kansas (1915) gave employers the right to implement what form of contract?",
-  "a": "Yellow dog contracts",
-  "s": "Yellow dog contracts",
-  "alt": [],
-  "t": "t",
-  "section": "lab"
- },
- {
-  "q": "Who told the members of their union to 'fight or be slaves'?",
-  "a": "A. Philip Randolph",
-  "s": "A. Philip Randolph",
-  "alt": [],
-  "t": "p",
-  "section": "lab"
- },
- {
-  "q": "How much did unemployment increase to by 1933?",
-  "a": "25%",
-  "s": "25%",
-  "alt": [],
-  "t": "n",
-  "section": "lab"
- },
- {
-  "q": "By 1933 what % of workers were unionised?",
-  "a": "10",
-  "s": "10",
-  "alt": [],
-  "t": "n",
-  "section": "lab"
- },
- {
-  "q": "When was the National Industry Recovery Act passed?",
-  "a": "1933",
-  "s": "1933",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "What New Deal agency did the Supreme Court declare unconstitutional in 1935?",
-  "a": "National Recovery Administration",
-  "s": "National Recovery Administration",
-  "alt": [
-   "NRA"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "When was the Wagner Act passed?",
-  "a": "1935",
-  "s": "1935",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "Name one way the Wagner Act benefited unions.",
-  "a": "Right to join unions, right for collective bargainings, permitted closed shops, banned spies on shop floor",
-  "s": "Collective bargaining",
-  "alt": [
-   "right to join unions",
-   "closed shops",
-   "banned spies",
-   "right to collective bargaining"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "Which mediation organisation was set up by the Wagner Act?",
-  "a": "National Labor Relations Board (NLRB)",
-  "s": "NLRB",
-  "alt": [
-   "National Labor Relations Board"
-  ],
-  "t": "o",
-  "section": "lab"
- },
- {
-  "q": "How much did union membership rise to by 1938?",
-  "a": "9 million",
-  "s": "9 million",
-  "alt": [],
-  "t": "n",
-  "section": "lab"
- },
- {
-  "q": "When was the Fair Labor Standards Act passed?",
-  "a": "1938",
-  "s": "1938",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "What minimum hourly wage did the Fair Labor Standards Act set in 1938?",
-  "a": "25 cents an hour",
-  "s": "25 cents",
-  "alt": [
-   "$0.25",
-   "25c",
-   "25 cents an hour"
-  ],
-  "t": "n",
-  "section": "lab"
- },
- {
-  "q": "The Congress of Industrial Organisations (CIO) was formed as a breakaway organisation, because the AFL excluded which type of worker?",
-  "a": "Unskilled",
-  "s": "Unskilled",
-  "alt": [],
-  "t": "t",
-  "section": "lab"
- },
- {
-  "q": "Name one group of workers who remained disadvantaged despite the New Deal.",
-  "a": "Agricultural workers, African Americans, Mexicans, Unskilled workers, Women, Native Americans",
-  "s": "Agricultural workers",
-  "alt": [
-   "African Americans",
-   "Mexicans",
-   "unskilled workers",
-   "women",
-   "Native Americans"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "What mediation body was re-established by FDR during WWII?",
-  "a": "NWLB",
-  "s": "NWLB",
-  "alt": [],
-  "t": "o",
-  "section": "lab"
- },
- {
-  "q": "What did the Smith-Connally Act give the government the power to do during WWII?",
-  "a": "Seize control of industries threatening to strike",
-  "s": "Seize striking industries",
-  "alt": [
-   "seize control",
-   "seize industries",
-   "take over industries"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "How did Randolph persuade FDR to pass Executive Order 8802 in 1941?",
-  "a": "March on Washington movement",
-  "s": "March on Washington movement",
-  "alt": [],
-  "t": "e",
-  "section": "lab"
- },
- {
-  "q": "What 1947 law made closed shops, and wildcat strikes illegal?",
-  "a": "Taft-Hartley Act",
-  "s": "Taft-Hartley Act",
-  "alt": [],
-  "t": "c",
-  "section": "lab"
- },
- {
-  "q": "How did scientific and technological advances in the 1950s disadvantage workers?",
-  "a": "Automation - machines could do the job of several people",
-  "s": "Automation",
-  "alt": [
-   "machines",
-   "mechanisation"
-  ],
-  "t": "t",
-  "section": "lab"
- },
- {
-  "q": "What type of workers decreased dramatically as a result of automation in the 1950s?",
-  "a": "Blue Collar",
-  "s": "Blue Collar",
-  "alt": [],
-  "t": "t",
-  "section": "lab"
- },
- {
-  "q": "When did the AFL and CIO merge?",
-  "a": "1955",
-  "s": "1955",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "The AFL-CIO merger brought what percentage of union members into a single unit?",
-  "a": "85%",
-  "s": "85%",
-  "alt": [],
-  "t": "n",
-  "section": "lab"
- },
- {
-  "q": "By 1960, 35% of Americans could be described as living below what?",
-  "a": "The poverty line",
-  "s": "The poverty line",
-  "alt": [],
-  "t": "t",
-  "section": "lab"
- },
- {
-  "q": "What term described Kennedy's ambitious plan for social reform?",
-  "a": "The New Frontier",
-  "s": "The New Frontier",
-  "alt": [],
-  "t": "t",
-  "section": "lab"
- },
- {
-  "q": "What bill to benefit workers did Congress reject in 1961?",
-  "a": "Increase to minimum wage",
-  "s": "Increase to minimum wage",
-  "alt": [],
-  "t": "c",
-  "section": "lab"
- },
- {
-  "q": "When was the Equal Pay Act passed?",
-  "a": "1963",
-  "s": "1963",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "What term described Johnson's ambitious plan for social reform?",
-  "a": "The Great Society",
-  "s": "The Great Society",
-  "alt": [],
-  "t": "t",
-  "section": "lab"
- },
- {
-  "q": "Name one act passed under Johnson that benefited labour rights and the workforce.",
-  "a": "Civil Rights Act 1964, Economic Opportunity Act 1964, Age Discrimination in Employment Act 1967",
-  "s": "Civil Rights Act",
-  "alt": [
-   "Economic Opportunity Act",
-   "Age Discrimination in Employment Act",
-   "ADEA"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "In the 1960s, how much more did an average unionised worker earn than a non-unionised worker of a similar background?",
-  "a": "20%",
-  "s": "20%",
-  "alt": [],
-  "t": "n",
-  "section": "lab"
- },
- {
-  "q": "By 1969, what percentage of apprenticeships in skilled trades were held by African Americans?",
-  "a": "3%",
-  "s": "3%",
-  "alt": [],
-  "t": "n",
-  "section": "lab"
- },
- {
-  "q": "What term describes Nixon's policy which attempted to create opportunities for African Americans in the workforce?",
-  "a": "Affirmative action",
-  "s": "Affirmative action",
-  "alt": [],
-  "t": "c",
-  "section": "lab"
- },
- {
-  "q": "When was the PATCO strike?",
-  "a": "1981",
-  "s": "1981",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "What ultimatum did Reagan give the striking PATCO workers?",
-  "a": "Gave them 48 hours to return to work or lose their jobs, and get a lifetime employment ban in the industry",
-  "s": "48 hours to return",
-  "alt": [
-   "48 hours",
-   "return to work in 48 hours",
-   "return or lose their jobs"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "How were the PATCO strike leaders treated after the strike ended?",
-  "a": "Sent to prison and fined",
-  "s": "Prison and fines",
-  "alt": [
-   "sent to prison and fined",
-   "imprisoned",
-   "jailed",
-   "fined"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "What happened to union membership 1970-1992?",
-  "a": "Declined dramatically - 12% by 1992",
-  "s": "Fell to 12%",
-  "alt": [
-   "declined",
-   "declined dramatically",
-   "12%",
-   "fell"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "How did the increase in technology in the 1970s negatively impact unskilled workers?",
-  "a": "Reduced the demand for them",
-  "s": "Reduced demand for them",
-  "alt": [
-   "reduced demand",
-   "less demand",
-   "fewer jobs"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "How did the post-1970s rise in skilled workers impact union membership?",
-  "a": "Caused it to decrease dramatically",
-  "s": "Decreased",
-  "alt": [
-   "decline",
-   "fell",
-   "dropped",
-   "decreased dramatically"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "In the late twentieth century, there was an influx of immigration from where?",
-  "a": "Asia",
-  "s": "Asia",
-  "alt": [],
-  "t": "l",
-  "section": "lab"
- },
- {
-  "q": "Why were white collar workers less interested in union membership?",
-  "a": "Higher wages and better benefits packages than blue collar",
-  "s": "Higher wages and benefits",
-  "alt": [
-   "better benefits",
-   "higher wages",
-   "better benefits packages"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "In 1977, what did Jimmy Carter and Congress do to benefit workers?",
-  "a": "Raised the hourly minimum wage",
-  "s": "Raised minimum wage",
-  "alt": [
-   "increased the minimum wage",
-   "minimum wage increase"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "Which President set out from the offset to curb the power of unions?",
-  "a": "Reagan",
-  "s": "Reagan",
-  "alt": [],
-  "t": "p",
-  "section": "lab"
- },
- {
-  "q": "In 1970, the US experienced its first nationwide strike - from which industry?",
-  "a": "Postal Workers",
-  "s": "Postal Workers",
-  "alt": [],
-  "t": "t",
-  "section": "lab"
- },
- {
-  "q": "When was the Women's Trade Union League formed?",
-  "a": "1903",
-  "s": "1903",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "When was the Triangle Shirtwaist Factory Fire?",
-  "a": "1911",
-  "s": "1911",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "How many workers died in the Triangle Shirtwaist Factory Fire?",
-  "a": "146",
-  "s": "146",
-  "alt": [],
-  "t": "n",
-  "section": "lab"
- },
- {
-  "q": "What is a wildcat strike?",
-  "a": "Strike undertaken without agreement of union leadership",
-  "s": "Strike without union approval",
-  "alt": [
-   "unofficial strike",
-   "without union agreement",
-   "without leadership agreement"
-  ],
-  "t": "x",
-  "section": "lab"
- },
- {
-  "q": "Which influential figure was a member of the Women's Trade Union League and supported their demands?",
-  "a": "Eleanor Roosevelt",
-  "s": "Eleanor Roosevelt",
-  "alt": [],
-  "t": "p",
-  "section": "lab"
- },
- {
-  "q": "When was the Coalition of Labor Union Women formed?",
-  "a": "1974",
-  "s": "1974",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "When was the Salad Bowl Strike?",
-  "a": "1970",
-  "s": "1970",
-  "alt": [],
-  "t": "y",
-  "section": "lab"
- },
- {
-  "q": "Who led the United Farm Workers and increased Mexican American union involvement?",
-  "a": "Cesar Chavez",
-  "s": "Cesar Chavez",
-  "alt": [],
-  "t": "p",
-  "section": "lab"
- },
- {
-  "q": "What is the name given to the large area of the United States that Native Americans occupied before 1865?",
-  "a": "Great Plains",
-  "s": "Great Plains",
-  "alt": [],
-  "t": "l",
-  "section": "na"
- },
- {
-  "q": "What discovery in 1859 in California led to increased encroachment on Native American land?",
-  "a": "Gold Rush",
-  "s": "Gold Rush",
-  "alt": [],
-  "t": "e",
-  "section": "na"
- },
- {
-  "q": "Between what years were the Plains Wars?",
-  "a": "1854-77",
-  "s": "1854-77",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "When was the Sand Creek Massacre?",
-  "a": "1864",
-  "s": "1864",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "What did the federal government finish constructing in 1869, which threatened the Native American land and way of life?",
-  "a": "Transcontinental Railway",
-  "s": "Transcontinental Railway",
-  "alt": [],
-  "t": "e",
-  "section": "na"
- },
- {
-  "q": "In what decade did the federal government begin signing treaties with individual tribes which took their land while encouraging movement onto reservations?",
-  "a": "1850s",
-  "s": "1850s",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "What was the power of tribal chiefs replaced with on the reservations?",
-  "a": "An Indian Agent appointed by the Indian Bureau (Federal Government)",
-  "s": "An Indian Agent",
-  "alt": [
-   "Indian Agent",
-   "agent appointed by the Indian Bureau"
-  ],
-  "t": "t",
-  "section": "na"
- },
- {
-  "q": "Which treaty made with the Sioux established the Great Sioux Reservation in 1868?",
-  "a": "Fort Laramie",
-  "s": "Fort Laramie",
-  "alt": [],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "What term describes the white American belief that God had chosen them to populate all the land from the Atlantic to the Pacific?",
-  "a": "Manifest Destiny",
-  "s": "Manifest Destiny",
-  "alt": [],
-  "t": "t",
-  "section": "na"
- },
- {
-  "q": "In which battle did the Sioux, led by Sitting Bull and Crazy Horse, defeat General Custer's troops?",
-  "a": "Battle of Little Bighorn, 1876",
-  "s": "Little Bighorn",
-  "alt": [
-   "Battle of Little Bighorn",
-   "Little Big Horn"
-  ],
-  "t": "e",
-  "section": "na"
- },
- {
-  "q": "How were reservation Indians classified under federal law because they didn't pay tax?",
-  "a": "Wards of the state",
-  "s": "Wards of the state",
-  "alt": [],
-  "t": "t",
-  "section": "na"
- },
- {
-  "q": "What was a positive aspect of reservation life for Native Americans?",
-  "a": "Tribal structures maintained",
-  "s": "Tribal structures kept",
-  "alt": [
-   "tribal structures maintained",
-   "tribal structures"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "Name one negative of life on reservations for Native Americans.",
-  "a": "Loss of tribal leadership, forced changes to lifestyle, poverty, no longer able to herd buffalo, illness and epidemic, dependence on the state for aid which they didn't always receive",
-  "s": "Poverty",
-  "alt": [
-   "loss of tribal leadership",
-   "forced changes to lifestyle",
-   "no longer able to herd buffalo",
-   "illness",
-   "epidemics",
-   "disease",
-   "dependence on the state",
-   "dependence on aid"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "What had the population of Native Americans fallen to by 1900?",
-  "a": "100,000",
-  "s": "100,000",
-  "alt": [],
-  "t": "n",
-  "section": "na"
- },
- {
-  "q": "In what year was the massacre at Wounded Knee?",
-  "a": "1890",
-  "s": "1890",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "Which Native American marriage practice was forbidden by the federal government?",
-  "a": "Polygamy",
-  "s": "Polygamy",
-  "alt": [],
-  "t": "t",
-  "section": "na"
- },
- {
-  "q": "Which tribe managed against the odds to thrive and grow in population under reservation policy?",
-  "a": "Navajo Indians",
-  "s": "Navajo Indians",
-  "alt": [],
-  "t": "o",
-  "section": "na"
- },
- {
-  "q": "What was the federal government's intended purpose in educating Native American children?",
-  "a": "Americanisation and destruction of tribal loyalty",
-  "s": "Americanisation",
-  "alt": [
-   "Americanization",
-   "assimilation",
-   "destroy tribal loyalty"
-  ],
-  "t": "t",
-  "section": "na"
- },
- {
-  "q": "What were the names of the harsh off-reservation boarding schools established in the 1870s?",
-  "a": "Carlisle and Hampton",
-  "s": "Carlisle and Hampton",
-  "alt": [],
-  "t": "t",
-  "section": "na"
- },
- {
-  "q": "When was the Indian Rights Association founded?",
-  "a": "1882",
-  "s": "1882",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "What was the main aim of the Indian Rights Association?",
-  "a": "To promote assimilation",
-  "s": "To promote assimilation",
-  "alt": [],
-  "t": "t",
-  "section": "na"
- },
- {
-  "q": "When was the Dawes Severalty Act passed?",
-  "a": "1887",
-  "s": "1887",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "Under the terms of the Dawes Act, after how long would the Native Americans own the land allotted to them?",
-  "a": "25 years",
-  "s": "25 years",
-  "alt": [],
-  "t": "n",
-  "section": "na"
- },
- {
-  "q": "What was the aim of the Dawes Act?",
-  "a": "Allotment policy - to break down reservations and tribal loyalties",
-  "s": "Break down reservations",
-  "alt": [
-   "allotment",
-   "break down tribal loyalties",
-   "allotment policy"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "Which amendment to the Dawes Act ended the rights of independence of the five civilised tribes?",
-  "a": "Curtis Act 1898",
-  "s": "Curtis Act 1898",
-  "alt": [],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "How did the Dawes Act adversely affect the Iroquois and Cherokee women?",
-  "a": "Their tribes were matriarchal - under the Dawes Act the land was allotted to the male head of the family",
-  "s": "Land went to male head",
-  "alt": [
-   "allotted to the male head",
-   "matriarchal",
-   "land allotted to men"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "At what conference did the leaders of the five civilised tribes petition Congress to create a separate state of Sequoyah?",
-  "a": "Muskogee Convention, 1905",
-  "s": "Muskogee Convention",
-  "alt": [
-   "Muskogee"
-  ],
-  "t": "e",
-  "section": "na"
- },
- {
-  "q": "Which Supreme Court case established the right of Congress to revoke all treaties with Native Americans leading to the further acquisition of land?",
-  "a": "Lone Wolf vs. Hitchcock, 1903",
-  "s": "Lone Wolf v Hitchcock",
-  "alt": [
-   "Lone Wolf"
-  ],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "Which early form of inter-tribal pressure group was established in 1911?",
-  "a": "The Society of American Indians",
-  "s": "Society of American Indians",
-  "alt": [
-   "SAI"
-  ],
-  "t": "o",
-  "section": "na"
- },
- {
-  "q": "Which Supreme Court Case denied the request of the five civilised tribes to be able to live according to their own laws and traditions?",
-  "a": "Cherokee Nation vs. Hitchcock, 1902",
-  "s": "Cherokee Nation v Hitchcock",
-  "alt": [
-   "Cherokee Nation"
-  ],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "Approximately how many Native American men fought in WW1?",
-  "a": "10,000",
-  "s": "10,000",
-  "alt": [],
-  "t": "n",
-  "section": "na"
- },
- {
-  "q": "When was the Indian Citizenship Act passed?",
-  "a": "1924",
-  "s": "1924",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "What percentage of Native Americans already had the right to vote before the Indian Citizenship Act was passed?",
-  "a": "2/3",
-  "s": "2/3",
-  "alt": [
-   "two thirds",
-   "two-thirds",
-   "67%"
-  ],
-  "t": "n",
-  "section": "na"
- },
- {
-  "q": "How were the rights granted by the Indian Citizenship Act limited?",
-  "a": "States enforced voting qualifications",
-  "s": "State voting qualifications",
-  "alt": [
-   "states enforced voting qualifications",
-   "voting qualifications"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "In which Supreme Court case were voting qualifications against Native Americans successfully challenged?",
-  "a": "Harrison vs. Laveen, 1948",
-  "s": "Harrison v Laveen",
-  "alt": [
-   "Harrison"
-  ],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "By the 1920s, what percentage of their land had Native Americans lost?",
-  "a": "80%",
-  "s": "80%",
-  "alt": [],
-  "t": "n",
-  "section": "na"
- },
- {
-  "q": "What was the Leavitt Bill also known as?",
-  "a": "The Dance Order",
-  "s": "The Dance Order",
-  "alt": [],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "which organisation was formed in 1923 in response to the Leavitt Bill?",
-  "a": "The AIDA (American Indian Defence Association)",
-  "s": "AIDA",
-  "alt": [
-   "American Indian Defence Association",
-   "American Indian Defense Association"
-  ],
-  "t": "o",
-  "section": "na"
- },
- {
-  "q": "How did the beliefs of the AIDA differ from that of the Indian Rights Association?",
-  "a": "AIDA wanted to preserve cultures whereas IRA focused on assimilation",
-  "s": "AIDA preserve, IRA assimilate",
-  "alt": [
-   "preserve cultures",
-   "preserve culture",
-   "assimilation"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "Who was the executive secretary of the AIDA?",
-  "a": "John Collier",
-  "s": "John Collier",
-  "alt": [],
-  "t": "p",
-  "section": "na"
- },
- {
-  "q": "Which two bills was the AIDA successful in blocking?",
-  "a": "Leavitt and Bursum",
-  "s": "Leavitt and Bursum",
-  "alt": [],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "In what year was the Meriam Report published?",
-  "a": "1928",
-  "s": "1928",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "What was significant about the Meriam Report?",
-  "a": "First condemnation of the Dawes Act 1887",
-  "s": "First to condemn Dawes Act",
-  "alt": [
-   "condemned the Dawes Act",
-   "criticised the Dawes Act"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "Which President put together a modest reform package to aid Native Americans after the publication of the Meriam Report?",
-  "a": "Herbert Hoover",
-  "s": "Herbert Hoover",
-  "alt": [],
-  "t": "p",
-  "section": "na"
- },
- {
-  "q": "What Act was the cornerstone of the Indian New Deal?",
-  "a": "Wheeler-Howard Act (AKA Indian Reorganisation Act), 1934",
-  "s": "Indian Reorganisation Act",
-  "alt": [
-   "Wheeler-Howard Act",
-   "Wheeler Howard",
-   "IRA",
-   "Indian Reorganization Act"
-  ],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "Name one right or benefit Native Americans gained under the Indian New Deal.",
-  "a": "Restoration of some lands, rights to practice their own religion and cultural practices like dances. Some tribal councils",
-  "s": "Own religion and dances",
-  "alt": [
-   "restoration of some lands",
-   "some land back",
-   "tribal councils",
-   "religion",
-   "cultural practices",
-   "dances"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "Which Native American woman went to the University of Pennsylvania during the New Deal to study anthropology?",
-  "a": "Gladys Tantaquidgeon",
-  "s": "Gladys Tantaquidgeon",
-  "alt": [],
-  "t": "p",
-  "section": "na"
- },
- {
-  "q": "Why was the Indian New Deal disappointingly different to John Collier's recommendations?",
-  "a": "It focused on assimilation rather than returning self-government",
-  "s": "Assimilation not self-government",
-  "alt": [
-   "focused on assimilation",
-   "assimilation",
-   "not self-government"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "During the Second World War, how many Native Americans left their reservations to serve or work in the defence industry?",
-  "a": "100,000",
-  "s": "100,000",
-  "alt": [],
-  "t": "n",
-  "section": "na"
- },
- {
-  "q": "Which tribe refused to be drafted into the army during WW2?",
-  "a": "Iroquois",
-  "s": "Iroquois",
-  "alt": [],
-  "t": "o",
-  "section": "na"
- },
- {
-  "q": "Why did Native Americans lose lots of their reservation lands at the end of WW2?",
-  "a": "Japanese Americans forcibly relocated there",
-  "s": "Japanese Americans relocated there",
-  "alt": [
-   "Japanese Americans",
-   "Japanese internment"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "Which Native American pressure group was set up towards the end of WW2?",
-  "a": "National Congress of American Indians (NCAI)",
-  "s": "NCAI",
-  "alt": [
-   "National Congress of American Indians"
-  ],
-  "t": "o",
-  "section": "na"
- },
- {
-  "q": "When was the NCAI set up?",
-  "a": "1944",
-  "s": "1944",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "What happened to the number of Native Americans in urban cities between 1930 and 1960?",
-  "a": "It increased dramatically (fourfold)",
-  "s": "Increased fourfold",
-  "alt": [
-   "quadrupled",
-   "increased",
-   "increased dramatically",
-   "four times"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "What did the BIA set up in major Western cities in 1948?",
-  "a": "Job placement centres for Native Americans",
-  "s": "Job placement centres",
-  "alt": [
-   "job centres",
-   "employment centres",
-   "job placement"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "Which organisation did Congress set up in 1946 to compensate Native Americans?",
-  "a": "The Indian Claims Commission",
-  "s": "The Indian Claims Commission",
-  "alt": [],
-  "t": "o",
-  "section": "na"
- },
- {
-  "q": "Why was the governmental policy of compensation disappointing to Native Americans?",
-  "a": "Usually offered money instead of their land back",
-  "s": "Money not land",
-  "alt": [
-   "money instead of land",
-   "money instead",
-   "offered money"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "Between what years was the ICC active in giving compensation?",
-  "a": "1946-1978",
-  "s": "1946-1978",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "Which land did the Sioux Indians refuse to give up their claim to?",
-  "a": "Black Hills of Dakota",
-  "s": "Black Hills of Dakota",
-  "alt": [],
-  "t": "l",
-  "section": "na"
- },
- {
-  "q": "What term describes the governmental policy of trying to attract Native Americans to migrate away from reservations and into cities?",
-  "a": "Urbanisation",
-  "s": "Urbanisation",
-  "alt": [],
-  "t": "t",
-  "section": "na"
- },
- {
-  "q": "In what year did Termination begin?",
-  "a": "1953",
-  "s": "1953",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "What was Termination?",
-  "a": "Ended recognition of existence of Native American special status, made them subject to same laws/rights as American citizens",
-  "s": "Ended special status",
-  "alt": [
-   "same laws as citizens",
-   "same rights as citizens",
-   "ended recognition",
-   "ended special status"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "Which federal government organisation controlled the money allocated for Native Americans and was responsible for their education?",
-  "a": "Bureau of Indian Affairs (BIA)",
-  "s": "BIA",
-  "alt": [
-   "Bureau of Indian Affairs"
-  ],
-  "t": "o",
-  "section": "na"
- },
- {
-  "q": "What was the aim of the Voluntary Relocation Program?",
-  "a": "To lure Native Americans away from their reservations",
-  "s": "Lure them off reservations",
-  "alt": [
-   "move them to cities",
-   "urbanisation",
-   "leave reservations"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "When was the Indian Vocational Training Act passed?",
-  "a": "1956",
-  "s": "1956",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "Which famous address to Congress by Johnson recognised the poor conditions Native Americans were living in?",
-  "a": "The 'Forgotten American' speech, 1968",
-  "s": "Forgotten American speech",
-  "alt": [
-   "The Forgotten American",
-   "Forgotten American"
-  ],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "When did Nixon end Termination?",
-  "a": "1970",
-  "s": "1970",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "Which employment policy begun by Richard Nixon benefitted Native Americans to a certain extent?",
-  "a": "Affirmative action",
-  "s": "Affirmative action",
-  "alt": [],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "Which group of Native Americans found it easier to find jobs in urban environments?",
-  "a": "Women",
-  "s": "Women",
-  "alt": [],
-  "t": "o",
-  "section": "na"
- },
- {
-  "q": "By 1960, which proportion of urban Native Americans were classified as 'poor'?",
-  "a": "25%",
-  "s": "25%",
-  "alt": [],
-  "t": "n",
-  "section": "na"
- },
- {
-  "q": "Life expectancy for urban Native Americans was how far below the national average?",
-  "a": "20 years",
-  "s": "20 years",
-  "alt": [],
-  "t": "n",
-  "section": "na"
- },
- {
-  "q": "Which Native American protest group was set up in 1961?",
-  "a": "National Indian Youth Council",
-  "s": "NIYC",
-  "alt": [
-   "National Indian Youth Council"
-  ],
-  "t": "o",
-  "section": "na"
- },
- {
-  "q": "When did the NIYC stage a 'fish-in' in Washington?",
-  "a": "1968",
-  "s": "1968",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "In what year did Native Americans gather in Washington DC, hoping for recognition in Johnson's war on poverty?",
-  "a": "1964",
-  "s": "1964",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "Which pressure group was criticised by Native American youths for being too slow to enact change?",
-  "a": "NCAI",
-  "s": "NCAI",
-  "alt": [],
-  "t": "o",
-  "section": "na"
- },
- {
-  "q": "Which book by Dee Brown raised awareness of the Native American plight?",
-  "a": "Bury my heart at Wounded Knee",
-  "s": "Bury My Heart at Wounded Knee",
-  "alt": [
-   "Bury my heart"
-  ],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "In what year was the American Indian Movement founded?",
-  "a": "1968",
-  "s": "1968",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "How was the Red Power movement similar to Black Power?",
-  "a": "Red Berets, police patrols, militancy",
-  "s": "Militancy",
-  "alt": [
-   "Red Berets",
-   "police patrols"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "What term describes the status that young Indians fought for in the 1960s?",
-  "a": "Native Sovereignty",
-  "s": "Native Sovereignty",
-  "alt": [],
-  "t": "t",
-  "section": "na"
- },
- {
-  "q": "Who led the Siege of Alcatraz?",
-  "a": "Richard Oakes",
-  "s": "Richard Oakes",
-  "alt": [],
-  "t": "p",
-  "section": "na"
- },
- {
-  "q": "When was the Siege of Alcatraz?",
-  "a": "1969-1971",
-  "s": "1969-1971",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "What did the invaders of Alcatraz offer the federal government in return for the land?",
-  "a": "$24 worth of beads and cloth",
-  "s": "$24 of beads and cloth",
-  "alt": [
-   "$24",
-   "beads and cloth"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "How many Native Americans visited Alcatraz during the siege?",
-  "a": "10,000",
-  "s": "10,000",
-  "alt": [],
-  "t": "n",
-  "section": "na"
- },
- {
-  "q": "In what year did Nixon address Congress, criticising the treatment of Native Americans?",
-  "a": "1970",
-  "s": "1970",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "In what year did Nixon see tribal lands returned to the Taos Pueblo Indians?",
-  "a": "1970",
-  "s": "1970",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "In what year were Native Americans given preference of employment opportunities in the BIA?",
-  "a": "1972",
-  "s": "1972",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "When was the Indian Education Act passed?",
-  "a": "1972",
-  "s": "1972",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "In what year did the Supreme Court uphold all the measures taken by the Nixon administration?",
-  "a": "1974",
-  "s": "1974",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "Which Act, passed in 1975, abandoned the long-held belief in the necessity of assimilation?",
-  "a": "Indian Self-Determination and Education Assistance Act",
-  "s": "Indian Self-Determination Act",
-  "alt": [
-   "Self-Determination Act",
-   "Indian Self-Determination and Education Assistance Act"
-  ],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "When was the Native American Religious Freedom Act passed?",
-  "a": "1978",
-  "s": "1978",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "Which 1990 Act required American Indian remains to be repatriated?",
-  "a": "Native American Graves Protection and Repatriation Act (NAGPRA)",
-  "s": "NAGPRA",
-  "alt": [
-   "Native American Graves Protection and Repatriation Act",
-   "Native American Graves Protection Act",
-   "Graves Protection Act"
-  ],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "When was the Indian Child Welfare Act passed?",
-  "a": "1978",
-  "s": "1978",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "What area did the AIM occupy in 1971 in protest over a long-standing land dispute?",
-  "a": "Mount Rushmore",
-  "s": "Mount Rushmore",
-  "alt": [],
-  "t": "l",
-  "section": "na"
- },
- {
-  "q": "When did the AIM take over the offices of the BIA in Washington DC?",
-  "a": "1972",
-  "s": "1972",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "Name the caravan of around 1,000 protestors that arrived in Washington DC in 1972.",
-  "a": "The Trail of Broken Treaties",
-  "s": "The Trail of Broken Treaties",
-  "alt": [],
-  "t": "e",
-  "section": "na"
- },
- {
-  "q": "When did Native American protestors occupy Wounded Knee?",
-  "a": "1973",
-  "s": "1973",
-  "alt": [],
-  "t": "y",
-  "section": "na"
- },
- {
-  "q": "What was the aim of the Native American Rights Fund (NARF)?",
-  "a": "To defend the rights of Native Americans and their way of life",
-  "s": "Defend Native rights",
-  "alt": [
-   "defend the rights of Native Americans",
-   "legal defence"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "Which Supreme Court case 'opened the floodgates' for claims for Native Americans to have their land returned?",
-  "a": "Oneida vs. Oneida and Madison Counties, 1974",
-  "s": "Oneida v Oneida County",
-  "alt": [
-   "Oneida",
-   "Oneida v Oneida and Madison Counties"
-  ],
-  "t": "c",
-  "section": "na"
- },
- {
-  "q": "What did Fisher vs. Montana 1976 decide?",
-  "a": "Secured the right of tribal courts to decide on cases relating to adoption of Native American children",
-  "s": "Tribal courts decide adoptions",
-  "alt": [
-   "right of tribal courts",
-   "tribal courts"
-  ],
-  "t": "x",
-  "section": "na"
- },
- {
-  "q": "How much compensation did the Sioux turn down in the 1980 United States vs. the Sioux Nation case, demanding the return of their land instead?",
-  "a": "$106 million",
-  "s": "$106 million",
-  "alt": [],
-  "t": "n",
-  "section": "na"
- },
- {
-  "q": "1982 Seminole vs. Butterworth established the right of Native Americans to do what on their land?",
-  "a": "Establish gambling enterprises, even if against state law",
-  "s": "Run casinos",
-  "alt": [
-   "gambling",
-   "gambling enterprises",
-   "bingo",
-   "casinos"
-  ],
-  "t": "t",
-  "section": "na"
- },
- {
-  "q": "How much had the Native American population increased to by 1990?",
-  "a": "1.7 million",
-  "s": "1.7 million",
-  "alt": [],
-  "t": "n",
-  "section": "na"
- },
- {
-  "q": "The Civil War meant that women were offered job opportunities in which industries?",
-  "a": "Agriculture and nursing",
-  "s": "Agriculture and nursing",
-  "alt": [
-   "farming and nursing"
-  ],
-  "t": "t",
-  "section": "wom"
- },
- {
-  "q": "By 1870, what percentage of unmarried women worked?",
-  "a": "13%",
-  "s": "13%",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "Which piece of legislation from 1862 gave women the opportunity to own land?",
-  "a": "Homestead Act",
-  "s": "Homestead Act",
-  "alt": [],
-  "t": "c",
-  "section": "wom"
- },
- {
-  "q": "What type of voting exclusion did the Fifteenth Amendment not forbid?",
-  "a": "On the basis of gender",
-  "s": "Gender",
-  "alt": [
-   "sex",
-   "on the basis of gender"
-  ],
-  "t": "t",
-  "section": "wom"
- },
- {
-  "q": "Which term describes the idea that women and men occupied different roles in life?",
-  "a": "Separate spheres",
-  "s": "Separate spheres",
-  "alt": [],
-  "t": "t",
-  "section": "wom"
- },
- {
-  "q": "By 1900, female workers made up what percentage of the workforce?",
-  "a": "17%",
-  "s": "17%",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "By the 1890s, how much could women make per week in office work?",
-  "a": "$7",
-  "s": "$7",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "During the Gilded Age, immigrant female factory workers had to work on average how many weekly hours to earn $5?",
-  "a": "70",
-  "s": "70",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "By 1900, the average birth rate fell to what?",
-  "a": "3.56",
-  "s": "3.56",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "By 1900, what had the divorce rate risen to?",
-  "a": "1 in 12",
-  "s": "1 in 12",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "What did Jane Addams establish in 1889?",
-  "a": "Hull House in Chicago",
-  "s": "Hull House in Chicago",
-  "alt": [],
-  "t": "t",
-  "section": "wom"
- },
- {
-  "q": "When was the Women's Crusade?",
-  "a": "1873",
-  "s": "1873",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "When was the Women's Christian Temperance Union founded?",
-  "a": "1874",
-  "s": "1874",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "When was the National Association of Coloured Women formed?",
-  "a": "1896",
-  "s": "1896",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "Which founding member of the AERA challenged the constitution by voting illegally in the Presidential Election of 1872?",
-  "a": "Susan B. Anthony",
-  "s": "Susan B. Anthony",
-  "alt": [],
-  "t": "p",
-  "section": "wom"
- },
- {
-  "q": "When did a merger of the AWSA and NWSA establish the NAWSA?",
-  "a": "1890",
-  "s": "1890",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "When was the militant Congressional Union of Women's Suffrage formed?",
-  "a": "1913",
-  "s": "1913",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "Which suffragist received a seven-month prison sentence in 1917 for picketing the White House?",
-  "a": "Alice Paul",
-  "s": "Alice Paul",
-  "alt": [],
-  "t": "p",
-  "section": "wom"
- },
- {
-  "q": "When was the Nineteenth Amendment passed?",
-  "a": "1920",
-  "s": "1920",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "How many women worked in WW1 industry between 1917 and 1918?",
-  "a": "1 million",
-  "s": "1 million",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "Which New Deal legislation helped women who were unable to work and had no male head of the household?",
-  "a": "Aid to Dependent Children 1935",
-  "s": "Aid to Dependent Children",
-  "alt": [
-   "ADC"
-  ],
-  "t": "c",
-  "section": "wom"
- },
- {
-  "q": "In 1939, a female teacher earned how much less than her male counterpart?",
-  "a": "20%",
-  "s": "20%",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "In what year did Jeanette Rankin become the first woman to join the House of Representatives?",
-  "a": "1917",
-  "s": "1917",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "Which women were not granted the vote under the 19th Amendment?",
-  "a": "Non-naturalised immigrants",
-  "s": "Non-naturalised immigrants",
-  "alt": [
-   "immigrants",
-   "non-naturalized immigrants"
-  ],
-  "t": "x",
-  "section": "wom"
- },
- {
-  "q": "By 1939, How many women had entered politics?",
-  "a": "9",
-  "s": "9",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "Who became Secretary of Labour in 1933?",
-  "a": "Frances Perkins",
-  "s": "Frances Perkins",
-  "alt": [],
-  "t": "p",
-  "section": "wom"
- },
- {
-  "q": "Which labour organisation did Eleanor Roosevelt join?",
-  "a": "Women's Trade Union League",
-  "s": "Women's Trade Union League",
-  "alt": [],
-  "t": "o",
-  "section": "wom"
- },
- {
-  "q": "When were the Comstock Laws passed?",
-  "a": "1873",
-  "s": "1873",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "When was the American Birth Control League founded?",
-  "a": "1921",
-  "s": "1921",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "In what year was the federal ban on birth control lifted?",
-  "a": "1938",
-  "s": "1938",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "When did Congress pass the 18th Amendment (banning alcohol)?",
-  "a": "1917 (ratified 1919)",
-  "s": "1917",
-  "alt": [
-   "1919"
-  ],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "When was the 21st Amendment ratified, ending prohibition?",
-  "a": "1933",
-  "s": "1933",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "Which figure illegally gave advice on birth control to women?",
-  "a": "Margaret Sanger",
-  "s": "Margaret Sanger",
-  "alt": [],
-  "t": "p",
-  "section": "wom"
- },
- {
-  "q": "When was the Molly Pitcher Club set up?",
-  "a": "1922",
-  "s": "1922",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "How many women entered the workforce between 1940 and 1945?",
-  "a": "5 million",
-  "s": "5 million",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "How many women joined the armed forces during WWII?",
-  "a": "350,000",
-  "s": "350,000",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "After WWII, what % of married women wanted to remain in employment?",
-  "a": "75%",
-  "s": "75%",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "Funding for which service was withdrawn between 1942 amd 1946?",
-  "a": "Childcare",
-  "s": "Childcare",
-  "alt": [],
-  "t": "t",
-  "section": "wom"
- },
- {
-  "q": "Which 1946 book emphasised the importance of mothers in the home?",
-  "a": "Spock's Common Sense Book of Baby and Child Care",
-  "s": "Spock's baby book",
-  "alt": [
-   "Spock",
-   "Dr Spock",
-   "Common Sense Book of Baby and Child Care"
-  ],
-  "t": "c",
-  "section": "wom"
- },
- {
-  "q": "Why did the GI Bill of Rights 1944 disadvantage women?",
-  "a": "It increased educational opportunities for men (veterans), not women",
-  "s": "Helped men, not women",
-  "alt": [
-   "benefited men",
-   "favoured men",
-   "men benefited",
-   "veterans were men"
-  ],
-  "t": "x",
-  "section": "wom"
- },
- {
-  "q": "What became more socially acceptable in the 1960s, allowing some families to spend more on recreation and leisure?",
-  "a": "Dual incomes",
-  "s": "Dual incomes",
-  "alt": [],
-  "t": "t",
-  "section": "wom"
- },
- {
-  "q": "What organisation, set up in 1964 was intended to ensure the Civil Rights Act were enforced for gender equality?",
-  "a": "Equal Employment Opportunity Commission",
-  "s": "EEOC",
-  "alt": [
-   "Equal Employment Opportunity Commission"
-  ],
-  "t": "o",
-  "section": "wom"
- },
- {
-  "q": "Who wrote The Feminine Mystique?",
-  "a": "Betty Friedan",
-  "s": "Betty Friedan",
-  "alt": [],
-  "t": "p",
-  "section": "wom"
- },
- {
-  "q": "How did Betty Friedan describe being a married housewife?",
-  "a": "Comfortable concentration camp",
-  "s": "Comfortable concentration camp",
-  "alt": [],
-  "t": "t",
-  "section": "wom"
- },
- {
-  "q": "In what year was NOW formed?",
-  "a": "1966",
-  "s": "1966",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "What was buried in Arlington National Cemetery in 1968?",
-  "a": "Traditional Womanhood",
-  "s": "Traditional Womanhood",
-  "alt": [],
-  "t": "t",
-  "section": "wom"
- },
- {
-  "q": "When was the women's strike for equality?",
-  "a": "1970",
-  "s": "1970",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "In 1968, 65% of girls aged 15-19 had the ambition to become what?",
-  "a": "Housewives",
-  "s": "Housewives",
-  "alt": [],
-  "t": "t",
-  "section": "wom"
- },
- {
-  "q": "By 1969 how many women were in national politics?",
-  "a": "11",
-  "s": "11",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "By 1970 what % of women had jobs?",
-  "a": "47%",
-  "s": "47%",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "By the mid-1980s how many states offered paid paternity leave?",
-  "a": "5",
-  "s": "5",
-  "alt": [],
-  "t": "n",
-  "section": "wom"
- },
- {
-  "q": "What radical splinter group called for the abolition of marriage in the 1970s?",
-  "a": "The Feminists",
-  "s": "The Feminists",
-  "alt": [],
-  "t": "o",
-  "section": "wom"
- },
- {
-  "q": "When was Roe v Wade decided by the Supreme Court?",
-  "a": "1973",
-  "s": "1973",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "What law meant that the Federal Government could not fund abortion services even after Roe v Wade?",
-  "a": "Hyde Amendment",
-  "s": "Hyde Amendment",
-  "alt": [],
-  "t": "c",
-  "section": "wom"
- },
- {
-  "q": "Who edited 'Ms' magazine?",
-  "a": "Gloria Steinem",
-  "s": "Gloria Steinem",
-  "alt": [],
-  "t": "p",
-  "section": "wom"
- },
- {
-  "q": "In which decade did the contraceptive pill become widely available?",
-  "a": "1960s/70s",
-  "s": "1960s",
-  "alt": [
-   "1970s",
-   "1960s/70s"
-  ],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "In what year was the ERA passed by the Federal Government",
-  "a": "1972",
-  "s": "1972",
-  "alt": [],
-  "t": "y",
-  "section": "wom"
- },
- {
-  "q": "Who led the opposition to the ERA?",
-  "a": "Phyllis Schlafly",
-  "s": "Phyllis Schlafly",
-  "alt": [],
-  "t": "p",
-  "section": "wom"
- },
- {
-  "q": "How many states ratified the ERA?",
-  "a": "35 of the 38 needed",
-  "s": "35",
-  "alt": [
-   "35/38",
-   "35 of 38",
-   "thirty five"
-  ],
-  "t": "n",
-  "section": "wom"
- }
+  {
+    "q": "Approximately how many former slaves were freed into society by the Thirteenth Amendment in 1865?",
+    "a": "4 million",
+    "s": "4 million",
+    "alt": [],
+    "t": "n",
+    "section": "aa"
+  },
+  {
+    "q": "What rights did the Fourteenth Amendment give to African Americans?",
+    "a": "Citizenship and equal protection under the law",
+    "s": "Citizenship",
+    "alt": [
+      "Equal protection",
+      "citizenship and equal protection",
+      "citizenship",
+      "citizenship and equal rights"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "What right could not be denied on grounds of race under the Fifteenth Amendment?",
+    "a": "The vote (denial of the vote on the basis of colour or previous servitude was forbidden)",
+    "s": "The vote",
+    "alt": [
+      "voting rights",
+      "right to vote",
+      "vote",
+      "the vote",
+      "voting",
+      "suffrage"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Name the President who tried to use his veto to oppose Congressional Reconstruction",
+    "a": "Andrew Johnson",
+    "s": "Andrew Johnson",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "How many African Americans were elected to Congress in the 1870s?",
+    "a": "Twenty two",
+    "s": "Twenty two",
+    "alt": [],
+    "t": "n",
+    "section": "aa"
+  },
+  {
+    "q": "Name the African American who sat a full six year term in Congress between 1875-81",
+    "a": "Blanche K. Bruce",
+    "s": "Blanche K. Bruce",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which organisation was set up by the Federal Government in 1865 to support freed slaves?",
+    "a": "The Freedmen's Bureau",
+    "s": "The Freedmen's Bureau",
+    "alt": [],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "In what year did the Freedmen's Bureau close?",
+    "a": "1872",
+    "s": "1872",
+    "alt": [],
+    "t": "y",
+    "section": "aa"
+  },
+  {
+    "q": "What was the most common agricultural path taken by former slaves in the Reconstruction era?",
+    "a": "Sharecropping",
+    "s": "Sharecropping",
+    "alt": [],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Which Supreme Court case ruled that the rights of citizens should stay under state rather than federal control?",
+    "a": "Slaughterhouse Case, 1873",
+    "s": "Slaughterhouse Case",
+    "alt": [
+      "Slaughterhouse",
+      "Slaughter-House Cases"
+    ],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "What did the Southern states begin to implement from 1865 onwards to deprive African Americans of their de jure rights?",
+    "a": "Black Codes",
+    "s": "Black Codes",
+    "alt": [],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "According to most Black Code regulations, what was the definition of a 'negro'?",
+    "a": "Someone with 1/8th black blood",
+    "s": "1/8th black blood",
+    "alt": [
+      "one eighth",
+      "an eighth",
+      "1/8"
+    ],
+    "t": "n",
+    "section": "aa"
+  },
+  {
+    "q": "Which group was formed in December 1865 to oppose African American civil rights?",
+    "a": "The Ku Klux Klan",
+    "s": "The Ku Klux Klan",
+    "alt": [],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "What was the name for Democrat controlled governments developed in the southern states from 1870 onwards to oppose reconstruction?",
+    "a": "Redemption Governments",
+    "s": "Redemption Governments",
+    "alt": [],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "Which compromise ended Reconstruction in 1877?",
+    "a": "With the Hayes-Tilden Compromise of 1877",
+    "s": "Hayes-Tilden Compromise",
+    "alt": [
+      "Compromise of 1877",
+      "Hayes Tilden"
+    ],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "In 1900, what proportion of African Americans still lived in the South?",
+    "a": "90%",
+    "s": "90%",
+    "alt": [],
+    "t": "n",
+    "section": "aa"
+  },
+  {
+    "q": "What was the name of 19th Century African-American owned businesses that served the black community where white businesses wouldn’t?",
+    "a": "Parallel businesses",
+    "s": "Parallel businesses",
+    "alt": [],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Name the district of New York where small groups of African Americans began migrating to from 1880s onwards?",
+    "a": "Harlem",
+    "s": "Harlem",
+    "alt": [],
+    "t": "l",
+    "section": "aa"
+  },
+  {
+    "q": "Which segregation laws developed rapidly between 1887 and 1891",
+    "a": "Jim Crow Laws",
+    "s": "Jim Crow Laws",
+    "alt": [],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "Which pseudo-Scientific theory prevalent in the 1900s asserted that African Americans were racially inferior?",
+    "a": "Social Darwinism",
+    "s": "Social Darwinism",
+    "alt": [],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "In what year was the landmark Plessy vs. Ferguson case passed?",
+    "a": "1896",
+    "s": "1896",
+    "alt": [],
+    "t": "y",
+    "section": "aa"
+  },
+  {
+    "q": "Name one measure used to undermine the Fifteenth Amendment.",
+    "a": "Poll tax, property qualifications, literacy tests, grandfather clauses",
+    "s": "Literacy tests",
+    "alt": [
+      "literacy test",
+      "poll tax",
+      "poll taxes",
+      "property qualifications",
+      "grandfather clauses",
+      "grandfather clause",
+      "property qualification"
+    ],
+    "t": "x",
+    "section": "aa"
+  },
+  {
+    "q": "Which Supreme Court case of 1898 ruled that poll taxes and measures were not unconstitutional and didn't breach the 15th Amendment?",
+    "a": "Mississippi vs. Williams",
+    "s": "Mississippi vs. Williams",
+    "alt": [],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "The period 1880-1910 saw the height of what kind of violent oppression against African Americans?",
+    "a": "Lynching",
+    "s": "Lynching",
+    "alt": [],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Which 19th Century figure notably opposed lynching and promoted women's rights?",
+    "a": "Ida B Wells",
+    "s": "Ida B Wells",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which unethical practice allowed bankrupt governments to profit from selling labour of prisoners to businessmen for cash?",
+    "a": "Convict leasing",
+    "s": "Convict leasing",
+    "alt": [],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Which civil rights leader advocated accepting white dominance and focusing on self-improvement?",
+    "a": "Booker T. Washington",
+    "s": "Booker T. Washington",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which African American training and educational organisation was set up in 1881?",
+    "a": "Tuskegee Institute",
+    "s": "Tuskegee Institute",
+    "alt": [],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "When was the Negro Business League set up?",
+    "a": "1900",
+    "s": "1900",
+    "alt": [],
+    "t": "y",
+    "section": "aa"
+  },
+  {
+    "q": "Which President frequently consulted with Booker T. Washington on 'African American issues'?",
+    "a": "Theodore Roosevelt",
+    "s": "Theodore Roosevelt",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "When was the NAACP set up?",
+    "a": "1909",
+    "s": "1909",
+    "alt": [],
+    "t": "y",
+    "section": "aa"
+  },
+  {
+    "q": "Which event triggered the founding of the NAACP?",
+    "a": "The Springfield Race Riot, 1908",
+    "s": "Springfield Race Riot",
+    "alt": [
+      "Springfield riot",
+      "Springfield"
+    ],
+    "t": "e",
+    "section": "aa"
+  },
+  {
+    "q": "What did the 1915 Guinn Vs. US Supreme Court case outlaw?",
+    "a": "Grandfather clauses (Oklahoma and Maryland)",
+    "s": "Grandfather clauses",
+    "alt": [
+      "grandfather clause"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "What was a criticism of the early NAACP leadership?",
+    "a": "They were almost all white",
+    "s": "Almost all white",
+    "alt": [
+      "mostly white",
+      "white leadership",
+      "all white"
+    ],
+    "t": "x",
+    "section": "aa"
+  },
+  {
+    "q": "What was the alternative name for the 369th Infantry Division who served with distinction during WW1?",
+    "a": "The Harlem Hellfighters",
+    "s": "The Harlem Hellfighters",
+    "alt": [],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "How many African Americans served during WW1?",
+    "a": "350,000",
+    "s": "350,000",
+    "alt": [],
+    "t": "n",
+    "section": "aa"
+  },
+  {
+    "q": "Which northern city experienced the largest race riots in 1919 due to WW1 economic migration of African Americans?",
+    "a": "Chicago",
+    "s": "Chicago",
+    "alt": [],
+    "t": "l",
+    "section": "aa"
+  },
+  {
+    "q": "Which decade was known as the 'Jazz Age' and saw the Harlem Renaissance?",
+    "a": "1920s",
+    "s": "1920s",
+    "alt": [],
+    "t": "y",
+    "section": "aa"
+  },
+  {
+    "q": "Which Civil Rights leader came to the US in 1916 and advocated the 'back to Africa' movement?",
+    "a": "Marcus Garvey",
+    "s": "Marcus Garvey",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "What did Marcus Garvey controversially do in 1922 which caused his support to plummet dramatically?",
+    "a": "Meet with the KKK",
+    "s": "Met the KKK",
+    "alt": [
+      "meeting the KKK",
+      "met with the KKK",
+      "meet with the KKK"
+    ],
+    "t": "x",
+    "section": "aa"
+  },
+  {
+    "q": "Name the African American who was elected to congress in 1928 (the first since 1900)?",
+    "a": "Oscar De Priest",
+    "s": "Oscar De Priest",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which political party recruited 7,000 unemployed black supporters in the post-WW1 era?",
+    "a": "The American Communist Party",
+    "s": "The American Communist Party",
+    "alt": [],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "The release of 'Birth of A Nation' in 1915 marked the resurgence of who?",
+    "a": "The KKK",
+    "s": "The KKK",
+    "alt": [],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "At its peak in 1924, how many members did the KKK have?",
+    "a": "5 million",
+    "s": "5 million",
+    "alt": [],
+    "t": "n",
+    "section": "aa"
+  },
+  {
+    "q": "Why did FDR say he could not target the New Deal at African Americans?",
+    "a": "He claimed he needed southern Democratic support to get the programme through Congress",
+    "s": "Needed southern Democrats",
+    "alt": [
+      "southern Democrats",
+      "southern Democratic support",
+      "needed southern support",
+      "needed southern Democrats",
+      "needed southern votes"
+    ],
+    "t": "x",
+    "section": "aa"
+  },
+  {
+    "q": "Which African American group was not covered by the Social Security Act or the National Labour Relations Act?",
+    "a": "Sharecroppers",
+    "s": "Sharecroppers",
+    "alt": [],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Name the African American athlete who won four gold medals at the 1936 Berlin Olympics?",
+    "a": "Jesse Owens",
+    "s": "Jesse Owens",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which Supreme Court case of 1938 ruled that separate but equal facilities must actually be equal?",
+    "a": "Gaines vs. Canada",
+    "s": "Gaines vs. Canada",
+    "alt": [],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "During WW2, approximately how many African Americans migrated to northern cities?",
+    "a": "500,000",
+    "s": "500,000",
+    "alt": [],
+    "t": "n",
+    "section": "aa"
+  },
+  {
+    "q": "Where were there serious race riots in 1943?",
+    "a": "Detroit",
+    "s": "Detroit",
+    "alt": [],
+    "t": "l",
+    "section": "aa"
+  },
+  {
+    "q": "Which Civil Rights organisation was set up in 1942?",
+    "a": "CORE (Congress of Racial Equality)",
+    "s": "CORE",
+    "alt": [
+      "Congress of Racial Equality"
+    ],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Which anti-Communist policy meant that civil rights groups were under suspicion in the 1950s?",
+    "a": "McCarthyism",
+    "s": "McCarthyism",
+    "alt": [],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Roosevelt issued Executive Order 8802 in 1941 barring racial discrimination in employment after lobbying by which figure?",
+    "a": "Philip Randolph",
+    "s": "Philip Randolph",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "In what year was the US military desegregated?",
+    "a": "1948",
+    "s": "1948",
+    "alt": [],
+    "t": "y",
+    "section": "aa"
+  },
+  {
+    "q": "Name the black lawyer who took cases to the Supreme Court on behalf of the NAACP and won almost all of them?",
+    "a": "Thurgood Marshall",
+    "s": "Thurgood Marshall",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which landmark Supreme Court case was decided in 1954?",
+    "a": "Brown v Board",
+    "s": "Brown v Board",
+    "alt": [],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "Which shocking event of 1955 publicised the continuing lack of justice for African Americans in the south?",
+    "a": "Murder of Emmett Till",
+    "s": "Murder of Emmett Till",
+    "alt": [],
+    "t": "e",
+    "section": "aa"
+  },
+  {
+    "q": "Which anti-civil rights organisations were set up from 1955 onwards?",
+    "a": "White Citizens Councils",
+    "s": "White Citizens Councils",
+    "alt": [],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Where did the President send federal troops in 1957 to allow black children to attend school?",
+    "a": "Little Rock, 1957",
+    "s": "Little Rock",
+    "alt": [
+      "Little Rock Arkansas"
+    ],
+    "t": "l",
+    "section": "aa"
+  },
+  {
+    "q": "What protest did Rosa Parks set off in 1955?",
+    "a": "The Montgomery Bus Boycott",
+    "s": "The Montgomery Bus Boycott",
+    "alt": [],
+    "t": "e",
+    "section": "aa"
+  },
+  {
+    "q": "What did Browder vs. Gayle 1956 decide?",
+    "a": "Segregation on public buses unconstitutional",
+    "s": "Bus segregation unconstitutional",
+    "alt": [
+      "segregated buses unconstitutional",
+      "buses unconstitutional",
+      "unconstitutional",
+      "bus segregation illegal"
+    ],
+    "t": "x",
+    "section": "aa"
+  },
+  {
+    "q": "Which organisation was formed in 1957 with Martin Luther King as its President?",
+    "a": "SCLC (Southern Christian Leadership Conference)",
+    "s": "SCLC",
+    "alt": [
+      "Southern Christian Leadership Conference"
+    ],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Which passive protest method was used in 1960 in Greensboro?",
+    "a": "Sit in",
+    "s": "Sit in",
+    "alt": [],
+    "t": "e",
+    "section": "aa"
+  },
+  {
+    "q": "Which organisation was set up in 1960 following the success of the sit-ins?",
+    "a": "SNCC (Student Non-Violent Co-ordinating Committee)",
+    "s": "SNCC",
+    "alt": [
+      "Student Non-Violent Co-ordinating Committee",
+      "Student Nonviolent Coordinating Committee"
+    ],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Which passive protest of 1961 saw blacks and whites working together to increase support for civil rights?",
+    "a": "Freedom Rides",
+    "s": "Freedom Rides",
+    "alt": [],
+    "t": "e",
+    "section": "aa"
+  },
+  {
+    "q": "Who was the police chief of Birmingham Alabama in 1963?",
+    "a": "Eugene 'Bull' Connor",
+    "s": "Eugene 'Bull' Connor",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "At which protest were peaceful protestors subject to use of police dogs and water cannons?",
+    "a": "Birmingham Protest 1963",
+    "s": "Birmingham Protest 1963",
+    "alt": [],
+    "t": "e",
+    "section": "aa"
+  },
+  {
+    "q": "Approximately how many people marched on Washington in 1963 to hear the 'I have a dream' speech?",
+    "a": "250,000",
+    "s": "250,000",
+    "alt": [],
+    "t": "n",
+    "section": "aa"
+  },
+  {
+    "q": "In what year did Lyndon B. Johnson pass the Civil Rights Act?",
+    "a": "1964",
+    "s": "1964",
+    "alt": [],
+    "t": "y",
+    "section": "aa"
+  },
+  {
+    "q": "From where did MLK lead a march to Montgomery demanding Voting Rights in 1965?",
+    "a": "Selma",
+    "s": "Selma",
+    "alt": [],
+    "t": "l",
+    "section": "aa"
+  },
+  {
+    "q": "In what year did Lyndon B. Johnson pass the Voting Rights Act?",
+    "a": "1965",
+    "s": "1965",
+    "alt": [],
+    "t": "y",
+    "section": "aa"
+  },
+  {
+    "q": "Where were there serious riots following the passing of the Voting Rights Act?",
+    "a": "Los Angeles",
+    "s": "Los Angeles",
+    "alt": [],
+    "t": "l",
+    "section": "aa"
+  },
+  {
+    "q": "Which unethical practice saw white Americans encouraged to sell their houses cheaply, before they were sold to black families at a higher price?",
+    "a": "Blockbusting",
+    "s": "Blockbusting",
+    "alt": [],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Which organisation was Malcolm X a prominent member of until 1963?",
+    "a": "Nation of Islam",
+    "s": "Nation of Islam",
+    "alt": [],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Name one way Malcolm X was critical of Martin Luther King.",
+    "a": "Rejected non-violence, criticised King's lack of focus on socio-economic issues, rejected integration or working with whites",
+    "s": "Rejected non-violence",
+    "alt": [
+      "non-violence",
+      "lack of focus on socio-economic issues",
+      "socio-economic",
+      "rejected integration",
+      "rejected working with whites",
+      "rejected non-violence",
+      "against non-violence",
+      "not enough on economics",
+      "lack of focus on economics"
+    ],
+    "t": "x",
+    "section": "aa"
+  },
+  {
+    "q": "When was Malcolm X assassinated?",
+    "a": "1965",
+    "s": "1965",
+    "alt": [],
+    "t": "y",
+    "section": "aa"
+  },
+  {
+    "q": "Where did Martin Luther King run an unsuccessful anti-segregation campaign in 1966?",
+    "a": "Chicago",
+    "s": "Chicago",
+    "alt": [],
+    "t": "l",
+    "section": "aa"
+  },
+  {
+    "q": "Which former member of the SNCC became disillusioned and left to join the Black Panthers in 1967?",
+    "a": "Stokely Carmichael",
+    "s": "Stokely Carmichael",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which conflict forced African American civil rights to take a back seat in the American media in the late 1960s?",
+    "a": "Vietnam War",
+    "s": "Vietnam War",
+    "alt": [],
+    "t": "e",
+    "section": "aa"
+  },
+  {
+    "q": "Between which years were the 'long hot summers' of violence in cities with substantial African American populations?",
+    "a": "1965-68",
+    "s": "1965-68",
+    "alt": [],
+    "t": "y",
+    "section": "aa"
+  },
+  {
+    "q": "When were the Black Panthers set up?",
+    "a": "1966",
+    "s": "1966",
+    "alt": [],
+    "t": "y",
+    "section": "aa"
+  },
+  {
+    "q": "What was the Black Panther's manifesto called?",
+    "a": "10-point programme",
+    "s": "10-point programme",
+    "alt": [],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "The failed 'Poor People's Campaign' took place in which year?",
+    "a": "1968",
+    "s": "1968",
+    "alt": [],
+    "t": "y",
+    "section": "aa"
+  },
+  {
+    "q": "Which President took a strong line against the Black Panthers?",
+    "a": "Nixon",
+    "s": "Nixon",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which policy to promote economic opportunity for African Americans came into place under Nixon?",
+    "a": "Affirmative action",
+    "s": "Affirmative action",
+    "alt": [],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "Which Supreme Court case upheld the validity of affirmative action?",
+    "a": "Griggs vs. Duke Power Company, 1971",
+    "s": "Griggs v Duke Power",
+    "alt": [
+      "Griggs"
+    ],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "Which unpopular policy was implemented in the 1970s to try and force racial integration in schools?",
+    "a": "Bussing",
+    "s": "Bussing",
+    "alt": [],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "A 1978 Supreme Court judgement in favour of Allan Bakke represented a setback against what Federal Civil Rights policy?",
+    "a": "Affirmative action",
+    "s": "Affirmative action",
+    "alt": [],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "Which President alleged that his administration was 'colour-blind' as a way of trying to resist affirmative action?",
+    "a": "Reagan",
+    "s": "Reagan",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which policy enacted by Reagan in the 1980s hit African Americans the hardest?",
+    "a": "Welfare cuts",
+    "s": "Welfare cuts",
+    "alt": [],
+    "t": "c",
+    "section": "aa"
+  },
+  {
+    "q": "Which branch of the Federal Government made the most efforts to positively impact African American civil rights in the 1980s?",
+    "a": "Congress",
+    "s": "Congress",
+    "alt": [],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Name the African American Democrat who attempted to run for Presidency in 1984 and 1988?",
+    "a": "Jesse Jackson",
+    "s": "Jesse Jackson",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which term describes the splitting of the black community along class lines?",
+    "a": "Bifurcation",
+    "s": "Bifurcation",
+    "alt": [],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Name the African American whose attack by police officers was caught on video camera in 1991?",
+    "a": "Rodney King",
+    "s": "Rodney King",
+    "alt": [],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "What was significant about the acquittal of the policemen who assaulted Rodney King?",
+    "a": "Jury were all white",
+    "s": "All-white jury",
+    "alt": [
+      "jury were all white",
+      "white jury",
+      "all white jury"
+    ],
+    "t": "x",
+    "section": "aa"
+  },
+  {
+    "q": "By 1992, what percentage of young African American men were either in prison, on parole, or on probation?",
+    "a": "25%",
+    "s": "25%",
+    "alt": [],
+    "t": "n",
+    "section": "aa"
+  },
+  {
+    "q": "What term describes a factory or workplace dominated by one union which all workers are obliged to join?",
+    "a": "Closed shop",
+    "s": "Closed shop",
+    "alt": [],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "Which union did William H. Sylvis lead in 1866?",
+    "a": "The National Labor Union (NLU)",
+    "s": "National Labor Union",
+    "alt": [
+      "NLU",
+      "National Labour Union"
+    ],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "Which system of employment popular in the Gilded Age left labourers vulnerable to being laid off in slack periods?",
+    "a": "Contract system",
+    "s": "Contract system",
+    "alt": [],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "When were the Knights of Labor founded?",
+    "a": "1869",
+    "s": "1869",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "Name one group the Knights of Labor admitted that other unions excluded.",
+    "a": "Skilled and unskilled workers, African Americans and women were all allowed to join",
+    "s": "African Americans",
+    "alt": [
+      "women",
+      "unskilled workers",
+      "unskilled",
+      "black workers",
+      "African Americans",
+      "skilled and unskilled workers"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "Which event in 1886 destroyed the reputation of the KOL?",
+    "a": "Haymarket Affair",
+    "s": "Haymarket Affair",
+    "alt": [],
+    "t": "e",
+    "section": "lab"
+  },
+  {
+    "q": "In what year was the American Federation of Labor founded?",
+    "a": "1886",
+    "s": "1886",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "Who was the first leader of the American Federation of Labor",
+    "a": "Samuel Gompers",
+    "s": "Samuel Gompers",
+    "alt": [],
+    "t": "p",
+    "section": "lab"
+  },
+  {
+    "q": "Which businessmen did the AFL negotiate with during the Gilded Age to win mediation and conciliation rights?",
+    "a": "Big businessmen like JP Morgan and Marcus A Hanna",
+    "s": "JP Morgan",
+    "alt": [
+      "Marcus Hanna",
+      "Marcus A Hanna",
+      "Mark Hanna",
+      "big businessmen",
+      "JP Morgan",
+      "Hanna",
+      "businessmen",
+      "big business"
+    ],
+    "t": "p",
+    "section": "lab"
+  },
+  {
+    "q": "Which short-lived early twentieth century trade union was known for being more militant at defending the rights of immigrants?",
+    "a": "Industrial Workers of the World (IWW or Wobblies)",
+    "s": "IWW",
+    "alt": [
+      "Wobblies",
+      "Industrial Workers of the World",
+      "IWW"
+    ],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "Who was the Haymarket Affair blamed on?",
+    "a": "German Anarchists / KOL",
+    "s": "German anarchists",
+    "alt": [
+      "anarchists",
+      "KOL",
+      "Knights of Labor"
+    ],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "Approximately how many immigrants entered the US between 1900 and 1930?",
+    "a": "19 million",
+    "s": "19 million",
+    "alt": [],
+    "t": "n",
+    "section": "lab"
+  },
+  {
+    "q": "In what year were 20 of the Molly Maguires hanged?",
+    "a": "1877–79",
+    "s": "1877",
+    "alt": [
+      "1878",
+      "1879",
+      "1877-79"
+    ],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "Which organisation advised African Americans to organise, but in their own racially separate unions?",
+    "a": "National Labor Union",
+    "s": "National Labor Union",
+    "alt": [],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "How did employers exploit the division between African American and white labour during the gilded age?",
+    "a": "Used African Americans as scab labour",
+    "s": "As scab labour",
+    "alt": [
+      "scabs",
+      "scab labour",
+      "strikebreakers"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "What term describes the attitude that there should be no governmental interference in the organisation or operation of business?",
+    "a": "Laissez Faire Capitalism",
+    "s": "Laissez Faire Capitalism",
+    "alt": [],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "Which Supreme Court case stated that it was unconstitutional to impose a 10-hour working day?",
+    "a": "Lochner vs. New York 1905",
+    "s": "Lochner vs. New York 1905",
+    "alt": [],
+    "t": "c",
+    "section": "lab"
+  },
+  {
+    "q": "Which African American union was formed in 1869?",
+    "a": "National Negro Labor Union",
+    "s": "National Negro Labor Union",
+    "alt": [],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "When was the Homestead Strike?",
+    "a": "1892",
+    "s": "1892",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "How did Henry Frick suppress the Homestead Strike?",
+    "a": "Stockpiled steel and then locked out the workers",
+    "s": "Locked out the workers",
+    "alt": [
+      "lockout",
+      "locked out",
+      "stockpiled steel",
+      "locked out workers",
+      "locked out the workers"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "How long did Carnegie Steel remain non-unionised for after the Homestead Strike?",
+    "a": "40 years",
+    "s": "40 years",
+    "alt": [],
+    "t": "n",
+    "section": "lab"
+  },
+  {
+    "q": "Who set up the militant American Railway Union in 1893 and later ran for President as a socialist 4 times?",
+    "a": "Eugene Debs",
+    "s": "Eugene Debs",
+    "alt": [],
+    "t": "p",
+    "section": "lab"
+  },
+  {
+    "q": "How was the Pullman Strike broken up?",
+    "a": "Cleveland sent in federal troops",
+    "s": "Federal troops",
+    "alt": [
+      "troops",
+      "Cleveland sent in troops"
+    ],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "What happened to the leaders of the Pullman Strike after it was resolved?",
+    "a": "They were not given their jobs back",
+    "s": "Not given jobs back",
+    "alt": [
+      "blacklisted",
+      "not rehired",
+      "lost their jobs",
+      "never got jobs back",
+      "were not rehired"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "What powerful precedent was set by the federal response to the Pullman Strike?",
+    "a": "Use of injunctions against labour unions to prevent striking",
+    "s": "Injunctions against unions",
+    "alt": [
+      "injunctions",
+      "court injunctions",
+      "injunction against strikers",
+      "use of injunctions"
+    ],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "By 1920, how many trade union members were there in the USA?",
+    "a": "5 million",
+    "s": "5 million",
+    "alt": [],
+    "t": "n",
+    "section": "lab"
+  },
+  {
+    "q": "Why was the Clayton Anti-Trust Act of 1914 significant?",
+    "a": "Limited the use of court injunctions against striking workers",
+    "s": "Limited injunctions against strikes",
+    "alt": [
+      "limited court injunctions",
+      "limited injunctions",
+      "injunctions",
+      "restricted injunctions",
+      "fewer injunctions",
+      "limited the use of injunctions"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "Which organisation was set up during WW1 to facilitate right to join unions and collective bargaining?",
+    "a": "National War Labor Board",
+    "s": "National War Labor Board",
+    "alt": [],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "Why were the 1919 spate of post-war strikes met with extreme fear and hysteria by employers?",
+    "a": "Red Scare",
+    "s": "Red Scare",
+    "alt": [],
+    "t": "e",
+    "section": "lab"
+  },
+  {
+    "q": "Which city saw an attempted general strike in 1919?",
+    "a": "Seattle",
+    "s": "Seattle",
+    "alt": [],
+    "t": "l",
+    "section": "lab"
+  },
+  {
+    "q": "What term describes the act of a company providing improved working conditions whilst preventing workers from calling strikes or negotiating wages?",
+    "a": "Welfare capitalism",
+    "s": "Welfare capitalism",
+    "alt": [],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "What is a yellow dog contract?",
+    "a": "A contract which prevents an employee from joining a union",
+    "s": "Bans joining a union",
+    "alt": [
+      "prevents joining a union",
+      "no union membership",
+      "stopped workers joining a union",
+      "contract banning union membership"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "What union did Randolph set up in 1925?",
+    "a": "BSCP",
+    "s": "BSCP",
+    "alt": [],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "When did Henry Ford's Ford Company agree to recognise unions?",
+    "a": "1941",
+    "s": "1941",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "Coppage vs. Kansas (1915) gave employers the right to implement what form of contract?",
+    "a": "Yellow dog contracts",
+    "s": "Yellow dog contracts",
+    "alt": [],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "Who told the members of their union to 'fight or be slaves'?",
+    "a": "A. Philip Randolph",
+    "s": "A. Philip Randolph",
+    "alt": [],
+    "t": "p",
+    "section": "lab"
+  },
+  {
+    "q": "How much did unemployment increase to by 1933?",
+    "a": "25%",
+    "s": "25%",
+    "alt": [],
+    "t": "n",
+    "section": "lab"
+  },
+  {
+    "q": "By 1933 what % of workers were unionised?",
+    "a": "10",
+    "s": "10",
+    "alt": [],
+    "t": "n",
+    "section": "lab"
+  },
+  {
+    "q": "When was the National Industry Recovery Act passed?",
+    "a": "1933",
+    "s": "1933",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "What New Deal agency did the Supreme Court declare unconstitutional in 1935?",
+    "a": "National Recovery Administration",
+    "s": "National Recovery Administration",
+    "alt": [
+      "NRA"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "When was the Wagner Act passed?",
+    "a": "1935",
+    "s": "1935",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "Name one way the Wagner Act benefited unions.",
+    "a": "Right to join unions, right for collective bargainings, permitted closed shops, banned spies on shop floor",
+    "s": "Collective bargaining",
+    "alt": [
+      "right to join unions",
+      "closed shops",
+      "banned spies",
+      "right to collective bargaining",
+      "collective bargaining",
+      "permitted closed shops"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "Which mediation organisation was set up by the Wagner Act?",
+    "a": "National Labor Relations Board (NLRB)",
+    "s": "NLRB",
+    "alt": [
+      "National Labor Relations Board"
+    ],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "How much did union membership rise to by 1938?",
+    "a": "9 million",
+    "s": "9 million",
+    "alt": [],
+    "t": "n",
+    "section": "lab"
+  },
+  {
+    "q": "When was the Fair Labor Standards Act passed?",
+    "a": "1938",
+    "s": "1938",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "What minimum hourly wage did the Fair Labor Standards Act set in 1938?",
+    "a": "25 cents an hour",
+    "s": "25 cents",
+    "alt": [
+      "$0.25",
+      "25c",
+      "25 cents an hour"
+    ],
+    "t": "n",
+    "section": "lab"
+  },
+  {
+    "q": "The Congress of Industrial Organisations (CIO) was formed as a breakaway organisation, because the AFL excluded which type of worker?",
+    "a": "Unskilled",
+    "s": "Unskilled",
+    "alt": [],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "Name one group of workers who remained disadvantaged despite the New Deal.",
+    "a": "Agricultural workers, African Americans, Mexicans, Unskilled workers, Women, Native Americans",
+    "s": "Agricultural workers",
+    "alt": [
+      "African Americans",
+      "Mexicans",
+      "unskilled workers",
+      "women",
+      "Native Americans",
+      "agricultural workers",
+      "farm workers"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "What mediation body was re-established by FDR during WWII?",
+    "a": "NWLB",
+    "s": "NWLB",
+    "alt": [],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "What did the Smith-Connally Act give the government the power to do during WWII?",
+    "a": "Seize control of industries threatening to strike",
+    "s": "Seize striking industries",
+    "alt": [
+      "seize control",
+      "seize industries",
+      "take over industries",
+      "take over striking industries",
+      "government seizure of industries",
+      "seize control of industries"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "How did Randolph persuade FDR to pass Executive Order 8802 in 1941?",
+    "a": "March on Washington movement",
+    "s": "March on Washington movement",
+    "alt": [],
+    "t": "e",
+    "section": "lab"
+  },
+  {
+    "q": "What 1947 law made closed shops, and wildcat strikes illegal?",
+    "a": "Taft-Hartley Act",
+    "s": "Taft-Hartley Act",
+    "alt": [],
+    "t": "c",
+    "section": "lab"
+  },
+  {
+    "q": "How did scientific and technological advances in the 1950s disadvantage workers?",
+    "a": "Automation - machines could do the job of several people",
+    "s": "Automation",
+    "alt": [
+      "machines",
+      "mechanisation",
+      "automation",
+      "machines replaced workers",
+      "machines replacing people",
+      "machines did the job of several people"
+    ],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "What type of workers decreased dramatically as a result of automation in the 1950s?",
+    "a": "Blue Collar",
+    "s": "Blue Collar",
+    "alt": [],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "When did the AFL and CIO merge?",
+    "a": "1955",
+    "s": "1955",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "The AFL-CIO merger brought what percentage of union members into a single unit?",
+    "a": "85%",
+    "s": "85%",
+    "alt": [],
+    "t": "n",
+    "section": "lab"
+  },
+  {
+    "q": "By 1960, 35% of Americans could be described as living below what?",
+    "a": "The poverty line",
+    "s": "The poverty line",
+    "alt": [],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "What term described Kennedy's ambitious plan for social reform?",
+    "a": "The New Frontier",
+    "s": "The New Frontier",
+    "alt": [],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "What bill to benefit workers did Congress reject in 1961?",
+    "a": "Increase to minimum wage",
+    "s": "Increase to minimum wage",
+    "alt": [],
+    "t": "c",
+    "section": "lab"
+  },
+  {
+    "q": "When was the Equal Pay Act passed?",
+    "a": "1963",
+    "s": "1963",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "What term described Johnson's ambitious plan for social reform?",
+    "a": "The Great Society",
+    "s": "The Great Society",
+    "alt": [],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "Name one act passed under Johnson that benefited labour rights and the workforce.",
+    "a": "Civil Rights Act 1964, Economic Opportunity Act 1964, Age Discrimination in Employment Act 1967",
+    "s": "Civil Rights Act",
+    "alt": [
+      "Economic Opportunity Act",
+      "Age Discrimination in Employment Act",
+      "ADEA",
+      "Civil Rights Act",
+      "Civil Rights Act 1964"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "In the 1960s, how much more did an average unionised worker earn than a non-unionised worker of a similar background?",
+    "a": "20%",
+    "s": "20%",
+    "alt": [],
+    "t": "n",
+    "section": "lab"
+  },
+  {
+    "q": "By 1969, what percentage of apprenticeships in skilled trades were held by African Americans?",
+    "a": "3%",
+    "s": "3%",
+    "alt": [],
+    "t": "n",
+    "section": "lab"
+  },
+  {
+    "q": "What term describes Nixon's policy which attempted to create opportunities for African Americans in the workforce?",
+    "a": "Affirmative action",
+    "s": "Affirmative action",
+    "alt": [],
+    "t": "c",
+    "section": "lab"
+  },
+  {
+    "q": "When was the PATCO strike?",
+    "a": "1981",
+    "s": "1981",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "Roughly how many air traffic controllers did Reagan fire during the PATCO strike?",
+    "a": "Over 11,000",
+    "s": "Over 11,000",
+    "alt": [
+      "11,000",
+      "11000",
+      "over 11000",
+      "11,000 workers",
+      "more than 11,000",
+      "about 11,000",
+      "around 11,000",
+      "eleven thousand",
+      "over eleven thousand"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "How were the PATCO strike leaders treated after the strike ended?",
+    "a": "Sent to prison and fined",
+    "s": "Prison and fines",
+    "alt": [
+      "sent to prison and fined",
+      "imprisoned",
+      "jailed",
+      "fined"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "What happened to union membership 1970-1992?",
+    "a": "Declined dramatically - 12% by 1992",
+    "s": "Fell to 12%",
+    "alt": [
+      "declined",
+      "declined dramatically",
+      "12%",
+      "fell"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "How did the increase in technology in the 1970s negatively impact unskilled workers?",
+    "a": "Reduced the demand for them",
+    "s": "Reduced demand for them",
+    "alt": [
+      "reduced demand",
+      "less demand",
+      "fewer jobs"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "How did the post-1970s rise in skilled workers impact union membership?",
+    "a": "Caused it to decrease dramatically",
+    "s": "Decreased",
+    "alt": [
+      "decline",
+      "fell",
+      "dropped",
+      "decreased dramatically"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "In the late twentieth century, there was an influx of immigration from where?",
+    "a": "Asia",
+    "s": "Asia",
+    "alt": [],
+    "t": "l",
+    "section": "lab"
+  },
+  {
+    "q": "Why were white collar workers less interested in union membership?",
+    "a": "Higher wages and better benefits packages than blue collar",
+    "s": "Higher wages and benefits",
+    "alt": [
+      "better benefits",
+      "higher wages",
+      "better benefits packages",
+      "better pay",
+      "higher wages and better benefits"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "In 1977, what did Jimmy Carter and Congress do to benefit workers?",
+    "a": "Raised the hourly minimum wage",
+    "s": "Raised minimum wage",
+    "alt": [
+      "increased the minimum wage",
+      "minimum wage increase"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "Which President set out from the offset to curb the power of unions?",
+    "a": "Reagan",
+    "s": "Reagan",
+    "alt": [],
+    "t": "p",
+    "section": "lab"
+  },
+  {
+    "q": "In 1970, the US experienced its first nationwide strike - from which industry?",
+    "a": "Postal Workers",
+    "s": "Postal Workers",
+    "alt": [],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "When was the Women's Trade Union League formed?",
+    "a": "1903",
+    "s": "1903",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "When was the Triangle Shirtwaist Factory Fire?",
+    "a": "1911",
+    "s": "1911",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "How many workers died in the Triangle Shirtwaist Factory Fire?",
+    "a": "146",
+    "s": "146",
+    "alt": [],
+    "t": "n",
+    "section": "lab"
+  },
+  {
+    "q": "What is a wildcat strike?",
+    "a": "Strike undertaken without agreement of union leadership",
+    "s": "Strike without union approval",
+    "alt": [
+      "unofficial strike",
+      "without union agreement",
+      "without leadership agreement",
+      "without union approval",
+      "strike without union backing",
+      "without union leadership agreement"
+    ],
+    "t": "x",
+    "section": "lab"
+  },
+  {
+    "q": "Which influential figure was a member of the Women's Trade Union League and supported their demands?",
+    "a": "Eleanor Roosevelt",
+    "s": "Eleanor Roosevelt",
+    "alt": [],
+    "t": "p",
+    "section": "lab"
+  },
+  {
+    "q": "When was the Coalition of Labor Union Women formed?",
+    "a": "1974",
+    "s": "1974",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "When was the Salad Bowl Strike?",
+    "a": "1970",
+    "s": "1970",
+    "alt": [],
+    "t": "y",
+    "section": "lab"
+  },
+  {
+    "q": "Who led the United Farm Workers and increased Mexican American union involvement?",
+    "a": "Cesar Chavez",
+    "s": "Cesar Chavez",
+    "alt": [],
+    "t": "p",
+    "section": "lab"
+  },
+  {
+    "q": "What is the name given to the large area of the United States that Native Americans occupied before 1865?",
+    "a": "Great Plains",
+    "s": "Great Plains",
+    "alt": [],
+    "t": "l",
+    "section": "na"
+  },
+  {
+    "q": "What discovery in 1859 in California led to increased encroachment on Native American land?",
+    "a": "Gold Rush",
+    "s": "Gold Rush",
+    "alt": [],
+    "t": "e",
+    "section": "na"
+  },
+  {
+    "q": "Between what years were the Plains Wars?",
+    "a": "1854-77",
+    "s": "1854-77",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "When was the Sand Creek Massacre?",
+    "a": "1864",
+    "s": "1864",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "What did the federal government finish constructing in 1869, which threatened the Native American land and way of life?",
+    "a": "Transcontinental Railway",
+    "s": "Transcontinental Railway",
+    "alt": [],
+    "t": "e",
+    "section": "na"
+  },
+  {
+    "q": "In what decade did the federal government begin signing treaties with individual tribes which took their land while encouraging movement onto reservations?",
+    "a": "1850s",
+    "s": "1850s",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "Who replaced tribal chiefs' authority on the reservations?",
+    "a": "An Indian Agent appointed by the Indian Bureau (Federal Government)",
+    "s": "An Indian Agent",
+    "alt": [
+      "Indian Agent",
+      "agent appointed by the Indian Bureau",
+      "government agent",
+      "Bureau agent",
+      "agent",
+      "Indian Bureau agent"
+    ],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "Which treaty made with the Sioux established the Great Sioux Reservation in 1868?",
+    "a": "Fort Laramie",
+    "s": "Fort Laramie",
+    "alt": [],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "What term describes the white American belief that God had chosen them to populate all the land from the Atlantic to the Pacific?",
+    "a": "Manifest Destiny",
+    "s": "Manifest Destiny",
+    "alt": [],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "In which battle did the Sioux, led by Sitting Bull and Crazy Horse, defeat General Custer's troops?",
+    "a": "Battle of Little Bighorn, 1876",
+    "s": "Little Bighorn",
+    "alt": [
+      "Battle of Little Bighorn",
+      "Little Big Horn"
+    ],
+    "t": "e",
+    "section": "na"
+  },
+  {
+    "q": "How were reservation Indians classified under federal law because they didn't pay tax?",
+    "a": "Wards of the state",
+    "s": "Wards of the state",
+    "alt": [],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "What was a positive aspect of reservation life for Native Americans?",
+    "a": "Tribal structures maintained",
+    "s": "Tribal structures kept",
+    "alt": [
+      "tribal structures maintained",
+      "tribal structures"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "Name one negative of life on reservations for Native Americans.",
+    "a": "Loss of tribal leadership, forced changes to lifestyle, poverty, no longer able to herd buffalo, illness and epidemic, dependence on the state for aid which they didn't always receive",
+    "s": "Poverty",
+    "alt": [
+      "loss of tribal leadership",
+      "forced changes to lifestyle",
+      "no longer able to herd buffalo",
+      "illness",
+      "epidemics",
+      "disease",
+      "dependence on the state",
+      "dependence on aid",
+      "loss of leadership",
+      "no leadership",
+      "forced lifestyle changes",
+      "poverty",
+      "epidemic"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "What had the population of Native Americans fallen to by 1900?",
+    "a": "100,000",
+    "s": "100,000",
+    "alt": [],
+    "t": "n",
+    "section": "na"
+  },
+  {
+    "q": "In what year was the massacre at Wounded Knee?",
+    "a": "1890",
+    "s": "1890",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "Which Native American marriage practice was forbidden by the federal government?",
+    "a": "Polygamy",
+    "s": "Polygamy",
+    "alt": [],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "Which tribe managed against the odds to thrive and grow in population under reservation policy?",
+    "a": "Navajo Indians",
+    "s": "Navajo Indians",
+    "alt": [],
+    "t": "o",
+    "section": "na"
+  },
+  {
+    "q": "What was the federal government's intended purpose in educating Native American children?",
+    "a": "Americanisation and destruction of tribal loyalty",
+    "s": "Americanisation",
+    "alt": [
+      "Americanization",
+      "assimilation",
+      "destroy tribal loyalty"
+    ],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "What were the names of the harsh off-reservation boarding schools established in the 1870s?",
+    "a": "Carlisle and Hampton",
+    "s": "Carlisle and Hampton",
+    "alt": [],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "When was the Indian Rights Association founded?",
+    "a": "1882",
+    "s": "1882",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "What was the main aim of the Indian Rights Association?",
+    "a": "To promote assimilation",
+    "s": "To promote assimilation",
+    "alt": [],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "When was the Dawes Severalty Act passed?",
+    "a": "1887",
+    "s": "1887",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "Under the terms of the Dawes Act, after how long would the Native Americans own the land allotted to them?",
+    "a": "25 years",
+    "s": "25 years",
+    "alt": [],
+    "t": "n",
+    "section": "na"
+  },
+  {
+    "q": "What was the aim of the Dawes Act?",
+    "a": "Allotment policy - to break down reservations and tribal loyalties",
+    "s": "Break down reservations",
+    "alt": [
+      "allotment",
+      "break down tribal loyalties",
+      "allotment policy",
+      "break up reservations",
+      "assimilation"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "Which amendment to the Dawes Act ended the rights of independence of the five civilised tribes?",
+    "a": "Curtis Act 1898",
+    "s": "Curtis Act 1898",
+    "alt": [],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "How did the Dawes Act adversely affect the Iroquois and Cherokee women?",
+    "a": "It undermined matriarchal structures (the land was allotted to the male head of the family)",
+    "s": "Undermined matriarchal structures",
+    "alt": [
+      "undermined matriarchal structures",
+      "undermined matriarchy",
+      "weakened matriarchal structures",
+      "matriarchal structures",
+      "undermined their matriarchal society",
+      "land allotted to the male head of the family",
+      "land given to men"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "At what conference did the leaders of the five civilised tribes petition Congress to create a separate state of Sequoyah?",
+    "a": "Muskogee Convention, 1905",
+    "s": "Muskogee Convention",
+    "alt": [
+      "Muskogee"
+    ],
+    "t": "e",
+    "section": "na"
+  },
+  {
+    "q": "Which Supreme Court case established the right of Congress to revoke all treaties with Native Americans leading to the further acquisition of land?",
+    "a": "Lone Wolf vs. Hitchcock, 1903",
+    "s": "Lone Wolf v Hitchcock",
+    "alt": [
+      "Lone Wolf"
+    ],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "Which early form of inter-tribal pressure group was established in 1911?",
+    "a": "The Society of American Indians",
+    "s": "Society of American Indians",
+    "alt": [
+      "SAI"
+    ],
+    "t": "o",
+    "section": "na"
+  },
+  {
+    "q": "Which Supreme Court Case denied the request of the five civilised tribes to be able to live according to their own laws and traditions?",
+    "a": "Cherokee Nation vs. Hitchcock, 1902",
+    "s": "Cherokee Nation v Hitchcock",
+    "alt": [
+      "Cherokee Nation"
+    ],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "Approximately how many Native American men fought in WW1?",
+    "a": "10,000",
+    "s": "10,000",
+    "alt": [],
+    "t": "n",
+    "section": "na"
+  },
+  {
+    "q": "When was the Indian Citizenship Act passed?",
+    "a": "1924",
+    "s": "1924",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "What percentage of Native Americans already had the right to vote before the Indian Citizenship Act was passed?",
+    "a": "2/3",
+    "s": "2/3",
+    "alt": [
+      "two thirds",
+      "two-thirds",
+      "67%"
+    ],
+    "t": "n",
+    "section": "na"
+  },
+  {
+    "q": "How were the rights granted by the Indian Citizenship Act limited?",
+    "a": "States enforced voting qualifications",
+    "s": "State voting qualifications",
+    "alt": [
+      "states enforced voting qualifications",
+      "voting qualifications"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "In which Supreme Court case were voting qualifications against Native Americans successfully challenged?",
+    "a": "Harrison vs. Laveen, 1948",
+    "s": "Harrison v Laveen",
+    "alt": [
+      "Harrison"
+    ],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "By the 1920s, what percentage of their land had Native Americans lost?",
+    "a": "80%",
+    "s": "80%",
+    "alt": [],
+    "t": "n",
+    "section": "na"
+  },
+  {
+    "q": "What was the Leavitt Bill also known as?",
+    "a": "The Dance Order",
+    "s": "The Dance Order",
+    "alt": [],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "which organisation was formed in 1923 in response to the Leavitt Bill?",
+    "a": "The AIDA (American Indian Defence Association)",
+    "s": "AIDA",
+    "alt": [
+      "American Indian Defence Association",
+      "American Indian Defense Association"
+    ],
+    "t": "o",
+    "section": "na"
+  },
+  {
+    "q": "What campaign group, founded in the 1920s, sought to preserve Native American cultures?",
+    "a": "The AIDA (American Indian Defence Association)",
+    "s": "AIDA",
+    "alt": [
+      "AIDA",
+      "American Indian Defence Association",
+      "American Indian Defense Association",
+      "the AIDA"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "Who was the executive secretary of the AIDA?",
+    "a": "John Collier",
+    "s": "John Collier",
+    "alt": [],
+    "t": "p",
+    "section": "na"
+  },
+  {
+    "q": "Which two bills was the AIDA successful in blocking?",
+    "a": "Leavitt and Bursum",
+    "s": "Leavitt and Bursum",
+    "alt": [],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "In what year was the Meriam Report published?",
+    "a": "1928",
+    "s": "1928",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "Which Act did the Meriam Report first condemn?",
+    "a": "The Dawes Act 1887",
+    "s": "Dawes Act",
+    "alt": [
+      "condemned the Dawes Act",
+      "criticised the Dawes Act",
+      "Dawes Act",
+      "Dawes",
+      "Dawes Act 1887",
+      "the Dawes Act"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "Which President put together a modest reform package to aid Native Americans after the publication of the Meriam Report?",
+    "a": "Herbert Hoover",
+    "s": "Herbert Hoover",
+    "alt": [],
+    "t": "p",
+    "section": "na"
+  },
+  {
+    "q": "What Act was the cornerstone of the Indian New Deal?",
+    "a": "Wheeler-Howard Act (AKA Indian Reorganisation Act), 1934",
+    "s": "Indian Reorganisation Act",
+    "alt": [
+      "Wheeler-Howard Act",
+      "Wheeler Howard",
+      "IRA",
+      "Indian Reorganization Act",
+      "Indian Reorganisation Act",
+      "IRA 1934"
+    ],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "Name one right or benefit Native Americans gained under the Indian New Deal.",
+    "a": "Restoration of some lands, rights to practice their own religion and cultural practices like dances. Some tribal councils",
+    "s": "Own religion and dances",
+    "alt": [
+      "restoration of some lands",
+      "some land back",
+      "tribal councils",
+      "religion",
+      "cultural practices",
+      "dances",
+      "religious freedom",
+      "land restored",
+      "restoration of lands",
+      "right to practice religion"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "Which Native American woman went to the University of Pennsylvania during the New Deal to study anthropology?",
+    "a": "Gladys Tantaquidgeon",
+    "s": "Gladys Tantaquidgeon",
+    "alt": [],
+    "t": "p",
+    "section": "na"
+  },
+  {
+    "q": "Why was the Indian New Deal disappointingly different to John Collier's recommendations?",
+    "a": "It focused on assimilation rather than returning self-government",
+    "s": "Assimilation not self-government",
+    "alt": [
+      "focused on assimilation",
+      "assimilation",
+      "not self-government",
+      "no self-government"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "During the Second World War, how many Native Americans left their reservations to serve or work in the defence industry?",
+    "a": "100,000",
+    "s": "100,000",
+    "alt": [],
+    "t": "n",
+    "section": "na"
+  },
+  {
+    "q": "Which tribe refused to be drafted into the army during WW2?",
+    "a": "Iroquois",
+    "s": "Iroquois",
+    "alt": [],
+    "t": "o",
+    "section": "na"
+  },
+  {
+    "q": "Why did Native Americans lose lots of their reservation lands at the end of WW2?",
+    "a": "Japanese Americans forcibly relocated there",
+    "s": "Japanese Americans relocated there",
+    "alt": [
+      "Japanese Americans",
+      "Japanese internment"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "Which Native American pressure group was set up towards the end of WW2?",
+    "a": "National Congress of American Indians (NCAI)",
+    "s": "NCAI",
+    "alt": [
+      "National Congress of American Indians"
+    ],
+    "t": "o",
+    "section": "na"
+  },
+  {
+    "q": "When was the NCAI set up?",
+    "a": "1944",
+    "s": "1944",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "What happened to the number of Native Americans in urban cities between 1930 and 1960?",
+    "a": "It increased dramatically (fourfold)",
+    "s": "Increased fourfold",
+    "alt": [
+      "quadrupled",
+      "increased",
+      "increased dramatically",
+      "four times"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "What did the BIA set up in major Western cities in 1948?",
+    "a": "Job placement centres for Native Americans",
+    "s": "Job placement centres",
+    "alt": [
+      "job centres",
+      "employment centres",
+      "job placement"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "Which organisation did Congress set up in 1946 to compensate Native Americans?",
+    "a": "The Indian Claims Commission",
+    "s": "The Indian Claims Commission",
+    "alt": [],
+    "t": "o",
+    "section": "na"
+  },
+  {
+    "q": "Why was the governmental policy of compensation disappointing to Native Americans?",
+    "a": "Usually offered money instead of their land back",
+    "s": "Money not land",
+    "alt": [
+      "money instead of land",
+      "money instead",
+      "offered money",
+      "money not land",
+      "no land returned"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "Between what years was the ICC active in giving compensation?",
+    "a": "1946-1978",
+    "s": "1946-1978",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "Which land did the Sioux Indians refuse to give up their claim to?",
+    "a": "Black Hills of Dakota",
+    "s": "Black Hills of Dakota",
+    "alt": [],
+    "t": "l",
+    "section": "na"
+  },
+  {
+    "q": "What term describes the governmental policy of trying to attract Native Americans to migrate away from reservations and into cities?",
+    "a": "Urbanisation",
+    "s": "Urbanisation",
+    "alt": [],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "In what year did Termination begin?",
+    "a": "1953",
+    "s": "1953",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "What did the 1950s Termination policy end for Native American tribes?",
+    "a": "Federal recognition of their special status (they became subject to the same laws and rights as American citizens)",
+    "s": "Federal recognition",
+    "alt": [
+      "federal recognition",
+      "recognition",
+      "special status",
+      "their special status",
+      "recognition of special status",
+      "recognition of tribes",
+      "tribal status",
+      "federal recognition of tribes",
+      "federal support"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "Which federal government organisation controlled the money allocated for Native Americans and was responsible for their education?",
+    "a": "Bureau of Indian Affairs (BIA)",
+    "s": "BIA",
+    "alt": [
+      "Bureau of Indian Affairs"
+    ],
+    "t": "o",
+    "section": "na"
+  },
+  {
+    "q": "What was the aim of the Voluntary Relocation Program?",
+    "a": "To lure Native Americans away from their reservations",
+    "s": "Lure them off reservations",
+    "alt": [
+      "move them to cities",
+      "urbanisation",
+      "leave reservations",
+      "move off reservations",
+      "relocate to cities",
+      "leave the reservations",
+      "move to cities"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "When was the Indian Vocational Training Act passed?",
+    "a": "1956",
+    "s": "1956",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "Which famous address to Congress by Johnson recognised the poor conditions Native Americans were living in?",
+    "a": "The 'Forgotten American' speech, 1968",
+    "s": "Forgotten American speech",
+    "alt": [
+      "The Forgotten American",
+      "Forgotten American"
+    ],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "When did Nixon end Termination?",
+    "a": "1970",
+    "s": "1970",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "Which employment policy begun by Richard Nixon benefitted Native Americans to a certain extent?",
+    "a": "Affirmative action",
+    "s": "Affirmative action",
+    "alt": [],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "Which group of Native Americans found it easier to find jobs in urban environments?",
+    "a": "Women",
+    "s": "Women",
+    "alt": [],
+    "t": "o",
+    "section": "na"
+  },
+  {
+    "q": "By 1960, which proportion of urban Native Americans were classified as 'poor'?",
+    "a": "25%",
+    "s": "25%",
+    "alt": [],
+    "t": "n",
+    "section": "na"
+  },
+  {
+    "q": "Life expectancy for urban Native Americans was how far below the national average?",
+    "a": "20 years",
+    "s": "20 years",
+    "alt": [],
+    "t": "n",
+    "section": "na"
+  },
+  {
+    "q": "Which Native American protest group was set up in 1961?",
+    "a": "National Indian Youth Council",
+    "s": "NIYC",
+    "alt": [
+      "National Indian Youth Council"
+    ],
+    "t": "o",
+    "section": "na"
+  },
+  {
+    "q": "When did the NIYC stage a 'fish-in' in Washington?",
+    "a": "1968",
+    "s": "1968",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "In what year did Native Americans gather in Washington DC, hoping for recognition in Johnson's war on poverty?",
+    "a": "1964",
+    "s": "1964",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "Which pressure group was criticised by Native American youths for being too slow to enact change?",
+    "a": "NCAI",
+    "s": "NCAI",
+    "alt": [],
+    "t": "o",
+    "section": "na"
+  },
+  {
+    "q": "Which book by Dee Brown raised awareness of the Native American plight?",
+    "a": "Bury my heart at Wounded Knee",
+    "s": "Bury My Heart at Wounded Knee",
+    "alt": [
+      "Bury my heart"
+    ],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "In what year was the American Indian Movement founded?",
+    "a": "1968",
+    "s": "1968",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "How was the Red Power movement similar to Black Power?",
+    "a": "Red Berets, police patrols, militancy",
+    "s": "Militancy",
+    "alt": [
+      "Red Berets",
+      "police patrols"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "What term describes the status that young Indians fought for in the 1960s?",
+    "a": "Native Sovereignty",
+    "s": "Native Sovereignty",
+    "alt": [],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "Who led the Siege of Alcatraz?",
+    "a": "Richard Oakes",
+    "s": "Richard Oakes",
+    "alt": [],
+    "t": "p",
+    "section": "na"
+  },
+  {
+    "q": "When was the Siege of Alcatraz?",
+    "a": "1969-1971",
+    "s": "1969-1971",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "What did the invaders of Alcatraz offer the federal government in return for the land?",
+    "a": "$24 worth of beads and cloth",
+    "s": "$24 of beads and cloth",
+    "alt": [
+      "$24",
+      "beads and cloth"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "How many Native Americans visited Alcatraz during the siege?",
+    "a": "10,000",
+    "s": "10,000",
+    "alt": [],
+    "t": "n",
+    "section": "na"
+  },
+  {
+    "q": "In what year did Nixon address Congress, criticising the treatment of Native Americans?",
+    "a": "1970",
+    "s": "1970",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "In what year did Nixon see tribal lands returned to the Taos Pueblo Indians?",
+    "a": "1970",
+    "s": "1970",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "In what year were Native Americans given preference of employment opportunities in the BIA?",
+    "a": "1972",
+    "s": "1972",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "When was the Indian Education Act passed?",
+    "a": "1972",
+    "s": "1972",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "In what year did the Supreme Court uphold all the measures taken by the Nixon administration?",
+    "a": "1974",
+    "s": "1974",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "Which Act, passed in 1975, abandoned the long-held belief in the necessity of assimilation?",
+    "a": "Indian Self-Determination and Education Assistance Act",
+    "s": "Indian Self-Determination Act",
+    "alt": [
+      "Self-Determination Act",
+      "Indian Self-Determination and Education Assistance Act"
+    ],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "When was the Native American Religious Freedom Act passed?",
+    "a": "1978",
+    "s": "1978",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "Which 1990 Act required American Indian remains to be repatriated?",
+    "a": "Native American Graves Protection and Repatriation Act (NAGPRA)",
+    "s": "NAGPRA",
+    "alt": [
+      "Native American Graves Protection and Repatriation Act",
+      "Native American Graves Protection Act",
+      "Graves Protection Act",
+      "NAGPRA",
+      "Graves Protection and Repatriation Act"
+    ],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "When was the Indian Child Welfare Act passed?",
+    "a": "1978",
+    "s": "1978",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "What area did the AIM occupy in 1971 in protest over a long-standing land dispute?",
+    "a": "Mount Rushmore",
+    "s": "Mount Rushmore",
+    "alt": [],
+    "t": "l",
+    "section": "na"
+  },
+  {
+    "q": "When did the AIM take over the offices of the BIA in Washington DC?",
+    "a": "1972",
+    "s": "1972",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "Name the caravan of around 1,000 protestors that arrived in Washington DC in 1972.",
+    "a": "The Trail of Broken Treaties",
+    "s": "The Trail of Broken Treaties",
+    "alt": [],
+    "t": "e",
+    "section": "na"
+  },
+  {
+    "q": "When did Native American protestors occupy Wounded Knee?",
+    "a": "1973",
+    "s": "1973",
+    "alt": [],
+    "t": "y",
+    "section": "na"
+  },
+  {
+    "q": "What was the aim of the Native American Rights Fund (NARF)?",
+    "a": "To defend the rights of Native Americans and their way of life",
+    "s": "Defend Native rights",
+    "alt": [
+      "defend the rights of Native Americans",
+      "legal defence",
+      "defend rights",
+      "protect Native American rights",
+      "legal help",
+      "defend their rights"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "Which Supreme Court case 'opened the floodgates' for claims for Native Americans to have their land returned?",
+    "a": "Oneida vs. Oneida and Madison Counties, 1974",
+    "s": "Oneida v Oneida County",
+    "alt": [
+      "Oneida",
+      "Oneida v Oneida and Madison Counties",
+      "Oneida v Oneida County",
+      "Oneida 1974",
+      "Oneida vs Oneida"
+    ],
+    "t": "c",
+    "section": "na"
+  },
+  {
+    "q": "Which courts did Fisher vs. Montana 1976 give the right to decide adoption cases involving Native American children?",
+    "a": "Tribal courts",
+    "s": "Tribal courts",
+    "alt": [
+      "right of tribal courts",
+      "tribal courts",
+      "tribal court",
+      "the tribes' courts",
+      "tribe's courts"
+    ],
+    "t": "x",
+    "section": "na"
+  },
+  {
+    "q": "How much compensation did the Sioux turn down in the 1980 United States vs. the Sioux Nation case, demanding the return of their land instead?",
+    "a": "$106 million",
+    "s": "$106 million",
+    "alt": [],
+    "t": "n",
+    "section": "na"
+  },
+  {
+    "q": "1982 Seminole vs. Butterworth established the right of Native Americans to do what on their land?",
+    "a": "Establish gambling enterprises, even if against state law",
+    "s": "Run casinos",
+    "alt": [
+      "gambling",
+      "gambling enterprises",
+      "bingo",
+      "casinos",
+      "run gambling"
+    ],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "How much had the Native American population increased to by 1990?",
+    "a": "1.7 million",
+    "s": "1.7 million",
+    "alt": [],
+    "t": "n",
+    "section": "na"
+  },
+  {
+    "q": "The Civil War meant that women were offered job opportunities in which industries?",
+    "a": "Agriculture and nursing",
+    "s": "Agriculture and nursing",
+    "alt": [
+      "farming and nursing"
+    ],
+    "t": "t",
+    "section": "wom"
+  },
+  {
+    "q": "By 1870, what percentage of unmarried women worked?",
+    "a": "13%",
+    "s": "13%",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "Which piece of legislation from 1862 gave women the opportunity to own land?",
+    "a": "Homestead Act",
+    "s": "Homestead Act",
+    "alt": [],
+    "t": "c",
+    "section": "wom"
+  },
+  {
+    "q": "What type of voting exclusion did the Fifteenth Amendment not forbid?",
+    "a": "On the basis of gender",
+    "s": "Gender",
+    "alt": [
+      "sex",
+      "on the basis of gender"
+    ],
+    "t": "t",
+    "section": "wom"
+  },
+  {
+    "q": "Which term describes the idea that women and men occupied different roles in life?",
+    "a": "Separate spheres",
+    "s": "Separate spheres",
+    "alt": [],
+    "t": "t",
+    "section": "wom"
+  },
+  {
+    "q": "By 1900, female workers made up what percentage of the workforce?",
+    "a": "17%",
+    "s": "17%",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "By the 1890s, how much could women make per week in office work?",
+    "a": "$7",
+    "s": "$7",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "During the Gilded Age, immigrant female factory workers had to work on average how many weekly hours to earn $5?",
+    "a": "70",
+    "s": "70",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "By 1900, the average birth rate fell to what?",
+    "a": "3.56",
+    "s": "3.56",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "By 1900, what had the divorce rate risen to?",
+    "a": "1 in 12",
+    "s": "1 in 12",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "What did Jane Addams establish in 1889?",
+    "a": "Hull House in Chicago",
+    "s": "Hull House in Chicago",
+    "alt": [],
+    "t": "t",
+    "section": "wom"
+  },
+  {
+    "q": "When was the Women's Crusade?",
+    "a": "1873",
+    "s": "1873",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "When was the Women's Christian Temperance Union founded?",
+    "a": "1874",
+    "s": "1874",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "When was the National Association of Coloured Women formed?",
+    "a": "1896",
+    "s": "1896",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "Which founding member of the AERA challenged the constitution by voting illegally in the Presidential Election of 1872?",
+    "a": "Susan B. Anthony",
+    "s": "Susan B. Anthony",
+    "alt": [],
+    "t": "p",
+    "section": "wom"
+  },
+  {
+    "q": "When did a merger of the AWSA and NWSA establish the NAWSA?",
+    "a": "1890",
+    "s": "1890",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "When was the militant Congressional Union of Women's Suffrage formed?",
+    "a": "1913",
+    "s": "1913",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "Which suffragist received a seven-month prison sentence in 1917 for picketing the White House?",
+    "a": "Alice Paul",
+    "s": "Alice Paul",
+    "alt": [],
+    "t": "p",
+    "section": "wom"
+  },
+  {
+    "q": "When was the Nineteenth Amendment passed?",
+    "a": "1920",
+    "s": "1920",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "How many women worked in WW1 industry between 1917 and 1918?",
+    "a": "1 million",
+    "s": "1 million",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "Which New Deal legislation helped women who were unable to work and had no male head of the household?",
+    "a": "Aid to Dependent Children 1935",
+    "s": "Aid to Dependent Children",
+    "alt": [
+      "ADC"
+    ],
+    "t": "c",
+    "section": "wom"
+  },
+  {
+    "q": "In 1939, a female teacher earned how much less than her male counterpart?",
+    "a": "20%",
+    "s": "20%",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "In what year did Jeanette Rankin become the first woman to join the House of Representatives?",
+    "a": "1917",
+    "s": "1917",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "Which women were not granted the vote under the 19th Amendment?",
+    "a": "Non-naturalised immigrants",
+    "s": "Non-naturalised immigrants",
+    "alt": [
+      "immigrants",
+      "non-naturalized immigrants"
+    ],
+    "t": "x",
+    "section": "wom"
+  },
+  {
+    "q": "By 1939, How many women had entered politics?",
+    "a": "9",
+    "s": "9",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "Who became Secretary of Labour in 1933?",
+    "a": "Frances Perkins",
+    "s": "Frances Perkins",
+    "alt": [],
+    "t": "p",
+    "section": "wom"
+  },
+  {
+    "q": "Which labour organisation did Eleanor Roosevelt join?",
+    "a": "Women's Trade Union League",
+    "s": "Women's Trade Union League",
+    "alt": [],
+    "t": "o",
+    "section": "wom"
+  },
+  {
+    "q": "When were the Comstock Laws passed?",
+    "a": "1873",
+    "s": "1873",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "When was the American Birth Control League founded?",
+    "a": "1921",
+    "s": "1921",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "In what year was the federal ban on birth control lifted?",
+    "a": "1938",
+    "s": "1938",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "When did Congress pass the 18th Amendment (banning alcohol)?",
+    "a": "1917 (ratified 1919)",
+    "s": "1917",
+    "alt": [
+      "1919"
+    ],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "When was the 21st Amendment ratified, ending prohibition?",
+    "a": "1933",
+    "s": "1933",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "Which figure illegally gave advice on birth control to women?",
+    "a": "Margaret Sanger",
+    "s": "Margaret Sanger",
+    "alt": [],
+    "t": "p",
+    "section": "wom"
+  },
+  {
+    "q": "When was the Molly Pitcher Club set up?",
+    "a": "1922",
+    "s": "1922",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "How many women entered the workforce between 1940 and 1945?",
+    "a": "5 million",
+    "s": "5 million",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "How many women joined the armed forces during WWII?",
+    "a": "350,000",
+    "s": "350,000",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "After WWII, what % of married women wanted to remain in employment?",
+    "a": "75%",
+    "s": "75%",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "Funding for which service was withdrawn between 1942 amd 1946?",
+    "a": "Childcare",
+    "s": "Childcare",
+    "alt": [],
+    "t": "t",
+    "section": "wom"
+  },
+  {
+    "q": "Which 1946 book emphasised the importance of mothers in the home?",
+    "a": "Spock's Common Sense Book of Baby and Child Care",
+    "s": "Spock's baby book",
+    "alt": [
+      "Spock",
+      "Dr Spock",
+      "Common Sense Book of Baby and Child Care",
+      "Baby and Child Care",
+      "Common Sense Book"
+    ],
+    "t": "c",
+    "section": "wom"
+  },
+  {
+    "q": "Why did the GI Bill of Rights 1944 disadvantage women?",
+    "a": "It increased educational opportunities for men (veterans), not women",
+    "s": "Helped men, not women",
+    "alt": [
+      "benefited men",
+      "favoured men",
+      "men benefited",
+      "veterans were men",
+      "helped men not women",
+      "men only",
+      "only helped men"
+    ],
+    "t": "x",
+    "section": "wom"
+  },
+  {
+    "q": "What became more socially acceptable in the 1960s, allowing some families to spend more on recreation and leisure?",
+    "a": "Dual incomes",
+    "s": "Dual incomes",
+    "alt": [],
+    "t": "t",
+    "section": "wom"
+  },
+  {
+    "q": "What organisation, set up in 1964 was intended to ensure the Civil Rights Act were enforced for gender equality?",
+    "a": "Equal Employment Opportunity Commission",
+    "s": "EEOC",
+    "alt": [
+      "Equal Employment Opportunity Commission"
+    ],
+    "t": "o",
+    "section": "wom"
+  },
+  {
+    "q": "Who wrote The Feminine Mystique?",
+    "a": "Betty Friedan",
+    "s": "Betty Friedan",
+    "alt": [],
+    "t": "p",
+    "section": "wom"
+  },
+  {
+    "q": "How did Betty Friedan describe being a married housewife?",
+    "a": "Comfortable concentration camp",
+    "s": "Comfortable concentration camp",
+    "alt": [],
+    "t": "t",
+    "section": "wom"
+  },
+  {
+    "q": "In what year was NOW formed?",
+    "a": "1966",
+    "s": "1966",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "What was buried in Arlington National Cemetery in 1968?",
+    "a": "Traditional Womanhood",
+    "s": "Traditional Womanhood",
+    "alt": [],
+    "t": "t",
+    "section": "wom"
+  },
+  {
+    "q": "When was the women's strike for equality?",
+    "a": "1970",
+    "s": "1970",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "In 1968, 65% of girls aged 15-19 had the ambition to become what?",
+    "a": "Housewives",
+    "s": "Housewives",
+    "alt": [],
+    "t": "t",
+    "section": "wom"
+  },
+  {
+    "q": "By 1969 how many women were in national politics?",
+    "a": "11",
+    "s": "11",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "By 1970 what % of women had jobs?",
+    "a": "47%",
+    "s": "47%",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "By the mid-1980s how many states offered paid paternity leave?",
+    "a": "5",
+    "s": "5",
+    "alt": [],
+    "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "What radical splinter group called for the abolition of marriage in the 1970s?",
+    "a": "The Feminists",
+    "s": "The Feminists",
+    "alt": [],
+    "t": "o",
+    "section": "wom"
+  },
+  {
+    "q": "When was Roe v Wade decided by the Supreme Court?",
+    "a": "1973",
+    "s": "1973",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "What law meant that the Federal Government could not fund abortion services even after Roe v Wade?",
+    "a": "Hyde Amendment",
+    "s": "Hyde Amendment",
+    "alt": [],
+    "t": "c",
+    "section": "wom"
+  },
+  {
+    "q": "Who edited 'Ms' magazine?",
+    "a": "Gloria Steinem",
+    "s": "Gloria Steinem",
+    "alt": [],
+    "t": "p",
+    "section": "wom"
+  },
+  {
+    "q": "In which decade did the contraceptive pill become widely available?",
+    "a": "1960s/70s",
+    "s": "1960s",
+    "alt": [
+      "1970s",
+      "1960s/70s"
+    ],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "In what year was the ERA passed by the Federal Government",
+    "a": "1972",
+    "s": "1972",
+    "alt": [],
+    "t": "y",
+    "section": "wom"
+  },
+  {
+    "q": "Who led the opposition to the ERA?",
+    "a": "Phyllis Schlafly",
+    "s": "Phyllis Schlafly",
+    "alt": [],
+    "t": "p",
+    "section": "wom"
+  },
+  {
+    "q": "How many states ratified the ERA?",
+    "a": "35 of the 38 needed",
+    "s": "35",
+    "alt": [
+      "35/38",
+      "35 of 38",
+      "thirty five"
+    ],
+    "t": "n",
+    "section": "wom"
+  }
 ]
