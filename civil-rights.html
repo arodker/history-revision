@@ -428,6 +428,24 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .boss-hit{animation:bosshit .45s}.boss-laugh{animation:bosslaugh .5s}
 @keyframes bosshit{25%{transform:translateX(-8px) rotate(-10deg);filter:brightness(2)}60%{transform:translateX(8px) rotate(8deg)}}
 @keyframes bosslaugh{50%{transform:scale(1.25)}}
+.bf{position:relative;text-align:center;padding:1.3rem .6rem 1.1rem;border-radius:16px;overflow:hidden;color:#fff;animation:bfbg 1.1s ease-in-out infinite alternate}
+@keyframes bfbg{from{background:#14070a}to{background:#43101a}}
+.bf-em{display:block;font-size:5rem;line-height:1.2;margin-top:.3rem;opacity:0;animation:bfdrop .9s ease-out .4s forwards}
+@keyframes bfdrop{0%{opacity:0;transform:translateY(-110px)}100%{opacity:1;transform:none}}
+.bf-warn{font-weight:900;letter-spacing:.38em;color:#ff4d3d;font-size:1.05rem;margin-bottom:.4rem;animation:bfblink .4s steps(2) infinite}
+@keyframes bfblink{50%{opacity:.2}}
+
+@keyframes bossenter{0%{transform:translateX(170px) rotate(8deg);opacity:0}25%{opacity:1}40%{transform:translateX(100px) rotate(-7deg)}55%{transform:translateX(58px) rotate(6deg)}70%{transform:translateX(28px) rotate(-5deg)}85%{transform:translateX(8px) rotate(3deg)}100%{transform:none}}
+.boss-enter{animation:bossenter 1.4s ease-out}
+.boss-intro{position:absolute;right:1.1rem;top:.2rem;font-weight:800;font-size:.8rem;color:#C0392B;animation:bossdmg 1.8s ease-out forwards;pointer-events:none}
+
+@keyframes bossdie{0%{transform:none;filter:none}12%{transform:translateX(-10px) rotate(-14deg) scale(1.15);filter:brightness(3)}26%{transform:translateX(10px) rotate(12deg) scale(1.2);filter:brightness(3) saturate(0)}40%{transform:translateX(-8px) rotate(-8deg) scale(1.1);filter:brightness(2.2)}55%{transform:translateY(-8px) scale(1.3);filter:brightness(3) saturate(0);opacity:1}100%{transform:translateY(70px) rotate(220deg) scale(.1);opacity:0;filter:grayscale(1)}}
+.boss-box.dead{position:relative;overflow:visible}.boss-die{animation:bossdie 1.5s ease-in forwards}.boss-box.dead .boss-bar i{background:#888}
+.boss-pt{position:absolute;left:2.4rem;top:1.7rem;font-size:1.4rem;pointer-events:none;opacity:0;animation:bosspt .9s ease-out .35s forwards}
+@keyframes bosspt{0%{opacity:1;transform:rotate(var(--a)) translateX(0) scale(.5)}100%{opacity:0;transform:rotate(var(--a)) translateX(var(--d)) scale(1.4)}}
+.boss-ko{text-align:center;font-size:3.2rem;font-weight:900;letter-spacing:.06em;color:#E8433A;margin:.4rem 0;text-shadow:0 3px 0 rgba(0,0,0,.2);animation:bossko .7s cubic-bezier(.2,1.6,.4,1) .5s both}
+@keyframes bossko{0%{transform:scale(3) rotate(-12deg);opacity:0}100%{transform:scale(1) rotate(-4deg);opacity:1}}
+
 .boss-r{flex:1;min-width:0}
 .boss-nm{font-weight:800;font-size:.95rem}.boss-nm small{color:var(--muted);font-weight:700;font-family:'Courier New',monospace}
 .boss-bar{height:12px;background:var(--subtle);border-radius:8px;overflow:hidden;margin:.35rem 0 .2rem}
@@ -2110,7 +2128,7 @@ const ARC_WHEN_RE = /^(when|in which year|in what year|what year)\b/i;
 function arcRqItem(q) { return Object.assign({}, q, {date: String(q.a).trim(), event: q.q, src: 'rq'}); }
 function arcRqYears() { return arcRqPool().filter(q => ARC_WHEN_RE.test(q.q) && ARC_DATE_RE.test(String(q.a).trim())).map(arcRqItem); }
 function arcKind(it) { const s = String(it.date); return it.src !== 'rq' ? 'y' : (ARC_WHEN_RE.test(it.q) && ARC_DATE_RE.test(s) ? 'y' : (/^[\d,.%]+$/.test(s) ? 'n' : 't')); }
-function arcWhPool() { return arcDatesOnly().map(d => Object.assign({}, d, {src: 'dt'})).concat(arcRqPool().filter(q => { const a = String(q.a).trim(); return a.length > 0 && a.length <= 30; }).map(arcRqItem)); }
+function arcWhPool() { return arcDatesOnly().map(d => Object.assign({}, d, {src: 'dt'})).concat(arcRqPool().filter(q => { const a = String(q.a).trim(); return a.length > 0 && a.length <= 30; }).map(arcRqItem).filter(it => arcKind(it) !== 't')); }
 function arcMode(it) { return it.src === 'rq' ? 'rapid' : 'date'; }
 function arcMixOrder(pool) {
   const a = shuffle(pool.filter(x => x.src !== 'rq')), b = shuffle(pool.filter(x => x.src === 'rq'));
@@ -2140,9 +2158,9 @@ function arcMenu() {
   document.getElementById('arc-body').innerHTML =
     '<div class="arc-sub">Pick one unit or several. Questions come from every unit selected, so long as it is unlocked on the home slider.</div>' +
     '<div class="arc-pills">' + pills + '</div>' +
-    '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">🧩</span><span class="arc-tx"><b>Match the dates</b><small>Pair each event with its date. Three lives.</small></span><span class="arc-hi">HI ' + (hs.mt || 0) + '</span></button>' +
     '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Type the answer. Right answers hurt the boss, misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
-    '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>No time limit. Tap right dates, ignore wrong ones.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
+    '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">🧩</span><span class="arc-tx"><b>Match the dates</b><small>Pair each event with its date. Three lives.</small></span><span class="arc-hi">HI ' + (hs.mt || 0) + '</span></button>' +
+    '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>No time limit. Tap the right date or number.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
     '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
     '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 12 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
 }
@@ -2393,7 +2411,7 @@ function stOver() {
     '<button class="arc-btn" onclick="stStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
 }
 // ----- Boss battle -----
-const BOSSES = [['Revision Gremlin','👹'], ['Memory Mummy','🧟'], ['Stat Skeleton','💀'], ['Date Dragon','🐉'], ['Mock Exam Kraken','🦑'], ['Mr Rodker','👨‍🏫']];
+const BOSSES = [['Procrastination Gremlin','👹'], ['Cramming Zombie','🧟'], ['Highlighter Vampire','🧛'], ['Dreaded Date Dragon','🐉'], ['Chief Examiner','🧙'], ['Mr Rodker','👨‍🏫']];
 const BOSS_HP = [6, 8, 10, 12, 15, 20], BOSS_SECS = 12;
 function bossStart() {
   const pool = shuffle(arcRqPool());
@@ -2405,14 +2423,40 @@ function bossQ() { const g = ARC.g; if (g.i >= g.pool.length) { g.pool = shuffle
 // ----- typed answer marking -----
 const BS_STOP = new Set(['the','a','an','of','and','or','to','in','on','at','for','by','with','was','were','is','are','as','his','her','its','their','they','them','he','she','it','be','been','being','had','has','have','did','do','does','that','this','who','which']);
 const BS_GENERIC = new Set(['act','treaty','plan','party','league','law','laws','conference','summit','pact','crisis','war','republic','government','state','states','united','british','britain','national','people','peoples','nazi','nazis']);
+const BS_FN = {a:1, an:1, one:1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9, ten:10};
+const BS_FD = {half:2, halves:2, third:3, thirds:3, quarter:4, quarters:4, fourth:4, fourths:4, fifth:5, fifths:5, sixth:6, sixths:6, seventh:7, sevenths:7, eighth:8, eighths:8, ninth:9, ninths:9, tenth:10, tenths:10};
+const BS_DEC = {twenties:'20s', thirties:'30s', forties:'40s', fifties:'50s', sixties:'60s', seventies:'70s', eighties:'80s', nineties:'90s'};
+const BS_CTRY = [['germany','german','germans'],['france','french'],['russia','russian','russians'],['china','chinese'],['japan','japanese'],['cuba','cuban','cubans'],['vietnam','vietnamese'],['korea','korean','koreans'],['spain','spanish'],['italy','italian','italians'],['poland','polish'],['ireland','irish'],['israel','israeli','israelis'],['iran','iranian','iranians'],['egypt','egyptian','egyptians']];
+const BS_CMAP = {}; BS_CTRY.forEach(g => g.slice(1).forEach(w => BS_CMAP[w] = g[0]));
+const BS_CRE = new RegExp('\\b(' + BS_CTRY.map(g => g.slice(1).join('|')).join('|') + ')\\b', 'g');
+// Different ways of writing the same thing become one form before answers are compared:
+// US / USA / America / American, UK / Britain / British, USSR / Soviet Union, WW1 / World War One,
+// 2/3 / two thirds, 1/3 / one third / a third, 50% / 50 percent / 50 per cent, 1960s / the sixties, 5th / fifth
+function bsCanon(s) {
+  s = s.replace(/\bu\.\s?s\.\s?s\.\s?r\.?/g, ' ussr ').replace(/\bu\.\s?s\.\s?a\.?/g, ' usa ').replace(/\bu\.\s?s\.?(?![a-z])/g, ' usa ').replace(/\bu\.\s?k\.?(?![a-z])/g, ' uk ');
+  s = s.replace(/\b(?:united states of america|united states|usa|us|americans?|america)\b/g, ' usa ')
+       .replace(/\b(?:united kingdom|great britain|britain|british|uk)\b/g, ' uk ')
+       .replace(/\b(?:soviet union|soviets?|ussr)\b/g, ' ussr ')
+       .replace(/\b(?:ww2|wwii|world war (?:2|ii|two)|second world war)\b/g, ' ww2 ')
+       .replace(/\b(?:ww1|wwi|world war (?:1|i|one)|first world war|great war)\b/g, ' ww1 ');
+  s = s.replace(/(\d+)\s*\/\s*(\d+)(?:st|nd|rd|th)?\b/g, (m, a, b) => ' frac' + a + 'x' + b + ' ');
+  s = s.replace(/\b(a|an|one|two|three|four|five|six|seven|eight|nine|ten|\d+)[\s-]+(halves|half|thirds?|quarters?|fourths?|fifths?|sixths?|sevenths?|eighths?|ninths?|tenths?)\b/g, (m, n, d) => ' frac' + (/^\d+$/.test(n) ? n : BS_FN[n]) + 'x' + BS_FD[d] + ' ');
+  s = s.replace(/\bhalf\b/g, ' frac1x2 ');
+  s = s.replace(/(\d)\s*%/g, '$1 percent ').replace(/%/g, ' percent ').replace(/\b(?:per cent|percentage)\b/g, ' percent ');
+  s = s.replace(/\b(?:18|19|20)(\d)0'?s\b/g, ' $10s ').replace(/\b(\d)0'?s\b/g, ' $10s ');
+  s = s.replace(/\b(twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties)\b/g, (m, w) => ' ' + BS_DEC[w] + ' ');
+  s = s.replace(BS_CRE, (m, w) => ' ' + BS_CMAP[w] + ' ');
+  s = s.replace(/\b(\d+)(?:st|nd|rd|th)\b/g, '$1');
+  return s;
+}
 function bsNorm(t) {
-  return String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/(\d)[,\s](?=\d{3}\b)/g, '$1').replace(/&/g, ' and ').replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+  return bsCanon(String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')).replace(/(\d)[,\s](?=\d{3}\b)/g, '$1').replace(/&/g, ' and ').replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
 }
 function bsNormN(t) { return bsNumWords(bsNorm(t)); }
 
 const BS_NW = {zero:0, one:1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9, ten:10, eleven:11, twelve:12, thirteen:13, fourteen:14, fifteen:15, sixteen:16, seventeen:17, eighteen:18, nineteen:19, twenty:20, thirty:30, forty:40, fourty:40, fifty:50, sixty:60, seventy:70, eighty:80, ninety:90};
 const BS_SC = {hundred:100, thousand:1000, million:1000000, billion:1000000000};
-const BS_ORD = {first:'1st', second:'2nd', third:'3rd', fourth:'4th', fifth:'5th', sixth:'6th', seventh:'7th', eighth:'8th', ninth:'9th', tenth:'10th'};
+const BS_ORD = {first:'1', second:'2', third:'3', fourth:'4', fifth:'5', sixth:'6', seventh:'7', eighth:'8', ninth:'9', tenth:'10', eleventh:'11', twelfth:'12', thirteenth:'13', fourteenth:'14', fifteenth:'15', sixteenth:'16', seventeenth:'17', eighteenth:'18', nineteenth:'19', twentieth:'20'};
 // "one thousand", "a thousand", "6 million", "twenty five" all become digits so they can be compared
 function bsNumWords(str) {
   const w = str.split(' '), out = [];
@@ -2470,7 +2514,7 @@ function bsTokenHit(tok, have) {
 // each side of a dash, and the text with the brackets removed.
 function bsAlts(answer) {
   const out = [];
-  String(answer).split(/\s*\/\s*|;\s*/).forEach(part => {
+  String(answer).split(/\s+\/\s+|(?<!\d)\/|\/(?!\d)|;\s*/).map(x => x.trim()).forEach(part => {
     out.push(part.replace(/\s*\([^)]*\)/g, '').trim());
     (part.match(/\(([^)]*)\)/g) || []).forEach(g => out.push(g.slice(1, -1)));
     part.split(/\s+[–—-]\s+/).forEach(seg => out.push(seg.replace(/\s*\([^)]*\)/g, '')));
@@ -2489,6 +2533,7 @@ function bsCheck(typed, answer, question) {
     if (bsNorm(alt) === t) return true;
     const aj = bsNormN(alt).replace(/ /g, '');
     if (tj.length >= 5 && (aj.match(/\d+/g) || []).join() === (tj.match(/\d+/g) || []).join() && (aj === tj || bsLev(aj, tj) <= (aj.length >= 10 ? 2 : 1))) return true;
+    if (tt.length && tt.every(w => /^frac\d+x\d+$/.test(w)) && tt.every(w => at.includes(w))) return true;
     const nums = at.filter(w => /\d/.test(w));
     if (nums.some(w => !have.has(w))) continue;
     const hit = at.filter(w => bsTokenHit(w, have)).length;
@@ -2528,6 +2573,7 @@ function bossRender() {
   const pct = Math.max(0, Math.round(g.hp / g.max * 100));
   const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Hits <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.boss || 0, g.score) + '</b></span></div>';
   let low;
+  if (g.phase === 'dead') { arcFrame(bossDeadHtml(B, g), head); return; }
   if (g.phase === 'ask') {
     low = '<input id="boss-in" class="boss-in" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" enterkeyhint="go" onkeydown="if(event.key===\'Enter\')bossSubmit()">' +
       '<div class="boss-hintline" id="boss-hint"></div>' +
@@ -2576,12 +2622,47 @@ function bossMark(ok) {
   if (ok) { g.score++; g.hp--; } else g.lives--;
   g.marking = false;
   if (g.lives <= 0) { bossOver(); return; }
-  if (g.hp <= 0) { bossWin(); return; }
+  if (g.hp <= 0) { bossDeath(); return; }
   bossAsk();
   const em = document.getElementById('boss-em');
   if (em) em.classList.add(ok ? 'boss-hit' : 'boss-laugh');
   const bb = document.querySelector('.boss-box');
   if (bb) { const d = document.createElement('span'); d.className = 'boss-dmg ' + (ok ? 'ok' : 'no'); d.textContent = ok ? '-1' : '💔'; bb.appendChild(d); }
+}
+function bossDeadHtml(B, g) {
+  const ps = ['💥','✨','⭐','💫','💥','✨','⭐','💫'].map((p, i) => '<span class="boss-pt" style="--a:' + (i * 45) + 'deg;--d:' + (62 + (i % 3) * 20) + 'px">' + p + '</span>').join('');
+  return '<div class="boss-box dead"><span class="boss-em boss-die">' + B[1] + '</span><div class="boss-r"><div class="boss-nm">' + B[0] + ' <small>Lv ' + (g.lv + 1) + '</small></div><div class="boss-bar"><i style="width:0%"></i></div><div class="boss-hp">0 of ' + g.max + ' HP</div></div>' + ps + '</div>' +
+    '<div class="boss-ko">K.O.</div><div class="boss-res ok" style="text-align:center">' + B[0] + ' is defeated</div>';
+}
+function bossDeath() {
+  const g = ARC.g;
+  g.phase = 'dead'; g.dying = true; bossRender();
+  const s = document.getElementById('s-arcade');
+  if (s) { s.classList.remove('arc-shake'); void s.offsetWidth; s.classList.add('arc-shake'); }
+  clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g) { g.dying = false; bossAdvance(); } }, 2000);
+}
+function bossFinalIntro() {
+  const g = ARC.g, B = BOSSES[BOSSES.length - 1];
+  g.phase = 'intro';
+  arcFrame('<div class="bf"><div class="bf-warn">FINAL BOSS</div><div class="bf-em">' + B[1] + '</div></div>', '');
+  clearTimeout(ARC.t);
+  ARC.t = setTimeout(() => {
+    if (ARC.g !== g) return;
+    bossNext();
+    const em = document.getElementById('boss-em'), bb = document.querySelector('.boss-box');
+    if (em) em.classList.add('boss-enter');
+    if (bb) { const d = document.createElement('span'); d.className = 'boss-intro'; d.textContent = 'Fight!'; bb.appendChild(d); }
+  }, 2800);
+}
+function bossAdvance() {
+  const g = ARC.g;
+  if (g.lv >= BOSSES.length - 1) { bossWin(); return; }
+  arcSetHS('boss', g.score);
+  if (g.lv + 1 >= BOSSES.length - 1) { bossFinalIntro(); return; }
+  bossNext();
+  const em = document.getElementById('boss-em'), bb = document.querySelector('.boss-box');
+  if (em) em.classList.add('boss-enter');
+  if (bb) { const d = document.createElement('span'); d.className = 'boss-intro'; d.textContent = 'Next up: ' + BOSSES[g.lv % BOSSES.length][0]; bb.appendChild(d); }
 }
 function bossWin() {
   const g = ARC.g, B = BOSSES[g.lv % BOSSES.length];
@@ -2603,8 +2684,8 @@ function bossNext() {
   bossAsk();
 }
 function bossOver() {
-  const g = ARC.g, isBest = arcSetHS('boss', g.score);
-  arcFrame('<div class="arc-end"><div class="arc-big">' + (g.lives > 0 ? '🛡️' : '💀') + '</div><div class="arc-h">' + (g.lives > 0 ? 'Well fought' : 'The boss wins this one') + '</div>' +
+  const g = ARC.g, isBest = arcSetHS('boss', g.score), B = BOSSES[g.lv % BOSSES.length];
+  arcFrame('<div class="arc-end"><div class="arc-big">' + (g.lives > 0 ? '🛡️' : '<span class="boss-em boss-laugh" style="font-size:inherit">' + B[1] + '</span>') + '</div><div class="arc-h">' + (g.lives > 0 ? 'Well fought' : B[0] + ' wins this one') + '</div>' +
     '<div class="arc-score">' + g.score + '</div><div class="arc-sub2">hits landed · ' + g.lv + ' boss' + (g.lv === 1 ? '' : 'es') + ' beaten' + (isBest ? ' · new best' : '') + '</div>' +
     '<button class="arc-btn" onclick="bossStart()">Fight again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
 }
@@ -2729,7 +2810,7 @@ uptoRender(); xpRender();
       {e:'🎯',t:'Say it, then reveal',p:'Answer in your head first, reveal, then tap ✓ or ✗. ⚙️ Settings takes you back to the setup.'}
     ],
     arcade:[
-      {sel:'#arc-body',e:'🕹️',t:'Four games',p:'🧩 Match the dates, 🐉 Boss battle, 🔨 Whack-a-fact and 🧱 Stack it.'},
+      {sel:'#arc-body',e:'🕹️',t:'Four games',p:'🐉 Boss battle, 🧩 Match the dates, 🔨 Whack-a-fact and 🧱 Stack it.'},
       {sel:'#arc-body',e:'🐉',t:'Boss battle',p:'Type each answer in 12 seconds. A miss costs a heart, and hearts do not come back for the next boss.'}
     ],
     progress:[
