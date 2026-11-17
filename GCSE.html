@@ -619,6 +619,13 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .boss-hit{animation:bosshit .45s}.boss-laugh{animation:bosslaugh .5s}
 @keyframes bosshit{25%{transform:translateX(-8px) rotate(-10deg);filter:brightness(2)}60%{transform:translateX(8px) rotate(8deg)}}
 @keyframes bosslaugh{50%{transform:scale(1.25)}}
+.bf-black{position:fixed;inset:0;z-index:99999;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;animation:bfin .45s ease-out both}
+.bf-black .bf-warn{font-size:1.6rem;margin-bottom:1rem;text-shadow:0 0 18px #ff1f1f}
+.bf-black .bf-em{font-size:9rem;margin-top:0;text-shadow:0 0 40px rgba(255,40,40,.55)}
+.bf-black .bf-name{margin-top:1rem;font-weight:900;font-size:1.7rem;letter-spacing:.08em;color:#ff3b30;text-shadow:0 0 18px #ff1f1f;opacity:0;animation:bfdrop .7s ease-out 1.1s forwards}
+.bf-black.bf-out{animation:bfout .45s ease-in forwards}
+@keyframes bfin{from{opacity:0}to{opacity:1}}
+@keyframes bfout{from{opacity:1}to{opacity:0}}
 .bf{position:relative;text-align:center;padding:1.3rem .6rem 1.1rem;border-radius:16px;overflow:hidden;color:#fff;animation:bfbg 1.1s ease-in-out infinite alternate}
 @keyframes bfbg{from{background:#14070a}to{background:#43101a}}
 .bf-em{display:block;font-size:5rem;line-height:1.2;margin-top:.3rem;opacity:0;animation:bfdrop .9s ease-out .4s forwards}
@@ -4938,6 +4945,11 @@ function bossFinalIntro() {
   const g = ARC.g, B = BOSSES[BOSSES.length - 1];
   g.phase = 'intro';
   arcFrame('<div class="bf"><div class="bf-warn">FINAL BOSS</div><div class="bf-em">' + B[1] + '</div></div>', '');
+  const blk = document.createElement('div');
+  blk.className = 'bf-black';
+  blk.innerHTML = '<div class="bf-warn">FINAL BOSS</div><div class="bf-em">' + B[1] + '</div><div class="bf-name">' + B[0] + '</div>';
+  document.body.appendChild(blk);
+  setTimeout(() => { blk.classList.add('bf-out'); setTimeout(() => blk.remove(), 450); }, 2500);
   clearTimeout(ARC.t);
   ARC.t = setTimeout(() => {
     if (ARC.g !== g) return;
