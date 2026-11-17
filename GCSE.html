@@ -4664,6 +4664,11 @@ const BS_CRE = new RegExp('\\b(' + BS_CTRY.map(g => g.slice(1).join('|')).join('
 // US / USA / America / American, UK / Britain / British, USSR / Soviet Union, WW1 / World War One,
 // 2/3 / two thirds, 1/3 / one third / a third, 50% / 50 percent / 50 per cent, 1960s / the sixties, 5th / fifth
 function bsCanon(s) {
+  // dates and amounts: Nov / November, 09.11.1989 / 9 November 1989, 1914-18 / 1914 to 1918, c.800 / 800, approximately 400,000
+  s = s.replace(/\b(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{4})\b/g, (m, d, mo, y) => (+mo >= 1 && +mo <= 12) ? ' ' + d + ' ' + ['january','february','march','april','may','june','july','august','september','october','november','december'][+mo - 1] + ' ' + y + ' ' : m);
+  if (/\d/.test(s)) s = s.replace(/\b(jan|feb|mar|apr|jun|jul|aug|sept|sep|oct|nov|dec)\b\.?/g, (m, a) => ({jan:'january',feb:'february',mar:'march',apr:'april',jun:'june',jul:'july',aug:'august',sep:'september',sept:'september',oct:'october',nov:'november',dec:'december'})[a]);
+  s = s.replace(/\b(\d{4})\s*(?:[-–—]|to|until|till)\s*(\d{2})\b(?!\d)/g, (m, a, b) => ' ' + a + ' ' + a.slice(0, 2) + b + ' ');
+  s = s.replace(/\b(?:c\.?|ca\.?|circa|approximately|approx\.?|roughly|about|around|nearly|almost)\s*(?=[£$€]?\d)/g, ' ');
   s = s.replace(/\bu\.\s?s\.\s?s\.\s?r\.?/g, ' ussr ').replace(/\bu\.\s?s\.\s?a\.?/g, ' usa ').replace(/\bu\.\s?s\.?(?![a-z])/g, ' usa ').replace(/\bu\.\s?k\.?(?![a-z])/g, ' uk ');
   s = s.replace(/\b(?:united states of america|united states|usa|us|americans?|america)\b/g, ' usa ')
        .replace(/\b(?:united kingdom|great britain|britain|british|uk)\b/g, ' uk ')
@@ -4722,10 +4727,27 @@ function bsStem(w) {
   if (w.length > 3 && /e$/.test(w)) w = w.slice(0, -1);
   return BS_IRR[w] || w;
 }
-function bsToks(t) { return bsNormN(t).split(' ').filter(w => w && !BS_STOP.has(w)).map(bsStem); }
+const BS_SYNG = [['ban','outlaw','prohibit','forbid','illegal','banned','outlawed','prohibited','forbidden'],['kill','murder','assassinate','slay','killed','murdered','assassinated'],['increase','rise','grow','climb','surge','rose','grew','increased'],['decrease','fall','drop','decline','reduce','reduced','fell','dropped','declined','cut'],['lot','dramatic','dramatically','sharp','sharply','rapid','rapidly','significant','significantly','massive','massively','huge','hugely','substantial','substantially','considerable','considerably','enormous','enormously'],['leader','head','chief','boss'],['abolish','end','scrap','scrapped','abolished','ended'],['create','establish','found','set','created','established','founded','formed','form'],['poor','poverty','impoverished'],['whip','flog','lash','beat','scourge'],['burn','brand','scorch','sear','burnt','burned','branded']];
+const BS_SYN = {}; BS_SYNG.forEach(g => g.forEach(w => BS_SYN[w] = g[0]));
+const BS_UNITS = new Set(['month','year','week','day','hour','cent','dollar','pound','shilling','penny','pence','each','per','men','people','mark','time','troop','tonne']);
+// Phonetic skeleton so that Kruschev / Khrushchev and Mujahedeen / Mujahideen count as the same word
+function bsPhon(w) {
+  w = String(w).replace(/[^a-z]/g, '');
+  if (w.length < 5) return w;
+  return w[0] + w.slice(1).replace(/ph/g, 'f').replace(/[aeiouyhw]/g, '').replace(/[bfpv]/g, '1').replace(/[cgjkqsxz]/g, '2').replace(/[dt]/g, '3').replace(/l/g, '4').replace(/[mn]/g, '5').replace(/r/g, '6').replace(/(.)\1+/g, '$1');
+}
+// "Walsingham and Leicester": when the question does not ask for two or both, either name will do
+function bsListSplit(alts, asked) {
+  if (/\b(two|2|both|three|3|four|4|five|5|pair|parents|were|are)\b/i.test(asked)) return;
+  alts.slice().forEach(a => {
+    const parts = String(a).split(/\s+and\s+|,\s*/).map(x => x.trim()).filter(Boolean);
+    if (parts.length >= 2 && parts.length <= 4 && parts.every(p => /^[A-Z]/.test(p) && !/\d/.test(p))) parts.forEach(p => alts.push(p));
+  });
+}
+function bsToks(t) { return bsNormN(t).split(' ').filter(w => w && !BS_STOP.has(w)).map(w => BS_SYN[w] || bsStem(w)).map(w => BS_SYN[w] || w); }
 function bsLev(a, b) {
   const m = a.length, n = b.length;
-  if (Math.abs(m - n) > 2) return 3;
+  if (Math.abs(m - n) > 3) return 9;
   let prev = [], cur = [], prev2 = [];
   for (let j = 0; j <= n; j++) prev[j] = j;
   for (let i = 1; i <= m; i++) {
@@ -4738,11 +4760,31 @@ function bsLev(a, b) {
 function bsTokenHit(tok, have) {
   if (have.has(tok)) return true;
   if (/\d/.test(tok) || tok.length < 4) return false;
-  for (const h of have) if (!/\d/.test(h) && bsLev(tok, h) <= (tok.length >= 8 ? 2 : 1)) return true;
+  const lim = tok.length >= 12 ? 3 : tok.length >= 8 ? 2 : 1, pk = tok.length >= 6 ? bsPhon(tok) : '';
+  for (const h of have) {
+    if (/\d/.test(h)) continue;
+    if (bsLev(tok, h) <= lim) return true;
+    if (pk && h.length >= 6 && pk.length >= 4 && Math.abs(h.length - tok.length) <= 2 && bsLev(tok, h) <= 4 && bsPhon(h) === pk) return true;
+  }
   return false;
 }
 // Every way of writing the answer that should be accepted: the main text, anything in brackets,
 // each side of a dash, and the text with the brackets removed.
+// Different names for the same thing. If the answer contains one of these, the others are accepted too.
+const BS_ALIAS = [["core","congress of racial equality"],["eucharist", "holy communion", "communion", "lord's supper", "lords supper"], ["church of england", "anglican church", "english church", "anglican"], ["catholic", "roman catholic", "catholicism", "roman catholicism"], ["puritan", "puritans", "puritanism"], ["book of common prayer", "prayer book", "bcp", "common prayer"], ["thirty-nine articles", "thirty nine articles", "39 articles"], ["act of supremacy", "supremacy act", "royal supremacy"], ["dissolution of the monasteries", "dissolution", "closure of the monasteries", "closing the monasteries"], ["pope", "the pope", "papacy"], ["elizabeth i", "queen elizabeth", "queen elizabeth i", "elizabeth", "good queen bess", "gloriana"], ["mary i", "mary tudor", "bloody mary", "queen mary"], ["mary queen of scots", "mary stuart", "mary, queen of scots", "mary stewart"], ["william cecil", "lord burghley", "cecil", "burghley", "baron burghley"], ["robert devereux", "earl of essex", "essex", "devereux", "second earl of essex"], ["francis walsingham", "walsingham", "sir francis walsingham"], ["robert dudley", "earl of leicester", "leicester"], ["john dudley", "duke of northumberland", "earl of warwick", "warwick", "northumberland"], ["edward seymour", "duke of somerset", "somerset", "protector somerset", "lord protector"], ["philip ii", "philip of spain", "king philip"], ["henry viii", "henry the eighth", "henry 8", "king henry viii"], ["martin luther king", "martin luther king jr", "mlk", "dr king", "dr martin luther king", "martin luther king junior"], ["malcolm x", "malcolm little"], ["franklin d roosevelt", "franklin roosevelt", "fdr", "franklin delano roosevelt", "roosevelt"], ["lyndon b johnson", "lyndon johnson", "lbj", "president johnson"], ["john f kennedy", "jfk", "john kennedy", "president kennedy"], ["adolf hitler", "hitler", "the fuhrer", "der fuhrer", "führer", "fuhrer"], ["mikhail gorbachev", "gorbachev"], ["ronald reagan", "reagan", "president reagan"], ["harry truman", "truman", "harry s truman", "president truman"], ["nikita khrushchev", "khrushchev", "krushchev"], ["joseph mccarthy", "mccarthy", "senator mccarthy", "joe mccarthy"], ["oswald mosley", "mosley", "sir oswald mosley"], ["gustav stresemann", "stresemann"], ["paul von hindenburg", "hindenburg", "president hindenburg"], ["ku klux klan", "klan", "kkk", "the klan"], ["naacp", "national association for the advancement of colored people", "national association for the advancement of coloured people"], ["sncc", "student nonviolent coordinating committee", "student non-violent coordinating committee", "snick"], ["sclc", "southern christian leadership conference"], ["black panthers", "black panther party"], ["ncai", "national congress of american indians"], ["nato", "north atlantic treaty organisation", "north atlantic treaty organization"], ["gdr", "east germany", "german democratic republic"], ["frg", "west germany", "federal republic of germany"], ["sturmabteilung", "brownshirts", "brown shirts", "stormtroopers", "storm troopers"], ["nsdap", "nazi party", "national socialist german workers party", "national socialists"], ["kpd", "communist party of germany", "german communist party"], ["spd", "social democratic party", "social democrats"], ["gestapo", "secret state police", "geheime staatspolizei"], ["hitler youth", "hitler jugend"], ["strength through joy", "kdf"], ["wall street crash", "stock market crash", "1929 crash", "crash of 1929"], ["segregation", "jim crow", "jim crow laws"], ["black codes", "black code"], ["freedom riders", "freedom rides"], ["brown v board of education", "brown v. board", "brown vs board of education", "brown v board", "brown versus board of education"], ["plessy v ferguson", "plessy vs ferguson", "plessy v. ferguson"], ["civil rights act of 1964", "civil rights act 1964", "1964 civil rights act", "civil rights act"], ["voting rights act of 1965", "voting rights act 1965", "1965 voting rights act", "voting rights act"], ["march on washington", "march on washington for jobs and freedom", "great march on washington"], ["montgomery bus boycott", "bus boycott"], ["little rock nine", "little rock"], ["cuban missile crisis", "missile crisis", "cuba crisis"], ["berlin airlift", "airlift"], ["berlin blockade", "blockade of berlin"], ["marshall plan", "marshall aid", "european recovery program", "european recovery programme"], ["sdi", "star wars", "strategic defense initiative", "strategic defence initiative"], ["icbm", "intercontinental ballistic missile", "intercontinental ballistic missiles"], ["perestroika", "restructuring"], ["glasnost", "openness"], ["treaty of versailles", "versailles treaty", "versailles"], ["enclosure", "enclosures", "enclosing common land"], ["poor law", "poor laws"], ["spanish armada", "armada", "the armada", "armada of 1588"], ["babington plot", "babington"], ["ridolfi plot", "ridolfi"], ["northern rebellion", "revolt of the northern earls", "rising of the northern earls", "rebellion of the northern earls"], ["kett's rebellion", "kett rebellion", "ketts rebellion", "kett's revolt"], ["western rebellion", "prayer book rebellion"], ["elizabethan religious settlement", "religious settlement", "1559 settlement", "settlement of 1559"], ["act of uniformity", "uniformity act"], ["windrush", "empire windrush", "hmt empire windrush", "mv empire windrush"], ["notting hill riots", "notting hill race riots", "notting hill disturbances"], ["british national party", "bnp"], ["kindertransport", "kinder transport"]];
+const BS_ALIAS_RE = BS_ALIAS.map(g => g.map(m => ({m: m, re: new RegExp("(^|[^a-z0-9])" + m.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + "(?![a-z0-9])")})));
+function bsAliasExpand(out) {
+  const base = out.slice();
+  base.forEach(a => {
+    const low = String(a).toLowerCase().replace(/[\u2018\u2019`]/g, "'");
+    BS_ALIAS_RE.forEach((g, gi) => g.forEach(x => {
+      if (x.re.test(low)) BS_ALIAS[gi].forEach(n => { if (n !== x.m) out.push(low.replace(x.re, (s, p) => p + n)); });
+    }));
+  });
+}
+// Answers a student has marked "I was right" are remembered on this device
+function bsLearned() { try { return JSON.parse(localStorage.getItem('bs_ok') || '{}') || {}; } catch (e) { return {}; } }
+function bsLearn(typed, answer) { try { const L = bsLearned(); L[bsNorm(typed) + '|' + bsNorm(answer)] = 1; localStorage.setItem('bs_ok', JSON.stringify(L)); } catch (e) {} }
 function bsAlts(answer) {
   const out = [];
   String(answer).split(/\s+\/\s+|(?<!\d)\/|\/(?!\d)|;\s*/).map(x => x.trim()).forEach(part => {
@@ -4751,13 +4793,18 @@ function bsAlts(answer) {
     part.split(/\s+[–—-]\s+/).forEach(seg => out.push(seg.replace(/\s*\([^)]*\)/g, '')));
     out.push(part.replace(/[()]/g, ' '));
   });
+  bsAliasExpand(out);
   return out.filter((x, i) => x && out.indexOf(x) === i);
 }
 function bsCheck(typed, answer, question) {
   const t = bsNorm(typed);
   if (!t) return false;
+  if (bsLearned()[t + '|' + bsNorm(answer)]) return true;
   const asked = String(question || '');
   const tt = bsToks(typed), have = new Set(tt), alts = bsAlts(answer), tj = bsNormN(typed).replace(/ /g, '');
+  bsListSplit(alts, asked);
+  // "Name one ...": any single item from a comma/semicolon list is enough
+  if (/\b(one|any|either)\b/i.test(asked)) alts.slice().forEach(a => { if (/[,;]|\sand\s/.test(a)) String(a).split(/[;,]|\.\s+|\sand\s/).map(x => x.replace(/^\s*(and|or)\s+/i, '').trim()).filter(x => x.split(/\s+/).length >= 1 && x.length >= 3).forEach(x => alts.push(x)); });
   for (const alt of alts) {
     const at = bsToks(alt);
     if (!at.length) continue;
@@ -4767,12 +4814,16 @@ function bsCheck(typed, answer, question) {
     if (tt.length && tt.every(w => /^frac\d+x\d+$/.test(w)) && tt.every(w => at.includes(w))) return true;
     const nums = at.filter(w => /\d/.test(w));
     if (nums.some(w => !have.has(w))) continue;
-    const hit = at.filter(w => bsTokenHit(w, have)).length;
-    if (at.length === 1 ? hit === 1 : at.length === 2 ? hit === 2 : hit / at.length >= 0.5) return true;
+    if (nums.length && at.filter(w => !/\d/.test(w)).every(w => BS_UNITS.has(w))) return true;
+    if (nums.length && at.length >= 6 && tt.length >= 2 && tt.some(w => bsTokenHit(w, new Set(at.filter(x => !/\d/.test(x))))) ) return true;
+    if (/\bname (one|any)\b/i.test(asked) && tt.length === 1 && tt[0].length >= 5 && !BS_GENERIC.has(tt[0]) && !new Set(bsToks(asked)).has(tt[0]) && at.length >= 3 && at.includes(tt[0])) return true;
+    const qset = new Set(bsToks(asked)), inf = at.filter(w => !qset.has(w)), base = inf.length >= 2 ? inf : at;
+    const hit = base.filter(w => bsTokenHit(w, have)).length;
+    if (at.length === 1 ? hit === 1 : at.length === 2 ? hit === 2 : hit >= Math.max(2, Math.ceil(base.length * (base.length >= 6 ? 0.33 : 0.4)))) return true;
     // part of a longer answer, as long as it is not just a generic word like "act" or "treaty"
     const core = at.filter(w => !BS_GENERIC.has(w));
     const tcore = tt.filter(w => !BS_GENERIC.has(w));
-    if (tcore.length && at.length >= 2 && tt.every(w => bsTokenHit(w, new Set(at))) && tcore.filter(w => bsTokenHit(w, new Set(core))).length >= Math.max(1, Math.ceil(core.length / 2))) return true;
+    if (!(/\b(two|2|both)\b/i.test(asked) && /\band\b/i.test(alt)) && tcore.length && at.length >= 2 && tt.every(w => bsTokenHit(w, new Set(at))) && tcore.filter(w => bsTokenHit(w, new Set(core))).length >= Math.max(1, Math.ceil(core.length / 2))) return true;
     // initials, e.g. MAD or ICBM
     if (tt.length === 1 && t.indexOf(' ') < 0 && t.length >= 2 && at.length >= 2) {
       const ini = bsNorm(alt).split(' ').filter(w => w && !BS_STOP.has(w)).map(w => w[0]).join('');
@@ -4786,7 +4837,7 @@ function bsCheck(typed, answer, question) {
   if (/^\d{3,4}$/.test(t)) {
     const yrs = String(answer).match(/\b\d{3,4}\b/g) || [];
     const dateLike = /^when\b|what year|which year/i.test(asked) || /^\s*(\d{1,2}\s+)?(january|february|march|april|may|june|july|august|september|october|november|december)\b/i.test(answer) || /^\s*\d{3,4}\b/.test(answer);
-    if (yrs.indexOf(t) !== -1 && dateLike) return true;
+    if (yrs.indexOf(t) !== -1 && dateLike && !/\d{3,4}\s*(?:[-\u2013\u2014]|to|until)\s*\d{2,4}/.test(answer)) return true;
   }
   // just a surname, for questions about who
   if (/^who\b|^whose\b/i.test(asked) && have.size === 1) {
@@ -4794,6 +4845,16 @@ function bsCheck(typed, answer, question) {
       for (const seg of String(alt).split(/,|\band\b/)) {
         const toks = bsNorm(seg).split(' ').filter(Boolean);
         if (toks.length && bsTokenHit(bsStem(toks[toks.length - 1]), have)) return true;
+      }
+    }
+  }
+  // just the surname (or the main word) of a name, whatever the question
+  if (have.size === 1 && t.length >= 4) {
+    for (const alt of alts) {
+      const words = String(alt).trim().split(/\s+/);
+      if (words.length >= 2 && words.length <= 4 && words.every(w => /^([A-Z][A-Za-z'.\u00c0-\u017f-]*|von|van|de|der|of|the)$/.test(w))) {
+        const last = bsStem(bsNorm(words[words.length - 1]).split(' ').pop());
+        if (last && !BS_GENERIC.has(last) && bsTokenHit(last, have)) return true;
       }
     }
   }
@@ -4833,7 +4894,7 @@ function bossResolve(late) {
   const g = ARC.g, q = bossQ(), el = document.getElementById('boss-in');
   g.typed = el ? el.value.trim() : '';
   g.late = late;
-  const ok = bsCheck(g.typed, q.a, q.q);
+  const ok = bsCheck(g.typed, [q.a].concat(Array.isArray(q.alt) ? q.alt : []).join(' / '), q.q);
   if (ok) {
     g.phase = 'ok'; bossRender();
     ARC.t = setTimeout(() => { if (ARC.g === g) bossMark(true); }, 1100);
@@ -4848,6 +4909,7 @@ function bossMark(ok) {
   const g = ARC.g, q = bossQ();
   if (g.marking) return;
   g.marking = true; clearTimeout(ARC.t); arcTimerStop();
+  if (ok && g.phase === 'no' && g.typed) bsLearn(g.typed, q.a);
   xpAward('rapid', ok, 'rq|' + q.q, q.q, q.paper, q.unit);
   g.i++;
   if (ok) { g.score++; g.hp--; } else g.lives--;
