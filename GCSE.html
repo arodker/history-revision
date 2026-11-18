@@ -2739,6 +2739,7 @@ const LS_HINTS      = 'gcse_fd_hints';         // boolean — remembered hint pr
 const LS_TARGET     = 'gcse_fd_target';        // daily flashcard target for the bowl
 
 // State
+let fdPinnedRun  = false;  // true while reviewing pinned cards
 let fdDeck       = [];   // current round deck (card objects, may include outstanding)
 let fdSeen       = [];   // cards seen this round (in order)
 let fdMissed     = [];   // missed this round (to recycle)
@@ -2901,6 +2902,7 @@ function fdUnitOk(c) {
   return c.unit === v;
 }
 function fdStart() {
+  fdPinnedRun = false;
   if (!FD.length) {
     alert('Flashcard data not loaded yet — please wait a moment and try again.');
     return;
@@ -3148,7 +3150,7 @@ function fdShowSummary() {
   unitCards = unitCards.filter(fdUnitOk);
   const unitTotal = unitCards.length;
   const allMastered = unitTotal > 0 && unitCards.every(c => mastered[fdKey(c)]);
-  const cleanSweep  = fdMissCount === 0 && fdGot > 0;
+  const cleanSweep  = !fdPinnedRun && fdMissCount === 0 && fdGot >= 10;
 
   if (allMastered || cleanSweep) {
     document.getElementById('fd-drill').style.display    = 'none';
@@ -3201,6 +3203,7 @@ function fdShowSummary() {
 }
 
 function fdStartPinned() {
+  fdPinnedRun = true;
   const outstanding = fdGetOutstanding();
   const pinnedCards = outstanding
     .map(k => FD.find(c => fdKey(c) === k))
