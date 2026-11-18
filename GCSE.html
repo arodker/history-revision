@@ -79,7 +79,7 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 .section-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
 .tb-btn{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;padding:0 .7rem;font-size:.85rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;text-decoration:none;transition:background .15s,color .15s}
 #cal-btn{height:36px;box-sizing:border-box;gap:0;outline:none}#cal-btn:focus-visible{outline:2px solid var(--border2);outline-offset:1px}#cal-btn:focus:not(:focus-visible){outline:none}
-@media (max-width:350px){#cal-txt span:first-child{display:none}#cal-txt span:last-child{font-size:.74rem}}
+@media (max-width:350px){#cal-txt span{display:none!important}#cal-txt::after{content:attr(data-short);font-weight:700;font-size:.8rem}}
 #cal-panel{max-width:calc(100vw - 32px)}
 .tb-btn:hover{background:var(--subtle);color:var(--text)}
 .yr-pill{background:#C2315B;color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.25rem .6rem;border-radius:8px}
@@ -5374,13 +5374,13 @@ function examCountRender() {
   if (!all.length) { btn.style.display = 'none'; return; }
   btn.style.display = '';
   const n = all.slice().sort((x, y) => x.days - y.days)[0];
-  txt.innerHTML = '<span style="display:block;font-size:.62rem;font-weight:500;color:var(--muted)">' + (n.days === 0 ? 'Next up today' : 'Next up in ' + n.days + (n.days === 1 ? ' day' : ' days')) + '</span><span style="display:block;font-size:.78rem;line-height:1.1">' + n.n + '</span>'; btn.title = 'Exam dates';
+  txt.innerHTML = '<span style="display:block;font-size:.62rem;font-weight:500;color:var(--muted)">' + (n.days === 0 ? 'Next up today' : 'Next up in ' + n.days + (n.days === 1 ? ' day' : ' days')) + '</span><span style="display:block;font-size:.78rem;line-height:1.1">' + n.n + '</span>'; btn.title = 'Exam dates'; txt.dataset.short = n.days === 0 ? 'Today' : n.days + 'd';
   const row = e => '<div style="display:flex;justify-content:space-between;gap:1rem;font-size:.85rem;padding:.2rem 0;color:var(--text)"><span>' + e.n.replace(' mock', '') + ' \u00b7 ' + e.d.getDate() + ' ' + e.d.toLocaleString('en-GB', {month: 'short'}) + '</span><b>' + (e.days === 0 ? 'Today' : e.days + (e.days === 1 ? ' day' : ' days')) + '</b></div>';
   const m = all.filter(e => /mock/.test(e.n)), r = all.filter(e => !/mock/.test(e.n));
   const hd = s => '<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin:.3rem 0 .15rem">' + s + '</div>';
   pan.innerHTML = (m.length ? hd('Mock exams') + m.map(row).join('') : '') + (r.length ? hd('Real exams') + r.map(row).join('') : '');
 }
-function calToggle(ev) { ev.stopPropagation(); const p = document.getElementById('cal-panel'); p.style.display = p.style.display === 'none' ? 'block' : 'none'; }
+function calToggle(ev) { ev.stopPropagation(); const p = document.getElementById('cal-panel'); p.style.display = p.style.display === 'none' ? 'block' : 'none'; p.style.left = '0'; if (p.style.display === 'block') { const o = p.getBoundingClientRect().right - (window.innerWidth - 16); if (o > 0) p.style.left = (-o) + 'px'; } }
 document.addEventListener('click', ev => { const p = document.getElementById('cal-panel'); if (p && !ev.target.closest('#cal-wrap')) p.style.display = 'none'; });
 examCountRender();
 document.addEventListener('visibilitychange', examCountRender);
