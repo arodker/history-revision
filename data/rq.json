@@ -1868,7 +1868,7 @@
     "s": "Reichswehr",
     "alt": [
       "German Army",
-      "The Reichswehr (German Army)",
+      "Army",
       "The Reichswehr"
     ],
     "t": "o"
@@ -1990,7 +1990,7 @@
     "unit": "Unit 4 – Life in Nazi Germany",
     "s": "Autobahns",
     "alt": [
-      "The Autobahns"
+      "motorways"
     ],
     "t": "t"
   },
@@ -2031,7 +2031,7 @@
     "s": "Volkswagen",
     "alt": [
       "A Volkswagen Beetle",
-      "Volkswagen Beetle",
+      "car",
       "VW",
       "VW Beetle",
       "Beetle"
@@ -2060,7 +2060,7 @@
   },
   {
     "paper": "p3",
-    "q": "In 1941, what were Jews required to wear in public?",
+    "q": "In 1935, what were Jews required to wear in public?",
     "a": "A yellow star",
     "d": "easy",
     "unit": "Unit 4 – Life in Nazi Germany",
@@ -2069,7 +2069,7 @@
       "Yellow star",
       "Star of David",
       "Yellow Star of David",
-      "A yellow Star of David"
+      "Tabula"
     ],
     "t": "t"
   },
@@ -2347,7 +2347,9 @@
     "d": "medium",
     "unit": "Unit 2 – Crises 1958–70",
     "s": "Kennedy",
-    "alt": [],
+    "alt": [
+      "JFK"
+    ],
     "t": "p"
   },
   {
@@ -2412,7 +2414,7 @@
     "unit": "Unit 2 – Crises 1958–70",
     "s": "Prague Spring",
     "alt": [
-      "The Prague Spring"
+      "Socialism with a human face"
     ],
     "t": "e"
   },
@@ -2506,7 +2508,7 @@
     "unit": "Unit 3 – End of Cold War 1970–91",
     "s": "Mujahideen",
     "alt": [
-      "The Mujahideen"
+      "The Mujahadeen"
     ],
     "t": "o"
   },
@@ -2656,7 +2658,9 @@
     "d": "hard",
     "unit": "Unit 1 – Queen & Religion",
     "s": "Holy Communion",
-    "alt": [],
+    "alt": [
+      "Eucharist"
+    ],
     "t": "t"
   },
   {
@@ -2723,7 +2727,9 @@
     "d": "hard",
     "unit": "Unit 1 – Queen & Religion",
     "s": "A plain white robe",
-    "alt": [],
+    "alt": [
+      "plain vestment"
+    ],
     "t": "t"
   },
   {
@@ -2736,7 +2742,7 @@
     "alt": [
       "Northumberland and Westmorland",
       "Westmorland and Northumberland",
-      "Earls of Westmoreland and Northumberland",
+      "Percy and Neville",
       "Westmorland",
       "Northumberland"
     ],
@@ -2812,7 +2818,7 @@
     "alt": [
       "Francis Drake",
       "Sir Francis Drake",
-      "El Draque"
+      "El Drako"
     ],
     "t": "p"
   },
@@ -3101,7 +3107,9 @@
     "d": "medium",
     "unit": "Unit 1 – Medieval",
     "s": "Convert to Christianity",
-    "alt": [],
+    "alt": [
+      "Baptised"
+    ],
     "t": "t"
   },
   {
@@ -3173,7 +3181,7 @@
     "s": "Clifford's Tower",
     "alt": [
       "York",
-      "Clifford's Tower, York",
+      "York Castle",
       "Cliffords Tower"
     ],
     "t": "l"
@@ -3198,7 +3206,9 @@
     "d": "medium",
     "unit": "Unit 1 – Medieval",
     "s": "The cloth trade",
-    "alt": [],
+    "alt": [
+      "wool trade"
+    ],
     "t": "t"
   },
   {
@@ -3209,7 +3219,7 @@
     "unit": "Unit 1 – Medieval",
     "s": "Hundred Years War",
     "alt": [
-      "The Hundred Years War"
+      "100 Years War"
     ],
     "t": "e"
   },
@@ -3243,7 +3253,9 @@
     "d": "hard",
     "unit": "Unit 1 – Medieval",
     "s": "The alien subsidy",
-    "alt": [],
+    "alt": [
+      "alien tax"
+    ],
     "t": "c"
   },
   {
@@ -3303,12 +3315,14 @@
   {
     "paper": "p1",
     "q": "In what year did Parliament naturalise all Protestant aliens?",
-    "a": "1709",
+    "a": "1708-9",
     "d": "medium",
     "unit": "Unit 2 – Early Modern",
     "s": "1709",
-    "alt": [],
-    "t": "y"
+    "alt": [
+      "1708"
+    ],
+    "t": "n"
   },
   {
     "paper": "p1",
@@ -3323,12 +3337,12 @@
   {
     "paper": "p1",
     "q": "What skill did Walloon migrants bring to Canterbury besides cloth weaving?",
-    "a": "Silk weaving / silk dyeing / sugar refinery",
+    "a": "Diamond cutting / silk dyeing / sugar refinery",
     "d": "medium",
     "unit": "Unit 2 – Early Modern",
     "s": "Silk weaving",
     "alt": [
-      "Silk dyeing",
+      "Diamond cutting",
       "Silk",
       "Sugar refinery",
       "Sugar refining",
@@ -3413,11 +3427,11 @@
   },
   {
     "paper": "p1",
-    "q": "What years are the industrial period in the migration course?",
-    "a": "18th and 19th centuries",
+    "q": "What years are the 18th and 19th centuries in the migration course?",
+    "a": "1700-1900",
     "d": "easy",
     "unit": "Unit 3 – 18th & 19th Centuries",
-    "s": "18th and 19th centuries",
+    "s": "1700-1900",
     "alt": [],
     "t": "t"
   },
@@ -3486,7 +3500,7 @@
     "unit": "Unit 3 – 18th & 19th Centuries",
     "s": "East India Company",
     "alt": [
-      "The East India Company"
+      "EIC"
     ],
     "t": "o"
   },
@@ -3543,7 +3557,7 @@
     "unit": "Unit 3 – 18th & 19th Centuries",
     "s": "East End of London",
     "alt": [
-      "The East End of London"
+      "Whitechapel"
     ],
     "t": "l"
   },
