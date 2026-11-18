@@ -1194,14 +1194,15 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 <!-- ═══ PARENT VIEW ═══ -->
 <div class="screen" id="s-parent">
   <button class="back-btn" onclick="parentExit()">← Back</button>
-  <div class="pr-hero" id="pr-hero"><div class="pr-hero-ic">👪</div><div><div class="pr-title">Quiz your child</div></div></div>
+  <div class="pr-hero" id="pr-hero"><div class="pr-hero-ic">👪</div><div><div class="pr-title">Quiz your child</div></div><div id="pv-dates" style="margin-left:auto;position:relative;flex-shrink:0"></div></div>
   <div id="pv-setup">
-    <div class="pr-step">Which papers? <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Tap to include or leave out</span></div>
-    <div id="pv-papers"></div>
-    <div class="pr-step" style="margin-top:1.2rem">How many questions? <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Endless keeps going until you finish</span></div>
+    <div class="pr-step" style="margin-top:0">How many questions? <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Endless keeps going until you finish</span></div>
     <div class="pr-chips" id="pv-count"></div>
     <button class="pr-start" id="pv-start" onclick="parentStart()">Start quiz</button>
-    <div class="pr-week" id="pv-week"></div>
+    <div class="pr-step" style="margin-top:1.6rem;padding-top:1rem;border-top:1px solid var(--border)">What are they revising for? <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Sets which units are covered</span></div>
+    <div id="pv-scope"></div>
+    <div class="pr-step" style="margin-top:1.2rem">Which papers? <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Tap to include or leave out</span></div>
+    <div id="pv-papers"></div>
   </div>
   <div id="pv-round" style="display:none"></div>
   <div id="pv-end" style="display:none"></div>
@@ -3840,27 +3841,42 @@ function uptoRender() {
   lockRender(); weakNudgeRender();
   r.value = uptoPos();
   document.getElementById('up-pos').textContent = uptoLabel(uptoPos());
+  const pr = document.getElementById('pv-range'), pp = document.getElementById('pv-pos');
+  if (pr) pr.value = uptoPos();
+  if (pp) pp.textContent = uptoLabel(uptoPos());
   uptoPaint(uptoPos());
-  const t = document.getElementById('up-ticks');
-  if (!t.children.length) {
-    t.innerHTML = COURSE_ORDER.map(p =>
-      '<span style="flex:' + P[p].units.length + ';border-color:' + PAPER_COL[p] + '">' + PAPER_NAME[p].replace(' & Nazi Germany', '') + ' <em>' + COURSE_YEAR[p] + '</em></span>').join('');
-  }
+  ['up-ticks', 'pv-ticks'].forEach(id => {
+    const t = document.getElementById(id);
+    if (t && !t.children.length) {
+      t.innerHTML = COURSE_ORDER.map(p =>
+        '<span style="flex:' + P[p].units.length + ';border-color:' + PAPER_COL[p] + '">' + PAPER_NAME[p].replace(' & Nazi Germany', '') + ' <em>' + COURSE_YEAR[p] + '</em></span>').join('');
+    }
+  });
 }
 const COURSE_YEAR = {p3:'Y9', p2a:'Y10', p2b:'Y10', p1:'Y11'};
 const UPTO_COL = '#7C5CD6'; // fixed purple, deliberately not one of the paper colours
 function uptoPaint() {
   const col = UPTO_COL;
-  const r = document.getElementById('up-range');
-  if (r) r.style.accentColor = col;
-  const card = r && r.closest('.up-card');
-  if (card) { card.style.borderColor = col; card.style.background = 'color-mix(in srgb,' + col + ' 9%,var(--card))'; }
+  ['up-range', 'pv-range'].forEach(id => {
+    const r = document.getElementById(id);
+    if (r) r.style.accentColor = col;
+    const card = r && r.closest('.up-card');
+    if (card) { card.style.borderColor = col; card.style.background = 'color-mix(in srgb,' + col + ' 9%,var(--card))'; }
+  });
 }
-function uptoPreview(v) { document.getElementById('up-pos').textContent = uptoLabel(v); uptoPaint(v); }
+function uptoPreview(v) {
+  document.getElementById('up-pos').textContent = uptoLabel(v);
+  const pr = document.getElementById('pv-range'), pp = document.getElementById('pv-pos'), hr = document.getElementById('up-range');
+  if (pr && pr.value !== String(v)) pr.value = v;
+  if (hr && hr.value !== String(v)) hr.value = v;
+  if (pp) pp.textContent = uptoLabel(v);
+  uptoPaint(v);
+}
 function uptoSave(v) {
   localStorage.setItem(LS_UPTO, String(parseInt(v, 10)));
   uptoRender();
   if (typeof buildKPool === 'function' && currentPaper) buildKPool();
+  try { const ps = document.getElementById('pv-setup'); if (ps && ps.style.display !== 'none' && typeof parentShowSetup === 'function' && !(PV && PV.midRound)) parentShowSetup(); } catch (e) {}
 }
 
 // ═══════════════════════════════════════════
@@ -4209,34 +4225,43 @@ function progressRender() {
 const PV = {sel:{}, n:10, endless:false, seen:{}, queue:[], i:0, first:true, total:0, ok:0, xp:0, missed:[], retry:[], cur:null, midRound:false};
 function parentExit() { PV.midRound = false; showScreen('s-pick'); xpFlushLater(); }
 function parentSetN(n) { PV.n = n; parentShowSetup(); }
-function parentTogglePaper(p) { PV.sel[p] = PV.sel[p] === false; parentShowSetup(); }
+function parentTogglePaper(p) { if (!paperReached(p)) { fdShowToast('Not covered yet. Choose what they are revising for below.'); return; } PV.sel[p] = PV.sel[p] === false; parentShowSetup(); }
+const PV_LBL = {p1:'P1 Migration', p2a:'P2a Cold War', p2b:'P2b Elizabeth', p3:'P3 Weimar & Nazi Germany'};
+function pvNextIsMock() {
+  const t0 = new Date(); t0.setHours(0, 0, 0, 0);
+  const up = EXAMS.map(e => { const p = e[1].split('-'); return {n: e[0], d: new Date(+p[0], +p[1] - 1, +p[2])}; }).filter(e => e.d >= t0).sort((x, y) => x.d - y.d);
+  return !!up.length && /mock/i.test(up[0].n);
+}
+function pvScopes() {
+  const L = COURSE_FLAT.length, mig = P.p1.units.length;
+  return [
+    {k:'eoy9', n:'End of Y9 exams', s:'P3 only', pos:P.p3.units.length},
+    {k:'eoy', n:'End of Y10 exams', s:'P2a, P2b and P3', pos:L - mig},
+    {k:'mock', n:'Y11 mocks', s:'Up to Migration unit 2', pos:Math.min(L, L - mig + 2)},
+    {k:'real', n:'Real exams', s:'Whole papers', pos:L}
+  ];
+}
+function parentSetScope(pos) { uptoSave(pos); parentShowSetup(); }
 function parentShowSetup() {
+  if (localStorage.getItem(LS_UPTO) === null) { try { localStorage.setItem(LS_UPTO, String(pvScopes()[pvNextIsMock() ? 2 : 3].pos)); uptoRender(); } catch (e) {} }
   PV.midRound = false;
   document.getElementById('pr-hero').style.display = 'flex';
   document.getElementById('pv-setup').style.display = 'block';
   document.getElementById('pv-round').style.display = 'none';
   document.getElementById('pv-end').style.display = 'none';
-  document.getElementById('pv-papers').innerHTML = '<div class="pr-papers">' + COURSE_ORDER.map(p => {
-    const on = PV.sel[p] !== false;
-    return '<button class="pr-paper' + (on ? ' sel' : '') + '" style="--c:' + PAPER_COL[p] + '" onclick="parentTogglePaper(\'' + p + '\')">' +
-      '<span class="pr-ptick"></span><b>' + PAPER_NAME[p] + '</b></button>';
-  }).join('') + '</div><div class="pr-note">Draws from every unit of the papers you choose.</div>';
+  document.getElementById('pv-papers').innerHTML = '<div class="pr-papers">' + ['p1', 'p2a', 'p2b', 'p3'].map(p => {
+    const lock = !paperReached(p), on = !lock && PV.sel[p] !== false;
+    return '<button class="pr-paper' + (on ? ' sel' : '') + '" style="--c:' + PAPER_COL[p] + (lock ? ';opacity:.45' : '') + '" onclick="parentTogglePaper(\'' + p + '\')">' +
+      '<span class="pr-ptick"></span><b>' + PV_LBL[p] + '</b>' + (lock ? '<small>Not covered yet</small>' : '') + '</button>';
+  }).join('') + '</div><div class="pr-note">Only asks about units covered so far.</div>';
   document.getElementById('pv-count').innerHTML = [5, 10, 20, 30, 0].map(n =>
     '<button class="pr-chip' + (PV.n === n ? ' sel' : '') + '" onclick="parentSetN(' + n + ')">' + (n || '♾️ Endless') + '</button>').join('');
-  const x = xpLoad();
-  let n = 0, dots = '';
-  for (let i = 6; i >= 0; i--) {
-    const on = (x.days[localDate(-i)] || 0) > 0;
-    if (on) n++;
-    const d = new Date(); d.setDate(d.getDate() - i);
-    dots += '<span class="pr-dot' + (on ? ' on' : '') + '">' + 'SMTWTFS'[d.getDay()] + '</span>';
-  }
-  const L = XP_LEVELS[xpLevelIdx(x.total)];
-  document.getElementById('pv-week').innerHTML =
-    '<div class="pr-week-h">Their week</div><div class="pr-dots">' + dots + '</div>' +
-    '<div class="pr-week-t">Revised on <b>' + n + ' of the last 7 days</b><br>' + L.e + ' ' + L.t + ' · ' + (x.days[localDate()] || 0) + ' XP today</div>';
+  const cur = uptoPos();
+  document.getElementById('pv-scope').innerHTML = '<div class="pr-papers">' + pvScopes().map(s =>
+    '<button class="pr-paper' + (cur === s.pos ? ' sel' : '') + '" style="--c:#6366f1" onclick="parentSetScope(' + s.pos + ')"><span class="pr-ptick"></span><b>' + s.n + '</b><small>' + s.s + '</small></button>').join('') + '</div>';
+  try { examCountRender(); } catch (e) {}
 }
-function pvPapers() { return COURSE_ORDER.filter(p => PV.sel[p] !== false); }
+function pvPapers() { return COURSE_ORDER.filter(p => PV.sel[p] !== false && paperReached(p)); }
 function pvBuild(n, excl) {
   excl = excl || {};
   const ps = pvPapers();
@@ -4244,9 +4269,9 @@ function pvBuild(n, excl) {
   const fcs = FD.filter(c => ps.includes(c.paper) && !excl[fdKey(c)] && !/^Case Study/i.test(c.front));
   const asFlash = c => ({kind:'flash', paper:c.paper, q:c.front, key:fdKey(c), label:c.front, card:c, unit:c.unit,
     points:['p1','p2','p3'].map((k, i) => c[k] ? boldHints(c[k], (c.hints && c.hints[i]) ? [c.hints[i]] : []) : '').filter(Boolean)});
-  const dts = shuffle(DATES.filter(d => ps.includes(d.paper)).map(d =>
+  const dts = shuffle(DATES.filter(d => ps.includes(d.paper) && inScope(d)).map(d =>
     ({kind:'date', paper:d.paper, q:'When did this happen: ' + d.event + '?', ans:d.date, key:d.paper + '|' + d.event, label:d.event, unit:d.unit})).filter(i => !excl[i.key]));
-  let rqs = RQ.filter(q => ps.includes(q.paper) && !excl['rq|' + q.q]);
+  let rqs = RQ.filter(q => ps.includes(q.paper) && inScope(q) && !excl['rq|' + q.q]);
   const nFlash = 0, nDate = Math.round(n * 0.5), nRq = n - nDate; // parent view: no flashcards (too hard to mark for a non-specialist)
   const easy = rqs.filter(q => q.d !== 'hard');
   if (easy.length >= nRq) rqs = easy;
@@ -4284,12 +4309,13 @@ function pvRender() {
   const label = !PV.first ? 'Second go · ' + (PV.i + 1) + ' of ' + PV.queue.length : endlessNow ? 'Question ' + (PV.i + 1) + ' · ' + PV.ok + ' right so far' : 'Question ' + (PV.i + 1) + ' of ' + PV.total;
   const done = PV.first ? PV.i : PV.total;
   document.getElementById('pv-round').innerHTML =
-    '<div class="pr-prog"><span>' + label + '</span><span class="pr-pill" style="--c:' + col + '">' + PAPER_NAME[it.paper] + '</span></div>' +
+    '<div class="pr-prog"><span>' + label + '</span><span class="pr-pill" style="--c:' + col + '">' + (PV_LBL[it.paper] || PAPER_NAME[it.paper]) + '</span></div>' +
     (endlessNow ? '<div style="height:.7rem"></div>' : '<div class="pr-bar"><i style="width:' + Math.round(done / PV.total * 100) + '%"></i></div>') +
     '<div class="pr-card" style="--c:' + col + '"><div class="pr-kind">' + kind + '</div><div class="pr-say">Read this out loud</div><div class="pr-q">' + it.q + '</div></div>' +
     '<div class="pr-reveal" id="pv-ans" style="display:none"></div>' +
     '<div id="pv-btns"><button class="pr-start" onclick="pvShow()">Show answer</button></div>' +
-    (endlessNow ? '<button class="pr-sec" style="margin-top:.9rem" onclick="pvFinish()">Finish round' + (PV.i ? ' (' + PV.i + ' answered)' : '') + '</button>' : '');
+    (endlessNow ? '<button class="pr-sec" style="margin-top:.9rem" onclick="pvFinish()">Finish round' + (PV.i ? ' (' + PV.i + ' answered)' : '') + '</button>' : '') +
+    '<button class="pr-sec" style="margin-top:.6rem" onclick="parentShowSetup()">\u2699\ufe0f Change settings</button>';
 }
 function pvShow() {
   const it = PV.cur;
@@ -4352,10 +4378,10 @@ function pvEnd() {
   }).join('');
   end.innerHTML =
     '<div class="pr-score"><div class="pr-ring" style="--p:' + pct + '"><b>' + PV.ok + '/' + PV.total + '</b><small>first time</small></div>' +
-    '<div class="pr-msg">' + msg + '</div><div class="pr-xp">+' + PV.xp + ' XP earned</div></div>' +
+    '<div class="pr-msg">' + msg + '</div></div>' +
     (miss ? '<div class="pr-step" style="margin-top:1.2rem"><span>!</span>Worth another look</div>' + miss : '') +
     '<div class="pr-endbtns"><button class="pr-start" onclick="parentStart()">Another round</button>' +
-    '<button class="pr-sec" onclick="parentShowSetup()">Change papers</button>' +
+    '<button class="pr-sec" onclick="parentShowSetup()">Change settings</button>' +
     '<button class="pr-sec" onclick="parentExit()">Done</button></div>';
   end.style.display = 'block';
 }
@@ -5407,6 +5433,12 @@ function examCountRender() {
   const row = e => '<div style="display:flex;justify-content:space-between;gap:1.2rem;font-size:.85rem;padding:.2rem 0;color:var(--text);white-space:nowrap"><span>' + e.n.replace(' mock', '') + ' \u00b7 ' + e.d.getDate() + ' ' + e.d.toLocaleString('en-GB', {month: 'short'}) + '</span><b>' + (e.days === 0 ? 'Today' : e.days + (e.days === 1 ? ' day' : ' days')) + '</b></div>';
   const m = all.filter(e => /mock/.test(e.n)), r = all.filter(e => !/mock/.test(e.n));
   const hd = s => '<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin:.3rem 0 .15rem">' + s + '</div>';
+  const pd = document.getElementById('pv-dates');
+  if (pd) {
+    const nl = n.n.replace('Paper ', 'P').replace(/ mock/i, ' Mock') + (/mock/i.test(n.n) ? '' : ' Exam');
+    const rw = e => '<div style="display:flex;justify-content:space-between;font-size:.82rem;padding:.12rem 0"><span>' + e.n.replace(' mock', '') + ' \u00b7 ' + e.d.getDate() + ' ' + e.d.toLocaleString('en-GB', {month: 'short'}) + '</span><b>' + (e.days === 0 ? 'Today' : e.days + (e.days === 1 ? ' day' : ' days')) + '</b></div>';
+    pd.innerHTML = '<details><summary style="list-style:none;cursor:pointer;font-size:.82rem;line-height:1.3;display:flex;align-items:center;gap:.45rem;padding:.4rem .65rem;border:1px solid var(--border2);border-radius:10px;background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.12)"><span style="font-size:1.15rem">\ud83d\udcc5</span><span style="text-align:left"><b>' + nl + '</b><br><span style="color:var(--muted)">' + (n.days === 0 ? 'today' : n.days + (n.days === 1 ? ' day' : ' days')) + ' \u00b7 tap for dates</span></span><span style="color:var(--muted)">\u25be</span></summary><div style="position:absolute;right:0;top:100%;margin-top:6px;z-index:20;min-width:230px;background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:.5rem .8rem;box-shadow:0 6px 20px rgba(0,0,0,.15)">' + (m.length ? hd('Mock exams') + m.map(rw).join('') : '') + (r.length ? hd('Real exams') + r.map(rw).join('') : '') + '</div></details>';
+  }
   pan.innerHTML = (m.length ? hd('Mock exams') + m.map(row).join('') : '') + (r.length ? hd('Real exams') + r.map(row).join('') : '');
 }
 function calToggle(ev) {
