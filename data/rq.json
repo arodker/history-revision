@@ -2105,20 +2105,7 @@
     ],
     "t": "c"
   },
-  {
-    "paper": "p3",
-    "q": "How many people were forcibly sterilised under Nazi racial laws by 1945?",
-    "a": "Approximately 400,000",
-    "d": "hard",
-    "unit": "Unit 4 – Life in Nazi Germany",
-    "s": "400,000",
-    "alt": [
-      "Approximately 400,000",
-      "About 400,000"
-    ],
-    "t": "n"
-  },
-  {
+ {
     "paper": "p2a",
     "q": "What ideology believed in redistribution of wealth and no private property?",
     "a": "Communism",
@@ -2325,7 +2312,11 @@
     "d": "medium",
     "unit": "Unit 2 – Crises 1958–70",
     "s": "20%",
-    "alt": [],
+     "alt": [
+      "1/5",
+       "Fifth",
+       "One fifth"
+    ],
     "t": "n"
   },
   {
@@ -2430,26 +2421,13 @@
     ],
     "t": "c"
   },
-  {
+ {
     "paper": "p2a",
-    "q": "Who was the Soviet submarine officer who refused to fire a nuclear torpedo during the Cuban crisis?",
-    "a": "Vasili Arkhipov",
-    "d": "hard",
-    "unit": "Unit 2 – Crises 1958–70",
-    "s": "Arkhipov",
-    "alt": [
-      "Vasili Arkhipov",
-      "Vasily Arkhipov"
-    ],
-    "t": "p"
-  },
-  {
-    "paper": "p2a",
-    "q": "How many countries joined the USA in boycotting the 1980 Moscow Olympics?",
-    "a": "60",
-    "d": "hard",
+    "q": "What did America and 60 other countries boycott in 1980?",
+    "a": "Moscow Olympics",
+    "d": "easy",
     "unit": "Unit 3 – End of Cold War 1970–91",
-    "s": "60",
+    "s": "Moscow Olympics",
     "alt": [],
     "t": "n"
   },
