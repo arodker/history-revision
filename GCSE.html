@@ -849,7 +849,8 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <div class="step-lbl"><span class="step-n">1</span>Set your progress</div>
   <div class="up-card up-col" id="up-card">
     <div class="up-head" id="up-tog" role="button" tabindex="0" aria-expanded="false" style="cursor:pointer"><span class="up-title">Set how much you have studied</span><span class="up-pos" id="up-pos"></span><span class="xp-chev">▾</span></div><div id="up-body">
-    <input type="range" id="up-range" min="1" max="15" step="1" value="15" oninput="uptoPreview(this.value)" onchange="uptoSave(this.value)" aria-label="Course position">
+    <div style="position:relative;margin-top:.9rem"><div id="up-mock" aria-hidden="true" style="position:absolute;top:-.85rem;bottom:0;width:0;border-left:2px solid #dc2626;pointer-events:none;z-index:1"><span style="position:absolute;top:0;right:4px;transform:translateY(-2px);font-size:.6rem;font-weight:700;color:#dc2626;white-space:nowrap;line-height:1">Y11 mocks</span></div>
+    <input type="range" id="up-range" min="1" max="15" step="1" value="15" oninput="uptoPreview(this.value)" onchange="uptoSave(this.value)" aria-label="Course position" style="position:relative"></div>
     <div class="up-ticks" id="up-ticks"></div>
     </div>
   </div>
@@ -1196,12 +1197,10 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   <button class="back-btn" onclick="parentExit()">← Back</button>
   <div class="pr-hero" id="pr-hero"><div class="pr-hero-ic">👪</div><div><div class="pr-title">Quiz your child</div></div><div id="pv-dates" style="margin-left:auto;position:relative;flex-shrink:0"></div></div>
   <div id="pv-setup">
-    <div class="pr-step" style="margin-top:0">How many questions? <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Endless keeps going until you finish</span></div>
-    <div class="pr-chips" id="pv-count"></div>
-    <button class="pr-start" id="pv-start" onclick="parentStart()">Start quiz</button>
-    <div class="pr-step" style="margin-top:1.6rem;padding-top:1rem;border-top:1px solid var(--border)">What are they revising for? <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Sets which units are covered</span></div>
+    <button class="pr-start" id="pv-start" onclick="parentStart()" style="margin-top:0">Start quiz</button>
+    <div class="pr-step" style="margin-top:1.6rem;padding-top:1rem;border-top:1px solid var(--border)">What are they revising for? <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Tap to change</span></div>
     <div id="pv-scope"></div>
-    <div class="pr-step" style="margin-top:1.2rem">Which papers? <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Tap to include or leave out</span></div>
+    <div class="pr-step" style="margin-top:1.2rem">Papers <span style="background:none;color:var(--muted);font-weight:400;width:auto;margin-left:2px">Tap to choose different ones</span></div>
     <div id="pv-papers"></div>
   </div>
   <div id="pv-round" style="display:none"></div>
@@ -3844,6 +3843,8 @@ function uptoRender() {
   const pr = document.getElementById('pv-range'), pp = document.getElementById('pv-pos');
   if (pr) pr.value = uptoPos();
   if (pp) pp.textContent = uptoLabel(uptoPos());
+  const mk = document.getElementById('up-mock');
+  if (mk) mk.style.left = 'calc(9px + (100% - 18px) * ' + ((pvScopes()[2].pos - 1) / 14) + ')';
   uptoPaint(uptoPos());
   ['up-ticks', 'pv-ticks'].forEach(id => {
     const t = document.getElementById(id);
@@ -4234,15 +4235,16 @@ function pvNextIsMock() {
 }
 function pvEnsureScope() {
   const cur = uptoPos(), sc = pvScopes();
-  if (localStorage.getItem(LS_UPTO) === null || !sc.some(s => s.pos === cur)) { localStorage.setItem(LS_UPTO, String(sc[pvNextIsMock() ? 2 : 3].pos)); uptoRender(); }
+  const d = sc[pvNextIsMock() ? 2 : 3].pos;
+  if (cur !== d) { localStorage.setItem(LS_UPTO, String(d)); uptoRender(); }
 }
 function pvScopes() {
   const L = COURSE_FLAT.length, mig = P.p1.units.length;
   return [
-    {k:'eoy9', n:'End of Y9 exams', s:'P3 only', pos:P.p3.units.length},
-    {k:'eoy', n:'End of Y10 exams', s:'P2a, P2b and P3', pos:L - mig},
-    {k:'mock', n:'Y11 mocks', s:'Up to Migration unit 2', pos:Math.min(L, L - mig + 2)},
-    {k:'real', n:'Real exams', s:'Whole papers', pos:L}
+    {k:'eoy9', n:'Year 9 end-of-year exams', s:'Paper 3 only (Weimar & Nazi Germany)', pos:P.p3.units.length},
+    {k:'eoy', n:'Year 10 end-of-year exams', s:'Papers 2a, 2b and 3', pos:L - mig},
+    {k:'mock', n:'Year 11 mocks', s:'Papers 2a, 2b and 3, plus Migration units 1 and 2', pos:Math.min(L, L - mig + 2)},
+    {k:'real', n:'Real GCSE exams', s:'All four papers in full', pos:L}
   ];
 }
 function parentSetScope(pos) { uptoSave(pos); parentShowSetup(); }
@@ -4253,16 +4255,19 @@ function parentShowSetup() {
   document.getElementById('pv-setup').style.display = 'block';
   document.getElementById('pv-round').style.display = 'none';
   document.getElementById('pv-end').style.display = 'none';
-  document.getElementById('pv-papers').innerHTML = '<div class="pr-papers">' + ['p1', 'p2a', 'p2b', 'p3'].map(p => {
+  const reach = ['p1', 'p2a', 'p2b', 'p3'].filter(p => paperReached(p)), chosen = reach.filter(p => PV.sel[p] !== false);
+  const sumTxt = !chosen.length ? 'No papers selected' : chosen.length === reach.length ? 'All relevant papers' : chosen.map(p => PV_LBL[p].split(' ')[0]).join(', ');
+  document.getElementById('pv-papers').innerHTML = '<details id="pv-pdet"' + (PV.pOpen ? ' open' : '') + ' ontoggle="PV.pOpen=this.open"><summary style="list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:.5rem;min-height:46px;padding:.5rem .9rem;border:1px solid var(--border2);border-radius:12px;background:var(--card);font-size:.95rem;font-weight:600;color:var(--text)"><span>' + sumTxt + '</span><span style="color:var(--muted);font-weight:400;font-size:.8rem">Change \u25be</span></summary><div class="pr-papers" style="margin-top:.6rem">' + ['p1', 'p2a', 'p2b', 'p3'].map(p => {
     const lock = !paperReached(p), on = !lock && PV.sel[p] !== false;
     return '<button class="pr-paper' + (on ? ' sel' : '') + '" style="--c:' + PAPER_COL[p] + (lock ? ';opacity:.45' : '') + '" onclick="parentTogglePaper(\'' + p + '\')">' +
       '<span class="pr-ptick"></span><b>' + PV_LBL[p] + '</b>' + (lock ? '<small>Not covered yet</small>' : '') + '</button>';
-  }).join('') + '</div><div class="pr-note">Only asks about units covered so far.</div>';
-  document.getElementById('pv-count').innerHTML = [5, 10, 20, 30, 0].map(n =>
-    '<button class="pr-chip' + (PV.n === n ? ' sel' : '') + '" onclick="parentSetN(' + n + ')">' + (n || '♾️ Endless') + '</button>').join('');
+  }).join('') + '</div><div class="pr-note">Only asks about units covered so far.</div></details>';
   const cur = uptoPos();
-  document.getElementById('pv-scope').innerHTML = '<div class="pr-papers">' + pvScopes().map(s =>
-    '<button class="pr-paper' + (cur === s.pos ? ' sel' : '') + '" style="--c:#6366f1" onclick="parentSetScope(' + s.pos + ')"><span class="pr-ptick"></span><b>' + s.n + '</b><small>' + s.s + '</small></button>').join('') + '</div>';
+  const recPos = pvScopes()[pvNextIsMock() ? 2 : 3].pos;
+  const cs = pvScopes().find(s => s.pos === cur);
+  document.getElementById('pv-scope').innerHTML = '<select aria-label="Revising for" onchange="parentSetScope(+this.value)" style="width:100%;min-height:50px;padding:.5rem 2.4rem .5rem .9rem;border:2px solid var(--border2);border-radius:12px;background:var(--card) url(&quot;data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'14\' height=\'9\'%3E%3Cpath d=\'M1 1l6 6 6-6\' fill=\'none\' stroke=\'%23888\' stroke-width=\'2\'/%3E%3C/svg%3E&quot;) no-repeat right .9rem center;-webkit-appearance:none;appearance:none;color:var(--text);font-size:1rem;font-weight:700">' + pvScopes().map(s =>
+    '<option value="' + s.pos + '"' + (cur === s.pos ? ' selected' : '') + '>' + s.n + (s.pos === recPos ? ' (recommended)' : '') + '</option>').join('') + '</select>' +
+    '<div class="pr-note" style="margin-top:.4rem">' + (cs ? 'Covers ' + cs.s.charAt(0).toLowerCase() + cs.s.slice(1) + '.' : '') + '</div>';
   try { examCountRender(); } catch (e) {}
 }
 function pvPapers() { return COURSE_ORDER.filter(p => PV.sel[p] !== false && paperReached(p)); }
@@ -4318,8 +4323,7 @@ function pvRender() {
     '<div class="pr-card" style="--c:' + col + '"><div class="pr-kind">' + kind + '</div><div class="pr-say">Read this out loud</div><div class="pr-q">' + it.q + '</div></div>' +
     '<div class="pr-reveal" id="pv-ans" style="display:none"></div>' +
     '<div id="pv-btns"><button class="pr-start" onclick="pvShow()">Show answer</button></div>' +
-    (endlessNow ? '<button class="pr-sec" style="margin-top:.9rem" onclick="pvFinish()">Finish round' + (PV.i ? ' (' + PV.i + ' answered)' : '') + '</button>' : '') +
-    '<button class="pr-sec" style="margin-top:.6rem" onclick="parentShowSetup()">\u2699\ufe0f Change settings</button>';
+    (endlessNow ? '<button class="pr-sec" style="margin-top:.9rem" onclick="pvFinish()">Finish round' + (PV.i ? ' (' + PV.i + ' answered)' : '') + '</button>' : '');
 }
 function pvShow() {
   const it = PV.cur;
@@ -4385,7 +4389,7 @@ function pvEnd() {
     '<div class="pr-msg">' + msg + '</div></div>' +
     (miss ? '<div class="pr-step" style="margin-top:1.2rem"><span>!</span>Worth another look</div>' + miss : '') +
     '<div class="pr-endbtns"><button class="pr-start" onclick="parentStart()">Another round</button>' +
-    '<button class="pr-sec" onclick="parentShowSetup()">Change settings</button>' +
+    '<button class="pr-sec" onclick="parentShowSetup()">Change quiz</button>' +
     '<button class="pr-sec" onclick="parentExit()">Done</button></div>';
   end.style.display = 'block';
 }
@@ -5613,7 +5617,6 @@ uptoRender();
     ],
     parent:[
       {sel:'#pv-papers',e:'👪',t:'Choose the papers',p:'A parent or carer quizzes you out loud.'},
-      {sel:'#pv-count',e:'🔢',t:'How many?',p:'5, 10, 20, 30 or Endless.'},
       {sel:'#pv-start',e:'▶️',t:'Start',p:'They tap ✓ Got it or ✗ Not yet. A finished quiz earns '+r.parent+' XP.'}
     ],
     stat:[
