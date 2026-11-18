@@ -79,6 +79,8 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 .section-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
 .tb-btn{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;padding:0 .7rem;font-size:.85rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;text-decoration:none;transition:background .15s,color .15s}
 #cal-btn{height:36px;box-sizing:border-box;gap:0;outline:none}#cal-btn:focus-visible{outline:2px solid var(--border2);outline-offset:1px}#cal-btn:focus:not(:focus-visible){outline:none}
+@media (max-width:350px){#cal-txt span:first-child{display:none}#cal-txt span:last-child{font-size:.74rem}}
+#cal-panel{max-width:calc(100vw - 32px)}
 .tb-btn:hover{background:var(--subtle);color:var(--text)}
 .yr-pill{background:#C2315B;color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.25rem .6rem;border-radius:8px}
 .pb-p1{background:#FEF9E7;color:#9A6B00;border-color:#F0B429}
@@ -713,6 +715,10 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 #s-pick .or-line{margin:.2rem 0 .25rem;font-size:.62rem}
 #s-pick .home-row{margin:0 0 .5rem}
 #s-pick .home-row .btn-go{font-size:.8rem;padding:.55rem .4rem}
+#xp-card.xp-col .xp-today,#xp-card.xp-col .xp-bar,#xp-card.xp-col .xp-next,#xp-card.xp-col .xp-streak{display:none}
+#xp-card.xp-col .xp-sub{font-size:0}#xp-card.xp-col .xp-sub::before{content:attr(data-lv);font-size:.72rem}
+.xp-chev{color:var(--muted);font-size:.9rem;margin-left:.2rem}#xp-card:not(.xp-col) .xp-chev{transform:rotate(180deg)}
+.xp-go{font-weight:700}
 #s-pick .xp-card{padding:.5rem .75rem;margin-bottom:.4rem}
 #s-pick .xp-card .xp-streak{margin-top:.4rem;padding-top:.4rem}
 #s-pick .xp-bar{margin:.35rem 0 .15rem}
@@ -851,7 +857,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   <div class="or-line">or</div>
   <div class="home-row"><button class="btn-go btn-mix" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button><button class="btn-go btn-arc" onclick="arcOpen()"><span class="new-flag">NEW</span>🕹️ Arcade Games</button></div>
   <div class="step-lbl"><span class="step-n">3</span>See your progress</div>
-  <div class="xp-card" id="xp-card" onclick="openProgress()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProgress()" title="See your progress"></div>
+  <div class="xp-card xp-col" id="xp-card" role="button" tabindex="0" aria-expanded="false"></div>
   <div id="weak-nudge"></div>
     <div id="home-pinned-link" style="display:none;text-align:center;margin-top:.5rem">
     <button onclick="goToPinnedReview()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer">📌 Review pinned cards</button>
@@ -4112,10 +4118,10 @@ function xpBlock(x, link) {
   const pct = nx ? Math.round((x.total - L.xp) / (nx.xp - L.xp) * 100) : 100;
   const next = nx ? 'Next: ' + nx.t + ' at ' + nx.xp.toLocaleString() + ' XP' : 'Top level reached';
   return '<div class="xp-top"><span class="xp-emoji">' + L.e + '</span>' +
-    '<div class="xp-mid"><div class="xp-name">' + L.t + '</div><div class="xp-sub">Level ' + (i + 1) + ' · ' + x.total.toLocaleString() + ' XP</div></div>' +
-    '<div class="xp-today"><b>' + today + '</b>/ ' + XP_RULE.cap + ' XP today</div></div>' +
+    '<div class="xp-mid"><div class="xp-name">' + L.t + '</div><div class="xp-sub" data-lv="Level ' + (i + 1) + '">Level ' + (i + 1) + ' · ' + x.total.toLocaleString() + ' XP</div></div>' +
+    '<div class="xp-today"><b>' + today + '</b>/ ' + XP_RULE.cap + ' XP today</div>' + (link ? '<span class="xp-chev">\u25BE</span>' : '') + '</div>' +
     '<div class="xp-bar"><div class="xp-fill" style="width:' + pct + '%"></div></div>' +
-    '<div class="xp-next"><span>' + next + '</span>' + (link ? '<span>Tap for progress ›</span>' : '') + '</div>' +
+    '<div class="xp-next"><span>' + next + '</span>' + (link ? '<span class="xp-go">See all progress ›</span>' : '') + '</div>' +
     xpStreakHtml(x);
 }
 function xpRender() {
@@ -5346,6 +5352,15 @@ showScreen = function (id) { const r = _bdgShow.apply(this, arguments); try { co
 setTimeout(() => { try { bdgCheck(false); bdgRenderHome(); } catch (e) {} }, 1500);
 
 
+
+(function () {
+  const el = document.getElementById('xp-card'); if (!el) return;
+  const canHover = window.matchMedia && window.matchMedia('(hover:hover)').matches;
+  function set(open) { el.classList.toggle('xp-col', !open); el.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  el.addEventListener('click', e => { if (e.target.closest('.xp-go')) { openProgress(); return; } el.dataset.pin = el.classList.contains('xp-col') ? '1' : ''; set(el.dataset.pin === '1'); });
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') el.click(); });
+  if (canHover) { el.addEventListener('mouseenter', () => { if (!el.dataset.pin) set(true); }); el.addEventListener('mouseleave', () => { if (!el.dataset.pin) set(false); }); }
+})();
 // ----- exam countdown (edit dates here: [label, 'YYYY-MM-DD'])
 const EXAMS = [
   ['Paper 2 mock', '2026-12-01'], ['Paper 3 mock', '2026-12-03'], ['Paper 1 mock', '2026-12-09'],
