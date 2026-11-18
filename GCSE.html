@@ -802,7 +802,8 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 <canvas id="fd-confetti-canvas" style="display:none"></canvas>
 <div class="app">
 <div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;margin-bottom:.5rem">
-  <a href="index.html" id="hub-link" class="tb-btn" style="margin-right:auto">← Hub</a>
+  <a href="index.html" id="hub-link" class="tb-btn" style="white-space:nowrap;flex-shrink:0">← Hub</a>
+  <span id="cal-wrap" style="position:relative;margin-right:auto"><button id="cal-btn" class="tb-btn" onclick="calToggle(event)" title="Exam dates" style="color:var(--text);white-space:nowrap;font-size:.8rem;padding:0 .55rem;text-align:left">📅 <span id="cal-txt" style="margin-left:.4rem;line-height:1.15"></span></button><div id="cal-panel" style="display:none;position:absolute;top:42px;left:0;z-index:60;min-width:250px;background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:.6rem .8rem;box-shadow:0 6px 20px rgba(0,0,0,.15)"></div></span>
   <button id="search-btn" class="tb-btn" onclick="openSearch()" title="Search topics">🔍</button>
   <button id="print-btn" class="tb-btn" onclick="window.print()" style="display:none" title="Print">🖨️</button>
   <button id="dark-toggle" class="tb-btn" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
@@ -828,7 +829,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     <h1 style="margin:0;font-size:1.45rem;font-weight:700">Mr Rodker's GCSE History Hub</h1>
     <span class="yr-pill">Y9-11</span>
   </div>
-  <div class="step-lbl"><span class="step-n">1</span>Set your progress</div>
+    <div class="step-lbl"><span class="step-n">1</span>Set your progress</div>
   <div class="up-card">
     <div class="up-head" id="up-tog"><span class="up-title">Set how much you have studied</span><span class="up-pos" id="up-pos"></span></div><div id="up-body">
     <input type="range" id="up-range" min="1" max="15" step="1" value="15" oninput="uptoPreview(this.value)" onchange="uptoSave(this.value)" aria-label="Course position">
@@ -837,10 +838,10 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   </div>
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
   <div class="paper-grid">
-    <button class="paper-btn pb-p1" onclick="openPaper('p1')"><span class="fd-wheel-cell pbw" data-paper="p1" title="Flashcards you got right today, out of this whole paper"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg></span><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
-    <button class="paper-btn pb-p2a" onclick="openPaper('p2a')"><span class="fd-wheel-cell pbw" data-paper="p2a" title="Flashcards you got right today, out of this whole paper"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg></span><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
-    <button class="paper-btn pb-p2b" onclick="openPaper('p2b')"><span class="fd-wheel-cell pbw" data-paper="p2b" title="Flashcards you got right today, out of this whole paper"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2b" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg></span><span class="plabel">Paper 2b</span>👑 Early Elizabethan England</button>
-    <button class="paper-btn pb-p3" onclick="openPaper('p3')"><span class="fd-wheel-cell pbw" data-paper="p3" title="Flashcards you got right today, out of this whole paper"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p3" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg></span><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
+    <button class="paper-btn pb-p1" onclick="openPaper('p1')"><span class="fd-wheel-cell pbw" data-paper="p1"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg></span><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
+    <button class="paper-btn pb-p2a" onclick="openPaper('p2a')"><span class="fd-wheel-cell pbw" data-paper="p2a"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg></span><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
+    <button class="paper-btn pb-p2b" onclick="openPaper('p2b')"><span class="fd-wheel-cell pbw" data-paper="p2b"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2b" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg></span><span class="plabel">Paper 2b</span>👑 Early Elizabethan England</button>
+    <button class="paper-btn pb-p3" onclick="openPaper('p3')"><span class="fd-wheel-cell pbw" data-paper="p3"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p3" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p3" cx="30" cy="30" r="24" fill="none" stroke="#378ADD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p3" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p3">0%</text></svg></span><span class="plabel">Paper 3</span>🏛️ Weimar &amp; Nazi Germany</button>
   </div>
   <div class="or-line">or</div>
   <div class="home-row"><button class="btn-go btn-mix" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button><button class="btn-go btn-arc" onclick="arcOpen()"><span class="new-flag">NEW</span>🕹️ Arcade Games</button></div>
@@ -5024,17 +5025,17 @@ const LS_BADGES = 'gcse_badges', LS_BSTAT = 'gcse_badge_stats';
 // c = ring/fill colour. secret badges show only "?" until found.
 const BADGES = [
   {id:'start', e:'🎒', n:'Day one', h:'Answer your first question correctly', c:['#E1F5EE','#1D9E75']},
-  {id:'c100', e:'💯', n:'Ton up', h:'Answer 100 questions correctly', c:['#FAEEDA','#EF9F27']},
-  {id:'c500', e:'🎓', n:'Scholar', h:'Answer 500 questions correctly', c:['#EEEDFE','#7F77DD']},
+  {id:'c100', e:'💯', n:'Ton up', h:'Answer 250 questions correctly', c:['#FAEEDA','#EF9F27']},
+  {id:'c500', e:'🎓', n:'Scholar', h:'Answer 600 questions correctly', c:['#EEEDFE','#7F77DD']},
   {id:'c1066', e:'🏹', n:'Hastings', h:'Answer 1066 questions correctly', c:['#FCEBEB','#E24B4A']},
-  {id:'combo10', e:'⚡', n:'On fire', h:'Get 10 answers right in a row', c:['#FAEEDA','#EF9F27']},
-  {id:'combo20', e:'🌋', n:'Unstoppable', h:'Get 20 answers right in a row', c:['#FCEBEB','#E24B4A']},
-  {id:'revisit', e:'🔁', n:'Lesson learned', h:'Get a question right that you got wrong before', c:['#E1F5EE','#1D9E75']},
-  {id:'objection', e:'👨‍⚖️', n:'Objection!', h:'Appeal a boss battle answer with "I was right"', c:['#EEEDFE','#7F77DD']},
+  {id:'combo10', e:'⚡', n:'On fire', h:'Get 15 answers right in a row', c:['#FAEEDA','#EF9F27']},
+  {id:'combo20', e:'🌋', n:'Unstoppable', h:'Get 30 answers right in a row', c:['#FCEBEB','#E24B4A']},
+  {id:'revisit', e:'🔁', n:'Lesson learned', h:'Get 10 questions right that you got wrong before', c:['#E1F5EE','#1D9E75']},
+  {id:'objection', e:'👨‍⚖️', n:'Objection!', h:'Have 5 boss battle answers accepted with "I was right"', c:['#EEEDFE','#7F77DD']},
   {id:'first', e:'⚔️', n:'First blood', h:'Defeat a boss', c:['#FAEEDA','#EF9F27']},
-  {id:'flawless', e:'💎', n:'Flawless', h:'Defeat a boss without losing a heart', c:['#E6F1FB','#378ADD']},
+  {id:'flawless', e:'💎', n:'Flawless', h:'Defeat the third boss or later without losing a heart', c:['#E6F1FB','#378ADD']},
   {id:'nine', e:'🐈', n:'Nine lives', h:'Defeat a boss on your last heart', c:['#FAECE7','#D85A30']},
-  {id:'untouch', e:'🛡️', n:'Untouchable', h:'Defeat 3 bosses in a row without losing a heart', c:['#E6F1FB','#378ADD']},
+  {id:'untouch', e:'🛡️', n:'Untouchable', h:'Defeat every boss in one run without losing a heart', c:['#E6F1FB','#378ADD']},
   {id:'dragon', e:'🐉', n:'Dragon slayer', h:'Defeat the Dreaded Date Dragon', c:['#EAF3DE','#639922']},
   {id:'wizard', e:'🧙', n:'Wizard hunter', h:'Defeat the Chief Examiner', c:['#EEEDFE','#7F77DD']},
   {id:'slayer', e:'🏆', n:'Giant slayer', h:'Defeat Mr Rodker', c:['#FAEEDA','#BA7517']},
@@ -5050,7 +5051,28 @@ const BADGES = [
   {id:'maxed', e:'💪', n:'Maxed out', h:'Reach the daily XP limit', c:['#FCEBEB','#E24B4A']},
   {id:'clock', e:'⏱️', n:'Against the clock', h:'Start a timed exam question', c:['#E1F5EE','#1D9E75']},
   {id:'examready', e:'📝', n:'Exam ready', h:'Finish a timed exam question before the clock runs out', c:['#E6F1FB','#378ADD']},
-  {id:'traveller', e:'🕰️', n:'Time traveller', h:'Answer questions from all four papers in one day', c:['#EEEDFE','#7F77DD']},
+  {id:'traveller', e:'🕰️', n:'Time traveller', h:'Get 15 flashcards right in each of the four papers in one day', c:['#EEEDFE','#7F77DD']},
+  {id:'ice', e:'🧊', n:'Ice cold', h:'Defeat Mr Rodker on your last heart', c:['#E6F1FB','#378ADD']},
+  {id:'gremlin', e:'👹', n:'Gremlin crusher', h:'Defeat the Procrastination Gremlin', c:['#FCEBEB','#E24B4A']},
+  {id:'zombie', e:'🧟', n:'Zombie squasher', h:'Defeat the Cramming Zombie', c:['#EAF3DE','#639922']},
+  {id:'vampire', e:'🧛', n:'Vampire hunter', h:'Defeat the Highlighter Vampire', c:['#FBEAF0','#D4537E']},
+  {id:'collector', e:'🏴‍☠️', n:'Boss collector', h:'Earn all six boss badges', c:['#F1EFE8','#444441']},
+  {id:'buzzer', e:'🔔', n:'Buzzer beater', h:'Get a boss answer right with under a second left', c:['#FAECE7','#D85A30']},
+  {id:'special', e:'🔬', n:'Specialist', h:'Get 90% or more over at least 50 answers in one unit', c:['#E1F5EE','#0F6E56']},
+  {id:'comeback', e:'📈', n:'Comeback kid', h:'Lift a weak unit (under 50%) to over 80%', c:['#EAF3DE','#3B6D11']},
+  {id:'pinpull', e:'📌', n:'Pin puller', h:'Clear 10 pinned flashcards', c:['#FCEBEB','#E24B4A']},
+  {id:'cushion', e:'🪡', n:'Pin cushion', h:'Clear 50 pinned flashcards', c:['#FAEEDA','#BA7517']},
+  {id:'clean', e:'🧹', n:'Clean slate', h:'Clear every pinned flashcard when you had at least 10', c:['#E6F1FB','#378ADD']},
+  {id:'month', e:'📆', n:'Month of mornings', h:'Earn 200 XP a day, 30 days in a row', c:['#EEEDFE','#534AB7']},
+  {id:'tenk', e:'🏔️', n:'Ten thousand', h:'Reach 10,000 total XP', c:['#E1F5EE','#1D9E75']},
+  {id:'twoaday', e:'🌗', n:'Two-a-day', h:'Earn XP in the morning and again in the evening of one day', c:['#EEEDFE','#7F77DD']},
+  {id:'weekend', e:'🎯', n:'Weekender', h:'Revise on both Saturday and Sunday of one weekend', c:['#FAEEDA','#EF9F27']},
+  {id:'explorer', e:'🧭', n:'Explorer', h:'Try every way to revise: Flashcards, Guide, Dates, Exam Practice, Mixed quiz, Parent view and Arcade', c:['#E6F1FB','#185FA5']},
+  {id:'examiner', e:'🖋️', n:"Examiner's pet", h:'Try a timed exam question in each of the four papers', c:['#EEEDFE','#534AB7']},
+  {id:'family', e:'👪', n:'Family night', h:'Finish three Parent view quizzes', c:['#FBEAF0','#D4537E']},
+  {id:'grand', e:'🏅', n:'Grand slam', h:'Earn all four paper master badges', c:['#FAEEDA','#BA7517']},
+  {id:'agent', e:'🥷', n:'Secret agent', h:'Find every secret badge', c:['#F1EFE8','#2C2C2A'], secret:true},
+  {id:'complete', e:'💫', n:'Completionist', h:'Earn every other badge', c:['#FAEEDA','#BA7517']},
   {id:'night', e:'🦉', n:'Night owl', h:'Revise after 11pm', c:['#EEEDFE','#534AB7'], secret:true},
   {id:'early', e:'🐦', n:'Early bird', h:'Revise before 7am', c:['#FAEEDA','#EF9F27'], secret:true},
   {id:'back', e:'🪃', n:'Boomerang', h:'Come back after a week away', c:['#E1F5EE','#1D9E75'], secret:true},
@@ -5087,6 +5109,7 @@ function bdgAward(id) {
   got[id] = localDate();
   try { localStorage.setItem(LS_BADGES, JSON.stringify(got)); } catch (e) {}
   bdgQueue.push(b); bdgNext();
+  if (!bdgAward.busy) { bdgAward.busy = true; try { bdgMeta(); } finally { bdgAward.busy = false; } }
   try { bdgRenderHome(); } catch (e) {}
   return true;
 }
@@ -5099,20 +5122,23 @@ function bdgCheck(active) {
     const dk = String(now.getDate()).padStart(2, '0') + '-' + String(now.getMonth() + 1).padStart(2, '0');
     if (BDG_DATES[dk]) bdgAward(BDG_DATES[dk]);
   }
-  if (typeof bnRun !== 'undefined') { if (bnRun >= 10) bdgAward('combo10'); if (bnRun >= 20) bdgAward('combo20'); }
+  if (typeof bnRun !== 'undefined') { if (bnRun >= 15) bdgAward('combo10'); if (bnRun >= 30) bdgAward('combo20'); }
   const st = bdgStreak(x);
   if (st >= 3) bdgAward('streak3');
   if (st >= 7) bdgAward('streak7');
   if (st >= 14) bdgAward('streak14');
   const ok = Object.keys(x.acc).reduce((s, k) => s + (x.acc[k].ok || 0), 0);
   if (ok >= 1) bdgAward('start');
-  if (ok >= 100) bdgAward('c100');
-  if (ok >= 500) bdgAward('c500');
+  if (ok >= 250) bdgAward('c100');
+  if (ok >= 600) bdgAward('c500');
   if (ok >= 1066) bdgAward('c1066');
   if ((x.days[localDate()] || 0) >= XP_RULE.cap) bdgAward('maxed');
-  const du = x.dayu[localDate()] || {}, ps = {};
-  Object.keys(du).forEach(k => ps[k.split('|')[0]] = 1);
-  if (['p1', 'p2a', 'p2b', 'p3'].every(p => ps[p])) bdgAward('traveller');
+  if (st >= 30) bdgAward('month');
+  if (x.total >= 10000) bdgAward('tenk');
+  if (Object.keys(x.units || {}).some(k => x.units[k].n >= 50 && x.units[k].ok / x.units[k].n >= 0.9)) bdgAward('special');
+  if (active && now.getDay() === 0 && (x.days[localDate()] || 0) > 0 && (x.days[localDate(-1)] || 0) > 0) bdgAward('weekend');
+  const fs = bsLoad().fd, ps = (fs && fs.d === localDate()) ? fs.p : {};
+  if (['p1', 'p2a', 'p2b', 'p3'].every(p => (ps[p] || 0) >= 15)) bdgAward('traveller');
   const t = localDate(), prev = Object.keys(x.days).filter(d => d < t && x.days[d] > 0).sort().pop();
   if (active && (x.days[t] || 0) > 0 && prev && (new Date(t) - new Date(prev)) / 864e5 >= 8) bdgAward('back');
 }
@@ -5122,6 +5148,13 @@ function bdgStreak(x) {
   let n = 0, off = (x.days[localDate()] || 0) >= BDG_DAILY ? 0 : -1;
   while ((x.days[localDate(off)] || 0) >= BDG_DAILY) { n++; off--; }
   return n;
+}
+function bdgMeta() {
+  const got = bdgLoad(), has = ids => ids.every(i => got[i]);
+  if (has(['gremlin', 'zombie', 'vampire', 'dragon', 'wizard', 'slayer'])) bdgAward('collector');
+  if (has(['p1', 'p2a', 'p2b', 'p3'])) bdgAward('grand');
+  if (has(BADGES.filter(b => b.secret && b.id !== 'agent').map(b => b.id))) bdgAward('agent');
+  if (has(BADGES.filter(b => b.id !== 'complete').map(b => b.id))) bdgAward('complete');
 }
 function bdgPapers() {
   const s = bsLoad(), m = s.mast || {};
@@ -5179,11 +5212,24 @@ function bdgHomeTap(id) {
 function bdgOpen() { showScreen('s-progress'); setTimeout(() => { const g = document.getElementById('pg-badges'); if (g) g.scrollIntoView({block:'start'}); }, 60); }
 // ---- hooks ----
 var _bdgXa = xpAward;
-xpAward = function (mode, ok, key) {
+xpAward = function (mode, ok, key, label, paper) {
+  const _args = arguments;
   let wasMiss = false;
   if (ok && key) { try { const m = xpLoad().miss[key]; wasMiss = !!(m && m.n > 0); } catch (e) {} }
   const r = _bdgXa.apply(this, arguments);
-  try { if (wasMiss) bdgAward('revisit'); bdgCheck(true); } catch (e) {}
+  try {
+    if (mode === 'flash' && paper && ok) { const s = bsLoad(), d = localDate(); s.fd = (s.fd && s.fd.d === d) ? s.fd : {d: d, p: {}}; s.fd.p[paper] = (s.fd.p[paper] || 0) + 1; bsSave(s); }
+  } catch (e) {}
+  try {
+    const s2 = bsLoad(), hr = new Date().getHours(), dd = localDate();
+    s2.tad = (s2.tad && s2.tad.d === dd) ? s2.tad : {d: dd, am: 0, pm: 0};
+    if (hr < 12) s2.tad.am = 1; if (hr >= 17) s2.tad.pm = 1;
+    const uk2 = (paper || '') + '|' + (_args[5] || ''), ub = xpLoad().units[uk2];
+    if (ub) { s2.low = s2.low || {}; const rt = ub.ok / ub.n; if (ub.n >= 20 && rt < 0.5) s2.low[uk2] = 1; if (s2.low[uk2] && ub.n >= 40 && rt >= 0.8) bdgAward('comeback'); }
+    bsSave(s2);
+    if (s2.tad.am && s2.tad.pm) bdgAward('twoaday');
+  } catch (e) {}
+  try { if (wasMiss) { const s = bsLoad(); s.rev = (s.rev || 0) + 1; bsSave(s); if (s.rev >= 10) bdgAward('revisit'); } bdgCheck(true); } catch (e) {}
   return r;
 };
 var _bdgMark = bossMark;
@@ -5191,6 +5237,8 @@ bossMark = function (ok) {
   const g = ARC.g;
   if (g && !g.marking) {
     if (!ok) g.slip = true;
+    else if (g.leftMs != null && g.leftMs > 0 && g.leftMs < 1000) bdgAward('buzzer');
+    g.leftMs = null;
     if (g.typed && /rodker/i.test(g.typed)) bdgAward('teacher');
   }
   return _bdgMark.apply(this, arguments);
@@ -5200,11 +5248,15 @@ bossDeath = function () {
   const g = ARC.g;
   if (g) {
     bdgAward('first');
-    if (!g.slip) { bdgAward('flawless'); g.clean = (g.clean || 0) + 1; if (g.clean >= 3) bdgAward('untouch'); } else g.clean = 0;
+    if (!g.slip) { if (g.lv >= 2) bdgAward('flawless'); g.clean = (g.clean || 0) + 1; if (g.clean >= BOSSES.length) bdgAward('untouch'); } else g.clean = 0;
     if (g.lives === 1) bdgAward('nine');
     const nm = (BOSSES[g.lv % BOSSES.length] || [])[0];
     if (nm === 'Dreaded Date Dragon') bdgAward('dragon');
     if (nm === 'Chief Examiner') bdgAward('wizard');
+    if (nm === 'Procrastination Gremlin') bdgAward('gremlin');
+    if (nm === 'Cramming Zombie') bdgAward('zombie');
+    if (nm === 'Highlighter Vampire') bdgAward('vampire');
+    if (nm === 'Mr Rodker' && g.lives === 1) bdgAward('ice');
   }
   return _bdgDeath.apply(this, arguments);
 };
@@ -5213,7 +5265,13 @@ bossNext = function () { if (ARC.g) ARC.g.slip = false; return _bdgNext.apply(th
 var _bdgStart = bossStart;
 bossStart = function () { const r = _bdgStart.apply(this, arguments); if (ARC.g) { ARC.g.slip = false; ARC.g.clean = 0; } return r; };
 var _bdgWin = bossWin;
-bossWin = function () { const g = ARC.g; if (g && g.lv >= BOSSES.length - 1) bdgAward('slayer'); return _bdgWin.apply(this, arguments); };
+bossWin = function () {
+  const g = ARC.g;
+  if (g && g.lv >= BOSSES.length - 1) { bdgAward('slayer'); }
+  return _bdgWin.apply(this, arguments);
+};
+var _bdgSub = bossSubmit;
+bossSubmit = function () { const g = ARC.g; if (g && ARC.tm) g.leftMs = ARC.tm.end - Date.now(); return _bdgSub.apply(this, arguments); };
 var _bdgOver = bossOver;
 bossOver = function () {
   const g = ARC.g;
@@ -5227,7 +5285,7 @@ arcSetHS = function (k) {
   return _bdgHS.apply(this, arguments);
 };
 var _bdgLearn = bsLearn;
-bsLearn = function () { bdgAward('objection'); return _bdgLearn.apply(this, arguments); };
+bsLearn = function () { const s = bsLoad(); s.obj = (s.obj || 0) + 1; bsSave(s); if (s.obj >= 5) bdgAward('objection'); return _bdgLearn.apply(this, arguments); };
 var _bdgFdm = fdSetMastered;
 fdSetMastered = function (obj) {
   const r = _bdgFdm.apply(this, arguments);
@@ -5235,14 +5293,38 @@ fdSetMastered = function (obj) {
   return r;
 };
 var _bdgFs = startFsClock;
-startFsClock = function () { bdgAward('clock'); return _bdgFs.apply(this, arguments); };
+startFsClock = function () { bdgAward('clock'); try { const s = bsLoad(); s.fsp = s.fsp || {}; s.fsp[currentPaper] = 1; bsSave(s); if (['p1', 'p2a', 'p2b', 'p3'].every(p => s.fsp[p])) bdgAward('examiner'); } catch (e) {} return _bdgFs.apply(this, arguments); };
 var _bdgFx = exitFullscreen;
 exitFullscreen = function () {
   try { if (fsInterval && fsElapsed >= 30 && fsElapsed < fsTotal) bdgAward('examready'); } catch (e) {}
   return _bdgFx.apply(this, arguments);
 };
+var _bdgPin = fdSetOutstanding;
+fdSetOutstanding = function (arr) {
+  let prev = [];
+  try { prev = fdGetOutstanding(); } catch (e) {}
+  const r = _bdgPin.apply(this, arguments);
+  try {
+    const cur = new Set(arr || []), removed = prev.filter(k => !cur.has(k)).length;
+    if (removed) {
+      const s = bsLoad(); s.pins = (s.pins || 0) + removed; bsSave(s);
+      if (s.pins >= 10) bdgAward('pinpull');
+      if (s.pins >= 50) bdgAward('cushion');
+      if (prev.length >= 10 && !(arr || []).length) bdgAward('clean');
+    }
+  } catch (e) {}
+  return r;
+};
+function bdgSeen(k) {
+  const s = bsLoad(); s.seen = s.seen || {}; if (s.seen[k]) return; s.seen[k] = 1; bsSave(s);
+  if (['flash', 'guide', 'dates', 'exam', 'mixed', 'parent', 'arcade'].every(x => s.seen[x])) bdgAward('explorer');
+}
+var _bdgEm = enterMode;
+enterMode = function (m) { try { bdgSeen({flashcard: 'flash', knowledge: 'guide', dates: 'dates', exam: 'exam'}[m] || '_'); } catch (e) {} return _bdgEm.apply(this, arguments); };
+var _bdgPv = pvEnd;
+pvEnd = function () { const r = _bdgPv.apply(this, arguments); try { const s = bsLoad(); s.fam = (s.fam || 0) + 1; bsSave(s); if (s.fam >= 3) bdgAward('family'); } catch (e) {} return r; };
 var _bdgShow = showScreen;
-showScreen = function (id) { const r = _bdgShow.apply(this, arguments); if (id === 's-progress') bdgRender(); if (id === 's-pick') bdgRenderHome(); return r; };
+showScreen = function (id) { const r = _bdgShow.apply(this, arguments); try { const k = {'s-rapid': 'mixed', 's-parent': 'parent', 's-arcade': 'arcade'}[id]; if (k) bdgSeen(k); } catch (e) {} if (id === 's-progress') bdgRender(); if (id === 's-pick') bdgRenderHome(); return r; };
 (function () {
   const K = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a']; let k = 0;
   document.addEventListener('keydown', e => {
@@ -5258,6 +5340,30 @@ showScreen = function (id) { const r = _bdgShow.apply(this, arguments); if (id =
 })();
 setTimeout(() => { try { bdgCheck(false); bdgRenderHome(); } catch (e) {} }, 1500);
 
+
+// ----- exam countdown (edit dates here: [label, 'YYYY-MM-DD'])
+const EXAMS = [
+  ['Paper 2 mock', '2026-12-01'], ['Paper 3 mock', '2026-12-03'], ['Paper 1 mock', '2026-12-09'],
+  ['Paper 1', '2027-05-20'], ['Paper 2', '2027-05-28'], ['Paper 3', '2027-06-09']
+];
+function examCountRender() {
+  const t0 = new Date(); t0.setHours(0, 0, 0, 0);
+  const all = EXAMS.map(e => { const p = e[1].split('-'); const d = new Date(+p[0], +p[1] - 1, +p[2]); return {n: e[0], d: d, days: Math.round((d - t0) / 864e5)}; }).filter(e => e.days >= 0);
+  const txt = document.getElementById('cal-txt'), btn = document.getElementById('cal-btn'), pan = document.getElementById('cal-panel');
+  if (!txt) return;
+  if (!all.length) { btn.style.display = 'none'; return; }
+  btn.style.display = '';
+  const n = all.slice().sort((x, y) => x.days - y.days)[0];
+  txt.innerHTML = '<span style="display:block;font-size:.62rem;font-weight:500;color:var(--muted)">' + (n.days === 0 ? 'Next up today' : 'Next up in ' + n.days + (n.days === 1 ? ' day' : ' days')) + '</span><span style="display:block;font-size:.78rem;line-height:1.1">' + n.n + '</span>'; btn.title = 'Exam dates';
+  const row = e => '<div style="display:flex;justify-content:space-between;gap:1rem;font-size:.85rem;padding:.2rem 0;color:var(--text)"><span>' + e.n.replace(' mock', '') + ' \u00b7 ' + e.d.getDate() + ' ' + e.d.toLocaleString('en-GB', {month: 'short'}) + '</span><b>' + (e.days === 0 ? 'Today' : e.days + (e.days === 1 ? ' day' : ' days')) + '</b></div>';
+  const m = all.filter(e => /mock/.test(e.n)), r = all.filter(e => !/mock/.test(e.n));
+  const hd = s => '<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin:.3rem 0 .15rem">' + s + '</div>';
+  pan.innerHTML = (m.length ? hd('Mock exams') + m.map(row).join('') : '') + (r.length ? hd('Real exams') + r.map(row).join('') : '');
+}
+function calToggle(ev) { ev.stopPropagation(); const p = document.getElementById('cal-panel'); p.style.display = p.style.display === 'none' ? 'block' : 'none'; }
+document.addEventListener('click', ev => { const p = document.getElementById('cal-panel'); if (p && !ev.target.closest('#cal-wrap')) p.style.display = 'none'; });
+examCountRender();
+document.addEventListener('visibilitychange', examCountRender);
 // ----- arcade feel: shake on wrong, pop on right -----
 var _arcXa = xpAward;
 xpAward = function (m, ok) {
