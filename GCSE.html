@@ -78,6 +78,7 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 .section-lbl{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:1.5rem 0 .65rem;display:flex;align-items:center;gap:.6rem}
 .section-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
 .tb-btn{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;padding:0 .7rem;font-size:.85rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;text-decoration:none;transition:background .15s,color .15s}
+#cal-btn{height:36px;box-sizing:border-box;gap:0;outline:none}#cal-btn:focus-visible{outline:2px solid var(--border2);outline-offset:1px}#cal-btn:focus:not(:focus-visible){outline:none}
 .tb-btn:hover{background:var(--subtle);color:var(--text)}
 .yr-pill{background:#C2315B;color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.25rem .6rem;border-radius:8px}
 .pb-p1{background:#FEF9E7;color:#9A6B00;border-color:#F0B429}
@@ -635,14 +636,18 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .bdg.sel .bdg-c{outline:3px solid #F0B429;outline-offset:2px}
 .bdg-detail{border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;font-size:.85rem;margin-bottom:2rem;color:var(--muted);min-height:2.6rem}
 .bdg-detail b{color:var(--text,inherit)}
-#bdg-toast{position:fixed;top:.8rem;left:50%;transform:translate(-50%,-140%);z-index:9000;background:#1d1a14;color:#fff;border:2px solid #F0B429;border-radius:14px;padding:.55rem 1rem;display:flex;align-items:center;gap:.6rem;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .35s cubic-bezier(.2,1.2,.4,1);pointer-events:none;max-width:92vw}
+#bdg-toast{position:fixed;top:.8rem;left:50%;transform:translate(-50%,-140%);z-index:100000;pointer-events:none;background:#1d1a14;color:#fff;border:2px solid #F0B429;border-radius:14px;padding:.55rem 1rem;display:flex;align-items:center;gap:.6rem;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .35s cubic-bezier(.2,1.2,.4,1);pointer-events:none;max-width:92vw}
 #bdg-toast.show{transform:translate(-50%,0)}
 #bdg-toast .bt-e{font-size:1.8rem}#bdg-toast .bt-k{font-size:.62rem;letter-spacing:.14em;color:#F0B429;font-weight:800}#bdg-toast .bt-n{font-weight:800;font-size:.95rem}
-.hb-row{display:flex;flex-wrap:wrap;gap:.45rem;justify-content:center;margin:1.1rem 0 .4rem}
-.hb-h{text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-top:1.2rem}
-.hb-row .bdg-c{width:46px;height:46px;font-size:1.4rem;border-width:2.5px}
-.hb-all{display:block;margin:.3rem auto 1.5rem;background:none;border:1px solid var(--border);border-radius:999px;padding:.45rem 1rem;font:inherit;font-size:.8rem;font-weight:600;color:var(--muted);cursor:pointer}
-#home-badges .bdg-detail{margin:.2rem 0 .7rem;text-align:center}
+.hb-row{display:flex;flex-wrap:nowrap;gap:.4rem;overflow-x:auto;padding:.1rem .1rem .2rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.hb-row::-webkit-scrollbar{display:none}
+.hb-row .bdg{flex:0 0 auto}
+.hb-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.25rem}
+.hb-h{font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.hb-row .bdg-c{width:40px;height:40px;font-size:1.2rem;border-width:2.5px}
+.hb-all{background:none;border:none;padding:.15rem 0;font:inherit;font-size:.78rem;font-weight:700;color:var(--muted);cursor:pointer}
+#home-badges{position:sticky;bottom:0;z-index:30;background:var(--bg);border-top:1px solid var(--border);margin:.8rem -.2rem 0;padding:.5rem .4rem calc(.5rem + env(safe-area-inset-bottom,0px))}
+#home-badges .bdg-detail{margin:0 0 .4rem;text-align:center;font-size:.8rem}
 .bf{position:relative;text-align:center;padding:1.3rem .6rem 1.1rem;border-radius:16px;overflow:hidden;color:#fff;animation:bfbg 1.1s ease-in-out infinite alternate}
 @keyframes bfbg{from{background:#14070a}to{background:#43101a}}
 .bf-em{display:block;font-size:5rem;line-height:1.2;margin-top:.3rem;opacity:0;animation:bfdrop .9s ease-out .4s forwards}
@@ -803,7 +808,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 <div class="app">
 <div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;margin-bottom:.5rem">
   <a href="index.html" id="hub-link" class="tb-btn" style="white-space:nowrap;flex-shrink:0">← Hub</a>
-  <span id="cal-wrap" style="position:relative;margin-right:auto"><button id="cal-btn" class="tb-btn" onclick="calToggle(event)" title="Exam dates" style="color:var(--text);white-space:nowrap;font-size:.8rem;padding:0 .55rem;text-align:left">📅 <span id="cal-txt" style="margin-left:.4rem;line-height:1.15"></span></button><div id="cal-panel" style="display:none;position:absolute;top:42px;left:0;z-index:60;min-width:250px;background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:.6rem .8rem;box-shadow:0 6px 20px rgba(0,0,0,.15)"></div></span>
+  <span id="cal-wrap" style="position:relative;margin-right:auto"><button id="cal-btn" class="tb-btn" onclick="calToggle(event)" title="Exam dates" style="color:var(--text);white-space:nowrap;font-size:.8rem;padding:0 .7rem 0 .6rem;text-align:left">📅 <span id="cal-txt" style="margin-left:.45rem;line-height:1.15;text-align:left"></span></button><div id="cal-panel" style="display:none;position:absolute;top:42px;left:0;z-index:60;min-width:250px;background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:.6rem .8rem;box-shadow:0 6px 20px rgba(0,0,0,.15)"></div></span>
   <button id="search-btn" class="tb-btn" onclick="openSearch()" title="Search topics">🔍</button>
   <button id="print-btn" class="tb-btn" onclick="window.print()" style="display:none" title="Print">🖨️</button>
   <button id="dark-toggle" class="tb-btn" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
@@ -4097,7 +4102,7 @@ function xpStreakHtml(x) {
   for (let i = 6; i >= 0; i--) {
     const d = new Date(); d.setDate(d.getDate() - i);
     const v = x.days[ymd(d)] || 0;
-    dots += '<i class="' + (v >= 500 ? 'on t4' : v >= 300 ? 'on t3' : v >= 100 ? 'on t2' : v > 0 ? 'on' : '') + (i === 0 ? ' today' : '') + '" title="' + ymd(d) + ': ' + v + ' XP">' + 'SMTWTFS'[d.getDay()] + '</i>';
+    dots += '<i class="' + (v >= 500 ? 'on t4' : v >= 300 ? 'on t3' : v >= 100 ? 'on t2' : v > 0 ? 'on' : '') + (i === 0 ? ' today' : '') + '" title="' + (v >= 500 ? 'Purple' : v >= 300 ? 'Gold' : v >= 100 ? 'Silver' : v > 0 ? 'Bronze' : 'No XP') + (v ? ' - ' + v + ' XP' : '') + '">' + 'SMTWTFS'[d.getDay()] + '</i>';
   }
   return '<div class="xp-streak"><span class="xp-flame">🔥 ' + (n ? n + ' day' + (n > 1 ? 's' : '') + ' in a row' : 'Start a streak today') + '</span><span class="xp-sdots">' + dots + '</span><span class="xp-best">Best ' + Math.max(n, xpBest(x)) + '</span></div>';
 }
@@ -5025,9 +5030,10 @@ const LS_BADGES = 'gcse_badges', LS_BSTAT = 'gcse_badge_stats';
 // c = ring/fill colour. secret badges show only "?" until found.
 const BADGES = [
   {id:'start', e:'🎒', n:'Day one', h:'Answer your first question correctly', c:['#E1F5EE','#1D9E75']},
-  {id:'c100', e:'💯', n:'Ton up', h:'Answer 250 questions correctly', c:['#FAEEDA','#EF9F27']},
+  {id:'c100', e:'💯', n:'Ton up', h:'Answer 100 questions correctly', c:['#FAEEDA','#EF9F27']},
+  {id:'c300', e:'🪖', n:'Spartan', h:'Answer 300 questions correctly', c:['#E6F1FB','#378ADD']},
   {id:'c500', e:'🎓', n:'Scholar', h:'Answer 600 questions correctly', c:['#EEEDFE','#7F77DD']},
-  {id:'c1066', e:'🏹', n:'Hastings', h:'Answer 1066 questions correctly', c:['#FCEBEB','#E24B4A']},
+  {id:'c1066', e:'🏹', n:'Conqueror', h:'Answer 1066 questions correctly', c:['#FCEBEB','#E24B4A']},
   {id:'combo10', e:'⚡', n:'On fire', h:'Get 15 answers right in a row', c:['#FAEEDA','#EF9F27']},
   {id:'combo20', e:'🌋', n:'Unstoppable', h:'Get 30 answers right in a row', c:['#FCEBEB','#E24B4A']},
   {id:'revisit', e:'🔁', n:'Lesson learned', h:'Get 10 questions right that you got wrong before', c:['#E1F5EE','#1D9E75']},
@@ -5129,7 +5135,8 @@ function bdgCheck(active) {
   if (st >= 14) bdgAward('streak14');
   const ok = Object.keys(x.acc).reduce((s, k) => s + (x.acc[k].ok || 0), 0);
   if (ok >= 1) bdgAward('start');
-  if (ok >= 250) bdgAward('c100');
+  if (ok >= 100) bdgAward('c100');
+  if (ok >= 300) bdgAward('c300');
   if (ok >= 600) bdgAward('c500');
   if (ok >= 1066) bdgAward('c1066');
   if ((x.days[localDate()] || 0) >= XP_RULE.cap) bdgAward('maxed');
@@ -5194,10 +5201,8 @@ function bdgRenderHome() {
   const got = bdgLoad(), list = BADGES.filter(b => got[b.id]);
   if (!list.length) { el.style.display = 'none'; el.innerHTML = ''; return; }
   el.style.display = 'block';
-  el.innerHTML = '<div class="hb-h">Your badges · ' + list.length + '</div><div class="hb-row">' + list.map(b =>
-    '<button class="bdg got" data-id="' + b.id + '" aria-label="' + b.n + '" onclick="bdgHomeTap(\'' + b.id + '\')"><div class="bdg-c" style="background:' + b.c[0] + ';border-color:' + b.c[1] + '">' + b.e + '</div></button>').join('') + '</div>' +
-    '<div class="bdg-detail" id="hb-detail" style="display:none"></div>' +
-    '<button class="hb-all" onclick="bdgOpen()">See all progress badges →</button>';
+  el.innerHTML = '<div class="bdg-detail" id="hb-detail" style="display:none"></div><div class="hb-top"><div class="hb-h">Your badges · ' + list.length + '</div><button class="hb-all" onclick="bdgOpen()">See all →</button></div><div class="hb-row">' + list.map(b =>
+    '<button class="bdg got" data-id="' + b.id + '" aria-label="' + b.n + '" onclick="bdgHomeTap(\'' + b.id + '\')"><div class="bdg-c" style="background:' + b.c[0] + ';border-color:' + b.c[1] + '">' + b.e + '</div></button>').join('') + '</div>';
 }
 function bdgHomeTap(id) {
   const b = BADGES.find(x => x.id === id), got = bdgLoad(), el = document.getElementById('hb-detail');
