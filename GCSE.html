@@ -1346,7 +1346,7 @@ function showScreen(id) {
   if (id === 's-pick') { renderFdWheels(); xpRender(); uptoRender(); }
   if (id === 's-hub') { hubRender(); renderFdHubWheel(); }
   if (id === 's-progress') progressRender();
-  if (id === 's-parent' && !PV.midRound) parentShowSetup();
+  if (id === 's-parent' && !PV.midRound) { try { pvEnsureScope(); } catch (e) {} parentShowSetup(); }
   if (id === 's-hub')  renderFdHubWheel();
   if (id === 's-main' && currentPaper) renderFdSetupWheel();
 }
@@ -4231,6 +4231,10 @@ function pvNextIsMock() {
   const t0 = new Date(); t0.setHours(0, 0, 0, 0);
   const up = EXAMS.map(e => { const p = e[1].split('-'); return {n: e[0], d: new Date(+p[0], +p[1] - 1, +p[2])}; }).filter(e => e.d >= t0).sort((x, y) => x.d - y.d);
   return !!up.length && /mock/i.test(up[0].n);
+}
+function pvEnsureScope() {
+  const cur = uptoPos(), sc = pvScopes();
+  if (localStorage.getItem(LS_UPTO) === null || !sc.some(s => s.pos === cur)) { localStorage.setItem(LS_UPTO, String(sc[pvNextIsMock() ? 2 : 3].pos)); uptoRender(); }
 }
 function pvScopes() {
   const L = COURSE_FLAT.length, mig = P.p1.units.length;
