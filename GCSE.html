@@ -5031,7 +5031,7 @@ const LS_BADGES = 'gcse_badges', LS_BSTAT = 'gcse_badge_stats';
 const BADGES = [
   {id:'start', e:'🎒', n:'Day one', h:'Answer your first question correctly', c:['#E1F5EE','#1D9E75']},
   {id:'c100', e:'💯', n:'Ton up', h:'Answer 100 questions correctly', c:['#FAEEDA','#EF9F27']},
-  {id:'c300', e:'🪖', n:'Spartan', h:'Answer 300 questions correctly', c:['#E6F1FB','#378ADD']},
+  {id:'c300', e:'🔱', n:'Spartan', h:'Answer 300 questions correctly', c:['#E6F1FB','#378ADD']},
   {id:'c500', e:'🎓', n:'Scholar', h:'Answer 600 questions correctly', c:['#EEEDFE','#7F77DD']},
   {id:'c1066', e:'🏹', n:'Conqueror', h:'Answer 1066 questions correctly', c:['#FCEBEB','#E24B4A']},
   {id:'combo10', e:'⚡', n:'On fire', h:'Get 15 answers right in a row', c:['#FAEEDA','#EF9F27']},
@@ -5045,7 +5045,7 @@ const BADGES = [
   {id:'dragon', e:'🐉', n:'Dragon slayer', h:'Defeat the Dreaded Date Dragon', c:['#EAF3DE','#639922']},
   {id:'wizard', e:'🧙', n:'Wizard hunter', h:'Defeat the Chief Examiner', c:['#EEEDFE','#7F77DD']},
   {id:'slayer', e:'🏆', n:'Giant slayer', h:'Defeat Mr Rodker', c:['#FAEEDA','#BA7517']},
-  {id:'bruised', e:'🩹', n:'Bruised, not beaten', h:'Lose 5 boss fights and keep coming back', c:['#FBEAF0','#D4537E']},
+  {id:'bruised', e:'🤕', n:'Bruised, not beaten', h:'Lose 5 boss fights and keep coming back', c:['#FBEAF0','#D4537E']},
   {id:'arcade', e:'🕹️', n:'Arcade regular', h:'Finish a round of all four arcade games', c:['#EEEDFE','#7F77DD']},
   {id:'p1', e:'🚢', n:'Paper 1 master', h:'Master every flashcard in Paper 1: Migrants in Britain', c:['#E6F1FB','#378ADD']},
   {id:'p2a', e:'🚀', n:'Paper 2a master', h:'Master every flashcard in Paper 2a: Cold War', c:['#EEEDFE','#7F77DD']},
@@ -5058,7 +5058,7 @@ const BADGES = [
   {id:'clock', e:'⏱️', n:'Against the clock', h:'Start a timed exam question', c:['#E1F5EE','#1D9E75']},
   {id:'examready', e:'📝', n:'Exam ready', h:'Finish a timed exam question before the clock runs out', c:['#E6F1FB','#378ADD']},
   {id:'traveller', e:'🕰️', n:'Time traveller', h:'Get 15 flashcards right in each of the four papers in one day', c:['#EEEDFE','#7F77DD']},
-  {id:'ice', e:'🧊', n:'Ice cold', h:'Defeat Mr Rodker on your last heart', c:['#E6F1FB','#378ADD']},
+  {id:'ice', e:'❄️', n:'Ice cold', h:'Defeat Mr Rodker on your last heart', c:['#E6F1FB','#378ADD']},
   {id:'gremlin', e:'👹', n:'Gremlin crusher', h:'Defeat the Procrastination Gremlin', c:['#FCEBEB','#E24B4A']},
   {id:'zombie', e:'🧟', n:'Zombie squasher', h:'Defeat the Cramming Zombie', c:['#EAF3DE','#639922']},
   {id:'vampire', e:'🧛', n:'Vampire hunter', h:'Defeat the Highlighter Vampire', c:['#FBEAF0','#D4537E']},
@@ -5067,7 +5067,7 @@ const BADGES = [
   {id:'special', e:'🔬', n:'Specialist', h:'Get 90% or more over at least 50 answers in one unit', c:['#E1F5EE','#0F6E56']},
   {id:'comeback', e:'📈', n:'Comeback kid', h:'Lift a weak unit (under 50%) to over 80%', c:['#EAF3DE','#3B6D11']},
   {id:'pinpull', e:'📌', n:'Pin puller', h:'Clear 10 pinned flashcards', c:['#FCEBEB','#E24B4A']},
-  {id:'cushion', e:'🪡', n:'Pin cushion', h:'Clear 50 pinned flashcards', c:['#FAEEDA','#BA7517']},
+  {id:'cushion', e:'📍', n:'Pin cushion', h:'Clear 50 pinned flashcards', c:['#FAEEDA','#BA7517']},
   {id:'clean', e:'🧹', n:'Clean slate', h:'Clear every pinned flashcard when you had at least 10', c:['#E6F1FB','#378ADD']},
   {id:'month', e:'📆', n:'Month of mornings', h:'Earn 200 XP a day, 30 days in a row', c:['#EEEDFE','#534AB7']},
   {id:'tenk', e:'🏔️', n:'Ten thousand', h:'Reach 10,000 total XP', c:['#E1F5EE','#1D9E75']},
@@ -5077,11 +5077,11 @@ const BADGES = [
   {id:'examiner', e:'🖋️', n:"Examiner's pet", h:'Try a timed exam question in each of the four papers', c:['#EEEDFE','#534AB7']},
   {id:'family', e:'👪', n:'Family night', h:'Finish three Parent view quizzes', c:['#FBEAF0','#D4537E']},
   {id:'grand', e:'🏅', n:'Grand slam', h:'Earn all four paper master badges', c:['#FAEEDA','#BA7517']},
-  {id:'agent', e:'🥷', n:'Secret agent', h:'Find every secret badge', c:['#F1EFE8','#2C2C2A'], secret:true},
+  {id:'agent', e:'🕶️', n:'Secret agent', h:'Find every secret badge', c:['#F1EFE8','#2C2C2A'], secret:true},
   {id:'complete', e:'💫', n:'Completionist', h:'Earn every other badge', c:['#FAEEDA','#BA7517']},
   {id:'night', e:'🦉', n:'Night owl', h:'Revise after 11pm', c:['#EEEDFE','#534AB7'], secret:true},
   {id:'early', e:'🐦', n:'Early bird', h:'Revise before 7am', c:['#FAEEDA','#EF9F27'], secret:true},
-  {id:'back', e:'🪃', n:'Boomerang', h:'Come back after a week away', c:['#E1F5EE','#1D9E75'], secret:true},
+  {id:'back', e:'🔙', n:'Boomerang', h:'Come back after a week away', c:['#E1F5EE','#1D9E75'], secret:true},
   {id:'teacher', e:'🍎', n:"Teacher's pet", h:'Say hello to the final boss', c:['#FCEBEB','#E24B4A'], secret:true},
   {id:'logo', e:'🕵️', n:'Detective', h:'Find the hidden spot on the home screen', c:['#F1EFE8','#5F5E5A'], secret:true},
   {id:'konami', e:'🎮', n:'Cheat code', h:'A classic sequence', c:['#EEEDFE','#7F77DD'], secret:true},
@@ -5090,7 +5090,7 @@ const BADGES = [
   {id:'hallow', e:'🎃', n:'Spooky season', h:'Revise on 31 October', c:['#FAECE7','#D85A30'], secret:true},
   {id:'bonfire', e:'🎇', n:'Remember, remember', h:'Revise on 5 November', c:['#FAEEDA','#BA7517'], secret:true},
   {id:'poppy', e:'🌺', n:'Lest we forget', h:'Revise on 11 November', c:['#FCEBEB','#A32D2D'], secret:true},
-  {id:'dday', e:'🪂', n:'D-Day', h:'Revise on 6 June', c:['#E6F1FB','#185FA5'], secret:true}
+  {id:'dday', e:'🎖️', n:'D-Day', h:'Revise on 6 June', c:['#E6F1FB','#185FA5'], secret:true}
 ];
 const BDG_DATES = {'25-12':'xmas','01-01':'ny','31-10':'hallow','05-11':'bonfire','11-11':'poppy','06-06':'dday'};
 function bdgLoad() { try { return JSON.parse(localStorage.getItem(LS_BADGES) || '{}') || {}; } catch (e) { return {}; } }
@@ -5329,7 +5329,7 @@ enterMode = function (m) { try { bdgSeen({flashcard: 'flash', knowledge: 'guide'
 var _bdgPv = pvEnd;
 pvEnd = function () { const r = _bdgPv.apply(this, arguments); try { const s = bsLoad(); s.fam = (s.fam || 0) + 1; bsSave(s); if (s.fam >= 3) bdgAward('family'); } catch (e) {} return r; };
 var _bdgShow = showScreen;
-showScreen = function (id) { const r = _bdgShow.apply(this, arguments); try { const k = {'s-rapid': 'mixed', 's-parent': 'parent', 's-arcade': 'arcade'}[id]; if (k) bdgSeen(k); } catch (e) {} if (id === 's-progress') bdgRender(); if (id === 's-pick') bdgRenderHome(); return r; };
+showScreen = function (id) { const r = _bdgShow.apply(this, arguments); try { const cw = document.getElementById('cal-wrap'); if (cw) cw.style.visibility = id === 's-pick' ? '' : 'hidden'; } catch (e) {} try { const k = {'s-rapid': 'mixed', 's-parent': 'parent', 's-arcade': 'arcade'}[id]; if (k) bdgSeen(k); } catch (e) {} if (id === 's-progress') bdgRender(); if (id === 's-pick') bdgRenderHome(); return r; };
 (function () {
   const K = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a']; let k = 0;
   document.addEventListener('keydown', e => {
