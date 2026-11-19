@@ -654,6 +654,9 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 #s-pick .pick-btn .pbw{width:3rem;right:.5rem}
 #s-pick .pick-btn .pbw .fd-wheel{width:3rem;height:3rem}
 .paper-lbl{font-size:.95rem;font-weight:800;margin:.1rem 0 .35rem}
+.hub-start-row{display:flex;gap:8px;margin-top:.7rem}
+.hub-start-row .hub-start{margin-top:0;flex:1;font-size:.88rem;line-height:1.3;padding:.75rem .3rem}
+.hub-start small{display:block;font-weight:600;opacity:.85;font-size:.72rem;margin-top:2px}
 </style>
 </head>
 <body>
@@ -2198,8 +2201,9 @@ function hubRender() {
   fc.style.borderLeftColor = col; fc.style.setProperty('--c', col);
   fc.innerHTML = '<h3>⚡ Flashcards</h3><div class="sub">Choose one era, several, or all of them.' + (pins ? ' Your ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + ' will be mixed in.' : '') + '</div>' +
     '<button class="hub-pill' + (fdHintsOn ? ' on' : '') + '" id="hub-hints" onclick="hubHints()">💡 Hints ' + (fdHintsOn ? 'on' : 'off') + '</button>' + allRow + rows +
-    '<button class="hub-start" style="background:' + col + '" onclick="hubGo()">Start flashcards' + (hubSel.all ? '' : ' · ' + nSel + ' era' + (nSel > 1 ? 's' : '')) + '</button>' +
-    (pins ? '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="hub-link" onclick="enterMode(\'flashcard\');setTimeout(fdStartPinned,100)">📌 Review ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + '</button></div>' : '');
+    '<div class="hub-start-row"><button class="hub-start" style="background:' + col + '" onclick="hubGo(\'flip\')">📖 Flip and learn' + (hubSel.all ? '' : '<small>' + nSel + ' era' + (nSel > 1 ? 's' : '') + '</small>') + '</button>' +
+    '<button class="hub-start" style="background:' + col + ';position:relative" onclick="hubGo(\'fill\')">' + (gapTried() ? '' : '<span class="gap-new-pill">NEW</span>') + '🧩 Fill the gaps' + (hubSel.all ? '' : '<small>' + nSel + ' era' + (nSel > 1 ? 's' : '') + '</small>') + '</button></div>' +
+    (pins ? '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="hub-link" onclick="fdMode=\'flip\';enterMode(\'flashcard\');setTimeout(fdStartPinned,100)">📌 Review ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + '</button></div>' : '');
 }
 function hubAll() { hubSel.all = true; hubSel.set = []; hubRender(); }
 function hubTog(i) {
@@ -2210,7 +2214,7 @@ function hubTog(i) {
   else hubSel.set.push(k);
   hubRender();
 }
-function hubGo() {
+function hubGo(mode) {
   var ue = getUnitEras();
   enterMode('flashcard');
   if (!hubSel.all) {
@@ -2218,7 +2222,7 @@ function hubGo() {
     hubSel.set.forEach(function (k) { s.add(k); if (ue.pairs[k]) s.add(ue.pairs[k]); });
     fdActiveEras = s; fdAllOn = false;
   }
-  fdStart();
+  fdStart(mode);
 }
 function hubHints() { fdSyncHints(!fdHintsOn); hubRender(); }
 
