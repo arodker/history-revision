@@ -12,6 +12,46 @@
    "Richard III",
    "image",
    "faction"
+  ],
+  "s": [
+   "Edward was 9, so a regent might seize power, as Richard III did in 1483.",
+   "A 9-year-old could not project the image of a divinely appointed, just, military monarch.",
+   "Henry left a divided council, already weighted towards reformists by Gardiner and Norfolk's fall in 1546."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Richard III",
+    "alt": [],
+    "d": [
+     "Henry VII",
+     "Edward IV",
+     "Perkin Warbeck"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "military",
+    "alt": [],
+    "d": [
+     "wealthy",
+     "Protestant",
+     "popular"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "reformists",
+    "alt": [
+     "reformers",
+     "reformist"
+    ],
+    "d": [
+     "conservatives",
+     "Catholics",
+     "Habsburgs"
+    ]
+   }
   ]
  },
  {
@@ -27,6 +67,45 @@
    "dry stamp",
    "autocrat",
    "Good Duke"
+  ],
+  "s": [
+   "Seymour conspired with Paget, used the dry stamp and the 'unfulfilled gifts' clause, and became Lord Protector.",
+   "He ruled as an autocrat, overriding Henry's will of 16 co-equal councillors and denying Edward any role.",
+   "He cast himself as the Good Duke, ally of the ordinary man, and led forces against Scotland in the Rough Wooing."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "dry stamp",
+    "alt": [],
+    "d": [
+     "Great Seal",
+     "Privy Seal",
+     "signet ring"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "16",
+    "alt": [
+     "sixteen"
+    ],
+    "d": [
+     "12",
+     "20",
+     "24"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Rough Wooing",
+    "alt": [],
+    "d": [
+     "Auld Alliance",
+     "Border War",
+     "Anglo-Scottish Union"
+    ]
+   }
   ]
  },
  {
@@ -42,6 +121,43 @@
    "minor",
    "Thomas Seymour",
    "Former allies"
+  ],
+  "s": [
+   "In a minority there was no authority to control faction, so disputes could spill into rebellion or civil war.",
+   "Somerset rewarded supporters, including his brother Thomas Seymour, who was later executed for attempting a coup.",
+   "The anti-Somerset faction of reformers and conservatives included Warwick, Wriothesley and Paget."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "minority",
+    "alt": [],
+    "d": [
+     "interregnum",
+     "coronation",
+     "parliament"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Thomas Seymour",
+    "alt": [],
+    "d": [
+     "John Dudley",
+     "William Paget",
+     "Henry Grey"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Wriothesley",
+    "alt": [],
+    "d": [
+     "Cranmer",
+     "Gardiner",
+     "Pole"
+    ]
+   }
   ]
  },
  {
@@ -57,6 +173,48 @@
    "faction",
    "general summons",
    "surrendered"
+  ],
+  "s": [
+   "The anti-Somerset faction of Warwick, Wriothesley and Paget blamed his arrogant leadership for the unrest of 1549.",
+   "Feeling threatened, Somerset issued a general summons on 5 October for loyal subjects to defend him, which was seen as inciting revolt.",
+   "He retreated to Windsor Castle and surrendered when the King turned against him."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "arrogant",
+    "alt": [],
+    "d": [
+     "indecisive",
+     "cowardly",
+     "negligent"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "5 October",
+    "alt": [
+     "5th October",
+     "October 5th"
+    ],
+    "d": [
+     "12 October",
+     "1 October",
+     "19 October"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Windsor Castle",
+    "alt": [
+     "Windsor"
+    ],
+    "d": [
+     "the Tower of London",
+     "Greenwich Palace",
+     "Dover Castle"
+    ]
+   }
   ]
  },
  {
@@ -72,6 +230,45 @@
    "reformist",
    "1552",
    "Edward"
+  ],
+  "s": [
+   "Warwick allied with reformists, became Lord President of the Council in 1550 and took the title Duke of Northumberland.",
+   "He released Somerset in 1550 hoping for an ally, but had him executed in 1552 on likely fabricated treason charges.",
+   "He worked more closely with Edward VI, knowing the monarch's support was crucial."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Lord President of the Council",
+    "alt": [
+     "Lord President"
+    ],
+    "d": [
+     "Lord Protector",
+     "Lord Chancellor",
+     "Lord Treasurer"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1552",
+    "alt": [],
+    "d": [
+     "1549",
+     "1551",
+     "1553"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Edward VI",
+    "alt": [],
+    "d": [
+     "Mary",
+     "Elizabeth",
+     "Gardiner"
+    ]
+   }
   ]
  },
  {
@@ -87,6 +284,45 @@
    "Protestant",
    "Guildford",
    "male heirs"
+  ],
+  "s": [
+   "Edward feared for his Protestant changes, as Mary was a committed Catholic who refused to convert.",
+   "Northumberland feared his own fall under Mary, so he married his son Guildford Dudley to Jane Grey to control the heir.",
+   "Edward crossed out 'male heirs' in his own hand and named Jane Grey, giving the Devise a shaky legal basis."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Catholic",
+    "alt": [],
+    "d": [
+     "Lutheran",
+     "Calvinist",
+     "Anabaptist"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Guildford Dudley",
+    "alt": [
+     "Guildford"
+    ],
+    "d": [
+     "Robert Dudley",
+     "Ambrose Dudley",
+     "Edward Courtenay"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "male heirs",
+    "alt": [],
+    "d": [
+     "Catholic heirs",
+     "legitimate heirs",
+     "royal heirs"
+    ]
+   }
   ]
  },
  {
@@ -102,6 +338,47 @@
    "East Anglia",
    "Council",
    "entered London"
+  ],
+  "s": [
+   "Mary had a power base in East Anglia, where Northumberland was hated after Kett's Rebellion, and proclaimed herself Queen on 9 July.",
+   "The Council never believed in the Devise, the army deserted Northumberland, and the Council proclaimed Mary on 19 July.",
+   "Popular legitimacy proved more powerful than legal manoeuvring, and Northumberland, Jane Grey and Guildford Dudley were executed."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Kett's Rebellion",
+    "alt": [
+     "Kett"
+    ],
+    "d": [
+     "the Pilgrimage of Grace",
+     "Wyatt's Rebellion",
+     "the Prayer Book Rebellion"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "19 July",
+    "alt": [
+     "19th July"
+    ],
+    "d": [
+     "10 July",
+     "9 July",
+     "25 July"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "executed",
+    "alt": [],
+    "d": [
+     "pardoned",
+     "exiled",
+     "released"
+    ]
+   }
   ]
  },
  {
@@ -117,6 +394,45 @@
    "Matilda",
    "John Knox",
    "Marriage"
+  ],
+  "s": [
+   "Mary was the first Queen to rule in her own right; Matilda's claim had led to civil war in the 12th century.",
+   "John Knox's First Blast of the Trumpet (1558) compared female rulers to 'the blind leading those who can see'.",
+   "Marriage was a hurdle: a wife was expected to obey her husband."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Matilda",
+    "alt": [],
+    "d": [
+     "Jane Grey",
+     "Margaret Beaufort",
+     "Eleanor of Aquitaine"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "John Knox",
+    "alt": [
+     "Knox"
+    ],
+    "d": [
+     "John Calvin",
+     "John Foxe",
+     "Thomas Cranmer"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "obey",
+    "alt": [],
+    "d": [
+     "advise",
+     "support",
+     "succeed"
+    ]
+   }
   ]
  },
  {
@@ -132,6 +448,46 @@
    "faction",
    "Guildhall",
    "Jane Grey"
+  ],
+  "s": [
+   "Mary managed her Council effectively, with less faction than under Edward.",
+   "During Wyatt's Rebellion she stayed in London against the Council's advice and rallied Londoners with her Guildhall speech.",
+   "That Edward and Northumberland would make Jane Grey queen shows gender mattered less than religion."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "effectively",
+    "alt": [
+     "well",
+     "successfully"
+    ],
+    "d": [
+     "badly",
+     "reluctantly",
+     "arrogantly"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Guildhall",
+    "alt": [],
+    "d": [
+     "Westminster Hall",
+     "St Paul's",
+     "Tilbury"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "religion",
+    "alt": [],
+    "d": [
+     "wealth",
+     "age",
+     "foreign policy"
+    ]
+   }
   ]
  },
  {
@@ -147,6 +503,47 @@
    "xenophobic",
    "Charles V",
    "unhappily"
+  ],
+  "s": [
+   "A foreign marriage risked foreign wars and a xenophobic reaction, and Wyatt's Rebellion broke out in January 1554.",
+   "Philip, Mary's choice, was the son of Charles V, Holy Roman Emperor, offering a powerful Habsburg alliance.",
+   "It ended unhappily: after her phantom pregnancy Philip rarely visited, and felt only 'a reasonable regret' at her death."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Wyatt's Rebellion",
+    "alt": [
+     "Wyatt"
+    ],
+    "d": [
+     "Kett's Rebellion",
+     "the Pilgrimage of Grace",
+     "the Prayer Book Rebellion"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Habsburg",
+    "alt": [],
+    "d": [
+     "Valois",
+     "Burgundian",
+     "Medici"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "phantom pregnancy",
+    "alt": [
+     "false pregnancy"
+    ],
+    "d": [
+     "miscarriage",
+     "coronation",
+     "illness"
+    ]
+   }
   ]
  },
  {
@@ -162,6 +559,45 @@
    "King",
    "claim",
    "France"
+  ],
+  "s": [
+   "Philip was named King but had no power in his own right, and no Spaniards were to receive English offices or lands.",
+   "After Mary's death he would have no claim to the throne, and England would not be drawn into Spain's wars.",
+   "It failed: England was drawn into Spain's war with France and lost Calais in 1558."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Spaniards",
+    "alt": [],
+    "d": [
+     "Frenchmen",
+     "Italians",
+     "Flemings"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "no claim",
+    "alt": [
+     "no right"
+    ],
+    "d": [
+     "a regency claim",
+     "a joint claim",
+     "a lesser claim"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Calais",
+    "alt": [],
+    "d": [
+     "Boulogne",
+     "Tournai",
+     "Gascony"
+    ]
+   }
   ]
  },
  {
@@ -177,6 +613,45 @@
    "casual councillors",
    "Pole",
    "1555"
+  ],
+  "s": [
+   "Casual councillors were excluded from key committees in 1554, and an inner council of the most valued advisors followed in 1555.",
+   "Gardiner was a cautious realist, Paget an exceptional administrator and Pole a zealous Catholic.",
+   "The struggles were minor, and Gardiner's death in 1555 ended his moderating influence."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "inner council",
+    "alt": [
+     "inner Council"
+    ],
+    "d": [
+     "Star Chamber",
+     "Court of Requests",
+     "Council of the North"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "administrator",
+    "alt": [],
+    "d": [
+     "soldier",
+     "diplomat",
+     "financier"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "moderating",
+    "alt": [],
+    "d": [
+     "radicalising",
+     "persecuting",
+     "unifying"
+    ]
+   }
   ]
  },
  {
@@ -192,6 +667,45 @@
    "deathbed",
    "Philip",
    "Henry II"
+  ],
+  "s": [
+   "Mary died without an heir and reluctantly recognised Elizabeth, asking her to preserve the Catholic faith.",
+   "Philip of Spain did not press his claim, preferring a Protestant England to a Catholic one aligned with France.",
+   "Henry II of France proclaimed Mary Queen of Scots the true Queen of England."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "reluctantly",
+    "alt": [],
+    "d": [
+     "eagerly",
+     "gladly",
+     "immediately"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "France",
+    "alt": [],
+    "d": [
+     "Scotland",
+     "the Papacy",
+     "the Empire"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Henry II",
+    "alt": [
+     "Henry II of France"
+    ],
+    "d": [
+     "Francis I",
+     "Charles V",
+     "Philip II"
+    ]
+   }
   ]
  },
  {
@@ -207,6 +721,47 @@
    "illegitimacy",
    "Regency Council",
    "unfulfilled gifts"
+  ],
+  "s": [
+   "The 1543 Third Act of Succession named Mary, then Elizabeth, as heirs if Edward died without heirs; their illegitimacy was never reversed.",
+   "Henry's will set up a Regency Council of 16, balanced between reformists like Seymour and conservatives like Gardiner and Norfolk.",
+   "The 'unfulfilled gifts' clause let Seymour and Paget make Seymour Lord Protector against Henry's wishes."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Third",
+    "alt": [],
+    "d": [
+     "First",
+     "Second",
+     "Fourth"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Regency Council",
+    "alt": [
+     "regency council"
+    ],
+    "d": [
+     "Privy Council",
+     "Council of the North",
+     "Star Chamber"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "unfulfilled gifts",
+    "alt": [
+     "unfulfilled gifts clause"
+    ],
+    "d": [
+     "royal prerogative",
+     "regency",
+     "succession"
+    ]
+   }
   ]
  },
  {
@@ -222,6 +777,43 @@
    "Courtenay",
    "Philip",
    "division"
+  ],
+  "s": [
+   "Edward Courtenay, Earl of Devon, was championed by Gardiner as a powerful English noble with royal blood.",
+   "Philip of Spain was championed by Paget and was Mary's personal choice, but risked a xenophobic reaction.",
+   "An English noble would bring division and faction at court, and a foreign prince would bring entanglement in foreign wars."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Gardiner",
+    "alt": [],
+    "d": [
+     "Paget",
+     "Pole",
+     "Renard"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "xenophobic",
+    "alt": [],
+    "d": [
+     "Protestant",
+     "Catholic",
+     "aristocratic"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "faction",
+    "alt": [],
+    "d": [
+     "rebellion",
+     "inflation",
+     "excommunication"
+    ]
+   }
   ]
  },
  {
@@ -237,6 +829,45 @@
    "Gardiner",
    "Paget",
    "Pole"
+  ],
+  "s": [
+   "Stephen Gardiner, Bishop of Winchester, was a committed Catholic and cautious realist, imprisoned by Edward in 1551.",
+   "William Paget served Henry, Edward and Mary, an exceptional administrator not committed to religious change.",
+   "Cardinal Pole, a zealous Catholic returned from exile, favoured persecution while Gardiner stressed caution."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Winchester",
+    "alt": [],
+    "d": [
+     "Durham",
+     "Canterbury",
+     "London"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "William Paget",
+    "alt": [
+     "Paget"
+    ],
+    "d": [
+     "William Cecil",
+     "Thomas Wriothesley",
+     "John Russell"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "persecution",
+    "alt": [],
+    "d": [
+     "compromise",
+     "delay",
+     "toleration"
+    ]
+   }
   ]
  },
  {
@@ -252,6 +883,45 @@
    "Dissolution",
    "Six Articles",
    "Majority"
+  ],
+  "s": [
+   "Henry only accepted changes that brought money and power, such as the Dissolution of the Monasteries.",
+   "The 1539 Act of Six Articles kept Catholic doctrine, including transubstantiation and clerical celibacy.",
+   "Outside London and East Anglia, most people just wanted to worship as their ancestors had done."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Dissolution of the Monasteries",
+    "alt": [
+     "Dissolution"
+    ],
+    "d": [
+     "Act of Uniformity",
+     "Book of Common Prayer",
+     "Forty-Two Articles"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Six Articles",
+    "alt": [],
+    "d": [
+     "Ten Articles",
+     "Forty-Two Articles",
+     "Thirty-Nine Articles"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "East Anglia",
+    "alt": [],
+    "d": [
+     "Yorkshire",
+     "Cornwall",
+     "Wales"
+    ]
+   }
   ]
  },
  {
@@ -267,6 +937,45 @@
    "six years",
    "Hooper",
    "wills"
+  ],
+  "s": [
+   "By 1553 England was Protestant de jure, but de facto doubtful, as six years could not undo 1,000 years of Catholic worship.",
+   "Bishop Hooper's visitations found that 171 of 311 Gloucester clergymen could not recite the Ten Commandments.",
+   "Wills show little support for change outside London and East Anglia, and Catholicism was restored rapidly under Mary."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "de facto",
+    "alt": [],
+    "d": [
+     "in theory",
+     "on paper",
+     "pro forma"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "171",
+    "alt": [],
+    "d": [
+     "71",
+     "111",
+     "211"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Wills",
+    "alt": [
+     "wills"
+    ],
+    "d": [
+     "Sermons",
+     "Tax returns",
+     "Ballads"
+    ]
+   }
   ]
  },
  {
@@ -282,6 +991,43 @@
    "1529",
    "Papal authority",
    "ex-monastic land"
+  ],
+  "s": [
+   "Mary aimed to undo all religious change since 1529, restoring Papal authority and Catholic practices.",
+   "Advisors urged caution: Gardiner doubted Papal authority could be restored and Renard warned against rushing monastic property.",
+   "Parliament refused to repeal the Act of Supremacy in October 1553, and landowning MPs would not revive heresy laws until their ex-monastic land was safe."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "1529",
+    "alt": [],
+    "d": [
+     "1509",
+     "1534",
+     "1547"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Renard",
+    "alt": [],
+    "d": [
+     "Paget",
+     "Pole",
+     "Cranmer"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Act of Supremacy",
+    "alt": [],
+    "d": [
+     "Act of Uniformity",
+     "Treason Act",
+     "Act of Succession"
+    ]
+   }
   ]
  },
  {
@@ -297,6 +1043,43 @@
    "Repeal",
    "ex-monastic",
    "12 Decrees"
+  ],
+  "s": [
+   "The First Act of Repeal (1553) reversed Edward's changes, and the 1554 Royal Injunctions restored Catholic practices.",
+   "The Second Act of Repeal (November 1554) repealed all religious legislation since 1529, but ex-monastic land was not returned.",
+   "Pole's 12 Decrees (1556) banned absenteeism, pluralism and simony to improve the quality of the clergy."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Injunctions",
+    "alt": [],
+    "d": [
+     "Articles",
+     "Decrees",
+     "Visitations"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1529",
+    "alt": [],
+    "d": [
+     "1509",
+     "1534",
+     "1547"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "pluralism",
+    "alt": [],
+    "d": [
+     "iconoclasm",
+     "heresy",
+     "nepotism"
+    ]
+   }
   ]
  },
  {
@@ -312,6 +1095,47 @@
    "284",
    "Cranmer",
    "Foxe's"
+  ],
+  "s": [
+   "284 people were burned, mostly in the Protestant south-east, but there is little evidence it converted anyone.",
+   "At his burning in 1556, Cranmer put the hand that signed his recantation into the flames first.",
+   "About 800 Protestants fled abroad, where Calvinist ideas radicalised many of them."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "284",
+    "alt": [],
+    "d": [
+     "184",
+     "248",
+     "400"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "recantation",
+    "alt": [
+     "recant"
+    ],
+    "d": [
+     "confession",
+     "petition",
+     "oath"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Calvinist",
+    "alt": [
+     "Calvinism"
+    ],
+    "d": [
+     "Lutheran",
+     "Zwinglian",
+     "Catholic"
+    ]
+   }
   ]
  },
  {
@@ -327,6 +1151,43 @@
    "rebellion",
    "19,000",
    "heir"
+  ],
+  "s": [
+   "Much of the North had always stayed Catholic, so Catholic worship returned speedily with no religious rebellion.",
+   "Mary failed to suppress the Protestant underground; 19,000 copies of the Second Book of Common Prayer survived.",
+   "Mary produced no heir, so Catholicism did not triumph, but Elizabeth's slow restoration of Protestantism suggests significant de facto change."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "North",
+    "alt": [],
+    "d": [
+     "South East",
+     "East Anglia",
+     "London"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "19,000",
+    "alt": [],
+    "d": [
+     "1,900",
+     "9,000",
+     "90,000"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "de facto",
+    "alt": [],
+    "d": [
+     "de jure",
+     "dynastic",
+     "symbolic"
+    ]
+   }
   ]
  },
  {
@@ -342,6 +1203,43 @@
    "iconoclasm",
    "Six Articles",
    "Chantries"
+  ],
+  "s": [
+   "Royal injunctions encouraged iconoclasm in churches across England.",
+   "Repealing the Six Articles removed Catholic doctrine, and repealing the Treason Act meant dissenting preaching was no longer treason.",
+   "Chantries were dissolved as superstitious Catholic worship, which also brought the Crown revenue and land."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "iconoclasm",
+    "alt": [],
+    "d": [
+     "pilgrimage",
+     "processions",
+     "confession"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Treason Act",
+    "alt": [],
+    "d": [
+     "Act of Supremacy",
+     "Heresy Act",
+     "Act of Uniformity"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Chantries",
+    "alt": [],
+    "d": [
+     "Abbeys",
+     "Friaries",
+     "Pilgrim shrines"
+    ]
+   }
   ]
  },
  {
@@ -357,6 +1255,45 @@
    "Treason Laws",
    "First Book",
    "Purgatory"
+  ],
+  "s": [
+   "Repealing the Treason Laws opened a Pandora's Box: Calvinism, Zwinglianism and Lutheranism were all preached, confusing official doctrine.",
+   "Cranmer's First Book of Common Prayer was enforced by the First Act of Uniformity but was deliberately vague on Holy Communion, pleasing nobody.",
+   "Some Protestant practices were encouraged, but many Catholic survivals remained, such as belief in Purgatory."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Zwinglianism",
+    "alt": [
+     "Zwinglism"
+    ],
+    "d": [
+     "Anabaptism",
+     "Socinianism",
+     "Arminianism"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Cranmer",
+    "alt": [],
+    "d": [
+     "Gardiner",
+     "Ridley",
+     "Hooper"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Purgatory",
+    "alt": [],
+    "d": [
+     "Papal authority",
+     "indulgences",
+     "monasteries"
+    ]
+   }
   ]
  },
  {
@@ -372,6 +1309,43 @@
    "Ordinal",
    "Second Book",
    "forty-two"
+  ],
+  "s": [
+   "Northumberland sided with radicals and replaced leading Catholic clergy with Protestants through a new ordinal in 1550.",
+   "The Second Book of Common Prayer (1552) removed all Catholic practices and made Communion purely symbolic.",
+   "The Forty-Two Articles (1552) set out key doctrines, but Parliament never passed them before Edward died."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "ordinal",
+    "alt": [],
+    "d": [
+     "injunction",
+     "visitation",
+     "treason act"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "symbolic",
+    "alt": [],
+    "d": [
+     "sacrificial",
+     "miraculous",
+     "compulsory"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Forty-Two Articles",
+    "alt": [],
+    "d": [
+     "Six Articles",
+     "Ten Articles",
+     "Thirty-Nine Articles"
+    ]
+   }
   ]
  },
  {
@@ -387,6 +1361,43 @@
    "Malthusian Crisis",
    "debasement",
    "enclosure"
+  ],
+  "s": [
+   "Population rose from 2.3 to 3 million between 1525 and 1551, outstripping agricultural productivity and pushing up food prices.",
+   "Henry VIII debased the coinage to fund wars, and Somerset continued debasement for the Scottish war, worsening inflation.",
+   "Enclosure turned arable land over to sheep for the cloth market, giving less food and more unemployment."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "3 million",
+    "alt": [],
+    "d": [
+     "4 million",
+     "3.5 million",
+     "5 million"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Scottish war",
+    "alt": [],
+    "d": [
+     "French war",
+     "Irish campaign",
+     "Welsh campaign"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "arable",
+    "alt": [],
+    "d": [
+     "woodland",
+     "marshland",
+     "heath"
+    ]
+   }
   ]
  },
  {
@@ -402,6 +1413,45 @@
    "John Hales",
    "Vagrancy Act",
    "ignorance"
+  ],
+  "s": [
+   "Somerset commissioned John Hales to investigate enclosures in 1548 and imposed a 5% Sheep Tax, raising hopes he could not meet.",
+   "The 1547 Vagrancy Act punished a first offence with two years' slavery and a second with life: punishment, not relief.",
+   "The government misunderstood the Great Price Rise beyond enclosure and kept debasing coinage to fund the Scottish war."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "John Hales",
+    "alt": [
+     "Hales"
+    ],
+    "d": [
+     "Thomas Smith",
+     "William Paget",
+     "Hugh Latimer"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "slavery",
+    "alt": [],
+    "d": [
+     "transportation",
+     "imprisonment",
+     "branding"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Scottish war",
+    "alt": [],
+    "d": [
+     "French war",
+     "Irish campaign",
+     "Welsh campaign"
+    ]
+   }
   ]
  },
  {
@@ -417,6 +1467,43 @@
    "many-headed monster",
    "Scottish border",
    "London"
+  ],
+  "s": [
+   "In 1549, the 'year of the many-headed monster', over half of English counties saw unrest, the most widespread of the Tudor period.",
+   "Thousands of soldiers were diverted from the Scottish border, and 3,000 Western rebels were ordered executed.",
+   "Neither rebellion marched on London: demands were polite and anger was aimed at local gentry, not the Crown."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "half",
+    "alt": [],
+    "d": [
+     "a third",
+     "two-thirds",
+     "three-quarters"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "3,000",
+    "alt": [],
+    "d": [
+     "300",
+     "1,000",
+     "30,000"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "gentry",
+    "alt": [],
+    "d": [
+     "bishops",
+     "councillors",
+     "foreigners"
+    ]
+   }
   ]
  },
  {
@@ -432,6 +1519,47 @@
    "Flowerdew",
    "demands",
    "6%"
+  ],
+  "s": [
+   "A mob attacked John Flowerdew's enclosures, and he redirected the protest to Robert Kett, a gentleman who had himself enclosed land.",
+   "Demands centred on enclosure, high rents and absent or uneducated clergy, and were written politely to Somerset as the Good Duke.",
+   "In Norfolk, 6% owned 60% of the land, reflecting genuine economic inequality, not just political opportunism."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Flowerdew",
+    "alt": [
+     "John Flowerdew"
+    ],
+    "d": [
+     "Hales",
+     "Wyatt",
+     "Russell"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "clergy",
+    "alt": [],
+    "d": [
+     "JPs",
+     "sheriffs",
+     "magistrates"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "60%",
+    "alt": [
+     "60 per cent"
+    ],
+    "d": [
+     "40%",
+     "50%",
+     "80%"
+    ]
+   }
   ]
  },
  {
@@ -447,6 +1575,45 @@
    "16,000",
    "well-disciplined",
    "Dussindale"
+  ],
+  "s": [
+   "16,000 rebels met in July 1549, camped at Mousehold Heath and stormed Norwich, hoping Somerset championed the poor.",
+   "Kett's camp was well disciplined, with Kett keeping order and dispensing justice.",
+   "Warwick arrived with 12,000 troops from the Scottish war and massacred the rebels at Dussindale, killing 3,000 and executing 49 leaders."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Mousehold Heath",
+    "alt": [
+     "Mousehold"
+    ],
+    "d": [
+     "Bodmin Moor",
+     "Sampford Courtenay",
+     "Salisbury Plain"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "disciplined",
+    "alt": [],
+    "d": [
+     "chaotic",
+     "divided",
+     "leaderless"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Dussindale",
+    "alt": [],
+    "d": [
+     "Sampford Courtenay",
+     "Pinkie Cleugh",
+     "Bosworth"
+    ]
+   }
   ]
  },
  {
@@ -462,6 +1629,45 @@
    "William Body",
    "Kill all",
    "Cornish"
+  ],
+  "s": [
+   "Rebels resisted Protestant reforms: William Body was murdered in 1548 for overseeing iconoclasm in Helston.",
+   "Demands were almost entirely religious, drawn up by literate local clergy, who dismissed the new service as a 'Christmas game'.",
+   "The Cornish resented central government and saw themselves as a distinct nation, as in the 1497 rebellion crushed by Henry VII."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "William Body",
+    "alt": [
+     "Body"
+    ],
+    "d": [
+     "John Hales",
+     "Humphrey Arundell",
+     "Lord Russell"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "clergy",
+    "alt": [],
+    "d": [
+     "gentry",
+     "merchants",
+     "lawyers"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1497",
+    "alt": [],
+    "d": [
+     "1487",
+     "1450",
+     "1536"
+    ]
+   }
   ]
  },
  {
@@ -477,6 +1683,46 @@
    "Exeter",
    "Sampford Courtenay",
    "leadership"
+  ],
+  "s": [
+   "Rebels besieged Exeter for a month, and local militia failed to suppress the revolt.",
+   "A government force of 8,000 under Lord John Russell defeated the rebels at Sampford Courtenay, and over 3,000 were executed.",
+   "It failed through lack of clear leadership, with different sections attacking different targets, unlike the more organised Kett's Rebellion."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Exeter",
+    "alt": [],
+    "d": [
+     "Plymouth",
+     "Truro",
+     "Bristol"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Lord John Russell",
+    "alt": [
+     "John Russell",
+     "Russell"
+    ],
+    "d": [
+     "Lord Warwick",
+     "Lord Paget",
+     "Lord Wriothesley"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "leadership",
+    "alt": [],
+    "d": [
+     "weapons",
+     "numbers",
+     "funding"
+    ]
+   }
   ]
  },
  {
@@ -492,6 +1738,45 @@
    "Xenophobic",
    "Protestant",
    "cloth trade"
+  ],
+  "s": [
+   "The ostensible cause was Mary's marriage to Philip of Spain: fears of xenophobia, Spanish patronage and entanglement in Habsburg wars.",
+   "Xenophobia may have masked other causes: the rebellion began in Protestant Kent and aimed to replace Mary with Elizabeth.",
+   "The cloth trade collapsed, causing unemployment in Kent, which had rebelled before in 1381 and 1450."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Philip of Spain",
+    "alt": [
+     "Philip"
+    ],
+    "d": [
+     "Edward Courtenay",
+     "Charles V",
+     "Henry II"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Kent",
+    "alt": [],
+    "d": [
+     "Norfolk",
+     "Devon",
+     "Yorkshire"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "cloth trade",
+    "alt": [],
+    "d": [
+     "wine trade",
+     "iron trade",
+     "fishing industry"
+    ]
+   }
   ]
  },
  {
@@ -507,6 +1792,46 @@
    "Englishmen",
    "Courtenay",
    "Guildhall"
+  ],
+  "s": [
+   "Government soldiers deserted Norfolk to join Wyatt with the cry 'We are all Englishmen!', and Wyatt reached the gates of London.",
+   "Courtenay revealed the plot to Gardiner, forcing Wyatt to rise too early in January, and French support never materialised.",
+   "Mary's Guildhall speech secured London's loyalty, and Wyatt did not implicate Elizabeth even under torture."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Norfolk",
+    "alt": [
+     "the Duke of Norfolk",
+     "Duke of Norfolk"
+    ],
+    "d": [
+     "Suffolk",
+     "Arundel",
+     "Paget"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Courtenay",
+    "alt": [],
+    "d": [
+     "Paget",
+     "Elizabeth",
+     "Pole"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Guildhall",
+    "alt": [],
+    "d": [
+     "Westminster",
+     "Tower",
+     "Whitehall"
+    ]
+   }
   ]
  },
  {
@@ -521,6 +1846,45 @@
    "bishops",
    "prorogued",
    "three votes"
+  ],
+  "s": [
+   "Catholic bishops and lay nobles in the Lords threatened to block the settlement, objecting to 'Head of the Church'.",
+   "Elizabeth prorogued Parliament over Easter 1559, arrested the Bishops of Lincoln and Winchester, and compromised on 'Supreme Governor'.",
+   "The settlement passed the Lords by just three votes, and Marian bishops who refused the Oath of Loyalty were removed."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Head of the Church",
+    "alt": [],
+    "d": [
+     "Defender of the Faith",
+     "Protector of the Realm",
+     "Lord of the Church"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Supreme Governor",
+    "alt": [],
+    "d": [
+     "Lord Protector",
+     "Defender of the Faith",
+     "Servant of the Church"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "three",
+    "alt": [
+     "3"
+    ],
+    "d": [
+     "one",
+     "five",
+     "ten"
+    ]
+   }
   ]
  },
  {
@@ -535,6 +1899,47 @@
    "Strickland",
    "Cope",
    "Neale"
+  ],
+  "s": [
+   "In 1571 Walter Strickland tried to remove vestments and kneeling from the Prayer Book and was barred from Parliament.",
+   "In 1586 Cope proposed a 'bill and book' for a Genevan Prayer Book and no bishops; he and four supporters went to the Tower.",
+   "J.E. Neale saw Cope and Strickland as an organised 'Puritan Choir', a view Elton challenged."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Strickland",
+    "alt": [
+     "Walter Strickland"
+    ],
+    "d": [
+     "Wentworth",
+     "Cartwright",
+     "Field"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Genevan",
+    "alt": [],
+    "d": [
+     "Zurich",
+     "Lutheran",
+     "Roman"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Puritan Choir",
+    "alt": [
+     "Choir"
+    ],
+    "d": [
+     "Puritan Chorus",
+     "Puritan Party",
+     "Puritan Caucus"
+    ]
+   }
   ]
  },
  {
@@ -549,6 +1954,43 @@
    "Vestiarian",
    "39 Articles",
    "prophesying"
+  ],
+  "s": [
+   "Puritans despised vestments; Parker's 1566 Advertisements compromised, but 37 clergy who refused lost their jobs.",
+   "Puritans tried to alter the 39 Articles in Convocation in 1563, but the Anglican articles passed by only one vote.",
+   "Prophesying and classis movements of the 1570s and 1580s spread Calvinist and Presbyterian ideals among clergy until Whitgift suppressed them."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Advertisements",
+    "alt": [],
+    "d": [
+     "Injunctions",
+     "Articles",
+     "Visitations"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Convocation",
+    "alt": [],
+    "d": [
+     "Parliament",
+     "the Privy Council",
+     "the Star Chamber"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Whitgift",
+    "alt": [],
+    "d": [
+     "Parker",
+     "Grindal",
+     "Bancroft"
+    ]
+   }
   ]
  },
  {
@@ -563,6 +2005,47 @@
    "Cartwright",
    "Marprelate",
    "Separatist"
+  ],
+  "s": [
+   "Cartwright's Presbyterian lectures at Cambridge in 1570 denounced Church hierarchy and cost him his professorship.",
+   "Field and Wilcox's Admonition to Parliament (1572) called for an end to episcopacy; the Marprelate Tracts of 1588-89 alienated moderates.",
+   "Separatists were suppressed: Robert Browne's 1581 church in Norwich, and Barrow and Greenwood's movement, whose leaders were executed in 1593."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Cartwright",
+    "alt": [
+     "Thomas Cartwright"
+    ],
+    "d": [
+     "Strickland",
+     "Browne",
+     "Barrow"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Admonition to Parliament",
+    "alt": [
+     "Admonition"
+    ],
+    "d": [
+     "Supplication to Parliament",
+     "Petition to Parliament",
+     "Remonstrance to Parliament"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Norwich",
+    "alt": [],
+    "d": [
+     "Cambridge",
+     "London",
+     "Geneva"
+    ]
+   }
   ]
  },
  {
@@ -577,6 +2060,47 @@
    "tolerance",
    "Philip",
    "parliament"
+  ],
+  "s": [
+   "A 1 shilling fine was the sole recusancy punishment, as Elizabeth would not 'open windows unto men's souls'.",
+   "Philip of Spain persuaded Pope Pius IV not to excommunicate Elizabeth in 1563, fearing France would gain England.",
+   "Elizabeth resisted harsher punishments and decreed that nobody would be asked to swear the Oath of Supremacy twice."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "1 shilling",
+    "alt": [
+     "one shilling",
+     "1s",
+     "12 pence"
+    ],
+    "d": [
+     "5 shillings",
+     "1 pound",
+     "1 penny"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Pius IV",
+    "alt": [],
+    "d": [
+     "Pius V",
+     "Paul IV",
+     "Gregory XIII"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "twice",
+    "alt": [],
+    "d": [
+     "three times",
+     "annually",
+     "publicly"
+    ]
+   }
   ]
  },
  {
@@ -591,6 +2115,43 @@
    "Douai",
    "650",
    "priest holes"
+  ],
+  "s": [
+   "William Allen's English College at Douai trained seminary priests, who arrived in England from 1574; 279 had come by 1585.",
+   "From the 1580s Jesuits also arrived, sheltered by Catholic gentry in priest holes.",
+   "This undermined Elizabeth's hope that Catholicism would 'wither on the vine', as a new generation of priests revitalised the religion."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Douai",
+    "alt": [],
+    "d": [
+     "Louvain",
+     "Paris",
+     "Padua"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "gentry",
+    "alt": [],
+    "d": [
+     "merchants",
+     "clergy",
+     "peasants"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "revitalised",
+    "alt": [],
+    "d": [
+     "suppressed",
+     "divided",
+     "funded"
+    ]
+   }
   ]
  },
  {
@@ -605,6 +2166,45 @@
    "Legislation",
    "Habsburg-Valois",
    "45-year"
+  ],
+  "s": [
+   "Legislation was effective: after initial tolerance most Catholics conformed, and later reprisals were broadly effective.",
+   "Foreign support was weak: Habsburg-Valois rivalry prevented coordinated Catholic action until the late 1580s, and the 1588 Armada failure boosted Protestantism.",
+   "Elizabeth's 45-year reign was decisive: the Marian Catholic establishment died out and a new generation grew up under the Settlement."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "conformed",
+    "alt": [],
+    "d": [
+     "emigrated",
+     "rebelled",
+     "converted"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Habsburg-Valois",
+    "alt": [],
+    "d": [
+     "Anglo-Spanish",
+     "Franco-Scottish",
+     "Burgundian-Papal"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "45",
+    "alt": [
+     "forty-five"
+    ],
+    "d": [
+     "25",
+     "35",
+     "55"
+    ]
+   }
   ]
  },
  {
@@ -619,6 +2219,46 @@
    "Marian exiles",
    "bishops",
    "personal beliefs"
+  ],
+  "s": [
+   "Returning Marian exiles, radicalised in Zurich, Frankfurt and Geneva, denied the monarch any role in the Church.",
+   "All the powerful bishops Elizabeth inherited were Catholic, and about one-third of the nobility and gentry privately kept the Catholic faith.",
+   "Elizabeth was raised Protestant but found radical Protestantism tedious and liked the ceremonial side of Catholicism."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Geneva",
+    "alt": [],
+    "d": [
+     "Rome",
+     "Wittenberg",
+     "Antwerp"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "one-third",
+    "alt": [
+     "a third",
+     "1/3"
+    ],
+    "d": [
+     "one-tenth",
+     "half",
+     "two-thirds"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "ceremonial",
+    "alt": [],
+    "d": [
+     "doctrinal",
+     "financial",
+     "political"
+    ]
+   }
   ]
  },
  {
@@ -633,6 +2273,45 @@
    "Habsburg-Valois rivalry",
    "Dauphin",
    "Protestant Lords"
+  ],
+  "s": [
+   "Spain and France were both Catholic, but Habsburg-Valois rivalry kept them hostile, and Elizabeth's future depended on it.",
+   "Mary Queen of Scots was married to the Dauphin Francis, and Henry II of France presented her as England's true Queen.",
+   "Many Catholics saw Elizabeth as illegitimate because the Pope refused Henry VIII's divorce, and in 1559 Protestant Lords overthrew Mary of Guise."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "rivalry",
+    "alt": [],
+    "d": [
+     "alliance",
+     "marriage",
+     "treaty"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Francis",
+    "alt": [
+     "Francis II"
+    ],
+    "d": [
+     "Charles",
+     "Philip",
+     "Louis"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Mary of Guise",
+    "alt": [],
+    "d": [
+     "Mary Queen of Scots",
+     "Catherine de Medici",
+     "Margaret Tudor"
+    ]
+   }
   ]
  },
  {
@@ -647,6 +2326,46 @@
    "Supreme Governor",
    "episcopal hierarchy",
    "oath"
+  ],
+  "s": [
+   "It removed the Pope's authority and made Elizabeth Supreme Governor, avoiding the title 'Supreme Head' that offended some.",
+   "Elizabeth ruled a strict episcopal hierarchy of Archbishops and Bishops.",
+   "Clergy and royal officials had to swear an oath of loyalty, and Elizabeth did not enforce Parliament's capital punishment for refusal."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Supreme Governor",
+    "alt": [],
+    "d": [
+     "Defender of the Faith",
+     "Lord Protector",
+     "Head of State"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "episcopal",
+    "alt": [],
+    "d": [
+     "presbyterian",
+     "congregational",
+     "synodal"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "capital punishment",
+    "alt": [
+     "the death penalty",
+     "execution"
+    ],
+    "d": [
+     "a fine",
+     "imprisonment",
+     "exile"
+    ]
+   }
   ]
  },
  {
@@ -661,6 +2380,47 @@
    "Black Rubric",
    "Visitations",
    "recusancy"
+  ],
+  "s": [
+   "Cranmer's 1552 Prayer Book was used, but the 'Black Rubric' denying Transubstantiation was omitted, leaving the question deliberately ambiguous.",
+   "Bishops carried out visitations to check churches followed the Church of England style set out in the Royal Injunctions.",
+   "Everyone had to attend a licensed Church of England church on Sundays or pay a 1 shilling recusancy fine."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "1552",
+    "alt": [],
+    "d": [
+     "1549",
+     "1559",
+     "1553"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "visitations",
+    "alt": [],
+    "d": [
+     "synods",
+     "councils",
+     "inquisitions"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1 shilling",
+    "alt": [
+     "one shilling",
+     "1s",
+     "12 pence"
+    ],
+    "d": [
+     "1 pound",
+     "6 pence",
+     "5 shillings"
+    ]
+   }
   ]
  },
  {
@@ -675,6 +2435,47 @@
    "taxes",
    "vestments",
    "via media"
+  ],
+  "s": [
+   "First Fruits and Tenths were paid to the Crown, and the small monasteries Mary had restored were dissolved again.",
+   "Clergy had to wear vestments but could marry, and music and images such as statues and stained glass were accepted.",
+   "Elizabeth called the settlement Via Media, the 'middle way', a compromise designed to end religious conflict."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "First Fruits and Tenths",
+    "alt": [
+     "First Fruits"
+    ],
+    "d": [
+     "Subsidies and Fifteenths",
+     "Ship Money",
+     "Purveyance"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "images",
+    "alt": [
+     "statues"
+    ],
+    "d": [
+     "incense",
+     "candles",
+     "relics"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Via Media",
+    "alt": [],
+    "d": [
+     "Magna Carta",
+     "Pax Romana",
+     "Ad Fontes"
+    ]
+   }
   ]
  },
  {
@@ -689,6 +2490,45 @@
    "chaplain",
    "39 Articles",
    "Advertisements"
+  ],
+  "s": [
+   "Parker was Anne Boleyn's chaplain, a Protestant who stayed in England under Mary and was not radicalised by Calvinism.",
+   "He defended the Settlement, passing the 39 Articles at Convocation in 1563 and resisting radical Puritan changes.",
+   "In his 1566 Advertisements he compromised with Puritans: clergy could wear just a 'comely surplice with long sleeves' at Communion."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Anne Boleyn",
+    "alt": [],
+    "d": [
+     "Catherine of Aragon",
+     "Jane Seymour",
+     "Catherine Parr"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "39 Articles",
+    "alt": [
+     "Thirty-Nine Articles"
+    ],
+    "d": [
+     "Six Articles",
+     "Forty-Two Articles",
+     "Ten Articles"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "surplice",
+    "alt": [],
+    "d": [
+     "cope",
+     "chasuble",
+     "alb"
+    ]
+   }
   ]
  },
  {
@@ -703,6 +2543,45 @@
    "Marian exile",
    "obey God",
    "tolerate"
+  ],
+  "s": [
+   "Edmund Grindal (1575-83), a former Marian exile sympathetic to Puritans, clashed with Elizabeth over prophesyings, unlicensed clergy meetings.",
+   "Ordered to suppress prophesyings in 1576, he refused, saying he must 'obey God rather than man', and was suspended in 1577.",
+   "He stayed suspended until his death in 1583, showing Elizabeth tolerated no challenge to her control of the Church."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "prophesyings",
+    "alt": [
+     "prophesying"
+    ],
+    "d": [
+     "visitations",
+     "conventicles",
+     "synods"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "refused",
+    "alt": [],
+    "d": [
+     "agreed",
+     "delayed",
+     "resigned"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "control",
+    "alt": [],
+    "d": [
+     "wealth",
+     "doctrine",
+     "succession"
+    ]
+   }
   ]
  },
  {
@@ -717,6 +2596,47 @@
    "Three Articles",
    "Marprelate Tracts",
    "black husband"
+  ],
+  "s": [
+   "Whitgift used the Court of High Commission against non-conformist clergy and required subscription to the Three Articles.",
+   "About 300 Puritan clergy were removed or suspended, but the Marprelate Tracts of 1588-89 showed resistance was not broken.",
+   "Elizabeth fully supported Whitgift, calling him her 'black husband', and repression contained the Puritan challenge without eliminating it."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Court of High Commission",
+    "alt": [
+     "High Commission"
+    ],
+    "d": [
+     "Star Chamber",
+     "Court of Requests",
+     "Court of Wards"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "300",
+    "alt": [
+     "three hundred"
+    ],
+    "d": [
+     "30",
+     "100",
+     "3,000"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "black husband",
+    "alt": [],
+    "d": [
+     "black knight",
+     "dark archbishop",
+     "little prelate"
+    ]
+   }
   ]
  },
  {
@@ -731,6 +2651,45 @@
    "Norfolk",
    "Durham",
    "Sussex"
+  ],
+  "s": [
+   "A plot to marry Mary to the Duke of Norfolk was uncovered, and the Catholic northern earls of Northumberland and Westmoreland rose.",
+   "The rebels captured Durham and held a Catholic Latin mass in the Cathedral, but no other Catholic nobles answered their summons.",
+   "The Earl of Sussex marched north and the rebels fled without a battle; Elizabeth executed 450 rebels."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Westmoreland",
+    "alt": [
+     "Westmorland"
+    ],
+    "d": [
+     "Derby",
+     "Shrewsbury",
+     "Cumberland"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Durham",
+    "alt": [],
+    "d": [
+     "York",
+     "Carlisle",
+     "Lincoln"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Sussex",
+    "alt": [],
+    "d": [
+     "Leicester",
+     "Pembroke",
+     "Warwick"
+    ]
+   }
   ]
  },
  {
@@ -745,6 +2704,45 @@
    "Darnley",
    "figurehead",
    "Pius V"
+  ],
+  "s": [
+   "Mary Queen of Scots abdicated in 1567 over suspected involvement in Darnley's murder, and fled to England in 1568.",
+   "She was Elizabeth's cousin and next in line, and her presence in the Catholic North made her a figurehead for plots.",
+   "In 1570 Pius V's Regnans in Excelsis excommunicated Elizabeth, turning Catholic non-conformity into potential treachery."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Darnley",
+    "alt": [
+     "Lord Darnley"
+    ],
+    "d": [
+     "Rizzio",
+     "Moray",
+     "Huntly"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "figurehead",
+    "alt": [],
+    "d": [
+     "prisoner",
+     "hostage",
+     "martyr"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Regnans in Excelsis",
+    "alt": [],
+    "d": [
+     "Cum Nos",
+     "Exsurge Domine",
+     "Unam Sanctam"
+    ]
+   }
   ]
  },
  {
@@ -759,6 +2757,45 @@
    "Ridolfi",
    "Throckmorton",
    "Babington"
+  ],
+  "s": [
+   "The 1571 Ridolfi Plot involved the Pope, Philip II and Norfolk, who was executed in 1572.",
+   "The 1583 Throckmorton Plot, uncovered by Walsingham, led to the 1584 Bond of Association, pledging to execute anyone implicated in future plots.",
+   "The 1586 Babington Plot planned Elizabeth's assassination and invasion, and Walsingham's evidence against Mary led to her execution in February 1587."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Ridolfi",
+    "alt": [],
+    "d": [
+     "Parry",
+     "Lopez",
+     "Stafford"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Bond of Association",
+    "alt": [],
+    "d": [
+     "Act of Association",
+     "Oath of Loyalty",
+     "Treason Act"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "February 1587",
+    "alt": [
+     "Feb 1587"
+    ],
+    "d": [
+     "February 1586",
+     "March 1587",
+     "February 1588"
+    ]
+   }
   ]
  },
  {
@@ -773,6 +2810,47 @@
    "Walsingham",
    "1585",
    "133"
+  ],
+  "s": [
+   "Walsingham's spies tracked missionary priests, and Edmund Campion, captured in 1581, racked and executed, became the most famous Catholic martyr.",
+   "In 1581 recusancy fines rose to £20 a month, and in 1585 priests were expelled and harbouring one became a capital offence.",
+   "133 seminary priests and Jesuits were executed, but persecution created martyrs and recusant numbers did not significantly fall."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Campion",
+    "alt": [
+     "Edmund Campion"
+    ],
+    "d": [
+     "Persons",
+     "Allen",
+     "Southwell"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "£20",
+    "alt": [
+     "20 pounds"
+    ],
+    "d": [
+     "£2",
+     "£10",
+     "£200"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "martyrs",
+    "alt": [],
+    "d": [
+     "converts",
+     "heretics",
+     "exiles"
+    ]
+   }
   ]
  },
  {
@@ -787,6 +2865,49 @@
    "gender",
    "Amy Robsart",
    "Dutch"
+  ],
+  "s": [
+   "Elizabeth stayed aloof, delayed decisions and favoured no faction, so councillors competed for her approval, and she used her gender as leverage.",
+   "In 1565-66 Leicester quarrelled with Norfolk and Sussex, almost to violence, until Elizabeth made clear she would not marry him.",
+   "From 1578 to 1585 the Dutch Revolt divided the Council: Leicester and Walsingham urged intervention, Burghley caution."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "aloof",
+    "alt": [],
+    "d": [
+     "partisan",
+     "absent",
+     "hostile"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Leicester",
+    "alt": [
+     "Robert Dudley",
+     "Dudley"
+    ],
+    "d": [
+     "Burghley",
+     "Hatton",
+     "Walsingham"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Burghley",
+    "alt": [
+     "Cecil",
+     "Lord Burghley"
+    ],
+    "d": [
+     "Hatton",
+     "Sussex",
+     "Mildmay"
+    ]
+   }
   ]
  },
  {
@@ -801,6 +2922,43 @@
    "buried alive",
    "faction",
    "personal experience"
+  ],
+  "s": [
+   "Elizabeth resented sharing power and said naming a successor was being 'buried alive', as enemies would plot around that person.",
+   "Marriage choices were almost impossible: a foreign monarch risked entanglement, an English noble would create faction, and almost all candidates were Catholic.",
+   "Her mother and stepmother Catherine Howard were executed, and her sister's marriage brought war and humiliation."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "buried alive",
+    "alt": [],
+    "d": [
+     "sold abroad",
+     "crowned twice",
+     "made a prisoner"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Catholic",
+    "alt": [],
+    "d": [
+     "Protestant",
+     "Spanish",
+     "French"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Catherine Howard",
+    "alt": [],
+    "d": [
+     "Jane Seymour",
+     "Catherine Parr",
+     "Anne of Cleves"
+    ]
+   }
   ]
  },
  {
@@ -815,6 +2973,47 @@
    "Bond",
    "James VI",
    "Cecil"
+  ],
+  "s": [
+   "The 1584 Bond of Association pledged to kill anyone linked to plots against Elizabeth, and Mary was executed in 1587.",
+   "Elizabeth never named a successor but tacitly acknowledged James VI would succeed, managing expectations without a formal declaration.",
+   "James I's peaceful succession in 1603 vindicated her deliberate ambiguity, and Cecil had corresponded secretly with James for years."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "1584",
+    "alt": [],
+    "d": [
+     "1581",
+     "1586",
+     "1589"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "James VI",
+    "alt": [
+     "James"
+    ],
+    "d": [
+     "Arbella Stuart",
+     "Edward Seymour",
+     "Henry Hastings"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Cecil",
+    "alt": [
+     "William Cecil"
+    ],
+    "d": [
+     "Walsingham",
+     "Hatton",
+     "Leicester"
+    ]
+   }
   ]
  },
  {
@@ -829,6 +3028,43 @@
    "Royal Assent",
    "parliament",
    "prerogative"
+  ],
+  "s": [
+   "The monarch derived power directly from God, and all legislation needed Royal Assent, an absolute right of veto.",
+   "The monarch could issue Royal Proclamations and call, prorogue and dissolve Parliament at will.",
+   "The Royal Prerogative covered matters only the monarch could decide: religion, war, succession and foreign policy."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Royal Assent",
+    "alt": [],
+    "d": [
+     "Royal Warrant",
+     "Parliamentary approval",
+     "Privy Council consent"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "prorogue",
+    "alt": [],
+    "d": [
+     "impeach",
+     "elect",
+     "fund"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "succession",
+    "alt": [],
+    "d": [
+     "taxation",
+     "local government",
+     "legislation"
+    ]
+   }
   ]
  },
  {
@@ -843,6 +3079,47 @@
    "advisors",
    "taxation",
    "Prerogative"
+  ],
+  "s": [
+   "The Privy Council had at most 20 members and met several times a week, dominated by William Cecil.",
+   "Parliament could pass laws more permanent than a proclamation and approved taxation, but met only ten times in the reign.",
+   "Parliament increasingly debated religion, marriage and succession, which Elizabeth saw as Royal Prerogative, a tension inherited by the Stuarts."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "20",
+    "alt": [
+     "twenty"
+    ],
+    "d": [
+     "10",
+     "30",
+     "40"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "ten",
+    "alt": [
+     "10"
+    ],
+    "d": [
+     "three",
+     "twenty",
+     "thirty"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Stuarts",
+    "alt": [],
+    "d": [
+     "Hanoverians",
+     "Plantagenets",
+     "Lancastrians"
+    ]
+   }
   ]
  },
  {
@@ -857,6 +3134,43 @@
    "Secretary",
    "Religious Settlement",
    "pragmatic"
+  ],
+  "s": [
+   "William Cecil was Elizabeth's principal adviser until his death in 1598: Secretary of State until 1572, then Lord Treasurer.",
+   "He helped draft the Religious Settlement, ran the Privy Council and created an intelligence service to uncover plots.",
+   "Cautious and pragmatic by nature, his prudence often matched Elizabeth's instincts."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Lord Treasurer",
+    "alt": [],
+    "d": [
+     "Lord Chancellor",
+     "Lord Chamberlain",
+     "Lord Admiral"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "intelligence service",
+    "alt": [],
+    "d": [
+     "standing army",
+     "royal navy",
+     "tax system"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "pragmatic",
+    "alt": [],
+    "d": [
+     "radical",
+     "zealous",
+     "reckless"
+    ]
+   }
   ]
  },
  {
@@ -871,6 +3185,43 @@
    "prorogue",
    "Royal Veto",
    "Privy Council"
+  ],
+  "s": [
+   "Elizabeth could dissolve a Parliament she disapproved of, or prorogue it, suspending proceedings while pressure was put on MPs.",
+   "She and the Privy Council influenced the choice of Speaker, who controlled debates, and could veto bills or arrest MPs.",
+   "Councillors were expected to promote Elizabeth's wishes in Parliament, where many were prominent politicians who dominated business."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "prorogue",
+    "alt": [],
+    "d": [
+     "impeach",
+     "summon",
+     "elect"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Speaker",
+    "alt": [],
+    "d": [
+     "Clerk",
+     "Chancellor",
+     "Serjeant"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "promote",
+    "alt": [],
+    "d": [
+     "oppose",
+     "amend",
+     "delay"
+    ]
+   }
   ]
  },
  {
@@ -885,6 +3236,45 @@
    "prorogued",
    "Strickland's",
    "Cope's"
+  ],
+  "s": [
+   "The Settlement nearly failed in 1559, opposed by Catholic bishops and lords, until Elizabeth prorogued Parliament and arrested critics.",
+   "Strickland's Bill (1571) to alter the Prayer Book infringed the Royal Prerogative and was never seen again.",
+   "Cope's 'bill and book' (1586) proposed no bishops; Hatton led the Council against it and Cope went to the Tower."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "prorogued",
+    "alt": [],
+    "d": [
+     "dissolved",
+     "summoned",
+     "dismissed"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Royal Prerogative",
+    "alt": [],
+    "d": [
+     "Act of Supremacy",
+     "Act of Uniformity",
+     "Statute of Praemunire"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Hatton",
+    "alt": [
+     "Christopher Hatton"
+    ],
+    "d": [
+     "Walsingham",
+     "Leicester",
+     "Sussex"
+    ]
+   }
   ]
  },
  {
@@ -899,6 +3289,47 @@
    "Paul Wentworth",
    "devil",
    "1596"
+  ],
+  "s": [
+   "Peter Wentworth and his brother Paul argued that Parliament could discuss religion and the succession, which Elizabeth defended as Royal Prerogative.",
+   "In 1576 Wentworth compared Elizabeth's involvement to 'the work of the devil', and the Commons itself sent him to the Tower.",
+   "In 1593 Wentworth went to the Tower for demanding Parliament's right to examine succession candidates, and died there in 1596."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Wentworth",
+    "alt": [
+     "Peter Wentworth"
+    ],
+    "d": [
+     "Strickland",
+     "Cope",
+     "Hatton"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "the Commons",
+    "alt": [
+     "Commons"
+    ],
+    "d": [
+     "the Privy Council",
+     "the Lords",
+     "the Star Chamber"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1596",
+    "alt": [],
+    "d": [
+     "1589",
+     "1599",
+     "1603"
+    ]
+   }
   ]
  },
  {
@@ -913,6 +3344,45 @@
    "1559",
    "smallpox",
    "Babington"
+  ],
+  "s": [
+   "Many MPs feared Elizabeth dying unmarried would leave the throne to Catholic Mary Queen of Scots, and petitioned her in 1559 and 1563.",
+   "In 1566 MPs tied a marriage demand to the subsidy bill after Elizabeth's smallpox in 1562, and she reaffirmed succession as her prerogative.",
+   "After the Babington Plot, Parliament pressed for Mary's execution, which came in February 1587."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "1563",
+    "alt": [],
+    "d": [
+     "1561",
+     "1566",
+     "1571"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "smallpox",
+    "alt": [],
+    "d": [
+     "measles",
+     "plague",
+     "sweating sickness"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Babington Plot",
+    "alt": [
+     "Babington"
+    ],
+    "d": [
+     "Ridolfi Plot",
+     "Throckmorton Plot",
+     "Rising of the North"
+    ]
+   }
   ]
  },
  {
@@ -927,6 +3397,45 @@
    "Dudley",
    "Archduke Charles",
    "Alençon"
+  ],
+  "s": [
+   "Leicester, her likely preference, was made unmarriageable by his family's executions and Amy Robsart's suspicious death in 1560.",
+   "Archduke Charles of Austria insisted on practising Catholicism, a dealbreaker, and Philip II's 1559 proposal was wildly unpopular after Mary's reign.",
+   "Alençon, her 'frog', was the only suitor to visit in person (1579), and his death in 1584 ended serious marriage talks."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Amy Robsart",
+    "alt": [],
+    "d": [
+     "Lettice Knollys",
+     "Lady Jane Grey",
+     "Anne Boleyn"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Archduke Charles of Austria",
+    "alt": [
+     "Archduke Charles"
+    ],
+    "d": [
+     "Eric of Sweden",
+     "Henry of Anjou",
+     "Philip of Hesse"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "frog",
+    "alt": [],
+    "d": [
+     "toad",
+     "pug",
+     "pet"
+    ]
+   }
   ]
  },
  {
@@ -941,6 +3450,43 @@
    "affection",
    "marry",
    "alliances"
+  ],
+  "s": [
+   "Elizabeth used gender as a political tool, as courtiers competing for her affection gave her leverage over faction.",
+   "Parliament and Council assumed a queen needed a husband, creating pressure to marry and name a successor.",
+   "A husband risked sharing sovereignty, and Mary I's marriage to Philip showed a foreign consort cost more than the alliance gained."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "faction",
+    "alt": [],
+    "d": [
+     "parliament",
+     "finance",
+     "foreign policy"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "husband",
+    "alt": [],
+    "d": [
+     "regent",
+     "protector",
+     "champion"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "sovereignty",
+    "alt": [],
+    "d": [
+     "revenue",
+     "patronage",
+     "succession"
+    ]
+   }
   ]
  },
  {
@@ -955,6 +3501,43 @@
    "£227,000",
    "Gresham",
    "Rates"
+  ],
+  "s": [
+   "Elizabeth inherited £227,000 of debt from Mary's war with France, owed to the Antwerp Exchange at 14% interest.",
+   "Gresham advised repaying debts swiftly and avoiding peacetime loans, so Elizabeth could borrow quickly at favourable rates in war.",
+   "Mary's revised Book of Rates boosted customs revenue, and Elizabeth kept able administrators in Gresham and Lord Treasurer Paulet."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "£227,000",
+    "alt": [],
+    "d": [
+     "£27,000",
+     "£127,000",
+     "£2,270,000"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "swiftly",
+    "alt": [],
+    "d": [
+     "gradually",
+     "reluctantly",
+     "annually"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Book of Rates",
+    "alt": [],
+    "d": [
+     "Statute of Artificers",
+     "Act of Uniformity",
+     "Poor Law"
+    ]
+   }
   ]
  },
  {
@@ -969,6 +3552,43 @@
    "Marian debt",
    "lifestyle",
    "600,000"
+  ],
+  "s": [
+   "The Marian debt was cleared by 1576, and by 1584 Elizabeth had built up a surplus of £300,000.",
+   "She achieved this by avoiding lavish building, going on summer progress at courtiers' expense and avoiding war at all costs.",
+   "But selling Crown Lands raised £600,000 and cut long-term income; Custom Farmers meant corruption, and she refused a professional tax service."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "£300,000",
+    "alt": [],
+    "d": [
+     "£30,000",
+     "£130,000",
+     "£3 million"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "summer progress",
+    "alt": [],
+    "d": [
+     "naval reviews",
+     "royal tours abroad",
+     "Parliament sessions"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Custom Farmers",
+    "alt": [],
+    "d": [
+     "Tax Commissioners",
+     "Crown Auditors",
+     "Exchequer Clerks"
+    ]
+   }
   ]
  },
  {
@@ -983,6 +3603,43 @@
    "population rise",
    "bullion",
    "misdiagnosis"
+  ],
+  "s": [
+   "Population rose from about 2.7 to 4 million between 1547 and 1603, and poor harvests reduced supply further.",
+   "New World gold and silver cut the value of precious metals across Europe, so coinage was worth less and prices rose.",
+   "Contemporaries blamed enclosure and greedy landlords, so the government never tackled the real cause, rising population."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "4 million",
+    "alt": [],
+    "d": [
+     "3 million",
+     "5 million",
+     "6 million"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "New World",
+    "alt": [],
+    "d": [
+     "Asian",
+     "Baltic",
+     "Mediterranean"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "enclosure",
+    "alt": [],
+    "d": [
+     "vagrancy",
+     "monopolies",
+     "taxation"
+    ]
+   }
   ]
  },
  {
@@ -997,6 +3654,47 @@
    "75%",
    "Russia",
    "Levant"
+  ],
+  "s": [
+   "Cloth made up 75% of exports at the start of the reign, but the Dutch Revolt and Spanish war collapsed the Antwerp market.",
+   "New companies were chartered: Muscovy (1555), Eastland (1579), Levant (1580) and East India (1600).",
+   "They only partly compensated for Antwerp, as the Eastland Company struggled against Hanseatic dominance and cloth exports stayed depressed."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "75%",
+    "alt": [
+     "three quarters"
+    ],
+    "d": [
+     "50%",
+     "25%",
+     "90%"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Levant",
+    "alt": [],
+    "d": [
+     "Barbary",
+     "Guinea",
+     "Virginia"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Hanseatic",
+    "alt": [
+     "Hanseatic League"
+    ],
+    "d": [
+     "Venetian",
+     "Genoese",
+     "Ottoman"
+    ]
+   }
   ]
  },
  {
@@ -1011,6 +3709,45 @@
    "Raleigh",
    "Hawkins",
    "1600"
+  ],
+  "s": [
+   "Spain and Portugal dominated the Americas, Raleigh's Roanoke attempts failed in the 1580s, and Frobisher found no north-west passage.",
+   "John Hawkins began English involvement in the Transatlantic Slave Trade in 1562, though Spanish and Portuguese traders still dominated it.",
+   "The East India Company (1600) came too late for Elizabeth to benefit, and 75% of trade was still with European partners."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Roanoke",
+    "alt": [],
+    "d": [
+     "Jamestown",
+     "Plymouth",
+     "Newfoundland"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1562",
+    "alt": [],
+    "d": [
+     "1572",
+     "1552",
+     "1582"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "75%",
+    "alt": [
+     "three quarters"
+    ],
+    "d": [
+     "50%",
+     "25%",
+     "90%"
+    ]
+   }
   ]
  },
  {
@@ -1025,6 +3762,43 @@
    "Malthusian Crisis",
    "wars",
    "enclosure"
+  ],
+  "s": [
+   "Population growth to about 4 million caused a Malthusian Crisis, as employers cut wages and landlords raised rents.",
+   "Wars with Spain and Ireland discharged unpaid, injured soldiers and sailors far from home, swelling the number of vagrants.",
+   "Contemporaries blamed enclosure, yet it covered over 70% of arable land in some areas but only 2% nationally."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Malthusian",
+    "alt": [],
+    "d": [
+     "Keynesian",
+     "Marxian",
+     "Darwinian"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Ireland",
+    "alt": [],
+    "d": [
+     "France",
+     "Scotland",
+     "Portugal"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "2%",
+    "alt": [],
+    "d": [
+     "20%",
+     "12%",
+     "5%"
+    ]
+   }
   ]
  },
  {
@@ -1039,6 +3813,46 @@
    "deserving",
    "regulating",
    "church"
+  ],
+  "s": [
+   "Government distinguished the deserving from the undeserving poor, and the 1563 Alms Act created a voluntary poor rate for the deserving.",
+   "The 1563 Statute of Artificers set maximum wages and enforced 7-year apprenticeships; the 1572 Vagabonds Act punished vagrancy by mutilation.",
+   "Poor relief was a Church matter run by parishes, and JPs took over later in the reign."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "voluntary",
+    "alt": [],
+    "d": [
+     "compulsory",
+     "annual",
+     "national"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "7-year",
+    "alt": [
+     "seven-year",
+     "7 year"
+    ],
+    "d": [
+     "3-year",
+     "5-year",
+     "10-year"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "JPs",
+    "alt": [],
+    "d": [
+     "bishops",
+     "mayors",
+     "sheriffs"
+    ]
+   }
   ]
  },
  {
@@ -1053,6 +3867,46 @@
    "debasement",
    "Antwerp Exchange",
    "debt"
+  ],
+  "s": [
+   "Sir Thomas Gresham, an experienced financier, stopped debasement and led the recoinage of 1560-61.",
+   "In 1565 he founded the Royal Exchange as London's answer to Antwerp, and Cecil accepted his case for relaxing the usury laws.",
+   "William Paulet, a highly effective Lord Treasurer, managed finances so well that the Marian debt was cleared by 1576."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "1560-61",
+    "alt": [
+     "1560–61",
+     "1560 to 1561"
+    ],
+    "d": [
+     "1558-59",
+     "1570-71",
+     "1580-81"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "usury",
+    "alt": [],
+    "d": [
+     "enclosure",
+     "apprenticeship",
+     "vagrancy"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Lord Treasurer",
+    "alt": [],
+    "d": [
+     "Lord Chancellor",
+     "Secretary of State",
+     "Lord Chamberlain"
+    ]
+   }
   ]
  },
  {
@@ -1067,6 +3921,47 @@
    "Crown land",
    "Rates",
    "subsidies"
+  ],
+  "s": [
+   "Ordinary revenue came every year from Crown lands, customs, profits of justice, and First Fruits and Tenths.",
+   "Mary's revised Book of Rates was not regularly updated, so by the 1590s inflation had eroded its real value.",
+   "Extraordinary revenue came from subsidies (about £100,000) and fifteenths and tenths, and gentry undervaluing neighbours' lands kept taxes among Europe's lowest."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "profits of justice",
+    "alt": [
+     "profits from justice"
+    ],
+    "d": [
+     "foreign tribute",
+     "Church tithes",
+     "forced loans"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Book of Rates",
+    "alt": [],
+    "d": [
+     "Statute of Artificers",
+     "Act of Uniformity",
+     "Poor Law"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "undervaluing",
+    "alt": [
+     "undervalued"
+    ],
+    "d": [
+     "overvaluing",
+     "ignoring",
+     "inflating"
+    ]
+   }
   ]
  },
  {
@@ -1081,6 +3976,45 @@
    "recoinage",
    "fish days",
    "structural"
+  ],
+  "s": [
+   "Gresham's 1560 recoinage called in debased coins, but prices did not fall as merchants kept them the same or higher.",
+   "Elizabeth tried limiting demand with Lenten fasting and fish days on Wednesdays and Fridays, and the 1586 Book of Orders banned hoarding.",
+   "Inflation was structural, and Tudor government lacked the tools to solve it or grasp rising population's effect."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "debased",
+    "alt": [],
+    "d": [
+     "clipped",
+     "foreign",
+     "gold"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Wednesdays and Fridays",
+    "alt": [
+     "Wednesday and Friday"
+    ],
+    "d": [
+     "Mondays and Thursdays",
+     "Tuesdays and Saturdays",
+     "Sundays and Wednesdays"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "population",
+    "alt": [],
+    "d": [
+     "bullion",
+     "wages",
+     "harvests"
+    ]
+   }
   ]
  },
  {
@@ -1095,6 +4029,47 @@
    "Nonsuch",
    "surplus",
    "subsidies"
+  ],
+  "s": [
+   "The Treaty of Nonsuch committed Elizabeth to £126,000 a year to support the Dutch rebels.",
+   "The war cost £4.5 million in total, and the £300,000 pre-war surplus was consumed almost entirely in the first year.",
+   "Crown land sales and monopolies followed, subsidies were approved in 1589 and 1593, and England was effectively bankrupt by the end of the reign."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Nonsuch",
+    "alt": [
+     "Treaty of Nonsuch"
+    ],
+    "d": [
+     "Troyes",
+     "Cateau-Cambresis",
+     "Edinburgh"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "£4.5 million",
+    "alt": [
+     "4.5 million"
+    ],
+    "d": [
+     "£1.5 million",
+     "£2.5 million",
+     "£9 million"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "monopolies",
+    "alt": [],
+    "d": [
+     "ship money",
+     "purveyance",
+     "benevolences"
+    ]
+   }
   ]
  },
  {
@@ -1109,6 +4084,43 @@
    "Spanish Fury",
    "Genoese Leon",
    "privateering"
+  ],
+  "s": [
+   "The 1576 Spanish Fury, a mutiny of unpaid Spanish troops, destroyed much of Antwerp, centre of the English wool trade.",
+   "Elizabeth's 1568 seizure of the Genoese loan caused a Spanish embargo until 1573, and war in 1585 closed Spanish and Portuguese markets.",
+   "Privateering compensated partly: Drake's circumnavigation (1577-80) returned £600,000, and the East India Company (1600) sought new markets."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Antwerp",
+    "alt": [],
+    "d": [
+     "Bruges",
+     "Ghent",
+     "Amsterdam"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1573",
+    "alt": [],
+    "d": [
+     "1570",
+     "1575",
+     "1578"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Drake",
+    "alt": [],
+    "d": [
+     "Hawkins",
+     "Frobisher",
+     "Raleigh"
+    ]
+   }
   ]
  },
  {
@@ -1123,6 +4135,43 @@
    "Flemings",
    "Drake",
    "monopolies"
+  ],
+  "s": [
+   "Flemings fleeing the Netherlands in 1566 and French Huguenots brought improved cloth-making and manufacturing skills to England.",
+   "Elizabeth sponsored privateers: Drake's circumnavigation (1577-80) took £400,000 and his 1587 raid on Cadiz brought £140,000.",
+   "The cost of war led to monopolies and Crown land sales in the 1590s, which raised prices and weakened royal finances."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Flemings",
+    "alt": [],
+    "d": [
+     "Venetians",
+     "Genoese",
+     "Lombards"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Cadiz",
+    "alt": [],
+    "d": [
+     "Lisbon",
+     "Corunna",
+     "Cartagena"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "monopolies",
+    "alt": [],
+    "d": [
+     "benevolences",
+     "forced loans",
+     "purveyance"
+    ]
+   }
   ]
  },
  {
@@ -1137,6 +4186,43 @@
    "Correction",
    "sturdy beggars",
    "responsibility"
+  ],
+  "s": [
+   "The 1576 Act gave the able-bodied work, often in a House of Correction, as even the 'undeserving poor' needed help.",
+   "The 1598 Act forbade begging and told JPs to employ the able-bodied; 'sturdy beggars' were whipped and returned to their birth parish.",
+   "The 1601 Poor Law gave the state responsibility for the Poor Rate and codified the deserving and undeserving distinction."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "House of Correction",
+    "alt": [],
+    "d": [
+     "workhouse",
+     "almshouse",
+     "hospital"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "whipped",
+    "alt": [],
+    "d": [
+     "branded",
+     "imprisoned",
+     "transported"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1601",
+    "alt": [],
+    "d": [
+     "1597",
+     "1603",
+     "1572"
+    ]
+   }
   ]
  },
  {
@@ -1151,6 +4237,45 @@
    "Norwich",
    "wills",
    "almshouses"
+  ],
+  "s": [
+   "Norwich, influenced by Kett's Rebellion, banned begging, and its wealthiest citizens regularly paid into a fund for the poorest.",
+   "Ipswich, Exeter and Cambridge introduced similar schemes, and many wealthy people left money for the poor in their wills.",
+   "Archbishops Parker and Whitgift supported almshouses and Leicester founded a hospital in Warwick, but this was no replacement for central legislation."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Kett's Rebellion",
+    "alt": [
+     "Kett's"
+    ],
+    "d": [
+     "the Pilgrimage of Grace",
+     "Wyatt's Rebellion",
+     "the Western Rising"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Exeter",
+    "alt": [],
+    "d": [
+     "Bristol",
+     "York",
+     "Lincoln"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Warwick",
+    "alt": [],
+    "d": [
+     "Coventry",
+     "Oxford",
+     "Stafford"
+    ]
+   }
   ]
  },
  {
@@ -1165,6 +4290,43 @@
    "£4.5 million",
    "subsidy",
    "loan"
+  ],
+  "s": [
+   "The £4.5 million war cost wiped out Elizabeth's surplus almost immediately, forcing Crown land sales and monopolies as patronage.",
+   "Parliament was willing to provide taxation: a double subsidy in 1589 and a triple subsidy secured by Burghley in 1593.",
+   "The Armada victory also required forced loans of £75,000 from the nobility and £56,000 from the City of London."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "monopolies",
+    "alt": [],
+    "d": [
+     "benevolences",
+     "purveyances",
+     "wardships"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1593",
+    "alt": [],
+    "d": [
+     "1591",
+     "1595",
+     "1597"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "£75,000",
+    "alt": [],
+    "d": [
+     "£7,500",
+     "£175,000",
+     "£750,000"
+    ]
+   }
   ]
  },
  {
@@ -1179,6 +4341,43 @@
    "Oxfordshire",
    "Tillage Act",
    "underlying causes"
+  ],
+  "s": [
+   "The 1596 Oxfordshire Rising protested enclosure at the peak of the food crisis and was quickly suppressed, with five ringleaders executed.",
+   "The 1597 Tillage Act reversed enclosure since 1588, and the 1601 Poor Law made the state permanently responsible for poor relief.",
+   "The crisis showed the limits of Elizabethan government, which could respond to disorder but not prevent its causes."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "1596",
+    "alt": [],
+    "d": [
+     "1591",
+     "1594",
+     "1599"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Tillage Act",
+    "alt": [],
+    "d": [
+     "Vagrancy Act",
+     "Enclosure Act",
+     "Statute of Artificers"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "disorder",
+    "alt": [],
+    "d": [
+     "famine",
+     "rebellion",
+     "unemployment"
+    ]
+   }
   ]
  },
  {
@@ -1193,6 +4392,43 @@
    "fireships",
    "God blew",
    "Tilbury speech"
+  ],
+  "s": [
+   "Philip II sent 130 ships and 57,000 men, but fireships scattered the Armada at Calais and Gravelines inflicted heavy losses.",
+   "Storms then destroyed over half the remaining fleet off Scotland and Ireland, and the medal said 'God blew, and they were scattered'.",
+   "At Tilbury Elizabeth claimed 'the heart and stomach of a king', though the threat was already receding."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "130",
+    "alt": [],
+    "d": [
+     "70",
+     "200",
+     "300"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Scotland and Ireland",
+    "alt": [],
+    "d": [
+     "Wales and Cornwall",
+     "France and Spain",
+     "Norway and Denmark"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Tilbury",
+    "alt": [],
+    "d": [
+     "Greenwich",
+     "Dover",
+     "Plymouth"
+    ]
+   }
   ]
  },
  {
@@ -1207,6 +4443,43 @@
    "disaster",
    "Madre",
    "Navarre"
+  ],
+  "s": [
+   "After 1588 the sea war went badly: Drake's 1589 'English Armada' was a disaster and treasure fleet attacks failed.",
+   "The Madre de Dios capture in 1592 brought riches worth half the Crown's annual income, and English support ensured Dutch survival.",
+   "Elizabeth sent £20,000 and 10,000 troops to Henry IV, but his conversion to Catholicism and 1598 peace with Spain negated this."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "English Armada",
+    "alt": [],
+    "d": [
+     "Great Armada",
+     "Counter Armada",
+     "Invincible Armada"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Madre de Dios",
+    "alt": [],
+    "d": [
+     "San Felipe",
+     "Santa Ana",
+     "Golden Hind"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Catholicism",
+    "alt": [],
+    "d": [
+     "Calvinism",
+     "Lutheranism",
+     "Anglicanism"
+    ]
+   }
   ]
  },
  {
@@ -1221,6 +4494,43 @@
    "1597",
    "starch",
    "Golden Speech"
+  ],
+  "s": [
+   "Elizabeth lacked funds to reward favourites, so granted monopolies, the sole right to sell a good in England, a major issue in 1597.",
+   "In 1601 MPs listed monopolies including salt, starch, iron and vinegar, and the scale of grievance threatened parliamentary goodwill.",
+   "Elizabeth annulled the worst monopolies and gave the Golden Speech, reframing the concession as love for her people."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "favourites",
+    "alt": [],
+    "d": [
+     "ministers",
+     "bishops",
+     "soldiers"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "starch",
+    "alt": [],
+    "d": [
+     "wool",
+     "coal",
+     "tobacco"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Golden Speech",
+    "alt": [],
+    "d": [
+     "Tilbury Speech",
+     "Armada Speech",
+     "Rainbow Speech"
+    ]
+   }
   ]
  },
  {
@@ -1235,6 +4545,43 @@
    "customary right",
    "Burghley",
    "delay"
+  ],
+  "s": [
+   "Purveyance, the monarch's right to buy goods below market value for the royal household, was criticised by MPs in 1589 and 1593.",
+   "Burghley defended it as Royal Prerogative, and Elizabeth privately agreed to investigate abuses but made no major concessions.",
+   "By 1597 the issue had dissipated, showing her tactics of delay worked."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "below market value",
+    "alt": [],
+    "d": [
+     "at double value",
+     "free of charge",
+     "at fixed prices"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Burghley",
+    "alt": [],
+    "d": [
+     "Walsingham",
+     "Hatton",
+     "Essex"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "delay",
+    "alt": [],
+    "d": [
+     "force",
+     "patronage",
+     "bribery"
+    ]
+   }
   ]
  },
  {
@@ -1249,6 +4596,46 @@
    "1566",
    "shared cause",
    "triple subsidy"
+  ],
+  "s": [
+   "In 1566 MPs tied marriage to the subsidy bill, and Elizabeth cut her request by a third but kept succession as prerogative.",
+   "War with Spain later gave Crown and Parliament a shared cause, making Parliament more willing to grant subsidies.",
+   "Parliament granted a double subsidy in 1589 and a triple subsidy in 1593, unlike its hostility over monopolies and purveyance."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "a third",
+    "alt": [
+     "one third",
+     "1/3"
+    ],
+    "d": [
+     "a half",
+     "a quarter",
+     "two thirds"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Spain",
+    "alt": [],
+    "d": [
+     "France",
+     "Scotland",
+     "the Dutch"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "triple",
+    "alt": [],
+    "d": [
+     "quadruple",
+     "single",
+     "fixed"
+    ]
+   }
   ]
  },
  {
@@ -1263,6 +4650,45 @@
    "Pale",
    "Gaelic",
    "Fitzgerald"
+  ],
+  "s": [
+   "The Crown had claimed Ireland since the 12th century, but English power was truly felt only in the Pale around Dublin.",
+   "Gaelic chieftains ruled Ulster and Connaught, Anglo-Norman families ruled Munster and Leinster, and all were Catholic.",
+   "Unrest was persistent: the Fitzgerald Rebellions came in 1569-73 and 1579-83, and Munster plantations failed to increase control."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "the Pale",
+    "alt": [
+     "Pale"
+    ],
+    "d": [
+     "the Marches",
+     "Wicklow",
+     "Waterford"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Anglo-Norman",
+    "alt": [],
+    "d": [
+     "Norse",
+     "Scottish",
+     "Welsh"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Fitzgerald",
+    "alt": [],
+    "d": [
+     "O'Donnell",
+     "Burke",
+     "MacCarthy"
+    ]
+   }
   ]
  },
  {
@@ -1277,6 +4703,43 @@
    "Yellow Ford",
    "Kinsale",
    "Mountjoy"
+  ],
+  "s": [
+   "Hugh O'Neill, Earl of Tyrone, led a Gaelic rebellion from 1594, and victory at Yellow Ford (1598) left him controlling most of Ireland.",
+   "Essex took 16,000 men in 1599 but made an unauthorised truce, and 4,000 Spanish landed at Kinsale in 1600.",
+   "Mountjoy defeated the Spanish in 1601 and Tyrone surrendered in 1603, in a war costing about £2 million."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Yellow Ford",
+    "alt": [],
+    "d": [
+     "Black Ford",
+     "Boyne Bridge",
+     "Red Ford"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "16,000",
+    "alt": [],
+    "d": [
+     "6,000",
+     "26,000",
+     "60,000"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Mountjoy",
+    "alt": [],
+    "d": [
+     "Raleigh",
+     "Grey",
+     "Drake"
+    ]
+   }
   ]
  },
  {
@@ -1291,6 +4754,47 @@
    "£2 million",
    "Essex",
    "defeat"
+  ],
+  "s": [
+   "The rebellion cost over £2 million to suppress, which was crippling alongside the Spanish war, and Yellow Ford was humiliating.",
+   "Essex led 16,000 men, the largest force sent to Ireland, but returned home without orders and without fighting a battle.",
+   "Mountjoy's defeat of Tyrone secured Ireland: Gaelic lords fled, Protestant plantations followed in Ulster, and England was never seriously threatened."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "£2 million",
+    "alt": [
+     "2 million"
+    ],
+    "d": [
+     "£200,000",
+     "£4 million",
+     "£20 million"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "largest force",
+    "alt": [
+     "largest"
+    ],
+    "d": [
+     "first force",
+     "last force",
+     "smallest force"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Ulster",
+    "alt": [],
+    "d": [
+     "Munster",
+     "Leinster",
+     "Connaught"
+    ]
+   }
   ]
  },
  {
@@ -1305,6 +4809,45 @@
    "Leicester",
    "Privy Council",
    "Cadiz"
+  ],
+  "s": [
+   "Robert Devereux, Earl of Essex, married Walsingham's daughter, and his wit and dashing personality made him a favourite in the 1590s.",
+   "He joined the Privy Council in 1593 more for personality than skill, and his arrogance clashed with the pragmatic Robert Cecil.",
+   "He often disobeyed orders, as with Drake's 1589 expedition, but burning Cadiz in 1596 made him hugely popular."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Walsingham's",
+    "alt": [
+     "Walsingham"
+    ],
+    "d": [
+     "Cecil's",
+     "Leicester's",
+     "Hatton's"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "pragmatic",
+    "alt": [],
+    "d": [
+     "radical",
+     "zealous",
+     "reckless"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Cadiz",
+    "alt": [],
+    "d": [
+     "Lisbon",
+     "Corunna",
+     "Calais"
+    ]
+   }
   ]
  },
  {
@@ -1319,6 +4862,43 @@
    "slapped",
    "Ireland",
    "sweet wines"
+  ],
+  "s": [
+   "Jealous of lost power, Essex initially refused to go to Ireland and was slapped by Elizabeth, half drawing his sword.",
+   "In Ireland in 1599 he fought no battle and returned without permission, so Elizabeth placed him under house arrest.",
+   "He lost his monopoly over sweet wines, and Mountjoy's success in Ireland disgraced him further, so he began his 1601 rebellion."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "slapped",
+    "alt": [],
+    "d": [
+     "imprisoned",
+     "banished",
+     "fined"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "house arrest",
+    "alt": [],
+    "d": [
+     "the Tower",
+     "exile",
+     "banishment"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "sweet wines",
+    "alt": [],
+    "d": [
+     "wool exports",
+     "salt",
+     "starch"
+    ]
+   }
   ]
  },
  {
@@ -1333,6 +4913,47 @@
    "Richard II",
    "Southampton",
    "1601"
+  ],
+  "s": [
+   "Essex warned James VI that Cecil would block his succession, and commissioned the banned play Richard II, about a childless monarch deposed.",
+   "He marched into the City hoping to raise citizens against Cecil, but supporters lost nerve and the rebellion collapsed.",
+   "Essex and five supporters were executed in February 1601, and Cecil's faction then ran government and secured James I's succession."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Richard II",
+    "alt": [],
+    "d": [
+     "Henry IV",
+     "Richard III",
+     "Edward II"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "the City",
+    "alt": [
+     "City of London"
+    ],
+    "d": [
+     "Whitehall",
+     "the Tower",
+     "Westminster"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "February 1601",
+    "alt": [
+     "Feb 1601"
+    ],
+    "d": [
+     "February 1600",
+     "March 1601",
+     "February 1602"
+    ]
+   }
   ]
  },
  {
@@ -1347,6 +4968,43 @@
    "bad harvests",
    "Malthusian",
    "monopolies"
+  ],
+  "s": [
+   "Bad harvests in 1594-98 doubled the price of wheat, and at the crisis peak in 1595-97 the death rate rose by 50%.",
+   "Population growth had outstripped food supply, a Malthusian Crisis, and war with Spain collapsed trade, reducing imports and cloth jobs.",
+   "War taxation and monopolies raised staple prices further, so natural, economic and fiscal pressures combined."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "50%",
+    "alt": [],
+    "d": [
+     "5%",
+     "15%",
+     "500%"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Malthusian",
+    "alt": [],
+    "d": [
+     "Keynesian",
+     "Marxian",
+     "Darwinian"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "monopolies",
+    "alt": [],
+    "d": [
+     "benevolences",
+     "purveyances",
+     "tithes"
+    ]
+   }
   ]
  },
  {
@@ -1361,6 +5019,45 @@
    "looks",
    "unseemly",
    "Rainbow"
+  ],
+  "s": [
+   "By her 60s she had blackened teeth, a red wig and a pockmarked face made up with white lead.",
+   "In 1596 the Privy Council ordered unseemly portraits destroyed, and all portraits had to follow a flattering Nicholas Hilliard version.",
+   "The Rainbow Portrait shows a rainbow for peace and divine favour, and a dress of eyes and ears so she sees all."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "white lead",
+    "alt": [],
+    "d": [
+     "rouge",
+     "chalk",
+     "powdered pearl"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Hilliard",
+    "alt": [
+     "Nicholas Hilliard"
+    ],
+    "d": [
+     "Holbein",
+     "Gheeraerts",
+     "Oliver"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "peace",
+    "alt": [],
+    "d": [
+     "war",
+     "wealth",
+     "wisdom"
+    ]
+   }
   ]
  },
  {
@@ -1375,6 +5072,45 @@
    "scandals",
    "Accession Day",
    "Faerie Queene"
+  ],
+  "s": [
+   "Scandals, such as Raleigh and Bess Throckmorton's child, undermined her image at court, and nobles reluctantly joined her progresses.",
+   "Accession Day Tilts on 17 November lavishly celebrated her, and ordinary people were encouraged to celebrate her as saviour of England and Protestantism.",
+   "Spenser's Faerie Queene glorified her as 'Gloriana', popularising the cult of the Virgin Queen, reinforced by the 1601 Golden Speech."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Throckmorton",
+    "alt": [
+     "Bess Throckmorton"
+    ],
+    "d": [
+     "Dudley",
+     "Howard",
+     "Seymour"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "17 November",
+    "alt": [],
+    "d": [
+     "24 March",
+     "7 September",
+     "25 December"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Gloriana",
+    "alt": [],
+    "d": [
+     "Britannia",
+     "Boadicea",
+     "Minerva"
+    ]
+   }
   ]
  },
  {
@@ -1389,6 +5125,45 @@
    "Marx",
    "Bolshevik",
    "religion"
+  ],
+  "s": [
+   "Marx and Engels said the proletariat would overthrow capitalism to create a classless society with no private property.",
+   "Lenin adapted Marx for Russia, founded the Bolshevik Party in 1903 and seized power in October 1917, creating a one-party state.",
+   "Marxism-Leninism opposed religion, private property and parliamentary democracy, dismissing democracy as camouflage for capitalism."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "proletariat",
+    "alt": [
+     "workers"
+    ],
+    "d": [
+     "bourgeoisie",
+     "aristocracy",
+     "peasantry"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1903",
+    "alt": [],
+    "d": [
+     "1893",
+     "1913",
+     "1905"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "religion",
+    "alt": [],
+    "d": [
+     "the army",
+     "trade unions",
+     "education"
+    ]
+   }
   ]
  },
  {
@@ -1403,6 +5178,43 @@
    "private ownership",
    "elected",
    "inequality"
+  ],
+  "s": [
+   "Capitalism rests on private ownership, investment and profit, with people producing what the market demands, not what the state directs.",
+   "The West valued individual liberty, freedom of speech and elected government accountable to the people.",
+   "Communism promised economic equality while capitalism gave political freedom but economic inequality, the core ideological clash of the Cold War."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "market",
+    "alt": [],
+    "d": [
+     "Party",
+     "Church",
+     "army"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "elected",
+    "alt": [],
+    "d": [
+     "hereditary",
+     "appointed",
+     "one-party"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "political freedom",
+    "alt": [],
+    "d": [
+     "religious freedom",
+     "free trade",
+     "national security"
+    ]
+   }
   ]
  },
  {
@@ -1417,6 +5229,43 @@
    "Civil War",
    "Comintern",
    "Nazi-Soviet Pact"
+  ],
+  "s": [
+   "The 1917 Bolshevik Revolution alarmed the West, and Britain, USA, France and Japan backed the Whites in the Civil War.",
+   "The Comintern (1919) and Stalin's 1930s show trials confirmed Western fears of a revolution-exporting, brutal dictatorship.",
+   "The Nazi-Soviet Pact (1939) shocked the West, and Munich (1938) convinced Stalin it wanted Germany and the USSR to destroy each other."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Whites",
+    "alt": [],
+    "d": [
+     "Reds",
+     "Mensheviks",
+     "Kulaks"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Comintern",
+    "alt": [],
+    "d": [
+     "Cominform",
+     "Comecon",
+     "Politburo"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Munich",
+    "alt": [],
+    "d": [
+     "Versailles",
+     "Locarno",
+     "Yalta"
+    ]
+   }
   ]
  },
  {
@@ -1431,6 +5280,45 @@
    "self-determination",
    "Stalin resented",
    "incompatibility"
+  ],
+  "s": [
+   "The Atlantic Charter (August 1941), a joint British-American document, affirmed self-determination, political freedom and freedom of speech.",
+   "The USSR endorsed it in January 1942 but had no part in drafting it, and Stalin resented the Western values.",
+   "It showed the incompatibility of war aims: the West fought for liberal democracy, the USSR for a buffer zone of compliant states."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "1941",
+    "alt": [
+     "August 1941"
+    ],
+    "d": [
+     "1939",
+     "1943",
+     "1945"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "drafting",
+    "alt": [],
+    "d": [
+     "signing",
+     "ratifying",
+     "announcing"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "buffer zone",
+    "alt": [],
+    "d": [
+     "colonial empire",
+     "world revolution",
+     "naval bases"
+    ]
+   }
   ]
  },
  {
@@ -1445,6 +5333,43 @@
    "North Africa",
    "Balkans",
    "Gromyko"
+  ],
+  "s": [
+   "Stalin wanted a second front through France, feeling the USSR fought the bulk of the war alone while the West fought in North Africa.",
+   "Britain and USA delayed until June 1944, and Churchill wanted it in the Balkans to limit Soviet influence.",
+   "Stalin believed the delay was deliberate, which hardened his suspicion of Western intentions."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "North Africa",
+    "alt": [],
+    "d": [
+     "the Pacific",
+     "Scandinavia",
+     "Greece"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "June 1944",
+    "alt": [],
+    "d": [
+     "June 1943",
+     "December 1944",
+     "May 1945"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "deliberate",
+    "alt": [],
+    "d": [
+     "accidental",
+     "unavoidable",
+     "unimportant"
+    ]
+   }
   ]
  },
  {
@@ -1459,6 +5384,43 @@
    "exile",
    "buffer zone",
    "war aims"
+  ],
+  "s": [
+   "Britain had gone to war over Polish independence and hosted the Polish government in exile, so abandoning Poland would be betrayal.",
+   "The USSR invaded eastern Poland in 1939 and wanted a friendly communist buffer, having been invaded via Poland three times.",
+   "Poland symbolised the clash of war aims: the West wanted free elections, the USSR wanted security through compliant neighbours."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "betrayal",
+    "alt": [],
+    "d": [
+     "victory",
+     "necessity",
+     "compromise"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "three times",
+    "alt": [],
+    "d": [
+     "twice",
+     "five times",
+     "once"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "free elections",
+    "alt": [],
+    "d": [
+     "land reform",
+     "disarmament",
+     "reparations"
+    ]
+   }
   ]
  },
  {
@@ -1473,6 +5435,45 @@
    "Romania",
    "naughty document",
    "self-determination"
+  ],
+  "s": [
+   "In October 1944 Churchill brokered a secret deal with Stalin dividing Eastern Europe: Romania 90% Soviet, Greece 90% British, Hungary and Yugoslavia 50/50.",
+   "Churchill scribbled the percentages on paper and Stalin ticked it; Churchill called it a 'naughty document'.",
+   "It was never formally enacted, but showed Churchill and Stalin already dividing Europe, undermining later Western claims to fight for self-determination."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Greece",
+    "alt": [],
+    "d": [
+     "Poland",
+     "Czechoslovakia",
+     "Austria"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "naughty document",
+    "alt": [
+     "naughty"
+    ],
+    "d": [
+     "secret treaty",
+     "scrap of paper",
+     "shameful pact"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "self-determination",
+    "alt": [],
+    "d": [
+     "collective security",
+     "free trade",
+     "disarmament"
+    ]
+   }
   ]
  },
  {
@@ -1487,6 +5488,43 @@
    "D-Day",
    "Japan",
    "most cooperative"
+  ],
+  "s": [
+   "Tehran (1943) was the first meeting of the Big Three, where the USA and UK promised a second front, D-Day, in May or June 1944.",
+   "Stalin agreed to declare war on Japan once Germany was defeated.",
+   "There was vague agreement that Germany would remain weak, and Tehran was the most cooperative of the three wartime conferences."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "second front",
+    "alt": [],
+    "d": [
+     "Pacific campaign",
+     "Balkan invasion",
+     "bombing campaign"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Japan",
+    "alt": [],
+    "d": [
+     "Italy",
+     "Turkey",
+     "Bulgaria"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "cooperative",
+    "alt": [],
+    "d": [
+     "hostile",
+     "short",
+     "secretive"
+    ]
+   }
   ]
  },
  {
@@ -1501,6 +5539,43 @@
    "occupation zones",
    "free elections",
    "Poland disputed"
+  ],
+  "s": [
+   "Yalta (February 1945) divided Germany into four zones, set $20 billion in reparations (half to the USSR) and planned the United Nations.",
+   "Stalin promised free elections in Eastern Europe, which was acknowledged as a Soviet 'sphere of influence' that was never clearly defined.",
+   "Poland was disputed: Stalin backed the communist Lublin Committee while Britain hosted the government in exile."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "four",
+    "alt": [],
+    "d": [
+     "three",
+     "five",
+     "six"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "free elections",
+    "alt": [],
+    "d": [
+     "a federal state",
+     "land reform",
+     "a military alliance"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Lublin Committee",
+    "alt": [],
+    "d": [
+     "Warsaw Directorate",
+     "Krakow Council",
+     "Gdansk Committee"
+    ]
+   }
   ]
  },
  {
@@ -1515,6 +5590,43 @@
    "reparations",
    "puppet government",
    "atomic bomb"
+  ],
+  "s": [
+   "At Potsdam (July-August 1945) the West opposed harsh reparations, fearing another Versailles, but Stalin, with 25 million dead, demanded severe terms.",
+   "Stalin had since installed a communist puppet government in Poland, which Truman strongly opposed.",
+   "Truman told Stalin of the atomic bomb but not that Hiroshima and Nagasaki would be bombed, which Stalin saw as a threat."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "25 million",
+    "alt": [],
+    "d": [
+     "5 million",
+     "15 million",
+     "40 million"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Poland",
+    "alt": [],
+    "d": [
+     "Hungary",
+     "Romania",
+     "Bulgaria"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "atomic bomb",
+    "alt": [],
+    "d": [
+     "hydrogen bomb",
+     "V-2 rocket",
+     "jet fighter"
+    ]
+   }
   ]
  },
  {
@@ -1529,6 +5641,43 @@
    "liberators",
    "retribution",
    "coups"
+  ],
+  "s": [
+   "In the West, Allied forces were seen as liberators who brought supplies without annexing territory or imposing ideology.",
+   "In the East the Red Army inflicted harsh retribution, with reprisals, plunder, deportation of ethnic Germans and annexation of territories.",
+   "Soviet influence spread rapidly through a communist coup in Romania (1945), coalitions in Hungary and Bulgaria, and the absorption of the Baltic states."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "liberators",
+    "alt": [],
+    "d": [
+     "occupiers",
+     "conquerors",
+     "protectors"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "ethnic Germans",
+    "alt": [],
+    "d": [
+     "Poles",
+     "Jews",
+     "Hungarians"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Romania",
+    "alt": [],
+    "d": [
+     "Greece",
+     "Finland",
+     "Austria"
+    ]
+   }
   ]
  },
  {
@@ -1543,6 +5692,43 @@
    "veto",
    "first meeting",
    "1950"
+  ],
+  "s": [
+   "The UN was established in October 1945, and its Security Council has five permanent members, each with a veto.",
+   "In 1946 Russia vetoed Anglo-French withdrawal from Syria and Lebanon, and the USSR rejected international control of atomic weapons.",
+   "In the Korean War the USSR boycotted the Security Council, so the USA secured a resolution authorising military action."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "five",
+    "alt": [],
+    "d": [
+     "three",
+     "seven",
+     "ten"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Syria and Lebanon",
+    "alt": [],
+    "d": [
+     "Egypt and Iraq",
+     "Greece and Turkey",
+     "Iran and Iraq"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "boycotted",
+    "alt": [],
+    "d": [
+     "vetoed",
+     "chaired",
+     "left"
+    ]
+   }
   ]
  },
  {
@@ -1557,6 +5743,45 @@
    "Stettin",
    "Anglo-American alliance",
    "firebrand"
+  ],
+  "s": [
+   "In March 1946 at Fulton, Missouri, Churchill said an iron curtain had descended from Stettin in the Baltic to Trieste in the Adriatic.",
+   "He called for an Anglo-American alliance and negotiating from strength, as Stalin despised weakness.",
+   "Stalin called him 'a firebrand of war', and despite inaccuracies the speech hardened attitudes and made the Cold War visible to ordinary people."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Stettin",
+    "alt": [],
+    "d": [
+     "Danzig",
+     "Riga",
+     "Memel"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Anglo-American",
+    "alt": [],
+    "d": [
+     "Anglo-French",
+     "Anglo-Soviet",
+     "Franco-American"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "firebrand of war",
+    "alt": [
+     "firebrand"
+    ],
+    "d": [
+     "imperialist butcher",
+     "enemy of peace",
+     "puppet of Wall Street"
+    ]
+   }
   ]
  },
  {
@@ -1571,6 +5796,47 @@
    "coalition",
    "forced mergers",
    "Rákosi"
+  ],
+  "s": [
+   "Salami tactics were the USSR's method of taking over Eastern European governments by joining coalitions then slicing out opposition parties one by one.",
+   "Methods included rigged elections, forced mergers of socialist and communist parties, arrests and murder of opposition leaders, and secret police.",
+   "By 1948 pro-Moscow leaders ruled across Eastern Europe, and the term was coined by Hungarian communist Matyas Rakosi."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "one by one",
+    "alt": [],
+    "d": [
+     "all at once",
+     "by referendum",
+     "by treaty"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "socialist",
+    "alt": [],
+    "d": [
+     "liberal",
+     "peasant",
+     "Catholic"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Rakosi",
+    "alt": [
+     "Matyas Rakosi",
+     "Rákosi",
+     "Mátyás Rákosi"
+    ],
+    "d": [
+     "Gomulka",
+     "Kadar",
+     "Ulbricht"
+    ]
+   }
   ]
  },
  {
@@ -1585,6 +5851,43 @@
    "Gomulka",
    "defenestrated",
    "accelerated"
+  ],
+  "s": [
+   "Poland's communist-dominated Provisional Government was set up in June 1945, and rigged elections in January 1947 gave communists 80%.",
+   "In Czechoslovakia communists won only 38% in 1946 but staged a coup in February 1948, and Jan Masaryk was defenestrated.",
+   "The coup shocked the West, playing on guilt over 1938-9, and accelerated the formation of NATO."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "80%",
+    "alt": [],
+    "d": [
+     "50%",
+     "60%",
+     "95%"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "defenestrated",
+    "alt": [],
+    "d": [
+     "imprisoned",
+     "exiled",
+     "shot"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "NATO",
+    "alt": [],
+    "d": [
+     "Comecon",
+     "the UN",
+     "Cominform"
+    ]
+   }
   ]
  },
  {
@@ -1599,6 +5902,45 @@
    "Kennan",
    "dominate",
    "containment"
+  ],
+  "s": [
+   "In the Long Telegram (February 1946) George Kennan argued Stalin sought capitalism's destruction but would back down under pressure.",
+   "In the Novikov Telegram (September 1946) the Soviet ambassador in Washington reported that the USA planned world domination through military might.",
+   "Each confirmed the other as the enemy, and the Long Telegram became the intellectual basis for containment."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Kennan",
+    "alt": [
+     "George Kennan"
+    ],
+    "d": [
+     "Marshall",
+     "Dulles",
+     "Acheson"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Washington",
+    "alt": [],
+    "d": [
+     "London",
+     "Paris",
+     "Berlin"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "containment",
+    "alt": [],
+    "d": [
+     "appeasement",
+     "rollback",
+     "deterrence"
+    ]
+   }
   ]
  },
  {
@@ -1613,6 +5955,45 @@
    "Greece",
    "Britain",
    "isolationism"
+  ],
+  "s": [
+   "On 12 March 1947 Truman asked Congress to support free peoples resisting subjugation, committing $400 million to anti-communists in Greece and Turkey.",
+   "It followed Britain's announcement that it could no longer fund anti-communist forces in Greece, and Stalin was breaking his Yalta promises.",
+   "It deliberately committed America to opposing communist expansion anywhere, ending US isolationism."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "$400 million",
+    "alt": [],
+    "d": [
+     "$40 million",
+     "$4 billion",
+     "$13 billion"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Britain",
+    "alt": [
+     "Britain's"
+    ],
+    "d": [
+     "France",
+     "Turkey",
+     "Italy"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "isolationism",
+    "alt": [],
+    "d": [
+     "imperialism",
+     "appeasement",
+     "neutrality"
+    ]
+   }
   ]
  },
  {
@@ -1627,6 +6008,45 @@
    "$13 billion",
    "16 nations",
    "Dollar Imperialism"
+  ],
+  "s": [
+   "In June 1947 George Marshall offered $13 billion of aid to Europe, but Stalin forbade satellite states to attend the Paris meeting.",
+   "Sixteen nations attended, and aid funded West Germany's re-industrialisation and promoted stability against communism.",
+   "Stalin called it 'Dollar Imperialism' and created Cominform (1947) and Comecon (1949), splitting Europe into two economic blocs."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "$13 billion",
+    "alt": [],
+    "d": [
+     "$3 billion",
+     "$30 billion",
+     "$400 million"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Sixteen",
+    "alt": [
+     "16"
+    ],
+    "d": [
+     "Six",
+     "Ten",
+     "Twenty-five"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Dollar Imperialism",
+    "alt": [],
+    "d": [
+     "Capitalist Colonialism",
+     "Wall Street Tyranny",
+     "American Empire"
+    ]
+   }
   ]
  },
  {
@@ -1641,6 +6061,43 @@
    "Yugoslavia expelled",
    "raw materials",
    "satellite states"
+  ],
+  "s": [
+   "Cominform (September 1947) was Stalin's response to the Truman Doctrine, coordinating European communist parties, and Yugoslavia was expelled in 1948 for resisting Soviet control.",
+   "Comecon (1949) countered the Marshall Plan, binding Eastern European economies to the USSR on terms favourable to Moscow.",
+   "Together they tightened control, preventing satellite states from trading freely with the West or having independent foreign policies."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Yugoslavia",
+    "alt": [],
+    "d": [
+     "Poland",
+     "Hungary",
+     "Albania"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Marshall Plan",
+    "alt": [],
+    "d": [
+     "Dawes Plan",
+     "Young Plan",
+     "Morgenthau Plan"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "trading freely",
+    "alt": [],
+    "d": [
+     "joining NATO",
+     "paying reparations",
+     "using Comecon"
+    ]
+   }
   ]
  },
  {
@@ -1655,6 +6112,43 @@
    "Bizonia",
    "Deutschmark",
    "23 June"
+  ],
+  "s": [
+   "The West wanted a recovering buffer, the USSR a weak Germany, and Bizonia (1947) merged US and British zones.",
+   "In June 1948 the West introduced the Deutschmark without consulting the USSR, defying Stalin's aim of preventing a West German state.",
+   "On 23 June 1948 Stalin cut road, rail and electricity links to West Berlin, 110 miles inside the Soviet zone."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Bizonia",
+    "alt": [],
+    "d": [
+     "Trizonia",
+     "Bavaria",
+     "Rhenania"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Deutschmark",
+    "alt": [],
+    "d": [
+     "Reichsmark",
+     "Ostmark",
+     "Rentenmark"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "110",
+    "alt": [],
+    "d": [
+     "11",
+     "50",
+     "200"
+    ]
+   }
   ]
  },
  {
@@ -1669,6 +6163,43 @@
    "8,000 tonnes",
    "propaganda disaster",
    "Federal Republic"
+  ],
+  "s": [
+   "Western planes supplied Berlin entirely by air, since Stalin could not shoot them down without war, reaching 8,000 tonnes daily by February 1949.",
+   "Stalin lifted the blockade in May 1949 after a propaganda disaster, and NATO was formed in April 1949.",
+   "It led to two German states: the Federal Republic (West, May 1949) and the German Democratic Republic (East, October 1949)."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "8,000",
+    "alt": [],
+    "d": [
+     "800",
+     "18,000",
+     "80,000"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "propaganda disaster",
+    "alt": [],
+    "d": [
+     "military defeat",
+     "diplomatic triumph",
+     "economic success"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "October 1949",
+    "alt": [],
+    "d": [
+     "October 1948",
+     "May 1950",
+     "August 1949"
+    ]
+   }
   ]
  },
  {
@@ -1683,6 +6214,45 @@
    "production quotas",
    "Soviet tanks",
    "workers' state"
+  ],
+  "s": [
+   "Ulbricht's high quotas, low wages and collectivisation sparked a strike of East Berlin workers on 16-17 June 1953, spreading to over 400 towns.",
+   "Demands turned political, and on 17 June Soviet tanks crushed the rising, killing about 55 and executing 20.",
+   "It showed communism's shallow roots in the DDR, and 17 June became a West German national holiday until 1990."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Ulbricht",
+    "alt": [
+     "Ulbricht's"
+    ],
+    "d": [
+     "Honecker",
+     "Pieck",
+     "Grotewohl"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "tanks",
+    "alt": [],
+    "d": [
+     "aircraft",
+     "gunboats",
+     "paratroops"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1990",
+    "alt": [],
+    "d": [
+     "1985",
+     "1989",
+     "1995"
+    ]
+   }
   ]
  },
  {
@@ -1697,6 +6267,45 @@
    "Article 5",
    "isolationism",
    "West Germany"
+  ],
+  "s": [
+   "The treaty (4 April 1949) followed the Berlin Blockade and Czech coup, and Article 5 made an attack on one an attack on all.",
+   "It committed America permanently to European defence, reversing isolationism.",
+   "NATO grew after the Soviet atomic test (1949) and the Korean War (1950), and West Germany joined in May 1955."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Article 5",
+    "alt": [],
+    "d": [
+     "Article 1",
+     "Article 9",
+     "Article 10"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "isolationism",
+    "alt": [],
+    "d": [
+     "appeasement",
+     "imperialism",
+     "neutrality"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "May 1955",
+    "alt": [
+     "1955"
+    ],
+    "d": [
+     "May 1949",
+     "May 1952",
+     "May 1959"
+    ]
+   }
   ]
  },
  {
@@ -1711,6 +6320,45 @@
    "one week",
    "legal framework",
    "political"
+  ],
+  "s": [
+   "The Warsaw Pact, signed on 14 May 1955, a week after West Germany joined NATO, was the Soviet response to German rearmament.",
+   "It was no alliance of independent states, as the USSR controlled members' policies, but it legalised stationing Soviet troops.",
+   "It was more political than defensive, and suppressing dissent could be called 'Warsaw Pact action'."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "14 May 1955",
+    "alt": [
+     "14 May"
+    ],
+    "d": [
+     "14 May 1949",
+     "4 April 1955",
+     "14 July 1955"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Soviet troops",
+    "alt": [],
+    "d": [
+     "nuclear weapons",
+     "Polish troops",
+     "US troops"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Warsaw Pact action",
+    "alt": [],
+    "d": [
+     "Soviet police action",
+     "Comecon intervention",
+     "Cominform action"
+    ]
+   }
   ]
  },
  {
@@ -1725,6 +6373,45 @@
    "Fuchs",
    "hydrogen bomb",
    "MAD"
+  ],
+  "s": [
+   "After Hiroshima and Nagasaki in 1945, Stalin accelerated the Soviet programme, aided by Klaus Fuchs, and tested an atomic bomb in 1949.",
+   "The USA tested a hydrogen bomb in 1952 and the USSR in 1953, ICBMs came in 1957, and the Rosenbergs were executed in June 1953.",
+   "This led to Mutually Assured Destruction (MAD), making nuclear war suicidal for both sides."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Klaus Fuchs",
+    "alt": [
+     "Fuchs"
+    ],
+    "d": [
+     "Alger Hiss",
+     "Kim Philby",
+     "Guy Burgess"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1952",
+    "alt": [],
+    "d": [
+     "1950",
+     "1954",
+     "1956"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "suicidal",
+    "alt": [],
+    "d": [
+     "profitable",
+     "limited",
+     "winnable"
+    ]
+   }
   ]
  },
  {
@@ -1739,6 +6426,45 @@
    "Dulles",
    "Korean War",
    "flexible response"
+  ],
+  "s": [
+   "John Foster Dulles said the USA would answer Soviet aggression anywhere with an overwhelming nuclear strike, part of Eisenhower's 'New Look'.",
+   "It responded to the Korean War, as conventional deterrence was expensive, while nuclear weapons gave 'more bang for the buck'.",
+   "It lost credibility as Soviet nuclear capability grew, and Kennedy replaced it with 'flexible response' in the 1960s."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Dulles",
+    "alt": [
+     "John Foster Dulles"
+    ],
+    "d": [
+     "Marshall",
+     "Acheson",
+     "Kissinger"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Korean War",
+    "alt": [],
+    "d": [
+     "Suez Crisis",
+     "Berlin Blockade",
+     "Vietnam War"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "flexible response",
+    "alt": [],
+    "d": [
+     "mutual deterrence",
+     "limited containment",
+     "graduated rollback"
+    ]
+   }
   ]
  },
  {
@@ -1753,6 +6479,43 @@
    "neutral Germany",
    "Adenauer",
    "Loth"
+  ],
+  "s": [
+   "In March 1952 Stalin proposed a unified, democratic, neutral Germany with free elections and all occupation forces withdrawn, aiming to derail West German rearmament.",
+   "The West rejected it, fearing a reunified Germany would drift Soviet, and Adenauer opposed reunification on these terms.",
+   "Historians are divided: Loth argues it was genuine, while Steininger sees propaganda."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "neutral",
+    "alt": [],
+    "d": [
+     "communist",
+     "federal",
+     "armed"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Adenauer",
+    "alt": [],
+    "d": [
+     "Erhard",
+     "Brandt",
+     "Heuss"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Loth",
+    "alt": [],
+    "d": [
+     "Kennan",
+     "Gaddis",
+     "Leffler"
+    ]
+   }
   ]
  },
  {
@@ -1767,6 +6530,47 @@
    "Party Congress",
    "Belgrade Declaration",
    "unintended consequences"
+  ],
+  "s": [
+   "In February 1956 Khrushchev denounced Stalin's crimes at the 20th Party Congress, a speech not meant to be public but quickly leaked.",
+   "De-Stalinisation released political prisoners, dismantled the cult of personality and called for 'peaceful co-existence' with the West.",
+   "It raised expectations of reform that Khrushchev could not satisfy, triggering the Polish October and the Hungarian Uprising of 1956."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "20th",
+    "alt": [
+     "20th Party Congress"
+    ],
+    "d": [
+     "18th",
+     "22nd",
+     "25th"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "peaceful co-existence",
+    "alt": [
+     "peaceful coexistence"
+    ],
+    "d": [
+     "peaceful competition",
+     "limited detente",
+     "mutual disarmament"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Polish October",
+    "alt": [],
+    "d": [
+     "Prague Spring",
+     "Berlin Rising",
+     "Czech Coup"
+    ]
+   }
   ]
  },
  {
@@ -1781,6 +6585,43 @@
    "Poznan",
    "Gomulka",
    "limited reformer"
+  ],
+  "s": [
+   "Poznan factory protests in June 1956 began over wages but quickly became political, and party liberals refused Moscow's nominee as defence minister.",
+   "In October 1956 support went to Gomulka, a communist imprisoned 1949-54 for 'deviationism', and Khrushchev accepted him rather than invade.",
+   "Gomulka proved a limited reformer, loyal to the USSR and Warsaw Pact, showing Khrushchev would tolerate controlled reform."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Poznan",
+    "alt": [],
+    "d": [
+     "Gdansk",
+     "Warsaw",
+     "Krakow"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "deviationism",
+    "alt": [],
+    "d": [
+     "Trotskyism",
+     "revisionism",
+     "nationalism"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "loyal",
+    "alt": [],
+    "d": [
+     "hostile",
+     "neutral",
+     "indifferent"
+    ]
+   }
   ]
  },
  {
@@ -1795,6 +6636,45 @@
    "AVH",
    "Imre Nagy",
    "Warsaw Pact"
+  ],
+  "s": [
+   "Hungary suffered Rakosi's AVH secret police, collectivisation and a Soviet-controlled economy, and Khrushchev's secret speech raised hopes of change.",
+   "In October 1956 police fired on protesters, and Nagy took power, released prisoners, ended the one-party state and asked Soviet troops to withdraw.",
+   "Nagy then announced Hungary would leave the Warsaw Pact and become neutral, so Khrushchev ordered the invasion."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "AVH",
+    "alt": [],
+    "d": [
+     "KGB",
+     "Stasi",
+     "NKVD"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Nagy",
+    "alt": [
+     "Imre Nagy"
+    ],
+    "d": [
+     "Kadar",
+     "Gero",
+     "Gomulka"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Warsaw Pact",
+    "alt": [],
+    "d": [
+     "Comecon",
+     "Cominform",
+     "NATO"
+    ]
+   }
   ]
  },
  {
@@ -1809,6 +6689,43 @@
    "Budapest",
    "Suez Crisis",
    "containment"
+  ],
+  "s": [
+   "Over 1,000 Soviet tanks entered Budapest, 3,000 Hungarians died, 180,000 fled and Nagy, replaced by Kadar, was executed in 1958.",
+   "The West did not intervene, as the Suez Crisis split it: Britain and France had invaded Egypt while America condemned them.",
+   "It showed the limits of containment: NATO was defensive and accepted the Iron Curtain as reality."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "1,000",
+    "alt": [],
+    "d": [
+     "100",
+     "500",
+     "5,000"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Suez Crisis",
+    "alt": [],
+    "d": [
+     "Korean War",
+     "Berlin Crisis",
+     "Cuban Crisis"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "defensive",
+    "alt": [],
+    "d": [
+     "offensive",
+     "neutral",
+     "expansionist"
+    ]
+   }
   ]
  },
  {
@@ -1823,6 +6740,45 @@
    "Spofford",
    "Bundeswehr",
    "Hallstein Doctrine"
+  ],
+  "s": [
+   "The Korean War showed NATO needed more ground forces, and France rejected Pleven's European Defence Community, an integrated European army, in August 1954.",
+   "West Germany joined NATO directly in May 1955, with the Bundeswehr barred from nuclear weapons.",
+   "The Hallstein Doctrine (1955) cut ties with any state recognising the GDR, and the Warsaw Pact followed."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Pleven's",
+    "alt": [
+     "Pleven"
+    ],
+    "d": [
+     "Schuman's",
+     "Monnet's",
+     "Adenauer's"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "nuclear weapons",
+    "alt": [],
+    "d": [
+     "tanks",
+     "aircraft",
+     "a general staff"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Hallstein Doctrine",
+    "alt": [],
+    "d": [
+     "Hallstein Plan",
+     "Adenauer Doctrine",
+     "Brandt Doctrine"
+    ]
+   }
   ]
  },
  {
@@ -1837,6 +6793,45 @@
    "brain drain",
    "six months",
    "U-2"
+  ],
+  "s": [
+   "Between 1949 and 1961 about 3.5 million East Germans fled West, a brain drain threatening the DDR.",
+   "In November 1958 Khrushchev's Berlin Ultimatum gave the West six months to leave West Berlin, but the Western powers refused.",
+   "The 1960 Paris Summit collapsed over the U-2 spy plane, and the 1961 Vienna Summit failed when Khrushchev tried to bully Kennedy."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "3.5 million",
+    "alt": [],
+    "d": [
+     "350,000",
+     "1.5 million",
+     "7 million"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "six months",
+    "alt": [],
+    "d": [
+     "six weeks",
+     "one year",
+     "two years"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Vienna Summit",
+    "alt": [
+     "Vienna"
+    ],
+    "d": [
+     "Geneva Summit",
+     "Camp David Summit",
+     "Moscow Summit"
+    ]
+   }
   ]
  },
  {
@@ -1851,6 +6846,43 @@
    "death strip",
    "Ich bin",
    "tacitly"
+  ],
+  "s": [
+   "On 12-13 August 1961 the border was sealed overnight with barbed wire, then a concrete wall and 'death strip'; about 5,000 escaped.",
+   "The Wall ended the brain drain, but a state that needed a wall to stop people leaving had visibly failed.",
+   "The USA condemned it but accepted it rather than risk war, and it symbolised repression until November 1989."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "death strip",
+    "alt": [],
+    "d": [
+     "no-man's land",
+     "iron fence",
+     "minefield"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "brain drain",
+    "alt": [],
+    "d": [
+     "food shortage",
+     "coup threat",
+     "army revolt"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "November 1989",
+    "alt": [],
+    "d": [
+     "November 1988",
+     "August 1989",
+     "March 1990"
+    ]
+   }
   ]
  },
  {
@@ -1865,6 +6897,43 @@
    "Sputnik",
    "Gagarin",
    "Apollo-Soyuz"
+  ],
+  "s": [
+   "Sputnik (October 1957), the first satellite, shocked the USA by showing Soviet rocket technology was ahead and a satellite could be weaponised.",
+   "Gagarin became the first human in space in April 1961, and Armstrong and Aldrin landed on the moon in July 1969.",
+   "Space and nuclear rockets shared technology, so the Space Race was the arms race by other means."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Sputnik",
+    "alt": [],
+    "d": [
+     "Vostok",
+     "Explorer",
+     "Luna"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "April 1961",
+    "alt": [],
+    "d": [
+     "April 1957",
+     "April 1963",
+     "August 1961"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "arms race",
+    "alt": [],
+    "d": [
+     "propaganda war",
+     "trade war",
+     "ideological debate"
+    ]
+   }
   ]
  },
  {
@@ -1879,6 +6948,43 @@
    "human face",
    "Warsaw Letter",
    "Palach"
+  ],
+  "s": [
+   "In January 1968 Dubcek launched 'socialism with a human face', easing censorship and freeing political prisoners, alarming Brezhnev who feared a chain reaction.",
+   "In July 1968 the Warsaw Letter warned the reforms threatened socialism, but Dubcek refused to reverse them.",
+   "In August 1968 500,000 Warsaw Pact troops invaded, Husak replaced Dubcek, and Jan Palach self-immolated in protest."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "chain reaction",
+    "alt": [],
+    "d": [
+     "economic collapse",
+     "Western invasion",
+     "military coup"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Warsaw Letter",
+    "alt": [],
+    "d": [
+     "Prague Letter",
+     "Moscow Memorandum",
+     "Bratislava Note"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "500,000",
+    "alt": [],
+    "d": [
+     "50,000",
+     "5,000",
+     "2 million"
+    ]
+   }
   ]
  },
  {
@@ -1893,6 +6999,43 @@
    "Brezhnev Doctrine",
    "Albania left",
    "Sinatra Doctrine"
+  ],
+  "s": [
+   "The Brezhnev Doctrine claimed the right to intervene where socialism was threatened in any communist state, ending reform across the Eastern bloc.",
+   "The USA did not intervene, being deeply involved in Vietnam, and Albania left the Warsaw Pact in protest.",
+   "The doctrine discouraged reform until Gorbachev abandoned it in 1988, and its abandonment, the Sinatra Doctrine, enabled the 1989 revolutions."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "intervene",
+    "alt": [],
+    "d": [
+     "negotiate",
+     "withdraw",
+     "annex"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Vietnam",
+    "alt": [],
+    "d": [
+     "Korea",
+     "Cuba",
+     "Berlin"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1988",
+    "alt": [],
+    "d": [
+     "1985",
+     "1991",
+     "1979"
+    ]
+   }
   ]
  },
  {
@@ -1907,6 +7050,43 @@
    "Fuchs",
    "Cambridge Five",
    "U-2"
+  ],
+  "s": [
+   "Klaus Fuchs passed Manhattan Project designs to the Soviets, and the Rosenbergs, executed in 1953, passed related intelligence, inflaming McCarthyism.",
+   "The Cambridge Five, recruited in the 1930s, included Philby, who destroyed Western spy networks and fled to the USSR in 1963.",
+   "The 1960 U-2 shooting down over the USSR wrecked the Paris Summit when Eisenhower refused to apologise."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Manhattan Project",
+    "alt": [],
+    "d": [
+     "Apollo Programme",
+     "Tube Alloys",
+     "Enigma project"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Philby",
+    "alt": [],
+    "d": [
+     "Blunt",
+     "Maclean",
+     "Burgess"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Paris Summit",
+    "alt": [],
+    "d": [
+     "Geneva Summit",
+     "Vienna Summit",
+     "Camp David Summit"
+    ]
+   }
   ]
  },
  {
@@ -1921,6 +7101,45 @@
    "Aldrich Ames",
    "Guillaume",
    "permanent feature"
+  ],
+  "s": [
+   "CIA officer Aldrich Ames spied for the Soviets from 1985, revealing virtually every CIA source inside the USSR, with at least ten executed, for money not ideology.",
+   "Gunter Guillaume, Willy Brandt's aide, was exposed as a Stasi spy in 1974, forcing Brandt to resign.",
+   "Espionage showed that even during detente both sides saw each other as fundamentally hostile."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "money",
+    "alt": [],
+    "d": [
+     "revenge",
+     "blackmail",
+     "fear"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Stasi",
+    "alt": [],
+    "d": [
+     "KGB",
+     "GRU",
+     "Gestapo"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "detente",
+    "alt": [
+     "détente"
+    ],
+    "d": [
+     "containment",
+     "appeasement",
+     "rollback"
+    ]
+   }
   ]
  },
  {
@@ -1935,6 +7154,45 @@
    "Walesa",
    "strike",
    "martial law"
+  ],
+  "s": [
+   "In 1980 Gdansk shipyard workers led by Lech Walesa formed Solidarity, the first independent trade union in the Eastern bloc.",
+   "Solidarity grew to 10 million members and demanded free trade unions, the right to strike and freedom of speech.",
+   "In December 1981 General Jaruzelski declared martial law and banned Solidarity, while Pope John Paul II sustained Polish resolve."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Walesa",
+    "alt": [
+     "Lech Walesa"
+    ],
+    "d": [
+     "Gomulka",
+     "Kuron",
+     "Michnik"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "10 million",
+    "alt": [],
+    "d": [
+     "1 million",
+     "100,000",
+     "50 million"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Jaruzelski",
+    "alt": [],
+    "d": [
+     "Gierek",
+     "Kania",
+     "Gomulka"
+    ]
+   }
   ]
  },
  {
@@ -1949,6 +7207,43 @@
    "Ussuri River",
    "Kissinger",
    "second-strike capability"
+  ],
+  "s": [
+   "The USSR spent about 40% of its budget on defence, growth stalled, and it needed US grain and technology.",
+   "The USA was weakened by Vietnam and the 1973 oil crisis, so Nixon and Kissinger sought to manage the Soviet threat cheaply.",
+   "Nuclear parity and second-strike capability made confrontation too dangerous after the Cuban Missile Crisis showed the risks of brinkmanship."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "40%",
+    "alt": [],
+    "d": [
+     "4%",
+     "14%",
+     "70%"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "oil crisis",
+    "alt": [],
+    "d": [
+     "stock market crash",
+     "banking crisis",
+     "grain shortage"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "second-strike",
+    "alt": [],
+    "d": [
+     "first-strike",
+     "conventional",
+     "missile defence"
+    ]
+   }
   ]
  },
  {
@@ -1963,6 +7258,45 @@
    "5-year freeze",
    "MIRVs",
    "Helsinki Accords"
+  ],
+  "s": [
+   "In 1972 Nixon and Brezhnev signed SALT I, a five-year freeze on missile launcher construction, limiting ICBMs and submarine-launched missiles.",
+   "MIRVs let one missile carry warheads aimed at multiple targets, so the freeze on launchers was partly illusory.",
+   "It was the first formal arms limitation agreement, leading to Helsinki (1975) and SALT II (1979), but the arms race continued."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "five-year",
+    "alt": [
+     "5-year"
+    ],
+    "d": [
+     "one-year",
+     "ten-year",
+     "three-year"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "MIRVs",
+    "alt": [],
+    "d": [
+     "ABMs",
+     "SLBMs",
+     "MRBMs"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "SALT II",
+    "alt": [],
+    "d": [
+     "SALT III",
+     "START I",
+     "INF Treaty"
+    ]
+   }
   ]
  },
  {
@@ -1977,6 +7311,43 @@
    "Basket 1",
    "Basket 3",
    "Apollo-Soyuz"
+  ],
+  "s": [
+   "The Helsinki Accords (1975) had three baskets: inviolable European borders, economic and scientific cooperation, and respect for human rights, seen as the zenith of detente.",
+   "The USSR ignored Basket 3 in practice, but it gave Eastern European dissidents a legal basis to demand their rights.",
+   "The same year Apollo-Soyuz saw US and Soviet astronauts shake hands in orbit, symbolising detente."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "three",
+    "alt": [],
+    "d": [
+     "two",
+     "four",
+     "five"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "dissidents",
+    "alt": [],
+    "d": [
+     "generals",
+     "bishops",
+     "diplomats"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Apollo-Soyuz",
+    "alt": [],
+    "d": [
+     "Apollo 11",
+     "Gemini-Vostok",
+     "Vostok-Mercury"
+    ]
+   }
   ]
  },
  {
@@ -1991,6 +7362,43 @@
    "Moscow Treaty",
    "Basic Treaty",
    "Guillaume"
+  ],
+  "s": [
+   "Brandt, Chancellor from 1969, abandoned the Hallstein Doctrine, and the 1970 Moscow and Warsaw Treaties accepted post-war borders, including the Oder-Neisse line.",
+   "The Basic Treaty (1972) recognised the GDR as a sovereign state, and both Germanies joined the UN.",
+   "Brandt won the 1971 Nobel Peace Prize and resigned in 1974 after aide Gunter Guillaume was exposed as a Stasi spy."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Hallstein Doctrine",
+    "alt": [],
+    "d": [
+     "Truman Doctrine",
+     "Brezhnev Doctrine",
+     "Adenauer Doctrine"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Basic Treaty",
+    "alt": [],
+    "d": [
+     "Prague Treaty",
+     "Helsinki Treaty",
+     "Berlin Treaty"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Stasi",
+    "alt": [],
+    "d": [
+     "KGB",
+     "GRU",
+     "Gestapo"
+    ]
+   }
   ]
  },
  {
@@ -2005,6 +7413,43 @@
    "PDPA",
    "Central Asian",
    "Operation Cyclone"
+  ],
+  "s": [
+   "In 1978 the communist PDPA seized power in Afghanistan and its atheist policies alienated Muslims, prompting Mujahedeen resistance.",
+   "Brezhnev feared a collapse would spread Islamic fundamentalism into Central Asia and bring a US-backed state near the Persian Gulf.",
+   "On Christmas Day 1979 100,000 Soviet troops invaded, killed Amin and installed Kamal, while Operation Cyclone armed the Mujahedeen via Pakistan."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "PDPA",
+    "alt": [],
+    "d": [
+     "KGB",
+     "Taliban",
+     "Baath"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Islamic fundamentalism",
+    "alt": [],
+    "d": [
+     "Chinese influence",
+     "nuclear proliferation",
+     "Western capitalism"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Pakistan",
+    "alt": [],
+    "d": [
+     "Iran",
+     "India",
+     "China"
+    ]
+   }
   ]
  },
  {
@@ -2019,6 +7464,43 @@
    "Carter",
    "Gorbachev",
    "glasnost"
+  ],
+  "s": [
+   "The Red Army could not win the decade-long war, with over 38,000 Soviets killed or wounded, and Carter boycotted the 1980 Moscow Olympics.",
+   "The war eroded Soviet willingness to use force and influenced Gorbachev's refusal to use it to keep communist regimes in 1989.",
+   "Glasnost exposed Afghanistan's failures, fuelling demands for change, while spiralling costs drained the economy."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Moscow Olympics",
+    "alt": [],
+    "d": [
+     "Los Angeles Olympics",
+     "Munich Olympics",
+     "Seoul Olympics"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1989",
+    "alt": [],
+    "d": [
+     "1985",
+     "1991",
+     "1979"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Glasnost",
+    "alt": [],
+    "d": [
+     "Perestroika",
+     "Detente",
+     "Ostpolitik"
+    ]
+   }
   ]
  },
  {
@@ -2033,6 +7515,43 @@
    "evil empire",
    "Star Wars",
    "Able Archer"
+  ],
+  "s": [
+   "Reagan called the USSR an 'evil empire', raised military spending from $171bn (1981) to $376bn (1986) and deployed Pershing and Cruise missiles in 1983.",
+   "SDI ('Star Wars', 1983) planned space-based lasers to intercept Soviet ICBMs, threatening to make Soviet arsenals obsolete.",
+   "In Able Archer 83, a NATO nuclear war exercise, the USSR feared a real strike and went on alert."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "$376bn",
+    "alt": [],
+    "d": [
+     "$37.6bn",
+     "$276bn",
+     "$576bn"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "space-based lasers",
+    "alt": [],
+    "d": [
+     "ground-based missiles",
+     "orbiting bombers",
+     "naval defences"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Able Archer 83",
+    "alt": [],
+    "d": [
+     "Able Archer 81",
+     "Proud Prophet 83",
+     "Red Dawn 83"
+    ]
+   }
   ]
  },
  {
@@ -2047,6 +7566,43 @@
    "economic stagnation",
    "SDI",
    "Carter Doctrine"
+  ],
+  "s": [
+   "Economic stagnation, not Reagan's military build-up, was the primary driver of Soviet change, as the USSR over-spent on defence.",
+   "SDI convinced Gorbachev the USSR could not win an arms race, while the Reagan Doctrine funded anti-communist resistance.",
+   "The Carter Doctrine (1980) promised a strong response to any threat to the Persian Gulf, and SALT II was never ratified."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "stagnation",
+    "alt": [],
+    "d": [
+     "inflation",
+     "rebellion",
+     "famine"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Reagan Doctrine",
+    "alt": [],
+    "d": [
+     "Truman Doctrine",
+     "Nixon Doctrine",
+     "Bush Doctrine"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Persian Gulf",
+    "alt": [],
+    "d": [
+     "Suez Canal",
+     "Baltic Sea",
+     "Panama Canal"
+    ]
+   }
   ]
  },
  {
@@ -2061,6 +7617,43 @@
    "stagnation",
    "Andropov",
    "over-spending"
+  ],
+  "s": [
+   "Brezhnev's 'era of stagnation' left the economy failing, Afghanistan costing vast resources, and Chernobyl (1986) costing $18 billion, exposing inefficiency and corruption.",
+   "Poor living standards caused unrest in satellite states such as Poland, and elderly successors Andropov and Chernenko prolonged stagnation.",
+   "When Gorbachev became leader in 1985, radical change was seen as necessary as the USSR was losing the technological race."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Chernobyl",
+    "alt": [],
+    "d": [
+     "Three Mile Island",
+     "Kyshtym",
+     "Windscale"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Andropov",
+    "alt": [],
+    "d": [
+     "Kosygin",
+     "Suslov",
+     "Podgorny"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1985",
+    "alt": [],
+    "d": [
+     "1982",
+     "1987",
+     "1989"
+    ]
+   }
   ]
  },
  {
@@ -2075,6 +7668,43 @@
    "private enterprise",
    "openness",
    "undermined Soviet"
+  ],
+  "s": [
+   "Perestroika ('restructuring') relaxed central control and allowed private enterprise from 1987, intended to save communism but unleashing forces it could not manage.",
+   "Glasnost ('openness') relaxed media controls from 1986, exposing corruption, freeing political prisoners and bringing multi-candidate elections.",
+   "Together they undermined Soviet authority, as glasnost exposed the depth of problems and perestroika created disruption without growth."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "restructuring",
+    "alt": [],
+    "d": [
+     "reconstruction",
+     "reform",
+     "revolution"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1986",
+    "alt": [],
+    "d": [
+     "1983",
+     "1985",
+     "1989"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "disruption",
+    "alt": [],
+    "d": [
+     "stability",
+     "prosperity",
+     "unity"
+    ]
+   }
   ]
  },
  {
@@ -2089,6 +7719,43 @@
    "INF Treaty",
    "working relationship",
    "arms race"
+  ],
+  "s": [
+   "At Reykjavik (1986) Reagan refused to trade SDI for sweeping arms cuts, but the 1987 INF Treaty eliminated intermediate-range missiles from Europe.",
+   "Reagan and Gorbachev exchanged visits, and Reagan came to believe Gorbachev was genuinely different from previous Soviet leaders.",
+   "The primary driver was Gorbachev's conviction that the USSR could not sustain the arms race, with Western pressure speeding his timetable."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Reykjavik",
+    "alt": [],
+    "d": [
+     "Geneva",
+     "Vienna",
+     "Helsinki"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "genuinely different",
+    "alt": [],
+    "d": [
+     "a hardliner",
+     "a threat",
+     "unchanged"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "timetable",
+    "alt": [],
+    "d": [
+     "downfall",
+     "funding",
+     "succession"
+    ]
+   }
   ]
  },
  {
@@ -2103,6 +7770,47 @@
    "abandoned",
    "crushed",
    "bolster"
+  ],
+  "s": [
+   "In December 1988 Gorbachev told the UN he was abandoning the Brezhnev Doctrine, leaving satellite states free to 'do it their way'.",
+   "This enabled the 1989 revolutions by removing the threat of intervention that had crushed Hungary (1956) and Czechoslovakia (1968).",
+   "By 1989 the 'Sinatra Doctrine' meant Gorbachev would not prop up unpopular regimes unwilling to reform."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "UN",
+    "alt": [
+     "United Nations"
+    ],
+    "d": [
+     "Warsaw Pact summit",
+     "Politburo",
+     "Congress of Deputies"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Hungary",
+    "alt": [],
+    "d": [
+     "Poland",
+     "East Germany",
+     "Romania"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Sinatra Doctrine",
+    "alt": [
+     "Sinatra"
+    ],
+    "d": [
+     "Truman Doctrine",
+     "Reagan Doctrine",
+     "Carter Doctrine"
+    ]
+   }
   ]
  },
  {
@@ -2117,6 +7825,47 @@
    "Solidarity landslide",
    "Pozsgay",
    "revolutions"
+  ],
+  "s": [
+   "Poland's Round Table Agreements (April 1989) let Solidarity contest 35% of seats, and its June landslide produced Eastern Europe's first non-communist government since 1948.",
+   "Hungary opened its Austrian border in August 1989, and 150,000 East Germans fled West, triggering the Berlin Wall crisis.",
+   "Both confirmed the Sinatra Doctrine was real, and Poland's success triggered revolutions across the Eastern bloc."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "35%",
+    "alt": [],
+    "d": [
+     "15%",
+     "50%",
+     "100%"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Austrian",
+    "alt": [
+     "Austria"
+    ],
+    "d": [
+     "Czech",
+     "Romanian",
+     "Yugoslav"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Sinatra Doctrine",
+    "alt": [
+     "Sinatra"
+    ],
+    "d": [
+     "Truman Doctrine",
+     "Reagan Doctrine",
+     "Carter Doctrine"
+    ]
+   }
   ]
  },
  {
@@ -2131,6 +7880,43 @@
    "Leipzig",
    "overwhelmed",
    "Ich bin"
+  ],
+  "s": [
+   "Hungary's open border let 150,000 East Germans flee West, causing mass demonstrations in Leipzig, and Gorbachev told Honecker to make changes.",
+   "On 9 November 1989 the government announced free travel, and overwhelmed border guards opened crossings that night.",
+   "It fell 26 years after Kennedy's 'Ich bin ein Berliner' speech, confirming the Sinatra Doctrine was real."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Leipzig",
+    "alt": [],
+    "d": [
+     "Dresden",
+     "Rostock",
+     "Magdeburg"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "free travel",
+    "alt": [],
+    "d": [
+     "a new constitution",
+     "free elections",
+     "the end of the SED"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "26",
+    "alt": [],
+    "d": [
+     "16",
+     "36",
+     "46"
+    ]
+   }
   ]
  },
  {
@@ -2145,6 +7931,43 @@
    "Havel",
    "Timisoara",
    "Velvet Divorce"
+  ],
+  "s": [
+   "In Czechoslovakia's Velvet Revolution, led by Charter 77 and Havel's Civic Forum, the Communists gave up power in December 1989 peacefully.",
+   "Romania's was the only violent revolution: protests began in Timisoara and the Ceausescus were executed on 25 December 1989.",
+   "In the Velvet Divorce (1 January 1993) Czechoslovakia split peacefully into the Czech Republic and Slovakia without a referendum."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Civic Forum",
+    "alt": [],
+    "d": [
+     "Public Against Violence",
+     "Solidarity",
+     "New Forum"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Timisoara",
+    "alt": [],
+    "d": [
+     "Bucharest",
+     "Cluj",
+     "Brasov"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1 January 1993",
+    "alt": [],
+    "d": [
+     "1 January 1990",
+     "1 July 1992",
+     "1 January 1995"
+    ]
+   }
   ]
  },
  {
@@ -2159,6 +7982,45 @@
    "Kohl",
    "Two Plus",
    "eastwards"
+  ],
+  "s": [
+   "Kohl moved fast, and the pro-reunification Alliance for Germany won East Germany's first free elections in March 1990.",
+   "Economic union came on 1 July 1990 (1:1 Deutschmark conversion), reunification on 3 October 1990, with the Two Plus Four Treaty settling borders.",
+   "Gorbachev agreed to German NATO membership in exchange for assurances that NATO would not expand eastwards, later controversial."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Kohl",
+    "alt": [
+     "Helmut Kohl"
+    ],
+    "d": [
+     "Brandt",
+     "Schmidt",
+     "Genscher"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Two Plus Four Treaty",
+    "alt": [],
+    "d": [
+     "Four Power Treaty",
+     "Basic Treaty",
+     "Maastricht Treaty"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "eastwards",
+    "alt": [],
+    "d": [
+     "westwards",
+     "southwards",
+     "into Ukraine"
+    ]
+   }
   ]
  },
  {
@@ -2173,6 +8035,47 @@
    "Estonia",
    "Yeltsin",
    "sole superpower"
+  ],
+  "s": [
+   "Gorbachev's reforms unleashed forces he could not control, and Estonia, Latvia and Lithuania declared independence in 1990.",
+   "In August 1991 hardliners staged a coup against the Union Treaty, but Yeltsin rallied opposition and it collapsed in three days.",
+   "On Christmas Day 1991 Gorbachev resigned, dissolving the USSR into 15 states; Russia inherited the Security Council seat and nuclear arsenal."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "1990",
+    "alt": [],
+    "d": [
+     "1987",
+     "1988",
+     "1992"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Yeltsin",
+    "alt": [
+     "Boris Yeltsin"
+    ],
+    "d": [
+     "Yanayev",
+     "Putin",
+     "Gromyko"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "15",
+    "alt": [
+     "fifteen"
+    ],
+    "d": [
+     "12",
+     "9",
+     "25"
+    ]
+   }
   ]
  },
  {
@@ -2187,6 +8090,45 @@
    "shock therapy",
    "October 1993",
    "Putin"
+  ],
+  "s": [
+   "'Shock therapy' removed price controls in January 1992, causing hyperinflation, and corrupt privatisation let 'oligarchs' acquire assets far below value.",
+   "In October 1993 Yeltsin had tanks shell the barricaded parliament, killing at least 187, and Chechnya (1994) brought humiliating defeats.",
+   "Yeltsin's health failed and Russia lost superpower status, and he resigned on 31 December 1999, handing power to Putin."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "hyperinflation",
+    "alt": [],
+    "d": [
+     "mass unemployment",
+     "a banking crash",
+     "famine"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "187",
+    "alt": [],
+    "d": [
+     "18",
+     "87",
+     "1,870"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Putin",
+    "alt": [
+     "Vladimir Putin"
+    ],
+    "d": [
+     "Zhirinovsky",
+     "Primakov",
+     "Zyuganov"
+    ]
+   }
   ]
  },
  {
@@ -2201,6 +8143,47 @@
    "Milosevic",
    "Srebrenica",
    "Dayton"
+  ],
+  "s": [
+   "After Tito's death in 1980 the federation fractured, and Serbian nationalist Milosevic became president in 1989, pressing Serbian interests.",
+   "Slovenia and Croatia declared independence in June 1991, starting war, and in 1995 Srebrenica saw 8,000 Muslim men and boys murdered.",
+   "NATO bombing in 1995 forced the Dayton Peace Agreement, and Yugoslavia showed communism had suppressed rather than resolved ethnic nationalism."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Tito's",
+    "alt": [
+     "Tito"
+    ],
+    "d": [
+     "Stalin's",
+     "Hoxha's",
+     "Ceausescu's"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "June 1991",
+    "alt": [],
+    "d": [
+     "June 1989",
+     "June 1993",
+     "March 1991"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Dayton Peace Agreement",
+    "alt": [
+     "Dayton"
+    ],
+    "d": [
+     "Geneva Accords",
+     "Paris Accords",
+     "Rambouillet Agreement"
+    ]
+   }
   ]
  },
  {
@@ -2216,6 +8199,46 @@
    "politics",
    "promoted",
    "assumptions"
+  ],
+  "s": [
+   "Chronicles are often third-hand, written by someone not at the heart of politics.",
+   "They are presented as neutral but reflect the dominant or promoted version of events.",
+   "They reflect the political and religious assumptions of their author."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "third-hand",
+    "alt": [
+     "second- or third-hand",
+     "second-hand"
+    ],
+    "d": [
+     "first-hand",
+     "eyewitness",
+     "official"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "neutral",
+    "alt": [],
+    "d": [
+     "official",
+     "critical",
+     "personal"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "religious",
+    "alt": [],
+    "d": [
+     "economic",
+     "legal",
+     "regional"
+    ]
+   }
   ]
  },
  {
@@ -2231,6 +8254,43 @@
    "over-reported",
    "informants",
    "Renard"
+  ],
+  "s": [
+   "Dispatches were written for the home government, so they were shaped to appear competent, over-reporting crises and rarely admitting uncertainty.",
+   "They relied on informants with their own agendas, and only Venice had a professional diplomatic service; others, like Renard, were court appointees.",
+   "No foreign observer was neutral: Renard prioritised Habsburg interests and Venetian ambassadors prioritised trade."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "crises",
+    "alt": [],
+    "d": [
+     "successes",
+     "rumours",
+     "expenses"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Venice",
+    "alt": [],
+    "d": [
+     "Spain",
+     "France",
+     "the Empire"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "trade",
+    "alt": [],
+    "d": [
+     "religion",
+     "dynasty",
+     "security"
+    ]
+   }
   ]
  },
  {
@@ -2246,6 +8306,43 @@
    "social scientists",
    "upward",
    "never suggest"
+  ],
+  "s": [
+   "The Commonwealth Men were moral reformers, not social scientists, and described poverty and enclosure to shame the powerful.",
+   "They wrote for literate, propertied readers, not the commons, so their criticism was aimed upward.",
+   "They never suggest that Protestant reform itself caused popular unrest."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "shame",
+    "alt": [],
+    "d": [
+     "advise",
+     "inform",
+     "flatter"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "propertied",
+    "alt": [],
+    "d": [
+     "clerical",
+     "urban",
+     "royal"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Protestant",
+    "alt": [],
+    "d": [
+     "Catholic",
+     "fiscal",
+     "monastic"
+    ]
+   }
   ]
  },
  {
@@ -2261,6 +8358,43 @@
    "clerk",
    "cross-reference",
    "authority"
+  ],
+  "s": [
+   "Acts record decisions, not the debates behind them; the real politics happened before the clerk wrote it down.",
+   "They are evidence of intent, not achievement, so cross-reference with local sources to check enforcement.",
+   "They speak in the register of authority, not doubt, showing how government wanted its actions to appear."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "debates",
+    "alt": [],
+    "d": [
+     "costs",
+     "witnesses",
+     "signatories"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "intent",
+    "alt": [],
+    "d": [
+     "opinion",
+     "outcome",
+     "opposition"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "doubt",
+    "alt": [],
+    "d": [
+     "opposition",
+     "debate",
+     "protest"
+    ]
+   }
   ]
  },
  {
@@ -2276,6 +8410,43 @@
    "churchwarden",
    "absence",
    "regional variation"
+  ],
+  "s": [
+   "Parish records are administrative, not statements of belief; a churchwarden buying a Bible is doing their duty, not expressing conviction.",
+   "Survival is patchy, so silence does not mean nothing happened and you should not argue from absence.",
+   "They show strong regional variation, so one region's evidence should not be generalised nationally."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "churchwarden",
+    "alt": [],
+    "d": [
+     "bishop",
+     "priest",
+     "constable"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "patchy",
+    "alt": [],
+    "d": [
+     "complete",
+     "consistent",
+     "national"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "regional",
+    "alt": [],
+    "d": [
+     "social",
+     "gender",
+     "religious"
+    ]
+   }
   ]
  },
  {
@@ -2291,6 +8462,45 @@
    "polemical purpose",
    "retellings",
    "evidential weight"
+  ],
+  "s": [
+   "Foxe had a clear polemical purpose, casting Protestants as heroic martyrs against Catholic tyranny.",
+   "His accounts came from survivors years later, often second- or third-hand and shaped by earlier retellings.",
+   "Moments that cut against his own purpose, such as hostile crowds, carry the most evidential weight."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "polemical",
+    "alt": [
+     "polemic"
+    ],
+    "d": [
+     "neutral",
+     "dynastic",
+     "financial"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "survivors",
+    "alt": [],
+    "d": [
+     "judges",
+     "gaolers",
+     "bishops"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "hostile crowds",
+    "alt": [],
+    "d": [
+     "royal pardons",
+     "bishops' speeches",
+     "trial transcripts"
+    ]
+   }
   ]
  },
  {
@@ -2306,6 +8516,43 @@
    "Kett",
    "Western",
    "Wyatt"
+  ],
+  "s": [
+   "Ask who wrote rebel demands: Kett's Articles show legal literacy, so they may be the words of educated gentry, not Norfolk peasants.",
+   "The Western Rebels' demand for the Mass may reflect conservative clergy leadership, not rank-and-file conviction.",
+   "Wyatt's rebels needed a cause with broad appeal, so they framed it as xenophobia against the Spanish marriage, not Protestantism."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "legal literacy",
+    "alt": [],
+    "d": [
+     "military skill",
+     "clerical training",
+     "royal connections"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Mass",
+    "alt": [],
+    "d": [
+     "Latin Bible",
+     "Prayer Book",
+     "Papal supremacy"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "xenophobia",
+    "alt": [],
+    "d": [
+     "heresy",
+     "taxation",
+     "enclosure"
+    ]
+   }
   ]
  }
 ]
