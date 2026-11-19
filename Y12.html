@@ -285,6 +285,34 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .src-panel-list li::before{content:'•';color:var(--muted);flex-shrink:0;font-weight:700}
 
 /* FLASHCARD DRILL */
+/* FILL THE GAPS */
+.fd-start-row{display:flex;gap:8px;margin-bottom:1.25rem}
+.fd-start-row .btn-go{margin:0;flex:1;font-size:.88rem;line-height:1.3;padding:.8rem .4rem}
+.fd-start-row .btn-go small{display:block;font-weight:600;opacity:.85;font-size:.72rem;margin-top:2px}
+.ff-switch{display:flex;margin:0 0 .6rem;border:1.5px solid var(--border2);border-radius:10px;overflow:hidden}
+.ff-switch button{flex:1;padding:.5rem;border:none;background:var(--card);color:var(--muted);font-family:inherit;font-size:.82rem;font-weight:700;cursor:pointer}
+.ff-switch button.on{background:var(--text);color:var(--surface)}
+.ff-card{position:relative;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;margin-bottom:.75rem;box-sizing:border-box}
+.ff-s{font-size:.92rem;line-height:1.75;margin:0 0 .7rem;color:var(--text)}
+.ff-blank{display:inline-block;min-width:4.5em;border:2px solid var(--muted);background:var(--subtle);border-radius:6px;color:transparent;user-select:none;vertical-align:middle;line-height:1.3;margin:0 .1em}
+.ff-blank.cur{border-color:#2563eb;background:rgba(37,99,235,.12);animation:ffp 1.2s ease-in-out infinite}
+@keyframes ffp{50%{opacity:.35}}
+.ff-ok{background:#d1fae5;color:#065f46;font-weight:700;padding:0 .25em;border-radius:4px}
+.ff-wrong{background:#fee2e2;color:#991b1b;text-decoration:line-through;padding:0 .25em;border-radius:4px;margin-right:.25em}
+.ff-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:.4rem}
+.ff-opt{padding:.75rem .5rem;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text);font-family:inherit;font-size:.86rem;font-weight:600;cursor:pointer;line-height:1.3}
+.ff-opt.good{background:#d1fae5;border-color:#10b981;color:#065f46}
+.ff-opt.bad{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.ff-opt:disabled{cursor:default}
+.ff-type{display:flex;gap:8px;margin-top:.4rem}
+.ff-type input{flex:1;min-width:0;padding:.7rem;border:1.5px solid var(--border2);border-radius:10px;background:var(--input-bg);color:var(--text);font-family:inherit;font-size:1rem}
+.ff-go{padding:.7rem 1rem;border:none;border-radius:10px;background:var(--text);color:var(--surface);font-family:inherit;font-weight:700;cursor:pointer}
+.ff-msg{font-size:.82rem;font-weight:600;margin:.55rem 0 0}.ff-msg.ok{color:#065f46}.ff-msg.no{color:#991b1b}
+.ff-next{width:100%;padding:.78rem;border:none;border-radius:10px;font-family:inherit;font-size:.92rem;font-weight:700;cursor:pointer;background:#1F3864;color:#fff;margin-top:.6rem}
+.ff-link{background:none;border:none;color:var(--muted);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:.78rem;padding:.35rem 0;margin-top:.3rem}
+.ff-notes{font-size:.82rem;line-height:1.6;margin-top:.5rem;padding:.6rem .8rem .6rem 1.6rem;background:var(--subtle);border-radius:8px}
+.ff-notes li{margin-bottom:.35rem}
+
 .fd-scene{perspective:1200px;margin-bottom:.75rem;cursor:pointer}
 .fd-card-inner{position:relative;width:100%;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.4,0,.2,1)}
 .fd-card-inner.flipped{transform:rotateY(180deg)}
@@ -433,6 +461,10 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .hub-row.lock{opacity:.45;cursor:not-allowed}
 .hub-pill{display:inline-flex;align-items:center;gap:.35rem;border:1.5px solid var(--border2);background:var(--surface);color:var(--muted);border-radius:20px;padding:.25rem .7rem;font-family:inherit;font-size:.74rem;font-weight:700;cursor:pointer;margin-bottom:.4rem}
 .hub-pill.on{background:#FEF3C7;border-color:#F0B429;color:#7A5200}
+.gap-new-pill{position:absolute;top:-9px;right:8px;background:#534AB7;color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.04em;padding:.12rem .5rem;border-radius:99px;border:2px solid var(--surface)}
+.hub-start-row{display:flex;gap:8px;margin-top:.7rem}
+.hub-start-row .hub-start{margin-top:0;flex:1;font-size:.88rem;line-height:1.3;padding:.75rem .3rem}
+.hub-start small{display:block;font-weight:600;opacity:.85;font-size:.72rem;margin-top:2px}
 .hub-start{width:100%;margin-top:.7rem;padding:.8rem;border:none;border-radius:10px;color:#fff;font-family:inherit;font-weight:700;font-size:.95rem;cursor:pointer}
 .hub-link{background:none;border:none;color:var(--muted);font-family:inherit;font-size:.76rem;font-weight:600;cursor:pointer;margin-top:.6rem;padding:.2rem}
 .wh-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.55rem .8rem;font-family:inherit;font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;cursor:pointer;margin-top:1rem}
@@ -451,6 +483,9 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 @keyframes stampin2{0%{opacity:0;transform:rotate(-5deg) scale(1.8)}60%{opacity:.95;transform:rotate(-5deg) scale(.94)}100%{opacity:.92;transform:rotate(-5deg) scale(1)}}
 .xp-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:.8rem .9rem;margin-bottom:.9rem;cursor:pointer}
 .xp-card:hover{border-color:var(--border2)}
+#xp-card.xp-col .xp-tl,#xp-card.xp-col .xp-bar,#xp-card.xp-col .xp-next,#xp-card.xp-col .xp-streak{display:none}
+#xp-card.xp-col .xp-sub{font-size:0}#xp-card.xp-col .xp-sub::before{content:attr(data-lv);font-size:.72rem}
+#xp-card .xp-today b{display:block}.xp-go{cursor:pointer}
 .xp-top{display:flex;align-items:center;gap:.7rem}
 .xp-emoji{font-size:2rem;line-height:1}
 .xp-mid{flex:1;min-width:0}
@@ -755,10 +790,10 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .up-ticks .up-none{border-top-color:var(--border2)}
 #s-pick .pick-grid{grid-template-columns:1fr 1fr;gap:8px;margin-bottom:.4rem}
 #s-pick .pick-btn.pb-cw{grid-column:1/-1}
-#s-pick .pick-btn{padding:.5rem 2.8rem .5rem .65rem;font-size:.82rem;line-height:1.2;border-width:1.5px}
-#s-pick .pick-btn .plabel{font-size:.58rem;margin-bottom:.15rem}
-#s-pick .pick-btn .pbw{width:1.9rem;right:.35rem}
-#s-pick .pick-btn .pbw .fd-wheel{width:1.9rem;height:1.9rem}
+#s-pick .pick-btn{padding:1rem 3.6rem 1rem .85rem;font-size:.9rem;line-height:1.3}
+#s-pick .pick-btn .plabel{font-size:.62rem;margin-bottom:.3rem}
+#s-pick .pick-btn .pbw{width:2.7rem;right:.5rem}
+#s-pick .pick-btn .pbw .fd-wheel{width:2.7rem;height:2.7rem}
 #s-pick .xp-card{padding:.5rem .75rem;margin-bottom:.4rem}
 #s-pick .xp-card .xp-streak{margin-top:.4rem;padding-top:.4rem}
 #s-pick .xp-bar{margin:.35rem 0 .15rem}
@@ -770,11 +805,12 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .hub-big{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:.9rem 0 .75rem}
 .hub-big .mode-btn{padding:1.3rem .5rem}.hub-big .mode-btn .icon{font-size:1.6rem}
 .arc-title{font-size:1.4rem;font-weight:800;margin:.4rem 0 .2rem}
-.up-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:.4rem 0}
-.up-pair .up-card{margin:0;padding:.4rem .45rem .45rem}
-.up-pair .up-head{flex-direction:column;align-items:flex-start;gap:0}
-.up-pair .up-title{font-size:.8rem}
-.up-pair .up-pos{font-size:.66rem}
+#up-wrap{border:1.5px solid #378ADD;border-radius:10px;background:color-mix(in srgb,#378ADD 9%,var(--card));padding:.4rem .65rem;margin:.3rem 0}.up-head2{display:flex;align-items:center;gap:.4rem;cursor:pointer}.up-sum{flex:1;font-size:.78rem;font-weight:700;color:var(--text);min-width:0}#up-wrap.up-col #up-body{display:none}#up-body{margin-top:.35rem}.xp-chev{color:var(--muted);font-size:.9rem;margin-left:.2rem;transition:transform .2s}#xp-card:not(.xp-col) .xp-chev{transform:rotate(180deg)}#up-wrap:not(.up-col) .xp-chev{transform:rotate(180deg)}
+.up-pair{display:block;margin:0}
+.up-pair .up-card{margin:0 0 .35rem;padding:0;border:none;border-radius:0;background:none!important}.up-pair .up-card:last-child{margin-bottom:0}
+.up-pair .up-head{flex-direction:row;align-items:baseline;gap:.5rem}.up-pair .up-pos{flex:1;text-align:right}
+.up-pair .up-title{font-size:.85rem}
+.up-pair .up-pos{font-size:.7rem}
 .up-pair .up-ticks span{font-size:.5rem;padding-left:0;padding-right:0}
 #up-ticks-t span{font-size:.44rem;letter-spacing:-.02em}
 .step-lbl{display:flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:700;margin:.5rem 0 .2rem}
@@ -836,7 +872,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.3rem">
     <h1 style="margin:0;font-size:1.2rem;font-weight:700">Mr Rodker's Revision Hub - A Level</h1><span class="yr-pill">Y12</span>
   </div>
-  <div class="step-lbl"><span class="step-n">1</span>Set your progress</div><div class="up-pair"><div class="up-card" id="up-card-t">
+  <div class="step-lbl"><span class="step-n">1</span>Set your progress</div><div id="up-wrap" class="up-col"><div class="up-head2" id="up-tog" role="button" tabindex="0" aria-expanded="false"><span class="up-sum" id="up-sum"></span><span class="xp-chev">▾</span></div><div id="up-body"><div class="up-pair"><div class="up-card" id="up-card-t">
     <div class="up-head"><span class="up-title">Tudors</span><span class="up-pos" id="up-pos-t"></span></div>
     <input type="range" id="up-range-t" min="0" max="6" step="1" value="6" oninput="uptoPreview('t',this.value)" onchange="uptoSave('t',this.value)" aria-label="Tudors">
     <div class="up-ticks" id="up-ticks-t"></div>
@@ -845,8 +881,10 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     <div class="up-head"><span class="up-title">Cold War</span><span class="up-pos" id="up-pos-c"></span></div>
     <input type="range" id="up-range-c" min="0" max="4" step="1" value="4" oninput="uptoPreview('c',this.value)" onchange="uptoSave('c',this.value)" aria-label="Cold War">
     <div class="up-ticks" id="up-ticks-c"></div>
-  </div></div>
+  </div></div></div></div>
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
+  <style>@keyframes gapglow{0%,100%{box-shadow:0 0 0 0 rgba(83,74,183,0)}50%{box-shadow:0 0 0 5px rgba(83,74,183,.3)}}#gap-flag{animation:gapglow 2s ease-in-out infinite}@media (prefers-reduced-motion:reduce){#gap-flag{animation:none}}</style>
+  <div id="gap-flag" style="display:none;background:#EEEDFE;border-radius:10px;padding:.6rem .75rem;margin:.2rem auto .6rem;width:fit-content;max-width:88%;color:#3C3489;font-size:.84rem;line-height:1.4;gap:.5rem;text-align:center;justify-content:center;align-items:center"><span>🆕</span><span><b>Try this:</b> Flashcards now have a gapfill mode!</span></div>
   <div class="pick-grid">
     <button class="pick-btn pb-mtc" onclick="openSection('mtc')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60">
           <circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
@@ -861,7 +899,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
           <circle class="fd-ring-got-elizabeth" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
           <circle class="fd-ring-fill-elizabeth" cx="30" cy="30" r="0" fill="#E1F5EE" style="transition:r .3s"/>
           <text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-elizabeth">0%</text>
-        </svg></span><span class="plabel">Paper 1b · 1558–1603</span>⚜️ Elizabeth I</button>
+        </svg></span><span class="plabel">Paper 1b · 1558–1603</span>👑 Elizabeth I</button>
     <button class="pick-btn pb-cw" onclick="openSection('coldwar')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60">
           <circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
           <circle class="fd-ring-miss-coldwar" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
@@ -873,7 +911,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   <div class="or-line">or</div>
   <div class="home-row"><button class="btn-go" style="background:#3E4651;border:1.5px solid #2D343D" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button><button class="btn-go btn-arc" onclick="arcOpen()"><span class="new-flag">NEW</span>🕹️ Arcade Games</button></div>
   <div class="step-lbl"><span class="step-n">3</span>See your progress</div>
-  <div class="xp-card" id="xp-card" onclick="openProgress()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProgress()" title="See your progress"></div>
+  <div class="xp-card xp-col" id="xp-card" role="button" tabindex="0" aria-expanded="false"></div>
   <div id="weak-nudge"></div>
 </div>
 
@@ -995,7 +1033,10 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
         <label for="fd-hints-on">💡 Show keyword hints on cards</label>
       </div>
       <div id="fd-outstanding-banner" style="display:none;font-size:.78rem;color:var(--muted);background:var(--subtle);border-radius:8px;padding:.6rem .75rem;margin-bottom:.75rem"></div>
-      <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start Flashcard Mode</button>
+      <div class="fd-start-row">
+        <button class="btn-go" id="fd-start-btn" onclick="fdStart('flip')">📖 Flip and learn</button>
+        <button class="btn-go" id="fd-fill-btn" onclick="fdStart('fill')">🧩 Fill the gaps</button>
+      </div>
       <button id="fd-pinned-btn" onclick="fdStartPinned()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer;display:none;width:100%;text-align:center;margin-top:.5rem">📌 Review pinned cards</button>
       <div class="fd-bowl-wrap fd-bowl-wrap-compact" id="fd-bowl-setup-wrap" style="margin-top:.75rem"></div>
       <!-- Wheel + unit breakdown -->
@@ -1019,9 +1060,19 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
         <div class="fd-progress-text"><span id="fd-prog-text"></span><span id="fd-prog-count"></span></div>
         <div class="fd-bar-bg"><div class="fd-bar-fill" id="fd-bar" style="width:0%"></div></div>
       </div>
-      <div class="fd-hints-toggle" style="margin-bottom:.5rem;margin-top:-.25rem">
+      <div class="fd-hints-toggle" id="fd-hints-drill-wrap" style="margin-bottom:.5rem;margin-top:-.25rem">
         <input type="checkbox" id="fd-hints-on-drill" onchange="fdSyncHints(this.checked)">
         <label for="fd-hints-on-drill">💡 Hints</label>
+      </div>
+      <div id="fd-fill" style="display:none">
+        <div class="ff-card" id="ff-card">
+          <div class="fd-card-no" id="ff-no"></div>
+          <div class="fd-tag" id="ff-tag"></div>
+          <div class="fd-question" id="ff-q"></div>
+          <div id="ff-sents"></div>
+          <div id="ff-input"></div>
+          <div id="ff-after"></div>
+        </div>
       </div>
       <div class="fd-scene" id="fd-scene" onclick="fdFlip()">
         <div class="fd-card-inner" id="fd-card-inner">
@@ -1114,7 +1165,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     <p class="rf-section-label">Which section?</p>
     <div class="rf-pills">
       <button class="rf-pill on-mtc" id="rqp-mtc" onclick="toggleRQReign('mtc')">⚔️ Mid Tudor Crisis</button>
-      <button class="rf-pill on-elizabeth" id="rqp-elizabeth" onclick="toggleRQReign('elizabeth')">⚜️ Elizabeth I</button>
+      <button class="rf-pill on-elizabeth" id="rqp-elizabeth" onclick="toggleRQReign('elizabeth')">👑 Elizabeth I</button>
       <button class="rf-pill on-coldwar" id="rqp-coldwar" onclick="toggleRQReign('coldwar')">☢️ Cold War</button>
     </div>
     <p class="rf-section-label">Mode</p>
@@ -2459,6 +2510,165 @@ const LS_STREAK   = 'alevel_fd_streak';
 
 let fdDeck=[], fdMissed=[], fdGot=0, fdMissCount=0, fdCurrent=null, fdFlipped=false, fdHintsOn=false, fdTotal=0, fdOutstanding=[];
 
+
+// ═══════════════════════════════════
+// FILL THE GAPS
+// ═══════════════════════════════════
+let fdMode = 'flip';
+let ffMode = 'match';
+let ffI = 0, ffRes = [], ffOpts = [], ffLock = false, ffTok = 0;
+function ffEsc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function ffFillFor(card, p) { return (card.fill || []).find(f => f.p === p); }
+function ffUsable(card) {
+  return !!(card && Array.isArray(card.s) && card.s.length === 3 && Array.isArray(card.fill) && card.fill.length === 3 && card.fill.every(f => ffFillFor(card, 1) && f.gap && f.d && f.d.length >= 2));
+}
+function ffNorm(x) {
+  return String(x).normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase()
+    .replace(/[‘’]/g,"'").replace(/[–—]/g,'-').replace(/[£$%,]/g,'')
+    .replace(/[^a-z0-9' \-\.]/g,' ').replace(/\s+/g,' ').replace(/^(the|a|an) /,'').trim();
+}
+function ffLev(a, b) {
+  const m = a.length, n = b.length; if (!m) return n; if (!n) return m;
+  let prev = Array.from({length:n+1}, (_,j) => j);
+  for (let i = 1; i <= m; i++) {
+    const cur = [i];
+    for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j]+1, cur[j-1]+1, prev[j-1] + (a[i-1] === b[j-1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[n];
+}
+function ffMatches(text, f) {
+  const t = ffNorm(text); if (!t) return false;
+  const targets = [f.gap].concat(f.alt || []).map(ffNorm);
+  for (const g of targets) {
+    if (t === g) return true;
+    if (/\d/.test(g)) continue;
+    const tol = g.length >= 9 ? 2 : g.length >= 5 ? 1 : 0;
+    if (tol && ffLev(t, g) <= tol) return true;
+  }
+  return false;
+}
+function ffSentHtml(i) {
+  const s = fdCurrent.s[i], f = ffFillFor(fdCurrent, i+1);
+  const m = new RegExp(f.gap.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'i').exec(s);
+  if (!m) return ffEsc(s);
+  const pre = ffEsc(s.slice(0, m.index)), post = ffEsc(s.slice(m.index + m[0].length));
+  let mid;
+  if (i < ffI) {
+    const r = ffRes[i];
+    mid = (r.ok ? '' : (r.pick ? '<span class="ff-wrong">' + ffEsc(r.pick) + '</span>' : '')) + '<span class="ff-ok">' + ffEsc(m[0]) + '</span>';
+  } else {
+    mid = '<span class="ff-blank' + (i === ffI ? ' cur' : '') + '">' + '&nbsp;'.repeat(Math.min(Math.max(m[0].length,6),16)) + '</span>';
+  }
+  return pre + mid + post;
+}
+function ffRender() {
+  ffTok++; ffI = 0; ffRes = []; ffLock = false;
+  const cardSec = fdCurrent.section || currentSection;
+  const col = S[cardSec] ? S[cardSec].colour : '#888';
+  const tagCls = cardSec === 'elizabeth' ? 't-elizabeth' : cardSec === 'coldwar' ? 't-coldwar' : 't-mtc';
+  const tag = document.getElementById('ff-tag');
+  tag.className = 'fd-tag ' + tagCls;
+  tag.textContent = fdCurrent.unit || (S[cardSec] ? S[cardSec].label : cardSec);
+  document.getElementById('ff-no').textContent = fdCurrent.no != null ? '#' + fdCurrent.no : '';
+  const isOut = fdGetOutstanding().includes(fdKey(fdCurrent));
+  document.getElementById('ff-q').textContent = (isOut ? '📌 ' : '') + fdCurrent.front;
+  document.getElementById('ff-card').style.borderLeftColor = col;
+  ffSyncSwitch(); ffDraw();
+}
+function ffSyncSwitch() {
+  document.querySelectorAll('#ff-switch button').forEach(b => b.classList.toggle('on', b.dataset.m === ffMode));
+}
+function ffSetMode(m) {
+  ffMode = m; try { localStorage.setItem('alevel_ff_mode', m); } catch(e) {}
+  ffSyncSwitch();
+  if (fdMode === 'fill' && fdCurrent && ffI < 3 && !ffLock) ffDraw();
+}
+function ffDraw() {
+  document.getElementById('ff-sents').innerHTML = [0,1,2].slice(0, Math.min(ffI,2) + 1).map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
+  document.getElementById('ff-after').innerHTML = '';
+  const box = document.getElementById('ff-input');
+  if (ffI >= 3) { box.innerHTML = ''; return; }
+  const f = ffFillFor(fdCurrent, ffI+1);
+  if (ffMode === 'match') {
+    ffOpts = [f.gap].concat(f.d.slice(0,3));
+    for (let i = ffOpts.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [ffOpts[i],ffOpts[j]] = [ffOpts[j],ffOpts[i]]; }
+    box.innerHTML = '<div class="ff-opts">' + ffOpts.map((o,i) => '<button type="button" class="ff-opt" data-i="' + i + '" onclick="ffPick(' + i + ')">' + ffEsc(o) + '</button>').join('') + '</div>';
+  } else {
+    box.innerHTML = '<div class="ff-type"><input id="ff-text" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Type the missing words" onkeydown="if(event.key===\'Enter\')ffCheck()"><button type="button" class="ff-go" onclick="ffCheck()">Check</button></div>';
+    const inp = document.getElementById('ff-text'); if (inp) setTimeout(() => { try { inp.focus({preventScroll:true}); } catch(e) {} }, 50);
+  }
+  ffLock = false;
+}
+function ffPick(i) {
+  if (ffLock) return; const f = ffFillFor(fdCurrent, ffI+1);
+  const pick = ffOpts[i]; const ok = pick.toLowerCase() === f.gap.toLowerCase();
+  document.querySelectorAll('#ff-input .ff-opt').forEach((b, k) => {
+    b.disabled = true;
+    if (ffOpts[k].toLowerCase() === f.gap.toLowerCase()) b.classList.add('good');
+    else if (k === i) b.classList.add('bad');
+  });
+  ffResolve(ok, pick, false);
+}
+function ffCheck() {
+  if (ffLock) return; const inp = document.getElementById('ff-text'); if (!inp) return;
+  const val = inp.value.trim(); if (!val) return;
+  const f = ffFillFor(fdCurrent, ffI+1);
+  ffResolve(ffMatches(val, f), val, true);
+}
+function ffResolve(ok, pick, canOverride) {
+  ffLock = true;
+  const tok = ffTok, f = ffFillFor(fdCurrent, ffI+1);
+  ffRes[ffI] = { ok: ok, pick: pick };
+  const idx = ffI;
+  // show the filled sentence for this gap straight away
+  ffI = idx + 1;
+  document.getElementById('ff-sents').innerHTML = [0,1,2].slice(0, idx + 1).map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
+  ffI = idx;
+  const after = document.getElementById('ff-after');
+  if (ok) {
+    after.innerHTML = '<div class="ff-msg ok">✓ Correct</div>';
+    setTimeout(() => { if (tok === ffTok) ffAdvance(); }, 700);
+  } else {
+    const inp = document.getElementById('ff-text'); if (inp) { inp.disabled = true; }
+    after.innerHTML = '<button type="button" class="ff-next" onclick="ffAdvance()">Continue</button>' +
+      (canOverride ? '<button type="button" class="ff-link" onclick="ffOverride()">I was right</button>' : '');
+  }
+}
+function ffOverride() {
+  if (!ffRes[ffI]) return;
+  ffRes[ffI].ok = true;
+  ffAdvance();
+}
+function ffAdvance() {
+  if (ffI > 2) return;
+  ffI++;
+  if (ffI < 3) { ffDraw(); return; }
+  ffFinish();
+}
+function ffFinish() {
+  const right = ffRes.filter(r => r.ok).length, all = right === 3;
+  document.getElementById('ff-input').innerHTML = '';
+  const after = document.getElementById('ff-after');
+  if (all) {
+    after.innerHTML = '<div class="ff-msg ok">3 of 3 ✅ Mastered</div><button type="button" class="ff-next" onclick="fdAnswer(true)">Next card →</button>';
+  } else {
+    after.innerHTML = '<button type="button" class="ff-next" onclick="fdAnswer(false)">Next card →</button>';
+  }
+}
+function ffNotes() {
+  const box = document.getElementById('ff-notes'); if (!box) return;
+  if (box.innerHTML) { box.innerHTML = ''; return; }
+  const hints = fdCurrent.hints || [];
+  box.innerHTML = '<ul class="ff-notes">' + ['p1','p2','p3'].map((k,i) => fdCurrent[k] ? '<li>' + boldHints(fdCurrent[k], hints[i] ? [hints[i]] : []) + '</li>' : '').join('') + '</ul>';
+}
+function ffShow(on) {
+  document.getElementById('fd-fill').style.display = on ? 'block' : 'none';
+  document.getElementById('fd-scene').style.display = on ? 'none' : '';
+  const hw = document.getElementById('fd-hints-drill-wrap'); if (hw) hw.style.display = on ? 'none' : '';
+  if (on) document.getElementById('fd-btn-row').style.display = 'none';
+}
+
 function fdTodayStr() { return localDate(); }
 function fdGetSession() {
   const s = JSON.parse(localStorage.getItem(LS_SESSION) || 'null');
@@ -2531,6 +2741,7 @@ function fdSetup() {
   sel.className = currentSection === 'mtc' ? 'sel-mtc' : currentSection === 'coldwar' ? 'sel-cw' : 'sel-liz';
   const startBtn = document.getElementById('fd-start-btn');
   startBtn.className = 'btn-go ' + S[currentSection].go;
+  const fillBtn = document.getElementById('fd-fill-btn'); if (fillBtn) fillBtn.className = 'btn-go ' + S[currentSection].go;
   const pinnedBtn = document.getElementById('fd-pinned-btn');
   if (pinnedBtn) {
     const outstanding = fdGetOutstanding();
@@ -2559,7 +2770,8 @@ function fdSetup() {
   fdUpdateStartBtn();
 }
 
-function fdStart() {
+function fdStart(mode) {
+  if (mode) fdMode = mode;
   if (!FD.length) { alert('Flashcard data not loaded yet — please wait and try again.'); return; }
   const unit = document.getElementById('fd-unit').value;
   if (!unit) { alert('Please select a unit first.'); return; }
@@ -2642,6 +2854,7 @@ function fdNext() {
   document.getElementById('fd-card-inner').classList.remove('flipped');
   document.getElementById('fd-btn-row').style.display = 'none';
   fdUpdateProgress();
+  if (fdMode === 'fill' && ffUsable(fdCurrent)) { ffShow(true); ffRender(); } else { ffShow(false); }
 }
 
 function fdSyncHeight() {
@@ -2825,8 +3038,10 @@ function fdUpdateStartBtn() {
   const btn  = document.getElementById('fd-start-btn');
   if (!btn) return;
   const unit = (document.getElementById('fd-unit') || {}).value || '';
+  const fbtn = document.getElementById('fd-fill-btn');
   if (!unit || !FD.length) {
-    btn.textContent = '⚡ Start Flashcard Mode';
+    btn.innerHTML = '📖 Flip and learn';
+    if (fbtn) fbtn.innerHTML = '🧩 Fill the gaps';
     return;
   }
   const mastered = fdGetMastered();
@@ -2846,9 +3061,10 @@ function fdUpdateStartBtn() {
     return c.unit !== unit;
   }).length;
 
-  let label = `⚡ Start — ${unmastered} card${unmastered !== 1 ? 's' : ''}`;
-  if (pinned > 0) label += ` + ${pinned} pinned`;
-  btn.textContent = label;
+  let sub = `${unmastered} card${unmastered !== 1 ? 's' : ''}`;
+  if (pinned > 0) sub += ` + ${pinned} pinned`;
+  btn.innerHTML = '📖 Flip and learn<small>' + sub + '</small>';
+  if (fbtn) fbtn.innerHTML = '🧩 Fill the gaps<small>' + sub + '</small>';
 }
 
 function fdWheelLaunch(sec) { pickSection(sec); enterMode('flashcard'); }
@@ -3157,7 +3373,7 @@ function fdToast(msg) {
   clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove('show'); }, 3000);
 }
 var SHORT = {mtc:'Mid Tudor', elizabeth:'Elizabeth I', coldwar:'Cold War'};
-var SEC_EMO = {mtc:'⚔️', elizabeth:'⚜️', coldwar:'☢️'};
+var SEC_EMO = {mtc:'⚔️', elizabeth:'👑', coldwar:'☢️'};
 var TILE = {mtc:'mtc', elizabeth:'liz', coldwar:'cw'};
 function uCol(u) { return S[u] ? S[u].colour : '#888'; }
 function secOf(it) { var r = it.reign || it.section; return (r === 'edward' || r === 'mary' || r === 'mtc') ? 'mtc' : r; }
@@ -3191,7 +3407,7 @@ function uptoLabel(k, v) { return k === 't' ? tudLabel(v) : cwLabel(v); }
 function uptoPaint(k) {
   var card = document.getElementById('up-card-' + k), r = document.getElementById('up-range-' + k);
   if (r) r.style.accentColor = UPTO_COL[k];
-  if (card) { card.style.borderColor = UPTO_COL[k]; card.style.background = 'color-mix(in srgb,' + UPTO_COL[k] + ' 9%,var(--card))'; }
+  
 }
 function uptoPreview(k, v) { document.getElementById('up-pos-' + k).textContent = uptoLabel(k, v); uptoPaint(k); }
 function uptoSave(k, v) { try { localStorage.setItem(k === 't' ? LS_PT : LS_PC, String(parseInt(v, 10))); } catch (e) {} uptoRender(); }
@@ -3214,6 +3430,15 @@ function lockFlash(u) {
   clearTimeout(b._nt); b._nt = setTimeout(function () { if (n.isConnected) n.remove(); }, 2200);
   b.classList.remove('pb-shake'); void b.offsetWidth; b.classList.add('pb-shake');
 }
+(function () {
+  var el = document.getElementById('up-wrap'), hd = document.getElementById('up-tog'); if (!el || !hd) return; var heads = [];
+  var canHover = window.matchMedia && window.matchMedia('(hover:hover)').matches;
+  function set(open) { el.classList.toggle('up-col', !open); hd.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  hd.addEventListener('click', function () { var open = el.classList.contains('up-col'); el.dataset.pin = open ? '1' : ''; set(open); });
+  Array.prototype.forEach.call(heads, function (h) { h.addEventListener('click', function () { hd.click(); }); });
+  hd.addEventListener('keydown', function (e) { if (e.key === 'Enter') hd.click(); });
+  if (canHover) { el.addEventListener('mouseenter', function () { if (!el.dataset.pin) set(true); }); el.addEventListener('mouseleave', function () { if (!el.dataset.pin) set(false); }); }
+})();
 function uptoRender() {
   if (!document.getElementById('up-range-t')) return;
   ['t', 'c'].forEach(function (k) {
@@ -3229,6 +3454,7 @@ function uptoRender() {
       t.innerHTML = cells.join('');
     }
   });
+  var sm = document.getElementById('up-sum'); if (sm) sm.textContent = 'Tudors: ' + uptoLabel('t', uptoPos('t')) + ' \u00B7 Cold War: ' + uptoLabel('c', uptoPos('c'));
   lockRender(); weakNudgeRender();
 }
 function openSection(u) { if (!secReached(u)) { lockFlash(u); return; } pickSection(u); }
@@ -3489,10 +3715,10 @@ function xpBlock(x, link) {
   var pct = nx ? Math.round((x.total - L.xp) / (nx.xp - L.xp) * 100) : 100;
   var next = nx ? 'Next: ' + nx.t + ' at ' + nx.xp.toLocaleString() + ' XP' : 'Top level reached';
   return '<div class="xp-top"><span class="xp-emoji">' + lvE(L) + '</span>' +
-    '<div class="xp-mid"><div class="xp-name">' + L.t + '</div><div class="xp-sub">Level ' + (i + 1) + ' · ' + x.total.toLocaleString() + ' XP</div></div>' +
-    '<div class="xp-today"><b>' + today + '</b>/ ' + XP_RULE.cap + ' XP today</div></div>' +
+    '<div class="xp-mid"><div class="xp-name">' + L.t + '</div><div class="xp-sub" data-lv="Level ' + (i + 1) + '">Level ' + (i + 1) + ' · ' + x.total.toLocaleString() + ' XP</div></div>' +
+    '<div class="xp-today"><b>' + today + '</b><span class="xp-tl">/ ' + XP_RULE.cap + ' XP today</span></div>' + (link ? '<span class="xp-chev">\u25BE</span>' : '') + '</div>' +
     '<div class="xp-bar"><div class="xp-fill" style="width:' + pct + '%"></div></div>' +
-    '<div class="xp-next"><span>' + next + '</span>' + (link ? '<span>Tap for progress ›</span>' : '') + '</div>' + xpStreakHtml(x);
+    '<div class="xp-next"><span>' + next + '</span>' + (link ? '<span class="xp-go">See all progress ›</span>' : '') + '</div>' + xpStreakHtml(x);
 }
 function xpRender() {
   var el = document.getElementById('xp-card');
@@ -3502,6 +3728,15 @@ function xpRender() {
   if (pg && document.getElementById('s-progress').classList.contains('active')) progressRender();
 }
 function openProgress() { showScreen('s-progress'); }
+(function () {
+  var el = document.getElementById('xp-card'); if (!el) return;
+  var canHover = window.matchMedia && window.matchMedia('(hover:hover)').matches;
+  function set(open) { el.classList.toggle('xp-col', !open); el.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  el.addEventListener('click', function (e) { if (e.target.closest('.xp-go')) { openProgress(); return; } el.dataset.pin = el.classList.contains('xp-col') ? '1' : ''; set(el.dataset.pin === '1'); });
+  el.addEventListener('keydown', function (e) { if (e.key === 'Enter') el.click(); });
+  if (canHover) { el.addEventListener('mouseenter', function () { if (!el.dataset.pin) set(true); }); el.addEventListener('mouseleave', function () { if (!el.dataset.pin) set(false); }); }
+})();
+
 function progressRender() {
   var x = xpLoad(), cur = xpLevelIdx(x.total);
   document.getElementById('pg-level').innerHTML = xpBlock(x, false);
@@ -3578,7 +3813,8 @@ function hubRender() {
   fc.style.borderLeftColor = col; fc.style.setProperty('--c', col);
   fc.innerHTML = '<h3>⚡ Flashcards</h3><div class="sub">Choose one unit, several, or all of them.' + (pins ? ' Your ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + ' will be mixed in.' : '') + '</div>' +
     '<button class="hub-pill' + (fdHintsOn ? ' on' : '') + '" id="hub-hints" onclick="hubHints()">💡 Hints ' + (fdHintsOn ? 'on' : 'off') + '</button>' + allRow + rows +
-    '<button class="hub-start" style="background:' + col + '" onclick="hubGo()">Start flashcards' + (hubSel.all ? '' : ' · ' + nSel + ' unit' + (nSel > 1 ? 's' : '')) + '</button>' +
+    '<div class="hub-start-row"><button class="hub-start" style="background:' + col + '" onclick="hubGo(\'flip\')">📖 Flip and learn' + (hubSel.all ? '' : '<small>' + nSel + ' unit' + (nSel > 1 ? 's' : '') + '</small>') + '</button>' +
+    '<button class="hub-start" style="background:' + col + ';position:relative" onclick="hubGo(\'fill\')">' + (gapTried() ? '' : '<span class="gap-new-pill">NEW</span>') + '🧩 Fill the gaps' + (hubSel.all ? '' : '<small>' + nSel + ' unit' + (nSel > 1 ? 's' : '') + '</small>') + '</button></div>' +
     (pins ? '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="hub-link" onclick="goToPinnedReview()">📌 Review ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + '</button></div>' : '');
 }
 function hubAll() { hubSel.all = true; hubSel.set = []; hubRender(); }
@@ -3597,7 +3833,11 @@ function hubStart(unitSet) {
   fdUnitSet = unitSet || null;
   fdStart();
 }
-function hubGo() {
+document.addEventListener('DOMContentLoaded', function () { try { if (!localStorage.getItem('alevel_gap_tried')) document.getElementById('gap-flag').style.display = 'flex'; } catch (e) {} });
+function gapTried() { try { return !!localStorage.getItem('alevel_gap_tried'); } catch (e) { return false; } }
+function hubGo(mode) {
+  if (mode === 'fill') { try { localStorage.setItem('alevel_gap_tried', '1'); } catch (e) {} }
+  if (mode) fdMode = mode;
   var u = currentSection, units = S[u].units;
   var set = hubSel.all ? units.filter(function (k) { return unitOK(u, k); }) : hubSel.set.slice();
   hubStart(set.length === units.length ? null : new Set(set));
@@ -3605,7 +3845,7 @@ function hubGo() {
 function hubHints() { fdSyncHints(!fdHintsOn); hubRender(); }
 function practiseUnit(u) {
   if (!secReached(u)) return;
-  pickSection(u); hubStart(null);
+  pickSection(u); fdMode = 'flip'; hubStart(null);
 }
 
 // ---------- screen wiring ----------
@@ -4374,8 +4614,8 @@ uptoRender(); xpRender();
   function L(){return (typeof XP_LEVELS!=='undefined')?XP_LEVELS:null}
     function HOME(){var r=R(),l=L();return [
     {first:1,e:'👋',t:'Welcome',p:'OCR Y107 Tudors and Paper 2 Cold War in one place. 30 seconds. ❓ gives tips for whichever page you are on.'},
-    {sel:'.up-pair,.up-card',e:'🎚️',t:'Set how far you have got',p:'One slider for Tudors, one for Cold War. Games only ask what you have covered.'},
-    {sel:'.pick-grid',e:'⚔️ ⚜️ ☢️',t:'Pick a paper',p:'Mid Tudor Crisis, Elizabeth I or the Cold War. Each has Flashcards, Guide, Dates and Exam Practice.'},
+    {sel:'#up-wrap',e:'🎚️',t:'Set how far you have got',p:'One slider for Tudors, one for Cold War. Games only ask what you have covered.'},
+    {sel:'.pick-grid',e:'⚔️ 👑 ☢️',t:'Pick a paper',p:'Mid Tudor Crisis, Elizabeth I or the Cold War. Each has Flashcards, Guide, Dates and Exam Practice.'},
     {sel:'.fd-wheel-cell',e:'📌',t:'Rings and pins',p:'Missed flashcards get a 📌 and return. Master a paper in one day for a 🥇.'},
     {sel:'.home-row .btn-go',e:'🎯',t:'Mixed Retrieval Quiz',p:'Quick recall across papers. Choose papers, difficulty and style.'},
     {sel:'.btn-arc',e:'🕹️ 🐉',t:'Arcade',p:'Four games. In the boss battle a miss costs a heart, and hearts do not come back.'},
@@ -4387,7 +4627,7 @@ uptoRender(); xpRender();
   function PAGES(){var r=R();return {
     hub:[
       {sel:'#hub-fc',e:'⚡',t:'Choose your units',p:'Tick one unit, several or all. 💡 Hints gives a nudge before you flip.'},
-      {sel:'.hub-start',e:'▶️',t:'Start flashcards',p:'Say each answer aloud, then flip. A miss gets a 📌 and returns. Right answers earn '+r.flash+' XP.'},
+      {sel:'.hub-start-row',e:'▶️',t:'Pick how to revise',p:'Flip and learn: say each answer aloud, then flip. Fill the gaps: complete each sentence by choosing the missing word. A miss gets a 📌 and returns. Right answers earn '+r.flash+' XP.'},
       {sel:'#s-hub .mode-grid,#s-hub .hub-big',e:'🧠 📅 ✏️',t:'Three more ways to revise',p:'Read the Revision Guide, test yourself on Key Dates, or practise exam answers.'}
     ],
     fcsetup:[
