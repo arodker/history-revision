@@ -648,6 +648,12 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .xp-go{font-weight:700}
 #up-card.up-col #up-body{display:none}#up-card:not(.up-col) .xp-chev{transform:rotate(180deg)}#up-card .up-head{display:flex;align-items:baseline;gap:.5rem}#up-card .up-pos{flex:1;text-align:right;font-weight:700}
 @keyframes gapglow{0%,100%{box-shadow:0 0 0 0 rgba(83,74,183,0)}50%{box-shadow:0 0 0 5px rgba(83,74,183,.3)}}#gap-flag{animation:gapglow 2s ease-in-out infinite}@media (prefers-reduced-motion:reduce){#gap-flag{animation:none}}
+#s-pick .pick-grid{gap:10px;margin-bottom:.5rem}
+#s-pick .pick-btn{padding:1.05rem 3.9rem 1.05rem .9rem;font-size:.98rem;line-height:1.25;border-width:2px;min-height:6rem}
+#s-pick .pick-btn .plabel{font-size:.68rem;margin-bottom:.25rem}
+#s-pick .pick-btn .pbw{width:3rem;right:.5rem}
+#s-pick .pick-btn .pbw .fd-wheel{width:3rem;height:3rem}
+.paper-lbl{font-size:.95rem;font-weight:800;margin:.1rem 0 .35rem}
 </style>
 </head>
 <body>
@@ -688,6 +694,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     </div>
   </div>
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
+  <div class="paper-lbl">Revise a unit:</div>
   <div id="gap-flag" style="display:none;background:#EEEDFE;border-radius:10px;padding:.6rem .75rem;margin:.2rem auto .6rem;width:fit-content;max-width:88%;color:#3C3489;font-size:.84rem;line-height:1.4;gap:.5rem;text-align:center;justify-content:center;align-items:center"><span>🆕</span><span><b>Try this:</b> Flashcards now have a gapfill mode!</span></div>
   <div class="pick-grid">
     <button class="pick-btn pb-aa" onclick="openUnit('aa')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-aa" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-aa" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-aa" cx="30" cy="30" r="24" fill="none" stroke="#4A7EC7" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-aa" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-aa">0%</text></svg></span><span class="plabel">Unit 1</span>✊ African American Rights</button>
