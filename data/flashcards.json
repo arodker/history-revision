@@ -921,14 +921,14 @@
    },
    {
     "p": 3,
-    "gap": "the Nazi Party",
+    "gap": "two years",
     "alt": [
-     "Nazi Party"
+     "2 years"
     ],
     "d": [
-     "the Centre Party",
-     "the Freikorps",
-     "the German People's Party"
+     "two months",
+     "five years",
+     "a decade"
     ]
    }
   ]
@@ -1018,9 +1018,9 @@
     "gap": "Mussolini",
     "alt": [],
     "d": [
-     "Franco",
-     "Lenin",
-     "Stalin"
+     "Ebert",
+     "Stresemann",
+     "Kapp"
     ]
    },
    {
@@ -1422,7 +1422,7 @@
     "d": [
      "Stresemann",
      "Ebert",
-     "Müller"
+     "Ludendorff"
     ]
    },
    {
@@ -1529,12 +1529,14 @@
    },
    {
     "p": 2,
-    "gap": "Enabling Act",
-    "alt": [],
+    "gap": "the Reichstag",
+    "alt": [
+     "Reichstag"
+    ],
     "d": [
-     "Treaty of Versailles",
-     "Weimar Constitution",
-     "Nuremberg Laws"
+     "the courts",
+     "the army",
+     "the President"
     ]
    },
    {
@@ -1798,12 +1800,12 @@
    },
    {
     "p": 3,
-    "gap": "propaganda",
+    "gap": "showcase",
     "alt": [],
     "d": [
-     "sports",
-     "trade",
-     "military"
+     "rehearsal",
+     "boycott",
+     "failure"
     ]
    }
   ]
@@ -2675,12 +2677,12 @@
    },
    {
     "p": 3,
-    "gap": "Tehran",
+    "gap": "strategy",
     "alt": [],
     "d": [
-     "Yalta",
-     "Potsdam",
-     "Geneva"
+     "reparations",
+     "borders",
+     "trade"
     ]
    }
   ]
@@ -2935,9 +2937,9 @@
     "gap": "Tito",
     "alt": [],
     "d": [
-     "Franco",
-     "Mao",
-     "Ceaușescu"
+     "Nagy",
+     "Dubček",
+     "Castro"
     ]
    }
   ]
@@ -2967,8 +2969,8 @@
     "alt": [],
     "d": [
      "Marshall",
-     "Dulles",
-     "Acheson"
+     "Eisenhower",
+     "Kennedy"
     ]
    },
    {
@@ -3293,12 +3295,14 @@
    },
    {
     "p": 3,
-    "gap": "Warsaw Pact",
-    "alt": [],
+    "gap": "satellite states",
+    "alt": [
+     "satellite"
+    ],
     "d": [
-     "SEATO",
-     "COMECON",
-     "Cominform"
+     "neutral states",
+     "Arab allies",
+     "Asian colonies"
     ]
    }
   ]
@@ -3375,12 +3379,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Laika",
+    "gap": "satellite",
     "alt": [],
     "d": [
-     "Belka",
-     "Strelka",
-     "Albert"
+     "astronaut",
+     "space station",
+     "moon probe"
     ]
    },
    {
@@ -3388,9 +3392,9 @@
     "gap": "Gagarin",
     "alt": [],
     "d": [
-     "Armstrong",
-     "Glenn",
-     "Shepard"
+     "Khrushchev",
+     "Kennedy",
+     "Eisenhower"
     ]
    },
    {
@@ -3433,7 +3437,7 @@
     "d": [
      "Brezhnev",
      "Gorbachev",
-     "Andropov"
+     "Yeltsin"
     ]
    },
    {
@@ -3535,9 +3539,9 @@
     "gap": "Rákosi",
     "alt": [],
     "d": [
-     "Gomułka",
      "Ulbricht",
-     "Ceaușescu"
+     "Dubček",
+     "Novotný"
     ]
    },
    {
@@ -3556,8 +3560,8 @@
     "alt": [],
     "d": [
      "Tito",
-     "Gomułka",
-     "Husák"
+     "Husák",
+     "Dubček"
     ]
    }
   ]
@@ -3689,8 +3693,8 @@
     "alt": [],
     "d": [
      "Honecker",
-     "Brandt",
-     "Adenauer"
+     "Kennedy",
+     "Churchill"
     ]
    },
    {
@@ -3790,9 +3794,9 @@
     "gap": "Batista",
     "alt": [],
     "d": [
-     "Trujillo",
-     "Somoza",
-     "Pinochet"
+     "Tito",
+     "Nagy",
+     "Dubček"
     ]
    },
    {
@@ -4050,7 +4054,7 @@
     "alt": [],
     "d": [
      "Gorbachev",
-     "Andropov",
+     "Yeltsin",
      "Stalin"
     ]
    },
@@ -4101,8 +4105,8 @@
     "alt": [],
     "d": [
      "Husák",
-     "Gottwald",
-     "Havel"
+     "Rákosi",
+     "Kádár"
     ]
    },
    {
@@ -4112,7 +4116,7 @@
     "d": [
      "Novotný",
      "Husák",
-     "Havel"
+     "Nagy"
     ]
    },
    {
@@ -4161,9 +4165,9 @@
     "gap": "Tito",
     "alt": [],
     "d": [
-     "Mao",
      "Castro",
-     "Franco"
+     "Nagy",
+     "Dubček"
     ]
    },
    {
@@ -4222,9 +4226,9 @@
     "gap": "Jan Palach",
     "alt": [],
     "d": [
-     "Václav Havel",
-     "Lech Wałęsa",
-     "Imre Nagy"
+     "Imre Nagy",
+     "Alexander Dubček",
+     "Fidel Castro"
     ]
    }
   ]
@@ -4461,7 +4465,7 @@
     "d": [
      "Kennedy",
      "Carter",
-     "Ford"
+     "Reagan"
     ]
    },
    {
@@ -4879,7 +4883,7 @@
     "d": [
      "Brezhnev",
      "Khrushchev",
-     "Andropov"
+     "Yeltsin"
     ]
    },
    {
@@ -5076,8 +5080,8 @@
     "alt": [],
     "d": [
      "Ulbricht",
-     "Ceaușescu",
-     "Kádár"
+     "Kádár",
+     "Brezhnev"
     ]
    },
    {
@@ -5199,7 +5203,7 @@
     "d": [
      "Brezhnev",
      "Khrushchev",
-     "Andropov"
+     "Stalin"
     ]
    }
   ]
@@ -5329,12 +5333,14 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Privy Council",
-    "alt": [],
+    "gap": "William Cecil",
+    "alt": [
+     "Cecil"
+    ],
     "d": [
-     "Star Chamber",
-     "House of Lords",
-     "Council of the North"
+     "Francis Drake",
+     "Anthony Babington",
+     "Roberto Ridolfi"
     ]
    },
    {
@@ -5446,9 +5452,9 @@
     "gap": "Mary, Queen of Scots",
     "alt": [],
     "d": [
-     "Lady Jane Grey",
      "Mary I",
-     "Catherine Howard"
+     "Edward VI",
+     "Philip II"
     ]
    },
    {
@@ -5497,9 +5503,9 @@
     "gap": "John Knox",
     "alt": [],
     "d": [
-     "Thomas Cranmer",
      "Martin Luther",
-     "John Calvin"
+     "Pope Pius V",
+     "Philip II"
     ]
    },
    {
@@ -6184,9 +6190,9 @@
     "gap": "Mary, Queen of Scots",
     "alt": [],
     "d": [
-     "Lady Jane Grey",
      "Catherine of Aragon",
-     "Arbella Stuart"
+     "Mary I",
+     "Anne Boleyn"
     ]
    }
   ]
@@ -6600,9 +6606,9 @@
     "gap": "William of Orange",
     "alt": [],
     "d": [
-     "Maurice of Nassau",
-     "Duke of Alva",
-     "Count Egmont"
+     "Philip II",
+     "Duke of Parma",
+     "Francis Drake"
     ]
    }
   ]
@@ -6679,12 +6685,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Cadiz",
+    "gap": "Armada",
     "alt": [],
     "d": [
-     "Lisbon",
-     "Seville",
-     "Cartagena"
+     "garrison",
+     "fortress",
+     "arsenal"
     ]
    },
    {
@@ -6737,7 +6743,7 @@
     "d": [
      "Santa Cruz",
      "Parma",
-     "Alva"
+     "Philip II"
     ]
    },
    {
@@ -6745,9 +6751,9 @@
     "gap": "Parma",
     "alt": [],
     "d": [
-     "Alva",
      "Santa Cruz",
-     "Guise"
+     "Guise",
+     "Philip II"
     ]
    },
    {
@@ -7453,9 +7459,9 @@
     "gap": "Mercator",
     "alt": [],
     "d": [
-     "Ptolemy",
-     "Columbus",
-     "Magellan"
+     "Francis Drake",
+     "John Hawkins",
+     "Walter Raleigh"
     ]
    },
    {
@@ -7526,7 +7532,7 @@
     "d": [
      "Drake",
      "Raleigh",
-     "Gilbert"
+     "Walsingham"
     ]
    }
   ]
@@ -7610,7 +7616,7 @@
     "d": [
      "Drake",
      "Hawkins",
-     "Gilbert"
+     "Walsingham"
     ]
    },
    {
@@ -7971,9 +7977,9 @@
     "gap": "Edward the Confessor",
     "alt": [],
     "d": [
-     "Edmund Ironside",
      "Harold Godwinson",
-     "Ethelred"
+     "Cnut",
+     "Alfred"
     ]
    },
    {
@@ -8811,9 +8817,9 @@
     "gap": "Manasseh ben Israel",
     "alt": [],
     "d": [
-     "Moses Montefiore",
-     "Baruch Spinoza",
-     "Nathan Rothschild"
+     "Oliver Cromwell",
+     "Ignatius Sancho",
+     "Olaudah Equiano"
     ]
    },
    {
@@ -10014,7 +10020,7 @@
     "d": [
      "Oswald Mosley",
      "Harold Wilson",
-     "Edward Heath"
+     "Churchill"
     ]
    },
    {
@@ -10157,9 +10163,9 @@
     "gap": "Mosley",
     "alt": [],
     "d": [
-     "Powell",
-     "Heath",
-     "Churchill"
+     "Mussolini",
+     "Churchill",
+     "Hitler"
     ]
    },
    {
@@ -10227,12 +10233,12 @@
    },
    {
     "p": 3,
-    "gap": "Macpherson",
+    "gap": "institutionally racist",
     "alt": [],
     "d": [
-     "Scarman",
-     "Hutton",
-     "Leveson"
+     "individually racist",
+     "openly racist",
+     "occasionally racist"
     ]
    }
   ]
@@ -10319,12 +10325,12 @@
    },
    {
     "p": 2,
-    "gap": "Idi Amin",
+    "gap": "Africanise",
     "alt": [],
     "d": [
-     "Jomo Kenyatta",
-     "Julius Nyerere",
-     "Robert Mugabe"
+     "Nationalise",
+     "Modernise",
+     "Westernise"
     ]
    },
    {
