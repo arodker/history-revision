@@ -8851,16 +8851,16 @@
   "front": "What was the experience of Jewish migrants in the Early Modern period?",
   "p1": "1656: allowed to build their own synagogue; but restricted — forbidden from attending university, serving in the army or becoming lawyers or MPs.",
   "p2": "Late 1600s: Jewish community in London had a positive relationship with the mayor and people of the city. But anti-Semitic stereotypes continued.",
-  "p3": "After 1656, Jewish financiers → London became a major financial centre.",
+  "p3": "Jewish people faced restrictions and could not serve in the army, become MPs or attend universtiy.",
   "hints": [
    "restricted",
    "mayor",
-   "London"
+   "restrictions"
   ],
   "s": [
    "1656: allowed to build their own synagogue; but restricted — forbidden from attending university, serving in the army or becoming lawyers or MPs.",
    "Late 1600s: Jewish community in London had a positive relationship with the mayor and people of the city. But anti-Semitic stereotypes continued.",
-   "After 1656, Jewish financiers → London became a major financial centre."
+   "Jewish people faced restrictions and could not serve in the army, become MPs or attend universtiy."
   ],
   "fill": [
    {
@@ -8887,12 +8887,12 @@
    },
    {
     "p": 3,
-    "gap": "financial",
+    "gap": "MPs",
     "alt": [],
     "d": [
-     "naval",
-     "wool",
-     "fashion"
+     "lords",
+     "Rabbis",
+     "Merchants"
     ]
    }
   ]
