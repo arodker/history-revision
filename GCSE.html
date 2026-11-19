@@ -146,6 +146,27 @@ function loadNudge() {
   } catch (e) {}
 }
 setTimeout(loadNudge, 2500);
+document.addEventListener('DOMContentLoaded', function () { try { if (!localStorage.getItem('gcse_gap_tried')) document.getElementById('gap-flag').style.display = 'flex'; } catch (e) {} });
+function gapNewClose(go) {
+  try { localStorage.setItem('gcse_gap_new', '1'); } catch (e) {}
+  const n = document.getElementById('gap-new'); if (n) n.remove();
+}
+function gapNewShow() {
+  try {
+    if (localStorage.getItem('gcse_gap_new') || !localStorage.getItem('gcse_tour_done') || !document.getElementById('s-pick').classList.contains('active') || document.getElementById('gap-new')) return;
+    const n = document.createElement('div'); n.id = 'gap-new';
+    n.style.cssText = 'position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:1rem';
+    n.innerHTML = '<div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;max-width:340px;width:100%;padding:1.3rem 1.2rem;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.35)">' +
+      '<div style="display:inline-block;background:#EEEDFE;color:#3C3489;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.15rem .6rem;border-radius:99px;margin-bottom:.6rem">NEW</div>' +
+      '<div style="font-size:1.15rem;font-weight:800;margin-bottom:.4rem">Try the new flashcards with gapfills</div>' +
+      '<div style="font-size:.88rem;opacity:.8;line-height:1.45;margin-bottom:1rem">Pick a paper, then choose <b>Fill the gaps</b>. Each card has three missing key words to pick or type. Get all three to earn the 🔗 Missing link badge.</div>' +
+      '<button onclick="gapNewClose()" style="font-weight:700;font-size:.95rem;padding:.6rem 1.4rem;border-radius:10px;border:none;background:#534AB7;color:#fff;cursor:pointer;font-family:inherit">Got it</button></div>';
+    n.addEventListener('click', e => { if (e.target === n) gapNewClose(); });
+    document.body.appendChild(n);
+  } catch (e) {}
+}
+setTimeout(gapNewShow, 1200);
+
 setTimeout(() => { try { if (localStorage.getItem('gcse_loaded')) { localStorage.removeItem('gcse_loaded'); bdgAward('portable'); } } catch (e) {} }, 1800);
 function usageStats() {
   const x = xpLoad(), t0 = new Date();
@@ -221,6 +242,9 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 .hub-pill.on{background:#FEF3C7;border-color:#F0B429;color:#7A5200}
 .hub-start{width:100%;margin-top:.7rem;padding:.8rem;border:none;border-radius:10px;color:#fff;font-family:inherit;font-weight:700;font-size:.95rem;cursor:pointer}
 .hub-link{background:none;border:none;color:var(--muted);font-family:inherit;font-size:.76rem;font-weight:600;cursor:pointer;margin-top:.6rem;padding:.2rem}
+.hub-start-row{display:flex;gap:8px;margin-top:.7rem}
+.hub-start-row .hub-start{margin-top:0;flex:1;font-size:.88rem;line-height:1.3;padding:.75rem .3rem}
+.hub-start small{display:block;font-weight:600;opacity:.85;font-size:.72rem;margin-top:2px}
 #fd-setup{display:none !important}
 .btn-mix{background:#454B5C;color:#fff}
 :root.dark .btn-mix{background:#5B6276}
@@ -464,6 +488,34 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 }
 
 /* ── FLASHCARD DRILL ── */
+/* FILL THE GAPS */
+.fd-start-row{display:flex;gap:8px;margin-bottom:1.25rem}
+.fd-start-row .btn-go{margin:0;flex:1;font-size:.88rem;line-height:1.3;padding:.8rem .4rem}
+.fd-start-row .btn-go small{display:block;font-weight:600;opacity:.85;font-size:.72rem;margin-top:2px}
+.ff-switch{display:flex;margin:0 0 .6rem;border:1.5px solid var(--border2);border-radius:10px;overflow:hidden}
+.ff-switch button{flex:1;padding:.5rem;border:none;background:var(--card);color:var(--muted);font-family:inherit;font-size:.82rem;font-weight:700;cursor:pointer}
+.ff-switch button.on{background:var(--text);color:var(--surface)}
+.ff-card{position:relative;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;margin-bottom:.75rem;box-sizing:border-box}
+.ff-s{font-size:.92rem;line-height:1.75;margin:0 0 .7rem;color:var(--text)}
+.ff-blank{display:inline-block;min-width:4.5em;border-bottom:2px solid var(--muted);color:transparent;user-select:none;vertical-align:baseline}
+.ff-blank.cur{border-color:#2563eb;animation:ffp 1.2s ease-in-out infinite}
+@keyframes ffp{50%{opacity:.35}}
+.ff-ok{background:#d1fae5;color:#065f46;font-weight:700;padding:0 .25em;border-radius:4px}
+.ff-wrong{background:#fee2e2;color:#991b1b;text-decoration:line-through;padding:0 .25em;border-radius:4px;margin-right:.25em}
+.ff-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:.4rem}
+.ff-opt{padding:.75rem .5rem;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text);font-family:inherit;font-size:.86rem;font-weight:600;cursor:pointer;line-height:1.3}
+.ff-opt.good{background:#d1fae5;border-color:#10b981;color:#065f46}
+.ff-opt.bad{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.ff-opt:disabled{cursor:default}
+.ff-type{display:flex;gap:8px;margin-top:.4rem}
+.ff-type input{flex:1;min-width:0;padding:.7rem;border:1.5px solid var(--border2);border-radius:10px;background:var(--input-bg);color:var(--text);font-family:inherit;font-size:1rem}
+.ff-go{padding:.7rem 1rem;border:none;border-radius:10px;background:var(--text);color:var(--surface);font-family:inherit;font-weight:700;cursor:pointer}
+.ff-msg{font-size:.82rem;font-weight:600;margin:.55rem 0 0}.ff-msg.ok{color:#065f46}.ff-msg.no{color:#991b1b}
+.ff-next{width:100%;padding:.78rem;border:none;border-radius:10px;font-family:inherit;font-size:.92rem;font-weight:700;cursor:pointer;background:#1F3864;color:#fff;margin-top:.6rem}
+.ff-link{background:none;border:none;color:var(--muted);text-decoration:underline;cursor:pointer;font-family:inherit;font-size:.78rem;padding:.35rem 0;margin-top:.3rem}
+.ff-notes{font-size:.82rem;line-height:1.6;margin-top:.5rem;padding:.6rem .8rem .6rem 1.6rem;background:var(--subtle);border-radius:8px}
+.ff-notes li{margin-bottom:.35rem}
+
 .fd-scene { width:100%; margin-bottom:1rem; cursor:pointer; overflow:hidden; border-radius:14px; }
 .fd-card-inner { position:relative; width:100%; border-radius:14px; transition:transform .2s cubic-bezier(.4,0,.2,1), opacity .2s; }
 .fd-card-inner.slide-out-right { transform:translateX(110%) !important; opacity:0; }
@@ -1033,6 +1085,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   </div>
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
   <div class="paper-lbl">Revise a paper:</div>
+  <div id="gap-flag" style="display:none;background:#EEEDFE;border-radius:10px;padding:.6rem .75rem;margin:.2rem auto .6rem;width:fit-content;max-width:88%;color:#3C3489;font-size:.84rem;line-height:1.4;gap:.5rem;text-align:center;justify-content:center;align-items:center"><span>🆕</span><span><b>Try this:</b> Flashcards now have a gapfill mode!</span></div>
   <div class="paper-grid">
     <button class="paper-btn pb-p1" onclick="openPaper('p1')"><span class="fd-wheel-cell pbw" data-paper="p1"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg></span><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
     <button class="paper-btn pb-p2a" onclick="openPaper('p2a')"><span class="fd-wheel-cell pbw" data-paper="p2a"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg></span><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>
@@ -1171,7 +1224,10 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
         <label for="fd-hints-on">💡 Show keyword hints on cards</label>
       </div>
       <div id="fd-outstanding-banner" style="display:none;font-size:.78rem;color:var(--muted);background:var(--subtle);border-radius:8px;padding:.6rem .75rem;margin-bottom:.75rem"></div>
-      <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start Flashcard Mode</button>
+      <div class="fd-start-row">
+        <button class="btn-go" id="fd-start-btn" onclick="fdStart('flip')">📖 Flip and learn</button>
+        <button class="btn-go" id="fd-fill-btn" onclick="fdStart('fill')">🧩 Fill the gaps</button>
+      </div>
       <button id="fd-print-btn" onclick="printFlashcards()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.5rem .9rem;cursor:pointer;display:block;width:100%;text-align:center;margin-top:.5rem">🖨️ Print cards as PDF</button>
       <button id="fd-pinned-btn" onclick="fdStartPinned()" style="background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer;display:none;width:100%;text-align:center;margin-top:.5rem">📌 Review pinned cards</button>
       <!-- Single paper wheel + unit breakdown -->
@@ -1203,9 +1259,22 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
         </div>
       </div>
 
-      <div class="fd-hints-toggle" style="margin-bottom:.5rem;margin-top:-.25rem">
+      <div class="fd-hints-toggle" id="fd-hints-drill-wrap" style="margin-bottom:.5rem;margin-top:-.25rem">
         <input type="checkbox" id="fd-hints-on-drill" onchange="fdSyncHints(this.checked)">
         <label for="fd-hints-on-drill">💡 Hints</label>
+      </div>
+      <div id="fd-fill" style="display:none">
+        <div class="ff-switch" id="ff-switch" role="group" aria-label="Answer style">
+          <button type="button" data-m="match" onclick="ffSetMode('match')">Match</button>
+          <button type="button" data-m="type" onclick="ffSetMode('type')">Type</button>
+        </div>
+        <div class="ff-card" id="ff-card">
+          <div class="fd-tag" id="ff-tag"></div>
+          <div class="fd-question" id="ff-q"></div>
+          <div id="ff-sents"></div>
+          <div id="ff-input"></div>
+          <div id="ff-after"></div>
+        </div>
       </div>
       <div class="fd-scene" id="fd-scene" onclick="fdFlip()">
         <div class="fd-card-inner" id="fd-card-inner">
@@ -2934,6 +3003,171 @@ let fdBusy = false;
 let fdBowlSeenTier = 0; // highest helpings tier already celebrated this page load
 let fdOutstanding = [];  // outstanding missed keys loaded from localStorage
 
+
+// ═══════════════════════════════════
+// FILL THE GAPS
+// ═══════════════════════════════════
+let fdMode = 'flip';
+let ffMode = (function(){ try { return localStorage.getItem('gcse_ff_mode') === 'type' ? 'type' : 'match'; } catch(e) { return 'match'; } })();
+let ffI = 0, ffRes = [], ffOpts = [], ffLock = false, ffTok = 0;
+function ffEsc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function ffFillFor(card, p) { return (card.fill || []).find(f => f.p === p); }
+function ffUsable(card) {
+  return !!(card && Array.isArray(card.s) && card.s.length === 3 && Array.isArray(card.fill) && card.fill.length === 3 && card.fill.every(f => ffFillFor(card, 1) && f.gap && f.d && f.d.length >= 2));
+}
+function ffNorm(x) {
+  return String(x).normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase()
+    .replace(/[‘’]/g,"'").replace(/[–—]/g,'-').replace(/[£$%,]/g,'')
+    .replace(/[^a-z0-9' \-\.]/g,' ').replace(/\s+/g,' ').replace(/^(the|a|an) /,'').trim();
+}
+function ffLev(a, b) {
+  const m = a.length, n = b.length; if (!m) return n; if (!n) return m;
+  let prev = Array.from({length:n+1}, (_,j) => j);
+  for (let i = 1; i <= m; i++) {
+    const cur = [i];
+    for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j]+1, cur[j-1]+1, prev[j-1] + (a[i-1] === b[j-1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[n];
+}
+function ffMatches(text, f) {
+  const t = ffNorm(text); if (!t) return false;
+  const targets = [f.gap].concat(f.alt || []).map(ffNorm);
+  for (const g of targets) {
+    if (t === g) return true;
+    if (/\d/.test(g)) continue;
+    const tol = g.length >= 9 ? 2 : g.length >= 5 ? 1 : 0;
+    if (tol && ffLev(t, g) <= tol) return true;
+  }
+  return false;
+}
+function ffSentHtml(i) {
+  const s = fdCurrent.s[i], f = ffFillFor(fdCurrent, i+1);
+  const m = new RegExp(f.gap.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'i').exec(s);
+  if (!m) return ffEsc(s);
+  const pre = ffEsc(s.slice(0, m.index)), post = ffEsc(s.slice(m.index + m[0].length));
+  let mid;
+  if (i < ffI) {
+    const r = ffRes[i];
+    mid = (r.ok ? '' : (r.pick ? '<span class="ff-wrong">' + ffEsc(r.pick) + '</span>' : '')) + '<span class="ff-ok">' + ffEsc(m[0]) + '</span>';
+  } else {
+    mid = '<span class="ff-blank' + (i === ffI ? ' cur' : '') + '">' + '&nbsp;'.repeat(Math.min(Math.max(m[0].length,6),16)) + '</span>';
+  }
+  return pre + mid + post;
+}
+function ffRender() {
+  ffTok++; ffI = 0; ffRes = []; ffLock = false;
+  const paperNames = {p1:'Migrants', p2a:'Cold War', p2b:'Elizabeth I', p3:'Germany'};
+  const tagClasses = {p1:'bg-p1', p2a:'bg-p2a', p2b:'bg-p2b', p3:'bg-p3'};
+  const stripeColours = {p1:'#F0B429', p2a:'#D4537E', p2b:'#1D9E75', p3:'#378ADD'};
+  const cp = fdCurrent.paper;
+  const tag = document.getElementById('ff-tag');
+  tag.className = 'fd-tag ' + (tagClasses[cp] || '');
+  tag.textContent = (paperNames[cp] || cp) + ' · ' + fdCurrent.unit;
+  const isOut = fdGetOutstanding().includes(fdKey(fdCurrent));
+  document.getElementById('ff-q').textContent = (isOut ? '📌 ' : '') + fdCurrent.front;
+  document.getElementById('ff-card').style.borderLeftColor = stripeColours[cp] || '#888';
+  ffSyncSwitch(); ffDraw();
+}
+function ffSyncSwitch() {
+  document.querySelectorAll('#ff-switch button').forEach(b => b.classList.toggle('on', b.dataset.m === ffMode));
+}
+function ffSetMode(m) {
+  ffMode = m; try { localStorage.setItem('gcse_ff_mode', m); } catch(e) {}
+  ffSyncSwitch();
+  if (fdMode === 'fill' && fdCurrent && ffI < 3 && !ffLock) ffDraw();
+}
+function ffDraw() {
+  document.getElementById('ff-sents').innerHTML = [0,1,2].map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
+  document.getElementById('ff-after').innerHTML = '';
+  const box = document.getElementById('ff-input');
+  if (ffI >= 3) { box.innerHTML = ''; return; }
+  const f = ffFillFor(fdCurrent, ffI+1);
+  if (ffMode === 'match') {
+    ffOpts = [f.gap].concat(f.d.slice(0,3));
+    for (let i = ffOpts.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [ffOpts[i],ffOpts[j]] = [ffOpts[j],ffOpts[i]]; }
+    box.innerHTML = '<div class="ff-opts">' + ffOpts.map((o,i) => '<button type="button" class="ff-opt" data-i="' + i + '" onclick="ffPick(' + i + ')">' + ffEsc(o) + '</button>').join('') + '</div>';
+  } else {
+    box.innerHTML = '<div class="ff-type"><input id="ff-text" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Type the missing words" onkeydown="if(event.key===\'Enter\')ffCheck()"><button type="button" class="ff-go" onclick="ffCheck()">Check</button></div>';
+    const inp = document.getElementById('ff-text'); if (inp) setTimeout(() => { try { inp.focus({preventScroll:true}); } catch(e) {} }, 50);
+  }
+  ffLock = false;
+}
+function ffPick(i) {
+  if (ffLock) return; const f = ffFillFor(fdCurrent, ffI+1);
+  const pick = ffOpts[i]; const ok = pick.toLowerCase() === f.gap.toLowerCase();
+  document.querySelectorAll('#ff-input .ff-opt').forEach((b, k) => {
+    b.disabled = true;
+    if (ffOpts[k].toLowerCase() === f.gap.toLowerCase()) b.classList.add('good');
+    else if (k === i) b.classList.add('bad');
+  });
+  ffResolve(ok, pick, false);
+}
+function ffCheck() {
+  if (ffLock) return; const inp = document.getElementById('ff-text'); if (!inp) return;
+  const val = inp.value.trim(); if (!val) return;
+  const f = ffFillFor(fdCurrent, ffI+1);
+  ffResolve(ffMatches(val, f), val, true);
+}
+function ffResolve(ok, pick, canOverride) {
+  ffLock = true;
+  const tok = ffTok, f = ffFillFor(fdCurrent, ffI+1);
+  ffRes[ffI] = { ok: ok, pick: pick };
+  const idx = ffI;
+  // show the filled sentence for this gap straight away
+  ffI = idx + 1;
+  document.getElementById('ff-sents').innerHTML = [0,1,2].map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
+  ffI = idx;
+  const after = document.getElementById('ff-after');
+  if (ok) {
+    after.innerHTML = '<div class="ff-msg ok">✓ Correct</div>';
+    setTimeout(() => { if (tok === ffTok) ffAdvance(); }, 700);
+  } else {
+    const inp = document.getElementById('ff-text'); if (inp) { inp.disabled = true; }
+    after.innerHTML = '<div class="ff-msg no">✗ Not quite. The answer is <b>' + ffEsc(f.gap) + '</b>.</div>' +
+      '<button type="button" class="ff-next" onclick="ffAdvance()">Continue</button>' +
+      (canOverride ? '<button type="button" class="ff-link" onclick="ffOverride()">I was right</button>' : '');
+  }
+}
+function ffOverride() {
+  if (!ffRes[ffI]) return;
+  ffRes[ffI].ok = true;
+  ffAdvance();
+}
+function ffAdvance() {
+  if (ffI > 2) return;
+  ffI++;
+  if (ffI < 3) { ffDraw(); return; }
+  ffFinish();
+}
+function ffFinish() {
+  const right = ffRes.filter(r => r.ok).length, all = right === 3, tok = ffTok;
+  document.getElementById('ff-sents').innerHTML = [0,1,2].map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
+  document.getElementById('ff-input').innerHTML = '';
+  const after = document.getElementById('ff-after');
+  if (all) {
+    after.innerHTML = '<div class="ff-msg ok">3 of 3 ✅ Mastered</div>';
+    try { bdgAward('gapfill'); } catch (e) {}
+    setTimeout(() => { if (tok === ffTok) fdAnswer(true); }, 900);
+  } else {
+    after.innerHTML = '<div class="ff-msg no">' + right + ' of 3. This card will come back as 📌.</div>' +
+      '<button type="button" class="ff-link" onclick="ffNotes()">Show full notes</button><div id="ff-notes"></div>' +
+      '<button type="button" class="ff-next" onclick="fdAnswer(false)">Next card →</button>';
+  }
+}
+function ffNotes() {
+  const box = document.getElementById('ff-notes'); if (!box) return;
+  if (box.innerHTML) { box.innerHTML = ''; return; }
+  const hints = fdCurrent.hints || [];
+  box.innerHTML = '<ul class="ff-notes">' + ['p1','p2','p3'].map((k,i) => fdCurrent[k] ? '<li>' + boldHints(fdCurrent[k], hints[i] ? [hints[i]] : []) + '</li>' : '').join('') + '</ul>';
+}
+function ffShow(on) {
+  document.getElementById('fd-fill').style.display = on ? 'block' : 'none';
+  document.getElementById('fd-scene').style.display = on ? 'none' : '';
+  const hw = document.getElementById('fd-hints-drill-wrap'); if (hw) hw.style.display = on ? 'none' : '';
+  if (on) document.getElementById('fd-btn-row').style.display = 'none';
+}
+
 function fdTodayStr() {
   return localDate();
 }
@@ -3044,6 +3278,7 @@ function fdSetup() {
   const startBtn = document.getElementById('fd-start-btn');
   const goClasses = {p1:'c-p1', p2a:'c-p2a', p2b:'c-p2b', p3:'c-p3'};
   startBtn.className = 'btn-go ' + (goClasses[currentPaper] || '');
+  const fillBtn = document.getElementById('fd-fill-btn'); if (fillBtn) fillBtn.className = 'btn-go ' + (goClasses[currentPaper] || '');
 
   // Show outstanding banner
   fdOutstanding = fdGetOutstanding();
@@ -3082,7 +3317,8 @@ function fdUnitOk(c) {
   if (v === 'multi') return fdSel.includes(c.unit);
   return c.unit === v;
 }
-function fdStart() {
+function fdStart(mode) {
+  if (mode) fdMode = mode;
   fdPinnedRun = false;
   if (!FD.length) {
     alert('Flashcard data not loaded yet — please wait a moment and try again.');
@@ -3219,6 +3455,7 @@ function fdNext() {
   document.getElementById('fd-card-inner').classList.remove('flipped');
   document.getElementById('fd-btn-row').style.display = 'none';
   fdUpdateProgress();
+  if (fdMode === 'fill' && ffUsable(fdCurrent)) { ffShow(true); ffRender(); } else { ffShow(false); }
 }
 
 function fdFlip() {
@@ -3477,7 +3714,8 @@ function fdUpdateStartBtn() {
   const btn  = document.getElementById('fd-start-btn');
   const unit = (document.getElementById('fd-unit') || {}).value || '';
   if (!btn) return;
-  if (!unit || !FD.length) { btn.textContent = '⚡ Start Flashcard Mode'; return; }
+  const fbtn = document.getElementById('fd-fill-btn');
+  if (!unit || !FD.length) { btn.innerHTML = '📖 Flip and learn'; if (fbtn) fbtn.innerHTML = '🧩 Fill the gaps'; return; }
   const mastered = fdGetMastered();
   let base = FD.filter(c => c.paper === currentPaper && (unit !== 'all' || inScope(c)) && fdUnitOk(c));
   const unmastered = base.filter(c => !mastered[fdKey(c)]).length;
@@ -3488,9 +3726,10 @@ function fdUpdateStartBtn() {
     if (c.paper !== currentPaper) return true;
     return !fdUnitOk(c);
   }).length;
-  let label = `⚡ Start — ${unmastered} card${unmastered !== 1 ? 's' : ''}`;
-  if (pinned > 0) label += ` + ${pinned} pinned`;
-  btn.textContent = label;
+  let sub = `${unmastered} card${unmastered !== 1 ? 's' : ''}`;
+  if (pinned > 0) sub += ` + ${pinned} pinned`;
+  btn.innerHTML = '📖 Flip and learn<small>' + sub + '</small>';
+  if (fbtn) fbtn.innerHTML = '🧩 Fill the gaps<small>' + sub + '</small>';
 }
 
 function fdBowlTierNow() {
@@ -3809,6 +4048,7 @@ function goToPinnedReview() {
   // Go to flashcard mode and trigger pinned review directly
   // Pick any paper first (doesn't matter for pinned — all papers included)
   if (!currentPaper) pickPaper('p1');
+  fdMode = 'flip';
   enterMode('flashcard');
   // Small delay for setup to render, then trigger
   setTimeout(() => fdStartPinned(), 100);
@@ -3944,7 +4184,8 @@ function hubRender2(p) {
   document.getElementById('hub-fc').style.setProperty('--c', col);
   document.getElementById('hub-fc').innerHTML = '<h3>⚡ Flashcards</h3><div class="sub">Choose one unit, several, or all of them.' + (pins ? ' Your ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + ' will be mixed in.' : '') + '</div>' +
     '<button class="hub-pill' + (fdHintsOn ? ' on' : '') + '" id="hub-hints" onclick="hubHints()">💡 Hints ' + (fdHintsOn ? 'on' : 'off') + '</button>' + allRow + rows +
-    '<button class="hub-start" style="background:' + col + '" onclick="hubGo()">Start flashcards' + (hubSel.all ? '' : ' · ' + nSel + ' unit' + (nSel > 1 ? 's' : '')) + '</button>' +
+    '<div class="hub-start-row"><button class="hub-start" style="background:' + col + '" onclick="hubGo(\'flip\')">📖 Flip and learn' + (hubSel.all ? '' : '<small>' + nSel + ' unit' + (nSel > 1 ? 's' : '') + '</small>') + '</button>' +
+    '<button class="hub-start" style="background:' + col + '" onclick="hubGo(\'fill\')">🧩 Fill the gaps' + (hubSel.all ? '' : '<small>' + nSel + ' unit' + (nSel > 1 ? 's' : '') + '</small>') + '</button></div>' +
     '<div style="display:flex;gap:10px;flex-wrap:wrap">' + (pins ? '<button class="hub-link" onclick="goToPinnedReview()">📌 Review ' + pins + ' pinned (all papers)</button>' : '') + '<button class="hub-link" onclick="hubPrint()">🖨️ Print cards as PDF</button></div>';
 }
 let hubSel = {paper:'', all:true, set:[]};
@@ -3956,7 +4197,9 @@ function hubTog(k) {
   else hubSel.set.push(u);
   hubRender();
 }
-function hubGo() {
+function hubGo(mode) {
+  if (mode) fdMode = mode;
+  if (mode === 'fill') { try { localStorage.setItem('gcse_gap_tried', '1'); } catch (e) {} }
   enterMode('flashcard');
   const sel = document.getElementById('fd-unit');
   if (hubSel.all) sel.value = 'all';
@@ -4317,6 +4560,7 @@ function practiseUnit(i) {
   const sel = document.getElementById('fd-unit');
   sel.value = c.unit;
   fdUpdateStartBtn();
+  fdMode = 'flip';
   fdStart();
 }
 function xpGrant(n, label) {
@@ -5383,6 +5627,7 @@ const BADGES = [
   {id:'poppy', e:'🌺', n:'Lest we forget', h:'Revise on 11 November', c:['#FCEBEB','#A32D2D'], secret:true},
   {id:'dday', e:'🎖️', n:'D-Day', h:'Revise on 6 June', c:['#E6F1FB','#185FA5'], secret:true},
   {id:'hungary', e:'🍲', n:'Hungary for knowledge', h:'Give a wrong answer for the Hungarian Uprising death toll', c:['#FAECE7','#D85A30'], secret:true},
+  {id:'gapfill', e:'🔗', n:'Missing link', h:'Get all 3 gaps right on a Fill the gaps card', c:['#EEEDFE','#7F77DD']},
   {id:'window', e:'🪟', n:'Defenestrated', h:'Quit 10 arcade games halfway through', c:['#E6F1FB','#185FA5'], secret:true},
   {id:'lightsw', e:'💡', n:'Light switch', h:'Switch between night and day mode 10 times in one day', c:['#FAEEDA','#BA7517'], secret:true}
 ];
@@ -5843,7 +6088,7 @@ uptoRender();
   function PAGES(){var r=R();return {
     hub:[
       {sel:'#hub-fc',e:'⚡',t:'Choose your units',p:'Tick one unit, several or all. 💡 Hints gives a nudge before you flip.'},
-      {sel:'.hub-start',e:'▶️',t:'Start flashcards',p:'Say each answer aloud, then flip. A miss gets a 📌 and returns. Right answers earn '+r.flash+' XP.'},
+      {sel:'.hub-start-row',e:'▶️',t:'Pick how to revise',p:'Flip and learn: say each answer aloud, then flip. Fill the gaps: complete each sentence by choosing or typing. A miss gets a 📌 and returns. Right answers earn '+r.flash+' XP.'},
       {sel:'#s-hub .mode-grid,#s-hub .hub-big',e:'🧠 📅 ✏️',t:'Three more ways to revise',p:'Read the Revision Guide, test yourself on Key Dates, or practise exam answers.'}
     ],
     fcsetup:[
