@@ -4944,11 +4944,11 @@ function stOver() {
 }
 // ----- Boss battle -----
 const BOSSES = [['Procrastination Gremlin','👹'], ['Cramming Zombie','🧟'], ['Highlighter Vampire','🧛'], ['Dreaded Date Dragon','🐉'], ['Chief Examiner','🧙'], ['Mr Rodker','👨‍🏫']];
-const BOSS_HP = [6, 8, 10, 12, 15, 20], BOSS_SECS = 12;
+const BOSS_HP = [6, 8, 10, 12, 15, 20], BOSS_SECS = 12, BOSS_HINTS = 3;
 function bossStart() {
   const pool = shuffle(arcRqPool());
   if (pool.length < 10) { arcShort('Not enough questions for this paper yet.'); return; }
-  ARC.g = {type:'boss', pool, i:0, lives:3, lv:0, max:BOSS_HP[0], hp:BOSS_HP[0], score:0, phase:'ask', typed:''};
+  ARC.g = {type:'boss', pool, i:0, lives:3, lv:0, max:BOSS_HP[0], hp:BOSS_HP[0], score:0, phase:'ask', typed:'', hints:BOSS_HINTS, hintQ:null};
   bossAsk();
 }
 function bossQ() { const g = ARC.g; if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; } return g.pool[g.i]; }
@@ -5169,8 +5169,8 @@ function bossRender() {
   if (g.phase === 'dead') { arcFrame(bossDeadHtml(B, g), head); return; }
   if (g.phase === 'ask') {
     low = '<input id="boss-in" class="boss-in" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" enterkeyhint="go" onkeydown="if(event.key===\'Enter\')bossSubmit()">' +
-      '<div class="boss-hintline" id="boss-hint"></div>' +
-      '<button class="arc-btn" onclick="bossSubmit()">Attack</button><button class="boss-right" onclick="bossHint()">💡 Hint</button>';
+      '<div class="boss-hintline" id="boss-hint">' + (g.hintQ === q ? bossHintText(q) : '') + '</div>' +
+      '<button class="arc-btn" onclick="bossSubmit()">Attack</button><button class="boss-right" id="boss-hint-btn" onclick="bossHint()"' + (g.hints <= 0 && g.hintQ !== q ? ' style="opacity:.45"' : '') + '>💡 Hint (' + g.hints + ' left)</button>';
   } else if (g.phase === 'ok') {
     low = '<div class="boss-res ok">&#10003; Correct</div><div class="boss-a">' + escHtml(q.a) + '</div>';
   } else {
@@ -5184,11 +5184,18 @@ function bossRender() {
     '<div class="boss-q" style="--c:' + (PAPER_COL[q.paper] || '#888') + '"><div class="eol-lab">' + PAPER_NAME[q.paper] + '</div>' + escHtml(q.q) + '</div>' + low, head);
   if (g.phase === 'ask') setTimeout(() => { const el = document.getElementById('boss-in'); if (el && ARC.g === g) el.focus(); }, 60);
 }
+function bossHintText(q) {
+  const a = String(q.a).replace(/\s*\(.*?\)/g, '').split(/;|\/| or /)[0].trim();
+  return 'Starts with "' + a.charAt(0).toUpperCase() + '"';
+}
 function bossHint() {
-  const g = ARC.g, q = bossQ(), el = document.getElementById('boss-hint');
+  const g = ARC.g, q = bossQ(), el = document.getElementById('boss-hint'), btn = document.getElementById('boss-hint-btn');
   if (!g || g.type !== 'boss' || g.phase !== 'ask' || !el) return;
-  const a = String(q.a).replace(/\s*\(.*?\)/g, '').split(/;|\/| or /)[0].trim(), w = a.split(/\s+/).filter(Boolean);
-  el.textContent = 'Starts with "' + a.charAt(0).toUpperCase() + '" · ' + w.length + ' word' + (w.length === 1 ? '' : 's');
+  if (g.hintQ === q) return;
+  if (g.hints <= 0) { el.textContent = 'No hints left this fight'; return; }
+  g.hints--; g.hintQ = q;
+  el.textContent = bossHintText(q);
+  if (btn) btn.textContent = '💡 Hint (' + g.hints + ' left)';
 }
 function bossAsk() { const g = ARC.g; g.phase = 'ask'; g.typed = ''; g.late = false; arcTimerStart(BOSS_SECS, bossLate); bossRender(); }
 function bsJoke(typed, q) {
@@ -5270,7 +5277,7 @@ function bossAdvance() {
   bossNext();
   const em = document.getElementById('boss-em'), bb = document.querySelector('.boss-box');
   if (em) em.classList.add('boss-enter');
-  if (bb) { const d = document.createElement('span'); d.className = 'boss-intro'; d.textContent = 'Next up: ' + BOSSES[g.lv % BOSSES.length][0]; bb.appendChild(d); }
+  if (bb) { const d = document.createElement('span'); d.className = 'boss-intro'; d.textContent = 'Next up: ' + BOSSES[g.lv % BOSSES.length][0] + (g.healed ? ' · +1 ❤️' : ''); bb.appendChild(d); }
 }
 function bossWin() {
   const g = ARC.g, B = BOSSES[g.lv % BOSSES.length];
@@ -5288,6 +5295,8 @@ function bossWin() {
 }
 function bossNext() {
   const g = ARC.g;
+  g.healed = false;
+  if ((g.lv + 1) % 2 === 0 && g.lives < 3) { g.lives++; g.healed = true; }
   g.lv++; g.max = BOSS_HP[Math.min(g.lv, BOSS_HP.length - 1)]; g.hp = g.max; g.over = false;
   bossAsk();
 }
@@ -5740,7 +5749,7 @@ function arcFx(ok) {
 // ----- game intro: rules + 3-2-1 -----
 var ARC_RULES = {
   eol: ['🧩', 'Match the dates', ['Tap an event, then the date it happened.', 'Clear the board in 30 seconds to go again with more pairs.', 'A wrong match costs a heart. You have three.']],
-  boss: ['🐉', 'Boss battle', ['Type the answer to hit the boss.', 'You get 12 seconds a question, and a hint if you are stuck.', 'A wrong answer costs a heart. Six bosses. The last one is Mr Rodker.']],
+  boss: ['🐉', 'Boss battle', ['Type the answer to hit the boss.', 'You get 12 seconds a question. Three hints for the whole fight, each shows the first letter.', 'A wrong answer costs a heart. Beat every second boss to win one back. Six bosses. The last one is Mr Rodker.']],
   wh: ['🔨', 'Whack-a-fact', ['One question stays at the top.', 'Answers pop up. Whack the right one before it sinks.', 'A wrong tap, or letting the right one escape, costs a heart.']],
   st: ['🧱', 'Stack it', ['Tap the oldest event first, then the next oldest.', 'You get 5 seconds a block.', 'Every tower adds one more block. Three hearts.']]
 };
