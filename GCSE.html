@@ -159,7 +159,7 @@ function gapNewShow() {
     n.innerHTML = '<div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;max-width:340px;width:100%;padding:1.3rem 1.2rem;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.35)">' +
       '<div style="display:inline-block;background:#EEEDFE;color:#3C3489;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.15rem .6rem;border-radius:99px;margin-bottom:.6rem">NEW</div>' +
       '<div style="font-size:1.15rem;font-weight:800;margin-bottom:.4rem">Try the new flashcards with gapfills</div>' +
-      '<div style="font-size:.88rem;opacity:.8;line-height:1.45;margin-bottom:1rem">Pick a paper, then choose <b>Fill the gaps</b>. Each card has three missing key words to pick or type. Get all three to earn the 🔗 Missing link badge.</div>' +
+      '<div style="font-size:.88rem;opacity:.8;line-height:1.45;margin-bottom:1rem">Pick a paper, then choose <b>Fill the gaps</b>. Each card has three missing key words to choose. Get all three to earn the 🔗 Missing link badge.</div>' +
       '<button onclick="gapNewClose()" style="font-weight:700;font-size:.95rem;padding:.6rem 1.4rem;border-radius:10px;border:none;background:#534AB7;color:#fff;cursor:pointer;font-family:inherit">Got it</button></div>';
     n.addEventListener('click', e => { if (e.target === n) gapNewClose(); });
     document.body.appendChild(n);
@@ -242,7 +242,9 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 .hub-pill.on{background:#FEF3C7;border-color:#F0B429;color:#7A5200}
 .hub-start{width:100%;margin-top:.7rem;padding:.8rem;border:none;border-radius:10px;color:#fff;font-family:inherit;font-weight:700;font-size:.95rem;cursor:pointer}
 .hub-link{background:none;border:none;color:var(--muted);font-family:inherit;font-size:.76rem;font-weight:600;cursor:pointer;margin-top:.6rem;padding:.2rem}
-.gap-new-pill{position:absolute;top:-9px;right:8px;background:#534AB7;color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.04em;padding:.12rem .5rem;border-radius:99px;border:2px solid var(--surface)}
+@keyframes gappulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(83,74,183,.55)}50%{transform:scale(1.12);box-shadow:0 0 0 6px rgba(83,74,183,0)}}
+.gap-new-pill{animation:gappulse 1.6s ease-in-out infinite;position:absolute;top:-9px;right:8px;background:#534AB7;color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.04em;padding:.12rem .5rem;border-radius:99px;border:2px solid var(--surface)}
+@media (prefers-reduced-motion:reduce){.gap-new-pill{animation:none}}
 .hub-start-row{display:flex;gap:8px;margin-top:.7rem}
 .hub-start-row .hub-start{margin-top:0;flex:1;font-size:.88rem;line-height:1.3;padding:.75rem .3rem}
 .hub-start small{display:block;font-weight:600;opacity:.85;font-size:.72rem;margin-top:2px}
@@ -1086,6 +1088,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   </div>
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
   <div class="paper-lbl">Revise a paper:</div>
+  <style>@keyframes gapglow{0%,100%{box-shadow:0 0 0 0 rgba(83,74,183,0)}50%{box-shadow:0 0 0 5px rgba(83,74,183,.3)}}#gap-flag{animation:gapglow 2s ease-in-out infinite}@media (prefers-reduced-motion:reduce){#gap-flag{animation:none}}</style>
   <div id="gap-flag" style="display:none;background:#EEEDFE;border-radius:10px;padding:.6rem .75rem;margin:.2rem auto .6rem;width:fit-content;max-width:88%;color:#3C3489;font-size:.84rem;line-height:1.4;gap:.5rem;text-align:center;justify-content:center;align-items:center"><span>🆕</span><span><b>Try this:</b> Flashcards now have a gapfill mode!</span></div>
   <div class="paper-grid">
     <button class="paper-btn pb-p1" onclick="openPaper('p1')"><span class="fd-wheel-cell pbw" data-paper="p1"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg></span><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
@@ -1265,10 +1268,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
         <label for="fd-hints-on-drill">💡 Hints</label>
       </div>
       <div id="fd-fill" style="display:none">
-        <div class="ff-switch" id="ff-switch" role="group" aria-label="Answer style">
-          <button type="button" data-m="match" onclick="ffSetMode('match')">Match</button>
-          <button type="button" data-m="type" onclick="ffSetMode('type')">Type</button>
-        </div>
         <div class="ff-card" id="ff-card">
           <div class="fd-tag" id="ff-tag"></div>
           <div class="fd-question" id="ff-q"></div>
@@ -3009,7 +3008,7 @@ let fdOutstanding = [];  // outstanding missed keys loaded from localStorage
 // FILL THE GAPS
 // ═══════════════════════════════════
 let fdMode = 'flip';
-let ffMode = (function(){ try { return localStorage.getItem('gcse_ff_mode') === 'type' ? 'type' : 'match'; } catch(e) { return 'match'; } })();
+let ffMode = 'match';
 let ffI = 0, ffRes = [], ffOpts = [], ffLock = false, ffTok = 0;
 function ffEsc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function ffFillFor(card, p) { return (card.fill || []).find(f => f.p === p); }
@@ -3044,7 +3043,7 @@ function ffMatches(text, f) {
 }
 function ffSentHtml(i) {
   const s = fdCurrent.s[i], f = ffFillFor(fdCurrent, i+1);
-  const m = new RegExp(f.gap.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'i').exec(s);
+  const m = new RegExp('(?<!\\w)' + f.gap.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '(?!\\w)', 'i').exec(s);
   if (!m) return ffEsc(s);
   const pre = ffEsc(s.slice(0, m.index)), post = ffEsc(s.slice(m.index + m[0].length));
   let mid;
@@ -3522,7 +3521,8 @@ function fdAnswer(got) {
   }
   const inner = document.getElementById('fd-card-inner');
   const reduced = window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
-  const stampWait = reduced ? 120 : 460;
+  const quick = fdMode === 'fill';
+  const stampWait = quick ? 0 : (reduced ? 120 : 460);
   setTimeout(() => {
     if (stampEl) stampEl.className = 'fd-stamp';
     inner.classList.add(got ? 'slide-out-right' : 'slide-out-left');
@@ -3541,7 +3541,7 @@ function fdAnswer(got) {
       renderFdSetupWheel();
       fdUpdateStartBtn();
       fdBusy = false;
-    }, 220);
+    }, quick ? 0 : 220);
   }, stampWait);
 }
 
@@ -4178,7 +4178,7 @@ function hubRender2(p) {
   const nSel = hubSel.all ? open.filter(Boolean).length : hubSel.set.length;
   document.getElementById('hub-fc').style.borderLeftColor = col;
   document.getElementById('hub-fc').style.setProperty('--c', col);
-  document.getElementById('hub-fc').innerHTML = '<h3>⚡ Flashcards</h3><div class="sub">Choose one unit, several, or all of them.' + (pins ? ' Your ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + ' will be mixed in.' : '') + '</div>' +
+  document.getElementById('hub-fc').innerHTML = '<h3>⚡ Flashcards</h3>' +
     '<button class="hub-pill' + (fdHintsOn ? ' on' : '') + '" id="hub-hints" onclick="hubHints()">💡 Hints ' + (fdHintsOn ? 'on' : 'off') + '</button>' + allRow + rows +
     '<div class="hub-start-row"><button class="hub-start" style="background:' + col + '" onclick="hubGo(\'flip\')">📖 Flip and learn' + (hubSel.all ? '' : '<small>' + nSel + ' unit' + (nSel > 1 ? 's' : '') + '</small>') + '</button>' +
     '<button class="hub-start" style="background:' + col + ';position:relative" onclick="hubGo(\'fill\')">' + (gapTried() ? '' : '<span class="gap-new-pill">NEW</span>') + '🧩 Fill the gaps' + (hubSel.all ? '' : '<small>' + nSel + ' unit' + (nSel > 1 ? 's' : '') + '</small>') + '</button></div>' +
@@ -6085,7 +6085,7 @@ uptoRender();
   function PAGES(){var r=R();return {
     hub:[
       {sel:'#hub-fc',e:'⚡',t:'Choose your units',p:'Tick one unit, several or all. 💡 Hints gives a nudge before you flip.'},
-      {sel:'.hub-start-row',e:'▶️',t:'Pick how to revise',p:'Flip and learn: say each answer aloud, then flip. Fill the gaps: complete each sentence by choosing or typing. A miss gets a 📌 and returns. Right answers earn '+r.flash+' XP.'},
+      {sel:'.hub-start-row',e:'▶️',t:'Pick how to revise',p:'Flip and learn: say each answer aloud, then flip. Fill the gaps: complete each sentence by choosing the missing word. A miss gets a 📌 and returns. Right answers earn '+r.flash+' XP.'},
       {sel:'#s-hub .mode-grid,#s-hub .hub-big',e:'🧠 📅 ✏️',t:'Three more ways to revise',p:'Read the Revision Guide, test yourself on Key Dates, or practise exam answers.'}
     ],
     fcsetup:[
