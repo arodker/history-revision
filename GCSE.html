@@ -3079,7 +3079,7 @@ function ffSetMode(m) {
   if (fdMode === 'fill' && fdCurrent && ffI < 3 && !ffLock) ffDraw();
 }
 function ffDraw() {
-  document.getElementById('ff-sents').innerHTML = '<p class="ff-s">' + ffSentHtml(Math.min(ffI,2)) + '</p>';
+  document.getElementById('ff-sents').innerHTML = [0,1,2].slice(0, Math.min(ffI,2) + 1).map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
   document.getElementById('ff-after').innerHTML = '';
   const box = document.getElementById('ff-input');
   if (ffI >= 3) { box.innerHTML = ''; return; }
@@ -3117,7 +3117,7 @@ function ffResolve(ok, pick, canOverride) {
   const idx = ffI;
   // show the filled sentence for this gap straight away
   ffI = idx + 1;
-  document.getElementById('ff-sents').innerHTML = '<p class="ff-s">' + ffSentHtml(idx) + '</p>';
+  document.getElementById('ff-sents').innerHTML = [0,1,2].slice(0, idx + 1).map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
   ffI = idx;
   const after = document.getElementById('ff-after');
   if (ok) {
@@ -3145,9 +3145,8 @@ function ffFinish() {
   document.getElementById('ff-input').innerHTML = '';
   const after = document.getElementById('ff-after');
   if (all) {
-    after.innerHTML = '<div class="ff-msg ok">3 of 3 ✅ Mastered</div>';
+    after.innerHTML = '<div class="ff-msg ok">3 of 3 ✅ Mastered</div><button type="button" class="ff-next" onclick="fdAnswer(true)">Next card →</button>';
     try { bdgAward('gapfill'); } catch (e) {}
-    setTimeout(() => { if (tok === ffTok) fdAnswer(true); }, 900);
   } else {
     after.innerHTML = '<button type="button" class="ff-next" onclick="fdAnswer(false)">Next card →</button>';
   }
