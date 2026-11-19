@@ -622,6 +622,32 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .hub-big{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:.9rem 0 .75rem}
 .hub-big .mode-btn{padding:1.3rem .5rem}.hub-big .mode-btn .icon{font-size:1.6rem}
 .arc-title{font-size:1.4rem;font-weight:800;margin:.4rem 0 .2rem}
+.ff-card{position:relative;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;margin-bottom:.75rem;box-sizing:border-box}
+.ff-s{font-size:.92rem;line-height:1.75;margin:0 0 .7rem;color:var(--text)}
+.ff-blank{display:inline-block;min-width:4.5em;border:2px solid var(--muted);background:var(--subtle);border-radius:6px;color:transparent;user-select:none;vertical-align:middle;line-height:1.3;margin:0 .1em}
+.ff-blank.cur{border-color:#2563eb;background:rgba(37,99,235,.12);animation:ffp 1.2s ease-in-out infinite}
+@keyframes ffp{50%{opacity:.35}}
+.ff-ok{background:#d1fae5;color:#065f46;font-weight:700;padding:0 .25em;border-radius:4px}
+.ff-wrong{background:#fee2e2;color:#991b1b;text-decoration:line-through;padding:0 .25em;border-radius:4px;margin-right:.25em}
+.ff-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:.4rem}
+.ff-opt{padding:.75rem .5rem;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text);font-family:inherit;font-size:.86rem;font-weight:600;cursor:pointer;line-height:1.3}
+.ff-opt.good{background:#d1fae5;border-color:#10b981;color:#065f46}
+.ff-opt.bad{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.ff-opt:disabled{cursor:default}
+.ff-msg{font-size:.82rem;font-weight:600;margin:.55rem 0 0}.ff-msg.ok{color:#065f46}.ff-msg.no{color:#991b1b}
+.ff-next{width:100%;padding:.78rem;border:none;border-radius:10px;font-family:inherit;font-size:.92rem;font-weight:700;cursor:pointer;background:#1F3864;color:#fff;margin-top:.6rem}
+
+@keyframes gappulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(83,74,183,.55)}50%{transform:scale(1.12);box-shadow:0 0 0 6px rgba(83,74,183,0)}}
+.gap-new-pill{animation:gappulse 1.6s ease-in-out infinite;position:absolute;top:-9px;right:8px;background:#534AB7;color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.04em;padding:.12rem .5rem;border-radius:99px;border:2px solid var(--surface)}
+@media (prefers-reduced-motion:reduce){.gap-new-pill,.ff-blank.cur{animation:none}}
+.ff-no{font-size:.7rem;font-weight:700;color:var(--muted);float:right}
+.ff-q{font-size:1.05rem;font-weight:700;margin:.2rem 0 .8rem;line-height:1.35}
+#xp-card.xp-col .xp-tl,#xp-card.xp-col .xp-bar,#xp-card.xp-col .xp-next,#xp-card.xp-col .xp-streak{display:none}
+#xp-card.xp-col .xp-sub{font-size:0}#xp-card.xp-col .xp-sub::before{content:attr(data-lv);font-size:.72rem}
+.xp-chev{color:var(--muted);font-size:.9rem;margin-left:.2rem}#xp-card:not(.xp-col) .xp-chev{transform:rotate(180deg)}
+.xp-go{font-weight:700}
+#up-card.up-col #up-body{display:none}#up-card:not(.up-col) .xp-chev{transform:rotate(180deg)}#up-card .up-head{display:flex;align-items:baseline;gap:.5rem}#up-card .up-pos{flex:1;text-align:right;font-weight:700}
+@keyframes gapglow{0%,100%{box-shadow:0 0 0 0 rgba(83,74,183,0)}50%{box-shadow:0 0 0 5px rgba(83,74,183,.3)}}#gap-flag{animation:gapglow 2s ease-in-out infinite}@media (prefers-reduced-motion:reduce){#gap-flag{animation:none}}
 </style>
 </head>
 <body>
@@ -655,13 +681,14 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     <h1 style="margin:0;font-size:1.2rem;font-weight:700">Mr Rodker's Revision Hub - Civil Rights</h1><span class="yr-pill">Y13</span>
   </div>
   <div class="step-lbl"><span class="step-n">1</span>Set your progress</div>
-  <div class="up-card">
-    <div class="up-head" id="up-tog"><span class="up-title">Set how much you have studied</span><span class="up-pos" id="up-pos"></span></div><div id="up-body">
+  <div class="up-card up-col" id="up-card">
+    <div class="up-head" id="up-tog" role="button" tabindex="0" aria-expanded="false" style="cursor:pointer"><span class="up-title">Set how much you have studied</span><span class="up-pos" id="up-pos"></span><span class="xp-chev">▾</span></div><div id="up-body">
     <input type="range" id="up-range" min="1" max="4" step="1" value="4" oninput="uptoPreview(this.value)" onchange="uptoSave(this.value)" aria-label="Course position">
     <div class="up-ticks" id="up-ticks"></div>
     </div>
   </div>
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
+  <div id="gap-flag" style="display:none;background:#EEEDFE;border-radius:10px;padding:.6rem .75rem;margin:.2rem auto .6rem;width:fit-content;max-width:88%;color:#3C3489;font-size:.84rem;line-height:1.4;gap:.5rem;text-align:center;justify-content:center;align-items:center"><span>🆕</span><span><b>Try this:</b> Flashcards now have a gapfill mode!</span></div>
   <div class="pick-grid">
     <button class="pick-btn pb-aa" onclick="openUnit('aa')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-aa" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-aa" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-aa" cx="30" cy="30" r="24" fill="none" stroke="#4A7EC7" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-aa" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-aa">0%</text></svg></span><span class="plabel">Unit 1</span>✊ African American Rights</button>
     <button class="pick-btn pb-lab" onclick="openUnit('lab')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-lab" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-lab" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-lab" cx="30" cy="30" r="24" fill="none" stroke="#C94A5A" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-lab" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-lab">0%</text></svg></span><span class="plabel">Unit 2</span>🔨 Labour and Trade Union Rights</button>
@@ -672,7 +699,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   <div class="home-row"><button class="btn-go c-mixed" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button><button class="btn-go btn-arc" onclick="arcOpen()"><span class="new-flag">NEW</span>🕹️ Arcade Games</button></div>
   <button class="btn-go c-stat home-stat" onclick="showStatSetup()">📊 Depth Study Stat Attack</button>
   <div class="step-lbl"><span class="step-n">3</span>See your progress</div>
-  <div class="xp-card" id="xp-card" onclick="openProgress()" role="button" tabindex="0" onkeydown="if(event.key==='Enter')openProgress()" title="See your progress"></div>
+  <div class="xp-card xp-col" id="xp-card" role="button" tabindex="0" aria-expanded="false"></div>
   <div id="weak-nudge"></div>
 </div>
 <div class="screen" id="s-hub">
@@ -707,7 +734,8 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
       <div class="pill-row" id="fd-era-pills"></div>
       <div class="fd-hints-toggle"><input type="checkbox" id="fd-hints-on" onchange="fdSyncHints(this.checked)"><label for="fd-hints-on">💡 Show keyword hints</label></div>
       <div class="fd-outstanding-banner" id="fd-outstanding-banner"></div>
-      <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Start — <span id="fd-start-count">0</span> cards</button>
+      <button class="btn-go" id="fd-start-btn" onclick="fdStart()">⚡ Flip and learn — <span id="fd-start-count">0</span> cards</button>
+      <button class="btn-go" id="fd-fill-btn" onclick="fdStart('fill')" style="background:#534AB7;position:relative"><span class="gap-new-pill" id="fd-gap-new">NEW</span>🧩 Fill the gaps</button>
       <button id="fd-pinned-btn" onclick="fdStartPinned()" style="display:none;background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:600;padding:.35rem .9rem;cursor:pointer;width:100%;text-align:center;margin-top:.5rem">📌 Review pinned cards</button>
       <div style="display:flex;align-items:flex-start;gap:1rem;padding:.75rem .5rem .25rem;margin-top:.75rem">
         <div style="text-align:center;flex-shrink:0"><svg id="fd-setup-wheel" viewBox="0 0 60 60" style="width:3.65rem;height:3.65rem;display:block;margin:0 auto .3rem"><circle id="fd-setup-bg" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle id="fd-setup-ring-miss" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle id="fd-setup-ring-got" cx="30" cy="30" r="24" fill="none" stroke="#888" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle id="fd-setup-ring-fill" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text id="fd-setup-pct" x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)">0%</text></svg><div id="fd-setup-label" class="fd-wheel-label"></div></div>
@@ -717,7 +745,8 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     </div>
     <div id="fd-drill" style="display:none">
       <div class="fd-progress-wrap"><div class="fd-progress-text"><span id="fd-prog-text"></span><span id="fd-prog-count"></span></div><div class="fd-bar-bg"><div class="fd-bar-fill" id="fd-bar" style="width:0%"></div></div></div>
-      <div class="fd-hints-toggle" style="margin-bottom:.5rem;margin-top:-.25rem"><input type="checkbox" id="fd-hints-on-drill" onchange="fdSyncHints(this.checked)"><label for="fd-hints-on-drill">💡 Hints</label></div>
+      <div class="fd-hints-toggle" id="fd-hints-drill-wrap" style="margin-bottom:.5rem;margin-top:-.25rem"><input type="checkbox" id="fd-hints-on-drill" onchange="fdSyncHints(this.checked)"><label for="fd-hints-on-drill">💡 Hints</label></div>
+      <div id="fd-fill" style="display:none"><div class="ff-card" id="ff-card"><div class="ff-no" id="ff-no"></div><div class="fd-tag" id="ff-tag"></div><div class="ff-q" id="ff-q"></div><div id="ff-sents"></div><div id="ff-input"></div><div id="ff-after"></div></div></div>
       <div class="fd-scene" id="fd-scene" onclick="fdFlip()"><div class="fd-card-inner" id="fd-card-inner"><div class="fd-front" id="fd-front"><div class="fd-card-no" id="fd-card-no"></div><div class="fd-tag" id="fd-tag"></div><div class="fd-question" id="fd-question"></div><div class="fd-hint-chips" id="fd-hint-chips"></div><div class="fd-tap-hint">Tap to reveal answer</div></div><div class="fd-back" id="fd-back"><div class="fd-card-no" id="fd-card-no-back"></div><div class="fd-tag" id="fd-tag-back"></div><ul class="fd-points" id="fd-points"></ul></div></div><div class="fd-stamp" id="fd-stamp" aria-hidden="true"></div></div>
       <div class="fd-btn-row" id="fd-btn-row" style="display:none"><button class="fd-btn fd-miss" onclick="fdAnswer(false)">Missed</button><button class="fd-btn fd-got" onclick="fdAnswer(true)">Got it</button></div>
     </div>
@@ -1428,17 +1457,137 @@ function fdPopulateCounts(){
   });
   fdUpdateFilterUI();
 }
-function fdStart(){if(!FD.length){alert('No flashcards loaded.');return;}var mastered=fdGetMastered();var base=fdFilteredCards();var unitTotal=base.length;base=base.filter(function(c){return!mastered[fdKey(c)];});if(base.length===0&&unitTotal>0){['fd-setup','fd-drill','fd-summary'].forEach(function(id){document.getElementById(id).style.display='none';});document.getElementById('fd-complete').style.display='block';document.getElementById('fd-complete-count').textContent='All '+unitTotal+' card'+(unitTotal!==1?'s':'')+' mastered ✅';return;}if(!base.length){alert('No cards match this selection.');return;}fdOutstanding=fdGetOutstanding().filter(function(k){return FD.find(function(c){return fdKey(c)===k;});});var outCards=fdOutstanding.map(function(k){return FD.find(function(c){return fdKey(c)===k;});}).filter(Boolean).filter(function(c){return c.section!==currentUnit;});var combined=shuffle(base.slice());outCards.forEach(function(oc,i){combined.splice(Math.min((i+1)*6,combined.length),0,oc);});fdDeck=combined;fdMissed=[];fdGot=0;fdMissCount=0;fdTotal=combined.length;document.getElementById('fd-setup').style.display='none';document.getElementById('fd-drill').style.display='block';fdNext();}
-function fdNext(){if(fdDeck.length===0){fdShowSummary();return;}fdCurrent=fdDeck.shift();fdFlipped=false;var col=UNITS[fdCurrent.section]?UNITS[fdCurrent.section].colour:'#888',tc='t-'+(fdCurrent.section||currentUnit);var PLABELS=ERA_LABELS;var allPeriods=fdCurrent.periods&&fdCurrent.periods.length?fdCurrent.periods:[fdCurrent.period];var periodLabel=allPeriods.map(function(p){return PLABELS[p]?PLABELS[p][1]:p;}).join(' · ');if(fdCurrent.depthStudy)periodLabel+=' 🔑';document.getElementById('fd-tag').className='fd-tag '+tc;document.getElementById('fd-tag').textContent=periodLabel;document.getElementById('fd-tag-back').className='fd-tag '+tc;document.getElementById('fd-tag-back').textContent=periodLabel;var cardNo=fdCurrent.no!=null?'#'+fdCurrent.no:'';document.getElementById('fd-card-no').textContent=cardNo;document.getElementById('fd-card-no-back').textContent=cardNo;var out=fdGetOutstanding();document.getElementById('fd-question').innerHTML=(out.indexOf(fdKey(fdCurrent))!==-1?'<span style="margin-right:4px">📌</span>':'')+fdCurrent.front.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');var pts=document.getElementById('fd-points');pts.innerHTML=['p1','p2','p3'].map(function(k,i){return fdCurrent[k]?'<li>'+boldHints(fdCurrent[k],fdCurrent.hints&&fdCurrent.hints[i]?[fdCurrent.hints[i]]:[])+'</li>':'';}).join('');document.querySelectorAll('#fd-points li').forEach(function(li){li.classList.remove('fd-pt-show');});var chips=document.getElementById('fd-hint-chips');if(fdHintsOn&&fdCurrent.hints&&fdCurrent.hints.length){chips.innerHTML=fdCurrent.hints.map(function(h){return '<span class="tag '+tc+'">'+h+'</span>';}).join('');chips.style.display='flex';}else{chips.innerHTML='';chips.style.display='none';}document.getElementById('fd-front').style.borderLeftColor=col;document.getElementById('fd-back').style.borderLeftColor=col;document.getElementById('fd-card-inner').classList.remove('flipped');document.getElementById('fd-btn-row').style.display='none';fdUpdateProgress();}
+// FILL THE GAPS
+// ═══════════════════════════════════
+var fdMode = 'flip';
+let ffI = 0, ffRes = [], ffOpts = [], ffLock = false, ffTok = 0;
+function ffEsc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function ffFillFor(card, p) { return (card.fill || []).find(f => f.p === p); }
+function ffNorm(x) {
+  return String(x).normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase()
+    .replace(/[‘’]/g,"'").replace(/[–—]/g,'-').replace(/[£$%,]/g,'')
+    .replace(/[^a-z0-9' \-\.]/g,' ').replace(/\s+/g,' ').replace(/^(the|a|an) /,'').trim();
+}
+function ffLev(a, b) {
+  const m = a.length, n = b.length; if (!m) return n; if (!n) return m;
+  let prev = Array.from({length:n+1}, (_,j) => j);
+  for (let i = 1; i <= m; i++) {
+    const cur = [i];
+    for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j]+1, cur[j-1]+1, prev[j-1] + (a[i-1] === b[j-1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[n];
+}
+function ffMatches(text, f) {
+  const t = ffNorm(text); if (!t) return false;
+  const targets = [f.gap].concat(f.alt || []).map(ffNorm);
+  for (const g of targets) {
+    if (t === g) return true;
+    if (/\d/.test(g)) continue;
+    const tol = g.length >= 9 ? 2 : g.length >= 5 ? 1 : 0;
+    if (tol && ffLev(t, g) <= tol) return true;
+  }
+  return false;
+}
+function ffSentHtml(i) {
+  const s = fdCurrent['p'+(i+1)], f = ffFillFor(fdCurrent, i+1);
+  const m = new RegExp('(?<!\\w)' + f.gap.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '(?!\\w)', 'i').exec(s);
+  if (!m) return ffEsc(s);
+  const pre = ffEsc(s.slice(0, m.index)), post = ffEsc(s.slice(m.index + m[0].length));
+  let mid;
+  if (i < ffI) {
+    const r = ffRes[i];
+    mid = (r.ok ? '' : (r.pick ? '<span class="ff-wrong">' + ffEsc(r.pick) + '</span>' : '')) + '<span class="ff-ok">' + ffEsc(m[0]) + '</span>';
+  } else {
+    mid = '<span class="ff-blank' + (i === ffI ? ' cur' : '') + '">' + '&nbsp;'.repeat(Math.min(Math.max(m[0].length,6),16)) + '</span>';
+  }
+  return pre + mid + post;
+}
+function ffRender() {
+  ffTok++; ffI = 0; ffRes = []; ffLock = false;
+  const tag = document.getElementById('ff-tag'), src = document.getElementById('fd-tag');
+  tag.className = src.className; tag.textContent = src.textContent;
+  document.getElementById('ff-no').textContent = fdCurrent.no != null ? '#' + fdCurrent.no : '';
+  const isOut = fdGetOutstanding().includes(fdKey(fdCurrent));
+  document.getElementById('ff-q').textContent = (isOut ? '📌 ' : '') + fdCurrent.front;
+  document.getElementById('ff-card').style.borderLeftColor = (UNITS[fdCurrent.section] ? UNITS[fdCurrent.section].colour : '#888');
+  ffDraw();
+}
+function ffDraw() {
+  document.getElementById('ff-sents').innerHTML = [0,1,2].slice(0, Math.min(ffI,2) + 1).map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
+  document.getElementById('ff-after').innerHTML = '';
+  const box = document.getElementById('ff-input');
+  if (ffI >= 3) { box.innerHTML = ''; return; }
+  const f = ffFillFor(fdCurrent, ffI+1);
+    ffOpts = [f.gap].concat(f.d.slice(0,3));
+    for (let i = ffOpts.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [ffOpts[i],ffOpts[j]] = [ffOpts[j],ffOpts[i]]; }
+    box.innerHTML = '<div class="ff-opts">' + ffOpts.map((o,i) => '<button type="button" class="ff-opt" data-i="' + i + '" onclick="ffPick(' + i + ')">' + ffEsc(o) + '</button>').join('') + '</div>';
+  ffLock = false;
+}
+function ffPick(i) {
+  if (ffLock) return; const f = ffFillFor(fdCurrent, ffI+1);
+  const pick = ffOpts[i]; const ok = pick.toLowerCase() === f.gap.toLowerCase();
+  document.querySelectorAll('#ff-input .ff-opt').forEach((b, k) => {
+    b.disabled = true;
+    if (ffOpts[k].toLowerCase() === f.gap.toLowerCase()) b.classList.add('good');
+    else if (k === i) b.classList.add('bad');
+  });
+  ffResolve(ok, pick);
+}
+function ffResolve(ok, pick) {
+  ffLock = true;
+  const tok = ffTok, f = ffFillFor(fdCurrent, ffI+1);
+  ffRes[ffI] = { ok: ok, pick: pick };
+  const idx = ffI;
+  // show the filled sentence for this gap straight away
+  ffI = idx + 1;
+  document.getElementById('ff-sents').innerHTML = [0,1,2].slice(0, idx + 1).map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
+  ffI = idx;
+  const after = document.getElementById('ff-after');
+  if (ok) {
+    after.innerHTML = '<div class="ff-msg ok">✓ Correct</div>';
+    setTimeout(() => { if (tok === ffTok) ffAdvance(); }, 700);
+  } else {
+    after.innerHTML = '<button type="button" class="ff-next" onclick="ffAdvance()">Continue</button>' ;
+  }
+}
+function ffAdvance() {
+  if (ffI > 2) return;
+  ffI++;
+  if (ffI < 3) { ffDraw(); return; }
+  ffFinish();
+}
+function ffFinish() {
+  const right = ffRes.filter(r => r.ok).length, all = right === 3, tok = ffTok;
+  document.getElementById('ff-input').innerHTML = '';
+  const after = document.getElementById('ff-after');
+  if (all) {
+    after.innerHTML = '<div class="ff-msg ok">3 of 3 ✅ Mastered</div><button type="button" class="ff-next" onclick="fdAnswer(true)">Next card →</button>';
+  } else {
+    after.innerHTML = '<button type="button" class="ff-next" onclick="fdAnswer(false)">Next card →</button>';
+  }
+}
+function ffShow(on) {
+  document.getElementById('fd-fill').style.display = on ? 'block' : 'none';
+  document.getElementById('fd-scene').style.display = on ? 'none' : '';
+  const hw = document.getElementById('fd-hints-drill-wrap'); if (hw) hw.style.display = on ? 'none' : '';
+  if (on) document.getElementById('fd-btn-row').style.display = 'none';
+}
+
+
+function gapTried(){try{return !!localStorage.getItem('cr_gap_tried');}catch(e){return false;}}
+document.addEventListener('DOMContentLoaded',function(){var n=document.getElementById('fd-gap-new');if(n&&gapTried())n.remove();});
+function fdStart(mode){fdMode=(mode==='fill')?'fill':'flip';if(fdMode==='fill'){try{localStorage.setItem('cr_gap_tried','1');}catch(e){}var gn=document.getElementById('fd-gap-new');if(gn)gn.remove();var gf=document.getElementById('gap-flag');if(gf)gf.style.display='none';}if(!FD.length){alert('No flashcards loaded.');return;}var mastered=fdGetMastered();var base=fdFilteredCards();var unitTotal=base.length;base=base.filter(function(c){return!mastered[fdKey(c)];});if(base.length===0&&unitTotal>0){['fd-setup','fd-drill','fd-summary'].forEach(function(id){document.getElementById(id).style.display='none';});document.getElementById('fd-complete').style.display='block';document.getElementById('fd-complete-count').textContent='All '+unitTotal+' card'+(unitTotal!==1?'s':'')+' mastered ✅';return;}if(!base.length){alert('No cards match this selection.');return;}fdOutstanding=fdGetOutstanding().filter(function(k){return FD.find(function(c){return fdKey(c)===k;});});var outCards=fdOutstanding.map(function(k){return FD.find(function(c){return fdKey(c)===k;});}).filter(Boolean).filter(function(c){return c.section!==currentUnit;});var combined=shuffle(base.slice());outCards.forEach(function(oc,i){combined.splice(Math.min((i+1)*6,combined.length),0,oc);});fdDeck=combined;fdMissed=[];fdGot=0;fdMissCount=0;fdTotal=combined.length;document.getElementById('fd-setup').style.display='none';document.getElementById('fd-drill').style.display='block';fdNext();}
+function fdNext(){if(fdDeck.length===0){fdShowSummary();return;}fdCurrent=fdDeck.shift();fdFlipped=false;var col=UNITS[fdCurrent.section]?UNITS[fdCurrent.section].colour:'#888',tc='t-'+(fdCurrent.section||currentUnit);var PLABELS=ERA_LABELS;var allPeriods=fdCurrent.periods&&fdCurrent.periods.length?fdCurrent.periods:[fdCurrent.period];var periodLabel=allPeriods.map(function(p){return PLABELS[p]?PLABELS[p][1]:p;}).join(' · ');if(fdCurrent.depthStudy)periodLabel+=' 🔑';document.getElementById('fd-tag').className='fd-tag '+tc;document.getElementById('fd-tag').textContent=periodLabel;document.getElementById('fd-tag-back').className='fd-tag '+tc;document.getElementById('fd-tag-back').textContent=periodLabel;var cardNo=fdCurrent.no!=null?'#'+fdCurrent.no:'';document.getElementById('fd-card-no').textContent=cardNo;document.getElementById('fd-card-no-back').textContent=cardNo;var out=fdGetOutstanding();document.getElementById('fd-question').innerHTML=(out.indexOf(fdKey(fdCurrent))!==-1?'<span style="margin-right:4px">📌</span>':'')+fdCurrent.front.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');var pts=document.getElementById('fd-points');pts.innerHTML=['p1','p2','p3'].map(function(k,i){return fdCurrent[k]?'<li>'+boldHints(fdCurrent[k],fdCurrent.hints&&fdCurrent.hints[i]?[fdCurrent.hints[i]]:[])+'</li>':'';}).join('');document.querySelectorAll('#fd-points li').forEach(function(li){li.classList.remove('fd-pt-show');});var chips=document.getElementById('fd-hint-chips');if(fdHintsOn&&fdCurrent.hints&&fdCurrent.hints.length){chips.innerHTML=fdCurrent.hints.map(function(h){return '<span class="tag '+tc+'">'+h+'</span>';}).join('');chips.style.display='flex';}else{chips.innerHTML='';chips.style.display='none';}document.getElementById('fd-front').style.borderLeftColor=col;document.getElementById('fd-back').style.borderLeftColor=col;document.getElementById('fd-card-inner').classList.remove('flipped');document.getElementById('fd-btn-row').style.display='none';fdUpdateProgress();if(fdMode==='fill'&&fdCurrent.fill&&fdCurrent.fill.length===3){ffShow(true);ffRender();}else{ffShow(false);}}
 function boldHints(text,hints){var out=text;(hints||[]).forEach(function(h){var e=h.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');var re=new RegExp('('+e+')','gi');if(re.test(out)){out=out.replace(new RegExp('('+e+')','gi'),'<strong>$1</strong>');}else{h.split(/[\s\/\-]+/).forEach(function(w){if(w.length>=4){var we=w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');out=out.replace(new RegExp('('+we+')','gi'),'<strong>$1</strong>');}});}});return out;}
 function fdSyncHeight(){var inner=document.getElementById('fd-card-inner'),front=document.getElementById('fd-front'),back=document.getElementById('fd-back');if(!inner||!front||!back)return;inner.style.height=Math.max(fdFlipped?back.offsetHeight:front.offsetHeight,140)+'px';}
 function fdFlip(){if(fdBusy)return;var inner=document.getElementById('fd-card-inner');if(!fdFlipped){fdFlipped=true;inner.classList.add('flipped');var items=document.querySelectorAll('#fd-points li');items.forEach(function(li,i){setTimeout(function(){li.classList.add('fd-pt-show');fdSyncHeight();},300+i*700);});setTimeout(function(){document.getElementById('fd-btn-row').style.display='grid';fdSyncHeight();},300+items.length*700+400);setTimeout(fdSyncHeight,50);}else if(inner.classList.contains('flipped')){inner.classList.remove('flipped');fdFlipped=false;setTimeout(fdSyncHeight,50);}else{inner.classList.add('flipped');fdFlipped=true;setTimeout(fdSyncHeight,50);}}
-function fdAnswer(got){var key=fdKey(fdCurrent),mastered=fdGetMastered(),outstanding=fdGetOutstanding();fdRecordCard(fdCurrent.section||currentUnit,got,fdCurrent.isDepthStudy||false);if(got){fdGot++;mastered[key]=true;fdSetMastered(mastered);var idx=outstanding.indexOf(key);if(idx!==-1)outstanding.splice(idx,1);fdSetOutstanding(outstanding);fdOutstanding=outstanding;}else{fdMissCount++;fdMissed.push(fdCurrent);if(outstanding.indexOf(key)===-1)outstanding.push(key);fdSetOutstanding(outstanding);fdOutstanding=outstanding;if(mastered[key]){delete mastered[key];fdSetMastered(mastered);}}document.getElementById('fd-btn-row').style.display='none';fdBusy=true;var st=document.getElementById('fd-stamp');if(st){st.textContent=got?'MASTERED':'REVISIT';st.className='fd-stamp '+(got?'got':'miss');void st.offsetWidth;st.classList.add('on');}var inner=document.getElementById('fd-card-inner');var wait=(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)?120:460;setTimeout(function(){if(st)st.className='fd-stamp';inner.classList.remove('flipped');inner.classList.add(got?'slide-out-right':'slide-out-left');setTimeout(function(){inner.classList.remove('slide-out-right','slide-out-left');fdNext();inner.classList.add(got?'slide-in-r':'slide-in-l');setTimeout(function(){inner.classList.remove('slide-in-r','slide-in-l');},250);renderFdWheels();renderFdHubWheel();renderFdSetupWheel();fdBusy=false;},220);},wait);}
+function fdAnswer(got){var key=fdKey(fdCurrent),mastered=fdGetMastered(),outstanding=fdGetOutstanding();fdRecordCard(fdCurrent.section||currentUnit,got,fdCurrent.isDepthStudy||false);if(got){fdGot++;mastered[key]=true;fdSetMastered(mastered);var idx=outstanding.indexOf(key);if(idx!==-1)outstanding.splice(idx,1);fdSetOutstanding(outstanding);fdOutstanding=outstanding;}else{fdMissCount++;fdMissed.push(fdCurrent);if(outstanding.indexOf(key)===-1)outstanding.push(key);fdSetOutstanding(outstanding);fdOutstanding=outstanding;if(mastered[key]){delete mastered[key];fdSetMastered(mastered);}}if(fdMode==='fill'){fdNext();renderFdWheels();renderFdHubWheel();renderFdSetupWheel();return;}document.getElementById('fd-btn-row').style.display='none';fdBusy=true;var st=document.getElementById('fd-stamp');if(st){st.textContent=got?'MASTERED':'REVISIT';st.className='fd-stamp '+(got?'got':'miss');void st.offsetWidth;st.classList.add('on');}var inner=document.getElementById('fd-card-inner');var wait=(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)?120:460;setTimeout(function(){if(st)st.className='fd-stamp';inner.classList.remove('flipped');inner.classList.add(got?'slide-out-right':'slide-out-left');setTimeout(function(){inner.classList.remove('slide-out-right','slide-out-left');fdNext();inner.classList.add(got?'slide-in-r':'slide-in-l');setTimeout(function(){inner.classList.remove('slide-in-r','slide-in-l');},250);renderFdWheels();renderFdHubWheel();renderFdSetupWheel();fdBusy=false;},220);},wait);}
 function fdUpdateProgress(){var seen=fdGot+fdMissCount,pct=fdTotal>0?Math.round(seen/fdTotal*100):0;var bar=document.getElementById('fd-bar');bar.style.width=pct+'%';bar.style.background=UNITS[currentUnit].colour;document.getElementById('fd-prog-text').textContent=seen+' of '+fdTotal+' cards';document.getElementById('fd-prog-count').textContent='Got '+fdGot+'  Missed '+fdMissCount;}
 function fdShowSummary(){var mastered=fdGetMastered();var allMastered=fdFilteredCards().filter(function(c){return!mastered[fdKey(c)];}).length===0;var cleanSweep=fdMissCount===0&&fdGot>0;if(cleanSweep||(allMastered&&fdMissCount===0)){['fd-drill','fd-summary'].forEach(function(id){document.getElementById(id).style.display='none';});document.getElementById('fd-complete').style.display='block';var total=fdFilteredCards().length;document.getElementById('fd-complete-count').textContent=allMastered?'All '+total+' card'+(total!==1?'s':'')+' mastered \u2705':fdGot+' card'+(fdGot!==1?'s':'')+' \u2014 clean sweep! \u2705';fdFireConfetti();fdUpdateStreak();return;}document.getElementById('fd-drill').style.display='none';document.getElementById('fd-summary').style.display='block';document.getElementById('fd-sum-got').textContent=fdGot;document.getElementById('fd-sum-miss').textContent=fdMissCount;var out=fdGetOutstanding();document.getElementById('fd-sum-note').innerHTML=out.length>0?'<strong>'+out.length+' card'+(out.length>1?'s':'')+' missed</strong> - will be woven into future sessions.':'';var drb=document.getElementById('fd-drill-again-btn');drb.style.display=fdMissCount>0?'block':'none';drb.style.background=UNITS[currentUnit].colour;fdUpdateStreak();}
 function fdDrillMissed(){if(!fdMissed.length)return;fdDeck=shuffle(fdMissed);fdMissed=[];fdGot=0;fdMissCount=0;fdTotal=fdDeck.length;document.getElementById('fd-summary').style.display='none';document.getElementById('fd-drill').style.display='block';fdNext();}
 function fdFinish(){fdSetup();showScreen('s-hub');}
-function fdResetUnit(){var mastered=fdGetMastered();var base=fdFilteredCards();base.forEach(function(c){delete mastered[fdKey(c)];});fdSetMastered(mastered);document.getElementById('fd-complete').style.display='none';renderFdSetupWheel();fdStart();}
+function fdResetUnit(){var mastered=fdGetMastered();var base=fdFilteredCards();base.forEach(function(c){delete mastered[fdKey(c)];});fdSetMastered(mastered);document.getElementById('fd-complete').style.display='none';renderFdSetupWheel();fdStart(fdMode);}
 function fdStartPinned(){var out=fdGetOutstanding(),cards=out.map(function(k){return FD.find(function(c){return fdKey(c)===k;});}).filter(Boolean);if(!cards.length){alert('No pinned cards!');return;}fdDeck=shuffle(cards);fdMissed=[];fdGot=0;fdMissCount=0;fdTotal=fdDeck.length;document.getElementById('fd-setup').style.display='none';document.getElementById('fd-drill').style.display='block';fdNext();}
 var CIRC=150.8;
 function fdWheelDash(got,miss,deckSize){if(!deckSize)return{got:'0 '+CIRC,miss:'0 '+CIRC};var g=Math.min(Math.round(got/deckSize*CIRC),CIRC),m=Math.min(Math.round(miss/deckSize*CIRC),CIRC-g);return{got:g+' '+(CIRC-g),miss:m+' '+(CIRC-m)};}
@@ -1951,10 +2100,10 @@ function xpBlock(x, link) {
   var pct = nx ? Math.round((x.total - L.xp) / (nx.xp - L.xp) * 100) : 100;
   var next = nx ? 'Next: ' + nx.t + ' at ' + nx.xp.toLocaleString() + ' XP' : 'Top level reached';
   return '<div class="xp-top"><span class="xp-emoji">' + lvE(L) + '</span>' +
-    '<div class="xp-mid"><div class="xp-name">' + L.t + '</div><div class="xp-sub">Level ' + (i + 1) + ' · ' + x.total.toLocaleString() + ' XP</div></div>' +
-    '<div class="xp-today"><b>' + today + '</b>/ ' + XP_RULE.cap + ' XP today</div></div>' +
+    '<div class="xp-mid"><div class="xp-name">' + L.t + '</div><div class="xp-sub" data-lv="Level ' + (i + 1) + '">Level ' + (i + 1) + '</div></div>' +
+    '<div class="xp-today"><b>' + x.total.toLocaleString() + ' XP</b><span class="xp-tl">Today ' + today + ' / ' + XP_RULE.cap + '</span></div>' + (link ? '<span class="xp-chev">\u25BE</span>' : '') + '</div>' +
     '<div class="xp-bar"><div class="xp-fill" style="width:' + pct + '%"></div></div>' +
-    '<div class="xp-next"><span>' + next + '</span>' + (link ? '<span>Tap for progress ›</span>' : '') + '</div>' + xpStreakHtml(x);
+    '<div class="xp-next"><span>' + next + '</span>' + (link ? '<span class="xp-go">See all progress ›</span>' : '') + '</div>' + xpStreakHtml(x);
 }
 function xpRender() {
   var el = document.getElementById('xp-card');
@@ -2955,6 +3104,43 @@ uptoRender(); xpRender();
     if(!seen)setTimeout(function(){if($('#s-pick.active'))startHere(true)},900);
   });
 })();
+
+(function () {
+  var el = document.getElementById('xp-card'); if (!el) return;
+  var canHover = window.matchMedia && window.matchMedia('(hover:hover)').matches;
+  function set(open) { el.classList.toggle('xp-col', !open); el.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  el.addEventListener('click', function (e) { if (e.target.closest('.xp-go')) { openProgress(); return; } el.dataset.pin = el.classList.contains('xp-col') ? '1' : ''; set(el.dataset.pin === '1'); });
+  el.addEventListener('keydown', function (e) { if (e.key === 'Enter') el.click(); });
+  if (canHover) { el.addEventListener('mouseenter', function () { if (!el.dataset.pin) set(true); }); el.addEventListener('mouseleave', function () { if (!el.dataset.pin) set(false); }); }
+})();
+(function () {
+  var el = document.getElementById('up-card'), hd = document.getElementById('up-tog'); if (!el || !hd) return;
+  var canHover = window.matchMedia && window.matchMedia('(hover:hover)').matches;
+  function set(open) { el.classList.toggle('up-col', !open); hd.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  hd.addEventListener('click', function () { var open = el.classList.contains('up-col'); el.dataset.pin = open ? '1' : ''; set(open); });
+  hd.addEventListener('keydown', function (e) { if (e.key === 'Enter') hd.click(); });
+  if (canHover) { el.addEventListener('mouseenter', function () { if (!el.dataset.pin) set(true); }); el.addEventListener('mouseleave', function () { if (!el.dataset.pin) set(false); }); }
+})();
+document.addEventListener('DOMContentLoaded', function () { try { if (!localStorage.getItem('cr_gap_tried')) document.getElementById('gap-flag').style.display = 'flex'; } catch (e) {} });
+function gapNewClose() {
+  try { localStorage.setItem('cr_gap_new', '1'); } catch (e) {}
+  var n = document.getElementById('gap-new'); if (n) n.remove();
+}
+function gapNewShow() {
+  try {
+    if (localStorage.getItem('cr_gap_new') || localStorage.getItem('cr_gap_tried') || !localStorage.getItem('hub_tour_done_' + location.pathname.split('/').pop()) || !document.getElementById('s-pick').classList.contains('active') || document.getElementById('gap-new')) return;
+    var n = document.createElement('div'); n.id = 'gap-new';
+    n.style.cssText = 'position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:1rem';
+    n.innerHTML = '<div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;max-width:340px;width:100%;padding:1.3rem 1.2rem;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.35)">' +
+      '<div style="display:inline-block;background:#EEEDFE;color:#3C3489;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.15rem .6rem;border-radius:99px;margin-bottom:.6rem">NEW</div>' +
+      '<div style="font-size:1.15rem;font-weight:800;margin-bottom:.4rem">Try the new flashcards with gapfills</div>' +
+      '<div style="font-size:.88rem;opacity:.8;line-height:1.45;margin-bottom:1rem">Pick a unit, open Flashcards, then choose <b>Fill the gaps</b>. Each card has three missing key words to choose from.</div>' +
+      '<button onclick="gapNewClose()" style="font-weight:700;font-size:.95rem;padding:.6rem 1.4rem;border-radius:10px;border:none;background:#534AB7;color:#fff;cursor:pointer;font-family:inherit">Got it</button></div>';
+    n.addEventListener('click', function (e) { if (e.target === n) gapNewClose(); });
+    document.body.appendChild(n);
+  } catch (e) {}
+}
+setTimeout(gapNewShow, 1200);
 </script>
 </body>
 </html>
