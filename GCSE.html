@@ -242,6 +242,7 @@ h1{font-family:Arial,Helvetica,sans-serif;font-size:1.55rem;font-weight:600;marg
 .hub-pill.on{background:#FEF3C7;border-color:#F0B429;color:#7A5200}
 .hub-start{width:100%;margin-top:.7rem;padding:.8rem;border:none;border-radius:10px;color:#fff;font-family:inherit;font-weight:700;font-size:.95rem;cursor:pointer}
 .hub-link{background:none;border:none;color:var(--muted);font-family:inherit;font-size:.76rem;font-weight:600;cursor:pointer;margin-top:.6rem;padding:.2rem}
+.gap-new-pill{position:absolute;top:-9px;right:8px;background:#534AB7;color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.04em;padding:.12rem .5rem;border-radius:99px;border:2px solid var(--surface)}
 .hub-start-row{display:flex;gap:8px;margin-top:.7rem}
 .hub-start-row .hub-start{margin-top:0;flex:1;font-size:.88rem;line-height:1.3;padding:.75rem .3rem}
 .hub-start small{display:block;font-weight:600;opacity:.85;font-size:.72rem;margin-top:2px}
@@ -497,8 +498,8 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .ff-switch button.on{background:var(--text);color:var(--surface)}
 .ff-card{position:relative;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;margin-bottom:.75rem;box-sizing:border-box}
 .ff-s{font-size:.92rem;line-height:1.75;margin:0 0 .7rem;color:var(--text)}
-.ff-blank{display:inline-block;min-width:4.5em;border-bottom:2px solid var(--muted);color:transparent;user-select:none;vertical-align:baseline}
-.ff-blank.cur{border-color:#2563eb;animation:ffp 1.2s ease-in-out infinite}
+.ff-blank{display:inline-block;min-width:4.5em;border:2px solid var(--muted);background:var(--subtle);border-radius:6px;color:transparent;user-select:none;vertical-align:middle;line-height:1.3;margin:0 .1em}
+.ff-blank.cur{border-color:#2563eb;background:rgba(37,99,235,.12);animation:ffp 1.2s ease-in-out infinite}
 @keyframes ffp{50%{opacity:.35}}
 .ff-ok{background:#d1fae5;color:#065f46;font-weight:700;padding:0 .25em;border-radius:4px}
 .ff-wrong{background:#fee2e2;color:#991b1b;text-decoration:line-through;padding:0 .25em;border-radius:4px;margin-right:.25em}
@@ -3078,7 +3079,7 @@ function ffSetMode(m) {
   if (fdMode === 'fill' && fdCurrent && ffI < 3 && !ffLock) ffDraw();
 }
 function ffDraw() {
-  document.getElementById('ff-sents').innerHTML = [0,1,2].map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
+  document.getElementById('ff-sents').innerHTML = '<p class="ff-s">' + ffSentHtml(Math.min(ffI,2)) + '</p>';
   document.getElementById('ff-after').innerHTML = '';
   const box = document.getElementById('ff-input');
   if (ffI >= 3) { box.innerHTML = ''; return; }
@@ -3116,7 +3117,7 @@ function ffResolve(ok, pick, canOverride) {
   const idx = ffI;
   // show the filled sentence for this gap straight away
   ffI = idx + 1;
-  document.getElementById('ff-sents').innerHTML = [0,1,2].map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
+  document.getElementById('ff-sents').innerHTML = '<p class="ff-s">' + ffSentHtml(idx) + '</p>';
   ffI = idx;
   const after = document.getElementById('ff-after');
   if (ok) {
@@ -3124,8 +3125,7 @@ function ffResolve(ok, pick, canOverride) {
     setTimeout(() => { if (tok === ffTok) ffAdvance(); }, 700);
   } else {
     const inp = document.getElementById('ff-text'); if (inp) { inp.disabled = true; }
-    after.innerHTML = '<div class="ff-msg no">✗ Not quite. The answer is <b>' + ffEsc(f.gap) + '</b>.</div>' +
-      '<button type="button" class="ff-next" onclick="ffAdvance()">Continue</button>' +
+    after.innerHTML = '<button type="button" class="ff-next" onclick="ffAdvance()">Continue</button>' +
       (canOverride ? '<button type="button" class="ff-link" onclick="ffOverride()">I was right</button>' : '');
   }
 }
@@ -3142,7 +3142,6 @@ function ffAdvance() {
 }
 function ffFinish() {
   const right = ffRes.filter(r => r.ok).length, all = right === 3, tok = ffTok;
-  document.getElementById('ff-sents').innerHTML = [0,1,2].map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
   document.getElementById('ff-input').innerHTML = '';
   const after = document.getElementById('ff-after');
   if (all) {
@@ -3150,9 +3149,7 @@ function ffFinish() {
     try { bdgAward('gapfill'); } catch (e) {}
     setTimeout(() => { if (tok === ffTok) fdAnswer(true); }, 900);
   } else {
-    after.innerHTML = '<div class="ff-msg no">' + right + ' of 3. This card will come back as 📌.</div>' +
-      '<button type="button" class="ff-link" onclick="ffNotes()">Show full notes</button><div id="ff-notes"></div>' +
-      '<button type="button" class="ff-next" onclick="fdAnswer(false)">Next card →</button>';
+    after.innerHTML = '<button type="button" class="ff-next" onclick="fdAnswer(false)">Next card →</button>';
   }
 }
 function ffNotes() {
@@ -4185,7 +4182,7 @@ function hubRender2(p) {
   document.getElementById('hub-fc').innerHTML = '<h3>⚡ Flashcards</h3><div class="sub">Choose one unit, several, or all of them.' + (pins ? ' Your ' + pins + ' pinned card' + (pins > 1 ? 's' : '') + ' will be mixed in.' : '') + '</div>' +
     '<button class="hub-pill' + (fdHintsOn ? ' on' : '') + '" id="hub-hints" onclick="hubHints()">💡 Hints ' + (fdHintsOn ? 'on' : 'off') + '</button>' + allRow + rows +
     '<div class="hub-start-row"><button class="hub-start" style="background:' + col + '" onclick="hubGo(\'flip\')">📖 Flip and learn' + (hubSel.all ? '' : '<small>' + nSel + ' unit' + (nSel > 1 ? 's' : '') + '</small>') + '</button>' +
-    '<button class="hub-start" style="background:' + col + '" onclick="hubGo(\'fill\')">🧩 Fill the gaps' + (hubSel.all ? '' : '<small>' + nSel + ' unit' + (nSel > 1 ? 's' : '') + '</small>') + '</button></div>' +
+    '<button class="hub-start" style="background:' + col + ';position:relative" onclick="hubGo(\'fill\')">' + (gapTried() ? '' : '<span class="gap-new-pill">NEW</span>') + '🧩 Fill the gaps' + (hubSel.all ? '' : '<small>' + nSel + ' unit' + (nSel > 1 ? 's' : '') + '</small>') + '</button></div>' +
     '<div style="display:flex;gap:10px;flex-wrap:wrap">' + (pins ? '<button class="hub-link" onclick="goToPinnedReview()">📌 Review ' + pins + ' pinned (all papers)</button>' : '') + '<button class="hub-link" onclick="hubPrint()">🖨️ Print cards as PDF</button></div>';
 }
 let hubSel = {paper:'', all:true, set:[]};
@@ -4197,6 +4194,7 @@ function hubTog(k) {
   else hubSel.set.push(u);
   hubRender();
 }
+function gapTried() { try { return !!localStorage.getItem('gcse_gap_tried'); } catch (e) { return false; } }
 function hubGo(mode) {
   if (mode) fdMode = mode;
   if (mode === 'fill') { try { localStorage.setItem('gcse_gap_tried', '1'); } catch (e) {} }
