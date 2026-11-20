@@ -8,7 +8,7 @@
   "p2": "Urban growth is a rise in a town's population.",
   "p3": "",
   "hints": [
-   "Rising",
+   "proportion",
    "Rise"
   ],
   "s": [
@@ -18,12 +18,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "increasing",
+    "gap": "proportion",
     "alt": [],
     "d": [
-     "falling",
-     "fixed",
-     "random"
+     "density",
+     "height",
+     "speed"
     ]
    },
    {
@@ -49,7 +49,7 @@
   "p3": "",
   "hints": [
    "Migration",
-   "Births"
+   "higher"
   ],
   "s": [
    "Rural-urban migration, the movement of people from the countryside to towns and cities, is the main reason LIC and NEE cities grow so fast.",
@@ -58,12 +58,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "countryside",
+    "gap": "the countryside",
     "alt": [],
     "d": [
-     "coast",
-     "suburbs",
-     "mountains"
+     "the coast",
+     "the city centre",
+     "the mountain"
     ]
    },
    {
@@ -190,22 +190,22 @@
    },
    {
     "p": 2,
-    "gap": "west coast",
+    "gap": "the west coast",
     "alt": [],
     "d": [
-     "east coast",
-     "north coast",
-     "south coast"
+     "the east coast",
+     "the north coast",
+     "the south coast"
     ]
    },
    {
     "p": 3,
-    "gap": "megacity",
+    "gap": "a megacity",
     "alt": [],
     "d": [
-     "conurbation",
-     "metropolis",
-     "suburb"
+     "a conurbation",
+     "a metropolis",
+     "a suburb"
     ]
    }
   ]
@@ -275,7 +275,7 @@
   "p3": "Natural increase is the second cause → a high birth rate; it is birth rate minus death rate.",
   "hints": [
    "Migration",
-   "Wages",
+   "average wage",
    "Birth rate"
   ],
   "s": [
@@ -562,12 +562,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Mithi River",
+    "gap": "The Mithi River",
     "alt": [],
     "d": [
-     "Ganges",
-     "Narmada",
-     "Godavari"
+     "The Ganges",
+     "The Narmada",
+     "The Godavari"
     ]
    },
    {
@@ -708,7 +708,7 @@
   "p3": "A decomposer breaks down dead organisms and returns nutrients to the soil.",
   "hints": [
    "Living",
-   "Plants",
+   "sunlight",
    "Dead"
   ],
   "s": [
@@ -759,8 +759,8 @@
   "p2": "A secondary consumer feeds on primary consumers, so it is a carnivore.",
   "p3": "",
   "hints": [
-   "Plant eater",
-   "Meat eater"
+   "producers",
+   "a carnivore"
   ],
   "s": [
    "A primary consumer feeds on producers, so it is a herbivore.",
@@ -779,12 +779,12 @@
    },
    {
     "p": 2,
-    "gap": "carnivore",
+    "gap": "a carnivore",
     "alt": [],
     "d": [
-     "herbivore",
-     "omnivore",
-     "scavenger"
+     "a herbivore",
+     "an omnivore",
+     "a scavenger"
     ]
    }
   ],
@@ -849,12 +849,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "variety",
+    "gap": "the variety",
     "alt": [],
     "d": [
-     "size",
-     "age",
-     "speed"
+     "the size",
+     "the age",
+     "the speed"
     ]
    },
    {
@@ -891,22 +891,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Equator",
+    "gap": "the Equator",
     "alt": [],
     "d": [
-     "tropics",
-     "coast",
-     "desert"
+     "the tropics",
+     "the coast",
+     "the desert"
     ]
    },
    {
     "p": 2,
-    "gap": "loop",
+    "gap": "the loop",
     "alt": [],
     "d": [
-     "layer",
-     "wall",
-     "line"
+     "the layer",
+     "the wall",
+     "the line"
     ]
    },
    {
@@ -953,22 +953,22 @@
    },
    {
     "p": 2,
-    "gap": "ITCZ",
+    "gap": "the ITCZ",
     "alt": [],
     "d": [
-     "jet stream",
-     "trade winds",
-     "polar front"
+     "the jet stream",
+     "the trade winds",
+     "the polar front"
     ]
    },
    {
     "p": 3,
-    "gap": "Hadley cell",
+    "gap": "the Hadley cell",
     "alt": [],
     "d": [
-     "Ferrel cell",
-     "Polar cell",
-     "Coriolis effect"
+     "the Ferrel cell",
+     "the Polar cell",
+     "the Coriolis effect"
     ]
    }
   ]
@@ -1049,12 +1049,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "equator",
+    "gap": "the equator",
     "alt": [],
     "d": [
-     "poles",
-     "Tropic of Cancer",
-     "30 degrees"
+     "the poles",
+     "the Tropic of Cancer",
+     "the 30 degrees"
     ]
    },
    {
@@ -1221,12 +1221,12 @@
    },
    {
     "p": 2,
-    "gap": "canopy",
+    "gap": "the canopy",
     "alt": [],
     "d": [
-     "forest floor",
-     "emergent layer",
-     "understorey"
+     "the forest floor",
+     "the emergent layer",
+     "the understorey"
     ]
    },
    {
@@ -1380,12 +1380,12 @@
    },
    {
     "p": 2,
-    "gap": "Trans-Amazonian Highway",
+    "gap": "the Trans-Amazonian Highway",
     "alt": [],
     "d": [
-     "Pan-American Highway",
-     "Silk Road",
-     "Grand Trunk Road"
+     "the Pan-American Highway",
+     "the Silk Road",
+     "the Grand Trunk Road"
     ]
    },
    {
@@ -1485,22 +1485,22 @@
    },
    {
     "p": 2,
-    "gap": "rosy periwinkle",
+    "gap": "the rosy periwinkle",
     "alt": [],
     "d": [
-     "foxglove",
-     "willow bark",
-     "cinchona"
+     "the foxglove",
+     "the willow bark",
+     "the cinchona"
     ]
    },
    {
     "p": 3,
-    "gap": "Kayapo",
+    "gap": "the Kayapo",
     "alt": [],
     "d": [
-     "Maasai",
-     "Inuit",
-     "Bedouin"
+     "the Maasai",
+     "the Inuit",
+     "the Bedouin"
     ]
    }
   ]
@@ -1669,7 +1669,7 @@
   "hints": [
    "ITTA",
    "Remote",
-   "Debt swap"
+   "the debt"
   ],
   "s": [
    "The International Tropical Timber Agreement (ITTA, 2006) marks hardwood with a registration number proving it came from a managed forest → illegal loggers find it harder to sell wood.",
@@ -1679,12 +1679,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "registration number",
+    "gap": "a registration number",
     "alt": [],
     "d": [
-     "tax stamp",
-     "export licence",
-     "barcode"
+     "a tax stamp",
+     "an export licence",
+     "a barcode"
     ]
    },
    {
@@ -1699,12 +1699,12 @@
    },
    {
     "p": 3,
-    "gap": "debt",
+    "gap": "the debt",
     "alt": [],
     "d": [
-     "trade",
-     "aid",
-     "tax"
+     "the trade",
+     "the aid",
+     "the tax"
     ]
    }
   ],
@@ -1733,12 +1733,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "equator",
+    "gap": "the equator",
     "alt": [],
     "d": [
-     "poles",
-     "tropics",
-     "coast"
+     "the poles",
+     "the tropics",
+     "the coast"
     ]
    },
    {
@@ -1772,7 +1772,7 @@
   "p2": "Coniferous forest, or taiga, is northern evergreen forest.",
   "p3": "Temperate deciduous forest has four distinct seasons.",
   "hints": [
-   "Cold",
+   "no trees",
    "Evergreen",
    "Seasons"
   ],
@@ -1784,12 +1784,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "freezing",
+    "gap": "no trees",
     "alt": [],
     "d": [
-     "boiling",
-     "flooding",
-     "drought"
+     "no water",
+     "no animals",
+     "no soil"
     ]
    },
    {
@@ -1863,7 +1863,7 @@
   "p2": "An energy mix is the combination of energy sources used to meet a country's total energy demand.",
   "p3": "",
   "hints": [
-   "Supply",
+   "uninterrupted",
    "Combination"
   ],
   "s": [
@@ -1883,12 +1883,12 @@
    },
    {
     "p": 2,
-    "gap": "combination",
+    "gap": "the combination",
     "alt": [],
     "d": [
-     "list",
-     "price",
-     "amount"
+     "the list",
+     "the price",
+     "the amount"
     ]
    }
   ],
@@ -1904,7 +1904,7 @@
   "p3": "",
   "hints": [
    "Demand",
-   "Moving"
+   "moves water"
   ],
   "s": [
    "Water stress is when a place's water demand cannot be met, so it is in deficit.",
@@ -1965,12 +1965,12 @@
    },
    {
     "p": 2,
-    "gap": "reliable",
+    "gap": "uninterrupted",
     "alt": [],
     "d": [
+     "occasional",
      "seasonal",
-     "imported",
-     "occasional"
+     "imported"
     ]
    },
    {
@@ -2217,12 +2217,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "national water grid",
+    "gap": "A national water grid",
     "alt": [],
     "d": [
-     "national gas network",
-     "national rail network",
-     "national road network"
+     "A national gas network",
+     "A national rail network",
+     "A national road network"
     ]
    },
    {
@@ -2256,8 +2256,8 @@
   "p2": "The Sahel is found on the fringe of a hot desert, the Sahara.",
   "p3": "",
   "hints": [
-   "Location",
-   "Edge"
+   "15 to 30°",
+   "the fringe"
   ],
   "s": [
    "The Sahara covers 9,200,000 km², lies 15 to 30° north of the Equator and covers most of northern Africa.",
@@ -2276,12 +2276,12 @@
    },
    {
     "p": 2,
-    "gap": "fringe",
+    "gap": "the fringe",
     "alt": [],
     "d": [
-     "centre",
-     "coast",
-     "summit"
+     "the centre",
+     "the coast",
+     "the summit"
     ]
    }
   ],
@@ -2297,7 +2297,7 @@
   "p3": "Erosion is when rock or soil is worn away and removed by wind, water or ice.",
   "hints": [
    "Dry",
-   "Amount",
+   "250mm",
    "Removed"
   ],
   "s": [
@@ -2348,8 +2348,8 @@
   "p2": "A climate graph shows temperature as a line graph and precipitation as a bar graph.",
   "p3": "",
   "hints": [
-   "Falls",
-   "Two parts"
+   "atmosphere",
+   "precipitation"
   ],
   "s": [
    "Precipitation is any water that forms in the Earth's atmosphere and then drops onto the surface, such as rain, snow, sleet or hail.",
@@ -2408,12 +2408,12 @@
    },
    {
     "p": 2,
-    "gap": "long-term average",
+    "gap": "the long-term average",
     "alt": [],
     "d": [
-     "daily total",
-     "coastal figure",
-     "record high"
+     "the daily total",
+     "the coastal figure",
+     "the record high"
     ]
    }
   ],
@@ -2428,8 +2428,8 @@
   "p2": "Climate describes average weather conditions over longer periods of time.",
   "p3": "",
   "hints": [
-   "Daily",
-   "Long term"
+   "the day-to-day",
+   "average"
   ],
   "s": [
    "Weather describes the day-to-day conditions of the atmosphere.",
@@ -2438,12 +2438,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "day-to-day",
+    "gap": "the day-to-day",
     "alt": [],
     "d": [
-     "monthly",
-     "seasonal",
-     "yearly"
+     "the monthly",
+     "the seasonal",
+     "the yearly"
     ]
    },
    {
@@ -2508,7 +2508,7 @@
   "p2": "The mesquite tree has the longest roots of any desert plant, recorded as long as 24 metres.",
   "p3": "",
   "hints": [
-   "Depth",
+   "the water table",
    "Mesquite"
   ],
   "s": [
@@ -2518,12 +2518,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "water table",
+    "gap": "the water table",
     "alt": [],
     "d": [
-     "river bed",
-     "rock layer",
-     "spring line"
+     "the river bed",
+     "the rock layer",
+     "the spring line"
     ]
    },
    {
@@ -2589,7 +2589,7 @@
   "p3": "",
   "hints": [
    "Money",
-   "Spending"
+   "income"
   ],
   "s": [
    "A development opportunity is initially about making money in a hot desert.",
@@ -2668,7 +2668,7 @@
   "p2": "Fertile soil has lots of nutrients in it, while infertile soil has none.",
   "p3": "",
   "hints": [
-   "Needed",
+   "substances",
    "Fertile"
   ],
   "s": [
@@ -2708,7 +2708,7 @@
   "p2": "It often takes advantage of local conditions, such as a sunny climate.",
   "p3": "",
   "hints": [
-   "Cost",
+   "cheap",
    "Local"
   ],
   "s": [
@@ -2728,12 +2728,12 @@
    },
    {
     "p": 2,
-    "gap": "sunny",
+    "gap": "local conditions",
     "alt": [],
     "d": [
-     "rainy",
-     "windy",
-     "cold"
+     "global trends",
+     "world prices",
+     "foreign aid"
     ]
    }
   ],
@@ -2768,12 +2768,12 @@
    },
    {
     "p": 2,
-    "gap": "air",
+    "gap": "the air",
     "alt": [],
     "d": [
-     "water",
-     "rock",
-     "fertiliser"
+     "the water",
+     "the rock",
+     "the fertiliser"
     ]
    }
   ],
@@ -2922,12 +2922,12 @@
    },
    {
     "p": 3,
-    "gap": "solar",
+    "gap": "a solar",
     "alt": [],
     "d": [
-     "wind",
-     "geothermal",
-     "hydroelectric"
+     "a wind",
+     "a geothermal",
+     "a hydroelectric"
     ]
    }
   ]
@@ -3095,8 +3095,8 @@
   "p3": "The technique is low cost and spread from Burkina Faso to Mali and Niger, but reduced rainfall from climate change may stop it working properly.",
   "hints": [
    "Bunds",
-   "Effect",
-   "Limit"
+   "trapping",
+   "reduced rainfall"
   ],
   "s": [
    "Stones are laid along the contours of the land in long lines, sometimes called bunds, 25 to 30 cm high.",
@@ -3106,12 +3106,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "contours",
+    "gap": "the contours",
     "alt": [],
     "d": [
-     "valleys",
-     "roads",
-     "rivers"
+     "the valleys",
+     "the roads",
+     "the rivers"
     ]
    },
    {
@@ -3146,7 +3146,7 @@
   "p3": "",
   "hints": [
    "Money",
-   "Measure"
+   "measurable"
   ],
   "s": [
    "Standard of living is how much money and material wealth people have, and what that money can buy.",
@@ -3185,7 +3185,7 @@
   "p2": "It includes things money cannot fully buy, such as health, safety, happiness, a clean environment, community, freedom and leisure time, so it is more subjective and harder to measure.",
   "p3": "",
   "hints": [
-   "Feelings",
+   "satisfied",
    "Measure"
   ],
   "s": [
@@ -3225,8 +3225,8 @@
   "p2": "It sorts every country into an income group based on GNI per capita.",
   "p3": "",
   "hints": [
-   "Role",
-   "Groups"
+   "lends money",
+   "an income group"
   ],
   "s": [
    "The World Bank is an international organisation that lends money and gives advice to countries to reduce poverty and support development.",
@@ -3245,12 +3245,12 @@
    },
    {
     "p": 2,
-    "gap": "income group",
+    "gap": "an income group",
     "alt": [],
     "d": [
-     "language group",
-     "trade bloc",
-     "time zone"
+     "a language group",
+     "a trade bloc",
+     "a time zone"
     ]
    }
   ],
@@ -3318,7 +3318,7 @@
   "p3": "",
   "hints": [
    "Statistics",
-   "Types"
+   "composite"
   ],
   "s": [
    "Development indicators are measurable statistics used to assess and compare the progress or quality of life of different regions or countries.",
@@ -3357,8 +3357,8 @@
   "p2": "Nigeria is approximately $2,160 and the UK approximately $46,000+.",
   "p3": "",
   "hints": [
-   "Meaning",
-   "Figures"
+   "the population",
+   "$2,160"
   ],
   "s": [
    "GNI per capita is the total value of goods and services produced by a country, plus net income from abroad, divided by the population.",
@@ -3367,12 +3367,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "population",
+    "gap": "the population",
     "alt": [],
     "d": [
-     "land area",
-     "workforce",
-     "exports"
+     "the land area",
+     "the workforce",
+     "the exports"
     ]
    },
    {
@@ -3397,8 +3397,8 @@
   "p2": "Nigeria is approximately $2,300 per person and the UK approximately $45,000+ per person.",
   "p3": "",
   "hints": [
-   "Meaning",
-   "Figures"
+   "within a country",
+   "$2,300"
   ],
   "s": [
    "GDP per capita is the total value of goods and services produced within a country in a year, divided by the population.",
@@ -3437,8 +3437,8 @@
   "p2": "Nigeria is approximately 72 per 1,000 and the UK approximately 3.6 per 1,000.",
   "p3": "",
   "hints": [
-   "Meaning",
-   "Figures"
+   "under one year old",
+   "72"
   ],
   "s": [
    "The infant mortality rate is the number of deaths of children under one year old per 1,000 live births.",
@@ -3477,8 +3477,8 @@
   "p2": "Nigeria is approximately 62%, varying significantly between south and north, and the UK approximately 99%.",
   "p3": "",
   "hints": [
-   "Meaning",
-   "Figures"
+   "read and write",
+   "62%"
   ],
   "s": [
    "The literacy rate is the percentage of the population aged 15 and over who can read and write.",
@@ -3487,12 +3487,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "15",
+    "gap": "read and write",
     "alt": [],
     "d": [
-     "5",
-     "18",
-     "25"
+     "vote and drive",
+     "add and subtract",
+     "speak and listen"
     ]
    },
    {
@@ -3517,8 +3517,8 @@
   "p2": "Nigeria is approximately 53 to 55 years and the UK approximately 81 years.",
   "p3": "",
   "hints": [
-   "Meaning",
-   "Figures"
+   "from birth",
+   "81 years"
   ],
   "s": [
    "Life expectancy is the average number of years a person is expected to live from birth.",
@@ -3558,7 +3558,7 @@
   "p3": "",
   "hints": [
    "Composite",
-   "Figures"
+   "0.93"
   ],
   "s": [
    "The Human Development Index is a composite statistic combining life expectancy, education and GNI per capita, scored 0 to 1.",
@@ -3597,8 +3597,8 @@
   "p2": "Around 64% of Nigerians have safely managed access, lower in rural regions such as the north, while in the UK virtually all households have treated tap water.",
   "p3": "",
   "hints": [
-   "Meaning",
-   "Figures"
+   "sustainable",
+   "64%"
   ],
   "s": [
    "Access to safe water is the percentage of the population with sustainable access to an improved water source.",
@@ -3690,7 +3690,7 @@
   "p3": "",
   "hints": [
    "Within",
-   "Between"
+   "another"
   ],
   "s": [
    "Rural-urban migration is the movement of people from the countryside to towns and cities, usually within one country.",
@@ -3731,7 +3731,7 @@
   "hints": [
    "Work",
    "Money",
-   "Skills"
+   "doctors"
   ],
   "s": [
    "An economic migrant is someone who moves to find work or a higher income.",
@@ -3741,12 +3741,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "higher income",
+    "gap": "a higher income",
     "alt": [],
     "d": [
-     "better climate",
-     "new language",
-     "partner"
+     "a better climate",
+     "a new language",
+     "a partner"
     ]
    },
    {
@@ -3834,7 +3834,7 @@
   "p3": "",
   "hints": [
    "Aid",
-   "Types"
+   "bilateral"
   ],
   "s": [
    "Official Development Assistance, or ODA, is aid that passes from one government to another, usually on a large scale.",
@@ -3994,7 +3994,7 @@
   "p3": "",
   "hints": [
    "Loans",
-   "Drawback"
+   "interest"
   ],
   "s": [
    "Microfinance gives very small loans to people who are refused by banks.",
@@ -4034,7 +4034,7 @@
   "p3": "Tertiary jobs are in services.",
   "hints": [
    "Model",
-   "Primary and secondary",
+   "agriculture",
    "Tertiary"
   ],
   "s": [
@@ -4045,12 +4045,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "predictable order",
+    "gap": "a predictable order",
     "alt": [],
     "d": [
-     "random order",
-     "fixed speed",
-     "single sector"
+     "a random order",
+     "a fixed speed",
+     "a single sector"
     ]
    },
    {
@@ -4136,9 +4136,9 @@
   "p2": "Abuja was purpose-built in the centre and became capital in 1991 → seen as neutral ground between the main ethnic groups; it replaced Lagos, still the biggest city.",
   "p3": "About 218 million people → the most populous country in Africa; more than 250 ethnic groups speak around 500 languages, with English official; Hausa, Yoruba and Igbo are the largest.",
   "hints": [
-   "Location",
+   "the Gulf of Guinea",
    "Capital",
-   "Population"
+   "ethnic groups"
   ],
   "s": [
    "Nigeria is in West Africa on the Gulf of Guinea, bordering Benin, Niger, Chad and Cameroon; it covers about 924,000 km², nearly four times the size of the UK.",
@@ -4148,12 +4148,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Gulf of Guinea",
+    "gap": "the Gulf of Guinea",
     "alt": [],
     "d": [
-     "Gulf of Aden",
-     "Bay of Bengal",
-     "Persian Gulf"
+     "the Gulf of Aden",
+     "the Bay of Bengal",
+     "the Persian Gulf"
     ]
    },
    {
@@ -4189,7 +4189,7 @@
   "hints": [
    "Culture",
    "Economy",
-   "Influence"
+   "OPEC"
   ],
   "s": [
    "Culture: Nollywood is the second largest film industry in the world, Afrobeats has global audiences, and Wole Soyinka won the Nobel Prize in Literature in 1986.",
@@ -4243,7 +4243,7 @@
   "hints": [
    "1960",
    "Gate keeper",
-   "Instability"
+   "dictatorships"
   ],
   "s": [
    "Britain ruled Nigeria from the mid-19th century until independence in 1960 → palm oil, peanuts and cocoa were extracted as raw materials, with no factories or education developed.",
@@ -4263,12 +4263,12 @@
    },
    {
     "p": 2,
-    "gap": "gate keeper state",
+    "gap": "a gate keeper state",
     "alt": [],
     "d": [
-     "welfare state",
-     "federal republic",
-     "one-party state"
+     "a welfare state",
+     "a federal republic",
+     "an one-party state"
     ]
    },
    {
@@ -4293,7 +4293,7 @@
   "p3": "About 10 million move to cities like Lagos each year; 1.3 million Nigerians have migrated abroad; remittances of about $23 billion in 2021 help families but can deepen inequality.",
   "hints": [
    "Gap",
-   "Regions",
+   "maternal mortality",
    "Remittances"
   ],
   "s": [
@@ -4355,12 +4355,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Clark-Fisher model",
+    "gap": "the Clark-Fisher model",
     "alt": [],
     "d": [
-     "demographic transition model",
-     "Human Development Index",
-     "hydrological cycle"
+     "the demographic transition model",
+     "the Human Development Index",
+     "the hydrological cycle"
     ]
    },
    {
@@ -4409,22 +4409,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "World Bank",
+    "gap": "the World Bank",
     "alt": [],
     "d": [
-     "IMF",
-     "United Nations",
-     "OPEC"
+     "the IMF",
+     "the United Nations",
+     "the OPEC"
     ]
    },
    {
     "p": 2,
-    "gap": "loan",
+    "gap": "a loan",
     "alt": [],
     "d": [
-     "grant",
-     "gift",
-     "donation"
+     "a grant",
+     "a gift",
+     "a donation"
     ]
    },
    {
@@ -4460,22 +4460,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Niger Delta",
+    "gap": "The Niger Delta",
     "alt": [],
     "d": [
-     "Lake Chad",
-     "Gulf of Guinea",
-     "Lekki coast"
+     "The Lake Chad",
+     "The Gulf of Guinea",
+     "The Lekki coast"
     ]
    },
    {
     "p": 2,
-    "gap": "multiplier effect",
+    "gap": "a multiplier effect",
     "alt": [],
     "d": [
-     "economic leakage",
-     "brain drain",
-     "demographic transition"
+     "an economic leakage",
+     "a brain drain",
+     "a demographic transition"
     ]
    },
    {
@@ -4509,12 +4509,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "potential",
+    "gap": "life and property",
     "alt": [],
     "d": [
-     "intention",
-     "obligation",
-     "reputation"
+     "trade and jobs",
+     "soil and water",
+     "wealth and power"
     ]
    },
    {
@@ -4549,22 +4549,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "environment",
+    "gap": "the environment",
     "alt": [],
     "d": [
-     "economy",
-     "climate",
-     "government"
+     "the economy",
+     "the climate",
+     "the government"
     ]
    },
    {
     "p": 2,
-    "gap": "vulnerable",
+    "gap": "a vulnerable",
     "alt": [],
     "d": [
-     "resilient",
-     "wealthy",
-     "urban"
+     "a resilient",
+     "a wealthy",
+     "an urban"
     ]
    }
   ],
@@ -4580,7 +4580,7 @@
   "p3": "",
   "hints": [
    "Land",
-   "Air"
+   "weather"
   ],
   "s": [
    "Geological hazards are caused by land and tectonic processes.",
@@ -4620,7 +4620,7 @@
   "p3": "Capacity to cope is a country's ability to react, for example through evacuation and medical assistance.",
   "hints": [
    "Magnitude",
-   "Exposure",
+   "unsafe",
    "React"
   ],
   "s": [
@@ -4673,7 +4673,7 @@
   "hints": [
    "Crust",
    "Mantle",
-   "Source"
+   "heat"
   ],
   "s": [
    "A tectonic plate is part of the Earth's crust that floats on the mantle and can interact to cause earthquakes.",
@@ -4763,8 +4763,8 @@
   "p2": "Friction makes the plates stick, pressure builds up, and when it is released it sends out huge amounts of energy as an earthquake.",
   "p3": "There are no volcanoes at a conservative margin; the San Andreas Fault is an example.",
   "hints": [
-   "Passing",
-   "Stuck",
+   "speeds",
+   "friction",
    "Example"
   ],
   "s": [
@@ -4795,12 +4795,12 @@
    },
    {
     "p": 3,
-    "gap": "San Andreas",
+    "gap": "the San Andreas",
     "alt": [],
     "d": [
-     "Tonga",
-     "Mid Atlantic",
-     "Java"
+     "the Tonga",
+     "the Mid Atlantic",
+     "the Java"
     ]
    }
   ],
@@ -4899,12 +4899,12 @@
    },
    {
     "p": 3,
-    "gap": "strongly",
+    "gap": "weaker",
     "alt": [],
     "d": [
-     "weakly",
-     "rarely",
-     "slowly"
+     "stronger",
+     "faster",
+     "wider"
     ]
    }
   ],
@@ -4920,7 +4920,7 @@
   "p3": "",
   "hints": [
    "Energy",
-   "Frequency"
+   "the less frequent"
   ],
   "s": [
    "The Richter scale measures the energy of an earthquake and is logarithmic, which means it measures shaking amplitude.",
@@ -4939,12 +4939,12 @@
    },
    {
     "p": 2,
-    "gap": "less frequent",
+    "gap": "the less frequent",
     "alt": [],
     "d": [
-     "more frequent",
-     "more deadly",
-     "more shallow"
+     "the more frequent",
+     "the more deadly",
+     "the more shallow"
     ]
    }
   ],
@@ -4960,7 +4960,7 @@
   "p3": "",
   "hints": [
    "Feel",
-   "Scale"
+   "XII"
   ],
   "s": [
    "The Mercalli scale measures intensity, based on how people feel the effects of an earthquake.",
@@ -4969,12 +4969,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "effects",
+    "gap": "the effects",
     "alt": [],
     "d": [
-     "depth",
-     "distance",
-     "energy"
+     "the depth",
+     "the distance",
+     "the energy"
     ]
    },
    {
@@ -5000,7 +5000,7 @@
   "p3": "In Haiti, destroyed pipelines were a primary effect and people getting cholera from contaminated water was a secondary effect.",
   "hints": [
    "Immediate",
-   "Knock-on",
+   "ruptured gas mains",
    "Haiti"
   ],
   "s": [
@@ -5011,22 +5011,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "direct",
+    "gap": "a direct",
     "alt": [],
     "d": [
-     "indirect",
-     "delayed",
-     "partial"
+     "an indirect",
+     "a delayed",
+     "a partial"
     ]
    },
    {
     "p": 2,
-    "gap": "indirectly",
+    "gap": "ruptured gas mains",
     "alt": [],
     "d": [
-     "directly",
-     "instantly",
-     "locally"
+     "blocked drains",
+     "broken windows",
+     "fallen trees"
     ]
    },
    {
@@ -5052,7 +5052,7 @@
   "p3": "NGO stands for Non-Governmental Organisation, for example the Red Cross.",
   "hints": [
    "Hours",
-   "Months",
+   "rebuilding",
    "Red Cross"
   ],
   "s": [
@@ -5103,8 +5103,8 @@
   "p2": "It was born in Kenya during violence that followed a disputed election.",
   "p3": "People text incident reports from mobile phones, which are uploaded to a map so aid agencies like the Red Cross can see who needs help and where.",
   "hints": [
-   "Meaning",
-   "Origin",
+   "Swahili",
+   "Kenya",
    "Reports"
   ],
   "s": [
@@ -5135,12 +5135,12 @@
    },
    {
     "p": 3,
-    "gap": "map",
+    "gap": "a map",
     "alt": [],
     "d": [
-     "chart",
-     "database",
-     "newsletter"
+     "a chart",
+     "a database",
+     "a newsletter"
     ]
    }
   ],
@@ -5207,7 +5207,7 @@
   "p2": "Scientists study historical records to identify locations they believe are at risk.",
   "p3": "Sensitive sensors can pick up foreshocks, and monitoring stations measure radon gas released from the ground.",
   "hints": [
-   "Accuracy",
+   "warning signs",
    "Records",
    "Sensors"
   ],
@@ -5260,7 +5260,7 @@
   "p3": "Hazard maps and zoning restrict certain areas or identify which areas need to be evacuated in an eruption.",
   "hints": [
    "Satellites",
-   "Lasers",
+   "deformation",
    "Maps"
   ],
   "s": [
@@ -5373,12 +5373,12 @@
    },
    {
     "p": 2,
-    "gap": "conservative",
+    "gap": "a conservative",
     "alt": [],
     "d": [
-     "constructive",
-     "destructive",
-     "collisional"
+     "a constructive",
+     "a destructive",
+     "a collisional"
     ]
    },
    {
@@ -5402,8 +5402,8 @@
   "p2": "72% of people lived below $2 a day, adult literacy was 62% and 36% of the population was under 15.",
   "p3": "The capital is Port-au-Prince and the population at the time of the event was 10 million.",
   "hints": [
-   "Income",
-   "Poverty",
+   "1560",
+   "72%",
    "Capital"
   ],
   "s": [
@@ -5453,7 +5453,7 @@
   "p2": "1 million people were made homeless, 2.3 million were displaced and 3.5 million were affected.",
   "p3": "4,758 schools were damaged or destroyed, 50 healthcare facilities were destroyed, and power and communications went down.",
   "hints": [
-   "Deaths",
+   "316,000",
    "Homeless",
    "Schools"
   ],
@@ -5505,7 +5505,7 @@
   "p3": "Clothing manufacture provides 2/3 of Haiti's GDP, and damaged factories and tourist attractions slowed economic recovery.",
   "hints": [
    "Disease",
-   "Disorder",
+   "looted",
    "GDP"
   ],
   "s": [
@@ -5659,7 +5659,7 @@
   "hints": [
    "Ambulance",
    "Rescue",
-   "Safety"
+   "criminal gangs"
   ],
   "s": [
    "Only one ambulance service operated in Port au Prince, so wounds became infected, causing amputations and preventable deaths.",
@@ -5832,12 +5832,12 @@
    },
    {
     "p": 2,
-    "gap": "decade",
+    "gap": "a decade",
     "alt": [],
     "d": [
-     "month",
-     "year",
-     "century"
+     "a month",
+     "a year",
+     "a century"
     ]
    },
    {
@@ -5862,7 +5862,7 @@
   "p3": "By Monday food was getting through, as soldiers gave out water and people could get lunch boxes from convenience stores.",
   "hints": [
    "Troops",
-   "Allies",
+   "Tokyo",
    "Food"
   ],
   "s": [
@@ -5912,7 +5912,7 @@
   "p2": "Gas pipelines have automatic cut offs to prevent gas leaks and fires, and high risk areas have loud warning sirens.",
   "p3": "1 September is Disaster Prevention Day, with drills and information for everyone, and hundreds of thousands of supply bags are stored ready for delivery by helicopter.",
   "hints": [
-   "Buildings",
+   "building regulations",
    "Gas",
    "Drills"
   ],
@@ -5924,12 +5924,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "1920s",
+    "gap": "building regulations",
     "alt": [],
     "d": [
-     "1820s",
-     "1950s",
-     "1990s"
+     "planning permissions",
+     "tax rules",
+     "speed limits"
     ]
    },
    {
@@ -5944,12 +5944,12 @@
    },
    {
     "p": 3,
-    "gap": "1 September",
+    "gap": "Disaster Prevention Day",
     "alt": [],
     "d": [
-     "1 January",
-     "1 April",
-     "1 December"
+     "Remembrance Day",
+     "Earth Day",
+     "Safety Week"
     ]
    }
   ]
@@ -6014,7 +6014,7 @@
   "p2": "Weathering of lava releases minerals and leaves behind extremely fertile soil, rich in nutrients.",
   "p3": "Volcanic soils make up less than 1% of the earth's surface but support 10% of the world's population; 40% of Indonesians work in agriculture.",
   "hints": [
-   "Tourism",
+   "100 million",
    "Soil",
    "Population"
   ],
@@ -6116,7 +6116,7 @@
   "p2": "The planet's average surface temperature has risen about 1 degree Celsius since the late 19th century, a change driven largely by increased carbon dioxide emissions.",
   "p3": "Temperatures are now about 1.2°C above pre-industrial levels.",
   "hints": [
-   "Long term",
+   "the average",
    "Rise",
    "Now"
   ],
@@ -6128,12 +6128,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "average",
+    "gap": "the average",
     "alt": [],
     "d": [
-     "extreme",
-     "daily",
-     "seasonal"
+     "the extreme",
+     "the daily",
+     "the seasonal"
     ]
    },
    {
@@ -6200,12 +6200,12 @@
    },
    {
     "p": 3,
-    "gap": "microorganisms",
+    "gap": "the microorganisms",
     "alt": [],
     "d": [
-     "fish bones",
-     "rock crystals",
-     "coral reefs"
+     "the fish bones",
+     "the rock crystals",
+     "the coral reefs"
     ]
    }
   ],
@@ -6274,7 +6274,7 @@
   "hints": [
    "Orbit",
    "Sun",
-   "Volcanoes"
+   "the atmosphere"
   ],
   "s": [
    "Earth's orbit around the Sun changes, which shifts the climate.",
@@ -6304,12 +6304,12 @@
    },
    {
     "p": 3,
-    "gap": "temporarily",
+    "gap": "the atmosphere",
     "alt": [],
     "d": [
-     "permanently",
-     "rarely",
-     "never"
+     "the ocean",
+     "the crust",
+     "the mantle"
     ]
    }
   ],
@@ -6429,7 +6429,7 @@
   "p3": "",
   "hints": [
    "Companies",
-   "Top 25"
+   "25"
   ],
   "s": [
    "Just 100 companies are the source of more than 70% of greenhouse gas emissions since 1988.",
@@ -6478,12 +6478,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "accelerating",
+    "gap": "stored carbon",
     "alt": [],
     "d": [
-     "slowing",
-     "stopping",
-     "reversing"
+     "stored water",
+     "stored heat",
+     "stored oxygen"
     ]
    },
    {
@@ -6508,8 +6508,8 @@
   "p2": "Adaptation means changing the way we live to better suit our new environment.",
   "p3": "",
   "hints": [
-   "Reduce",
-   "Change"
+   "greenhouse gas emissions",
+   "suit"
   ],
   "s": [
    "Mitigation means stopping or reducing our greenhouse gas emissions to slow down the rate of climate change.",
@@ -6518,12 +6518,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "reducing",
+    "gap": "greenhouse gas emissions",
     "alt": [],
     "d": [
-     "increasing",
-     "measuring",
-     "ignoring"
+     "fossil fuel prices",
+     "energy bills",
+     "population growth"
     ]
    },
    {
@@ -6549,7 +6549,7 @@
   "p3": "",
   "hints": [
    "Capture",
-   "Limits"
+   "cement and steel"
   ],
   "s": [
    "Carbon capture and storage (CCS) captures carbon dioxide produced by industry and stores it underground so it cannot enter the atmosphere.",
@@ -6568,12 +6568,12 @@
    },
    {
     "p": 2,
-    "gap": "costly",
+    "gap": "cement and steel",
     "alt": [],
     "d": [
-     "cheap",
-     "simple",
-     "free"
+     "glass and paper",
+     "oil and gas",
+     "coal and wood"
     ]
    }
   ],
@@ -6590,7 +6590,7 @@
   "hints": [
    "Alternative energy",
    "CCS",
-   "Agreements"
+   "The Paris Agreement"
   ],
   "s": [
    "Mitigation reduces greenhouse gas emissions → alternative energy such as solar, wind and hydroelectric cuts fossil fuel use; trees absorb carbon dioxide as natural carbon sinks, but non-native species can disrupt ecosystems.",
@@ -6620,12 +6620,12 @@
    },
    {
     "p": 3,
-    "gap": "Paris Agreement",
+    "gap": "The Paris Agreement",
     "alt": [],
     "d": [
-     "Kyoto Protocol",
-     "Montreal Protocol",
-     "Geneva Convention"
+     "The Kyoto Protocol",
+     "The Montreal Protocol",
+     "The Geneva Convention"
     ]
    }
   ]
@@ -6692,7 +6692,7 @@
   "hints": [
    "Seas",
    "Rainfall",
-   "Wildlife"
+   "the algae"
   ],
   "s": [
    "Rising seas threaten low-lying places such as the Maldives and parts of Bangladesh, where communities may be displaced.",
@@ -6702,32 +6702,32 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Maldives",
+    "gap": "the Maldives",
     "alt": [],
     "d": [
-     "Seychelles",
-     "Fiji",
-     "Iceland"
+     "the Seychelles",
+     "the Fiji",
+     "the Iceland"
     ]
    },
    {
     "p": 2,
-    "gap": "Ganges",
+    "gap": "the Ganges",
     "alt": [],
     "d": [
-     "Nile",
-     "Thames",
-     "Amazon"
+     "the Nile",
+     "the Thames",
+     "the Amazon"
     ]
    },
    {
     "p": 3,
-    "gap": "algae",
+    "gap": "the algae",
     "alt": [],
     "d": [
-     "sand",
-     "fish",
-     "plankton"
+     "the sand",
+     "the fish",
+     "the plankton"
     ]
    }
   ]
@@ -6898,7 +6898,7 @@
   "p3": "",
   "hints": [
    "Amount",
-   "Speed"
+   "fast"
   ],
   "s": [
    "Discharge is the amount of water in the river.",
@@ -6907,12 +6907,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "amount",
+    "gap": "the amount of water",
     "alt": [],
     "d": [
-     "colour",
-     "depth",
-     "width"
+     "the speed of water",
+     "the depth of water",
+     "the width of water"
     ]
    },
    {
@@ -6978,8 +6978,8 @@
   "p3": "Attrition is when rocks carried by the river smash together and break into smaller, smoother, rounder pebbles.",
   "hints": [
    "Cracks",
-   "Rubbing",
-   "Collisions"
+   "rub",
+   "smoother"
   ],
   "s": [
    "Hydraulic action is when water is forced into cracks in the bank, weakening the rock until it breaks away.",
@@ -7201,7 +7201,7 @@
   "p3": "Raised banks formed by repeated flooding are natural levees; the floodplain is low-lying ground next to a river, formed mainly of river sediments and subject to flooding.",
   "hints": [
    "Meander",
-   "Deposition",
+   "bed load",
    "Levees"
   ],
   "s": [
@@ -7232,12 +7232,12 @@
    },
    {
     "p": 3,
-    "gap": "floodplain",
+    "gap": "the floodplain",
     "alt": [],
     "d": [
-     "estuary",
-     "plunge pool",
-     "interlocking spur"
+     "the estuary",
+     "the plunge pool",
+     "the interlocking spur"
     ]
    }
   ]
@@ -7302,7 +7302,7 @@
   "p2": "Hard engineering uses man-made structures to prevent or control natural processes; soft engineering works with natural processes to manage flood risk.",
   "p3": "The Boscastle scheme cost £4.5 million and took four years → it reduced appeal in an Area of Outstanding Natural Beauty, cutting tourism; unstable trees were removed, destroying habitats.",
   "hints": [
-   "Flood",
+   "saturated",
    "Engineering",
    "Scheme"
   ],
@@ -7355,7 +7355,7 @@
   "hints": [
    "Increase",
    "Opposite",
-   "Size"
+   "6 million"
   ],
   "s": [
    "Urbanisation is the increase in the proportion of people living in towns and cities.",
@@ -7365,12 +7365,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "proportion",
+    "gap": "the proportion",
     "alt": [],
     "d": [
-     "height",
-     "speed",
-     "density"
+     "the height",
+     "the speed",
+     "the density"
     ]
    },
    {
@@ -7525,8 +7525,8 @@
   "p2": "It has golf courses, large garden centres, sports pitches and A-roads.",
   "p3": "It often has new housing and business parks on it.",
   "hints": [
-   "Edge",
-   "Land uses",
+   "the countryside",
+   "golf courses",
    "New"
   ],
   "s": [
@@ -7537,12 +7537,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "countryside",
+    "gap": "the countryside",
     "alt": [],
     "d": [
-     "coast",
-     "CBD",
-     "suburbs"
+     "the coast",
+     "the CBD",
+     "the suburb"
     ]
    },
    {
@@ -7577,7 +7577,7 @@
   "p2": "Brownfield sites are land that has previously been used and abandoned and now awaits a new use; they are often contaminated.",
   "p3": "",
   "hints": [
-   "Untouched",
+   "farmland",
    "Abandoned"
   ],
   "s": [
@@ -7627,22 +7627,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "rapid",
+    "gap": "expansion",
     "alt": [],
     "d": [
-     "slow",
-     "planned",
-     "vertical"
+     "decline",
+     "planning",
+     "pollution"
     ]
    },
    {
     "p": 2,
-    "gap": "Green Belt",
+    "gap": "the Green Belt",
     "alt": [],
     "d": [
-     "inner city",
-     "CBD",
-     "brownfield sites"
+     "the inner city",
+     "the CBD",
+     "the brownfield sites"
     ]
    }
   ],
@@ -7658,7 +7658,7 @@
   "p3": "Congestion is when roads are so crowded with traffic that it stops movement.",
   "hints": [
    "Linked",
-   "Payment",
+   "a smartcard",
    "Traffic"
   ],
   "s": [
@@ -7669,22 +7669,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "efficiently",
+    "gap": "modes of transport",
     "alt": [],
     "d": [
-     "randomly",
-     "rarely",
-     "slowly"
+     "types of road",
+     "timetables",
+     "ticket prices"
     ]
    },
    {
     "p": 2,
-    "gap": "smartcard",
+    "gap": "a smartcard",
     "alt": [],
     "d": [
-     "passport",
-     "timetable",
-     "permit"
+     "a passport",
+     "a timetable",
+     "a permit"
     ]
    },
    {
@@ -7773,12 +7773,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "government",
+    "gap": "the government",
     "alt": [],
     "d": [
-     "employer",
-     "bank",
-     "charity"
+     "the employer",
+     "the bank",
+     "the charity"
     ]
    },
    {
@@ -7793,12 +7793,12 @@
    },
    {
     "p": 3,
-    "gap": "extremely",
+    "gap": "poor",
     "alt": [],
     "d": [
-     "slightly",
-     "rarely",
-     "briefly"
+     "rich",
+     "old",
+     "young"
     ]
    }
   ],
@@ -7814,7 +7814,7 @@
   "p3": "",
   "hints": [
    "Movement",
-   "Reason"
+   "work"
   ],
   "s": [
    "Immigration is the movement of people into a country.",
@@ -7873,12 +7873,12 @@
    },
    {
     "p": 2,
-    "gap": "freely",
+    "gap": "EU member states",
     "alt": [],
     "d": [
-     "slowly",
-     "rarely",
-     "illegally"
+     "Commonwealth countries",
+     "G7 nations",
+     "NATO allies"
     ]
    }
   ],
@@ -7894,7 +7894,7 @@
   "p3": "London is home to 251 overseas banks, and financial services contributed £126.9bn to the British economy in 2014, with London accounting for more than half.",
   "hints": [
    "Income",
-   "Finance",
+   "30%",
    "Banks"
   ],
   "s": [
@@ -7946,7 +7946,7 @@
   "hints": [
    "Universities",
    "Airport",
-   "Tourism"
+   "19 million"
   ],
   "s": [
    "London is home to some of the world's top universities, such as Imperial College London and UCL, with over 100,000 international students.",
@@ -8007,22 +8007,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "1948",
+    "gap": "Commonwealth",
     "alt": [],
     "d": [
-     "1918",
-     "1958",
-     "1968"
+     "European",
+     "Latin American",
+     "Scandinavian"
     ]
    },
    {
     "p": 2,
-    "gap": "2004",
+    "gap": "Poland",
     "alt": [],
     "d": [
-     "1994",
-     "2014",
-     "2001"
+     "Turkey",
+     "Norway",
+     "Serbia"
     ]
    },
    {
@@ -8046,8 +8046,8 @@
   "p2": "London is home to some of the best universities in the country, such as UCL, Imperial and LSE, which attract young domestic migrants.",
   "p3": "It offers a wide range of financial, creative and knowledge based jobs, so a large proportion of domestic migrants are very young.",
   "hints": [
-   "Numbers",
-   "Study",
+   "205,500",
+   "LSE",
    "Jobs"
   ],
   "s": [
@@ -8150,7 +8150,7 @@
   "hints": [
    "Carnival",
    "Food",
-   "Entertainment"
+   "free"
   ],
   "s": [
    "Notting Hill Carnival celebrates the Caribbean culture brought to the UK after post-war migration, and is attended by over a million people each year.",
@@ -8160,12 +8160,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "million",
+    "gap": "a million",
     "alt": [],
     "d": [
-     "thousand",
-     "hundred",
-     "billion"
+     "a thousand",
+     "a hundred",
+     "a billion"
     ]
    },
    {
@@ -8199,9 +8199,9 @@
   "p2": "In wealthy parts of London average life expectancy can be 10 years higher than in the poorest areas.",
   "p3": "270,000 Londoners were unemployed in 2016, with higher rates in London's poorer neighbourhoods.",
   "hints": [
-   "Housing",
-   "Health",
-   "Employment"
+   "half",
+   "10 years",
+   "270,000"
   ],
   "s": [
    "House prices and rents are higher in London than anywhere else in the UK, and renters often pay more than half their weekly pay in rent.",
@@ -8290,7 +8290,7 @@
   "p3": "Two industrial sites on the park before redevelopment meant the loss of around 5,000 jobs.",
   "hints": [
    "Polluted",
-   "Clean-up",
+   "the River Lea",
    "Jobs"
   ],
   "s": [
@@ -8311,12 +8311,12 @@
    },
    {
     "p": 2,
-    "gap": "River Lea",
+    "gap": "the River Lea",
     "alt": [],
     "d": [
-     "River Thames",
-     "River Severn",
-     "River Trent"
+     "the River Thames",
+     "the River Severn",
+     "the River Trent"
     ]
    },
    {
@@ -8393,7 +8393,7 @@
   "hints": [
    "Homes",
    "Offices",
-   "Shopping"
+   "Westfield"
   ],
   "s": [
    "East Village, the old Athletes' Village, now provides 2,800 new homes.",
@@ -8442,9 +8442,9 @@
   "p2": "Around 500 homes were demolished, and only some of the 8,000 new homes planned by 2030 are to be affordable.",
   "p3": "The London Legacy Development Corporation (LLDC) was set up to plan the regeneration, which is likely to take until 2030.",
   "hints": [
-   "Positive",
-   "Negative",
-   "Planning"
+   "1,800",
+   "affordable",
+   "LLDC"
   ],
   "s": [
    "A new school has been built for 1,800 students aged 3 to 18, and public sports facilities have been provided for East London.",
@@ -8515,12 +8515,12 @@
    },
    {
     "p": 2,
-    "gap": "rainwater recycling",
+    "gap": "a rainwater recycling",
     "alt": [],
     "d": [
-     "wind turbines",
-     "solar farms",
-     "gas boilers"
+     "a wind turbines",
+     "a solar farms",
+     "a gas boilers"
     ]
    },
    {
@@ -8544,9 +8544,9 @@
   "p2": "Green roofs and walls have trees and plants on buildings, and there are about 700 green roofs in central London.",
   "p3": "They reduce the urban heat island effect, provide habitats for insects and improve air quality by reducing particulate matter.",
   "hints": [
-   "Meaning",
+   "green space",
    "Roofs",
-   "Benefits"
+   "habitats"
   ],
   "s": [
    "Urban greening is creating more green space in cities.",
@@ -8596,7 +8596,7 @@
   "p3": "90,599 new homes along the route were predicted by 2021 and 180,000 by 2026.",
   "hints": [
    "Capacity",
-   "Jobs",
+   "apprenticeships",
    "Homes"
   ],
   "s": [
@@ -8646,8 +8646,8 @@
   "p2": "From 2002 to 2014 private vehicles fell by 39%, because the charge deters driving and the income is invested in public transport.",
   "p3": "It has been less successful recently because private hire vehicles such as Uber have increased by 29% since 2000, adding more vehicles and congestion.",
   "hints": [
-   "Charge",
-   "Evidence",
+   "£18",
+   "39%",
    "Uber"
   ],
   "s": [
@@ -8697,9 +8697,9 @@
   "p2": "The average speed in London is 7 mph, and London is the sixth most congested city in the world.",
   "p3": "Congestion in central London has been reduced by 15% compared with a decade ago.",
   "hints": [
-   "Time",
+   "227",
    "Speed",
-   "Reduction"
+   "15%"
   ],
   "s": [
    "London drivers waste over 227 hours a year stuck in traffic, which is 9 and a half days.",
@@ -8749,7 +8749,7 @@
   "p3": "",
   "hints": [
    "Households",
-   "Locations"
+   "commuter settlements"
   ],
   "s": [
    "Since 1971 the number of households in London has increased by 31%.",
@@ -8788,8 +8788,8 @@
   "p3": "Old buildings need to be demolished first, land is more expensive closer to the CBD, and ex-industrial sites are often contaminated with toxic waste, so decontamination is costly.",
   "hints": [
    "Available",
-   "Regeneration",
-   "Costs"
+   "derelict",
+   "decontamination"
   ],
   "s": [
    "Sites are available because industry declined, public transport is better in inner city areas and building there reduces urban sprawl.",
@@ -8838,7 +8838,7 @@
   "p2": "Building there increases urban sprawl, and valuable farmland or land for recreation may be lost.",
   "p3": "",
   "hints": [
-   "Cost",
+   "cheaper",
    "Sprawl"
   ],
   "s": [
@@ -8967,12 +8967,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "boundary",
+    "gap": "the boundary",
     "alt": [],
     "d": [
-     "cliff",
-     "beach",
-     "estuary"
+     "the cliff",
+     "the beach",
+     "the estuary"
     ]
    },
    {
@@ -9037,7 +9037,7 @@
   "p2": "Weathering is when rocks are broken up in situ, which means they are not removed.",
   "p3": "Both erosion and weathering play a role in shaping coastal landscapes.",
   "hints": [
-   "Cliffs",
+   "mass movement",
    "Broken up",
    "Landscapes"
   ],
@@ -9069,12 +9069,12 @@
    },
    {
     "p": 3,
-    "gap": "shaping",
+    "gap": "erosion",
     "alt": [],
     "d": [
-     "moving",
-     "dissolving",
-     "burying"
+     "deposition",
+     "transportation",
+     "mass movement"
     ]
    }
   ],
@@ -9090,7 +9090,7 @@
   "p3": "",
   "hints": [
    "Rain",
-   "Base"
+   "The debris"
   ],
   "s": [
    "Rockfall is a type of mass movement that is more likely once cliffs are weakened by weathering, and it is most common after large amounts of rain.",
@@ -9109,12 +9109,12 @@
    },
    {
     "p": 2,
-    "gap": "debris",
+    "gap": "The debris",
     "alt": [],
     "d": [
-     "sand",
-     "water",
-     "soil"
+     "The sand",
+     "The water",
+     "The soil"
     ]
    }
   ],
@@ -9141,22 +9141,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "zigzag",
+    "gap": "a zigzag",
     "alt": [],
     "d": [
-     "straight line",
-     "spiral",
-     "loop"
+     "a straight line",
+     "a spiral",
+     "a loop"
     ]
    },
    {
     "p": 2,
-    "gap": "prevailing wind",
+    "gap": "the prevailing wind",
     "alt": [],
     "d": [
-     "tide",
-     "current",
-     "storm surge"
+     "the tide",
+     "the current",
+     "the storm surge"
     ]
    },
    {
@@ -9281,12 +9281,12 @@
    },
    {
     "p": 2,
-    "gap": "bay",
+    "gap": "a bay",
     "alt": [],
     "d": [
-     "headland",
-     "cliff",
-     "stack"
+     "a headland",
+     "a cliff",
+     "a stack"
     ]
    }
   ],
@@ -9313,12 +9313,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "wind",
+    "gap": "the wind",
     "alt": [],
     "d": [
-     "tide",
-     "current",
-     "swash"
+     "the tide",
+     "the current",
+     "the swash"
     ]
    },
    {
@@ -9333,12 +9333,12 @@
    },
    {
     "p": 3,
-    "gap": "salt-tolerant",
+    "gap": "a salt-tolerant",
     "alt": [],
     "d": [
-     "water-loving",
-     "shade-loving",
-     "heat-tolerant"
+     "a water-loving",
+     "a shade-loving",
+     "a heat-tolerant"
     ]
    }
   ],
@@ -9354,8 +9354,8 @@
   "p3": "It is only a few metres high, with small scattered patches of marram grass.",
   "hints": [
    "Sand",
-   "Newest",
-   "Size"
+   "closest to the sea",
+   "scattered"
   ],
   "s": [
    "Saltation is a type of transportation that bounces sand along in the wind.",
@@ -9415,22 +9415,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "trough",
+    "gap": "a trough",
     "alt": [],
     "d": [
-     "ridge",
-     "peak",
-     "cliff"
+     "a ridge",
+     "a peak",
+     "a cliff"
     ]
    },
    {
     "p": 2,
-    "gap": "water table",
+    "gap": "the water table",
     "alt": [],
     "d": [
-     "sea level",
-     "high tide line",
-     "shoreline"
+     "the sea level",
+     "the high tide line",
+     "the shoreline"
     ]
    }
   ],
@@ -9485,7 +9485,7 @@
   "p2": "At Walton on the Naze the cliff was regraded to a gentler slope and planted with vegetation.",
   "p3": "",
   "hints": [
-   "Gentle",
+   "harmony",
    "Walton"
   ],
   "s": [
@@ -9505,12 +9505,12 @@
    },
    {
     "p": 2,
-    "gap": "gentler",
+    "gap": "regraded",
     "alt": [],
     "d": [
-     "steeper",
-     "taller",
-     "wider"
+     "raised",
+     "dredged",
+     "fenced"
     ]
    }
   ],
@@ -9525,9 +9525,9 @@
   "p2": "It is usually in low lying estuarine areas, often land once claimed from the sea.",
   "p3": "Maintenance costs are very low, and salt marsh and vegetation provide natural protection from storms.",
   "hints": [
-   "Removal",
-   "Location",
-   "Benefits"
+   "flooded",
+   "estuarine",
+   "salt marsh"
   ],
   "s": [
    "Managed retreat, also called managed realignment, removes coastal protection so an area is deliberately flooded by the sea.",
@@ -9537,12 +9537,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "deliberately",
+    "gap": "flooded",
     "alt": [],
     "d": [
-     "accidentally",
-     "regularly",
-     "annually"
+     "drained",
+     "fenced",
+     "built on"
     ]
    },
    {
@@ -9578,7 +9578,7 @@
   "p3": "",
   "hints": [
    "Beach",
-   "Spacing"
+   "large"
   ],
   "s": [
    "Groynes stop longshore drift and keep the beach in place.",
@@ -9639,12 +9639,12 @@
    },
    {
     "p": 2,
-    "gap": "discordant",
+    "gap": "a discordant",
     "alt": [],
     "d": [
-     "concordant",
-     "convergent",
-     "divergent"
+     "a concordant",
+     "a convergent",
+     "a divergent"
     ]
    },
    {
@@ -9690,12 +9690,12 @@
    },
    {
     "p": 2,
-    "gap": "stack",
+    "gap": "a stack",
     "alt": [],
     "d": [
-     "spit",
-     "bar",
-     "dune"
+     "a spit",
+     "a bar",
+     "a dune"
     ]
    },
    {
@@ -9720,7 +9720,7 @@
   "p3": "Sand blown inland is stabilised by plants such as marram grass → embryo dunes by the sea, then yellow dunes, then older grey dunes; a slack is the dip between dunes.",
   "hints": [
    "Drift",
-   "Spit and bar",
+   "a bar",
    "Dunes"
   ],
   "s": [
@@ -9731,22 +9731,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "prevailing wind",
+    "gap": "the prevailing wind",
     "alt": [],
     "d": [
-     "tide",
-     "current",
-     "jet stream"
+     "the tide",
+     "the current",
+     "the jet stream"
     ]
    },
    {
     "p": 2,
-    "gap": "bar",
+    "gap": "a bar",
     "alt": [],
     "d": [
-     "stack",
-     "stump",
-     "cave"
+     "a stack",
+     "a stump",
+     "a cave"
     ]
    },
    {
@@ -9770,7 +9770,7 @@
   "p2": "Managed retreat, also called managed realignment, removes coastal protection so low-lying land is deliberately flooded; costs are low and salt marsh protects against storms, but land and property are lost.",
   "p3": "Groynes stop longshore drift and keep the beach in place; hard defences can cause conflict further along the coast where sediment supply is interrupted.",
   "hints": [
-   "Hard and soft",
+   "soft engineering",
    "Retreat",
    "Groynes"
   ],
@@ -9822,8 +9822,8 @@
   "p3": "The cliffs are an SSSI rich in fossils up to 55 million years old; erosion also threatens properties such as Sunny Point road, where the average house costs £400,000.",
   "hints": [
    "Case study",
-   "Rate",
-   "Value"
+   "the Naze Tower",
+   "an SSSI"
   ],
   "s": [
    "Walton on the Naze is the Paper 1 case study and Paper 3 fieldwork site; permeable red crag over impermeable London clay slumps, and destructive waves attack the soft cliffs.",
@@ -9843,22 +9843,22 @@
    },
    {
     "p": 2,
-    "gap": "Naze Tower",
+    "gap": "the Naze Tower",
     "alt": [],
     "d": [
-     "Crag Walk",
-     "Sunny Point",
-     "Harwich Harbour"
+     "the Crag Walk",
+     "the Sunny Point",
+     "the Harwich Harbour"
     ]
    },
    {
     "p": 3,
-    "gap": "SSSI",
+    "gap": "an SSSI",
     "alt": [],
     "d": [
-     "AONB",
-     "UNESCO",
-     "national park"
+     "an AONB",
+     "an UNESCO",
+     "a national park"
     ]
    }
   ],
@@ -9875,9 +9875,9 @@
   "p2": "In the north the replenished beach was mostly gone by 2003; the cliff was then regraded and planted, a soft strategy that binds the soil.",
   "p3": "In 1998 rock armour at the base of the cliff cut loss from 4 m to 2 m a year; hard defences have increased erosion further along the coast, where sediment supply is interrupted.",
   "hints": [
-   "Hard",
+   "breakwaters",
    "Soft",
-   "Evaluation"
+   "rock armour"
   ],
   "s": [
    "In 1977 a seawall, breakwaters and groynes protected properties in the south; groynes stop longshore drift, but many are now old, rotten and buried by sand.",
@@ -9931,7 +9931,7 @@
   "p3": "",
   "hints": [
    "Intervals",
-   "Whole beach"
+   "a representative"
   ],
   "s": [
    "Systematic sampling means taking measurements at regular intervals, such as every 2 m along a 20 m transect.",
@@ -9950,12 +9950,12 @@
    },
    {
     "p": 2,
-    "gap": "representative",
+    "gap": "a representative",
     "alt": [],
     "d": [
-     "biased",
-     "tiny",
-     "cheap"
+     "a biased",
+     "a tiny",
+     "a cheap"
     ]
    }
   ],
@@ -10021,9 +10021,9 @@
   "p2": "Accuracy → the instrument was hard to line up, wind moved the ranging poles and human error crept in; one person always read the clinometer, and practising first would help.",
   "p3": "Data was collected on a single day in September so annual change may be missed → use data from other times of year or secondary data.",
   "hints": [
-   "Sample size",
+   "anomalies",
    "Accuracy",
-   "Timing"
+   "secondary data"
   ],
   "s": [
    "The sample was small: beach profiling was done only twice and only 1 of about 20 groynes was measured; repeating more and taking a class average spots anomalies.",
@@ -10043,12 +10043,12 @@
    },
    {
     "p": 2,
-    "gap": "clinometer",
+    "gap": "the clinometer",
     "alt": [],
     "d": [
-     "anemometer",
-     "flume",
-     "quadrat"
+     "the anemometer",
+     "the flume",
+     "the quadrat"
     ]
    },
    {
@@ -10072,9 +10072,9 @@
   "p2": "It is a quick and easy way to find out if the waves are destructive, which have a frequency of over 10 to 14 waves per minute.",
   "p3": "Human error could mean waves are miscounted, because it is difficult to see exactly when waves break.",
   "hints": [
-   "Method",
-   "Why",
-   "Limit"
+   "a mean",
+   "10 to 14",
+   "miscounted"
   ],
   "s": [
    "Groups stood every 2 m along a 12 m transect and counted the waves breaking on the shoreline per minute, repeated 3 times to take a mean.",
@@ -10084,12 +10084,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "mean",
+    "gap": "a mean",
     "alt": [],
     "d": [
-     "median",
-     "mode",
-     "range"
+     "a median",
+     "a mode",
+     "a range"
     ]
    },
    {
@@ -10123,9 +10123,9 @@
   "p2": "If the protected section of beach had a higher or steeper profile, it would prove the management was effective.",
   "p3": "The clinometer was hard to line up and wind blew the poles, so human error reduced reliability; one person always reading the clinometer helped.",
   "hints": [
-   "Method",
-   "Why",
-   "Limit"
+   "clinometer",
+   "steeper",
+   "reliability"
   ],
   "s": [
    "Two ranging poles, a tape measure and a hand-held clinometer measured the profile of a protected stretch and an unprotected stretch, with the poles 2 m apart and the angle between them measured.",
@@ -10174,9 +10174,9 @@
   "p2": "The smaller the amount of exposed groyne, the more sediment has been trapped there, and working groynes should trap sand on the south side.",
   "p3": "Only one groyne was measured, so the result may be false and less valid; taking an average reduced the effect of broken sections.",
   "hints": [
-   "Method",
-   "Why",
-   "Limit"
+   "a tape measure",
+   "trapped",
+   "one groyne"
   ],
   "s": [
    "Students measured the height of exposed groyne on either side using a tape measure, every 1 m down the length of the groyne.",
@@ -10186,12 +10186,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "tape measure",
+    "gap": "a tape measure",
     "alt": [],
     "d": [
-     "clinometer",
-     "ranging pole",
-     "stopwatch"
+     "a clinometer",
+     "a ranging pole",
+     "a stopwatch"
     ]
    },
    {
@@ -10226,7 +10226,7 @@
   "p3": "Adverse weather was a risk, so we checked the weather forecast and brought appropriate clothing.",
   "hints": [
    "Cliffs",
-   "Water",
+   "footwear",
    "Weather"
   ],
   "s": [
@@ -10276,7 +10276,7 @@
   "p2": "The results show the hypothesis is true, and hard engineering is successful at managing longshore drift at Walton on the Naze.",
   "p3": "",
   "hints": [
-   "Graph",
+   "exposed groyne",
    "Hypothesis"
   ],
   "s": [
@@ -10407,7 +10407,7 @@
   "p2": "This creates an area of low pressure called the Intertropical Convergence Zone, where clouds form and heavy rainfall helps create the world's largest tropical rainforests.",
   "p3": "",
   "hints": [
-   "Heating",
+   "less dense",
    "Low pressure"
   ],
   "s": [
@@ -10447,8 +10447,8 @@
   "p2": "Where the air sinks high pressure creates clear skies and dry conditions, and at the surface air flows back towards the Equator as the trade winds.",
   "p3": "",
   "hints": [
-   "Sinking",
-   "Return"
+   "30°",
+   "the trade winds"
   ],
   "s": [
    "In the Hadley cell, rising air travels at high altitude towards 30° north and south of the Equator, cools, becomes more dense and sinks.",
@@ -10467,12 +10467,12 @@
    },
    {
     "p": 2,
-    "gap": "trade winds",
+    "gap": "the trade winds",
     "alt": [],
     "d": [
-     "westerlies",
-     "jet streams",
-     "monsoons"
+     "the westerlies",
+     "the jet streams",
+     "the monsoons"
     ]
    }
   ],
@@ -10488,7 +10488,7 @@
   "p3": "",
   "hints": [
    "Rotating",
-   "Names"
+   "118 km"
   ],
   "s": [
    "A tropical storm is a general term for rotating winds and clouds around a calm centre, forming over tropical or subtropical waters.",
@@ -10497,12 +10497,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "calm centre",
+    "gap": "a calm centre",
     "alt": [],
     "d": [
-     "cold front",
-     "wide valley",
-     "dry core"
+     "a cold front",
+     "a wide valley",
+     "a dry core"
     ]
    },
    {
@@ -10529,7 +10529,7 @@
   "hints": [
    "Latitude",
    "Tracks",
-   "Seasons"
+   "January to April"
   ],
   "s": [
    "Tropical storms form between about 5° and 30° latitude and do not occur directly on the Equator.",
@@ -10579,7 +10579,7 @@
   "p2": "The rising air draws up more warm moist air, leading to strong winds, and it spirals upwards, cools and condenses into large cumulonimbus clouds.",
   "p3": "",
   "hints": [
-   "Heating",
+   "27°C",
    "Spiral"
   ],
   "s": [
@@ -10669,12 +10669,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "significantly",
+    "gap": "the average",
     "alt": [],
     "d": [
-     "slightly",
-     "rarely",
-     "never"
+     "the highest",
+     "the wettest",
+     "the hottest"
     ]
    },
    {
@@ -10709,12 +10709,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "urgently",
+    "gap": "the hours or days",
     "alt": [],
     "d": [
-     "slowly",
-     "rarely",
-     "eventually"
+     "the weeks or months",
+     "the months or years",
+     "the years or decades"
     ]
    },
    {
@@ -10792,7 +10792,7 @@
   "p3": "",
   "hints": [
    "Cause",
-   "Chain"
+   "surges"
   ],
   "s": [
    "Waterborne diseases, such as cholera, are caused when water is contaminated with seawater, industrial waste or sewage.",
@@ -10831,9 +10831,9 @@
   "p2": "Trade winds converge near the Equator and force warm, moist air to rise → pressure falls; the rising air cools and condenses into cumulonimbus clouds.",
   "p3": "The Coriolis effect, caused by Earth's rotation, deflects incoming air and starts the spiral; storms do not form within about 5° of the Equator because the force is too weak.",
   "hints": [
-   "Warm sea",
+   "evaporation",
    "Trade winds",
-   "Spin"
+   "The Coriolis effect"
   ],
   "s": [
    "Sea surface temperature above 27°C to a depth of at least 60 m → intense evaporation saturates the air with water vapour.",
@@ -10863,12 +10863,12 @@
    },
    {
     "p": 3,
-    "gap": "Coriolis effect",
+    "gap": "The Coriolis effect",
     "alt": [],
     "d": [
-     "greenhouse effect",
-     "multiplier effect",
-     "El Niño effect"
+     "The greenhouse effect",
+     "The multiplier effect",
+     "The El Niño effect"
     ]
    }
   ]
@@ -10882,9 +10882,9 @@
   "p2": "At the centre is a calm eye of descending air; around it the eyewall has the strongest winds and heaviest rain; spiral rainbands draw in warm, moist air.",
   "p3": "Warm ocean water is the energy source; at landfall or over cooler water the energy supply is cut off → friction and loss of warm moisture weaken the storm.",
   "hints": [
-   "Stages",
+   "hurricane",
    "Eye",
-   "Weakening"
+   "landfall"
   ],
   "s": [
    "A tropical disturbance strengthens into a tropical depression, then a tropical storm, and eventually a tropical cyclone, hurricane or typhoon.",
@@ -10904,12 +10904,12 @@
    },
    {
     "p": 2,
-    "gap": "eyewall",
+    "gap": "the eyewall",
     "alt": [],
     "d": [
-     "warm front",
-     "anticyclone",
-     "trough"
+     "the warm front",
+     "the anticyclone",
+     "the trough"
     ]
    },
    {
@@ -10933,7 +10933,7 @@
   "p2": "Primary effects → power cut, airport damaged, roads blocked; three-quarters of farmers and fishers lost income; oil from a barge contaminated 10 hectares of mangrove.",
   "p3": "Secondary effects → contaminated water raised waterborne disease; shortages caused looting and eight deaths in a stampede for rice; rice prices rose 11.9% by 2014.",
   "hints": [
-   "Event",
+   "a storm surge",
    "Primary",
    "Secondary"
   ],
@@ -10945,12 +10945,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "storm surge",
+    "gap": "a storm surge",
     "alt": [],
     "d": [
-     "tsunami",
-     "landslide",
-     "drought"
+     "a tsunami",
+     "a landslide",
+     "a drought"
     ]
    },
    {
@@ -10990,9 +10990,9 @@
   "p2": "France, Belgium and Israel set up field hospitals; the USA used the carrier USS George Washington's helicopters for search and rescue and supplies.",
   "p3": "Cash-for-work paid locals to clear debris; agencies replaced fishing boats; cyclone shelters and surge warnings were built; a no-build zone was often ineffective as people fish from the coast.",
   "hints": [
-   "Immediate",
-   "Foreign aid",
-   "Long term"
+   "the Red Cross",
+   "field hospitals",
+   "cash-for-work"
   ],
   "s": [
    "About 800,000 people were evacuated to stadiums in Tacloban, but some flooded; the Red Cross gave out rice and canned food; airport damage delayed aid by up to three days.",
@@ -11002,12 +11002,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Red Cross",
+    "gap": "the Red Cross",
     "alt": [],
     "d": [
-     "Oxfam",
-     "UNICEF",
-     "Greenpeace"
+     "the Oxfam",
+     "the UNICEF",
+     "the Greenpeace"
     ]
    },
    {
@@ -11147,7 +11147,7 @@
   "p3": "Management is mostly preparation → the Met Office issues warnings and trees near power lines are maintained; flood walls, tree planting and floodplain planning reduce flood risk.",
   "hints": [
    "Storms",
-   "Flooding",
+   "the River South Esk",
    "Management"
   ],
   "s": [
@@ -11168,22 +11168,22 @@
    },
    {
     "p": 2,
-    "gap": "River South Esk",
+    "gap": "the River South Esk",
     "alt": [],
     "d": [
-     "River Severn",
-     "River Thames",
-     "River Valancy"
+     "the River Severn",
+     "the River Thames",
+     "the River Valancy"
     ]
    },
    {
     "p": 3,
-    "gap": "Met Office",
+    "gap": "the Met Office",
     "alt": [],
     "d": [
-     "Environment Agency",
-     "World Bank",
-     "National Hurricane Centre"
+     "the Environment Agency",
+     "the World Bank",
+     "the National Hurricane Centre"
     ]
    }
   ],
@@ -11212,12 +11212,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "anticyclone",
+    "gap": "an anticyclone",
     "alt": [],
     "d": [
-     "depression",
-     "jet stream",
-     "front"
+     "a depression",
+     "a jet stream",
+     "a front"
     ]
    },
    {
@@ -11252,8 +11252,8 @@
   "p3": "Tertiary industry is providing services, such as teachers, lawyers, doctors, politicians and waiters.",
   "hints": [
    "Earth",
-   "Making",
-   "Serving"
+   "assembly",
+   "services"
   ],
   "s": [
    "Primary industry is acquiring raw materials from the earth, such as farming, cutting down trees, coal mining, oil drilling and fishing.",
@@ -11304,7 +11304,7 @@
   "p3": "",
   "hints": [
    "Information",
-   "Skills"
+   "training"
   ],
   "s": [
    "Quaternary industry is providing information services, such as computing, ICT and research and development (R&D), especially in science.",
@@ -11344,8 +11344,8 @@
   "p3": "A post-industrial economy is when a country no longer relies on heavy industry.",
   "hints": [
    "Before",
-   "During",
-   "After"
+   "factories",
+   "heavy industry"
   ],
   "s": [
    "A pre-industrial economy is a time before industrialisation, which in the UK means anytime before 1760.",
@@ -11395,7 +11395,7 @@
   "p2": "Mechanisation means employment in the primary sector decreases as machines replace manual labour, so manual labour in the collieries became unnecessary.",
   "p3": "",
   "hints": [
-   "Change",
+   "agricultural",
    "Machines"
   ],
   "s": [
@@ -11435,8 +11435,8 @@
   "p2": "Over-employment in publicly owned companies such as collieries led to mass unemployment from the 1960s onwards.",
   "p3": "",
   "hints": [
-   "Ownership",
-   "Jobs"
+   "publicly owned",
+   "unemployment"
   ],
   "s": [
    "Nationalised industries, such as collieries, are publicly owned.",
@@ -11476,7 +11476,7 @@
   "p3": "",
   "hints": [
    "Money",
-   "Place"
+   "the Square Mile"
   ],
   "s": [
    "Financial services are any businesses that manage money, including banks, credit-card companies, insurance companies, accountancy companies and hedge funds.",
@@ -11495,12 +11495,12 @@
    },
    {
     "p": 2,
-    "gap": "Square Mile",
+    "gap": "the Square Mile",
     "alt": [],
     "d": [
-     "Golden Mile",
-     "Green Belt",
-     "East End"
+     "the Golden Mile",
+     "the Green Belt",
+     "the East End"
     ]
    }
   ],
@@ -11515,7 +11515,7 @@
   "p2": "A circular economy designs products with recycling in mind, so different materials are easy to separate and valuable components are easily removed.",
   "p3": "",
   "hints": [
-   "Free",
+   "any location",
    "Recycling"
   ],
   "s": [
@@ -11555,8 +11555,8 @@
   "p2": "Scientific research and commercial development may be carried out in co-operation with the university.",
   "p3": "Business parks are purpose built areas of offices, often at the edge of a city on a main road.",
   "hints": [
-   "Location",
-   "Link",
+   "university sites",
+   "co-operation",
    "Offices"
   ],
   "s": [
@@ -11679,12 +11679,12 @@
    },
    {
     "p": 3,
-    "gap": "declining",
+    "gap": "an ex-mining",
     "alt": [],
     "d": [
-     "growing",
-     "stable",
-     "ageing"
+     "an ex-fishing",
+     "an ex-farming",
+     "an ex-textile"
     ]
    }
   ],
@@ -11699,7 +11699,7 @@
   "p2": "It is widely accepted that there is a pro-London bias when it comes to transport in the UK.",
   "p3": "",
   "hints": [
-   "Basics",
+   "utilities",
    "Bias"
   ],
   "s": [
@@ -11719,12 +11719,12 @@
    },
    {
     "p": 2,
-    "gap": "pro-London",
+    "gap": "a pro-London",
     "alt": [],
     "d": [
-     "anti-London",
-     "rural",
-     "coastal"
+     "an anti-London",
+     "a rural",
+     "a coastal"
     ]
    }
   ],
@@ -11739,7 +11739,7 @@
   "p2": "Improvements in transport and new trade policies with industrial economies abroad make British manufacturing uncompetitive.",
   "p3": "With higher wages and unit costs of production, coal is cheaper to import from abroad.",
   "hints": [
-   "Groups",
+   "the G7",
    "Trade",
    "Cost"
   ],
@@ -11751,12 +11751,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "G7",
+    "gap": "the G7",
     "alt": [],
     "d": [
-     "G20",
-     "NATO",
-     "OPEC"
+     "the G20",
+     "the NATO",
+     "the OPEC"
     ]
    },
    {
@@ -11791,7 +11791,7 @@
   "p2": "Globalisation made UK coal uncompetitive, because with higher wages and unit costs of production it was cheaper to import coal from abroad.",
   "p3": "From the 1960s the UK discovered cheaper energy such as North Sea gas and oil, the government chose not to support the industry, and global warming increased the need to reduce CO2 emissions.",
   "hints": [
-   "Machines",
+   "unnecessary",
    "Cost",
    "Energy"
   ],
@@ -11842,9 +11842,9 @@
   "p2": "Levels of crime increase, and family tensions and breakdown rise.",
   "p3": "Drug use and alcoholism increase.",
   "hints": [
-   "Leaving",
+   "skilled",
    "Family",
-   "Health"
+   "alcoholism"
   ],
   "s": [
    "Skilled workers leave, which causes migration and a brain drain.",
@@ -12027,12 +12027,12 @@
    },
    {
     "p": 3,
-    "gap": "atmosphere",
+    "gap": "the atmosphere",
     "alt": [],
     "d": [
-     "soil",
-     "wildlife",
-     "roads"
+     "the soil",
+     "the wildlife",
+     "the roads"
     ]
    }
   ]
@@ -12048,7 +12048,7 @@
   "hints": [
    "Cars",
    "Factories",
-   "Limit"
+   "7%"
   ],
   "s": [
    "Electric and hybrid vehicles reduce reliance on fossil fuels and cut CO2 emissions, and cars are designed with the circular economy in mind.",
@@ -12097,9 +12097,9 @@
   "p2": "Over the same period services rose from 46% to 79%.",
   "p3": "By 2009 financial services accounted for 12% of UK GDP.",
   "hints": [
-   "Falling",
-   "Rising",
-   "Finance"
+   "14%",
+   "79%",
+   "12%"
   ],
   "s": [
    "In 1948 manufacturing accounted for 41% of the British economy, but by 2013 it was just 14%.",
@@ -12149,7 +12149,7 @@
   "p3": "",
   "hints": [
    "Exports",
-   "Share"
+   "10%"
   ],
   "s": [
    "The UK is the world's leading exporter of financial services, with 60% of those exports going to the EU and the US.",
@@ -12199,12 +12199,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "motorway",
+    "gap": "The motorway",
     "alt": [],
     "d": [
-     "canal",
-     "runway",
-     "railway"
+     "The canal",
+     "The runway",
+     "The railway"
     ]
    },
    {
@@ -12240,7 +12240,7 @@
   "hints": [
    "North",
    "South",
-   "Movement"
+   "a brain drain"
   ],
   "s": [
    "The north is more deprived, has higher unemployment and had most manufacturing industry before deindustrialisation.",
@@ -12270,12 +12270,12 @@
    },
    {
     "p": 3,
-    "gap": "brain drain",
+    "gap": "a brain drain",
     "alt": [],
     "d": [
-     "housing boom",
-     "baby boom",
-     "trade deficit"
+     "a housing boom",
+     "a baby boom",
+     "a trade deficit"
     ]
    }
   ]
@@ -12289,9 +12289,9 @@
   "p2": "Disposable income per person is 128% of the national average in London, but only 84% in the north-east.",
   "p3": "61% of pupils in London and the south-east achieve 5 or more GCSE grades at A* to C, and men in Glasgow have a life expectancy of 71.6 years compared with 83 years in East Dorset.",
   "hints": [
-   "Physical",
+   "rainier",
    "Income",
-   "Education"
+   "71.6 years"
   ],
   "s": [
    "Lowland areas are in the south and east, mountainous areas such as the Lake District and Snowdonia are in the north and west, and the north and west are colder and rainier.",
@@ -12372,12 +12372,12 @@
    },
    {
     "p": 3,
-    "gap": "rural-urban",
+    "gap": "a rural-urban",
     "alt": [],
     "d": [
-     "coastal",
-     "east-west",
-     "age"
+     "a coastal",
+     "an east-west",
+     "an age"
     ]
    }
   ]
@@ -12430,7 +12430,7 @@
   "p2": "Phase 2, from Birmingham to Leeds and Manchester, has been cancelled due to spiralling costs, and the estimated final cost of Phase One is £65 billion.",
   "p3": "The government claims it will create 100,000 jobs, 75% of them outside London, and Birmingham's economy will be boosted most, by 2.1 to 4.2% a year.",
   "hints": [
-   "Speed",
+   "36 minutes",
    "Cost",
    "Jobs"
   ],
@@ -12481,9 +12481,9 @@
   "p2": "It is projected to add 500 jobs at the airport, a further 5,000 jobs regionally, and £430 million to the economy of South West England.",
   "p3": "An increase of 10,420 flights a year, including more at night, increases noise pollution, and environmental groups say higher carbon emissions make the 2050 net-zero target harder to meet.",
   "hints": [
-   "Plan",
-   "Benefits",
-   "Costs"
+   "12 million",
+   "£430 million",
+   "the 2050"
   ],
   "s": [
    "A four-storey terminal extension, a new multi-storey car park and removal of night flight constraints raise the passenger limit from 10 million to 12 million a year.",
@@ -12513,12 +12513,12 @@
    },
    {
     "p": 3,
-    "gap": "2050",
+    "gap": "the 2050",
     "alt": [],
     "d": [
-     "2030",
-     "2040",
-     "2070"
+     "the 2030",
+     "the 2040",
+     "the 2070"
     ]
    }
   ]
@@ -12533,8 +12533,8 @@
   "p3": "Extensive dredging to deepen the harbour caused huge disruption to marine ecosystems.",
   "hints": [
    "Port",
-   "Benefits",
-   "Costs"
+   "17,500",
+   "dredging"
   ],
   "s": [
    "The Port of Aberdeen is the UK's oldest port, and the expansion has a total cost of £420 million, funded in part by taxpayer money.",
@@ -12585,7 +12585,7 @@
   "hints": [
    "Services",
    "TNCs",
-   "Outsourcing"
+   "lower wages"
   ],
   "s": [
    "The UK sells financial services to many countries, including NEEs such as India.",
@@ -12685,8 +12685,8 @@
   "p2": "Secondary data was broader and helped support the primary data.",
   "p3": "",
   "hints": [
-   "Own data",
-   "Other data"
+   "targeted",
+   "broader"
   ],
   "s": [
    "Primary data collection allowed us to collect data specifically targeted to our research question.",
@@ -12725,8 +12725,8 @@
   "p2": "Opportunistic sampling, used for the semi-structured interviews, means we may not have got a representative cross section of the population.",
   "p3": "",
   "hints": [
-   "Mixed",
-   "Weakness"
+   "support",
+   "cross section"
   ],
   "s": [
    "Using a range of methods to collect quantitative and qualitative data improved validity, because findings from different types of data could support each other.",
@@ -12767,7 +12767,7 @@
   "hints": [
    "Hypothesis",
    "Need",
-   "Outcomes"
+   "unaffordable"
   ],
   "s": [
    "The hypothesis was that Olympic Park regeneration has benefited the local area; the area is close to school.",
@@ -12817,7 +12817,7 @@
   "p3": "Evaluation → data on one day in March missed some groups; the survey was subjective; mixing primary and secondary, quantitative and qualitative data improved validity; bipolar charts allow before and after comparison.",
   "hints": [
    "Positive",
-   "Not for all",
+   "house prices",
    "Evaluation"
   ],
   "s": [
@@ -12867,9 +12867,9 @@
   "p2": "Successful regeneration will be well used and by a range of different people.",
   "p3": "It depends on peak times and days, so without multiple counts it can be inaccurate, and a very busy area is hard to count.",
   "hints": [
-   "Method",
-   "Link",
-   "Limit"
+   "the type of person",
+   "a range",
+   "peak times"
   ],
   "s": [
    "The pedestrian count showed how busy and well used different areas of the Olympic Park site are, and the type of person using it.",
@@ -12879,22 +12879,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "type of person",
+    "gap": "the type of person",
     "alt": [],
     "d": [
-     "traffic speed",
-     "noise level",
-     "building height"
+     "the traffic speed",
+     "the noise level",
+     "the building height"
     ]
    },
    {
     "p": 2,
-    "gap": "range",
+    "gap": "a range",
     "alt": [],
     "d": [
-     "handful",
-     "single type",
-     "small number"
+     "a handful",
+     "a single type",
+     "a small number"
     ]
    },
    {
@@ -12918,9 +12918,9 @@
   "p2": "Successful regeneration would mean high scores in regenerated areas.",
   "p3": "It is quick and the same rating system allows comparison, but it is subjective, so each group scored differently, and shallow, as it cannot show why an area is the way it is.",
   "hints": [
-   "Method",
-   "Link",
-   "Limit"
+   "greenery",
+   "high",
+   "subjective"
   ],
   "s": [
    "An area was rated using a scale on aspects such as noise, building condition and greenery, at 3 different sites.",
@@ -12969,9 +12969,9 @@
   "p2": "Successful regeneration would mean people are positive about the different aspects of the area.",
   "p3": "Interviews give in-depth opinions, but some people refuse and time of day affects the sample, so it is not representative.",
   "hints": [
-   "Method",
-   "Link",
-   "Limit"
+   "positive",
+   "the different aspects",
+   "in-depth"
   ],
   "s": [
    "Semi-structured interviews let us discuss with people using the area whether they think regeneration has been positive or not.",
@@ -12991,12 +12991,12 @@
    },
    {
     "p": 2,
-    "gap": "different aspects",
+    "gap": "the different aspects",
     "alt": [],
     "d": [
-     "single aspect",
-     "past aspects",
-     "hidden aspects"
+     "the single aspect",
+     "the past aspects",
+     "the hidden aspects"
     ]
    },
    {
@@ -13020,9 +13020,9 @@
   "p2": "Successful regeneration also means that new housing should be affordable to locals.",
   "p3": "We looked at the first 5 properties we found, so the sample was small and not necessarily representative, but it showed prices higher than the surrounding area.",
   "hints": [
-   "Method",
-   "Link",
-   "Limit"
+   "websites",
+   "housing",
+   "small"
   ],
   "s": [
    "Property websites were used to find the average prices of homes to rent and buy in East Village.",
@@ -13052,12 +13052,12 @@
    },
    {
     "p": 3,
-    "gap": "first 5",
+    "gap": "small",
     "alt": [],
     "d": [
-     "last 5",
-     "random 50",
-     "all 500"
+     "large",
+     "stratified",
+     "complete"
     ]
    }
   ]
@@ -13071,7 +13071,7 @@
   "p2": "You cannot take your copy into the exam, but you receive a clean copy of the booklet.",
   "p3": "",
   "hints": [
-   "Timing",
+   "12 weeks",
    "Exam"
   ],
   "s": [
@@ -13091,12 +13091,12 @@
    },
    {
     "p": 2,
-    "gap": "clean",
+    "gap": "a clean",
     "alt": [],
     "d": [
-     "annotated",
-     "marked",
-     "shorter"
+     "an annotated",
+     "a marked",
+     "a shorter"
     ]
    }
   ]
@@ -13110,8 +13110,8 @@
   "p2": "The booklet may also include published extracts and quotes from interest groups.",
   "p3": "",
   "hints": [
-   "Visual",
-   "Words"
+   "satellite images",
+   "interest groups"
   ],
   "s": [
    "Sources may include maps, diagrams, graphs, statistics, photographs, satellite images and sketches.",
@@ -13149,8 +13149,8 @@
   "p2": "You must select and justify a possible option, and the exam ends with an extended piece of evaluative writing.",
   "p3": "",
   "hints": [
-   "Themes",
-   "Decision"
+   "a range of scales",
+   "justify"
   ],
   "s": [
    "You must draw on more than one theme from the compulsory content and analyse the issue at a range of scales.",
@@ -13159,12 +13159,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "range of scales",
+    "gap": "a range of scales",
     "alt": [],
     "d": [
-     "single scale",
-     "local scale only",
-     "global scale only"
+     "a single scale",
+     "a local scale only",
+     "a global scale only"
     ]
    },
    {
@@ -13188,7 +13188,7 @@
   "p2": "You consider physical and human interrelationships, and justify your solution by its impact on people and the environment.",
   "p3": "",
   "hints": [
-   "Views",
+   "stakeholder",
    "Solution"
   ],
   "s": [
@@ -13228,7 +13228,7 @@
   "p3": "",
   "hints": [
    "Whole course",
-   "Weighting"
+   "30%"
   ],
   "s": [
    "Paper 3 is synoptic, so you draw together knowledge, understanding and skills from the whole course.",
@@ -13266,7 +13266,7 @@
   "p2": "Skills are assessed in all three papers, so an OS or other map extract may appear in any of them.",
   "p3": "",
   "hints": [
-   "Scales",
+   "1:25 000",
    "Papers"
   ],
   "s": [
@@ -13305,8 +13305,8 @@
   "p2": "You use gradient, contours, spot heights and cross-sections, and infer human activity from the map.",
   "p3": "",
   "hints": [
-   "Location",
-   "Relief"
+   "six-figure",
+   "spot heights"
   ],
   "s": [
    "You use four and six-figure grid references, scale, distance and direction.",
@@ -13383,8 +13383,8 @@
   "p2": "You also use divided bar graphs, scattergraphs and population pyramids.",
   "p3": "",
   "hints": [
-   "Common",
-   "Others"
+   "histogram",
+   "population pyramids"
   ],
   "s": [
    "You select and construct line, bar, pie, pictogram and histogram graphs.",
@@ -13422,8 +13422,8 @@
   "p2": "You complete desire line, proportional symbol and flow line maps.",
   "p3": "",
   "hints": [
-   "Shading",
-   "Lines"
+   "choropleth",
+   "proportional symbol"
   ],
   "s": [
    "You complete choropleth, isoline and dot maps.",
@@ -13462,7 +13462,7 @@
   "p3": "",
   "hints": [
    "Number",
-   "Collecting"
+   "sample size"
   ],
   "s": [
    "You work with number, area, scale and units, and use proportion, ratio, magnitude and frequency.",
@@ -13500,7 +13500,7 @@
   "p2": "You also use cumulative frequency and percentage change.",
   "p3": "",
   "hints": [
-   "Averages",
+   "the interquartile range",
    "Change"
   ],
   "s": [
@@ -13510,12 +13510,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "interquartile range",
+    "gap": "the interquartile range",
     "alt": [],
     "d": [
-     "standard deviation",
-     "variance",
-     "scatter"
+     "the standard deviation",
+     "the variance",
+     "the scatter"
     ]
    },
    {
@@ -13540,7 +13540,7 @@
   "p3": "",
   "hints": [
    "Lines",
-   "Spotting bias"
+   "selective"
   ],
   "s": [
    "You sketch trend lines, estimate lines of best fit, interpolate and extrapolate.",
@@ -13579,7 +13579,7 @@
   "p3": "",
   "hints": [
    "Sources",
-   "Digital"
+   "GIS-based"
   ],
   "s": [
    "Qualitative and quantitative data come from primary and secondary sources, including fieldwork data.",
@@ -13617,8 +13617,8 @@
   "p2": "You build well-evidenced conclusions and communicate clearly for different target audiences.",
   "p3": "",
   "hints": [
-   "Writing",
-   "Concluding"
+   "lines of enquiry",
+   "well-evidenced"
   ],
   "s": [
    "You identify lines of enquiry and write descriptively, analytically and critically.",
@@ -13627,12 +13627,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "analytically",
+    "gap": "lines of enquiry",
     "alt": [],
     "d": [
-     "creatively",
-     "briefly",
-     "anonymously"
+     "lines of latitude",
+     "lines of best fit",
+     "lines of symmetry"
     ]
    },
    {
