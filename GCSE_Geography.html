@@ -2984,11 +2984,11 @@ let DATES = []; // loaded from data/dates-geo.json
 let FD = []; // loaded from data/flashcards-geo.json
 
 Promise.all([
-  fetch('data/eq-geo.json').then(r => { if (!r.ok) throw new Error('eq-geo.json: ' + r.status); return r.json(); }),
+  fetch('data/eq-geo.json').then(r => r.ok ? r.json() : []).catch(() => []),
   fetch('data/rq-geo.json').then(r => { if (!r.ok) throw new Error('rq-geo.json: ' + r.status); return r.json(); }),
-  fetch('data/dates-geo.json').then(r => { if (!r.ok) throw new Error('dates-geo.json: ' + r.status); return r.json(); }),
+  fetch('data/dates-geo.json').then(r => r.ok ? r.json() : []).catch(() => []),
   fetch('data/flashcards-geo.json').then(r => { if (!r.ok) throw new Error('flashcards-geo.json: ' + r.status); return r.json(); }),
-  fetch('data/kc-geo.json').then(r => { if (!r.ok) throw new Error('kc-geo.json: ' + r.status); return r.json(); }),
+  fetch('data/kc-geo.json').then(r => r.ok ? r.json() : []).catch(() => []),
 ]).then(([eq, rq, dates, fd, kc]) => {
   const SLOT = SLOT_OF_UNIT;
   const remap = a => a.map(it => { it.pn = it.paper; if (SLOT[it.unit]) it.paper = SLOT[it.unit]; return it; });
