@@ -1,0 +1,4177 @@
+[
+ {
+  "no": 0,
+  "paper": "p2",
+  "unit": "Unit 1 – Mumbai",
+  "front": "What are the key terms for urban change?",
+  "p1": "Urbanisation is the increasing proportion of people living in towns and cities; urban growth is a rise in a town's population; a megacity has 10 million+ people.",
+  "p2": "Natural increase happens when birth rate is higher than death rate; rural-urban migration is the main reason LIC and NEE cities grow so fast.",
+  "p3": "A push factor is a reason to leave a rural area, a pull factor is a reason to move to the city; a slum has poor quality, often illegal housing lacking clean water, sewers or electricity.",
+  "hints": [
+   "Urbanisation",
+   "Migration",
+   "Slum"
+  ],
+  "s": [
+   "Urbanisation is the increasing proportion of people living in towns and cities; urban growth is a rise in a town's population; a megacity has 10 million+ people.",
+   "Natural increase happens when birth rate is higher than death rate; rural-urban migration is the main reason LIC and NEE cities grow so fast.",
+   "A push factor is a reason to leave a rural area, a pull factor is a reason to move to the city; a slum has poor quality, often illegal housing lacking clean water, sewers or electricity."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "megacity",
+    "alt": [],
+    "d": [
+     "conurbation",
+     "metropolis",
+     "suburb"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "rural-urban migration",
+    "alt": [],
+    "d": [
+     "counter-urbanisation",
+     "suburbanisation",
+     "commuting"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "slum",
+    "alt": [],
+    "d": [
+     "ragpicker",
+     "megacity",
+     "hawker"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 1,
+  "paper": "p2",
+  "unit": "Unit 1 – Mumbai",
+  "front": "Where is Mumbai?",
+  "p1": "Mumbai is in Asia → India → the state of Maharashtra; it is the state capital, but NOT the capital of India.",
+  "p2": "Mumbai lies on the west coast of India, not the east; its port handles 70% of maritime trade and 3 million people commute in from surrounding areas.",
+  "p3": "Mumbai has a population of over 21 million → India's largest city and a megacity (10 million+ people).",
+  "hints": [
+   "Maharashtra",
+   "West coast",
+   "Megacity"
+  ],
+  "s": [
+   "Mumbai is in Asia → India → the state of Maharashtra; it is the state capital, but NOT the capital of India.",
+   "Mumbai lies on the west coast of India, not the east; its port handles 70% of maritime trade and 3 million people commute in from surrounding areas.",
+   "Mumbai has a population of over 21 million → India's largest city and a megacity (10 million+ people)."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Maharashtra",
+    "alt": [],
+    "d": [
+     "Gujarat",
+     "Karnataka",
+     "Kerala"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "west coast",
+    "alt": [],
+    "d": [
+     "east coast",
+     "north coast",
+     "south coast"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "megacity",
+    "alt": [],
+    "d": [
+     "conurbation",
+     "metropolis",
+     "suburb"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 2,
+  "paper": "p2",
+  "unit": "Unit 1 – Mumbai",
+  "front": "Why is Mumbai important?",
+  "p1": "Regional: capital of Maharashtra → generates 40% of the state's income; 3 million people commute in from surrounding areas.",
+  "p2": "National: commercial capital of India → 6% of India's GDP; home to the Bombay Stock Exchange, Reserve Bank of India and Tata Group; its port handles 70% of maritime trade.",
+  "p3": "International: a top ten centre of commerce in the world; Bollywood is the largest film producer in the world; historic importance to Portugal and Britain makes it a melting pot of cultures.",
+  "hints": [
+   "Regional",
+   "Commercial",
+   "Bollywood"
+  ],
+  "s": [
+   "Regional: capital of Maharashtra → generates 40% of the state's income; 3 million people commute in from surrounding areas.",
+   "National: commercial capital of India → 6% of India's GDP; home to the Bombay Stock Exchange, Reserve Bank of India and Tata Group; its port handles 70% of maritime trade.",
+   "International: a top ten centre of commerce in the world; Bollywood is the largest film producer in the world; historic importance to Portugal and Britain makes it a melting pot of cultures."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "commute",
+    "alt": [],
+    "d": [
+     "migrate",
+     "emigrate",
+     "retire"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "commercial capital",
+    "alt": [],
+    "d": [
+     "political capital",
+     "industrial capital",
+     "cultural capital"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Bollywood",
+    "alt": [],
+    "d": [
+     "Hollywood",
+     "Nollywood",
+     "Pinewood"
+    ]
+   }
+  ],
+  "review": [
+   "M5",
+   "M9"
+  ]
+ },
+ {
+  "no": 3,
+  "paper": "p2",
+  "unit": "Unit 1 – Mumbai",
+  "front": "Why is Mumbai growing so rapidly?",
+  "p1": "Rural-urban migration is the first cause → 480 migrants arrive in Mumbai each day.",
+  "p2": "Push: average wage in rural Maharashtra is as low as $1 a day; pull: it is $20 a day in Mumbai, though less in the informal sector; many jobs are informal, e.g. hawkers and laundry workers.",
+  "p3": "Natural increase is the second cause → a high birth rate; it is birth rate minus death rate.",
+  "hints": [
+   "Migration",
+   "Wages",
+   "Birth rate"
+  ],
+  "s": [
+   "Rural-urban migration is the first cause → 480 migrants arrive in Mumbai each day.",
+   "Push: average wage in rural Maharashtra is as low as $1 a day; pull: it is $20 a day in Mumbai, though less in the informal sector; many jobs are informal, e.g. hawkers and laundry workers.",
+   "Natural increase is the second cause → a high birth rate; it is birth rate minus death rate."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "migration",
+    "alt": [],
+    "d": [
+     "urbanisation",
+     "natural increase",
+     "commuting"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "average wage",
+    "alt": [],
+    "d": [
+     "average rent",
+     "life expectancy",
+     "literacy rate"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "natural increase",
+    "alt": [],
+    "d": [
+     "urban growth",
+     "rural-urban migration",
+     "urbanisation"
+    ]
+   }
+  ],
+  "review": [
+   "M12"
+  ]
+ },
+ {
+  "no": 4,
+  "paper": "p2",
+  "unit": "Unit 1 – Mumbai",
+  "front": "What opportunities does Mumbai offer?",
+  "p1": "Education: primary and secondary schools with free education up to certain ages; University of Mumbai is world renowned; literacy rate 89.7% (slums: 69%+).",
+  "p2": "Health and resources: healthcare is better than the rest of India; 98% of people have electricity and water supply.",
+  "p3": "Industry: financial capital of India with the Bombay Stock Exchange and Tata Group; informal sector jobs in recycling, leather tanning and pottery; call centres in Navi Mumbai after government tax breaks and IT parks.",
+  "hints": [
+   "University",
+   "Healthcare",
+   "Call centres"
+  ],
+  "s": [
+   "Education: primary and secondary schools with free education up to certain ages; University of Mumbai is world renowned; literacy rate 89.7% (slums: 69%+).",
+   "Health and resources: healthcare is better than the rest of India; 98% of people have electricity and water supply.",
+   "Industry: financial capital of India with the Bombay Stock Exchange and Tata Group; informal sector jobs in recycling, leather tanning and pottery; call centres in Navi Mumbai after government tax breaks and IT parks."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "University of Mumbai",
+    "alt": [],
+    "d": [
+     "University of Delhi",
+     "University of Oxford",
+     "University of Madras"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "electricity",
+    "alt": [],
+    "d": [
+     "gas",
+     "broadband",
+     "sewage"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "tax breaks",
+    "alt": [],
+    "d": [
+     "tax rises",
+     "free land",
+     "import bans"
+    ]
+   }
+  ],
+  "review": [
+   "M1",
+   "M4",
+   "M5"
+  ]
+ },
+ {
+  "no": 5,
+  "paper": "p2",
+  "unit": "Unit 1 – Mumbai",
+  "front": "What challenges does Dharavi face?",
+  "p1": "Dharavi is one of the largest slums in Asia, in the heart of Mumbai → overcrowding with about a million people.",
+  "p2": "500 people share one public toilet and open sewers run through the streets → water-borne disease such as typhoid and diphtheria.",
+  "p3": "One third of residents have experienced crime; residents have no legal right to the land → it can be cleared at any time.",
+  "hints": [
+   "Overcrowding",
+   "Toilet",
+   "Legal right"
+  ],
+  "s": [
+   "Dharavi is one of the largest slums in Asia, in the heart of Mumbai → overcrowding with about a million people.",
+   "500 people share one public toilet and open sewers run through the streets → water-borne disease such as typhoid and diphtheria.",
+   "One third of residents have experienced crime; residents have no legal right to the land → it can be cleared at any time."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Asia",
+    "alt": [],
+    "d": [
+     "Africa",
+     "Europe",
+     "South America"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "water-borne disease",
+    "alt": [],
+    "d": [
+     "air pollution",
+     "traffic congestion",
+     "informal work"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "legal right",
+    "alt": [],
+    "d": [
+     "planning permission",
+     "tax exemption",
+     "building licence"
+    ]
+   }
+  ],
+  "review": [
+   "M8",
+   "M10",
+   "M11"
+  ]
+ },
+ {
+  "no": 6,
+  "paper": "p2",
+  "unit": "Unit 1 – Mumbai",
+  "front": "Why do sanitation and waste cause problems in Dharavi?",
+  "p1": "Slum areas often lack proper sewage, so dirty water flows into the river; water-borne disease spreads, including cholera where rubbish dumps infect water supplies.",
+  "p2": "There is no proper city-wide rubbish collection, and none organised in Dharavi, so open dumps attract rats and cockroaches → disease.",
+  "p3": "Positive: ragpickers collect and recycle plastic → this creates hundreds of thousands of jobs.",
+  "hints": [
+   "Sewage",
+   "Dumps",
+   "Ragpickers"
+  ],
+  "s": [
+   "Slum areas often lack proper sewage, so dirty water flows into the river; water-borne disease spreads, including cholera where rubbish dumps infect water supplies.",
+   "There is no proper city-wide rubbish collection, and none organised in Dharavi, so open dumps attract rats and cockroaches → disease.",
+   "Positive: ragpickers collect and recycle plastic → this creates hundreds of thousands of jobs."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "sewage",
+    "alt": [],
+    "d": [
+     "electricity",
+     "healthcare",
+     "education"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "dumps",
+    "alt": [],
+    "d": [
+     "sewers",
+     "drains",
+     "canals"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "ragpickers",
+    "alt": [],
+    "d": [
+     "hawkers",
+     "migrants",
+     "commuters"
+    ]
+   }
+  ],
+  "review": [
+   "M2",
+   "M3",
+   "M10"
+  ]
+ },
+ {
+  "no": 7,
+  "paper": "p2",
+  "unit": "Unit 1 – Mumbai",
+  "front": "How is informal work both a strength and a problem?",
+  "p1": "Strength: thousands of small workshops and home businesses in Dharavi do recycling, leather tanning and pottery work for residents.",
+  "p2": "Problem: informal work has no contracts, no legal protections and little job security; it is not taxed by the government → the city cannot gain taxes.",
+  "p3": "Problem: it traps many residents in low-income, unstable work → young people leave education early to work.",
+  "hints": [
+   "Workshops",
+   "Contracts",
+   "Education"
+  ],
+  "s": [
+   "Strength: thousands of small workshops and home businesses in Dharavi do recycling, leather tanning and pottery work for residents.",
+   "Problem: informal work has no contracts, no legal protections and little job security; it is not taxed by the government → the city cannot gain taxes.",
+   "Problem: it traps many residents in low-income, unstable work → young people leave education early to work."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "home businesses",
+    "alt": [],
+    "d": [
+     "call centres",
+     "shopping malls",
+     "oil refineries"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "job security",
+    "alt": [],
+    "d": [
+     "holiday pay",
+     "sick pay",
+     "minimum wage"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "low-income",
+    "alt": [],
+    "d": [
+     "high-income",
+     "skilled",
+     "seasonal"
+    ]
+   }
+  ],
+  "review": [
+   "M1"
+  ]
+ },
+ {
+  "no": 8,
+  "paper": "p2",
+  "unit": "Unit 1 – Mumbai",
+  "front": "How polluted are Mumbai's water and air?",
+  "p1": "The Mithi River flows through the city including Dharavi; 93% of its waste comes from homes and 7% from factories.",
+  "p2": "About 1,500 factories line the river and many release waste straight in → Water Quality Index 'bad to very bad'.",
+  "p3": "Smog is common and particulate matter is 15x over the safe limit → asthma and other serious health problems; Mumbai is ranked 4th most polluted megacity in the world.",
+  "hints": [
+   "Mithi River",
+   "Factories",
+   "Particulate matter"
+  ],
+  "s": [
+   "The Mithi River flows through the city including Dharavi; 93% of its waste comes from homes and 7% from factories.",
+   "About 1,500 factories line the river and many release waste straight in → Water Quality Index 'bad to very bad'.",
+   "Smog is common and particulate matter is 15x over the safe limit → asthma and other serious health problems; Mumbai is ranked 4th most polluted megacity in the world."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Mithi River",
+    "alt": [],
+    "d": [
+     "Ganges",
+     "Narmada",
+     "Godavari"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "factories",
+    "alt": [],
+    "d": [
+     "farms",
+     "homes",
+     "ports"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "particulate matter",
+    "alt": [],
+    "d": [
+     "ozone",
+     "nitrogen",
+     "sulphur"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 9,
+  "paper": "p2",
+  "unit": "Unit 1 – Mumbai",
+  "front": "How bad is traffic congestion in Mumbai?",
+  "p1": "Mumbai has 1.8 million motor vehicles; private vehicles are up by more than half in 8 years and people spend about 1.5 hours a day stuck in traffic.",
+  "p2": "Trains built for 1,700 passengers often carry three times that number, so overcrowding is severe on the rail network.",
+  "p3": "Response: nearly 90% use public transport; a new traffic system is run from a control centre in Mumbai police headquarters.",
+  "hints": [
+   "Vehicles",
+   "Trains",
+   "Public transport"
+  ],
+  "s": [
+   "Mumbai has 1.8 million motor vehicles; private vehicles are up by more than half in 8 years and people spend about 1.5 hours a day stuck in traffic.",
+   "Trains built for 1,700 passengers often carry three times that number, so overcrowding is severe on the rail network.",
+   "Response: nearly 90% use public transport; a new traffic system is run from a control centre in Mumbai police headquarters."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "private vehicles",
+    "alt": [],
+    "d": [
+     "public buses",
+     "taxis",
+     "bicycles"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Trains",
+    "alt": [],
+    "d": [
+     "Buses",
+     "Ferries",
+     "Taxis"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "public transport",
+    "alt": [],
+    "d": [
+     "private cars",
+     "motorbikes",
+     "walking"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 10,
+  "paper": "p2",
+  "unit": "Unit 1 – Mumbai",
+  "front": "How does the Dharavi Sector 5 redevelopment change quality of life?",
+  "p1": "A $2 billion project in Sector 5 of Dharavi → slum housing demolished and replaced by high-rise tower blocks; 72,000 families rehomed.",
+  "p2": "Improved: proper plumbing and toilets → less water-borne disease, e.g. cholera; new parks and green space; secure windows and doors.",
+  "p3": "Worsened: most slum dwellers have no legal right to land → homeless; loss of community (some families there 150 years); flats too small (5 to 10 people in 21 m2); unique culture destroyed.",
+  "hints": [
+   "Tower blocks",
+   "Plumbing",
+   "Legal right"
+  ],
+  "s": [
+   "A $2 billion project in Sector 5 of Dharavi → slum housing demolished and replaced by high-rise tower blocks; 72,000 families rehomed.",
+   "Improved: proper plumbing and toilets → less water-borne disease, e.g. cholera; new parks and green space; secure windows and doors.",
+   "Worsened: most slum dwellers have no legal right to land → homeless; loss of community (some families there 150 years); flats too small (5 to 10 people in 21 m2); unique culture destroyed."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "high-rise tower blocks",
+    "alt": [],
+    "d": [
+     "terraced houses",
+     "bungalows",
+     "shanty huts"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "plumbing",
+    "alt": [],
+    "d": [
+     "wiring",
+     "roofing",
+     "glazing"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "legal right",
+    "alt": [],
+    "d": [
+     "planning permission",
+     "rental contract",
+     "building licence"
+    ]
+   }
+  ],
+  "review": [
+   "M6",
+   "M7"
+  ]
+ },
+ {
+  "no": 11,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "What are the key terms in ecosystems?",
+  "p1": "An ecosystem is producers, consumers and decomposers interacting with each other and with non-living parts; a producer is a plant that uses sunlight, water and carbon dioxide to make its own food.",
+  "p2": "A primary consumer feeds on producers (herbivore) and a secondary consumer feeds on primary consumers (carnivore); a decomposer breaks down dead organisms and returns nutrients to the soil.",
+  "p3": "A food chain shows how each living thing gets its food, starting with plants; a food web is interlocking food chains; biodiversity is the variety of life in an area.",
+  "hints": [
+   "Ecosystem",
+   "Consumers",
+   "Biodiversity"
+  ],
+  "s": [
+   "An ecosystem is producers, consumers and decomposers interacting with each other and with non-living parts; a producer is a plant that uses sunlight, water and carbon dioxide to make its own food.",
+   "A primary consumer feeds on producers (herbivore) and a secondary consumer feeds on primary consumers (carnivore); a decomposer breaks down dead organisms and returns nutrients to the soil.",
+   "A food chain shows how each living thing gets its food, starting with plants; a food web is interlocking food chains; biodiversity is the variety of life in an area."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "decomposers",
+    "alt": [],
+    "d": [
+     "herbivores",
+     "carnivores",
+     "predators"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "nutrients",
+    "alt": [],
+    "d": [
+     "water",
+     "sunlight",
+     "carbon dioxide"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "biodiversity",
+    "alt": [],
+    "d": [
+     "population",
+     "productivity",
+     "succession"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 12,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "What is the global pattern of biomes?",
+  "p1": "A biome is a large area with similar climate, geology and vegetation, found in bands of latitude around the planet.",
+  "p2": "Tropical rainforest is very hot and wet, on or around the equator; desert is very hot and very dry, around 30 degrees N and S; tropical savannah is hot, dry grassland with scattered shrubs and trees between rainforest and desert.",
+  "p3": "Tundra is below freezing at night all year, 'land with no trees'; coniferous forest (taiga) is northern evergreen forest; temperate deciduous forest has four distinct seasons.",
+  "hints": [
+   "Biome",
+   "Equator",
+   "Tundra"
+  ],
+  "s": [
+   "A biome is a large area with similar climate, geology and vegetation, found in bands of latitude around the planet.",
+   "Tropical rainforest is very hot and wet, on or around the equator; desert is very hot and very dry, around 30 degrees N and S; tropical savannah is hot, dry grassland with scattered shrubs and trees between rainforest and desert.",
+   "Tundra is below freezing at night all year, 'land with no trees'; coniferous forest (taiga) is northern evergreen forest; temperate deciduous forest has four distinct seasons."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "latitude",
+    "alt": [],
+    "d": [
+     "longitude",
+     "altitude",
+     "elevation"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "equator",
+    "alt": [],
+    "d": [
+     "poles",
+     "coast",
+     "tropics"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Tundra",
+    "alt": [],
+    "d": [
+     "Savannah",
+     "Chaparral",
+     "Grassland"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 13,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "Why are rainforests on the equator and deserts near 30 degrees?",
+  "p1": "The equator is heated intensely by differential heating, so it is hotter than the poles → temperature changes with latitude.",
+  "p2": "At the equator air rises → cools → condenses → heavy convectional rain; this low pressure zone is the ITCZ (inter-tropical convergence zone).",
+  "p3": "Air spreads north and south, cools and sinks at about 30 degrees N and S → high pressure → almost no rain → deserts; the loop of rising and sinking air is the Hadley cell.",
+  "hints": [
+   "Heating",
+   "Convectional",
+   "Hadley cell"
+  ],
+  "s": [
+   "The equator is heated intensely by differential heating, so it is hotter than the poles → temperature changes with latitude.",
+   "At the equator air rises → cools → condenses → heavy convectional rain; this low pressure zone is the ITCZ (inter-tropical convergence zone).",
+   "Air spreads north and south, cools and sinks at about 30 degrees N and S → high pressure → almost no rain → deserts; the loop of rising and sinking air is the Hadley cell."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "differential heating",
+    "alt": [],
+    "d": [
+     "relief heating",
+     "tidal heating",
+     "seasonal cooling"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "ITCZ",
+    "alt": [],
+    "d": [
+     "jet stream",
+     "trade winds",
+     "polar front"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Hadley cell",
+    "alt": [],
+    "d": [
+     "Ferrel cell",
+     "Polar cell",
+     "Coriolis effect"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 14,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "How will climate change affect Epping Forest?",
+  "p1": "Epping Forest is deciduous woodland, the most common ecosystem in the UK → the trees lose their leaves each year.",
+  "p2": "The UK is getting wetter summers and milder temperatures → oak mildew, a fungus, weakens oaks (Oak Decline); warmer winters let insects survive all year → pest populations rise, e.g. Horse Chestnut Leaf Miner.",
+  "p3": "Windthrow: more wind and wet soils → trees uprooted; the cause is the burning of fossil fuels, which releases carbon dioxide.",
+  "hints": [
+   "Deciduous",
+   "Oak mildew",
+   "Windthrow"
+  ],
+  "s": [
+   "Epping Forest is deciduous woodland, the most common ecosystem in the UK → the trees lose their leaves each year.",
+   "The UK is getting wetter summers and milder temperatures → oak mildew, a fungus, weakens oaks (Oak Decline); warmer winters let insects survive all year → pest populations rise, e.g. Horse Chestnut Leaf Miner.",
+   "Windthrow: more wind and wet soils → trees uprooted; the cause is the burning of fossil fuels, which releases carbon dioxide."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "deciduous",
+    "alt": [],
+    "d": [
+     "coniferous",
+     "evergreen",
+     "tropical"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "oak mildew",
+    "alt": [],
+    "d": [
+     "acid rain",
+     "coppicing",
+     "soil erosion"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Windthrow",
+    "alt": [],
+    "d": [
+     "Leaching",
+     "Coppicing",
+     "Soil creep"
+    ]
+   }
+  ],
+  "review": [
+   "T8",
+   "T9"
+  ]
+ },
+ {
+  "no": 15,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "What is a tropical rainforest like?",
+  "p1": "Found on or around the equator; the Amazon is the world's largest tropical rainforest, spanning 9 countries in South America with 60% in Brazil.",
+  "p2": "Climate: hot and wet all year with a very small temperature range; rain falls in every month.",
+  "p3": "Structure: four layers, with emergent trees 40 to 60 m tall; biodiversity is very high, with 6% of the Earth but around 50% of known species.",
+  "hints": [
+   "Equator",
+   "Climate",
+   "Biodiversity"
+  ],
+  "s": [
+   "Found on or around the equator; the Amazon is the world's largest tropical rainforest, spanning 9 countries in South America with 60% in Brazil.",
+   "Climate: hot and wet all year with a very small temperature range; rain falls in every month.",
+   "Structure: four layers, with emergent trees 40 to 60 m tall; biodiversity is very high, with 6% of the Earth but around 50% of known species."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "equator",
+    "alt": [],
+    "d": [
+     "poles",
+     "Tropic of Cancer",
+     "30 degrees"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "temperature range",
+    "alt": [],
+    "d": [
+     "wind speed",
+     "rainfall total",
+     "humidity"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "biodiversity",
+    "alt": [],
+    "d": [
+     "soil fertility",
+     "tree density",
+     "river length"
+    ]
+   }
+  ],
+  "review": [
+   "T1",
+   "T2",
+   "T4"
+  ]
+ },
+ {
+  "no": 16,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "Why is the rainforest climate hot and wet?",
+  "p1": "The sun is overhead at the equator → energy is concentrated on a small surface area; the wettest month is March, with about 314 mm.",
+  "p2": "Evaporation is rapid, so warm moist air rises → low pressure.",
+  "p3": "Rising air cools → condensation → clouds → heavy convectional rain, usually in the afternoon; the equator has rising air in the Hadley cell, the ITCZ.",
+  "hints": [
+   "Overhead",
+   "Evaporation",
+   "Convectional"
+  ],
+  "s": [
+   "The sun is overhead at the equator → energy is concentrated on a small surface area; the wettest month is March, with about 314 mm.",
+   "Evaporation is rapid, so warm moist air rises → low pressure.",
+   "Rising air cools → condensation → clouds → heavy convectional rain, usually in the afternoon; the equator has rising air in the Hadley cell, the ITCZ."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "overhead",
+    "alt": [],
+    "d": [
+     "at a low angle",
+     "above the clouds",
+     "below the horizon"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "evaporation",
+    "alt": [],
+    "d": [
+     "condensation",
+     "precipitation",
+     "transpiration"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "convectional rain",
+    "alt": [],
+    "d": [
+     "frontal rain",
+     "relief rain",
+     "drizzle"
+    ]
+   }
+  ],
+  "review": [
+   "T1",
+   "T2"
+  ]
+ },
+ {
+  "no": 17,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "How are rainforest plants adapted?",
+  "p1": "Emergent trees are very tall (40 to 60 m) → reach the strongest sunlight above the canopy; buttress roots act as an anchor → support tall emergent trees.",
+  "p2": "Drip tips are pointed leaf ends → heavy rain runs off quickly so leaves are not damaged; glossy, pointed-tip leaves in the canopy repel water.",
+  "p3": "Canopy plants encase seeds in fruit → animals eat it and spread seeds; emergent trees have lightweight seeds spread by wind; understorey plants have larger leaves for dim light.",
+  "hints": [
+   "Emergent",
+   "Drip tips",
+   "Seeds"
+  ],
+  "s": [
+   "Emergent trees are very tall (40 to 60 m) → reach the strongest sunlight above the canopy; buttress roots act as an anchor → support tall emergent trees.",
+   "Drip tips are pointed leaf ends → heavy rain runs off quickly so leaves are not damaged; glossy, pointed-tip leaves in the canopy repel water.",
+   "Canopy plants encase seeds in fruit → animals eat it and spread seeds; emergent trees have lightweight seeds spread by wind; understorey plants have larger leaves for dim light."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "buttress roots",
+    "alt": [],
+    "d": [
+     "tap roots",
+     "root nodules",
+     "rhizomes"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "drip tips",
+    "alt": [],
+    "d": [
+     "spines",
+     "thorns",
+     "hairy leaves"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "larger leaves",
+    "alt": [],
+    "d": [
+     "thicker bark",
+     "longer roots",
+     "smaller leaves"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 18,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "How are rainforest animals adapted?",
+  "p1": "Emergent layer animals fly or glide, e.g. birds, bats, gliders and butterflies.",
+  "p2": "Most animals live in the canopy because there is plenty of fruit; the Boto (pink river dolphin) lives in Amazon freshwater habitats.",
+  "p3": "Decomposers such as termites, slugs, worms and fungi live on the forest floor.",
+  "hints": [
+   "Glide",
+   "Canopy",
+   "Decomposers"
+  ],
+  "s": [
+   "Emergent layer animals fly or glide, e.g. birds, bats, gliders and butterflies.",
+   "Most animals live in the canopy because there is plenty of fruit; the Boto (pink river dolphin) lives in Amazon freshwater habitats.",
+   "Decomposers such as termites, slugs, worms and fungi live on the forest floor."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "glide",
+    "alt": [],
+    "d": [
+     "burrow",
+     "hibernate",
+     "migrate"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "canopy",
+    "alt": [],
+    "d": [
+     "forest floor",
+     "emergent layer",
+     "understorey"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Decomposers",
+    "alt": [],
+    "d": [
+     "Producers",
+     "Predators",
+     "Herbivores"
+    ]
+   }
+  ],
+  "review": [
+   "T5"
+  ]
+ },
+ {
+  "no": 19,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "Why is rainforest soil nutrient-rich but fragile?",
+  "p1": "The soil is nutrient-rich but shallow, and the trees shed their leaves all year.",
+  "p2": "Dead leaves break down rapidly on the warm damp floor with insects, forming humus that roots absorb quickly → nutrients are used up quickly.",
+  "p3": "After clearance there is no canopy → heavy rain washes nutrients out and topsoil into rivers → the soil quickly becomes infertile and cleared land is often abandoned.",
+  "hints": [
+   "Shallow",
+   "Humus",
+   "Topsoil"
+  ],
+  "s": [
+   "The soil is nutrient-rich but shallow, and the trees shed their leaves all year.",
+   "Dead leaves break down rapidly on the warm damp floor with insects, forming humus that roots absorb quickly → nutrients are used up quickly.",
+   "After clearance there is no canopy → heavy rain washes nutrients out and topsoil into rivers → the soil quickly becomes infertile and cleared land is often abandoned."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "shallow",
+    "alt": [],
+    "d": [
+     "deep",
+     "waterlogged",
+     "rocky"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "humus",
+    "alt": [],
+    "d": [
+     "clay",
+     "peat",
+     "silt"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "topsoil",
+    "alt": [],
+    "d": [
+     "bedrock",
+     "subsoil",
+     "groundwater"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 20,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "What causes deforestation in the Amazon?",
+  "p1": "Causes: cattle ranching, commercial farming, subsistence farming, logging, mining, roads, settlement and energy (dams).",
+  "p2": "Commercial: around 80% of cleared land becomes cattle pasture, with plantations of soya, palm oil and bananas; Brazil is one of the world's largest exporters.",
+  "p3": "Subsistence: Amerindians have used slash and burn for generations → trees cut and burned for temporary nutrient-rich soil; government gave small amounts of land to some of Brazil's 25 million people.",
+  "hints": [
+   "Causes",
+   "Soya",
+   "Slash and burn"
+  ],
+  "s": [
+   "Causes: cattle ranching, commercial farming, subsistence farming, logging, mining, roads, settlement and energy (dams).",
+   "Commercial: around 80% of cleared land becomes cattle pasture, with plantations of soya, palm oil and bananas; Brazil is one of the world's largest exporters.",
+   "Subsistence: Amerindians have used slash and burn for generations → trees cut and burned for temporary nutrient-rich soil; government gave small amounts of land to some of Brazil's 25 million people."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "cattle ranching",
+    "alt": [],
+    "d": [
+     "tourism",
+     "fishing",
+     "fracking"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "soya",
+    "alt": [],
+    "d": [
+     "wheat",
+     "rice",
+     "cotton"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "slash and burn",
+    "alt": [],
+    "d": [
+     "crop rotation",
+     "terracing",
+     "irrigation"
+    ]
+   }
+  ],
+  "review": [
+   "T7"
+  ]
+ },
+ {
+  "no": 21,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "How do logging, mining, roads and dams clear the rainforest?",
+  "p1": "Logging takes hardwoods such as mahogany for furniture; mining takes iron ore, bauxite and gold, with about 50,000 hectares cleared for gold alone (70,000 football pitches).",
+  "p2": "Over 12,000 km of new roads have been built, including the Trans-Amazonian Highway (5,300 km) → opens remote areas.",
+  "p3": "Brazil's population has more than doubled since 1972 and Parauapebas is fast-growing; 74 dams are on Amazon rivers, including Belo Monte (2019).",
+  "hints": [
+   "Mahogany",
+   "Highway",
+   "Dams"
+  ],
+  "s": [
+   "Logging takes hardwoods such as mahogany for furniture; mining takes iron ore, bauxite and gold, with about 50,000 hectares cleared for gold alone (70,000 football pitches).",
+   "Over 12,000 km of new roads have been built, including the Trans-Amazonian Highway (5,300 km) → opens remote areas.",
+   "Brazil's population has more than doubled since 1972 and Parauapebas is fast-growing; 74 dams are on Amazon rivers, including Belo Monte (2019)."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "mahogany",
+    "alt": [],
+    "d": [
+     "oak",
+     "pine",
+     "teak"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Trans-Amazonian Highway",
+    "alt": [],
+    "d": [
+     "Pan-American Highway",
+     "Silk Road",
+     "Grand Trunk Road"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Belo Monte",
+    "alt": [],
+    "d": [
+     "Hoover Dam",
+     "Three Gorges",
+     "Aswan"
+    ]
+   }
+  ],
+  "review": [
+   "T6"
+  ]
+ },
+ {
+  "no": 22,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "What are the impacts of deforestation?",
+  "p1": "Loss of biodiversity: 137 species lost a day; loss of indigenous people: about 6 million Amerindians in 1500, roughly 200,000 now.",
+  "p2": "Without a canopy and roots, topsoil is washed away → soil erosion; nutrients are leached within a few years → infertile soil and abandoned land.",
+  "p3": "Less evapotranspiration from fewer trees → less rainfall, so parts of the forest risk turning to savanna; burning trees releases carbon (the Amazon holds around 100 billion tonnes) → faster global warming.",
+  "hints": [
+   "Biodiversity",
+   "Leached",
+   "Evapotranspiration"
+  ],
+  "s": [
+   "Loss of biodiversity: 137 species lost a day; loss of indigenous people: about 6 million Amerindians in 1500, roughly 200,000 now.",
+   "Without a canopy and roots, topsoil is washed away → soil erosion; nutrients are leached within a few years → infertile soil and abandoned land.",
+   "Less evapotranspiration from fewer trees → less rainfall, so parts of the forest risk turning to savanna; burning trees releases carbon (the Amazon holds around 100 billion tonnes) → faster global warming."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Amerindians",
+    "alt": [],
+    "d": [
+     "Inuit",
+     "Maasai",
+     "Aboriginals"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "leached",
+    "alt": [],
+    "d": [
+     "deposited",
+     "absorbed",
+     "evaporated"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "evapotranspiration",
+    "alt": [],
+    "d": [
+     "condensation",
+     "precipitation",
+     "infiltration"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 23,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "Why are tropical rainforests valuable?",
+  "p1": "Environment: the forest stores carbon and drives its own water cycle through evapotranspiration; it covers 6% of the Earth but holds around 50% of known species.",
+  "p2": "Medicines: about 25% of modern medicines come from rainforest plants; the rosy periwinkle treats childhood leukaemia.",
+  "p3": "People: timber, minerals, farmland, energy and jobs for Brazil; the forest is home to Amerindian groups such as the Kayapo (food, shelter, medicine).",
+  "hints": [
+   "Carbon",
+   "Medicines",
+   "Kayapo"
+  ],
+  "s": [
+   "Environment: the forest stores carbon and drives its own water cycle through evapotranspiration; it covers 6% of the Earth but holds around 50% of known species.",
+   "Medicines: about 25% of modern medicines come from rainforest plants; the rosy periwinkle treats childhood leukaemia.",
+   "People: timber, minerals, farmland, energy and jobs for Brazil; the forest is home to Amerindian groups such as the Kayapo (food, shelter, medicine)."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "carbon",
+    "alt": [],
+    "d": [
+     "oxygen",
+     "methane",
+     "nitrogen"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "rosy periwinkle",
+    "alt": [],
+    "d": [
+     "foxglove",
+     "willow bark",
+     "cinchona"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Kayapo",
+    "alt": [],
+    "d": [
+     "Maasai",
+     "Inuit",
+     "Bedouin"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 24,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "How can the rainforest be managed sustainably?",
+  "p1": "Sustainable management means meeting today's needs without damaging the resource for future generations.",
+  "p2": "Local strategies are ecotourism, and selective logging with replanting; national parks work at national scale, e.g. Tumucumaque National Park (2002), around the size of Switzerland.",
+  "p3": "International strategies are the timber agreement (ITTA) and debt reduction; charities such as WWF run conservation and education.",
+  "hints": [
+   "Sustainable",
+   "Ecotourism",
+   "WWF"
+  ],
+  "s": [
+   "Sustainable management means meeting today's needs without damaging the resource for future generations.",
+   "Local strategies are ecotourism, and selective logging with replanting; national parks work at national scale, e.g. Tumucumaque National Park (2002), around the size of Switzerland.",
+   "International strategies are the timber agreement (ITTA) and debt reduction; charities such as WWF run conservation and education."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "future generations",
+    "alt": [],
+    "d": [
+     "local farmers",
+     "other countries",
+     "tourists"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "ecotourism",
+    "alt": [],
+    "d": [
+     "mass tourism",
+     "plantation farming",
+     "clear-felling"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "WWF",
+    "alt": [],
+    "d": [
+     "Oxfam",
+     "Greenpeace",
+     "Amnesty"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 25,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "What are the pros and cons of local rainforest management?",
+  "p1": "Ecotourism uses small, locally owned resorts of sustainable materials with local guides → money goes to local people, so the forest is worth more standing than cleared.",
+  "p2": "Limit: ecotourism reaches only a few thousand people a year in the Amazon.",
+  "p3": "Selective logging cuts only mature or valuable trees so the forest can recover and loggers still earn; but felled trees damage others, replanting is expensive, and secondary forest takes over 20 years to regain 80% of biodiversity.",
+  "hints": [
+   "Locally owned",
+   "Limit",
+   "Mature"
+  ],
+  "s": [
+   "Ecotourism uses small, locally owned resorts of sustainable materials with local guides → money goes to local people, so the forest is worth more standing than cleared.",
+   "Limit: ecotourism reaches only a few thousand people a year in the Amazon.",
+   "Selective logging cuts only mature or valuable trees so the forest can recover and loggers still earn; but felled trees damage others, replanting is expensive, and secondary forest takes over 20 years to regain 80% of biodiversity."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "locally owned",
+    "alt": [],
+    "d": [
+     "foreign owned",
+     "state owned",
+     "chain owned"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "ecotourism",
+    "alt": [],
+    "d": [
+     "logging",
+     "ranching",
+     "mining"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "mature",
+    "alt": [],
+    "d": [
+     "young",
+     "dead",
+     "diseased"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 26,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "How do national parks and education help, and what are their limits?",
+  "p1": "Tumucumaque National Park (2002) is around the size of Switzerland → it is hard to police illegal logging across such an area.",
+  "p2": "WWF staff visit schools in rainforest areas to teach why the rainforest matters → this changes attitudes in the long term.",
+  "p3": "Charities rely on donations, results take a long time, and many people cut forest because they are desperately poor.",
+  "hints": [
+   "Tumucumaque",
+   "Schools",
+   "Donations"
+  ],
+  "s": [
+   "Tumucumaque National Park (2002) is around the size of Switzerland → it is hard to police illegal logging across such an area.",
+   "WWF staff visit schools in rainforest areas to teach why the rainforest matters → this changes attitudes in the long term.",
+   "Charities rely on donations, results take a long time, and many people cut forest because they are desperately poor."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Tumucumaque",
+    "alt": [],
+    "d": [
+     "Kruger",
+     "Yellowstone",
+     "Serengeti"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "schools",
+    "alt": [],
+    "d": [
+     "hospitals",
+     "farms",
+     "ports"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "donations",
+    "alt": [],
+    "d": [
+     "taxes",
+     "grants",
+     "fees"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 27,
+  "paper": "p1",
+  "unit": "Unit 2 – Tropical Rainforests",
+  "front": "How do international agreements protect the rainforest?",
+  "p1": "The International Tropical Timber Agreement (ITTA, 2006) marks hardwood with a registration number proving it came from a managed forest → illegal loggers find it harder to sell wood.",
+  "p2": "Limits: some illegal timber still reaches market; remote areas are hard to monitor; people who rely on illegal logging lose income.",
+  "p3": "In a debt-for-nature swap an HIC cancels part of the debt of an LIC or NEE and in return it protects part of its forest; but it cannot earn money from those areas and the promise is hard to enforce.",
+  "hints": [
+   "ITTA",
+   "Remote",
+   "Debt swap"
+  ],
+  "s": [
+   "The International Tropical Timber Agreement (ITTA, 2006) marks hardwood with a registration number proving it came from a managed forest → illegal loggers find it harder to sell wood.",
+   "Limits: some illegal timber still reaches market; remote areas are hard to monitor; people who rely on illegal logging lose income.",
+   "In a debt-for-nature swap an HIC cancels part of the debt of an LIC or NEE and in return it protects part of its forest; but it cannot earn money from those areas and the promise is hard to enforce."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "registration number",
+    "alt": [],
+    "d": [
+     "tax stamp",
+     "export licence",
+     "barcode"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "remote areas",
+    "alt": [],
+    "d": [
+     "city centres",
+     "border towns",
+     "ports"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "debt",
+    "alt": [],
+    "d": [
+     "trade",
+     "aid",
+     "tax"
+    ]
+   }
+  ],
+  "review": [
+   "T3"
+  ]
+ },
+ {
+  "no": 28,
+  "paper": "p2",
+  "unit": "Unit 3 – Resource Management",
+  "front": "What are the key terms in resource management?",
+  "p1": "Resources are physical supplies humans need to survive; energy security means uninterrupted availability of energy sources at an affordable price.",
+  "p2": "An energy mix is the combination of energy sources used to meet a country's total energy demand; water stress is when a place's water demand cannot be met (in deficit).",
+  "p3": "Sustainable management means meeting needs today without damaging a resource for future generations.",
+  "hints": [
+   "Resources",
+   "Energy mix",
+   "Sustainable"
+  ],
+  "s": [
+   "Resources are physical supplies humans need to survive; energy security means uninterrupted availability of energy sources at an affordable price.",
+   "An energy mix is the combination of energy sources used to meet a country's total energy demand; water stress is when a place's water demand cannot be met (in deficit).",
+   "Sustainable management means meeting needs today without damaging a resource for future generations."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "uninterrupted",
+    "alt": [],
+    "d": [
+     "occasional",
+     "seasonal",
+     "imported"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "energy mix",
+    "alt": [],
+    "d": [
+     "energy surplus",
+     "food miles",
+     "water transfer"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "future generations",
+    "alt": [],
+    "d": [
+     "local communities",
+     "other countries",
+     "big companies"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 29,
+  "paper": "p2",
+  "unit": "Unit 3 – Resource Management",
+  "front": "Why do energy security and resources matter?",
+  "p1": "A regular supply of food, water and energy is essential for health, a good life, good social relations, security and freedom of choice → quality of life and economic well-being improve.",
+  "p2": "An energy secure country has a reliable and uninterrupted supply, an affordable and competitively priced supply, and an accessible and available supply.",
+  "p3": "It also has a domestic energy mix that is not reliant on imports; countries can generate their own energy or import it; the booklet links the war in Ukraine to energy security and the cost of living.",
+  "hints": [
+   "Well-being",
+   "Reliable",
+   "Imports"
+  ],
+  "s": [
+   "A regular supply of food, water and energy is essential for health, a good life, good social relations, security and freedom of choice → quality of life and economic well-being improve.",
+   "An energy secure country has a reliable and uninterrupted supply, an affordable and competitively priced supply, and an accessible and available supply.",
+   "It also has a domestic energy mix that is not reliant on imports; countries can generate their own energy or import it; the booklet links the war in Ukraine to energy security and the cost of living."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "quality of life",
+    "alt": [],
+    "d": [
+     "life expectancy",
+     "literacy rate",
+     "birth rate"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "reliable",
+    "alt": [],
+    "d": [
+     "seasonal",
+     "imported",
+     "occasional"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "imports",
+    "alt": [],
+    "d": [
+     "exports",
+     "reserves",
+     "subsidies"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 30,
+  "paper": "p2",
+  "unit": "Unit 3 – Resource Management",
+  "front": "What factors affect energy supply?",
+  "p1": "Physical: just 1% of the Sahara would provide enough solar energy for the world; Iceland has hot rocks near the surface on a constructive boundary → geothermal energy.",
+  "p2": "North Sea gas is mostly extracted → harder and costlier to get more; the USA is energy secure through fracking (shale gas).",
+  "p3": "Pirates seized an oil tanker off Somalia; Germany is planning to stop nuclear power (waste concerns); the Nembe Creek pipeline in the Niger delta had 53 leaks from suspected oil thieves.",
+  "hints": [
+   "Geothermal",
+   "Fracking",
+   "Nuclear"
+  ],
+  "s": [
+   "Physical: just 1% of the Sahara would provide enough solar energy for the world; Iceland has hot rocks near the surface on a constructive boundary → geothermal energy.",
+   "North Sea gas is mostly extracted → harder and costlier to get more; the USA is energy secure through fracking (shale gas).",
+   "Pirates seized an oil tanker off Somalia; Germany is planning to stop nuclear power (waste concerns); the Nembe Creek pipeline in the Niger delta had 53 leaks from suspected oil thieves."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "geothermal",
+    "alt": [],
+    "d": [
+     "wind",
+     "tidal",
+     "hydroelectric"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "fracking",
+    "alt": [],
+    "d": [
+     "wind farms",
+     "tidal barrages",
+     "opencast mining"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "nuclear power",
+    "alt": [],
+    "d": [
+     "wind power",
+     "solar power",
+     "hydroelectric power"
+    ]
+   }
+  ],
+  "review": [
+   "R1"
+  ]
+ },
+ {
+  "no": 31,
+  "paper": "p2",
+  "unit": "Unit 3 – Resource Management",
+  "front": "How have UK food habits changed?",
+  "p1": "Before the 1950s food was mostly seasonal; from the 1950s agribusiness grew and food costs fell, with environmental and social impacts.",
+  "p2": "In 1951 the first UK supermarket opened in Streatham → supermarkets gained control of supply chains and drove prices down; globalisation brought strawberries in January and fruit grown in polytunnels in southern Spain, shipped or flown in refrigerated.",
+  "p3": "From the 1990s some people try to buy locally produced food; recent years show growing demand for organic food; lower greenhouse gas emissions come with lower food miles.",
+  "hints": [
+   "Seasonal",
+   "Supermarkets",
+   "Food miles"
+  ],
+  "s": [
+   "Before the 1950s food was mostly seasonal; from the 1950s agribusiness grew and food costs fell, with environmental and social impacts.",
+   "In 1951 the first UK supermarket opened in Streatham → supermarkets gained control of supply chains and drove prices down; globalisation brought strawberries in January and fruit grown in polytunnels in southern Spain, shipped or flown in refrigerated.",
+   "From the 1990s some people try to buy locally produced food; recent years show growing demand for organic food; lower greenhouse gas emissions come with lower food miles."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "seasonal",
+    "alt": [],
+    "d": [
+     "organic",
+     "imported",
+     "frozen"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "supermarkets",
+    "alt": [],
+    "d": [
+     "corner shops",
+     "street markets",
+     "wholesalers"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "food miles",
+    "alt": [],
+    "d": [
+     "food waste",
+     "food security",
+     "carbon footprint"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 32,
+  "paper": "p2",
+  "unit": "Unit 3 – Resource Management",
+  "front": "Where does the UK's water come from?",
+  "p1": "Surface water comes from rivers, lakes and reservoirs: 474 sources in England and Wales and 339 in Scotland.",
+  "p2": "Surface water supplies 64% of England's drinking water and nearly 93% of Wales's.",
+  "p3": "Groundwater is stored in aquifers (rock, sand and soil): 2,259 sources in England and Wales and 86 in Scotland, but only 30% of England's and 6% of Wales's tap water.",
+  "hints": [
+   "Reservoirs",
+   "Drinking water",
+   "Aquifers"
+  ],
+  "s": [
+   "Surface water comes from rivers, lakes and reservoirs: 474 sources in England and Wales and 339 in Scotland.",
+   "Surface water supplies 64% of England's drinking water and nearly 93% of Wales's.",
+   "Groundwater is stored in aquifers (rock, sand and soil): 2,259 sources in England and Wales and 86 in Scotland, but only 30% of England's and 6% of Wales's tap water."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "reservoirs",
+    "alt": [],
+    "d": [
+     "springs",
+     "wells",
+     "canals"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "drinking water",
+    "alt": [],
+    "d": [
+     "irrigation water",
+     "industrial water",
+     "waste water"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "aquifers",
+    "alt": [],
+    "d": [
+     "estuaries",
+     "catchments",
+     "deltas"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 33,
+  "paper": "p2",
+  "unit": "Unit 3 – Resource Management",
+  "front": "Why does a wet country worry about drought?",
+  "p1": "Some areas of the UK have a water surplus while others have a deficit.",
+  "p2": "London and 70% of English regions could be under water stress within two decades → severe unless action is taken.",
+  "p3": "Water transfer schemes move water from surplus areas to deficit areas, e.g. Kielder Water reservoir in Northumberland, released into rivers → Newcastle, Sunderland, Durham, Darlington and Middlesbrough.",
+  "hints": [
+   "Surplus",
+   "Stress",
+   "Kielder"
+  ],
+  "s": [
+   "Some areas of the UK have a water surplus while others have a deficit.",
+   "London and 70% of English regions could be under water stress within two decades → severe unless action is taken.",
+   "Water transfer schemes move water from surplus areas to deficit areas, e.g. Kielder Water reservoir in Northumberland, released into rivers → Newcastle, Sunderland, Durham, Darlington and Middlesbrough."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "surplus",
+    "alt": [],
+    "d": [
+     "drought",
+     "flood",
+     "shortage"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "water stress",
+    "alt": [],
+    "d": [
+     "water security",
+     "water transfer",
+     "water surplus"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Kielder Water",
+    "alt": [],
+    "d": [
+     "Rutland Water",
+     "Lake Vyrnwy",
+     "Windermere"
+    ]
+   }
+  ],
+  "review": [
+   "R2",
+   "R4"
+  ]
+ },
+ {
+  "no": 34,
+  "paper": "p2",
+  "unit": "Unit 3 – Resource Management",
+  "front": "Why have water transfer schemes been limited in the UK?",
+  "p1": "A national water grid (like the electricity grid) has been considered but not developed.",
+  "p2": "About 5% of UK supply is piped from outside the local area.",
+  "p3": "Transfer schemes have fallen out of favour because of environmental impact on the donor area, cost and energy use.",
+  "hints": [
+   "Grid",
+   "Piped",
+   "Cost"
+  ],
+  "s": [
+   "A national water grid (like the electricity grid) has been considered but not developed.",
+   "About 5% of UK supply is piped from outside the local area.",
+   "Transfer schemes have fallen out of favour because of environmental impact on the donor area, cost and energy use."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "national water grid",
+    "alt": [],
+    "d": [
+     "national gas network",
+     "national rail network",
+     "national road network"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "piped",
+    "alt": [],
+    "d": [
+     "shipped",
+     "trucked",
+     "tankered"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "environmental impact",
+    "alt": [],
+    "d": [
+     "flood risk",
+     "population growth",
+     "labour costs"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 35,
+  "paper": "p1",
+  "unit": "Unit 4 – Hot Deserts",
+  "front": "What is a hot desert?",
+  "p1": "A desert is land or climate so dry it supports little vegetation → arid land receives less than 250mm of precipitation a year.",
+  "p2": "The Sahara covers 9,200,000 km² → it lies 15 to 30° north of the Equator and covers most of northern Africa.",
+  "p3": "The difference in temperature within one day is the diurnal range; a climate graph shows temperature as a line and precipitation as bars.",
+  "hints": [
+   "Arid",
+   "Location",
+   "Climate graph"
+  ],
+  "s": [
+   "A desert is land or climate so dry it supports little vegetation → arid land receives less than 250mm of precipitation a year.",
+   "The Sahara covers 9,200,000 km² → it lies 15 to 30° north of the Equator and covers most of northern Africa.",
+   "The difference in temperature within one day is the diurnal range; a climate graph shows temperature as a line and precipitation as bars."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "arid",
+    "alt": [],
+    "d": [
+     "humid",
+     "tropical",
+     "temperate"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Sahara",
+    "alt": [],
+    "d": [
+     "Sahel",
+     "Hassi Messaoud",
+     "Port El Aaiun"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "diurnal range",
+    "alt": [],
+    "d": [
+     "annual range",
+     "temperature gradient",
+     "precipitation total"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 36,
+  "paper": "p1",
+  "unit": "Unit 4 – Hot Deserts",
+  "front": "How do plants adapt to hot deserts?",
+  "p1": "Xerophytes have physical adaptations, e.g. the saguaro cactus → shallow roots 4 to 6 inches deep catch rare rain, the fleshy stem stores water, thin spines replace leaves → less transpiration.",
+  "p2": "The mesquite tree has tap roots as long as 24 metres → they reach the water table; small, waxy leaves cut water loss and leaves are dropped in droughts.",
+  "p3": "Ephemerals have behavioural adaptations, e.g. the ocotillo → dormant in dry periods, new leaves after rain, waxy stem coating seals in moisture, up to five cycles a year.",
+  "hints": [
+   "Xerophytes",
+   "Tap roots",
+   "Ephemerals"
+  ],
+  "s": [
+   "Xerophytes have physical adaptations, e.g. the saguaro cactus → shallow roots 4 to 6 inches deep catch rare rain, the fleshy stem stores water, thin spines replace leaves → less transpiration.",
+   "The mesquite tree has tap roots as long as 24 metres → they reach the water table; small, waxy leaves cut water loss and leaves are dropped in droughts.",
+   "Ephemerals have behavioural adaptations, e.g. the ocotillo → dormant in dry periods, new leaves after rain, waxy stem coating seals in moisture, up to five cycles a year."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "xerophytes",
+    "alt": [],
+    "d": [
+     "ephemerals",
+     "nocturnal",
+     "drip tips"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "tap roots",
+    "alt": [],
+    "d": [
+     "fleshy stems",
+     "waxy coatings",
+     "thin spines"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "ephemerals",
+    "alt": [],
+    "d": [
+     "xerophytes",
+     "nocturnal",
+     "epiphytes"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 37,
+  "paper": "p1",
+  "unit": "Unit 4 – Hot Deserts",
+  "front": "How do animals adapt to hot deserts?",
+  "p1": "Fennec fox → large ears dissipate excess body heat, kidneys restrict water loss, sandy colour reflects the Sun's heat, thick fur on the soles protects against hot sand.",
+  "p2": "Leopard gecko → strictly nocturnal, sleeping by day to limit heat exposure; transparent eyelids protect against sandstorms; solid, crystallised faeces limit water loss.",
+  "p3": "Gila monster → up to 98% of its life underground in burrows to avoid extreme heat, eating only 5 to 6 times a year; African elephant → huge ears with surface blood vessels cool its blood.",
+  "hints": [
+   "Fennec fox",
+   "Nocturnal",
+   "Burrows"
+  ],
+  "s": [
+   "Fennec fox → large ears dissipate excess body heat, kidneys restrict water loss, sandy colour reflects the Sun's heat, thick fur on the soles protects against hot sand.",
+   "Leopard gecko → strictly nocturnal, sleeping by day to limit heat exposure; transparent eyelids protect against sandstorms; solid, crystallised faeces limit water loss.",
+   "Gila monster → up to 98% of its life underground in burrows to avoid extreme heat, eating only 5 to 6 times a year; African elephant → huge ears with surface blood vessels cool its blood."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "large ears",
+    "alt": [],
+    "d": [
+     "long tails",
+     "wide feet",
+     "a thin coat"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "nocturnal",
+    "alt": [],
+    "d": [
+     "diurnal",
+     "ephemeral",
+     "xerophyte"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "burrows",
+    "alt": [],
+    "d": [
+     "oases",
+     "aquifers",
+     "dunes"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 38,
+  "paper": "p1",
+  "unit": "Unit 4 – Hot Deserts",
+  "front": "How is energy developed in the Sahara?",
+  "p1": "Oil was found at Hassi Messaoud in 1956 → now one of North Africa's biggest oilfields, employing 40,000 local people, with Shell and BP.",
+  "p2": "Challenges → deep in the Sahara, miles from roads, nearest oasis over 40 miles away; overcome by pumping water from aquifers and building a runway.",
+  "p3": "Noor Ouarzazate in Morocco is a solar complex of about 580 MW → 8,500 construction jobs but only 234 permanent by 2022; mirrors cleaned with piped water.",
+  "hints": [
+   "Oil",
+   "Challenges",
+   "Solar"
+  ],
+  "s": [
+   "Oil was found at Hassi Messaoud in 1956 → now one of North Africa's biggest oilfields, employing 40,000 local people, with Shell and BP.",
+   "Challenges → deep in the Sahara, miles from roads, nearest oasis over 40 miles away; overcome by pumping water from aquifers and building a runway.",
+   "Noor Ouarzazate in Morocco is a solar complex of about 580 MW → 8,500 construction jobs but only 234 permanent by 2022; mirrors cleaned with piped water."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Hassi Messaoud",
+    "alt": [],
+    "d": [
+     "Noor Ouarzazate",
+     "Bou Craa",
+     "Port El Aaiun"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "aquifers",
+    "alt": [],
+    "d": [
+     "reservoirs",
+     "desalination plants",
+     "pipelines"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "solar",
+    "alt": [],
+    "d": [
+     "wind",
+     "geothermal",
+     "hydroelectric"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 39,
+  "paper": "p1",
+  "unit": "Unit 4 – Hot Deserts",
+  "front": "How do mining and tourism help Morocco?",
+  "p1": "Morocco is the world's leading exporter of phosphate, holding 75% of global reserves; mining gives about 10% of GDP; it is vital in synthetic fertiliser.",
+  "p2": "Mining challenges → toxic risks to workers' health and the environment; mining is very water intensive → the company OCP builds desalination plants to supply fresh water.",
+  "p3": "Tourism employs 2.5 million of Morocco's 35 million people, about 7% of GDP; challenge → only three gateways into the Sahara from Marrakech, each a road journey of several hours.",
+  "hints": [
+   "Phosphate",
+   "Water",
+   "Gateways"
+  ],
+  "s": [
+   "Morocco is the world's leading exporter of phosphate, holding 75% of global reserves; mining gives about 10% of GDP; it is vital in synthetic fertiliser.",
+   "Mining challenges → toxic risks to workers' health and the environment; mining is very water intensive → the company OCP builds desalination plants to supply fresh water.",
+   "Tourism employs 2.5 million of Morocco's 35 million people, about 7% of GDP; challenge → only three gateways into the Sahara from Marrakech, each a road journey of several hours."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "phosphate",
+    "alt": [],
+    "d": [
+     "copper",
+     "salt",
+     "cement"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "desalination",
+    "alt": [],
+    "d": [
+     "irrigation",
+     "afforestation",
+     "recycling"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "gateways",
+    "alt": [],
+    "d": [
+     "oases",
+     "airports",
+     "borders"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 40,
+  "paper": "p1",
+  "unit": "Unit 4 – Hot Deserts",
+  "front": "What is desertification?",
+  "p1": "Desertification is the process by which fertile land turns into non-productive desert → it can have natural causes but is also a result of human activity.",
+  "p2": "The Sahel lies on the fringe of a hot desert → a rainfall index shows whether rainfall is above or below the long-term average.",
+  "p3": "Deforestation is cutting down trees; erosion is rock or soil worn away and removed by wind, water or ice; infertile soil has no nutrients.",
+  "hints": [
+   "Fertile",
+   "Sahel",
+   "Erosion"
+  ],
+  "s": [
+   "Desertification is the process by which fertile land turns into non-productive desert → it can have natural causes but is also a result of human activity.",
+   "The Sahel lies on the fringe of a hot desert → a rainfall index shows whether rainfall is above or below the long-term average.",
+   "Deforestation is cutting down trees; erosion is rock or soil worn away and removed by wind, water or ice; infertile soil has no nutrients."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "fertile",
+    "alt": [],
+    "d": [
+     "arid",
+     "saline",
+     "rocky"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Sahel",
+    "alt": [],
+    "d": [
+     "Sahara",
+     "Morocco",
+     "Algeria"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "erosion",
+    "alt": [],
+    "d": [
+     "weathering",
+     "deposition",
+     "transpiration"
+    ]
+   }
+  ],
+  "review": [
+   "H1"
+  ]
+ },
+ {
+  "no": 41,
+  "paper": "p1",
+  "unit": "Unit 4 – Hot Deserts",
+  "front": "How can desertification be managed?",
+  "p1": "Appropriate technology is cheap to make, easy to use and mend, and often takes advantage of local conditions such as a sunny climate.",
+  "p2": "Afforestation, planting trees, stops soil erosion, holds water and adds nutrients from leaf litter; the African Union's Great Green Wall, launched 2007, is 8,000 km long across 11 countries.",
+  "p3": "Stone lines 25 to 30 cm high along contours trap rainwater and nutrients; the idea spread from Burkina Faso to Mali and Niger, and it is cheap and quickly learned.",
+  "hints": [
+   "Appropriate technology",
+   "Trees",
+   "Stone lines"
+  ],
+  "s": [
+   "Appropriate technology is cheap to make, easy to use and mend, and often takes advantage of local conditions such as a sunny climate.",
+   "Afforestation, planting trees, stops soil erosion, holds water and adds nutrients from leaf litter; the African Union's Great Green Wall, launched 2007, is 8,000 km long across 11 countries.",
+   "Stone lines 25 to 30 cm high along contours trap rainwater and nutrients; the idea spread from Burkina Faso to Mali and Niger, and it is cheap and quickly learned."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "appropriate technology",
+    "alt": [],
+    "d": [
+     "green energy",
+     "wilderness",
+     "desalination"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "afforestation",
+    "alt": [],
+    "d": [
+     "deforestation",
+     "desalination",
+     "urbanisation"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "stone lines",
+    "alt": [],
+    "d": [
+     "tap roots",
+     "solar cookers",
+     "crop rotation"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 42,
+  "paper": "p1",
+  "unit": "Unit 4 – Hot Deserts",
+  "front": "Which other strategies reduce desertification?",
+  "p1": "Solar cookers use free solar energy so women need not collect firewood → less deforestation; they are cheap and simple, but food cooks slowly and must be left outside.",
+  "p2": "Crop rotation → farmers are taught about nutrients and soil exhaustion; legumes such as peas and beans are nitrogen fixers that boost soil fertility.",
+  "p3": "Crop rotation is cheap but relies on a robust education system or NGOs; skills can be passed to other villages and to the farmers' children.",
+  "hints": [
+   "Firewood",
+   "Nitrogen",
+   "NGOs"
+  ],
+  "s": [
+   "Solar cookers use free solar energy so women need not collect firewood → less deforestation; they are cheap and simple, but food cooks slowly and must be left outside.",
+   "Crop rotation → farmers are taught about nutrients and soil exhaustion; legumes such as peas and beans are nitrogen fixers that boost soil fertility.",
+   "Crop rotation is cheap but relies on a robust education system or NGOs; skills can be passed to other villages and to the farmers' children."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "solar cookers",
+    "alt": [],
+    "d": [
+     "stone lines",
+     "afforestation",
+     "wind turbines"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "legumes",
+    "alt": [],
+    "d": [
+     "cereals",
+     "acacia",
+     "mesquite"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "education",
+    "alt": [],
+    "d": [
+     "transport",
+     "irrigation",
+     "electricity"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 43,
+  "paper": "p2",
+  "unit": "Unit 5 – Development (Nigeria)",
+  "front": "What is development?",
+  "p1": "Development is progress in a country's quality of life and standard of living; the latter is money and material wealth, mostly measurable, e.g. GDP per capita, wages and electricity access.",
+  "p2": "Quality of life is how good life feels and how satisfied people are, including health, safety, a clean environment and freedom; it is more subjective and harder to measure.",
+  "p3": "The World Bank sorts countries by GNI per capita into low, lower-middle, upper-middle and high income; NEE is not a World Bank category but describes middle income countries developing quickly.",
+  "hints": [
+   "Standard of living",
+   "Quality of life",
+   "World Bank"
+  ],
+  "s": [
+   "Development is progress in a country's quality of life and standard of living; the latter is money and material wealth, mostly measurable, e.g. GDP per capita, wages and electricity access.",
+   "Quality of life is how good life feels and how satisfied people are, including health, safety, a clean environment and freedom; it is more subjective and harder to measure.",
+   "The World Bank sorts countries by GNI per capita into low, lower-middle, upper-middle and high income; NEE is not a World Bank category but describes middle income countries developing quickly."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "standard of living",
+    "alt": [],
+    "d": [
+     "life expectancy",
+     "literacy rate",
+     "urban growth"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "subjective",
+    "alt": [],
+    "d": [
+     "measurable",
+     "relative",
+     "regional"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "GNI per capita",
+    "alt": [],
+    "d": [
+     "GDP per capita",
+     "infant mortality",
+     "literacy rate"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 44,
+  "paper": "p2",
+  "unit": "Unit 5 – Development (Nigeria)",
+  "front": "How is development measured?",
+  "p1": "Economic indicators measure an economy, e.g. GNI per capita (Nigeria about $2,160, UK about $46,000+); social indicators measure wider quality of life; composite indicators combine several.",
+  "p2": "The Human Development Index is a composite of life expectancy, education and GNI per capita, scored 0 to 1 → Nigeria about 0.54, UK about 0.93.",
+  "p3": "Nigeria against the UK → infant mortality about 72 against 3.6 per 1,000; life expectancy about 53 to 55 against 81 years; literacy about 62% against 99%.",
+  "hints": [
+   "Indicators",
+   "HDI",
+   "Nigeria v UK"
+  ],
+  "s": [
+   "Economic indicators measure an economy, e.g. GNI per capita (Nigeria about $2,160, UK about $46,000+); social indicators measure wider quality of life; composite indicators combine several.",
+   "The Human Development Index is a composite of life expectancy, education and GNI per capita, scored 0 to 1 → Nigeria about 0.54, UK about 0.93.",
+   "Nigeria against the UK → infant mortality about 72 against 3.6 per 1,000; life expectancy about 53 to 55 against 81 years; literacy about 62% against 99%."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "composite",
+    "alt": [],
+    "d": [
+     "relative",
+     "regional",
+     "national"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Human Development Index",
+    "alt": [],
+    "d": [
+     "Gross National Income",
+     "Demographic Transition Model",
+     "Infant Mortality Rate"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "infant mortality",
+    "alt": [],
+    "d": [
+     "fertility rate",
+     "birth rate",
+     "death rate"
+    ]
+   }
+  ],
+  "review": [
+   "D1"
+  ]
+ },
+ {
+  "no": 45,
+  "paper": "p2",
+  "unit": "Unit 5 – Development (Nigeria)",
+  "front": "What is the demographic transition model?",
+  "p1": "The demographic transition model shows how a population changes as a country develops; stage 1 has very high, fluctuating birth and death rates, so natural increase is very low.",
+  "p2": "Stage 2 → death rate falls rapidly as healthcare, hygiene and living standards improve while birth rate stays high → population explosion; Nigeria's wide-based pyramid is a stage 2 shape.",
+  "p3": "Stage 3 → birth rate falls rapidly as contraception becomes more available and more women work; stage 4 has low rates, with growth mainly from immigration; the UK is stage 4/5.",
+  "hints": [
+   "Stage 1",
+   "Stage 2",
+   "Stage 3"
+  ],
+  "s": [
+   "The demographic transition model shows how a population changes as a country develops; stage 1 has very high, fluctuating birth and death rates, so natural increase is very low.",
+   "Stage 2 → death rate falls rapidly as healthcare, hygiene and living standards improve while birth rate stays high → population explosion; Nigeria's wide-based pyramid is a stage 2 shape.",
+   "Stage 3 → birth rate falls rapidly as contraception becomes more available and more women work; stage 4 has low rates, with growth mainly from immigration; the UK is stage 4/5."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "natural increase",
+    "alt": [],
+    "d": [
+     "urban growth",
+     "net migration",
+     "life expectancy"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "population explosion",
+    "alt": [],
+    "d": [
+     "population decline",
+     "urban growth",
+     "natural decrease"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "contraception",
+    "alt": [],
+    "d": [
+     "healthcare",
+     "education",
+     "vaccination"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 46,
+  "paper": "p2",
+  "unit": "Unit 5 – Development (Nigeria)",
+  "front": "Where is Nigeria?",
+  "p1": "Nigeria is in West Africa on the Gulf of Guinea, bordering Benin, Niger, Chad and Cameroon; it covers about 924,000 km², nearly four times the size of the UK.",
+  "p2": "Abuja was purpose-built in the centre and became capital in 1991 → seen as neutral ground between the main ethnic groups; it replaced Lagos, still the biggest city.",
+  "p3": "About 218 million people → the most populous country in Africa; more than 250 ethnic groups speak around 500 languages, with English official; Hausa, Yoruba and Igbo are the largest.",
+  "hints": [
+   "Location",
+   "Capital",
+   "Population"
+  ],
+  "s": [
+   "Nigeria is in West Africa on the Gulf of Guinea, bordering Benin, Niger, Chad and Cameroon; it covers about 924,000 km², nearly four times the size of the UK.",
+   "Abuja was purpose-built in the centre and became capital in 1991 → seen as neutral ground between the main ethnic groups; it replaced Lagos, still the biggest city.",
+   "About 218 million people → the most populous country in Africa; more than 250 ethnic groups speak around 500 languages, with English official; Hausa, Yoruba and Igbo are the largest."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Gulf of Guinea",
+    "alt": [],
+    "d": [
+     "Gulf of Aden",
+     "Bay of Bengal",
+     "Persian Gulf"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Abuja",
+    "alt": [],
+    "d": [
+     "Kano",
+     "Sokoto",
+     "Yobe"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "ethnic groups",
+    "alt": [],
+    "d": [
+     "religious groups",
+     "language families",
+     "regional states"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 47,
+  "paper": "p2",
+  "unit": "Unit 5 – Development (Nigeria)",
+  "front": "Why is Nigeria important?",
+  "p1": "Culture: Nollywood is the second largest film industry in the world, Afrobeats has global audiences, and Wole Soyinka won the Nobel Prize in Literature in 1986.",
+  "p2": "Economy: once seen as Africa's largest, now third on the IMF's 2026 outlook; 70% work in agriculture; supplies 2.7% of the world's oil, the 12th largest producer.",
+  "p3": "International: member of OPEC since 1971, founding member of ECOWAS in 1975, and the 5th largest contributor to UN peacekeeping.",
+  "hints": [
+   "Culture",
+   "Economy",
+   "Influence"
+  ],
+  "s": [
+   "Culture: Nollywood is the second largest film industry in the world, Afrobeats has global audiences, and Wole Soyinka won the Nobel Prize in Literature in 1986.",
+   "Economy: once seen as Africa's largest, now third on the IMF's 2026 outlook; 70% work in agriculture; supplies 2.7% of the world's oil, the 12th largest producer.",
+   "International: member of OPEC since 1971, founding member of ECOWAS in 1975, and the 5th largest contributor to UN peacekeeping."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Nollywood",
+    "alt": [],
+    "d": [
+     "Bollywood",
+     "Hollywood",
+     "Pinewood"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "agriculture",
+    "alt": [],
+    "d": [
+     "manufacturing",
+     "tourism",
+     "mining"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "OPEC",
+    "alt": [],
+    "d": [
+     "NATO",
+     "UNESCO",
+     "UNICEF"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 48,
+  "paper": "p2",
+  "unit": "Unit 5 – Development (Nigeria)",
+  "front": "How did history shape Nigeria's development?",
+  "p1": "Britain ruled Nigeria from the mid-19th century until independence in 1960 → palm oil, peanuts and cocoa were extracted as raw materials, with no factories or education developed.",
+  "p2": "It became a gate keeper state → the only way to gain wealth and power was to control the 'gate', such as the port; borders drawn by Europeans ignored ethnic, religious and cultural differences.",
+  "p3": "Civil war lasted from 1967 to 1970, then dictatorships followed, with no stable democracy until 1999; the north suffers drought and desertification.",
+  "hints": [
+   "1960",
+   "Gate keeper",
+   "Instability"
+  ],
+  "s": [
+   "Britain ruled Nigeria from the mid-19th century until independence in 1960 → palm oil, peanuts and cocoa were extracted as raw materials, with no factories or education developed.",
+   "It became a gate keeper state → the only way to gain wealth and power was to control the 'gate', such as the port; borders drawn by Europeans ignored ethnic, religious and cultural differences.",
+   "Civil war lasted from 1967 to 1970, then dictatorships followed, with no stable democracy until 1999; the north suffers drought and desertification."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "raw materials",
+    "alt": [],
+    "d": [
+     "manufactured goods",
+     "luxury goods",
+     "finished products"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "gate keeper state",
+    "alt": [],
+    "d": [
+     "welfare state",
+     "federal republic",
+     "one-party state"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "dictatorships",
+    "alt": [],
+    "d": [
+     "colonies",
+     "monarchies",
+     "coalitions"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 49,
+  "paper": "p2",
+  "unit": "Unit 5 – Development (Nigeria)",
+  "front": "How does the development gap lead to migration?",
+  "p1": "The gap in standard of living and wealth between richer and poorer countries drives migration; push factors include low wages or conflict, pull factors include jobs.",
+  "p2": "In Kano and Sokoto over 70% live on under $1.90 a day; maternal mortality is about 917 per 100,000 against 512 nationally; the north has 0.24 doctors per 1,000, the south 1.3.",
+  "p3": "About 10 million move to cities like Lagos each year; 1.3 million Nigerians have migrated abroad; remittances of about $23 billion in 2021 help families but can deepen inequality.",
+  "hints": [
+   "Gap",
+   "Regions",
+   "Remittances"
+  ],
+  "s": [
+   "The gap in standard of living and wealth between richer and poorer countries drives migration; push factors include low wages or conflict, pull factors include jobs.",
+   "In Kano and Sokoto over 70% live on under $1.90 a day; maternal mortality is about 917 per 100,000 against 512 nationally; the north has 0.24 doctors per 1,000, the south 1.3.",
+   "About 10 million move to cities like Lagos each year; 1.3 million Nigerians have migrated abroad; remittances of about $23 billion in 2021 help families but can deepen inequality."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "push factors",
+    "alt": [],
+    "d": [
+     "demographic transition",
+     "remittances",
+     "brain drain"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "maternal mortality",
+    "alt": [],
+    "d": [
+     "infant mortality",
+     "life expectancy",
+     "literacy rate"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "remittances",
+    "alt": [],
+    "d": [
+     "aid",
+     "tariffs",
+     "exports"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 50,
+  "paper": "p2",
+  "unit": "Unit 5 – Development (Nigeria)",
+  "front": "How can manufacturing and tourism help Nigeria?",
+  "p1": "Nigeria's employment is about 34% primary, 18% secondary and 48% tertiary; the Clark-Fisher model shows how jobs change in a predictable order as a country develops.",
+  "p2": "Tourism contributed about 4.5% of GDP in 2019 and employs 2.4 million; Lagos is the largest centre, with the Lekki beaches, and Badagry is linked to the Atlantic slave trade.",
+  "p3": "Positive multiplier effect → spending creates jobs → more money in the local economy → better roads, airports and power; costs include economic leakage, seasonal low-paid jobs and litter.",
+  "hints": [
+   "Jobs",
+   "Tourism",
+   "Multiplier"
+  ],
+  "s": [
+   "Nigeria's employment is about 34% primary, 18% secondary and 48% tertiary; the Clark-Fisher model shows how jobs change in a predictable order as a country develops.",
+   "Tourism contributed about 4.5% of GDP in 2019 and employs 2.4 million; Lagos is the largest centre, with the Lekki beaches, and Badagry is linked to the Atlantic slave trade.",
+   "Positive multiplier effect → spending creates jobs → more money in the local economy → better roads, airports and power; costs include economic leakage, seasonal low-paid jobs and litter."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Clark-Fisher model",
+    "alt": [],
+    "d": [
+     "demographic transition model",
+     "Human Development Index",
+     "hydrological cycle"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Lagos",
+    "alt": [],
+    "d": [
+     "Abuja",
+     "Kano",
+     "Sokoto"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "economic leakage",
+    "alt": [],
+    "d": [
+     "brain drain",
+     "remittances",
+     "urban growth"
+    ]
+   }
+  ],
+  "review": [
+   "D3"
+  ]
+ },
+ {
+  "no": 51,
+  "paper": "p2",
+  "unit": "Unit 5 – Development (Nigeria)",
+  "front": "How else can aid and trade close the development gap?",
+  "p1": "Official Development Assistance (ODA) passes from one government to another on a large scale; aid direct between governments is bilateral, aid through the World Bank is multilateral.",
+  "p2": "Nigeria gets about 4% of Africa's aid; the World Bank gave $495 million for water management, including the Farin Ruwa dam; this aid is a loan, repaid with interest → debt.",
+  "p3": "Problems → about $40 million is lost to corruption each year; up to 90% of ODA can be a loan; about $30 billion flows into Africa yearly but more flows out.",
+  "hints": [
+   "ODA",
+   "Nigeria",
+   "Problems"
+  ],
+  "s": [
+   "Official Development Assistance (ODA) passes from one government to another on a large scale; aid direct between governments is bilateral, aid through the World Bank is multilateral.",
+   "Nigeria gets about 4% of Africa's aid; the World Bank gave $495 million for water management, including the Farin Ruwa dam; this aid is a loan, repaid with interest → debt.",
+   "Problems → about $40 million is lost to corruption each year; up to 90% of ODA can be a loan; about $30 billion flows into Africa yearly but more flows out."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "World Bank",
+    "alt": [],
+    "d": [
+     "IMF",
+     "United Nations",
+     "OPEC"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "loan",
+    "alt": [],
+    "d": [
+     "grant",
+     "gift",
+     "donation"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "corruption",
+    "alt": [],
+    "d": [
+     "inflation",
+     "drought",
+     "conflict"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 52,
+  "paper": "p2",
+  "unit": "Unit 5 – Development (Nigeria)",
+  "front": "What other strategies can close the development gap?",
+  "p1": "Simple, low-cost technology that suits local skills, e.g. hand pumps, is intermediate technology; it is cheap and locally controlled but small scale.",
+  "p2": "Farmers get a fair, guaranteed price plus money for their community and better working conditions under Fairtrade; products cost more.",
+  "p3": "Debt relief cancels or reduces money owed, freeing money for health and education, but often has conditions; microfinance gives very small loans to people refused by banks, empowering women, but interest can be high.",
+  "hints": [
+   "Technology",
+   "Fairtrade",
+   "Debt"
+  ],
+  "s": [
+   "Simple, low-cost technology that suits local skills, e.g. hand pumps, is intermediate technology; it is cheap and locally controlled but small scale.",
+   "Farmers get a fair, guaranteed price plus money for their community and better working conditions under Fairtrade; products cost more.",
+   "Debt relief cancels or reduces money owed, freeing money for health and education, but often has conditions; microfinance gives very small loans to people refused by banks, empowering women, but interest can be high."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "intermediate technology",
+    "alt": [],
+    "d": [
+     "green energy",
+     "mass production",
+     "debt relief"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Fairtrade",
+    "alt": [],
+    "d": [
+     "microfinance",
+     "debt relief",
+     "aid"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "debt relief",
+    "alt": [],
+    "d": [
+     "Fairtrade",
+     "aid",
+     "tourism"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 53,
+  "paper": "p2",
+  "unit": "Unit 5 – Development (Nigeria)",
+  "front": "How do TNCs affect Nigeria?",
+  "p1": "The Niger Delta is the centre of Nigeria's oil industry → about 50 oil fields and 5,000 km of pipelines; oil gives about 90% of export income; Shell, Exxon, Chevron and Eni operate there.",
+  "p2": "Positives → Shell employs over 4,500 directly and 20,000 indirectly, creating a multiplier effect; TNCs pay tax for schools and roads and bring new technology.",
+  "p3": "Negatives → economic leakage as profits return to HICs; insecure jobs; about 240,000 barrels spilt a year, up to 25 years to clean.",
+  "hints": [
+   "Oil",
+   "Positives",
+   "Negatives"
+  ],
+  "s": [
+   "The Niger Delta is the centre of Nigeria's oil industry → about 50 oil fields and 5,000 km of pipelines; oil gives about 90% of export income; Shell, Exxon, Chevron and Eni operate there.",
+   "Positives → Shell employs over 4,500 directly and 20,000 indirectly, creating a multiplier effect; TNCs pay tax for schools and roads and bring new technology.",
+   "Negatives → economic leakage as profits return to HICs; insecure jobs; about 240,000 barrels spilt a year, up to 25 years to clean."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Niger Delta",
+    "alt": [],
+    "d": [
+     "Lake Chad",
+     "Gulf of Guinea",
+     "Lekki coast"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "multiplier effect",
+    "alt": [],
+    "d": [
+     "economic leakage",
+     "brain drain",
+     "demographic transition"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "economic leakage",
+    "alt": [],
+    "d": [
+     "multiplier effect",
+     "brain drain",
+     "urban growth"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 54,
+  "paper": "p1",
+  "unit": "Unit 7 – Climate Change",
+  "front": "What is the evidence for climate change?",
+  "p1": "Short term → temperatures up about 1°C since the late 19th century; ice sheets shrinking, glaciers retreating; sea level up 20 cm in a century, the rate nearly double in the last two decades.",
+  "p2": "Long term → ice cores from Antarctica and Greenland reach 3 km deep; the oldest go back 800,000 years (Antarctica); trapped air bubbles show past carbon dioxide and methane.",
+  "p3": "Ocean-floor sediment cores hold microorganisms that record past ocean temperature; direct carbon dioxide measurements go back only to the 1950s.",
+  "hints": [
+   "Short term",
+   "Ice cores",
+   "Sediment"
+  ],
+  "s": [
+   "Short term → temperatures up about 1°C since the late 19th century; ice sheets shrinking, glaciers retreating; sea level up 20 cm in a century, the rate nearly double in the last two decades.",
+   "Long term → ice cores from Antarctica and Greenland reach 3 km deep; the oldest go back 800,000 years (Antarctica); trapped air bubbles show past carbon dioxide and methane.",
+   "Ocean-floor sediment cores hold microorganisms that record past ocean temperature; direct carbon dioxide measurements go back only to the 1950s."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "sea level",
+    "alt": [],
+    "d": [
+     "air pressure",
+     "ozone",
+     "rainfall"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "ice cores",
+    "alt": [],
+    "d": [
+     "sediment cores",
+     "tree rings",
+     "pollen records"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "sediment cores",
+    "alt": [],
+    "d": [
+     "ice cores",
+     "tree rings",
+     "thermometers"
+    ]
+   }
+  ],
+  "review": [
+   "C1"
+  ]
+ },
+ {
+  "no": 55,
+  "paper": "p1",
+  "unit": "Unit 7 – Climate Change",
+  "front": "What causes climate change?",
+  "p1": "Natural factors → orbital changes, volcanic activity and solar output; the natural greenhouse effect helps sustain life on Earth.",
+  "p2": "Human factors → burning fossil fuels releases carbon dioxide, a greenhouse gas → more heat trapped, the enhanced greenhouse effect.",
+  "p3": "Livestock farming produces methane, which traps heat more effectively than carbon dioxide; deforestation removes carbon sinks, forests that absorb more carbon than they release.",
+  "hints": [
+   "Natural",
+   "Fossil fuels",
+   "Agriculture"
+  ],
+  "s": [
+   "Natural factors → orbital changes, volcanic activity and solar output; the natural greenhouse effect helps sustain life on Earth.",
+   "Human factors → burning fossil fuels releases carbon dioxide, a greenhouse gas → more heat trapped, the enhanced greenhouse effect.",
+   "Livestock farming produces methane, which traps heat more effectively than carbon dioxide; deforestation removes carbon sinks, forests that absorb more carbon than they release."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "volcanic activity",
+    "alt": [],
+    "d": [
+     "tectonic uplift",
+     "ocean currents",
+     "wind patterns"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "carbon dioxide",
+    "alt": [],
+    "d": [
+     "oxygen",
+     "nitrogen",
+     "hydrogen"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "methane",
+    "alt": [],
+    "d": [
+     "ozone",
+     "sulphur dioxide",
+     "nitrogen"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 56,
+  "paper": "p1",
+  "unit": "Unit 7 – Climate Change",
+  "front": "Who is responsible for climate change?",
+  "p1": "Just 100 companies are the source of more than 70% of greenhouse gas emissions since 1988 → 25 of them account for more than half of global industrial emissions.",
+  "p2": "ExxonMobil, Shell, BP and Chevron are among the highest emitting investor-owned companies; extraction at the 1988 to 2017 rate → temperatures on course to rise 4°C by 2100.",
+  "p3": "A carbon sink is a natural environment such as oceans or forests that absorbs more carbon than it releases, so lowering carbon dioxide in the atmosphere.",
+  "hints": [
+   "Companies",
+   "Emitters",
+   "Sinks"
+  ],
+  "s": [
+   "Just 100 companies are the source of more than 70% of greenhouse gas emissions since 1988 → 25 of them account for more than half of global industrial emissions.",
+   "ExxonMobil, Shell, BP and Chevron are among the highest emitting investor-owned companies; extraction at the 1988 to 2017 rate → temperatures on course to rise 4°C by 2100.",
+   "A carbon sink is a natural environment such as oceans or forests that absorbs more carbon than it releases, so lowering carbon dioxide in the atmosphere."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "100 companies",
+    "alt": [],
+    "d": [
+     "10 countries",
+     "50 countries",
+     "1,000 companies"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "BP",
+    "alt": [],
+    "d": [
+     "Eni",
+     "Tata Group",
+     "Volkswagen"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "carbon sink",
+    "alt": [],
+    "d": [
+     "carbon footprint",
+     "carbon capture",
+     "carbon tax"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 57,
+  "paper": "p1",
+  "unit": "Unit 7 – Climate Change",
+  "front": "What are the effects of climate change?",
+  "p1": "Temperatures are about 1.2°C above pre-industrial levels → glaciers and ice caps melt and sea levels rise → flooding of low-lying places such as the Maldives and parts of Bangladesh.",
+  "p2": "Rainfall changes → crop failures and food shortages in parts of Africa and South Asia; Himalayan glacial melt threatens water for millions on the Ganges; droughts in California.",
+  "p3": "Polar bears lose sea ice; coral bleaching hits the Great Barrier Reef as coral expels algae; Amazon wildfires release stored carbon → a feedback loop.",
+  "hints": [
+   "Sea level",
+   "Water",
+   "Wildlife"
+  ],
+  "s": [
+   "Temperatures are about 1.2°C above pre-industrial levels → glaciers and ice caps melt and sea levels rise → flooding of low-lying places such as the Maldives and parts of Bangladesh.",
+   "Rainfall changes → crop failures and food shortages in parts of Africa and South Asia; Himalayan glacial melt threatens water for millions on the Ganges; droughts in California.",
+   "Polar bears lose sea ice; coral bleaching hits the Great Barrier Reef as coral expels algae; Amazon wildfires release stored carbon → a feedback loop."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "sea levels",
+    "alt": [],
+    "d": [
+     "air pressure",
+     "ozone levels",
+     "wind speeds"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "glacial melt",
+    "alt": [],
+    "d": [
+     "monsoon rains",
+     "river dredging",
+     "deforestation"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "coral bleaching",
+    "alt": [],
+    "d": [
+     "algal bloom",
+     "reef growth",
+     "tidal surge"
+    ]
+   }
+  ],
+  "review": [
+   "C1"
+  ]
+ },
+ {
+  "no": 58,
+  "paper": "p1",
+  "unit": "Unit 7 – Climate Change",
+  "front": "How can we mitigate climate change?",
+  "p1": "Mitigation reduces greenhouse gas emissions → alternative energy such as solar, wind and hydroelectric cuts fossil fuel use; trees absorb carbon dioxide as natural carbon sinks, but non-native species can disrupt ecosystems.",
+  "p2": "CCS captures carbon dioxide from industry and stores it underground; it is still being developed and costly but could cut emissions from cement and steel.",
+  "p3": "The Paris Agreement, adopted by nearly every country, aims to keep warming well below 2°C and to aim for 1.5°C; the challenge is that nations follow through on their commitments.",
+  "hints": [
+   "Alternative energy",
+   "CCS",
+   "Agreements"
+  ],
+  "s": [
+   "Mitigation reduces greenhouse gas emissions → alternative energy such as solar, wind and hydroelectric cuts fossil fuel use; trees absorb carbon dioxide as natural carbon sinks, but non-native species can disrupt ecosystems.",
+   "CCS captures carbon dioxide from industry and stores it underground; it is still being developed and costly but could cut emissions from cement and steel.",
+   "The Paris Agreement, adopted by nearly every country, aims to keep warming well below 2°C and to aim for 1.5°C; the challenge is that nations follow through on their commitments."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "alternative energy",
+    "alt": [],
+    "d": [
+     "fracking",
+     "coal mining",
+     "deforestation"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "underground",
+    "alt": [],
+    "d": [
+     "at sea",
+     "in forests",
+     "in the atmosphere"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Paris Agreement",
+    "alt": [],
+    "d": [
+     "Kyoto Protocol",
+     "Montreal Protocol",
+     "Geneva Convention"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 59,
+  "paper": "p1",
+  "unit": "Unit 7 – Climate Change",
+  "front": "How can we adapt to climate change?",
+  "p1": "Adaptation means changing how we live to suit the new environment; in farming this means changing to more resilient crop varieties and adjusting planting schedules.",
+  "p2": "Managing water supply → rainwater harvesting, drip irrigation and sustainable groundwater management help communities use water efficiently in droughts.",
+  "p3": "Reducing risk from rising sea levels → sea walls and flood barriers, plus restoring wetlands that absorb excess water.",
+  "hints": [
+   "Farming",
+   "Water",
+   "Sea level"
+  ],
+  "s": [
+   "Adaptation means changing how we live to suit the new environment; in farming this means changing to more resilient crop varieties and adjusting planting schedules.",
+   "Managing water supply → rainwater harvesting, drip irrigation and sustainable groundwater management help communities use water efficiently in droughts.",
+   "Reducing risk from rising sea levels → sea walls and flood barriers, plus restoring wetlands that absorb excess water."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "crop varieties",
+    "alt": [],
+    "d": [
+     "field boundaries",
+     "fertiliser brands",
+     "farm subsidies"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "rainwater harvesting",
+    "alt": [],
+    "d": [
+     "desalination",
+     "water transfer",
+     "dam building"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "wetlands",
+    "alt": [],
+    "d": [
+     "sand dunes",
+     "salt flats",
+     "rainforests"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 60,
+  "paper": "p1",
+  "unit": "Unit 8 – Rivers",
+  "front": "How does a river erode and transport?",
+  "p1": "Water forced into cracks in the bank weakens the rock until it breaks away, which is hydraulic action; rocks carried by the river rub against the bed and bank, wearing them away, which is abrasion.",
+  "p2": "Rocks carried by the river smash together and break into smaller, smoother, rounder pebbles, which is attrition.",
+  "p3": "Solution dissolves minerals; suspension carries fine silt; saltation bounces pebbles along the bed; traction rolls boulders as bedload; material is deposited when the water loses energy.",
+  "hints": [
+   "Erosion",
+   "Attrition",
+   "Transport"
+  ],
+  "s": [
+   "Water forced into cracks in the bank weakens the rock until it breaks away, which is hydraulic action; rocks carried by the river rub against the bed and bank, wearing them away, which is abrasion.",
+   "Rocks carried by the river smash together and break into smaller, smoother, rounder pebbles, which is attrition.",
+   "Solution dissolves minerals; suspension carries fine silt; saltation bounces pebbles along the bed; traction rolls boulders as bedload; material is deposited when the water loses energy."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "abrasion",
+    "alt": [],
+    "d": [
+     "attrition",
+     "transportation",
+     "deposition"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "attrition",
+    "alt": [],
+    "d": [
+     "abrasion",
+     "hydraulic action",
+     "deposition"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "deposited",
+    "alt": [],
+    "d": [
+     "eroded",
+     "weathered",
+     "dissolved"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 61,
+  "paper": "p1",
+  "unit": "Unit 8 – Rivers",
+  "front": "How do upper course landforms form?",
+  "p1": "Upland streams have low discharge → up to 95% of energy overcomes friction and the rest erodes vertically; steep, unsupported sides are attacked by freeze-thaw weathering → a V-shaped valley.",
+  "p2": "The river winds around more resistant rock and cuts into weaker rock, leaving interlocking spurs.",
+  "p3": "A waterfall forms by differential erosion → hard rock over soft; in the plunge pool hydraulic action and abrasion undercut the soft rock, the overhang collapses and a gorge forms as the waterfall retreats.",
+  "hints": [
+   "V-shaped valley",
+   "Spurs",
+   "Waterfall"
+  ],
+  "s": [
+   "Upland streams have low discharge → up to 95% of energy overcomes friction and the rest erodes vertically; steep, unsupported sides are attacked by freeze-thaw weathering → a V-shaped valley.",
+   "The river winds around more resistant rock and cuts into weaker rock, leaving interlocking spurs.",
+   "A waterfall forms by differential erosion → hard rock over soft; in the plunge pool hydraulic action and abrasion undercut the soft rock, the overhang collapses and a gorge forms as the waterfall retreats."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "freeze-thaw weathering",
+    "alt": [],
+    "d": [
+     "biological weathering",
+     "solution",
+     "attrition"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "interlocking spurs",
+    "alt": [],
+    "d": [
+     "meanders",
+     "oxbow lakes",
+     "levees"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "differential erosion",
+    "alt": [],
+    "d": [
+     "vertical erosion",
+     "lateral erosion",
+     "freeze-thaw"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 62,
+  "paper": "p1",
+  "unit": "Unit 8 – Rivers",
+  "front": "How do middle and lower course landforms form?",
+  "p1": "At a meander the outside bank is undercut by lateral erosion where the current is faster, forming a river cliff; sand and shingle are deposited on the slower inside bend.",
+  "p2": "In low flow, bed load is deposited and raises the river bed, increasing flood risk; in a flood the heaviest sediment drops closest to the river.",
+  "p3": "Raised banks formed by repeated flooding are natural levees; the floodplain is low-lying ground next to a river, formed mainly of river sediments and subject to flooding.",
+  "hints": [
+   "Meander",
+   "Deposition",
+   "Levees"
+  ],
+  "s": [
+   "At a meander the outside bank is undercut by lateral erosion where the current is faster, forming a river cliff; sand and shingle are deposited on the slower inside bend.",
+   "In low flow, bed load is deposited and raises the river bed, increasing flood risk; in a flood the heaviest sediment drops closest to the river.",
+   "Raised banks formed by repeated flooding are natural levees; the floodplain is low-lying ground next to a river, formed mainly of river sediments and subject to flooding."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "lateral erosion",
+    "alt": [],
+    "d": [
+     "vertical erosion",
+     "freeze-thaw",
+     "attrition"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "bed load",
+    "alt": [],
+    "d": [
+     "suspended load",
+     "dissolved load",
+     "discharge"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "floodplain",
+    "alt": [],
+    "d": [
+     "estuary",
+     "plunge pool",
+     "interlocking spur"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 63,
+  "paper": "p1",
+  "unit": "Unit 8 – Rivers",
+  "front": "What causes river flooding?",
+  "p1": "A flood is when river level rises until it overflows its banks; physical causes include rainfall, geology, relief and vegetation.",
+  "p2": "Impermeable rock stops water soaking in → it reaches the river by surface runoff, the quickest route → shorter lag time → river more likely to overflow.",
+  "p3": "Human causes → urbanisation, building on floodplains, deforestation and arable farming; concrete and tarmac are impermeable, so rain runs rapidly into drains and rivers.",
+  "hints": [
+   "Physical",
+   "Runoff",
+   "Human"
+  ],
+  "s": [
+   "A flood is when river level rises until it overflows its banks; physical causes include rainfall, geology, relief and vegetation.",
+   "Impermeable rock stops water soaking in → it reaches the river by surface runoff, the quickest route → shorter lag time → river more likely to overflow.",
+   "Human causes → urbanisation, building on floodplains, deforestation and arable farming; concrete and tarmac are impermeable, so rain runs rapidly into drains and rivers."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "relief",
+    "alt": [],
+    "d": [
+     "tides",
+     "longitude",
+     "ocean currents"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "surface runoff",
+    "alt": [],
+    "d": [
+     "percolation",
+     "groundwater flow",
+     "throughflow"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "urbanisation",
+    "alt": [],
+    "d": [
+     "afforestation",
+     "rainfall",
+     "relief"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 64,
+  "paper": "p1",
+  "unit": "Unit 8 – Rivers",
+  "front": "How was Boscastle flooded and managed?",
+  "p1": "On 16 August 2004 heavy localised rain, 89mm in an hour, fell on saturated ground; a steep-sided impermeable valley funnelled water into the village and narrow river channels.",
+  "p2": "Hard engineering uses man-made structures to prevent or control natural processes; soft engineering works with natural processes to manage flood risk.",
+  "p3": "The Boscastle scheme cost £4.5 million and took four years → it reduced appeal in an Area of Outstanding Natural Beauty, cutting tourism; unstable trees were removed, destroying habitats.",
+  "hints": [
+   "Flood",
+   "Engineering",
+   "Scheme"
+  ],
+  "s": [
+   "On 16 August 2004 heavy localised rain, 89mm in an hour, fell on saturated ground; a steep-sided impermeable valley funnelled water into the village and narrow river channels.",
+   "Hard engineering uses man-made structures to prevent or control natural processes; soft engineering works with natural processes to manage flood risk.",
+   "The Boscastle scheme cost £4.5 million and took four years → it reduced appeal in an Area of Outstanding Natural Beauty, cutting tourism; unstable trees were removed, destroying habitats."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "saturated",
+    "alt": [],
+    "d": [
+     "frozen",
+     "permeable",
+     "dry"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "soft engineering",
+    "alt": [],
+    "d": [
+     "managed retreat",
+     "rock armour",
+     "do nothing"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "tourism",
+    "alt": [],
+    "d": [
+     "farming",
+     "fishing",
+     "manufacturing"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 65,
+  "paper": "p1",
+  "unit": "Unit 10 – Coasts",
+  "front": "What are the types of wave?",
+  "p1": "Low waves with a strong swash push sand and pebbles up the beach and build it up; these are constructive waves.",
+  "p2": "High waves with a strong backwash drag material back into the sea and erode beaches and cliffs; these are destructive waves.",
+  "p3": "Weathering is when rocks are broken up in situ, not removed; erosion removes material; both shape coastal landscapes.",
+  "hints": [
+   "Constructive",
+   "Destructive",
+   "Weathering"
+  ],
+  "s": [
+   "Low waves with a strong swash push sand and pebbles up the beach and build it up; these are constructive waves.",
+   "High waves with a strong backwash drag material back into the sea and erode beaches and cliffs; these are destructive waves.",
+   "Weathering is when rocks are broken up in situ, not removed; erosion removes material; both shape coastal landscapes."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "constructive",
+    "alt": [],
+    "d": [
+     "destructive",
+     "tidal",
+     "storm"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "backwash",
+    "alt": [],
+    "d": [
+     "swash",
+     "tide",
+     "current"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "in situ",
+    "alt": [],
+    "d": [
+     "in transit",
+     "by waves",
+     "by wind"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 66,
+  "paper": "p1",
+  "unit": "Unit 10 – Coasts",
+  "front": "How do headlands and bays form?",
+  "p1": "Bands of alternating rock running parallel to the coast form a concordant coastline; bands at right angles to the coast form a discordant coastline.",
+  "p2": "Swanage on the Jurassic Coast is a discordant coastline, so headlands and bays form there; less resistant rock erodes more rapidly than resistant rock.",
+  "p3": "A headland is a cliff that juts out into the sea, surrounded by water on three sides; a bay is a crescent-shaped indentation in the coastline.",
+  "hints": [
+   "Concordant",
+   "Discordant",
+   "Headland"
+  ],
+  "s": [
+   "Bands of alternating rock running parallel to the coast form a concordant coastline; bands at right angles to the coast form a discordant coastline.",
+   "Swanage on the Jurassic Coast is a discordant coastline, so headlands and bays form there; less resistant rock erodes more rapidly than resistant rock.",
+   "A headland is a cliff that juts out into the sea, surrounded by water on three sides; a bay is a crescent-shaped indentation in the coastline."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "right angles",
+    "alt": [],
+    "d": [
+     "30 degrees",
+     "45 degrees",
+     "60 degrees"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "discordant",
+    "alt": [],
+    "d": [
+     "concordant",
+     "convergent",
+     "divergent"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "three sides",
+    "alt": [],
+    "d": [
+     "two sides",
+     "four sides",
+     "one side"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 67,
+  "paper": "p1",
+  "unit": "Unit 10 – Coasts",
+  "front": "How do cliffs and stacks form?",
+  "p1": "A wave cut notch forms at the cliff base between high and low water mark, cut by hydraulic action; the cliff above is undercut and collapses, leaving a wave cut platform.",
+  "p2": "Waves erode a crack into a cave, then an arch; when the arch collapses a stack is left, which is eroded down to a low stump.",
+  "p3": "Vegetation on a cliff shows biological weathering is taking place: plant roots exert force and release weak acids that break up the rock.",
+  "hints": [
+   "Notch",
+   "Stack",
+   "Weathering"
+  ],
+  "s": [
+   "A wave cut notch forms at the cliff base between high and low water mark, cut by hydraulic action; the cliff above is undercut and collapses, leaving a wave cut platform.",
+   "Waves erode a crack into a cave, then an arch; when the arch collapses a stack is left, which is eroded down to a low stump.",
+   "Vegetation on a cliff shows biological weathering is taking place: plant roots exert force and release weak acids that break up the rock."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "hydraulic action",
+    "alt": [],
+    "d": [
+     "abrasion",
+     "attrition",
+     "freeze-thaw"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "stack",
+    "alt": [],
+    "d": [
+     "spit",
+     "bar",
+     "dune"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "biological weathering",
+    "alt": [],
+    "d": [
+     "freeze-thaw weathering",
+     "chemical weathering",
+     "mechanical weathering"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 68,
+  "paper": "p1",
+  "unit": "Unit 10 – Coasts",
+  "front": "How are depositional landforms formed?",
+  "p1": "Longshore drift moves material along the coast in a zigzag → the prevailing wind drives waves in at an angle; swash carries material up the beach, backwash returns it by gravity.",
+  "p2": "Landforms of deposition such as spits form where material moved by longshore drift is dropped; a bar is a spit that cuts off a bay.",
+  "p3": "Sand blown inland is stabilised by plants such as marram grass → embryo dunes by the sea, then yellow dunes, then older grey dunes; a slack is the dip between dunes.",
+  "hints": [
+   "Drift",
+   "Spit and bar",
+   "Dunes"
+  ],
+  "s": [
+   "Longshore drift moves material along the coast in a zigzag → the prevailing wind drives waves in at an angle; swash carries material up the beach, backwash returns it by gravity.",
+   "Landforms of deposition such as spits form where material moved by longshore drift is dropped; a bar is a spit that cuts off a bay.",
+   "Sand blown inland is stabilised by plants such as marram grass → embryo dunes by the sea, then yellow dunes, then older grey dunes; a slack is the dip between dunes."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "prevailing wind",
+    "alt": [],
+    "d": [
+     "tide",
+     "current",
+     "jet stream"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "bar",
+    "alt": [],
+    "d": [
+     "stack",
+     "stump",
+     "cave"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "marram grass",
+    "alt": [],
+    "d": [
+     "gorse",
+     "heather",
+     "nettles"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 69,
+  "paper": "p1",
+  "unit": "Unit 10 – Coasts",
+  "front": "How can coasts be managed?",
+  "p1": "Hard engineering uses large artificial structures to stop erosion or flooding; soft engineering is less intrusive and works with natural processes; the Holderness Coast loses about 2 metres a year.",
+  "p2": "Managed retreat, also called managed realignment, removes coastal protection so low-lying land is deliberately flooded; costs are low and salt marsh protects against storms, but land and property are lost.",
+  "p3": "Groynes stop longshore drift and keep the beach in place; hard defences can cause conflict further along the coast where sediment supply is interrupted.",
+  "hints": [
+   "Hard and soft",
+   "Retreat",
+   "Groynes"
+  ],
+  "s": [
+   "Hard engineering uses large artificial structures to stop erosion or flooding; soft engineering is less intrusive and works with natural processes; the Holderness Coast loses about 2 metres a year.",
+   "Managed retreat, also called managed realignment, removes coastal protection so low-lying land is deliberately flooded; costs are low and salt marsh protects against storms, but land and property are lost.",
+   "Groynes stop longshore drift and keep the beach in place; hard defences can cause conflict further along the coast where sediment supply is interrupted."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "soft engineering",
+    "alt": [],
+    "d": [
+     "managed retreat",
+     "rock armour",
+     "do nothing"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "managed retreat",
+    "alt": [],
+    "d": [
+     "beach replenishment",
+     "do nothing",
+     "rock armour"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "groynes",
+    "alt": [],
+    "d": [
+     "sea walls",
+     "rock armour",
+     "geotextile matting"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 70,
+  "paper": "p1",
+  "unit": "Unit 10 – Coasts",
+  "front": "Why does Walton on the Naze need managing?",
+  "p1": "Walton on the Naze is the Paper 1 case study and Paper 3 fieldwork site; permeable red crag over impermeable London clay slumps, and destructive waves attack the soft cliffs.",
+  "p2": "The Essex coast loses about 2 m a year, historically up to 16 m; the Naze Tower was 400 m from the coast and is now just a few metres away.",
+  "p3": "The cliffs are an SSSI rich in fossils up to 55 million years old; erosion also threatens properties such as Sunny Point road, where the average house costs £400,000.",
+  "hints": [
+   "Case study",
+   "Rate",
+   "Value"
+  ],
+  "s": [
+   "Walton on the Naze is the Paper 1 case study and Paper 3 fieldwork site; permeable red crag over impermeable London clay slumps, and destructive waves attack the soft cliffs.",
+   "The Essex coast loses about 2 m a year, historically up to 16 m; the Naze Tower was 400 m from the coast and is now just a few metres away.",
+   "The cliffs are an SSSI rich in fossils up to 55 million years old; erosion also threatens properties such as Sunny Point road, where the average house costs £400,000."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "London clay",
+    "alt": [],
+    "d": [
+     "chalk",
+     "shale",
+     "granite"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Naze Tower",
+    "alt": [],
+    "d": [
+     "Crag Walk",
+     "Sunny Point",
+     "Harwich Harbour"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "SSSI",
+    "alt": [],
+    "d": [
+     "AONB",
+     "UNESCO",
+     "national park"
+    ]
+   }
+  ],
+  "review": [
+   "K3"
+  ]
+ },
+ {
+  "no": 71,
+  "paper": "p1",
+  "unit": "Unit 10 – Coasts",
+  "front": "How is Walton on the Naze managed?",
+  "p1": "In 1977 a seawall, breakwaters and groynes protected properties in the south; groynes stop longshore drift, but many are now old, rotten and buried by sand.",
+  "p2": "In the north the replenished beach was mostly gone by 2003; the cliff was then regraded and planted, a soft strategy that binds the soil.",
+  "p3": "In 1998 rock armour at the base of the cliff cut loss from 4 m to 2 m a year; hard defences have increased erosion further along the coast, where sediment supply is interrupted.",
+  "hints": [
+   "Hard",
+   "Soft",
+   "Evaluation"
+  ],
+  "s": [
+   "In 1977 a seawall, breakwaters and groynes protected properties in the south; groynes stop longshore drift, but many are now old, rotten and buried by sand.",
+   "In the north the replenished beach was mostly gone by 2003; the cliff was then regraded and planted, a soft strategy that binds the soil.",
+   "In 1998 rock armour at the base of the cliff cut loss from 4 m to 2 m a year; hard defences have increased erosion further along the coast, where sediment supply is interrupted."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "breakwaters",
+    "alt": [],
+    "d": [
+     "spits",
+     "stacks",
+     "dunes"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "regraded",
+    "alt": [],
+    "d": [
+     "dredged",
+     "drained",
+     "rebuilt"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "rock armour",
+    "alt": [],
+    "d": [
+     "seawall",
+     "groynes",
+     "geotextile matting"
+    ]
+   }
+  ],
+  "review": [
+   "K2",
+   "K3"
+  ]
+ },
+ {
+  "no": 72,
+  "paper": "p1",
+  "unit": "Unit 12 – Tropical Storms",
+  "front": "What conditions do tropical storms need?",
+  "p1": "Sea surface temperature above 27°C to a depth of at least 60 m → intense evaporation saturates the air with water vapour.",
+  "p2": "Trade winds converge near the Equator and force warm, moist air to rise → pressure falls; the rising air cools and condenses into cumulonimbus clouds.",
+  "p3": "The Coriolis effect, caused by Earth's rotation, deflects incoming air and starts the spiral; storms do not form within about 5° of the Equator because the force is too weak.",
+  "hints": [
+   "Warm sea",
+   "Trade winds",
+   "Spin"
+  ],
+  "s": [
+   "Sea surface temperature above 27°C to a depth of at least 60 m → intense evaporation saturates the air with water vapour.",
+   "Trade winds converge near the Equator and force warm, moist air to rise → pressure falls; the rising air cools and condenses into cumulonimbus clouds.",
+   "The Coriolis effect, caused by Earth's rotation, deflects incoming air and starts the spiral; storms do not form within about 5° of the Equator because the force is too weak."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "evaporation",
+    "alt": [],
+    "d": [
+     "condensation",
+     "precipitation",
+     "transpiration"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "trade winds",
+    "alt": [],
+    "d": [
+     "westerlies",
+     "jet stream",
+     "monsoon"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Coriolis effect",
+    "alt": [],
+    "d": [
+     "greenhouse effect",
+     "multiplier effect",
+     "El Niño effect"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 73,
+  "paper": "p1",
+  "unit": "Unit 12 – Tropical Storms",
+  "front": "How does a tropical storm develop and die?",
+  "p1": "A tropical disturbance strengthens into a tropical depression, then a tropical storm, and eventually a tropical cyclone, hurricane or typhoon.",
+  "p2": "At the centre is a calm eye of descending air; around it the eyewall has the strongest winds and heaviest rain; spiral rainbands draw in warm, moist air.",
+  "p3": "Warm ocean water is the energy source; at landfall or over cooler water the energy supply is cut off → friction and loss of warm moisture weaken the storm.",
+  "hints": [
+   "Stages",
+   "Eye",
+   "Weakening"
+  ],
+  "s": [
+   "A tropical disturbance strengthens into a tropical depression, then a tropical storm, and eventually a tropical cyclone, hurricane or typhoon.",
+   "At the centre is a calm eye of descending air; around it the eyewall has the strongest winds and heaviest rain; spiral rainbands draw in warm, moist air.",
+   "Warm ocean water is the energy source; at landfall or over cooler water the energy supply is cut off → friction and loss of warm moisture weaken the storm."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "hurricane",
+    "alt": [],
+    "d": [
+     "tornado",
+     "monsoon",
+     "tsunami"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "eyewall",
+    "alt": [],
+    "d": [
+     "warm front",
+     "anticyclone",
+     "trough"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "landfall",
+    "alt": [],
+    "d": [
+     "storm surge",
+     "evacuation",
+     "convergence"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 74,
+  "paper": "p1",
+  "unit": "Unit 12 – Tropical Storms",
+  "front": "What happened in Typhoon Haiyan?",
+  "p1": "Haiyan struck the Philippines on 8 November 2013 as a category 5 storm; a storm surge and about 400 mm of rain flooded up to 1 km inland, destroying about 90% of Tacloban.",
+  "p2": "Primary effects → power cut, airport damaged, roads blocked; three-quarters of farmers and fishers lost income; oil from a barge contaminated 10 hectares of mangrove.",
+  "p3": "Secondary effects → contaminated water raised waterborne disease; shortages caused looting and eight deaths in a stampede for rice; rice prices rose 11.9% by 2014.",
+  "hints": [
+   "Event",
+   "Primary",
+   "Secondary"
+  ],
+  "s": [
+   "Haiyan struck the Philippines on 8 November 2013 as a category 5 storm; a storm surge and about 400 mm of rain flooded up to 1 km inland, destroying about 90% of Tacloban.",
+   "Primary effects → power cut, airport damaged, roads blocked; three-quarters of farmers and fishers lost income; oil from a barge contaminated 10 hectares of mangrove.",
+   "Secondary effects → contaminated water raised waterborne disease; shortages caused looting and eight deaths in a stampede for rice; rice prices rose 11.9% by 2014."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "storm surge",
+    "alt": [],
+    "d": [
+     "tsunami",
+     "landslide",
+     "drought"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "mangrove",
+    "alt": [],
+    "d": [
+     "rainforest",
+     "coral reef",
+     "savanna"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "waterborne disease",
+    "alt": [],
+    "d": [
+     "air pollution",
+     "soil erosion",
+     "coastal erosion"
+    ]
+   }
+  ],
+  "review": [
+   "S1",
+   "S2",
+   "S3",
+   "S4"
+  ]
+ },
+ {
+  "no": 75,
+  "paper": "p1",
+  "unit": "Unit 12 – Tropical Storms",
+  "front": "How did people respond to Typhoon Haiyan?",
+  "p1": "About 800,000 people were evacuated to stadiums in Tacloban, but some flooded; the Red Cross gave out rice and canned food; airport damage delayed aid by up to three days.",
+  "p2": "France, Belgium and Israel set up field hospitals; the USA used the carrier USS George Washington's helicopters for search and rescue and supplies.",
+  "p3": "Cash-for-work paid locals to clear debris; agencies replaced fishing boats; cyclone shelters and surge warnings were built; a no-build zone was often ineffective as people fish from the coast.",
+  "hints": [
+   "Immediate",
+   "Foreign aid",
+   "Long term"
+  ],
+  "s": [
+   "About 800,000 people were evacuated to stadiums in Tacloban, but some flooded; the Red Cross gave out rice and canned food; airport damage delayed aid by up to three days.",
+   "France, Belgium and Israel set up field hospitals; the USA used the carrier USS George Washington's helicopters for search and rescue and supplies.",
+   "Cash-for-work paid locals to clear debris; agencies replaced fishing boats; cyclone shelters and surge warnings were built; a no-build zone was often ineffective as people fish from the coast."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "Red Cross",
+    "alt": [],
+    "d": [
+     "Oxfam",
+     "UNICEF",
+     "Greenpeace"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "field hospitals",
+    "alt": [],
+    "d": [
+     "evacuation centres",
+     "refugee camps",
+     "food banks"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "cash-for-work",
+    "alt": [],
+    "d": [
+     "food aid",
+     "debt relief",
+     "microfinance"
+    ]
+   }
+  ],
+  "review": [
+   "S3"
+  ]
+ },
+ {
+  "no": 76,
+  "paper": "p1",
+  "unit": "Unit 12 – Tropical Storms",
+  "front": "How can the effects of tropical storms be reduced?",
+  "p1": "Prediction → satellite data let the US National Hurricane Centre predict Katrina's landfall 56 hours before it hit New Orleans; some countries lack accurate modelling data.",
+  "p2": "Preparation → emergency shelters on higher ground away from storm surges; information is broadcast on TV, radio and social media, or by loudspeakers in some developing countries.",
+  "p3": "Protection → key roads may be elevated in surge-prone areas, but it is hard to protect everywhere; low-lying, poor areas without defences are most at risk.",
+  "hints": [
+   "Prediction",
+   "Preparation",
+   "Protection"
+  ],
+  "s": [
+   "Prediction → satellite data let the US National Hurricane Centre predict Katrina's landfall 56 hours before it hit New Orleans; some countries lack accurate modelling data.",
+   "Preparation → emergency shelters on higher ground away from storm surges; information is broadcast on TV, radio and social media, or by loudspeakers in some developing countries.",
+   "Protection → key roads may be elevated in surge-prone areas, but it is hard to protect everywhere; low-lying, poor areas without defences are most at risk."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "satellite",
+    "alt": [],
+    "d": [
+     "seismograph",
+     "tide gauge",
+     "thermometer"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "higher ground",
+    "alt": [],
+    "d": [
+     "flood plains",
+     "river banks",
+     "low-lying coasts"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "elevated",
+    "alt": [],
+    "d": [
+     "widened",
+     "straightened",
+     "dredged"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 77,
+  "paper": "p1",
+  "unit": "Unit 12 – Tropical Storms",
+  "front": "Why do people live in hazard zones?",
+  "p1": "Living with danger is a way of life; family and friends give roots in a place; some people study hazards, e.g. vulcanologists and storm chasers.",
+  "p2": "Money can be made from tourism or farming; resources such as metals, minerals and precious stones are often found near volcanoes.",
+  "p3": "Some hazard areas are huge settlements, e.g. Mexico City in an earthquake zone, which cannot be moved; the bottom line is often poverty, with little choice about where to live.",
+  "hints": [
+   "Way of life",
+   "Money",
+   "Poverty"
+  ],
+  "s": [
+   "Living with danger is a way of life; family and friends give roots in a place; some people study hazards, e.g. vulcanologists and storm chasers.",
+   "Money can be made from tourism or farming; resources such as metals, minerals and precious stones are often found near volcanoes.",
+   "Some hazard areas are huge settlements, e.g. Mexico City in an earthquake zone, which cannot be moved; the bottom line is often poverty, with little choice about where to live."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "vulcanologists",
+    "alt": [],
+    "d": [
+     "economists",
+     "archaeologists",
+     "cartographers"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "tourism",
+    "alt": [],
+    "d": [
+     "mining",
+     "fishing",
+     "manufacturing"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "poverty",
+    "alt": [],
+    "d": [
+     "overcrowding",
+     "pollution",
+     "migration"
+    ]
+   }
+  ]
+ },
+ {
+  "no": 78,
+  "paper": "p1",
+  "unit": "Unit 12 – Tropical Storms",
+  "front": "What extreme weather affects the UK?",
+  "p1": "Storms begin as depressions, areas of low pressure, carried by the jet stream; Storm Darragh in December 2024 brought winds of about 96 mph in Devon and a rare red wind warning.",
+  "p2": "Storm Babet in October 2023 brought 150 to 200 mm of rain to eastern Scotland; the River South Esk overwhelmed defences at Brechin and seven people died.",
+  "p3": "Management is mostly preparation → the Met Office issues warnings and trees near power lines are maintained; flood walls, tree planting and floodplain planning reduce flood risk.",
+  "hints": [
+   "Storms",
+   "Flooding",
+   "Management"
+  ],
+  "s": [
+   "Storms begin as depressions, areas of low pressure, carried by the jet stream; Storm Darragh in December 2024 brought winds of about 96 mph in Devon and a rare red wind warning.",
+   "Storm Babet in October 2023 brought 150 to 200 mm of rain to eastern Scotland; the River South Esk overwhelmed defences at Brechin and seven people died.",
+   "Management is mostly preparation → the Met Office issues warnings and trees near power lines are maintained; flood walls, tree planting and floodplain planning reduce flood risk."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "depressions",
+    "alt": [],
+    "d": [
+     "anticyclones",
+     "monsoons",
+     "trade winds"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "River South Esk",
+    "alt": [],
+    "d": [
+     "River Severn",
+     "River Thames",
+     "River Valancy"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Met Office",
+    "alt": [],
+    "d": [
+     "Environment Agency",
+     "World Bank",
+     "National Hurricane Centre"
+    ]
+   }
+  ],
+  "review": [
+   "S5"
+  ]
+ },
+ {
+  "no": 79,
+  "paper": "p1",
+  "unit": "Unit 12 – Tropical Storms",
+  "front": "How do UK heat and cold extremes compare?",
+  "p1": "Heatwaves often occur when an anticyclone sits over Britain → sinking air, clear skies; on 19 July 2022 Coningsby in Lincolnshire reached 40.3°C, the UK record.",
+  "p2": "Droughts shrink rivers and reservoirs; water companies bring in hosepipe bans; days above 25°C rose 53% when 1991 to 2020 is compared with the previous 30 years.",
+  "p3": "A change of wind direction can bring Arctic or polar continental air; over 17,000 trains were cancelled in January 2014; cold spells are expected to decrease as Britain warms.",
+  "hints": [
+   "Heat",
+   "Drought",
+   "Cold"
+  ],
+  "s": [
+   "Heatwaves often occur when an anticyclone sits over Britain → sinking air, clear skies; on 19 July 2022 Coningsby in Lincolnshire reached 40.3°C, the UK record.",
+   "Droughts shrink rivers and reservoirs; water companies bring in hosepipe bans; days above 25°C rose 53% when 1991 to 2020 is compared with the previous 30 years.",
+   "A change of wind direction can bring Arctic or polar continental air; over 17,000 trains were cancelled in January 2014; cold spells are expected to decrease as Britain warms."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "anticyclone",
+    "alt": [],
+    "d": [
+     "depression",
+     "jet stream",
+     "front"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "hosepipe bans",
+    "alt": [],
+    "d": [
+     "flood barriers",
+     "gritting",
+     "sandbagging"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "decrease",
+    "alt": [],
+    "d": [
+     "increase",
+     "double",
+     "stay constant"
+    ]
+   }
+  ]
+ }
+]
