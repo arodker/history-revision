@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>if(localStorage.getItem('gcse_dark')=='1')document.documentElement.classList.add('dark');
+<script>if(localStorage.getItem('geo_dark')=='1')document.documentElement.classList.add('dark');
 /* ---------- Move progress between devices ---------- */
-function pmKeys() { const k = []; for (let i = 0; i < localStorage.length; i++) { const n = localStorage.key(i); if (n && (/^gcse_/.test(n) || n === 'bs_ok') && n !== 'gcse_tour_done' && n !== 'gcse_did' && n !== 'gcse_ping' && n !== 'gcse_loaded') k.push(n); } return k; }
+function pmKeys() { const k = []; for (let i = 0; i < localStorage.length; i++) { const n = localStorage.key(i); if (n && (/^geo_/.test(n) || n === 'geo_bs_ok') && n !== 'geo_tour_done' && n !== 'geo_did' && n !== 'geo_ping' && n !== 'geo_loaded') k.push(n); } return k; }
 function pmB64(bytes) { let s = ''; bytes.forEach(b => s += String.fromCharCode(b)); return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); }
 function pmUnb64(str) { const s = atob(str.replace(/-/g, '+').replace(/_/g, '/')); return Uint8Array.from(s, c => c.charCodeAt(0)); }
 async function pmMake() {
@@ -23,7 +23,7 @@ async function pmParse(code) {
   let bytes = pmUnb64(m[2]);
   if (m[1] === '1') bytes = new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer());
   const o = JSON.parse(new TextDecoder().decode(bytes));
-  Object.keys(o).forEach(k => { if (!(/^gcse_/.test(k) || k === 'bs_ok') || typeof o[k] !== 'string') throw new Error('bad'); });
+  Object.keys(o).forEach(k => { if (!(/^geo_/.test(k) || k === 'geo_bs_ok') || typeof o[k] !== 'string') throw new Error('bad'); });
   return o;
 }
 const SYNC_URL = 'https://script.google.com/macros/s/AKfycbxK8TeIKnstO8SC-PbPdasW5G-iw6mpsFoOfZhCqvftJ_iY_4m9TG9XNgoXtuIqts6S/exec';
@@ -102,8 +102,8 @@ async function pmDoLoad(long) {
   if (!Object.keys(o).length) { m.style.color = '#dc2626'; m.textContent = 'That code is empty.'; return; }
   pmKeys().forEach(k => localStorage.removeItem(k));
   Object.keys(o).forEach(k => localStorage.setItem(k, o[k]));
-  localStorage.setItem('gcse_tour_done', '1');
-  localStorage.setItem('gcse_loaded', '1');
+  localStorage.setItem('geo_tour_done', '1');
+  localStorage.setItem('geo_loaded', '1');
   location.reload();
 }
 async function pmCopy(id) {
@@ -137,37 +137,17 @@ document.addEventListener('click', e => { const w = document.getElementById('set
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { setMenuClose(); pmClose(); } });
 function loadNudge() {
   try {
-    if (localStorage.getItem('gcse_nudge') || xpLoad().total > 0 || !document.getElementById('s-pick').classList.contains('active')) return;
+    if (localStorage.getItem('geo_nudge') || xpLoad().total > 0 || !document.getElementById('s-pick').classList.contains('active')) return;
     const n = document.createElement('div'); n.id = 'load-nudge';
     n.style.cssText = 'position:fixed;top:64px;left:50%;transform:translateX(-50%);z-index:500;width:max-content;max-width:92vw;background:var(--card);border:1px solid var(--border2);border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.2);padding:.55rem .8rem;font-size:.85rem;display:flex;align-items:center;gap:.6rem';
-    n.innerHTML = '<span>Got progress on another device?</span><button onclick="localStorage.setItem(\'gcse_nudge\',\'1\');this.parentNode.remove();pmOpen(\'load\')" style="font-weight:700;background:none;border:none;color:var(--accent,#2563eb);cursor:pointer;white-space:nowrap">Load it</button><button aria-label="Dismiss" onclick="localStorage.setItem(\'gcse_nudge\',\'1\');this.parentNode.remove()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem">✕</button>';
+    n.innerHTML = '<span>Got progress on another device?</span><button onclick="localStorage.setItem(\'geo_nudge\',\'1\');this.parentNode.remove();pmOpen(\'load\')" style="font-weight:700;background:none;border:none;color:var(--accent,#2563eb);cursor:pointer;white-space:nowrap">Load it</button><button aria-label="Dismiss" onclick="localStorage.setItem(\'geo_nudge\',\'1\');this.parentNode.remove()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem">✕</button>';
     document.body.appendChild(n);
     setTimeout(() => { if (n.parentNode) n.remove(); }, 12000);
   } catch (e) {}
 }
 setTimeout(loadNudge, 2500);
-document.addEventListener('DOMContentLoaded', function () { try { if (!localStorage.getItem('gcse_gap_tried')) document.getElementById('gap-flag').style.display = 'flex'; } catch (e) {} });
-function gapNewClose(go) {
-  try { localStorage.setItem('gcse_gap_new', '1'); } catch (e) {}
-  const n = document.getElementById('gap-new'); if (n) n.remove();
-}
-function gapNewShow() {
-  try {
-    if (localStorage.getItem('gcse_gap_new') || !localStorage.getItem('gcse_tour_done') || !document.getElementById('s-pick').classList.contains('active') || document.getElementById('gap-new')) return;
-    const n = document.createElement('div'); n.id = 'gap-new';
-    n.style.cssText = 'position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:1rem';
-    n.innerHTML = '<div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;max-width:340px;width:100%;padding:1.3rem 1.2rem;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.35)">' +
-      '<div style="display:inline-block;background:#EEEDFE;color:#3C3489;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.15rem .6rem;border-radius:99px;margin-bottom:.6rem">NEW</div>' +
-      '<div style="font-size:1.15rem;font-weight:800;margin-bottom:.4rem">Try the new flashcards with gapfills</div>' +
-      '<div style="font-size:.88rem;opacity:.8;line-height:1.45;margin-bottom:1rem">Pick a paper, then choose <b>Fill the gaps</b>. Each card has three missing key words to choose. Get all three to earn the 🔗 Missing link badge.</div>' +
-      '<button onclick="gapNewClose()" style="font-weight:700;font-size:.95rem;padding:.6rem 1.4rem;border-radius:10px;border:none;background:#534AB7;color:#fff;cursor:pointer;font-family:inherit">Got it</button></div>';
-    n.addEventListener('click', e => { if (e.target === n) gapNewClose(); });
-    document.body.appendChild(n);
-  } catch (e) {}
-}
-setTimeout(gapNewShow, 1200);
 
-setTimeout(() => { try { if (localStorage.getItem('gcse_loaded')) { localStorage.removeItem('gcse_loaded'); bdgAward('portable'); } } catch (e) {} }, 1800);
+setTimeout(() => { try { if (localStorage.getItem('geo_loaded')) { localStorage.removeItem('geo_loaded'); bdgAward('portable'); } } catch (e) {} }, 1800);
 function usageStats() {
   const x = xpLoad(), t0 = new Date();
   let d14 = 0;
@@ -180,11 +160,11 @@ function usageStats() {
 function usagePing(force) {
   if (!SYNC_URL) return;
   try {
-    const last = +localStorage.getItem('gcse_ping') || 0;
+    const last = +localStorage.getItem('geo_ping') || 0;
     if (!force && Date.now() - last < 3 * 3600000) return;
-    let id = localStorage.getItem('gcse_did');
-    if (!id) { id = 'd-' + Math.random().toString(36).slice(2, 8) + Math.random().toString(36).slice(2, 6); localStorage.setItem('gcse_did', id); }
-    localStorage.setItem('gcse_ping', String(Date.now()));
+    let id = localStorage.getItem('geo_did');
+    if (!id) { id = 'd-' + Math.random().toString(36).slice(2, 8) + Math.random().toString(36).slice(2, 6); localStorage.setItem('geo_did', id); }
+    localStorage.setItem('geo_ping', String(Date.now()));
     syncPost({action: 'ping', id: id, stats: usageStats()}).catch(() => {});
   } catch (e) {}
 }
@@ -1104,7 +1084,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
   <div class="paper-lbl">Revise a unit:</div>
   <style>@keyframes gapglow{0%,100%{box-shadow:0 0 0 0 rgba(83,74,183,0)}50%{box-shadow:0 0 0 5px rgba(83,74,183,.3)}}#gap-flag{animation:gapglow 2s ease-in-out infinite}@media (prefers-reduced-motion:reduce){#gap-flag{animation:none}}</style>
-  <div id="gap-flag" hidden style="display:none !important;background:#EEEDFE;border-radius:10px;padding:.6rem .75rem;margin:.2rem auto .6rem;width:fit-content;max-width:88%;color:#3C3489;font-size:.84rem;line-height:1.4;gap:.5rem;text-align:center;justify-content:center;align-items:center"><span>🆕</span><span><b>Try this:</b> Flashcards now have a gapfill mode!</span></div>
   <div class="paper-grid">
     <div class="pgrp pgrp1">Paper 1 · Physical geography</div>
     <button class="paper-btn pb-p2b" onclick="openPaper('p2b')"><span class="fd-wheel-cell pbw" data-paper="p2b"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2b" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2b" cx="30" cy="30" r="24" fill="none" stroke="#1D9E75" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2b" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2b">0%</text></svg></span><span class="ppill pp1">Paper 1</span><span class="plabel">Unit 2</span>🌴 Tropical Rainforests</button>
@@ -1160,11 +1139,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   </div>
   <div id="hub-weak"></div>
   <div class="hub-fc" id="hub-fc"></div>
-  <div class="mode-grid" hidden style="display:none;grid-template-columns:1fr;gap:8px;margin:.7rem 0 .6rem">
-    <button class="mode-btn" onclick="enterMode('knowledge')" style="padding:.65rem .4rem;font-size:.78rem;border-radius:10px"><span class="icon" style="font-size:1.25rem;margin-bottom:.2rem">🧠</span>Revision Guide</button>
-    <button class="mode-btn" onclick="enterMode('dates')" hidden style="display:none;padding:.65rem .4rem;font-size:.78rem;border-radius:10px"><span class="icon" style="font-size:1.25rem;margin-bottom:.2rem">📅</span>Key Dates Quiz</button>
-    <button class="mode-btn" onclick="enterMode('exam')" hidden style="display:none;padding:.65rem .4rem;font-size:.78rem;border-radius:10px"><span class="icon" style="font-size:1.25rem;margin-bottom:.2rem">✏️</span>Exam Practice</button>
-  </div>
 </div>
 
 <!-- SCREEN 3: MODE CONTENT -->
@@ -1391,12 +1365,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
       <button class="rq-pill" id="rqp-u14" onclick="toggleRQPaper('u14')">🏭 UK Economic Change</button>
       <button class="rq-pill" id="rqp-u15" onclick="toggleRQPaper('u15')">🗺️ Human Fieldwork</button>
     </div>
-    <p class="rq-section-label">Maximum difficulty?</p>
-    <div class="rq-stars">
-      <button class="rq-star" id="rqs-1" onclick="setRQDiff(1)">⭐</button>
-      <button class="rq-star" id="rqs-2" onclick="setRQDiff(2)">⭐⭐</button>
-      <button class="rq-star" id="rqs-3" onclick="setRQDiff(3)">⭐⭐⭐</button>
-    </div>
     <p class="rq-section-label">Mode?</p>
     <div style="display:flex;gap:8px;margin-bottom:1rem">
       <button class="rq-star sel" id="rq-mode-grid" onclick="setRQMode('grid')" style="flex:1;border-radius:8px;padding:8px">All at once</button>
@@ -1405,7 +1373,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
     </div>
     <button class="btn-go" id="rq-go" style="background:var(--subtle);color:var(--muted);cursor:not-allowed" onclick="generateRQ()">🎯 Let's go</button>
     <p id="rq-counter" style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:-.75rem;margin-bottom:.5rem"></p>
-    <div id="rq-err" class="empty" style="display:none">Not enough questions match these filters. Try adding more papers or increasing difficulty.</div>
+    <div id="rq-err" class="empty" style="display:none">Not enough questions match these filters. Try adding more papers.</div>
     <button id="rq-resume-btn" class="btn-sm" onclick="resumeRQ()" style="width:100%;margin-top:.5rem;display:none">↩️ Resume unfinished quiz</button>
   </div>
   <!-- Grid mode output -->
@@ -1530,7 +1498,7 @@ function localDate(offsetDays) { const d = new Date(); if (offsetDays) d.setDate
 // ═══════════════════════════════════════════
 function toggleDark() {
   const isDark = document.documentElement.classList.toggle('dark');
-  localStorage.setItem('gcse_dark', isDark ? '1' : '0');
+  localStorage.setItem('geo_dark', isDark ? '1' : '0');
   try {
     var st = bsLoad(), d = new Date().toDateString();
     if (st.lsDay !== d) { st.lsDay = d; st.lsN = 0; }
@@ -1541,7 +1509,7 @@ function toggleDark() {
 }
 // Apply on load
 (function() {
-  if (localStorage.getItem('gcse_dark') === '1') {
+  if (localStorage.getItem('geo_dark') === '1') {
     document.documentElement.classList.add('dark');
   }
 })();
@@ -2032,14 +2000,12 @@ function jumpToCard() {
 }
 // ═══════════════════════════════════════════
 // RAPID FIRE DATA
-// difficulty: 'easy' | 'medium' | 'hard'
 // ═══════════════════════════════════════════
 let RQ = []; // loaded from data/rq-geo.json
 
 // ── Mixed Retrieval Quiz state ──
 let rqPapers = Object.fromEntries(SLOTS.map(k => [k, true]));
 let rqAutoOff = {};
-let rqDiff = 2; // single value: 1=easy only, 2=easy+medium, 3=all
 let rqMode = 'grid'; // 'grid' or 'one'
 let rqOnePool = [], rqOneIdx = 0, rqOneOK = 0, rqOneBad = 0, rqOneMissed = [], rqOneStreak = 0;
 let rqElPool = [], rqElIdx = 0, rqElOK = 0, rqElBad = 0, rqElStreak = 0, rqElTotal = 0;
@@ -2314,9 +2280,6 @@ function showRapidSetup() {
     if (rqPapers[p]) btn.classList.add('on-' + p);
     else btn.classList.remove('on-' + p);
   });
-  [1,2,3].forEach(i => {
-    document.getElementById('rqs-' + i).classList.toggle('sel', i === rqDiff);
-  });
   updateRQCounter();
 }
 
@@ -2343,18 +2306,9 @@ function toggleRQPaper(p) {
   updateRQCounter();
 }
 
-function setRQDiff(n) {
-  rqDiff = n;
-  [1,2,3].forEach(i => document.getElementById('rqs-' + i).classList.toggle('sel', i === n));
-  updateRQCounter();
-}
-
 function updateRQCounter() {
   const activePapers = Object.keys(rqPapers).filter(p => rqPapers[p]);
-  const allowed = ['easy'];
-  if (rqDiff >= 2) allowed.push('medium');
-  if (rqDiff >= 3) allowed.push('hard');
-  const count = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d) && inScope(q)).length;
+  const count = RQ.filter(q => activePapers.includes(q.paper) && inScope(q)).length;
   const counter = document.getElementById('rq-counter');
   if (counter) counter.textContent = count >= 10 ? count + ' questions available' : count > 0 ? count + ' questions (need at least 10)' : '';
   const goBtn = document.getElementById('rq-go');
@@ -2373,13 +2327,10 @@ function generateRQ() {
     document.getElementById('rq-err').textContent = 'Please select at least one paper.';
     return;
   }
-  const allowed = ['easy'];
-  if (rqDiff >= 2) allowed.push('medium');
-  if (rqDiff >= 3) allowed.push('hard');
-  let pool = RQ.filter(q => activePapers.includes(q.paper) && allowed.includes(q.d) && inScope(q));
+  let pool = RQ.filter(q => activePapers.includes(q.paper) && inScope(q));
   if (pool.length < 10) {
     document.getElementById('rq-err').style.display = 'block';
-    document.getElementById('rq-err').textContent = 'Not enough questions match these filters. Try adding more papers or increasing difficulty.';
+    document.getElementById('rq-err').textContent = 'Not enough questions match these filters. Try adding more papers.';
     return;
   }
   document.getElementById('rq-err').style.display = 'none';
@@ -2658,10 +2609,10 @@ let quizHistory = []; // [{item, wasCorrect}] — answered questions in order
 let quizViewIdx = 0; // which question is currently displayed (may be < quizIdx when reviewing)
 
 function getHardDates() {
-  return JSON.parse(localStorage.getItem('gcse_hard_dates_' + currentPaper) || '[]');
+  return JSON.parse(localStorage.getItem('geo_hard_dates_' + currentPaper) || '[]');
 }
 function saveHardDates(arr) {
-  localStorage.setItem('gcse_hard_dates_' + currentPaper, JSON.stringify(arr));
+  localStorage.setItem('geo_hard_dates_' + currentPaper, JSON.stringify(arr));
 }
 
 function applyDatesStartBtn() {
@@ -2977,7 +2928,7 @@ function showQuizEnd() {
   const total = quizPool.length;
   const pct = Math.round((quizOK / total) * 100);
   const celebrations_dates = [
-    'History is all about timing — and yours is excellent. 🏆',
+    'Top marks! Your recall is excellent. 🏆',
     'Top marks! Every date nailed. 🎯',
     'Outstanding! You clearly know your chronology. ⭐',
   ];
@@ -3016,10 +2967,10 @@ function showQuizEnd() {
       </div>
     </div>`;
 }
-let KC = []; // loaded from data/kc.json
-let EQ = []; // loaded from data/eq.json
+let KC = []; // loaded from data/kc-geo.json
+let EQ = []; // loaded from data/eq-geo.json
 
-let DATES = []; // loaded from data/dates.json
+let DATES = []; // loaded from data/dates-geo.json
 
 // ═══════════════════════════════════════════
 // LOAD EXTERNAL DATA
@@ -3027,11 +2978,11 @@ let DATES = []; // loaded from data/dates.json
 let FD = []; // loaded from data/flashcards-geo.json
 
 Promise.all([
-  fetch('data/eq.json').then(r => { if (!r.ok) throw new Error('eq.json: ' + r.status); return r.json(); }),
+  fetch('data/eq-geo.json').then(r => { if (!r.ok) throw new Error('eq-geo.json: ' + r.status); return r.json(); }),
   fetch('data/rq-geo.json').then(r => { if (!r.ok) throw new Error('rq-geo.json: ' + r.status); return r.json(); }),
-  fetch('data/dates.json').then(r => { if (!r.ok) throw new Error('dates.json: ' + r.status); return r.json(); }),
+  fetch('data/dates-geo.json').then(r => { if (!r.ok) throw new Error('dates-geo.json: ' + r.status); return r.json(); }),
   fetch('data/flashcards-geo.json').then(r => { if (!r.ok) throw new Error('flashcards-geo.json: ' + r.status); return r.json(); }),
-  fetch('data/kc.json').then(r => { if (!r.ok) throw new Error('kc.json: ' + r.status); return r.json(); }),
+  fetch('data/kc-geo.json').then(r => { if (!r.ok) throw new Error('kc-geo.json: ' + r.status); return r.json(); }),
 ]).then(([eq, rq, dates, fd, kc]) => {
   const SLOT = SLOT_OF_UNIT;
   const remap = a => a.map(it => { it.pn = it.paper; if (SLOT[it.unit]) it.paper = SLOT[it.unit]; return it; });
@@ -3057,7 +3008,7 @@ Promise.all([
   window._dataErr = String(err && err.message || err);
   try { hubRender(); } catch (e) {}
   const eOut = document.getElementById('e-out');
-  if (eOut) eOut.innerHTML = '<div class="empty">📌 Could not load data files. Make sure data/eq.json, rq.json, dates.json, flashcards.json and kc.json are in your repository.</div>';
+  if (eOut) eOut.innerHTML = '<div class="empty">📌 Could not load data files. Make sure data/eq-geo.json, rq.json, dates.json, flashcards.json and kc.json are in your repository.</div>';
 });
 
 // ═══════════════════════════════════════════
@@ -3065,12 +3016,12 @@ Promise.all([
 // ═══════════════════════════════════════════
 
 // localStorage keys
-const LS_MASTERED   = 'gcse_fd_mastered';    // {cardKey: true} — cards ever ticked ✅
-const LS_MISSED     = 'gcse_fd_missed';       // [cardKey, ...] — outstanding missed cards (cross-session)
-const LS_STREAK     = 'gcse_fd_streak';       // {date:'YYYY-MM-DD', count:N}
-const LS_SESSION    = 'gcse_fd_session';      // {date:'YYYY-MM-DD', got:{p1:N,...}, total:{p1:N,...}}
-const LS_HINTS      = 'gcse_fd_hints';         // boolean — remembered hint preference
-const LS_TARGET     = 'gcse_fd_target';        // daily flashcard target for the bowl
+const LS_MASTERED   = 'geo_fd_mastered';    // {cardKey: true} — cards ever ticked ✅
+const LS_MISSED     = 'geo_fd_missed';       // [cardKey, ...] — outstanding missed cards (cross-session)
+const LS_STREAK     = 'geo_fd_streak';       // {date:'YYYY-MM-DD', count:N}
+const LS_SESSION    = 'geo_fd_session';      // {date:'YYYY-MM-DD', got:{p1:N,...}, total:{p1:N,...}}
+const LS_HINTS      = 'geo_fd_hints';         // boolean — remembered hint preference
+const LS_TARGET     = 'geo_fd_target';        // daily flashcard target for the bowl
 
 // State
 let fdPinnedRun  = false;  // true while reviewing pinned cards
@@ -3081,7 +3032,7 @@ let fdGot        = 0;    // ✅ count this round
 let fdMissCount  = 0;    // ❌ count this round
 let fdCurrent    = null; // card currently shown
 let fdFlipped    = false;
-let fdHintsOn    = localStorage.getItem('gcse_fd_hints') !== '0'; // persists across cards within a session
+let fdHintsOn    = localStorage.getItem('geo_fd_hints') !== '0'; // persists across cards within a session
 let fdTotal      = 0;    // original deck size (for progress bar)
 let fdBusy = false;
 let fdBowlSeenTier = 0; // highest helpings tier already celebrated this page load
@@ -3097,7 +3048,7 @@ let ffI = 0, ffRes = [], ffOpts = [], ffLock = false, ffTok = 0;
 function ffEsc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function ffFillFor(card, p) { return (card.fill || []).find(f => f.p === p); }
 function ffUsable(card) {
-  return !!(card && Array.isArray(card.s) && card.s.length === 3 && Array.isArray(card.fill) && card.fill.length === 3 && card.fill.every(f => ffFillFor(card, 1) && f.gap && f.d && f.d.length >= 2));
+  return !!(card && Array.isArray(card.s) && card.s.length >= 1 && card.s.length <= 3 && Array.isArray(card.fill) && card.fill.length === card.s.length && card.fill.every(f => f.gap && f.d && f.d.length >= 2));
 }
 function ffNorm(x) {
   return String(x).normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase()
@@ -3149,7 +3100,7 @@ function ffRender() {
   tag.className = 'fd-tag ' + (tagClasses[cp] || '');
   tag.textContent = 'Paper ' + (fdCurrent.pn || '').replace('p','') + ' · ' + fdCurrent.unit;
   const isOut = fdGetOutstanding().includes(fdKey(fdCurrent));
-  document.getElementById('ff-q').textContent = (isOut ? '📌 ' : '') + fdCurrent.front;
+  document.getElementById('ff-q').textContent = (isOut ? '📌 ' : '') + (fdCurrent.k ? '🔑 ' : '') + fdCurrent.front;
   document.getElementById('ff-card').style.borderLeftColor = stripeColours[cp] || '#888';
   ffSyncSwitch(); ffDraw();
 }
@@ -3157,15 +3108,15 @@ function ffSyncSwitch() {
   document.querySelectorAll('#ff-switch button').forEach(b => b.classList.toggle('on', b.dataset.m === ffMode));
 }
 function ffSetMode(m) {
-  ffMode = m; try { localStorage.setItem('gcse_ff_mode', m); } catch(e) {}
+  ffMode = m; try { localStorage.setItem('geo_ff_mode', m); } catch(e) {}
   ffSyncSwitch();
-  if (fdMode === 'fill' && fdCurrent && ffI < 3 && !ffLock) ffDraw();
+  if (fdMode === 'fill' && fdCurrent && ffI < fdCurrent.s.length && !ffLock) ffDraw();
 }
 function ffDraw() {
-  document.getElementById('ff-sents').innerHTML = [0,1,2].slice(0, Math.min(ffI,2) + 1).map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
+  document.getElementById('ff-sents').innerHTML = fdCurrent.s.map((_, i) => i).slice(0, Math.min(ffI, fdCurrent.s.length - 1) + 1).map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
   document.getElementById('ff-after').innerHTML = '';
   const box = document.getElementById('ff-input');
-  if (ffI >= 3) { box.innerHTML = ''; return; }
+  if (ffI >= fdCurrent.s.length) { box.innerHTML = ''; return; }
   const f = ffFillFor(fdCurrent, ffI+1);
   if (ffMode === 'match') {
     ffOpts = [f.gap].concat(f.d.slice(0,3));
@@ -3200,7 +3151,7 @@ function ffResolve(ok, pick, canOverride) {
   const idx = ffI;
   // show the filled sentence for this gap straight away
   ffI = idx + 1;
-  document.getElementById('ff-sents').innerHTML = [0,1,2].slice(0, idx + 1).map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
+  document.getElementById('ff-sents').innerHTML = fdCurrent.s.map((_, i) => i).slice(0, idx + 1).map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
   ffI = idx;
   const after = document.getElementById('ff-after');
   if (ok) {
@@ -3218,17 +3169,17 @@ function ffOverride() {
   ffAdvance();
 }
 function ffAdvance() {
-  if (ffI > 2) return;
+  if (ffI >= fdCurrent.s.length) return;
   ffI++;
-  if (ffI < 3) { ffDraw(); return; }
+  if (ffI < fdCurrent.s.length) { ffDraw(); return; }
   ffFinish();
 }
 function ffFinish() {
-  const right = ffRes.filter(r => r.ok).length, all = right === 3, tok = ffTok;
+  const nPts = fdCurrent.s.length, right = ffRes.filter(r => r.ok).length, all = right === nPts, tok = ffTok;
   document.getElementById('ff-input').innerHTML = '';
   const after = document.getElementById('ff-after');
   if (all) {
-    after.innerHTML = '<div class="ff-msg ok">3 of 3 ✅ Mastered</div><button type="button" class="ff-next" onclick="fdAnswer(true)">Next card →</button>';
+    after.innerHTML = '<div class="ff-msg ok">' + nPts + ' of ' + nPts + ' ✅ Mastered</div><button type="button" class="ff-next" onclick="fdAnswer(true)">Next card →</button>';
     try { bdgAward('gapfill'); } catch (e) {}
   } else {
     after.innerHTML = '<button type="button" class="ff-next" onclick="fdAnswer(false)">Next card →</button>';
@@ -3504,7 +3455,7 @@ function fdNext() {
   const outstandingCheck = fdGetOutstanding();
   const isOutstandingCard = outstandingCheck.includes(fdKey(fdCurrent));
   document.getElementById('fd-question').textContent =
-    (isOutstandingCard ? '📌 ' : '') + fdCurrent.front;
+    (isOutstandingCard ? '📌 ' : '') + (fdCurrent.k ? '🔑 ' : '') + fdCurrent.front;
 
   const pts = document.getElementById('fd-points');
   const hints = fdCurrent.hints || [];
@@ -4197,7 +4148,7 @@ const PAPER_NAME = SLOT_SHORT;
 // COURSE SLIDER  (units in teaching order)
 // ═══════════════════════════════════════════
 const COURSE_ORDER = SLOTS;
-const LS_UPTO = 'gcse_course_pos';
+const LS_UPTO = 'geo_course_pos';
 const COURSE_FLAT = [];
 COURSE_ORDER.forEach(p => P[p].units.forEach(u => COURSE_FLAT.push({paper:p, unit:u})));
 const UNIT_IDX = {};
@@ -4263,9 +4214,9 @@ function hubRender2(p) {
   document.getElementById('hub-fc').style.borderLeftColor = col;
   document.getElementById('hub-fc').style.setProperty('--c', col);
   document.getElementById('hub-fc').innerHTML = '<h3>⚡ Flashcards</h3>' +
-    '<button class="hub-pill' + (fdHintsOn ? ' on' : '') + '" id="hub-hints" onclick="hubHints()">💡 Hints ' + (fdHintsOn ? 'on' : 'off') + '</button>' + allRow + rows +
+    '<button class="hub-pill' + (fdHintsOn ? ' on' : '') + '" id="hub-hints" onclick="hubHints()">💡 Hints ' + (fdHintsOn ? 'on' : 'off') + '</button>' + '<div class="sub" style="margin:.2rem 0 .7rem">' + allCards.filter(c => mast[fdKey(c)]).length + ' of ' + allCards.length + ' cards mastered</div>' +
     '<div class="hub-start-row"><button class="hub-start" style="background:' + col + '" onclick="hubGo(\'flip\')">📖 Flip and learn' + (hubSel.all ? '' : '<small>' + nSel + ' unit' + (nSel > 1 ? 's' : '') + '</small>') + '</button>' +
-    '<button class="hub-start" style="background:' + col + ';position:relative" onclick="hubGo(\'fill\')">' + (gapTried() ? '' : '<span class="gap-new-pill">NEW</span>') + '🧩 Fill the gaps' + (hubSel.all ? '' : '<small>' + nSel + ' unit' + (nSel > 1 ? 's' : '') + '</small>') + '</button></div>' +
+    '<button class="hub-start" style="background:' + col + ';position:relative" onclick="hubGo(\'fill\')">' + '🧩 Fill the gaps' + (hubSel.all ? '' : '<small>' + nSel + ' unit' + (nSel > 1 ? 's' : '') + '</small>') + '</button></div>' +
     '<div style="display:flex;gap:10px;flex-wrap:wrap">' + (pins ? '<button class="hub-link" onclick="goToPinnedReview()">📌 Review ' + pins + ' pinned (all papers)</button>' : '') + '<button class="hub-link" onclick="hubPrint()">🖨️ Print cards as PDF</button></div>';
 }
 let hubSel = {paper:'', all:true, set:[]};
@@ -4277,10 +4228,10 @@ function hubTog(k) {
   else hubSel.set.push(u);
   hubRender();
 }
-function gapTried() { try { return !!localStorage.getItem('gcse_gap_tried'); } catch (e) { return false; } }
+function gapTried() { try { return !!localStorage.getItem('geo_gap_tried'); } catch (e) { return false; } }
 function hubGo(mode) {
   if (mode) fdMode = mode;
-  if (mode === 'fill') { try { localStorage.setItem('gcse_gap_tried', '1'); } catch (e) {} }
+  if (mode === 'fill') { try { localStorage.setItem('geo_gap_tried', '1'); } catch (e) {} }
   enterMode('flashcard');
   const sel = document.getElementById('fd-unit');
   if (hubSel.all) sel.value = 'all';
@@ -4301,12 +4252,12 @@ function wheelsToggle(force) {
   t.style.display = open ? 'flex' : 'none';
   document.getElementById('wh-chev').textContent = open ? '▴' : '▾';
   document.getElementById('wh-toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
-  try { localStorage.setItem('gcse_wheels', open ? '1' : '0'); } catch (e) {}
+  try { localStorage.setItem('geo_wheels', open ? '1' : '0'); } catch (e) {}
 }
 if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
   window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 }
-wheelsToggle(localStorage.getItem('gcse_wheels') === '1');
+wheelsToggle(localStorage.getItem('geo_wheels') === '1');
 function unitBuilt(p) {
   if (!window._dataLoaded) return true;
   return [KC, RQ, FD, EQ, DATES].some(a => a.some(it => it.paper === p));
@@ -4408,7 +4359,7 @@ const XP_LEVELS = [
 ];
 // Change a number here to retune the game.
 const XP_RULE = {flash:10, date:5, rapid:5, wrong:0, repeat:2, runLen:5, runBonus:5, parent:20, cap:500};
-const LS_XP = 'gcse_xp';
+const LS_XP = 'geo_xp';
 let xpRun = 0, xpCapShown = false, xpPopTimer = null;
 
 function xpLoad() {
@@ -4830,9 +4781,7 @@ function pvBuild(n, excl) {
   const dts = shuffle(DATES.filter(d => ps.includes(d.paper) && inScope(d)).map(d =>
     ({kind:'date', paper:d.paper, q:'When did this happen: ' + d.event + '?', ans:d.date, key:d.paper + '|' + d.event, label:d.event, unit:d.unit})).filter(i => !excl[i.key]));
   let rqs = RQ.filter(q => ps.includes(q.paper) && inScope(q) && !excl['rq|' + q.q]);
-  const nFlash = 0, nDate = Math.round(n * 0.5), nRq = n - nDate; // parent view: no flashcards (too hard to mark for a non-specialist)
-  const easy = rqs.filter(q => q.d !== 'hard');
-  if (easy.length >= nRq) rqs = easy;
+  const nFlash = 0, nDate = dts.length ? Math.round(n * 0.5) : 0, nRq = n - nDate; // parent view: no flashcards (too hard to mark for a non-specialist)
   rqs = shuffle(rqs.map(q => ({kind:'rq', paper:q.paper, q:q.q, ans:q.a, key:'rq|' + q.q, label:q.q, unit:q.unit})));
   const pinned = shuffle(fcs.filter(c => out.includes(fdKey(c))));
   const fresh = shuffle(fcs.filter(c => !out.includes(fdKey(c)) && !mast[fdKey(c)]));
@@ -4947,7 +4896,7 @@ function pvEnd() {
 // ═══════════════════════════════════════════
 // ARCADE
 // ═══════════════════════════════════════════
-const LS_ARC = 'gcse_arcade_hs';
+const LS_ARC = 'geo_arcade_hs';
 const ARC = {sel:null, g:null, t:null, iv:null};
 const PAPER_EMO = SLOT_EMO;
 function arcStop() { clearTimeout(ARC.t); clearInterval(ARC.iv); ARC.iv = null; ARC.tm = null; ARC.g = null; xpFlushLater(); }
@@ -5280,7 +5229,7 @@ function stOver() {
     '<button class="arc-btn" onclick="stStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
 }
 // ----- Boss battle -----
-const BOSSES = [['Procrastination Gremlin','👹'], ['Cramming Zombie','🧟'], ['Highlighter Vampire','🧛'], ['Dreaded Date Dragon','🐉'], ['Chief Examiner','🧙'], ['Mr Chalk','👨‍🏫']];
+const BOSSES = [['Mudslide Golem','🗿'], ['Drought Scorpion','🦂'], ['Smog Shade','👻'], ['Magma Dragon','🐉'], ['Typhoon Kraken','🐙'], ['The Supervolcano','🌋']];
 const BOSS_HP = [6, 8, 10, 12, 15, 20], BOSS_SECS = 12, BOSS_HINTS = 3;
 function bossStart() {
   const pool = shuffle(arcRqPool());
@@ -5421,8 +5370,8 @@ function bsAliasExpand(out) {
   });
 }
 // Answers a student has marked "I was right" are remembered on this device
-function bsLearned() { try { return JSON.parse(localStorage.getItem('bs_ok') || '{}') || {}; } catch (e) { return {}; } }
-function bsLearn(typed, answer) { try { const L = bsLearned(); L[bsNorm(typed) + '|' + bsNorm(answer)] = 1; localStorage.setItem('bs_ok', JSON.stringify(L)); } catch (e) {} }
+function bsLearned() { try { return JSON.parse(localStorage.getItem('geo_bs_ok') || '{}') || {}; } catch (e) { return {}; } }
+function bsLearn(typed, answer) { try { const L = bsLearned(); L[bsNorm(typed) + '|' + bsNorm(answer)] = 1; localStorage.setItem('geo_bs_ok', JSON.stringify(L)); } catch (e) {} }
 function bsAlts(answer) {
   const out = [];
   String(answer).split(/\s+\/\s+|(?<!\d)\/|\/(?!\d)|;\s*/).map(x => x.trim()).forEach(part => {
@@ -5535,14 +5484,7 @@ function bossHint() {
   if (btn) btn.textContent = '💡 Hint (' + g.hints + ' left)';
 }
 function bossAsk() { const g = ARC.g; g.phase = 'ask'; g.typed = ''; g.late = false; arcTimerStart(BOSS_SECS, bossLate); bossRender(); }
-function bsJoke(typed, q) {
-  try {
-    if (!/Hungarians were killed/i.test(q.q || '')) return;
-    const s = String(typed).toLowerCase().replace(/,/g, '').trim();
-    const n = s.replace(/[^0-9]/g, '');
-    if (n === '2000' || n === '20000' || /^(2|20)\s*k$/.test(s) || /^(two|twenty) thousand$/.test(s)) bdgAward('hungary');
-  } catch (e) {}
-}
+function bsJoke() {}
 function bossResolve(late) {
   const g = ARC.g, q = bossQ(), el = document.getElementById('boss-in');
   g.typed = el ? el.value.trim() : '';
@@ -5588,33 +5530,14 @@ function bossDeath() {
   if (s) { s.classList.remove('arc-shake'); void s.offsetWidth; s.classList.add('arc-shake'); }
   clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g) { g.dying = false; bossAdvance(); } }, 2000);
 }
-function bossFinalIntro() {
-  const g = ARC.g, B = BOSSES[BOSSES.length - 1];
-  g.phase = 'intro';
-  arcFrame('<div class="bf"><div class="bf-warn">FINAL BOSS</div><div class="bf-em">' + B[1] + '</div></div>', '');
-  const blk = document.createElement('div');
-  blk.className = 'bf-black';
-  blk.innerHTML = '<div class="bf-warn">FINAL BOSS</div><div class="bf-em">' + B[1] + '</div><div class="bf-name">' + B[0] + '</div>';
-  document.body.appendChild(blk);
-  setTimeout(() => { blk.classList.add('bf-out'); setTimeout(() => blk.remove(), 450); }, 2500);
-  clearTimeout(ARC.t);
-  ARC.t = setTimeout(() => {
-    if (ARC.g !== g) return;
-    bossNext();
-    const em = document.getElementById('boss-em'), bb = document.querySelector('.boss-box');
-    if (em) em.classList.add('boss-enter');
-    if (bb) { const d = document.createElement('span'); d.className = 'boss-intro'; d.textContent = 'Fight!'; bb.appendChild(d); }
-  }, 2800);
-}
 function bossAdvance() {
   const g = ARC.g;
   if (g.lv >= BOSSES.length - 1) { bossWin(); return; }
   arcSetHS('boss', g.score);
-  if (g.lv + 1 >= BOSSES.length - 1) { bossFinalIntro(); return; }
   bossNext();
   const em = document.getElementById('boss-em'), bb = document.querySelector('.boss-box');
   if (em) em.classList.add('boss-enter');
-  if (bb) { const d = document.createElement('span'); d.className = 'boss-intro'; d.textContent = 'Next up: ' + BOSSES[g.lv % BOSSES.length][0] + (g.healed ? ' · +1 ❤️' : ''); bb.appendChild(d); }
+  if (bb) { const d = document.createElement('span'); d.className = 'boss-intro'; d.textContent = (g.lv >= BOSSES.length - 1 ? 'Final boss: ' : 'Next up: ') + BOSSES[g.lv % BOSSES.length][0] + (g.healed ? ' · +1 ❤️' : ''); bb.appendChild(d); }
 }
 function bossWin() {
   const g = ARC.g, B = BOSSES[g.lv % BOSSES.length];
@@ -5648,8 +5571,8 @@ function bossOver() {
 // ═══════════════════════════════════════════
 // BADGES
 // ═══════════════════════════════════════════
-const LS_BADGES = 'gcse_badges', LS_BSTAT = 'gcse_badge_stats';
-try { if (localStorage.getItem('gcse_badge_ver') !== '2') { localStorage.removeItem(LS_BADGES); localStorage.removeItem(LS_BSTAT); localStorage.setItem('gcse_badge_ver', '2'); } } catch (e) {}
+const LS_BADGES = 'geo_badges', LS_BSTAT = 'geo_badge_stats';
+try { if (localStorage.getItem('geo_badge_ver') !== '2') { localStorage.removeItem(LS_BADGES); localStorage.removeItem(LS_BSTAT); localStorage.setItem('geo_badge_ver', '2'); } } catch (e) {}
 // c = ring/fill colour. secret badges show only "?" until found.
 const BADGES = [
   ...UNITS.map(u => ({id:u.k, e:u.e, n:u.n + ' master', h:'Master every flashcard in Unit ' + u.i + ': ' + u.n, c:[u.bg, u.col]})),
@@ -5657,7 +5580,7 @@ const BADGES = [
   {id:'c100', e:'💯', n:'Ton up', h:'Answer 100 questions correctly', c:['#FAEEDA','#EF9F27']},
   {id:'c300', e:'🔱', n:'Pathfinder', h:'Answer 300 questions correctly', c:['#E6F1FB','#378ADD']},
   {id:'c500', e:'🎓', n:'Scholar', h:'Answer 600 questions correctly', c:['#EEEDFE','#7F77DD']},
-  {id:'c1066', e:'🏹', n:'Globetrotter', h:'Answer 1066 questions correctly', c:['#FCEBEB','#E24B4A']},
+  {id:'c1000', e:'🌍', n:'Globetrotter', h:'Answer 1000 questions correctly', c:['#FCEBEB','#E24B4A']},
   {id:'combo10', e:'⚡', n:'On fire', h:'Get 15 answers right in a row', c:['#FAEEDA','#EF9F27']},
   {id:'combo20', e:'🌋', n:'Unstoppable', h:'Get 30 answers right in a row', c:['#FCEBEB','#E24B4A']},
   {id:'revisit', e:'🔁', n:'Lesson learned', h:'Get 10 questions right that you got wrong before', c:['#E1F5EE','#1D9E75']},
@@ -5667,9 +5590,9 @@ const BADGES = [
   {id:'flawless', e:'💎', n:'Flawless', h:'Defeat the third boss or later without losing a heart', c:['#E6F1FB','#378ADD']},
   {id:'nine', e:'🐈', n:'Nine lives', h:'Defeat a boss on your last heart', c:['#FAECE7','#D85A30']},
   {id:'untouch', e:'🛡️', n:'Untouchable', h:'Defeat every boss in one run without losing a heart', c:['#E6F1FB','#378ADD']},
-  {id:'dragon', e:'🐉', n:'Dragon slayer', h:'Defeat the Dreaded Date Dragon', c:['#EAF3DE','#639922']},
-  {id:'wizard', e:'🧙', n:'Wizard hunter', h:'Defeat the Chief Examiner', c:['#EEEDFE','#7F77DD']},
-  {id:'slayer', e:'🏆', n:'Giant slayer', h:'Defeat Mr Chalk', c:['#FAEEDA','#BA7517']},
+  {id:'dragon', e:'🐉', n:'Dragon slayer', h:'Defeat the Magma Dragon', c:['#EAF3DE','#639922']},
+  {id:'wizard', e:'🐙', n:'Kraken hunter', h:'Defeat the Typhoon Kraken', c:['#EEEDFE','#7F77DD']},
+  {id:'slayer', e:'🏆', n:'Giant slayer', h:'Defeat the Supervolcano', c:['#FAEEDA','#BA7517']},
   {id:'bruised', e:'🤕', n:'Bruised, not beaten', h:'Lose 5 boss fights and keep coming back', c:['#FBEAF0','#D4537E']},
   {id:'arcade', e:'🕹️', n:'Arcade regular', h:'Finish a round of all four arcade games', c:['#EEEDFE','#7F77DD']},
   {id:'streak3', e:'📅', n:'Hat-trick', h:'Earn 200 XP a day, 3 days in a row', c:['#EAF3DE','#639922']},
@@ -5677,10 +5600,10 @@ const BADGES = [
   {id:'streak14', e:'🌟', n:'Fortnight', h:'Earn 200 XP a day, 14 days in a row', c:['#FAEEDA','#EF9F27']},
   {id:'maxed', e:'💪', n:'Maxed out', h:'Reach the daily XP limit', c:['#FCEBEB','#E24B4A']},
   {id:'traveller', e:'🕰️', n:'Jet setter', h:'Get 15 flashcards right in four different units in one day', c:['#EEEDFE','#7F77DD']},
-  {id:'ice', e:'❄️', n:'Ice cold', h:'Defeat Mr Chalk on your last heart', c:['#E6F1FB','#378ADD']},
-  {id:'gremlin', e:'👹', n:'Gremlin crusher', h:'Defeat the Procrastination Gremlin', c:['#FCEBEB','#E24B4A']},
-  {id:'zombie', e:'🧟', n:'Zombie squasher', h:'Defeat the Cramming Zombie', c:['#EAF3DE','#639922']},
-  {id:'vampire', e:'🧛', n:'Vampire hunter', h:'Defeat the Highlighter Vampire', c:['#FBEAF0','#D4537E']},
+  {id:'ice', e:'❄️', n:'Ice cold', h:'Defeat the Supervolcano on your last heart', c:['#E6F1FB','#378ADD']},
+  {id:'gremlin', e:'🗿', n:'Golem crusher', h:'Defeat the Mudslide Golem', c:['#FCEBEB','#E24B4A']},
+  {id:'zombie', e:'🦂', n:'Scorpion squasher', h:'Defeat the Drought Scorpion', c:['#EAF3DE','#639922']},
+  {id:'vampire', e:'👻', n:'Shade hunter', h:'Defeat the Smog Shade', c:['#FBEAF0','#D4537E']},
   {id:'collector', e:'🏴‍☠️', n:'Boss collector', h:'Earn all six boss badges', c:['#F1EFE8','#444441']},
   {id:'buzzer', e:'🔔', n:'Buzzer beater', h:'Get a boss answer right with under a second left', c:['#FAECE7','#D85A30']},
   {id:'special', e:'🔬', n:'Specialist', h:'Get 90% or more over at least 150 answers in one unit', c:['#E1F5EE','#0F6E56']},
@@ -5688,7 +5611,7 @@ const BADGES = [
   {id:'portable', e:'🧳', n:'Packed bags', h:'Move your progress to another device', c:['#E6F1FB','#378ADD']},
   {id:'rise', e:'🌱', n:'On the rise', h:"Score 10 points higher than last week (at least 50 answers in each week)", c:['#EAF3DE','#639922']},
   ...UNITS.map(u => ({id:'ex' + u.i, e:u.e, n:u.n + ' explorer', h:'Answer 50 ' + u.n + ' questions correctly', c:[u.bg, u.col]})),
-  {id:'gall', e:'🧭', n:'Four corners', h:'Answer 50 questions correctly in every unit that has questions', c:['#FAEEDA','#BA7517']},
+  {id:'gall', e:'🗺️', n:'Four corners', h:'Answer 50 questions correctly in every unit that has questions', c:['#FAEEDA','#BA7517']},
   {id:'pinpull', e:'📌', n:'Pin puller', h:'Clear 10 pinned flashcards', c:['#FCEBEB','#E24B4A']},
   {id:'cushion', e:'📍', n:'Pin cushion', h:'Clear 50 pinned flashcards', c:['#FAEEDA','#BA7517']},
   {id:'clean', e:'🧹', n:'Clean slate', h:'Clear every pinned flashcard when you had at least 10', c:['#E6F1FB','#378ADD']},
@@ -5704,7 +5627,7 @@ const BADGES = [
   {id:'night', e:'🦉', n:'Night owl', h:'Revise after 11pm', c:['#EEEDFE','#534AB7'], secret:true},
   {id:'early', e:'🐦', n:'Early bird', h:'Revise before 7am', c:['#FAEEDA','#EF9F27'], secret:true},
   {id:'back', e:'🔙', n:'Boomerang', h:'Come back after a week away', c:['#E1F5EE','#1D9E75'], secret:true},
-  {id:'teacher', e:'🍎', n:"Teacher's pet", h:'Say hello to the final boss', c:['#FCEBEB','#E24B4A'], secret:true},
+  {id:'teacher', e:'🍎', n:'Friendly visitor', h:'Say hello to the final boss', c:['#FCEBEB','#E24B4A'], secret:true},
   {id:'logo', e:'🕵️', n:'Detective', h:'Find the hidden spot on the home screen', c:['#F1EFE8','#5F5E5A'], secret:true},
   {id:'konami', e:'🎮', n:'Cheat code', h:'A classic sequence', c:['#EEEDFE','#7F77DD'], secret:true},
   {id:'xmas', e:'🎄', n:'Revising at Christmas', h:'Revise on 25 December', c:['#EAF3DE','#3B6D11'], secret:true},
@@ -5712,8 +5635,6 @@ const BADGES = [
   {id:'hallow', e:'🎃', n:'Spooky season', h:'Revise on 31 October', c:['#FAECE7','#D85A30'], secret:true},
   {id:'bonfire', e:'🎇', n:'Remember, remember', h:'Revise on 5 November', c:['#FAEEDA','#BA7517'], secret:true},
   {id:'poppy', e:'🌺', n:'Lest we forget', h:'Revise on 11 November', c:['#FCEBEB','#A32D2D'], secret:true},
-  {id:'dday', e:'🎖️', n:'D-Day', h:'Revise on 6 June', c:['#E6F1FB','#185FA5'], secret:true},
-  {id:'hungary', e:'🍲', n:'Hungary for knowledge', h:'Give a wrong answer for the Hungarian Uprising death toll', c:['#FAECE7','#D85A30'], secret:true},
   {id:'gapfill', e:'🔗', n:'Missing link', h:'Get all 3 gaps right on a Fill the gaps card', c:['#EEEDFE','#7F77DD']},
   {id:'window', e:'🪟', n:'Defenestrated', h:'Quit 10 arcade games halfway through', c:['#E6F1FB','#185FA5'], secret:true},
   {id:'lightsw', e:'💡', n:'Light switch', h:'Switch between night and day mode 10 times in one day', c:['#FAEEDA','#BA7517'], secret:true}
@@ -5724,7 +5645,7 @@ const UC_COL = SLOT_UC;
 COURSE_FLAT.forEach(function (c, i) {
   BADGES.push({id:'u' + i, e:UC_EMO[i] || '📘', n:UC_NAME[i] || c.unit, h:'Get every date and retrieval question in ' + c.unit + ' right at least once', c:UC_COL[c.paper], unit:i});
 });
-const BDG_DATES = {'25-12':'xmas','01-01':'ny','31-10':'hallow','05-11':'bonfire','11-11':'poppy','06-06':'dday'};
+const BDG_DATES = {'25-12':'xmas','01-01':'ny','31-10':'hallow','05-11':'bonfire','11-11':'poppy'};
 function bdgLoad() { try { return JSON.parse(localStorage.getItem(LS_BADGES) || '{}') || {}; } catch (e) { return {}; } }
 function bsWeekKey(offDays) {
   const d = new Date(); d.setHours(12, 0, 0, 0); d.setDate(d.getDate() + (offDays || 0) - ((d.getDay() + 6) % 7));
@@ -5783,7 +5704,7 @@ function bdgCheck(active) {
   if (ok >= 100) bdgAward('c100');
   if (ok >= 300) bdgAward('c300');
   if (ok >= 600) bdgAward('c500');
-  if (ok >= 1066) bdgAward('c1066');
+  if (ok >= 1000) bdgAward('c1000');
   if ((x.acc.date && x.acc.date.ok || 0) >= 100) bdgAward('chron');
   if (x.acc.date && x.acc.date.n >= 50 && x.acc.date.ok / x.acc.date.n >= 0.9) bdgAward('titan');
   try {
@@ -5902,7 +5823,7 @@ bossMark = function (ok) {
     if (!ok) g.slip = true;
     else if (g.leftMs != null && g.leftMs > 0 && g.leftMs < 1000) bdgAward('buzzer');
     g.leftMs = null;
-    if (g.typed && /chalk/i.test(g.typed)) bdgAward('teacher');
+    if (g.typed && /volcano/i.test(g.typed)) bdgAward('teacher');
   }
   return _bdgMark.apply(this, arguments);
 };
@@ -5914,12 +5835,12 @@ bossDeath = function () {
     if (!g.slip) { if (g.lv >= 2) bdgAward('flawless'); g.clean = (g.clean || 0) + 1; if (g.clean >= BOSSES.length) bdgAward('untouch'); } else g.clean = 0;
     if (g.lives === 1) bdgAward('nine');
     const nm = (BOSSES[g.lv % BOSSES.length] || [])[0];
-    if (nm === 'Dreaded Date Dragon') bdgAward('dragon');
-    if (nm === 'Chief Examiner') bdgAward('wizard');
-    if (nm === 'Procrastination Gremlin') bdgAward('gremlin');
-    if (nm === 'Cramming Zombie') bdgAward('zombie');
-    if (nm === 'Highlighter Vampire') bdgAward('vampire');
-    if (nm === 'Mr Chalk' && g.lives === 1) bdgAward('ice');
+    if (nm === 'Magma Dragon') bdgAward('dragon');
+    if (nm === 'Typhoon Kraken') bdgAward('wizard');
+    if (nm === 'Mudslide Golem') bdgAward('gremlin');
+    if (nm === 'Drought Scorpion') bdgAward('zombie');
+    if (nm === 'Smog Shade') bdgAward('vampire');
+    if (nm === 'The Supervolcano' && g.lives === 1) bdgAward('ice');
   }
   return _bdgDeath.apply(this, arguments);
 };
@@ -6043,7 +5964,7 @@ function examCountRender() {
       const m = M[window.__luckIdx];
       lk.innerHTML = '<div style="font-size:1.35rem;font-weight:800;letter-spacing:.01em">' + m[0] + ' ' + m[1] + ' ' + m[0] + '</div><div style="font-size:.88rem;font-weight:600;margin-top:.15rem">' + td.map(e => e.n.replace('Paper ', 'P').replace(/ mock/i, ' Mock')).join(' and ') + ' today</div>';
     } else lk.innerHTML = '';
-    try { const k = 'gcse_luck_' + localDate(); if (td.length && !localStorage.getItem(k)) { localStorage.setItem(k, '1'); setTimeout(() => { if (typeof fdFireConfetti === 'function') fdFireConfetti(); }, 600); } } catch (e) {} }
+    try { const k = 'geo_luck_' + localDate(); if (td.length && !localStorage.getItem(k)) { localStorage.setItem(k, '1'); setTimeout(() => { if (typeof fdFireConfetti === 'function') fdFireConfetti(); }, 600); } } catch (e) {} }
   btn.title = soon ? n.n + (n.days === 0 ? ' today' : ' in ' + n.days + (n.days === 1 ? ' day' : ' days')) : 'Exam dates';
   const row = e => '<div style="display:flex;justify-content:space-between;gap:1.2rem;font-size:.85rem;padding:.2rem 0;color:var(--text);white-space:nowrap"><span>' + e.n.replace(' mock', '') + ' \u00b7 ' + e.d.getDate() + ' ' + e.d.toLocaleString('en-GB', {month: 'short'}) + '</span><b>' + (e.days === 0 ? 'Today' : e.days + (e.days === 1 ? ' day' : ' days')) + '</b></div>';
   const m = all.filter(e => /mock/.test(e.n)), r = all.filter(e => !/mock/.test(e.n));
@@ -6084,7 +6005,7 @@ function arcFx(ok) {
 // ----- game intro: rules + 3-2-1 -----
 var ARC_RULES = {
   eol: ['🧩', 'Match the dates', ['Tap an event, then the date it happened.', 'Clear the board in 30 seconds to go again with more pairs.', 'A wrong match costs a heart. You have three.']],
-  boss: ['🐉', 'Boss battle', ['Type the answer to hit the boss.', 'You get 12 seconds a question. Three hints for the whole fight, each shows the first letter.', 'A wrong answer costs a heart. Beat every second boss to win one back. Six bosses. The last one is Mr Chalk.']],
+  boss: ['🐉', 'Boss battle', ['Type the answer to hit the boss.', 'You get 12 seconds a question. Three hints for the whole fight, each shows the first letter.', 'A wrong answer costs a heart. Beat every second boss to win one back. Six bosses. The last one is the Supervolcano.']],
   wh: ['🔨', 'Whack-a-fact', ['One question stays at the top.', 'Answers pop up. Whack the right one before it sinks.', 'A wrong tap, or letting the right one escape, costs a heart.']],
   st: ['🧱', 'Stack it', ['Tap the oldest event first, then the next oldest.', 'You get 5 seconds a block.', 'Every tower adds one more block. Three hearts.']]
 };
@@ -6167,7 +6088,7 @@ uptoRender();
     {sel:'.paper-grid',e:'🏙️ 🌴 ⚡ 🏜️',t:'Pick a unit',p:'One tile for each of the 14 units, in teaching order. The paper number is shown on every card.'},
     {sel:'.fd-wheel-cell,#fd-tracker',e:'⭕',t:'The rings',p:'Each ring shows how many of that unit\'s flashcards you got right today. A grey slice is cards you missed. It starts again each day, and a full ring turns gold 🥇.'},
     {sel:'.fd-wheel-cell,#fd-tracker',e:'📌',t:'Pins',p:'A flashcard you miss gets a 📌 and comes back later until you get it right.'},
-    {sel:'.btn-mix',e:'🎯',t:'Mixed Retrieval Quiz',p:'Quick recall across papers. Choose papers, difficulty and style.'},
+    {sel:'.btn-mix',e:'🎯',t:'Mixed Retrieval Quiz',p:'Quick recall across papers. Choose papers and style.'},
     {sel:'.btn-arc',e:'🕹️',t:'Arcade',p:'Games that test what you have learned. Beat the bosses and earn badges.'},
     {sel:'#xp-card',e:'⭐',t:'XP and levels',p:r.flash+' XP per flashcard, '+r.date+' per date or quiz answer, '+r.cap+' a day. Level up from '+(l?l[0].t:'Local explorer')+' to '+(l?l[l.length-1].t:'Global citizen')+'. Badges are separate and show at the bottom of this page once you earn one.'},
     {sel:'#parent-btn',e:'👪',t:'Parent view',p:'A parent quizzes you aloud and taps ✓ or ✗. Finishing earns '+r.parent+' XP.'},
@@ -6204,7 +6125,6 @@ uptoRender();
     ],
     rapidsetup:[
       {sel:'#rqp-p1,#rqp-aa,#rqp-mtc',par:1,e:'📚',t:'Choose papers',p:'Tick the papers or units you want mixed together.'},
-      {sel:'#rqs-1',par:1,e:'⭐',t:'Difficulty',p:'⭐ is gentle and ⭐⭐⭐ is tough.'},
       {sel:'#rq-mode-grid',e:'🎛️',t:'Style',p:'All at once, one at a time, or endless.'},
       {sel:'#rqm-batch',par:1,e:'🎛️',t:'Style',p:'Ten at once, one at a time, or endless.'},
       {sel:'#rq-go,#rq-setup .btn-go',e:'🎯',t:'Go',p:'Reveal each answer, then tap ✓ or ✗.'}
