@@ -132,14 +132,12 @@
    },
    {
     "p": 2,
-    "gap": "the Spartacist",
-    "alt": [
-     "Spartacist"
-    ],
+    "gap": "Spartacist uprising",
+    "alt": [],
     "d": [
-     "the Kapp",
-     "the Munich",
-     "the Ruhr"
+     "Kapp Putsch",
+     "Munich Putsch",
+     "Ruhr uprising"
     ]
    },
    {
@@ -175,22 +173,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "communist",
+    "gap": "Rosa Luxemburg",
     "alt": [],
     "d": [
-     "fascist",
-     "monarchist",
-     "Catholic"
+     "Ernst Thälmann",
+     "Gustav Stresemann",
+     "Friedrich Ebert"
     ]
    },
    {
     "p": 2,
-    "gap": "communication",
+    "gap": "communication offices",
     "alt": [],
     "d": [
-     "finance",
-     "military",
-     "police"
+     "railway stations",
+     "newspaper offices",
+     "army barracks"
     ]
    },
    {
@@ -226,12 +224,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "disband",
+    "gap": "disband the Freikorps",
     "alt": [],
     "d": [
-     "expand",
-     "fund",
-     "arm"
+     "disband the SA",
+     "arrest Kapp",
+     "dissolve the Reichstag"
     ]
    },
    {
@@ -246,12 +244,12 @@
    },
    {
     "p": 3,
-    "gap": "fled",
+    "gap": "four days",
     "alt": [],
     "d": [
-     "surrendered",
-     "was executed",
-     "was arrested"
+     "two weeks",
+     "one week",
+     "six months"
     ]
    }
   ]
@@ -277,36 +275,32 @@
   "fill": [
    {
     "p": 1,
-    "gap": "an emergency",
-    "alt": [
-     "emergency"
-    ],
+    "gap": "Article 48",
+    "alt": [],
     "d": [
-     "a referendum",
-     "an election",
-     "a recession"
+     "Article 231",
+     "Article 109",
+     "Article 76"
     ]
    },
    {
     "p": 2,
-    "gap": "Proportional representation",
+    "gap": "coalition",
     "alt": [],
     "d": [
-     "First past the post",
-     "Majority voting",
-     "Direct democracy"
+     "minority",
+     "caretaker",
+     "military"
     ]
    },
    {
     "p": 3,
-    "gap": "an acceptable",
-    "alt": [
-     "acceptable"
-    ],
+    "gap": "Violence",
+    "alt": [],
     "d": [
-     "an unacceptable",
-     "a forbidden",
-     "an illegal"
+     "Corruption",
+     "Inflation",
+     "Censorship"
     ]
    }
   ]
@@ -332,22 +326,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "men and women",
+    "gap": "equal voting rights",
     "alt": [],
     "d": [
-     "men over 25",
-     "property owners",
-     "adults over 30"
+     "equal pay",
+     "free education",
+     "property rights"
     ]
    },
    {
     "p": 2,
-    "gap": "divided",
+    "gap": "one person",
     "alt": [],
     "d": [
-     "concentrated",
-     "inherited",
-     "abolished"
+     "one party",
+     "one region",
+     "one class"
     ]
    },
    {
@@ -456,12 +450,12 @@
    },
    {
     "p": 3,
-    "gap": "assassinated",
+    "gap": "Matthias Erzberger",
     "alt": [],
     "d": [
-     "executed",
-     "imprisoned",
-     "deported"
+     "Walther Rathenau",
+     "Gustav Stresemann",
+     "Philipp Scheidemann"
     ]
    }
   ]
@@ -542,12 +536,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "shortages",
+    "gap": "refused to accept German marks",
     "alt": [],
     "d": [
-     "surpluses",
-     "bargains",
-     "exports"
+     "demanded gold payments",
+     "imported more goods",
+     "raised reparations"
     ]
    },
    {
@@ -758,22 +752,22 @@
    },
    {
     "p": 2,
-    "gap": "fell",
+    "gap": "25%",
     "alt": [],
     "d": [
-     "increased",
-     "stayed the same",
-     "doubled"
+     "10%",
+     "50%",
+     "15%"
     ]
    },
    {
     "p": 3,
-    "gap": "housing shortage",
+    "gap": "100,000 new homes",
     "alt": [],
     "d": [
-     "food shortage",
-     "fuel shortage",
-     "labour shortage"
+     "500,000 new homes",
+     "10,000 new homes",
+     "1 million new homes"
     ]
    }
   ]
@@ -799,12 +793,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "voting",
+    "gap": "equal voting rights",
     "alt": [],
     "d": [
-     "pay",
-     "property",
-     "inheritance"
+     "equal pay",
+     "the right to stand as president",
+     "property rights"
     ]
    },
    {
@@ -850,12 +844,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Berlin",
+    "gap": "avant-garde",
     "alt": [],
     "d": [
-     "Munich",
-     "Hamburg",
-     "Paris"
+     "Expressionist",
+     "Romantic",
+     "Baroque"
     ]
    },
    {
@@ -964,22 +958,22 @@
    },
    {
     "p": 2,
-    "gap": "swastika",
+    "gap": "Volkischer Beobachter",
     "alt": [],
     "d": [
-     "eagle",
-     "iron cross",
-     "sword"
+     "Der Stürmer",
+     "Mein Kampf",
+     "Berliner Tageblatt"
     ]
    },
    {
     "p": 3,
-    "gap": "ex-soldiers",
+    "gap": "Sturmabteilung",
     "alt": [],
     "d": [
-     "students",
-     "factory workers",
-     "policemen"
+     "Schutzstaffel",
+     "Hitlerjugend",
+     "Freikorps"
     ]
    }
   ]
@@ -1005,12 +999,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "right-wing",
+    "gap": "von Kahr",
     "alt": [],
     "d": [
-     "left-wing",
-     "communist",
-     "Catholic"
+     "von Papen",
+     "von Schleicher",
+     "von Hindenburg"
     ]
    },
    {
@@ -1076,12 +1070,12 @@
    },
    {
     "p": 3,
-    "gap": "crushed",
+    "gap": "16 Nazis killed",
     "alt": [],
     "d": [
-     "joined",
-     "ignored",
-     "supported"
+     "160 Nazis killed",
+     "600 Nazis killed",
+     "26 Nazis killed"
     ]
    }
   ]
@@ -1180,12 +1174,12 @@
    },
    {
     "p": 3,
-    "gap": "socialist",
+    "gap": "Bamberg Conference",
     "alt": [],
     "d": [
-     "liberal",
-     "monarchist",
-     "communist"
+     "Nuremberg Rally",
+     "Munich Conference",
+     "Weimar Conference"
     ]
    }
   ]
@@ -1221,12 +1215,12 @@
    },
    {
     "p": 2,
-    "gap": "nationalist",
+    "gap": "Locarno",
     "alt": [],
     "d": [
-     "communist",
-     "liberal",
-     "Catholic"
+     "Dawes",
+     "Kellogg-Briand",
+     "Young"
     ]
    },
    {
@@ -1282,12 +1276,12 @@
    },
    {
     "p": 3,
-    "gap": "banking",
+    "gap": "banking crisis",
     "alt": [],
     "d": [
-     "harvest",
-     "trade",
-     "tax"
+     "housing crisis",
+     "food crisis",
+     "coal crisis"
     ]
    }
   ]
@@ -1313,12 +1307,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Hindenburg",
+    "gap": "37%",
     "alt": [],
     "d": [
-     "Ebert",
-     "Brüning",
-     "Papen"
+     "27%",
+     "47%",
+     "17%"
     ]
    },
    {
@@ -1468,32 +1462,32 @@
   "fill": [
    {
     "p": 1,
-    "gap": "communist",
+    "gap": "Dutch communist",
     "alt": [],
     "d": [
-     "socialist",
-     "anarchist",
-     "Catholic"
+     "German Jewish",
+     "Soviet spy",
+     "Nazi stormtrooper"
     ]
    },
    {
     "p": 2,
-    "gap": "emergency",
+    "gap": "Decree for the Protection of People and State",
     "alt": [],
     "d": [
-     "war",
-     "martial law",
-     "curfew"
+     "Enabling Act",
+     "Law for the Protection of the Reich",
+     "Emergency Decree 48"
     ]
    },
    {
     "p": 3,
-    "gap": "majority",
+    "gap": "2/3 majority",
     "alt": [],
     "d": [
-     "coalition",
-     "veto",
-     "quorum"
+     "simple majority",
+     "1/3 majority",
+     "75% majority"
     ]
    }
   ]
@@ -1582,14 +1576,12 @@
    },
    {
     "p": 2,
-    "gap": "a socialist",
-    "alt": [
-     "socialist"
-    ],
+    "gap": "socialist direction",
+    "alt": [],
     "d": [
-     "a capitalist",
-     "a monarchist",
-     "a fascist"
+     "nationalist direction",
+     "monarchist direction",
+     "liberal direction"
     ]
    },
    {
@@ -1625,12 +1617,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "murdered",
+    "gap": "Röhm",
     "alt": [],
     "d": [
-     "arrested",
-     "exiled",
-     "expelled"
+     "Strasser",
+     "Himmler",
+     "Heydrich"
     ]
    },
    {
@@ -1645,12 +1637,12 @@
    },
    {
     "p": 3,
-    "gap": "oppose",
+    "gap": "deterrence",
     "alt": [],
     "d": [
-     "obey",
-     "flatter",
-     "replace"
+     "loyalty",
+     "propaganda",
+     "obedience"
     ]
    }
   ]
@@ -1676,12 +1668,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "died",
+    "gap": "aged 86",
     "alt": [],
     "d": [
-     "resigned",
-     "was assassinated",
-     "retired"
+     "aged 76",
+     "aged 96",
+     "aged 66"
     ]
    },
    {
@@ -1696,14 +1688,12 @@
    },
    {
     "p": 3,
-    "gap": "the republic",
-    "alt": [
-     "republic"
-    ],
+    "gap": "personal oath",
+    "alt": [],
     "d": [
-     "the Kaiser",
-     "the church",
-     "the Reichstag"
+     "written agreement",
+     "secret pact",
+     "public vow"
     ]
    }
   ]
@@ -1749,12 +1739,12 @@
    },
    {
     "p": 3,
-    "gap": "appeal",
+    "gap": "No jury",
     "alt": [],
     "d": [
-     "bail",
-     "legal aid",
-     "parole"
+     "No lawyers",
+     "No witnesses",
+     "No prisons"
     ]
    }
   ]
@@ -1800,12 +1790,12 @@
    },
    {
     "p": 3,
-    "gap": "showcase",
+    "gap": "Berlin Olympics",
     "alt": [],
     "d": [
-     "rehearsal",
-     "boycott",
-     "failure"
+     "Nuremberg Games",
+     "Munich Games",
+     "Hamburg Festival"
     ]
    }
   ]
@@ -1831,12 +1821,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "shut down",
+    "gap": "permitted content",
     "alt": [],
     "d": [
-     "rewarded",
-     "subsidised",
-     "copied"
+     "approved headlines",
+     "editorial staff",
+     "printing costs"
     ]
    },
    {
@@ -1902,12 +1892,12 @@
    },
    {
     "p": 3,
-    "gap": "harassed",
+    "gap": "criticised Hitler",
     "alt": [],
     "d": [
-     "protected",
-     "funded",
-     "promoted"
+     "praised Hitler",
+     "signed the Concordat",
+     "met Hitler"
     ]
    }
   ]
@@ -1933,12 +1923,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "working-class",
+    "gap": "Edelweiss Pirates",
     "alt": [],
     "d": [
-     "wealthy",
-     "upper-class",
-     "middle-class"
+     "League of German Girls",
+     "Swing Youth",
+     "White Rose"
     ]
    },
    {
@@ -1984,12 +1974,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "converting",
+    "gap": "Pastors' Emergency League",
     "alt": [],
     "d": [
-     "marrying",
-     "voting",
-     "emigrating"
+     "Confessing Church",
+     "German Christians",
+     "Catholic Centre Party"
     ]
    },
    {
@@ -2004,12 +1994,12 @@
    },
    {
     "p": 3,
-    "gap": "treason",
+    "gap": "800 priests",
     "alt": [],
     "d": [
-     "fraud",
-     "theft",
-     "murder"
+     "80 priests",
+     "8,000 priests",
+     "300 priests"
     ]
    }
   ]
@@ -2098,12 +2088,12 @@
    },
    {
     "p": 2,
-    "gap": "Kirche",
+    "gap": "3 Ks",
     "alt": [],
     "d": [
-     "Kultur",
-     "Kaiser",
-     "Kampf"
+     "4 Ks",
+     "5 Ds",
+     "2 Ks"
     ]
    },
    {
@@ -2141,12 +2131,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "work",
+    "gap": "stopped work",
     "alt": [],
     "d": [
-     "voting",
-     "studying",
-     "smoking"
+     "had children",
+     "joined the BDM",
+     "left Germany"
     ]
    },
    {
@@ -2161,12 +2151,12 @@
    },
    {
     "p": 3,
-    "gap": "factories",
+    "gap": "war production",
     "alt": [],
     "d": [
-     "offices",
-     "farms",
-     "hospitals"
+     "coal mining",
+     "the civil service",
+     "teaching"
     ]
    }
   ]
@@ -2212,12 +2202,12 @@
    },
    {
     "p": 3,
-    "gap": "cooking",
+    "gap": "cooking and needlework",
     "alt": [],
     "d": [
-     "mathematics",
-     "Latin",
-     "politics"
+     "science and maths",
+     "sport and drill",
+     "art and music"
     ]
    }
   ]
@@ -2227,7 +2217,7 @@
   "paper": "p3",
   "unit": "Unit 4 – Life in Nazi Germany",
   "front": "What was the purpose of Nazi Youth Groups?",
-  "p1": "Hitler Youth (10–18 boys): political, physical and military training — camping, shooting, political education; compulsory from 1939 after only 25% attending in 1938.",
+  "p1": "Hitler Youth (14–18 boys): political, physical and military training — camping, shooting, political education; only 25% attended before it became compulsory in 1936.",
   "p2": "League of German Maidens (10–21 girls): same political and physical training but military replaced with housework and racial hygiene.",
   "p3": "All other youth groups banned; aim was to create loyal, physically strong Nazis who would sustain the 1,000-year Reich beyond Hitler's lifetime.",
   "hints": [
@@ -2236,7 +2226,7 @@
    "1,000"
   ],
   "s": [
-   "Hitler Youth (10–18 boys): political, physical and military training — camping, shooting, political education; compulsory from 1939 after only 25% attending in 1938.",
+   "Hitler Youth (14–18 boys): political, physical and military training — camping, shooting, political education; only 25% attended before it became compulsory in 1936.",
    "League of German Maidens (10–21 girls): same political and physical training but military replaced with housework and racial hygiene.",
    "All other youth groups banned; aim was to create loyal, physically strong Nazis who would sustain the 1,000-year Reich beyond Hitler's lifetime."
   ],
@@ -2263,12 +2253,12 @@
    },
    {
     "p": 3,
-    "gap": "banned",
+    "gap": "1,000-year Reich",
     "alt": [],
     "d": [
-     "encouraged",
-     "funded",
-     "merged"
+     "100-year Reich",
+     "500-year Reich",
+     "10,000-year Reich"
     ]
    }
   ]
@@ -2294,32 +2284,32 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Autobahn",
+    "gap": "paid public work schemes",
     "alt": [],
     "d": [
-     "railways",
-     "canals",
-     "bridges"
+     "tax cuts for business",
+     "foreign loans",
+     "army conscription"
     ]
    },
    {
     "p": 2,
-    "gap": "defied",
+    "gap": "Rearmament",
     "alt": [],
     "d": [
-     "obeyed",
-     "signed",
-     "ratified"
+     "Autobahn building",
+     "Conscription",
+     "Public works"
     ]
    },
    {
     "p": 3,
-    "gap": "excluding",
+    "gap": "excluding women",
     "alt": [],
     "d": [
-     "counting",
-     "registering",
-     "paying"
+     "excluding soldiers",
+     "excluding farmers",
+     "excluding students"
     ]
    }
   ]
@@ -2365,14 +2355,12 @@
    },
    {
     "p": 3,
-    "gap": "the construction",
-    "alt": [
-     "construction"
-    ],
+    "gap": "Beauty of Labour",
+    "alt": [],
     "d": [
-     "the cleaning",
-     "the catering",
-     "the decoration"
+     "Strength through Joy",
+     "German Labour Front",
+     "Labour Service"
     ]
    }
   ]
@@ -2408,14 +2396,12 @@
    },
    {
     "p": 2,
-    "gap": "the Aryan",
-    "alt": [
-     "Aryan"
-    ],
+    "gap": "Aryan race",
+    "alt": [],
     "d": [
-     "the Slavic",
-     "the Latin",
-     "the Celtic"
+     "Slavic race",
+     "Nordic empire",
+     "master class"
     ]
    },
    {
@@ -2553,12 +2539,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "inferior",
+    "gap": "Untermenschen",
     "alt": [],
     "d": [
-     "equal",
-     "superior",
-     "ancient"
+     "Volksgemeinschaft",
+     "Lebensraum",
+     "Mischlinge"
     ]
    },
    {
@@ -2624,12 +2610,12 @@
    },
    {
     "p": 3,
-    "gap": "limited",
+    "gap": "no democracy",
     "alt": [],
     "d": [
-     "extensive",
-     "unlimited",
-     "guaranteed"
+     "no industry",
+     "no armies",
+     "no trade"
     ]
    }
   ]
@@ -2871,12 +2857,12 @@
    },
    {
     "p": 2,
-    "gap": "threat",
+    "gap": "nuclear age",
     "alt": [],
     "d": [
-     "ally",
-     "benefit",
-     "trading partner"
+     "space age",
+     "jet age",
+     "information age"
     ]
    },
    {
@@ -3067,12 +3053,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "devastation",
+    "gap": "$13 billion",
     "alt": [],
     "d": [
-     "prosperity",
-     "celebration",
-     "recovery"
+     "$3 billion",
+     "$30 billion",
+     "$1 billion"
     ]
    },
    {
@@ -3087,12 +3073,12 @@
    },
    {
     "p": 3,
-    "gap": "economic",
+    "gap": "two economic camps",
     "alt": [],
     "d": [
-     "religious",
-     "military",
-     "linguistic"
+     "two military camps",
+     "two political camps",
+     "two ideological camps"
     ]
    }
   ]
@@ -3128,24 +3114,22 @@
    },
    {
     "p": 2,
-    "gap": "the Marshall Plan",
-    "alt": [
-     "Marshall Plan"
-    ],
+    "gap": "Soviet equivalent",
+    "alt": [],
     "d": [
-     "the Truman Doctrine",
-     "the Dawes Plan",
-     "the Warsaw Pact"
+     "American equivalent",
+     "British equivalent",
+     "Western equivalent"
     ]
    },
    {
     "p": 3,
-    "gap": "political",
+    "gap": "economic and political blocs",
     "alt": [],
     "d": [
-     "religious",
-     "military",
-     "cultural"
+     "military and nuclear blocs",
+     "trade and tax blocs",
+     "cultural and religious blocs"
     ]
    }
   ]
@@ -3171,12 +3155,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "rebuilding",
+    "gap": "powerful Germany",
     "alt": [],
     "d": [
-     "abandoning",
-     "dividing",
-     "selling"
+     "powerful Poland",
+     "powerful Britain",
+     "powerful America"
     ]
    },
    {
@@ -3285,12 +3269,12 @@
    },
    {
     "p": 2,
-    "gap": "armed",
+    "gap": "dangerous armed Germany",
     "alt": [],
     "d": [
-     "weak",
-     "divided",
-     "peaceful"
+     "neutral Germany",
+     "united Germany",
+     "communist Germany"
     ]
    },
    {
@@ -3312,7 +3296,7 @@
   "paper": "p2a",
   "unit": "Unit 1 – Origins 1941–58",
   "front": "How did the arms race develop 1945–60?",
-  "p1": "1945: USA develops A-bomb. 1949: USSR develops A-bomb. 1952: USA develops H-bomb (1,000× more powerful than Hiroshima). 1953: USSR develops H-bomb.",
+  "p1": "1945: USA develops A-bomb. 1949: USSR develops A-bomb. 1952: USA develops H-bomb (1,000× more powerful than Hiroshima). 1953: USSR develops its own.",
   "p2": "1957: USA develops ICBM (fires nuclear bomb 4,500km). USSR develops it months later.",
   "p3": "Led to Mutually Assured Destruction (MAD) — neither side could use nuclear weapons without being destroyed in retaliation.",
   "hints": [
@@ -3328,12 +3312,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "1952",
+    "gap": "H-bomb",
     "alt": [],
     "d": [
-     "1946",
-     "1955",
-     "1958"
+     "neutron bomb",
+     "dirty bomb",
+     "cobalt bomb"
     ]
    },
    {
@@ -3348,12 +3332,12 @@
    },
    {
     "p": 3,
-    "gap": "retaliation",
+    "gap": "Mutually Assured Destruction",
     "alt": [],
     "d": [
-     "sanctions",
-     "protest",
-     "surprise"
+     "Massive Atomic Deterrence",
+     "Mutual Armed Defence",
+     "Maximum Arms Deployment"
     ]
    }
   ]
@@ -3379,12 +3363,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "satellite",
+    "gap": "Sputnik",
     "alt": [],
     "d": [
-     "astronaut",
-     "space station",
-     "moon probe"
+     "Vostok",
+     "Apollo",
+     "Explorer"
     ]
    },
    {
@@ -3399,14 +3383,12 @@
    },
    {
     "p": 3,
-    "gap": "a propaganda",
-    "alt": [
-     "propaganda"
-    ],
+    "gap": "propaganda competition",
+    "alt": [],
     "d": [
-     "an economic",
-     "a religious",
-     "a sporting"
+     "economic competition",
+     "scientific rivalry",
+     "military alliance"
     ]
    }
   ]
@@ -3442,12 +3424,12 @@
    },
    {
     "p": 2,
-    "gap": "purges",
+    "gap": "cult of personality",
     "alt": [],
     "d": [
-     "achievements",
-     "wars",
-     "reforms"
+     "five-year plans",
+     "Gulag system",
+     "collectivisation"
     ]
    },
    {
@@ -3536,12 +3518,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Rákosi",
+    "gap": "Nagy",
     "alt": [],
     "d": [
-     "Ulbricht",
-     "Dubček",
-     "Novotný"
+     "Kádár",
+     "Gomulka",
+     "Tito"
     ]
    },
    {
@@ -3571,7 +3553,7 @@
   "paper": "p2a",
   "unit": "Unit 2 – Crises 1958–70",
   "front": "Why did Khrushchev make his Berlin Ultimatum?",
-  "p1": "1950s: 4 million East Germans (1/5 of population) fled to the West through Berlin — 'Brain Drain' of skilled young workers.",
+  "p1": "1950s: 3 million East Germans (1/5 of population) fled to the West through Berlin — 'Brain Drain' of skilled young workers.",
   "p2": "West Germany joined NATO in 1955 — confirming Soviet fears of a rearmed, threatening Germany.",
   "p3": "1958 Berlin Ultimatum: West given 6 months to leave Berlin and declare it a 'free city', or Khrushchev would hand control of transport links to East Germany.",
   "hints": [
@@ -3580,7 +3562,7 @@
    "free city"
   ],
   "s": [
-   "1950s: 4 million East Germans (1/5 of population) fled to the West through Berlin — 'Brain Drain' of skilled young workers.",
+   "1950s: 3 million East Germans (1/5 of population) fled to the West through Berlin — 'Brain Drain' of skilled young workers.",
    "West Germany joined NATO in 1955 — confirming Soviet fears of a rearmed, threatening Germany.",
    "1958 Berlin Ultimatum: West given 6 months to leave Berlin and declare it a 'free city', or Khrushchev would hand control of transport links to East Germany."
   ],
@@ -3638,12 +3620,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "postponed",
+    "gap": "six-month deadline",
     "alt": [],
     "d": [
-     "enforced",
-     "shortened",
-     "cancelled"
+     "one-year deadline",
+     "three-month deadline",
+     "two-year deadline"
     ]
    },
    {
@@ -3658,12 +3640,12 @@
    },
    {
     "p": 3,
-    "gap": "bully",
+    "gap": "military spending",
     "alt": [],
     "d": [
-     "flatter",
-     "ignore",
-     "thank"
+     "nuclear stockpile",
+     "troop numbers",
+     "foreign aid"
     ]
    }
   ]
@@ -3699,22 +3681,22 @@
    },
    {
     "p": 2,
-    "gap": "overnight",
+    "gap": "barbed wire",
     "alt": [],
     "d": [
-     "over a decade",
-     "over a year",
-     "over a month"
+     "concrete slabs",
+     "brick walls",
+     "steel barriers"
     ]
    },
    {
     "p": 3,
-    "gap": "shot",
+    "gap": "28 years",
     "alt": [],
     "d": [
-     "pardoned",
-     "deported",
-     "fined"
+     "18 years",
+     "15 years",
+     "38 years"
     ]
    }
   ]
@@ -3740,12 +3722,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "halted",
+    "gap": "refugee crisis",
     "alt": [],
     "d": [
-     "worsened",
-     "doubled",
-     "ignored"
+     "economic crisis",
+     "missile crisis",
+     "food crisis"
     ]
    },
    {
@@ -3948,12 +3930,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Letters",
+    "gap": "Soviet ships",
     "alt": [],
     "d": [
-     "Hotline calls",
-     "Face-to-face summits",
-     "Radio broadcasts"
+     "American ships",
+     "Cuban ships",
+     "British ships"
     ]
    },
    {
@@ -4254,12 +4236,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "capitalism",
+    "gap": "force it back",
     "alt": [],
     "d": [
-     "democracy",
-     "nationalism",
-     "neutrality"
+     "leave the Warsaw Pact",
+     "invade Cuba",
+     "trade with China"
     ]
    },
    {
@@ -4356,12 +4338,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "domestic",
+    "gap": "domestic issues",
     "alt": [],
     "d": [
-     "overseas",
-     "military",
-     "space"
+     "foreign policy",
+     "space exploration",
+     "nuclear testing"
     ]
    },
    {
@@ -4409,12 +4391,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "nuclear",
+    "gap": "40%",
     "alt": [],
     "d": [
-     "conventional",
-     "chemical",
-     "naval"
+     "10%",
+     "60%",
+     "20%"
     ]
    },
    {
@@ -4480,12 +4462,12 @@
    },
    {
     "p": 3,
-    "gap": "enough",
+    "gap": "MAD",
     "alt": [],
     "d": [
-     "too few",
-     "no",
-     "only a few"
+     "SDI",
+     "NATO",
+     "INF"
     ]
    }
   ]
@@ -4649,7 +4631,7 @@
   "unit": "Unit 3 – End of Cold War 1970–91",
   "front": "Why did the USSR invade Afghanistan?",
   "p1": "Mujahedeen were winning; Brezhnev feared this would inspire rebellion in the Muslim regions in the south of the USSR.",
-  "p2": "Christmas Day 1979: USSR invaded to prop up the communist government.",
+  "p2": "Christmas Eve 1979: USSR invaded to prop up the communist government.",
   "p3": "Soviets killed the unpopular President Amin and replaced him with the more pro-Moscow but still unpopular Kamal.",
   "hints": [
    "Brezhnev",
@@ -4658,7 +4640,7 @@
   ],
   "s": [
    "Mujahedeen were winning; Brezhnev feared this would inspire rebellion in the Muslim regions in the south of the USSR.",
-   "Christmas Day 1979: USSR invaded to prop up the communist government.",
+   "Christmas Eve 1979: USSR invaded to prop up the communist government.",
    "Soviets killed the unpopular President Amin and replaced him with the more pro-Moscow but still unpopular Kamal."
   ],
   "fill": [
@@ -4674,11 +4656,11 @@
    },
    {
     "p": 2,
-    "gap": "Christmas Day",
+    "gap": "Christmas Eve",
     "alt": [],
     "d": [
-     "New Year's Day",
-     "Easter Day",
+     "New Year's Eve",
+     "Christmas Day",
      "Boxing Day"
     ]
    },
@@ -4715,12 +4697,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "10-year",
+    "gap": "$8 billion",
     "alt": [],
     "d": [
-     "2-year",
-     "5-year",
-     "20-year"
+     "$18 billion",
+     "$80 billion",
+     "$2 billion"
     ]
    },
    {
@@ -4941,12 +4923,12 @@
    },
    {
     "p": 3,
-    "gap": "reform",
+    "gap": "radical reform",
     "alt": [],
     "d": [
-     "repression",
-     "war",
-     "isolation"
+     "gradual reform",
+     "military action",
+     "more spending"
     ]
    }
   ]
@@ -5096,12 +5078,12 @@
    },
    {
     "p": 3,
-    "gap": "violent",
+    "gap": "violent revolution",
     "alt": [],
     "d": [
-     "peaceful",
-     "quiet",
-     "gradual"
+     "peaceful transition",
+     "military coup",
+     "civil election"
     ]
    }
   ]
@@ -5188,12 +5170,12 @@
    },
    {
     "p": 2,
-    "gap": "easily",
+    "gap": "declared independence",
     "alt": [],
     "d": [
-     "slowly",
-     "violently",
-     "rarely"
+     "joined NATO",
+     "left the UN",
+     "invaded Poland"
     ]
    },
    {
@@ -5386,12 +5368,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "head",
+    "gap": "Pope",
     "alt": [],
     "d": [
-     "servant",
-     "critic",
-     "rival"
+     "Archbishop",
+     "Monarch",
+     "Parliament"
     ]
    },
    {
@@ -5406,12 +5388,12 @@
    },
    {
     "p": 3,
-    "gap": "symbolic",
+    "gap": "transubstantiation",
     "alt": [],
     "d": [
-     "literal",
-     "miraculous",
-     "sacred"
+     "consubstantiation",
+     "excommunication",
+     "predestination"
     ]
    }
   ]
@@ -5459,12 +5441,12 @@
    },
    {
     "p": 3,
-    "gap": "reversed",
+    "gap": "declared Elizabeth illegitimate",
     "alt": [],
     "d": [
-     "repeated",
-     "enforced",
-     "extended"
+     "declared Mary illegitimate",
+     "named Elizabeth heir",
+     "banned Elizabeth from court"
     ]
    }
   ]
@@ -5616,12 +5598,12 @@
    },
    {
     "p": 3,
-    "gap": "long-term",
+    "gap": "Crown lands",
     "alt": [],
     "d": [
-     "short-term",
-     "immediate",
-     "annual"
+     "Church lands",
+     "Royal forests",
+     "Crown jewels"
     ]
    }
   ]
@@ -5814,24 +5796,22 @@
    },
    {
     "p": 2,
-    "gap": "the vague",
-    "alt": [
-     "vague"
-    ],
+    "gap": "vague wording",
+    "alt": [],
     "d": [
-     "the precise",
-     "the strict",
-     "the long"
+     "clear wording",
+     "Latin wording",
+     "Catholic wording"
     ]
    },
    {
     "p": 3,
-    "gap": "without",
+    "gap": "priestly hierarchy",
     "alt": [],
     "d": [
-     "with",
-     "through",
-     "via"
+     "royal authority",
+     "bishops' approval",
+     "the Pope"
     ]
    }
   ]
@@ -5928,12 +5908,12 @@
    },
    {
     "p": 3,
-    "gap": "compromise",
+    "gap": "chapel",
     "alt": [],
     "d": [
-     "victory",
-     "defeat",
-     "insult"
+     "palace",
+     "cathedral",
+     "parliament"
     ]
    }
   ]
@@ -6030,14 +6010,12 @@
    },
    {
     "p": 3,
-    "gap": "a French",
-    "alt": [
-     "French"
-    ],
+    "gap": "French puppet",
+    "alt": [],
     "d": [
-     "a Spanish",
-     "a Dutch",
-     "an Italian"
+     "Spanish puppet",
+     "Scottish puppet",
+     "Papal puppet"
     ]
    }
   ]
@@ -6063,14 +6041,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "the rightful",
-    "alt": [
-     "rightful"
-    ],
+    "gap": "rightful heir",
+    "alt": [],
     "d": [
-     "the unwanted",
-     "the foreign",
-     "the illegitimate"
+     "lawful regent",
+     "legitimate queen",
+     "future consort"
     ]
    },
    {
@@ -6218,14 +6194,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "the recusancy",
-    "alt": [
-     "recusancy"
-    ],
+    "gap": "none came",
+    "alt": [],
     "d": [
-     "the heresy",
-     "the treason",
-     "the tithe"
+     "all came",
+     "half came",
+     "few came"
     ]
    },
    {
@@ -6271,12 +6245,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "duty",
+    "gap": "excommunicated",
     "alt": [],
     "d": [
-     "crime",
-     "sin",
-     "choice"
+     "imprisoned",
+     "exiled",
+     "crowned"
     ]
    },
    {
@@ -6291,12 +6265,12 @@
    },
    {
     "p": 3,
-    "gap": "Catholic",
+    "gap": "Catholic foreign powers",
     "alt": [],
     "d": [
-     "Protestant",
-     "Puritan",
-     "Lutheran"
+     "Protestant foreign powers",
+     "neutral foreign powers",
+     "Eastern foreign powers"
     ]
    }
   ]
@@ -6428,12 +6402,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "free",
+    "gap": "free Mary",
     "alt": [],
     "d": [
-     "crown",
-     "protect",
-     "banish"
+     "kill Mary",
+     "crown Mary",
+     "exile Mary"
     ]
    },
    {
@@ -6550,14 +6524,12 @@
    },
    {
     "p": 3,
-    "gap": "the Golden Hind",
-    "alt": [
-     "Golden Hind"
-    ],
+    "gap": "knighted",
+    "alt": [],
     "d": [
-     "the Mary Rose",
-     "the Revenge",
-     "the Victory"
+     "pardoned",
+     "exiled",
+     "promoted"
     ]
    }
   ]
@@ -6583,12 +6555,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "revolted",
+    "gap": "Catholic Spanish rule",
     "alt": [],
     "d": [
-     "rejoiced",
-     "emigrated",
-     "surrendered"
+     "English rule",
+     "French rule",
+     "Papal rule"
     ]
    },
    {
@@ -6644,12 +6616,12 @@
    },
    {
     "p": 2,
-    "gap": "superior",
+    "gap": "superior force",
     "alt": [],
     "d": [
-     "inferior",
-     "equal",
-     "smaller"
+     "smaller force",
+     "mercenary force",
+     "naval force"
     ]
    },
    {
@@ -6707,12 +6679,12 @@
    },
    {
     "p": 3,
-    "gap": "Portugal",
+    "gap": "12 months",
     "alt": [],
     "d": [
-     "France",
-     "Ireland",
-     "Italy"
+     "6 months",
+     "2 years",
+     "3 years"
     ]
    }
   ]
@@ -6758,12 +6730,12 @@
    },
    {
     "p": 3,
-    "gap": "exactly",
+    "gap": "right time",
     "alt": [],
     "d": [
-     "roughly",
-     "never",
-     "eventually"
+     "wrong time",
+     "best weather",
+     "full moon"
     ]
    }
   ]
@@ -7044,32 +7016,32 @@
   "fill": [
    {
     "p": 1,
-    "gap": "deaths",
+    "gap": "no rules",
     "alt": [],
     "d": [
-     "fines",
-     "arrests",
-     "fires"
+     "strict rules",
+     "royal approval",
+     "referees"
     ]
    },
    {
     "p": 2,
-    "gap": "rabbit",
+    "gap": "Music",
     "alt": [],
     "d": [
-     "swan",
-     "stag",
-     "boar"
+     "Dance",
+     "Theatre",
+     "Poetry"
     ]
    },
    {
     "p": 3,
-    "gap": "dogs",
+    "gap": "bear-baiting",
     "alt": [],
     "d": [
-     "wolves",
-     "horses",
-     "eagles"
+     "bull-running",
+     "cock-throwing",
+     "hare coursing"
     ]
    }
   ]
@@ -7095,12 +7067,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "real tennis",
+    "gap": "hawking",
     "alt": [],
     "d": [
-     "football",
-     "cock-fighting",
-     "bear-baiting"
+     "archery",
+     "bowls",
+     "jousting"
     ]
    },
    {
@@ -7197,32 +7169,32 @@
   "fill": [
    {
     "p": 1,
-    "gap": "grew",
+    "gap": "4 million",
     "alt": [],
     "d": [
-     "fell",
-     "halved",
-     "stagnated"
+     "2 million",
+     "5 million",
+     "8 million"
     ]
    },
    {
     "p": 2,
-    "gap": "demand",
+    "gap": "rising prices",
     "alt": [],
     "d": [
-     "tax",
-     "cost",
-     "trade"
+     "falling prices",
+     "stable prices",
+     "lower taxes"
     ]
    },
    {
     "p": 3,
-    "gap": "falling",
+    "gap": "falling wages",
     "alt": [],
     "d": [
-     "stable",
-     "fixed",
-     "doubled"
+     "falling rents",
+     "rising taxes",
+     "falling prices"
     ]
    }
   ]
@@ -7258,24 +7230,22 @@
    },
    {
     "p": 2,
-    "gap": "less",
+    "gap": "food prices rose",
     "alt": [],
     "d": [
-     "more",
-     "no",
-     "plenty"
+     "food prices fell",
+     "rents fell",
+     "wages rose"
     ]
    },
    {
     "p": 3,
-    "gap": "the east",
-    "alt": [
-     "east"
-    ],
+    "gap": "70%",
+    "alt": [],
     "d": [
-     "the west",
-     "the north",
-     "the south"
+     "20%",
+     "40%",
+     "90%"
     ]
    }
   ]
@@ -7301,12 +7271,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "silver",
+    "gap": "precious metal",
     "alt": [],
     "d": [
-     "gold",
-     "iron",
-     "copper"
+     "paper money",
+     "iron ore",
+     "sea salt"
     ]
    },
    {
@@ -7324,9 +7294,9 @@
     "gap": "inflation",
     "alt": [],
     "d": [
-     "deflation",
-     "stability",
-     "growth"
+     "famine",
+     "rebellion",
+     "taxation"
     ]
    }
   ]
@@ -7352,12 +7322,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "harshly",
+    "gap": "able-bodied",
     "alt": [],
     "d": [
-     "kindly",
-     "generously",
-     "fairly"
+     "elderly",
+     "orphans",
+     "children"
     ]
    },
    {
@@ -7413,12 +7383,12 @@
    },
    {
     "p": 2,
-    "gap": "ear",
+    "gap": "right ear",
     "alt": [],
     "d": [
-     "hand",
-     "shoulder",
-     "cheek"
+     "left ear",
+     "left hand",
+     "right hand"
     ]
    },
    {
@@ -7570,12 +7540,12 @@
    },
    {
     "p": 2,
-    "gap": "2nd",
+    "gap": "circumnavigate the globe",
     "alt": [],
     "d": [
-     "3rd",
-     "5th",
-     "10th"
+     "cross the Atlantic",
+     "reach the Pacific",
+     "find the North-West Passage"
     ]
    },
    {
@@ -7631,12 +7601,12 @@
    },
    {
     "p": 3,
-    "gap": "farm",
+    "gap": "farm the land",
     "alt": [],
     "d": [
-     "fight",
-     "sail",
-     "preach"
+     "sail the ships",
+     "trade with Natives",
+     "build forts"
     ]
    }
   ]
@@ -7674,12 +7644,12 @@
    },
    {
     "p": 2,
-    "gap": "disease",
+    "gap": "Wingina",
     "alt": [],
     "d": [
-     "famine",
-     "fire",
-     "flooding"
+     "Powhatan",
+     "Manteo",
+     "Pocahontas"
     ]
    },
    {
@@ -7768,12 +7738,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "raid",
+    "gap": "weak coastal defences",
     "alt": [],
     "d": [
-     "preach",
-     "farm",
-     "tax"
+     "strong navies",
+     "large cities",
+     "Roman roads"
     ]
    },
    {
@@ -7841,12 +7811,12 @@
    },
    {
     "p": 3,
-    "gap": "Cnut",
+    "gap": "English laws",
     "alt": [],
     "d": [
-     "Alfred",
-     "Harold",
-     "William"
+     "Danish laws",
+     "Norman laws",
+     "Viking laws"
     ]
    }
   ]
@@ -7943,12 +7913,12 @@
    },
    {
     "p": 3,
-    "gap": "peaceful",
+    "gap": "assimilation",
     "alt": [],
     "d": [
-     "violent",
-     "hostile",
-     "forced"
+     "conquest",
+     "segregation",
+     "expulsion"
     ]
    }
   ]
@@ -7984,24 +7954,22 @@
    },
    {
     "p": 2,
-    "gap": "knight",
+    "gap": "land and power",
     "alt": [],
     "d": [
-     "peasant",
-     "priest",
-     "merchant"
+     "gold and silver",
+     "titles and crowns",
+     "money and ships"
     ]
    },
    {
     "p": 3,
-    "gap": "a Papal",
-    "alt": [
-     "Papal"
-    ],
+    "gap": "Papal banner",
+    "alt": [],
     "d": [
-     "a Royal",
-     "a French",
-     "a Viking"
+     "Royal banner",
+     "Norman banner",
+     "Saxon banner"
     ]
    }
   ]
@@ -8100,12 +8068,12 @@
    },
    {
     "p": 3,
-    "gap": "Athelstan",
+    "gap": "language of power",
     "alt": [],
     "d": [
-     "Charles",
-     "Richard",
-     "Thomas"
+     "language of trade",
+     "language of the poor",
+     "language of the Church"
     ]
    }
   ]
@@ -8131,12 +8099,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Papal",
+    "gap": "usury",
     "alt": [],
     "d": [
-     "Royal",
-     "Parliamentary",
-     "Norman"
+     "tithes",
+     "tariffs",
+     "rent"
     ]
    },
    {
@@ -8151,12 +8119,12 @@
    },
    {
     "p": 3,
-    "gap": "Torah",
+    "gap": "liberties",
     "alt": [],
     "d": [
-     "Bible",
-     "Koran",
-     "Gospels"
+     "monopolies",
+     "tax exemptions",
+     "land grants"
     ]
    }
   ]
@@ -8202,12 +8170,12 @@
    },
    {
     "p": 3,
-    "gap": "baptism",
+    "gap": "mass baptism",
     "alt": [],
     "d": [
-     "execution",
-     "expulsion",
-     "conscription"
+     "mass exile",
+     "mass execution",
+     "mass taxation"
     ]
    }
   ]
@@ -8467,12 +8435,12 @@
    },
    {
     "p": 3,
-    "gap": "metalwork",
+    "gap": "techniques",
     "alt": [],
     "d": [
-     "farming",
-     "shipbuilding",
-     "printing"
+     "tariffs",
+     "laws",
+     "taxes"
     ]
    }
   ]
@@ -8498,12 +8466,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "divided",
+    "gap": "Protestant nation",
     "alt": [],
     "d": [
-     "united",
-     "converted",
-     "reconciled"
+     "Catholic nation",
+     "Puritan state",
+     "Orthodox nation"
     ]
    },
    {
@@ -8763,12 +8731,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "French-speaking",
+    "gap": "invited",
     "alt": [],
     "d": [
-     "Dutch-speaking",
-     "German-speaking",
-     "Spanish-speaking"
+     "expelled",
+     "banned",
+     "taxed"
     ]
    },
    {
@@ -8851,16 +8819,16 @@
   "front": "What was the experience of Jewish migrants in the Early Modern period?",
   "p1": "1656: allowed to build their own synagogue; but restricted — forbidden from attending university, serving in the army or becoming lawyers or MPs.",
   "p2": "Late 1600s: Jewish community in London had a positive relationship with the mayor and people of the city. But anti-Semitic stereotypes continued.",
-  "p3": "Jewish people faced restrictions and could not serve in the army, become MPs or attend universtiy.",
+  "p3": "After 1656, Jewish financiers → London became a major financial centre.",
   "hints": [
    "restricted",
    "mayor",
-   "restrictions"
+   "London"
   ],
   "s": [
    "1656: allowed to build their own synagogue; but restricted — forbidden from attending university, serving in the army or becoming lawyers or MPs.",
    "Late 1600s: Jewish community in London had a positive relationship with the mayor and people of the city. But anti-Semitic stereotypes continued.",
-   "Jewish people faced restrictions and could not serve in the army, become MPs or attend universtiy."
+   "After 1656, Jewish financiers → London became a major financial centre."
   ],
   "fill": [
    {
@@ -8887,12 +8855,12 @@
    },
    {
     "p": 3,
-    "gap": "MPs",
+    "gap": "financial centre",
     "alt": [],
     "d": [
-     "lords",
-     "Rabbis",
-     "Merchants"
+     "cultural centre",
+     "military centre",
+     "religious centre"
     ]
    }
   ]
@@ -8954,7 +8922,7 @@
   "unit": "Unit 2 – Early Modern",
   "front": "Why did Palatines come to England?",
   "p1": "1708–09: Wars in the Rhineland → instability; approximately 13,000 Protestant Palatine refugees sought refuge in England.",
-  "p2": "1708: Parliament passed the Foreign Protestants Naturalisation Act — offering citizenship to all foreign Protestants.",
+  "p2": "1708–09: Parliament passed the Foreign Protestants Naturalisation Act — offering citizenship to all foreign Protestants.",
   "p3": "Palatines saw Protestant England as a safe refuge after years of religious war and instability in Germany.",
   "hints": [
    "Rhineland",
@@ -8963,7 +8931,7 @@
   ],
   "s": [
    "1708–09: Wars in the Rhineland → instability; approximately 13,000 Protestant Palatine refugees sought refuge in England.",
-   "1708: Parliament passed the Foreign Protestants Naturalisation Act — offering citizenship to all foreign Protestants.",
+   "1708–09: Parliament passed the Foreign Protestants Naturalisation Act — offering citizenship to all foreign Protestants.",
    "Palatines saw Protestant England as a safe refuge after years of religious war and instability in Germany."
   ],
   "fill": [
@@ -8991,14 +8959,12 @@
    },
    {
     "p": 3,
-    "gap": "a safe",
-    "alt": [
-     "safe"
-    ],
+    "gap": "safe refuge",
+    "alt": [],
     "d": [
-     "a hostile",
-     "a poor",
-     "a distant"
+     "trading hub",
+     "military ally",
+     "royal court"
     ]
    }
   ]
@@ -9138,12 +9104,12 @@
    },
    {
     "p": 2,
-    "gap": "factory",
+    "gap": "industrial cities",
     "alt": [],
     "d": [
-     "farm",
-     "fishing",
-     "forestry"
+     "coastal ports",
+     "farming villages",
+     "mining towns"
     ]
    },
    {
@@ -9230,14 +9196,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "the rail",
-    "alt": [
-     "rail"
-    ],
+    "gap": "rail network",
+    "alt": [],
     "d": [
-     "the canal",
-     "the postal",
-     "the road"
+     "canal network",
+     "road network",
+     "telegraph network"
     ]
    },
    {
@@ -9285,12 +9249,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "nannies",
+    "gap": "Ayahs",
     "alt": [],
     "d": [
-     "cooks",
-     "gardeners",
-     "soldiers"
+     "Lascars",
+     "Sepoys",
+     "Parsis"
     ]
    },
    {
@@ -9489,12 +9453,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "height",
+    "gap": "enslaved",
     "alt": [],
     "d": [
-     "end",
-     "beginning",
-     "decline"
+     "free",
+     "educated",
+     "married"
     ]
    },
    {
@@ -9748,12 +9712,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "military",
+    "gap": "Polish Resettlement Act",
     "alt": [],
     "d": [
-     "police",
-     "Parliament",
-     "civil service"
+     "Aliens Act",
+     "Nationality Act",
+     "Refugee Act"
     ]
    },
    {
@@ -9768,12 +9732,12 @@
    },
    {
     "p": 3,
-    "gap": "UN",
+    "gap": "UN Convention on Refugees",
     "alt": [],
     "d": [
-     "EU",
-     "NATO",
-     "Commonwealth"
+     "Geneva Treaty on Trade",
+     "NATO Charter",
+     "EU Charter"
     ]
    }
   ]
@@ -9954,12 +9918,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Jewish",
+    "gap": "undesirable",
     "alt": [],
     "d": [
-     "Irish",
-     "Caribbean",
-     "Asian"
+     "skilled",
+     "wealthy",
+     "Irish"
     ]
    },
    {
@@ -10005,12 +9969,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "threats",
+    "gap": "Colour bars",
     "alt": [],
     "d": [
-     "allies",
-     "friends",
-     "members"
+     "rent controls",
+     "zoning laws",
+     "tax breaks"
     ]
    },
    {
@@ -10107,12 +10071,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "1965",
+    "gap": "public places",
     "alt": [],
     "d": [
-     "1948",
-     "1971",
-     "1981"
+     "workplaces",
+     "schools",
+     "private homes"
     ]
    },
    {
@@ -10429,12 +10393,12 @@
    },
    {
     "p": 2,
-    "gap": "communist",
+    "gap": "Poland",
     "alt": [],
     "d": [
-     "capitalist",
-     "Catholic",
-     "Protestant"
+     "Ukraine",
+     "Russia",
+     "Belarus"
     ]
    },
    {
@@ -10523,12 +10487,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Victorian",
+    "gap": "Peter Rachman",
     "alt": [],
     "d": [
-     "Georgian",
-     "Edwardian",
-     "Tudor"
+     "Frank Crichlow",
+     "Bruce Kenrick",
+     "Oswald Mosley"
     ]
    },
    {
@@ -10584,12 +10548,12 @@
    },
    {
     "p": 2,
-    "gap": "1963",
+    "gap": "1,000",
     "alt": [],
     "d": [
-     "1953",
-     "1973",
-     "1983"
+     "100",
+     "10,000",
+     "500"
     ]
    },
    {
@@ -10676,12 +10640,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "commercial",
+    "gap": "cultural and commercial",
     "alt": [],
     "d": [
-     "religious",
-     "political",
-     "military"
+     "religious and political",
+     "sporting and military",
+     "academic and legal"
     ]
    },
    {
@@ -10937,12 +10901,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "carpenter",
+    "gap": "convicted",
     "alt": [],
     "d": [
-     "teacher",
-     "doctor",
-     "bus driver"
+     "arrested",
+     "charged",
+     "deported"
     ]
    },
    {
@@ -11012,14 +10976,12 @@
    },
    {
     "p": 3,
-    "gap": "the 1958",
-    "alt": [
-     "1958"
-    ],
+    "gap": "Caribbean Carnival",
+    "alt": [],
     "d": [
-     "the 1948",
-     "the 1968",
-     "the 1978"
+     "Windrush Festival",
+     "Notting Hill Fair",
+     "Mangrove Parade"
     ]
    }
   ]
