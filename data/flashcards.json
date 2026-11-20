@@ -8921,18 +8921,18 @@
   "paper": "p1",
   "unit": "Unit 2 – Early Modern",
   "front": "Why did Palatines come to England?",
-  "p1": "1708–09: Wars in the Rhineland → instability; approximately 13,000 Protestant Palatine refugees sought refuge in England.",
+  "p1": "17th Century: Wars in the Rhineland → instability; approximately 13,000 Protestant Palatine refugees sought refuge in England.",
   "p2": "1708–09: Parliament passed the Foreign Protestants Naturalisation Act — offering citizenship to all foreign Protestants.",
-  "p3": "Palatines saw Protestant England as a safe refuge after years of religious war and instability in Germany.",
+  "p3": "Palatines hoping to travel from England on to the Carolina colonies in America.",
   "hints": [
    "Rhineland",
    "Naturalisation",
-   "refuge"
+   "Carolina"
   ],
   "s": [
    "1708–09: Wars in the Rhineland → instability; approximately 13,000 Protestant Palatine refugees sought refuge in England.",
    "1708–09: Parliament passed the Foreign Protestants Naturalisation Act — offering citizenship to all foreign Protestants.",
-   "Palatines saw Protestant England as a safe refuge after years of religious war and instability in Germany."
+   "Palatines hoping to travel from England on to the Carolina colonies in America."
   ],
   "fill": [
    {
@@ -8959,12 +8959,12 @@
    },
    {
     "p": 3,
-    "gap": "safe refuge",
+    "gap": "America",
     "alt": [],
     "d": [
-     "trading hub",
-     "military ally",
-     "royal court"
+     "Asia",
+     "Africa",
+     "Australia"
     ]
    }
   ]
