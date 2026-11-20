@@ -31,12 +31,12 @@
    },
    {
     "p": 2,
-    "gap": "military",
+    "gap": "divinely appointed",
     "alt": [],
     "d": [
-     "wealthy",
-     "Protestant",
-     "popular"
+     "popularly elected",
+     "widely loved",
+     "wealthy and powerful"
     ]
    },
    {
@@ -182,25 +182,22 @@
   "fill": [
    {
     "p": 1,
-    "gap": "arrogant",
+    "gap": "unrest of 1549",
     "alt": [],
     "d": [
-     "indecisive",
-     "cowardly",
-     "negligent"
+     "plague of 1551",
+     "Armada of 1588",
+     "Pilgrimage of 1536"
     ]
    },
    {
     "p": 2,
-    "gap": "5 October",
-    "alt": [
-     "5th October",
-     "October 5th"
-    ],
+    "gap": "5th October",
+    "alt": [],
     "d": [
-     "12 October",
-     "1 October",
-     "19 October"
+     "12th October",
+     "1st October",
+     "19th October"
     ]
    },
    {
@@ -332,7 +329,7 @@
   "unit": "Unit 1 – Stability of the Monarchy",
   "front": "Why did the Devise for the Succession fail to prevent Mary's accession?",
   "p1": "Mary had a power base in East Anglia — significant hatred of Northumberland after Kett's Rebellion → proclaimed herself Queen 9th July, before the Council's proclamation of Jane on 10th.",
-  "p2": "Council never truly believed in the Devise — bullied into it by Northumberland. Army deserted him on the march north; councillors broke ranks for Mary → retreated to Cambridge, accepted Mary on 19th.",
+  "p2": "Council bullied into the Devise by Northumberland. Army deserted him on the march north → retreated to Cambridge; councillors broke ranks, accepted Mary on 19th.",
   "p3": "Mary entered London to rousing popular support → popular legitimacy proved more powerful than legal manoeuvring. Northumberland, Jane Grey and Guildford Dudley all executed.",
   "hints": [
    "East Anglia",
@@ -359,24 +356,22 @@
    },
    {
     "p": 2,
-    "gap": "19 July",
-    "alt": [
-     "19th July"
-    ],
+    "gap": "Army deserted him",
+    "alt": [],
     "d": [
-     "10 July",
-     "9 July",
-     "25 July"
+     "Army rebelled against him",
+     "Navy mutinied",
+     "Council arrested him"
     ]
    },
    {
     "p": 3,
-    "gap": "executed",
+    "gap": "popular legitimacy",
     "alt": [],
     "d": [
-     "pardoned",
-     "exiled",
-     "released"
+     "legal precedent",
+     "noble support",
+     "military strength"
     ]
    }
   ]
@@ -425,12 +420,12 @@
    },
    {
     "p": 3,
-    "gap": "obey",
+    "gap": "foreign prince",
     "alt": [],
     "d": [
-     "advise",
-     "support",
-     "succeed"
+     "Scottish king",
+     "Papal envoy",
+     "French duke"
     ]
    }
   ]
@@ -457,15 +452,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "effectively",
-    "alt": [
-     "well",
-     "successfully"
-    ],
+    "gap": "less serious under Mary",
+    "alt": [],
     "d": [
-     "badly",
-     "reluctantly",
-     "arrogantly"
+     "more serious under Mary",
+     "equally serious",
+     "absent under Mary"
     ]
    },
    {
@@ -622,10 +614,8 @@
   "fill": [
    {
     "p": 1,
-    "gap": "inner council",
-    "alt": [
-     "inner Council"
-    ],
+    "gap": "Inner council",
+    "alt": [],
     "d": [
      "Star Chamber",
      "Court of Requests",
@@ -634,22 +624,22 @@
    },
    {
     "p": 2,
-    "gap": "administrator",
+    "gap": "cautious realist",
     "alt": [],
     "d": [
-     "soldier",
-     "diplomat",
-     "financier"
+     "fanatical Protestant",
+     "ruthless reformer",
+     "loyal Spaniard"
     ]
    },
    {
     "p": 3,
-    "gap": "moderating",
+    "gap": "Gardiner's death 1555",
     "alt": [],
     "d": [
-     "radicalising",
-     "persecuting",
-     "unifying"
+     "Paget's death 1555",
+     "Pole's death 1558",
+     "Cranmer's death 1556"
     ]
    }
   ]
@@ -676,12 +666,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "reluctantly",
+    "gap": "preserve the Catholic faith",
     "alt": [],
     "d": [
-     "eagerly",
-     "gladly",
-     "immediately"
+     "reverse the Religious Settlement",
+     "marry a Protestant",
+     "recall Philip"
     ]
    },
    {
@@ -730,12 +720,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Third",
+    "gap": "Mary, then Elizabeth",
     "alt": [],
     "d": [
-     "First",
-     "Second",
-     "Fourth"
+     "Elizabeth, then Mary",
+     "Jane Grey, then Mary",
+     "Mary, then Jane Grey"
     ]
    },
    {
@@ -752,14 +742,12 @@
    },
    {
     "p": 3,
-    "gap": "unfulfilled gifts",
-    "alt": [
-     "unfulfilled gifts clause"
-    ],
+    "gap": "Unfulfilled gifts",
+    "alt": [],
     "d": [
-     "royal prerogative",
-     "regency",
-     "succession"
+     "Royal prerogative",
+     "Regency clause",
+     "Succession clause"
     ]
    }
   ]
@@ -959,21 +947,19 @@
     "gap": "171",
     "alt": [],
     "d": [
-     "71",
      "111",
-     "211"
+     "211",
+     "231"
     ]
    },
    {
     "p": 3,
-    "gap": "Wills",
-    "alt": [
-     "wills"
-    ],
+    "gap": "wills",
+    "alt": [],
     "d": [
-     "Sermons",
-     "Tax returns",
-     "Ballads"
+     "sermons",
+     "tax returns",
+     "ballads"
     ]
    }
   ]
@@ -1174,8 +1160,8 @@
     "alt": [],
     "d": [
      "1,900",
-     "9,000",
-     "90,000"
+     "90,000",
+     "29,000"
     ]
    },
    {
@@ -1264,10 +1250,8 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Zwinglianism",
-    "alt": [
-     "Zwinglism"
-    ],
+    "gap": "Zwinglism",
+    "alt": [],
     "d": [
      "Anabaptism",
      "Socinianism",
@@ -1302,7 +1286,7 @@
   "reign": "edward",
   "unit": "Unit 2 – Religious Change",
   "front": "How did Northumberland introduce ceremonial and doctrinal change?",
-  "p1": "Northumberland's rise to power increased the pace of reform as he sided with religious radicals → new ordinal (1550): leading Catholic clergy replaced with Protestants → new Treason Act made questioning the Royal Supremacy an offence.",
+  "p1": "Northumberland sided with religious radicals → new ordinal (1550) replaced leading Catholic clergy with Protestants; new Treason Act made questioning the Royal Supremacy an offence.",
   "p2": "Second Book of Common Prayer (1552) — far more radical: all Catholic practices removed; Communion confirmed as purely symbolic.",
   "p3": "Forty-Two Articles (1552) drew up key doctrines — never passed by Parliament before Edward died 1553. De jure England was Protestant by 1553; de facto another matter.",
   "hints": [
@@ -1323,7 +1307,7 @@
     "d": [
      "injunction",
      "visitation",
-     "treason act"
+     "proclamation"
     ]
    },
    {
@@ -1390,12 +1374,12 @@
    },
    {
     "p": 3,
-    "gap": "arable",
+    "gap": "livestock farming",
     "alt": [],
     "d": [
-     "woodland",
-     "marshland",
-     "heath"
+     "grain farming",
+     "dairy farming",
+     "wool imports"
     ]
    }
   ]
@@ -1476,12 +1460,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "half",
+    "gap": "over half of English counties",
     "alt": [],
     "d": [
-     "a third",
-     "two-thirds",
-     "three-quarters"
+     "a third of English counties",
+     "every English county",
+     "the northern counties"
     ]
    },
    {
@@ -1540,12 +1524,12 @@
    },
    {
     "p": 2,
-    "gap": "clergy",
+    "gap": "absent or uneducated clergy",
     "alt": [],
     "d": [
-     "JPs",
-     "sheriffs",
-     "magistrates"
+     "Catholic bishops",
+     "Protestant preachers",
+     "foreign merchants"
     ]
    },
    {
@@ -1596,12 +1580,12 @@
    },
    {
     "p": 2,
-    "gap": "disciplined",
+    "gap": "dispensed justice",
     "alt": [],
     "d": [
-     "chaotic",
-     "divided",
-     "leaderless"
+     "marched on London",
+     "burned Norwich",
+     "demanded the throne"
     ]
    },
    {
@@ -1650,12 +1634,12 @@
    },
    {
     "p": 2,
-    "gap": "clergy",
+    "gap": "Christmas game",
     "alt": [],
     "d": [
-     "gentry",
-     "merchants",
-     "lawyers"
+     "Easter parade",
+     "May Day festival",
+     "Lenten fast"
     ]
    },
    {
@@ -1732,7 +1716,7 @@
   "unit": "Unit 3 – Rebellion and Unrest",
   "front": "What were the causes of Wyatt's Rebellion in 1554?",
   "p1": "Ostensible cause: Mary's marriage to Philip of Spain — xenophobic fears over a foreign marriage; Spanish patronage; entanglement in Habsburg wars.",
-  "p2": "Xenophobia may have masked other causes. Rebellion began in Protestant Kent — part of the plot was to replace Mary with Elizabeth. Many leaders had lost positions at court due to their faith.",
+  "p2": "Xenophobia may have masked other causes. Rebellion began in Protestant Kent; plot to replace Mary with Elizabeth. Many leaders had lost court positions due to their faith.",
   "p3": "Collapse of the cloth trade → unemployment in Kent. Kentish people also had a long history of rebellion: 1381 and 1450.",
   "hints": [
    "Xenophobic",
@@ -1828,8 +1812,8 @@
     "alt": [],
     "d": [
      "Westminster",
-     "Tower",
-     "Whitehall"
+     "Whitehall",
+     "Smithfield"
     ]
    }
   ]
@@ -2144,12 +2128,12 @@
    },
    {
     "p": 3,
-    "gap": "revitalised",
+    "gap": "revitalising",
     "alt": [],
     "d": [
-     "suppressed",
-     "divided",
-     "funded"
+     "suppressing",
+     "dividing",
+     "funding"
     ]
    }
   ]
@@ -2319,7 +2303,7 @@
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "front": "What were the key provisions of the Act of Supremacy (1559)?",
-  "p1": "Removed the Pope's authority over the English Church. Made Elizabeth Supreme Governor — not 'Supreme Head' (Henry's title), to avoid offending those who believed a woman could not be head of the Church.",
+  "p1": "Removed the Pope's authority over the English Church. Made Elizabeth Supreme Governor, not 'Supreme Head' (Henry's title), to avoid offending those who believed a woman could not head the Church.",
   "p2": "Elizabeth in charge of a strict episcopal hierarchy of Archbishops and Bishops.",
   "p3": "All clergy and royal officials had to swear an oath of loyalty to Elizabeth. Parliament tried to enforce capital punishment for refusal → Elizabeth did not enforce this.",
   "hints": [
@@ -2399,12 +2383,12 @@
    },
    {
     "p": 2,
-    "gap": "visitations",
+    "gap": "Visitations",
     "alt": [],
     "d": [
-     "synods",
-     "councils",
-     "inquisitions"
+     "Synods",
+     "Councils",
+     "Inquisitions"
     ]
    },
    {
@@ -2564,12 +2548,12 @@
    },
    {
     "p": 2,
-    "gap": "refused",
+    "gap": "obey God rather than man",
     "alt": [],
     "d": [
-     "agreed",
-     "delayed",
-     "resigned"
+     "serve the Queen above all",
+     "submit to Rome",
+     "defer to Parliament"
     ]
    },
    {
@@ -2589,7 +2573,7 @@
   "section": "elizabeth",
   "unit": "Unit 4 – Elizabeth I and Religion",
   "front": "What were Whitgift's methods as Archbishop (1583–1604)?",
-  "p1": "John Whitgift used the Court of High Commission to investigate and discipline non-conformist clergy. Required subscription to the Three Articles — swearing Elizabeth's supremacy; exclusive use of the Book of Common Prayer; and that the 39 Articles were scripturally sound.",
+  "p1": "John Whitgift used the Court of High Commission to discipline non-conformist clergy. Required subscription to the Three Articles: Elizabeth's supremacy; sole use of the Book of Common Prayer; the 39 Articles scripturally sound.",
   "p2": "~300 Puritan clergy removed or suspended. The anonymous Marprelate Tracts (1588–89) — scurrilous pamphlets attacking bishops — showed Puritan resistance had not been broken.",
   "p3": "Elizabeth supported Whitgift fully and died holding his hand — she called him her 'black husband'. Determined repression contained the Puritan challenge without eliminating it.",
   "hints": [
@@ -2618,13 +2602,11 @@
    {
     "p": 2,
     "gap": "300",
-    "alt": [
-     "three hundred"
-    ],
+    "alt": [],
     "d": [
-     "30",
      "100",
-     "3,000"
+     "3,000",
+     "500"
     ]
    },
    {
@@ -2832,13 +2814,11 @@
    {
     "p": 2,
     "gap": "£20",
-    "alt": [
-     "20 pounds"
-    ],
+    "alt": [],
     "d": [
-     "£2",
      "£10",
-     "£200"
+     "£200",
+     "£5"
     ]
    },
    {
@@ -2874,12 +2854,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "aloof",
+    "gap": "favour to no faction",
     "alt": [],
     "d": [
-     "partisan",
-     "absent",
-     "hostile"
+     "favour to Cecil alone",
+     "favour to the Howards",
+     "favour to Leicester"
     ]
    },
    {
@@ -3214,12 +3194,12 @@
    },
    {
     "p": 3,
-    "gap": "promote",
+    "gap": "dominated parliamentary business",
     "alt": [],
     "d": [
-     "oppose",
-     "amend",
-     "delay"
+     "avoided parliamentary business",
+     "were excluded from Parliament",
+     "sat only in the Lords"
     ]
    }
   ]
@@ -3229,9 +3209,9 @@
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "front": "What were the parliamentary conflicts over religion?",
-  "p1": "The Religious Settlement nearly failed to pass in 1559, opposed by Catholic bishops and lords → Elizabeth prorogued Parliament and arrested critics to force it through.",
-  "p2": "Strickland's Bill (1571) attempted to alter the Book of Common Prayer → questioned by the Privy Council for infringing the Royal Prerogative and suspended from Parliament → allowed back after outcry, but the bill was never seen again.",
-  "p3": "Cope's 'bill and book' (1586) proposed replacing the Prayer Book with the Genevan model and abolishing bishops → Cope and four supporters sent to the Tower; the Privy Council, led by Hatton, argued against it in Parliament until it was defeated.",
+  "p1": "The Religious Settlement nearly failed in 1559, opposed by Catholic bishops and lords → Elizabeth prorogued Parliament and arrested critics to force it through.",
+  "p2": "Strickland's Bill (1571) tried to alter the Book of Common Prayer → Privy Council questioned him for infringing the Royal Prerogative; suspended, then allowed back after outcry, but the bill never reappeared.",
+  "p3": "Cope's 'bill and book' (1586) proposed replacing the Prayer Book with the Genevan model and abolishing bishops → Cope and four supporters sent to the Tower; Hatton led the opposition until it was defeated.",
   "hints": [
    "prorogued",
    "Strickland's",
@@ -3245,12 +3225,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "prorogued",
+    "gap": "arrested critics",
     "alt": [],
     "d": [
-     "dissolved",
-     "summoned",
-     "dismissed"
+     "pardoned critics",
+     "exiled critics",
+     "bribed critics"
     ]
    },
    {
@@ -3282,7 +3262,7 @@
   "section": "elizabeth",
   "unit": "Unit 5 – Government and Parliament",
   "front": "How did Parliament clash with Elizabeth over freedom of speech, including in the 1590s?",
-  "p1": "Paul Wentworth (1566) and his brother Peter Wentworth (1571, 1576, 1587, 1593) repeatedly argued Parliament had the right to discuss religion and the succession → Elizabeth rigidly defended this as her Royal Prerogative.",
+  "p1": "Paul Wentworth (1566) and Peter Wentworth (1571, 1576, 1587, 1593) argued Parliament could discuss religion and the succession → Elizabeth defended these as her Royal Prerogative.",
   "p2": "1576: Peter Wentworth compared Elizabeth's involvement to 'the work of the devil' → the Commons itself, not Elizabeth, sent him to the Tower — most MPs didn't support the Wentworths either.",
   "p3": "1591–93: Wentworth wrote a pamphlet demanding Parliament's right to examine succession candidates → questioned by the Privy Council, then sent to the Tower in 1593, where he died in 1596.",
   "hints": [
@@ -3445,7 +3425,7 @@
   "front": "What was the role of gender in Elizabethan government?",
   "p1": "Elizabeth used gender as a political tool — courtiers competed for her affection → gave her leverage over faction that a male monarch would not have had.",
   "p2": "Gender created real problems: Parliament and Council assumed a queen needed a husband → persistent pressure to marry. Her gender used to justify demands that she name a successor.",
-  "p3": "Marriage could forge foreign alliances — but any husband risked becoming a co-ruler sharing sovereignty. As Mary I's marriage to Philip proved, a foreign consort caused more problems than the alliance was worth.",
+  "p3": "Marriage could forge foreign alliances, but any husband risked becoming a co-ruler sharing sovereignty. Mary I's marriage to Philip proved a foreign consort caused more problems than the alliance was worth.",
   "hints": [
    "affection",
    "marry",
@@ -3494,7 +3474,7 @@
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "front": "What was the financial situation Elizabeth inherited in 1558?",
-  "p1": "Inherited debt of £227,000 from Mary's war with France, owed to the Antwerp Exchange at 14% interest. Gresham identified three problems: debasement of coinage; cost of war; Hanseatic League control of wool exports.",
+  "p1": "Inherited debt of £227,000 from Mary's war with France, owed to the Antwerp Exchange at 14% interest. Gresham's three problems: debasement of coinage; cost of war; Hanseatic League control of wool exports.",
   "p2": "Gresham's advice: maintain excellent credit rating by repaying debts swiftly and avoiding loans in peacetime → when war came, Elizabeth could borrow quickly at favourable rates.",
   "p3": "Mary's revised Book of Rates dramatically boosted customs revenue. Elizabeth retained able administrators in Gresham and Lord Treasurer Paulet — a significant advantage she wisely used.",
   "hints": [
@@ -3520,12 +3500,12 @@
    },
    {
     "p": 2,
-    "gap": "swiftly",
+    "gap": "repaying debts swiftly",
     "alt": [],
     "d": [
-     "gradually",
-     "reluctantly",
-     "annually"
+     "borrowing heavily",
+     "selling Crown lands",
+     "raising taxes quickly"
     ]
    },
    {
@@ -3596,7 +3576,7 @@
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "front": "What caused inflation during Elizabeth's reign?",
-  "p1": "Population rise c.2.7 to c.4 million between 1547 and 1603 → demand outstripped supply. Poor harvests — common due to the Little Ice Age — reduced supply further. By 1560s, average food prices triple those of Henry VII's reign.",
+  "p1": "Population rise from c.2.7 to c.4 million (1547–1603) → demand outstripped supply. Little Ice Age harvests cut supply further. By 1560s, average food prices triple those of Henry VII's reign.",
   "p2": "Bullion: gold and silver from the New World reduced the value of precious metals across Europe → coinage less valuable, prices rose.",
   "p3": "Contemporaries blamed enclosure and greedy landlords — misdiagnosis meant the government could not tackle the underlying cause: rising population affecting supply and demand.",
   "hints": [
@@ -3632,12 +3612,12 @@
    },
    {
     "p": 3,
-    "gap": "enclosure",
+    "gap": "rising population",
     "alt": [],
     "d": [
-     "vagrancy",
-     "monopolies",
-     "taxation"
+     "falling harvests",
+     "debased coinage",
+     "New World silver"
     ]
    }
   ]
@@ -3675,24 +3655,22 @@
    },
    {
     "p": 2,
-    "gap": "Levant",
+    "gap": "Hanseatic League",
     "alt": [],
     "d": [
-     "Barbary",
-     "Guinea",
-     "Virginia"
+     "Venetian Republic",
+     "Swedish Crown",
+     "Dutch Republic"
     ]
    },
    {
     "p": 3,
-    "gap": "Hanseatic",
-    "alt": [
-     "Hanseatic League"
-    ],
+    "gap": "Ottoman Empire",
+    "alt": [],
     "d": [
-     "Venetian",
-     "Genoese",
-     "Ottoman"
+     "Venetian Republic",
+     "Persian Empire",
+     "Mughal Empire"
     ]
    }
   ]
@@ -3876,15 +3854,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "1560-61",
-    "alt": [
-     "1560–61",
-     "1560 to 1561"
-    ],
+    "gap": "1560–61",
+    "alt": [],
     "d": [
-     "1558-59",
-     "1570-71",
-     "1580-81"
+     "1558–59",
+     "1570–71",
+     "1580–81"
     ]
    },
    {
@@ -3930,10 +3905,8 @@
   "fill": [
    {
     "p": 1,
-    "gap": "profits of justice",
-    "alt": [
-     "profits from justice"
-    ],
+    "gap": "profits from justice",
+    "alt": [],
     "d": [
      "foreign tribute",
      "Church tithes",
@@ -3952,14 +3925,12 @@
    },
    {
     "p": 3,
-    "gap": "undervaluing",
-    "alt": [
-     "undervalued"
-    ],
+    "gap": "undervalued",
+    "alt": [],
     "d": [
-     "overvaluing",
-     "ignoring",
-     "inflating"
+     "overvalued",
+     "ignored",
+     "inflated"
     ]
    }
   ]
@@ -3969,7 +3940,7 @@
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "front": "How did the government attempt to tackle inflation?",
-  "p1": "Gresham attempted recoinage 1560 — called in debased coins and removed base alloys. By 1561 debased coins called in — but prices did not fall → merchants simply kept the same prices, or higher.",
+  "p1": "Gresham's recoinage 1560 called in debased coins and removed base alloys. By 1561 prices had not fallen → merchants simply kept the same prices, or higher.",
   "p2": "Elizabeth encouraged limiting demand: fasting during Lent; 'fish days' on Wednesdays and Fridays. 1586 Book of Orders prohibited hoarding of grain.",
   "p3": "Government could not tackle the issue — did not understand how rising population affected supply and demand. Inflation was a structural problem no Tudor government had the economic tools to solve.",
   "hints": [
@@ -4007,12 +3978,12 @@
    },
    {
     "p": 3,
-    "gap": "population",
+    "gap": "supply and demand",
     "alt": [],
     "d": [
-     "bullion",
-     "wages",
-     "harvests"
+     "trade and tariffs",
+     "wages and rents",
+     "taxes and tithes"
     ]
    }
   ]
@@ -4050,24 +4021,22 @@
    },
    {
     "p": 2,
-    "gap": "£4.5 million",
-    "alt": [
-     "4.5 million"
-    ],
+    "gap": "£300,000",
+    "alt": [],
     "d": [
-     "£1.5 million",
-     "£2.5 million",
-     "£9 million"
+     "£30,000",
+     "£3 million",
+     "£3,000"
     ]
    },
    {
     "p": 3,
-    "gap": "monopolies",
+    "gap": "effectively bankrupt",
     "alt": [],
     "d": [
-     "ship money",
-     "purveyance",
-     "benevolences"
+     "financially secure",
+     "in surplus",
+     "heavily taxed"
     ]
    }
   ]
@@ -4370,12 +4339,12 @@
    },
    {
     "p": 3,
-    "gap": "disorder",
+    "gap": "prevent its underlying causes",
     "alt": [],
     "d": [
-     "famine",
-     "rebellion",
-     "unemployment"
+     "ignore its short-term effects",
+     "fund relief in full",
+     "predict harvest failures"
     ]
    }
   ]
@@ -4438,7 +4407,7 @@
   "front": "What happened in the war with Spain after the Armada?",
   "p1": "At sea, failure common after 1588 — Drake's 'English Armada' 1589 was an unmitigated disaster. English attempts to capture the treasure fleet routinely failed.",
   "p2": "Capture of the Madre de Dios 1592 → brought riches worth half the Crown's usual annual income. English support for Dutch rebels ensured their survival and eventual success.",
-  "p3": "Henry of Navarre's coronation as Henry IV 1589 seemed a huge opportunity — Elizabeth sent £20,000 and 10,000 troops. But his conversion to Catholicism and unilateral peace with Spain 1598 → negated these gains.",
+  "p3": "Henry of Navarre became Henry IV 1589: Elizabeth sent £20,000 and 10,000 troops. But his conversion to Catholicism and unilateral peace with Spain 1598 negated these gains.",
   "hints": [
    "disaster",
    "Madre",
@@ -4503,12 +4472,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "favourites",
+    "gap": "granting monopolies",
     "alt": [],
     "d": [
-     "ministers",
-     "bishops",
-     "soldiers"
+     "selling offices",
+     "raising subsidies",
+     "debasing the coinage"
     ]
    },
    {
@@ -4725,9 +4694,9 @@
     "gap": "16,000",
     "alt": [],
     "d": [
-     "6,000",
      "26,000",
-     "60,000"
+     "60,000",
+     "1,600"
     ]
    },
    {
@@ -4871,12 +4840,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "slapped",
+    "gap": "refused to go to Ireland",
     "alt": [],
     "d": [
-     "imprisoned",
-     "banished",
-     "fined"
+     "refused to marry",
+     "refused to return from Spain",
+     "refused to attend Parliament"
     ]
    },
    {
@@ -4907,7 +4876,7 @@
   "unit": "Unit 7 – Later Years 1588–1603",
   "front": "What were the key events and consequences of Essex's Rebellion?",
   "p1": "Essex wrote to James VI warning Robert Cecil would prevent his succession. Commissioned performance of the banned play Richard II — in which a childless monarch is deposed by a nobleman.",
-  "p2": "Gathered supporters including the Earl of Southampton; marched into the City of London hoping to raise citizens against Cecil. Most supporters got cold feet → rebellion collapsed as Tower's guns turned on Essex House.",
+  "p2": "Marched into the City of London with Southampton hoping to raise citizens against Cecil. Most supporters got cold feet → rebellion collapsed as Tower's guns turned on Essex House.",
   "p3": "Essex and five supporters executed February 1601. Cecil's faction controlled government unopposed from then on → engineered the smooth succession of James I in 1603.",
   "hints": [
    "Richard II",
@@ -4962,7 +4931,7 @@
   "unit": "Unit 7 – Later Years 1588–1603",
   "front": "What were the specific causes of the 1590s socioeconomic crisis?",
   "p1": "Bad harvests 1594–98 → average price of wheat doubled. Cheaper grains rose even faster, hitting the poorest hardest. At the crisis peak 1595–97, the death rate increased by 50%.",
-  "p2": "Population growth throughout the century had outstripped food supply — a Malthusian Crisis. Collapse of trade due to war with Spain → reduced supply of imported goods and cost jobs in cloth manufacture.",
+  "p2": "Population growth outstripped food supply: a Malthusian Crisis. War with Spain collapsed trade → fewer imported goods and lost jobs in cloth manufacture.",
   "p3": "War taxation (unprecedented subsidies 1589 and 1593) and Elizabeth's granting of monopolies further raised prices on staple goods. The 1590s crisis combined natural, economic and fiscal pressures simultaneously.",
   "hints": [
    "bad harvests",
@@ -5362,12 +5331,12 @@
    },
    {
     "p": 3,
-    "gap": "deliberate",
+    "gap": "suspicion of Western intentions",
     "alt": [],
     "d": [
-     "accidental",
-     "unavoidable",
-     "unimportant"
+     "trust in Western intentions",
+     "fear of Japanese intentions",
+     "respect for Western leaders"
     ]
    }
   ]
@@ -5602,9 +5571,9 @@
     "gap": "25 million",
     "alt": [],
     "d": [
-     "5 million",
      "15 million",
-     "40 million"
+     "40 million",
+     "2 million"
     ]
    },
    {
@@ -5721,12 +5690,12 @@
    },
    {
     "p": 3,
-    "gap": "boycotted",
+    "gap": "boycotting",
     "alt": [],
     "d": [
-     "vetoed",
-     "chaired",
-     "left"
+     "vetoing",
+     "chairing",
+     "leaving"
     ]
    }
   ]
@@ -5815,25 +5784,21 @@
    },
    {
     "p": 2,
-    "gap": "socialist",
+    "gap": "forced mergers",
     "alt": [],
     "d": [
-     "liberal",
-     "peasant",
-     "Catholic"
+     "free mergers",
+     "banned mergers",
+     "voluntary alliances"
     ]
    },
    {
     "p": 3,
-    "gap": "Rakosi",
-    "alt": [
-     "Matyas Rakosi",
-     "Rákosi",
-     "Mátyás Rákosi"
-    ],
+    "gap": "Rákosi",
+    "alt": [],
     "d": [
      "Gomulka",
-     "Kadar",
+     "Kádár",
      "Ulbricht"
     ]
    }
@@ -6027,14 +5992,12 @@
    },
    {
     "p": 2,
-    "gap": "Sixteen",
-    "alt": [
-     "16"
-    ],
+    "gap": "16 nations",
+    "alt": [],
     "d": [
-     "Six",
-     "Ten",
-     "Twenty-five"
+     "12 nations",
+     "10 nations",
+     "25 nations"
     ]
    },
    {
@@ -6141,12 +6104,12 @@
    },
    {
     "p": 3,
-    "gap": "110",
+    "gap": "110 miles",
     "alt": [],
     "d": [
-     "11",
-     "50",
-     "200"
+     "11 miles",
+     "50 miles",
+     "200 miles"
     ]
    }
   ]
@@ -6182,12 +6145,12 @@
    },
    {
     "p": 2,
-    "gap": "propaganda disaster",
+    "gap": "Propaganda disaster",
     "alt": [],
     "d": [
-     "military defeat",
-     "diplomatic triumph",
-     "economic success"
+     "Military defeat",
+     "Diplomatic triumph",
+     "Economic success"
     ]
    },
    {
@@ -6366,7 +6329,7 @@
   "section": "coldwar",
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "front": "How did the arms race develop between 1945 and 1955?",
-  "p1": "USA bombed Hiroshima and Nagasaki August 1945. Stalin accelerated the Soviet programme — aided by Klaus Fuchs, who passed Manhattan Project designs to the USSR. Soviets tested first atomic bomb 1949, years earlier than expected.",
+  "p1": "USA bombed Hiroshima and Nagasaki August 1945. Klaus Fuchs passed Manhattan Project designs to the USSR; Soviets tested their first atomic bomb 1949, years earlier than expected.",
   "p2": "USA tested hydrogen bomb 1952 (1,000 times more powerful); USSR tested its own 1953. Both sides developed ICBMs in 1957. Rosenbergs executed June 1953 for passing atomic secrets to Moscow.",
   "p3": "Led to Mutually Assured Destruction (MAD) — any nuclear strike would be met by devastating retaliation, making nuclear war suicidal for both sides.",
   "hints": [
@@ -6630,7 +6593,7 @@
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "front": "What caused the Hungarian Uprising of 1956?",
   "p1": "Hungary under Stalinist rule: Rakosi's brutal AVH secret police, collectivisation, Soviet-controlled economy. Khrushchev's secret speech raised hopes for change.",
-  "p2": "October 1956: police fired on protesters — workers, students and intellectuals joined in. Imre Nagy took power: released political prisoners, ended the one-party state, asked Khrushchev to withdraw Soviet troops. Khrushchev initially accepted.",
+  "p2": "October 1956: police fired on protesters. Imre Nagy took power: released political prisoners, ended the one-party state, asked Khrushchev to withdraw Soviet troops. Khrushchev initially accepted.",
   "p3": "Nagy went too far — announced Hungary would leave the Warsaw Pact and become neutral. Threatened a chain reaction across the Eastern bloc. Khrushchev ordered the invasion.",
   "hints": [
    "AVH",
@@ -6749,14 +6712,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Pleven's",
-    "alt": [
-     "Pleven"
-    ],
+    "gap": "Spofford Compromise",
+    "alt": [],
     "d": [
-     "Schuman's",
-     "Monnet's",
-     "Adenauer's"
+     "Pleven Plan",
+     "Schuman Plan",
+     "Dulles Plan"
     ]
    },
    {
@@ -7069,12 +7030,12 @@
    },
    {
     "p": 2,
-    "gap": "Philby",
+    "gap": "head of MI6's anti-Soviet section",
     "alt": [],
     "d": [
-     "Blunt",
-     "Maclean",
-     "Burgess"
+     "head of MI5's counter-intelligence",
+     "head of the CIA",
+     "head of GCHQ"
     ]
    },
    {
@@ -7095,7 +7056,7 @@
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "front": "How did espionage shape the later Cold War?",
   "p1": "Aldrich Ames (arrested 1994): CIA officer who spied for the Soviet Union from 1985. Revealed virtually every CIA source inside the USSR — at least ten executed. Motivated by money, not ideology.",
-  "p2": "Gunter Guillaume — personal aide to West German Chancellor Willy Brandt — exposed as an East German Stasi spy in 1974. Forced Brandt to resign, ending the political career of the architect of Ostpolitik.",
+  "p2": "Gunter Guillaume, personal aide to Chancellor Willy Brandt, exposed as an East German Stasi spy in 1974 → Brandt resigned, ending the career of the architect of Ostpolitik.",
   "p3": "Espionage was a permanent feature of Cold War relations, demonstrating that even during détente both sides viewed each other as fundamentally hostile.",
   "hints": [
    "Aldrich Ames",
@@ -7130,10 +7091,8 @@
    },
    {
     "p": 3,
-    "gap": "detente",
-    "alt": [
-     "détente"
-    ],
+    "gap": "détente",
+    "alt": [],
     "d": [
      "containment",
      "appeasement",
@@ -7147,7 +7106,7 @@
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "front": "What was Solidarity in Poland (1980–81)?",
-  "p1": "1980: workers at the Lenin Shipyard in Gdansk struck over food prices. Led by Lech Walesa, they formed Solidarity — the first independent trade union in the Eastern bloc. Quickly grew to 10 million members.",
+  "p1": "1980: Lenin Shipyard workers in Gdansk struck over food prices. Led by Lech Walesa, they formed Solidarity, the first independent trade union in the Eastern bloc: 10 million members.",
   "p2": "Solidarity demanded: free trade unions, the right to strike, freedom of speech, release of political prisoners. A broad political movement threatening the communist monopoly on power.",
   "p3": "December 1981: General Jaruzelski declared martial law — Solidarity banned, Walesa imprisoned. Survived underground; Pope John Paul II (a Pole, elected 1979) crucial in sustaining Polish resolve.",
   "hints": [
@@ -7175,12 +7134,12 @@
    },
    {
     "p": 2,
-    "gap": "10 million",
+    "gap": "free trade unions",
     "alt": [],
     "d": [
-     "1 million",
-     "100,000",
-     "50 million"
+     "a free press",
+     "a multi-party state",
+     "Soviet withdrawal"
     ]
    },
    {
@@ -7267,14 +7226,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "five-year",
-    "alt": [
-     "5-year"
-    ],
+    "gap": "5-year freeze",
+    "alt": [],
     "d": [
-     "one-year",
-     "ten-year",
-     "three-year"
+     "1-year freeze",
+     "10-year freeze",
+     "3-year freeze"
     ]
    },
    {
@@ -7355,7 +7312,7 @@
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "front": "What was Ostpolitik?",
-  "p1": "Willy Brandt, West German Chancellor from 1969: abandoned the Hallstein Doctrine and normalised relations with the Eastern bloc. Moscow Treaty (1970) — accepted inviolable post-war borders; Warsaw Treaty (1970) — recognised Oder-Neisse line with Poland.",
+  "p1": "Willy Brandt, West German Chancellor from 1969, abandoned the Hallstein Doctrine and normalised relations with the Eastern bloc. Moscow Treaty (1970) accepted post-war borders; Warsaw Treaty (1970) recognised the Oder-Neisse line with Poland.",
   "p2": "Basic Treaty (1972) — FRG recognised the GDR as a sovereign state; both Germanies joined the UN. West Germany-Czechoslovakia Treaty (1973) revoked the Munich Agreement.",
   "p3": "Brandt won Nobel Peace Prize 1971. Resigned 1974 after aide Gunter Guillaume exposed as Stasi spy. Ostpolitik's achievements maintained by subsequent governments.",
   "hints": [
@@ -7457,7 +7414,7 @@
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "front": "What were the consequences of the Soviet invasion of Afghanistan?",
-  "p1": "Decade-long guerrilla war the Red Army could not win. Over 38,000 Soviets killed or wounded. Carter cancelled SALT II, imposed sanctions, boycotted 1980 Moscow Olympics. USSR boycotted 1984 Los Angeles Olympics in retaliation.",
+  "p1": "Decade-long guerrilla war the Red Army could not win; over 38,000 Soviets killed or wounded. Carter cancelled SALT II, imposed sanctions and boycotted 1980 Moscow Olympics; USSR boycotted 1984 Los Angeles Olympics in retaliation.",
   "p2": "War eroded Soviet willingness to use military intervention — directly influenced Gorbachev's decision not to use force to maintain communist regimes in 1989.",
   "p3": "When glasnost freed the press, Afghanistan's failures became public — fuelling demands for political change. Spiralling costs drained an economy already over-spending on defence.",
   "hints": [
@@ -7473,12 +7430,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Moscow Olympics",
+    "gap": "1980 Moscow Olympics",
     "alt": [],
     "d": [
-     "Los Angeles Olympics",
-     "Munich Olympics",
-     "Seoul Olympics"
+     "1976 Montreal Olympics",
+     "1972 Munich Olympics",
+     "1988 Seoul Olympics"
     ]
    },
    {
@@ -7493,11 +7450,11 @@
    },
    {
     "p": 3,
-    "gap": "Glasnost",
+    "gap": "glasnost",
     "alt": [],
     "d": [
-     "Perestroika",
-     "Detente",
+     "perestroika",
+     "détente",
      "Ostpolitik"
     ]
    }
@@ -7508,7 +7465,7 @@
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "front": "What was the new Cold War (1979–1984)?",
-  "p1": "Reagan called the USSR an 'evil empire', raised military spending from $171bn (1981) to $376bn (1986). Stationed Pershing and Cruise missiles in Western Europe 1983. KAL 007 shot down by USSR 1983 — 269 killed.",
+  "p1": "Reagan called the USSR an 'evil empire'; military spending rose from $171bn (1981) to $376bn (1986). Pershing and Cruise missiles stationed in Western Europe 1983. KAL 007 shot down 1983: 269 killed.",
   "p2": "SDI ('Star Wars', 1983): space-based laser system to intercept Soviet ICBMs — threatened to make the entire Soviet nuclear arsenal obsolete.",
   "p3": "Able Archer 83: NATO exercise simulating nuclear war — mistaken by USSR for a real strike; Soviet forces went on alert. Most dangerous moment of the new Cold War.",
   "hints": [
@@ -7534,12 +7491,12 @@
    },
    {
     "p": 2,
-    "gap": "space-based lasers",
+    "gap": "space-based laser system",
     "alt": [],
     "d": [
-     "ground-based missiles",
-     "orbiting bombers",
-     "naval defences"
+     "ground-based missile system",
+     "orbiting bomber fleet",
+     "naval defence shield"
     ]
    },
    {
@@ -7611,7 +7568,7 @@
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "front": "What problems was the USSR facing in the 1980s?",
   "p1": "Brezhnev's 'era of stagnation': economy failing; Afghanistan costing vast resources with no results. Chernobyl (1986) exploded — $18 billion spent on containment, exposing industrial inefficiency and corruption.",
-  "p2": "Poor living standards → unrest in satellite states (e.g. Solidarity in Poland). Reagan's SDI threatened to make Soviet ICBMs obsolete. Andropov and Chernenko — Brezhnev's two elderly successors — meant stagnation at a critical moment.",
+  "p2": "Poor living standards → unrest in satellite states (e.g. Solidarity in Poland). Reagan's SDI threatened to make Soviet ICBMs obsolete. Andropov and Chernenko, Brezhnev's elderly successors, meant stagnation.",
   "p3": "When Gorbachev became leader 1985, radical change was universally understood to be necessary. USSR over-spending on defence, producing too few consumer goods, losing the technological race.",
   "hints": [
    "stagnation",
@@ -7712,7 +7669,7 @@
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "front": "How did Reagan and Gorbachev reduce tensions?",
-  "p1": "Reykjavik (1986): Gorbachev tried to trade SDI for sweeping arms cuts — Reagan refused. But it produced the INF Treaty (Washington, 1987): total elimination of intermediate-range missiles from Europe. First ever arms reduction agreement.",
+  "p1": "Reykjavik (1986): Gorbachev tried to trade SDI for sweeping arms cuts; Reagan refused. But it led to the INF Treaty (Washington, 1987): total elimination of intermediate-range missiles from Europe, the first ever arms reduction.",
   "p2": "Reagan and Gorbachev exchanged visits, developed a working relationship. Reagan came to believe Gorbachev was genuinely different from previous Soviet leaders.",
   "p3": "Primary driver was Gorbachev's conviction the USSR could not sustain the arms race — Western pressure accelerated his timetable but did not create the necessity.",
   "hints": [
@@ -7801,14 +7758,12 @@
    },
    {
     "p": 3,
-    "gap": "Sinatra Doctrine",
-    "alt": [
-     "Sinatra"
-    ],
+    "gap": "unpopular communist regimes",
+    "alt": [],
     "d": [
-     "Truman Doctrine",
-     "Reagan Doctrine",
-     "Carter Doctrine"
+     "popular socialist parties",
+     "reformist Western governments",
+     "Warsaw Pact armies"
     ]
    }
   ]
@@ -7818,8 +7773,8 @@
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "front": "What happened in Poland and Hungary in 1989?",
-  "p1": "Poland: Round Table Agreements (April 1989) — Solidarity recognised as a party, allowed to contest 35% of parliamentary seats. June 1989 elections: Solidarity landslide — first non-communist government in Eastern Europe since 1948.",
-  "p2": "Hungary: reformist Imre Pozsgay declared January 1989 the communist monopoly must end. Hungary opened its borders with Austria August 1989 — 150,000 East Germans fled West, triggering the crisis that brought down the Berlin Wall.",
+  "p1": "Poland: Round Table Agreements (April 1989): Solidarity recognised as a party, allowed to contest 35% of seats. June 1989 elections: Solidarity landslide → first non-communist government in Eastern Europe since 1948.",
+  "p2": "Hungary: reformist Imre Pozsgay declared January 1989 that the communist monopoly must end. Border opened with Austria August 1989 → 150,000 East Germans fled West.",
   "p3": "Both confirmed the Sinatra Doctrine was real — Poland's success triggered a wave of revolutions across the Eastern bloc.",
   "hints": [
    "Solidarity landslide",
@@ -7844,14 +7799,12 @@
    },
    {
     "p": 2,
-    "gap": "Austrian",
-    "alt": [
-     "Austria"
-    ],
+    "gap": "Austria",
+    "alt": [],
     "d": [
-     "Czech",
-     "Romanian",
-     "Yugoslav"
+     "Czechoslovakia",
+     "Romania",
+     "Yugoslavia"
     ]
    },
    {
@@ -7873,7 +7826,7 @@
   "section": "coldwar",
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "front": "Why did the Berlin Wall fall on 9 November 1989?",
-  "p1": "Hungary's open border allowed 150,000 East Germans to flee West → mass demonstrations in East German cities, especially Leipzig. Honecker could not count on Soviet support — Gorbachev told him to make changes.",
+  "p1": "Hungary's open border let 150,000 East Germans flee West → mass demonstrations in East German cities, especially Leipzig. Honecker could not count on Soviet support: Gorbachev told him to make changes.",
   "p2": "9 November 1989: government announced East Germans could travel freely. Border guards — overwhelmed by crowds — opened crossings. Crowds demolished the Wall with hammers and pickaxes that night.",
   "p3": "Kennedy pledged 'Ich bin ein Berliner' 1963 — 26 years later the Wall fell. Confirmed the Sinatra Doctrine was real.",
   "hints": [
@@ -7899,12 +7852,12 @@
    },
    {
     "p": 2,
-    "gap": "free travel",
+    "gap": "travel freely",
     "alt": [],
     "d": [
-     "a new constitution",
-     "free elections",
-     "the end of the SED"
+     "vote freely",
+     "trade freely",
+     "leave permanently"
     ]
    },
    {
@@ -7925,7 +7878,7 @@
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "front": "What happened in Czechoslovakia (1989) and Romania (1989)?",
   "p1": "Velvet Revolution (Czechoslovakia): mass demonstrations led by Charter 77 and Vaclav Havel's Civic Forum. Communist Party relinquished power December 1989 — Havel made president. Peaceful, hence 'velvet'.",
-  "p2": "Romania: the only violent revolution of 1989. Demonstrations in Timisoara spread across the country. Ceausescu and wife fled, were captured and executed 25 December 1989 — the only Eastern European leaders to be killed.",
+  "p2": "Romania: the only violent revolution of 1989. Demonstrations in Timisoara spread nationwide. Ceausescu and wife fled, were captured and executed 25 December 1989: the only Eastern European leaders killed.",
   "p3": "Velvet Divorce (1 January 1993): Czechoslovakia peacefully split into Czech Republic and Slovakia — agreed by Vaclav Klaus and Vladimir Meciar without a referendum.",
   "hints": [
    "Havel",
@@ -7976,7 +7929,7 @@
   "unit": "Chapter 4 – The End of the Cold War 1984–1995",
   "front": "How and why was Germany reunified?",
   "p1": "Helmut Kohl moved rapidly, fearing the opportunity would close. March 1990: first free elections in East Germany — pro-reunification Alliance for Germany won a clear majority.",
-  "p2": "1 July 1990: economic union — Deutschmark replaced East German Mark at 1:1. 3 October 1990: formal reunification. Two Plus Four Treaty with the four wartime Allies settled the borders of the new Germany.",
+  "p2": "1 July 1990: economic union (Deutschmark replaced East German Mark at 1:1). 3 October 1990: formal reunification. Two Plus Four Treaty with the four wartime Allies settled the new Germany's borders.",
   "p3": "Gorbachev agreed to German NATO membership in exchange for assurances NATO would not expand eastwards — an assurance that became deeply controversial in later decades.",
   "hints": [
    "Kohl",
@@ -8066,14 +8019,12 @@
    },
    {
     "p": 3,
-    "gap": "15",
-    "alt": [
-     "fifteen"
-    ],
+    "gap": "15 independent states",
+    "alt": [],
     "d": [
-     "12",
-     "9",
-     "25"
+     "12 independent states",
+     "9 independent states",
+     "25 independent states"
     ]
    }
   ]
@@ -8109,12 +8060,12 @@
    },
    {
     "p": 2,
-    "gap": "187",
+    "gap": "187 killed",
     "alt": [],
     "d": [
-     "18",
-     "87",
-     "1,870"
+     "47 killed",
+     "287 killed",
+     "1,000 killed"
     ]
    },
    {
@@ -8152,14 +8103,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Tito's",
-    "alt": [
-     "Tito"
-    ],
+    "gap": "Tito",
+    "alt": [],
     "d": [
-     "Stalin's",
-     "Hoxha's",
-     "Ceausescu's"
+     "Stalin",
+     "Hoxha",
+     "Ceausescu"
     ]
    },
    {
@@ -8263,12 +8212,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "crises",
+    "gap": "Crises over-reported",
     "alt": [],
     "d": [
-     "successes",
-     "rumours",
-     "expenses"
+     "Successes over-reported",
+     "Rumours over-reported",
+     "Expenses over-reported"
     ]
    },
    {
@@ -8525,12 +8474,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "legal literacy",
+    "gap": "educated gentry",
     "alt": [],
     "d": [
-     "military skill",
-     "clerical training",
-     "royal connections"
+     "wealthy nobles",
+     "Commonwealth men",
+     "local clergy"
     ]
    },
    {
