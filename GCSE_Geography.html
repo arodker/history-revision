@@ -1049,7 +1049,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 <div style="display:flex;justify-content:flex-end;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:.5rem">
   <a href="index.html" id="hub-link" class="tb-btn" style="white-space:nowrap;flex-shrink:0">← Hub</a>
   <span id="cal-wrap" style="position:relative;margin-right:auto"><button id="cal-btn" class="tb-btn" onclick="calToggle(event)" title="Exam dates" aria-label="Exam dates" style="color:var(--text);padding:0 .6rem;font-size:1.05rem;white-space:nowrap"><span class="cal-ic">📅</span><span id="cal-dot" style="display:none"></span></button><div id="cal-panel" style="display:none;position:absolute;top:42px;left:0;z-index:60;min-width:min(290px,calc(100vw - 32px));width:max-content;background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:.6rem .8rem;box-shadow:0 6px 20px rgba(0,0,0,.15)"></div></span>
-  <button id="search-btn" class="tb-btn" onclick="openSearch()" title="Search topics">🔍</button>
   <button id="print-btn" class="tb-btn" onclick="window.print()" style="display:none" title="Print">🖨️</button>
   <span id="set-wrap" style="position:relative"><button id="set-btn" class="tb-btn" onclick="setMenuToggle(event)" aria-label="Settings" aria-haspopup="true" aria-expanded="false" title="Settings">⚙️</button><div id="set-menu" role="menu" hidden></div></span>
 </div>
@@ -6101,7 +6100,7 @@ uptoRender();
     {sel:'.btn-arc',e:'🕹️',t:'Arcade',p:'Games that test what you have learned. Beat the bosses and earn badges.'},
     {sel:'#xp-card',e:'⭐',t:'XP and levels',p:r.flash+' XP per flashcard, '+r.date+' per date or quiz answer, '+r.cap+' a day. Level up from '+(l?l[0].t:'Local explorer')+' to '+(l?l[l.length-1].t:'Global citizen')+'. Badges are separate and show at the bottom of this page once you earn one.'},
     {sel:'#parent-btn',e:'👪',t:'Parent view',p:'A parent quizzes you aloud and taps ✓ or ✗. Finishing earns '+r.parent+' XP.'},
-    {sel:'#search-btn',e:'🔍',t:'Search and dark mode',p:'Search finds any person or event. ⚙️ holds night mode, hints and saving your progress.'},
+    {sel:'#set-btn',e:'⚙️',t:'Settings',p:'Night mode, hints and saving your progress.'},
     {first:1,e:'🎉',t:'Start here',p:'Open a paper and do a round of ⚡ Flashcards.'}
   ]}
 
