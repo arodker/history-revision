@@ -712,6 +712,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 @keyframes rkpop{0%{transform:scale(.2);opacity:1}60%{transform:scale(1.6);opacity:1}100%{transform:scale(2.2);opacity:0}}
 .rk-skip{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:rgba(255,255,255,.55);font-size:.75rem}
 </style>
+<style id="ring-dark">:root.dark .pbw .fd-wheel text{fill:#26262b;font-weight:800}:root.dark .pbw .fd-wheel>circle[stroke="var(--subtle)"]{stroke:rgba(0,0,0,.16)}:root.dark .pbw .fd-wheel>circle[stroke="#e5e5e5"]{stroke:rgba(0,0,0,.3)}</style>
 </head>
 <body>
 <canvas id="fd-confetti-canvas" style="display:none"></canvas>
@@ -3421,15 +3422,15 @@ setTimeout(gapNewShow, 1200);
   setInterval(tick, TICK * 1000);
   // Totals over the last 14 days, sent with the usage numbers: seconds per hour of day, per weekday (Monday first), per feature, plus sessions and active days.
   window.hsUsage = function () {
-    var o = cache || load(), h = new Array(24).fill(0), w = new Array(7).fill(0), f = {}, s = 0, t = 0, days = 0;
+    var o = cache || load(), h = new Array(24).fill(0), w = new Array(7).fill(0), hw = new Array(168).fill(0), f = {}, s = 0, t = 0, days = 0;
     Object.keys(o.d).forEach(function (k) {
       var d = o.d[k], p = k.split('-'), wd = (new Date(+p[0], +p[1] - 1, +p[2]).getDay() + 6) % 7;
       if (!d.t) return;
       days++; s += d.s || 0; t += d.t;
-      Object.keys(d.h).forEach(function (x) { h[+x] += d.h[x]; w[wd] += d.h[x]; });
+      Object.keys(d.h).forEach(function (x) { h[+x] += d.h[x]; w[wd] += d.h[x]; hw[wd * 24 + +x] += d.h[x]; });
       Object.keys(d.f).forEach(function (x) { var nm = NAMES[x] || x; f[nm] = (f[nm] || 0) + d.f[x]; });
     });
-    return {h: h, w: w, f: f, s: s, t: t, days: days};
+    return {h: h, w: w, hw: hw, f: f, s: s, t: t, days: days};
   };
 })();
 </script>
