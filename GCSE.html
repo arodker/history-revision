@@ -3011,9 +3011,9 @@ let fdMode = 'flip';
 let ffMode = 'match';
 let ffI = 0, ffRes = [], ffOpts = [], ffLock = false, ffTok = 0;
 function ffEsc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function ffFillFor(card, p) { return (card.fill || []).find(f => f.p === p); }
+function ffFillFor(card, p) { const k = card._ffKey || (card._ffKey = {}); if (!k[p]) { const o = (card.fill || []).filter(f => f.p === p); k[p] = o[Math.floor(Math.random() * o.length)]; } return k[p]; }
 function ffUsable(card) {
-  return !!(card && Array.isArray(card.s) && card.s.length === 3 && Array.isArray(card.fill) && card.fill.length === 3 && card.fill.every(f => ffFillFor(card, 1) && f.gap && f.d && f.d.length >= 2));
+  return !!(card && Array.isArray(card.s) && card.s.length === 3 && Array.isArray(card.fill) && card.fill.length >= 3 && card.fill.every(f => ffFillFor(card, 1) && f.gap && f.d && f.d.length >= 2));
 }
 function ffNorm(x) {
   return String(x).normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase()
@@ -3400,6 +3400,7 @@ function fdNext() {
   }
 
   fdCurrent = fdDeck.shift();
+  delete fdCurrent._ffKey;
   fdFlipped = false;
 
   // Update card UI
