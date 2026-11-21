@@ -192,12 +192,14 @@
    },
    {
     "p": 2,
-    "gap": "5th October",
-    "alt": [],
+    "gap": "5 October",
+    "alt": [
+     "5th October"
+    ],
     "d": [
-     "12th October",
-     "1st October",
-     "19th October"
+     "12 October",
+     "1 October",
+     "19 October"
     ]
    },
    {
@@ -356,12 +358,12 @@
    },
    {
     "p": 2,
-    "gap": "Army deserted him",
+    "gap": "19 July",
     "alt": [],
     "d": [
-     "Army rebelled against him",
-     "Navy mutinied",
-     "Council arrested him"
+     "10 July",
+     "12 July",
+     "25 July"
     ]
    },
    {
@@ -393,7 +395,7 @@
   "s": [
    "Mary was the first Queen to rule in her own right; Matilda's claim had led to civil war in the 12th century.",
    "John Knox's First Blast of the Trumpet (1558) compared female rulers to 'the blind leading those who can see'.",
-   "Marriage was a hurdle: a wife was expected to obey her husband."
+   "Marriage was a hurdle: a wife was expected to obey her husband, whether Mary chose an English noble or a foreign prince."
   ],
   "fill": [
    {
@@ -452,12 +454,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "less serious under Mary",
+    "gap": "less faction",
     "alt": [],
     "d": [
-     "more serious under Mary",
-     "equally serious",
-     "absent under Mary"
+     "more faction",
+     "as much faction",
+     "similar faction"
     ]
    },
    {
@@ -634,12 +636,12 @@
    },
    {
     "p": 3,
-    "gap": "Gardiner's death 1555",
+    "gap": "Gardiner's death",
     "alt": [],
     "d": [
-     "Paget's death 1555",
-     "Pole's death 1558",
-     "Cranmer's death 1556"
+     "Paget's death",
+     "Pole's death",
+     "Cranmer's death"
     ]
    }
   ]
@@ -777,7 +779,7 @@
     "gap": "Gardiner",
     "alt": [],
     "d": [
-     "Paget",
+     "Arundel",
      "Pole",
      "Renard"
     ]
@@ -1042,7 +1044,7 @@
     "alt": [],
     "d": [
      "Articles",
-     "Decrees",
+     "Proclamations",
      "Visitations"
     ]
    },
@@ -1075,7 +1077,7 @@
   "unit": "Unit 2 – Religious Change",
   "front": "Why were the Marian burnings counter-productive?",
   "p1": "284 burned (51 women), mostly in Protestant strongholds of the south-east. Large crowds attended but little evidence burnings converted anyone — many viewed them as entertainment.",
-  "p2": "Burnings of prominent Protestant bishops inspired resistance. Cranmer's burning 1556: plunged the hand that signed his recantation into the flames first.",
+  "p2": "Gardiner thought the burnings counter-productive, but they continued under Pole after his death. Burnings of bishops inspired resistance. Cranmer's 1556 burning: plunged the hand that signed his recantation into the flames first.",
   "p3": "~800 Protestants fled abroad, including many printers → underground propaganda movement keeping Cranmer's Prayer Book and Foxe's Book of Martyrs in circulation, radicalising exiles with Calvinist ideas.",
   "hints": [
    "284",
@@ -1084,8 +1086,8 @@
   ],
   "s": [
    "284 people were burned, mostly in the Protestant south-east, but there is little evidence it converted anyone.",
-   "At his burning in 1556, Cranmer put the hand that signed his recantation into the flames first.",
-   "About 800 Protestants fled abroad, where Calvinist ideas radicalised many of them."
+   "Gardiner thought the burnings counter-productive, but they continued under Pole, and at his burning in 1556 Cranmer put the hand that signed his recantation into the flames first.",
+   "About 800 Protestants fled abroad, including printers who kept Foxe's Book of Martyrs in circulation, and Calvinist ideas radicalised many of them."
   ],
   "fill": [
    {
@@ -1131,7 +1133,7 @@
   "unit": "Unit 2 – Religious Change",
   "front": "How far had England returned to Catholicism by 1558?",
   "p1": "Edward's short reign meant much of the country — especially the North — had always remained Catholic. Catholic worship returned speedily; Mary faced no rebellion purely on the issue of religion.",
-  "p2": "Mary failed to suppress the Protestant underground. Two-thirds of printers were Protestant; 19,000 copies of the Second Book of Common Prayer remained in circulation alongside Foxe's Book of Martyrs.",
+  "p2": "Mary failed to suppress the Protestant underground. 19,000 copies of the Second Book of Common Prayer remained in circulation alongside Foxe's Book of Martyrs.",
   "p3": "Failure to produce an heir → Catholicism did not triumph. But the time it took Elizabeth to re-establish Protestantism suggests the Marian restoration achieved significant de facto change.",
   "hints": [
    "rebellion",
@@ -1250,8 +1252,10 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Zwinglism",
-    "alt": [],
+    "gap": "Zwinglianism",
+    "alt": [
+     "Zwinglism"
+    ],
     "d": [
      "Anabaptism",
      "Socinianism",
@@ -1374,12 +1378,12 @@
    },
    {
     "p": 3,
-    "gap": "livestock farming",
+    "gap": "arable land",
     "alt": [],
     "d": [
-     "grain farming",
-     "dairy farming",
-     "wool imports"
+     "common land",
+     "waste land",
+     "monastic land"
     ]
    }
   ]
@@ -1580,12 +1584,12 @@
    },
    {
     "p": 2,
-    "gap": "dispensed justice",
+    "gap": "well disciplined",
     "alt": [],
     "d": [
-     "marched on London",
-     "burned Norwich",
-     "demanded the throne"
+     "poorly armed",
+     "badly led",
+     "deeply divided"
     ]
    },
    {
@@ -1660,7 +1664,7 @@
   "reign": "edward",
   "unit": "Unit 3 – Rebellion and Unrest",
   "front": "What happened during the Western Rebellion?",
-  "p1": "Rebels besieged Exeter for a month; attacked gentry at St Michael's Mount, Bodmin and Trematon Castle. Local militia failed to suppress revolt.",
+  "p1": "Rebels besieged Exeter for a month; attacked gentry at St Michael's Mount, Bodmin ('Kill all the gentlemen!') and Trematon Castle. Local militia failed to suppress revolt.",
   "p2": "Government forces of 8,000 led by Lord John Russell defeated rebels at Sampford Courtenay — over 3,000 executed.",
   "p3": "Failed due to lack of clear leadership — different sections attacked different targets, unlike the more organised Kett's Rebellion. Cornish language suppressed after the rebellion.",
   "hints": [
@@ -1669,7 +1673,7 @@
    "leadership"
   ],
   "s": [
-   "Rebels besieged Exeter for a month, and local militia failed to suppress the revolt.",
+   "Rebels besieged Exeter for a month and attacked gentry, with 'Kill all the gentlemen!' chanted at Bodmin; local militia failed to suppress the revolt.",
    "A government force of 8,000 under Lord John Russell defeated the rebels at Sampford Courtenay, and over 3,000 were executed.",
    "It failed through lack of clear leadership, with different sections attacking different targets, unlike the more organised Kett's Rebellion."
   ],
@@ -1771,7 +1775,7 @@
   "front": "How serious a threat was Wyatt's Rebellion to Mary's reign?",
   "p1": "Government soldiers deserted Norfolk and joined Wyatt declaring 'We are all Englishmen!' — Wyatt reached the gates of London. If Londoners had opened the city gates, the rebellion could have succeeded.",
   "p2": "Courtenay revealed the plot to Gardiner → forced Wyatt's hand too early, in January. French support and the other three rebel forces never materialised. Hard to sustain in winter.",
-  "p3": "Mary's decisive Guildhall speech secured London's loyalty → gates stayed shut. Wyatt and leaders executed; Elizabeth imprisoned in the Tower but released after Wyatt refused to implicate her under torture.",
+  "p3": "Mary's decisive Guildhall speech secured London's loyalty → gates stayed shut. Wyatt and leaders executed; Elizabeth imprisoned in the Tower.",
   "hints": [
    "Englishmen",
    "Courtenay",
@@ -1780,7 +1784,7 @@
   "s": [
    "Government soldiers deserted Norfolk to join Wyatt with the cry 'We are all Englishmen!', and Wyatt reached the gates of London.",
    "Courtenay revealed the plot to Gardiner, forcing Wyatt to rise too early in January, and French support never materialised.",
-   "Mary's Guildhall speech secured London's loyalty, and Wyatt did not implicate Elizabeth even under torture."
+   "Mary's Guildhall speech secured London's loyalty, so the rebellion failed, Wyatt was executed and Elizabeth was imprisoned in the Tower."
   ],
   "fill": [
    {
@@ -1802,8 +1806,8 @@
     "alt": [],
     "d": [
      "Paget",
-     "Elizabeth",
-     "Pole"
+     "Pole",
+     "Arundel"
     ]
    },
    {
@@ -1932,7 +1936,7 @@
   "unit": "Unit 4 – Elizabeth I and Religion",
   "front": "How did Puritans challenge the settlement from within the Church?",
   "p1": "Vestiarian Controversy: Puritans despised vestments. Parker's 1566 Advertisements compromised — but 37 clergy who refused lost their jobs.",
-  "p2": "Puritans attempted to alter the 39 Articles in Convocation (1563) — Anglican articles only passed by one vote. Ceremony left more ambiguous; doctrine clearly moderate.",
+  "p2": "Puritans attempted to alter the 39 Articles in Convocation (1563): defeated by a single vote. 1571: clergy with reservations need not follow the ceremonial articles, but doctrine was non-negotiable.",
   "p3": "Bottom-up prophesying and classis movements 1570s–80s → tried to spread Calvinist and Presbyterian ideals among clergy. Later suppressed by Whitgift.",
   "hints": [
    "Vestiarian",
@@ -1941,7 +1945,7 @@
   ],
   "s": [
    "Puritans despised vestments; Parker's 1566 Advertisements compromised, but 37 clergy who refused lost their jobs.",
-   "Puritans tried to alter the 39 Articles in Convocation in 1563, but the Anglican articles passed by only one vote.",
+   "Puritan attempts to alter the 39 Articles in Convocation in 1563 were defeated by one vote, and from 1571 clergy with reservations could ignore the ceremonial articles but not the doctrinal ones.",
    "Prophesying and classis movements of the 1570s and 1580s spread Calvinist and Presbyterian ideals among clergy until Whitgift suppressed them."
   ],
   "fill": [
@@ -1951,8 +1955,8 @@
     "alt": [],
     "d": [
      "Injunctions",
-     "Articles",
-     "Visitations"
+     "Visitations",
+     "Canons"
     ]
    },
    {
@@ -1970,9 +1974,9 @@
     "gap": "Whitgift",
     "alt": [],
     "d": [
-     "Parker",
      "Grindal",
-     "Bancroft"
+     "Bancroft",
+     "Laud"
     ]
    }
   ]
@@ -2004,8 +2008,8 @@
     ],
     "d": [
      "Strickland",
-     "Browne",
-     "Barrow"
+     "Travers",
+     "Humphrey"
     ]
    },
    {
@@ -2025,9 +2029,9 @@
     "gap": "Norwich",
     "alt": [],
     "d": [
-     "Cambridge",
      "London",
-     "Geneva"
+     "Geneva",
+     "Bristol"
     ]
    }
   ]
@@ -2128,12 +2132,14 @@
    },
    {
     "p": 3,
-    "gap": "revitalising",
-    "alt": [],
+    "gap": "revitalised",
+    "alt": [
+     "revitalising"
+    ],
     "d": [
-     "suppressing",
-     "dividing",
-     "funding"
+     "suppressed",
+     "divided",
+     "funded"
     ]
    }
   ]
@@ -2291,9 +2297,9 @@
     "gap": "Mary of Guise",
     "alt": [],
     "d": [
-     "Mary Queen of Scots",
      "Catherine de Medici",
-     "Margaret Tudor"
+     "Margaret Tudor",
+     "Anne of Cleves"
     ]
    }
   ]
@@ -2304,7 +2310,7 @@
   "unit": "Unit 4 – Elizabeth I and Religion",
   "front": "What were the key provisions of the Act of Supremacy (1559)?",
   "p1": "Removed the Pope's authority over the English Church. Made Elizabeth Supreme Governor, not 'Supreme Head' (Henry's title), to avoid offending those who believed a woman could not head the Church.",
-  "p2": "Elizabeth in charge of a strict episcopal hierarchy of Archbishops and Bishops.",
+  "p2": "Elizabeth in charge of a strict episcopal hierarchy of Archbishops and Bishops. Mary's heresy laws repealed: no more burnings.",
   "p3": "All clergy and royal officials had to swear an oath of loyalty to Elizabeth. Parliament tried to enforce capital punishment for refusal → Elizabeth did not enforce this.",
   "hints": [
    "Supreme Governor",
@@ -2313,7 +2319,7 @@
   ],
   "s": [
    "It removed the Pope's authority and made Elizabeth Supreme Governor, avoiding the title 'Supreme Head' that offended some.",
-   "Elizabeth ruled a strict episcopal hierarchy of Archbishops and Bishops.",
+   "Elizabeth ruled a strict episcopal hierarchy of Archbishops and Bishops, and Mary's heresy laws were repealed, ending the burnings.",
    "Clergy and royal officials had to swear an oath of loyalty, and Elizabeth did not enforce Parliament's capital punishment for refusal."
   ],
   "fill": [
@@ -2377,8 +2383,8 @@
     "alt": [],
     "d": [
      "1549",
-     "1559",
-     "1553"
+     "1553",
+     "1547"
     ]
    },
    {
@@ -2854,12 +2860,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "favour to no faction",
+    "gap": "aloof",
     "alt": [],
     "d": [
-     "favour to Cecil alone",
-     "favour to the Howards",
-     "favour to Leicester"
+     "involved",
+     "hostile",
+     "dependent"
     ]
    },
    {
@@ -2870,9 +2876,9 @@
      "Dudley"
     ],
     "d": [
-     "Burghley",
      "Hatton",
-     "Walsingham"
+     "Essex",
+     "Raleigh"
     ]
    },
    {
@@ -2884,8 +2890,8 @@
     ],
     "d": [
      "Hatton",
-     "Sussex",
-     "Mildmay"
+     "Mildmay",
+     "Knollys"
     ]
    }
   ]
@@ -3042,7 +3048,7 @@
     "d": [
      "taxation",
      "local government",
-     "legislation"
+     "trade"
     ]
    }
   ]
@@ -3194,12 +3200,12 @@
    },
    {
     "p": 3,
-    "gap": "dominated parliamentary business",
+    "gap": "promote",
     "alt": [],
     "d": [
-     "avoided parliamentary business",
-     "were excluded from Parliament",
-     "sat only in the Lords"
+     "resist",
+     "amend",
+     "block"
     ]
    }
   ]
@@ -3295,9 +3301,9 @@
      "Commons"
     ],
     "d": [
-     "the Privy Council",
      "the Lords",
-     "the Star Chamber"
+     "the Star Chamber",
+     "the Court of Wards"
     ]
    },
    {
@@ -3337,8 +3343,8 @@
     "alt": [],
     "d": [
      "1561",
-     "1566",
-     "1571"
+     "1571",
+     "1569"
     ]
    },
    {
@@ -3371,7 +3377,7 @@
   "unit": "Unit 5 – Government and Parliament",
   "front": "Who were Elizabeth's main suitors?",
   "p1": "Robert Dudley, Earl of Leicester — Elizabeth's likely personal preference; father, brother and grandfather all executed as traitors. Amy Robsart's suspicious death 1560 made him unmarriageable.",
-  "p2": "Habsburg candidates: Archduke Charles of Austria — insistence on practising Catholicism a dealbreaker. Philip II proposed 1559 — wildly unpopular after Mary's reign.",
+  "p2": "Habsburg candidates: Archduke Charles of Austria: insistence on practising Catholicism a dealbreaker. Philip II proposed 1559; wildly unpopular after Mary's reign. Prince Eric of Sweden; Protestant, but little diplomatic benefit.",
   "p3": "Francis, Duke of Alençon — the only suitor to visit in person (1579). Elizabeth called him her 'frog'. Died 1584 — ending the last serious marriage negotiation.",
   "hints": [
    "Dudley",
@@ -3380,7 +3386,7 @@
   ],
   "s": [
    "Leicester, her likely preference, was made unmarriageable by his family's executions and Amy Robsart's suspicious death in 1560.",
-   "Archduke Charles of Austria insisted on practising Catholicism, a dealbreaker, and Philip II's 1559 proposal was wildly unpopular after Mary's reign.",
+   "Archduke Charles of Austria insisted on practising Catholicism, a dealbreaker; Prince Eric of Sweden was Protestant but offered little diplomatic benefit; Philip II's 1559 proposal was wildly unpopular.",
    "Alençon, her 'frog', was the only suitor to visit in person (1579), and his death in 1584 ended serious marriage talks."
   ],
   "fill": [
@@ -3401,9 +3407,9 @@
      "Archduke Charles"
     ],
     "d": [
-     "Eric of Sweden",
      "Henry of Anjou",
-     "Philip of Hesse"
+     "Philip of Hesse",
+     "Maximilian of Bavaria"
     ]
    },
    {
@@ -3442,9 +3448,9 @@
     "gap": "faction",
     "alt": [],
     "d": [
-     "parliament",
      "finance",
-     "foreign policy"
+     "foreign policy",
+     "the Church"
     ]
    },
    {
@@ -3627,50 +3633,50 @@
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "front": "How effectively did overseas trade develop in Europe and the Middle East?",
-  "p1": "Cloth trade: 75% of exports at start of reign. Dutch Revolt and war with Spain collapsed the Antwerp market → new companies chartered: Muscovy (1555); Eastland (1579); Levant (1580); East India (1600).",
-  "p2": "Muscovy Company: prosperous — traded cloth for Russian hides. Eastland Company: less successful, struggled against the German Hanseatic League's dominance of the Baltic.",
+  "p1": "Cloth trade through Antwerp collapsed with the Dutch Revolt and war with Spain → new companies chartered: Muscovy (1555); Eastland (1579); Levant (1580); East India (1600).",
+  "p2": "Muscovy Company: trade unpredictable and profit limited by faction and Ivan the Terrible. Eastland Company: struggled against the German Hanseatic League's dominance of the Baltic.",
   "p3": "Levant Company (1580): traded with Ottoman Empire, more successful. Overall the new companies partially compensated for the loss of Antwerp but never fully replaced it — cloth exports remained depressed.",
   "hints": [
-   "75%",
-   "Russia",
+   "Antwerp",
+   "Ivan the Terrible",
    "Levant"
   ],
   "s": [
-   "Cloth made up 75% of exports at the start of the reign, but the Dutch Revolt and Spanish war collapsed the Antwerp market.",
+   "The Dutch Revolt and Spanish war collapsed the Antwerp market for English cloth.",
    "New companies were chartered: Muscovy (1555), Eastland (1579), Levant (1580) and East India (1600).",
    "They only partly compensated for Antwerp, as the Eastland Company struggled against Hanseatic dominance and cloth exports stayed depressed."
   ],
   "fill": [
    {
     "p": 1,
-    "gap": "75%",
-    "alt": [
-     "three quarters"
-    ],
+    "gap": "Antwerp",
+    "alt": [],
     "d": [
-     "50%",
-     "25%",
-     "90%"
+     "Hamburg",
+     "Lisbon",
+     "Venice"
     ]
    },
    {
     "p": 2,
-    "gap": "Hanseatic League",
+    "gap": "East India",
     "alt": [],
     "d": [
-     "Venetian Republic",
-     "Swedish Crown",
-     "Dutch Republic"
+     "Virginia",
+     "Hudson's Bay",
+     "Royal African"
     ]
    },
    {
     "p": 3,
-    "gap": "Ottoman Empire",
-    "alt": [],
+    "gap": "Hanseatic",
+    "alt": [
+     "Hanseatic League"
+    ],
     "d": [
-     "Venetian Republic",
-     "Persian Empire",
-     "Mughal Empire"
+     "Venetian",
+     "Swedish",
+     "Genoese"
     ]
    }
   ]
@@ -3680,9 +3686,9 @@
   "section": "elizabeth",
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "front": "How effectively did overseas trade develop in the Americas and Asia?",
-  "p1": "Americas dominated by Spain and Portugal. Raleigh's colonisation attempts at Roanoke failed in the 1580s. John Dee and Martin Frobisher failed to find a north-west passage.",
+  "p1": "Americas dominated by Spain and Portugal. Raleigh's colonisation attempts at Roanoke failed in the 1580s. John Davis and Martin Frobisher failed to find a north-west passage.",
   "p2": "John Hawkins established English involvement in the Transatlantic Slave Trade (1562) — still dominated by Spanish and Portuguese in this period.",
-  "p3": "East India Company established 1600 — vital to empire but too early for Elizabeth to benefit. By end of reign, 75% of trade still with traditional European partners.",
+  "p3": "East India Company established 1600: vital to empire but too early for Elizabeth to benefit.",
   "hints": [
    "Raleigh",
    "Hawkins",
@@ -3691,7 +3697,7 @@
   "s": [
    "Spain and Portugal dominated the Americas, Raleigh's Roanoke attempts failed in the 1580s, and Frobisher found no north-west passage.",
    "John Hawkins began English involvement in the Transatlantic Slave Trade in 1562, though Spanish and Portuguese traders still dominated it.",
-   "The East India Company (1600) came too late for Elizabeth to benefit, and 75% of trade was still with European partners."
+   "The East India Company (1600) came too late for Elizabeth to benefit."
   ],
   "fill": [
    {
@@ -3716,14 +3722,12 @@
    },
    {
     "p": 3,
-    "gap": "75%",
-    "alt": [
-     "three quarters"
-    ],
+    "gap": "East India Company",
+    "alt": [],
     "d": [
-     "50%",
-     "25%",
-     "90%"
+     "Muscovy Company",
+     "Levant Company",
+     "Eastland Company"
     ]
    }
   ]
@@ -3735,7 +3739,7 @@
   "front": "What caused poverty and vagrancy to grow during Elizabeth's reign?",
   "p1": "Growing population (3 to 4 million) → Malthusian Crisis: employers lowered wages while landlords raised rents. Combined with inflation → large amounts of poverty.",
   "p2": "Wars with Spain and Ireland compounded the problem — soldiers and sailors discharged far from home, often unpaid and injured → added to the pool of destitute vagrants.",
-  "p3": "Contemporaries blamed enclosure and greedy landlords. By 1600, over 70% of arable land was enclosed in some areas — but nationally only 2%.",
+  "p3": "Contemporaries blamed enclosure and greedy landlords. By 1600, over 70% of arable land was enclosed in some areas: elsewhere far lower, and enclosure even declined as the Dutch cloth market collapsed.",
   "hints": [
    "Malthusian Crisis",
    "wars",
@@ -3744,7 +3748,7 @@
   "s": [
    "Population growth to about 4 million caused a Malthusian Crisis, as employers cut wages and landlords raised rents.",
    "Wars with Spain and Ireland discharged unpaid, injured soldiers and sailors far from home, swelling the number of vagrants.",
-   "Contemporaries blamed enclosure, yet it covered over 70% of arable land in some areas but only 2% nationally."
+   "Contemporaries blamed enclosure, which covered over 70% of arable land in some areas but was far lower elsewhere."
   ],
   "fill": [
    {
@@ -3769,12 +3773,12 @@
    },
    {
     "p": 3,
-    "gap": "2%",
+    "gap": "70%",
     "alt": [],
     "d": [
-     "20%",
-     "12%",
-     "5%"
+     "30%",
+     "50%",
+     "90%"
     ]
    }
   ]
@@ -3854,12 +3858,14 @@
   "fill": [
    {
     "p": 1,
-    "gap": "1560–61",
-    "alt": [],
+    "gap": "1560-61",
+    "alt": [
+     "1560–61"
+    ],
     "d": [
-     "1558–59",
-     "1570–71",
-     "1580–81"
+     "1558-59",
+     "1570-71",
+     "1580-81"
     ]
    },
    {
@@ -3905,12 +3911,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "profits from justice",
+    "gap": "First Fruits and Tenths",
     "alt": [],
     "d": [
-     "foreign tribute",
-     "Church tithes",
-     "forced loans"
+     "Ship Money and Purveyance",
+     "Wardship and Scutage",
+     "Tonnage and Poundage"
     ]
    },
    {
@@ -3925,12 +3931,14 @@
    },
    {
     "p": 3,
-    "gap": "undervalued",
-    "alt": [],
+    "gap": "undervaluing",
+    "alt": [
+     "undervalued"
+    ],
     "d": [
-     "overvalued",
-     "ignored",
-     "inflated"
+     "overvaluing",
+     "ignoring",
+     "inflating"
     ]
    }
   ]
@@ -3978,12 +3986,12 @@
    },
    {
     "p": 3,
-    "gap": "supply and demand",
+    "gap": "structural",
     "alt": [],
     "d": [
-     "trade and tariffs",
-     "wages and rents",
-     "taxes and tithes"
+     "temporary",
+     "seasonal",
+     "imported"
     ]
    }
   ]
@@ -4048,7 +4056,7 @@
   "front": "How did the war with Spain disrupt English trade?",
   "p1": "Even before 1585, the Dutch Revolt damaged English trade. The 1576 Spanish Fury — mutiny of unpaid Spanish troops — destroyed much of Antwerp, centre of the English wool trade.",
   "p2": "Elizabeth's seizure of the Genoese Leon 1568 → Spanish trade embargo until 1573. Outbreak of open war 1585 → closed Spanish and Portuguese markets entirely.",
-  "p3": "Privateering licences offered some compensation — Drake's circumnavigation (1577–80) returned £600,000 of plunder. East India Company (1600) grew partly from the need to find alternative markets.",
+  "p3": "Privateering licences offered some compensation: Drake's circumnavigation (1577–80) brought large plunder. East India Company (1600) grew partly from the need to find alternative markets.",
   "hints": [
    "Spanish Fury",
    "Genoese Leon",
@@ -4057,7 +4065,7 @@
   "s": [
    "The 1576 Spanish Fury, a mutiny of unpaid Spanish troops, destroyed much of Antwerp, centre of the English wool trade.",
    "Elizabeth's 1568 seizure of the Genoese loan caused a Spanish embargo until 1573, and war in 1585 closed Spanish and Portuguese markets.",
-   "Privateering compensated partly: Drake's circumnavigation (1577-80) returned £600,000, and the East India Company (1600) sought new markets."
+   "Privateering compensated partly: Drake's circumnavigation (1577-80) took large plunder, and the East India Company (1600) sought new markets."
   ],
   "fill": [
    {
@@ -4098,7 +4106,7 @@
   "unit": "Unit 6 – Financial, Economic and Social Affairs",
   "front": "What economic benefits did the war with Spain bring?",
   "p1": "Flemings fled the Netherlands 1566 — brought improved cloth-making skills to England. French Huguenots fleeing persecution also brought manufacturing skills and trade.",
-  "p2": "Elizabeth's sponsorship of privateers brought dividends — Drake's circumnavigation (1577–80) stole £400,000 from Spanish ships and ports. His 1587 raid on Cadiz brought £140,000.",
+  "p2": "Elizabeth's sponsorship of privateers brought dividends: Drake's circumnavigation (1577–80) took large amounts from Spanish ships and ports. His 1587 raid on Cadiz brought £140,000.",
   "p3": "Cost of war → Elizabeth resorted to monopolies to reward courtiers → contributed to price rises and dissatisfaction. Crown lands sold in the 1590s further weakened long-term royal finances.",
   "hints": [
    "Flemings",
@@ -4107,7 +4115,7 @@
   ],
   "s": [
    "Flemings fleeing the Netherlands in 1566 and French Huguenots brought improved cloth-making and manufacturing skills to England.",
-   "Elizabeth sponsored privateers: Drake's circumnavigation (1577-80) took £400,000 and his 1587 raid on Cadiz brought £140,000.",
+   "Elizabeth sponsored privateers: Drake's circumnavigation (1577-80) took large plunder and his 1587 raid on Cadiz brought £140,000.",
    "The cost of war led to monopolies and Crown land sales in the 1590s, which raised prices and weakened royal finances."
   ],
   "fill": [
@@ -4339,12 +4347,12 @@
    },
    {
     "p": 3,
-    "gap": "prevent its underlying causes",
+    "gap": "prevent",
     "alt": [],
     "d": [
-     "ignore its short-term effects",
-     "fund relief in full",
-     "predict harvest failures"
+     "predict",
+     "forgive",
+     "finance"
     ]
    }
   ]
@@ -4472,12 +4480,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "granting monopolies",
+    "gap": "sole right",
     "alt": [],
     "d": [
-     "selling offices",
-     "raising subsidies",
-     "debasing the coinage"
+     "joint right",
+     "temporary licence",
+     "royal pardon"
     ]
    },
    {
@@ -4509,7 +4517,7 @@
   "front": "What was the purveyance dispute in Parliament?",
   "p1": "Purveyance — monarch's customary right to purchase goods at below market value for the royal household — criticised by MPs in the Parliaments of 1589 and 1593.",
   "p2": "Lord Burghley defended purveyance as part of the Royal Prerogative. Elizabeth privately agreed to investigate abuses but made no major concessions — the right was maintained intact.",
-  "p3": "By the 1597 Parliament the issue had dissipated — evidence of Elizabeth's tactics of delay working.",
+  "p3": "Criticism was suppressed in Parliament and no major concessions followed: evidence of Elizabeth's tactics of delay working.",
   "hints": [
    "customary right",
    "Burghley",
@@ -4518,7 +4526,7 @@
   "s": [
    "Purveyance, the monarch's right to buy goods below market value for the royal household, was criticised by MPs in 1589 and 1593.",
    "Burghley defended it as Royal Prerogative, and Elizabeth privately agreed to investigate abuses but made no major concessions.",
-   "By 1597 the issue had dissipated, showing her tactics of delay worked."
+   "Criticism was suppressed and no major concessions followed, showing her tactics of delay worked."
   ],
   "fill": [
    {
@@ -4613,7 +4621,7 @@
   "unit": "Unit 7 – Later Years 1588–1603",
   "front": "What was the background to Ireland and what caused Tyrone's Rebellion?",
   "p1": "English Crown had claimed Ireland since the 12th century — but by the 16th century English power truly felt only in the Pale around Dublin.",
-  "p2": "Ulster and Connaught (north/west): ruled by Gaelic chieftains, opposed to English culture. Munster and Leinster (south/east): ruled by Anglo-Norman families who resented London. All Catholic.",
+  "p2": "Some Anglo-Norman lords were sympathetic to English rule; native Gaelic lords were more resistant. Ireland stayed Catholic: English power too weak to enforce Protestantism.",
   "p3": "Ireland a persistent source of unrest — Fitzgerald Rebellions 1569–73 and 1579–83. Plantations in Munster attempted to increase control → unsuccessfully.",
   "hints": [
    "Pale",
@@ -4622,7 +4630,7 @@
   ],
   "s": [
    "The Crown had claimed Ireland since the 12th century, but English power was truly felt only in the Pale around Dublin.",
-   "Gaelic chieftains ruled Ulster and Connaught, Anglo-Norman families ruled Munster and Leinster, and all were Catholic.",
+   "Some Anglo-Norman lords were sympathetic to English rule, native Gaelic lords resisted it, and Ireland stayed Catholic.",
    "Unrest was persistent: the Fitzgerald Rebellions came in 1569-73 and 1579-83, and Munster plantations failed to increase control."
   ],
   "fill": [
@@ -4666,7 +4674,7 @@
   "unit": "Unit 7 – Later Years 1588–1603",
   "front": "What happened during the Nine Years' War?",
   "p1": "1594: Hugh O'Neill, Earl of Tyrone, led Gaelic rebellion. Victory at Yellow Ford 1598 — worst English defeat in Ireland — left Tyrone controlling most of the island.",
-  "p2": "Essex sent 1599 with 16,000 men — the largest force Elizabeth ever dispatched. Made unauthorised truce with Tyrone; returned without permission and in disgrace. 4,000 Spanish landed at Kinsale 1600.",
+  "p2": "Essex sent 1599 with 16,000 men: the largest force Elizabeth ever dispatched. Made unauthorised truce with Tyrone; returned without permission and in disgrace. 4,000 Spanish landed at Kinsale 1601.",
   "p3": "Mountjoy defeated Spanish at Kinsale 1601; Tyrone surrendered 1603 — just days after Elizabeth's death. War cost ~£2 million → nearly broke Elizabethan finances.",
   "hints": [
    "Yellow Ford",
@@ -4675,7 +4683,7 @@
   ],
   "s": [
    "Hugh O'Neill, Earl of Tyrone, led a Gaelic rebellion from 1594, and victory at Yellow Ford (1598) left him controlling most of Ireland.",
-   "Essex took 16,000 men in 1599 but made an unauthorised truce, and 4,000 Spanish landed at Kinsale in 1600.",
+   "Essex took 16,000 men in 1599 but made an unauthorised truce, and 4,000 Spanish landed at Kinsale in 1601.",
    "Mountjoy defeated the Spanish in 1601 and Tyrone surrendered in 1603, in a war costing about £2 million."
   ],
   "fill": [
@@ -5690,12 +5698,14 @@
    },
    {
     "p": 3,
-    "gap": "boycotting",
-    "alt": [],
+    "gap": "boycotted",
+    "alt": [
+     "boycotting"
+    ],
     "d": [
-     "vetoing",
-     "chairing",
-     "leaving"
+     "chaired",
+     "dominated",
+     "abstained"
     ]
    }
   ]
@@ -5794,11 +5804,13 @@
    },
    {
     "p": 3,
-    "gap": "Rákosi",
-    "alt": [],
+    "gap": "Rakosi",
+    "alt": [
+     "Rákosi"
+    ],
     "d": [
      "Gomulka",
-     "Kádár",
+     "Kadar",
      "Ulbricht"
     ]
    }
@@ -5945,8 +5957,8 @@
     ],
     "d": [
      "France",
-     "Turkey",
-     "Italy"
+     "Italy",
+     "Poland"
     ]
    },
    {
@@ -5992,12 +6004,15 @@
    },
    {
     "p": 2,
-    "gap": "16 nations",
-    "alt": [],
+    "gap": "Sixteen",
+    "alt": [
+     "16 nations",
+     "16"
+    ],
     "d": [
-     "12 nations",
-     "10 nations",
-     "25 nations"
+     "Twelve",
+     "Ten",
+     "Twenty-five"
     ]
    },
    {
@@ -6330,7 +6345,7 @@
   "unit": "Chapter 2 – Development of the Cold War 1946–1955",
   "front": "How did the arms race develop between 1945 and 1955?",
   "p1": "USA bombed Hiroshima and Nagasaki August 1945. Klaus Fuchs passed Manhattan Project designs to the USSR; Soviets tested their first atomic bomb 1949, years earlier than expected.",
-  "p2": "USA tested hydrogen bomb 1952 (1,000 times more powerful); USSR tested its own 1953. Both sides developed ICBMs in 1957. Rosenbergs executed June 1953 for passing atomic secrets to Moscow.",
+  "p2": "USA tested hydrogen bomb 1952 (1,000 times more powerful); USSR tested its own 1953. USSR tested its first ICBM in 1957; USA followed by 1958. Rosenbergs executed June 1953 for passing atomic secrets to Moscow.",
   "p3": "Led to Mutually Assured Destruction (MAD) — any nuclear strike would be met by devastating retaliation, making nuclear war suicidal for both sides.",
   "hints": [
    "Fuchs",
@@ -6339,7 +6354,7 @@
   ],
   "s": [
    "After Hiroshima and Nagasaki in 1945, Stalin accelerated the Soviet programme, aided by Klaus Fuchs, and tested an atomic bomb in 1949.",
-   "The USA tested a hydrogen bomb in 1952 and the USSR in 1953, ICBMs came in 1957, and the Rosenbergs were executed in June 1953.",
+   "The USA tested a hydrogen bomb in 1952 and the USSR in 1953, the USSR tested an ICBM in 1957, and the Rosenbergs were executed in June 1953.",
    "This led to Mutually Assured Destruction (MAD), making nuclear war suicidal for both sides."
   ],
   "fill": [
@@ -6561,8 +6576,8 @@
     "alt": [],
     "d": [
      "Gdansk",
-     "Warsaw",
-     "Krakow"
+     "Krakow",
+     "Lodz"
     ]
    },
    {
@@ -6712,12 +6727,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Spofford Compromise",
+    "gap": "Pleven",
     "alt": [],
     "d": [
-     "Pleven Plan",
-     "Schuman Plan",
-     "Dulles Plan"
+     "Schuman",
+     "Dulles",
+     "Monnet"
     ]
    },
    {
@@ -7030,12 +7045,12 @@
    },
    {
     "p": 2,
-    "gap": "head of MI6's anti-Soviet section",
+    "gap": "Philby",
     "alt": [],
     "d": [
-     "head of MI5's counter-intelligence",
-     "head of the CIA",
-     "head of GCHQ"
+     "Penkovsky",
+     "Gouzenko",
+     "Gordievsky"
     ]
    },
    {
@@ -7091,8 +7106,10 @@
    },
    {
     "p": 3,
-    "gap": "détente",
-    "alt": [],
+    "gap": "detente",
+    "alt": [
+     "détente"
+    ],
     "d": [
      "containment",
      "appeasement",
@@ -7226,12 +7243,14 @@
   "fill": [
    {
     "p": 1,
-    "gap": "5-year freeze",
-    "alt": [],
+    "gap": "five-year freeze",
+    "alt": [
+     "5-year freeze"
+    ],
     "d": [
-     "1-year freeze",
-     "10-year freeze",
-     "3-year freeze"
+     "one-year freeze",
+     "ten-year freeze",
+     "three-year freeze"
     ]
    },
    {
@@ -7261,7 +7280,7 @@
   "section": "coldwar",
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "front": "What were the Helsinki Accords (1975)?",
-  "p1": "33 nations agreed three 'baskets': Basket 1 — European borders inviolable; Basket 2 — economic and scientific cooperation; Basket 3 — human rights to be respected. Seen as the zenith of détente.",
+  "p1": "35 nations agreed three 'baskets': Basket 1: European borders inviolable; Basket 2; economic and scientific cooperation; Basket 3; human rights to be respected. Seen as the zenith of détente.",
   "p2": "Basket 3 ignored in practice by the USSR — but gave Eastern European dissidents a legal basis to demand their rights, increasingly important in the 1980s.",
   "p3": "Same year: Apollo-Soyuz mission — US and Soviet astronauts shaking hands in orbit, symbolising the spirit of détente.",
   "hints": [
@@ -7491,12 +7510,12 @@
    },
    {
     "p": 2,
-    "gap": "space-based laser system",
+    "gap": "space-based lasers",
     "alt": [],
     "d": [
-     "ground-based missile system",
-     "orbiting bomber fleet",
-     "naval defence shield"
+     "ground-based missiles",
+     "orbiting bombers",
+     "naval shields"
     ]
    },
    {
@@ -7517,7 +7536,7 @@
   "unit": "Chapter 3 – The Cold War 1956–1984",
   "front": "How did the new Cold War end and why did the USSR change course?",
   "p1": "Internal economic stagnation — not Reagan's military build-up — was the primary driver of Soviet change. USSR over-spending on defence while producing too few consumer goods.",
-  "p2": "SDI was decisive in bringing Gorbachev to the negotiating table — he concluded the USSR could not win an arms race. Reagan Doctrine: USA funded anti-communist resistance groups worldwide.",
+  "p2": "SDI helped bring Gorbachev to the negotiating table (he concluded the USSR could not win an arms race) but did not create the need for change. Reagan Doctrine: USA funded anti-communist resistance groups worldwide.",
   "p3": "Carter Doctrine (1980): USA would respond strongly to any threat to the Persian Gulf — issued after the Soviet invasion of Afghanistan. SALT II never ratified.",
   "hints": [
    "economic stagnation",
@@ -7526,7 +7545,7 @@
   ],
   "s": [
    "Economic stagnation, not Reagan's military build-up, was the primary driver of Soviet change, as the USSR over-spent on defence.",
-   "SDI convinced Gorbachev the USSR could not win an arms race, while the Reagan Doctrine funded anti-communist resistance.",
+   "SDI helped bring Gorbachev to the table, as he concluded the USSR could not win an arms race, while the Reagan Doctrine funded anti-communist resistance.",
    "The Carter Doctrine (1980) promised a strong response to any threat to the Persian Gulf, and SALT II was never ratified."
   ],
   "fill": [
@@ -7758,12 +7777,12 @@
    },
    {
     "p": 3,
-    "gap": "unpopular communist regimes",
+    "gap": "unpopular regimes",
     "alt": [],
     "d": [
-     "popular socialist parties",
-     "reformist Western governments",
-     "Warsaw Pact armies"
+     "popular parties",
+     "reformist governments",
+     "Western armies"
     ]
    }
   ]
@@ -7852,12 +7871,14 @@
    },
    {
     "p": 2,
-    "gap": "travel freely",
-    "alt": [],
+    "gap": "free travel",
+    "alt": [
+     "travel freely"
+    ],
     "d": [
-     "vote freely",
-     "trade freely",
-     "leave permanently"
+     "free elections",
+     "free trade",
+     "free speech"
     ]
    },
    {
@@ -8019,12 +8040,12 @@
    },
    {
     "p": 3,
-    "gap": "15 independent states",
+    "gap": "15 states",
     "alt": [],
     "d": [
-     "12 independent states",
-     "9 independent states",
-     "25 independent states"
+     "12 states",
+     "9 states",
+     "25 states"
     ]
    }
   ]
@@ -8060,12 +8081,14 @@
    },
    {
     "p": 2,
-    "gap": "187 killed",
-    "alt": [],
+    "gap": "at least 187",
+    "alt": [
+     "187"
+    ],
     "d": [
-     "47 killed",
-     "287 killed",
-     "1,000 killed"
+     "at least 47",
+     "at least 287",
+     "at least 1,000"
     ]
    },
    {
@@ -8212,12 +8235,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Crises over-reported",
+    "gap": "crises",
     "alt": [],
     "d": [
-     "Successes over-reported",
-     "Rumours over-reported",
-     "Expenses over-reported"
+     "successes",
+     "rumours",
+     "expenses"
     ]
    },
    {
