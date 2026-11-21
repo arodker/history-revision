@@ -49,7 +49,7 @@
   "p3": "",
   "hints": [
    "Migration",
-   "higher"
+   "the birth rate"
   ],
   "s": [
    "Rural-urban migration, the movement of people from the countryside to towns and cities, is the main reason LIC and NEE cities grow so fast.",
@@ -68,12 +68,12 @@
    },
    {
     "p": 2,
-    "gap": "higher",
+    "gap": "the birth rate",
     "alt": [],
     "d": [
-     "lower",
-     "equal",
-     "double"
+     "the infant mortality rate",
+     "the migration rate",
+     "the fertility rate"
     ]
    }
   ],
@@ -98,12 +98,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "illegal",
+    "gap": "sewers",
     "alt": [],
     "d": [
-     "modern",
-     "luxury",
-     "rented"
+     "roads",
+     "schools",
+     "shops"
     ]
    },
    {
@@ -203,8 +203,8 @@
     "gap": "a megacity",
     "alt": [],
     "d": [
-     "a conurbation",
-     "a metropolis",
+     "a hamlet",
+     "a market town",
      "a suburb"
     ]
    }
@@ -217,7 +217,7 @@
   "front": "Why is Mumbai important?",
   "p1": "Regional: capital of Maharashtra → generates 40% of the state's income; 3 million people commute in from surrounding areas.",
   "p2": "National: commercial capital of India → 6% of India's GDP; home to the Bombay Stock Exchange, Reserve Bank of India and Tata Group; its port handles 70% of maritime trade.",
-  "p3": "International: a top ten centre of commerce in the world; Bollywood is the largest film producer in the world; historic importance to Portugal and Britain makes it a melting pot of cultures.",
+  "p3": "International: a top ten world centre of commerce; Bollywood is the largest film producer in the world; its history with Portugal and Britain makes it a melting pot of cultures.",
   "hints": [
    "Regional",
    "Commercial",
@@ -226,7 +226,7 @@
   "s": [
    "Regional: capital of Maharashtra → generates 40% of the state's income; 3 million people commute in from surrounding areas.",
    "National: commercial capital of India → 6% of India's GDP; home to the Bombay Stock Exchange, Reserve Bank of India and Tata Group; its port handles 70% of maritime trade.",
-   "International: a top ten centre of commerce in the world; Bollywood is the largest film producer in the world; historic importance to Portugal and Britain makes it a melting pot of cultures."
+   "International: a top ten world centre of commerce; Bollywood is the largest film producer in the world; its history with Portugal and Britain makes it a melting pot of cultures."
   ],
   "fill": [
    {
@@ -271,7 +271,7 @@
   "unit": "Unit 1 – Mumbai",
   "front": "Why is Mumbai growing so rapidly?",
   "p1": "Rural-urban migration is the first cause → 480 migrants arrive in Mumbai each day.",
-  "p2": "Push: average wage in rural Maharashtra is as low as $1 a day; pull: it is $20 a day in Mumbai, though less in the informal sector; many jobs are informal, e.g. hawkers and laundry workers.",
+  "p2": "Push: average wage in rural Maharashtra is as low as $1 a day; pull: it is $20 a day in Mumbai, though less in the informal sector.",
   "p3": "Natural increase is the second cause → a high birth rate; it is birth rate minus death rate.",
   "hints": [
    "Migration",
@@ -280,7 +280,7 @@
   ],
   "s": [
    "Rural-urban migration is the first cause → 480 migrants arrive in Mumbai each day.",
-   "Push: average wage in rural Maharashtra is as low as $1 a day; pull: it is $20 a day in Mumbai, though less in the informal sector; many jobs are informal, e.g. hawkers and laundry workers.",
+   "Push: average wage in rural Maharashtra is as low as $1 a day; pull: it is $20 a day in Mumbai, though less in the informal sector.",
    "Natural increase is the second cause → a high birth rate; it is birth rate minus death rate."
   ],
   "fill": [
@@ -326,7 +326,7 @@
   "front": "What opportunities does Mumbai offer?",
   "p1": "Education: primary and secondary schools with free education up to certain ages; University of Mumbai is world renowned; literacy rate 89.7% (slums: 69%+).",
   "p2": "Health and resources: healthcare is better than the rest of India; 98% of people have electricity and water supply.",
-  "p3": "Industry: financial capital of India with the Bombay Stock Exchange and Tata Group; informal sector jobs in recycling, leather tanning and pottery; call centres in Navi Mumbai after government tax breaks and IT parks.",
+  "p3": "Industry: Bombay Stock Exchange and Tata Group; informal jobs in recycling, leather tanning and pottery; call centres in Navi Mumbai after government tax breaks and IT parks.",
   "hints": [
    "University",
    "Healthcare",
@@ -335,7 +335,7 @@
   "s": [
    "Education: primary and secondary schools with free education up to certain ages; University of Mumbai is world renowned; literacy rate 89.7% (slums: 69%+).",
    "Health and resources: healthcare is better than the rest of India; 98% of people have electricity and water supply.",
-   "Industry: financial capital of India with the Bombay Stock Exchange and Tata Group; informal sector jobs in recycling, leather tanning and pottery; call centres in Navi Mumbai after government tax breaks and IT parks."
+   "Industry: Bombay Stock Exchange and Tata Group; informal jobs in recycling, leather tanning and pottery; call centres in Navi Mumbai after government tax breaks and IT parks."
   ],
   "fill": [
    {
@@ -396,12 +396,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Asia",
+    "gap": "overcrowding",
     "alt": [],
     "d": [
-     "Africa",
-     "Europe",
-     "South America"
+     "pollution",
+     "flooding",
+     "unemployment"
     ]
    },
    {
@@ -617,8 +617,8 @@
     "alt": [],
     "d": [
      "public buses",
-     "taxis",
-     "bicycles"
+     "goods lorries",
+     "cycle rickshaws"
     ]
    },
    {
@@ -650,7 +650,7 @@
   "front": "How does the Dharavi Sector 5 redevelopment change quality of life?",
   "p1": "A $2 billion project in Sector 5 of Dharavi → slum housing demolished and replaced by high-rise tower blocks; 72,000 families rehomed.",
   "p2": "Improved: proper plumbing and toilets → less water-borne disease, e.g. cholera; new parks and green space; secure windows and doors.",
-  "p3": "Worsened: most slum dwellers have no legal right to land → homeless; loss of community (some families there 150 years); flats too small (5 to 10 people in 21 m2); unique culture destroyed.",
+  "p3": "Worsened: most slum dwellers have no legal right to land → homeless; loss of community (some families there 150 years); flats too small (5 to 10 people in 21 m2).",
   "hints": [
    "Tower blocks",
    "Plumbing",
@@ -659,7 +659,7 @@
   "s": [
    "A $2 billion project in Sector 5 of Dharavi → slum housing demolished and replaced by high-rise tower blocks; 72,000 families rehomed.",
    "Improved: proper plumbing and toilets → less water-borne disease, e.g. cholera; new parks and green space; secure windows and doors.",
-   "Worsened: most slum dwellers have no legal right to land → homeless; loss of community (some families there 150 years); flats too small (5 to 10 people in 21 m2); unique culture destroyed."
+   "Worsened: most slum dwellers have no legal right to land → homeless; loss of community (some families there 150 years); flats too small (5 to 10 people in 21 m2)."
   ],
   "fill": [
    {
@@ -880,7 +880,7 @@
   "p3": "Air rises at the equator, cools, condenses and falls as heavy rain, then sinks at 30 degrees, bringing high pressure and almost no rain.",
   "hints": [
    "Hotter",
-   "Loop",
+   "Rising and sinking air",
    "Rain"
   ],
   "s": [
@@ -901,12 +901,12 @@
    },
    {
     "p": 2,
-    "gap": "the loop",
+    "gap": "rising and sinking air",
     "alt": [],
     "d": [
-     "the layer",
-     "the wall",
-     "the line"
+     "warm and cold water",
+     "wet and dry soil",
+     "hot and cold land"
     ]
    },
    {
@@ -929,7 +929,7 @@
   "front": "Why are rainforests on the equator and deserts near 30 degrees?",
   "p1": "The equator is heated intensely by differential heating, so it is hotter than the poles → temperature changes with latitude.",
   "p2": "At the equator air rises → cools → condenses → heavy convectional rain; this low pressure zone is the ITCZ (inter-tropical convergence zone).",
-  "p3": "Air spreads north and south, cools and sinks at about 30 degrees N and S → high pressure → almost no rain → deserts; the loop of rising and sinking air is the Hadley cell.",
+  "p3": "Air spreads north and south, cools and sinks at about 30 degrees N and S → high pressure → almost no rain → deserts; this loop is the Hadley cell.",
   "hints": [
    "Heating",
    "Convectional",
@@ -938,7 +938,7 @@
   "s": [
    "The equator is heated intensely by differential heating, so it is hotter than the poles → temperature changes with latitude.",
    "At the equator air rises → cools → condenses → heavy convectional rain; this low pressure zone is the ITCZ (inter-tropical convergence zone).",
-   "Air spreads north and south, cools and sinks at about 30 degrees N and S → high pressure → almost no rain → deserts; the loop of rising and sinking air is the Hadley cell."
+   "Air spreads north and south, cools and sinks at about 30 degrees N and S → high pressure → almost no rain → deserts; this loop is the Hadley cell."
   ],
   "fill": [
    {
@@ -979,7 +979,7 @@
   "unit": "Unit 2 – Tropical Rainforests",
   "front": "How will climate change affect Epping Forest?",
   "p1": "Epping Forest is deciduous woodland, the most common ecosystem in the UK → the trees lose their leaves each year.",
-  "p2": "The UK is getting wetter summers and milder temperatures → oak mildew, a fungus, weakens oaks (Oak Decline); warmer winters let insects survive all year → pest populations rise, e.g. Horse Chestnut Leaf Miner.",
+  "p2": "Wetter summers and milder temperatures → oak mildew weakens oaks (Oak Decline); warmer winters let insects survive all year → pests rise, e.g. Horse Chestnut Leaf Miner.",
   "p3": "Windthrow: more wind and wet soils → trees uprooted; the cause is the burning of fossil fuels, which releases carbon dioxide.",
   "hints": [
    "Deciduous",
@@ -988,7 +988,7 @@
   ],
   "s": [
    "Epping Forest is deciduous woodland, the most common ecosystem in the UK → the trees lose their leaves each year.",
-   "The UK is getting wetter summers and milder temperatures → oak mildew, a fungus, weakens oaks (Oak Decline); warmer winters let insects survive all year → pest populations rise, e.g. Horse Chestnut Leaf Miner.",
+   "Wetter summers and milder temperatures → oak mildew weakens oaks (Oak Decline); warmer winters let insects survive all year → pests rise, e.g. Horse Chestnut Leaf Miner.",
    "Windthrow: more wind and wet soils → trees uprooted; the cause is the burning of fossil fuels, which releases carbon dioxide."
   ],
   "fill": [
@@ -1120,7 +1120,7 @@
     "d": [
      "condensation",
      "precipitation",
-     "transpiration"
+     "infiltration"
     ]
    },
    {
@@ -1302,7 +1302,7 @@
   "front": "What causes deforestation in the Amazon?",
   "p1": "Causes: cattle ranching, commercial farming, subsistence farming, logging, mining, roads, settlement and energy (dams).",
   "p2": "Commercial: around 80% of cleared land becomes cattle pasture, with plantations of soya, palm oil and bananas; Brazil is one of the world's largest exporters.",
-  "p3": "Subsistence: Amerindians have used slash and burn for generations → trees cut and burned for temporary nutrient-rich soil; government gave small amounts of land to some of Brazil's 25 million people.",
+  "p3": "Subsistence: Amerindians have long used slash and burn → trees cut and burned for temporary nutrient-rich soil; government gave small amounts of land to some of Brazil's 25 million people.",
   "hints": [
    "Causes",
    "Soya",
@@ -1311,7 +1311,7 @@
   "s": [
    "Causes: cattle ranching, commercial farming, subsistence farming, logging, mining, roads, settlement and energy (dams).",
    "Commercial: around 80% of cleared land becomes cattle pasture, with plantations of soya, palm oil and bananas; Brazil is one of the world's largest exporters.",
-   "Subsistence: Amerindians have used slash and burn for generations → trees cut and burned for temporary nutrient-rich soil; government gave small amounts of land to some of Brazil's 25 million people."
+   "Subsistence: Amerindians have long used slash and burn → trees cut and burned for temporary nutrient-rich soil; government gave small amounts of land to some of Brazil's 25 million people."
   ],
   "fill": [
    {
@@ -1410,7 +1410,7 @@
   "front": "What are the impacts of deforestation?",
   "p1": "Loss of biodiversity: 137 species lost a day; loss of indigenous people: about 6 million Amerindians in 1500, roughly 200,000 now.",
   "p2": "Without a canopy and roots, topsoil is washed away → soil erosion; nutrients are leached within a few years → infertile soil and abandoned land.",
-  "p3": "Less evapotranspiration from fewer trees → less rainfall, so parts of the forest risk turning to savanna; burning trees releases carbon (the Amazon holds around 100 billion tonnes) → faster global warming.",
+  "p3": "Fewer trees → less evapotranspiration and rainfall, so parts of the forest risk turning to savanna; burning trees releases carbon (about 100 billion tonnes stored) → faster global warming.",
   "hints": [
    "Biodiversity",
    "Leached",
@@ -1419,7 +1419,7 @@
   "s": [
    "Loss of biodiversity: 137 species lost a day; loss of indigenous people: about 6 million Amerindians in 1500, roughly 200,000 now.",
    "Without a canopy and roots, topsoil is washed away → soil erosion; nutrients are leached within a few years → infertile soil and abandoned land.",
-   "Less evapotranspiration from fewer trees → less rainfall, so parts of the forest risk turning to savanna; burning trees releases carbon (the Amazon holds around 100 billion tonnes) → faster global warming."
+   "Fewer trees → less evapotranspiration and rainfall, so parts of the forest risk turning to savanna; burning trees releases carbon (about 100 billion tonnes stored) → faster global warming."
   ],
   "fill": [
    {
@@ -1563,16 +1563,16 @@
   "front": "What are the pros and cons of local rainforest management?",
   "p1": "Ecotourism uses small, locally owned resorts of sustainable materials with local guides → money goes to local people, so the forest is worth more standing than cleared.",
   "p2": "Limit: ecotourism reaches only a few thousand people a year in the Amazon.",
-  "p3": "Selective logging cuts only mature or valuable trees so the forest can recover and loggers still earn; but felled trees damage others, replanting is expensive, and secondary forest takes over 20 years to regain 80% of biodiversity.",
+  "p3": "Selective logging cuts only mature or valuable trees so the forest can recover; but felled trees damage others and secondary forest takes over 20 years to regain 80% of biodiversity.",
   "hints": [
    "Locally owned",
    "Limit",
-   "Mature"
+   "Secondary forest"
   ],
   "s": [
    "Ecotourism uses small, locally owned resorts of sustainable materials with local guides → money goes to local people, so the forest is worth more standing than cleared.",
    "Limit: ecotourism reaches only a few thousand people a year in the Amazon.",
-   "Selective logging cuts only mature or valuable trees so the forest can recover and loggers still earn; but felled trees damage others, replanting is expensive, and secondary forest takes over 20 years to regain 80% of biodiversity."
+   "Selective logging cuts only mature or valuable trees so the forest can recover; but felled trees damage others and secondary forest takes over 20 years to regain 80% of biodiversity."
   ],
   "fill": [
    {
@@ -1597,12 +1597,12 @@
    },
    {
     "p": 3,
-    "gap": "mature",
+    "gap": "secondary forest",
     "alt": [],
     "d": [
-     "young",
-     "dead",
-     "diseased"
+     "primary forest",
+     "plantation forest",
+     "emergent forest"
     ]
    }
   ]
@@ -1665,26 +1665,26 @@
   "front": "How do international agreements protect the rainforest?",
   "p1": "The International Tropical Timber Agreement (ITTA, 2006) marks hardwood with a registration number proving it came from a managed forest → illegal loggers find it harder to sell wood.",
   "p2": "Limits: some illegal timber still reaches market; remote areas are hard to monitor; people who rely on illegal logging lose income.",
-  "p3": "In a debt-for-nature swap an HIC cancels part of the debt of an LIC or NEE and in return it protects part of its forest; but it cannot earn money from those areas and the promise is hard to enforce.",
+  "p3": "In a debt-for-nature swap an HIC cancels an LIC or NEE's debt for protecting its forest; but the country loses income from it and the promise is hard to enforce.",
   "hints": [
    "ITTA",
    "Remote",
-   "the debt"
+   "a debt-for-nature swap"
   ],
   "s": [
    "The International Tropical Timber Agreement (ITTA, 2006) marks hardwood with a registration number proving it came from a managed forest → illegal loggers find it harder to sell wood.",
    "Limits: some illegal timber still reaches market; remote areas are hard to monitor; people who rely on illegal logging lose income.",
-   "In a debt-for-nature swap an HIC cancels part of the debt of an LIC or NEE and in return it protects part of its forest; but it cannot earn money from those areas and the promise is hard to enforce."
+   "In a debt-for-nature swap an HIC cancels an LIC or NEE's debt for protecting its forest; but the country loses income from it and the promise is hard to enforce."
   ],
   "fill": [
    {
     "p": 1,
-    "gap": "a registration number",
+    "gap": "a managed forest",
     "alt": [],
     "d": [
-     "a tax stamp",
-     "an export licence",
-     "a barcode"
+     "a protected park",
+     "a private estate",
+     "a national reserve"
     ]
    },
    {
@@ -1699,12 +1699,12 @@
    },
    {
     "p": 3,
-    "gap": "the debt",
+    "gap": "a debt-for-nature swap",
     "alt": [],
     "d": [
-     "the trade",
-     "the aid",
-     "the tax"
+     "a carbon credit scheme",
+     "a timber ban",
+     "a tax holiday"
     ]
    }
   ],
@@ -1941,16 +1941,16 @@
   "front": "Why do energy security and resources matter?",
   "p1": "A regular supply of food, water and energy is essential for health, a good life, good social relations, security and freedom of choice → quality of life and economic well-being improve.",
   "p2": "An energy secure country has a reliable and uninterrupted supply, an affordable and competitively priced supply, and an accessible and available supply.",
-  "p3": "It also has a domestic energy mix that is not reliant on imports; countries can generate their own energy or import it; the booklet links the war in Ukraine to energy security and the cost of living.",
+  "p3": "It also has a domestic energy mix not reliant on imports; countries can generate their own energy or import it; the war in Ukraine linked energy security to the cost of living.",
   "hints": [
    "Well-being",
-   "Reliable",
+   "Uninterrupted",
    "Imports"
   ],
   "s": [
    "A regular supply of food, water and energy is essential for health, a good life, good social relations, security and freedom of choice → quality of life and economic well-being improve.",
    "An energy secure country has a reliable and uninterrupted supply, an affordable and competitively priced supply, and an accessible and available supply.",
-   "It also has a domestic energy mix that is not reliant on imports; countries can generate their own energy or import it; the booklet links the war in Ukraine to energy security and the cost of living."
+   "It also has a domestic energy mix not reliant on imports; countries can generate their own energy or import it; the war in Ukraine linked energy security to the cost of living."
   ],
   "fill": [
    {
@@ -1992,7 +1992,7 @@
   "front": "What factors affect energy supply?",
   "p1": "Physical: just 1% of the Sahara would provide enough solar energy for the world; Iceland has hot rocks near the surface on a constructive boundary → geothermal energy.",
   "p2": "North Sea gas is mostly extracted → harder and costlier to get more; the USA is energy secure through fracking (shale gas).",
-  "p3": "Pirates seized an oil tanker off Somalia; Germany is planning to stop nuclear power (waste concerns); the Nembe Creek pipeline in the Niger delta had 53 leaks from suspected oil thieves.",
+  "p3": "Pirates seized an oil tanker off Somalia; Germany plans to stop nuclear power (waste concerns); the Nembe Creek pipeline in the Niger delta had 53 leaks from suspected oil thieves.",
   "hints": [
    "Geothermal",
    "Fracking",
@@ -2001,7 +2001,7 @@
   "s": [
    "Physical: just 1% of the Sahara would provide enough solar energy for the world; Iceland has hot rocks near the surface on a constructive boundary → geothermal energy.",
    "North Sea gas is mostly extracted → harder and costlier to get more; the USA is energy secure through fracking (shale gas).",
-   "Pirates seized an oil tanker off Somalia; Germany is planning to stop nuclear power (waste concerns); the Nembe Creek pipeline in the Niger delta had 53 leaks from suspected oil thieves."
+   "Pirates seized an oil tanker off Somalia; Germany plans to stop nuclear power (waste concerns); the Nembe Creek pipeline in the Niger delta had 53 leaks from suspected oil thieves."
   ],
   "fill": [
    {
@@ -2045,17 +2045,17 @@
   "unit": "Unit 3 – Resource Management",
   "front": "How have UK food habits changed?",
   "p1": "Before the 1950s food was mostly seasonal; from the 1950s agribusiness grew and food costs fell, with environmental and social impacts.",
-  "p2": "In 1951 the first UK supermarket opened in Streatham → supermarkets gained control of supply chains and drove prices down; globalisation brought strawberries in January and fruit grown in polytunnels in southern Spain, shipped or flown in refrigerated.",
-  "p3": "From the 1990s some people try to buy locally produced food; recent years show growing demand for organic food; lower greenhouse gas emissions come with lower food miles.",
+  "p2": "In 1951 the first UK supermarket opened in Streatham → supermarkets gained control of supply chains; globalisation brought strawberries in January from polytunnels in southern Spain.",
+  "p3": "From the 1990s some people buy local food and demand for organic food has grown; lower food miles mean lower greenhouse gas emissions.",
   "hints": [
    "Seasonal",
-   "Supermarkets",
-   "Food miles"
+   "Globalisation",
+   "Organic"
   ],
   "s": [
    "Before the 1950s food was mostly seasonal; from the 1950s agribusiness grew and food costs fell, with environmental and social impacts.",
-   "In 1951 the first UK supermarket opened in Streatham → supermarkets gained control of supply chains and drove prices down; globalisation brought strawberries in January and fruit grown in polytunnels in southern Spain, shipped or flown in refrigerated.",
-   "From the 1990s some people try to buy locally produced food; recent years show growing demand for organic food; lower greenhouse gas emissions come with lower food miles."
+   "In 1951 the first UK supermarket opened in Streatham → supermarkets gained control of supply chains; globalisation brought strawberries in January from polytunnels in southern Spain.",
+   "From the 1990s some people buy local food and demand for organic food has grown; lower food miles mean lower greenhouse gas emissions."
   ],
   "fill": [
    {
@@ -2070,22 +2070,22 @@
    },
    {
     "p": 2,
-    "gap": "supermarkets",
+    "gap": "globalisation",
     "alt": [],
     "d": [
-     "corner shops",
-     "street markets",
-     "wholesalers"
+     "urbanisation",
+     "privatisation",
+     "regeneration"
     ]
    },
    {
     "p": 3,
-    "gap": "food miles",
+    "gap": "organic",
     "alt": [],
     "d": [
-     "food waste",
-     "food security",
-     "carbon footprint"
+     "fairtrade",
+     "free-range",
+     "vegan"
     ]
    }
   ]
@@ -2528,12 +2528,12 @@
    },
    {
     "p": 2,
-    "gap": "limit",
+    "gap": "sleeping",
     "alt": [],
     "d": [
-     "increase",
-     "remove",
-     "double"
+     "hunting",
+     "feeding",
+     "migrating"
     ]
    }
   ],
@@ -2584,7 +2584,7 @@
   "paper": "p1",
   "unit": "Unit 4 – Hot Deserts",
   "front": "How do plants adapt to hot deserts?",
-  "p1": "Xerophytes have physical adaptations, e.g. the saguaro cactus → shallow roots 4 to 6 inches deep catch rare rain, the fleshy stem stores water, thin spines replace leaves → less transpiration.",
+  "p1": "Xerophytes have physical adaptations, e.g. the saguaro cactus → shallow roots (4 to 6 inches) catch rare rain, the fleshy stem stores water, thin spines replace leaves → less transpiration.",
   "p2": "The mesquite tree has tap roots as long as 24 metres → they reach the water table; small, waxy leaves cut water loss and leaves are dropped in droughts.",
   "p3": "Ephemerals have behavioural adaptations, e.g. the ocotillo → dormant in dry periods, new leaves after rain, waxy stem coating seals in moisture, up to five cycles a year.",
   "hints": [
@@ -2593,7 +2593,7 @@
    "Ephemerals"
   ],
   "s": [
-   "Xerophytes have physical adaptations, e.g. the saguaro cactus → shallow roots 4 to 6 inches deep catch rare rain, the fleshy stem stores water, thin spines replace leaves → less transpiration.",
+   "Xerophytes have physical adaptations, e.g. the saguaro cactus → shallow roots (4 to 6 inches) catch rare rain, the fleshy stem stores water, thin spines replace leaves → less transpiration.",
    "The mesquite tree has tap roots as long as 24 metres → they reach the water table; small, waxy leaves cut water loss and leaves are dropped in droughts.",
    "Ephemerals have behavioural adaptations, e.g. the ocotillo → dormant in dry periods, new leaves after rain, waxy stem coating seals in moisture, up to five cycles a year."
   ],
@@ -2637,7 +2637,7 @@
   "front": "How do animals adapt to hot deserts?",
   "p1": "Fennec fox → large ears dissipate excess body heat, kidneys restrict water loss, sandy colour reflects the Sun's heat, thick fur on the soles protects against hot sand.",
   "p2": "Leopard gecko → strictly nocturnal, sleeping by day to limit heat exposure; transparent eyelids protect against sandstorms; solid, crystallised faeces limit water loss.",
-  "p3": "Gila monster → up to 98% of its life underground in burrows to avoid extreme heat, eating only 5 to 6 times a year; African elephant → huge ears with surface blood vessels cool its blood.",
+  "p3": "Gila monster → spends up to 98% of its life in burrows to avoid extreme heat; African elephant → huge ears with surface blood vessels cool its blood.",
   "hints": [
    "Fennec fox",
    "Nocturnal",
@@ -2646,7 +2646,7 @@
   "s": [
    "Fennec fox → large ears dissipate excess body heat, kidneys restrict water loss, sandy colour reflects the Sun's heat, thick fur on the soles protects against hot sand.",
    "Leopard gecko → strictly nocturnal, sleeping by day to limit heat exposure; transparent eyelids protect against sandstorms; solid, crystallised faeces limit water loss.",
-   "Gila monster → up to 98% of its life underground in burrows to avoid extreme heat, eating only 5 to 6 times a year; African elephant → huge ears with surface blood vessels cool its blood."
+   "Gila monster → spends up to 98% of its life in burrows to avoid extreme heat; African elephant → huge ears with surface blood vessels cool its blood."
   ],
   "fill": [
    {
@@ -2814,12 +2814,12 @@
    },
    {
     "p": 2,
-    "gap": "legumes",
+    "gap": "nitrogen fixers",
     "alt": [],
     "d": [
-     "cereals",
-     "acacia",
-     "mesquite"
+     "pest controllers",
+     "water collectors",
+     "wind breaks"
     ]
    },
    {
@@ -3382,8 +3382,8 @@
     "gap": "conflict",
     "alt": [],
     "d": [
-     "housing",
-     "schools",
+     "new jobs",
+     "good schools",
      "tourism"
     ]
    },
@@ -3410,7 +3410,7 @@
   "p3": "",
   "hints": [
    "Within",
-   "another"
+   "one country to another"
   ],
   "s": [
    "Rural-urban migration is the movement of people from the countryside to towns and cities, usually within one country.",
@@ -3429,12 +3429,12 @@
    },
    {
     "p": 2,
-    "gap": "another",
+    "gap": "one country to another",
     "alt": [],
     "d": [
-     "the same",
-     "a rural",
-     "each"
+     "one city to another",
+     "one region to another",
+     "one village to another"
     ]
    }
   ],
@@ -3878,7 +3878,7 @@
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "How did history shape Nigeria's development?",
   "p1": "Britain ruled Nigeria from the mid-19th century until independence in 1960 → palm oil, peanuts and cocoa were extracted as raw materials, with no factories or education developed.",
-  "p2": "It became a gate keeper state → the only way to gain wealth and power was to control the 'gate', such as the port; borders drawn by Europeans ignored ethnic, religious and cultural differences.",
+  "p2": "It became a gate keeper state → wealth and power came only from controlling the 'gate', such as the port; European-drawn borders ignored ethnic, religious and cultural differences.",
   "p3": "Civil war lasted from 1967 to 1970, then dictatorships followed, with no stable democracy until 1999; the north suffers drought and desertification.",
   "hints": [
    "1960",
@@ -3887,7 +3887,7 @@
   ],
   "s": [
    "Britain ruled Nigeria from the mid-19th century until independence in 1960 → palm oil, peanuts and cocoa were extracted as raw materials, with no factories or education developed.",
-   "It became a gate keeper state → the only way to gain wealth and power was to control the 'gate', such as the port; borders drawn by Europeans ignored ethnic, religious and cultural differences.",
+   "It became a gate keeper state → wealth and power came only from controlling the 'gate', such as the port; European-drawn borders ignored ethnic, religious and cultural differences.",
    "Civil war lasted from 1967 to 1970, then dictatorships followed, with no stable democracy until 1999; the north suffers drought and desertification."
   ],
   "fill": [
@@ -3908,7 +3908,7 @@
     "d": [
      "a welfare state",
      "a federal republic",
-     "an one-party state"
+     "a monarchy"
     ]
    },
    {
@@ -4005,12 +4005,12 @@
    },
    {
     "p": 2,
-    "gap": "Lagos",
+    "gap": "GDP",
     "alt": [],
     "d": [
-     "Abuja",
-     "Kano",
-     "Sokoto"
+     "HDI",
+     "exports",
+     "imports"
     ]
    },
    {
@@ -4054,17 +4054,17 @@
     "d": [
      "the IMF",
      "the United Nations",
-     "the OPEC"
+     "the European Union"
     ]
    },
    {
     "p": 2,
-    "gap": "a loan",
+    "gap": "debt",
     "alt": [],
     "d": [
-     "a grant",
-     "a gift",
-     "a donation"
+     "profit",
+     "inflation",
+     "tax"
     ]
    },
    {
@@ -4084,7 +4084,7 @@
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "How do TNCs affect Nigeria?",
-  "p1": "The Niger Delta is the centre of Nigeria's oil industry → about 50 oil fields and 5,000 km of pipelines; oil gives about 90% of export income; Shell, Exxon, Chevron and Eni operate there.",
+  "p1": "The Niger Delta is the centre of Nigeria's oil industry → about 50 oil fields, 5,000 km of pipelines and 90% of export income; Shell, Exxon, Chevron and Eni operate there.",
   "p2": "Positives → Shell employs over 4,500 directly and 20,000 indirectly, creating a multiplier effect; TNCs pay tax for schools and roads and bring new technology.",
   "p3": "Negatives → economic leakage as profits return to HICs; insecure jobs; about 240,000 barrels spilt a year, up to 25 years to clean.",
   "hints": [
@@ -4093,7 +4093,7 @@
    "Negatives"
   ],
   "s": [
-   "The Niger Delta is the centre of Nigeria's oil industry → about 50 oil fields and 5,000 km of pipelines; oil gives about 90% of export income; Shell, Exxon, Chevron and Eni operate there.",
+   "The Niger Delta is the centre of Nigeria's oil industry → about 50 oil fields, 5,000 km of pipelines and 90% of export income; Shell, Exxon, Chevron and Eni operate there.",
    "Positives → Shell employs over 4,500 directly and 20,000 indirectly, creating a multiplier effect; TNCs pay tax for schools and roads and bring new technology.",
    "Negatives → economic leakage as profits return to HICs; insecure jobs; about 240,000 barrels spilt a year, up to 25 years to clean."
   ],
@@ -4103,8 +4103,8 @@
     "gap": "The Niger Delta",
     "alt": [],
     "d": [
-     "The Lake Chad",
-     "The Gulf of Guinea",
+     "The Sahel",
+     "The Benue Valley",
      "The Lekki coast"
     ]
    },
@@ -4487,12 +4487,12 @@
    },
    {
     "p": 3,
-    "gap": "all",
+    "gap": "plate boundaries",
     "alt": [],
     "d": [
-     "no",
-     "few",
-     "some"
+     "ocean trenches",
+     "mountain ranges",
+     "hotspots"
     ]
    }
   ],
@@ -4676,7 +4676,7 @@
     "d": [
      "malaria",
      "measles",
-     "dysentery"
+     "tuberculosis"
     ]
    }
   ],
@@ -5257,12 +5257,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "one",
+    "gap": "ambulance service",
     "alt": [],
     "d": [
-     "three",
-     "six",
-     "ten"
+     "fire service",
+     "hospital",
+     "police force"
     ]
    },
    {
@@ -5308,12 +5308,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "5",
+    "gap": "debt repayments",
     "alt": [],
     "d": [
-     "2",
-     "10",
-     "20"
+     "tax payments",
+     "import duties",
+     "aid payments"
     ]
    },
    {
@@ -5689,7 +5689,7 @@
     "alt": [],
     "d": [
      "illegal",
-     "forbidden",
+     "dangerous",
      "complicated"
     ]
    }
@@ -5772,8 +5772,8 @@
     "alt": [],
     "d": [
      "barometer",
-     "satellite",
-     "ice core"
+     "seismograph",
+     "hygrometer"
     ]
    },
    {
@@ -5793,7 +5793,7 @@
     "d": [
      "the fish bones",
      "the rock crystals",
-     "the coral reefs"
+     "the sand grains"
     ]
    }
   ],
@@ -5875,9 +5875,9 @@
     "gap": "orbit",
     "alt": [],
     "d": [
-     "tilt",
      "moon",
-     "spin"
+     "spin",
+     "size"
     ]
    },
    {
@@ -5928,8 +5928,8 @@
     "alt": [],
     "d": [
      "reflect",
-     "absorb",
-     "create"
+     "create",
+     "filter"
     ]
    },
    {
@@ -5944,12 +5944,12 @@
    },
    {
     "p": 3,
-    "gap": "forests",
+    "gap": "absorbs",
     "alt": [],
     "d": [
-     "deserts",
-     "glaciers",
-     "cities"
+     "emits",
+     "creates",
+     "reflects"
     ]
    }
   ],
@@ -6149,7 +6149,7 @@
     "gap": "underground",
     "alt": [],
     "d": [
-     "in oceans",
+     "in lakes",
      "in forests",
      "in space"
     ]
@@ -6172,7 +6172,7 @@
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "How can we mitigate climate change?",
-  "p1": "Mitigation reduces greenhouse gas emissions → alternative energy such as solar, wind and hydroelectric cuts fossil fuel use; trees absorb carbon dioxide as natural carbon sinks, but non-native species can disrupt ecosystems.",
+  "p1": "Mitigation reduces greenhouse gas emissions → alternative energy such as solar, wind and hydroelectric cuts fossil fuel use; trees absorb carbon dioxide, but non-native species can disrupt ecosystems.",
   "p2": "CCS captures carbon dioxide from industry and stores it underground; it is still being developed and costly but could cut emissions from cement and steel.",
   "p3": "The Paris Agreement, adopted by nearly every country, aims to keep warming well below 2°C and to aim for 1.5°C; the challenge is that nations follow through on their commitments.",
   "hints": [
@@ -6181,7 +6181,7 @@
    "The Paris Agreement"
   ],
   "s": [
-   "Mitigation reduces greenhouse gas emissions → alternative energy such as solar, wind and hydroelectric cuts fossil fuel use; trees absorb carbon dioxide as natural carbon sinks, but non-native species can disrupt ecosystems.",
+   "Mitigation reduces greenhouse gas emissions → alternative energy such as solar, wind and hydroelectric cuts fossil fuel use; trees absorb carbon dioxide, but non-native species can disrupt ecosystems.",
    "CCS captures carbon dioxide from industry and stores it underground; it is still being developed and costly but could cut emissions from cement and steel.",
    "The Paris Agreement, adopted by nearly every country, aims to keep warming well below 2°C and to aim for 1.5°C; the challenge is that nations follow through on their commitments."
   ],
@@ -6201,7 +6201,7 @@
     "gap": "underground",
     "alt": [],
     "d": [
-     "at sea",
+     "in rivers",
      "in forests",
      "in the atmosphere"
     ]
@@ -6293,9 +6293,9 @@
     "gap": "the Maldives",
     "alt": [],
     "d": [
-     "the Seychelles",
-     "the Fiji",
-     "the Iceland"
+     "the Faroe Islands",
+     "the Orkney Islands",
+     "the Shetland Islands"
     ]
    },
    {
@@ -6315,7 +6315,7 @@
     "d": [
      "the sand",
      "the fish",
-     "the plankton"
+     "the shells"
     ]
    }
   ]
@@ -6397,8 +6397,8 @@
     "alt": [],
     "d": [
      "ice",
-     "steam pipes",
-     "gravel"
+     "salt",
+     "sand"
     ]
    },
    {
@@ -6485,7 +6485,7 @@
   "p2": "Velocity is how fast the river flows.",
   "p3": "",
   "hints": [
-   "Amount",
+   "The amount of water",
    "fast"
   ],
   "s": [
@@ -6735,7 +6735,7 @@
   "front": "How do upper course landforms form?",
   "p1": "Upland streams have low discharge → up to 95% of energy overcomes friction and the rest erodes vertically; steep, unsupported sides are attacked by freeze-thaw weathering → a V-shaped valley.",
   "p2": "The river winds around more resistant rock and cuts into weaker rock, leaving interlocking spurs.",
-  "p3": "A waterfall forms by differential erosion → hard rock over soft; in the plunge pool hydraulic action and abrasion undercut the soft rock, the overhang collapses and a gorge forms as the waterfall retreats.",
+  "p3": "A waterfall forms by differential erosion → hard rock over soft; hydraulic action and abrasion undercut the soft rock in the plunge pool; the overhang collapses, leaving a gorge.",
   "hints": [
    "V-shaped valley",
    "Spurs",
@@ -6744,7 +6744,7 @@
   "s": [
    "Upland streams have low discharge → up to 95% of energy overcomes friction and the rest erodes vertically; steep, unsupported sides are attacked by freeze-thaw weathering → a V-shaped valley.",
    "The river winds around more resistant rock and cuts into weaker rock, leaving interlocking spurs.",
-   "A waterfall forms by differential erosion → hard rock over soft; in the plunge pool hydraulic action and abrasion undercut the soft rock, the overhang collapses and a gorge forms as the waterfall retreats."
+   "A waterfall forms by differential erosion → hard rock over soft; hydraulic action and abrasion undercut the soft rock in the plunge pool; the overhang collapses, leaving a gorge."
   ],
   "fill": [
    {
@@ -7178,9 +7178,9 @@
     "gap": "farmland",
     "alt": [],
     "d": [
-     "wetland",
-     "woodland",
-     "moorland"
+     "housing",
+     "offices",
+     "car parks"
     ]
    },
    {
@@ -7659,9 +7659,9 @@
     "gap": "LSE",
     "alt": [],
     "d": [
-     "UEA",
-     "LSO",
-     "LSD"
+     "Durham",
+     "Warwick",
+     "Exeter"
     ]
    },
    {
@@ -8103,12 +8103,12 @@
    },
    {
     "p": 2,
-    "gap": "a rainwater recycling",
+    "gap": "a rainwater recycling system",
     "alt": [],
     "d": [
-     "a wind turbines",
-     "a solar farms",
-     "a gas boilers"
+     "a wind turbine system",
+     "a solar farm system",
+     "a gas boiler system"
     ]
    },
    {
@@ -8439,9 +8439,9 @@
     "gap": "cheaper",
     "alt": [],
     "d": [
-     "dearer",
+     "more expensive",
      "scarcer",
-     "wetter"
+     "flatter"
     ]
    },
    {
@@ -9086,7 +9086,7 @@
   "p3": "",
   "hints": [
    "Beach",
-   "large"
+   "regular intervals"
   ],
   "s": [
    "Groynes stop longshore drift and keep the beach in place.",
@@ -9105,12 +9105,12 @@
    },
    {
     "p": 2,
-    "gap": "large",
+    "gap": "regular intervals",
     "alt": [],
     "d": [
-     "small",
-     "wooden",
-     "curved"
+     "random places",
+     "the cliff top",
+     "river mouths"
     ]
    }
   ],
@@ -9330,7 +9330,7 @@
   "p3": "The cliffs are an SSSI rich in fossils up to 55 million years old; erosion also threatens properties such as Sunny Point road, where the average house costs £400,000.",
   "hints": [
    "Case study",
-   "the Naze Tower",
+   "400 m",
    "an SSSI"
   ],
   "s": [
@@ -9351,12 +9351,12 @@
    },
    {
     "p": 2,
-    "gap": "the Naze Tower",
+    "gap": "400 m",
     "alt": [],
     "d": [
-     "the Crag Walk",
-     "the Sunny Point",
-     "the Harwich Harbour"
+     "40 m",
+     "4 km",
+     "800 m"
     ]
    },
    {
@@ -9365,8 +9365,8 @@
     "alt": [],
     "d": [
      "an AONB",
-     "an UNESCO",
-     "a national park"
+     "a national park",
+     "a nature reserve"
     ]
    }
   ],
@@ -9381,7 +9381,7 @@
   "front": "How is Walton on the Naze managed?",
   "p1": "In 1977 a seawall, breakwaters and groynes protected properties in the south; groynes stop longshore drift, but many are now old, rotten and buried by sand.",
   "p2": "In the north the replenished beach was mostly gone by 2003; the cliff was then regraded and planted, a soft strategy that binds the soil.",
-  "p3": "In 1998 rock armour at the base of the cliff cut loss from 4 m to 2 m a year; hard defences have increased erosion further along the coast, where sediment supply is interrupted.",
+  "p3": "In 1998 rock armour at the cliff base cut loss from 4 m to 2 m a year; hard defences increased erosion further along the coast, where sediment supply is interrupted.",
   "hints": [
    "breakwaters",
    "Soft",
@@ -9390,7 +9390,7 @@
   "s": [
    "In 1977 a seawall, breakwaters and groynes protected properties in the south; groynes stop longshore drift, but many are now old, rotten and buried by sand.",
    "In the north the replenished beach was mostly gone by 2003; the cliff was then regraded and planted, a soft strategy that binds the soil.",
-   "In 1998 rock armour at the base of the cliff cut loss from 4 m to 2 m a year; hard defences have increased erosion further along the coast, where sediment supply is interrupted."
+   "In 1998 rock armour at the cliff base cut loss from 4 m to 2 m a year; hard defences increased erosion further along the coast, where sediment supply is interrupted."
   ],
   "fill": [
    {
@@ -9474,7 +9474,7 @@
   "paper": "p3",
   "unit": "Unit 11 – Physical Fieldwork",
   "front": "What was the physical fieldwork enquiry?",
-  "p1": "The enquiry asked whether longshore drift is being controlled by hard engineering at Walton on the Naze, on the Essex coast 75 miles north east of London and reachable in a day.",
+  "p1": "The enquiry asked whether hard engineering is controlling longshore drift at Walton on the Naze, 75 miles north east of London on the Essex coast.",
   "p2": "A good location → a rapidly eroding coast attacked by destructive waves with high longshore drift; protected stretches south of the Naze and unprotected stretches allow comparison.",
   "p3": "Management there includes a sea wall, rock armour and groynes; key concepts → destructive waves, longshore drift, coastal management and beach profile.",
   "hints": [
@@ -9483,7 +9483,7 @@
    "Management"
   ],
   "s": [
-   "The enquiry asked whether longshore drift is being controlled by hard engineering at Walton on the Naze, on the Essex coast 75 miles north east of London and reachable in a day.",
+   "The enquiry asked whether hard engineering is controlling longshore drift at Walton on the Naze, 75 miles north east of London on the Essex coast.",
    "A good location → a rapidly eroding coast attacked by destructive waves with high longshore drift; protected stretches south of the Naze and unprotected stretches allow comparison.",
    "Management there includes a sea wall, rock armour and groynes; key concepts → destructive waves, longshore drift, coastal management and beach profile."
   ],
@@ -9627,28 +9627,28 @@
   "paper": "p3",
   "unit": "Unit 11 – Physical Fieldwork",
   "front": "How did we measure the beach profile?",
-  "p1": "Two ranging poles, a tape measure and a hand-held clinometer measured the profile of a protected stretch and an unprotected stretch, with the poles 2 m apart and the angle between them measured.",
+  "p1": "Two ranging poles 2 m apart, a tape measure and a clinometer measured the profile of a protected and an unprotected stretch; the angle between the poles was recorded.",
   "p2": "If the protected section of beach had a higher or steeper profile, it would prove the management was effective.",
   "p3": "The clinometer was hard to line up and wind blew the poles, so human error reduced reliability; one person always reading the clinometer helped.",
   "hints": [
-   "clinometer",
+   "a clinometer",
    "steeper",
    "reliability"
   ],
   "s": [
-   "Two ranging poles, a tape measure and a hand-held clinometer measured the profile of a protected stretch and an unprotected stretch, with the poles 2 m apart and the angle between them measured.",
+   "Two ranging poles 2 m apart, a tape measure and a clinometer measured the profile of a protected and an unprotected stretch; the angle between the poles was recorded.",
    "If the protected section of beach had a higher or steeper profile, it would prove the management was effective.",
    "The clinometer was hard to line up and wind blew the poles, so human error reduced reliability; one person always reading the clinometer helped."
   ],
   "fill": [
    {
     "p": 1,
-    "gap": "clinometer",
+    "gap": "a clinometer",
     "alt": [],
     "d": [
-     "compass",
-     "barometer",
-     "anemometer"
+     "a compass",
+     "a barometer",
+     "a quadrat"
     ]
    },
    {
@@ -9885,12 +9885,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "curve",
+    "gap": "the Earth's rotation",
     "alt": [],
     "d": [
-     "stop",
-     "speed up",
-     "reverse"
+     "the Moon's orbit",
+     "the Sun's heat",
+     "the ocean currents"
     ]
    },
    {
@@ -10164,7 +10164,7 @@
   "unit": "Unit 12 – Tropical Storms",
   "front": "What is extreme weather, and why is the UK's weather so changeable?",
   "p1": "Extreme weather is when a weather event is significantly different from the average or usual weather patterns.",
-  "p2": "The UK experiences heatwaves, droughts, heavy rainfall, flooding, strong winds, storms and periods of snow and ice, and its weather is naturally very changeable because it is affected by different air masses.",
+  "p2": "The UK gets heatwaves, droughts, heavy rain, floods, strong winds, storms, snow and ice, and its weather is very changeable because different air masses affect it.",
   "p3": "",
   "hints": [
    "Different",
@@ -10172,7 +10172,7 @@
   ],
   "s": [
    "Extreme weather is when a weather event is significantly different from the average or usual weather patterns.",
-   "The UK experiences heatwaves, droughts, heavy rainfall, flooding, strong winds, storms and periods of snow and ice, and its weather is naturally very changeable because it is affected by different air masses."
+   "The UK gets heatwaves, droughts, heavy rain, floods, strong winds, storms, snow and ice, and its weather is very changeable because different air masses affect it."
   ],
   "fill": [
    {
@@ -10207,7 +10207,7 @@
   "p2": "Long-term responses are to do with recovering and rebuilding after the disaster, which happens in the months and possibly years after.",
   "p3": "",
   "hints": [
-   "Urgent",
+   "The hours or days",
    "Rebuilding"
   ],
   "s": [
@@ -10437,7 +10437,7 @@
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What happened in Typhoon Haiyan?",
-  "p1": "Haiyan struck the Philippines on 8 November 2013 as a category 5 storm; a storm surge and about 400 mm of rain flooded up to 1 km inland, destroying about 90% of Tacloban.",
+  "p1": "Haiyan struck the Philippines on 8 November 2013 (category 5); a storm surge and about 400 mm of rain flooded up to 1 km inland, destroying about 90% of Tacloban.",
   "p2": "Primary effects → power cut, airport damaged, roads blocked; three-quarters of farmers and fishers lost income; oil from a barge contaminated 10 hectares of mangrove.",
   "p3": "Secondary effects → contaminated water raised waterborne disease; shortages caused looting and eight deaths in a stampede for rice; rice prices rose 11.9% by 2014.",
   "hints": [
@@ -10446,7 +10446,7 @@
    "Secondary"
   ],
   "s": [
-   "Haiyan struck the Philippines on 8 November 2013 as a category 5 storm; a storm surge and about 400 mm of rain flooded up to 1 km inland, destroying about 90% of Tacloban.",
+   "Haiyan struck the Philippines on 8 November 2013 (category 5); a storm surge and about 400 mm of rain flooded up to 1 km inland, destroying about 90% of Tacloban.",
    "Primary effects → power cut, airport damaged, roads blocked; three-quarters of farmers and fishers lost income; oil from a barge contaminated 10 hectares of mangrove.",
    "Secondary effects → contaminated water raised waterborne disease; shortages caused looting and eight deaths in a stampede for rice; rice prices rose 11.9% by 2014."
   ],
@@ -10498,7 +10498,7 @@
   "p2": "France, Belgium and Israel set up field hospitals; the USA used the carrier USS George Washington's helicopters for search and rescue and supplies.",
   "p3": "Cash-for-work paid locals to clear debris; agencies replaced fishing boats; cyclone shelters and surge warnings were built; a no-build zone was often ineffective as people fish from the coast.",
   "hints": [
-   "the Red Cross",
+   "stadiums",
    "field hospitals",
    "cash-for-work"
   ],
@@ -10510,12 +10510,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "the Red Cross",
+    "gap": "stadiums",
     "alt": [],
     "d": [
-     "the Oxfam",
-     "the UNICEF",
-     "the Greenpeace"
+     "schools",
+     "hotels",
+     "churches"
     ]
    },
    {
@@ -10650,7 +10650,7 @@
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What extreme weather affects the UK?",
-  "p1": "Storms begin as depressions, areas of low pressure, carried by the jet stream; Storm Darragh in December 2024 brought winds of about 96 mph in Devon and a rare red wind warning.",
+  "p1": "Storms begin as depressions (areas of low pressure) carried by the jet stream; Storm Darragh in December 2024 brought about 96 mph winds in Devon and a rare red warning.",
   "p2": "Storm Babet in October 2023 brought 150 to 200 mm of rain to eastern Scotland; the River South Esk overwhelmed defences at Brechin and seven people died.",
   "p3": "Management is mostly preparation → the Met Office issues warnings and trees near power lines are maintained; flood walls, tree planting and floodplain planning reduce flood risk.",
   "hints": [
@@ -10659,7 +10659,7 @@
    "Management"
   ],
   "s": [
-   "Storms begin as depressions, areas of low pressure, carried by the jet stream; Storm Darragh in December 2024 brought winds of about 96 mph in Devon and a rare red wind warning.",
+   "Storms begin as depressions (areas of low pressure) carried by the jet stream; Storm Darragh in December 2024 brought about 96 mph winds in Devon and a rare red warning.",
    "Storm Babet in October 2023 brought 150 to 200 mm of rain to eastern Scotland; the River South Esk overwhelmed defences at Brechin and seven people died.",
    "Management is mostly preparation → the Met Office issues warnings and trees near power lines are maintained; flood walls, tree planting and floodplain planning reduce flood risk."
   ],
@@ -10740,12 +10740,12 @@
    },
    {
     "p": 3,
-    "gap": "decrease",
+    "gap": "polar continental air",
     "alt": [],
     "d": [
-     "increase",
-     "double",
-     "stay constant"
+     "tropical maritime air",
+     "polar maritime air",
+     "tropical continental air"
     ]
    }
   ]
@@ -10968,7 +10968,7 @@
     "d": [
      "inflation",
      "migration",
-     "immigration"
+     "pollution"
     ]
    }
   ],
@@ -11043,12 +11043,12 @@
    },
    {
     "p": 2,
-    "gap": "separate",
+    "gap": "recycling",
     "alt": [],
     "d": [
-     "mix",
-     "burn",
-     "bury"
+     "burning",
+     "dumping",
+     "importing"
     ]
    }
   ],
@@ -11157,7 +11157,7 @@
   "hints": [
    "Travel",
    "Growing",
-   "Declining"
+   "An ex-mining"
   ],
   "s": [
    "A commuter is somebody who travels in to and out of a city each day for work.",
@@ -11262,9 +11262,9 @@
     "gap": "the G7",
     "alt": [],
     "d": [
-     "the G20",
-     "the NATO",
-     "the OPEC"
+     "the BRICS",
+     "the African Union",
+     "the Arab League"
     ]
    },
    {
@@ -11297,7 +11297,7 @@
   "front": "Why did the coal industry in South Wales decline?",
   "p1": "Mechanisation made manual labour in the collieries unnecessary, and nationalisation propped up the industry for longer than it should have without giving miners alternative careers.",
   "p2": "Globalisation made UK coal uncompetitive, because with higher wages and unit costs of production it was cheaper to import coal from abroad.",
-  "p3": "From the 1960s the UK discovered cheaper energy such as North Sea gas and oil, the government chose not to support the industry, and global warming increased the need to reduce CO2 emissions.",
+  "p3": "From the 1960s cheaper energy such as North Sea gas and oil was found, the government chose not to support the industry, and global warming increased the need to cut CO2 emissions.",
   "hints": [
    "unnecessary",
    "Cost",
@@ -11306,7 +11306,7 @@
   "s": [
    "Mechanisation made manual labour in the collieries unnecessary, and nationalisation propped up the industry for longer than it should have without giving miners alternative careers.",
    "Globalisation made UK coal uncompetitive, because with higher wages and unit costs of production it was cheaper to import coal from abroad.",
-   "From the 1960s the UK discovered cheaper energy such as North Sea gas and oil, the government chose not to support the industry, and global warming increased the need to reduce CO2 emissions."
+   "From the 1960s cheaper energy such as North Sea gas and oil was found, the government chose not to support the industry, and global warming increased the need to cut CO2 emissions."
   ],
   "fill": [
    {
@@ -11331,12 +11331,12 @@
    },
    {
     "p": 3,
-    "gap": "North Sea",
+    "gap": "global warming",
     "alt": [],
     "d": [
-     "Irish Sea",
-     "Baltic Sea",
-     "Black Sea"
+     "acid rain",
+     "urbanisation",
+     "privatisation"
     ]
    }
   ]
@@ -11727,12 +11727,12 @@
    },
    {
     "p": 3,
-    "gap": "cheaper",
+    "gap": "expansion",
     "alt": [],
     "d": [
-     "dearer",
-     "scarcer",
-     "wetter"
+     "pollution",
+     "congestion",
+     "flooding"
     ]
    }
   ]
@@ -11768,12 +11768,12 @@
    },
    {
     "p": 2,
-    "gap": "Oxford",
+    "gap": "a global business hub",
     "alt": [],
     "d": [
-     "Hull",
-     "Preston",
-     "Carlisle"
+     "a regional trading port",
+     "a tourist resort",
+     "a manufacturing centre"
     ]
    },
    {
@@ -11793,18 +11793,18 @@
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What evidence is there of a north-south divide?",
-  "p1": "Lowland areas are in the south and east, mountainous areas such as the Lake District and Snowdonia are in the north and west, and the north and west are colder and rainier.",
+  "p1": "Lowland areas are in the south and east; mountainous areas such as the Lake District and Snowdonia are in the north and west, which are colder and rainier.",
   "p2": "Disposable income per person is 128% of the national average in London, but only 84% in the north-east.",
-  "p3": "61% of pupils in London and the south-east achieve 5 or more GCSE grades at A* to C, and men in Glasgow have a life expectancy of 71.6 years compared with 83 years in East Dorset.",
+  "p3": "61% of pupils in London and the south-east get 5 or more GCSEs at grades A* to C; male life expectancy is 71.6 years in Glasgow and 83 years in East Dorset.",
   "hints": [
    "rainier",
    "Income",
-   "71.6 years"
+   "life expectancy"
   ],
   "s": [
-   "Lowland areas are in the south and east, mountainous areas such as the Lake District and Snowdonia are in the north and west, and the north and west are colder and rainier.",
+   "Lowland areas are in the south and east; mountainous areas such as the Lake District and Snowdonia are in the north and west, which are colder and rainier.",
    "Disposable income per person is 128% of the national average in London, but only 84% in the north-east.",
-   "61% of pupils in London and the south-east achieve 5 or more GCSE grades at A* to C, and men in Glasgow have a life expectancy of 71.6 years compared with 83 years in East Dorset."
+   "61% of pupils in London and the south-east get 5 or more GCSEs at grades A* to C; male life expectancy is 71.6 years in Glasgow and 83 years in East Dorset."
   ],
   "fill": [
    {
@@ -11829,12 +11829,12 @@
    },
    {
     "p": 3,
-    "gap": "71.6 years",
+    "gap": "life expectancy",
     "alt": [],
     "d": [
-     "61.6 years",
-     "76.1 years",
-     "81.6 years"
+     "infant mortality",
+     "literacy rate",
+     "unemployment rate"
     ]
    }
   ]
@@ -12003,7 +12003,7 @@
   "hints": [
    "12 million",
    "£430 million",
-   "the 2050"
+   "net-zero"
   ],
   "s": [
    "A four-storey terminal extension, a new multi-storey car park and removal of night flight constraints raise the passenger limit from 10 million to 12 million a year.",
@@ -12033,12 +12033,12 @@
    },
    {
     "p": 3,
-    "gap": "the 2050",
+    "gap": "net-zero",
     "alt": [],
     "d": [
-     "the 2030",
-     "the 2040",
-     "the 2070"
+     "zero-waste",
+     "low-cost",
+     "high-speed"
     ]
    }
   ]
@@ -12064,12 +12064,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "oldest",
+    "gap": "taxpayer money",
     "alt": [],
     "d": [
-     "newest",
-     "largest",
-     "smallest"
+     "private loans",
+     "EU grants",
+     "port fees"
     ]
    },
    {
@@ -12283,7 +12283,7 @@
   "front": "What was the human fieldwork enquiry?",
   "p1": "The hypothesis was that Olympic Park regeneration has benefited the local area; the area is close to school.",
   "p2": "After the closure of London Docks came deindustrialisation, so the area had higher-than-average deprivation and needed regeneration.",
-  "p3": "Positives → a new school, the Here East creative hub, a decontaminated site, transport upgrades at Stratford International, 8,000 new homes and sports facilities; negatives → many homes unaffordable, 5,000 job losses, 500 homes demolished.",
+  "p3": "Positives → a new school, the Here East creative hub, a decontaminated site, transport upgrades, 8,000 new homes and sports facilities; negatives → many homes unaffordable, 5,000 job losses, 500 homes demolished.",
   "hints": [
    "Hypothesis",
    "Need",
@@ -12292,7 +12292,7 @@
   "s": [
    "The hypothesis was that Olympic Park regeneration has benefited the local area; the area is close to school.",
    "After the closure of London Docks came deindustrialisation, so the area had higher-than-average deprivation and needed regeneration.",
-   "Positives → a new school, the Here East creative hub, a decontaminated site, transport upgrades at Stratford International, 8,000 new homes and sports facilities; negatives → many homes unaffordable, 5,000 job losses, 500 homes demolished."
+   "Positives → a new school, the Here East creative hub, a decontaminated site, transport upgrades, 8,000 new homes and sports facilities; negatives → many homes unaffordable, 5,000 job losses, 500 homes demolished."
   ],
   "fill": [
    {
@@ -12334,7 +12334,7 @@
   "front": "What did we conclude and how did we evaluate?",
   "p1": "Regeneration was mostly positive → new shops, schools and doctor surgeries, a much improved built environment and better transport links.",
   "p2": "It was not successful for everyone → low paid unskilled workers struggle to access new housing and rising house prices make this worse.",
-  "p3": "Evaluation → data on one day in March missed some groups; the survey was subjective; mixing primary and secondary, quantitative and qualitative data improved validity; bipolar charts allow before and after comparison.",
+  "p3": "Evaluation → data from one day in March missed some groups and the survey was subjective; mixing primary and secondary, quantitative and qualitative data improved validity.",
   "hints": [
    "Positive",
    "house prices",
@@ -12343,7 +12343,7 @@
   "s": [
    "Regeneration was mostly positive → new shops, schools and doctor surgeries, a much improved built environment and better transport links.",
    "It was not successful for everyone → low paid unskilled workers struggle to access new housing and rising house prices make this worse.",
-   "Evaluation → data on one day in March missed some groups; the survey was subjective; mixing primary and secondary, quantitative and qualitative data improved validity; bipolar charts allow before and after comparison."
+   "Evaluation → data from one day in March missed some groups and the survey was subjective; mixing primary and secondary, quantitative and qualitative data improved validity."
   ],
   "fill": [
    {
@@ -12436,7 +12436,7 @@
   "front": "How did we use the bipolar environmental quality survey?",
   "p1": "An area was rated using a scale on aspects such as noise, building condition and greenery, at 3 different sites.",
   "p2": "Successful regeneration would mean high scores in regenerated areas.",
-  "p3": "It is quick and the same rating system allows comparison, but it is subjective, so each group scored differently, and shallow, as it cannot show why an area is the way it is.",
+  "p3": "It is quick and allows comparison, but it is subjective, so groups scored differently, and shallow, as it cannot show why an area is the way it is.",
   "hints": [
    "greenery",
    "high",
@@ -12445,7 +12445,7 @@
   "s": [
    "An area was rated using a scale on aspects such as noise, building condition and greenery, at 3 different sites.",
    "Successful regeneration would mean high scores in regenerated areas.",
-   "It is quick and the same rating system allows comparison, but it is subjective, so each group scored differently, and shallow, as it cannot show why an area is the way it is."
+   "It is quick and allows comparison, but it is subjective, so groups scored differently, and shallow, as it cannot show why an area is the way it is."
   ],
   "fill": [
    {
@@ -12542,7 +12542,7 @@
   "hints": [
    "websites",
    "housing",
-   "small"
+   "representative"
   ],
   "s": [
    "Property websites were used to find the average prices of homes to rent and buy in East Village.",
@@ -12572,12 +12572,12 @@
    },
    {
     "p": 3,
-    "gap": "small",
+    "gap": "representative",
     "alt": [],
     "d": [
-     "large",
-     "stratified",
-     "complete"
+     "complete",
+     "expensive",
+     "quick"
     ]
    }
   ]
@@ -12611,12 +12611,12 @@
    },
    {
     "p": 2,
-    "gap": "a clean",
+    "gap": "a clean copy",
     "alt": [],
     "d": [
-     "an annotated",
-     "a marked",
-     "a shorter"
+     "a marked copy",
+     "a shorter copy",
+     "an annotated copy"
     ]
    }
   ]
@@ -12654,7 +12654,7 @@
     "alt": [],
     "d": [
      "examiners",
-     "local councils",
+     "teachers",
      "tour operators"
     ]
    }
