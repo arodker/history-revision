@@ -174,7 +174,7 @@ function usageStats() {
   let d14 = 0;
   for (let i = 0; i < 14; i++) { const d = new Date(t0); d.setDate(d.getDate() - i); const k = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); if (x.days[k] > 0) d14++; }
   let weak = []; try { weak = unitFlags(x).filter(u => u.flag === 'weak').slice(0, 5).map(u => u.c.paper + '|' + u.c.unit); } catch (e) {}
-  let badges = 0; try { const b = JSON.parse(localStorage.getItem(LS_BADGES) || '{}'); badges = Array.isArray(b) ? b.length : Object.keys(b).length; } catch (e) {}
+  let badges = 0; try { const b = JSON.parse(localStorage.getItem(LS_BADGES) || '{}'); badges = (Array.isArray(b) ? b : Object.keys(b)).filter(function (i) { return BADGES.some(function (x) { return x.id === i; }); }).length; } catch (e) {}
   let miss = []; try { miss = Object.keys(x.miss || {}).map(k => [k, String(x.miss[k].label || '').slice(0, 90), x.miss[k].paper || '', x.miss[k].n || 0]).sort((p, q) => q[3] - p[3]).slice(0, 10); } catch (e) {}
   let use = null; try { use = window.hsUsage(); } catch (e) {}
   return {xp: x.total, level: xpLevelIdx(x.total), days14: d14, badges: badges, acc: x.acc, pos: uptoPos(), weak: weak, miss: miss, use: use};
@@ -4456,10 +4456,6 @@ function ucProg(i) {
 }
 function bdgUnits() {
   if (!RQ.length || !DATES.length) return;
-  COURSE_FLAT.forEach(function (c, i) {
-    var p = ucProg(i);
-    if (p.total && p.n >= p.total) bdgAward('u' + i);
-  });
   bdgPapers();
 }
 function xpAward(mode, ok, key, label, paper, unit) {
@@ -5697,16 +5693,13 @@ const BADGES = [
   {id:'c1066', e:'🏹', n:'Conqueror', h:'Answer 1066 questions correctly', c:['#FCEBEB','#E24B4A']},
   {id:'combo10', e:'⚡', n:'On fire', h:'Get 15 answers right in a row', c:['#FAEEDA','#EF9F27']},
   {id:'combo20', e:'🌋', n:'Unstoppable', h:'Get 30 answers right in a row', c:['#FCEBEB','#E24B4A']},
-  {id:'revisit', e:'🔁', n:'Lesson learned', h:'Get 10 questions right that you got wrong before', c:['#E1F5EE','#1D9E75']},
-  {id:'fixer', e:'🔧', n:'Mistake fixer', h:'Get 30 questions right that you got wrong before', c:['#E1F5EE','#0F6E56']},
+  {id:'revisit', e:'🔁', n:'Lesson learned', h:'Get 25 questions right that you got wrong before', c:['#E1F5EE','#1D9E75']},
+  {id:'fixer', e:'🔧', n:'Mistake fixer', h:'Get 100 questions right that you got wrong before', c:['#E1F5EE','#0F6E56']},
   {id:'objection', e:'👨‍⚖️', n:'Objection!', h:'Have 5 boss battle answers accepted with "I was right"', c:['#EEEDFE','#7F77DD']},
   {id:'first', e:'⚔️', n:'First blood', h:'Defeat a boss', c:['#FAEEDA','#EF9F27']},
   {id:'flawless', e:'💎', n:'Flawless', h:'Defeat the third boss or later without losing a heart', c:['#E6F1FB','#378ADD']},
   {id:'nine', e:'🐈', n:'Nine lives', h:'Defeat a boss on your last heart', c:['#FAECE7','#D85A30']},
   {id:'untouch', e:'🛡️', n:'Untouchable', h:'Defeat every boss in one run without losing a heart', c:['#E6F1FB','#378ADD']},
-  {id:'dragon', e:'🐉', n:'Dragon slayer', h:'Defeat the Dreaded Date Dragon', c:['#EAF3DE','#639922']},
-  {id:'wizard', e:'🧙', n:'Wizard hunter', h:'Defeat the Chief Examiner', c:['#EEEDFE','#7F77DD']},
-  {id:'slayer', e:'🏆', n:'Giant slayer', h:'Defeat Mr Rodker', c:['#FAEEDA','#BA7517']},
   {id:'bruised', e:'🤕', n:'Bruised, not beaten', h:'Lose 5 boss fights and keep coming back', c:['#FBEAF0','#D4537E']},
   {id:'arcade', e:'🕹️', n:'Arcade regular', h:'Finish a round of all four arcade games', c:['#EEEDFE','#7F77DD']},
   {id:'p1', e:'🚢', n:'Paper 1 master', h:'Master every flashcard in Paper 1 and get every date and retrieval question right: Migrants in Britain', c:['#E6F1FB','#378ADD']},
@@ -5717,14 +5710,10 @@ const BADGES = [
   {id:'streak7', e:'🗓️', n:'Week warrior', h:'Earn 200 XP a day, 7 days in a row', c:['#EAF3DE','#3B6D11']},
   {id:'streak14', e:'🌟', n:'Fortnight', h:'Earn 200 XP a day, 14 days in a row', c:['#FAEEDA','#EF9F27']},
   {id:'maxed', e:'💪', n:'Maxed out', h:'Reach the daily XP limit', c:['#FCEBEB','#E24B4A']},
-  {id:'clock', e:'⏱️', n:'Against the clock', h:'Start a timed exam question', c:['#E1F5EE','#1D9E75']},
   {id:'examready', e:'📝', n:'Exam ready', h:'Finish a timed exam question before the clock runs out', c:['#E6F1FB','#378ADD']},
   {id:'traveller', e:'🕰️', n:'Time traveller', h:'Get 15 flashcards right in each of the four papers in one day', c:['#EEEDFE','#7F77DD']},
   {id:'ice', e:'❄️', n:'Ice cold', h:'Defeat Mr Rodker on your last heart', c:['#E6F1FB','#378ADD']},
-  {id:'gremlin', e:'👹', n:'Gremlin crusher', h:'Defeat the Procrastination Gremlin', c:['#FCEBEB','#E24B4A']},
-  {id:'zombie', e:'🧟', n:'Zombie squasher', h:'Defeat the Cramming Zombie', c:['#EAF3DE','#639922']},
-  {id:'vampire', e:'🧛', n:'Vampire hunter', h:'Defeat the Highlighter Vampire', c:['#FBEAF0','#D4537E']},
-  {id:'collector', e:'🏴‍☠️', n:'Boss collector', h:'Earn all six boss badges', c:['#F1EFE8','#444441']},
+  {id:'collector', e:'🏴‍☠️', n:'Boss collector', h:'Defeat all six bosses', c:['#F1EFE8','#444441']},
   {id:'buzzer', e:'🔔', n:'Buzzer beater', h:'Get a boss answer right with under a second left', c:['#FAECE7','#D85A30']},
   {id:'special', e:'🔬', n:'Specialist', h:'Get 90% or more over at least 150 answers in one unit', c:['#E1F5EE','#0F6E56']},
   {id:'comeback', e:'📈', n:'Comeback kid', h:'Lift a weak unit (under 50%) to over 80%', c:['#EAF3DE','#3B6D11']},
@@ -5737,7 +5726,6 @@ const BADGES = [
   {id:'clean', e:'🧹', n:'Clean slate', h:'Clear every pinned flashcard when you had at least 10', c:['#E6F1FB','#378ADD']},
   {id:'month', e:'📆', n:'Month of mornings', h:'Earn 200 XP a day, 30 days in a row', c:['#EEEDFE','#534AB7']},
   {id:'tenk', e:'🏔️', n:'Ten thousand', h:'Reach 10,000 total XP', c:['#E1F5EE','#1D9E75']},
-  {id:'twoaday', e:'🌗', n:'Two-a-day', h:'Earn XP in the morning and again in the evening of one day', c:['#EEEDFE','#7F77DD']},
   {id:'weekend', e:'🎯', n:'Weekender', h:'Revise on both Saturday and Sunday of one weekend', c:['#FAEEDA','#EF9F27']},
   {id:'explorer', e:'🧭', n:'Explorer', h:'Try every way to revise: Flashcards, Guide, Dates, Exam Practice, Mixed quiz, Parent view and Arcade', c:['#E6F1FB','#185FA5']},
   {id:'examiner', e:'🖋️', n:"Examiner's pet", h:'Try a timed exam question in each of the four papers', c:['#EEEDFE','#534AB7']},
@@ -5753,22 +5741,11 @@ const BADGES = [
   {id:'konami', e:'🎮', n:'Cheat code', h:'A classic sequence', c:['#EEEDFE','#7F77DD'], secret:true},
   {id:'xmas', e:'🎄', n:'Revising at Christmas', h:'Revise on 25 December', c:['#EAF3DE','#3B6D11'], secret:true},
   {id:'ny', e:'🎆', n:'New year, new grades', h:'Revise on 1 January', c:['#E6F1FB','#378ADD'], secret:true},
-  {id:'hallow', e:'🎃', n:'Spooky season', h:'Revise on 31 October', c:['#FAECE7','#D85A30'], secret:true},
-  {id:'bonfire', e:'🎇', n:'Remember, remember', h:'Revise on 5 November', c:['#FAEEDA','#BA7517'], secret:true},
-  {id:'poppy', e:'🌺', n:'Lest we forget', h:'Revise on 11 November', c:['#FCEBEB','#A32D2D'], secret:true},
-  {id:'dday', e:'🎖️', n:'D-Day', h:'Revise on 6 June', c:['#E6F1FB','#185FA5'], secret:true},
   {id:'hungary', e:'🍲', n:'Hungary for knowledge', h:'Give a wrong answer for the Hungarian Uprising death toll', c:['#FAECE7','#D85A30'], secret:true},
   {id:'gapfill', e:'🔗', n:'Missing link', h:'Get all 3 gaps right on a Fill the gaps card', c:['#EEEDFE','#7F77DD']},
-  {id:'window', e:'🪟', n:'Defenestrated', h:'Quit 10 arcade games halfway through', c:['#E6F1FB','#185FA5'], secret:true},
-  {id:'lightsw', e:'💡', n:'Light switch', h:'Switch between night and day mode 10 times in one day', c:['#FAEEDA','#BA7517'], secret:true}
 ];
-const UC_EMO = ['💸','🍺','🚒','🏖️','🍬','🐷','⚒️','👸','💨','🎭','🦅','🐛','🛤️','🚌','🥁'];
-const UC_NAME = ['Hyperinflation Hero','Beer Hall Regular','Reichstag Fire Marshal','KdF Holidaymaker','Candy Dropper','Bay of Pigs Veteran','Wall Hammerer','Supreme Governor','Protestant Wind Rider','Globe Groundling','Blood Eagler','Huguenot Silkworm','Railway Navvy','Bristol Bus Conductor','Carnival Drummer'];
 const UC_COL = {p3:['#FAECE7','#D85A30'], p2a:['#EEEDFE','#7F77DD'], p2b:['#FAEEDA','#EF9F27'], p1:['#E6F1FB','#378ADD']};
-COURSE_FLAT.forEach(function (c, i) {
-  BADGES.push({id:'u' + i, e:UC_EMO[i] || '📘', n:UC_NAME[i] || c.unit, h:'Get every date and retrieval question in ' + c.unit + ' right at least once', c:UC_COL[c.paper], unit:i});
-});
-const BDG_DATES = {'25-12':'xmas','01-01':'ny','31-10':'hallow','05-11':'bonfire','11-11':'poppy','06-06':'dday'};
+const BDG_DATES = {'25-12':'xmas','01-01':'ny'};
 function bdgLoad() { try { return JSON.parse(localStorage.getItem(LS_BADGES) || '{}') || {}; } catch (e) { return {}; } }
 function bsWeekKey(offDays) {
   const d = new Date(); d.setHours(12, 0, 0, 0); d.setDate(d.getDate() + (offDays || 0) - ((d.getDay() + 6) % 7));
@@ -5795,7 +5772,23 @@ function bdgNext() {
   void el.offsetWidth; el.classList.add('show');
   setTimeout(() => { el.classList.remove('show'); setTimeout(() => { bdgBusy = false; bdgNext(); }, 450); }, 2600);
 }
+const BOSS_IDS = ['dragon', 'wizard', 'gremlin', 'zombie', 'vampire', 'slayer'];
+function bossAll() { try { const s = bsLoad(), b = s.bosses || {}, g = bdgLoad(); return BOSS_IDS.every(i => b[i] || g[i]); } catch (e) { return false; } }
+// One-off clean-up: drop earned badges that no longer exist. Boss defeats are kept as progress towards Boss collector.
+(function bdgPrune() {
+  try {
+    const got = bdgLoad(), ids = BADGES.map(b => b.id), s = bsLoad(); let ch = false, sc = false;
+    Object.keys(got).forEach(k => {
+      if (ids.indexOf(k) >= 0) return;
+      if (BOSS_IDS.indexOf(k) >= 0) { s.bosses = s.bosses || {}; if (!s.bosses[k]) { s.bosses[k] = 1; sc = true; } }
+      delete got[k]; ch = true;
+    });
+    if (sc) bsSave(s);
+    if (ch) localStorage.setItem(LS_BADGES, JSON.stringify(got));
+  } catch (e) {}
+})();
 function bdgAward(id) {
+  if (BOSS_IDS.indexOf(id) >= 0) { try { const s = bsLoad(); s.bosses = s.bosses || {}; if (!s.bosses[id]) { s.bosses[id] = 1; bsSave(s); } if (bossAll()) return bdgAward('collector'); } catch (e) {} return false; }
   const got = bdgLoad();
   if (got[id]) return false;
   const b = BADGES.find(x => x.id === id);
@@ -5853,7 +5846,7 @@ function bdgStreak(x) {
 }
 function bdgMeta() {
   const got = bdgLoad(), has = ids => ids.every(i => got[i]);
-  if (has(['gremlin', 'zombie', 'vampire', 'dragon', 'wizard', 'slayer'])) bdgAward('collector');
+  if (bossAll()) bdgAward('collector');
   if (has(['p1', 'p2a', 'p2b', 'p3'])) bdgAward('grand');
   if (has(BADGES.filter(b => b.secret && b.id !== 'agent').map(b => b.id))) bdgAward('agent');
   if (has(BADGES.filter(b => b.id !== 'complete').map(b => b.id))) bdgAward('complete');
@@ -5935,7 +5928,7 @@ xpAward = function (mode, ok, key, label, paper) {
     bsSave(s2);
     if (s2.tad.am && s2.tad.pm) bdgAward('twoaday');
   } catch (e) {}
-  try { if (wasMiss) { const s = bsLoad(); s.rev = (s.rev || 0) + 1; bsSave(s); if (s.rev >= 10) bdgAward('revisit'); if (s.rev >= 30) bdgAward('fixer'); } bdgCheck(true); } catch (e) {}
+  try { if (wasMiss) { const s = bsLoad(); s.rev = (s.rev || 0) + 1; bsSave(s); if (s.rev >= 25) bdgAward('revisit'); if (s.rev >= 100) bdgAward('fixer'); } bdgCheck(true); } catch (e) {}
   return r;
 };
 var _bdgMark = bossMark;
