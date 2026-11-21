@@ -47,6 +47,16 @@
      "Munich Putsch",
      "Ruhr Occupation"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "750,000",
+    "alt": [],
+    "d": [
+     "75,000",
+     "1.5 million",
+     "250,000"
+    ]
    }
   ]
  },
@@ -97,6 +107,16 @@
      "Versailles",
      "blockade",
      "peace-at-any-price"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "9 November 1918",
+    "alt": [],
+    "d": [
+     "10 November 1918",
+     "28 June 1919",
+     "3 November 1918"
     ]
    }
   ]
@@ -149,6 +169,16 @@
      "Landtag",
      "Duma"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "every 7 years",
+    "alt": [],
+    "d": [
+     "every 4 years",
+     "every 5 years",
+     "every 10 years"
+    ]
    }
   ]
  },
@@ -199,6 +229,16 @@
      "SA",
      "SS",
      "Hitler Youth"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Karl Liebknecht",
+    "alt": [],
+    "d": [
+     "Ernst Thälmann",
+     "Friedrich Ebert",
+     "Gustav Noske"
     ]
    }
   ]
@@ -251,6 +291,26 @@
      "one week",
      "six months"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Wolfgang Kapp",
+    "alt": [],
+    "d": [
+     "Erich Ludendorff",
+     "Paul von Hindenburg",
+     "Adolf Hitler"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Stuttgart",
+    "alt": [],
+    "d": [
+     "Munich",
+     "Weimar",
+     "Dresden"
+    ]
    }
   ]
  },
@@ -301,6 +361,16 @@
      "Corruption",
      "Inflation",
      "Censorship"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Proportional representation",
+    "alt": [],
+    "d": [
+     "First-past-the-post",
+     "Presidential rule",
+     "Federal voting"
     ]
    }
   ]
@@ -353,6 +423,16 @@
      "600,000",
      "160,000"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Proportional Representation",
+    "alt": [],
+    "d": [
+     "First-Past-the-Post",
+     "Alternative Vote",
+     "Direct Democracy"
+    ]
    }
   ]
  },
@@ -403,6 +483,26 @@
      "Armistice",
      "Disarmament",
      "Anschluss"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Polish Corridor",
+    "alt": [],
+    "d": [
+     "Sudetenland",
+     "Danzig Free City",
+     "Bohemia"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "£6.6 billion",
+    "alt": [],
+    "d": [
+     "£66 million",
+     "£660 million",
+     "£66 billion"
     ]
    }
   ]
@@ -456,6 +556,16 @@
      "Walther Rathenau",
      "Gustav Stresemann",
      "Philipp Scheidemann"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Dolchstoss",
+    "alt": [],
+    "d": [
+     "Blitzkrieg",
+     "Lebensraum",
+     "Anschluss"
     ]
    }
   ]
@@ -512,6 +622,26 @@
      "sold land",
      "borrowed gold"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "December 1922",
+    "alt": [],
+    "d": [
+     "January 1919",
+     "November 1923",
+     "June 1920"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "200 billion marks",
+    "alt": [],
+    "d": [
+     "2 billion marks",
+     "20 million marks",
+     "200 million marks"
+    ]
    }
   ]
  },
@@ -520,17 +650,17 @@
   "paper": "p3",
   "unit": "Unit 1 – Weimar Republic",
   "front": "What was the impact of Hyperinflation?",
-  "p1": "Collapse of society; mass shortages as foreign suppliers refused to accept German marks. People cannot afford basic goods.",
-  "p2": "Middle-class savings wiped out overnight. Pensions also become worthless.",
+  "p1": "Collapse of society; mass shortages as foreign suppliers refused to accept German marks. A loaf of bread cost 200 billion marks by November 1923.",
+  "p2": "Middle-class savings wiped out overnight. Pensions also become worthless. Children played in the streets with bricks of worthless banknotes.",
   "p3": "Loss of trust in the Weimar government, which was seen as unable to manage the economy. Hitler attempted Munich Putsch during Hyperinflation.",
   "hints": [
-   "Collapse",
+   "Bread",
    "Savings",
    "Putsch"
   ],
   "s": [
-   "Collapse of society; mass shortages as foreign suppliers refused to accept German marks. People cannot afford basic goods.",
-   "Middle-class savings wiped out overnight. Pensions also become worthless.",
+   "Collapse of society; mass shortages as foreign suppliers refused to accept German marks. A loaf of bread cost 200 billion marks by November 1923.",
+   "Middle-class savings wiped out overnight. Pensions also become worthless. Children played in the streets with bricks of worthless banknotes.",
    "Loss of trust in the Weimar government, which was seen as unable to manage the economy. Hitler attempted Munich Putsch during Hyperinflation."
   ],
   "fill": [
@@ -562,6 +692,26 @@
      "Kapp Putsch",
      "Spartacist Revolt",
      "Reichstag Fire"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Pensions",
+    "alt": [],
+    "d": [
+     "Wages",
+     "Mortgages",
+     "Insurance"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "200 billion marks",
+    "alt": [],
+    "d": [
+     "2 billion marks",
+     "20 million marks",
+     "200 million marks"
     ]
    }
   ]
@@ -600,9 +750,9 @@
     "gap": "Dawes Plan",
     "alt": [],
     "d": [
-     "Young Plan",
      "Locarno Pact",
-     "Marshall Plan"
+     "Marshall Plan",
+     "Treaty of Rapallo"
     ]
    },
    {
@@ -610,9 +760,39 @@
     "gap": "Young Plan",
     "alt": [],
     "d": [
-     "Dawes Plan",
      "Locarno Pact",
-     "Treaty of Rapallo"
+     "Treaty of Rapallo",
+     "Marshall Plan"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Reichsmark",
+    "alt": [],
+    "d": [
+     "Deutschmark",
+     "Thaler",
+     "Papiermark"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "£50 million/year",
+    "alt": [],
+    "d": [
+     "£5 million/year",
+     "£500 million/year",
+     "£5 billion/year"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1988",
+    "alt": [],
+    "d": [
+     "1958",
+     "1968",
+     "1998"
     ]
    }
   ]
@@ -667,6 +847,26 @@
      "disarm completely",
      "share colonies"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "1926",
+    "alt": [],
+    "d": [
+     "1924",
+     "1927",
+     "1930"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "61 nations",
+    "alt": [],
+    "d": [
+     "16 nations",
+     "25 nations",
+     "100 nations"
+    ]
    }
   ]
  },
@@ -717,6 +917,16 @@
      "British loans",
      "French reparations",
      "Soviet trade"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "40%",
+    "alt": [],
+    "d": [
+     "15%",
+     "60%",
+     "50%"
     ]
    }
   ]
@@ -769,6 +979,16 @@
      "10,000 new homes",
      "1 million new homes"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1927",
+    "alt": [],
+    "d": [
+     "1919",
+     "1923",
+     "1932"
+    ]
    }
   ]
  },
@@ -820,6 +1040,16 @@
      "13%",
      "50%"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "5,000",
+    "alt": [],
+    "d": [
+     "500",
+     "2,500",
+     "10,000"
+    ]
    }
   ]
  },
@@ -847,9 +1077,9 @@
     "gap": "avant-garde",
     "alt": [],
     "d": [
-     "Expressionist",
      "Romantic",
-     "Baroque"
+     "Baroque",
+     "Gothic"
     ]
    },
    {
@@ -869,7 +1099,17 @@
     "d": [
      "Pablo Picasso",
      "Salvador Dali",
-     "Fritz Lang"
+     "Wassily Kandinsky"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Marlene Dietrich",
+    "alt": [],
+    "d": [
+     "Greta Garbo",
+     "Leni Riefenstahl",
+     "Lotte Lenya"
     ]
    }
   ]
@@ -895,12 +1135,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "spy",
+    "gap": "military spy",
     "alt": [],
     "d": [
-     "recruiter",
-     "journalist",
-     "translator"
+     "army recruiter",
+     "party organiser",
+     "police informant"
     ]
    },
    {
@@ -923,6 +1163,16 @@
      "two months",
      "five years",
      "a decade"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Anton Drexler",
+    "alt": [],
+    "d": [
+     "Ernst Röhm",
+     "Gregor Strasser",
+     "Dietrich Eckart"
     ]
    }
   ]
@@ -975,6 +1225,16 @@
      "Hitlerjugend",
      "Freikorps"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "swastika logo",
+    "alt": [],
+    "d": [
+     "eagle emblem",
+     "red banner",
+     "iron cross"
+    ]
    }
   ]
  },
@@ -1025,6 +1285,16 @@
      "Kapp Putsch",
      "Wall Street Crash",
      "Young Plan"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Ludendorff",
+    "alt": [],
+    "d": [
+     "Hindenburg",
+     "Mackensen",
+     "Seeckt"
     ]
    }
   ]
@@ -1077,6 +1347,16 @@
      "600 Nazis killed",
      "26 Nazis killed"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "8 November 1923",
+    "alt": [],
+    "d": [
+     "9 November 1923",
+     "8 November 1924",
+     "1 November 1923"
+    ]
    }
   ]
  },
@@ -1127,6 +1407,16 @@
      "terror",
      "civil war",
      "a second putsch"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "5 years",
+    "alt": [],
+    "d": [
+     "10 years",
+     "2 years",
+     "12 months"
     ]
    }
   ]
@@ -1181,6 +1471,26 @@
      "Munich Conference",
      "Weimar Conference"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "400,000",
+    "alt": [],
+    "d": [
+     "40,000",
+     "4 million",
+     "150,000"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "won over Goebbels",
+    "alt": [],
+    "d": [
+     "expelled Strasser",
+     "executed Röhm",
+     "banned the SA"
+    ]
    }
   ]
  },
@@ -1208,9 +1518,9 @@
     "gap": "Stresemann",
     "alt": [],
     "d": [
-     "Hindenburg",
      "Ebert",
-     "Brüning"
+     "Brüning",
+     "Rathenau"
     ]
    },
    {
@@ -1231,6 +1541,26 @@
      "Ludendorff",
      "Ebert",
      "Kaiser Wilhelm"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "2.6%",
+    "alt": [],
+    "d": [
+     "12%",
+     "26%",
+     "0.6%"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "League of Nations",
+    "alt": [],
+    "d": [
+     "United Nations",
+     "Council of Europe",
+     "Hague Tribunal"
     ]
    }
   ]
@@ -1282,6 +1612,16 @@
      "housing crisis",
      "food crisis",
      "coal crisis"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "£14 billion",
+    "alt": [],
+    "d": [
+     "£1.4 billion",
+     "£140 billion",
+     "£14 million"
     ]
    }
   ]
@@ -1336,6 +1676,26 @@
      "the poor peasants",
      "the army officers"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "13 million votes",
+    "alt": [],
+    "d": [
+     "3 million votes",
+     "30 million votes",
+     "1.3 million votes"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Communists (KPD)",
+    "alt": [],
+    "d": [
+     "Social Democrats (SPD)",
+     "Centre Party (Zentrum)",
+     "Nationalists (DNVP)"
+    ]
    }
   ]
  },
@@ -1386,6 +1746,16 @@
      "Land and Freedom",
      "Peace and Bread",
      "Blood and Soil"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "120 newspapers",
+    "alt": [],
+    "d": [
+     "12 newspapers",
+     "200 newspapers",
+     "1,200 newspapers"
     ]
    }
   ]
@@ -1438,6 +1808,16 @@
      "Foreign Minister",
      "Interior Minister"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "von Schleicher",
+    "alt": [],
+    "d": [
+     "von Ribbentrop",
+     "von Blomberg",
+     "von Neurath"
+    ]
    }
   ]
  },
@@ -1488,6 +1868,26 @@
      "simple majority",
      "1/3 majority",
      "75% majority"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "27 February 1933",
+    "alt": [],
+    "d": [
+     "30 January 1933",
+     "23 March 1933",
+     "1 April 1933"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "4,000 communists",
+    "alt": [],
+    "d": [
+     "400 communists",
+     "40,000 communists",
+     "14,000 communists"
     ]
    }
   ]
@@ -1542,6 +1942,16 @@
      "newspapers",
      "universities"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "288 seats",
+    "alt": [],
+    "d": [
+     "88 seats",
+     "188 seats",
+     "388 seats"
+    ]
    }
   ]
  },
@@ -1593,6 +2003,16 @@
      "officers",
      "politicians"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Himmler and Heydrich",
+    "alt": [],
+    "d": [
+     "Göring and Goebbels",
+     "Hess and Bormann",
+     "Streicher and Frick"
+    ]
    }
   ]
  },
@@ -1620,9 +2040,9 @@
     "gap": "Röhm",
     "alt": [],
     "d": [
-     "Strasser",
      "Himmler",
-     "Heydrich"
+     "Heydrich",
+     "Goebbels"
     ]
    },
    {
@@ -1643,6 +2063,16 @@
      "loyalty",
      "propaganda",
      "obedience"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "30 June 1934",
+    "alt": [],
+    "d": [
+     "27 February 1933",
+     "2 August 1934",
+     "8 November 1923"
     ]
    }
   ]
@@ -1695,6 +2125,16 @@
      "secret pact",
      "public vow"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "2 August 1934",
+    "alt": [],
+    "d": [
+     "30 June 1934",
+     "9 November 1938",
+     "27 February 1933"
+    ]
    }
   ]
  },
@@ -1746,6 +2186,26 @@
      "No witnesses",
      "No prisons"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Heydrich",
+    "alt": [],
+    "d": [
+     "Göring",
+     "Goebbels",
+     "Bormann"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "534",
+    "alt": [],
+    "d": [
+     "54",
+     "5,340",
+     "153"
+    ]
    }
   ]
  },
@@ -1784,8 +2244,8 @@
     "alt": [],
     "d": [
      "Munich",
-     "Berlin",
-     "Dachau"
+     "Dachau",
+     "Hamburg"
     ]
    },
    {
@@ -1796,6 +2256,16 @@
      "Nuremberg Games",
      "Munich Games",
      "Hamburg Festival"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "70%",
+    "alt": [],
+    "d": [
+     "40%",
+     "90%",
+     "20%"
     ]
    }
   ]
@@ -1848,6 +2318,16 @@
      "Handel",
      "Brahms"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "2,500",
+    "alt": [],
+    "d": [
+     "250",
+     "25,000",
+     "1,500"
+    ]
    }
   ]
  },
@@ -1899,6 +2379,16 @@
      "signed the Concordat",
      "met Hitler"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Pope Pius XI",
+    "alt": [],
+    "d": [
+     "Pope Leo XIII",
+     "Pope John XXIII",
+     "Pope Benedict XV"
+    ]
    }
   ]
  },
@@ -1927,8 +2417,8 @@
     "alt": [],
     "d": [
      "League of German Girls",
-     "Swing Youth",
-     "White Rose"
+     "White Rose",
+     "Red Orchestra"
     ]
    },
    {
@@ -1949,6 +2439,16 @@
      "military",
      "economic",
      "religious"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Himmler",
+    "alt": [],
+    "d": [
+     "Göring",
+     "Goebbels",
+     "Heydrich"
     ]
    }
   ]
@@ -1977,9 +2477,9 @@
     "gap": "Pastors' Emergency League",
     "alt": [],
     "d": [
-     "Confessing Church",
      "German Christians",
-     "Catholic Centre Party"
+     "Catholic Centre Party",
+     "Reich Chamber of Culture"
     ]
    },
    {
@@ -2000,6 +2500,16 @@
      "80 priests",
      "8,000 priests",
      "300 priests"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Martin Niemöller",
+    "alt": [],
+    "d": [
+     "Dietrich Bonhoeffer",
+     "Clemens von Galen",
+     "Karl Barth"
     ]
    }
   ]
@@ -2047,12 +2557,22 @@
    },
    {
     "p": 3,
-    "gap": "rare",
+    "gap": "open resistance",
     "alt": [],
     "d": [
-     "common",
-     "widespread",
-     "legal"
+     "mass strikes",
+     "armed uprisings",
+     "street protests"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "informer",
+    "alt": [],
+    "d": [
+     "priest",
+     "soldier",
+     "judge"
     ]
    }
   ]
@@ -2107,6 +2627,16 @@
      "the army",
      "the police"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Kirche",
+    "alt": [],
+    "d": [
+     "Kaiser",
+     "Krieg",
+     "Kunst"
+    ]
    }
   ]
  },
@@ -2157,6 +2687,16 @@
      "coal mining",
      "the civil service",
      "teaching"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "1,000 marks",
+    "alt": [],
+    "d": [
+     "100 marks",
+     "10,000 marks",
+     "500 marks"
     ]
    }
   ]
@@ -2209,6 +2749,16 @@
      "sport and drill",
      "art and music"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Nazi Teachers' League",
+    "alt": [],
+    "d": [
+     "Hitler Youth Association",
+     "German Labour Front",
+     "Reich Chamber of Education"
+    ]
    }
   ]
  },
@@ -2259,6 +2809,16 @@
      "100-year Reich",
      "500-year Reich",
      "10,000-year Reich"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "25%",
+    "alt": [],
+    "d": [
+     "10%",
+     "50%",
+     "75%"
     ]
    }
   ]
@@ -2311,6 +2871,16 @@
      "excluding farmers",
      "excluding students"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "1.36 million men",
+    "alt": [],
+    "d": [
+     "136,000 men",
+     "13.6 million men",
+     "5 million men"
+    ]
    }
   ]
  },
@@ -2348,9 +2918,9 @@
     "gap": "Strength through Joy",
     "alt": [],
     "d": [
-     "Beauty of Labour",
-     "Labour Front",
-     "Labour Service"
+     "Labour Service",
+     "Reich Food Estate",
+     "Winter Relief"
     ]
    },
    {
@@ -2358,9 +2928,19 @@
     "gap": "Beauty of Labour",
     "alt": [],
     "d": [
-     "Strength through Joy",
-     "German Labour Front",
-     "Labour Service"
+     "Labour Service",
+     "Winter Relief",
+     "Reich Food Estate"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "35 million members",
+    "alt": [],
+    "d": [
+     "3.5 million members",
+     "350 million members",
+     "10 million members"
     ]
    }
   ]
@@ -2413,6 +2993,16 @@
      "the Reichstag Fire",
      "the Kapp Putsch"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Eugenics",
+    "alt": [],
+    "d": [
+     "Fascism",
+     "Socialism",
+     "Militarism"
+    ]
    }
   ]
  },
@@ -2463,6 +3053,16 @@
      "foreign",
      "wealthy",
      "powerful"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "yellow star",
+    "alt": [],
+    "d": [
+     "red armband",
+     "pink triangle",
+     "white badge"
     ]
    }
   ]
@@ -2515,6 +3115,26 @@
      "deported",
      "pardoned"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "9–10 November 1938",
+    "alt": [],
+    "d": [
+     "9 November 1923",
+     "30 June 1934",
+     "1–2 April 1933"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1 billion marks",
+    "alt": [],
+    "d": [
+     "1 million marks",
+     "10 billion marks",
+     "100 million marks"
+    ]
    }
   ]
  },
@@ -2553,8 +3173,8 @@
     "alt": [],
     "d": [
      "Jehovah's Witnesses",
-     "Roma",
-     "Slavs"
+     "Freemasons",
+     "Vagrants"
     ]
    },
    {
@@ -2563,8 +3183,18 @@
     "alt": [],
     "d": [
      "executed",
-     "deported",
-     "hospitalised"
+     "hospitalised",
+     "segregated"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "T4 euthanasia programme",
+    "alt": [],
+    "d": [
+     "Aktion Reinhard",
+     "Final Solution",
+     "Lebensborn programme"
     ]
    }
   ]
@@ -2617,6 +3247,16 @@
      "no armies",
      "no trade"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "businesses",
+    "alt": [],
+    "d": [
+     "banks",
+     "schools",
+     "newspapers"
+    ]
    }
   ]
  },
@@ -2644,9 +3284,9 @@
     "gap": "Nazism",
     "alt": [],
     "d": [
-     "communism",
      "capitalism",
-     "imperialism"
+     "imperialism",
+     "Japanese militarism"
     ]
    },
    {
@@ -2669,6 +3309,26 @@
      "reparations",
      "borders",
      "trade"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "1941",
+    "alt": [],
+    "d": [
+     "1939",
+     "1940",
+     "1945"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "4 years",
+    "alt": [],
+    "d": [
+     "2 years",
+     "6 years",
+     "10 years"
     ]
    }
   ]
@@ -2721,6 +3381,16 @@
      "military alliance",
      "peace treaty"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "$20 billion",
+    "alt": [],
+    "d": [
+     "$2 billion",
+     "$200 billion",
+     "$20 million"
+    ]
    }
   ]
  },
@@ -2772,6 +3442,16 @@
      "generous",
      "detailed"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Polish independence",
+    "alt": [],
+    "d": [
+     "Polish borders",
+     "Polish elections",
+     "Polish industry"
+    ]
    }
   ]
  },
@@ -2822,6 +3502,16 @@
      "reassure",
      "thank",
      "bribe"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "common enemy",
+    "alt": [],
+    "d": [
+     "Cold War",
+     "Iron Curtain",
+     "Marshall Plan"
     ]
    }
   ]
@@ -2876,6 +3566,16 @@
      "a military base",
      "a peace treaty"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Nagasaki",
+    "alt": [],
+    "d": [
+     "Tokyo",
+     "Osaka",
+     "Kyoto"
+    ]
    }
   ]
  },
@@ -2926,6 +3626,16 @@
      "Nagy",
      "Dubček",
      "Castro"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Iron Curtain",
+    "alt": [],
+    "d": [
+     "Berlin Wall",
+     "Bamboo Curtain",
+     "Domino Theory"
     ]
    }
   ]
@@ -2978,6 +3688,16 @@
      "improved",
      "ignored"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Truman Doctrine",
+    "alt": [],
+    "d": [
+     "Marshall Plan",
+     "Yalta Agreement",
+     "Iron Curtain speech"
+    ]
    }
   ]
  },
@@ -3028,6 +3748,16 @@
      "France's",
      "Germany's",
      "Italy's"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "$400 million",
+    "alt": [],
+    "d": [
+     "$40 million",
+     "$4 billion",
+     "$13 billion"
     ]
    }
   ]
@@ -3080,6 +3810,16 @@
      "two political camps",
      "two ideological camps"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "General Marshall",
+    "alt": [],
+    "d": [
+     "General Eisenhower",
+     "General Patton",
+     "General MacArthur"
+    ]
    }
   ]
  },
@@ -3130,6 +3870,16 @@
      "military and nuclear blocs",
      "trade and tax blocs",
      "cultural and religious blocs"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "satellite economies",
+    "alt": [],
+    "d": [
+     "Western economies",
+     "colonial economies",
+     "allied economies"
     ]
    }
   ]
@@ -3184,6 +3934,26 @@
      "bomb",
      "bribe"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Bizonia",
+    "alt": [],
+    "d": [
+     "Duozonia",
+     "Unizone",
+     "Westzonia"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "24 June 1948",
+    "alt": [],
+    "d": [
+     "23 June 1948",
+     "12 May 1949",
+     "1 April 1948"
+    ]
    }
   ]
  },
@@ -3234,6 +4004,16 @@
      "SEATO",
      "COMECON",
      "CENTO"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "4,000 tonnes",
+    "alt": [],
+    "d": [
+     "400 tonnes",
+     "40,000 tonnes",
+     "14,000 tonnes"
     ]
    }
   ]
@@ -3288,6 +4068,16 @@
      "Arab allies",
      "Asian colonies"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "1955",
+    "alt": [],
+    "d": [
+     "1950",
+     "1953",
+     "1961"
+    ]
    }
   ]
  },
@@ -3338,6 +4128,16 @@
      "Massive Atomic Deterrence",
      "Mutual Armed Defence",
      "Maximum Arms Deployment"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "4,500km",
+    "alt": [],
+    "d": [
+     "450km",
+     "45,000km",
+     "1,500km"
     ]
    }
   ]
@@ -3390,6 +4190,16 @@
      "scientific rivalry",
      "military alliance"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Laika",
+    "alt": [],
+    "d": [
+     "Belka",
+     "Strelka",
+     "Muttnik"
+    ]
    }
   ]
  },
@@ -3440,6 +4250,16 @@
      "total war",
      "containment",
      "rollback"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "purges",
+    "alt": [],
+    "d": [
+     "famines",
+     "invasions",
+     "treaties"
     ]
    }
   ]
@@ -3494,6 +4314,16 @@
      "Nationalisation",
      "Industrialisation"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Marshall Aid",
+    "alt": [],
+    "d": [
+     "Lend-Lease",
+     "Dawes loans",
+     "Truman Aid"
+    ]
    }
   ]
  },
@@ -3521,9 +4351,9 @@
     "gap": "Nagy",
     "alt": [],
     "d": [
-     "Kádár",
      "Gomulka",
-     "Tito"
+     "Tito",
+     "Dubček"
     ]
    },
    {
@@ -3544,6 +4374,16 @@
      "Tito",
      "Husák",
      "Dubček"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1,000 tanks",
+    "alt": [],
+    "d": [
+     "100 tanks",
+     "10,000 tanks",
+     "500 tanks"
     ]
    }
   ]
@@ -3596,6 +4436,16 @@
      "military zone",
      "Soviet protectorate"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "3 million",
+    "alt": [],
+    "d": [
+     "30 million",
+     "300,000",
+     "1 million"
+    ]
    }
   ]
  },
@@ -3646,6 +4496,16 @@
      "nuclear stockpile",
      "troop numbers",
      "foreign aid"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "$2 billion",
+    "alt": [],
+    "d": [
+     "$200 million",
+     "$20 billion",
+     "$12 billion"
     ]
    }
   ]
@@ -3698,6 +4558,16 @@
      "15 years",
      "38 years"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "13 August 1961",
+    "alt": [],
+    "d": [
+     "13 August 1963",
+     "9 November 1989",
+     "1 January 1959"
+    ]
    }
   ]
  },
@@ -3749,6 +4619,16 @@
      "Potsdamer Platz",
      "Tempelhof"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Ich bin ein Berliner",
+    "alt": [],
+    "d": [
+     "Ich liebe Berlin",
+     "Wir sind das Volk",
+     "Tear down this wall"
+    ]
    }
   ]
  },
@@ -3799,6 +4679,16 @@
      "9 miles",
      "190 miles",
      "900 miles"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Che Guevara",
+    "alt": [],
+    "d": [
+     "Camilo Cienfuegos",
+     "Salvador Allende",
+     "Hugo Chávez"
     ]
    }
   ]
@@ -3853,6 +4743,16 @@
      "troops",
      "warships"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1,400 Cuban exiles",
+    "alt": [],
+    "d": [
+     "140 Cuban exiles",
+     "14,000 Cuban exiles",
+     "4,000 Cuban exiles"
+    ]
    }
   ]
  },
@@ -3906,6 +4806,26 @@
      "escorted",
      "allowed through"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "14 October 1962",
+    "alt": [],
+    "d": [
+     "14 October 1961",
+     "28 October 1962",
+     "27 October 1962"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "13 days",
+    "alt": [],
+    "d": [
+     "13 weeks",
+     "13 months",
+     "3 days"
+    ]
    }
   ]
  },
@@ -3957,6 +4877,16 @@
      "hesitated",
      "ordered"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "24 October",
+    "alt": [],
+    "d": [
+     "22 October",
+     "26 October",
+     "23 October"
+    ]
    }
   ]
  },
@@ -3994,9 +4924,9 @@
     "gap": "publicly",
     "alt": [],
     "d": [
-     "secretly",
      "partly",
-     "slowly"
+     "slowly",
+     "reluctantly"
     ]
    },
    {
@@ -4007,6 +4937,16 @@
      "public",
      "written",
      "televised"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "28 October 1962",
+    "alt": [],
+    "d": [
+     "14 October 1962",
+     "27 October 1962",
+     "24 October 1962"
     ]
    }
   ]
@@ -4055,9 +4995,19 @@
     "gap": "Non-Proliferation",
     "alt": [],
     "d": [
-     "Test Ban",
      "Arms Limitation",
-     "Disarmament"
+     "Disarmament",
+     "Anti-Ballistic Missile"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1968",
+    "alt": [],
+    "d": [
+     "1962",
+     "1972",
+     "1975"
     ]
    }
   ]
@@ -4096,9 +5046,9 @@
     "gap": "Dubček",
     "alt": [],
     "d": [
-     "Novotný",
      "Husák",
-     "Nagy"
+     "Nagy",
+     "Gomulka"
     ]
    },
    {
@@ -4109,6 +5059,16 @@
      "state ownership",
      "collective farms",
      "military service"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Socialism with a Human Face",
+    "alt": [],
+    "d": [
+     "Communism with a Soviet Face",
+     "Capitalism with a Human Face",
+     "Freedom without Socialism"
     ]
    }
   ]
@@ -4161,6 +5121,16 @@
      "ending",
      "slowing"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Warsaw Pact",
+    "alt": [],
+    "d": [
+     "NATO",
+     "COMECON",
+     "Comintern"
+    ]
    }
   ]
  },
@@ -4211,6 +5181,26 @@
      "Imre Nagy",
      "Alexander Dubček",
      "Fidel Castro"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "August 1968",
+    "alt": [],
+    "d": [
+     "August 1956",
+     "January 1968",
+     "August 1961"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Husák",
+    "alt": [],
+    "d": [
+     "Novotný",
+     "Kádár",
+     "Ulbricht"
     ]
    }
   ]
@@ -4263,6 +5253,16 @@
      "Truman Doctrine",
      "Carter Doctrine"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "1988",
+    "alt": [],
+    "d": [
+     "1986",
+     "1990",
+     "1991"
+    ]
    }
   ]
  },
@@ -4313,6 +5313,16 @@
      "military",
      "economic",
      "cultural"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Romania",
+    "alt": [],
+    "d": [
+     "Bulgaria",
+     "Hungary",
+     "Poland"
     ]
    }
   ]
@@ -4367,6 +5377,16 @@
      "an alliance",
      "a loan"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "1965",
+    "alt": [],
+    "d": [
+     "1955",
+     "1969",
+     "1963"
+    ]
    }
   ]
  },
@@ -4417,6 +5437,16 @@
      "Berlin Blockade",
      "Prague Spring",
      "U2 Crisis"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "grain",
+    "alt": [],
+    "d": [
+     "oil",
+     "steel",
+     "coal"
     ]
    }
   ]
@@ -4469,6 +5499,16 @@
      "NATO",
      "INF"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "ICBMs",
+    "alt": [],
+    "d": [
+     "H-bombs",
+     "U2s",
+     "Jupiters"
+    ]
    }
   ]
  },
@@ -4520,6 +5560,16 @@
      "celebrated",
      "expanded"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "35 nations",
+    "alt": [],
+    "d": [
+     "15 nations",
+     "3 nations",
+     "50 nations"
+    ]
    }
   ]
  },
@@ -4547,9 +5597,9 @@
     "gap": "dialogue",
     "alt": [],
     "d": [
-     "war",
      "conflict",
-     "embargoes"
+     "embargoes",
+     "rivalry"
     ]
    },
    {
@@ -4570,6 +5620,16 @@
      "Vietnam",
      "Cuba",
      "Poland"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "30,000",
+    "alt": [],
+    "d": [
+     "13,000",
+     "50,000",
+     "3,000"
     ]
    }
   ]
@@ -4622,6 +5682,16 @@
      "Iraqi revolution",
      "Turkish revolution"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1978",
+    "alt": [],
+    "d": [
+     "1968",
+     "1988",
+     "1973"
+    ]
    }
   ]
  },
@@ -4672,6 +5742,16 @@
      "Daoud",
      "Zahir",
      "Najibullah"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1979",
+    "alt": [],
+    "d": [
+     "1975",
+     "1980",
+     "1981"
     ]
    }
   ]
@@ -4724,6 +5804,16 @@
      "Cuba",
      "Suez"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "15,000",
+    "alt": [],
+    "d": [
+     "5,000",
+     "50,000",
+     "150,000"
+    ]
    }
   ]
  },
@@ -4761,9 +5851,9 @@
     "gap": "grain",
     "alt": [],
     "d": [
-     "oil",
      "steel",
-     "cotton"
+     "cotton",
+     "coal"
     ]
    },
    {
@@ -4774,6 +5864,16 @@
      "SALT I",
      "INF",
      "START"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Mujahedeen",
+    "alt": [],
+    "d": [
+     "Taliban",
+     "Contras",
+     "Viet Cong"
     ]
    }
   ]
@@ -4825,6 +5925,26 @@
      "SALT",
      "INF",
      "NATO"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Nicaragua",
+    "alt": [],
+    "d": [
+     "Cuba",
+     "Libya",
+     "Vietnam"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "$1 trillion",
+    "alt": [],
+    "d": [
+     "$10 billion",
+     "$100 billion",
+     "$10 trillion"
     ]
    }
   ]
@@ -4879,6 +5999,16 @@
      "a secret",
      "a treaty"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1983",
+    "alt": [],
+    "d": [
+     "1981",
+     "1985",
+     "1987"
+    ]
    }
   ]
  },
@@ -4908,7 +6038,7 @@
     "d": [
      "expansion",
      "growth",
-     "reform"
+     "prosperity"
     ]
    },
    {
@@ -4929,6 +6059,16 @@
      "gradual reform",
      "military action",
      "more spending"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1985",
+    "alt": [],
+    "d": [
+     "1975",
+     "1980",
+     "1991"
     ]
    }
   ]
@@ -4957,9 +6097,9 @@
     "gap": "Perestroika",
     "alt": [],
     "d": [
-     "Glasnost",
      "Dolchstoss",
-     "Blitzkrieg"
+     "Blitzkrieg",
+     "Realpolitik"
     ]
    },
    {
@@ -4967,9 +6107,9 @@
     "gap": "Glasnost",
     "alt": [],
     "d": [
-     "Perestroika",
      "Realpolitik",
-     "Lebensraum"
+     "Lebensraum",
+     "Ostpolitik"
     ]
    },
    {
@@ -4980,6 +6120,16 @@
      "Reagan Doctrine",
      "Truman Doctrine",
      "Monroe Doctrine"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Brezhnev Doctrine",
+    "alt": [],
+    "d": [
+     "Truman Doctrine",
+     "Monroe Doctrine",
+     "Carter Doctrine"
     ]
    }
   ]
@@ -5034,6 +6184,16 @@
      "a trade war",
      "a civil war"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Reagan and Gorbachev",
+    "alt": [],
+    "d": [
+     "Nixon and Brezhnev",
+     "Carter and Brezhnev",
+     "Kennedy and Khrushchev"
+    ]
    }
   ]
  },
@@ -5071,9 +6231,9 @@
     "gap": "Solidarity",
     "alt": [],
     "d": [
-     "Perestroika",
-     "Glasnost",
-     "Charter 77"
+     "Charter 77",
+     "Prague Spring",
+     "Brezhnev Doctrine"
     ]
    },
    {
@@ -5084,6 +6244,16 @@
      "peaceful transition",
      "military coup",
      "civil election"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "June 1989",
+    "alt": [],
+    "d": [
+     "May 1989",
+     "August 1989",
+     "November 1989"
     ]
    }
   ]
@@ -5136,6 +6306,26 @@
      "COMECON",
      "EEC"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "9 November 1989",
+    "alt": [],
+    "d": [
+     "9 November 1938",
+     "3 October 1990",
+     "13 August 1961"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "July 1991",
+    "alt": [],
+    "d": [
+     "July 1989",
+     "July 1990",
+     "July 1992"
+    ]
    }
   ]
  },
@@ -5186,6 +6376,26 @@
      "Brezhnev",
      "Khrushchev",
      "Stalin"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Nobel Peace Prize",
+    "alt": [],
+    "d": [
+     "Order of Lenin",
+     "Hero of the Soviet Union",
+     "Presidential Medal"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Estonia, Latvia, Lithuania",
+    "alt": [],
+    "d": [
+     "Poland, Hungary, Romania",
+     "Ukraine, Georgia, Armenia",
+     "Cuba, Vietnam, China"
     ]
    }
   ]
@@ -5240,6 +6450,26 @@
      "economic collapse",
      "famine"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Gang of 8",
+    "alt": [],
+    "d": [
+     "Gang of 4",
+     "Council of 12",
+     "Committee of 5"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Christmas Day 1991",
+    "alt": [],
+    "d": [
+     "Christmas Day 1989",
+     "New Year's Day 1992",
+     "Easter Sunday 1991"
+    ]
    }
   ]
  },
@@ -5291,6 +6521,16 @@
      "apprentices",
      "burghers"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Gentry",
+    "alt": [],
+    "d": [
+     "Merchants",
+     "Yeomen",
+     "Clergy"
+    ]
    }
   ]
  },
@@ -5330,9 +6570,9 @@
     "gap": "taxation",
     "alt": [],
     "d": [
-     "marriage",
-     "succession",
-     "foreign policy"
+     "coinage",
+     "war and peace",
+     "Crown lands"
     ]
    },
    {
@@ -5343,6 +6583,16 @@
      "charter",
      "statute",
      "mandate"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "19",
+    "alt": [],
+    "d": [
+     "9",
+     "12",
+     "29"
     ]
    }
   ]
@@ -5394,6 +6644,16 @@
      "consubstantiation",
      "excommunication",
      "predestination"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "ornate",
+    "alt": [],
+    "d": [
+     "plain",
+     "small",
+     "modern"
     ]
    }
   ]
@@ -5448,6 +6708,26 @@
      "named Elizabeth heir",
      "banned Elizabeth from court"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Catherine of Aragon",
+    "alt": [],
+    "d": [
+     "Jane Seymour",
+     "Anne of Cleves",
+     "Catherine Howard"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1536",
+    "alt": [],
+    "d": [
+     "1533",
+     "1539",
+     "1547"
+    ]
    }
   ]
  },
@@ -5492,12 +6772,22 @@
    },
    {
     "p": 3,
-    "gap": "obey",
+    "gap": "legally required to obey",
     "alt": [],
     "d": [
-     "advise",
-     "support",
-     "educate"
+     "legally entitled to inherit",
+     "legally free to divorce",
+     "legally allowed to rule"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "monstrous regiment of women",
+    "alt": [],
+    "d": [
+     "wicked rule of queens",
+     "weak council of widows",
+     "foolish reign of girls"
     ]
    }
   ]
@@ -5552,6 +6842,16 @@
      "the Triple Alliance",
      "the Holy League"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "New World",
+    "alt": [],
+    "d": [
+     "Far East",
+     "Mediterranean",
+     "Baltic"
+    ]
    }
   ]
  },
@@ -5604,6 +6904,16 @@
      "Church lands",
      "Royal forests",
      "Crown jewels"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "£227,000",
+    "alt": [],
+    "d": [
+     "£22,700",
+     "£2.27 million",
+     "£500,000"
     ]
    }
   ]
@@ -5658,6 +6968,26 @@
      "the East",
      "the West"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1534",
+    "alt": [],
+    "d": [
+     "1529",
+     "1536",
+     "1547"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "284 Protestants",
+    "alt": [],
+    "d": [
+     "28 Protestants",
+     "2,840 Protestants",
+     "84 Protestants"
+    ]
    }
   ]
  },
@@ -5711,6 +7041,16 @@
      "a Greek Bible",
      "a French Bible"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "English Book of Common Prayer",
+    "alt": [],
+    "d": [
+     "Latin Missal",
+     "Geneva Psalter",
+     "Catholic Breviary"
+    ]
    }
   ]
  },
@@ -5761,6 +7101,16 @@
      "Pilgrimages",
      "Injunctions",
      "Inquisitions"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "parish structure",
+    "alt": [],
+    "d": [
+     "guild system",
+     "feudal system",
+     "county boundaries"
     ]
    }
   ]
@@ -5813,6 +7163,16 @@
      "bishops' approval",
      "the Pope"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "vestments",
+    "alt": [],
+    "d": [
+     "chalices",
+     "organs",
+     "windows"
+    ]
    }
   ]
  },
@@ -5847,12 +7207,12 @@
    },
    {
     "p": 2,
-    "gap": "tiny",
+    "gap": "a few thousand",
     "alt": [],
     "d": [
-     "large",
-     "growing",
-     "powerful"
+     "several million",
+     "tens of thousands",
+     "half the population"
     ]
    },
    {
@@ -5863,6 +7223,16 @@
      "knighted",
      "promoted",
      "pardoned"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Strickland and Cope",
+    "alt": [],
+    "d": [
+     "Wentworth and Hatton",
+     "Grindal and Whitgift",
+     "Knox and Calvin"
     ]
    }
   ]
@@ -5915,6 +7285,16 @@
      "cathedral",
      "parliament"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1559–60",
+    "alt": [],
+    "d": [
+     "1558–59",
+     "1562–63",
+     "1566–67"
+    ]
    }
   ]
  },
@@ -5965,6 +7345,26 @@
      "total",
      "complete",
      "no"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Archbishop Parker",
+    "alt": [],
+    "d": [
+     "Archbishop Grindal",
+     "Archbishop Whitgift",
+     "Archbishop Cranmer"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "37 London ministers",
+    "alt": [],
+    "d": [
+     "3 London ministers",
+     "370 London ministers",
+     "17 London ministers"
     ]
    }
   ]
@@ -6017,6 +7417,16 @@
      "Scottish puppet",
      "Papal puppet"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "1570",
+    "alt": [],
+    "d": [
+     "1560",
+     "1568",
+     "1575"
+    ]
    }
   ]
  },
@@ -6068,6 +7478,16 @@
      "Treaty of Nonsuch",
      "Treaty of Joinville"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "1566",
+    "alt": [],
+    "d": [
+     "1562",
+     "1564",
+     "1569"
+    ]
    }
   ]
  },
@@ -6102,12 +7522,12 @@
    },
    {
     "p": 2,
-    "gap": "fled",
+    "gap": "seeking Elizabeth's aid",
     "alt": [],
     "d": [
-     "was invited",
-     "was deported",
-     "was captured"
+     "seeking Spanish protection",
+     "seeking French support",
+     "seeking a Papal annulment"
     ]
    },
    {
@@ -6118,6 +7538,16 @@
      "exile",
      "execution",
      "release"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "assassination of Lord Darnley",
+    "alt": [],
+    "d": [
+     "death of Lord Bothwell",
+     "abdication of Lord Moray",
+     "execution of Duke of Norfolk"
     ]
    }
   ]
@@ -6170,6 +7600,26 @@
      "Mary I",
      "Anne Boleyn"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Earls of Westmoreland and Northumberland",
+    "alt": [],
+    "d": [
+     "Earls of Essex and Leicester",
+     "Dukes of Norfolk and Suffolk",
+     "Earls of Arundel and Oxford"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Neville and Percy",
+    "alt": [],
+    "d": [
+     "Howard and Dudley",
+     "Seymour and Cecil",
+     "Tudor and Boleyn"
+    ]
    }
   ]
  },
@@ -6221,6 +7671,16 @@
      "Ireland",
      "Spain"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "450 rebels executed",
+    "alt": [],
+    "d": [
+     "45 rebels executed",
+     "4,500 rebels executed",
+     "150 rebels executed"
+    ]
    }
   ]
  },
@@ -6271,6 +7731,26 @@
      "Protestant foreign powers",
      "neutral foreign powers",
      "Eastern foreign powers"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Pope Pius V",
+    "alt": [],
+    "d": [
+     "Pope Paul III",
+     "Pope Gregory XIII",
+     "Pope Clement VII"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1571",
+    "alt": [],
+    "d": [
+     "1569",
+     "1575",
+     "1585"
     ]
    }
   ]
@@ -6325,6 +7805,16 @@
      "the Essex",
      "the Parry"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Ridolfi Plot",
+    "alt": [],
+    "d": [
+     "Gunpowder Plot",
+     "Essex Rebellion",
+     "Main Plot"
+    ]
    }
   ]
  },
@@ -6378,6 +7868,16 @@
      "the Treaty of Nonsuch",
      "the Act of Uniformity"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Duke of Norfolk",
+    "alt": [],
+    "d": [
+     "Duke of Suffolk",
+     "Duke of Somerset",
+     "Duke of Buckingham"
+    ]
    }
   ]
  },
@@ -6428,6 +7928,16 @@
      "the Pope",
      "the Scottish lords",
      "a French court"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "1586",
+    "alt": [],
+    "d": [
+     "1571",
+     "1583",
+     "1588"
     ]
    }
   ]
@@ -6480,6 +7990,16 @@
      "Hampton Court",
      "Windsor"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "February 1587",
+    "alt": [],
+    "d": [
+     "February 1588",
+     "August 1586",
+     "May 1587"
+    ]
    }
   ]
  },
@@ -6530,6 +8050,16 @@
      "pardoned",
      "exiled",
      "promoted"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "£40,000",
+    "alt": [],
+    "d": [
+     "£4,000",
+     "£140,000",
+     "£14,000"
     ]
    }
   ]
@@ -6582,6 +8112,16 @@
      "Duke of Parma",
      "Francis Drake"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "7,400 troops",
+    "alt": [],
+    "d": [
+     "740 troops",
+     "74,000 troops",
+     "17,400 troops"
+    ]
    }
   ]
  },
@@ -6632,6 +8172,16 @@
      "Calais",
      "Dunkirk",
      "Antwerp"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Earl of Leicester",
+    "alt": [],
+    "d": [
+     "Earl of Essex",
+     "Duke of Norfolk",
+     "Earl of Pembroke"
     ]
    }
   ]
@@ -6686,6 +8236,16 @@
      "2 years",
      "3 years"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "£140,000",
+    "alt": [],
+    "d": [
+     "£14,000",
+     "£400,000",
+     "£1,400,000"
+    ]
    }
   ]
  },
@@ -6714,8 +8274,8 @@
     "alt": [],
     "d": [
      "Santa Cruz",
-     "Parma",
-     "Philip II"
+     "Philip II",
+     "Drake"
     ]
    },
    {
@@ -6736,6 +8296,26 @@
      "wrong time",
      "best weather",
      "full moon"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "130 ships",
+    "alt": [],
+    "d": [
+     "13 ships",
+     "1,300 ships",
+     "30 ships"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "30,000 men",
+    "alt": [],
+    "d": [
+     "3,000 men",
+     "300,000 men",
+     "13,000 men"
     ]
    }
   ]
@@ -6788,6 +8368,16 @@
      "Cannons",
      "Galleys"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "8 August",
+    "alt": [],
+    "d": [
+     "8 July",
+     "18 August",
+     "28 July"
+    ]
    }
   ]
  },
@@ -6838,6 +8428,16 @@
      "obedience",
      "retreat",
      "surrender"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Santa Cruz",
+    "alt": [],
+    "d": [
+     "Philip II",
+     "Alba",
+     "Don John"
     ]
    }
   ]
@@ -6890,6 +8490,16 @@
      "heavier",
      "larger"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "10,000",
+    "alt": [],
+    "d": [
+     "1,000",
+     "50,000",
+     "20,000"
+    ]
    }
   ]
  },
@@ -6940,6 +8550,16 @@
      "enriched",
      "strengthened",
      "crowned"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "55",
+    "alt": [],
+    "d": [
+     "35",
+     "45",
+     "65"
     ]
    }
   ]
@@ -6992,6 +8612,16 @@
      "Gentry",
      "Merchant"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "72",
+    "alt": [],
+    "d": [
+     "27",
+     "100",
+     "52"
+    ]
    }
   ]
  },
@@ -7042,6 +8672,16 @@
      "bull-running",
      "cock-throwing",
      "hare coursing"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Football",
+    "alt": [],
+    "d": [
+     "Cricket",
+     "Rugby",
+     "Tennis"
     ]
    }
   ]
@@ -7094,6 +8734,16 @@
      "Milton",
      "Dickens"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "fencing",
+    "alt": [],
+    "d": [
+     "archery",
+     "boxing",
+     "jousting"
+    ]
    }
   ]
  },
@@ -7144,6 +8794,16 @@
      "expensive",
      "noisy",
      "foreign"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1572",
+    "alt": [],
+    "d": [
+     "1562",
+     "1582",
+     "1592"
     ]
    }
   ]
@@ -7196,6 +8856,16 @@
      "rising taxes",
      "falling prices"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "3 million",
+    "alt": [],
+    "d": [
+     "2 million",
+     "5 million",
+     "1 million"
+    ]
    }
   ]
  },
@@ -7246,6 +8916,16 @@
      "20%",
      "40%",
      "90%"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "east of England",
+    "alt": [],
+    "d": [
+     "north of England",
+     "south-west England",
+     "Midlands"
     ]
    }
   ]
@@ -7298,6 +8978,16 @@
      "rebellion",
      "taxation"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "1540s",
+    "alt": [],
+    "d": [
+     "1520s",
+     "1560s",
+     "1590s"
+    ]
    }
   ]
  },
@@ -7348,6 +9038,16 @@
      "sympathy",
      "charity",
      "indifference"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "harshly",
+    "alt": [],
+    "d": [
+     "kindly",
+     "fairly",
+     "gently"
     ]
    }
   ]
@@ -7402,6 +9102,16 @@
      "a Hospital",
      "a Monastery"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1563",
+    "alt": [],
+    "d": [
+     "1547",
+     "1555",
+     "1598"
+    ]
    }
   ]
  },
@@ -7453,6 +9163,16 @@
      "longships",
      "caravels"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1569",
+    "alt": [],
+    "d": [
+     "1559",
+     "1579",
+     "1588"
+    ]
    }
   ]
  },
@@ -7481,8 +9201,8 @@
     "alt": [],
     "d": [
      "wine trade",
-     "slave trade",
-     "fur trade"
+     "fur trade",
+     "wool trade"
     ]
    },
    {
@@ -7500,9 +9220,19 @@
     "gap": "Hawkins",
     "alt": [],
     "d": [
-     "Drake",
      "Raleigh",
-     "Walsingham"
+     "Walsingham",
+     "Gilbert"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1562",
+    "alt": [],
+    "d": [
+     "1532",
+     "1572",
+     "1588"
     ]
    }
   ]
@@ -7557,6 +9287,26 @@
      "New France",
      "Virginia"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1577–80",
+    "alt": [],
+    "d": [
+     "1567–70",
+     "1585–88",
+     "1572–75"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Golden Hind",
+    "alt": [],
+    "d": [
+     "Pelican",
+     "Revenge",
+     "Ark Royal"
+    ]
    }
   ]
  },
@@ -7607,6 +9357,16 @@
      "sail the ships",
      "trade with Natives",
      "build forts"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Ralph Lane",
+    "alt": [],
+    "d": [
+     "John White",
+     "Thomas Harriot",
+     "Richard Grenville"
     ]
    }
   ]
@@ -7661,6 +9421,16 @@
      "French navy",
      "Dutch fleet"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Algonquian",
+    "alt": [],
+    "d": [
+     "Powhatan",
+     "Iroquois",
+     "Cherokee"
+    ]
    }
   ]
  },
@@ -7700,7 +9470,7 @@
     "d": [
      "council",
      "army",
-     "Church"
+     "university"
     ]
    },
    {
@@ -7713,6 +9483,16 @@
      "the guilds",
      "the army",
      "the Crown"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Monasteries",
+    "alt": [],
+    "d": [
+     "Castles",
+     "Towns",
+     "Universities"
     ]
    }
   ]
@@ -7751,9 +9531,9 @@
     "gap": "revenge",
     "alt": [],
     "d": [
-     "land",
-     "trade",
-     "glory"
+     "glory",
+     "plunder",
+     "Danegeld"
     ]
    },
    {
@@ -7764,6 +9544,26 @@
      "old age",
      "illness",
      "prayer"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "865",
+    "alt": [],
+    "d": [
+     "793",
+     "878",
+     "1066"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Valhalla",
+    "alt": [],
+    "d": [
+     "Asgard",
+     "Midgard",
+     "Hel"
     ]
    }
   ]
@@ -7818,6 +9618,36 @@
      "Norman laws",
      "Viking laws"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "878",
+    "alt": [],
+    "d": [
+     "865",
+     "793",
+     "954"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1002",
+    "alt": [],
+    "d": [
+     "1013",
+     "954",
+     "991"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Cnut",
+    "alt": [],
+    "d": [
+     "Harold",
+     "Edmund",
+     "Edgar"
+    ]
    }
   ]
  },
@@ -7868,6 +9698,16 @@
      "Latin",
      "French",
      "Welsh"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Leicester",
+    "alt": [],
+    "d": [
+     "Oxford",
+     "Reading",
+     "Salisbury"
     ]
    }
   ]
@@ -7920,6 +9760,16 @@
      "segregation",
      "expulsion"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1,000",
+    "alt": [],
+    "d": [
+     "500",
+     "5,000",
+     "2,000"
+    ]
    }
   ]
  },
@@ -7970,6 +9820,16 @@
      "Royal banner",
      "Norman banner",
      "Saxon banner"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Duke of Normandy",
+    "alt": [],
+    "d": [
+     "Count of Anjou",
+     "King of France",
+     "Earl of Wessex"
     ]
    }
   ]
@@ -8024,6 +9884,16 @@
      "German",
      "Danish"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "1069-70",
+    "alt": [],
+    "d": [
+     "1066-67",
+     "1075-76",
+     "1085-86"
+    ]
    }
   ]
  },
@@ -8074,6 +9944,16 @@
      "language of trade",
      "language of the poor",
      "language of the Church"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1070",
+    "alt": [],
+    "d": [
+     "1066",
+     "1086",
+     "1100"
     ]
    }
   ]
@@ -8126,6 +10006,16 @@
      "tax exemptions",
      "land grants"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "1135",
+    "alt": [],
+    "d": [
+     "1066",
+     "1215",
+     "1275"
+    ]
    }
   ]
  },
@@ -8163,9 +10053,9 @@
     "gap": "Norwich",
     "alt": [],
     "d": [
-     "York",
      "Lincoln",
-     "Oxford"
+     "Oxford",
+     "Bristol"
     ]
    },
    {
@@ -8176,6 +10066,16 @@
      "mass exile",
      "mass execution",
      "mass taxation"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1144",
+    "alt": [],
+    "d": [
+     "1044",
+     "1244",
+     "1170"
     ]
    }
   ]
@@ -8201,12 +10101,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "tabula (yellow badge)",
+    "gap": "scapegoated",
     "alt": [],
     "d": [
-     "Curfew",
-     "Job restrictions",
-     "Tax codes"
+     "protected",
+     "honoured",
+     "ignored"
     ]
    },
    {
@@ -8227,6 +10127,16 @@
      "protected",
      "taxed",
      "welcomed"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1265",
+    "alt": [],
+    "d": [
+     "1215",
+     "1245",
+     "1300"
     ]
    }
   ]
@@ -8280,6 +10190,16 @@
      "the University of Cambridge",
      "the University of London",
      "the University of Durham"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Jacob of Oxford",
+    "alt": [],
+    "d": [
+     "Aaron of Lincoln",
+     "Isaac of Norwich",
+     "Josce of York"
     ]
    }
   ]
@@ -8336,6 +10256,26 @@
      "the Guildhall",
      "the Royal Exchange"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Flemish weavers",
+    "alt": [],
+    "d": [
+     "French vintners",
+     "German miners",
+     "Italian bankers"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1351",
+    "alt": [],
+    "d": [
+     "1301",
+     "1381",
+     "1415"
+    ]
    }
   ]
  },
@@ -8389,6 +10329,26 @@
      "income",
      "land"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1378",
+    "alt": [],
+    "d": [
+     "1348",
+     "1388",
+     "1415"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1440",
+    "alt": [],
+    "d": [
+     "1340",
+     "1540",
+     "1478"
+    ]
    }
   ]
  },
@@ -8441,6 +10401,16 @@
      "tariffs",
      "laws",
      "taxes"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "metalwork",
+    "alt": [],
+    "d": [
+     "pottery",
+     "glassmaking",
+     "shipbuilding"
     ]
    }
   ]
@@ -8497,6 +10467,16 @@
      "the grain trade",
      "the opium trade"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Henry VIII",
+    "alt": [],
+    "d": [
+     "Henry VII",
+     "Mary I",
+     "James I"
+    ]
    }
   ]
  },
@@ -8550,6 +10530,16 @@
      "the Church",
      "the navy"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "30,000",
+    "alt": [],
+    "d": [
+     "3,000",
+     "300,000",
+     "13,000"
+    ]
    }
   ]
  },
@@ -8600,6 +10590,16 @@
      "hostility",
      "suspicion",
      "anger"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Charles II",
+    "alt": [],
+    "d": [
+     "James II",
+     "William III",
+     "Charles I"
     ]
    }
   ]
@@ -8654,6 +10654,16 @@
      "telescopes",
      "microscopes"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1694",
+    "alt": [],
+    "d": [
+     "1649",
+     "1707",
+     "1688"
+    ]
    }
   ]
  },
@@ -8707,6 +10717,16 @@
      "paid",
      "trained"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1561",
+    "alt": [],
+    "d": [
+     "1551",
+     "1571",
+     "1588"
+    ]
    }
   ]
  },
@@ -8758,6 +10778,16 @@
      "wool dyeing",
      "shipbuilding"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1570s",
+    "alt": [],
+    "d": [
+     "1550s",
+     "1590s",
+     "1620s"
+    ]
    }
   ]
  },
@@ -8808,6 +10838,16 @@
      "military",
      "religious",
      "cultural"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Dutch economy",
+    "alt": [],
+    "d": [
+     "French economy",
+     "Spanish economy",
+     "German economy"
     ]
    }
   ]
@@ -8862,6 +10902,16 @@
      "military centre",
      "religious centre"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "university",
+    "alt": [],
+    "d": [
+     "church",
+     "court",
+     "trade guild"
+    ]
    }
   ]
  },
@@ -8913,6 +10963,36 @@
      "Hudson's Bay Company",
      "Virginia Company"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "John Blanke",
+    "alt": [],
+    "d": [
+     "Olaudah Equiano",
+     "Ignatius Sancho",
+     "Mary Seacole"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "John Hawkins and Francis Drake",
+    "alt": [],
+    "d": [
+     "Walter Raleigh and Humphrey Gilbert",
+     "William Cecil and Robert Dudley",
+     "Thomas Cromwell and Thomas More"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "200,000",
+    "alt": [],
+    "d": [
+     "20,000",
+     "2 million",
+     "2,000"
+    ]
    }
   ]
  },
@@ -8921,18 +11001,18 @@
   "paper": "p1",
   "unit": "Unit 2 – Early Modern",
   "front": "Why did Palatines come to England?",
-  "p1": "17th Century: Wars in the Rhineland → instability; approximately 13,000 Protestant Palatine refugees sought refuge in England.",
+  "p1": "1708–09: Wars in the Rhineland → instability; approximately 13,000 Protestant Palatine refugees sought refuge in England.",
   "p2": "1708–09: Parliament passed the Foreign Protestants Naturalisation Act — offering citizenship to all foreign Protestants.",
-  "p3": "Palatines hoping to travel from England on to the Carolina colonies in America.",
+  "p3": "Palatines saw Protestant England as a safe refuge after years of religious war and instability in Germany.",
   "hints": [
    "Rhineland",
    "Naturalisation",
-   "Carolina"
+   "refuge"
   ],
   "s": [
    "1708–09: Wars in the Rhineland → instability; approximately 13,000 Protestant Palatine refugees sought refuge in England.",
    "1708–09: Parliament passed the Foreign Protestants Naturalisation Act — offering citizenship to all foreign Protestants.",
-   "Palatines hoping to travel from England on to the Carolina colonies in America."
+   "Palatines saw Protestant England as a safe refuge after years of religious war and instability in Germany."
   ],
   "fill": [
    {
@@ -8959,12 +11039,32 @@
    },
    {
     "p": 3,
-    "gap": "America",
+    "gap": "safe refuge",
     "alt": [],
     "d": [
-     "Asia",
-     "Africa",
-     "Australia"
+     "trading hub",
+     "military ally",
+     "royal court"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "13,000",
+    "alt": [],
+    "d": [
+     "1,300",
+     "130,000",
+     "3,000"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Foreign Protestants Naturalisation Act",
+    "alt": [],
+    "d": [
+     "Aliens Act",
+     "Toleration Act",
+     "Test Act"
     ]
    }
   ]
@@ -9019,6 +11119,16 @@
      "France",
      "America"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "1709",
+    "alt": [],
+    "d": [
+     "1707",
+     "1711",
+     "1719"
+    ]
    }
   ]
  },
@@ -9068,7 +11178,17 @@
     "d": [
      "poverty",
      "censorship",
-     "empire"
+     "slavery"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "India",
+    "alt": [],
+    "d": [
+     "Australia",
+     "Canada",
+     "Egypt"
     ]
    }
   ]
@@ -9121,6 +11241,16 @@
      "Corn Laws",
      "Act of Union"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "86%",
+    "alt": [],
+    "d": [
+     "68%",
+     "76%",
+     "96%"
+    ]
    }
   ]
  },
@@ -9171,6 +11301,16 @@
      "Freemasons",
      "Salvation Army",
      "Chartists"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1860s",
+    "alt": [],
+    "d": [
+     "1840s",
+     "1880s",
+     "1830s"
     ]
    }
   ]
@@ -9225,6 +11365,16 @@
      "the Luddite",
      "the Trade Union"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "O'Connor",
+    "alt": [],
+    "d": [
+     "Peel",
+     "Gladstone",
+     "Disraeli"
+    ]
    }
   ]
  },
@@ -9252,9 +11402,9 @@
     "gap": "Ayahs",
     "alt": [],
     "d": [
-     "Lascars",
      "Sepoys",
-     "Parsis"
+     "Parsis",
+     "Zamindars"
     ]
    },
    {
@@ -9275,6 +11425,36 @@
      "business",
      "war",
      "tourism"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "East Indian Company",
+    "alt": [],
+    "d": [
+     "Hudson's Bay Company",
+     "Royal African Company",
+     "Levant Company"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1869",
+    "alt": [],
+    "d": [
+     "1859",
+     "1879",
+     "1889"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1858",
+    "alt": [],
+    "d": [
+     "1757",
+     "1833",
+     "1901"
     ]
    }
   ]
@@ -9327,6 +11507,16 @@
      "Hindu",
      "Buddhist"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Ayahs' Home",
+    "alt": [],
+    "d": [
+     "Lascars' Hostel",
+     "Sepoys' Barracks",
+     "Nurses' Lodge"
+    ]
    }
   ]
  },
@@ -9377,6 +11567,16 @@
      "cathedrals",
      "theatres",
      "libraries"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Sake Dean Mohamed",
+    "alt": [],
+    "d": [
+     "Dadabhai Naoroji",
+     "Shapurji Saklatvala",
+     "Rammohan Roy"
     ]
    }
   ]
@@ -9429,6 +11629,16 @@
      "neutral",
      "welcoming"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "20%",
+    "alt": [],
+    "d": [
+     "2%",
+     "40%",
+     "12%"
+    ]
    }
   ]
  },
@@ -9479,6 +11689,16 @@
      "Olaudah Equiano",
      "William Cuffay",
      "John Blanke"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1807",
+    "alt": [],
+    "d": [
+     "1787",
+     "1815",
+     "1865"
     ]
    }
   ]
@@ -9533,6 +11753,26 @@
      "architects",
      "novelists"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Olaudah Equiano",
+    "alt": [],
+    "d": [
+     "Mary Prince",
+     "Paul Cuffe",
+     "Toussaint Louverture"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "William Cuffay",
+    "alt": [],
+    "d": [
+     "William Wilberforce",
+     "Thomas Clarkson",
+     "Frederick Douglass"
+    ]
    }
   ]
  },
@@ -9572,7 +11812,7 @@
     "d": [
      "monarchy",
      "wealth",
-     "empire"
+     "stability"
     ]
    },
    {
@@ -9583,6 +11823,26 @@
      "expel",
      "tax",
      "ignore"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Russian Empire",
+    "alt": [],
+    "d": [
+     "Ottoman Empire",
+     "Austrian Empire",
+     "German Empire"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Sephardic Jewish community",
+    "alt": [],
+    "d": [
+     "Orthodox Jewish community",
+     "Hasidic Jewish community",
+     "Reform Jewish community"
     ]
    }
   ]
@@ -9637,6 +11897,26 @@
      "Harrow School",
      "Sunday School"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Whitechapel",
+    "alt": [],
+    "d": [
+     "Brixton",
+     "Soho",
+     "Camden"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1888",
+    "alt": [],
+    "d": [
+     "1858",
+     "1898",
+     "1881"
+    ]
    }
   ]
  },
@@ -9688,6 +11968,16 @@
      "police",
      "schools"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1914–18",
+    "alt": [],
+    "d": [
+     "1912–16",
+     "1915–19",
+     "1916–20"
+    ]
    }
   ]
  },
@@ -9738,6 +12028,16 @@
      "Geneva Treaty on Trade",
      "NATO Charter",
      "EU Charter"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "1947",
+    "alt": [],
+    "d": [
+     "1945",
+     "1949",
+     "1953"
     ]
    }
   ]
@@ -9792,6 +12092,16 @@
      "elected",
      "deported"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Charles Wootton",
+    "alt": [],
+    "d": [
+     "Cecil Rhodes",
+     "Claudia Jones",
+     "Ira Aldridge"
+    ]
    }
   ]
  },
@@ -9829,9 +12139,9 @@
     "gap": "Kindertransport",
     "alt": [],
     "d": [
-     "Windrush",
      "Marshall Plan",
-     "Berlin Airlift"
+     "Berlin Airlift",
+     "Dunkirk evacuation"
     ]
    },
    {
@@ -9842,6 +12152,16 @@
      "disarming",
      "evacuating",
      "taxing"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1948",
+    "alt": [],
+    "d": [
+     "1946",
+     "1950",
+     "1952"
     ]
    }
   ]
@@ -9894,6 +12214,16 @@
      "taxes",
      "pensions"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "1948 British Nationality Act",
+    "alt": [],
+    "d": [
+     "1914 Aliens Restriction Act",
+     "1962 Commonwealth Immigrants Act",
+     "1971 Immigration Act"
+    ]
    }
   ]
  },
@@ -9944,6 +12274,36 @@
      "skilled",
      "wealthy",
      "English-speaking"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "1905",
+    "alt": [],
+    "d": [
+     "1815",
+     "1914",
+     "1919"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "1948",
+    "alt": [],
+    "d": [
+     "1938",
+     "1962",
+     "1968"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1971",
+    "alt": [],
+    "d": [
+     "1962",
+     "1981",
+     "1951"
     ]
    }
   ]
@@ -9996,6 +12356,16 @@
      "rarely",
      "never"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "SUS laws",
+    "alt": [],
+    "d": [
+     "Vagrancy Acts",
+     "Riot Acts",
+     "Race Relations Acts"
+    ]
    }
   ]
  },
@@ -10046,6 +12416,16 @@
      "opera",
      "folk",
      "polka"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Bristol Bus Boycott",
+    "alt": [],
+    "d": [
+     "Brixton Riots",
+     "Cable Street",
+     "Mangrove Nine"
     ]
    }
   ]
@@ -10100,6 +12480,26 @@
      "accent",
      "height"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1965",
+    "alt": [],
+    "d": [
+     "1948",
+     "1958",
+     "1975"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "2010",
+    "alt": [],
+    "d": [
+     "2000",
+     "2020",
+     "1990"
+    ]
    }
   ]
  },
@@ -10153,6 +12553,16 @@
      "Union Movement",
      "White Defence League"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Battle of Cable Street",
+    "alt": [],
+    "d": [
+     "Peterloo Massacre",
+     "Battle of Orgreave",
+     "Siege of Sidney Street"
+    ]
    }
   ]
  },
@@ -10180,9 +12590,9 @@
     "gap": "Mangrove",
     "alt": [],
     "d": [
-     "Brixton",
      "Windrush",
-     "Carnival"
+     "Carnival",
+     "Colherne"
     ]
    },
    {
@@ -10190,9 +12600,9 @@
     "gap": "Scarman",
     "alt": [],
     "d": [
-     "Macpherson",
      "Wilson",
-     "Powell"
+     "Powell",
+     "Denning"
     ]
    },
    {
@@ -10203,6 +12613,16 @@
      "individually racist",
      "openly racist",
      "occasionally racist"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Stephen Lawrence",
+    "alt": [],
+    "d": [
+     "Kelso Cochrane",
+     "Blair Peach",
+     "Mark Duggan"
     ]
    }
   ]
@@ -10255,6 +12675,16 @@
      "tightened",
      "defended"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Guy Bailey",
+    "alt": [],
+    "d": [
+     "Frank Crichlow",
+     "Darcus Howe",
+     "Sam King"
+    ]
    }
   ]
  },
@@ -10305,6 +12735,36 @@
      "visas",
      "pensions",
      "houses"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "East Africa",
+    "alt": [],
+    "d": [
+     "West Africa",
+     "North Africa",
+     "Central Asia"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Idi Amin",
+    "alt": [],
+    "d": [
+     "Jomo Kenyatta",
+     "Julius Nyerere",
+     "Robert Mugabe"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "27,000",
+    "alt": [],
+    "d": [
+     "2,700",
+     "270,000",
+     "17,000"
     ]
    }
   ]
@@ -10359,6 +12819,36 @@
      "Magic Mile",
      "Royal Mile"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "60,000",
+    "alt": [],
+    "d": [
+     "6,000",
+     "600,000",
+     "16,000"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "19%",
+    "alt": [],
+    "d": [
+     "9%",
+     "49%",
+     "1.9%"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Belgrave Road",
+    "alt": [],
+    "d": [
+     "Brick Lane",
+     "Southall Broadway",
+     "Soho Road"
+    ]
    }
   ]
  },
@@ -10409,6 +12899,36 @@
      "free trade",
      "free healthcare",
      "free speech"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "1992",
+    "alt": [],
+    "d": [
+     "1972",
+     "1982",
+     "2002"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "2004",
+    "alt": [],
+    "d": [
+     "1994",
+     "2008",
+     "2013"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "2020",
+    "alt": [],
+    "d": [
+     "2018",
+     "2022",
+     "2024"
     ]
    }
   ]
@@ -10463,6 +12983,16 @@
      "Waterloo",
      "Euston"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1948",
+    "alt": [],
+    "d": [
+     "1945",
+     "1951",
+     "1956"
+    ]
    }
   ]
  },
@@ -10514,6 +13044,16 @@
      "housing",
      "education"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "bedsits",
+    "alt": [],
+    "d": [
+     "hotels",
+     "villas",
+     "tenements"
+    ]
    }
   ]
  },
@@ -10541,9 +13081,9 @@
     "gap": "Bruce Kenrick",
     "alt": [],
     "d": [
-     "Sam King",
      "Frank Crichlow",
-     "Peter Rachman"
+     "Peter Rachman",
+     "Claudia Jones"
     ]
    },
    {
@@ -10558,12 +13098,22 @@
    },
    {
     "p": 3,
-    "gap": "save",
+    "gap": "mutual self-help",
     "alt": [],
     "d": [
-     "borrow",
-     "spend",
-     "rent"
+     "state benefits",
+     "bank loans",
+     "council grants"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Sam King",
+    "alt": [],
+    "d": [
+     "Frank Crichlow",
+     "Claudia Jones",
+     "Darcus Howe"
     ]
    }
   ]
@@ -10615,6 +13165,16 @@
      "protected",
      "funded",
      "licensed"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "private houses",
+    "alt": [],
+    "d": [
+     "church halls",
+     "warehouses",
+     "cafes"
     ]
    }
   ]
@@ -10669,6 +13229,16 @@
      "a wealthy",
      "an industrial"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "broader migrant community",
+    "alt": [],
+    "d": [
+     "local council",
+     "white working class",
+     "tourist industry"
+    ]
    }
   ]
  },
@@ -10719,6 +13289,16 @@
      "protection",
      "investigation",
      "support"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Notting Hill carnival",
+    "alt": [],
+    "d": [
+     "Edinburgh festival",
+     "Cowes Week",
+     "Henley Regatta"
     ]
    }
   ]
@@ -10771,6 +13351,16 @@
      "ignore",
      "collect"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "1969–70",
+    "alt": [],
+    "d": [
+     "1968–69",
+     "1971–72",
+     "1965–66"
+    ]
    }
   ]
  },
@@ -10802,7 +13392,7 @@
     "d": [
      "the National Front",
      "the British Union of Fascists",
-     "the White Defence League"
+     "the British National Party"
     ]
    },
    {
@@ -10822,9 +13412,29 @@
      "White Defence League"
     ],
     "d": [
-     "The Union Movement",
      "The National Front",
-     "The Black Panthers"
+     "The Black Panthers",
+     "The Ku Klux Klan"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Oswald Mosley",
+    "alt": [],
+    "d": [
+     "Enoch Powell",
+     "Colin Jordan",
+     "Nick Griffin"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Kelso Cochrane",
+    "alt": [],
+    "d": [
+     "Claudia Jones",
+     "Frank Crichlow",
+     "Darcus Howe"
     ]
    }
   ]
@@ -10876,6 +13486,16 @@
      "leniently",
      "fairly",
      "equally"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "bottles",
+    "alt": [],
+    "d": [
+     "bricks",
+     "sticks",
+     "stones"
     ]
    }
   ]
@@ -10930,6 +13550,16 @@
      "the National Front",
      "the Black Panthers"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "97%",
+    "alt": [],
+    "d": [
+     "9%",
+     "47%",
+     "67%"
+    ]
    }
   ]
  },
@@ -10982,6 +13612,16 @@
      "Windrush Festival",
      "Notting Hill Fair",
      "Mangrove Parade"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "1966",
+    "alt": [],
+    "d": [
+     "1956",
+     "1976",
+     "1986"
     ]
    }
   ]
@@ -11036,6 +13676,26 @@
      "fled abroad",
      "hired a barrister"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Darcus Howe",
+    "alt": [],
+    "d": [
+     "Frank Crichlow",
+     "Eldridge Cleaver",
+     "Stokely Carmichael"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Mangrove Nine",
+    "alt": [],
+    "d": [
+     "Mangrove Five",
+     "Notting Hill Seven",
+     "Brixton Twelve"
+    ]
    }
   ]
  },
@@ -11087,6 +13747,26 @@
      "jailed",
      "deported"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Darcus Howe and Frank Crichlow",
+    "alt": [],
+    "d": [
+     "Claudia Jones and Sam King",
+     "Bruce Kenrick and Peter Rachman",
+     "Stokely Carmichael and Martin Luther King"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "all-black jury",
+    "alt": [],
+    "d": [
+     "all-white jury",
+     "mixed jury",
+     "single magistrate"
+    ]
    }
   ]
  },
@@ -11137,6 +13817,16 @@
      "Parliamentary reports",
      "Census returns",
      "Newspaper archives"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "stop-and-search",
+    "alt": [],
+    "d": [
+     "arrests",
+     "prosecutions",
+     "convictions"
     ]
    }
   ]
