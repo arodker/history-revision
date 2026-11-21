@@ -1044,6 +1044,22 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 :root.dark .fb-c{background:#1d3b2b;color:#9be0b8}
 :root.dark .fb-w{background:#4a2326;color:#ffb3ac}
 </style>
+<style id="boss-extra">.boss-taunt{display:flex;align-items:center;gap:.6rem;margin:.5rem auto .3rem;max-width:34rem;background:#FFF4F2;color:#5A1610;border:2px solid #C0392B;border-radius:14px;padding:.55rem .8rem;font-weight:700;font-size:.95rem;line-height:1.3;animation:bosstaunt .45s cubic-bezier(.2,1.6,.4,1)}
+.boss-taunt span{font-size:1.6rem;flex:none}.boss-taunt i{font-style:italic}
+:root.dark .boss-taunt{background:#2A1614;color:#FFD9D4;border-color:#FF8076}
+@keyframes bosstaunt{0%{transform:scale(.6) rotate(-3deg);opacity:0}100%{transform:none;opacity:1}}
+.rk-ov{position:fixed;inset:0;z-index:9990;background:rgba(10,6,20,.55);overflow:hidden;cursor:pointer;animation:rkin .25s}
+@keyframes rkin{from{opacity:0}to{opacity:1}}
+.rk-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.rk-sp,.rk-gh{position:absolute;left:0;top:0;width:84px;height:84px;line-height:84px;font-size:72px;text-align:center;pointer-events:none;will-change:transform;filter:drop-shadow(0 6px 10px rgba(0,0,0,.4))}
+.rk-gh{opacity:.35;filter:none;animation:rkgh .45s forwards}
+@keyframes rkgh{to{opacity:0}}
+.rk-say{position:absolute;top:9%;left:0;right:0;text-align:center;pointer-events:none}
+.rk-say b{display:inline-block;max-width:90%;background:#fff;color:#1c1530;border:3px solid #E8433A;border-radius:16px;padding:.5rem 1rem;font-size:1.15rem;font-weight:900;animation:bosstaunt .3s cubic-bezier(.2,1.6,.4,1)}
+.rk-pop{position:absolute;font-size:48px;pointer-events:none;animation:rkpop .6s forwards}
+@keyframes rkpop{0%{transform:scale(.2);opacity:1}60%{transform:scale(1.6);opacity:1}100%{transform:scale(2.2);opacity:0}}
+.rk-skip{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:rgba(255,255,255,.55);font-size:.75rem}
+</style>
 </head>
 <body>
 <div id="fd-toast"></div>
@@ -5187,6 +5203,103 @@ function stOver() {
 // ----- Boss battle -----
 const BOSSES = [['Procrastination Gremlin','👹'], ['Cramming Zombie','🧟'], ['Highlighter Vampire','🧛'], ['Dreaded Date Dragon','🐉'], ['Chief Examiner','🧙'], ['Mr Rodker','👨‍🏫']];
 const BOSS_HP = [6, 8, 10, 12, 15, 20], BOSS_SECS = 12, BOSS_HINTS = 3;
+const BOSS_TAUNTS = [
+  ['I will revise tomorrow. So will you.', 'Plenty of time left. Said every student ever.', 'Have you checked your phone recently? Go on.', 'Wrong! Maybe a snack break would help. Or ten.', 'That was the easy one, you know.', 'Revision can wait. Your mistakes cannot.'],
+  ['Did you cram that at 2am? It shows.', 'Brains... you seem to be missing yours.', 'Last night\'s cramming has gone already.', 'Forgotten already? I am not surprised.', 'You should have spaced it out, little survivor.', 'Mmm, forgotten facts. Delicious.'],
+  ['You highlighted the whole page, did you not?', 'Highlighting is not revising.', 'All that yellow and nothing stuck.', 'I have drained the answer right out of you.', 'Pretty colours. Shame about the memory.', 'Rereading your notes again? Bold strategy.'],
+  ['Wrong! Your timeline is toast.', 'Dates are my hoard. You cannot have them.', 'Close? In history, close is wrong.', 'You would be crispy in the exam.', 'Even a goldfish remembers more dates.', 'Out by a few years. Out by a few centuries?'],
+  ['No marks awarded.', 'The mark scheme disagrees with you.', 'Please do not write that in the exam.', 'That is Level 1. Generous, really.', 'That is not what the specification says.', 'I will be quoting that in my examiner\'s report.'],
+  ['Who taught you that? Oh. Me.', 'We did retrieval practice. And yet, here we are.', 'Say that again, but with a point of evidence.', 'I do not accept that. Try again, properly.', 'Did you do the homework? Be honest.', 'See me at the end. We need to talk about your knowledge.']
+];
+const BOSS_LATE = ['Too slow!', 'Tick tock. Time is up.', 'Did you fall asleep?', 'The clock wins again.'];
+const BOSS_LAST = ['That is your last heart. Any final words?', 'One more and you are done.'];
+function bossTaunt(g, late) {
+  const pool = g.lives <= 1 ? BOSS_LAST : (late ? BOSS_LATE.concat(BOSS_TAUNTS[g.lv % BOSS_TAUNTS.length].slice(0, 2)) : BOSS_TAUNTS[g.lv % BOSS_TAUNTS.length]);
+  let t, n = 0;
+  do { t = pool[Math.floor(Math.random() * pool.length)]; } while (t === g.lastTaunt && pool.length > 1 && ++n < 8);
+  g.lastTaunt = t;
+  return t;
+}
+function bossRodkerFlight(o) {
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const W = window.innerWidth, H = window.innerHeight, S = 84;
+  const ov = document.createElement('div');
+  ov.className = 'rk-ov';
+  ov.innerHTML = '<div class="rk-flash"></div><div class="rk-say"></div><div class="rk-skip">Tap to skip</div>';
+  const sp = document.createElement('div');
+  sp.className = 'rk-sp'; sp.textContent = o.emoji;
+  ov.appendChild(sp);
+  document.body.appendChild(ov);
+  const say = ov.querySelector('.rk-say'), flash = ov.querySelector('.rk-flash');
+  const lines = ['Impossible!', 'I wrote that mark scheme!', 'Not my league table!', 'That was MY question!', 'This is not in the specification!', 'I will see you in detention!', 'Nooooo!'];
+  let done = false, raf = 0, timers = [];
+  const later = (fn, ms) => { timers.push(setTimeout(fn, ms)); };
+  const stop = () => { done = true; cancelAnimationFrame(raf); timers.forEach(clearTimeout); ov.remove(); };
+  const finish = () => { if (done) return; stop(); o.done(); };
+  ov.addEventListener('click', finish);
+  const pop = (txt, cls) => { const s = document.createElement('span'); s.className = 'rk-pop ' + (cls || ''); s.textContent = txt; return s; };
+  const flashNow = (c, ms) => { flash.style.background = c; flash.style.transition = 'none'; flash.style.opacity = '.45'; void flash.offsetWidth; flash.style.transition = 'opacity ' + (ms || 350) + 'ms'; flash.style.opacity = '0'; };
+  const setSay = t => { say.textContent = ''; const b = document.createElement('b'); b.textContent = t; say.appendChild(b); };
+  const ending = () => {
+    sp.style.opacity = '0';
+    flashNow('#fff', 600);
+    if (o.shake) o.shake();
+    setSay('Mr Rodker has defenestrated himself');
+    for (let i = 0; i < 4; i++) later(() => { const p = pop(['💥','✨'][i % 2]); p.style.left = (10 + Math.random() * 80) + '%'; p.style.top = (15 + Math.random() * 60) + '%'; p.style.fontSize = (24 + Math.random() * 20) + 'px'; ov.appendChild(p); later(() => p.remove(), 700); }, i * 140);
+    later(finish, 1700);
+  };
+  if (reduce) {
+    sp.style.display = 'none'; ending(); return;
+  }
+  let cx = o.from ? o.from.x : W / 2, cy = o.from ? o.from.y : H / 2;
+  const ang = Math.random() * Math.PI * 2;
+  let vx = Math.cos(ang) * 520, vy = Math.sin(ang) * 520;
+  if (Math.abs(vx) < 250) vx = vx < 0 ? -250 : 250;
+  if (Math.abs(vy) < 250) vy = vy < 0 ? -250 : 250;
+  let rot = 0, vr = 400, bounces = 0, lastTrail = 0, phase = 'fly', pt = 0;
+  const T0 = performance.now(); let last = T0, lx = 0, ly = 0, ls = 1, lr = 0;
+  setSay('Hold on. Hold on!');
+  flashNow('#fff', 300);
+  const put = (x, y, r, s) => { sp.style.transform = 'translate(' + (x - S / 2) + 'px,' + (y - S / 2) + 'px) rotate(' + r + 'deg) scale(' + s + ')'; };
+  const frame = now => {
+    if (done) return;
+    if (!o.alive()) { stop(); return; }
+    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    const el = now - T0;
+    if (phase === 'fly') {
+      const k = Math.min(1, el / 2800);
+      const sc = 1 + k * 0.9, sp2 = 1 + k * 0.6, half = S * sc / 2;
+      cx += vx * sp2 * dt; cy += vy * sp2 * dt; rot += vr * dt;
+      let hit = null;
+      if (cx - half < 0) { cx = half; vx = Math.abs(vx); hit = [0, cy]; }
+      else if (cx + half > W) { cx = W - half; vx = -Math.abs(vx); hit = [W, cy]; }
+      if (cy - half < 0) { cy = half; vy = Math.abs(vy); hit = [cx, 0]; }
+      else if (cy + half > H) { cy = H - half; vy = -Math.abs(vy); hit = [cx, H]; }
+      if (hit) {
+        bounces++; vr = -vr * 1.08 + (Math.random() - .5) * 200;
+        const p = pop('💥'); p.style.left = (hit[0] - 24) + 'px'; p.style.top = (hit[1] - 24) + 'px'; ov.appendChild(p); later(() => p.remove(), 600);
+        if (o.shake) o.shake();
+        flashNow('#fff', 180);
+        setSay(lines[Math.min(bounces - 1, lines.length - 1)]);
+      }
+      if (now - lastTrail > 40) {
+        lastTrail = now;
+        const g = document.createElement('div'); g.className = 'rk-gh'; g.textContent = o.emoji;
+        g.style.transform = 'translate(' + (cx - S / 2) + 'px,' + (cy - S / 2) + 'px) rotate(' + rot + 'deg) scale(' + sc + ')';
+        ov.insertBefore(g, sp); later(() => g.remove(), 460);
+      }
+      put(cx, cy, rot, sc); lx = cx; ly = cy; ls = sc; lr = rot;
+      if (el > 2800 || bounces >= 5) { phase = 'launch'; pt = now; setSay('Nooooooo!'); }
+    } else if (phase === 'launch') {
+      const k = Math.min(1, (now - pt) / 550), e = k * k * k;
+      put(lx + (W / 2 - lx) * e, ly + (H / 2 - ly) * e, lr + e * 540, ls + e * 5);
+      if (k >= 1) { phase = 'end'; ending(); return; }
+    }
+    raf = requestAnimationFrame(frame);
+  };
+  raf = requestAnimationFrame(frame);
+  return { skip: finish };
+}
 function bossStart() {
   const pool = shuffle(arcRqPool());
   if (pool.length < 10) { arcShort('Not enough questions for this paper yet.'); return; }
@@ -5417,6 +5530,7 @@ function bossRender() {
     low = '<div class="boss-res ok">&#10003; Correct</div><div class="boss-a">' + escHtml(q.a) + '</div>';
   } else {
     low = '<div class="boss-res no">' + (g.late && !g.typed ? '&#9200; Time\'s up' : '&#10007; Not quite') + '</div>' +
+      (g.taunt ? '<div class="boss-taunt"><span>' + B[1] + '</span><i>' + escHtml(g.taunt) + '</i></div>' : '') +
       (g.typed ? '<div class="boss-typed">You wrote: ' + escHtml(g.typed) + '</div>' : '') +
       '<div class="boss-a">' + escHtml(q.a) + '</div>' +
       '<div class="boss-auto"><i></i></div><button class="arc-btn" onclick="bossMark(false)">Next</button><button class="boss-right" onclick="bossMark(true)">I was right</button>';
@@ -5458,8 +5572,10 @@ function bossResolve(late) {
     g.phase = 'ok'; bossRender();
     ARC.t = setTimeout(() => { if (ARC.g === g) bossMark(true); }, 1100);
   } else {
+    g.taunt = bossTaunt(g, late && !g.typed);
     g.phase = 'no'; bossRender();
-    clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g && g.phase === 'no') bossMark(false); }, 3000);
+    const em0 = document.getElementById('boss-em'); if (em0) em0.classList.add('boss-laugh');
+    clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g && g.phase === 'no') bossMark(false); }, 4200);
   }
 }
 function bossLate() { const g = ARC.g; if (!g || g.type !== 'boss' || g.phase !== 'ask') return; bossResolve(true); }
@@ -5467,7 +5583,7 @@ function bossSubmit() { const g = ARC.g; if (!g || g.type !== 'boss' || g.phase 
 function bossMark(ok) {
   const g = ARC.g, q = bossQ();
   if (g.marking) return;
-  g.marking = true; clearTimeout(ARC.t); arcTimerStop();
+  g.marking = true; g.taunt = ''; clearTimeout(ARC.t); arcTimerStop();
   if (ok && g.phase === 'no' && g.typed) bsLearn(g.typed, q.a);
   xpAward('rapid', ok, 'rq|' + q.q, q.q, q.paper, q.unit);
   g.i++;
@@ -5490,8 +5606,22 @@ function bossDeath() {
   const g = ARC.g;
   g.phase = 'dead'; g.dying = true; bossRender();
   const s = document.getElementById('s-arcade');
-  if (s) { s.classList.remove('arc-shake'); void s.offsetWidth; s.classList.add('arc-shake'); }
-  clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g) { g.dying = false; bossAdvance(); } }, 2000);
+  const shake = () => { if (s) { s.classList.remove('arc-shake'); void s.offsetWidth; s.classList.add('arc-shake'); } };
+  shake();
+  clearTimeout(ARC.t);
+  if (g.lv >= BOSSES.length - 1) {
+    const em = document.getElementById('boss-em'), r = em ? em.getBoundingClientRect() : null;
+    if (em) em.style.visibility = 'hidden';
+    bossRodkerFlight({
+      emoji: BOSSES[BOSSES.length - 1][1],
+      from: r ? { x: r.left + r.width / 2, y: r.top + r.height / 2 } : null,
+      alive: () => ARC.g === g && !!document.getElementById('s-arcade'),
+      shake: shake,
+      done: () => { if (ARC.g === g) { g.dying = false; bossAdvance(); } }
+    });
+    return;
+  }
+  ARC.t = setTimeout(() => { if (ARC.g === g) { g.dying = false; bossAdvance(); } }, 2000);
 }
 function bossFinalIntro() {
   const g = ARC.g, B = BOSSES[BOSSES.length - 1];
@@ -5528,7 +5658,6 @@ function bossWin() {
     g.over = true; g.lv++;
     arcFrame('<div class="arc-end"><div class="arc-big">👑</div><div class="arc-h">You beat ' + B[0] + '!</div><div class="arc-sub2">Every boss defeated · ' + g.score + ' hits · ' + g.lives + ' heart' + (g.lives === 1 ? '' : 's') + ' left</div>' +
       '<button class="arc-btn" onclick="bossStart()">Fight again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
-    if (typeof fdFireConfetti === 'function') fdFireConfetti();
     return;
   }
   arcFrame('<div class="arc-end"><div class="arc-big">🏆</div><div class="arc-h">' + B[0] + ' defeated</div><div class="arc-sub2">' + g.score + ' hits so far · ' + g.lives + ' heart' + (g.lives === 1 ? '' : 's') + ' left</div>' +
