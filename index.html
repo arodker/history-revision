@@ -4,160 +4,110 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <meta name="theme-color" content="#f8f7f4">
-<title>Humanities Revision Hub</title>
+<title>Mossbourne Humanities Revision Hub</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%A5%A3%3C/text%3E%3C/svg%3E">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}html{font-size:clamp(17px,.9vw + 8px,24px)}
-
 :root{
-  --bg:#f8f7f4;--text:#1a1a18;--muted:#6b6b68;--border:#e8e7e2;
-  --gcse:#0F6E56;--gcse-bg:#E1F5EE;--gcse-mid:#1D9E75;
-  --hist-stamp:#E8821E;
-  --aa:#1B4B8A;--aa-bg:#EEF3FB;--aa-mid:#4A7EC7;
-  --lab:#9B2335;--lab-bg:#FBEEF0;--lab-mid:#C94A5A;
-  --geo:#2E8B57;--geo-bg:#EAF0FB;
-  --rs:#2A6BC8;--rs-bg:#F3EEF9;
-  --psy:#7B3FA0;--psy-bg:#F4EAFA;--psy-mid:#A56CC9;--psy-stamp:#B06AD0;
+  --bg:#f8f7f4;--card:#fff;--text:#1a1a18;--muted:#6b6b68;--border:#e8e7e2;--soon:#9a9994;
+  --cont-bg:#EEEDFE;--cont-tx:#3C3489;
 }
-
 body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 .app{max-width:52rem;margin:0 auto;padding:2rem 1.25rem 4rem}
-
-h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
-.subtitle{font-size:.8rem;color:var(--muted);margin-bottom:2.3rem}
-
-.subject-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:1rem;
-  align-items:start;
-}
-@media (max-width:900px){
-  .subject-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media (max-width:640px){
-  .subject-grid{grid-template-columns:1fr}
-}
-
-.subject-box{
-  background:var(--surface,#fff);border:1.5px solid var(--border);border-radius:16px;
-  padding:1.3rem 1.1rem 1.1rem;
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-  animation:up .3s ease backwards;cursor:pointer;
-}
-.subject-box:nth-child(1){animation-delay:.05s}
-.subject-box:nth-child(2){animation-delay:.1s}
-.subject-box:nth-child(3){animation-delay:.15s}
-.subject-box:nth-child(4){animation-delay:.2s}
-
-.stamp-circle{
-  width:58px;height:58px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-size:1.55rem;
-  border:3px solid var(--sc,var(--border));position:relative;color:var(--sc,var(--muted));
-  margin-bottom:.6rem;background:none;cursor:pointer;
-  transition:transform .15s;
-  font-family:inherit;padding:0;
-}
-.stamp-circle::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--sc,var(--border));opacity:.35}
-.stamp-circle.soon{opacity:.45}
-.stamp-circle:hover{transform:scale(1.06)}
-.stamp-circle:focus-visible{outline:3px solid var(--text);outline-offset:3px}
-
-.subj-name2{font-size:1.02rem;font-weight:700;margin-bottom:.1rem}
-.subj-tag{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.4rem;display:flex;align-items:center;gap:.25rem}
-.subj-tag::after{content:'▾';font-size:.6rem;opacity:.6;transition:transform .2s}
-.subject-box.expanded .subj-tag::after{transform:rotate(180deg)}
-
-.ticket-list{
-  display:flex;flex-direction:column;gap:.55rem;width:100%;
-  max-height:0;opacity:0;overflow:hidden;
-  transition:max-height .3s ease,opacity .25s ease,margin-top .3s ease;
-}
-.subject-box.expanded .ticket-list,
-.subject-box:hover .ticket-list,
-.subject-box:focus-within .ticket-list{
-  max-height:260px;opacity:1;margin-top:.3rem;
-}
-.ticket{
-  position:relative;background:var(--tc-bg,#fff);color:var(--tc,var(--muted));
-  border:2px solid var(--tc-mid,var(--border));border-radius:8px;
-  padding:.55rem .7rem;font-size:.76rem;font-weight:700;
-  text-decoration:none;display:block;line-height:1.3;text-align:center;
-  transition:transform .15s,box-shadow .15s;box-shadow:0 1px 2px rgba(0,0,0,.05);
-}
-.ticket:hover{transform:translateY(-2px);box-shadow:0 5px 12px rgba(0,0,0,.09)}
-.ticket:focus-visible{outline:3px solid var(--text);outline-offset:2px}
-
-.ticket-soon{
-  background:transparent;color:#aaa;border:2px dashed var(--border);cursor:default;box-shadow:none;
-  text-align:center;
-}
-.ticket-soon:hover{transform:none;box-shadow:none}
-
+h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
+.subtitle{text-align:center;font-size:.8rem;color:var(--muted);margin-bottom:1.3rem}
+.cont{display:none;align-items:center;gap:.7rem;background:var(--cont-bg);color:var(--cont-tx);border-radius:12px;padding:.7rem .9rem;margin-bottom:1.1rem;text-decoration:none}
+.cont.show{display:flex}
+.cont .pl{font-size:1.3rem}
+.cont b{display:block;font-size:.88rem}.cont span{font-size:.72rem;opacity:.85}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:stretch}
+@media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.grid{grid-template-columns:1fr}}
+.subj{background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:1rem 1rem .9rem;animation:up .3s ease backwards}
+.subj:nth-child(2){animation-delay:.05s}.subj:nth-child(3){animation-delay:.1s}
+.sh{display:flex;align-items:center;gap:.7rem;margin-bottom:.75rem}
+.ic{width:44px;height:44px;border-radius:50%;border:3px solid var(--sc);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex:none;position:relative}
+.ic::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--sc);opacity:.35}
+.sn{font-size:1.02rem;font-weight:700;line-height:1.15}
+.st{font-size:.7rem;color:var(--muted);margin-top:.15rem}
+.tl{display:flex;flex-direction:column;gap:.5rem}
+.t{height:3.5rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:.15rem;background:var(--tb);color:var(--tc);border:2px solid var(--tm);border-radius:10px;padding:.6rem .75rem;font-size:.8rem;font-weight:700;text-decoration:none;line-height:1.25;transition:transform .15s,box-shadow .15s}
+.t:hover{transform:translateY(-2px);box-shadow:0 5px 12px rgba(0,0,0,.1)}
+.t:focus-visible{outline:3px solid var(--text);outline-offset:2px}
+.t small{font-weight:400;font-size:.68rem;opacity:.9;white-space:nowrap}
+.t.off{background:transparent;color:var(--soon);border:2px dashed var(--border);cursor:default;font-weight:400}
+.t.off:hover{transform:none;box-shadow:none}
+.lab{font-size:.7rem;letter-spacing:.06em;color:var(--muted);margin:1.6rem 0 .6rem}
+.soon{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+@media (max-width:480px){.soon{grid-template-columns:1fr}}
+.sb{border:1.5px dashed var(--sc);border-left:5px solid var(--sc);border-radius:14px;padding:.8rem 1rem;color:var(--soon)}
+.sb .sn{font-size:.92rem;color:var(--muted)}
+.sb p{font-size:.74rem;margin-top:.3rem;line-height:1.5}
 @keyframes up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-h1{animation:up .3s ease backwards}
-
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div class="app">
+  <h1>Mossbourne Humanities Revision Hub</h1>
+  <p class="subtitle">Pick your course</p>
 
-  <h1>Humanities Revision Hub</h1>
+  <a class="cont" id="cont" href="#"><span class="pl">▶️</span><div><b id="cont-t">Continue</b><span id="cont-s"></span></div></a>
 
-  <div class="subject-grid">
+  <div class="grid">
+    <section class="subj" style="--sc:#E8821E">
+      <div class="sh"><div class="ic">🏹</div><div><div class="sn">History</div></div></div>
+      <div class="tl">
+        <a href="GCSE.html" class="t" data-xp="gcse_xp" style="--tc:#8A4A06;--tb:#FEF3E6;--tm:#F2A559">GCSE History<small></small></a>
+        <a href="Y12.html" class="t" data-xp="alevel_xp" style="--tc:#7A3F04;--tb:#FBDDB8;--tm:#E8821E">Y12 Tudors and Cold War<small></small></a>
+        <a href="civil-rights.html" class="t" data-xp="cr_xp" style="--tc:#5E2F02;--tb:#F5C48A;--tm:#C96A0A">Y13 Civil Rights<small></small></a>
+        </div>
+    </section>
 
-    <div class="subject-box">
-      <button type="button" class="stamp-circle" style="--sc:var(--hist-stamp)" aria-label="Toggle History courses">🏛️</button>
-      <div class="subj-name2">History - Mr Rodker</div>
-      <div class="subj-tag">3 courses</div>
-      <div class="ticket-list">
-        <a href="GCSE.html" class="ticket" style="--tc:var(--gcse);--tc-bg:var(--gcse-bg);--tc-mid:var(--gcse-mid)">GCSE History</a>
-        <a href="Y12.html" class="ticket" style="--tc:var(--lab);--tc-bg:var(--lab-bg);--tc-mid:var(--lab-mid)">Y12 History</a>
-        <a href="civil-rights.html" class="ticket" style="--tc:var(--aa);--tc-bg:var(--aa-bg);--tc-mid:var(--aa-mid)">Y13 History</a>
+    <section class="subj" style="--sc:#2E8B57">
+      <div class="sh"><div class="ic">🌍</div><div><div class="sn">Geography</div></div></div>
+      <div class="tl">
+        <a href="GCSE_Geography.html" class="t" data-xp="geo_xp" style="--tc:#0C462C;--tb:#E6F4EC;--tm:#2E8B57">GCSE Geography<small></small></a>
+        <div class="t off">A Level Geography<small>Coming soon</small></div>
       </div>
-    </div>
+    </section>
 
-    <div class="subject-box">
-      <button type="button" class="stamp-circle" style="--sc:var(--psy-stamp)" aria-label="Toggle Psychology courses">🧠</button>
-      <div class="subj-name2">Psychology - Mr Wakefield</div>
-      <div class="subj-tag">2 courses</div>
-      <div class="ticket-list">
-        <a href="https://mrstwakefield.github.io/Mr-Wakefields-GCSE-Revision/" class="ticket" style="--tc:var(--psy);--tc-bg:var(--psy-bg);--tc-mid:var(--psy-mid)">GCSE Psychology</a>
-        <a href="https://mrstwakefield.github.io/Mr-Wakefields-Fount-of-Wisdom-Knowledge/" class="ticket" style="--tc:var(--psy);--tc-bg:var(--psy-bg);--tc-mid:var(--psy-mid)">A Level Psychology</a>
+    <section class="subj" style="--sc:#B06AD0">
+      <div class="sh"><div class="ic">🧠</div><div><div class="sn">Psychology</div></div></div>
+      <div class="tl">
+        <a href="https://mrstwakefield.github.io/Mr-Wakefields-GCSE-Revision/" class="t" style="--tc:#7B3FA0;--tb:#F4EAFA;--tm:#A56CC9">GCSE Psychology<small>opens site ↗</small></a>
+        <a href="https://mrstwakefield.github.io/Mr-Wakefields-Fount-of-Wisdom-Knowledge/" class="t" style="--tc:#7B3FA0;--tb:#F4EAFA;--tm:#A56CC9">A Level Psychology<small>opens site ↗</small></a>
       </div>
-    </div>
-
-    <div class="subject-box">
-      <button type="button" class="stamp-circle soon" style="--sc:var(--rs)" aria-label="Toggle Religious Studies courses">🕊️</button>
-      <div class="subj-name2" style="color:var(--muted)">Religious Studies</div>
-      <div class="subj-tag">Coming soon</div>
-      <div class="ticket-list">
-        <div class="ticket ticket-soon">GCSE RS</div>
-        <div class="ticket ticket-soon">Philosophy and Ethics</div>
-      </div>
-    </div>
-
-    <div class="subject-box">
-      <button type="button" class="stamp-circle" style="--sc:var(--geo)" aria-label="Toggle Geography courses">🌍</button>
-      <div class="subj-name2">Geography</div>
-      <div class="subj-tag">2 courses</div>
-      <div class="ticket-list">
-        <a href="GCSE_Geography.html" class="ticket" style="--tc:var(--geo);--tc-bg:#E6F4EC;--tc-mid:var(--geo)">GCSE Geography</a>
-        <div class="ticket ticket-soon">A Level Geography</div>
-      </div>
-    </div>
-
+    </section>
   </div>
 
+  <p class="lab">COMING SOON</p>
+  <div class="soon">
+    <div class="sb" style="--sc:#3B7DD8"><div class="sn">🕊️ Religious Studies</div><p>GCSE RS<br>Philosophy and Ethics</p></div>
+    <div class="sb" style="--sc:#E3B220"><div class="sn">⚖️ Sociology</div><p>GCSE Sociology<br>A Level Sociology</p></div>
+  </div>
 </div>
 <script>
-document.querySelectorAll('.subject-box').forEach(function(box){
-  box.addEventListener('click', function(e){
-    if (e.target.closest('.ticket-list')) return; // let the real course links navigate normally
-    box.classList.toggle('expanded');
+/* Level and XP on each tile come from that hub's own saved progress (each hub keeps its own, so nothing is shared). */
+var LV = [0, 250, 600, 1100, 1800, 2700, 3900, 5500, 7600, 10200, 13500, 17500, 22500, 28500, 36000, 50000];
+function xpOf(key) { try { var o = JSON.parse(localStorage.getItem(key) || 'null'); return o && o.total > 0 ? o.total : 0; } catch (e) { return 0; } }
+function lvOf(x) { var i = 0; LV.forEach(function (v, k) { if (x >= v) i = k; }); return i + 1; }
+document.querySelectorAll('a.t[data-xp]').forEach(function (a) {
+  var x = xpOf(a.getAttribute('data-xp'));
+  if (x) a.querySelector('small').textContent = 'Level ' + lvOf(x) + ' · ' + x.toLocaleString() + ' XP';
+  a.addEventListener('click', function () {
+    try { localStorage.setItem('hub_last', JSON.stringify({href: a.getAttribute('href'), name: a.childNodes[0].textContent, xp: a.getAttribute('data-xp')})); } catch (e) {}
   });
 });
+try {
+  var last = JSON.parse(localStorage.getItem('hub_last') || 'null');
+  if (last && last.href) {
+    var c = document.getElementById('cont'); c.href = last.href;
+    document.getElementById('cont-t').textContent = 'Continue: ' + last.name;
+    var x = xpOf(last.xp); document.getElementById('cont-s').textContent = x ? 'Level ' + lvOf(x) + ' · ' + x.toLocaleString() + ' XP' : 'Pick up where you left off';
+    c.classList.add('show');
+  }
+} catch (e) {}
 </script>
 </body>
 </html>
