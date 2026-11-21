@@ -838,6 +838,14 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .flg-lt{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'><rect width='30' height='7' fill='%23FDB913'/><rect y='7' width='30' height='6' fill='%23006A44'/><rect y='13' width='30' height='7' fill='%23C1272D'/></svg>")}
 .flg-lv{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'><rect width='30' height='20' fill='%239E3039'/><rect y='8' width='30' height='4' fill='%23fff'/></svg>")}
 .flg-ee{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'><rect width='30' height='7' fill='%230072CE'/><rect y='7' width='30' height='6' fill='%23000'/><rect y='13' width='30' height='7' fill='%23fff'/></svg>")}
+#set-menu{position:absolute;right:0;top:calc(100% + 6px);z-index:600;width:240px;background:var(--card);border:1px solid var(--border2);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.18);padding:6px}
+#set-menu[hidden]{display:none}
+.set-row{display:flex;justify-content:space-between;align-items:center;gap:.6rem;width:100%;padding:.65rem .7rem;font-size:.9rem;background:none;border:none;color:var(--text);cursor:pointer;text-align:left;border-radius:8px;font-family:inherit}
+.set-row:hover{background:var(--subtle)}
+.set-sw{width:34px;height:20px;border-radius:10px;background:var(--border2);position:relative;flex:none}
+.set-sw::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
+.set-sw.on{background:#2563eb}.set-sw.on::after{left:16px}
+.set-sep{border-top:1px solid var(--border);margin:4px 0}
 </style>
 <style>.up-ticks{display:none!important}</style>
 <style id="boss-extra">.boss-taunt{display:flex;align-items:center;gap:.6rem;margin:.5rem auto .3rem;max-width:34rem;background:#FFF4F2;color:#5A1610;border:2px solid #C0392B;border-radius:14px;padding:.55rem .8rem;font-weight:700;font-size:.95rem;line-height:1.3;animation:bosstaunt .45s cubic-bezier(.2,1.6,.4,1)}
@@ -867,7 +875,8 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   <a id="hub-link" href="index.html" class="tb-btn">&larr; Hub</a>
   <div style="display:flex;gap:6px">
   <button id="search-btn" class="tb-btn" onclick="openSearch()" title="Search topics">🔍</button>
-  <button id="dark-toggle" class="tb-btn" onclick="toggleDark()" title="Toggle dark mode">🌙</button>
+  <span id="set-wrap" style="position:relative"><button id="set-btn" class="tb-btn" onclick="setMenuToggle(event)" aria-label="Settings" aria-haspopup="true" aria-expanded="false" title="Settings">⚙️</button><div id="set-menu" role="menu" hidden></div></span>
+  <button id="dark-toggle" class="tb-btn" onclick="toggleDark()" style="display:none" aria-hidden="true" tabindex="-1">🌙</button>
   </div>
 </div>
 
@@ -4866,12 +4875,231 @@ uptoRender(); xpRender();
   });
   document.addEventListener('keydown',function(e){if(card&&e.key==='Escape')end(true)});
   window.addEventListener('DOMContentLoaded',function(){
-    var t=$('#dark-toggle');
-    if(t&&!$('#tour-btn')){var b=document.createElement('button');b.id='tour-btn';b.className=t.className;b.title='Tips for this page';b.setAttribute('aria-label','Tips for this page');b.textContent='❓';t.parentNode.insertBefore(b,t)}
+    var t=$('#set-wrap');
+    if(t&&!$('#tour-btn')){var b=document.createElement('button');b.id='tour-btn';b.className=($('#set-btn')||t).className;b.style.display='none';b.title='Tips for this page';b.setAttribute('aria-label','Tips for this page');b.textContent='❓';t.parentNode.insertBefore(b,t)}
     var seen=false;try{seen=localStorage.getItem(KEY)==='1'}catch(e){}
     if(!seen)setTimeout(function(){if($('#s-pick.active'))startHere(true)},900);
   });
 })();
+</script>
+<script>
+/* ---------- Anonymous usage timing: when the hub is used and which features, in active seconds ---------- */
+(function () {
+  var KEY = 'alevel_use', IDLE = 90000, TICK = 5, NEW_SESSION = 30 * 60000;
+  var NAMES = {home: 'Home and menus', guide: 'Revision guide', flash: 'Flashcards', dates: 'Key dates quiz', exam: 'Exam practice', rapid: 'Mixed retrieval quiz', stat: 'Stat Attack', arcade: 'Arcade games', progress: 'Progress page', parent: 'Parent page'};
+  var lastInput = Date.now(), cache = null;
+  ['pointerdown', 'keydown', 'touchstart', 'scroll', 'wheel'].forEach(function (e) { window.addEventListener(e, function () { lastInput = Date.now(); }, {passive: true, capture: true}); });
+  function dayKey(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+  function load() { try { var o = JSON.parse(localStorage.getItem(KEY) || 'null'); if (o && o.d) return o; } catch (e) {} return {d: {}, last: 0}; }
+  function shown(id) { var e = document.getElementById(id); return !!(e && e.style.display !== 'none' && e.offsetParent !== null); }
+  function feature() {
+    var s = document.querySelector('.screen.active'); if (!s) return 'home';
+    var id = s.id;
+    if (id === 's-main') {
+      if (shown('mode-flashcard')) return 'flash';
+      if (shown('mode-dates')) return 'dates';
+      if (shown('mode-exam')) return 'exam';
+      if (shown('mode-knowledge')) return 'guide';
+      return 'home';
+    }
+    return {'s-rapid': 'rapid', 's-stat': 'stat', 's-arcade': 'arcade', 's-progress': 'progress', 's-parent': 'parent'}[id] || 'home';
+  }
+  function tick() {
+    if (document.visibilityState !== 'visible') return;
+    var now = Date.now();
+    if (now - lastInput > IDLE) return;
+    var o = cache || (cache = load()), n = new Date(now), k = dayKey(n);
+    var day = o.d[k] || (o.d[k] = {h: {}, f: {}, s: 0, t: 0});
+    if (!o.last || now - o.last > NEW_SESSION) day.s++;
+    o.last = now;
+    var h = n.getHours(), f = feature();
+    day.h[h] = (day.h[h] || 0) + TICK; day.f[f] = (day.f[f] || 0) + TICK; day.t += TICK;
+    var ks = Object.keys(o.d).sort(); while (ks.length > 14) delete o.d[ks.shift()];
+    try { localStorage.setItem(KEY, JSON.stringify(o)); } catch (e) {}
+  }
+  setInterval(tick, TICK * 1000);
+  // Totals over the last 14 days, sent with the usage numbers: seconds per hour of day, per weekday (Monday first), per feature, plus sessions and active days.
+  window.hsUsage = function () {
+    var o = cache || load(), h = new Array(24).fill(0), w = new Array(7).fill(0), f = {}, s = 0, t = 0, days = 0;
+    Object.keys(o.d).forEach(function (k) {
+      var d = o.d[k], p = k.split('-'), wd = (new Date(+p[0], +p[1] - 1, +p[2]).getDay() + 6) % 7;
+      if (!d.t) return;
+      days++; s += d.s || 0; t += d.t;
+      Object.keys(d.h).forEach(function (x) { h[+x] += d.h[x]; w[wd] += d.h[x]; });
+      Object.keys(d.f).forEach(function (x) { var nm = NAMES[x] || x; f[nm] = (f[nm] || 0) + d.f[x]; });
+    });
+    return {h: h, w: w, f: f, s: s, t: t, days: days};
+  };
+})();
+</script>
+<script>
+/* ---------- Save/load progress codes and anonymous usage numbers (shared with the other hubs) ---------- */
+(function () {
+  var HUB = 'y12', PFX = /^alevel_/, TAG = 'Y12', TITLE = 'Y12';
+  var SYNC_URL = 'https://script.google.com/macros/s/AKfycbxK8TeIKnstO8SC-PbPdasW5G-iw6mpsFoOfZhCqvftJ_iY_4m9TG9XNgoXtuIqts6S/exec';
+  var SKIP = {'alevel_use': 1, 'alevel_did': 1, 'alevel_ping': 1, 'alevel_loaded': 1};
+  function keys() { var k = []; for (var i = 0; i < localStorage.length; i++) { var n = localStorage.key(i); if (n && (PFX.test(n) || n === 'bs_ok') && !SKIP[n]) k.push(n); } return k; }
+  function b64(bytes) { var s = ''; bytes.forEach(function (b) { s += String.fromCharCode(b); }); return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); }
+  function unb64(str) { var s = atob(str.replace(/-/g, '+').replace(/_/g, '/')); return Uint8Array.from(s, function (c) { return c.charCodeAt(0); }); }
+  async function make() {
+    var o = {}; keys().forEach(function (k) { o[k] = localStorage.getItem(k); });
+    var raw = new TextEncoder().encode(JSON.stringify(o));
+    if (window.CompressionStream) {
+      var cs = new Response(new Blob([raw]).stream().pipeThrough(new CompressionStream('deflate-raw')));
+      return TAG + '1:' + b64(new Uint8Array(await cs.arrayBuffer()));
+    }
+    return TAG + '0:' + b64(raw);
+  }
+  async function parse(code) {
+    code = (code || '').replace(/\s+/g, '');
+    var m = new RegExp('^' + TAG + '([01]):(.+)$').exec(code); if (!m) throw new Error('bad');
+    var bytes = unb64(m[2]);
+    if (m[1] === '1') bytes = new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer());
+    var o = JSON.parse(new TextDecoder().decode(bytes));
+    Object.keys(o).forEach(function (k) { if (!(PFX.test(k) || k === 'bs_ok') || typeof o[k] !== 'string') throw new Error('bad'); });
+    return o;
+  }
+  function post(o) { o.hub = HUB; return fetch(SYNC_URL, {method: 'POST', headers: {'Content-Type': 'text/plain'}, body: JSON.stringify(o)}).then(function (r) { return r.json(); }); }
+  function close() { var e = document.getElementById('hs-ov'); if (e) e.remove(); }
+  function shell(title, inner) {
+    close();
+    var ov = document.createElement('div'); ov.id = 'hs-ov';
+    ov.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem';
+    ov.innerHTML = '<div style="background:var(--card);color:var(--text);border-radius:16px;max-width:460px;width:100%;max-height:90vh;overflow:auto;padding:1.1rem 1.2rem;box-shadow:0 10px 40px rgba(0,0,0,.3)">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;gap:.5rem"><b style="font-size:1.1rem">' + title + '</b><button onclick="hsClose()" aria-label="Close" style="background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--muted)">✕</button></div>' + inner + '</div>';
+    ov.addEventListener('click', function (e) { if (e.target === ov) close(); });
+    document.body.appendChild(ov);
+  }
+  var BTN = 'display:block;width:100%;padding:.7rem;border-radius:10px;border:none;font-weight:700;font-size:.95rem;font-family:inherit;cursor:pointer;background:#534AB7;color:#fff;margin:.4rem 0';
+  var BTN2 = BTN.replace('background:#534AB7;color:#fff', 'background:var(--subtle);color:var(--text)');
+  var TA = 'width:100%;font-size:.75rem;font-family:monospace;border:1px solid var(--border);border-radius:10px;padding:.5rem;background:var(--surface,var(--card));color:var(--text);resize:none;box-sizing:border-box';
+  var LNK = 'color:var(--muted)';
+  function home() {
+    shell('Save or load progress',
+      '<div style="font-size:.85rem;color:var(--muted);margin:.6rem 0 .5rem">Move your progress to another device. Codes work for 7 days.</div>' +
+      '<button style="' + BTN + '" onclick="hsSave(false)">💾 Save progress</button><button style="' + BTN2 + '" onclick="hsLoad(false)">📥 Load progress</button>' +
+      '<div style="margin-top:.7rem;font-size:.75rem;color:var(--muted)">This hub also sends anonymous usage numbers (no names), including when it is used and which features, to help improve it.</div>');
+  }
+  async function save(long) {
+    if (!long) {
+      shell('Take your progress to another device',
+        '<div id="hs-code" style="text-align:center;font-size:2rem;font-weight:800;letter-spacing:.15em;padding:.7rem;border:2px dashed var(--border);border-radius:12px;margin:.9rem 0 .4rem;color:var(--muted)">…</div>' +
+        '<div style="text-align:center;font-size:.85rem;color:var(--muted)">On your other device, tap 💾 then Load progress and type this code. It works for 7 days.</div>' +
+        '<div id="hs-msg" style="font-size:.85rem;min-height:1.2rem;margin:.5rem 0;text-align:center"></div>' +
+        '<button style="' + BTN + '" onclick="hsCopy(\'hs-code\')">Copy code</button>' +
+        '<div style="margin-top:.8rem;font-size:.75rem;color:var(--muted)">No connection? <a href="#" onclick="hsSave(true);return false" style="' + LNK + '">Use a long code instead</a>.</div>');
+      var m = document.getElementById('hs-msg'), c = document.getElementById('hs-code');
+      try {
+        var r = await post({action: 'save', data: await make()});
+        if (!r.code) throw new Error(r.error || 'fail');
+        c.textContent = r.code.slice(0, 3) + '-' + r.code.slice(3); c.style.color = 'var(--text)';
+      } catch (e) { m.style.color = '#dc2626'; m.textContent = 'Could not reach the server. Check your connection or use a long code.'; }
+    } else {
+      var code = ''; try { code = await make(); } catch (e) {}
+      shell('Long progress code',
+        '<div style="font-size:.85rem;color:var(--muted);margin:.7rem 0 .5rem">Copy this whole code and paste it on your other device under Load progress.</div>' +
+        '<textarea id="hs-out" rows="5" readonly style="' + TA + '">' + code + '</textarea>' +
+        '<div id="hs-msg" style="font-size:.85rem;min-height:1.2rem;margin:.4rem 0"></div>' +
+        '<button style="' + BTN + '" onclick="hsCopy(\'hs-out\')">Copy code</button>');
+    }
+  }
+  function load(long) {
+    shell('Bring your progress here',
+      '<div style="font-size:.85rem;color:var(--muted);margin:.7rem 0 .5rem">' + (long ? 'Paste the long code from your other device.' : 'Type the code from your other device.') + '</div>' +
+      (long ? '<textarea id="hs-in" rows="4" placeholder="Paste code here" style="' + TA + '"></textarea>'
+            : '<input id="hs-in" maxlength="8" autocapitalize="characters" autocomplete="off" placeholder="ABC-123" style="width:100%;box-sizing:border-box;border:1px solid var(--border);border-radius:10px;padding:.6rem;background:var(--surface,var(--card));color:var(--text);font-size:1.3rem;letter-spacing:.15em;text-align:center;text-transform:uppercase">') +
+      '<div style="background:#fef3c7;color:#92400e;border-radius:8px;padding:.5rem .7rem;font-size:.82rem;margin:.6rem 0">This replaces the progress on this device.</div>' +
+      '<div id="hs-msg" style="font-size:.85rem;min-height:1.2rem;margin-bottom:.4rem"></div>' +
+      '<button style="' + BTN + '" onclick="hsDoLoad(' + (long ? 'true' : 'false') + ')">Load my progress</button>' +
+      '<div style="margin-top:.8rem;font-size:.75rem;color:var(--muted)">' + (long ? '<a href="#" onclick="hsLoad(false);return false" style="' + LNK + '">Have a short code instead?</a>' : '<a href="#" onclick="hsLoad(true);return false" style="' + LNK + '">Have a long code instead?</a>') + '</div>');
+  }
+  async function doLoad(long) {
+    var m = document.getElementById('hs-msg'); m.style.color = '#dc2626';
+    var val = document.getElementById('hs-in').value, data = val;
+    if (!long) {
+      var code = val.toUpperCase().replace(/[^A-Z0-9]/g, '');
+      if (code.length !== 6) { m.textContent = 'Codes have 6 letters and numbers.'; return; }
+      m.style.color = 'var(--muted)'; m.textContent = 'Checking…';
+      var r; try { r = await fetch(SYNC_URL + '?action=load&code=' + code).then(function (x) { return x.json(); }); } catch (e) { m.style.color = '#dc2626'; m.textContent = 'Could not reach the server. Check your connection.'; return; }
+      m.style.color = '#dc2626';
+      if (r.error === 'expired') { m.textContent = 'That code has expired. Get a new one.'; return; }
+      if (!r.data) { m.textContent = 'Code not found. Check it and try again.'; return; }
+      data = r.data;
+    }
+    var o; try { o = await parse(data); } catch (e) { m.style.color = '#dc2626'; m.textContent = 'That code did not work. It may be from a different hub, or not all of it was copied.'; return; }
+    if (!Object.keys(o).length) { m.style.color = '#dc2626'; m.textContent = 'That code is empty.'; return; }
+    keys().forEach(function (k) { localStorage.removeItem(k); });
+    Object.keys(o).forEach(function (k) { localStorage.setItem(k, o[k]); });
+    localStorage.setItem('alevel_loaded', '1');
+    location.reload();
+  }
+  async function copy(id) {
+    var el = document.getElementById(id), msg = document.getElementById('hs-msg'), txt = el.value !== undefined ? el.value : el.textContent;
+    try { await navigator.clipboard.writeText(txt); msg.style.color = '#16a34a'; msg.textContent = 'Copied.'; }
+    catch (e) { if (el.select) el.select(); msg.style.color = 'var(--muted)'; msg.textContent = 'Press copy on your keyboard or share menu.'; }
+  }
+  window.hsOpen = home; window.hsClose = close; window.hsSave = save; window.hsLoad = load; window.hsDoLoad = doLoad; window.hsCopy = copy;
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+  /* ----- anonymous usage numbers ----- */
+  function stats() {
+    var x = xpLoad(), t0 = new Date(), d14 = 0;
+    for (var i = 0; i < 14; i++) { var d = new Date(t0); d.setDate(d.getDate() - i); var k = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); if (x.days[k] > 0) d14++; }
+    var lv = xpLevelIdx(x.total), o = {xp: x.total, level: lv, lvlName: (XP_LEVELS[lv] || {}).t || '', days14: d14, badges: 0, acc: x.acc};
+    var weak = [], miss = [];
+    try { weak = unitFlags(x).filter(function (u) { return u.flag === 'weak'; }).slice(0, 5).map(function (u) { return (S[u.u] || {}).label || u.u; }); } catch (e) {}
+    try { miss = Object.keys(x.miss || {}).map(function (k) { var m = x.miss[k]; return [k, String(m.label || '').slice(0, 90), String(m.unit || ''), m.n || 0]; }).sort(function (p, q) { return q[3] - p[3]; }).slice(0, 10); } catch (e) {}
+    o.weak = weak; o.miss = miss;
+    try { o.use = window.hsUsage(); } catch (e) {}
+    o.pos = posTs(); o.posL = tudLabel(posTs()); o.pos2 = posC(); o.pos2L = cwLabel(posC());
+    return o;
+  }
+  function ping(force) {
+    try {
+      var last = +localStorage.getItem('alevel_ping') || 0;
+      if (!force && Date.now() - last < 3 * 3600000) return;
+      var id = localStorage.getItem('alevel_did');
+      if (!id) { id = 'd-' + Math.random().toString(36).slice(2, 8) + Math.random().toString(36).slice(2, 6); localStorage.setItem('alevel_did', id); }
+      localStorage.setItem('alevel_ping', String(Date.now()));
+      post({action: 'ping', id: id, stats: stats()}).catch(function () {});
+    } catch (e) {}
+  }
+  setTimeout(ping, 6000);
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') ping(); });
+})();
+</script>
+
+<script>
+/* ---------- Settings menu (same as the GCSE hub) ---------- */
+function setMenuClose() { var m = document.getElementById('set-menu'), b = document.getElementById('set-btn'); if (m) m.hidden = true; if (b) b.setAttribute('aria-expanded', 'false'); }
+function setMenuRender() {
+  var m = document.getElementById('set-menu'); if (!m) return;
+  var dark = document.documentElement.classList.contains('dark');
+  var row = function (ic, label, act, sw) { return '<button class="set-row" role="menuitem" onclick="' + act + '"><span>' + ic + ' ' + label + '</span>' + (sw === undefined ? '' : '<span class="set-sw' + (sw ? ' on' : '') + '"></span>') + '</button>'; };
+  m.innerHTML = row('🌙', 'Night mode', 'toggleDark();setMenuRender()', dark) + row('💡', 'Hints', 'setHints()', fdHintsOn) + '<div class="set-sep"></div>' +
+    row('💾', 'Save progress', "setMenuClose();hsSave(false)") + row('📥', 'Load progress', "setMenuClose();hsLoad(false)") + '<div class="set-sep"></div>' +
+    row('💡', 'Tips for this page', "setMenuClose();document.getElementById('tour-btn').click()") + row('🖨️', 'Print this page', 'setMenuClose();window.print()');
+}
+function setHints() { fdSyncHints(!fdHintsOn); setMenuRender(); }
+function setMenuToggle(ev) {
+  if (ev) ev.stopPropagation();
+  var m = document.getElementById('set-menu'), b = document.getElementById('set-btn');
+  if (!m.hidden) { setMenuClose(); return; }
+  setMenuRender(); m.hidden = false; b.setAttribute('aria-expanded', 'true');
+}
+document.addEventListener('click', function (e) { var w = document.getElementById('set-wrap'); if (w && document.body.contains(e.target) && !w.contains(e.target)) setMenuClose(); });
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenuClose(); });
+function loadNudge() {
+  try {
+    if (localStorage.getItem('alevel_nudge') || xpLoad().total > 0 || !document.getElementById('s-pick').classList.contains('active')) return;
+    var n = document.createElement('div'); n.id = 'load-nudge';
+    n.style.cssText = 'position:fixed;top:64px;left:50%;transform:translateX(-50%);z-index:500;width:max-content;max-width:92vw;background:var(--card);border:1px solid var(--border);border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.2);padding:.55rem .8rem;font-size:.85rem;display:flex;align-items:center;gap:.6rem';
+    n.innerHTML = '<span>Got progress on another device?</span><button onclick="localStorage.setItem(\'alevel_nudge\',\'1\');this.parentNode.remove();hsLoad(false)" style="font-weight:700;background:none;border:none;color:#2563eb;cursor:pointer;white-space:nowrap">Load it</button><button aria-label="Dismiss" onclick="localStorage.setItem(\'alevel_nudge\',\'1\');this.parentNode.remove()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem">✕</button>';
+    document.body.appendChild(n);
+    setTimeout(function () { if (n.parentNode) n.remove(); }, 12000);
+  } catch (e) {}
+}
+setTimeout(loadNudge, 2500);
 </script>
 </body>
 </html>
