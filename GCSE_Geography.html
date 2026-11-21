@@ -4514,8 +4514,9 @@ function bdgUnits() {
   if (!RQ.length || !DATES.length) return;
   COURSE_FLAT.forEach(function (c, i) {
     var p = ucProg(i);
-    if (p.total && p.n >= p.total) bdgAward('u' + i);
+    if (p.total && p.n >= p.total) bdgAward('uc' + i);
   });
+  bdgPapers();
 }
 function xpAward(mode, ok, key, label, paper, unit) {
   bnTrack(ok);
@@ -5606,10 +5607,10 @@ function bossOver() {
 // BADGES
 // ═══════════════════════════════════════════
 const LS_BADGES = 'geo_badges', LS_BSTAT = 'geo_badge_stats';
-try { if (localStorage.getItem('geo_badge_ver') !== '2') { localStorage.removeItem(LS_BADGES); localStorage.removeItem(LS_BSTAT); localStorage.setItem('geo_badge_ver', '2'); } } catch (e) {}
+try { if (localStorage.getItem('geo_badge_ver') !== '3') { localStorage.removeItem(LS_BADGES); localStorage.setItem('geo_badge_ver', '3'); } } catch (e) {}
 // c = ring/fill colour. secret badges show only "?" until found.
 const BADGES = [
-  ...UNITS.map(u => ({id:u.k, e:u.e, n:u.n + ' master', h:'Master every flashcard in Unit ' + u.i + ': ' + u.n, c:[u.bg, u.col]})),
+  ...UNITS.map(u => ({id:u.k, e:u.e, n:u.n + ' master', h:'Master every flashcard and get every date and retrieval question right in Unit ' + u.i + ': ' + u.n, c:[u.bg, u.col]})),
   {id:'start', e:'🎒', n:'Day one', h:'Answer your first question correctly', c:['#E1F5EE','#1D9E75']},
   {id:'c100', e:'💯', n:'Ton up', h:'Answer 100 questions correctly', c:['#FAEEDA','#EF9F27']},
   {id:'c300', e:'🔱', n:'Pathfinder', h:'Answer 300 questions correctly', c:['#E6F1FB','#378ADD']},
@@ -5673,11 +5674,10 @@ const BADGES = [
   {id:'window', e:'🪟', n:'Defenestrated', h:'Quit 10 arcade games halfway through', c:['#E6F1FB','#185FA5'], secret:true},
   {id:'lightsw', e:'💡', n:'Light switch', h:'Switch between night and day mode 10 times in one day', c:['#FAEEDA','#BA7517'], secret:true}
 ];
-const UC_EMO = ['💸','🍺','🚒','🏖️','🍬','🐷','⚒️','👸','💨','🎭','🦅','🐛','🛤️','🚌','🥁'];
-const UC_NAME = ['Hyperinflation Hero','Beer Hall Regular','Reichstag Fire Marshal','KdF Holidaymaker','Candy Dropper','Bay of Pigs Veteran','Wall Hammerer','Supreme Governor','Protestant Wind Rider','Globe Groundling','Blood Eagler','Huguenot Silkworm','Railway Navvy','Bristol Bus Conductor','Carnival Drummer'];
 const UC_COL = SLOT_UC;
 COURSE_FLAT.forEach(function (c, i) {
-  BADGES.push({id:'u' + i, e:UC_EMO[i] || '📘', n:UC_NAME[i] || c.unit, h:'Get every date and retrieval question in ' + c.unit + ' right at least once', c:UC_COL[c.paper], unit:i});
+  const un = UNITS.find(u => u.k === c.paper) || {};
+  BADGES.push({id:'uc' + i, e:un.e || '📘', n:(un.n || c.unit) + ' quiz clear', h:'Get every date and retrieval question in ' + c.unit + ' right at least once', c:UC_COL[c.paper], unit:i});
 });
 const BDG_DATES = {'25-12':'xmas','01-01':'ny','31-10':'hallow','05-11':'bonfire','11-11':'poppy'};
 function bdgLoad() { try { return JSON.parse(localStorage.getItem(LS_BADGES) || '{}') || {}; } catch (e) { return {}; } }
@@ -5781,7 +5781,12 @@ function bdgPapers() {
     const total = (typeof FD !== 'undefined' ? FD : []).filter(c => c.paper === p).length;
     if (!total) return;
     let n = 0; Object.keys(m).forEach(k => { if (k.indexOf(p + '|') === 0) n++; });
-    if (n >= total) bdgAward(p);
+    if (n < total) return;
+    // The quiz side: every date and retrieval question in this unit must also have been answered right.
+    if (!RQ.length || !DATES.length) return;
+    let quizDone = true;
+    COURSE_FLAT.forEach((c, i) => { if (c.paper !== p) return; const q = ucProg(i); if (!q.total || q.n < q.total) quizDone = false; });
+    if (quizDone) bdgAward(p);
   });
 }
 let bdgSel = '';
@@ -6276,15 +6281,15 @@ uptoRender();
   setInterval(tick, TICK * 1000);
   // Totals over the last 14 days, sent with the usage numbers: seconds per hour of day, per weekday (Monday first), per feature, plus sessions and active days.
   window.hsUsage = function () {
-    var o = cache || load(), h = new Array(24).fill(0), w = new Array(7).fill(0), f = {}, s = 0, t = 0, days = 0;
+    var o = cache || load(), h = new Array(24).fill(0), w = new Array(7).fill(0), hw = new Array(168).fill(0), f = {}, s = 0, t = 0, days = 0;
     Object.keys(o.d).forEach(function (k) {
       var d = o.d[k], p = k.split('-'), wd = (new Date(+p[0], +p[1] - 1, +p[2]).getDay() + 6) % 7;
       if (!d.t) return;
       days++; s += d.s || 0; t += d.t;
-      Object.keys(d.h).forEach(function (x) { h[+x] += d.h[x]; w[wd] += d.h[x]; });
+      Object.keys(d.h).forEach(function (x) { h[+x] += d.h[x]; w[wd] += d.h[x]; hw[wd * 24 + +x] += d.h[x]; });
       Object.keys(d.f).forEach(function (x) { var nm = NAMES[x] || x; f[nm] = (f[nm] || 0) + d.f[x]; });
     });
-    return {h: h, w: w, f: f, s: s, t: t, days: days};
+    return {h: h, w: w, hw: hw, f: f, s: s, t: t, days: days};
   };
 })();
 </script>
