@@ -4460,6 +4460,7 @@ function bdgUnits() {
     var p = ucProg(i);
     if (p.total && p.n >= p.total) bdgAward('u' + i);
   });
+  bdgPapers();
 }
 function xpAward(mode, ok, key, label, paper, unit) {
   bnTrack(ok);
@@ -5708,10 +5709,10 @@ const BADGES = [
   {id:'slayer', e:'🏆', n:'Giant slayer', h:'Defeat Mr Rodker', c:['#FAEEDA','#BA7517']},
   {id:'bruised', e:'🤕', n:'Bruised, not beaten', h:'Lose 5 boss fights and keep coming back', c:['#FBEAF0','#D4537E']},
   {id:'arcade', e:'🕹️', n:'Arcade regular', h:'Finish a round of all four arcade games', c:['#EEEDFE','#7F77DD']},
-  {id:'p1', e:'🚢', n:'Paper 1 master', h:'Master every flashcard in Paper 1: Migrants in Britain', c:['#E6F1FB','#378ADD']},
-  {id:'p2a', e:'🚀', n:'Paper 2a master', h:'Master every flashcard in Paper 2a: Cold War', c:['#EEEDFE','#7F77DD']},
-  {id:'p2b', e:'👑', n:'Paper 2b master', h:'Master every flashcard in Paper 2b: Early Elizabethan England', c:['#FAEEDA','#EF9F27']},
-  {id:'p3', e:'🏛️', n:'Paper 3 master', h:'Master every flashcard in Paper 3: Weimar and Nazi Germany', c:['#FAECE7','#D85A30']},
+  {id:'p1', e:'🚢', n:'Paper 1 master', h:'Master every flashcard in Paper 1 and get every date and retrieval question right: Migrants in Britain', c:['#E6F1FB','#378ADD']},
+  {id:'p2a', e:'🚀', n:'Paper 2a master', h:'Master every flashcard in Paper 2a and get every date and retrieval question right: Cold War', c:['#EEEDFE','#7F77DD']},
+  {id:'p2b', e:'👑', n:'Paper 2b master', h:'Master every flashcard in Paper 2b and get every date and retrieval question right: Early Elizabethan England', c:['#FAEEDA','#EF9F27']},
+  {id:'p3', e:'🏛️', n:'Paper 3 master', h:'Master every flashcard in Paper 3 and get every date and retrieval question right: Weimar and Nazi Germany', c:['#FAECE7','#D85A30']},
   {id:'streak3', e:'📅', n:'Hat-trick', h:'Earn 200 XP a day, 3 days in a row', c:['#EAF3DE','#639922']},
   {id:'streak7', e:'🗓️', n:'Week warrior', h:'Earn 200 XP a day, 7 days in a row', c:['#EAF3DE','#3B6D11']},
   {id:'streak14', e:'🌟', n:'Fortnight', h:'Earn 200 XP a day, 14 days in a row', c:['#FAEEDA','#EF9F27']},
@@ -5863,7 +5864,12 @@ function bdgPapers() {
     const total = (typeof FD !== 'undefined' ? FD : []).filter(c => c.paper === p).length;
     if (!total) return;
     let n = 0; Object.keys(m).forEach(k => { if (k.indexOf(p + '|') === 0) n++; });
-    if (n >= total) bdgAward(p);
+    if (n < total) return;
+    // The quiz side: every date and retrieval question in this paper must also have been answered right.
+    if (!RQ.length || !DATES.length) return;
+    let quizDone = true;
+    COURSE_FLAT.forEach((c, i) => { if (c.paper !== p) return; const q = ucProg(i); if (!q.total || q.n < q.total) quizDone = false; });
+    if (quizDone) bdgAward(p);
   });
 }
 let bdgSel = '';
