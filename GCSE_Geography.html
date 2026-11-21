@@ -27,9 +27,9 @@ async function pmParse(code) {
   return o;
 }
 const SYNC_URL = 'https://script.google.com/macros/s/AKfycbxK8TeIKnstO8SC-PbPdasW5G-iw6mpsFoOfZhCqvftJ_iY_4m9TG9XNgoXtuIqts6S/exec';
-function syncPost(o) {
+function syncPost(o, ka) {
   o.hub = 'geog';
-  return fetch(SYNC_URL, {method: 'POST', headers: {'Content-Type': 'text/plain'}, body: JSON.stringify(o)}).then(r => r.json());
+  return fetch(SYNC_URL, {method: 'POST', headers: {'Content-Type': 'text/plain'}, body: JSON.stringify(o), keepalive: !!ka}).then(r => r.json());
 }
 function pmClose() { const e = document.getElementById('pm-ov'); if (e) e.remove(); }
 function pmShell(title, inner) {
@@ -164,15 +164,16 @@ function usagePing(force) {
   if (!SYNC_URL) return;
   try {
     const last = +localStorage.getItem('geo_ping') || 0;
-    if (!force && Date.now() - last < 3 * 3600000) return;
+    if (!force && Date.now() - last < 60000) return;
     let id = localStorage.getItem('geo_did');
     if (!id) { id = 'd-' + Math.random().toString(36).slice(2, 8) + Math.random().toString(36).slice(2, 6); localStorage.setItem('geo_did', id); }
     localStorage.setItem('geo_ping', String(Date.now()));
-    syncPost({action: 'ping', id: id, stats: usageStats()}).catch(() => {});
+    syncPost({action: 'ping', id: id, stats: usageStats()}, true).catch(() => {});
   } catch (e) {}
 }
 setTimeout(usagePing, 6000);
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') usagePing(); });
+setInterval(() => { if (document.visibilityState === 'visible') usagePing(); }, 240000);
 </script>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#7C5CD6">
