@@ -51,6 +51,16 @@
      "Catholics",
      "Habsburgs"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Gardiner",
+    "alt": [],
+    "d": [
+     "Wolsey",
+     "Cromwell",
+     "Cranmer"
+    ]
    }
   ]
  },
@@ -105,6 +115,16 @@
      "Border War",
      "Anglo-Scottish Union"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Good Duke",
+    "alt": [],
+    "d": [
+     "Wise Duke",
+     "Honest Duke",
+     "Gracious Duke"
+    ]
    }
   ]
  },
@@ -156,6 +176,16 @@
      "Cranmer",
      "Gardiner",
      "Pole"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Warwick",
+    "alt": [],
+    "d": [
+     "Cranmer",
+     "Cecil",
+     "Russell"
     ]
    }
   ]
@@ -213,6 +243,16 @@
      "Greenwich Palace",
      "Dover Castle"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "general summons",
+    "alt": [],
+    "d": [
+     "royal proclamation",
+     "parliamentary bill",
+     "secret letter"
+    ]
    }
   ]
  },
@@ -266,6 +306,16 @@
      "Mary",
      "Elizabeth",
      "Gardiner"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "treason",
+    "alt": [],
+    "d": [
+     "heresy",
+     "corruption",
+     "rebellion"
     ]
    }
   ]
@@ -321,6 +371,16 @@
      "legitimate heirs",
      "royal heirs"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "refused to convert",
+    "alt": [],
+    "d": [
+     "agreed to convert",
+     "went into exile",
+     "sought Spanish help"
+    ]
    }
   ]
  },
@@ -374,6 +434,16 @@
      "legal precedent",
      "noble support",
      "military strength"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "the army",
+    "alt": [],
+    "d": [
+     "the navy",
+     "the Lords",
+     "the City"
     ]
    }
   ]
@@ -429,6 +499,16 @@
      "Papal envoy",
      "French duke"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "1558",
+    "alt": [],
+    "d": [
+     "1553",
+     "1547",
+     "1568"
+    ]
    }
   ]
  },
@@ -480,6 +560,16 @@
      "wealth",
      "age",
      "foreign policy"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Wyatt's Rebellion",
+    "alt": [],
+    "d": [
+     "Kett's Rebellion",
+     "Western Rebellion",
+     "Pilgrimage of Grace"
     ]
    }
   ]
@@ -537,6 +627,16 @@
      "coronation",
      "illness"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Charles V",
+    "alt": [],
+    "d": [
+     "Francis I",
+     "Henry II",
+     "Maximilian II"
+    ]
    }
   ]
  },
@@ -591,6 +691,16 @@
      "Tournai",
      "Gascony"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "King",
+    "alt": [],
+    "d": [
+     "Regent",
+     "Consort",
+     "Protector"
+    ]
    }
   ]
  },
@@ -643,6 +753,16 @@
      "Pole's death",
      "Cranmer's death"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Paget",
+    "alt": [],
+    "d": [
+     "Cecil",
+     "Petre",
+     "Arundel"
+    ]
    }
   ]
  },
@@ -678,12 +798,12 @@
    },
    {
     "p": 2,
-    "gap": "France",
+    "gap": "Protestant England",
     "alt": [],
     "d": [
-     "Scotland",
-     "the Papacy",
-     "the Empire"
+     "neutral England",
+     "weakened England",
+     "Spanish England"
     ]
    },
    {
@@ -696,6 +816,16 @@
      "Francis I",
      "Charles V",
      "Philip II"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Mary Queen of Scots",
+    "alt": [],
+    "d": [
+     "Margaret Douglas",
+     "Jane Grey",
+     "Katherine Grey"
     ]
    }
   ]
@@ -751,6 +881,16 @@
      "Regency clause",
      "Succession clause"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "1543",
+    "alt": [],
+    "d": [
+     "1536",
+     "1547",
+     "1544"
+    ]
    }
   ]
  },
@@ -802,6 +942,16 @@
      "rebellion",
      "inflation",
      "excommunication"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Earl of Devon",
+    "alt": [],
+    "d": [
+     "Earl of Surrey",
+     "Duke of Norfolk",
+     "Earl of Sussex"
     ]
    }
   ]
@@ -857,6 +1007,16 @@
      "delay",
      "toleration"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "imprisoned",
+    "alt": [],
+    "d": [
+     "exiled",
+     "executed",
+     "dismissed"
+    ]
    }
   ]
  },
@@ -911,6 +1071,16 @@
      "Cornwall",
      "Wales"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "transubstantiation",
+    "alt": [],
+    "d": [
+     "predestination",
+     "purgatory",
+     "indulgences"
+    ]
    }
   ]
  },
@@ -962,6 +1132,16 @@
      "sermons",
      "tax returns",
      "ballads"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Ten Commandments",
+    "alt": [],
+    "d": [
+     "Apostles' Creed",
+     "Six Articles",
+     "Nicene Creed"
     ]
    }
   ]
@@ -1015,6 +1195,16 @@
      "Treason Act",
      "Act of Succession"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "heresy laws",
+    "alt": [],
+    "d": [
+     "treason laws",
+     "vagrancy laws",
+     "tax laws"
+    ]
    }
   ]
  },
@@ -1066,6 +1256,16 @@
      "iconoclasm",
      "heresy",
      "nepotism"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "simony",
+    "alt": [],
+    "d": [
+     "usury",
+     "nepotism",
+     "heresy"
     ]
    }
   ]
@@ -1123,6 +1323,16 @@
      "Zwinglian",
      "Catholic"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "800",
+    "alt": [],
+    "d": [
+     "500",
+     "1,200",
+     "300"
+    ]
    }
   ]
  },
@@ -1175,6 +1385,16 @@
      "dynastic",
      "symbolic"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Protestant underground",
+    "alt": [],
+    "d": [
+     "Catholic underground",
+     "Puritan underground",
+     "Lollard underground"
+    ]
    }
   ]
  },
@@ -1226,6 +1446,16 @@
      "Abbeys",
      "Friaries",
      "Pilgrim shrines"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Six Articles",
+    "alt": [],
+    "d": [
+     "Ten Articles",
+     "Forty-Two Articles",
+     "Thirty-Nine Articles"
     ]
    }
   ]
@@ -1281,6 +1511,16 @@
      "indulgences",
      "monasteries"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "First Act of Uniformity",
+    "alt": [],
+    "d": [
+     "Second Act of Uniformity",
+     "Act of Supremacy",
+     "Treason Act"
+    ]
    }
   ]
  },
@@ -1333,6 +1573,16 @@
      "Ten Articles",
      "Thirty-Nine Articles"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "radicals",
+    "alt": [],
+    "d": [
+     "conservatives",
+     "traditionalists",
+     "Lutherans"
+    ]
    }
   ]
  },
@@ -1384,6 +1634,16 @@
      "common land",
      "waste land",
      "monastic land"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "agricultural productivity",
+    "alt": [],
+    "d": [
+     "food imports",
+     "wool production",
+     "tax revenue"
     ]
    }
   ]
@@ -1439,6 +1699,16 @@
      "Irish campaign",
      "Welsh campaign"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "two years",
+    "alt": [],
+    "d": [
+     "six months",
+     "one year",
+     "five years"
+    ]
    }
   ]
  },
@@ -1490,6 +1760,16 @@
      "bishops",
      "councillors",
      "foreigners"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Scottish border",
+    "alt": [],
+    "d": [
+     "Welsh border",
+     "French garrisons",
+     "Irish coast"
     ]
    }
   ]
@@ -1547,6 +1827,16 @@
      "50%",
      "80%"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Somerset",
+    "alt": [],
+    "d": [
+     "Warwick",
+     "Cranmer",
+     "Paget"
+    ]
    }
   ]
  },
@@ -1601,6 +1891,16 @@
      "Pinkie Cleugh",
      "Bosworth"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "16,000",
+    "alt": [],
+    "d": [
+     "6,000",
+     "10,000",
+     "20,000"
+    ]
    }
   ]
  },
@@ -1654,6 +1954,16 @@
      "1487",
      "1450",
      "1536"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "iconoclasm",
+    "alt": [],
+    "d": [
+     "enclosure",
+     "conscription",
+     "taxation"
     ]
    }
   ]
@@ -1710,6 +2020,16 @@
      "numbers",
      "funding"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Sampford Courtenay",
+    "alt": [],
+    "d": [
+     "Clyst St Mary",
+     "Launceston",
+     "Okehampton"
+    ]
    }
   ]
  },
@@ -1747,12 +2067,12 @@
    },
    {
     "p": 2,
-    "gap": "Kent",
+    "gap": "masked",
     "alt": [],
     "d": [
-     "Norfolk",
-     "Devon",
-     "Yorkshire"
+     "revealed",
+     "justified",
+     "excused"
     ]
    },
    {
@@ -1763,6 +2083,16 @@
      "wine trade",
      "iron trade",
      "fishing industry"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Elizabeth",
+    "alt": [],
+    "d": [
+     "Jane Grey",
+     "Mary Stuart",
+     "Margaret Douglas"
     ]
    }
   ]
@@ -1819,6 +2149,16 @@
      "Whitehall",
      "Smithfield"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Gardiner",
+    "alt": [],
+    "d": [
+     "Paget",
+     "Pole",
+     "Renard"
+    ]
    }
   ]
  },
@@ -1872,6 +2212,16 @@
      "five",
      "ten"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "prorogued",
+    "alt": [],
+    "d": [
+     "dissolved",
+     "adjourned",
+     "summoned"
+    ]
    }
   ]
  },
@@ -1896,14 +2246,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Strickland",
-    "alt": [
-     "Walter Strickland"
-    ],
+    "gap": "barred from Parliament",
+    "alt": [],
     "d": [
-     "Wentworth",
-     "Cartwright",
-     "Field"
+     "fined heavily",
+     "banished from court",
+     "sent abroad"
     ]
    },
    {
@@ -1926,6 +2274,16 @@
      "Puritan Chorus",
      "Puritan Party",
      "Puritan Caucus"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "bill and book",
+    "alt": [],
+    "d": [
+     "petition and prayer",
+     "charter and canon",
+     "act and article"
     ]
    }
   ]
@@ -1977,6 +2335,16 @@
      "Grindal",
      "Bancroft",
      "Laud"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "one vote",
+    "alt": [],
+    "d": [
+     "three votes",
+     "ten votes",
+     "two votes"
     ]
    }
   ]
@@ -2033,6 +2401,16 @@
      "Geneva",
      "Bristol"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Marprelate Tracts",
+    "alt": [],
+    "d": [
+     "Cartwright Letters",
+     "Genevan Pamphlets",
+     "Classis Tracts"
+    ]
    }
   ]
  },
@@ -2088,6 +2466,16 @@
      "annually",
      "publicly"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Philip of Spain",
+    "alt": [],
+    "d": [
+     "Henry II",
+     "Charles IX",
+     "Maximilian II"
+    ]
    }
   ]
  },
@@ -2141,6 +2529,16 @@
      "divided",
      "funded"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "William Allen",
+    "alt": [],
+    "d": [
+     "Edmund Campion",
+     "Robert Parsons",
+     "Thomas More"
+    ]
    }
   ]
  },
@@ -2193,6 +2591,16 @@
      "25",
      "35",
      "55"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Armada",
+    "alt": [],
+    "d": [
+     "Rising of the North",
+     "Ridolfi Plot",
+     "Babington Plot"
     ]
    }
   ]
@@ -2248,6 +2656,16 @@
      "financial",
      "political"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "monarch",
+    "alt": [],
+    "d": [
+     "Pope",
+     "nobles",
+     "Parliament"
+    ]
    }
   ]
  },
@@ -2300,6 +2718,16 @@
      "Catherine de Medici",
      "Margaret Tudor",
      "Anne of Cleves"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "illegitimate",
+    "alt": [],
+    "d": [
+     "unpopular",
+     "heretical",
+     "foreign"
     ]
    }
   ]
@@ -2354,6 +2782,16 @@
      "a fine",
      "imprisonment",
      "exile"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "heresy laws",
+    "alt": [],
+    "d": [
+     "treason laws",
+     "vagrancy laws",
+     "tax laws"
     ]
    }
   ]
@@ -2410,6 +2848,16 @@
      "6 pence",
      "5 shillings"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Black Rubric",
+    "alt": [],
+    "d": [
+     "Ornaments Rubric",
+     "Thirty-Nine Articles",
+     "Book of Homilies"
+    ]
    }
   ]
  },
@@ -2465,6 +2913,16 @@
      "Pax Romana",
      "Ad Fontes"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "vestments",
+    "alt": [],
+    "d": [
+     "chalices",
+     "rosaries",
+     "candles"
+    ]
    }
   ]
  },
@@ -2518,6 +2976,16 @@
      "chasuble",
      "alb"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "chaplain",
+    "alt": [],
+    "d": [
+     "confessor",
+     "physician",
+     "secretary"
+    ]
    }
   ]
  },
@@ -2542,14 +3010,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "prophesyings",
-    "alt": [
-     "prophesying"
-    ],
+    "gap": "sympathetic to Puritans",
+    "alt": [],
     "d": [
-     "visitations",
-     "conventicles",
-     "synods"
+     "hostile to Puritans",
+     "neutral towards Puritans",
+     "loyal to Rome"
     ]
    },
    {
@@ -2570,6 +3036,16 @@
      "wealth",
      "doctrine",
      "succession"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Marian exile",
+    "alt": [],
+    "d": [
+     "Edwardian exile",
+     "Lollard exile",
+     "Huguenot exile"
     ]
    }
   ]
@@ -2624,6 +3100,16 @@
      "dark archbishop",
      "little prelate"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Three Articles",
+    "alt": [],
+    "d": [
+     "Six Articles",
+     "Thirty-Nine Articles",
+     "Forty-Two Articles"
+    ]
    }
   ]
  },
@@ -2676,6 +3162,16 @@
      "Leicester",
      "Pembroke",
      "Warwick"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "450",
+    "alt": [],
+    "d": [
+     "150",
+     "300",
+     "800"
     ]
    }
   ]
@@ -2730,6 +3226,16 @@
      "Exsurge Domine",
      "Unam Sanctam"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Pius V",
+    "alt": [],
+    "d": [
+     "Pius IV",
+     "Paul IV",
+     "Gregory XIII"
+    ]
    }
   ]
  },
@@ -2782,6 +3288,16 @@
      "February 1586",
      "March 1587",
      "February 1588"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Throckmorton Plot",
+    "alt": [],
+    "d": [
+     "Parry Plot",
+     "Ballard Plot",
+     "Somerville Plot"
     ]
    }
   ]
@@ -2836,6 +3352,16 @@
      "heretics",
      "exiles"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "capital offence",
+    "alt": [],
+    "d": [
+     "felony",
+     "misdemeanour",
+     "heresy"
+    ]
    }
   ]
  },
@@ -2870,15 +3396,12 @@
    },
    {
     "p": 2,
-    "gap": "Leicester",
-    "alt": [
-     "Robert Dudley",
-     "Dudley"
-    ],
+    "gap": "would not marry him",
+    "alt": [],
     "d": [
-     "Hatton",
-     "Essex",
-     "Raleigh"
+     "would marry him",
+     "would knight him",
+     "would banish him"
     ]
    },
    {
@@ -2892,6 +3415,16 @@
      "Hatton",
      "Mildmay",
      "Knollys"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Sussex",
+    "alt": [],
+    "d": [
+     "Pembroke",
+     "Arundel",
+     "Hertford"
     ]
    }
   ]
@@ -2943,6 +3476,16 @@
      "Jane Seymour",
      "Catherine Parr",
      "Anne of Cleves"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "foreign monarch",
+    "alt": [],
+    "d": [
+     "Scottish noble",
+     "Church bishop",
+     "royal official"
     ]
    }
   ]
@@ -2999,6 +3542,16 @@
      "Hatton",
      "Leicester"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "tacitly",
+    "alt": [],
+    "d": [
+     "openly",
+     "publicly",
+     "reluctantly"
+    ]
    }
   ]
  },
@@ -3049,6 +3602,16 @@
      "taxation",
      "local government",
      "trade"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "veto",
+    "alt": [],
+    "d": [
+     "pardon",
+     "censure",
+     "amendment"
     ]
    }
   ]
@@ -3105,6 +3668,16 @@
      "Plantagenets",
      "Lancastrians"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "William Cecil",
+    "alt": [],
+    "d": [
+     "Francis Walsingham",
+     "Robert Dudley",
+     "Thomas Gresham"
+    ]
    }
   ]
  },
@@ -3156,6 +3729,16 @@
      "zealous",
      "reckless"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Religious Settlement",
+    "alt": [],
+    "d": [
+     "Treaty of Nonsuch",
+     "Poor Law",
+     "Statute of Artificers"
+    ]
    }
   ]
  },
@@ -3206,6 +3789,16 @@
      "resist",
      "amend",
      "block"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "veto",
+    "alt": [],
+    "d": [
+     "pardon",
+     "censure",
+     "amend"
     ]
    }
   ]
@@ -3260,6 +3853,16 @@
      "Leicester",
      "Sussex"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Catholic bishops",
+    "alt": [],
+    "d": [
+     "Puritan MPs",
+     "Marian exiles",
+     "Privy Councillors"
+    ]
    }
   ]
  },
@@ -3284,14 +3887,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Wentworth",
-    "alt": [
-     "Peter Wentworth"
-    ],
+    "gap": "religion and the succession",
+    "alt": [],
     "d": [
-     "Strickland",
-     "Cope",
-     "Hatton"
+     "taxation and war",
+     "marriage and trade",
+     "poverty and enclosure"
     ]
    },
    {
@@ -3314,6 +3915,16 @@
      "1589",
      "1599",
      "1603"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "the devil",
+    "alt": [],
+    "d": [
+     "the pope",
+     "Antichrist",
+     "a tyrant"
     ]
    }
   ]
@@ -3368,6 +3979,16 @@
      "Throckmorton Plot",
      "Rising of the North"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Mary Queen of Scots",
+    "alt": [],
+    "d": [
+     "Katherine Grey",
+     "Margaret Douglas",
+     "Arbella Stuart"
+    ]
    }
   ]
  },
@@ -3421,6 +4042,16 @@
      "pug",
      "pet"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Alençon",
+    "alt": [],
+    "d": [
+     "Henry of Navarre",
+     "Don John of Austria",
+     "Philip of Hesse"
+    ]
    }
   ]
  },
@@ -3455,12 +4086,12 @@
    },
    {
     "p": 2,
-    "gap": "husband",
+    "gap": "name a successor",
     "alt": [],
     "d": [
-     "regent",
-     "protector",
-     "champion"
+     "declare war",
+     "call Parliament",
+     "raise taxes"
     ]
    },
    {
@@ -3471,6 +4102,16 @@
      "revenue",
      "patronage",
      "succession"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "foreign consort",
+    "alt": [],
+    "d": [
+     "English noble",
+     "Scottish regent",
+     "papal envoy"
     ]
    }
   ]
@@ -3523,6 +4164,16 @@
      "Act of Uniformity",
      "Poor Law"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Antwerp Exchange",
+    "alt": [],
+    "d": [
+     "Amsterdam Bourse",
+     "Lyon Fair",
+     "Bruges Staple"
+    ]
    }
   ]
  },
@@ -3573,6 +4224,16 @@
      "Tax Commissioners",
      "Crown Auditors",
      "Exchequer Clerks"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "£600,000",
+    "alt": [],
+    "d": [
+     "£60,000",
+     "£200,000",
+     "£1 million"
     ]
    }
   ]
@@ -3625,6 +4286,16 @@
      "debased coinage",
      "New World silver"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "precious metals",
+    "alt": [],
+    "d": [
+     "cloth exports",
+     "land values",
+     "wage rates"
+    ]
    }
   ]
  },
@@ -3649,12 +4320,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "Antwerp",
+    "gap": "English cloth",
     "alt": [],
     "d": [
-     "Hamburg",
-     "Lisbon",
-     "Venice"
+     "English wool",
+     "Flemish cloth",
+     "English tin"
     ]
    },
    {
@@ -3677,6 +4348,16 @@
      "Venetian",
      "Swedish",
      "Genoese"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Dutch Revolt",
+    "alt": [],
+    "d": [
+     "Bohemian Revolt",
+     "Schmalkaldic War",
+     "Wars of Religion"
     ]
    }
   ]
@@ -3729,6 +4410,16 @@
      "Levant Company",
      "Eastland Company"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "John Hawkins",
+    "alt": [],
+    "d": [
+     "Francis Drake",
+     "Walter Raleigh",
+     "Humphrey Gilbert"
+    ]
    }
   ]
  },
@@ -3779,6 +4470,16 @@
      "30%",
      "50%",
      "90%"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "soldiers and sailors",
+    "alt": [],
+    "d": [
+     "merchants and weavers",
+     "farmers and labourers",
+     "priests and monks"
     ]
    }
   ]
@@ -3834,6 +4535,16 @@
      "mayors",
      "sheriffs"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Alms Act",
+    "alt": [],
+    "d": [
+     "Poor Law",
+     "Vagrancy Act",
+     "Enclosure Act"
+    ]
    }
   ]
  },
@@ -3886,6 +4597,16 @@
      "Lord Chancellor",
      "Secretary of State",
      "Lord Chamberlain"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "debasement",
+    "alt": [],
+    "d": [
+     "inflation",
+     "enclosure",
+     "taxation"
     ]
    }
   ]
@@ -3940,6 +4661,16 @@
      "ignoring",
      "inflating"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "subsidies",
+    "alt": [],
+    "d": [
+     "loans",
+     "benevolences",
+     "monopolies"
+    ]
    }
   ]
  },
@@ -3992,6 +4723,16 @@
      "temporary",
      "seasonal",
      "imported"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Book of Orders",
+    "alt": [],
+    "d": [
+     "Statute of Artificers",
+     "Poor Law",
+     "Alms Act"
     ]
    }
   ]
@@ -4046,6 +4787,16 @@
      "in surplus",
      "heavily taxed"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "£126,000",
+    "alt": [],
+    "d": [
+     "£12,600",
+     "£260,000",
+     "£1 million"
+    ]
    }
   ]
  },
@@ -4096,6 +4847,16 @@
      "Hawkins",
      "Frobisher",
      "Raleigh"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Spanish Fury",
+    "alt": [],
+    "d": [
+     "Sack of Rome",
+     "Armada",
+     "Treaty of Nonsuch"
     ]
    }
   ]
@@ -4148,6 +4909,16 @@
      "forced loans",
      "purveyance"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "cloth-making",
+    "alt": [],
+    "d": [
+     "shipbuilding",
+     "metalworking",
+     "tanning"
+    ]
    }
   ]
  },
@@ -4198,6 +4969,16 @@
      "1597",
      "1603",
      "1572"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Poor Rate",
+    "alt": [],
+    "d": [
+     "Poor Tax",
+     "Church Rate",
+     "Land Tax"
     ]
    }
   ]
@@ -4252,6 +5033,16 @@
      "Oxford",
      "Stafford"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "banned begging",
+    "alt": [],
+    "d": [
+     "taxed begging",
+     "licensed begging",
+     "punished vagrants"
+    ]
    }
   ]
  },
@@ -4302,6 +5093,16 @@
      "£7,500",
      "£175,000",
      "£750,000"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "triple subsidy",
+    "alt": [],
+    "d": [
+     "single subsidy",
+     "quadruple subsidy",
+     "half subsidy"
     ]
    }
   ]
@@ -4354,6 +5155,16 @@
      "forgive",
      "finance"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Poor Law",
+    "alt": [],
+    "d": [
+     "Alms Act",
+     "Vagrancy Act",
+     "Settlement Act"
+    ]
    }
   ]
  },
@@ -4404,6 +5215,16 @@
      "Greenwich",
      "Dover",
      "Plymouth"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "fireships",
+    "alt": [],
+    "d": [
+     "cannon",
+     "galleasses",
+     "boarding parties"
     ]
    }
   ]
@@ -4456,6 +5277,16 @@
      "Lutheranism",
      "Anglicanism"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "treasure fleet",
+    "alt": [],
+    "d": [
+     "Spanish ports",
+     "Portuguese colonies",
+     "Dutch harbours"
+    ]
    }
   ]
  },
@@ -4507,6 +5338,16 @@
      "Armada Speech",
      "Rainbow Speech"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "annulled",
+    "alt": [],
+    "d": [
+     "extended",
+     "defended",
+     "renewed"
+    ]
    }
   ]
  },
@@ -4557,6 +5398,16 @@
      "force",
      "patronage",
      "bribery"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Royal Prerogative",
+    "alt": [],
+    "d": [
+     "Common Law",
+     "Statute Law",
+     "Church Law"
     ]
    }
   ]
@@ -4612,6 +5463,16 @@
      "single",
      "fixed"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "subsidy bill",
+    "alt": [],
+    "d": [
+     "treason bill",
+     "poor bill",
+     "enclosure bill"
+    ]
    }
   ]
  },
@@ -4665,6 +5526,16 @@
      "Burke",
      "MacCarthy"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Munster",
+    "alt": [],
+    "d": [
+     "Ulster",
+     "Leinster",
+     "Connaught"
+    ]
    }
   ]
  },
@@ -4715,6 +5586,16 @@
      "Raleigh",
      "Grey",
      "Drake"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "unauthorised truce",
+    "alt": [],
+    "d": [
+     "negotiated peace",
+     "agreed ceasefire",
+     "royal pardon"
     ]
    }
   ]
@@ -4771,6 +5652,16 @@
      "Leinster",
      "Connaught"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "plantations",
+    "alt": [],
+    "d": [
+     "garrisons",
+     "missions",
+     "pardons"
+    ]
    }
   ]
  },
@@ -4824,6 +5715,16 @@
      "Corunna",
      "Calais"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Robert Cecil",
+    "alt": [],
+    "d": [
+     "William Cecil",
+     "Walter Raleigh",
+     "Thomas Egerton"
+    ]
    }
   ]
  },
@@ -4874,6 +5775,16 @@
      "wool exports",
      "salt",
      "starch"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Mountjoy",
+    "alt": [],
+    "d": [
+     "Raleigh",
+     "Burghley",
+     "Howard"
     ]
    }
   ]
@@ -4930,6 +5841,16 @@
      "March 1601",
      "February 1602"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "James VI",
+    "alt": [],
+    "d": [
+     "Philip III",
+     "Henry IV",
+     "Arbella Stuart"
+    ]
    }
   ]
  },
@@ -4980,6 +5901,16 @@
      "benevolences",
      "purveyances",
      "tithes"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "doubled",
+    "alt": [],
+    "d": [
+     "halved",
+     "trebled",
+     "quadrupled"
     ]
    }
   ]
@@ -5034,6 +5965,16 @@
      "wealth",
      "wisdom"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Rainbow Portrait",
+    "alt": [],
+    "d": [
+     "Ditchley Portrait",
+     "Armada Portrait",
+     "Coronation Portrait"
+    ]
    }
   ]
  },
@@ -5086,6 +6027,16 @@
      "Britannia",
      "Boadicea",
      "Minerva"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Accession Day",
+    "alt": [],
+    "d": [
+     "Coronation Day",
+     "Victory Day",
+     "Jubilee Day"
     ]
    }
   ]
@@ -5140,6 +6091,16 @@
      "trade unions",
      "education"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Marx and Engels",
+    "alt": [],
+    "d": [
+     "Lenin and Trotsky",
+     "Hegel and Smith",
+     "Bakunin and Proudhon"
+    ]
    }
   ]
  },
@@ -5191,6 +6152,16 @@
      "free trade",
      "national security"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "individual liberty",
+    "alt": [],
+    "d": [
+     "collective duty",
+     "state planning",
+     "social equality"
+    ]
    }
   ]
  },
@@ -5241,6 +6212,16 @@
      "Versailles",
      "Locarno",
      "Yalta"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "show trials",
+    "alt": [],
+    "d": [
+     "famines",
+     "treaties",
+     "tariffs"
     ]
    }
   ]
@@ -5295,6 +6276,16 @@
      "world revolution",
      "naval bases"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "self-determination",
+    "alt": [],
+    "d": [
+     "collective security",
+     "free trade",
+     "disarmament"
+    ]
    }
   ]
  },
@@ -5346,6 +6337,16 @@
      "fear of Japanese intentions",
      "respect for Western leaders"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Balkans",
+    "alt": [],
+    "d": [
+     "Baltic",
+     "Mediterranean",
+     "Pacific"
+    ]
    }
   ]
  },
@@ -5396,6 +6397,16 @@
      "land reform",
      "disarmament",
      "reparations"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "government in exile",
+    "alt": [],
+    "d": [
+     "puppet government",
+     "provisional council",
+     "national assembly"
     ]
    }
   ]
@@ -5450,6 +6461,16 @@
      "free trade",
      "disarmament"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Romania",
+    "alt": [],
+    "d": [
+     "Poland",
+     "Albania",
+     "Czechoslovakia"
+    ]
    }
   ]
  },
@@ -5500,6 +6521,16 @@
      "hostile",
      "short",
      "secretive"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "D-Day",
+    "alt": [],
+    "d": [
+     "VE Day",
+     "Operation Torch",
+     "Operation Husky"
     ]
    }
   ]
@@ -5552,6 +6583,16 @@
      "Krakow Council",
      "Gdansk Committee"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "$20 billion",
+    "alt": [],
+    "d": [
+     "$2 billion",
+     "$200 billion",
+     "$10 billion"
+    ]
    }
   ]
  },
@@ -5603,6 +6644,16 @@
      "V-2 rocket",
      "jet fighter"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Versailles",
+    "alt": [],
+    "d": [
+     "Locarno",
+     "Dawes",
+     "Brest-Litovsk"
+    ]
    }
   ]
  },
@@ -5653,6 +6704,16 @@
      "Greece",
      "Finland",
      "Austria"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Baltic states",
+    "alt": [],
+    "d": [
+     "Balkan states",
+     "Nordic states",
+     "Slavic states"
     ]
    }
   ]
@@ -5707,6 +6768,16 @@
      "dominated",
      "abstained"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Korean War",
+    "alt": [],
+    "d": [
+     "Berlin Blockade",
+     "Suez Crisis",
+     "Cuban Missile Crisis"
+    ]
    }
   ]
  },
@@ -5759,6 +6830,16 @@
      "imperialist butcher",
      "enemy of peace",
      "puppet of Wall Street"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Trieste",
+    "alt": [],
+    "d": [
+     "Venice",
+     "Rijeka",
+     "Bari"
     ]
    }
   ]
@@ -5813,6 +6894,16 @@
      "Kadar",
      "Ulbricht"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "coalitions",
+    "alt": [],
+    "d": [
+     "trade unions",
+     "treaties",
+     "parliaments"
+    ]
    }
   ]
  },
@@ -5863,6 +6954,16 @@
      "Comecon",
      "the UN",
      "Cominform"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "38%",
+    "alt": [],
+    "d": [
+     "18%",
+     "58%",
+     "28%"
     ]
    }
   ]
@@ -5917,6 +7018,16 @@
      "rollback",
      "deterrence"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "world domination",
+    "alt": [],
+    "d": [
+     "nuclear first strike",
+     "economic collapse",
+     "European conquest"
+    ]
    }
   ]
  },
@@ -5969,6 +7080,16 @@
      "imperialism",
      "appeasement",
      "neutrality"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Congress",
+    "alt": [],
+    "d": [
+     "the Senate",
+     "the United Nations",
+     "the Cabinet"
     ]
    }
   ]
@@ -6024,6 +7145,16 @@
      "Wall Street Tyranny",
      "American Empire"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "re-industrialisation",
+    "alt": [],
+    "d": [
+     "demilitarisation",
+     "de-Nazification",
+     "nationalisation"
+    ]
    }
   ]
  },
@@ -6074,6 +7205,16 @@
      "joining NATO",
      "paying reparations",
      "using Comecon"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "independent foreign policies",
+    "alt": [],
+    "d": [
+     "independent legal systems",
+     "elected governments",
+     "national armies"
     ]
    }
   ]
@@ -6126,6 +7267,16 @@
      "50 miles",
      "200 miles"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "weak Germany",
+    "alt": [],
+    "d": [
+     "neutral Germany",
+     "rearmed Germany",
+     "federal Germany"
+    ]
    }
   ]
  },
@@ -6176,6 +7327,16 @@
      "October 1948",
      "May 1950",
      "August 1949"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Federal Republic",
+    "alt": [],
+    "d": [
+     "Free Republic",
+     "People's Republic",
+     "Weimar Republic"
     ]
    }
   ]
@@ -6230,6 +7391,16 @@
      "1989",
      "1995"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "quotas",
+    "alt": [],
+    "d": [
+     "tariffs",
+     "rents",
+     "taxes"
+    ]
    }
   ]
  },
@@ -6282,6 +7453,16 @@
      "May 1949",
      "May 1952",
      "May 1959"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Soviet atomic test",
+    "alt": [],
+    "d": [
+     "Suez Crisis",
+     "Sputnik launch",
+     "U-2 incident"
     ]
    }
   ]
@@ -6336,6 +7517,16 @@
      "Comecon intervention",
      "Cominform action"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "legalised",
+    "alt": [],
+    "d": [
+     "prohibited",
+     "financed",
+     "limited"
+    ]
    }
   ]
  },
@@ -6388,6 +7579,16 @@
      "profitable",
      "limited",
      "winnable"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Rosenbergs",
+    "alt": [],
+    "d": [
+     "Hiss ring",
+     "Cambridge Five",
+     "Philby ring"
     ]
    }
   ]
@@ -6442,6 +7643,16 @@
      "limited containment",
      "graduated rollback"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Kennedy",
+    "alt": [],
+    "d": [
+     "Johnson",
+     "Nixon",
+     "Truman"
+    ]
    }
   ]
  },
@@ -6492,6 +7703,16 @@
      "Kennan",
      "Gaddis",
      "Leffler"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "democratic",
+    "alt": [],
+    "d": [
+     "communist",
+     "federal",
+     "monarchical"
     ]
    }
   ]
@@ -6548,6 +7769,16 @@
      "Berlin Rising",
      "Czech Coup"
     ]
+   },
+   {
+    "p": 3,
+    "gap": "Hungarian Uprising",
+    "alt": [],
+    "d": [
+     "Prague Spring",
+     "Berlin Rising",
+     "Suez Crisis"
+    ]
    }
   ]
  },
@@ -6599,6 +7830,16 @@
      "neutral",
      "indifferent"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "imprisoned",
+    "alt": [],
+    "d": [
+     "exiled",
+     "executed",
+     "dismissed"
+    ]
    }
   ]
  },
@@ -6633,14 +7874,12 @@
    },
    {
     "p": 2,
-    "gap": "Nagy",
-    "alt": [
-     "Imre Nagy"
-    ],
+    "gap": "one-party state",
+    "alt": [],
     "d": [
-     "Kadar",
-     "Gero",
-     "Gomulka"
+     "censorship",
+     "state farms",
+     "military rule"
     ]
    },
    {
@@ -6651,6 +7890,16 @@
      "Comecon",
      "Cominform",
      "NATO"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "collectivisation",
+    "alt": [],
+    "d": [
+     "conscription",
+     "rationing",
+     "nationalisation"
     ]
    }
   ]
@@ -6703,6 +7952,16 @@
      "neutral",
      "expansionist"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Kadar",
+    "alt": [],
+    "d": [
+     "Gomulka",
+     "Rakosi",
+     "Ulbricht"
+    ]
    }
   ]
  },
@@ -6753,6 +8012,16 @@
      "Hallstein Plan",
      "Adenauer Doctrine",
      "Brandt Doctrine"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "ground forces",
+    "alt": [],
+    "d": [
+     "naval forces",
+     "air forces",
+     "nuclear forces"
     ]
    }
   ]
@@ -6807,6 +8076,16 @@
      "Camp David Summit",
      "Moscow Summit"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Berlin Ultimatum",
+    "alt": [],
+    "d": [
+     "Berlin Blockade",
+     "Berlin Declaration",
+     "Berlin Accord"
+    ]
    }
   ]
  },
@@ -6857,6 +8136,16 @@
      "November 1988",
      "August 1989",
      "March 1990"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "barbed wire",
+    "alt": [],
+    "d": [
+     "sandbags",
+     "concrete blocks",
+     "steel fencing"
     ]
    }
   ]
@@ -6909,6 +8198,16 @@
      "trade war",
      "ideological debate"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Armstrong and Aldrin",
+    "alt": [],
+    "d": [
+     "Gagarin and Titov",
+     "Shepard and Glenn",
+     "Collins and Lovell"
+    ]
    }
   ]
  },
@@ -6960,6 +8259,16 @@
      "5,000",
      "2 million"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "censorship",
+    "alt": [],
+    "d": [
+     "tariffs",
+     "collectivisation",
+     "conscription"
+    ]
    }
   ]
  },
@@ -6984,12 +8293,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "intervene",
+    "gap": "socialism",
     "alt": [],
     "d": [
-     "negotiate",
-     "withdraw",
-     "annex"
+     "capitalism",
+     "nationalism",
+     "democracy"
     ]
    },
    {
@@ -7010,6 +8319,16 @@
      "1985",
      "1991",
      "1979"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Albania",
+    "alt": [],
+    "d": [
+     "Bulgaria",
+     "Hungary",
+     "East Germany"
     ]
    }
   ]
@@ -7061,6 +8380,16 @@
      "Geneva Summit",
      "Vienna Summit",
      "Camp David Summit"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Cambridge Five",
+    "alt": [],
+    "d": [
+     "Oxford Four",
+     "Cambridge Four",
+     "Bletchley Five"
     ]
    }
   ]
@@ -7115,6 +8444,16 @@
      "appeasement",
      "rollback"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Aldrich Ames",
+    "alt": [],
+    "d": [
+     "Robert Hanssen",
+     "John Walker",
+     "Kim Philby"
+    ]
    }
   ]
  },
@@ -7168,6 +8507,16 @@
      "Kania",
      "Gomulka"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Gdansk",
+    "alt": [],
+    "d": [
+     "Warsaw",
+     "Krakow",
+     "Poznan"
+    ]
    }
   ]
  },
@@ -7218,6 +8567,16 @@
      "first-strike",
      "conventional",
      "missile defence"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "brinkmanship",
+    "alt": [],
+    "d": [
+     "containment",
+     "appeasement",
+     "isolationism"
     ]
    }
   ]
@@ -7272,6 +8631,16 @@
      "START I",
      "INF Treaty"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "submarine-launched missiles",
+    "alt": [],
+    "d": [
+     "cruise missiles",
+     "bomber aircraft",
+     "tactical weapons"
+    ]
    }
   ]
  },
@@ -7322,6 +8691,16 @@
      "Apollo 11",
      "Gemini-Vostok",
      "Vostok-Mercury"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "inviolable",
+    "alt": [],
+    "d": [
+     "negotiable",
+     "provisional",
+     "adjustable"
     ]
    }
   ]
@@ -7374,6 +8753,16 @@
      "GRU",
      "Gestapo"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Oder-Neisse",
+    "alt": [],
+    "d": [
+     "Elbe",
+     "Rhine",
+     "Danube"
+    ]
    }
   ]
  },
@@ -7424,6 +8813,16 @@
      "Iran",
      "India",
      "China"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Operation Cyclone",
+    "alt": [],
+    "d": [
+     "Operation Condor",
+     "Operation Ajax",
+     "Operation Mongoose"
     ]
    }
   ]
@@ -7476,6 +8875,16 @@
      "détente",
      "Ostpolitik"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Carter",
+    "alt": [],
+    "d": [
+     "Reagan",
+     "Ford",
+     "Nixon"
+    ]
    }
   ]
  },
@@ -7526,6 +8935,16 @@
      "Able Archer 81",
      "Proud Prophet 83",
      "Red Dawn 83"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Pershing and Cruise",
+    "alt": [],
+    "d": [
+     "Polaris and Poseidon",
+     "Minuteman and Titan",
+     "Scud and Frog"
     ]
    }
   ]
@@ -7578,6 +8997,16 @@
      "Baltic Sea",
      "Panama Canal"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "Gorbachev",
+    "alt": [],
+    "d": [
+     "Brezhnev",
+     "Andropov",
+     "Yeltsin"
+    ]
    }
   ]
  },
@@ -7628,6 +9057,16 @@
      "1982",
      "1987",
      "1989"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "unrest",
+    "alt": [],
+    "d": [
+     "famine",
+     "emigration",
+     "mutiny"
     ]
    }
   ]
@@ -7680,6 +9119,16 @@
      "prosperity",
      "unity"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "private enterprise",
+    "alt": [],
+    "d": [
+     "foreign investment",
+     "state planning",
+     "free elections"
+    ]
    }
   ]
  },
@@ -7730,6 +9179,16 @@
      "downfall",
      "funding",
      "succession"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "INF Treaty",
+    "alt": [],
+    "d": [
+     "SALT II",
+     "START I",
+     "ABM Treaty"
     ]
    }
   ]
@@ -7784,6 +9243,16 @@
      "reformist governments",
      "Western armies"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Brezhnev Doctrine",
+    "alt": [],
+    "d": [
+     "Truman Doctrine",
+     "Monroe Doctrine",
+     "Carter Doctrine"
+    ]
    }
   ]
  },
@@ -7836,6 +9305,16 @@
      "Truman Doctrine",
      "Reagan Doctrine",
      "Carter Doctrine"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Round Table Agreements",
+    "alt": [],
+    "d": [
+     "Helsinki Accords",
+     "Camp David Accords",
+     "Potsdam Agreements"
     ]
    }
   ]
@@ -7890,6 +9369,16 @@
      "36",
      "46"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "Honecker",
+    "alt": [],
+    "d": [
+     "Ulbricht",
+     "Krenz",
+     "Kohl"
+    ]
    }
   ]
  },
@@ -7940,6 +9429,16 @@
      "1 January 1990",
      "1 July 1992",
      "1 January 1995"
+    ]
+   },
+   {
+    "p": 1,
+    "gap": "Charter 77",
+    "alt": [],
+    "d": [
+     "Solidarity",
+     "Helsinki Watch",
+     "Amnesty"
     ]
    }
   ]
@@ -7994,6 +9493,16 @@
      "southwards",
      "into Ukraine"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "1:1",
+    "alt": [],
+    "d": [
+     "2:1",
+     "3:1",
+     "5:1"
+    ]
    }
   ]
  },
@@ -8046,6 +9555,16 @@
      "12 states",
      "9 states",
      "25 states"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "Union Treaty",
+    "alt": [],
+    "d": [
+     "Warsaw Pact",
+     "Helsinki Accords",
+     "Brest-Litovsk"
     ]
    }
   ]
@@ -8102,6 +9621,16 @@
      "Primakov",
      "Zyuganov"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "oligarchs",
+    "alt": [],
+    "d": [
+     "kulaks",
+     "boyars",
+     "commissars"
+    ]
    }
   ]
  },
@@ -8154,6 +9683,16 @@
      "Geneva Accords",
      "Paris Accords",
      "Rambouillet Agreement"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "8,000",
+    "alt": [],
+    "d": [
+     "3,000",
+     "12,000",
+     "20,000"
     ]
    }
   ]
@@ -8210,6 +9749,16 @@
      "legal",
      "regional"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "heart of politics",
+    "alt": [],
+    "d": [
+     "royal court",
+     "Parliament",
+     "Privy Council"
+    ]
    }
   ]
  },
@@ -8261,6 +9810,16 @@
      "religion",
      "dynasty",
      "security"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Habsburg interests",
+    "alt": [],
+    "d": [
+     "English interests",
+     "Papal interests",
+     "French interests"
     ]
    }
   ]
@@ -8314,6 +9873,16 @@
      "fiscal",
      "monastic"
     ]
+   },
+   {
+    "p": 1,
+    "gap": "moral reformers",
+    "alt": [],
+    "d": [
+     "court officials",
+     "merchant lobbyists",
+     "gentry rebels"
+    ]
    }
   ]
  },
@@ -8366,6 +9935,16 @@
      "debate",
      "protest"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "enforcement",
+    "alt": [],
+    "d": [
+     "popularity",
+     "drafting",
+     "repeal"
+    ]
    }
   ]
  },
@@ -8417,6 +9996,16 @@
      "social",
      "gender",
      "religious"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "absence",
+    "alt": [],
+    "d": [
+     "presence",
+     "abundance",
+     "repetition"
     ]
    }
   ]
@@ -8472,6 +10061,16 @@
      "bishops' speeches",
      "trial transcripts"
     ]
+   },
+   {
+    "p": 2,
+    "gap": "years later",
+    "alt": [],
+    "d": [
+     "months later",
+     "decades later",
+     "within days"
+    ]
    }
   ]
  },
@@ -8523,6 +10122,16 @@
      "heresy",
      "taxation",
      "enclosure"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "Spanish marriage",
+    "alt": [],
+    "d": [
+     "Scottish marriage",
+     "French marriage",
+     "Danish marriage"
     ]
    }
   ]
