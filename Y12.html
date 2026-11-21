@@ -4960,7 +4960,7 @@ uptoRender(); xpRender();
     Object.keys(o).forEach(function (k) { if (!(PFX.test(k) || k === 'bs_ok') || typeof o[k] !== 'string') throw new Error('bad'); });
     return o;
   }
-  function post(o) { o.hub = HUB; return fetch(SYNC_URL, {method: 'POST', headers: {'Content-Type': 'text/plain'}, body: JSON.stringify(o)}).then(function (r) { return r.json(); }); }
+  function post(o, ka) { o.hub = HUB; return fetch(SYNC_URL, {method: 'POST', headers: {'Content-Type': 'text/plain'}, body: JSON.stringify(o), keepalive: !!ka}).then(function (r) { return r.json(); }); }
   function close() { var e = document.getElementById('hs-ov'); if (e) e.remove(); }
   function shell(title, inner) {
     close();
@@ -5058,15 +5058,16 @@ uptoRender(); xpRender();
   function ping(force) {
     try {
       var last = +localStorage.getItem('alevel_ping') || 0;
-      if (!force && Date.now() - last < 3 * 3600000) return;
+      if (!force && Date.now() - last < 60000) return;
       var id = localStorage.getItem('alevel_did');
       if (!id) { id = 'd-' + Math.random().toString(36).slice(2, 8) + Math.random().toString(36).slice(2, 6); localStorage.setItem('alevel_did', id); }
       localStorage.setItem('alevel_ping', String(Date.now()));
-      post({action: 'ping', id: id, stats: stats()}).catch(function () {});
+      post({action: 'ping', id: id, stats: stats()}, true).catch(function () {});
     } catch (e) {}
   }
   setTimeout(ping, 6000);
   document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') ping(); });
+  setInterval(function () { if (document.visibilityState === 'visible') ping(); }, 240000);
 })();
 </script>
 
