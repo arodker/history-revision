@@ -4920,15 +4920,15 @@ uptoRender(); xpRender();
   setInterval(tick, TICK * 1000);
   // Totals over the last 14 days, sent with the usage numbers: seconds per hour of day, per weekday (Monday first), per feature, plus sessions and active days.
   window.hsUsage = function () {
-    var o = cache || load(), h = new Array(24).fill(0), w = new Array(7).fill(0), f = {}, s = 0, t = 0, days = 0;
+    var o = cache || load(), h = new Array(24).fill(0), w = new Array(7).fill(0), hw = new Array(168).fill(0), f = {}, s = 0, t = 0, days = 0;
     Object.keys(o.d).forEach(function (k) {
       var d = o.d[k], p = k.split('-'), wd = (new Date(+p[0], +p[1] - 1, +p[2]).getDay() + 6) % 7;
       if (!d.t) return;
       days++; s += d.s || 0; t += d.t;
-      Object.keys(d.h).forEach(function (x) { h[+x] += d.h[x]; w[wd] += d.h[x]; });
+      Object.keys(d.h).forEach(function (x) { h[+x] += d.h[x]; w[wd] += d.h[x]; hw[wd * 24 + +x] += d.h[x]; });
       Object.keys(d.f).forEach(function (x) { var nm = NAMES[x] || x; f[nm] = (f[nm] || 0) + d.f[x]; });
     });
-    return {h: h, w: w, f: f, s: s, t: t, days: days};
+    return {h: h, w: w, hw: hw, f: f, s: s, t: t, days: days};
   };
 })();
 </script>
