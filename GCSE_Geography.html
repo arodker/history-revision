@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>if(localStorage.getItem('geo_dark')=='1')document.documentElement.classList.add('dark');
 /* ---------- Move progress between devices ---------- */
-function pmKeys() { const k = []; for (let i = 0; i < localStorage.length; i++) { const n = localStorage.key(i); if (n && (/^geo_/.test(n) || n === 'geo_bs_ok') && n !== 'geo_tour_done' && n !== 'geo_did' && n !== 'geo_ping' && n !== 'geo_loaded') k.push(n); } return k; }
+function pmKeys() { const k = []; for (let i = 0; i < localStorage.length; i++) { const n = localStorage.key(i); if (n && (/^geo_/.test(n) || n === 'geo_bs_ok') && n !== 'geo_use' && n !== 'geo_tour_done' && n !== 'geo_did' && n !== 'geo_ping' && n !== 'geo_loaded') k.push(n); } return k; }
 function pmB64(bytes) { let s = ''; bytes.forEach(b => s += String.fromCharCode(b)); return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); }
 function pmUnb64(str) { const s = atob(str.replace(/-/g, '+').replace(/_/g, '/')); return Uint8Array.from(s, c => c.charCodeAt(0)); }
 async function pmMake() {
@@ -28,6 +28,7 @@ async function pmParse(code) {
 }
 const SYNC_URL = 'https://script.google.com/macros/s/AKfycbxK8TeIKnstO8SC-PbPdasW5G-iw6mpsFoOfZhCqvftJ_iY_4m9TG9XNgoXtuIqts6S/exec';
 function syncPost(o) {
+  o.hub = 'geog';
   return fetch(SYNC_URL, {method: 'POST', headers: {'Content-Type': 'text/plain'}, body: JSON.stringify(o)}).then(r => r.json());
 }
 function pmClose() { const e = document.getElementById('pm-ov'); if (e) e.remove(); }
@@ -54,7 +55,7 @@ async function pmSaveUI(long) {
       '<div style="text-align:center;font-size:.85rem;color:var(--muted)">On your other device, tap ⚙️ then Load progress and type this code. It works for 7 days.</div>' +
       '<div id="pm-msg" style="font-size:.85rem;min-height:1.2rem;margin:.5rem 0;text-align:center"></div>' +
       '<button class="pr-start" onclick="pmCopy(\'pm-code\')">Copy code</button>' +
-      '<div style="margin-top:1rem;font-size:.75rem;color:var(--muted)">No connection? <a href="#" onclick="pmSaveUI(true);return false" style="' + PM_LINK + '">Use a long code instead</a>. The hub also sends anonymous usage numbers (no names) to help improve it.</div>');
+      '<div style="margin-top:1rem;font-size:.75rem;color:var(--muted)">No connection? <a href="#" onclick="pmSaveUI(true);return false" style="' + PM_LINK + '">Use a long code instead</a>. The hub also sends anonymous usage numbers (no names), including when it is used and which features, to help improve it.</div>');
     pmGetCode();
   } else {
     let code = ''; try { code = await pmMake(); } catch (e) {}
@@ -152,10 +153,12 @@ function usageStats() {
   const x = xpLoad(), t0 = new Date();
   let d14 = 0;
   for (let i = 0; i < 14; i++) { const d = new Date(t0); d.setDate(d.getDate() - i); const k = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); if (x.days[k] > 0) d14++; }
-  let weak = []; try { weak = unitFlags(x).filter(u => u.flag === 'weak').slice(0, 5).map(u => u.c.paper + '|' + u.c.unit); } catch (e) {}
+  let weak = []; try { weak = unitFlags(x).filter(u => u.flag === 'weak').slice(0, 5).map(u => (P[u.c.paper] && P[u.c.paper].label) || u.c.unit); } catch (e) {}
   let badges = 0; try { const b = JSON.parse(localStorage.getItem(LS_BADGES) || '{}'); badges = Array.isArray(b) ? b.length : Object.keys(b).length; } catch (e) {}
-  let miss = []; try { miss = Object.keys(x.miss || {}).map(k => [k, String(x.miss[k].label || '').slice(0, 90), x.miss[k].paper || '', x.miss[k].n || 0]).sort((p, q) => q[3] - p[3]).slice(0, 10); } catch (e) {}
-  return {xp: x.total, level: xpLevelIdx(x.total), days14: d14, badges: badges, acc: x.acc, pos: uptoPos(), weak: weak, miss: miss};
+  let miss = []; try { miss = Object.keys(x.miss || {}).map(k => [k, String(x.miss[k].label || '').slice(0, 90), (P[x.miss[k].paper] && P[x.miss[k].paper].label) || x.miss[k].paper || '', x.miss[k].n || 0]).sort((p, q) => q[3] - p[3]).slice(0, 10); } catch (e) {}
+  let use = null; try { use = window.hsUsage(); } catch (e) {}
+  let posL = ''; try { posL = uptoLabel(uptoPos()); } catch (e) {}
+  return {xp: x.total, level: xpLevelIdx(x.total), lvlName: (XP_LEVELS[xpLevelIdx(x.total)] || {}).t || '', days14: d14, badges: badges, acc: x.acc, pos: uptoPos(), posL: posL, weak: weak, miss: miss, use: use};
 }
 function usagePing(force) {
   if (!SYNC_URL) return;
@@ -6233,6 +6236,56 @@ uptoRender();
     var seen=false;try{seen=localStorage.getItem(KEY)==='1'}catch(e){}
     if(!seen)setTimeout(function(){if($('#s-pick.active'))startHere(true)},900);
   });
+})();
+</script>
+<script>
+/* ---------- Anonymous usage timing: when the hub is used and which features, in active seconds ---------- */
+(function () {
+  var KEY = 'geo_use', IDLE = 90000, TICK = 5, NEW_SESSION = 30 * 60000;
+  var NAMES = {home: 'Home and menus', guide: 'Revision guide', flash: 'Flashcards', dates: 'Key dates quiz', exam: 'Exam practice', rapid: 'Mixed retrieval quiz', stat: 'Stat Attack', arcade: 'Arcade games', progress: 'Progress page', parent: 'Parent page'};
+  var lastInput = Date.now(), cache = null;
+  ['pointerdown', 'keydown', 'touchstart', 'scroll', 'wheel'].forEach(function (e) { window.addEventListener(e, function () { lastInput = Date.now(); }, {passive: true, capture: true}); });
+  function dayKey(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+  function load() { try { var o = JSON.parse(localStorage.getItem(KEY) || 'null'); if (o && o.d) return o; } catch (e) {} return {d: {}, last: 0}; }
+  function shown(id) { var e = document.getElementById(id); return !!(e && e.style.display !== 'none' && e.offsetParent !== null); }
+  function feature() {
+    var s = document.querySelector('.screen.active'); if (!s) return 'home';
+    var id = s.id;
+    if (id === 's-main') {
+      if (shown('mode-flashcard')) return 'flash';
+      if (shown('mode-dates')) return 'dates';
+      if (shown('mode-exam')) return 'exam';
+      if (shown('mode-knowledge')) return 'guide';
+      return 'home';
+    }
+    return {'s-rapid': 'rapid', 's-stat': 'stat', 's-arcade': 'arcade', 's-progress': 'progress', 's-parent': 'parent'}[id] || 'home';
+  }
+  function tick() {
+    if (document.visibilityState !== 'visible') return;
+    var now = Date.now();
+    if (now - lastInput > IDLE) return;
+    var o = cache || (cache = load()), n = new Date(now), k = dayKey(n);
+    var day = o.d[k] || (o.d[k] = {h: {}, f: {}, s: 0, t: 0});
+    if (!o.last || now - o.last > NEW_SESSION) day.s++;
+    o.last = now;
+    var h = n.getHours(), f = feature();
+    day.h[h] = (day.h[h] || 0) + TICK; day.f[f] = (day.f[f] || 0) + TICK; day.t += TICK;
+    var ks = Object.keys(o.d).sort(); while (ks.length > 14) delete o.d[ks.shift()];
+    try { localStorage.setItem(KEY, JSON.stringify(o)); } catch (e) {}
+  }
+  setInterval(tick, TICK * 1000);
+  // Totals over the last 14 days, sent with the usage numbers: seconds per hour of day, per weekday (Monday first), per feature, plus sessions and active days.
+  window.hsUsage = function () {
+    var o = cache || load(), h = new Array(24).fill(0), w = new Array(7).fill(0), f = {}, s = 0, t = 0, days = 0;
+    Object.keys(o.d).forEach(function (k) {
+      var d = o.d[k], p = k.split('-'), wd = (new Date(+p[0], +p[1] - 1, +p[2]).getDay() + 6) % 7;
+      if (!d.t) return;
+      days++; s += d.s || 0; t += d.t;
+      Object.keys(d.h).forEach(function (x) { h[+x] += d.h[x]; w[wd] += d.h[x]; });
+      Object.keys(d.f).forEach(function (x) { var nm = NAMES[x] || x; f[nm] = (f[nm] || 0) + d.f[x]; });
+    });
+    return {h: h, w: w, f: f, s: s, t: t, days: days};
+  };
 })();
 </script>
 </body>
