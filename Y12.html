@@ -13,7 +13,7 @@ html{font-size:clamp(17px,.9vw + 8px,24px)}
   --bg:#f8f7f4;--surface:#fff;--card:#fafaf8;--border:#e8e7e2;--border2:#ddddd8;
   --text:#1a1a18;--muted:#6b6b68;--muted2:#5f5e5a;--subtle:#eeede8;
   --tag-bg:#eeede8;--tag-col:#5f5e5a;--input-bg:#fff;
-  --mtc:#4E8A20;--edward:#2A6BC8;--mary:#C82A2A;--elizabeth:#1D9E75;--coldwar:#C47B1A;
+  --mtc:#534AB7;--edward:#2A6BC8;--mary:#C82A2A;--elizabeth:#1D9E75;--coldwar:#C47B1A;
   --paper:#FBF6E9;--paper-edge:#E1D6B6;
 }
 :root.dark body{
@@ -49,8 +49,8 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
 .tb-btn{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;padding:0 .7rem;font-size:.85rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;text-decoration:none;transition:background .15s,color .15s}
 .tb-btn:hover{background:var(--subtle);color:var(--text)}
 .yr-pill{background:#1A6B5A;color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.25rem .6rem;border-radius:8px}
-.pb-mtc{background:#F0F7E4;color:#35591A;border-color:#8BC34A}
-.pb-mtc:hover{background:#e3efd0}
+.pb-mtc{background:#EEEDFE;color:#3C3489;border-color:#7F77DD}
+.pb-mtc:hover{background:#dddbfa}
 .pb-liz{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
 .pb-liz:hover{background:#c8edde}
 .pb-cw{background:#FEF3DC;color:#7a4e00;border-color:#C47B1A}
@@ -61,7 +61,7 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
 .back-btn{padding:.35rem .7rem;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
 .back-btn:hover{background:var(--subtle)}
 .section-badge{font-size:.8rem;font-weight:700;padding:5px 12px;border-radius:20px}
-.bg-mtc{background:#F0F7E4;color:#35591A}
+.bg-mtc{background:#EEEDFE;color:#3C3489}
 .bg-liz{background:#E1F5EE;color:#0F6E56}
 .bg-cw{background:#FEF3DC;color:#7a4e00}
 .mode-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.25rem}
@@ -73,13 +73,13 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem}
 /* FILTERS */
 .filter-row{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
 select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);border-radius:8px;background:var(--input-bg);color:var(--text);cursor:pointer;flex:1;min-width:140px;font-family:inherit}
-.sel-mtc{background:#F0F7E4;color:#35591A;border-color:#8BC34A}
+.sel-mtc{background:#EEEDFE;color:#3C3489;border-color:#7F77DD}
 .sel-liz{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
 
 /* BUTTONS */
 .btn-go{width:100%;padding:.77rem;font-size:.95rem;font-weight:700;border:none;border-radius:10px;cursor:pointer;margin-bottom:1.25rem;transition:opacity .15s;color:#fff;font-family:inherit}
 .btn-go:hover{opacity:.9}
-.c-mtc{background:#4E8A20}.c-liz{background:#1D9E75}.c-cw{background:#C47B1A}
+.c-mtc{background:#534AB7}.c-liz{background:#1D9E75}.c-cw{background:#C47B1A}
 .btn-sm{padding:.41rem .82rem;font-size:.8rem;font-weight:500;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer;transition:background .12s;font-family:inherit}
 .btn-sm:hover{background:var(--subtle)}
 .btn-sm.muted-btn{background:var(--subtle);color:var(--text);border-color:var(--border2)}
@@ -87,15 +87,15 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 /* CARD */
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.25rem;margin-bottom:.75rem;position:relative;overflow:hidden}
 .stripe{position:absolute;left:0;top:0;bottom:0;width:4px}
-.s-edward{background:#6B9DE8}.s-mary{background:#E87A6B}.s-mtc{background:#8BC34A}.s-elizabeth{background:#1D9E75}
+.s-edward{background:#6B9DE8}.s-mary{background:#E87A6B}.s-mtc{background:#7F77DD}.s-elizabeth{background:#1D9E75}
 .inner{padding-left:.5rem}
 .meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.6rem}
 .tag{font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:20px}
 .t-grey{background:var(--tag-bg);color:var(--tag-col)}
 .t-edward{background:#EEF3FB;color:#1B4B9A}.t-mary{background:#FBF0EE;color:#9A1B1B}
-.t-mtc{background:#F0F7E4;color:#35591A}.t-elizabeth{background:#E1F5EE;color:#0F6E56}
+.t-mtc{background:#EEEDFE;color:#3C3489}.t-elizabeth{background:#E1F5EE;color:#0F6E56}
 .t-coldwar{background:#FEF3DC;color:#7a4e00}
-.sel-mtc{background:#F0F7E4;color:#35591A;border-color:#8BC34A}
+.sel-mtc{background:#EEEDFE;color:#3C3489;border-color:#7F77DD}
 .sel-liz{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
 .sel-cw{background:#FEF3DC;color:#7a4e00;border-color:#C47B1A}
 .card-heading{font-size:1.05rem;font-weight:700;margin-bottom:.5rem;line-height:1.3;text-decoration:underline;text-underline-offset:3px}
@@ -129,7 +129,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 /* QUIZ */
 .quiz-prog{height:4px;background:var(--subtle);border-radius:2px;margin-bottom:1rem;overflow:hidden}
 .quiz-fill{height:100%;border-radius:2px;transition:width .3s}
-.fill-mtc{background:#4E8A20}.fill-liz{background:#1D9E75}.fill-cw{background:#C47B1A}
+.fill-mtc{background:#534AB7}.fill-liz{background:#1D9E75}.fill-cw{background:#C47B1A}
 .quiz-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
 .quiz-hdr-l{font-size:.8rem;color:var(--muted)}
 .sc-row{display:flex;gap:6px}
@@ -161,7 +161,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .rf-pill{padding:6px 12px;font-size:.78rem;font-weight:600;border:1.5px solid var(--border2);border-radius:20px;cursor:pointer;background:var(--surface);color:var(--muted);font-family:inherit;transition:all .15s}
 .rf-pill.on-edward{background:#EEF3FB;color:#1B4B9A;border-color:#6B9DE8}
 .rf-pill.on-mary{background:#FBF0EE;color:#9A1B1B;border-color:#E87A6B}
-.rf-pill.on-mtc{background:#F0F7E4;color:#35591A;border-color:#8BC34A}
+.rf-pill.on-mtc{background:#EEEDFE;color:#3C3489;border-color:#7F77DD}
 .rf-pill.on-coldwar{background:#FEF3DC;color:#7a4e00;border-color:#C47B1A}
 .rf-pill.on-elizabeth{background:#E1F5EE;color:#0F6E56;border-color:#1D9E75}
 .count-row{display:flex;gap:8px;margin-bottom:1rem}
@@ -252,7 +252,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .src-prompt-list li{font-size:.86rem;line-height:1.6;padding:.5rem 0;border-bottom:1px dashed var(--border);display:flex;gap:.55rem}
 .src-prompt-list li:last-child{border-bottom:none}
 .src-prompt-list li::before{content:'→';color:var(--muted);flex-shrink:0;font-weight:700}
-.src-random-btn{display:flex;align-items:center;justify-content:center;gap:.4rem;width:100%;padding:.45rem .85rem;margin:.5rem 0 .65rem;background:rgba(78,138,32,.1);color:var(--mtc);border:1px solid var(--mtc);border-radius:8px;font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s,color .15s,border-color .15s;letter-spacing:.01em}
+.src-random-btn{display:flex;align-items:center;justify-content:center;gap:.4rem;width:100%;padding:.45rem .85rem;margin:.5rem 0 .65rem;background:rgba(83,74,183,.1);color:var(--mtc);border:1px solid var(--mtc);border-radius:8px;font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s,color .15s,border-color .15s;letter-spacing:.01em}
 .src-random-btn:hover{background:var(--mtc);color:#fff}
 .src-random-btn:active{transform:scale(.99)}
 :root.dark .src-random-btn{background:rgba(151,95,215,.18);color:#C5A8EE;border-color:#9B72D8}
@@ -839,6 +839,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .flg-lv{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'><rect width='30' height='20' fill='%239E3039'/><rect y='8' width='30' height='4' fill='%23fff'/></svg>")}
 .flg-ee{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'><rect width='30' height='7' fill='%230072CE'/><rect y='7' width='30' height='6' fill='%23000'/><rect y='13' width='30' height='7' fill='%23fff'/></svg>")}
 </style>
+<style>.up-ticks{display:none!important}</style>
 </head>
 <body>
 <div id="fd-toast"></div>
@@ -884,13 +885,12 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   </div></div></div></div>
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
   <style>@keyframes gapglow{0%,100%{box-shadow:0 0 0 0 rgba(83,74,183,0)}50%{box-shadow:0 0 0 5px rgba(83,74,183,.3)}}#gap-flag{animation:gapglow 2s ease-in-out infinite}@media (prefers-reduced-motion:reduce){#gap-flag{animation:none}}</style>
-  <div id="gap-flag" style="display:none;background:#EEEDFE;border-radius:10px;padding:.6rem .75rem;margin:.2rem auto .6rem;width:fit-content;max-width:88%;color:#3C3489;font-size:.84rem;line-height:1.4;gap:.5rem;text-align:center;justify-content:center;align-items:center"><span>🆕</span><span><b>Try this:</b> Flashcards now have a gapfill mode!</span></div>
   <div class="pick-grid">
     <button class="pick-btn pb-mtc" onclick="openSection('mtc')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60">
           <circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
           <circle class="fd-ring-miss-mtc" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
-          <circle class="fd-ring-got-mtc" cx="30" cy="30" r="24" fill="none" stroke="#8BC34A" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
-          <circle class="fd-ring-fill-mtc" cx="30" cy="30" r="0" fill="#F0F7E4" style="transition:r .3s"/>
+          <circle class="fd-ring-got-mtc" cx="30" cy="30" r="24" fill="none" stroke="#7F77DD" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/>
+          <circle class="fd-ring-fill-mtc" cx="30" cy="30" r="0" fill="#EEEDFE" style="transition:r .3s"/>
           <text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-mtc">0%</text>
         </svg></span><span class="plabel">Paper 1a · 1547–1558</span>⚔️ Mid Tudor Crisis</button>
     <button class="pick-btn pb-liz" onclick="openSection('elizabeth')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60">
@@ -1262,7 +1262,7 @@ function toggleDark() {
 const S = {
   mtc: {
     label: 'Mid Tudor Crisis',
-    badge: 'bg-mtc', go: 'c-mtc', fill: 'fill-mtc', colour: '#8BC34A',
+    badge: 'bg-mtc', go: 'c-mtc', fill: 'fill-mtc', colour: '#7F77DD',
     units: ['Unit 0 – Primary Sources','Unit 1 – Stability of the Monarchy','Unit 2 – Religious Change','Unit 3 – Rebellion and Unrest'],
     hasSource: true, hasEssay: false, hasCWEssay: false,
     examActive: true
@@ -1675,7 +1675,7 @@ function boldHints(text, hints) {
   return out;
 }
 function stripeCol(val) {
-  return {edward:'#6B9DE8', mary:'#E87A6B', mtc:'#8BC34A', elizabeth:'#1D9E75', coldwar:'#C47B1A'}[val] || '#888';
+  return {edward:'#6B9DE8', mary:'#E87A6B', mtc:'#7F77DD', elizabeth:'#1D9E75', coldwar:'#C47B1A'}[val] || '#888';
 }
 function tagClass(val) {
   if (val === 'elizabeth') return 't-elizabeth';
@@ -2518,9 +2518,9 @@ let fdMode = 'flip';
 let ffMode = 'match';
 let ffI = 0, ffRes = [], ffOpts = [], ffLock = false, ffTok = 0;
 function ffEsc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function ffFillFor(card, p) { return (card.fill || []).find(f => f.p === p); }
+function ffFillFor(card, p) { const k = card._ffKey || (card._ffKey = {}); if (!k[p]) { const o = (card.fill || []).filter(f => f.p === p); k[p] = o[Math.floor(Math.random() * o.length)]; } return k[p]; }
 function ffUsable(card) {
-  return !!(card && Array.isArray(card.s) && card.s.length === 3 && Array.isArray(card.fill) && card.fill.length === 3 && card.fill.every(f => ffFillFor(card, 1) && f.gap && f.d && f.d.length >= 2));
+  return !!(card && Array.isArray(card.s) && card.s.length === 3 && Array.isArray(card.fill) && card.fill.length >= 3 && card.fill.every(f => ffFillFor(card, 1) && f.gap && f.d && f.d.length >= 2));
 }
 function ffNorm(x) {
   return String(x).normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase()
@@ -2822,7 +2822,7 @@ function fdStart(mode) {
 
 function fdNext() {
   if (fdDeck.length === 0) { fdShowSummary(); return; }
-  fdCurrent = fdDeck.shift(); fdFlipped = false;
+  fdCurrent = fdDeck.shift(); delete fdCurrent._ffKey; fdFlipped = false;
   const cardSec = fdCurrent.section || currentSection;
   const col = S[cardSec] ? S[cardSec].colour : '#888';
   const sectionLabel = S[cardSec] ? S[cardSec].label : cardSec;
@@ -3073,7 +3073,7 @@ function goToPinnedReview() { if (!currentSection) pickSection('mtc'); enterMode
 // ═══════════════════════════════════
 // TRACKER WHEELS
 // ═══════════════════════════════════
-const sectionColours = { mtc:'#8BC34A', elizabeth:'#1D9E75', coldwar:'#C47B1A' };
+const sectionColours = { mtc:'#7F77DD', elizabeth:'#1D9E75', coldwar:'#C47B1A' };
 
 
 function fdBowlGetTarget() { return 25; }
@@ -3406,7 +3406,7 @@ function uptoPos(k) { return k === 't' ? posTs() : posC(); }
 function uptoLabel(k, v) { return k === 't' ? tudLabel(v) : cwLabel(v); }
 function uptoPaint(k) {
   var card = document.getElementById('up-card-' + k), r = document.getElementById('up-range-' + k);
-  if (r) r.style.accentColor = UPTO_COL[k];
+  if (r) r.style.accentColor = k === 't' ? (+r.value >= 3 ? S.elizabeth.colour : '#534AB7') : UPTO_COL[k];
   
 }
 function uptoPreview(k, v) { document.getElementById('up-pos-' + k).textContent = uptoLabel(k, v); uptoPaint(k); }
@@ -3448,9 +3448,9 @@ function uptoRender() {
     document.getElementById('up-pos-' + k).textContent = uptoLabel(k, uptoPos(k));
     uptoPaint(k);
     if (!t.children.length) {
-      var cells = ['<span class="up-none">None</span>'];
-      if (k === 't') ['Ed', 'Mary'].forEach(function (x) { cells.push('<span style="border-color:' + S.mtc.colour + '">' + x + '</span>'); }), S.elizabeth.units.forEach(function (u, i) { cells.push('<span style="border-color:' + S.elizabeth.colour + '">U' + (i + 4) + '</span>'); });
-      else CWU.forEach(function (u, i) { cells.push('<span style="border-color:' + S.coldwar.colour + '">Ch ' + (i + 1) + '</span>'); });
+      var cells = ['<span class="up-none"></span>'];
+      if (k === 't') ['Ed', 'Mary'].forEach(function (x) { cells.push('<span style="border-color:' + S.mtc.colour + '"></span>'); }), S.elizabeth.units.forEach(function (u, i) { cells.push('<span style="border-color:' + S.elizabeth.colour + '"></span>'); });
+      else CWU.forEach(function (u, i) { cells.push('<span style="border-color:' + S.coldwar.colour + '"></span>'); });
       t.innerHTML = cells.join('');
     }
   });
