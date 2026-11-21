@@ -2503,46 +2503,6 @@
   "no": 51,
   "paper": "p1",
   "unit": "Unit 4 – Hot Deserts",
-  "front": "What is a tap root?",
-  "p1": "Tap roots are extremely long roots that draw water from deep underground near the water table.",
-  "p2": "The mesquite tree has the longest roots of any desert plant, recorded as long as 24 metres.",
-  "p3": "",
-  "hints": [
-   "the water table",
-   "Mesquite"
-  ],
-  "s": [
-   "Tap roots are extremely long roots that draw water from deep underground near the water table.",
-   "The mesquite tree has the longest roots of any desert plant, recorded as long as 24 metres."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "the water table",
-    "alt": [],
-    "d": [
-     "the river bed",
-     "the rock layer",
-     "the spring line"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "24 metres",
-    "alt": [],
-    "d": [
-     "2.4 metres",
-     "42 metres",
-     "240 metres"
-    ]
-   }
-  ],
-  "k": 1
- },
- {
-  "no": 52,
-  "paper": "p1",
-  "unit": "Unit 4 – Hot Deserts",
   "front": "What does nocturnal mean?",
   "p1": "A nocturnal animal comes out at night.",
   "p2": "The leopard gecko is strictly nocturnal, sleeping during the day to limit its exposure to the heat of the sun.",
@@ -2580,127 +2540,7 @@
   "k": 1
  },
  {
-  "no": 53,
-  "paper": "p1",
-  "unit": "Unit 4 – Hot Deserts",
-  "front": "What is a development opportunity in a hot desert?",
-  "p1": "A development opportunity is initially about making money in a hot desert.",
-  "p2": "As income increases, that money can then be used to increase development.",
-  "p3": "",
-  "hints": [
-   "Money",
-   "income"
-  ],
-  "s": [
-   "A development opportunity is initially about making money in a hot desert.",
-   "As income increases, that money can then be used to increase development."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "making money",
-    "alt": [],
-    "d": [
-     "saving water",
-     "building roads",
-     "farming land"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "income",
-    "alt": [],
-    "d": [
-     "rainfall",
-     "tourism",
-     "population"
-    ]
-   }
-  ],
-  "k": 1
- },
- {
-  "no": 54,
-  "paper": "p1",
-  "unit": "Unit 4 – Hot Deserts",
-  "front": "What are vegetation and deforestation?",
-  "p1": "Vegetation means trees, plants and grasses.",
-  "p2": "Deforestation is cutting down trees.",
-  "p3": "",
-  "hints": [
-   "Plants",
-   "Trees"
-  ],
-  "s": [
-   "Vegetation means trees, plants and grasses.",
-   "Deforestation is cutting down trees."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "grasses",
-    "alt": [],
-    "d": [
-     "rocks",
-     "rivers",
-     "crops"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "cutting down",
-    "alt": [],
-    "d": [
-     "planting",
-     "counting",
-     "burning"
-    ]
-   }
-  ],
-  "k": 1
- },
- {
-  "no": 55,
-  "paper": "p1",
-  "unit": "Unit 4 – Hot Deserts",
-  "front": "What are nutrients and fertile soil?",
-  "p1": "Nutrients are substances in the soil that plants need to grow.",
-  "p2": "Fertile soil has lots of nutrients in it, while infertile soil has none.",
-  "p3": "",
-  "hints": [
-   "substances",
-   "Fertile"
-  ],
-  "s": [
-   "Nutrients are substances in the soil that plants need to grow.",
-   "Fertile soil has lots of nutrients in it, while infertile soil has none."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "substances",
-    "alt": [],
-    "d": [
-     "pests",
-     "layers",
-     "fossils"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "infertile",
-    "alt": [],
-    "d": [
-     "acidic",
-     "sandy",
-     "waterlogged"
-    ]
-   }
-  ],
-  "k": 1
- },
- {
-  "no": 56,
+  "no": 52,
   "paper": "p1",
   "unit": "Unit 4 – Hot Deserts",
   "front": "What is appropriate technology?",
@@ -2740,47 +2580,7 @@
   "k": 1
  },
  {
-  "no": 57,
-  "paper": "p1",
-  "unit": "Unit 4 – Hot Deserts",
-  "front": "What are legumes?",
-  "p1": "Legumes, such as peas and beans, are nitrogen fixers.",
-  "p2": "Nitrogen fixers take nitrogen from the air and add it to the soil, which boosts soil fertility.",
-  "p3": "",
-  "hints": [
-   "Peas",
-   "Soil"
-  ],
-  "s": [
-   "Legumes, such as peas and beans, are nitrogen fixers.",
-   "Nitrogen fixers take nitrogen from the air and add it to the soil, which boosts soil fertility."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "beans",
-    "alt": [],
-    "d": [
-     "wheat",
-     "maize",
-     "millet"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "the air",
-    "alt": [],
-    "d": [
-     "the water",
-     "the rock",
-     "the fertiliser"
-    ]
-   }
-  ],
-  "k": 1
- },
- {
-  "no": 58,
+  "no": 53,
   "paper": "p1",
   "unit": "Unit 4 – Hot Deserts",
   "front": "How do plants adapt to hot deserts?",
@@ -2831,7 +2631,7 @@
   ]
  },
  {
-  "no": 59,
+  "no": 54,
   "paper": "p1",
   "unit": "Unit 4 – Hot Deserts",
   "front": "How do animals adapt to hot deserts?",
@@ -2882,7 +2682,7 @@
   ]
  },
  {
-  "no": 60,
+  "no": 55,
   "paper": "p1",
   "unit": "Unit 4 – Hot Deserts",
   "front": "How is energy developed in the Sahara?",
@@ -2933,7 +2733,7 @@
   ]
  },
  {
-  "no": 61,
+  "no": 56,
   "paper": "p1",
   "unit": "Unit 4 – Hot Deserts",
   "front": "How do mining and tourism help Morocco?",
@@ -2984,7 +2784,7 @@
   ]
  },
  {
-  "no": 62,
+  "no": 57,
   "paper": "p1",
   "unit": "Unit 4 – Hot Deserts",
   "front": "Which other strategies reduce desertification?",
@@ -3035,7 +2835,7 @@
   ]
  },
  {
-  "no": 63,
+  "no": 58,
   "paper": "p1",
   "unit": "Unit 4 – Hot Deserts",
   "front": "How does afforestation slow desertification?",
@@ -3086,7 +2886,7 @@
   ]
  },
  {
-  "no": 64,
+  "no": 59,
   "paper": "p1",
   "unit": "Unit 4 – Hot Deserts",
   "front": "How do stone lines help in the Sahel?",
@@ -3137,7 +2937,7 @@
   ]
  },
  {
-  "no": 65,
+  "no": 60,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is standard of living?",
@@ -3177,7 +2977,7 @@
   "k": 1
  },
  {
-  "no": 66,
+  "no": 61,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is quality of life?",
@@ -3217,47 +3017,7 @@
   "k": 1
  },
  {
-  "no": 67,
-  "paper": "p2",
-  "unit": "Unit 5 – Development (Nigeria)",
-  "front": "What is the World Bank?",
-  "p1": "The World Bank is an international organisation that lends money and gives advice to countries to reduce poverty and support development.",
-  "p2": "It sorts every country into an income group based on GNI per capita.",
-  "p3": "",
-  "hints": [
-   "lends money",
-   "an income group"
-  ],
-  "s": [
-   "The World Bank is an international organisation that lends money and gives advice to countries to reduce poverty and support development.",
-   "It sorts every country into an income group based on GNI per capita."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "lends money",
-    "alt": [],
-    "d": [
-     "collects taxes",
-     "sells oil",
-     "makes laws"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "an income group",
-    "alt": [],
-    "d": [
-     "a language group",
-     "a trade bloc",
-     "a time zone"
-    ]
-   }
-  ],
-  "k": 1
- },
- {
-  "no": 68,
+  "no": 62,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What do LIC, NEE and HIC stand for?",
@@ -3309,7 +3069,7 @@
   "k": 1
  },
  {
-  "no": 69,
+  "no": 63,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is a development indicator?",
@@ -3349,7 +3109,7 @@
   "k": 1
  },
  {
-  "no": 70,
+  "no": 64,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is GNI per capita?",
@@ -3389,47 +3149,7 @@
   "k": 1
  },
  {
-  "no": 71,
-  "paper": "p2",
-  "unit": "Unit 5 – Development (Nigeria)",
-  "front": "What is GDP per capita?",
-  "p1": "GDP per capita is the total value of goods and services produced within a country in a year, divided by the population.",
-  "p2": "Nigeria is approximately $2,300 per person and the UK approximately $45,000+ per person.",
-  "p3": "",
-  "hints": [
-   "within a country",
-   "$2,300"
-  ],
-  "s": [
-   "GDP per capita is the total value of goods and services produced within a country in a year, divided by the population.",
-   "Nigeria is approximately $2,300 per person and the UK approximately $45,000+ per person."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "within a country",
-    "alt": [],
-    "d": [
-     "from abroad",
-     "by migrants",
-     "by the poorest"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "$2,300",
-    "alt": [],
-    "d": [
-     "$230",
-     "$3,200",
-     "$23,000"
-    ]
-   }
-  ],
-  "k": 1
- },
- {
-  "no": 72,
+  "no": 65,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is the infant mortality rate?",
@@ -3469,7 +3189,7 @@
   "k": 1
  },
  {
-  "no": 73,
+  "no": 66,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is the literacy rate?",
@@ -3509,7 +3229,7 @@
   "k": 1
  },
  {
-  "no": 74,
+  "no": 67,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is life expectancy?",
@@ -3549,7 +3269,7 @@
   "k": 1
  },
  {
-  "no": 75,
+  "no": 68,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is the Human Development Index?",
@@ -3589,7 +3309,7 @@
   "k": 1
  },
  {
-  "no": 76,
+  "no": 69,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is access to safe water?",
@@ -3629,7 +3349,7 @@
   "k": 1
  },
  {
-  "no": 77,
+  "no": 70,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What are migration and push and pull factors?",
@@ -3681,7 +3401,7 @@
   "k": 1
  },
  {
-  "no": 78,
+  "no": 71,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "How do rural-urban and international migration differ?",
@@ -3721,7 +3441,7 @@
   "k": 1
  },
  {
-  "no": 79,
+  "no": 72,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What are economic migrants, remittances and brain drain?",
@@ -3773,7 +3493,7 @@
   "k": 1
  },
  {
-  "no": 80,
+  "no": 73,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What are the multiplier effect and economic leakage?",
@@ -3825,87 +3545,7 @@
   "k": 1
  },
  {
-  "no": 81,
-  "paper": "p2",
-  "unit": "Unit 5 – Development (Nigeria)",
-  "front": "What is Official Development Assistance?",
-  "p1": "Official Development Assistance, or ODA, is aid that passes from one government to another, usually on a large scale.",
-  "p2": "Bilateral aid goes directly from one government to another, while multilateral aid is given through an organisation such as the World Bank.",
-  "p3": "",
-  "hints": [
-   "Aid",
-   "bilateral"
-  ],
-  "s": [
-   "Official Development Assistance, or ODA, is aid that passes from one government to another, usually on a large scale.",
-   "Bilateral aid goes directly from one government to another, while multilateral aid is given through an organisation such as the World Bank."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "government",
-    "alt": [],
-    "d": [
-     "charity",
-     "company",
-     "bank"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "bilateral",
-    "alt": [],
-    "d": [
-     "private",
-     "emergency",
-     "regional"
-    ]
-   }
-  ],
-  "k": 1
- },
- {
-  "no": 82,
-  "paper": "p2",
-  "unit": "Unit 5 – Development (Nigeria)",
-  "front": "What is intermediate technology?",
-  "p1": "Intermediate technology is simple, low-cost technology that suits local skills, such as hand pumps.",
-  "p2": "It is cheap and locally controlled, but small scale.",
-  "p3": "",
-  "hints": [
-   "Simple",
-   "Scale"
-  ],
-  "s": [
-   "Intermediate technology is simple, low-cost technology that suits local skills, such as hand pumps.",
-   "It is cheap and locally controlled, but small scale."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "local skills",
-    "alt": [],
-    "d": [
-     "foreign experts",
-     "large factories",
-     "computers"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "small scale",
-    "alt": [],
-    "d": [
-     "large scale",
-     "very costly",
-     "imported"
-    ]
-   }
-  ],
-  "k": 1
- },
- {
-  "no": 83,
+  "no": 74,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is Fairtrade?",
@@ -3945,7 +3585,7 @@
   "k": 1
  },
  {
-  "no": 84,
+  "no": 75,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is debt relief?",
@@ -3985,7 +3625,7 @@
   "k": 1
  },
  {
-  "no": 85,
+  "no": 76,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is microfinance?",
@@ -4025,7 +3665,7 @@
   "k": 1
  },
  {
-  "no": 86,
+  "no": 77,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is the Clark-Fisher model and what are the three job sectors?",
@@ -4077,7 +3717,7 @@
   "k": 1
  },
  {
-  "no": 87,
+  "no": 78,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "What is the demographic transition model?",
@@ -4128,7 +3768,7 @@
   ]
  },
  {
-  "no": 88,
+  "no": 79,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "Where is Nigeria?",
@@ -4179,7 +3819,7 @@
   ]
  },
  {
-  "no": 89,
+  "no": 80,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "Why is Nigeria important?",
@@ -4233,7 +3873,7 @@
   ]
  },
  {
-  "no": 90,
+  "no": 81,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "How did history shape Nigeria's development?",
@@ -4284,7 +3924,7 @@
   ]
  },
  {
-  "no": 91,
+  "no": 82,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "How does the development gap lead to migration?",
@@ -4335,7 +3975,7 @@
   ]
  },
  {
-  "no": 92,
+  "no": 83,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "How can manufacturing and tourism help Nigeria?",
@@ -4389,7 +4029,7 @@
   ]
  },
  {
-  "no": 93,
+  "no": 84,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "How else can aid and trade close the development gap?",
@@ -4440,7 +4080,7 @@
   ]
  },
  {
-  "no": 94,
+  "no": 85,
   "paper": "p2",
   "unit": "Unit 5 – Development (Nigeria)",
   "front": "How do TNCs affect Nigeria?",
@@ -4491,7 +4131,7 @@
   ]
  },
  {
-  "no": 95,
+  "no": 86,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What is a natural hazard?",
@@ -4531,7 +4171,7 @@
   "k": 1
  },
  {
-  "no": 96,
+  "no": 87,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What is a natural disaster?",
@@ -4571,7 +4211,7 @@
   "k": 1
  },
  {
-  "no": 97,
+  "no": 88,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What are geological and atmospheric hazards?",
@@ -4611,7 +4251,7 @@
   "k": 1
  },
  {
-  "no": 98,
+  "no": 89,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What affects hazard risk?",
@@ -4663,7 +4303,7 @@
   "k": 1
  },
  {
-  "no": 99,
+  "no": 90,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What are tectonic plates and how do they move?",
@@ -4715,7 +4355,7 @@
   "k": 1
  },
  {
-  "no": 100,
+  "no": 91,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What is a constructive plate margin?",
@@ -4755,7 +4395,7 @@
   "k": 1
  },
  {
-  "no": 101,
+  "no": 92,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What is a conservative plate margin?",
@@ -4807,7 +4447,7 @@
   "k": 1
  },
  {
-  "no": 102,
+  "no": 93,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What is an earthquake?",
@@ -4859,7 +4499,7 @@
   "k": 1
  },
  {
-  "no": 103,
+  "no": 94,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What are the focus and the epicentre?",
@@ -4911,7 +4551,7 @@
   "k": 1
  },
  {
-  "no": 104,
+  "no": 95,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What is the Richter scale?",
@@ -4951,7 +4591,7 @@
   "k": 1
  },
  {
-  "no": 105,
+  "no": 96,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What is the Mercalli scale?",
@@ -4991,7 +4631,7 @@
   "k": 1
  },
  {
-  "no": 106,
+  "no": 97,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What are primary and secondary effects?",
@@ -5043,7 +4683,7 @@
   "k": 1
  },
  {
-  "no": 107,
+  "no": 98,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What are short and long term responses and what is an NGO?",
@@ -5095,59 +4735,7 @@
   "k": 1
  },
  {
-  "no": 108,
-  "paper": "p1",
-  "unit": "Unit 6 – Tectonic Hazards",
-  "front": "What is Ushahidi?",
-  "p1": "Ushahidi means testament in Swahili.",
-  "p2": "It was born in Kenya during violence that followed a disputed election.",
-  "p3": "People text incident reports from mobile phones, which are uploaded to a map so aid agencies like the Red Cross can see who needs help and where.",
-  "hints": [
-   "Swahili",
-   "Kenya",
-   "Reports"
-  ],
-  "s": [
-   "Ushahidi means testament in Swahili.",
-   "It was born in Kenya during violence that followed a disputed election.",
-   "People text incident reports from mobile phones, which are uploaded to a map so aid agencies like the Red Cross can see who needs help and where."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "Swahili",
-    "alt": [],
-    "d": [
-     "Arabic",
-     "Hausa",
-     "Creole"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "Kenya",
-    "alt": [],
-    "d": [
-     "Haiti",
-     "Nigeria",
-     "Tanzania"
-    ]
-   },
-   {
-    "p": 3,
-    "gap": "a map",
-    "alt": [],
-    "d": [
-     "a chart",
-     "a database",
-     "a newsletter"
-    ]
-   }
-  ],
-  "k": 1
- },
- {
-  "no": 109,
+  "no": 99,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What are the three Ps for reducing tectonic risk?",
@@ -5199,7 +4787,7 @@
   "k": 1
  },
  {
-  "no": 110,
+  "no": 100,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "Can earthquakes be predicted?",
@@ -5251,7 +4839,7 @@
   "k": 1
  },
  {
-  "no": 111,
+  "no": 101,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "How are volcanoes monitored?",
@@ -5303,7 +4891,7 @@
   "k": 1
  },
  {
-  "no": 112,
+  "no": 102,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "Why does magnitude not decide the death toll?",
@@ -5343,7 +4931,7 @@
   "k": 1
  },
  {
-  "no": 113,
+  "no": 103,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "Why did the Haiti earthquake of 2010 happen?",
@@ -5394,7 +4982,7 @@
   ]
  },
  {
-  "no": 114,
+  "no": 104,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What was Haiti like before the earthquake?",
@@ -5445,7 +5033,7 @@
   ]
  },
  {
-  "no": 115,
+  "no": 105,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What were the primary effects of the Haiti earthquake?",
@@ -5496,7 +5084,7 @@
   ]
  },
  {
-  "no": 116,
+  "no": 106,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What were the secondary effects of the Haiti earthquake?",
@@ -5547,7 +5135,7 @@
   ]
  },
  {
-  "no": 117,
+  "no": 107,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "How did the Haiti earthquake affect people, the economy and the environment?",
@@ -5598,7 +5186,7 @@
   ]
  },
  {
-  "no": 118,
+  "no": 108,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What were the short term responses to the Haiti earthquake?",
@@ -5649,7 +5237,7 @@
   ]
  },
  {
-  "no": 119,
+  "no": 109,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "Why was the short term response in Haiti ineffective?",
@@ -5700,7 +5288,7 @@
   ]
  },
  {
-  "no": 120,
+  "no": 110,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What were the long term responses to the Haiti earthquake?",
@@ -5751,7 +5339,7 @@
   ]
  },
  {
-  "no": 121,
+  "no": 111,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What were the effects of the Kumamoto earthquakes?",
@@ -5802,7 +5390,7 @@
   ]
  },
  {
-  "no": 122,
+  "no": 112,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What were the economic effects of the Kumamoto earthquakes?",
@@ -5853,7 +5441,7 @@
   ]
  },
  {
-  "no": 123,
+  "no": 113,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "What were the responses to the Kumamoto earthquakes?",
@@ -5904,7 +5492,7 @@
   ]
  },
  {
-  "no": 124,
+  "no": 114,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "How does Japan reduce earthquake risk?",
@@ -5955,7 +5543,7 @@
   ]
  },
  {
-  "no": 125,
+  "no": 115,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "Why do people live in areas at risk of tectonic hazards?",
@@ -6006,7 +5594,7 @@
   ]
  },
  {
-  "no": 126,
+  "no": 116,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "How do tourism and farming keep people living near volcanoes?",
@@ -6057,7 +5645,7 @@
   ]
  },
  {
-  "no": 127,
+  "no": 117,
   "paper": "p1",
   "unit": "Unit 6 – Tectonic Hazards",
   "front": "How do mining, energy and family keep people living near volcanoes?",
@@ -6108,7 +5696,7 @@
   ]
  },
  {
-  "no": 128,
+  "no": 118,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "What is global warming and how much has the Earth warmed?",
@@ -6160,7 +5748,7 @@
   "k": 1
  },
  {
-  "no": 129,
+  "no": 119,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "What is the short term evidence for climate change, and what are sediment cores?",
@@ -6212,7 +5800,7 @@
   "k": 1
  },
  {
-  "no": 130,
+  "no": 120,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "What is an ice core and how far back do ice cores go?",
@@ -6264,7 +5852,7 @@
   "k": 1
  },
  {
-  "no": 131,
+  "no": 121,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "What are the natural causes of climate change?",
@@ -6316,7 +5904,7 @@
   "k": 1
  },
  {
-  "no": 132,
+  "no": 122,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "What are the greenhouse effects and carbon sinks?",
@@ -6368,7 +5956,7 @@
   "k": 1
  },
  {
-  "no": 133,
+  "no": 123,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "What are the human causes of climate change?",
@@ -6420,7 +6008,7 @@
   "k": 1
  },
  {
-  "no": 134,
+  "no": 124,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "Who is most responsible for climate change?",
@@ -6460,7 +6048,7 @@
   "k": 1
  },
  {
-  "no": 135,
+  "no": 125,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "What is a feedback loop?",
@@ -6500,7 +6088,7 @@
   "k": 1
  },
  {
-  "no": 136,
+  "no": 126,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "What is the difference between mitigation and adaptation?",
@@ -6540,7 +6128,7 @@
   "k": 1
  },
  {
-  "no": 137,
+  "no": 127,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "What is carbon capture and storage?",
@@ -6580,7 +6168,7 @@
   "k": 1
  },
  {
-  "no": 138,
+  "no": 128,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "How can we mitigate climate change?",
@@ -6631,7 +6219,7 @@
   ]
  },
  {
-  "no": 139,
+  "no": 129,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "How can we adapt to climate change?",
@@ -6682,7 +6270,7 @@
   ]
  },
  {
-  "no": 140,
+  "no": 130,
   "paper": "p1",
   "unit": "Unit 7 – Climate Change",
   "front": "How does climate change affect people and wildlife?",
@@ -6733,7 +6321,7 @@
   ]
  },
  {
-  "no": 141,
+  "no": 131,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "What happens when precipitation falls?",
@@ -6785,7 +6373,7 @@
   "k": 1
  },
  {
-  "no": 142,
+  "no": 132,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "How does water get into the atmosphere?",
@@ -6837,7 +6425,7 @@
   "k": 1
  },
  {
-  "no": 143,
+  "no": 133,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "What are infiltration, surface runoff and groundwater flow?",
@@ -6889,7 +6477,7 @@
   "k": 1
  },
  {
-  "no": 144,
+  "no": 134,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "What are discharge and velocity?",
@@ -6929,7 +6517,7 @@
   "k": 1
  },
  {
-  "no": 145,
+  "no": 135,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "What are erosion, transportation and deposition?",
@@ -6969,7 +6557,7 @@
   "k": 1
  },
  {
-  "no": 146,
+  "no": 136,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "What are hydraulic action, abrasion and attrition?",
@@ -7021,7 +6609,7 @@
   "k": 1
  },
  {
-  "no": 147,
+  "no": 137,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "What are solution and suspension?",
@@ -7061,7 +6649,7 @@
   "k": 1
  },
  {
-  "no": 148,
+  "no": 138,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "What are saltation and traction?",
@@ -7101,7 +6689,7 @@
   "k": 1
  },
  {
-  "no": 149,
+  "no": 139,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "What are hard and soft engineering?",
@@ -7141,7 +6729,7 @@
   "k": 1
  },
  {
-  "no": 150,
+  "no": 140,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "How do upper course landforms form?",
@@ -7192,7 +6780,7 @@
   ]
  },
  {
-  "no": 151,
+  "no": 141,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "How do middle and lower course landforms form?",
@@ -7243,7 +6831,7 @@
   ]
  },
  {
-  "no": 152,
+  "no": 142,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "What causes river flooding?",
@@ -7294,7 +6882,7 @@
   ]
  },
  {
-  "no": 153,
+  "no": 143,
   "paper": "p1",
   "unit": "Unit 8 – Rivers",
   "front": "How was Boscastle flooded and managed?",
@@ -7345,7 +6933,7 @@
   ]
  },
  {
-  "no": 154,
+  "no": 144,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What are urbanisation, counter-urbanisation and primate cities?",
@@ -7397,7 +6985,7 @@
   "k": 1
  },
  {
-  "no": 155,
+  "no": 145,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What is the CBD?",
@@ -7437,7 +7025,7 @@
   "k": 1
  },
  {
-  "no": 156,
+  "no": 146,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What is the inner city?",
@@ -7477,7 +7065,7 @@
   "k": 1
  },
  {
-  "no": 157,
+  "no": 147,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What are the suburbs?",
@@ -7517,7 +7105,7 @@
   "k": 1
  },
  {
-  "no": 158,
+  "no": 148,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What is the rural urban fringe?",
@@ -7569,7 +7157,7 @@
   "k": 1
  },
  {
-  "no": 159,
+  "no": 149,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What are greenfield and brownfield sites?",
@@ -7609,7 +7197,7 @@
   "k": 1
  },
  {
-  "no": 160,
+  "no": 150,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What is urban sprawl?",
@@ -7649,7 +7237,7 @@
   "k": 1
  },
  {
-  "no": 161,
+  "no": 151,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What are the key transport terms in London?",
@@ -7701,7 +7289,7 @@
   "k": 1
  },
  {
-  "no": 162,
+  "no": 152,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What is deprivation and how unequal are Tower Hamlets and Richmond-upon-Thames?",
@@ -7753,7 +7341,7 @@
   "k": 1
  },
  {
-  "no": 163,
+  "no": 153,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What are benefits, debt and poverty?",
@@ -7805,7 +7393,7 @@
   "k": 1
  },
  {
-  "no": 164,
+  "no": 154,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What are immigration and economic migrants?",
@@ -7845,7 +7433,7 @@
   "k": 1
  },
  {
-  "no": 165,
+  "no": 155,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What is the EU and freedom of movement?",
@@ -7885,7 +7473,7 @@
   "k": 1
  },
  {
-  "no": 166,
+  "no": 156,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "Why is London important economically?",
@@ -7936,7 +7524,7 @@
   ]
  },
  {
-  "no": 167,
+  "no": 157,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "Why is London important in education, transport and culture?",
@@ -7987,7 +7575,7 @@
   ]
  },
  {
-  "no": 168,
+  "no": 158,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "How has migration changed London?",
@@ -8038,7 +7626,7 @@
   ]
  },
  {
-  "no": 169,
+  "no": 159,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "Why do young people from the UK move to London?",
@@ -8089,7 +7677,7 @@
   ]
  },
  {
-  "no": 170,
+  "no": 160,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What employment and wealth opportunities has urban change created in London?",
@@ -8140,7 +7728,7 @@
   ]
  },
  {
-  "no": 171,
+  "no": 161,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What cultural and recreation opportunities has urban change created in London?",
@@ -8191,7 +7779,7 @@
   ]
  },
  {
-  "no": 172,
+  "no": 162,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What are London's socioeconomic challenges in housing, health and employment?",
@@ -8242,7 +7830,7 @@
   ]
  },
  {
-  "no": 173,
+  "no": 163,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "How does education link to inequality in London?",
@@ -8281,7 +7869,7 @@
   ]
  },
  {
-  "no": 174,
+  "no": 164,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "Why was regeneration needed in Stratford?",
@@ -8332,7 +7920,7 @@
   ]
  },
  {
-  "no": 175,
+  "no": 165,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What are the main features of the Olympic Park redevelopment?",
@@ -8383,7 +7971,7 @@
   ]
  },
  {
-  "no": 176,
+  "no": 166,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What homes and business space did the Olympic Park create?",
@@ -8434,7 +8022,7 @@
   ]
  },
  {
-  "no": 177,
+  "no": 167,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "Was the Olympic Park regeneration positive?",
@@ -8485,7 +8073,7 @@
   ]
  },
  {
-  "no": 178,
+  "no": 168,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What makes the East Village a sustainable community?",
@@ -8536,7 +8124,7 @@
   ]
  },
  {
-  "no": 179,
+  "no": 169,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What is urban greening and how do green roofs help?",
@@ -8587,7 +8175,7 @@
   ]
  },
  {
-  "no": 180,
+  "no": 170,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What are the benefits of the Elizabeth Line?",
@@ -8638,7 +8226,7 @@
   ]
  },
  {
-  "no": 181,
+  "no": 171,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "How does the congestion charge reduce congestion?",
@@ -8689,7 +8277,7 @@
   ]
  },
  {
-  "no": 182,
+  "no": 172,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "How congested is London?",
@@ -8740,7 +8328,7 @@
   ]
  },
  {
-  "no": 183,
+  "no": 173,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "Why does London need new homes?",
@@ -8779,7 +8367,7 @@
   ]
  },
  {
-  "no": 184,
+  "no": 174,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What are the advantages and disadvantages of building on brownfield sites?",
@@ -8830,7 +8418,7 @@
   ]
  },
  {
-  "no": 185,
+  "no": 175,
   "paper": "p2",
   "unit": "Unit 9 – London",
   "front": "What are the advantages and disadvantages of building on greenfield sites?",
@@ -8869,7 +8457,7 @@
   ]
  },
  {
-  "no": 186,
+  "no": 176,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What is a constructive wave?",
@@ -8909,7 +8497,7 @@
   "k": 1
  },
  {
-  "no": 187,
+  "no": 177,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What is a destructive wave?",
@@ -8949,47 +8537,7 @@
   "k": 1
  },
  {
-  "no": 188,
-  "paper": "p1",
-  "unit": "Unit 10 – Coasts",
-  "front": "What is a coast?",
-  "p1": "A coast is the boundary where the land meets the sea.",
-  "p2": "Waves, tides and currents constantly change it → they wear away rock, move material along the shore and build new landforms.",
-  "p3": "",
-  "hints": [
-   "Land",
-   "Change"
-  ],
-  "s": [
-   "A coast is the boundary where the land meets the sea.",
-   "Waves, tides and currents constantly change it → they wear away rock, move material along the shore and build new landforms."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "the boundary",
-    "alt": [],
-    "d": [
-     "the cliff",
-     "the beach",
-     "the estuary"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "tides",
-    "alt": [],
-    "d": [
-     "winds",
-     "glaciers",
-     "floods"
-    ]
-   }
-  ],
-  "k": 1
- },
- {
-  "no": 189,
+  "no": 178,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What is biological weathering?",
@@ -9029,7 +8577,7 @@
   "k": 1
  },
  {
-  "no": 190,
+  "no": 179,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What are subaerial processes and weathering?",
@@ -9081,7 +8629,7 @@
   "k": 1
  },
  {
-  "no": 191,
+  "no": 180,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What is rockfall?",
@@ -9121,7 +8669,7 @@
   "k": 1
  },
  {
-  "no": 192,
+  "no": 181,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What is longshore drift?",
@@ -9173,7 +8721,7 @@
   "k": 1
  },
  {
-  "no": 193,
+  "no": 182,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What is a wave cut notch?",
@@ -9213,7 +8761,7 @@
   "k": 1
  },
  {
-  "no": 194,
+  "no": 183,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What is a wave cut platform?",
@@ -9253,7 +8801,7 @@
   "k": 1
  },
  {
-  "no": 195,
+  "no": 184,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What are spits and bars?",
@@ -9293,7 +8841,7 @@
   "k": 1
  },
  {
-  "no": 196,
+  "no": 185,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What is a sand dune?",
@@ -9345,7 +8893,7 @@
   "k": 1
  },
  {
-  "no": 197,
+  "no": 186,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What is saltation and what is an embryo dune?",
@@ -9397,47 +8945,7 @@
   "k": 1
  },
  {
-  "no": 198,
-  "paper": "p1",
-  "unit": "Unit 10 – Coasts",
-  "front": "What is a dune slack?",
-  "p1": "A slack is a trough or dip between two dunes.",
-  "p2": "Some are eroded down to the water table and are filled with salty ponds.",
-  "p3": "",
-  "hints": [
-   "Trough",
-   "Ponds"
-  ],
-  "s": [
-   "A slack is a trough or dip between two dunes.",
-   "Some are eroded down to the water table and are filled with salty ponds."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "a trough",
-    "alt": [],
-    "d": [
-     "a ridge",
-     "a peak",
-     "a cliff"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "the water table",
-    "alt": [],
-    "d": [
-     "the sea level",
-     "the high tide line",
-     "the shoreline"
-    ]
-   }
-  ],
-  "k": 1
- },
- {
-  "no": 199,
+  "no": 187,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What is hard engineering?",
@@ -9477,7 +8985,7 @@
   "k": 1
  },
  {
-  "no": 200,
+  "no": 188,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What is soft engineering?",
@@ -9517,7 +9025,7 @@
   "k": 1
  },
  {
-  "no": 201,
+  "no": 189,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What is managed retreat?",
@@ -9569,7 +9077,7 @@
   "k": 1
  },
  {
-  "no": 202,
+  "no": 190,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "What are groynes and breakwaters?",
@@ -9609,7 +9117,7 @@
   "k": 1
  },
  {
-  "no": 203,
+  "no": 191,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "How do headlands and bays form?",
@@ -9660,7 +9168,7 @@
   ]
  },
  {
-  "no": 204,
+  "no": 192,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "How do cliffs and stacks form?",
@@ -9711,7 +9219,7 @@
   ]
  },
  {
-  "no": 205,
+  "no": 193,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "How are depositional landforms formed?",
@@ -9762,7 +9270,7 @@
   ]
  },
  {
-  "no": 206,
+  "no": 194,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "How can coasts be managed?",
@@ -9813,7 +9321,7 @@
   ]
  },
  {
-  "no": 207,
+  "no": 195,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "Why does Walton on the Naze need managing?",
@@ -9867,7 +9375,7 @@
   ]
  },
  {
-  "no": 208,
+  "no": 196,
   "paper": "p1",
   "unit": "Unit 10 – Coasts",
   "front": "How is Walton on the Naze managed?",
@@ -9922,7 +9430,7 @@
   ]
  },
  {
-  "no": 209,
+  "no": 197,
   "paper": "p3",
   "unit": "Unit 11 – Physical Fieldwork",
   "front": "What is systematic sampling?",
@@ -9962,7 +9470,7 @@
   "k": 1
  },
  {
-  "no": 210,
+  "no": 198,
   "paper": "p3",
   "unit": "Unit 11 – Physical Fieldwork",
   "front": "What was the physical fieldwork enquiry?",
@@ -10013,7 +9521,7 @@
   ]
  },
  {
-  "no": 211,
+  "no": 199,
   "paper": "p3",
   "unit": "Unit 11 – Physical Fieldwork",
   "front": "How did we evaluate the physical fieldwork?",
@@ -10064,7 +9572,7 @@
   ]
  },
  {
-  "no": 212,
+  "no": 200,
   "paper": "p3",
   "unit": "Unit 11 – Physical Fieldwork",
   "front": "How did we count waves?",
@@ -10115,7 +9623,7 @@
   ]
  },
  {
-  "no": 213,
+  "no": 201,
   "paper": "p3",
   "unit": "Unit 11 – Physical Fieldwork",
   "front": "How did we measure the beach profile?",
@@ -10166,7 +9674,7 @@
   ]
  },
  {
-  "no": 214,
+  "no": 202,
   "paper": "p3",
   "unit": "Unit 11 – Physical Fieldwork",
   "front": "How did we measure the groyne profile?",
@@ -10217,7 +9725,7 @@
   ]
  },
  {
-  "no": 215,
+  "no": 203,
   "paper": "p3",
   "unit": "Unit 11 – Physical Fieldwork",
   "front": "What were the risks of the coast fieldwork?",
@@ -10268,7 +9776,7 @@
   ]
  },
  {
-  "no": 216,
+  "no": 204,
   "paper": "p3",
   "unit": "Unit 11 – Physical Fieldwork",
   "front": "What was the conclusion of the physical fieldwork?",
@@ -10307,7 +9815,7 @@
   ]
  },
  {
-  "no": 217,
+  "no": 205,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What are hydrological, atmospheric and tectonic hazards?",
@@ -10359,7 +9867,7 @@
   "k": 1
  },
  {
-  "no": 218,
+  "no": 206,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What are the Coriolis effect and surface winds?",
@@ -10399,7 +9907,7 @@
   "k": 1
  },
  {
-  "no": 219,
+  "no": 207,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What is the Intertropical Convergence Zone?",
@@ -10439,7 +9947,7 @@
   "k": 1
  },
  {
-  "no": 220,
+  "no": 208,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What is the Hadley cell?",
@@ -10479,7 +9987,7 @@
   "k": 1
  },
  {
-  "no": 221,
+  "no": 209,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What is a tropical storm?",
@@ -10519,7 +10027,7 @@
   "k": 1
  },
  {
-  "no": 222,
+  "no": 210,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "Where and when do tropical storms form?",
@@ -10571,7 +10079,7 @@
   "k": 1
  },
  {
-  "no": 223,
+  "no": 211,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "How does a tropical storm form?",
@@ -10611,7 +10119,7 @@
   "k": 1
  },
  {
-  "no": 224,
+  "no": 212,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What are the eye and the eye wall?",
@@ -10651,7 +10159,7 @@
   "k": 1
  },
  {
-  "no": 225,
+  "no": 213,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What is extreme weather, and why is the UK's weather so changeable?",
@@ -10691,7 +10199,7 @@
   "k": 1
  },
  {
-  "no": 226,
+  "no": 214,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What are immediate and long-term responses?",
@@ -10731,7 +10239,7 @@
   "k": 1
  },
  {
-  "no": 227,
+  "no": 215,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What are local, national and international responses?",
@@ -10783,7 +10291,7 @@
   "k": 1
  },
  {
-  "no": 228,
+  "no": 216,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "How do tropical storms cause waterborne diseases?",
@@ -10823,7 +10331,7 @@
   "k": 1
  },
  {
-  "no": 229,
+  "no": 217,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What conditions do tropical storms need?",
@@ -10874,7 +10382,7 @@
   ]
  },
  {
-  "no": 230,
+  "no": 218,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "How does a tropical storm develop and die?",
@@ -10925,7 +10433,7 @@
   ]
  },
  {
-  "no": 231,
+  "no": 219,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What happened in Typhoon Haiyan?",
@@ -10982,7 +10490,7 @@
   ]
  },
  {
-  "no": 232,
+  "no": 220,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "How did people respond to Typhoon Haiyan?",
@@ -11036,7 +10544,7 @@
   ]
  },
  {
-  "no": 233,
+  "no": 221,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "How can the effects of tropical storms be reduced?",
@@ -11087,7 +10595,7 @@
   ]
  },
  {
-  "no": 234,
+  "no": 222,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "Why do people live in hazard zones?",
@@ -11138,7 +10646,7 @@
   ]
  },
  {
-  "no": 235,
+  "no": 223,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "What extreme weather affects the UK?",
@@ -11192,7 +10700,7 @@
   ]
  },
  {
-  "no": 236,
+  "no": 224,
   "paper": "p1",
   "unit": "Unit 12 – Tropical Storms",
   "front": "How do UK heat and cold extremes compare?",
@@ -11243,7 +10751,7 @@
   ]
  },
  {
-  "no": 237,
+  "no": 225,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What are primary, secondary and tertiary industry?",
@@ -11295,7 +10803,7 @@
   "k": 1
  },
  {
-  "no": 238,
+  "no": 226,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What is quaternary industry?",
@@ -11335,7 +10843,7 @@
   "k": 1
  },
  {
-  "no": 239,
+  "no": 227,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What are pre-industrial, industrial and post-industrial economies?",
@@ -11387,7 +10895,7 @@
   "k": 1
  },
  {
-  "no": 240,
+  "no": 228,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "How did UK industry change?",
@@ -11427,7 +10935,7 @@
   "k": 1
  },
  {
-  "no": 241,
+  "no": 229,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What is nationalisation?",
@@ -11467,7 +10975,7 @@
   "k": 1
  },
  {
-  "no": 242,
+  "no": 230,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What are financial services?",
@@ -11507,7 +11015,7 @@
   "k": 1
  },
  {
-  "no": 243,
+  "no": 231,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What are footloose industries and circular economies?",
@@ -11547,7 +11055,7 @@
   "k": 1
  },
  {
-  "no": 244,
+  "no": 232,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What are science parks and business parks?",
@@ -11599,7 +11107,7 @@
   "k": 1
  },
  {
-  "no": 245,
+  "no": 233,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What is the north-south divide and how do government policies reduce it?",
@@ -11639,7 +11147,7 @@
   "k": 1
  },
  {
-  "no": 246,
+  "no": 234,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "How do two rural areas in the UK contrast, and who commutes?",
@@ -11691,7 +11199,7 @@
   "k": 1
  },
  {
-  "no": 247,
+  "no": 235,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What is infrastructure?",
@@ -11731,7 +11239,7 @@
   "k": 1
  },
  {
-  "no": 248,
+  "no": 236,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "How is the UK linked to the world politically, and how has globalisation affected manufacturing?",
@@ -11783,7 +11291,7 @@
   "k": 1
  },
  {
-  "no": 249,
+  "no": 237,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "Why did the coal industry in South Wales decline?",
@@ -11834,7 +11342,7 @@
   ]
  },
  {
-  "no": 250,
+  "no": 238,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What are the social impacts of deindustrialisation?",
@@ -11885,7 +11393,7 @@
   ]
  },
  {
-  "no": 251,
+  "no": 239,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What are the economic impacts of deindustrialisation?",
@@ -11936,7 +11444,7 @@
   ]
  },
  {
-  "no": 252,
+  "no": 240,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What are the environmental impacts of deindustrialisation?",
@@ -11987,7 +11495,7 @@
   ]
  },
  {
-  "no": 253,
+  "no": 241,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What are the environmental impacts of coal mining?",
@@ -12038,7 +11546,7 @@
   ]
  },
  {
-  "no": 254,
+  "no": 242,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "How is modern car manufacturing more sustainable?",
@@ -12089,7 +11597,7 @@
   ]
  },
  {
-  "no": 255,
+  "no": 243,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "How has the UK moved from manufacturing to financial services?",
@@ -12140,7 +11648,7 @@
   ]
  },
  {
-  "no": 256,
+  "no": 244,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "How important are financial services to the UK?",
@@ -12179,7 +11687,7 @@
   ]
  },
  {
-  "no": 257,
+  "no": 245,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "Why is the M4 corridor a good location for science and research parks?",
@@ -12230,7 +11738,7 @@
   ]
  },
  {
-  "no": 258,
+  "no": 246,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "How do the north and south of the UK differ?",
@@ -12281,7 +11789,7 @@
   ]
  },
  {
-  "no": 259,
+  "no": 247,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What evidence is there of a north-south divide?",
@@ -12332,7 +11840,7 @@
   ]
  },
  {
-  "no": 260,
+  "no": 248,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "Is the north-south divide too simplistic?",
@@ -12383,46 +11891,58 @@
   ]
  },
  {
-  "no": 261,
+  "no": 249,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
-  "front": "Who are the directly elected mayors in the north?",
-  "p1": "Andy Burnham is the directly elected mayor of Greater Manchester, and the lesson article is about his re-nationalised buses.",
-  "p2": "Oliver Coppard is the directly elected mayor of South Yorkshire.",
-  "p3": "",
+  "front": "What policies do directly elected mayors use to help close the north-south divide?",
+  "p1": "Directly elected mayors in the north have power over local policy, such as transport, so decisions about the north are made in the north.",
+  "p2": "In Greater Manchester, Andy Burnham re-nationalised the region's buses while he was mayor, bringing them back under public control.",
+  "p3": "The impact is that local people, not private companies, control routes and fares, which can help people in the north reach jobs more easily.",
   "hints": [
-   "Manchester",
-   "Yorkshire"
+   "transport",
+   "re-nationalised",
+   "jobs"
   ],
   "s": [
-   "Andy Burnham is the directly elected mayor of Greater Manchester, and the lesson article is about his re-nationalised buses.",
-   "Oliver Coppard is the directly elected mayor of South Yorkshire."
+   "Directly elected mayors in the north have power over local policy, such as transport, so decisions about the north are made in the north.",
+   "In Greater Manchester, Andy Burnham re-nationalised the region's buses while he was mayor, bringing them back under public control.",
+   "The impact is that local people, not private companies, control routes and fares, which can help people in the north reach jobs more easily."
   ],
   "fill": [
    {
     "p": 1,
-    "gap": "buses",
+    "gap": "transport",
     "alt": [],
     "d": [
-     "trams",
-     "trains",
-     "taxis"
+     "tax",
+     "defence",
+     "immigration"
     ]
    },
    {
     "p": 2,
-    "gap": "South Yorkshire",
+    "gap": "re-nationalised",
     "alt": [],
     "d": [
-     "West Yorkshire",
-     "Merseyside",
-     "Tyne and Wear"
+     "privatised",
+     "closed",
+     "sold"
+    ]
+   },
+   {
+    "p": 3,
+    "gap": "jobs",
+    "alt": [],
+    "d": [
+     "schools",
+     "shops",
+     "parks"
     ]
    }
   ]
  },
  {
-  "no": 262,
+  "no": 250,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What are the costs and benefits of HS2?",
@@ -12473,7 +11993,7 @@
   ]
  },
  {
-  "no": 263,
+  "no": 251,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What are the costs and benefits of the Bristol Airport expansion?",
@@ -12524,7 +12044,7 @@
   ]
  },
  {
-  "no": 264,
+  "no": 252,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "What are the costs and benefits of the Port of Aberdeen expansion?",
@@ -12575,7 +12095,7 @@
   ]
  },
  {
-  "no": 265,
+  "no": 253,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "How is the UK linked to the world by trade?",
@@ -12626,7 +12146,7 @@
   ]
  },
  {
-  "no": 266,
+  "no": 254,
   "paper": "p2",
   "unit": "Unit 13 – UK Economic Change",
   "front": "How is the UK linked to the world by transport and communication?",
@@ -12677,7 +12197,7 @@
   ]
  },
  {
-  "no": 267,
+  "no": 255,
   "paper": "p3",
   "unit": "Unit 14 – Human Fieldwork",
   "front": "What is primary and secondary data?",
@@ -12717,7 +12237,7 @@
   "k": 1
  },
  {
-  "no": 268,
+  "no": 256,
   "paper": "p3",
   "unit": "Unit 14 – Human Fieldwork",
   "front": "Why use quantitative and qualitative data, and what is opportunistic sampling?",
@@ -12757,7 +12277,7 @@
   "k": 1
  },
  {
-  "no": 269,
+  "no": 257,
   "paper": "p3",
   "unit": "Unit 14 – Human Fieldwork",
   "front": "What was the human fieldwork enquiry?",
@@ -12808,7 +12328,7 @@
   ]
  },
  {
-  "no": 270,
+  "no": 258,
   "paper": "p3",
   "unit": "Unit 14 – Human Fieldwork",
   "front": "What did we conclude and how did we evaluate?",
@@ -12859,7 +12379,7 @@
   ]
  },
  {
-  "no": 271,
+  "no": 259,
   "paper": "p3",
   "unit": "Unit 14 – Human Fieldwork",
   "front": "How did we use the pedestrian count?",
@@ -12910,7 +12430,7 @@
   ]
  },
  {
-  "no": 272,
+  "no": 260,
   "paper": "p3",
   "unit": "Unit 14 – Human Fieldwork",
   "front": "How did we use the bipolar environmental quality survey?",
@@ -12961,7 +12481,7 @@
   ]
  },
  {
-  "no": 273,
+  "no": 261,
   "paper": "p3",
   "unit": "Unit 14 – Human Fieldwork",
   "front": "How did we use semi-structured interviews?",
@@ -13012,7 +12532,7 @@
   ]
  },
  {
-  "no": 274,
+  "no": 262,
   "paper": "p3",
   "unit": "Unit 14 – Human Fieldwork",
   "front": "How did we use the affordable home survey?",
@@ -13063,7 +12583,7 @@
   ]
  },
  {
-  "no": 275,
+  "no": 263,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "What is the pre-release booklet?",
@@ -13102,7 +12622,7 @@
   ]
  },
  {
-  "no": 276,
+  "no": 264,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "What sources can the pre-release booklet contain?",
@@ -13141,7 +12661,7 @@
   ]
  },
  {
-  "no": 277,
+  "no": 265,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "What does issue evaluation ask you to do?",
@@ -13180,7 +12700,7 @@
   ]
  },
  {
-  "no": 278,
+  "no": 266,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "How do you evaluate an issue well?",
@@ -13219,7 +12739,7 @@
   ]
  },
  {
-  "no": 279,
+  "no": 267,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "Why is Paper 3 different from Papers 1 and 2?",
@@ -13258,7 +12778,7 @@
   ]
  },
  {
-  "no": 280,
+  "no": 268,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "Which OS map scales are used?",
@@ -13297,7 +12817,7 @@
   ]
  },
  {
-  "no": 281,
+  "no": 269,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "What OS map skills do you need?",
@@ -13336,7 +12856,7 @@
   ]
  },
  {
-  "no": 282,
+  "no": 270,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "What atlas and map skills do you need?",
@@ -13375,7 +12895,7 @@
   ]
  },
  {
-  "no": 283,
+  "no": 271,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "Which graphs do you need to select and construct?",
@@ -13414,7 +12934,7 @@
   ]
  },
  {
-  "no": 284,
+  "no": 272,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "Which maps do you need to complete and interpret?",
@@ -13453,7 +12973,7 @@
   ]
  },
  {
-  "no": 285,
+  "no": 273,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "What numerical skills do you need?",
@@ -13492,7 +13012,7 @@
   ]
  },
  {
-  "no": 286,
+  "no": 274,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "Which statistical skills do you need?",
@@ -13531,7 +13051,7 @@
   ]
  },
  {
-  "no": 287,
+  "no": 275,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "How do you work with trends in data?",
@@ -13570,7 +13090,7 @@
   ]
  },
  {
-  "no": 288,
+  "no": 276,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "What types of data do you use in geography?",
@@ -13609,7 +13129,7 @@
   ]
  },
  {
-  "no": 289,
+  "no": 277,
   "paper": "p3",
   "unit": "Unit 15 – Skills for Pre-release",
   "front": "What are the enquiry and argument skills?",
