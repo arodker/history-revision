@@ -125,7 +125,7 @@ function setMenuRender() {
   const row = (ic, label, act, sw) => '<button class="set-row" role="menuitem" onclick="' + act + '"><span>' + ic + ' ' + label + '</span>' + (sw === undefined ? '' : '<span class="set-sw' + (sw ? ' on' : '') + '"></span>') + '</button>';
   m.innerHTML = row('🌙', 'Night mode', 'toggleDark()', dark) + row('💡', 'Hints', 'setHints()', fdHintsOn) + '<div class="set-sep"></div>' +
     row('💾', 'Save progress', "pmOpen('save')") + row('📥', 'Load progress', "pmOpen('load')") + '<div class="set-sep"></div>' +
-    row('💡', 'Tips for this page', "setMenuClose();document.getElementById('tour-btn').click()") + row('🖨️', 'Print this page', 'setMenuClose();window.print()');
+    (hsInstalled() ? '' : row('📲', 'Install as an app', 'setMenuClose();hsInstall()')) + row('💡', 'Tips for this page', "setMenuClose();document.getElementById('tour-btn').click()") + row('🖨️', 'Print this page', 'setMenuClose();window.print()');
 }
 function setHints() { fdSyncHints(!fdHintsOn); setMenuRender(); }
 function setMenuToggle(ev) {
@@ -175,13 +175,6 @@ setTimeout(usagePing, 6000);
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') usagePing(); });
 setInterval(() => { if (document.visibilityState === 'visible') usagePing(); }, 240000);
 </script>
-<link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#7C5CD6">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="GCSE Geography">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>GCSE Geography Revision Hub</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%A5%A3%3C/text%3E%3C/svg%3E">
 <style>
@@ -1045,6 +1038,29 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 .pb-u16{background:#FEE8EC;color:#862334;border-color:#F43F5E}.bg-u16{background:#FEE8EC;color:#862334}.mode-btn.stripe-u16{border-left-color:#F43F5E}select.sel-u16{background:#FEE8EC;color:#862334;border-color:#F43F5E}.c-u16{background:#F43F5E}.s-u16{background:#F43F5E}.t-u16{background:#FEE8EC;color:#862334}.fill-u16{background:#F43F5E}.rq-pill.on-u16{background:#FEE8EC;color:#862334;border-color:#F43F5E}
 .pb-soon{opacity:.55;filter:grayscale(.55)}.pb-soon::after{content:'Coming soon';display:block;font-size:.66rem;font-weight:700;margin-top:.3rem}
 .paper-grid{grid-template-columns:1fr 1fr}
+</style>
+<link rel="manifest" href="manifest-geog.webmanifest">
+<meta name="theme-color" content="#2E8B57">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="GCSE Geography">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="icon-geog-touch.png">
+<style id="boss-extra">.boss-taunt{display:flex;align-items:center;gap:.6rem;margin:.5rem auto .3rem;max-width:34rem;background:#FFF4F2;color:#5A1610;border:2px solid #C0392B;border-radius:14px;padding:.55rem .8rem;font-weight:700;font-size:.95rem;line-height:1.3;animation:bosstaunt .45s cubic-bezier(.2,1.6,.4,1)}
+.boss-taunt span{font-size:1.6rem;flex:none}.boss-taunt i{font-style:italic}
+:root.dark .boss-taunt{background:#2A1614;color:#FFD9D4;border-color:#FF8076}
+@keyframes bosstaunt{0%{transform:scale(.6) rotate(-3deg);opacity:0}100%{transform:none;opacity:1}}
+.rk-ov{position:fixed;inset:0;z-index:9990;background:rgba(10,6,20,.55);overflow:hidden;cursor:pointer;animation:rkin .25s}
+@keyframes rkin{from{opacity:0}to{opacity:1}}
+.rk-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.rk-sp,.rk-gh{position:absolute;left:0;top:0;width:84px;height:84px;line-height:84px;font-size:72px;text-align:center;pointer-events:none;will-change:transform;filter:drop-shadow(0 6px 10px rgba(0,0,0,.4))}
+.rk-gh{opacity:.35;filter:none;animation:rkgh .45s forwards}
+@keyframes rkgh{to{opacity:0}}
+.rk-say{position:absolute;top:9%;left:0;right:0;text-align:center;pointer-events:none}
+.rk-say b{display:inline-block;max-width:90%;background:#fff;color:#1c1530;border:3px solid #E8433A;border-radius:16px;padding:.5rem 1rem;font-size:1.15rem;font-weight:900;animation:bosstaunt .3s cubic-bezier(.2,1.6,.4,1)}
+.rk-pop{position:absolute;font-size:48px;pointer-events:none;animation:rkpop .6s forwards}
+@keyframes rkpop{0%{transform:scale(.2);opacity:1}60%{transform:scale(1.6);opacity:1}100%{transform:scale(2.2);opacity:0}}
+.rk-skip{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:rgba(255,255,255,.55);font-size:.75rem}
 </style>
 </head>
 <body>
@@ -5261,8 +5277,25 @@ function stOver() {
     '<button class="arc-btn" onclick="stStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
 }
 // ----- Boss battle -----
-const BOSSES = [['Mudslide Golem','🗿'], ['Drought Scorpion','🦂'], ['Smog Shade','👻'], ['Magma Dragon','🐉'], ['Typhoon Kraken','🐙'], ['The Supervolcano','🌋']];
+const BOSSES = [['Erosion Troll','🧌'], ['Glacier Mammoth','🦣'], ['Gridlock Ghoul','🧟'], ['Jungle Anaconda','🐍'], ['Typhoon Kraken','🐙'], ['The Supervolcano','🌋']];
 const BOSS_HP = [6, 8, 10, 12, 15, 20], BOSS_SECS = 12, BOSS_HINTS = 3;
+const BOSS_TAUNTS = [
+  ['That answer just fell off the cliff.', 'Your revision is wearing away, one wave at a time.', 'Attrition, abrasion, and now your marks.', 'That answer has been eroded to nothing.', 'I have seen more solid headlands than your knowledge.', 'Hydraulic action? More like hydraulic wrong.'],
+  ['Your answer has gone cold.', 'Frozen solid. Not one fact moved.', 'You are in a rut, and it is U-shaped.', 'That answer has been scraped clean off.', 'Your revision has melted away.', 'Slow and heavy, just like your thinking.'],
+  ['You are stuck in traffic. So is your answer.', 'Rush hour in your brain and nothing is moving.', 'That answer did not survive the commute.', 'Too much congestion in that answer.', 'Urban sprawl? That answer sprawled everywhere.', 'Your revision has been bulldozed for a car park.'],
+  ['That answer is lost in the canopy.', 'You have been deforested of facts.', 'I am squeezing the marks right out of you.', 'It is a jungle in there. Mostly weeds.', 'No biodiversity in that answer. Just one wrong idea.', 'Your marks are slithering away.'],
+  ['A storm is coming for your grade.', 'You are out of your depth.', 'Low pressure. Low marks.', 'Your answer has been swept out to sea.', 'Flooded with mistakes again.', 'That answer did not survive the storm surge.'],
+  ['I am overdue, and so are your revision notes.', 'One eruption and your grade is ash.', 'Everything you know is about to be buried.', 'Every other boss warned you about this.', 'Have you even read the specification? Brave.', 'The whole sky goes dark when I blow.']
+];
+const BOSS_LATE = ['Too slow! The lava is flowing.', 'Tick tock. The tide is coming in.', 'Did you drift off with the tectonic plates?', 'The clock wins again.'];
+const BOSS_LAST = ['That is your last heart. The ground is shaking.', 'One more mistake and you are swept away.'];
+function bossTaunt(g, late) {
+  const pool = g.lives <= 1 ? BOSS_LAST : (late ? BOSS_LATE.concat(BOSS_TAUNTS[g.lv % BOSS_TAUNTS.length].slice(0, 2)) : BOSS_TAUNTS[g.lv % BOSS_TAUNTS.length]);
+  let t, n = 0;
+  do { t = pool[Math.floor(Math.random() * pool.length)]; } while (t === g.lastTaunt && pool.length > 1 && ++n < 8);
+  g.lastTaunt = t;
+  return t;
+}
 function bossStart() {
   const pool = shuffle(arcRqPool());
   if (pool.length < 10) { arcShort('Not enough questions for this paper yet.'); return; }
@@ -5493,6 +5526,7 @@ function bossRender() {
     low = '<div class="boss-res ok">&#10003; Correct</div><div class="boss-a">' + escHtml(q.a) + '</div>';
   } else {
     low = '<div class="boss-res no">' + (g.late && !g.typed ? '&#9200; Time\'s up' : '&#10007; Not quite') + '</div>' +
+      (g.taunt ? '<div class="boss-taunt"><span>' + B[1] + '</span><i>' + escHtml(g.taunt) + '</i></div>' : '') +
       (g.typed ? '<div class="boss-typed">You wrote: ' + escHtml(g.typed) + '</div>' : '') +
       '<div class="boss-a">' + escHtml(q.a) + '</div>' +
       '<div class="boss-auto"><i></i></div><button class="arc-btn" onclick="bossMark(false)">Next</button><button class="boss-right" onclick="bossMark(true)">I was right</button>';
@@ -5527,8 +5561,10 @@ function bossResolve(late) {
     g.phase = 'ok'; bossRender();
     ARC.t = setTimeout(() => { if (ARC.g === g) bossMark(true); }, 1100);
   } else {
+    g.taunt = bossTaunt(g, late && !g.typed);
     g.phase = 'no'; bossRender();
-    clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g && g.phase === 'no') bossMark(false); }, 3000);
+    const em0 = document.getElementById('boss-em'); if (em0) em0.classList.add('boss-laugh');
+    clearTimeout(ARC.t); ARC.t = setTimeout(() => { if (ARC.g === g && g.phase === 'no') bossMark(false); }, 4200);
   }
 }
 function bossLate() { const g = ARC.g; if (!g || g.type !== 'boss' || g.phase !== 'ask') return; bossResolve(true); }
@@ -5536,7 +5572,7 @@ function bossSubmit() { const g = ARC.g; if (!g || g.type !== 'boss' || g.phase 
 function bossMark(ok) {
   const g = ARC.g, q = bossQ();
   if (g.marking) return;
-  g.marking = true; clearTimeout(ARC.t); arcTimerStop();
+  g.marking = true; g.taunt = ''; clearTimeout(ARC.t); arcTimerStop();
   if (ok && g.phase === 'no' && g.typed) bsLearn(g.typed, q.a);
   xpAward('rapid', ok, 'rq|' + q.q, q.q, q.paper, q.unit);
   g.i++;
@@ -5630,6 +5666,12 @@ const BADGES = [
   {id:'maxed', e:'💪', n:'Maxed out', h:'Reach the daily XP limit', c:['#FCEBEB','#E24B4A']},
   {id:'traveller', e:'🕰️', n:'Jet setter', h:'Get 15 flashcards right in four different units in one day', c:['#EEEDFE','#7F77DD']},
   {id:'ice', e:'❄️', n:'Ice cold', h:'Defeat the Supervolcano on your last heart', c:['#E6F1FB','#378ADD']},
+  {id:'troll', e:'🧌', n:'Troll banisher', h:'Defeat the Erosion Troll', c:['#F1EFE8','#8A6D3B']},
+  {id:'mammoth', e:'🦣', n:'Mammoth melter', h:'Defeat the Glacier Mammoth', c:['#E6F1FB','#378ADD']},
+  {id:'ghoul', e:'🧟', n:'Ghoul buster', h:'Defeat the Gridlock Ghoul', c:['#F1EFE8','#5F5E5A']},
+  {id:'anaconda', e:'🐍', n:'Snake charmer', h:'Defeat the Jungle Anaconda', c:['#EAF3DE','#3B6D11']},
+  {id:'kraken', e:'🐙', n:'Kraken wrangler', h:'Defeat the Typhoon Kraken', c:['#E1F5EE','#0F6E56']},
+  {id:'volcano', e:'🌋', n:'Eruption stopper', h:'Defeat the Supervolcano', c:['#FAECE7','#D85A30']},
   {id:'collector', e:'🏴‍☠️', n:'Boss collector', h:'Defeat all six bosses', c:['#F1EFE8','#444441']},
   {id:'buzzer', e:'🔔', n:'Buzzer beater', h:'Get a boss answer right with under a second left', c:['#FAECE7','#D85A30']},
   {id:'special', e:'🔬', n:'Specialist', h:'Get 90% or more over at least 150 answers in one unit', c:['#E1F5EE','#0F6E56']},
@@ -5686,23 +5728,22 @@ function bdgNext() {
   void el.offsetWidth; el.classList.add('show');
   setTimeout(() => { el.classList.remove('show'); setTimeout(() => { bdgBusy = false; bdgNext(); }, 450); }, 2600);
 }
-const BOSS_IDS = ['dragon', 'wizard', 'gremlin', 'zombie', 'vampire', 'slayer'];
-function bossAll() { try { const s = bsLoad(), b = s.bosses || {}, g = bdgLoad(); return BOSS_IDS.every(i => b[i] || g[i]); } catch (e) { return false; } }
-// One-off clean-up: drop earned badges that no longer exist. Boss defeats are kept as progress towards Boss collector.
+const BOSS_IDS = ['troll', 'mammoth', 'ghoul', 'anaconda', 'kraken', 'volcano'];
+const BOSS_OLD = {gremlin:'troll', golem:'troll', zombie:'mammoth', scorpion:'mammoth', tsunami:'mammoth', vampire:'ghoul', shade:'ghoul', dragon:'anaconda', magma:'anaconda', wizard:'kraken', slayer:'volcano'};
+function bossAll() { try { const g = bdgLoad(); return BOSS_IDS.every(i => g[i]); } catch (e) { return false; } }
+// One-off clean-up: drop earned badges that no longer exist. Old hidden boss defeats become the matching boss badge.
 (function bdgPrune() {
   try {
-    const got = bdgLoad(), ids = BADGES.map(b => b.id), s = bsLoad(); let ch = false, sc = false;
-    Object.keys(got).forEach(k => {
-      if (ids.indexOf(k) >= 0) return;
-      if (BOSS_IDS.indexOf(k) >= 0) { s.bosses = s.bosses || {}; if (!s.bosses[k]) { s.bosses[k] = 1; sc = true; } }
-      delete got[k]; ch = true;
-    });
-    if (sc) bsSave(s);
+    const got = bdgLoad(), ids = BADGES.map(b => b.id), s = bsLoad(); let ch = false;
+    const old = Object.assign({}, s.bosses || {});
+    Object.keys(got).forEach(k => { if (BOSS_OLD[k]) old[k] = 1; });
+    Object.keys(old).forEach(k => { const n = BOSS_OLD[k] || (BOSS_IDS.indexOf(k) >= 0 ? k : null); if (n && !got[n]) { got[n] = localDate(); ch = true; } });
+    Object.keys(got).forEach(k => { if (ids.indexOf(k) < 0) { delete got[k]; ch = true; } });
+    if (s.bosses) { delete s.bosses; bsSave(s); }
     if (ch) localStorage.setItem(LS_BADGES, JSON.stringify(got));
   } catch (e) {}
 })();
 function bdgAward(id) {
-  if (BOSS_IDS.indexOf(id) >= 0) { try { const s = bsLoad(); s.bosses = s.bosses || {}; if (!s.bosses[id]) { s.bosses[id] = 1; bsSave(s); } if (bossAll()) return bdgAward('collector'); } catch (e) {} return false; }
   const got = bdgLoad();
   if (got[id]) return false;
   const b = BADGES.find(x => x.id === id);
@@ -5869,11 +5910,12 @@ bossDeath = function () {
     if (!g.slip) { if (g.lv >= 2) bdgAward('flawless'); g.clean = (g.clean || 0) + 1; if (g.clean >= BOSSES.length) bdgAward('untouch'); } else g.clean = 0;
     if (g.lives === 1) bdgAward('nine');
     const nm = (BOSSES[g.lv % BOSSES.length] || [])[0];
-    if (nm === 'Magma Dragon') bdgAward('dragon');
-    if (nm === 'Typhoon Kraken') bdgAward('wizard');
-    if (nm === 'Mudslide Golem') bdgAward('gremlin');
-    if (nm === 'Drought Scorpion') bdgAward('zombie');
-    if (nm === 'Smog Shade') bdgAward('vampire');
+    if (nm === 'Erosion Troll') bdgAward('troll');
+    if (nm === 'Glacier Mammoth') bdgAward('mammoth');
+    if (nm === 'Gridlock Ghoul') bdgAward('ghoul');
+    if (nm === 'Jungle Anaconda') bdgAward('anaconda');
+    if (nm === 'Typhoon Kraken') bdgAward('kraken');
+    if (nm === 'The Supervolcano') bdgAward('volcano');
     if (nm === 'The Supervolcano' && g.lives === 1) bdgAward('ice');
   }
   return _bdgDeath.apply(this, arguments);
@@ -5885,7 +5927,7 @@ bossStart = function () { const r = _bdgStart.apply(this, arguments); if (ARC.g)
 var _bdgWin = bossWin;
 bossWin = function () {
   const g = ARC.g;
-  if (g && g.lv >= BOSSES.length - 1) { bdgAward('slayer'); }
+  if (g && g.lv >= BOSSES.length - 1) { bdgAward('volcano'); }
   return _bdgWin.apply(this, arguments);
 };
 var _bdgSub = bossSubmit;
@@ -6286,6 +6328,36 @@ uptoRender();
     });
     return {h: h, w: w, hw: hw, f: f, s: s, t: t, days: days};
   };
+})();
+</script>
+<script id="hs-install">
+(function(){
+var HUB={name:"GCSE Geography Hub",short:"GCSE Geography",color:"#2E8B57",icon:"icon-geog-192.png"};
+var dp=null;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;try{setMenuRender()}catch(_){}});
+window.addEventListener('appinstalled',function(){dp=null;try{setMenuRender()}catch(_){}});
+window.hsInstalled=function(){try{return matchMedia('(display-mode: standalone)').matches||navigator.standalone===true}catch(_){return false}};
+if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)&&!window.__swReg){window.__swReg=1;window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}
+var ua=navigator.userAgent,ios=/iPad|iPhone|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+window.hsInstall=function(){
+ var o=document.getElementById('hs-inst');if(o)o.remove();
+ o=document.createElement('div');o.id='hs-inst';
+ o.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:16px;font-family:inherit';
+ var steps=ios?'<ol style="margin:.6em 0 0 1.2em;padding:0;line-height:1.6"><li>Open this page in <b>Safari</b></li><li>Tap the <b>Share</b> button (square with an arrow)</li><li>Scroll and tap <b>Add to Home Screen</b></li><li>Tap <b>Add</b></li></ol>'
+  :(dp?'<p style="margin:.6em 0 0">One tap and it sits on your home screen like any other app.</p>':'<ol style="margin:.6em 0 0 1.2em;padding:0;line-height:1.6"><li>Open this page in <b>Chrome</b></li><li>Tap the <b>&#8942;</b> menu (top right)</li><li>Tap <b>Install app</b> or <b>Add to Home screen</b></li></ol>');
+ o.innerHTML='<div style="background:#fff;color:#222;border-radius:18px;max-width:340px;width:100%;padding:22px;box-shadow:0 20px 50px rgba(0,0,0,.35);text-align:center;border-top:6px solid '+HUB.color+'">'
+  +'<img src="'+HUB.icon+'" alt="" width="84" height="84" style="border-radius:18px;box-shadow:0 4px 12px rgba(0,0,0,.2)">'
+  +'<div style="font-weight:800;font-size:1.1em;margin-top:.7em">'+HUB.name+'</div>'
+  +'<div style="text-align:left;font-size:.92em;margin-top:.4em">'+steps+'</div>'
+  +'<div style="display:flex;gap:8px;margin-top:1.1em">'
+  +(dp&&!ios?'<button id="hs-inst-go" style="flex:1;border:0;border-radius:10px;padding:.7em;font-weight:700;color:#fff;background:'+HUB.color+';font-size:1em">Install</button>':'')
+  +'<button id="hs-inst-x" style="flex:1;border:1px solid #ccc;border-radius:10px;padding:.7em;background:#f6f6f6;color:#222;font-size:1em">'+(dp&&!ios?'Not now':'Got it')+'</button></div></div>';
+ document.body.appendChild(o);
+ o.addEventListener('click',function(e){if(e.target===o)o.remove()});
+ document.getElementById('hs-inst-x').onclick=function(){o.remove()};
+ var g=document.getElementById('hs-inst-go');
+ if(g)g.onclick=function(){var p=dp;dp=null;o.remove();p.prompt();p.userChoice.finally(function(){try{setMenuRender()}catch(_){}})};
+};
 })();
 </script>
 </body>
