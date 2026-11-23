@@ -3964,7 +3964,7 @@ function final(s,anim){
   var court=perfect?'<div class="dq-court"><span class="dq-trump l">🎺</span><span class="dq-crown">👑</span><span class="dq-trump r">🎺</span></div>':'';
   root.innerHTML='<div class="dq-panel'+(perfect?' dq-gold':'')+'" style="text-align:center">'
     +'<div class="dq-k" style="justify-content:center">'+esc(QNAME)+' No.'+dailyNo(s.date)+'</div>'+court
-    +'<div class="dq-score">'+n+'/10</div><p class="dq-t">'+title(n)+'</p>'
+    +'<div class="dq-score">'+n+'/10</div><p class="dq-t">'+title(n)+'</p>'+(n<=3?'<p class="dq-s" style="margin:0">Try your luck again tomorrow</p>':'')
     +'<div class="dq-rows"><div class="dq-rl">Tudor</div><div class="dq-sym" style="justify-content:center">'+symRow('t')+'</div><div class="dq-rl">Cold War</div><div class="dq-sym" style="justify-content:center">'+symRow('c')+'</div></div>'
     +'<div class="'+late.replace(/^ /,'')+'" id="dq-after">'
     +'<div class="dq-cmp" id="dq-cmp"></div><p class="dq-s" style="margin:.6rem 0 .7rem">'+(s.xp?'+'+s.xp+' XP':'')+(s.xp&&st?' \u00b7 ':'')+(st?'🔥 Streak: '+st+(st===1?' day':' days'):'')+'</p>'
