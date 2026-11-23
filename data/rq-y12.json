@@ -337,11 +337,16 @@
   {
     "section": "mtc",
     "unit": "Unit 2 – Religious Change",
-    "q": "What doctrine did the First Book of Common Prayer contain about the Holy Communion?",
-    "a": "Vague wording",
+    "q": "What service was left ambiguous in the First Book of Common Prayer?",
+    "a": "Eucharist / Holy Communion",
     "reign": "edward",
-    "s": "Vague wording",
-    "alt": [],
+    "s": "Eucharist",
+    "alt": [
+      "Eucharist",
+      "Holy Communion",
+      "Communion",
+      "Eucharist / Holy Communion"
+    ],
     "t": "t"
   },
   {
