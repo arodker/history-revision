@@ -5341,7 +5341,7 @@ function bossStart() {
 function bossQ() { const g = ARC.g; if (g.i >= g.pool.length) { g.pool = shuffle(g.pool); g.i = 0; } return g.pool[g.i]; }
 // ----- typed answer marking -----
 const BS_STOP = new Set(['the','a','an','of','and','or','to','in','on','at','for','by','with','was','were','is','are','as','his','her','its','their','they','them','he','she','it','be','been','being','had','has','have','did','do','does','that','this','who','which']);
-const BS_GENERIC = new Set(['act','treaty','plan','party','league','law','laws','conference','summit','pact','crisis','war','republic','government','state','states','united','british','britain','national','people','peoples','nazi','nazis','transubstantiation','consubstantiation']);
+const BS_GENERIC = new Set(['act','treaty','plan','party','league','law','laws','conference','summit','pact','crisis','war','republic','government','state','states','united','british','britain','national','people','peoples','nazi','nazis','transubstantiation','consubstantiation','spaniard','spaniards']);
 const BS_FN = {a:1, an:1, one:1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9, ten:10};
 const BS_FD = {half:2, halves:2, third:3, thirds:3, quarter:4, quarters:4, fourth:4, fourths:4, fifth:5, fifths:5, sixth:6, sixths:6, seventh:7, sevenths:7, eighth:8, eighths:8, ninth:9, ninths:9, tenth:10, tenths:10};
 const BS_DEC = {twenties:'20s', thirties:'30s', forties:'40s', fifties:'50s', sixties:'60s', seventies:'70s', eighties:'80s', nineties:'90s'};
