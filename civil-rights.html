@@ -797,6 +797,10 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .dq-flag.p{animation:dq-fp 1.6s ease-in-out infinite}
 @keyframes dq-fp{50%{transform:scale(1.1)}}
 #dq-card.mini{padding:.55rem .85rem;background:none;border:1px dashed var(--border2)}
+#dq-card.mini.gold{background:#FAEEDA;border:1px solid #BA7517}
+#dq-card.mini.gold .dq-ml,#dq-card.mini.gold .dq-ml b,#dq-card.mini.gold button{color:#854F0B}
+:root.dark #dq-card.mini.gold{background:#3a2e17;border-color:#EF9F27}
+:root.dark #dq-card.mini.gold .dq-ml,:root.dark #dq-card.mini.gold .dq-ml b,:root.dark #dq-card.mini.gold button{color:#FAC775}
 .dq-ml{flex:1;font-size:.82rem;color:var(--muted)}.dq-ml b{color:var(--text);font-weight:600}
 .dq-hero{display:grid;grid-template-columns:1fr 1fr}
 .dq-hero div{padding:.85rem .5rem .7rem;text-align:center;font-size:.74rem;font-weight:700}
@@ -3849,7 +3853,7 @@ function renderCard(){
   if(s&&s.res.length>=10){
     var n=score(s);
     card.innerHTML='<div class="dq-mini"><span class="dq-ml"><b>'+esc(QNAME)+' '+n+'/10</b> \u00b7 next one in '+cdText()+'</span><button onclick="dqOpen()">Result</button></div>';
-    card.className='on mini';return;
+    card.className='on mini'+(n===10?' gold':'');return;
   }
   var started=s&&s.res.length>0;
   var seen=false;try{seen=!!localStorage.getItem('cr_dq_seen');}catch(e){}
