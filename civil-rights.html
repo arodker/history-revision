@@ -796,7 +796,8 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .dq-flag{position:absolute;top:8px;right:8px;background:#F0B429;color:#3B2A00;font-size:.6rem;font-weight:800;padding:2px 8px;border-radius:10px;letter-spacing:.04em;z-index:1}
 .dq-flag.p{animation:dq-fp 1.6s ease-in-out infinite}
 @keyframes dq-fp{50%{transform:scale(1.1)}}
-#dq-card.mini{padding:.6rem .85rem}
+#dq-card.mini{padding:.55rem .85rem;background:none;border:1px dashed var(--border2)}
+.dq-ml{flex:1;font-size:.82rem;color:var(--muted)}.dq-ml b{color:var(--text);font-weight:600}
 .dq-hero{display:grid;grid-template-columns:1fr 1fr}
 .dq-hero div{padding:.85rem .5rem .7rem;text-align:center;font-size:.74rem;font-weight:700}
 .dq-hero span{display:block;font-size:2.1rem;line-height:1.15}
@@ -810,7 +811,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .dq-mini b{font-size:.95rem}
 .dq-mini .dq-ms{font-size:1.05rem;letter-spacing:.05em}
 .dq-mini .dq-mc{font-size:.72rem;color:var(--muted);flex:1;min-width:6rem}
-.dq-mini button{padding:.4rem .7rem;border-radius:8px;border:1px solid var(--border2);background:var(--surface);color:var(--text);font:inherit;font-size:.78rem;font-weight:600;cursor:pointer}
+.dq-mini button{padding:.2rem .3rem;border:0;background:none;color:var(--muted);font:inherit;font-size:.78rem;cursor:pointer;text-decoration:underline}
 .dq-cmp{margin:.2rem 0 .8rem}
 .dq-cmp p{margin:0;font-size:.95rem;font-weight:700}
 .dq-cmp small{display:block;font-size:.74rem;color:var(--muted);margin:.1rem 0 .5rem}
@@ -3847,7 +3848,7 @@ function renderCard(){
   var s=getState(),st=streak();
   if(s&&s.res.length>=10){
     var n=score(s);
-    card.innerHTML='<div class="dq-mini"><b>'+esc(QNAME)+' No.'+dailyNo(s.date)+': '+n+'/10</b><span class="dq-mc">Next '+esc(QNAME)+' in '+cdText()+'</span><button onclick="dqOpen()">Result</button></div>';
+    card.innerHTML='<div class="dq-mini"><span class="dq-ml"><b>'+esc(QNAME)+' '+n+'/10</b> \u00b7 next one in '+cdText()+'</span><button onclick="dqOpen()">Result</button></div>';
     card.className='on mini';return;
   }
   var started=s&&s.res.length>0;
