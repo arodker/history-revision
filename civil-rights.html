@@ -792,6 +792,29 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 @keyframes dq-blare-l{0%{transform:translateX(-90px) scaleX(-1) scale(.3);opacity:0}70%{transform:translateX(6px) scaleX(-1) scale(1.2);opacity:1}100%{transform:translateX(0) scaleX(-1) scale(1);opacity:1}}
 @keyframes dq-blare-r{0%{transform:translateX(90px) scale(.3);opacity:0}70%{transform:translateX(-6px) scale(1.2);opacity:1}100%{transform:translateX(0) scale(1);opacity:1}}
 @keyframes dq-pulse{50%{transform:scale(1.08)}}
+#dq-card.hero{padding:0;overflow:hidden}
+#dq-card.mini{padding:.6rem .85rem}
+.dq-hero{display:grid;grid-template-columns:1fr 1fr}
+.dq-hero div{padding:.85rem .5rem .7rem;text-align:center;font-size:.74rem;font-weight:700}
+.dq-hero span{display:block;font-size:2.1rem;line-height:1.15}
+.dq-hg{background:#FAEEDA;color:#854F0B}.dq-hb{background:#E6F1FB;color:#0C447C}
+:root.dark .dq-hg{background:#3a2e17;color:#FAC775}:root.dark .dq-hb{background:#14283f;color:#85B7EB}
+.dq-body{padding:.85rem 1.1rem 1rem;text-align:center}
+.dq-name{font-size:1.7rem;font-weight:800;letter-spacing:.12em;margin:0;line-height:1.1}
+.dq-play{display:block;width:100%;padding:.8rem;border:0;border-radius:10px;background:#EF9F27;color:#412402;font:inherit;font-weight:800;font-size:1rem;cursor:pointer}
+.dq-play:hover{background:#BA7517;color:#fff}
+.dq-mini{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.dq-mini b{font-size:.95rem}
+.dq-mini .dq-ms{font-size:1.05rem;letter-spacing:.05em}
+.dq-mini .dq-mc{font-size:.72rem;color:var(--muted);flex:1;min-width:6rem}
+.dq-mini button{padding:.4rem .7rem;border-radius:8px;border:1px solid var(--border2);background:var(--surface);color:var(--text);font:inherit;font-size:.78rem;font-weight:600;cursor:pointer}
+.dq-cmp{margin:.2rem 0 .8rem}
+.dq-cmp p{margin:0;font-size:.95rem;font-weight:700}
+.dq-cmp small{display:block;font-size:.74rem;color:var(--muted);margin:.1rem 0 .5rem}
+.dq-hist{display:flex;align-items:flex-end;gap:3px;height:56px}
+.dq-hist i{flex:1;background:var(--border2);border-radius:3px 3px 0 0;min-height:2px}
+.dq-hist i.me{background:#EF9F27}
+.dq-hl{display:flex;gap:3px;font-size:.62rem;color:var(--muted);margin-top:2px}.dq-hl span{flex:1}
 @media (prefers-reduced-motion:reduce){.dq-ic,.dq-sym span,.dq-late,.dq-crown,.dq-trump,.dq-shake,.dq-ring{animation:none!important}}
 </style>
 </head>
@@ -3756,7 +3779,8 @@ var on=LIVE||/[?&]daily(=|&|$)/.test(location.search);
 var card=document.getElementById('dq-card'),root=document.getElementById('dq-root');
 if(!card||!root)return;
 var SECS=15,EPOCH='2026-11-23',K='cr_daily',KH='cr_daily_hist';
-var QNAME='Rodquiz';
+var QNAME='Quizker';
+var API='https://script.google.com/macros/s/AKfycbxK8TeIKnstO8SC-PbPdasW5G-iw6mpsFoOfZhCqvftJ_iY_4m9TG9XNgoXtuIqts6S/exec',MINN=5;
 var SYM={t:{c:'👑',w:'🪓',s:'🪓'},c:{c:'🚀',w:'☢️',s:'☢️'}};
 var SEC_LBL={mtc:'Mid Tudor',elizabeth:'Elizabeth',coldwar:'Cold War'};
 var WD=['M','T','W','T','F','S','S'];
@@ -3821,15 +3845,17 @@ function shareText(s){
 /* home card */
 function renderCard(){
   if(!on){card.className='';card.innerHTML='';return;}
-  var s=getState(),st=streak(),k='<div class="dq-k"><span>Daily 10 · No.'+dailyNo(today())+'</span><span>'+(st?'🔥 '+st+(st===1?' day':' days'):'')+'</span></div>';
+  var s=getState(),st=streak();
   if(s&&s.res.length>=10){
     var n=score(s);
-    card.innerHTML=k+'<p class="dq-h">Today: '+n+'/10 · '+title(n)+'</p><p class="dq-s">Next quiz in '+cdText()+'.</p><button class="dq-sec" style="width:100%" onclick="dqOpen()">View result</button>';
-  }else{
-    var started=s&&s.res.length>0;
-    card.innerHTML=k+'<p class="dq-h">'+esc(QNAME)+'</p><p class="dq-s">Ten questions on your Year 12 content, 15 seconds each. Everyone gets the same ten today.</p><button class="dq-go" onclick="dqOpen()">'+(started?'Continue today’s quiz':'Take today’s quiz')+'</button>';
+    card.innerHTML='<div class="dq-mini"><b>'+esc(QNAME)+' No.'+dailyNo(s.date)+'</b><span class="dq-ms">'+rowSyms(s,'t')+rowSyms(s,'c')+'</span><b>'+n+'/10</b><span class="dq-mc">'+(st?'\u{1F525} '+st+(st===1?' day':' days')+' \u00b7 ':'')+'next in '+cdText()+'</span><button onclick="dqOpen()">Result</button></div>';
+    card.className='on mini';return;
   }
-  card.className='on';
+  var started=s&&s.res.length>0;
+  card.innerHTML='<div class="dq-hero"><div class="dq-hg"><span>\u{1F451}</span>Tudors</div><div class="dq-hb"><span>\u{1F680}</span>Cold War</div></div>'
+    +'<div class="dq-body"><p class="dq-name">'+esc(QNAME.toUpperCase())+'</p><p class="dq-s" style="margin:.2rem 0 .7rem">No.'+dailyNo(today())+' \u00b7 10 questions \u00b7 15 seconds each'+(st?' \u00b7 \u{1F525} '+st+(st===1?' day':' days'):'')+'</p>'
+    +'<button class="dq-play" onclick="dqOpen()">'+(started?'Continue today\u2019s Quizker':'Play today\u2019s Quizker')+'</button></div>';
+  card.className='on hero';
 }
 function cdText(){var m=Math.max(0,Math.ceil(secsLeft()/60));return m<=0?'a moment':Math.floor(m/60)+'h '+(m%60)+'m';}
 window.dqOpen=function(){showScreen('s-daily');};
@@ -3922,20 +3948,47 @@ function final(s,anim){
   var wk='';for(var d=0;d<7;d++){var ds=addDays(mon,d),e=h[ds],c=ds===t?'t':(e?'':'n');wk+='<div class="'+c+'"><small>'+WD[d]+'</small><br>'+(e?e.s:'-')+'</div>';}
   var court=perfect?'<div class="dq-court"><span class="dq-trump l">🎺</span><span class="dq-crown">👑</span><span class="dq-trump r">🎺</span></div>':'';
   root.innerHTML='<div class="dq-panel'+(perfect?' dq-gold':'')+'" style="text-align:center">'
-    +'<div class="dq-k" style="justify-content:center">Daily No.'+dailyNo(s.date)+'</div>'+court
+    +'<div class="dq-k" style="justify-content:center">'+esc(QNAME)+' No.'+dailyNo(s.date)+'</div>'+court
     +'<div class="dq-score">'+n+'/10</div><p class="dq-t">'+title(n)+'</p>'
     +'<div class="dq-rows"><div class="dq-rl">Tudor</div><div class="dq-sym" style="justify-content:center">'+symRow('t')+'</div><div class="dq-rl">Cold War</div><div class="dq-sym" style="justify-content:center">'+symRow('c')+'</div></div>'
     +'<div class="'+late.replace(/^ /,'')+'" id="dq-after">'
-    +'<p class="dq-s" style="margin:.6rem 0 .7rem">'+(st?'🔥 Streak: '+st+(st===1?' day':' days'):'')+'</p>'
+    +'<div class="dq-cmp" id="dq-cmp"></div><p class="dq-s" style="margin:.6rem 0 .7rem">'+(st?'🔥 Streak: '+st+(st===1?' day':' days'):'')+'</p>'
     +'<div class="dq-row2"><button class="dq-go" id="dq-share" onclick="dqShare()">Share result</button><button class="dq-sec" onclick="dqReview()">Review misses</button></div>'
     +'<div class="dq-rev" id="dq-rev"></div>'
     +'<div class="dq-next" id="dq-cd">Next quiz in '+cdText()+'</div>'
     +'<div class="dq-rl" style="text-align:left">This week</div><div class="dq-wk">'+wk+'</div></div></div>';
+  compare(s);
   cdTimer=setInterval(function(){
     var el=document.getElementById('dq-cd');if(!el){stopAll();return;}
     if(today()!==s.date)el.innerHTML='Next quiz is ready <button class="dq-sec" style="margin-left:.4rem" onclick="dqRetry()">Play</button>';
     else el.textContent='Next quiz in '+cdText();
   },30000);
+}
+function did(){var id=localStorage.getItem('cr_did');if(!id){id='d-'+Math.random().toString(36).slice(2,8)+Math.random().toString(36).slice(2,6);try{localStorage.setItem('cr_did',id);}catch(e){}}return id;}
+function qkey(q){return (q.k==='dt'?'[date] ':'')+String(q.q).slice(0,90);}
+function send(s){
+  if(s.sent)return Promise.resolve();
+  var body={action:'daily',hub:'y13',id:did(),day:dailyNo(s.date),score:score(s),res:s.res.join(''),qs:s.items.map(function(q,i){return [qkey(q),q.ss,s.res[i]];})};
+  return fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(body)}).then(function(r){return r.json();}).then(function(d){
+    if(d&&d.ok){var c=getState();if(c){c.sent=1;save(c);}}
+  });
+}
+function compare(s){
+  var ctl=window.AbortController?new AbortController():null,to=setTimeout(function(){if(ctl)ctl.abort();},8000);
+  send(s).catch(function(){}).then(function(){
+    return fetch(API+'?action=daily&day='+dailyNo(s.date),ctl?{signal:ctl.signal}:{}).then(function(r){return r.json();});
+  }).then(function(d){
+    clearTimeout(to);
+    var el=document.getElementById('dq-cmp');
+    if(!el||!d||!d.dist||d.dist.length!==11||!(d.n>=MINN))return;
+    var c=getState(),me=score(s),others=d.n-(c&&c.sent?1:0),below=0,i,mx=1;
+    for(i=0;i<me;i++)below+=d.dist[i];
+    d.dist.forEach(function(x){if(x>mx)mx=x;});
+    var beat=others>0?Math.round(100*below/others):0;
+    el.innerHTML='<p>You beat '+beat+'% of players</p><small>Average '+d.avg+' \u00b7 '+d.n+' played today</small>'
+      +'<div class="dq-hist">'+d.dist.map(function(x,k){return '<i class="'+(k===me?'me':'')+'" style="height:'+Math.max(4,Math.round(100*x/mx))+'%"></i>';}).join('')+'</div>'
+      +'<div class="dq-hl">'+d.dist.map(function(x,k){return '<span>'+k+'</span>';}).join('')+'</div>';
+  }).catch(function(){clearTimeout(to);});
 }
 window.dqShare=function(){
   var s=getState();if(!s)return;var txt=shareText(s),b=document.getElementById('dq-share');
