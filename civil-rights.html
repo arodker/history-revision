@@ -3810,9 +3810,8 @@ function dtOk(x){return /^\d{4}$/.test(x.date)&&x.event&&x.event.split(/\s+/).le
 function pickRq(pool,n,r){var seen={},out=[];shuf(pool,r).forEach(function(x){var k=String(x.a).toLowerCase().replace(/[^a-z0-9]/g,'');if(out.length<n&&!seen[k]){seen[k]=1;out.push(x);}});return out;}
 function mkRq(x,sec){return {k:'rq',sec:sec,ss:x.section,q:x.q,a:x.a,alt:x.alt||[]};}
 function mkDt(x,sec,r){
-  var y=+x.date,c=[];for(var d=-6;d<=6;d++){var v=y+d;if(d&&v>=1400&&v<=2025)c.push(v);}
-  var opts=shuf(c,r).slice(0,3).concat([y]).sort(function(a,b){return a-b;});
-  return {k:'dt',sec:sec,ss:x.section,q:'In which year did this happen? '+x.event.replace(/\s+[—–]\s+/g,': '),a:String(y),opts:opts};
+  var y=+x.date;
+  return {k:'dt',sec:sec,ss:x.section,q:'In which year did this happen? '+x.event.replace(/\s+[—–]\s+/g,': '),a:String(y)};
 }
 function build(date,rq,dt){
   var r=rng(hash('dq|'+date)),tudor,i;
@@ -3892,9 +3891,7 @@ function question(s){
     s.qs=Date.now();save(s);
   }
   var bar='';for(var j=0;j<10;j++)bar+='<i class="'+(j<i?'d':'')+'"></i>';
-  var input=q.k==='dt'
-    ?'<div class="dq-opts">'+q.opts.map(function(o){return '<button class="dq-opt" onclick="dqPick('+o+')">'+o+'</button>';}).join('')+'</div>'
-    :'<input class="dq-in" id="dq-in" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" onkeydown="if(event.key===\'Enter\')dqSubmit()"><button class="dq-go" style="margin-bottom:.5rem" onclick="dqSubmit()">Submit</button>';
+  var input='<input class="dq-in" id="dq-in" type="text"'+(q.k==='dt'?' inputmode="numeric"':'')+' autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="'+(q.k==='dt'?'Type the year':'Type your answer')+'" onkeydown="if(event.key===\'Enter\')dqSubmit()"><button class="dq-go" style="margin-bottom:.5rem" onclick="dqSubmit()">Submit</button>';
   root.innerHTML='<div class="dq-panel" id="dq-panel"><div class="dq-bar">'+bar+'</div>'
     +'<div class="dq-top"><div class="dq-ring" id="dq-ring"><svg viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="18"/><circle class="arc" id="dq-arc" cx="22" cy="22" r="18"/></svg><b id="dq-sec">'+SECS+'</b></div>'
     +'<div class="dq-meta">Question '+(i+1)+' of 10<br>'+esc(SEC_LBL[q.ss])+'</div></div>'
@@ -3915,7 +3912,9 @@ function tick(s){
 window.dqSubmit=function(){
   var s=getState();if(!s||busy)return;var q=s.items[s.res.length],inp=document.getElementById('dq-in');
   var t=inp?inp.value.trim():'';if(!t)return;
-  var ok=false;try{ok=!!bsCheck(t,[q.a].concat(q.alt||[]).join(' / '),q.q);}catch(e){ok=false;}
+  var ok=false;
+  if(q.k==='dt'){var m=t.match(/\b\d{4}\b/);ok=!!m&&m[0]===q.a;}
+  else{try{ok=!!bsCheck(t,[q.a].concat(q.alt||[]).join(' / '),q.q);}catch(e){ok=false;}}
   finish(s,ok?'c':'w');
 };
 window.dqPick=function(v){var s=getState();if(!s||busy)return;var q=s.items[s.res.length];finish(s,String(v)===q.a?'c':'w');};
