@@ -864,7 +864,6 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   </div>
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
   <div class="paper-lbl">Revise a unit:</div>
-  <div id="gap-flag" style="display:none;background:#EEEDFE;border-radius:10px;padding:.6rem .75rem;margin:.2rem auto .6rem;width:fit-content;max-width:88%;color:#3C3489;font-size:.84rem;line-height:1.4;gap:.5rem;text-align:center;justify-content:center;align-items:center"><span>🆕</span><span><b>Try this:</b> Flashcards now have a gapfill mode!</span></div>
   <div class="pick-grid">
     <button class="pick-btn pb-aa" onclick="openUnit('aa')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-aa" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-aa" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-aa" cx="30" cy="30" r="24" fill="none" stroke="#4A7EC7" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-aa" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-aa">0%</text></svg></span><span class="plabel">Unit 1</span>✊ African American Rights</button>
     <button class="pick-btn pb-lab" onclick="openUnit('lab')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-lab" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-lab" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-lab" cx="30" cy="30" r="24" fill="none" stroke="#C94A5A" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-lab" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-lab">0%</text></svg></span><span class="plabel">Unit 2</span>🔨 Labour and Trade Union Rights</button>
@@ -3471,7 +3470,6 @@ uptoRender(); xpRender();
   hd.addEventListener('keydown', function (e) { if (e.key === 'Enter') hd.click(); });
   if (canHover) { el.addEventListener('mouseenter', function () { if (!el.dataset.pin) set(true); }); el.addEventListener('mouseleave', function () { if (!el.dataset.pin) set(false); }); }
 })();
-document.addEventListener('DOMContentLoaded', function () { try { if (!localStorage.getItem('cr_gap_tried')) document.getElementById('gap-flag').style.display = 'flex'; } catch (e) {} });
 function gapNewClose() {
   try { localStorage.setItem('cr_gap_new', '1'); } catch (e) {}
   var n = document.getElementById('gap-new'); if (n) n.remove();
@@ -3490,7 +3488,6 @@ function gapNewShow() {
     document.body.appendChild(n);
   } catch (e) {}
 }
-setTimeout(gapNewShow, 1200);
 </script>
 <script>
 /* ---------- Anonymous usage timing: when the hub is used and which features, in active seconds ---------- */
@@ -3856,7 +3853,8 @@ function renderCard(){
   }
   var started=s&&s.res.length>0;
   var seen=false;try{seen=!!localStorage.getItem('cr_dq_seen');}catch(e){}
-  card.innerHTML='<span class="dq-flag'+(seen?'':' p')+'">NEW</span><div class="dq-hero"><div class="dq-hg"><span>\u{1F451}</span>Tudors</div><div class="dq-hb"><span>\u{1F680}</span>Cold War</div></div>'
+  var played=started||Object.keys(hist()).length>0;
+  card.innerHTML=(played?'':'<span class="dq-flag'+(seen?'':' p')+'">NEW</span>')+'<div class="dq-hero"><div class="dq-hg"><span>\u{1F451}</span>Tudors</div><div class="dq-hb"><span>\u{1F680}</span>Cold War</div></div>'
     +'<div class="dq-body"><p class="dq-name">'+esc(QNAME.toUpperCase())+'</p><p class="dq-s" style="margin:.2rem 0 .7rem">No.'+dailyNo(today())+' \u00b7 10 questions \u00b7 15 seconds each'+(st?' \u00b7 \u{1F525} '+st+(st===1?' day':' days'):'')+'</p>'
     +'<button class="dq-play" onclick="dqOpen()">'+(started?'Continue today\u2019s Quizker':'Play today\u2019s Quizker')+'</button></div>';
   card.className='on hero';
