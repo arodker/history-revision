@@ -3780,7 +3780,7 @@ var card=document.getElementById('dq-card'),root=document.getElementById('dq-roo
 if(!card||!root)return;
 var XP_QZ=5,SECS=15,EPOCH='2026-11-23',K='cr_daily',KH='cr_daily_hist';
 var QNAME='Quizker';
-var API='https://script.google.com/macros/s/AKfycbxK8TeIKnstO8SC-PbPdasW5G-iw6mpsFoOfZhCqvftJ_iY_4m9TG9XNgoXtuIqts6S/exec',MINN=5;
+var API='https://script.google.com/macros/s/AKfycbxK8TeIKnstO8SC-PbPdasW5G-iw6mpsFoOfZhCqvftJ_iY_4m9TG9XNgoXtuIqts6S/exec',MINN=4;
 var SYM={t:{c:'👑',w:'🪓',s:'🪓'},c:{c:'🚀',w:'☢️',s:'☢️'}};
 var SEC_LBL={mtc:'Mid Tudor',elizabeth:'Elizabeth',coldwar:'Cold War'};
 var WD=['M','T','W','T','F','S','S'];
@@ -3996,7 +3996,8 @@ function compare(s){
   }).then(function(d){
     clearTimeout(to);
     var el=document.getElementById('dq-cmp');
-    if(!el||!d||!d.dist||d.dist.length!==11||!(d.n>=MINN))return;
+    if(!el||!d||!d.dist||d.dist.length!==11)return;
+    if(!(d.n>=MINN)){el.innerHTML='<p>You are one of the first to try</p><small>Check back later to see how your score compares.</small>';return;}
     var c=getState(),me=score(s),others=d.n-(c&&c.sent?1:0),below=0,i,mx=1;
     for(i=0;i<me;i++)below+=d.dist[i];
     d.dist.forEach(function(x){if(x>mx)mx=x;});
