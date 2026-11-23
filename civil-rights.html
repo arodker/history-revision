@@ -3814,8 +3814,7 @@ function title(n){return n===10?'Gloriana':n>=8?'Spymaster':n>=6?'Courtier':n>=4
 function streak(){var h=hist(),t=today(),d=h[t]?t:addDays(t,-1),n=0;while(h[d]){n++;d=addDays(d,-1);}return n;}
 function rowSyms(s,sec){return s.items.map(function(q,i){return q.sec===sec?SYM[sec][s.res[i]||'s']:'';}).join('');}
 function shareText(s){
-  var n=score(s),st=streak();
-  return 'Tudors and Cold War Daily No.'+dailyNo(s.date)+'\n'+n+'/10 · '+title(n)+'\nTudor '+rowSyms(s,'t')+'\nCold War '+rowSyms(s,'c')+'\nStreak: '+st+(st===1?' day':' days');
+  return 'Tudors and Cold War Daily No.'+dailyNo(s.date)+'\n'+rowSyms(s,'t')+rowSyms(s,'c');
 }
 
 /* home card */
