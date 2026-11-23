@@ -792,7 +792,10 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 @keyframes dq-blare-l{0%{transform:translateX(-90px) scaleX(-1) scale(.3);opacity:0}70%{transform:translateX(6px) scaleX(-1) scale(1.2);opacity:1}100%{transform:translateX(0) scaleX(-1) scale(1);opacity:1}}
 @keyframes dq-blare-r{0%{transform:translateX(90px) scale(.3);opacity:0}70%{transform:translateX(-6px) scale(1.2);opacity:1}100%{transform:translateX(0) scale(1);opacity:1}}
 @keyframes dq-pulse{50%{transform:scale(1.08)}}
-#dq-card.hero{padding:0;overflow:hidden}
+#dq-card.hero{padding:0;overflow:hidden;position:relative}
+.dq-flag{position:absolute;top:8px;right:8px;background:#F0B429;color:#3B2A00;font-size:.6rem;font-weight:800;padding:2px 8px;border-radius:10px;letter-spacing:.04em;z-index:1}
+.dq-flag.p{animation:dq-fp 1.6s ease-in-out infinite}
+@keyframes dq-fp{50%{transform:scale(1.1)}}
 #dq-card.mini{padding:.6rem .85rem}
 .dq-hero{display:grid;grid-template-columns:1fr 1fr}
 .dq-hero div{padding:.85rem .5rem .7rem;text-align:center;font-size:.74rem;font-weight:700}
@@ -815,7 +818,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .dq-hist i{flex:1;background:var(--border2);border-radius:3px 3px 0 0;min-height:2px}
 .dq-hist i.me{background:#EF9F27}
 .dq-hl{display:flex;gap:3px;font-size:.62rem;color:var(--muted);margin-top:2px}.dq-hl span{flex:1}
-@media (prefers-reduced-motion:reduce){.dq-ic,.dq-sym span,.dq-late,.dq-crown,.dq-trump,.dq-shake,.dq-ring{animation:none!important}}
+@media (prefers-reduced-motion:reduce){.dq-flag.p,.dq-ic,.dq-sym span,.dq-late,.dq-crown,.dq-trump,.dq-shake,.dq-ring{animation:none!important}}
 </style>
 </head>
 <body>
@@ -869,7 +872,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     <button class="pick-btn pb-wom" onclick="openUnit('wom')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60"><circle class="fd-ring-bg-wom" cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-wom" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-wom" cx="30" cy="30" r="24" fill="none" stroke="#9B5EC7" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-wom" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-wom">0%</text></svg></span><span class="plabel">Unit 4</span>📢 Women's Rights</button>
   </div>
   <div class="or-line">or</div>
-  <div class="home-row"><button class="btn-go c-mixed" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button><button class="btn-go btn-arc" onclick="arcOpen()"><span class="new-flag">NEW</span>🕹️ Arcade Games</button></div>
+  <div class="home-row"><button class="btn-go c-mixed" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button><button class="btn-go btn-arc" onclick="arcOpen()">🕹️ Arcade Games</button></div>
   <button class="btn-go c-stat home-stat" onclick="showStatSetup()">📊 Depth Study Stat Attack</button>
   <div class="step-lbl"><span class="step-n">3</span>See your progress</div>
   <div class="xp-card xp-col" id="xp-card" role="button" tabindex="0" aria-expanded="false"></div>
@@ -3778,7 +3781,7 @@ var LIVE=true;
 var on=LIVE||/[?&]daily(=|&|$)/.test(location.search);
 var card=document.getElementById('dq-card'),root=document.getElementById('dq-root');
 if(!card||!root)return;
-var SECS=15,EPOCH='2026-11-23',K='cr_daily',KH='cr_daily_hist';
+var XP_QZ=5,SECS=15,EPOCH='2026-11-23',K='cr_daily',KH='cr_daily_hist';
 var QNAME='Quizker';
 var API='https://script.google.com/macros/s/AKfycbxK8TeIKnstO8SC-PbPdasW5G-iw6mpsFoOfZhCqvftJ_iY_4m9TG9XNgoXtuIqts6S/exec',MINN=5;
 var SYM={t:{c:'👑',w:'🪓',s:'🪓'},c:{c:'🚀',w:'☢️',s:'☢️'}};
@@ -3797,7 +3800,7 @@ function dnum(s){var a=s.split('-');return Math.round(Date.UTC(+a[0],+a[1]-1,+a[
 function addDays(s,n){return new Date((dnum(s)+n)*864e5).toISOString().slice(0,10);}
 function dow(s){return (new Date(dnum(s)*864e5).getUTCDay()+6)%7;}
 function secsLeft(){var p=lparts();return 86400-((+p.hour)*3600+(+p.minute)*60+(+p.second));}
-function dailyNo(s){return dnum(s)-dnum(EPOCH)+1;}
+function dailyNo(s){return dnum(s)-dnum(EPOCH);}
 
 /* seeded random */
 function hash(s){var h=1779033703^s.length;for(var i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19;}h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return (h^h>>>16)>>>0;}
@@ -3848,17 +3851,18 @@ function renderCard(){
   var s=getState(),st=streak();
   if(s&&s.res.length>=10){
     var n=score(s);
-    card.innerHTML='<div class="dq-mini"><b>'+esc(QNAME)+' No.'+dailyNo(s.date)+'</b><span class="dq-ms">'+rowSyms(s,'t')+rowSyms(s,'c')+'</span><b>'+n+'/10</b><span class="dq-mc">'+(st?'\u{1F525} '+st+(st===1?' day':' days')+' \u00b7 ':'')+'next in '+cdText()+'</span><button onclick="dqOpen()">Result</button></div>';
+    card.innerHTML='<div class="dq-mini"><b>'+esc(QNAME)+' No.'+dailyNo(s.date)+': '+n+'/10</b><span class="dq-mc">Next '+esc(QNAME)+' in '+cdText()+'</span><button onclick="dqOpen()">Result</button></div>';
     card.className='on mini';return;
   }
   var started=s&&s.res.length>0;
-  card.innerHTML='<div class="dq-hero"><div class="dq-hg"><span>\u{1F451}</span>Tudors</div><div class="dq-hb"><span>\u{1F680}</span>Cold War</div></div>'
+  var seen=false;try{seen=!!localStorage.getItem('cr_dq_seen');}catch(e){}
+  card.innerHTML='<span class="dq-flag'+(seen?'':' p')+'">NEW</span><div class="dq-hero"><div class="dq-hg"><span>\u{1F451}</span>Tudors</div><div class="dq-hb"><span>\u{1F680}</span>Cold War</div></div>'
     +'<div class="dq-body"><p class="dq-name">'+esc(QNAME.toUpperCase())+'</p><p class="dq-s" style="margin:.2rem 0 .7rem">No.'+dailyNo(today())+' \u00b7 10 questions \u00b7 15 seconds each'+(st?' \u00b7 \u{1F525} '+st+(st===1?' day':' days'):'')+'</p>'
     +'<button class="dq-play" onclick="dqOpen()">'+(started?'Continue today\u2019s Quizker':'Play today\u2019s Quizker')+'</button></div>';
   card.className='on hero';
 }
 function cdText(){var m=Math.max(0,Math.ceil(secsLeft()/60));return m<=0?'a moment':Math.floor(m/60)+'h '+(m%60)+'m';}
-window.dqOpen=function(){showScreen('s-daily');};
+window.dqOpen=function(){try{localStorage.setItem('cr_dq_seen','1');}catch(e){}showScreen('s-daily');};
 
 /* screen entry / exit */
 function stopAll(){clearInterval(timer);timer=null;clearTimeout(advance);advance=null;clearInterval(cdTimer);cdTimer=null;}
@@ -3919,6 +3923,17 @@ window.dqSubmit=function(){
 window.dqPick=function(v){var s=getState();if(!s||busy)return;var q=s.items[s.res.length];finish(s,String(v)===q.a?'c':'w');};
 window.dqSkip=function(){var s=getState();if(!s||busy)return;finish(s,'s');};
 
+function award(s){
+  var g=0;
+  try{
+    var x=xpLoad(),r=xpAdd(x,XP_QZ);
+    xpSave(x);g=r.gain;
+    if(r.up>=0)s.xpUp=Math.max(s.xpUp==null?-1:s.xpUp,r.up);
+    s.xp=(s.xp||0)+g;save(s);
+    xpRender();
+  }catch(e){}
+  return g;
+}
 function finish(s,r){
   if(busy)return;busy=true;stopAll();
   var i=s.res.length,q=s.items[i];
@@ -3927,11 +3942,13 @@ function finish(s,r){
   if(last){var h=hist();h[s.date]={s:score(s)};jset(KH,h);}
   var ic=SYM[q.sec][r],cls=r==='c'?'ok':r==='w'?'bad':'skip';
   var msg=r==='c'?'Correct':r==='w'?'Not quite':'Out of time or skipped';
-  var ans=r==='c'?'':'<div class="dq-ans">Answer: <b>'+esc(q.a)+'</b></div>';
-  var btn=r==='c'?'':'<button class="dq-go" onclick="dqNext()">'+(last?'See result':'Next')+'</button>';
+  var gain=0;
+  if(r==='c')gain=award(s);
+  var ans='<div class="dq-ans">Answer: <b>'+esc(q.a)+'</b>'+(gain?' \u00b7 +'+gain+' XP':'')+'</div>';
+  var btn='<button class="dq-go" onclick="dqNext()">'+(last?'See result':'Next')+'</button>';
   var bar='';for(var j=0;j<10;j++)bar+='<i class="'+(j<s.res.length?'d':'')+'"></i>';
   root.innerHTML='<div class="dq-panel'+(r==='w'?' dq-shake':'')+'"><div class="dq-bar">'+bar+'</div><div class="dq-fb"><span class="dq-ic '+cls+'">'+ic+'</span><div class="dq-fbt">'+msg+'</div>'+ans+btn+'</div></div>';
-  if(r==='c')advance=setTimeout(function(){dqNext();},1200);
+  if(r==='c')advance=setTimeout(function(){dqNext();},2200);
 }
 window.dqNext=function(){
   clearTimeout(advance);advance=null;
@@ -3952,11 +3969,12 @@ function final(s,anim){
     +'<div class="dq-score">'+n+'/10</div><p class="dq-t">'+title(n)+'</p>'
     +'<div class="dq-rows"><div class="dq-rl">Tudor</div><div class="dq-sym" style="justify-content:center">'+symRow('t')+'</div><div class="dq-rl">Cold War</div><div class="dq-sym" style="justify-content:center">'+symRow('c')+'</div></div>'
     +'<div class="'+late.replace(/^ /,'')+'" id="dq-after">'
-    +'<div class="dq-cmp" id="dq-cmp"></div><p class="dq-s" style="margin:.6rem 0 .7rem">'+(st?'🔥 Streak: '+st+(st===1?' day':' days'):'')+'</p>'
+    +'<div class="dq-cmp" id="dq-cmp"></div><p class="dq-s" style="margin:.6rem 0 .7rem">'+(s.xp?'+'+s.xp+' XP':'')+(s.xp&&st?' \u00b7 ':'')+(st?'🔥 Streak: '+st+(st===1?' day':' days'):'')+'</p>'
     +'<div class="dq-row2"><button class="dq-go" id="dq-share" onclick="dqShare()">Share result</button><button class="dq-sec" onclick="dqReview()">Review misses</button></div>'
     +'<div class="dq-rev" id="dq-rev"></div>'
     +'<div class="dq-next" id="dq-cd">Next quiz in '+cdText()+'</div>'
     +'<div class="dq-rl" style="text-align:left">This week</div><div class="dq-wk">'+wk+'</div></div></div>';
+  if(s.xpUp>=0&&!s.upShown){s.upShown=1;save(s);xpPendingUp=Math.max(xpPendingUp,s.xpUp);xpFlushLater();}
   compare(s);
   cdTimer=setInterval(function(){
     var el=document.getElementById('dq-cd');if(!el){stopAll();return;}
