@@ -373,10 +373,14 @@
     "section": "mtc",
     "unit": "Unit 2 – Religious Change",
     "q": "What doctrine did the Second Book of Common Prayer contain about the Holy Communion?",
-    "a": "Purely symbolic. Calvinist",
+    "a": "Denied transubstantiation",
     "reign": "edward",
-    "s": "Purely symbolic",
+    "s": "Denied transubstantiation",
     "alt": [
+      "Rejected transubstantiation",
+      "No transubstantiation",
+      "Denied transubstantiation",
+      "Purely symbolic",
       "Symbolic",
       "Calvinist",
       "Purely symbolic. Calvinist"
@@ -2442,14 +2446,14 @@
   {
     "section": "coldwar",
     "unit": "Chapter 1 – Origins of the Cold War to 1945",
-    "q": "What was the Treaty of Brest Litovsk?",
-    "a": "Agreement to withdraw Russia from WW1",
-    "s": "Russia withdrew from WW1",
+    "q": "Which 1918 treaty took Russia out of the First World War?",
+    "a": "Brest-Litovsk",
+    "s": "Brest-Litovsk",
     "alt": [
-      "Agreement to withdraw Russia from WW1",
-      "Russia left WW1",
-      "Russia withdrew from the war",
-      "Peace treaty between Russia and Germany"
+      "Treaty of Brest-Litovsk",
+      "Brest Litovsk",
+      "Treaty of Brest Litovsk",
+      "Brest-Litovsk Treaty"
     ],
     "t": "x"
   },
@@ -3081,13 +3085,14 @@
     "section": "coldwar",
     "unit": "Chapter 3 – The Cold War 1956–1984",
     "q": "What did East and West Germany agree to do in the Basic Treaty of 1972?",
-    "a": "East and West Germany to recognise each other; both to join the UN",
-    "s": "East and West Germany to recognise each other; both to join the UN",
+    "a": "Recognise each other",
+    "s": "Recognise each other",
     "alt": [
       "mutual recognition",
       "recognise each other",
       "join the UN",
-      "recognise each other and join the UN"
+      "recognise each other and join the UN",
+      "East and West Germany to recognise each other; both to join the UN"
     ],
     "t": "x"
   },
