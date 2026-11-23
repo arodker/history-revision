@@ -123,11 +123,43 @@ function setMenuRender() {
   const m = document.getElementById('set-menu'); if (!m) return;
   const dark = document.documentElement.classList.contains('dark');
   const row = (ic, label, act, sw) => '<button class="set-row" role="menuitem" onclick="' + act + '"><span>' + ic + ' ' + label + '</span>' + (sw === undefined ? '' : '<span class="set-sw' + (sw ? ' on' : '') + '"></span>') + '</button>';
-  m.innerHTML = row('🌙', 'Night mode', 'toggleDark()', dark) + row('💡', 'Hints', 'setHints()', fdHintsOn) + '<div class="set-sep"></div>' +
+  m.innerHTML = row('🌙', 'Night mode', 'toggleDark()', dark) + row('💡', 'Hints', 'setHints()', fdHintsOn) + row('📌', pinLabel(), 'setClearPinned()') + row('🔠', tsLabel(), 'setTextSize()') + row('🗑️', rsLabel(), 'setResetProgress()') + '<div class="set-sep"></div>' +
     row('💾', 'Save progress', "pmOpen('save')") + row('📥', 'Load progress', "pmOpen('load')") + '<div class="set-sep"></div>' +
     (hsInstalled() ? '' : row('📲', 'Install as an app', 'setMenuClose();hsInstall()')) + row('💡', 'Tips for this page', "setMenuClose();document.getElementById('tour-btn').click()") + row('🖨️', 'Print this page', 'setMenuClose();window.print()');
 }
 function setHints() { fdSyncHints(!fdHintsOn); setMenuRender(); }
+var pinAsk = 0;
+function pinLabel() {
+  var n = fdGetOutstanding().length;
+  if (!n) return 'Clear pinned cards (none)';
+  return Date.now() - pinAsk < 4000 ? 'Tap again to clear ' + n + ' pinned' : 'Clear pinned cards (' + n + ')';
+}
+function setClearPinned() {
+  if (!fdGetOutstanding().length) { setMenuClose(); return; }
+  if (Date.now() - pinAsk >= 4000) { pinAsk = Date.now(); setMenuRender(); return; }
+  pinAsk = 0; fdSetOutstanding([]); fdOutstanding = [];
+  var b = document.getElementById('fd-pinned-btn'); if (b) b.style.display = 'none';
+  var n = document.getElementById('fd-outstanding-banner'); if (n) n.style.display = 'none';
+  setMenuClose();
+}
+var TS_PFX = 'geo_', TS_BASE = 'clamp(16px,.9vw + 7px,24px)';
+var TS_KEY = TS_PFX + 'text_size', TS_STEPS = [['', 'Normal', 1], ['l', 'Large', 1.125], ['xl', 'Larger', 1.25]];
+function tsIndex() { var v = ''; try { v = localStorage.getItem(TS_KEY) || ''; } catch (e) {} for (var i = 0; i < TS_STEPS.length; i++) if (TS_STEPS[i][0] === v) return i; return 0; }
+function tsApply() { var s = TS_STEPS[tsIndex()]; document.documentElement.style.fontSize = s[2] === 1 ? '' : 'calc(' + TS_BASE + ' * ' + s[2] + ')'; }
+function tsLabel() { return 'Text size: ' + TS_STEPS[tsIndex()][1]; }
+function setTextSize() { var n = (tsIndex() + 1) % TS_STEPS.length; try { localStorage.setItem(TS_KEY, TS_STEPS[n][0]); } catch (e) {} tsApply(); setMenuRender(); }
+tsApply();
+var rsAsk = 0;
+function rsLabel() { return Date.now() - rsAsk < 4000 ? 'Tap again to erase all progress' : 'Reset progress'; }
+function setResetProgress() {
+  if (Date.now() - rsAsk >= 4000) { rsAsk = Date.now(); setMenuRender(); return; }
+  rsAsk = 0;
+  var keep = new RegExp('^' + TS_PFX + '(dark|fd_hints|fd_target|text_size|tour_done|use|did|ping|loaded|course_pos|course_slide|pos_.*|gap_tried|gap_new|ff_mode|nudge|k_view|bs_ok)$');
+  var del = [];
+  for (var i = 0; i < localStorage.length; i++) { var n = localStorage.key(i); if (n && n.indexOf(TS_PFX) === 0 && !keep.test(n)) del.push(n); }
+  del.forEach(function (n) { localStorage.removeItem(n); });
+  location.reload();
+}
 function setMenuToggle(ev) {
   if (ev) ev.stopPropagation();
   const m = document.getElementById('set-menu'), b = document.getElementById('set-btn');
