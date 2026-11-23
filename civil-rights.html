@@ -720,6 +720,80 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 <meta name="apple-mobile-web-app-title" content="Y13 History">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="apple-touch-icon" href="icon-y13-touch.png">
+<style id="dq-css">
+#dq-card{display:none;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem 1.1rem;margin:.2rem 0 1rem}
+#dq-card.on{display:block}
+.dq-k{font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center;margin-bottom:.3rem}
+.dq-h{font-size:1.02rem;font-weight:700;margin:0 0 .15rem}
+.dq-s{font-size:.82rem;color:var(--muted);line-height:1.5;margin:0 0 .75rem}
+.dq-go{display:block;width:100%;padding:.72rem;border:0;border-radius:10px;background:var(--text);color:var(--surface);font:inherit;font-weight:700;font-size:.92rem;cursor:pointer}
+.dq-go:hover{opacity:.9}
+.dq-sec{background:var(--surface);border:1px solid var(--border2);color:var(--text);font:inherit;font-size:.85rem;font-weight:600;padding:.6rem;border-radius:10px;cursor:pointer}
+.dq-row2{display:flex;gap:.5rem}.dq-row2>*{flex:1}
+.dq-panel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.15rem;margin-bottom:.75rem;position:relative;overflow:hidden}
+.dq-bar{display:flex;gap:3px;margin-bottom:.9rem}
+.dq-bar i{flex:1;height:5px;border-radius:3px;background:var(--border2)}
+.dq-bar i.d{background:var(--muted)}.dq-bar i.c{background:var(--aa-mid)}
+.dq-top{display:flex;align-items:center;gap:.8rem;margin-bottom:.85rem}
+.dq-top .dq-meta{flex:1;font-size:.78rem;color:var(--muted);line-height:1.4}
+.dq-ring{position:relative;width:46px;height:46px;flex:none}
+.dq-ring svg{width:46px;height:46px;display:block}
+.dq-ring .bg{fill:none;stroke:var(--border2);stroke-width:4}
+.dq-ring .arc{fill:none;stroke:var(--aa-mid);stroke-width:4;stroke-linecap:round;stroke-dasharray:113.1;stroke-dashoffset:0;transform:rotate(-90deg);transform-origin:50% 50%}
+.dq-ring b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+.dq-ring.amber .arc{stroke:#BA7517}.dq-ring.red .arc{stroke:#C0392B}
+.dq-ring.red{animation:dq-pulse .5s ease-in-out infinite}
+.dq-q{font-size:1.02rem;line-height:1.5;margin:0 0 .9rem;font-weight:600}
+.dq-in{width:100%;padding:.7rem .8rem;font:inherit;font-size:1rem;border:1.5px solid var(--border2);border-radius:10px;background:var(--input-bg);color:var(--text);margin-bottom:.55rem}
+.dq-opts{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.55rem}
+.dq-opt{padding:.85rem .5rem;font:inherit;font-size:1rem;font-weight:700;border:1.5px solid var(--border2);border-radius:10px;background:var(--surface);color:var(--text);cursor:pointer}
+.dq-opt:hover{border-color:var(--muted)}
+.dq-fb{text-align:center;padding:.4rem 0 .2rem}
+.dq-ic{font-size:3.4rem;line-height:1.1;display:block;margin:.2rem 0 .3rem}
+.dq-ic.ok{animation:dq-pop .5s ease both}
+.dq-ic.bad{animation:dq-swing .6s ease both}
+.dq-ic.skip{animation:dq-fade .6s ease both}
+.dq-shake{animation:dq-shake .45s ease}
+.dq-fbt{font-size:1rem;font-weight:700;margin-bottom:.2rem}
+.dq-ans{font-size:.88rem;color:var(--muted);margin-bottom:.8rem}.dq-ans b{color:var(--text)}
+.dq-t{font-size:1.25rem;font-weight:700;margin:0 0 .2rem}
+.dq-score{font-size:2.3rem;font-weight:700;line-height:1.1}
+.dq-rows{margin:.9rem 0 .4rem}
+.dq-rl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:.5rem 0 .2rem}
+.dq-sym{display:flex;gap:.3rem;flex-wrap:wrap;font-size:1.6rem;line-height:1.2}
+.dq-sym span{animation:dq-reveal .35s ease both}
+.dq-late{animation:dq-reveal .5s ease both}
+.dq-next{font-size:.82rem;color:var(--muted);margin:.9rem 0 .7rem}
+.dq-wk{display:grid;grid-template-columns:repeat(7,1fr);gap:.3rem;text-align:center;margin-top:.35rem}
+.dq-wk small{font-size:.68rem;color:var(--muted)}
+.dq-wk div{border-radius:8px;padding:.45rem 0;font-size:.95rem;background:var(--subtle)}
+.dq-wk div.t{background:var(--aa-bg);color:var(--aa);font-weight:700}
+.dq-wk div.n{background:none;border:1px dashed var(--border2);color:var(--muted)}
+.dq-rev{margin-top:.7rem;text-align:left;font-size:.85rem;line-height:1.5}
+.dq-rev p{margin:0 0 .6rem;padding:.55rem .65rem;background:var(--surface);border:1px solid var(--border);border-radius:10px}
+.dq-rev b{display:block}
+.dq-gold{border:2px solid #BA7517;background:#FAEEDA;text-align:center}
+.dq-gold .dq-t,.dq-gold .dq-score{color:#854F0B}
+.dq-gold .dq-k,.dq-gold .dq-rl,.dq-gold .dq-next{color:#854F0B}
+:root.dark .dq-gold{background:#3a2e17;border-color:#EF9F27}
+:root.dark .dq-gold .dq-t,:root.dark .dq-gold .dq-score,:root.dark .dq-gold .dq-k,:root.dark .dq-gold .dq-rl,:root.dark .dq-gold .dq-next{color:#FAC775}
+.dq-gold .dq-sym{justify-content:center}
+.dq-court{display:flex;align-items:center;justify-content:center;gap:.4rem;height:5.2rem;overflow:hidden}
+.dq-crown{font-size:3.6rem;animation:dq-lower 1.1s cubic-bezier(.3,1.4,.5,1) both}
+.dq-trump{font-size:2.6rem;display:inline-block}
+.dq-trump.l{animation:dq-blare-l .7s ease-out both}
+.dq-trump.r{animation:dq-blare-r .7s ease-out both}
+@keyframes dq-pop{0%{transform:scale(.2);opacity:0}60%{transform:scale(1.25);opacity:1}100%{transform:scale(1)}}
+@keyframes dq-swing{0%{transform:rotate(-80deg) translateY(-30px);opacity:0}45%{transform:rotate(28deg);opacity:1}70%{transform:rotate(-8deg)}100%{transform:rotate(0)}}
+@keyframes dq-fade{0%{transform:scale(.4);opacity:0}40%{transform:scale(1.2);opacity:1}100%{transform:scale(1);opacity:.9}}
+@keyframes dq-shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@keyframes dq-reveal{from{opacity:0;transform:translateY(8px) scale(.6)}to{opacity:1;transform:none}}
+@keyframes dq-lower{0%{transform:translateY(-170px) rotate(-10deg);opacity:0}60%{transform:translateY(10px) rotate(3deg);opacity:1}80%{transform:translateY(-5px)}100%{transform:none}}
+@keyframes dq-blare-l{0%{transform:translateX(-90px) scaleX(-1) scale(.3);opacity:0}70%{transform:translateX(6px) scaleX(-1) scale(1.2);opacity:1}100%{transform:translateX(0) scaleX(-1) scale(1);opacity:1}}
+@keyframes dq-blare-r{0%{transform:translateX(90px) scale(.3);opacity:0}70%{transform:translateX(-6px) scale(1.2);opacity:1}100%{transform:translateX(0) scale(1);opacity:1}}
+@keyframes dq-pulse{50%{transform:scale(1.08)}}
+@media (prefers-reduced-motion:reduce){.dq-ic,.dq-sym span,.dq-late,.dq-crown,.dq-trump,.dq-shake,.dq-ring{animation:none!important}}
+</style>
 </head>
 <body>
 <canvas id="fd-confetti-canvas" style="display:none"></canvas>
@@ -752,6 +826,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.3rem">
     <h1 style="margin:0;font-size:1.2rem;font-weight:700">Mr Rodker's Revision Hub - Civil Rights</h1><span class="yr-pill">Y13</span>
   </div>
+  <div id="dq-card"></div>
   <div class="step-lbl"><span class="step-n">1</span>Set your progress</div>
   <div class="up-card up-col" id="up-card">
     <div class="up-head" id="up-tog" role="button" tabindex="0" aria-expanded="false" style="cursor:pointer"><span class="up-title">Set how much you have studied</span><span class="up-pos" id="up-pos"></span><span class="xp-chev">▾</span></div><div id="up-body">
@@ -1017,6 +1092,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   </div>
   <div id="st-out"></div>
 </div>
+<div class="screen" id="s-daily"><div class="mode-header"><button class="back-btn" onclick="showScreen('s-pick')">🏠 Home</button></div><div id="dq-root"></div></div>
 </div>
 <script>
 var UNITS={aa:{label:'African American Rights',short:'African Americans',colour:'#4A7EC7',cls:'aa',rights:['Political Rights','Social Rights','Economic Rights']},lab:{label:'Labour and Trade Union Rights',short:'Labour',colour:'#C94A5A',cls:'lab',rights:['Right to Organise','Right to Strike','Right to Fair Wages and Conditions']},na:{label:'Native American Rights',short:'Native Americans',colour:'#2A9E80',cls:'na',rights:['Right to Land','Right to Self-Determination','Religious and Cultural Rights']},wom:{label:"Women's Rights",short:'Women',colour:'#9B5EC7',cls:'wom',rights:['Political Rights','Social and Economic Rights','Reproductive and Personal Rights']}};
@@ -3616,7 +3692,7 @@ function rsLabel() { return Date.now() - rsAsk < 4000 ? 'Tap again to erase all 
 function setResetProgress() {
   if (Date.now() - rsAsk >= 4000) { rsAsk = Date.now(); setMenuRender(); return; }
   rsAsk = 0;
-  var keep = new RegExp('^' + TS_PFX + '(dark|fd_hints|fd_target|text_size|tour_done|use|did|ping|loaded|course_pos|course_slide|pos_.*|gap_tried|gap_new|ff_mode|nudge|k_view|bs_ok)$');
+  var keep = new RegExp('^' + TS_PFX + '(dark|fd_hints|fd_target|text_size|tour_done|daily|daily_hist|use|did|ping|loaded|course_pos|course_slide|pos_.*|gap_tried|gap_new|ff_mode|nudge|k_view|bs_ok)$');
   var del = [];
   for (var i = 0; i < localStorage.length; i++) { var n = localStorage.key(i); if (n && n.indexOf(TS_PFX) === 0 && !keep.test(n)) del.push(n); }
   del.forEach(function (n) { localStorage.removeItem(n); });
@@ -3670,6 +3746,224 @@ window.hsInstall=function(){
  var g=document.getElementById('hs-inst-go');
  if(g)g.onclick=function(){var p=dp;dp=null;o.remove();p.prompt();p.userChoice.finally(function(){try{setMenuRender()}catch(_){}})};
 };
+})();
+</script>
+<script id="dq-js">
+(function(){
+'use strict';
+var LIVE=false;
+var on=LIVE||/[?&]daily(=|&|$)/.test(location.search);
+var card=document.getElementById('dq-card'),root=document.getElementById('dq-root');
+if(!card||!root)return;
+var SECS=15,EPOCH='2026-11-23',K='cr_daily',KH='cr_daily_hist';
+var SYM={t:{c:'👑',w:'🪓',s:'💀'},c:{c:'🚀',w:'☢️',s:'💥'}};
+var SEC_LBL={mtc:'Mid Tudor',elizabeth:'Elizabeth',coldwar:'Cold War'};
+var WD=['M','T','W','T','F','S','S'];
+var timer=null,advance=null,cdTimer=null,busy=false,loadErr=false;
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function jget(k,d){try{var v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}}
+function jset(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+
+/* London dates */
+function lparts(d){var p={};new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(d||new Date()).forEach(function(x){p[x.type]=x.value;});return p;}
+function today(){var p=lparts();return p.year+'-'+p.month+'-'+p.day;}
+function dnum(s){var a=s.split('-');return Math.round(Date.UTC(+a[0],+a[1]-1,+a[2])/864e5);}
+function addDays(s,n){return new Date((dnum(s)+n)*864e5).toISOString().slice(0,10);}
+function dow(s){return (new Date(dnum(s)*864e5).getUTCDay()+6)%7;}
+function secsLeft(){var p=lparts();return 86400-((+p.hour)*3600+(+p.minute)*60+(+p.second));}
+function dailyNo(s){return dnum(s)-dnum(EPOCH)+1;}
+
+/* seeded random */
+function hash(s){var h=1779033703^s.length;for(var i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19;}h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return (h^h>>>16)>>>0;}
+function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function shuf(arr,r){var a=arr.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(r()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+/* question selection */
+function rqOk(x){var a=String(x.a||'');return a&&a.split(/\s+/).length<=4&&a.indexOf('/')<0&&!/complete this sentence/i.test(x.q)&&!/vague/i.test(a+' '+x.q);}
+function dtOk(x){return /^\d{4}$/.test(x.date)&&x.event&&x.event.split(/\s+/).length<=14&&!/\b\d{4}\b/.test(x.event);}
+function pickRq(pool,n,r){var seen={},out=[];shuf(pool,r).forEach(function(x){var k=String(x.a).toLowerCase().replace(/[^a-z0-9]/g,'');if(out.length<n&&!seen[k]){seen[k]=1;out.push(x);}});return out;}
+function mkRq(x,sec){return {k:'rq',sec:sec,ss:x.section,q:x.q,a:x.a,alt:x.alt||[]};}
+function mkDt(x,sec,r){
+  var y=+x.date,c=[];for(var d=-6;d<=6;d++){var v=y+d;if(d&&v>=1400&&v<=2025)c.push(v);}
+  var opts=shuf(c,r).slice(0,3).concat([y]).sort(function(a,b){return a-b;});
+  return {k:'dt',sec:sec,ss:x.section,q:'In which year did this happen? '+x.event.replace(/\s+[—–]\s+/g,': '),a:String(y),opts:opts};
+}
+function build(date,rq,dt){
+  var r=rng(hash('dq|'+date)),tudor,i;
+  var tRq=rq.filter(function(x){return rqOk(x)&&(x.section==='mtc'||x.section==='elizabeth');});
+  var cRq=rq.filter(function(x){return rqOk(x)&&x.section==='coldwar';});
+  var tDt=dt.filter(function(x){return dtOk(x)&&(x.section==='mtc'||x.section==='elizabeth');});
+  var cDt=dt.filter(function(x){return dtOk(x)&&x.section==='coldwar';});
+  for(i=0;i<20;i++){
+    tudor=pickRq(tRq,5,r).map(function(x){return mkRq(x,'t');}).concat(shuf(tDt,r).slice(0,1).map(function(x){return mkDt(x,'t',r);}));
+    var m=tudor.filter(function(q){return q.ss==='mtc';}).length;
+    if(m>=2&&m<=4)break;
+  }
+  var cw=pickRq(cRq,3,r).map(function(x){return mkRq(x,'c');}).concat(shuf(cDt,r).slice(0,1).map(function(x){return mkDt(x,'c',r);}));
+  if(tudor.length<6||cw.length<4)return null;
+  return shuf(tudor.concat(cw),r);
+}
+
+/* state */
+function getState(){var s=jget(K,null);return s&&s.date===today()&&s.items?s:null;}
+function save(s){jset(K,s);}
+function hist(){return jget(KH,{});}
+function score(s){return s.res.filter(function(x){return x==='c';}).length;}
+function title(n){return n===10?'Gloriana':n>=8?'Spymaster':n>=6?'Courtier':n>=4?'Cuban Missile Crisis':'Off to the Tower';}
+function streak(){var h=hist(),t=today(),d=h[t]?t:addDays(t,-1),n=0;while(h[d]){n++;d=addDays(d,-1);}return n;}
+function rowSyms(s,sec){return s.items.map(function(q,i){return q.sec===sec?SYM[sec][s.res[i]||'s']:'';}).join('');}
+function shareText(s){
+  var n=score(s),st=streak();
+  return 'Tudors and Cold War Daily No.'+dailyNo(s.date)+'\n'+n+'/10 · '+title(n)+'\nTudor '+rowSyms(s,'t')+'\nCold War '+rowSyms(s,'c')+'\nStreak: '+st+(st===1?' day':' days');
+}
+
+/* home card */
+function renderCard(){
+  if(!on){card.className='';card.innerHTML='';return;}
+  var s=getState(),st=streak(),k='<div class="dq-k"><span>Daily 10 · No.'+dailyNo(today())+'</span><span>'+(st?'🔥 '+st+(st===1?' day':' days'):'')+'</span></div>';
+  if(s&&s.res.length>=10){
+    var n=score(s);
+    card.innerHTML=k+'<p class="dq-h">Today: '+n+'/10 · '+title(n)+'</p><p class="dq-s">Next quiz in '+cdText()+'.</p><button class="dq-sec" style="width:100%" onclick="dqOpen()">View result</button>';
+  }else{
+    var started=s&&s.res.length>0;
+    card.innerHTML=k+'<p class="dq-h">Tudors and Cold War daily 10</p><p class="dq-s">Ten questions on your Year 12 content, 15 seconds each. Everyone gets the same ten today.</p><button class="dq-go" onclick="dqOpen()">'+(started?'Continue today’s quiz':'Take today’s quiz')+'</button>';
+  }
+  card.className='on';
+}
+function cdText(){var m=Math.max(0,Math.ceil(secsLeft()/60));return m<=0?'a moment':Math.floor(m/60)+'h '+(m%60)+'m';}
+window.dqOpen=function(){showScreen('s-daily');};
+
+/* screen entry / exit */
+function stopAll(){clearInterval(timer);timer=null;clearTimeout(advance);advance=null;clearInterval(cdTimer);cdTimer=null;}
+function enter(){
+  stopAll();
+  var s=getState();
+  if(s){show(s);return;}
+  root.innerHTML='<div class="dq-panel"><p class="dq-s" style="margin:0">Loading today’s quiz…</p></div>';
+  Promise.all([fdLoadJSON('data/rq-y12.json'),fdLoadJSON('data/dates-y12.json')]).then(function(d){
+    if(!document.getElementById('s-daily').classList.contains('active'))return;
+    var s2=getState();if(s2){show(s2);return;}
+    var items=build(today(),d[0]||[],d[1]||[]);
+    if(!items){
+      root.innerHTML='<div class="dq-panel"><p class="dq-h">The quiz could not load</p><p class="dq-s">Check your connection and try again.</p><button class="dq-go" onclick="dqRetry()">Try again</button></div>';
+      return;
+    }
+    s2={date:today(),items:items,res:[],qs:0};save(s2);show(s2);
+  });
+}
+window.dqRetry=function(){enter();};
+function show(s){if(s.res.length>=10)final(s,false);else question(s);}
+
+/* question */
+function question(s){
+  stopAll();
+  var i=s.res.length,q=s.items[i];
+  if(!s.qs||Date.now()-s.qs>=SECS*1000){
+    if(s.qs){s.res.push('s');s.qs=0;save(s);if(s.res.length>=10){final(s,true);return;}return question(s);}
+    s.qs=Date.now();save(s);
+  }
+  var bar='';for(var j=0;j<10;j++)bar+='<i class="'+(j<i?'d':'')+'"></i>';
+  var input=q.k==='dt'
+    ?'<div class="dq-opts">'+q.opts.map(function(o){return '<button class="dq-opt" onclick="dqPick('+o+')">'+o+'</button>';}).join('')+'</div>'
+    :'<input class="dq-in" id="dq-in" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" onkeydown="if(event.key===\'Enter\')dqSubmit()"><button class="dq-go" style="margin-bottom:.5rem" onclick="dqSubmit()">Submit</button>';
+  root.innerHTML='<div class="dq-panel" id="dq-panel"><div class="dq-bar">'+bar+'</div>'
+    +'<div class="dq-top"><div class="dq-ring" id="dq-ring"><svg viewBox="0 0 44 44"><circle class="bg" cx="22" cy="22" r="18"/><circle class="arc" id="dq-arc" cx="22" cy="22" r="18"/></svg><b id="dq-sec">'+SECS+'</b></div>'
+    +'<div class="dq-meta">Question '+(i+1)+' of 10<br>'+esc(SEC_LBL[q.ss])+'</div></div>'
+    +'<p class="dq-q">'+esc(q.q)+'</p>'+input
+    +'<button class="dq-sec" style="width:100%" onclick="dqSkip()">Skip</button></div>';
+  var inp=document.getElementById('dq-in');if(inp)setTimeout(function(){inp.focus();},50);
+  busy=false;tick(s);
+  timer=setInterval(function(){tick(s);},100);
+}
+function tick(s){
+  var rem=SECS-(Date.now()-s.qs)/1000;
+  if(rem<=0){var inp=document.getElementById('dq-in');var t=inp?inp.value.trim():'';if(t)return dqSubmit();return finish(s,'s');}
+  var ring=document.getElementById('dq-ring');if(!ring)return;
+  document.getElementById('dq-arc').style.strokeDashoffset=(113.1*(1-rem/SECS)).toFixed(1);
+  document.getElementById('dq-sec').textContent=Math.ceil(rem);
+  ring.className='dq-ring'+(rem<=4?' red':rem<=8?' amber':'');
+}
+window.dqSubmit=function(){
+  var s=getState();if(!s||busy)return;var q=s.items[s.res.length],inp=document.getElementById('dq-in');
+  var t=inp?inp.value.trim():'';if(!t)return;
+  var ok=false;try{ok=!!bsCheck(t,[q.a].concat(q.alt||[]).join(' / '),q.q);}catch(e){ok=false;}
+  finish(s,ok?'c':'w');
+};
+window.dqPick=function(v){var s=getState();if(!s||busy)return;var q=s.items[s.res.length];finish(s,String(v)===q.a?'c':'w');};
+window.dqSkip=function(){var s=getState();if(!s||busy)return;finish(s,'s');};
+
+function finish(s,r){
+  if(busy)return;busy=true;stopAll();
+  var i=s.res.length,q=s.items[i];
+  s.res.push(r);s.qs=0;save(s);
+  var last=s.res.length>=10;
+  if(last){var h=hist();h[s.date]={s:score(s)};jset(KH,h);}
+  var ic=SYM[q.sec][r],cls=r==='c'?'ok':r==='w'?'bad':'skip';
+  var msg=r==='c'?'Correct':r==='w'?'Not quite':'Out of time or skipped';
+  var ans=r==='c'?'':'<div class="dq-ans">Answer: <b>'+esc(q.a)+'</b></div>';
+  var btn=r==='c'?'':'<button class="dq-go" onclick="dqNext()">'+(last?'See result':'Next')+'</button>';
+  var bar='';for(var j=0;j<10;j++)bar+='<i class="'+(j<s.res.length?'d':'')+'"></i>';
+  root.innerHTML='<div class="dq-panel'+(r==='w'?' dq-shake':'')+'"><div class="dq-bar">'+bar+'</div><div class="dq-fb"><span class="dq-ic '+cls+'">'+ic+'</span><div class="dq-fbt">'+msg+'</div>'+ans+btn+'</div></div>';
+  if(r==='c')advance=setTimeout(function(){dqNext();},1200);
+}
+window.dqNext=function(){
+  clearTimeout(advance);advance=null;
+  var s=getState();if(!s)return;
+  if(s.res.length>=10)final(s,true);else question(s);
+};
+
+/* final */
+function final(s,anim){
+  stopAll();busy=false;
+  var n=score(s),perfect=n===10,st=streak(),h=hist(),t=today(),mon=addDays(t,-dow(t));
+  function symRow(sec){return s.items.map(function(q,i){return q.sec===sec?'<span style="animation-delay:'+(anim?(i*0.25).toFixed(2):0)+'s">'+SYM[sec][s.res[i]||'s']+'</span>':'';}).join('');}
+  var late=anim?' dq-late" style="animation-delay:2.7s':'';
+  var wk='';for(var d=0;d<7;d++){var ds=addDays(mon,d),e=h[ds],c=ds===t?'t':(e?'':'n');wk+='<div class="'+c+'"><small>'+WD[d]+'</small><br>'+(e?e.s:'-')+'</div>';}
+  var court=perfect?'<div class="dq-court"><span class="dq-trump l">🎺</span><span class="dq-crown">👑</span><span class="dq-trump r">🎺</span></div>':'';
+  root.innerHTML='<div class="dq-panel'+(perfect?' dq-gold':'')+'" style="text-align:center">'
+    +'<div class="dq-k" style="justify-content:center">Daily No.'+dailyNo(s.date)+'</div>'+court
+    +'<div class="dq-score">'+n+'/10</div><p class="dq-t">'+title(n)+'</p>'
+    +'<div class="dq-rows"><div class="dq-rl">Tudor</div><div class="dq-sym" style="justify-content:center">'+symRow('t')+'</div><div class="dq-rl">Cold War</div><div class="dq-sym" style="justify-content:center">'+symRow('c')+'</div></div>'
+    +'<div class="'+late.replace(/^ /,'')+'" id="dq-after">'
+    +'<p class="dq-s" style="margin:.6rem 0 .7rem">'+(st?'🔥 Streak: '+st+(st===1?' day':' days'):'')+'</p>'
+    +'<div class="dq-row2"><button class="dq-go" id="dq-share" onclick="dqShare()">Share result</button><button class="dq-sec" onclick="dqReview()">Review misses</button></div>'
+    +'<div class="dq-rev" id="dq-rev"></div>'
+    +'<div class="dq-next" id="dq-cd">Next quiz in '+cdText()+'</div>'
+    +'<div class="dq-rl" style="text-align:left">This week</div><div class="dq-wk">'+wk+'</div></div></div>';
+  cdTimer=setInterval(function(){
+    var el=document.getElementById('dq-cd');if(!el){stopAll();return;}
+    if(today()!==s.date)el.innerHTML='Next quiz is ready <button class="dq-sec" style="margin-left:.4rem" onclick="dqRetry()">Play</button>';
+    else el.textContent='Next quiz in '+cdText();
+  },30000);
+}
+window.dqShare=function(){
+  var s=getState();if(!s)return;var txt=shareText(s),b=document.getElementById('dq-share');
+  function done(){if(b){b.textContent='Copied';setTimeout(function(){b.textContent='Share result';},2000);}}
+  function fallback(){var ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}
+  if(navigator.share){navigator.share({text:txt}).catch(function(){});}
+  else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,fallback);}
+  else fallback();
+};
+window.dqReview=function(){
+  var s=getState(),el=document.getElementById('dq-rev');if(!s||!el)return;
+  var miss=s.items.map(function(q,i){return {q:q,r:s.res[i]};}).filter(function(x){return x.r!=='c';});
+  el.innerHTML=miss.length?miss.map(function(x){return '<p><b>'+esc(x.q.q)+'</b>Answer: '+esc(x.q.a)+'</p>';}).join(''):'<p>No misses today.</p>';
+};
+
+/* hook screen changes */
+var orig=window.showScreen;
+window.showScreen=function(id){
+  orig.apply(this,arguments);
+  if(id==='s-daily')enter();else{stopAll();busy=false;}
+  if(id==='s-pick')renderCard();
+};
+document.addEventListener('visibilitychange',function(){
+  if(document.hidden||busy||!document.getElementById('s-daily').classList.contains('active'))return;
+  enter();
+});
+renderCard();
+setInterval(function(){if(document.getElementById('s-pick').classList.contains('active'))renderCard();},60000);
 })();
 </script>
 </body>
