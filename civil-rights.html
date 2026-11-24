@@ -1531,7 +1531,6 @@ function printRQ(questions) {
         <div class="box"><span class="lab">Answer</span><i></i></div>
       </div></div>`;
   }).join('');
-  const key = list.map((q, i) => `<li><b>${i + 1}.</b> ${q.a}</li>`).join('');
   const win = window.open('', '_blank');
   win.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Do Now – ${esc(hub)}</title>
     <style>
@@ -1554,17 +1553,11 @@ function printRQ(questions) {
       .box .lab { position:absolute; top:2px; left:6px; font-size:6.5pt; letter-spacing:.06em; text-transform:uppercase; color:#aaa; }
       .box i { position:absolute; left:8px; right:8px; bottom:.3cm; border-bottom:1px dotted #bbb; }
       .foot { margin-top:.2cm; font-size:7.5pt; color:#888; text-align:right; }
-      .keypage { page-break-before:always; }
-      .keypage h2 { font-size:14pt; margin-bottom:.1cm; }
-      .keypage .note { font-size:8.5pt; color:#666; margin-bottom:.4cm; }
-      .keypage ol { list-style:none; columns:2; column-gap:1cm; font-size:10pt; line-height:1.5; }
-      .keypage li { break-inside:avoid; margin-bottom:.15cm; }
       @media print { @page { size:A4; margin:.8cm 0; } body { padding:.2cm 1.1cm; } }
     </style></head><body>
     <div class="head"><div><h1>Do Now</h1><div class="sub">${esc(hub)} &nbsp;·&nbsp; ${today}</div></div>
       <div class="meta"><span>Name</span><span class="f"></span><span>Class</span><span class="f s"></span><span class="score">&nbsp;&nbsp;/ ${list.length}</span></div></div>
     ${rows}
-    <div class="keypage"><h2>Answers – ${esc(hub)} Do Now, ${today}</h2><div class="note">Teacher copy. Accept sensible equivalents.</div><ol>${key}</ol></div>
     <script>window.onload=function(){setTimeout(function(){window.print()},250)}<\/script></body></html>`);
   win.document.close();
 }
