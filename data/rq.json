@@ -4189,5 +4189,243 @@
       "Kristallnacht (Night of Broken Glass)"
     ],
     "t": "t"
+  },
+  {
+    "paper": "p2a",
+    "q": "Which 1943 conference was the first meeting of the Big Three?",
+    "a": "Tehran",
+    "d": "medium",
+    "unit": "Unit 1 – Origins 1941–58",
+    "s": "Tehran",
+    "alt": [
+      "Tehran Conference",
+      "The Tehran Conference",
+      "Teheran"
+    ],
+    "t": "o"
+  },
+  {
+    "paper": "p2a",
+    "q": "Which 1946 telegram from the Soviet ambassador warned Stalin of US aims?",
+    "a": "Novikov Telegram",
+    "d": "hard",
+    "unit": "Unit 1 – Origins 1941–58",
+    "s": "Novikov",
+    "alt": [
+      "Novikov",
+      "The Novikov Telegram",
+      "Novikov's Telegram"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p2a",
+    "q": "Which Soviet organisation, formed in 1947, controlled the leaders of the satellite states?",
+    "a": "Cominform",
+    "d": "medium",
+    "unit": "Unit 1 – Origins 1941–58",
+    "s": "Cominform",
+    "alt": [
+      "The Cominform",
+      "Communist Information Bureau"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p2a",
+    "q": "Where did US and Soviet tanks face off in Berlin in 1961?",
+    "a": "Checkpoint Charlie",
+    "d": "medium",
+    "unit": "Unit 2 – Crises 1958–70",
+    "s": "Checkpoint Charlie",
+    "alt": [
+      "Charlie"
+    ],
+    "t": "o"
+  },
+  {
+    "paper": "p2a",
+    "q": "Who was overthrown in the 1959 Cuban Revolution?",
+    "a": "Batista",
+    "d": "medium",
+    "unit": "Unit 2 – Crises 1958–70",
+    "s": "Batista",
+    "alt": [
+      "General Batista",
+      "Fulgencio Batista"
+    ],
+    "t": "p"
+  },
+  {
+    "paper": "p2a",
+    "q": "What did Kennedy impose on Cuba in October 1962?",
+    "a": "A naval blockade",
+    "d": "medium",
+    "unit": "Unit 2 – Crises 1958–70",
+    "s": "Blockade",
+    "alt": [
+      "Blockade",
+      "Naval blockade",
+      "A blockade",
+      "Quarantine",
+      "A quarantine",
+      "Naval quarantine",
+      "US naval blockade"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p2a",
+    "q": "Who was the dictator of Czechoslovakia before the Prague Spring?",
+    "a": "Novotny",
+    "d": "hard",
+    "unit": "Unit 2 – Crises 1958–70",
+    "s": "Novotny",
+    "alt": [
+      "Antonin Novotny",
+      "Antonín Novotný",
+      "Novotný"
+    ],
+    "t": "p"
+  },
+  {
+    "paper": "p2a",
+    "q": "Which 1975 space mission ended the space race with a handshake?",
+    "a": "Apollo-Soyuz",
+    "d": "medium",
+    "unit": "Unit 3 – End of Cold War 1970–91",
+    "s": "Apollo-Soyuz",
+    "alt": [
+      "Apollo Soyuz",
+      "The Apollo-Soyuz Mission",
+      "Apollo-Soyuz Mission"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p2a",
+    "q": "Which 1986 Soviet nuclear disaster cost 18 billion roubles to clear up?",
+    "a": "Chernobyl",
+    "d": "medium",
+    "unit": "Unit 3 – End of Cold War 1970–91",
+    "s": "Chernobyl",
+    "alt": [
+      "The Chernobyl disaster",
+      "Chernobyl disaster"
+    ],
+    "t": "o"
+  },
+  {
+    "paper": "p2a",
+    "q": "At which 1989 summit did Bush and Gorbachev declare the end of the Cold War?",
+    "a": "Malta Summit",
+    "d": "medium",
+    "unit": "Unit 3 – End of Cold War 1970–91",
+    "s": "Malta",
+    "alt": [
+      "Malta",
+      "The Malta Summit"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p2a",
+    "q": "Which Soviet-led military alliance ended in 1991?",
+    "a": "The Warsaw Pact",
+    "d": "medium",
+    "unit": "Unit 3 – End of Cold War 1970–91",
+    "s": "Warsaw Pact",
+    "alt": [
+      "Warsaw Pact"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p2a",
+    "q": "Who led the protests in 1991 to restore Gorbachev to power?",
+    "a": "Boris Yeltsin",
+    "d": "medium",
+    "unit": "Unit 3 – End of Cold War 1970–91",
+    "s": "Yeltsin",
+    "alt": [
+      "Yeltsin"
+    ],
+    "t": "p"
+  },
+  {
+    "paper": "p2b",
+    "q": "Who proposed to Elizabeth in 1558 to maintain the Anglo-Spanish alliance?",
+    "a": "Philip II",
+    "d": "medium",
+    "unit": "Unit 1 – Queen & Religion",
+    "s": "Philip II",
+    "alt": [
+      "Philip of Spain",
+      "Philip",
+      "King Philip",
+      "Philip II of Spain",
+      "King Philip II"
+    ],
+    "t": "p"
+  },
+  {
+    "paper": "p2b",
+    "q": "Name one of the Acts of the Religious Settlement.",
+    "a": "Act of Supremacy",
+    "d": "medium",
+    "unit": "Unit 1 – Queen & Religion",
+    "s": "Act of Supremacy",
+    "alt": [
+      "Act of Uniformity",
+      "Supremacy",
+      "Uniformity",
+      "The Act of Supremacy",
+      "The Act of Uniformity",
+      "Acts of Supremacy",
+      "Acts of Uniformity",
+      "Supremacy Act",
+      "Uniformity Act"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p2b",
+    "q": "Which Catholic priests were sent to infiltrate England?",
+    "a": "Jesuits",
+    "d": "medium",
+    "unit": "Unit 2 – Challenges 1569–88",
+    "s": "Jesuits",
+    "alt": [
+      "The Jesuits",
+      "Jesuit priests",
+      "Jesuit"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p2b",
+    "q": "Which navigational device allowed sailors to calculate their position by the stars?",
+    "a": "Astrolabe",
+    "d": "hard",
+    "unit": "Unit 3 – Elizabethan Society",
+    "s": "Astrolabe",
+    "alt": [
+      "The astrolabe"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p2b",
+    "q": "What early form of prison was set up for the undeserving poor who refused to work?",
+    "a": "House of Correction",
+    "d": "medium",
+    "unit": "Unit 3 – Elizabethan Society",
+    "s": "House of Correction",
+    "alt": [
+      "Houses of Correction",
+      "The House of Correction",
+      "Bridewell"
+    ],
+    "t": "t"
   }
 ]
