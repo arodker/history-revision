@@ -4070,7 +4070,7 @@ function final(s,anim){
     +'<div class="dq-score">'+n+'/10</div><p class="dq-t">'+title(n)+'</p>'+(n<=3?'<p class="dq-s" style="margin:0">Try your luck again tomorrow</p>':'')
     +'<div class="dq-rows"><div class="dq-rl">Tudor</div><div class="dq-sym" style="justify-content:center">'+symRow('t')+'</div><div class="dq-rl">Cold War</div><div class="dq-sym" style="justify-content:center">'+symRow('c')+'</div></div>'
     +'<div class="'+late.replace(/^ /,'')+'" id="dq-after">'
-    +'<div class="dq-cmp" id="dq-cmp"></div><p class="dq-s" style="margin:.6rem 0 .7rem">'+(s.xp?'+'+s.xp+' XP':'')+(s.xp&&st?' \u00b7 ':'')+(st?'🔥 Streak: '+st+(st===1?' day':' days'):'')+'</p>'
+    +'<div class="dq-cmp" id="dq-cmp"><small>Comparing to others…</small></div><p class="dq-s" style="margin:.6rem 0 .7rem">'+(s.xp?'+'+s.xp+' XP':'')+(s.xp&&st?' \u00b7 ':'')+(st?'🔥 Streak: '+st+(st===1?' day':' days'):'')+'</p>'
     +'<div class="dq-row2"><button class="dq-go" id="dq-share" onclick="dqShare()">Share result</button><button class="dq-sec" onclick="dqReview()">Review misses</button></div>'
     +'<div class="dq-rev" id="dq-rev"></div>'
     +'<div class="dq-next" id="dq-cd">Next quiz in '+cdText()+'</div>'
