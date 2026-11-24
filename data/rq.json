@@ -2105,7 +2105,7 @@
     ],
     "t": "c"
   },
- {
+  {
     "paper": "p2a",
     "q": "What ideology believed in redistribution of wealth and no private property?",
     "a": "Communism",
@@ -2312,10 +2312,10 @@
     "d": "medium",
     "unit": "Unit 2 – Crises 1958–70",
     "s": "20%",
-     "alt": [
+    "alt": [
       "1/5",
-       "Fifth",
-       "One fifth"
+      "Fifth",
+      "One fifth"
     ],
     "t": "n"
   },
@@ -2421,7 +2421,7 @@
     ],
     "t": "c"
   },
- {
+  {
     "paper": "p2a",
     "q": "What did America and 60 other countries boycott in 1980?",
     "a": "Moscow Olympics",
@@ -4005,5 +4005,189 @@
       "Metro"
     ],
     "t": "o"
+  },
+  {
+    "paper": "p3",
+    "q": "What percentage of Germany's land was lost under the Treaty of Versailles?",
+    "a": "13%",
+    "d": "medium",
+    "unit": "Unit 1 – Weimar Republic",
+    "s": "13%",
+    "alt": [
+      "13",
+      "13 percent",
+      "13 per cent",
+      "thirteen percent"
+    ],
+    "t": "n"
+  },
+  {
+    "paper": "p3",
+    "q": "Which region returned to France under the Treaty of Versailles?",
+    "a": "Alsace-Lorraine",
+    "d": "medium",
+    "unit": "Unit 1 – Weimar Republic",
+    "s": "Alsace-Lorraine",
+    "alt": [
+      "Alsace Lorraine",
+      "Alsace and Lorraine",
+      "Alsace"
+    ],
+    "t": "o"
+  },
+  {
+    "paper": "p3",
+    "q": "What name was given to the Treaty of Versailles because Germany had no say in its terms?",
+    "a": "Diktat",
+    "d": "medium",
+    "unit": "Unit 1 – Weimar Republic",
+    "s": "Diktat",
+    "alt": [
+      "A Diktat",
+      "The Diktat",
+      "Dictated peace"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p3",
+    "q": "What name was given to the politicians who signed the armistice in 1918?",
+    "a": "November Criminals",
+    "d": "medium",
+    "unit": "Unit 1 – Weimar Republic",
+    "s": "November Criminals",
+    "alt": [
+      "The November Criminals"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p3",
+    "q": "Which 1928 pact saw Germany and 61 other countries agree not to use war to achieve foreign policy aims?",
+    "a": "Kellogg-Briand Pact",
+    "d": "hard",
+    "unit": "Unit 1 – Weimar Republic",
+    "s": "Kellogg-Briand",
+    "alt": [
+      "Kellogg Briand Pact",
+      "Kellogg-Briand",
+      "Kellogg Briand",
+      "The Kellogg-Briand Pact"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p3",
+    "q": "Which WWI general marched with Hitler in the Munich Putsch?",
+    "a": "Ludendorff",
+    "d": "hard",
+    "unit": "Unit 2 – Hitler's Rise",
+    "s": "Ludendorff",
+    "alt": [
+      "General Ludendorff",
+      "Erich Ludendorff"
+    ],
+    "t": "p"
+  },
+  {
+    "paper": "p3",
+    "q": "Who was the last Chancellor before Hitler?",
+    "a": "Von Schleicher",
+    "d": "hard",
+    "unit": "Unit 2 – Hitler's Rise",
+    "s": "Schleicher",
+    "alt": [
+      "Schleicher",
+      "Kurt von Schleicher",
+      "Kurt Schleicher",
+      "Von Schleicher"
+    ],
+    "t": "p"
+  },
+  {
+    "paper": "p3",
+    "q": "What name was given to the period 1924 to 1928, when Nazi support collapsed?",
+    "a": "The lean years",
+    "d": "medium",
+    "unit": "Unit 2 – Hitler's Rise",
+    "s": "Lean years",
+    "alt": [
+      "Lean years",
+      "The Lean Years",
+      "Lean Years"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p3",
+    "q": "Who was head of the SS and the police state?",
+    "a": "Himmler",
+    "d": "medium",
+    "unit": "Unit 3 – Nazi Control",
+    "s": "Himmler",
+    "alt": [
+      "Heinrich Himmler"
+    ],
+    "t": "p"
+  },
+  {
+    "paper": "p3",
+    "q": "Which court set up in 1934 had judges who swore a personal oath of loyalty to Hitler?",
+    "a": "People's Court",
+    "d": "medium",
+    "unit": "Unit 3 – Nazi Control",
+    "s": "People's Court",
+    "alt": [
+      "The People's Court",
+      "Peoples Court",
+      "The Peoples Court"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p3",
+    "q": "What replaced trade unions in Nazi Germany in 1933?",
+    "a": "German Labour Front",
+    "d": "medium",
+    "unit": "Unit 4 – Life in Nazi Germany",
+    "s": "DAF",
+    "alt": [
+      "DAF",
+      "The DAF",
+      "Deutsche Arbeitsfront",
+      "German Labor Front",
+      "The German Labour Front",
+      "DAF (German Labour Front)"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p3",
+    "q": "Which Nazi organisation encouraged employers to improve factory conditions?",
+    "a": "Beauty of Labour",
+    "d": "hard",
+    "unit": "Unit 4 – Life in Nazi Germany",
+    "s": "Beauty of Labour",
+    "alt": [
+      "SdA",
+      "Beauty of Labor",
+      "The Beauty of Labour"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p3",
+    "q": "What was triggered by the assassination of a German official in Paris in 1938?",
+    "a": "Kristallnacht",
+    "d": "medium",
+    "unit": "Unit 4 – Life in Nazi Germany",
+    "s": "Kristallnacht",
+    "alt": [
+      "Night of Broken Glass",
+      "The Night of Broken Glass",
+      "Night of the Broken Glass",
+      "Kristallnacht (Night of Broken Glass)"
+    ],
+    "t": "t"
   }
 ]
