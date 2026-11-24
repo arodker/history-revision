@@ -5522,6 +5522,11 @@ function bsCheck(typed, answer, question) {
   if (!t) return false;
   if (bsLearned()[t + '|' + bsNorm(answer)]) return true;
   const asked = String(question || '');
+  if (/^\s*put in order/i.test(asked)) {
+    const seq = x => (String(x).toLowerCase().match(/[a-z]+/g) || []).filter(w => w !== 'and' && w !== 'then' && w !== 'the');
+    const want = seq(String(answer).split(' / ')[0]), got = seq(typed);
+    return want.length > 0 && want.join(' ') === got.join(' ');
+  }
   const tt = bsToks(typed), have = new Set(tt), alts = bsAlts(answer), tj = bsNormN(typed).replace(/ /g, '');
   bsStripYear(alts);
   bsListSplit(alts, asked);
