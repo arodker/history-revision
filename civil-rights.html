@@ -3843,7 +3843,7 @@ function title(n){return n===10?'Gloriana':n>=8?'Clever as Cecil':n>=6?'Dancing 
 function streak(){var h=hist(),t=today(),d=h[t]?t:addDays(t,-1),n=0;while(h[d]){n++;d=addDays(d,-1);}return n;}
 function rowSyms(s,sec){return s.items.map(function(q,i){return q.sec===sec?SYM[sec][s.res[i]||'s']:'';}).join('');}
 function shareText(s){
-  return QNAME+' No.'+dailyNo(s.date)+'\n'+rowSyms(s,'t')+'\n'+rowSyms(s,'c');
+  return QNAME+' #'+dailyNo(s.date)+'\n'+rowSyms(s,'t')+'\n'+rowSyms(s,'c');
 }
 
 /* home card */
