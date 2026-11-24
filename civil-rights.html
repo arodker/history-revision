@@ -4064,8 +4064,8 @@ window.dqShare=function(){
 };
 window.dqReview=function(){
   var s=getState(),el=document.getElementById('dq-rev');if(!s||!el)return;
-  var miss=s.items.map(function(q,i){return {q:q,r:s.res[i]};}).filter(function(x){return x.r!=='c';});
-  el.innerHTML=miss.length?miss.map(function(x){return '<p><b>'+esc(x.q.q)+'</b>Answer: '+esc(x.q.a)+'</p>';}).join(''):'<p>No misses today.</p>';
+  var miss=s.items.map(function(q,i){return {q:q,r:s.res[i],n:i+1};}).filter(function(x){return x.r!=='c';});
+  el.innerHTML=miss.length?miss.map(function(x){return '<p><b>'+x.n+'. '+esc(x.q.q)+'</b>Answer: '+esc(x.q.a)+'</p>';}).join(''):'<p>No misses today.</p>';
 };
 
 /* hook screen changes */
