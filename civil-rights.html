@@ -3053,6 +3053,7 @@ function bsAlts(answer) {
 function bsCheck(typed, answer, question) {
   const t = bsNorm(typed);
   if (!t) return false;
+  if (/\bvalentines?\b/.test(t) && !/valentine/i.test(answer)) return false;
   if (bsLearned()[t + '|' + bsNorm(answer)]) return true;
   const asked = String(question || '');
   const tt = bsToks(typed), have = new Set(tt), alts = bsAlts(answer), tj = bsNormN(typed).replace(/ /g, '');
