@@ -102,7 +102,9 @@
       "The common man",
       "The poor",
       "Ordinary men",
-      "The ordinary people"
+      "The ordinary people",
+      "The peasants",
+      "Peasants"
     ],
     "t": "t"
   },
@@ -1965,7 +1967,14 @@
     "q": "How much money did Francis Drake seize during his circumnavigation?",
     "a": "£400,000",
     "s": "£400,000",
-    "alt": [],
+    "alt": [
+      "£400k",
+      "400k",
+      "400,000",
+      "£400000",
+      "400000",
+      "400,000 pounds"
+    ],
     "t": "n"
   },
   {
