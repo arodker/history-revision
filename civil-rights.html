@@ -3859,7 +3859,7 @@ function renderCard(){
   var seen=false;try{seen=!!localStorage.getItem('cr_dq_seen');}catch(e){}
   var played=started||Object.keys(hist()).length>0;
   card.innerHTML=(played?'':'<span class="dq-flag'+(seen?'':' p')+'">NEW</span>')+'<div class="dq-hero"><div class="dq-hg"><span>\u{1F451}</span>Tudors</div><div class="dq-hb"><span>\u{1F680}</span>Cold War</div></div>'
-    +'<div class="dq-body"><p class="dq-name">'+esc(QNAME.toUpperCase())+'</p><p class="dq-s" style="margin:.2rem 0 .7rem">No.'+dailyNo(today())+' \u00b7 10 questions \u00b7 15 seconds each'+(st?' \u00b7 \u{1F525} '+st+(st===1?' day':' days'):'')+'</p>'
+    +'<div class="dq-body"><p class="dq-name">'+esc(QNAME.toUpperCase())+'</p><p class="dq-s" style="margin:.2rem 0 .7rem">#'+dailyNo(today())+' \u00b7 10 questions \u00b7 15 seconds each'+(st?' \u00b7 \u{1F525} '+st+(st===1?' day':' days'):'')+'</p>'
     +'<button class="dq-play" onclick="dqOpen()">'+(started?'Continue today\u2019s Quizker':'Play today\u2019s Quizker')+'</button></div>';
   card.className='on hero';
 }
@@ -3967,7 +3967,7 @@ function final(s,anim){
   var wk='';for(var d=0;d<7;d++){var ds=addDays(mon,d),e=h[ds],c=ds===t?'t':(e?'':'n');wk+='<div class="'+c+'"><small>'+WD[d]+'</small><br>'+(e?e.s:'-')+'</div>';}
   var court=perfect?'<div class="dq-court"><span class="dq-trump l">🎺</span><span class="dq-crown">👑</span><span class="dq-trump r">🎺</span></div>':'';
   root.innerHTML='<div class="dq-panel'+(perfect?' dq-gold':'')+'" style="text-align:center">'
-    +'<div class="dq-k" style="justify-content:center">'+esc(QNAME)+' No.'+dailyNo(s.date)+'</div>'+court
+    +'<div class="dq-k" style="justify-content:center">'+esc(QNAME)+' #'+dailyNo(s.date)+'</div>'+court
     +'<div class="dq-score">'+n+'/10</div><p class="dq-t">'+title(n)+'</p>'+(n<=3?'<p class="dq-s" style="margin:0">Try your luck again tomorrow</p>':'')
     +'<div class="dq-rows"><div class="dq-rl">Tudor</div><div class="dq-sym" style="justify-content:center">'+symRow('t')+'</div><div class="dq-rl">Cold War</div><div class="dq-sym" style="justify-content:center">'+symRow('c')+'</div></div>'
     +'<div class="'+late.replace(/^ /,'')+'" id="dq-after">'
