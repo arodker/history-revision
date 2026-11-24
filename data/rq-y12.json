@@ -4102,26 +4102,15 @@
   },
   {
     "section": "elizabeth",
-    "unit": "Unit 4 – Elizabeth I and Religion",
-    "q": "Which Calvinist reformer led the Scottish Reformation of 1559 to 1560?",
-    "a": "John Knox",
-    "s": "Knox",
-    "alt": [
-      "Knox"
-    ],
-    "t": "p",
-    "v": 2
-  },
-  {
-    "section": "elizabeth",
     "unit": "Unit 7 – Later Years 1588–1603",
-    "q": "Which earl married Mary Queen of Scots in 1567 and was suspected of being involved in Darnley's murder?",
-    "a": "Earl of Bothwell",
-    "s": "Bothwell",
+    "q": "What was the name of Mary Queen of Scots' second husband, whose death led to her abdication?",
+    "a": "Lord Darnley",
+    "s": "Darnley",
     "alt": [
-      "Bothwell",
-      "The Earl of Bothwell",
-      "James Hepburn"
+      "Darnley",
+      "Henry Stuart",
+      "Henry Darnley",
+      "Henry, Lord Darnley"
     ],
     "t": "p",
     "v": 2
@@ -4141,7 +4130,7 @@
   {
     "section": "mtc",
     "unit": "Unit 1 – Stability of the Monarchy",
-    "q": "Which Cardinal became Archbishop of Canterbury after Cranmer's execution?",
+    "q": "Who became Archbishop of Canterbury after Cranmer's execution?",
     "a": "Reginald Pole",
     "s": "Pole",
     "alt": [
@@ -4149,6 +4138,49 @@
       "Cardinal Pole"
     ],
     "t": "p",
+    "v": 2
+  },
+  {
+    "section": "elizabeth",
+    "unit": "Unit 7 – Later Years 1588–1603",
+    "q": "How much did Elizabeth raise in forced loans from the nobility to prepare for the Armada?",
+    "a": "£75,000",
+    "s": "£75,000",
+    "alt": [
+      "75,000",
+      "£75k",
+      "75k",
+      "75000"
+    ],
+    "t": "n",
+    "v": 2
+  },
+  {
+    "section": "elizabeth",
+    "unit": "Unit 7 – Later Years 1588–1603",
+    "q": "How much did Elizabeth borrow at 10% from the City of London to prepare for the Armada?",
+    "a": "£56,000",
+    "s": "£56,000",
+    "alt": [
+      "56,000",
+      "£56k",
+      "56k",
+      "56000"
+    ],
+    "t": "n",
+    "v": 2
+  },
+  {
+    "section": "elizabeth",
+    "unit": "Unit 7 – Later Years 1588–1603",
+    "q": "How many ships were in the Spanish Armada of 1588?",
+    "a": "130",
+    "s": "130",
+    "alt": [
+      "One hundred and thirty",
+      "130 ships"
+    ],
+    "t": "n",
     "v": 2
   }
 ]
