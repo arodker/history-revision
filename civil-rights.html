@@ -3926,7 +3926,7 @@ function build(date,rq,dt,ex,cap){
 }
 
 /* no question repeats within 7 days (from #3 on; #0-#2 were drawn without it) */
-var BMEMO={},EASY2='g';
+var BMEMO={},EASY2='n';
 function buildNR(date,rq,dt){
   if(BMEMO[date])return BMEMO[date];
   var n=dailyNo(date),ex={},k,d,it;
