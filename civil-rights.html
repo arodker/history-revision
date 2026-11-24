@@ -3930,6 +3930,7 @@ var BMEMO={},EASY2='r';
 function buildNR(date,rq,dt){
   if(BMEMO[date])return BMEMO[date];
   var n=dailyNo(date),ex={},k,d,it;
+  rq=rq.filter(function(x){return n>=3?!x.old:!x.v;});dt=dt.filter(function(x){return n>=3?!x.old:!x.v;});
   if(n===2){ex.__easy=1;ex.__salt='|e'+EASY2;['0','1'].forEach(function(z){var dd=addDays(date,-(2-+z));(buildNR(dd,rq,dt)||[]).forEach(function(x){ex[x.q]=1;});});}
   if(n>=3)for(k=1;k<=7;k++){d=addDays(date,-k);if(dailyNo(d)<0)break;it=buildNR(d,rq,dt);(it||[]).forEach(function(x){ex[x.q]=1;});}
   return BMEMO[date]=build(date,rq,dt,ex,n>=3);

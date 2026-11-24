@@ -3438,7 +3438,7 @@ Promise.all([
   fetch('data/sources-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
   fetch('data/essays-y12.json').then(r=>r.ok?r.json():[]).catch(()=>[]),
 ]).then(([kc,fd,dates,rq,sources,essays]) => {
-  KC = kc; FD = fd; DATES = dates; RQ = rq;
+  KC = kc; FD = fd; DATES = dates.filter(x=>!x.old); RQ = rq.filter(x=>!x.old);
   SOURCE_SETS = (sources && Array.isArray(sources.sources)) ? sources.sources : (Array.isArray(sources) ? sources : []);
   ESSAY_QS = essays;
   console.log('Data loaded — KC:', KC.length, 'FD:', FD.length, 'DATES:', DATES.length, 'RQ:', RQ.length, 'ESSAYS:', ESSAY_QS.length);

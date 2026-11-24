@@ -3414,7 +3414,8 @@
     "a": "1965",
     "s": "1965",
     "alt": [],
-    "t": "y"
+    "t": "y",
+    "old": 1
   },
   {
     "section": "coldwar",
@@ -3491,7 +3492,8 @@
       "1 billion",
       "1 billion dollars"
     ],
-    "t": "n"
+    "t": "n",
+    "old": 1
   },
   {
     "section": "coldwar",
@@ -3499,7 +3501,12 @@
     "q": "In total, how much did the USSR spend on the war in Afghanistan?",
     "a": "$50 billion",
     "s": "$50 billion",
-    "alt": [],
+    "alt": [
+      "$8 billion a year",
+      "$8 billion per year",
+      "8 billion a year",
+      "$8bn a year"
+    ],
     "t": "n"
   },
   {
@@ -3726,5 +3733,73 @@
     "s": "100,000",
     "alt": [],
     "t": "n"
+  },
+  {
+    "section": "coldwar",
+    "unit": "Chapter 3 – The Cold War 1956–1984",
+    "q": "Who was appointed leader of Hungary after the Soviet invasion of 1956?",
+    "a": "Janos Kadar",
+    "s": "Kadar",
+    "alt": [
+      "János Kádár",
+      "Janos Kadar",
+      "Kadar",
+      "Kádár"
+    ],
+    "t": "p",
+    "v": 2
+  },
+  {
+    "section": "coldwar",
+    "unit": "Chapter 3 – The Cold War 1956–1984",
+    "q": "Which hard-line Czechoslovak leader was replaced by Dubcek in 1968?",
+    "a": "Antonin Novotny",
+    "s": "Novotny",
+    "alt": [
+      "Antonín Novotný",
+      "Novotny",
+      "Novotný"
+    ],
+    "t": "p",
+    "v": 2
+  },
+  {
+    "section": "coldwar",
+    "unit": "Chapter 2 – Development of the Cold War 1946–1955",
+    "q": "What name was given to the Soviet method of gradually taking over Eastern European states by eliminating opposition?",
+    "a": "Salami tactics",
+    "s": "Salami tactics",
+    "alt": [
+      "Salami tactic",
+      "Salami slicing"
+    ],
+    "t": "t",
+    "v": 2
+  },
+  {
+    "section": "coldwar",
+    "unit": "Chapter 4 – The End of the Cold War 1984–1995",
+    "q": "Which doctrine replaced the Brezhnev Doctrine in 1988, letting satellite states go their own way?",
+    "a": "Sinatra Doctrine",
+    "s": "Sinatra Doctrine",
+    "alt": [
+      "The Sinatra Doctrine"
+    ],
+    "t": "t",
+    "v": 2
+  },
+  {
+    "section": "coldwar",
+    "unit": "Chapter 4 – The End of the Cold War 1984–1995",
+    "q": "Which December 1987 treaty destroyed all intermediate-range nuclear missiles?",
+    "a": "INF Treaty",
+    "s": "INF Treaty",
+    "alt": [
+      "INF",
+      "The INF Treaty",
+      "Intermediate-Range Nuclear Forces Treaty"
+    ],
+    "t": "t",
+    "v": 2
   }
 ]
