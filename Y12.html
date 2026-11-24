@@ -2394,11 +2394,75 @@ function setRQCount(n) {
   });
 }
 
+function printRQ(questions) {
+  const hub = 'A Level History';
+  const info = q => ({label: (S[q.section] && S[q.section].label) || '', colour: (S[q.section] && S[q.section].colour) || '#555'});
+  const list = (questions && questions.length ? questions : (typeof rqOnePool !== 'undefined' ? rqOnePool : [])) || [];
+  if (!list.length) { alert('Generate a set of questions first.'); return; }
+  const esc = s => String(s == null ? '' : s).replace(/&(?!(?:[a-z]+|#\d+);)/gi, '&amp;').replace(/</g, '&lt;');
+  const today = new Date().toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'});
+  const rows = list.map((q, i) => {
+    const inf = info(q);
+    return `<div class="row"><div class="num">${i + 1}</div><div class="main">
+        <div class="topic" style="color:${inf.colour}"><span class="dot" style="background:${inf.colour}"></span>${esc(inf.label)}</div>
+        <div class="qtext">${q.q}</div>
+        <div class="box"><span class="lab">Answer</span><i></i></div>
+      </div></div>`;
+  }).join('');
+  const key = list.map((q, i) => `<li><b>${i + 1}.</b> ${q.a}</li>`).join('');
+  const win = window.open('', '_blank');
+  win.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Do Now – ${esc(hub)}</title>
+    <style>
+      * { box-sizing:border-box; margin:0; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      body { font-family:'Segoe UI',Helvetica,Arial,sans-serif; color:#1a1a1a; font-size:10.5pt; padding:.9cm 1.1cm; }
+      .head { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:2.5px solid #1a1a1a; padding-bottom:.25cm; margin-bottom:.35cm; }
+      .head h1 { font-size:20pt; font-weight:800; letter-spacing:-.01em; line-height:1; }
+      .head .sub { font-size:9pt; color:#555; margin-top:.12cm; }
+      .meta { display:flex; gap:.5cm; align-items:flex-end; font-size:9pt; color:#444; }
+      .meta .f { border-bottom:1px solid #444; min-width:3.6cm; height:.55cm; display:flex; align-items:flex-end; padding-bottom:1px; }
+      .meta .f.s { min-width:1.2cm; }
+      .meta .score { border:1.5px solid #1a1a1a; border-radius:6px; padding:.1cm .35cm; font-weight:700; font-size:11pt; min-width:1.9cm; text-align:center; }
+      .row { display:flex; gap:.3cm; margin-bottom:.2cm; break-inside:avoid; }
+      .num { flex:0 0 .78cm; height:.78cm; border-radius:50%; background:#1a1a1a; color:#fff; font-weight:700; font-size:10.5pt; display:flex; align-items:center; justify-content:center; margin-top:.02cm; }
+      .main { flex:1; }
+      .topic { font-size:7.5pt; font-weight:700; text-transform:uppercase; letter-spacing:.07em; margin-bottom:.06cm; display:flex; align-items:center; gap:.15cm; }
+      .dot { width:7px; height:7px; border-radius:50%; display:inline-block; }
+      .qtext { font-size:10.5pt; font-weight:600; line-height:1.3; margin-bottom:.14cm; }
+      .box { position:relative; border:1.4px solid #6b6b6b; border-radius:6px; height:1.05cm; background:#fff; overflow:hidden; }
+      .box .lab { position:absolute; top:2px; left:6px; font-size:6.5pt; letter-spacing:.06em; text-transform:uppercase; color:#aaa; }
+      .box i { position:absolute; left:8px; right:8px; bottom:.3cm; border-bottom:1px dotted #bbb; }
+      .foot { margin-top:.2cm; font-size:7.5pt; color:#888; text-align:right; }
+      .keypage { page-break-before:always; }
+      .keypage h2 { font-size:14pt; margin-bottom:.1cm; }
+      .keypage .note { font-size:8.5pt; color:#666; margin-bottom:.4cm; }
+      .keypage ol { list-style:none; columns:2; column-gap:1cm; font-size:10pt; line-height:1.5; }
+      .keypage li { break-inside:avoid; margin-bottom:.15cm; }
+      @media print { @page { size:A4; margin:.8cm 0; } body { padding:.2cm 1.1cm; } }
+    </style></head><body>
+    <div class="head"><div><h1>Do Now</h1><div class="sub">${esc(hub)} &nbsp;·&nbsp; ${today}</div></div>
+      <div class="meta"><span>Name</span><span class="f"></span><span>Class</span><span class="f s"></span><span class="score">&nbsp;&nbsp;/ ${list.length}</span></div></div>
+    ${rows}
+    <div class="keypage"><h2>Answers – ${esc(hub)} Do Now, ${today}</h2><div class="note">Teacher copy. Accept sensible equivalents.</div><ol>${key}</ol></div>
+    <script>window.onload=function(){setTimeout(function(){window.print()},250)}<\/script></body></html>`);
+  win.document.close();
+}
+
+function rqAddPrintBtn(pool) {
+  window._rqCurrentPool = pool;
+  const out = document.getElementById('rq-out');
+  if (!out || document.getElementById('rq-print-btn')) return;
+  const d = document.createElement('div');
+  d.style.cssText = 'text-align:right;margin-bottom:.5rem';
+  d.innerHTML = '<button id="rq-print-btn" onclick="printRQ(window._rqCurrentPool)" class="btn-sm" style="font-size:.75rem">\ud83d\udda8\ufe0f Print as do-now</button>';
+  out.insertBefore(d, out.firstChild);
+}
+
 function generateRQ() {
   var filtered = shuffle(RQ.filter(function(q){ return rqReigns.has(q.section) && inScope(q); }));
   document.getElementById('rq-setup').style.display = 'none';
   if (rqMode === 'batch') {
     var pool = filtered.slice(0, 10);
+    rqAddPrintBtn(pool);
     document.getElementById('rq-one').style.display = 'none';
     document.getElementById('rq-endless').style.display = 'none';
     document.getElementById('rq-out').style.display = 'block';
