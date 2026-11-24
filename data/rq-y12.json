@@ -189,7 +189,14 @@
     "a": "Somerset",
     "reign": "edward",
     "s": "Somerset",
-    "alt": [],
+    "alt": [
+      "Edward Seymour",
+      "Seymour",
+      "Duke of Somerset",
+      "The Duke of Somerset",
+      "Lord Somerset",
+      "Protector Somerset"
+    ],
     "t": "p"
   },
   {
@@ -1572,10 +1579,23 @@
   {
     "section": "elizabeth",
     "unit": "Unit 5 – Government and Parliament",
-    "q": "What event did Walsingham witness in France in 1572?",
+    "q": "What event did Walsingham witness in France in 1572 that confirmed his view of an international Catholic conspiracy?",
     "a": "St Bartholomew's Day Massacre",
     "s": "St Bartholomew's Day Massacre",
-    "alt": [],
+    "alt": [
+      "St Bartholomew's",
+      "St Bartholomews",
+      "St Bartholomew",
+      "Bartholomew's Day Massacre",
+      "Bartholomews Day Massacre",
+      "Bartholomew Massacre",
+      "Bartholomews massacre",
+      "Massacre of St Bartholomew",
+      "St Bartholomew's Day",
+      "St Bartholomews Day Massacre",
+      "Saint Bartholomew's Day Massacre",
+      "St Bartholomew massacre"
+    ],
     "t": "e"
   },
   {
@@ -1588,7 +1608,14 @@
       "Norfolk and Sussex",
       "Howards (Norfolk and Sussex)",
       "The Howards",
-      "Howard"
+      "Howard",
+      "Howards",
+      "Norfolk",
+      "Norfolks",
+      "Norfolk's",
+      "Sussex",
+      "Sussex's",
+      "Norfolk and Sussex's"
     ],
     "t": "o"
   },
@@ -1797,7 +1824,8 @@
     "alt": [
       "Fifteenths and tenths",
       "15th and 10th",
-      "Fifteenth and Tenth"
+      "Fifteenth and Tenth",
+      "1/15 and 1/10"
     ],
     "t": "t"
   },
@@ -3146,7 +3174,11 @@
     "q": "When was the Brezhnev Doctrine published?",
     "a": "September 1968",
     "s": "September 1968",
-    "alt": [],
+    "alt": [
+      "1968",
+      "Sept 1968",
+      "Sep 1968"
+    ],
     "t": "y"
   },
   {
@@ -3355,12 +3387,12 @@
   {
     "section": "coldwar",
     "unit": "Chapter 4 – The End of the Cold War 1984–1995",
-    "q": "In June 1989 which political party won 160 of 161 freely elected seats?",
-    "a": "Solidarity, Poland",
+    "q": "In June 1989 which political party in Poland won 160 of 161 freely elected seats?",
+    "a": "Solidarity",
     "s": "Solidarity",
     "alt": [
-      "Solidarity, Poland",
-      "Solidarność"
+      "Solidarność",
+      "Solidarnosc"
     ],
     "t": "t"
   },
