@@ -3933,7 +3933,17 @@ function buildNR(date,rq,dt){
   rq=rq.filter(function(x){return n>=3?!x.old:!x.v;});dt=dt.filter(function(x){return n>=3?!x.old:!x.v;});
   if(n===2){ex.__easy=1;ex.__salt='|e'+EASY2;['0','1'].forEach(function(z){var dd=addDays(date,-(2-+z));(buildNR(dd,rq,dt)||[]).forEach(function(x){ex[x.q]=1;});});}
   if(n>=3)for(k=1;k<=7;k++){d=addDays(date,-k);if(dailyNo(d)<0)break;it=buildNR(d,rq,dt);(it||[]).forEach(function(x){ex[x.q]=1;});}
-  return BMEMO[date]=build(date,rq,dt,ex,n>=3);
+  var res=build(date,rq,dt,ex,n>=3);
+  if(n===2&&res){
+    var ix=-1;res.forEach(function(x,i){if(/Serbian president/.test(x.q))ix=i;});
+    if(ix>=0){
+      var used={};res.forEach(function(x){used[x.q]=1;});
+      var pool=rq.filter(function(x){return rqOk(x)&&!ex[x.q]&&!used[x.q]&&easyOk(x,ex)&&x.section==='coldwar';});
+      var pick=pickRq(pool,1,rng(hash('dq|'+date+'|swap6')))[0];
+      if(pick)res[ix]=mkRq(pick,'c');
+    }
+  }
+  return BMEMO[date]=res;
 }
 
 /* state */
