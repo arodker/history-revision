@@ -4099,7 +4099,8 @@ function compare(s){
   }).then(function(d){
     clearTimeout(to);
     var el=document.getElementById('dq-cmp');
-    if(!el||!d||!d.dist||d.dist.length!==11)return;
+    if(!el)return;
+    if(!d||!d.dist||d.dist.length!==11){el.innerHTML='<small>Comparison unavailable right now. Try again later.</small>';return;}
     if(!(d.n>=MINN)){el.innerHTML='<p>You are one of the first to try</p><small>Check back later to see how your score compares.</small>';return;}
     var c=getState(),me=score(s),others=d.n-(c&&c.sent?1:0),below=0,i,mx=1;
     for(i=0;i<me;i++)below+=d.dist[i];
@@ -4108,7 +4109,7 @@ function compare(s){
     el.innerHTML='<p>You beat '+beat+'% of players</p><small>Average '+d.avg+' \u00b7 '+d.n+' played today</small>'
       +'<div class="dq-hist">'+d.dist.map(function(x,k){return '<i class="'+(k===me?'me':'')+'" style="height:'+Math.max(4,Math.round(100*x/mx))+'%"></i>';}).join('')+'</div>'
       +'<div class="dq-hl">'+d.dist.map(function(x,k){return '<span>'+k+'</span>';}).join('')+'</div>';
-  }).catch(function(){clearTimeout(to);});
+  }).catch(function(){clearTimeout(to);var el=document.getElementById('dq-cmp');if(el)el.innerHTML='<small>Comparison unavailable right now. Try again later.</small>';});
 }
 window.dqShare=function(){
   var s=getState();if(!s)return;var txt=shareText(s),b=document.getElementById('dq-share');
