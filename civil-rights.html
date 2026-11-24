@@ -3901,12 +3901,13 @@ function mkDt(x,sec,r){
   var y=+x.date;
   return {k:'dt',sec:sec,ss:x.section,q:'In which year did this happen? '+x.event.replace(/\s+[—–]\s+/g,': '),a:String(y)};
 }
+function easyOk(x,ex){return !ex.__easy||(String(x.a).split(/\s+/).length<=2&&!/\d{1,3},\d{3}|[%\u00a3$]|million|billion|\d{3,}/i.test(x.a)&&!(x.alt&&x.alt.length>7&&false));}
 function isDateAns(a){return /\b(1\d{3}|20\d{2})\b/.test(a)||/\b(january|february|march|april|may|june|july|august|september|october|november|december)\b/i.test(a);}
 function build(date,rq,dt,ex,cap){
   ex=ex||{};
-  var r=rng(hash('dq|'+date)),tudor,i;
-  var tRq=rq.filter(function(x){return rqOk(x)&&!ex[x.q]&&(x.section==='mtc'||x.section==='elizabeth');});
-  var cRq=rq.filter(function(x){return rqOk(x)&&!ex[x.q]&&x.section==='coldwar';});
+  var r=rng(hash('dq|'+date+(ex.__salt||''))),tudor,i;
+  var tRq=rq.filter(function(x){return rqOk(x)&&!ex[x.q]&&easyOk(x,ex)&&(x.section==='mtc'||x.section==='elizabeth');});
+  var cRq=rq.filter(function(x){return rqOk(x)&&!ex[x.q]&&easyOk(x,ex)&&x.section==='coldwar';});
   var tDt=dt.filter(function(x){return dtOk(x)&&!ex['In which year did this happen? '+x.event.replace(/\s+[\u2014\u2013]\s+/g,': ')]&&(x.section==='mtc'||x.section==='elizabeth');});
   var cDt=dt.filter(function(x){return dtOk(x)&&!ex['In which year did this happen? '+x.event.replace(/\s+[\u2014\u2013]\s+/g,': ')]&&x.section==='coldwar';});
   var r0=r,res=null,tries;
@@ -3925,10 +3926,11 @@ function build(date,rq,dt,ex,cap){
 }
 
 /* no question repeats within 7 days (from #3 on; #0-#2 were drawn without it) */
-var BMEMO={};
+var BMEMO={},EASY2='g';
 function buildNR(date,rq,dt){
   if(BMEMO[date])return BMEMO[date];
   var n=dailyNo(date),ex={},k,d,it;
+  if(n===2){ex.__easy=1;ex.__salt='|e'+EASY2;['0','1'].forEach(function(z){var dd=addDays(date,-(2-+z));(buildNR(dd,rq,dt)||[]).forEach(function(x){ex[x.q]=1;});});}
   if(n>=3)for(k=1;k<=7;k++){d=addDays(date,-k);if(dailyNo(d)<0)break;it=buildNR(d,rq,dt);(it||[]).forEach(function(x){ex[x.q]=1;});}
   return BMEMO[date]=build(date,rq,dt,ex,n>=3);
 }
