@@ -46,10 +46,14 @@
     "section": "aa"
   },
   {
-    "q": "How many African Americans were elected to Congress in the 1870s?",
-    "a": "Twenty two",
-    "s": "Twenty two",
-    "alt": [],
+    "q": "By 1887, how many African Americans had served in Congress?",
+    "a": "22",
+    "s": "22",
+    "alt": [
+      "Twenty two",
+      "Twenty-two",
+      "twenty two"
+    ],
     "t": "n",
     "section": "aa"
   },
@@ -142,11 +146,14 @@
   },
   {
     "q": "Which compromise ended Reconstruction in 1877?",
-    "a": "With the Hayes-Tilden Compromise of 1877",
+    "a": "The Hayes-Tilden Compromise",
     "s": "Hayes-Tilden Compromise",
     "alt": [
       "Compromise of 1877",
-      "Hayes Tilden"
+      "The Compromise of 1877",
+      "Hayes Tilden",
+      "Hayes-Tilden",
+      "Hayes Tilden Compromise"
     ],
     "t": "c",
     "section": "aa"
@@ -337,7 +344,7 @@
     "section": "aa"
   },
   {
-    "q": "What was the alternative name for the 369th Infantry Division who served with distinction during WW1?",
+    "q": "What was the alternative name for the 369th Infantry Regiment who served with distinction during WW1?",
     "a": "The Harlem Hellfighters",
     "s": "The Harlem Hellfighters",
     "alt": [
@@ -1113,7 +1120,12 @@
     "q": "Which African American union was formed in 1869?",
     "a": "National Negro Labor Union",
     "s": "National Negro Labor Union",
-    "alt": [],
+    "alt": [
+      "Colored National Labor Union",
+      "Coloured National Labor Union",
+      "CNLU",
+      "National Negro Labour Union"
+    ],
     "t": "o",
     "section": "lab"
   },
@@ -1150,7 +1162,7 @@
     "section": "lab"
   },
   {
-    "q": "Who set up the militant American Railway Union in 1893 and later ran for President as a socialist 4 times?",
+    "q": "Who set up the militant American Railway Union in 1893 and later ran for President as a socialist 5 times?",
     "a": "Eugene Debs",
     "s": "Eugene Debs",
     "alt": [],
@@ -2215,17 +2227,6 @@
     "section": "na"
   },
   {
-    "q": "which organisation was formed in 1923 in response to the Leavitt Bill?",
-    "a": "The AIDA (American Indian Defence Association)",
-    "s": "AIDA",
-    "alt": [
-      "American Indian Defence Association",
-      "American Indian Defense Association"
-    ],
-    "t": "o",
-    "section": "na"
-  },
-  {
     "q": "What campaign group, founded in the 1920s, sought to preserve Native American cultures?",
     "a": "The AIDA (American Indian Defence Association)",
     "s": "AIDA",
@@ -2365,13 +2366,13 @@
     "section": "na"
   },
   {
-    "q": "Why did Native Americans lose lots of their reservation lands at the end of WW2?",
-    "a": "Japanese Americans forcibly relocated there",
-    "s": "Japanese Americans relocated there",
+    "q": "Who were interned on Native land during WWII?",
+    "a": "Japanese Americans",
+    "s": "Japanese Americans",
     "alt": [
-      "Japanese Americans",
-      "Japanese internment",
-      "Japanese relocation"
+      "Japanese American",
+      "Japanese internees",
+      "Japanese"
     ],
     "t": "x",
     "section": "na"
@@ -3163,8 +3164,8 @@
   },
   {
     "q": "In what year was the federal ban on birth control lifted?",
-    "a": "1938",
-    "s": "1938",
+    "a": "1936",
+    "s": "1936",
     "alt": [],
     "t": "y",
     "section": "wom"
@@ -3451,6 +3452,603 @@
       "thirty five"
     ],
     "t": "n",
+    "section": "wom"
+  },
+  {
+    "q": "Which 1863 proclamation made abolition a Union war aim?",
+    "a": "Emancipation Proclamation",
+    "s": "Emancipation Proclamation",
+    "alt": [
+      "The Emancipation Proclamation"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Which 1867 Act divided the Southern states into military districts?",
+    "a": "The Reconstruction Act",
+    "s": "The Reconstruction Act",
+    "alt": [
+      "Reconstruction Act",
+      "Reconstruction Act 1867",
+      "First Reconstruction Act",
+      "Military Reconstruction Act"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Which 1870-1 Acts brought federal intervention to destroy the KKK?",
+    "a": "Enforcement Acts",
+    "s": "Enforcement Acts",
+    "alt": [
+      "Enforcement Act",
+      "The Enforcement Acts",
+      "Force Acts",
+      "Ku Klux Klan Acts"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Who was the first African American senator?",
+    "a": "Hiram Revels",
+    "s": "Hiram Revels",
+    "alt": [
+      "Revels",
+      "Hiram Rhodes Revels"
+    ],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which 1895 compromise saw Booker T. Washington accept social segregation in return for economic co-operation?",
+    "a": "Atlanta Compromise",
+    "s": "Atlanta Compromise",
+    "alt": [
+      "The Atlanta Compromise",
+      "Atlanta Compromise speech",
+      "Atlanta Exposition"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Which 1892 pamphlet by Ida B. Wells exposed lynching?",
+    "a": "Southern Horrors",
+    "s": "Southern Horrors",
+    "alt": [
+      "The Southern Horrors"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Which 1898 event saw a biracial local government ousted by a white mob?",
+    "a": "Wilmington Coup",
+    "s": "Wilmington Coup",
+    "alt": [
+      "The Wilmington Coup",
+      "Wilmington",
+      "Wilmington Massacre",
+      "Wilmington Insurrection"
+    ],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Which 1905 movement was the immediate predecessor of the NAACP?",
+    "a": "Niagara Movement",
+    "s": "Niagara Movement",
+    "alt": [
+      "The Niagara Movement",
+      "Niagara"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Which scholar co-founded the NAACP in 1909 with Ida B. Wells?",
+    "a": "W.E.B. Du Bois",
+    "s": "W.E.B. Du Bois",
+    "alt": [
+      "Du Bois",
+      "DuBois",
+      "WEB Du Bois",
+      "W. E. B. Du Bois",
+      "W.E.B. DuBois"
+    ],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which President segregated the Federal Government in 1913?",
+    "a": "Woodrow Wilson",
+    "s": "Woodrow Wilson",
+    "alt": [
+      "Wilson",
+      "President Wilson"
+    ],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "What name is given to the 1919 wave of race riots across American cities?",
+    "a": "Red Summer",
+    "s": "Red Summer",
+    "alt": [
+      "The Red Summer",
+      "Red Summer of 1919"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Which 1921 riot destroyed the prosperous black community known as \"Black Wall Street\"?",
+    "a": "The Tulsa Race Riot",
+    "s": "The Tulsa Race Riot",
+    "alt": [
+      "Tulsa Race Riot",
+      "Tulsa",
+      "Tulsa Race Massacre",
+      "Tulsa Massacre",
+      "Tulsa riot",
+      "Tulsa Race Riots"
+    ],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "What was the name of the shipping line launched by Garvey's 'back to Africa' movement in 1919?",
+    "a": "Black Star Line",
+    "s": "Black Star Line",
+    "alt": [
+      "The Black Star Line",
+      "Black Star"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "What was the name of the WWII campaign for victory over fascism abroad and racism at home?",
+    "a": "Double V",
+    "s": "Double V",
+    "alt": [
+      "Double V campaign",
+      "The Double V campaign",
+      "Double Victory",
+      "Double V Campaign"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Which 1944 Supreme Court case outlawed all-white primaries?",
+    "a": "Smith v. Allwright",
+    "s": "Smith v. Allwright",
+    "alt": [
+      "Smith v Allwright",
+      "Smith vs Allwright",
+      "Smith vs. Allwright",
+      "Allwright"
+    ],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Which 1960 Supreme Court case ruled that segregation on interstate buses was unconstitutional?",
+    "a": "Boynton v. Virginia",
+    "s": "Boynton v. Virginia",
+    "alt": [
+      "Boynton v Virginia",
+      "Boynton vs Virginia",
+      "Boynton vs. Virginia",
+      "Boynton"
+    ],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Whose attempt to enrol at the University of Mississippi in 1962 led to a riot suppressed by 30,000 federal troops?",
+    "a": "James Meredith",
+    "s": "James Meredith",
+    "alt": [
+      "Meredith"
+    ],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "How many young girls were killed in the 1963 Birmingham church bombing?",
+    "a": "Four",
+    "s": "Four",
+    "alt": [
+      "4",
+      "four girls",
+      "4 girls"
+    ],
+    "t": "n",
+    "section": "aa"
+  },
+  {
+    "q": "On which bridge were the Selma marchers met with violence in 1965?",
+    "a": "Edmund Pettus Bridge",
+    "s": "Edmund Pettus Bridge",
+    "alt": [
+      "The Edmund Pettus Bridge",
+      "Pettus Bridge",
+      "Edmund Pettus"
+    ],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Name either of the two cities that saw the largest riots of the 1967 Long Hot Summer.",
+    "a": "Detroit",
+    "s": "Detroit",
+    "alt": [
+      "Newark",
+      "Detroit or Newark",
+      "Newark or Detroit",
+      "Detroit and Newark",
+      "Detroit, Newark"
+    ],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Which pro-segregation candidate won five states in the 1968 Presidential election?",
+    "a": "George Wallace",
+    "s": "George Wallace",
+    "alt": [
+      "Wallace",
+      "Governor Wallace"
+    ],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which 1971 Supreme Court case ruled that bussing was constitutional?",
+    "a": "Swann v. Charlotte-Mecklenburg",
+    "s": "Swann v. Charlotte-Mecklenburg",
+    "alt": [
+      "Swann v Charlotte-Mecklenburg",
+      "Swann",
+      "Swann v. Charlotte Mecklenburg",
+      "Swann v Charlotte Mecklenburg",
+      "Swann vs Charlotte-Mecklenburg"
+    ],
+    "t": "o",
+    "section": "aa"
+  },
+  {
+    "q": "Whose 1981 lynching led to a strong federal response and punishment for the KKK?",
+    "a": "Michael Donald",
+    "s": "Michael Donald",
+    "alt": [
+      "Donald"
+    ],
+    "t": "p",
+    "section": "aa"
+  },
+  {
+    "q": "Which national holiday celebrating King was established in 1983?",
+    "a": "MLK Day",
+    "s": "MLK Day",
+    "alt": [
+      "Martin Luther King Day",
+      "Martin Luther King Jr. Day",
+      "Martin Luther King Jr Day",
+      "MLK day"
+    ],
+    "t": "t",
+    "section": "aa"
+  },
+  {
+    "q": "Which 1890 Act was often used against unions, branding strikes and boycotts as illegal restraints of trade?",
+    "a": "Sherman Antitrust Act",
+    "s": "Sherman Antitrust Act",
+    "alt": [
+      "Sherman Act",
+      "Sherman Anti-Trust Act",
+      "Sherman Antitrust",
+      "Sherman"
+    ],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "Which 1877 strike ended with federal troops killing over 100 workers?",
+    "a": "The Great Railroad Strike",
+    "s": "The Great Railroad Strike",
+    "alt": [
+      "Great Railroad Strike",
+      "Great Railroad Strike of 1877",
+      "Railroad Strike of 1877",
+      "Great Strike"
+    ],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "Which 1894 march saw unemployed workers demand federal job creation in Washington?",
+    "a": "Coxey's Army",
+    "s": "Coxey's Army",
+    "alt": [
+      "Coxeys Army",
+      "Coxey's",
+      "Coxey"
+    ],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "Which President forced mine owners to negotiate during the 1902 Great Coal Strike?",
+    "a": "Theodore Roosevelt",
+    "s": "Theodore Roosevelt",
+    "alt": [
+      "Teddy Roosevelt",
+      "Roosevelt",
+      "Theodore",
+      "Teddy"
+    ],
+    "t": "p",
+    "section": "lab"
+  },
+  {
+    "q": "Which 1912 strike, led by the IWW, saw immigrant women strike for higher wages and use a children's exodus to gain sympathy?",
+    "a": "The Lawrence Textile Strike",
+    "s": "The Lawrence Textile Strike",
+    "alt": [
+      "Lawrence Textile Strike",
+      "Lawrence Strike",
+      "Lawrence",
+      "Bread and Roses",
+      "Bread and Roses Strike",
+      "The Bread and Roses Strike",
+      "Lawrence Bread and Roses Strike",
+      "Lawrence Textile Bread and Roses Strike",
+      "Lawrence Textile \"Bread and Roses\" Strike"
+    ],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "Which 1932 Act banned yellow-dog contracts and prohibited federal courts using injunctions against peaceful strikes?",
+    "a": "Norris-La Guardia Act",
+    "s": "Norris-La Guardia Act",
+    "alt": [
+      "Norris La Guardia Act",
+      "Norris-LaGuardia Act",
+      "Norris LaGuardia Act",
+      "Norris-La Guardia",
+      "Norris La Guardia"
+    ],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "At which company did the 1937 sit-down strike of 40,000 workers force recognition of the UAW?",
+    "a": "General Motors",
+    "s": "General Motors",
+    "alt": [
+      "GM",
+      "General Motors (GM)"
+    ],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "Which 1965 California farm workers' strike, led by Cesar Chavez, became a nationwide boycott of a crop?",
+    "a": "Delano Grape Strike",
+    "s": "Delano Grape Strike",
+    "alt": [
+      "Delano",
+      "The Delano Grape Strike",
+      "Grape Strike",
+      "Grape Boycott",
+      "Delano Grape Boycott",
+      "Delano Strike"
+    ],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "Which group, established in Detroit in 1968, challenged discrimination within the white-dominated UAW?",
+    "a": "DRUM",
+    "s": "DRUM",
+    "alt": [
+      "D.R.U.M.",
+      "Dodge Revolutionary Union Movement"
+    ],
+    "t": "t",
+    "section": "lab"
+  },
+  {
+    "q": "Which 1923 Supreme Court case overturned a minimum wage law for women?",
+    "a": "Adkins v. Children's Hospital",
+    "s": "Adkins v. Children's Hospital",
+    "alt": [
+      "Adkins v Children's Hospital",
+      "Adkins",
+      "Adkins v Childrens Hospital",
+      "Adkins vs. Children's Hospital"
+    ],
+    "t": "o",
+    "section": "lab"
+  },
+  {
+    "q": "What name is given to the 1864-6 forced relocation of the Navajo to the Bosque Redondo reservation?",
+    "a": "The Long Walk",
+    "s": "The Long Walk",
+    "alt": [
+      "Long Walk",
+      "Long Walk of the Navajo",
+      "The Long Walk of the Navajo"
+    ],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "Who wrote 'A Century of Dishonor' in 1881, exposing the government's mistreatment of Native Americans?",
+    "a": "Helen Hunt Jackson",
+    "s": "Helen Hunt Jackson",
+    "alt": [
+      "Jackson",
+      "Helen Jackson",
+      "Helen Hunt"
+    ],
+    "t": "p",
+    "section": "na"
+  },
+  {
+    "q": "Which 1885 Act limited tribal sovereignty by placing certain crimes under federal jurisdiction?",
+    "a": "Major Crimes Act",
+    "s": "Major Crimes Act",
+    "alt": [
+      "The Major Crimes Act",
+      "Major Crimes Act 1885"
+    ],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "Which religious revival among the Plains tribes, begun in 1889, was violently suppressed at Wounded Knee?",
+    "a": "Ghost Dance",
+    "s": "Ghost Dance",
+    "alt": [
+      "The Ghost Dance",
+      "Ghost Dance Movement"
+    ],
+    "t": "t",
+    "section": "na"
+  },
+  {
+    "q": "Whose Code Talkers served in the US armed forces during WWII?",
+    "a": "Navajo",
+    "s": "Navajo",
+    "alt": [
+      "The Navajo",
+      "Navajo Indians",
+      "Navajo tribe"
+    ],
+    "t": "o",
+    "section": "na"
+  },
+  {
+    "q": "For how many days did the 1973 occupation of Wounded Knee last?",
+    "a": "71 days",
+    "s": "71 days",
+    "alt": [
+      "71",
+      "seventy-one",
+      "seventy one"
+    ],
+    "t": "n",
+    "section": "na"
+  },
+  {
+    "q": "In 1869, which territory became the first in the US to grant women the vote?",
+    "a": "Wyoming",
+    "s": "Wyoming",
+    "alt": [
+      "Wyoming Territory"
+    ],
+    "t": "o",
+    "section": "wom"
+  },
+  {
+    "q": "Which 1875 Supreme Court case ruled that suffrage was not a right guaranteed by the 14th Amendment?",
+    "a": "Minor v. Happersett",
+    "s": "Minor v. Happersett",
+    "alt": [
+      "Minor v Happersett",
+      "Minor vs Happersett",
+      "Minor vs. Happersett",
+      "Minor"
+    ],
+    "t": "o",
+    "section": "wom"
+  },
+  {
+    "q": "Which 1921 Act provided the first federal funding for maternal and child health programmes?",
+    "a": "Shepard-Towner Act",
+    "s": "Shepard-Towner Act",
+    "alt": [
+      "Sheppard-Towner Act",
+      "Shepard Towner Act",
+      "Sheppard-Towner",
+      "Shepard-Towner",
+      "Shepard-Towner Maternity and Infancy Protection Act"
+    ],
+    "t": "t",
+    "section": "wom"
+  },
+  {
+    "q": "Which 1965 Supreme Court case legalised contraception for married couples only?",
+    "a": "Griswold v. Connecticut",
+    "s": "Griswold v. Connecticut",
+    "alt": [
+      "Griswold v Connecticut",
+      "Griswold",
+      "Griswold vs Connecticut",
+      "Griswold vs. Connecticut"
+    ],
+    "t": "o",
+    "section": "wom"
+  },
+  {
+    "q": "Which 1972 Supreme Court case extended the right to contraception to unmarried couples?",
+    "a": "Eisenstadt v. Baird",
+    "s": "Eisenstadt v. Baird",
+    "alt": [
+      "Eisenstadt v Baird",
+      "Eisenstadt",
+      "Eisenstadt vs Baird",
+      "Eisenstadt vs. Baird"
+    ],
+    "t": "o",
+    "section": "wom"
+  },
+  {
+    "q": "Which 1968 protest by NOW outside a beauty pageant involved crowning a pig?",
+    "a": "The Miss America protest",
+    "s": "The Miss America protest",
+    "alt": [
+      "Miss America protest",
+      "Miss America",
+      "Miss America pageant",
+      "Miss America Protest",
+      "The Miss America pageant"
+    ],
+    "t": "o",
+    "section": "wom"
+  },
+  {
+    "q": "Who became the first woman appointed to the Supreme Court in 1981?",
+    "a": "Sandra Day O'Connor",
+    "s": "Sandra Day O'Connor",
+    "alt": [
+      "O'Connor",
+      "Sandra Day OConnor",
+      "Sandra OConnor",
+      "Sandra O'Connor",
+      "OConnor"
+    ],
+    "t": "p",
+    "section": "wom"
+  },
+  {
+    "q": "Which 1992 Supreme Court case reaffirmed Roe v. Wade but allowed additional state restrictions on abortion?",
+    "a": "Planned Parenthood v. Casey",
+    "s": "Planned Parenthood v. Casey",
+    "alt": [
+      "Planned Parenthood v Casey",
+      "Casey",
+      "Planned Parenthood vs Casey",
+      "Planned Parenthood vs. Casey"
+    ],
+    "t": "o",
     "section": "wom"
   }
 ]
