@@ -188,9 +188,16 @@
   "paper": "p2",
   "unit": "Unit 1 – Urbanisation (Mumbai)",
   "q": "What is the Dharavi informal sector worth?",
-  "a": "Over $600 million a year",
+  "a": "Over $1 billion a year",
   "source": "CS; MB 9.7",
-  "review": "M1"
+  "review": "M1",
+  "alt": [
+   "$1 billion",
+   "1 billion dollars",
+   "$1bn",
+   "Over $600 million a year",
+   "$600 million"
+  ]
  },
  {
   "paper": "p2",
@@ -891,9 +898,16 @@
   "paper": "p1",
   "unit": "Unit 2 – Ecosystems (Tropical Rainforests)",
   "q": "What was the 2010 USA-Brazil debt swap worth?",
-  "a": "GBP 13.5 million (booklet)",
+  "a": "$21 million (about GBP 13.5 million)",
   "source": "TB L9",
-  "review": "T3"
+  "review": "T3",
+  "alt": [
+   "21 million dollars",
+   "$21m",
+   "GBP 13.5 million",
+   "£13.5 million",
+   "£13.5m"
+  ]
  },
  {
   "paper": "p2",
@@ -2693,7 +2707,14 @@
   "q": "What is the informal industry in Dharavi worth?",
   "a": "$1 billion",
   "source": "Retrieval sheet Q101",
-  "review": ""
+  "review": "",
+  "alt": [
+   "Over $1 billion a year",
+   "1 billion dollars",
+   "$1bn",
+   "$600 million",
+   "Over $600 million a year"
+  ]
  },
  {
   "paper": "p2",
@@ -3252,9 +3273,16 @@
   "paper": "p1",
   "unit": "Unit 2 – Ecosystems (Tropical Rainforests)",
   "q": "How much of Brazils debt did USA agree to wipe in 2010 in return for TRF protection?",
-  "a": "£13.5 billion",
+  "a": "$21 million (about £13.5 million)",
   "source": "Retrieval sheet Q138",
-  "review": ""
+  "review": "",
+  "alt": [
+   "21 million dollars",
+   "$21m",
+   "£13.5 million",
+   "£13.5m",
+   "GBP 13.5 million"
+  ]
  },
  {
   "paper": "p1",
