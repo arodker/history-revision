@@ -296,7 +296,12 @@
     "a": "Prayers for the dead",
     "reign": "edward",
     "s": "Prayers for the dead",
-    "alt": [],
+    "alt": [
+      "Prayers for souls",
+      "Masses for the dead",
+      "Prayers for the souls of the dead",
+      "Praying for the dead"
+    ],
     "t": "t"
   },
   {
@@ -1722,7 +1727,8 @@
     "a": "Peter Wentworth",
     "s": "Wentworth",
     "alt": [
-      "Peter Wentworth"
+      "Peter Wentworth",
+      "Wentworth"
     ],
     "t": "p"
   },
@@ -2148,7 +2154,8 @@
     "a": "Peter Wentworth",
     "s": "Wentworth",
     "alt": [
-      "Peter Wentworth"
+      "Peter Wentworth",
+      "Wentworth"
     ],
     "t": "p"
   },
@@ -2374,7 +2381,11 @@
     "a": "James VI",
     "s": "VI",
     "alt": [
-      "James VI"
+      "James VI",
+      "James I",
+      "James VI of Scotland",
+      "King James",
+      "James Stuart"
     ],
     "t": "p"
   },
@@ -3372,7 +3383,11 @@
     "q": "Under perestroika, what percentage of a Soviet business were foreign companies allowed to own?",
     "a": "49%",
     "s": "49%",
-    "alt": [],
+    "alt": [
+      "49 percent",
+      "49",
+      "49 per cent"
+    ],
     "t": "n"
   },
   {
