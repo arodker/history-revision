@@ -3050,13 +3050,39 @@ function bsAlts(answer) {
   bsAliasExpand(out);
   return out.filter((x, i) => x && out.indexOf(x) === i);
 }
+function bsNumNorm(s) {
+  s = String(s);
+  s = s.replace(/\bhalf a million\b/i, '500000').replace(/\b(?:a )?quarter of a million\b/i, '250000');
+  s = s.replace(/(£|\$)?\s*(\d+(?:\.\d+)?)\s*(?:k|thousand)\b/gi, function (m, c, n) { return (c || '') + Math.round(parseFloat(n) * 1000); });
+  s = s.replace(/(£|\$)?\s*(\d+(?:\.\d+)?)\s*(?:m|mn|million)\b/gi, function (m, c, n) { return (c || '') + n + ' million'; });
+  s = s.replace(/(£|\$)?\s*(\d+(?:\.\d+)?)\s*(?:bn|b|billion)\b/gi, function (m, c, n) { return (c || '') + n + ' billion'; });
+  return s;
+}
+function bsFracPct(s) {
+  const t = String(s).toLowerCase().replace(/[.!]/g, '').replace(/^(about|around|roughly|approximately|nearly|almost|c)\s+/, '').replace(/^an?\s+/, '').trim();
+  const m = { 'quarter': 25, 'one quarter': 25, '1/4': 25, 'one in four': 25, '1 in 4': 25, 'three quarters': 75, 'three-quarters': 75, '3/4': 75, 'three in four': 75, '3 in 4': 75, 'fifth': 20, 'one fifth': 20, '1/5': 20, 'one in five': 20, '1 in 5': 20, 'half': 50, 'one half': 50, '1/2': 50, 'one in two': 50, '1 in 2': 50, 'tenth': 10, 'one tenth': 10, '1/10': 10, 'one in ten': 10, '1 in 10': 10 };
+  return Object.prototype.hasOwnProperty.call(m, t) ? m[t] : null;
+}
+function bsStripYear(alts) {
+  const MON = /\b(january|february|march|april|may|june|july|august|september|october|november|december)\b/gi;
+  alts.slice().forEach(function (a) {
+    const s = String(a).replace(/[\s,]*\(?\b(?:1[5-9]\d\d|20\d\d)\)?\s*$/, '').trim();
+    if (!s || s === a || !/[a-z]/i.test(s) || alts.indexOf(s) >= 0) return;
+    const rest = s.replace(MON, '').replace(/[\s\d–\-,.()]|\b(?:st|nd|rd|th)\b/gi, '');
+    if (!rest && !/\d/.test(s)) return;
+    alts.push(s);
+  });
+}
 function bsCheck(typed, answer, question) {
+  typed = bsNumNorm(typed); answer = bsNumNorm(answer);
+  { const pf = bsFracPct(typed); if (pf !== null && String(answer).split(' / ').some(function (x) { const mm = x.trim().match(/^(\d+(?:\.\d+)?)\s*(?:%|percent|per cent)$/i); return mm && parseFloat(mm[1]) === pf; })) return true; }
   const t = bsNorm(typed);
   if (!t) return false;
   if (/\bvalentines?\b/.test(t) && !/valentine/i.test(answer)) return false;
   if (bsLearned()[t + '|' + bsNorm(answer)]) return true;
   const asked = String(question || '');
   const tt = bsToks(typed), have = new Set(tt), alts = bsAlts(answer), tj = bsNormN(typed).replace(/ /g, '');
+  bsStripYear(alts);
   bsListSplit(alts, asked);
   // "Name one ...": any single item from a comma/semicolon list is enough
   if (/\b(one|any|either)\b/i.test(asked)) alts.slice().forEach(a => { if (/[,;]|\sand\s/.test(a)) String(a).split(/[;,]|\.\s+|\sand\s/).map(x => x.replace(/^\s*(and|or)\s+/i, '').trim()).filter(x => x.split(/\s+/).length >= 1 && x.length >= 3).forEach(x => alts.push(x)); });

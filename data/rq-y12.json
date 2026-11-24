@@ -192,8 +192,6 @@
     "alt": [
       "Edward Seymour",
       "Seymour",
-      "Duke of Somerset",
-      "The Duke of Somerset",
       "Lord Somerset",
       "Protector Somerset"
     ],
@@ -320,7 +318,10 @@
     "a": "Treason Laws",
     "reign": "edward",
     "s": "Treason Laws",
-    "alt": [],
+    "alt": [
+      "Treason Act",
+      "Treason Acts"
+    ],
     "t": "t"
   },
   {
@@ -424,7 +425,12 @@
     "a": "Edward died",
     "reign": "edward",
     "s": "Edward died",
-    "alt": [],
+    "alt": [
+      "Edward's death",
+      "death of Edward",
+      "Edward VI's death",
+      "Edward dying"
+    ],
     "t": "t"
   },
   {
@@ -448,7 +454,10 @@
     "q": "What is the name of a period when population outstrips the available resources?",
     "a": "Malthusian Crisis",
     "s": "Malthusian Crisis",
-    "alt": [],
+    "alt": [
+      "Malthusian trap",
+      "Malthus"
+    ],
     "t": "t"
   },
   {
@@ -457,7 +466,10 @@
     "q": "How large was the population of England in 1550 (to the nearest million)?",
     "a": "3",
     "s": "3",
-    "alt": [],
+    "alt": [
+      "3 million",
+      "3m"
+    ],
     "t": "n"
   },
   {
@@ -466,7 +478,9 @@
     "q": "What mysterious disease struck England during the Tudor period?",
     "a": "English Sweat",
     "s": "English Sweat",
-    "alt": [],
+    "alt": [
+      "Sweating sickness"
+    ],
     "t": "t"
   },
   {
@@ -509,7 +523,12 @@
     "q": "What process saw the removal of precious metal from the coinage?",
     "a": "Debasement",
     "s": "Debasement",
-    "alt": [],
+    "alt": [
+      "debasing",
+      "debasing the coinage",
+      "debase",
+      "Debasing coinage"
+    ],
     "t": "t"
   },
   {
@@ -518,7 +537,9 @@
     "q": "What group of writers blamed the Great Price Rise on gentry and merchants exploiting the poor?",
     "a": "Commonwealth Men",
     "s": "Commonwealth Men",
-    "alt": [],
+    "alt": [
+      "Commonwealth writers"
+    ],
     "t": "o"
   },
   {
@@ -537,7 +558,11 @@
     "a": "Scotland",
     "reign": "edward",
     "s": "Scotland",
-    "alt": [],
+    "alt": [
+      "Scots",
+      "Scottish war",
+      "The Scots"
+    ],
     "t": "l"
   },
   {
@@ -579,7 +604,9 @@
     "a": "Mousehold Heath",
     "reign": "edward",
     "s": "Mousehold Heath",
-    "alt": [],
+    "alt": [
+      "Mousehold Hill"
+    ],
     "t": "l"
   },
   {
@@ -643,7 +670,9 @@
     "a": "Kill the Gentlemen",
     "reign": "edward",
     "s": "Kill the Gentlemen",
-    "alt": [],
+    "alt": [
+      "Kill the gentry"
+    ],
     "t": "t"
   },
   {
@@ -687,7 +716,10 @@
     "a": "Devise for the Succession",
     "reign": "edward",
     "s": "Devise for the Succession",
-    "alt": [],
+    "alt": [
+      "Edward's Devise",
+      "Edward VI's Devise"
+    ],
     "t": "c"
   },
   {
@@ -697,7 +729,12 @@
     "a": "East Anglia",
     "reign": "mary",
     "s": "East Anglia",
-    "alt": [],
+    "alt": [
+      "Framlingham",
+      "Kenninghall",
+      "Norfolk",
+      "Suffolk"
+    ],
     "t": "l"
   },
   {
@@ -779,7 +816,10 @@
     "reign": "mary",
     "s": "V",
     "alt": [
-      "Charles V"
+      "Charles V",
+      "Charles 5",
+      "Charles the Fifth",
+      "Emperor Charles"
     ],
     "t": "p"
   },
@@ -854,7 +894,11 @@
     "a": "Cloth trade",
     "reign": "mary",
     "s": "Cloth trade",
-    "alt": [],
+    "alt": [
+      "Wool trade",
+      "Cloth industry",
+      "Wool"
+    ],
     "t": "t"
   },
   {
@@ -939,7 +983,12 @@
     "a": "Edwardian Reformation",
     "reign": "mary",
     "s": "Edwardian Reformation",
-    "alt": [],
+    "alt": [
+      "Edwardian reforms",
+      "Edward's reforms",
+      "Edwardian religious changes",
+      "Protestant reforms of Edward VI"
+    ],
     "t": "t"
   },
   {
@@ -969,7 +1018,11 @@
     "a": "Heresy Laws",
     "reign": "mary",
     "s": "Heresy Laws",
-    "alt": [],
+    "alt": [
+      "Heresy Acts",
+      "Heresy Act",
+      "Heresy statutes"
+    ],
     "t": "t"
   },
   {
@@ -979,7 +1032,10 @@
     "a": "Ex-Monastic Land",
     "reign": "mary",
     "s": "Ex-Monastic Land",
-    "alt": [],
+    "alt": [
+      "Church lands",
+      "Abbey lands"
+    ],
     "t": "t"
   },
   {
@@ -1012,7 +1068,8 @@
     "reign": "mary",
     "s": "Gardiner",
     "alt": [
-      "Stephen Gardiner"
+      "Stephen Gardiner",
+      "Bishop Gardiner"
     ],
     "t": "p"
   },
@@ -1106,7 +1163,8 @@
     "a": "Episcopy",
     "s": "Episcopy",
     "alt": [
-      "Episcopacy"
+      "Episcopacy",
+      "Bishops"
     ],
     "t": "t"
   },
@@ -1288,7 +1346,13 @@
     "q": "What were Whitgift's Three Articles designed to find?",
     "a": "Puritan clergy",
     "s": "Puritan clergy",
-    "alt": [],
+    "alt": [
+      "Nonconformist clergy",
+      "Nonconformists",
+      "Puritan ministers",
+      "Nonconformist ministers",
+      "Non-conformists"
+    ],
     "t": "t"
   },
   {
@@ -1500,7 +1564,14 @@
     "q": "For what did the monarch need Parliament's approval?",
     "a": "Taxation",
     "s": "Taxation",
-    "alt": [],
+    "alt": [
+      "Taxes",
+      "Subsidies",
+      "Raising taxes",
+      "Supply",
+      "To raise taxes",
+      "Tax"
+    ],
     "t": "t"
   },
   {
@@ -1578,7 +1649,9 @@
     "q": "Which member of the Privy Council was executed for treason in 1572?",
     "a": "Norfolk",
     "s": "Norfolk",
-    "alt": [],
+    "alt": [
+      "Thomas Howard"
+    ],
     "t": "p"
   },
   {
@@ -1789,7 +1862,9 @@
     "q": "How did Leicester sabotage Cecil's attempts to find a marriage for Elizabeth?",
     "a": "Anti-Catholic propaganda",
     "s": "Anti-Catholic propaganda",
-    "alt": [],
+    "alt": [
+      "Propaganda"
+    ],
     "t": "t"
   },
   {
@@ -1891,7 +1966,10 @@
     "q": "What did the Book of Orders in 1586 ban?",
     "a": "Hoarding of grain",
     "s": "Hoarding of grain",
-    "alt": [],
+    "alt": [
+      "hoarding corn",
+      "Hoarding corn"
+    ],
     "t": "t"
   },
   {
@@ -1909,7 +1987,11 @@
     "q": "At the start of Elizabeth's reign what trade accounted for 75% of exports?",
     "a": "Cloth trade",
     "s": "Cloth trade",
-    "alt": [],
+    "alt": [
+      "Wool",
+      "Wool trade",
+      "Woollen cloth"
+    ],
     "t": "t"
   },
   {
@@ -1918,7 +2000,11 @@
     "q": "Which Germanic trading confederation dominated wool exports from England?",
     "a": "Hanseatic League",
     "s": "Hanseatic League",
-    "alt": [],
+    "alt": [
+      "Hanse",
+      "Hansa",
+      "the Hanse"
+    ],
     "t": "o"
   },
   {
@@ -1927,7 +2013,10 @@
     "q": "What trading company was established under the reign of Mary I to trade with Russia?",
     "a": "Muscovy Company",
     "s": "Muscovy Company",
-    "alt": [],
+    "alt": [
+      "Russia Company",
+      "Moscow Company"
+    ],
     "t": "o"
   },
   {
@@ -1936,7 +2025,9 @@
     "q": "What Elizabethan trading company operated in the Eastern Mediterranean?",
     "a": "Levant Company",
     "s": "Levant Company",
-    "alt": [],
+    "alt": [
+      "Turkey Company"
+    ],
     "t": "o"
   },
   {
@@ -1965,7 +2056,12 @@
     "q": "What group of refugees arrived in England from the Netherlands, bringing new industries and trades?",
     "a": "Flemings",
     "s": "Flemings",
-    "alt": [],
+    "alt": [
+      "Dutch",
+      "Walloons",
+      "Strangers",
+      "Dutch refugees"
+    ],
     "t": "o"
   },
   {
@@ -1983,7 +2079,12 @@
     "q": "How did Philip respond to Elizabeth's seizure of the Genoese loan?",
     "a": "Trade embargo",
     "s": "Trade embargo",
-    "alt": [],
+    "alt": [
+      "Embargo on English goods",
+      "Trade ban",
+      "Banned English trade",
+      "Trade sanctions"
+    ],
     "t": "t"
   },
   {
@@ -2144,7 +2245,10 @@
     "q": "In total, how much money did Elizabeth spend on war after 1585?",
     "a": "£4.5 million",
     "s": "£4.5 million",
-    "alt": [],
+    "alt": [
+      "£4,500,000",
+      "4,500,000"
+    ],
     "t": "n"
   },
   {
@@ -2192,7 +2296,9 @@
     "q": "What form of patronage did MPs protest against in 1597 and 1601?",
     "a": "Monopolies",
     "s": "Monopolies",
-    "alt": [],
+    "alt": [
+      "Patents"
+    ],
     "t": "t"
   },
   {
@@ -2256,7 +2362,9 @@
     "a": "Hugh O'Neill",
     "s": "O'Neill",
     "alt": [
-      "Hugh O'Neill"
+      "Hugh O'Neill",
+      "Tyrone",
+      "Earl of Tyrone"
     ],
     "t": "p"
   },
@@ -2297,7 +2405,10 @@
     "q": "Which English courtier finally defeated Tyrone's rebellion?",
     "a": "Lord Mountjoy",
     "s": "Lord Mountjoy",
-    "alt": [],
+    "alt": [
+      "Charles Blount",
+      "Baron Mountjoy"
+    ],
     "t": "p"
   },
   {
@@ -2371,7 +2482,10 @@
     "q": "What play was performed by Essex's supporters prior to his rebellion?",
     "a": "Richard II",
     "s": "Richard II",
-    "alt": [],
+    "alt": [
+      "Richard 2",
+      "Richard the Second"
+    ],
     "t": "t"
   },
   {
@@ -2431,7 +2545,12 @@
     "q": "What festival/holiday celebrated the anniversary of Elizabeth becoming queen?",
     "a": "Accession Day",
     "s": "Accession Day",
-    "alt": [],
+    "alt": [
+      "Queen's Day",
+      "Queens Day",
+      "Elizabeth's Day",
+      "Queen Elizabeth's Day"
+    ],
     "t": "t"
   },
   {
@@ -2451,7 +2570,12 @@
     "q": "In 1596 the Privy Council ordered that what were to be destroyed?",
     "a": "Unseemly and improper portraits",
     "s": "Unseemly and improper portraits",
-    "alt": [],
+    "alt": [
+      "Unseemly images",
+      "Bad portraits",
+      "Ugly portraits",
+      "Unflattering portraits"
+    ],
     "t": "x"
   },
   {
@@ -2460,7 +2584,9 @@
     "q": "What poem by Edmund Spenser helped glorify Elizabeth as 'Gloriana'?",
     "a": "Faerie Queene",
     "s": "Faerie Queene",
-    "alt": [],
+    "alt": [
+      "Fairy Queen"
+    ],
     "t": "t"
   },
   {
@@ -2667,7 +2793,14 @@
     "q": "Name the government installed in Poland by the USSR instead of the Western-backed London Poles.",
     "a": "Lublin Poles",
     "s": "Lublin Poles",
-    "alt": [],
+    "alt": [
+      "Lublin Committee",
+      "Lublin government",
+      "Polish Committee of National Liberation",
+      "PKWN",
+      "The Lublin Committee",
+      "Lublin regime"
+    ],
     "t": "t"
   },
   {
@@ -2740,7 +2873,11 @@
     "q": "Which organisation did Roosevelt convince the USSR to join?",
     "a": "United Nations",
     "s": "United Nations",
-    "alt": [],
+    "alt": [
+      "The UN",
+      "UNO",
+      "U.N."
+    ],
     "t": "o"
   },
   {
@@ -2779,7 +2916,9 @@
     "q": "Which satellite state considered taking Marshall Aid in the summer of 1947, enraging Stalin?",
     "a": "Czechoslovakia",
     "s": "Czechoslovakia",
-    "alt": [],
+    "alt": [
+      "Czech"
+    ],
     "t": "l"
   },
   {
@@ -2797,7 +2936,9 @@
     "q": "Which country did Churchill visit in December 1944 to try and assist in negotiating a peace settlement between Communists and the new government?",
     "a": "Greece",
     "s": "Greece",
-    "alt": [],
+    "alt": [
+      "Athens"
+    ],
     "t": "l"
   },
   {
@@ -2833,7 +2974,10 @@
     "q": "In September 1947, members of European Communist parties met to form which organisation?",
     "a": "Cominform",
     "s": "Cominform",
-    "alt": [],
+    "alt": [
+      "Communist Information Bureau",
+      "Information Bureau"
+    ],
     "t": "o"
   },
   {
@@ -2913,7 +3057,16 @@
     "q": "Name the currency introduced in East Germany in response to the West German Deutschmark.",
     "a": "Ostmark",
     "s": "Ostmark",
-    "alt": [],
+    "alt": [
+      "East German mark",
+      "East Mark",
+      "East German Mark",
+      "DDR Mark",
+      "DDR-Mark",
+      "Mark of the GDR",
+      "East Deutschmark",
+      "Deutsche Mark der DDR"
+    ],
     "t": "t"
   },
   {
@@ -3013,7 +3166,9 @@
     "q": "Which conflict provoked discussion of West German rearmament?",
     "a": "Korean War",
     "s": "Korean War",
-    "alt": [],
+    "alt": [
+      "Korean conflict"
+    ],
     "t": "e"
   },
   {
@@ -3022,7 +3177,10 @@
     "q": "Name two countries who opposed German rearmament the most strongly.",
     "a": "USSR and France",
     "s": "USSR and France",
-    "alt": [],
+    "alt": [
+      "France and Russia",
+      "Russia and France"
+    ],
     "t": "t"
   },
   {
@@ -3031,7 +3189,18 @@
     "q": "What caused the East German Uprising in 1953?",
     "a": "Strict collectivisation quotas",
     "s": "Strict collectivisation quotas",
-    "alt": [],
+    "alt": [
+      "Collectivisation",
+      "Work quotas",
+      "Higher work quotas",
+      "Increased work quotas",
+      "Production quotas",
+      "Quotas",
+      "Raised work norms",
+      "Work norms",
+      "Increased work norms",
+      "Norms"
+    ],
     "t": "e"
   },
   {
@@ -3102,7 +3271,11 @@
     "q": "Name the group of British Secret Service agents who were spies for the USSR.",
     "a": "Cambridge Five",
     "s": "Cambridge Five",
-    "alt": [],
+    "alt": [
+      "Cambridge Spies",
+      "Cambridge Spy Ring",
+      "Cambridge Spy ring"
+    ],
     "t": "o"
   },
   {
@@ -3258,7 +3431,9 @@
     "q": "Name the collaborative space mission which took place in 1975.",
     "a": "Apollo-Soyuz",
     "s": "Apollo-Soyuz",
-    "alt": [],
+    "alt": [
+      "ASTP"
+    ],
     "t": "c"
   },
   {
