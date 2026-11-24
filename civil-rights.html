@@ -4093,8 +4093,10 @@ function send(s){
   });
 }
 function compare(s){
-  var ctl=window.AbortController?new AbortController():null,to=setTimeout(function(){if(ctl)ctl.abort();},8000);
-  send(s).catch(function(){}).then(function(){
+  var ctl=window.AbortController?new AbortController():null,to=0;
+  var sp=send(s).catch(function(){});
+  Promise.race([sp,new Promise(function(r){setTimeout(r,5000);})]).then(function(){
+    to=setTimeout(function(){if(ctl)ctl.abort();},10000);
     return fetch(API+'?action=daily&day='+dailyNo(s.date),ctl?{signal:ctl.signal}:{}).then(function(r){return r.json();});
   }).then(function(d){
     clearTimeout(to);
