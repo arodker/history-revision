@@ -3819,12 +3819,13 @@ function mkDt(x,sec,r){
   var y=+x.date;
   return {k:'dt',sec:sec,ss:x.section,q:'In which year did this happen? '+x.event.replace(/\s+[—–]\s+/g,': '),a:String(y)};
 }
-function build(date,rq,dt){
+function build(date,rq,dt,ex){
+  ex=ex||{};
   var r=rng(hash('dq|'+date)),tudor,i;
-  var tRq=rq.filter(function(x){return rqOk(x)&&(x.section==='mtc'||x.section==='elizabeth');});
-  var cRq=rq.filter(function(x){return rqOk(x)&&x.section==='coldwar';});
-  var tDt=dt.filter(function(x){return dtOk(x)&&(x.section==='mtc'||x.section==='elizabeth');});
-  var cDt=dt.filter(function(x){return dtOk(x)&&x.section==='coldwar';});
+  var tRq=rq.filter(function(x){return rqOk(x)&&!ex[x.q]&&(x.section==='mtc'||x.section==='elizabeth');});
+  var cRq=rq.filter(function(x){return rqOk(x)&&!ex[x.q]&&x.section==='coldwar';});
+  var tDt=dt.filter(function(x){return dtOk(x)&&!ex['In which year did this happen? '+x.event.replace(/\s+[\u2014\u2013]\s+/g,': ')]&&(x.section==='mtc'||x.section==='elizabeth');});
+  var cDt=dt.filter(function(x){return dtOk(x)&&!ex['In which year did this happen? '+x.event.replace(/\s+[\u2014\u2013]\s+/g,': ')]&&x.section==='coldwar';});
   for(i=0;i<20;i++){
     tudor=pickRq(tRq,5,r).map(function(x){return mkRq(x,'t');}).concat(shuf(tDt,r).slice(0,1).map(function(x){return mkDt(x,'t',r);}));
     var m=tudor.filter(function(q){return q.ss==='mtc';}).length;
@@ -3833,6 +3834,15 @@ function build(date,rq,dt){
   var cw=pickRq(cRq,3,r).map(function(x){return mkRq(x,'c');}).concat(shuf(cDt,r).slice(0,1).map(function(x){return mkDt(x,'c',r);}));
   if(tudor.length<6||cw.length<4)return null;
   return shuf(tudor.concat(cw),r);
+}
+
+/* no question repeats within 7 days (from #3 on; #0-#2 were drawn without it) */
+var BMEMO={};
+function buildNR(date,rq,dt){
+  if(BMEMO[date])return BMEMO[date];
+  var n=dailyNo(date),ex={},k,d,it;
+  if(n>=3)for(k=1;k<=7;k++){d=addDays(date,-k);if(dailyNo(d)<0)break;it=buildNR(d,rq,dt);(it||[]).forEach(function(x){ex[x.q]=1;});}
+  return BMEMO[date]=build(date,rq,dt,ex);
 }
 
 /* state */
@@ -3877,7 +3887,7 @@ function enter(){
   Promise.all([fdLoadJSON('data/rq-y12.json'),fdLoadJSON('data/dates-y12.json')]).then(function(d){
     if(!document.getElementById('s-daily').classList.contains('active'))return;
     var s2=getState();if(s2){show(s2);return;}
-    var items=build(today(),d[0]||[],d[1]||[]);
+    var items=buildNR(today(),d[0]||[],d[1]||[]);
     if(!items){
       root.innerHTML='<div class="dq-panel"><p class="dq-h">The quiz could not load</p><p class="dq-s">Check your connection and try again.</p><button class="dq-go" onclick="dqRetry()">Try again</button></div>';
       return;
