@@ -3281,7 +3281,7 @@ function fdWeekPaint(slots, totalOf) {
     }
     gotEl.setAttribute('stroke-dasharray', (t * circ) + ' ' + (circ - t * circ));
     gotEl.setAttribute('transform', 'rotate(' + (-90 + a * 360) + ' 30 30)');
-    if (track) track.setAttribute('stroke', done ? '#F0B429' : 'transparent');
+    if (track) track.setAttribute('stroke', done ? '#F0B429' : 'var(--subtle)');
     if (fillEl) fillEl.setAttribute('r', done ? '18' : '0');
     if (txtEl) {
       txtEl.textContent = done ? '\uD83E\uDD47' : Math.round(all * 100) + '%';
