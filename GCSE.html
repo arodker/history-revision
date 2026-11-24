@@ -3231,6 +3231,66 @@ function ffShow(on) {
 function fdTodayStr() {
   return localDate();
 }
+/* Picker rings show the last 7 days; cards got today are drawn in the full colour */
+const LS_WEEK = 'gcse_fd_week';
+function fdWeekStart(today) { const d = new Date(today + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() - 6); return d.toISOString().slice(0, 10); }
+function fdWeekLog(slot, got, extra) {
+  if (!got) return;
+  try {
+    const t = fdTodayStr(), from = fdWeekStart(t);
+    let w = JSON.parse(localStorage.getItem(LS_WEEK) || '{}');
+    Object.keys(w).forEach(function (d) { if (d < from) delete w[d]; });
+    w[t] = w[t] || {};
+    w[t][slot] = (w[t][slot] || 0) + 1;
+    if (extra) w[t][extra] = (w[t][extra] || 0) + 1;
+    localStorage.setItem(LS_WEEK, JSON.stringify(w));
+  } catch (e) {}
+}
+function fdWeekCount(key, total, todayCount) {
+  let prev = 0;
+  try {
+    const w = JSON.parse(localStorage.getItem(LS_WEEK) || '{}'), t = fdTodayStr(), from = fdWeekStart(t);
+    Object.keys(w).forEach(function (d) { if (d >= from && d < t) prev += (w[d][key] || 0); });
+  } catch (e) {}
+  return Math.min(total, prev + (todayCount || 0));
+}
+function fdWeekPaint(slots, totalOf) {
+  const circ = 2 * Math.PI * 24, s = fdGetSession(), today = fdTodayStr(), from = fdWeekStart(today);
+  let w = {};
+  try { w = JSON.parse(localStorage.getItem(LS_WEEK) || '{}'); } catch (e) {}
+  slots.forEach(function (slot) {
+    const total = totalOf(slot);
+    const gotEl = document.querySelector('.fd-ring-got-' + slot);
+    if (!total || !gotEl) return;
+    const missEl = document.querySelector('.fd-ring-miss-' + slot);
+    const txtEl = document.querySelector('.fd-pct-' + slot);
+    const fillEl = document.querySelector('.fd-ring-fill-' + slot);
+    const track = gotEl.ownerSVGElement ? gotEl.ownerSVGElement.querySelector('circle') : null;
+    let prev = 0;
+    Object.keys(w).forEach(function (d) { if (d >= from && d < today) prev += (w[d][slot] || 0); });
+    const t = Math.min(1, (s.got[slot] || 0) / total);
+    const a = Math.min(Math.min(1, prev / total), 1 - t);
+    const all = a + t, done = all >= 0.999;
+    if (!gotEl.dataset.col) gotEl.dataset.col = gotEl.getAttribute('stroke');
+    const col = gotEl.dataset.col;
+    if (missEl) {
+      missEl.setAttribute('stroke', col);
+      missEl.setAttribute('stroke-opacity', '0.4');
+      missEl.setAttribute('stroke-dasharray', (a * circ) + ' ' + (circ - a * circ));
+      missEl.setAttribute('transform', 'rotate(-90 30 30)');
+    }
+    gotEl.setAttribute('stroke-dasharray', (t * circ) + ' ' + (circ - t * circ));
+    gotEl.setAttribute('transform', 'rotate(' + (-90 + a * 360) + ' 30 30)');
+    if (track) track.setAttribute('stroke', done ? '#F0B429' : 'transparent');
+    if (fillEl) fillEl.setAttribute('r', done ? '18' : '0');
+    if (txtEl) {
+      txtEl.textContent = done ? '\uD83E\uDD47' : Math.round(all * 100) + '%';
+      txtEl.setAttribute('font-size', done ? '14' : '10');
+    }
+    const cell = gotEl.closest('.fd-wheel-cell');
+    if (cell) cell.title = Math.round(all * 100) + '% in the last 7 days' + (t > 0 ? '\n' + Math.round(t * 100) + '% of cards today' : '');
+  });
+}
 function fdGetSession() {
   const s = JSON.parse(localStorage.getItem(LS_SESSION) || 'null');
   const today = fdTodayStr();
@@ -3248,6 +3308,7 @@ function fdSetSession(s) {
   localStorage.setItem(LS_SESSION, JSON.stringify(s));
 }
 function fdRecordSessionCard(paper, got) {
+  fdWeekLog(paper, got, fdCurrent && fdCurrent.unit ? 'u|' + paper + '|' + fdCurrent.unit : null);
   const s = fdGetSession();
   s.total[paper] = (s.total[paper] || 0) + 1;
   if (got) s.got[paper] = (s.got[paper] || 0) + 1;
@@ -3907,7 +3968,7 @@ function renderFdSetupWheel() {
       return `<div style="display:flex;align-items:center;gap:.4rem;padding:.2rem 0;border-bottom:1px solid var(--subtle);font-size:.72rem">
         <span style="color:${colour};font-size:.65rem">${dot}</span>
         <span style="flex:1;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${unit}</span>
-        <span style="font-weight:700;color:${colour};flex-shrink:0">${gotToday}/${unitTotal}</span>
+        <span style="font-weight:700;color:${colour};flex-shrink:0">${gotToday}/${unitTotal} <span style="font-weight:400;color:var(--muted)">(${fdWeekCount('u|'+uk, unitTotal, gotToday)}/${unitTotal})</span></span>
       </div>`;
     }).join('');
     }
@@ -4033,6 +4094,10 @@ function renderFdBowl() {
   fdBowlPaint('fd-bowl-hub');
 }
 function renderFdWheels() {
+  renderFdWheelsBase();
+  fdWeekPaint(['p1','p2a','p2b','p3'], function (slot) { return FD.filter(c => c.paper === slot).length; });
+}
+function renderFdWheelsBase() {
   renderFdBowl();
   if (!FD || !FD.length) return;
   const session = fdGetSession();
@@ -6276,7 +6341,7 @@ uptoRender();
     {first:1,e:'👋',t:'Welcome',p:'Edexcel GCSE History in one place. This takes 30 seconds. ⚙️ then Tips for this page explains whichever page you are on.'},
     {sel:'.up-card',e:'🎚️',t:'Set how far you have got',p:'Tap to open, then drag to where your class has reached. Games only ask what you have covered.'},
     {sel:'.paper-grid',e:'🚢 🚀 👑 🏛️',t:'Pick a paper',p:'Migration, Cold War, Elizabeth or Weimar. Each has Flashcards, Guide, Dates and Exam Practice.'},
-    {sel:'.fd-wheel-cell,#fd-tracker',e:'⭕',t:'The rings',p:'Each ring shows how many of that paper\'s flashcards you got right today. A grey slice is cards you missed. It starts again each day, and a full ring turns gold 🥇.'},
+    {sel:'.fd-wheel-cell,#fd-tracker',e:'⭕',t:'The rings',p:'Each ring shows how many of that paper\'s flashcards you have got right in the last 7 days. The darker part is today. Hover over a ring for the numbers, and a full ring turns gold 🥇.'},
     {sel:'.fd-wheel-cell,#fd-tracker',e:'📌',t:'Pins',p:'A flashcard you miss gets a 📌 and comes back later until you get it right.'},
     {sel:'.btn-mix',e:'🎯',t:'Mixed Retrieval Quiz',p:'Quick recall across papers. Choose papers, difficulty and style.'},
     {sel:'.btn-arc',e:'🕹️',t:'Arcade',p:'Games that test what you have learned. Beat the bosses and earn badges.'},

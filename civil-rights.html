@@ -1582,9 +1582,69 @@ function rqMark(correct){document.getElementById('rq-answer-btns').style.display
 var LS_M='cr_fd_mastered',LS_P='cr_fd_missed',LS_S='cr_fd_session',LS_H='cr_fd_hints',LS_STREAK='cr_fd_streak';
 var fdDeck=[],fdMissed=[],fdGot=0,fdMissCount=0,fdCurrent=null,fdFlipped=false,fdHintsOn=false,fdTotal=0,fdOutstanding=[],fdBusy=false;
 function fdTodayStr(){return localDate();}
+/* Picker rings show the last 7 days; cards got today are drawn in the full colour */
+const LS_WEEK = 'cr_fd_week';
+function fdWeekStart(today) { const d = new Date(today + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() - 6); return d.toISOString().slice(0, 10); }
+function fdWeekLog(slot, got, extra) {
+  if (!got) return;
+  try {
+    const t = fdTodayStr(), from = fdWeekStart(t);
+    let w = JSON.parse(localStorage.getItem(LS_WEEK) || '{}');
+    Object.keys(w).forEach(function (d) { if (d < from) delete w[d]; });
+    w[t] = w[t] || {};
+    w[t][slot] = (w[t][slot] || 0) + 1;
+    if (extra) w[t][extra] = (w[t][extra] || 0) + 1;
+    localStorage.setItem(LS_WEEK, JSON.stringify(w));
+  } catch (e) {}
+}
+function fdWeekCount(key, total, todayCount) {
+  let prev = 0;
+  try {
+    const w = JSON.parse(localStorage.getItem(LS_WEEK) || '{}'), t = fdTodayStr(), from = fdWeekStart(t);
+    Object.keys(w).forEach(function (d) { if (d >= from && d < t) prev += (w[d][key] || 0); });
+  } catch (e) {}
+  return Math.min(total, prev + (todayCount || 0));
+}
+function fdWeekPaint(slots, totalOf) {
+  const circ = 2 * Math.PI * 24, s = fdGetSession(), today = fdTodayStr(), from = fdWeekStart(today);
+  let w = {};
+  try { w = JSON.parse(localStorage.getItem(LS_WEEK) || '{}'); } catch (e) {}
+  slots.forEach(function (slot) {
+    const total = totalOf(slot);
+    const gotEl = document.querySelector('.fd-ring-got-' + slot);
+    if (!total || !gotEl) return;
+    const missEl = document.querySelector('.fd-ring-miss-' + slot);
+    const txtEl = document.querySelector('.fd-pct-' + slot);
+    const fillEl = document.querySelector('.fd-ring-fill-' + slot);
+    const track = gotEl.ownerSVGElement ? gotEl.ownerSVGElement.querySelector('circle') : null;
+    let prev = 0;
+    Object.keys(w).forEach(function (d) { if (d >= from && d < today) prev += (w[d][slot] || 0); });
+    const t = Math.min(1, (s.got[slot] || 0) / total);
+    const a = Math.min(Math.min(1, prev / total), 1 - t);
+    const all = a + t, done = all >= 0.999;
+    if (!gotEl.dataset.col) gotEl.dataset.col = gotEl.getAttribute('stroke');
+    const col = gotEl.dataset.col;
+    if (missEl) {
+      missEl.setAttribute('stroke', col);
+      missEl.setAttribute('stroke-opacity', '0.4');
+      missEl.setAttribute('stroke-dasharray', (a * circ) + ' ' + (circ - a * circ));
+      missEl.setAttribute('transform', 'rotate(-90 30 30)');
+    }
+    gotEl.setAttribute('stroke-dasharray', (t * circ) + ' ' + (circ - t * circ));
+    gotEl.setAttribute('transform', 'rotate(' + (-90 + a * 360) + ' 30 30)');
+    if (track) track.setAttribute('stroke', done ? '#F0B429' : 'transparent');
+    if (fillEl) fillEl.setAttribute('r', done ? '18' : '0');
+    if (txtEl) {
+      txtEl.textContent = done ? '\uD83E\uDD47' : Math.round(all * 100) + '%';
+      txtEl.setAttribute('font-size', done ? '14' : '10');
+    }
+    const cell = gotEl.closest('.fd-wheel-cell');
+    if (cell) cell.title = Math.round(all * 100) + '% in the last 7 days' + (t > 0 ? '\n' + Math.round(t * 100) + '% of cards today' : '');
+  });
+}
 function fdGetSession(){var s=JSON.parse(localStorage.getItem(LS_S)||'null'),t=fdTodayStr();if(!s||s.date!==t){var f={date:t,got:{aa:0,lab:0,na:0,wom:0},total:{aa:0,lab:0,na:0,wom:0},ds_got:{aa:0,lab:0,na:0,wom:0},them_got:{aa:0,lab:0,na:0,wom:0}};localStorage.setItem(LS_S,JSON.stringify(f));return f;}if(!s.ds_got)s.ds_got={aa:0,lab:0,na:0,wom:0};if(!s.them_got)s.them_got={aa:0,lab:0,na:0,wom:0};return s;}
 function fdSetSession(s){localStorage.setItem(LS_S,JSON.stringify(s));}
-function fdRecordCard(sec,got,isDS){var s=fdGetSession();s.total[sec]=(s.total[sec]||0)+1;if(got){s.got[sec]=(s.got[sec]||0)+1;if(isDS){s.ds_got[sec]=(s.ds_got[sec]||0)+1;}else{s.them_got[sec]=(s.them_got[sec]||0)+1;}}fdSetSession(s);}
+function fdRecordCard(sec,got,isDS){fdWeekLog(sec,got,isDS?'ds:'+sec:'th:'+sec);var s=fdGetSession();s.total[sec]=(s.total[sec]||0)+1;if(got){s.got[sec]=(s.got[sec]||0)+1;if(isDS){s.ds_got[sec]=(s.ds_got[sec]||0)+1;}else{s.them_got[sec]=(s.them_got[sec]||0)+1;}}fdSetSession(s);}
 function fdGetMastered(){var raw=JSON.parse(localStorage.getItem(LS_M)||'{}');var today=localDate();if(!raw.date||raw.date!==today)return{};return raw.cards||{};}
 function fdSetMastered(o){var today=localDate();localStorage.setItem(LS_M,JSON.stringify({date:today,cards:o}));}
 function fdGetOutstanding(){return JSON.parse(localStorage.getItem(LS_P)||'[]');}
@@ -1911,9 +1971,13 @@ function renderFdStreak(){
   row.innerHTML=html;
   labelEl.textContent=count>0?(count+' bowl'+(count>1?'s':'')+' in a row'):'Start a streak today';
 }
-function renderFdWheels(){renderFdBowl();var s=fdGetSession();['aa','lab','na','wom'].forEach(function(u){var deckSize=FD.filter(function(c){return c.section===u;}).length;var got=s.got[u]||0,missCount=(s.total[u]||0)-got,pct=deckSize?Math.round(got/deckSize*100):0;var isDone=deckSize>0&&got>=deckSize&&(s.total[u]||0)>0;var d=fdWheelDash(got,missCount,deckSize);var miss=document.querySelector('.fd-ring-miss-'+u),ring=document.querySelector('.fd-ring-got-'+u),pe=document.querySelector('.fd-pct-'+u),fill=document.querySelector('.fd-ring-fill-'+u),bg=document.querySelector('.fd-ring-bg-'+u);if(miss)miss.setAttribute('stroke-dasharray',d.miss);if(ring)ring.setAttribute('stroke-dasharray',d.got);if(fill)fill.setAttribute('r',isDone?'18':'0');if(bg)bg.setAttribute('stroke',isDone?'#F0B429':'var(--subtle)');if(pe){pe.textContent=isDone?'🥇':pct+'%';pe.setAttribute('font-size',isDone?'14':'10');}});}
+function renderFdWheels() {
+  renderFdWheelsBase();
+  fdWeekPaint(['aa','lab','na','wom'], function (slot) { return FD.filter(function(c){return c.section===slot;}).length; });
+}
+function renderFdWheelsBase(){renderFdBowl();var s=fdGetSession();['aa','lab','na','wom'].forEach(function(u){var deckSize=FD.filter(function(c){return c.section===u;}).length;var got=s.got[u]||0,missCount=(s.total[u]||0)-got,pct=deckSize?Math.round(got/deckSize*100):0;var isDone=deckSize>0&&got>=deckSize&&(s.total[u]||0)>0;var d=fdWheelDash(got,missCount,deckSize);var miss=document.querySelector('.fd-ring-miss-'+u),ring=document.querySelector('.fd-ring-got-'+u),pe=document.querySelector('.fd-pct-'+u),fill=document.querySelector('.fd-ring-fill-'+u),bg=document.querySelector('.fd-ring-bg-'+u);if(miss)miss.setAttribute('stroke-dasharray',d.miss);if(ring)ring.setAttribute('stroke-dasharray',d.got);if(fill)fill.setAttribute('r',isDone?'18':'0');if(bg)bg.setAttribute('stroke',isDone?'#F0B429':'var(--subtle)');if(pe){pe.textContent=isDone?'🥇':pct+'%';pe.setAttribute('font-size',isDone?'14':'10');}});}
 function renderFdHubWheel(){fdBowlPaint('fd-bowl-hub');var deckSize=FD.filter(function(c){return c.section===currentUnit;}).length;var s=fdGetSession(),got=s.got[currentUnit]||0,missCount=(s.total[currentUnit]||0)-got,pct=deckSize?Math.round(got/deckSize*100):0;var isDone=deckSize>0&&got>=deckSize&&(s.total[currentUnit]||0)>0;var col=UNITS[currentUnit].colour;var d=fdWheelDash(got,missCount,deckSize);var miss=document.getElementById('fd-hub-ring-miss'),ring=document.getElementById('fd-hub-ring-got'),pe=document.getElementById('fd-hub-pct'),fill=document.getElementById('fd-hub-ring-fill'),bg=document.getElementById('fd-hub-bg');if(miss)miss.setAttribute('stroke-dasharray',d.miss);if(ring){ring.setAttribute('stroke-dasharray',d.got);ring.setAttribute('stroke',col);}if(fill)fill.setAttribute('r',isDone?'18':'0');if(bg)bg.setAttribute('stroke',isDone?col:'var(--subtle)');if(pe){pe.textContent=isDone?'🥇':pct+'%';pe.setAttribute('font-size',isDone?'14':'10');}}
-function renderFdSetupWheel(){fdBowlPaint('fd-bowl-setup');var deckSize=FD.filter(function(c){return c.section===currentUnit;}).length;var s=fdGetSession(),got=s.got[currentUnit]||0,missCount=(s.total[currentUnit]||0)-got,pct=deckSize?Math.round(got/deckSize*100):0;var isDone=deckSize>0&&got>=deckSize&&(s.total[currentUnit]||0)>0;var col=UNITS[currentUnit].colour;var d=fdWheelDash(got,missCount,deckSize);var miss=document.getElementById('fd-setup-ring-miss'),ring=document.getElementById('fd-setup-ring-got'),pe=document.getElementById('fd-setup-pct'),lbl=document.getElementById('fd-setup-label'),fill=document.getElementById('fd-setup-ring-fill'),bg=document.getElementById('fd-setup-bg');if(miss)miss.setAttribute('stroke-dasharray',d.miss);if(ring){ring.setAttribute('stroke-dasharray',d.got);ring.setAttribute('stroke',col);}if(fill)fill.setAttribute('r',isDone?'18':'0');if(bg)bg.setAttribute('stroke',isDone?col:'var(--subtle)');if(pe){pe.textContent=isDone?'🥇':pct+'%';pe.setAttribute('font-size',isDone?'14':'10');}if(lbl)lbl.textContent=UNITS[currentUnit].short;var bd=document.getElementById('fd-unit-breakdown');if(bd){var dsTotal=FD.filter(function(c){return c.section===currentUnit&&c.isDepthStudy;}).length;var themTotal=FD.filter(function(c){return c.section===currentUnit&&!c.isDepthStudy;}).length;var dsGot=s.ds_got&&s.ds_got[currentUnit]||0;var themGot=s.them_got&&s.them_got[currentUnit]||0;bd.innerHTML='<div style="line-height:2;font-size:.72rem"><div><span style="color:var(--muted)">1865–1992 cards: </span><strong>'+themGot+' / '+themTotal+'</strong>'+(themTotal>0&&themGot>=themTotal?' 🥇':'')+'</div><div><span style="color:var(--muted)">🔑 Depth Study: </span><strong>'+dsGot+' / '+dsTotal+'</strong>'+(dsTotal>0&&dsGot>=dsTotal?' 🥇':'')+'</div><div style="margin-top:.2rem;color:var(--muted)">'+got+' correct of '+deckSize+' total today</div></div>';}}
+function renderFdSetupWheel(){fdBowlPaint('fd-bowl-setup');var deckSize=FD.filter(function(c){return c.section===currentUnit;}).length;var s=fdGetSession(),got=s.got[currentUnit]||0,missCount=(s.total[currentUnit]||0)-got,pct=deckSize?Math.round(got/deckSize*100):0;var isDone=deckSize>0&&got>=deckSize&&(s.total[currentUnit]||0)>0;var col=UNITS[currentUnit].colour;var d=fdWheelDash(got,missCount,deckSize);var miss=document.getElementById('fd-setup-ring-miss'),ring=document.getElementById('fd-setup-ring-got'),pe=document.getElementById('fd-setup-pct'),lbl=document.getElementById('fd-setup-label'),fill=document.getElementById('fd-setup-ring-fill'),bg=document.getElementById('fd-setup-bg');if(miss)miss.setAttribute('stroke-dasharray',d.miss);if(ring){ring.setAttribute('stroke-dasharray',d.got);ring.setAttribute('stroke',col);}if(fill)fill.setAttribute('r',isDone?'18':'0');if(bg)bg.setAttribute('stroke',isDone?col:'var(--subtle)');if(pe){pe.textContent=isDone?'🥇':pct+'%';pe.setAttribute('font-size',isDone?'14':'10');}if(lbl)lbl.textContent=UNITS[currentUnit].short;var bd=document.getElementById('fd-unit-breakdown');if(bd){var dsTotal=FD.filter(function(c){return c.section===currentUnit&&c.isDepthStudy;}).length;var themTotal=FD.filter(function(c){return c.section===currentUnit&&!c.isDepthStudy;}).length;var dsGot=s.ds_got&&s.ds_got[currentUnit]||0;var themGot=s.them_got&&s.them_got[currentUnit]||0;bd.innerHTML='<div style="line-height:2;font-size:.72rem"><div><span style="color:var(--muted)">1865–1992 cards: </span><strong>'+themGot+' / '+themTotal+'</strong> <span style="color:var(--muted)">('+fdWeekCount('th:'+currentUnit,themTotal,themGot)+' / '+themTotal+')</span>'+(themTotal>0&&themGot>=themTotal?' 🥇':'')+'</div><div><span style="color:var(--muted)">🔑 Depth Study: </span><strong>'+dsGot+' / '+dsTotal+'</strong> <span style="color:var(--muted)">('+fdWeekCount('ds:'+currentUnit,dsTotal,dsGot)+' / '+dsTotal+')</span>'+(dsTotal>0&&dsGot>=dsTotal?' 🥇':'')+'</div><div style="margin-top:.2rem;color:var(--muted)">'+got+' correct of '+deckSize+' total today</div></div>';}}
 function fdWheelLaunch(unit){pickUnit(unit);enterMode('flashcard');}
 
 // ═══════════════════════════════════
@@ -3422,7 +3486,7 @@ uptoRender(); xpRender();
     {first:1,e:'👋',t:'Welcome',p:'OCR Y319 Civil Rights USA 1865 to 1992 in one place. 30 seconds. ❓ gives tips for whichever page you are on.'},
     {sel:'.up-card',e:'🎚️',t:'Set how far you have got',p:'Drag to the unit your class has reached. Games only ask what you have covered.'},
     {sel:'.pick-grid',e:'✊ 🔨 🏹 📢',t:'Pick a unit',p:'African Americans, Labour, Native Americans or Women. Each has Flashcards, Guide and Dates.'},
-    {sel:'.fd-wheel-cell',e:'📌',t:'Rings and pins',p:'Missed flashcards get a 📌 and return. Master a unit in one day for a 🥇.'},
+    {sel:'.fd-wheel-cell',e:'📌',t:'Rings and pins',p:'Missed flashcards get a 📌 and return. Rings show the last 7 days, with today in the darker shade. Hover for the numbers.'},
     {sel:'.c-mixed',e:'🎯',t:'Mixed Retrieval Quiz',p:'Quick recall across units. Choose units, difficulty and style.'},
     {sel:'.home-stat',e:'📊',t:'Depth Study Stat Attack',p:'Fill the missing figure, name or term from the depth study debates.'},
     {sel:'.btn-arc',e:'🕹️ 🐉',t:'Arcade',p:'Four games. In the boss battle a miss costs a heart, and hearts do not come back.'},
