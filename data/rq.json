@@ -4427,5 +4427,208 @@
       "Bridewell"
     ],
     "t": "t"
+  },
+  {
+    "paper": "p1",
+    "q": "Which king defeated the Vikings at the Battle of Edington in 878?",
+    "a": "Alfred the Great",
+    "d": "medium",
+    "unit": "Unit 1 – Medieval",
+    "s": "Alfred",
+    "alt": [
+      "Alfred",
+      "King Alfred",
+      "Alfred of Wessex"
+    ],
+    "t": "p"
+  },
+  {
+    "paper": "p1",
+    "q": "What was the Viking assembly of free men called, an early example of juries and democracy?",
+    "a": "The Thing",
+    "d": "medium",
+    "unit": "Unit 1 – Medieval",
+    "s": "Thing",
+    "alt": [
+      "Thing",
+      "Things",
+      "The Things",
+      "A Thing",
+      "The Thing assembly"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p1",
+    "q": "How many major landowners in the Domesday Book were Anglo-Saxon?",
+    "a": "Two",
+    "d": "hard",
+    "unit": "Unit 1 – Medieval",
+    "s": "Two",
+    "alt": [
+      "2",
+      "two",
+      "only two",
+      "Only 2"
+    ],
+    "t": "n"
+  },
+  {
+    "paper": "p1",
+    "q": "Which 1517 riots saw foreigners attacked in London?",
+    "a": "Evil May Day",
+    "d": "medium",
+    "unit": "Unit 2 – Early Modern",
+    "s": "Evil May Day",
+    "alt": [
+      "Evil May Day riots",
+      "The Evil May Day riots",
+      "Evil Mayday"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p1",
+    "q": "Which 1572 massacre in France sent many Huguenots to England?",
+    "a": "St Bartholomew's Day Massacre",
+    "d": "medium",
+    "unit": "Unit 2 – Early Modern",
+    "s": "St Bartholomew's Day",
+    "alt": [
+      "St Bartholomew's Day",
+      "Saint Bartholomew's Day Massacre",
+      "St Bartholomews Day Massacre",
+      "St Bartholomew's Massacre",
+      "The St Bartholomew's Day Massacre"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p1",
+    "q": "Which 1845-6 crop failure caused the Irish famine?",
+    "a": "Potato blight",
+    "d": "easy",
+    "unit": "Unit 3 – 18th & 19th Centuries",
+    "s": "Potato blight",
+    "alt": [
+      "Blight",
+      "The potato blight",
+      "Potato famine",
+      "Potato crop failure",
+      "Potato disease"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p1",
+    "q": "Which 1905 Act was the first government limit on migration?",
+    "a": "The Aliens Act",
+    "d": "medium",
+    "unit": "Unit 3 – 18th & 19th Centuries",
+    "s": "Aliens Act",
+    "alt": [
+      "Aliens Act",
+      "Aliens Act 1905",
+      "The Aliens Act 1905",
+      "1905 Aliens Act"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p1",
+    "q": "Which African migrant's 1789 autobiography helped persuade MPs to abolish slavery?",
+    "a": "Olaudah Equiano",
+    "d": "medium",
+    "unit": "Unit 3 – 18th & 19th Centuries",
+    "s": "Equiano",
+    "alt": [
+      "Equiano",
+      "Olaudah Equiano",
+      "Gustavus Vassa"
+    ],
+    "t": "p"
+  },
+  {
+    "paper": "p1",
+    "q": "Which scheme brought around 10,000 Jewish children to Britain in 1938-9?",
+    "a": "The Kindertransport",
+    "d": "easy",
+    "unit": "Unit 4 – Modern",
+    "s": "Kindertransport",
+    "alt": [
+      "Kindertransport",
+      "The Kindertransport programme",
+      "Kindertransport scheme"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p1",
+    "q": "Refugees from which country came to Britain at the start of WWI?",
+    "a": "Belgium",
+    "d": "easy",
+    "unit": "Unit 4 – Modern",
+    "s": "Belgium",
+    "alt": [
+      "Belgian",
+      "The Belgians",
+      "Belgians"
+    ],
+    "t": "o"
+  },
+  {
+    "paper": "p1",
+    "q": "Which 1965 Act first made racial discrimination illegal?",
+    "a": "The Race Relations Act",
+    "d": "medium",
+    "unit": "Unit 4 – Modern",
+    "s": "Race Relations Act",
+    "alt": [
+      "Race Relations Act",
+      "Race Relations Act 1965",
+      "The Race Relations Act 1965",
+      "1965 Race Relations Act",
+      "Race Relations"
+    ],
+    "t": "t"
+  },
+  {
+    "paper": "p1",
+    "q": "Idi Amin expelled Asians in 1972 from which country?",
+    "a": "Uganda",
+    "d": "easy",
+    "unit": "Unit 4 – Modern",
+    "s": "Uganda",
+    "alt": [
+      "Uganda"
+    ],
+    "t": "o"
+  },
+  {
+    "paper": "p1",
+    "q": "Whose 1993 murder led to the Macpherson Report?",
+    "a": "Stephen Lawrence",
+    "d": "medium",
+    "unit": "Unit 4 – Modern",
+    "s": "Stephen Lawrence",
+    "alt": [
+      "Lawrence",
+      "Stephen Lawrence's"
+    ],
+    "t": "p"
+  },
+  {
+    "paper": "p1",
+    "q": "How many nights did the 1958 Notting Hill riots last?",
+    "a": "Six",
+    "d": "medium",
+    "unit": "Unit 5 – Notting Hill",
+    "s": "Six",
+    "alt": [
+      "6",
+      "six nights",
+      "6 nights"
+    ],
+    "t": "n"
   }
 ]
