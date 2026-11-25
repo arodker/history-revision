@@ -1112,6 +1112,21 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 .qgold .fd-tag::before{content:'SoWA ';font-weight:800;color:#7A5200}
 .kw-terms{display:flex;flex-wrap:wrap;gap:6px;margin:.4rem 0 .8rem}.kw-terms .mt-b{width:auto;flex:1 1 42%;min-height:0;padding:.6rem .5rem;font-family:inherit;font-weight:800;text-align:center}
 .kw-defs .mt-b{display:block;width:100%;text-align:left;margin:0 0 6px;padding:.65rem .8rem;font-family:inherit;font-weight:500;line-height:1.4;min-height:0;height:auto;writing-mode:horizontal-tb}
+
+.qz-ban{display:inline-block;font-size:.8rem;font-weight:800;border-radius:10px 10px 0 0;padding:4px 12px;margin-top:.2rem}
+.qz-ban.qv-gap{background:#BA7517;color:#fff}.qz-ban.qv-shows{background:#0F6E56;color:#fff}.qz-ban.qv-pick{background:#534AB7;color:#fff}
+.qz-card.qv-gap{border-left-color:#BA7517;border-top-left-radius:0}
+.qz-card.qv-shows{border-left-color:#0F6E56;background:#F0FAF6;border-top-left-radius:0}
+.qz-card.qv-shows .qz-q{font-family:Georgia,serif;font-style:italic;font-size:1.1rem;border-left:3px solid #5DCAA5;padding-left:.7rem}
+.qz-card.qv-shows .qz-src{color:#0F6E56}.qz-card.qv-shows .qz-tag{background:#CFEFE3;color:#085041}
+.qz-card.qv-pick{border-left-color:#534AB7;background:#F3F2FE;border-top-left-radius:0}
+.qz-card.qv-pick .qz-q{font-size:1.2rem;font-weight:800;color:#3C3489;text-align:center;padding:.4rem 0}
+.qz-card.qv-pick .qz-tag{background:#DEDBFB;color:#3C3489}
+.qz-card.qv-pick .quiz-prompt{color:#534AB7;font-weight:700;text-align:center}
+.qopts{grid-template-columns:1fr !important}
+.qopts .opt{text-align:left;font-family:Georgia,serif;font-style:italic;border-left:4px solid #AFA9EC;font-size:.92rem}
+:root.dark .qz-card.qv-shows,:root.dark .qz-card.qv-pick{background:var(--surface)}
+:root.dark .qz-card.qv-pick .qz-q{color:#CECBF6}
 </style>
 <link rel="manifest" href="manifest-geog.webmanifest">
 <meta name="theme-color" content="#2E8B57">
@@ -6581,11 +6596,11 @@ function qzMake(kind, item, variant) {
   let c;
   if (kind === 'sowa' && variant === 'shows') {
     const w = qzSafe(item, 'shows', 3).map(x => x.shows);
-    c = {item, targets:[item.shows], options:[item.shows].concat(w), html:escHtml(item.quote), tag:item.type, ask:'This quote shows that…'};
+    c = {item, targets:[item.shows], options:[item.shows].concat(w), html:escHtml(item.quote), tag:item.type, ask:'This quote shows that…', v:'shows'};
   } else if (kind === 'sowa' && variant === 'pick') {
     const w = qzSafe(item, 'quote', 3, true).map(x => x.quote);
-    c = {item, targets:[item.quote], options:[item.quote].concat(w), html:'<b>' + escHtml(item.shows) + '</b>', tag:'', ask:'Which quote could you use to show this?'};
-  } else if (kind === 'sowa') { const b = qzBlank(item); c = {item, targets:[b.gap], options:[b.gap].concat(b.d), html:b.html, tag:item.type, ask:'Fill the gap in the quote.'}; }
+    c = {item, targets:[item.quote], options:[item.quote].concat(w), html:'<b>' + escHtml(item.shows) + '</b>', tag:'', ask:'Which quote could you use to show this?', v:'pick'};
+  } else if (kind === 'sowa') { const b = qzBlank(item); c = {item, targets:[b.gap], options:[b.gap].concat(b.d), html:b.html, tag:item.type, ask:'Fill the gap in the quote.', v:'gap'}; }
   else c = {item, targets:[item.term].concat(item.alt || []), options:[item.term].concat(item.d), html:escHtml(item.def), tag:item.cmd ? 'Command word' : 'Key word', ask:item.cmd ? 'Which command word is this?' : 'Which key word is this?'};
   c.opts = shuffle(c.options.slice()); return c;
 }
@@ -6622,6 +6637,7 @@ function qzStart(missedOnly) {
   QZ.idx = 0; QZ.ok = 0; QZ.bad = 0; QZ.streak = 0; QZ.missed = []; QZ.hist = []; QZ.view = 0; QZ.locked = false;
   QZ.var = QZ.pool.map((it, j) => qzVariant(it, j)); QZ.cur = qzMake(QZ.kind, QZ.pool[0], QZ.var[0]); qzDraw();
 }
+const QZ_BAN = {gap:'✏️ Fill the gap', shows:'💡 What does it show?', pick:'🔍 Find the quote'};
 const QZ_NAV = 'padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit';
 function qzDraw() {
   const reviewing = QZ.view < QZ.idx, total = QZ.pool.length, kw = QZ.kind === 'kw';
@@ -6641,13 +6657,13 @@ function qzDraw() {
     ans = '<div style="margin-top:.75rem"><input id="qz-in" class="qz-in" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer…" onkeydown="if(event.key===\'Enter\')qzType()">' +
       '<button class="btn-go" id="qz-check" style="background:' + qzCol().solid + ';margin-top:.6rem;margin-bottom:0;padding:11px" onclick="qzType()">Check answer</button><div class="quiz-fb" id="qfb"></div></div>';
   } else {
-    ans = '<div class="opts">' + c.opts.map((o, i) => '<button class="opt" onclick="qzPick(' + i + ')">' + escHtml(o) + '</button>').join('') + '</div><div class="quiz-fb" id="qfb"></div>';
+    ans = '<div class="opts' + (c.v === 'pick' ? ' qopts' : '') + '">' + c.opts.map((o, i) => '<button class="opt" onclick="qzPick(' + i + ')">' + escHtml(o) + '</button>').join('') + '</div><div class="quiz-fb" id="qfb"></div>';
   }
   document.getElementById('qz-body').innerHTML =
     '<div class="quiz-prog"><div class="quiz-fill" style="width:' + pct + '%;background:' + qzCol().solid + '"></div></div>' +
     '<div class="quiz-hdr"><div style="display:flex;align-items:center;gap:8px">' + prev + '<span class="quiz-hdr-l">Question ' + (pos + 1) + ' of ' + total + (reviewing ? ' <span style="font-size:.7rem;color:var(--muted)">(reviewing)</span>' : '') + '</span>' + next + '</div>' +
     '<div class="sc-row">' + streak + '<span class="sc sc-c">✓ ' + QZ.ok + '</span><span class="sc sc-w">✗ ' + QZ.bad + '</span></div></div>' +
-    '<div class="qz-card' + (kw ? ' kw' : '') + '">' + (kw ? '' : '<span class="qz-mark">“</span>') + '<span class="qz-tag">' + escHtml(c.item.unit) + '</span>' + (kw || !c.tag ? '' : '<div class="qz-src">' + escHtml(c.tag) + ':</div>') + '<div class="qz-q">' + c.html + '</div>' +
+    (kw ? '' : '<div class="qz-ban qv-' + c.v + '">' + QZ_BAN[c.v] + '</div>') + '<div class="qz-card' + (kw ? ' kw' : ' qv-' + c.v) + '">' + (kw || c.v === 'pick' ? '' : '<span class="qz-mark">“</span>') + '<span class="qz-tag">' + escHtml(c.item.unit) + '</span>' + (kw || !c.tag ? '' : '<div class="qz-src">' + escHtml(c.tag) + ':</div>') + '<div class="qz-q">' + c.html + '</div>' +
     '<div class="quiz-prompt" style="margin-top:.6rem">' + c.ask + '</div>' + ans + '</div>';
   const inp = document.getElementById('qz-in'); if (inp) setTimeout(() => inp.focus(), 50);
 }
