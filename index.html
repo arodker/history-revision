@@ -4,16 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <meta name="theme-color" content="#f8f7f4">
-<title>Mossbourne Humanities Learning Area</title>
+<title>Mossbourne Humanities Revision Hub</title>
 <script>try{var _hk=['hub_dark','gcse_dark','alevel_dark','cr_dark','geo_dark'];if(_hk.some(function(k){return localStorage.getItem(k)==='1'}))document.documentElement.classList.add('dark')}catch(e){}</script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%A5%A3%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20x%3D%226%22%20y%3D%2214%22%20width%3D%229%22%20height%3D%2238%22%20rx%3D%222%22%20fill%3D%22%23E8821E%22/%3E%3Crect%20x%3D%2217%22%20y%3D%228%22%20width%3D%229%22%20height%3D%2244%22%20rx%3D%222%22%20fill%3D%22%232E8B57%22/%3E%3Crect%20x%3D%2228%22%20y%3D%2216%22%20width%3D%229%22%20height%3D%2236%22%20rx%3D%222%22%20fill%3D%22%233B7DD8%22/%3E%3Crect%20x%3D%2239%22%20y%3D%2210%22%20width%3D%229%22%20height%3D%2242%22%20rx%3D%222%22%20fill%3D%22%23B06AD0%22/%3E%3Cg%20transform%3D%22rotate%2814%2056%2052%29%22%3E%3Crect%20x%3D%2250%22%20y%3D%2214%22%20width%3D%229%22%20height%3D%2238%22%20rx%3D%222%22%20fill%3D%22%23E3B220%22/%3E%3C/g%3E%3Crect%20x%3D%223%22%20y%3D%2252%22%20width%3D%2258%22%20height%3D%224%22%20rx%3D%222%22%20fill%3D%22%231a1a18%22/%3E%3C/svg%3E">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root.dark{--bg:#141413;--card:#1f1f1d;--text:#efeee9;--muted:#a3a29b;--border:#38372f;--soon:#85847c;--cont-bg:#2a2850;--cont-tx:#dcd9ff}
-.top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.3rem}
-.top h1{text-wrap:balance;text-align:left;font-size:1.85rem;line-height:1.15;font-weight:800;margin:0}.top .subtitle{text-align:left;font-size:.95rem;margin:.5rem 0 0}
-.bar{display:flex;gap:4px;margin-top:.6rem;max-width:11rem}.bar i{flex:1;height:5px;border-radius:3px}
-@media (max-width:480px){.top h1{font-size:1.5rem}}
+.top{margin-bottom:1.3rem}
+.bk{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem}
+.logo{width:3.4rem;height:3.4rem;color:var(--text)}
+.top h1{white-space:nowrap;text-align:left;font-size:min(1.85rem,4.5vw);line-height:1.15;font-weight:800;margin:0}
+.top .subtitle{text-align:left;font-size:.95rem;margin:.4rem 0 0}
 .gear{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;border:1.5px solid var(--border);background:var(--card);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .gear:hover{border-color:var(--muted)}.gear:focus-visible{outline:3px solid var(--text);outline-offset:2px}
 .sp{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:50;display:none;align-items:center;justify-content:center;padding:1rem}
@@ -86,8 +87,9 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
 <body>
 <div class="app">
   <div class="top">
-    <div><h1>Mossbourne Humanities Learning Area</h1><div class="bar" aria-hidden="true"><i style="background:#E8821E"></i><i style="background:#2E8B57"></i><i style="background:#3B7DD8"></i><i style="background:#B06AD0"></i><i style="background:#E3B220"></i></div><p class="subtitle"><span id="greet">Hello</span>. Pick your course.</p></div>
-    <button class="gear" id="gear" aria-label="Settings" title="Settings">⚙️</button>
+    <div class="bk"><svg class="logo" viewBox="0 0 70 64" role="img" aria-label="Five coloured books on a shelf"><rect x="6" y="14" width="9" height="38" rx="2" fill="#E8821E"/><rect x="17" y="8" width="9" height="44" rx="2" fill="#2E8B57"/><rect x="28" y="16" width="9" height="36" rx="2" fill="#3B7DD8"/><rect x="39" y="10" width="9" height="42" rx="2" fill="#B06AD0"/><g transform="rotate(14 56 52)"><rect x="50" y="14" width="9" height="38" rx="2" fill="#E3B220"/></g><rect x="3" y="52" width="58" height="4" rx="2" fill="currentColor"/></svg><button class="gear" id="gear" aria-label="Settings" title="Settings">⚙️</button></div>
+    <h1>Mossbourne Humanities Revision Hub</h1>
+    <p class="subtitle"><span id="greet">Hello</span>. Pick your course.</p>
   </div>
   <div class="sp" id="sp" role="dialog" aria-label="Settings"><div class="sp-in">
     <div class="sp-h"><b>Settings</b><button id="sp-x" aria-label="Close">✕</button></div>
