@@ -856,6 +856,31 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .set-sw::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
 .set-sw.on{background:#2563eb}.set-sw.on::after{left:16px}
 .set-sep{border-top:1px solid var(--border);margin:4px 0}
+.bdg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:.9rem .3rem;margin:.4rem 0 .8rem;text-align:center}
+.bdg{background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit}
+.bdg-c{width:64px;height:64px;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:1.9rem;border:3px solid var(--border)}
+.bdg-n{font-size:.72rem;font-weight:600;margin-top:.3rem;line-height:1.2}
+.bdg.lock .bdg-c{background:var(--bg2,#eceae4);color:#9a978d;font-size:1.6rem;font-weight:700;border-color:#cfcdc4}
+.bdg.lock .bdg-n{color:var(--muted);font-weight:500}
+.bdg.sel .bdg-c{outline:3px solid #F0B429;outline-offset:2px}
+.bdg-detail{border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;font-size:.85rem;margin-bottom:2rem;color:var(--muted);min-height:2.6rem}
+.bdg-detail b{color:var(--text,inherit)}
+#bdg-toast{position:fixed;top:.8rem;left:50%;transform:translate(-50%,-140%);z-index:100000;pointer-events:none;background:#1d1a14;color:#fff;border:2px solid #F0B429;border-radius:14px;padding:.55rem 1rem;display:flex;align-items:center;gap:.6rem;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .35s cubic-bezier(.2,1.2,.4,1);pointer-events:none;max-width:92vw}
+#bdg-toast.show{transform:translate(-50%,0)}
+#bdg-toast .bt-e{font-size:1.8rem}#bdg-toast .bt-k{font-size:.62rem;letter-spacing:.14em;color:#F0B429;font-weight:800}#bdg-toast .bt-n{font-weight:800;font-size:.95rem}
+.hb-row{display:flex;flex-wrap:nowrap;gap:.4rem;overflow-x:auto;padding:.1rem .1rem .2rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.hb-row::-webkit-scrollbar{display:none}
+.hb-row .bdg{flex:0 0 auto}
+.hb-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.25rem}
+.hb-h{font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.hb-row .bdg-c{width:40px;height:40px;font-size:1.2rem;border-width:2.5px}
+.hb-all{background:none;border:none;padding:.15rem 0;font:inherit;font-size:.78rem;font-weight:700;color:var(--muted);cursor:pointer}
+#home-badges{margin:.9rem 0 0;padding:0}
+#home-badges .bdg-detail{margin:0 0 .4rem;text-align:center;font-size:.8rem}
+.bf{position:relative;text-align:center;padding:1.3rem .6rem 1.1rem;border-radius:16px;overflow:hidden;color:#fff;animation:bfbg 1.1s ease-in-out infinite alternate}
+@keyframes bfbg{from{background:#14070a}to{background:#43101a}}
+.bf-em{display:block;font-size:5rem;line-height:1.2;margin-top:.3rem;opacity:0;animation:bfdrop .9s ease-out .4s forwards}
+
 </style>
 <style>.up-ticks{display:none!important}</style>
 <style id="boss-extra">.boss-taunt{display:flex;align-items:center;gap:.6rem;margin:.5rem auto .3rem;max-width:34rem;background:#FFF4F2;color:#5A1610;border:2px solid #C0392B;border-radius:14px;padding:.55rem .8rem;font-weight:700;font-size:.95rem;line-height:1.3;animation:bosstaunt .45s cubic-bezier(.2,1.6,.4,1)}
@@ -956,6 +981,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   <div class="step-lbl"><span class="step-n">3</span>See your progress</div>
   <div class="xp-card xp-col" id="xp-card" role="button" tabindex="0" aria-expanded="false"></div>
   <div id="weak-nudge"></div>
+  <div id="home-badges" style="display:none"></div>
 </div>
 
 <!-- ══ SCREEN 2: HUB ══ -->
@@ -1197,6 +1223,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
   <div id="pg-acc"></div>
   <div class="pg-h">Flashcards mastered today</div>
   <div id="pg-mastery"></div>
+  <div class="pg-h">Badges <span id="bdg-count" style="font-weight:400;opacity:.7"></span></div><div class="bdg-grid" id="pg-badges"></div><div class="bdg-detail" id="bdg-detail">Tap a badge to see how it is earned.</div>
 </div>
 
 <div class="screen" id="s-rapid">
@@ -5330,6 +5357,279 @@ window.hsInstall=function(){
  if(g)g.onclick=function(){var p=dp;dp=null;o.remove();p.prompt();p.userChoice.finally(function(){try{setMenuRender()}catch(_){}})};
 };
 })();
+</script>
+<script id="bdg-js">
+/* ===== BADGES (ported from the GCSE hubs) ===== */
+var LS_BADGES = 'alevel_badges', LS_BSTAT = 'alevel_badge_stats', BDG_PFX = 'alevel_';
+const BADGES = [{"id": "start", "e": "🎒", "n": "Day one", "h": "Answer your first question correctly", "c": ["#E1F5EE", "#1D9E75"]}, {"id": "c100", "e": "💯", "n": "Ton up", "h": "Answer 100 questions correctly", "c": ["#FAEEDA", "#EF9F27"]}, {"id": "c300", "e": "🔱", "n": "Spartan", "h": "Answer 300 questions correctly", "c": ["#E6F1FB", "#378ADD"]}, {"id": "c600", "e": "🎓", "n": "Scholar", "h": "Answer 600 questions correctly", "c": ["#EEEDFE", "#7F77DD"]}, {"id": "c1066", "e": "🏹", "n": "Hastings", "h": "Answer 1,066 questions correctly", "c": ["#FCEBEB", "#E24B4A"]}, {"id": "onfire", "e": "⚡", "n": "On fire", "h": "Get 50 answers right in a row", "c": ["#FAEEDA", "#EF9F27"]}, {"id": "unstop", "e": "🚀", "n": "Unstoppable", "h": "Get 100 answers right in a row", "c": ["#FCEBEB", "#E24B4A"]}, {"id": "revisit", "e": "🔁", "n": "Lesson learned", "h": "Get 25 questions right that you got wrong before", "c": ["#E1F5EE", "#1D9E75"]}, {"id": "fixer", "e": "🔧", "n": "Mistake fixer", "h": "Get 100 questions right that you got wrong before", "c": ["#E1F5EE", "#0F6E56"]}, {"id": "objection", "e": "🙋", "n": "Objection!", "h": "Have 5 boss battle answers accepted with \"I was right\"", "c": ["#EEEDFE", "#7F77DD"]}, {"id": "first", "e": "💥", "n": "First blood", "h": "Defeat a boss", "c": ["#FAEEDA", "#EF9F27"]}, {"id": "flawless", "e": "💎", "n": "Flawless", "h": "Defeat the third boss or later without losing a heart", "c": ["#E6F1FB", "#378ADD"]}, {"id": "nine", "e": "🐈", "n": "Nine lives", "h": "Defeat a boss on your last heart", "c": ["#FBEAF0", "#D4537E"]}, {"id": "untouch", "e": "🔒", "n": "Untouchable", "h": "Defeat all six bosses in one run without losing a heart", "c": ["#F1EFE8", "#5F5E5A"]}, {"id": "bruised", "e": "😤", "n": "Bruised, not beaten", "h": "Lose to a boss five times and keep going", "c": ["#FCEBEB", "#E24B4A"]}, {"id": "arcade", "e": "🎮", "n": "Arcade regular", "h": "Play every arcade game", "c": ["#E6F1FB", "#378ADD"]}, {"id": "collector", "e": "🏆", "n": "Boss collector", "h": "Defeat all six bosses", "c": ["#FAEEDA", "#EF9F27"]}, {"id": "ice", "e": "⛄", "n": "Ice cold", "h": "Beat Mr Rodker on your last heart", "c": ["#E6F1FB", "#378ADD"]}, {"id": "buzzer", "e": "🔔", "n": "Buzzer beater", "h": "Answer a boss question correctly with under a second left", "c": ["#FAEEDA", "#EF9F27"]}, {"id": "streak3", "e": "🎩", "n": "Hat-trick", "h": "Earn 200 XP a day for 3 days in a row", "c": ["#EEEDFE", "#7F77DD"]}, {"id": "streak7", "e": "📅", "n": "Week warrior", "h": "Earn 200 XP a day for 7 days in a row", "c": ["#E1F5EE", "#1D9E75"]}, {"id": "streak14", "e": "🌟", "n": "Fortnight", "h": "Earn 200 XP a day for 14 days in a row", "c": ["#FAEEDA", "#EF9F27"]}, {"id": "month", "e": "🌅", "n": "Month of mornings", "h": "Earn 200 XP a day for 30 days in a row", "c": ["#FCEBEB", "#E24B4A"]}, {"id": "maxed", "e": "💪", "n": "Maxed out", "h": "Hit the daily XP cap of 500", "c": ["#FBEAF0", "#D4537E"]}, {"id": "special", "e": "🔬", "n": "Specialist", "h": "Answer 150 questions in one unit with 90% accuracy", "c": ["#E6F1FB", "#378ADD"]}, {"id": "comeback", "e": "📈", "n": "Comeback kid", "h": "Lift a unit from under 50% to 80% accuracy", "c": ["#E1F5EE", "#1D9E75"]}, {"id": "portable", "e": "📲", "n": "Packed bags", "h": "Load your progress on a new device", "c": ["#F1EFE8", "#5F5E5A"]}, {"id": "rise", "e": "🌱", "n": "On the rise", "h": "Improve your weekly accuracy by 10 points", "c": ["#E1F5EE", "#0F6E56"]}, {"id": "chron", "e": "📜", "n": "Chronologist", "h": "Answer 100 date questions correctly", "c": ["#FAEEDA", "#EF9F27"]}, {"id": "titan", "e": "⏳", "n": "Timeline titan", "h": "Score 90% or more over 50 date questions", "c": ["#EEEDFE", "#7F77DD"]}, {"id": "pinpull", "e": "📌", "n": "Pin puller", "h": "Clear 10 pinned cards", "c": ["#FCEBEB", "#E24B4A"]}, {"id": "cushion", "e": "📍", "n": "Pin cushion", "h": "Clear 50 pinned cards", "c": ["#FCEBEB", "#E24B4A"]}, {"id": "clean", "e": "✨", "n": "Clean slate", "h": "Clear a pile of 10 or more pinned cards in one go", "c": ["#E1F5EE", "#1D9E75"]}, {"id": "tenk", "e": "🗻", "n": "Ten thousand XP", "h": "Earn 10,000 XP in total", "c": ["#E6F1FB", "#378ADD"]}, {"id": "weekend", "e": "🎯", "n": "Weekender", "h": "Revise on a Saturday and a Sunday", "c": ["#FBEAF0", "#D4537E"]}, {"id": "explorer", "e": "🔭", "n": "Explorer", "h": "Try every way to revise", "c": ["#EEEDFE", "#7F77DD"]}, {"id": "gapfill", "e": "🔗", "n": "Missing link", "h": "Get all three Fill the gaps right in one go", "c": ["#E1F5EE", "#0F6E56"]}, {"id": "mtc", "e": "🌹", "n": "Mid Tudor Crisis master", "h": "Master every Mid Tudor Crisis flashcard", "c": ["#FCEBEB", "#E24B4A"]}, {"id": "eliz", "e": "👸", "n": "Elizabeth I master", "h": "Master every Elizabeth I flashcard", "c": ["#EEEDFE", "#7F77DD"]}, {"id": "cw", "e": "📡", "n": "Cold War master", "h": "Master every Cold War flashcard", "c": ["#E6F1FB", "#378ADD"]}, {"id": "grand", "e": "🏅", "n": "Grand slam", "h": "Master every unit", "c": ["#FAEEDA", "#EF9F27"]}, {"id": "complete", "e": "💫", "n": "Completionist", "h": "Earn every other badge", "c": ["#EEEDFE", "#7F77DD"]}, {"id": "agent", "e": "😎", "n": "Secret agent", "h": "Find every secret badge", "c": ["#F1EFE8", "#5F5E5A"], "secret": true}, {"id": "night", "e": "🌙", "n": "Night owl", "h": "Revise after 11pm", "c": ["#F1EFE8", "#5F5E5A"], "secret": true}, {"id": "early", "e": "🐦", "n": "Early bird", "h": "Revise before 7am", "c": ["#F1EFE8", "#5F5E5A"], "secret": true}, {"id": "back", "e": "🔙", "n": "Boomerang", "h": "Come back after more than a week away", "c": ["#F1EFE8", "#5F5E5A"], "secret": true}, {"id": "teacher", "e": "🍎", "n": "Teacher's pet", "h": "Type Rodker into a boss answer", "c": ["#F1EFE8", "#5F5E5A"], "secret": true}, {"id": "logo", "e": "🔎", "n": "Detective", "h": "Tap the title seven times", "c": ["#F1EFE8", "#5F5E5A"], "secret": true}, {"id": "konami", "e": "👾", "n": "Cheat code", "h": "Try the classic cheat code", "c": ["#F1EFE8", "#5F5E5A"], "secret": true}, {"id": "xmas", "e": "🎄", "n": "Revising at Christmas", "h": "Revise on 25 December", "c": ["#F1EFE8", "#5F5E5A"], "secret": true}, {"id": "ny", "e": "🎆", "n": "New year, new grades", "h": "Revise on 1 January", "c": ["#F1EFE8", "#5F5E5A"], "secret": true}];
+const BDG_MASTERS = [{"id": "mtc", "sec": "mtc", "grand": 1}, {"id": "eliz", "sec": "elizabeth", "grand": 1}, {"id": "cw", "sec": "coldwar", "grand": 1}];
+const BDG_DATES = {'25-12': 'xmas', '01-01': 'ny'};
+const BOSS_IDS = ['dragon', 'wizard', 'gremlin', 'zombie', 'vampire', 'slayer'];
+function bdgLoad() { try { return JSON.parse(localStorage.getItem(LS_BADGES) || '{}') || {}; } catch (e) { return {}; } }
+function bdS() { try { return JSON.parse(localStorage.getItem(LS_BSTAT) || '{}') || {}; } catch (e) { return {}; } }
+function bdSave(s) { try { localStorage.setItem(LS_BSTAT, JSON.stringify(s)); } catch (e) {} }
+function bdWeekKey(offDays) {
+  const d = new Date(); d.setHours(12, 0, 0, 0); d.setDate(d.getDate() + (offDays || 0) - ((d.getDay() + 6) % 7));
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+function bdWeek(ok) {
+  try {
+    const s = bdS(), w = s.wk || (s.wk = {}), k = bdWeekKey(0), e = w[k] || (w[k] = {ok: 0, n: 0});
+    e.n++; if (ok) e.ok++;
+    Object.keys(w).sort().slice(0, -4).forEach(o => delete w[o]);
+    bdSave(s);
+  } catch (e) {}
+}
+let bdgQueue = [], bdgBusy = false;
+function bdgNext() {
+  if (bdgBusy || !bdgQueue.length) return;
+  bdgBusy = true;
+  const b = bdgQueue.shift();
+  let el = document.getElementById('bdg-toast');
+  if (!el) { el = document.createElement('div'); el.id = 'bdg-toast'; document.body.appendChild(el); }
+  el.innerHTML = '<span class="bt-e">' + b.e + '</span><span><div class="bt-k">BADGE UNLOCKED</div><div class="bt-n">' + b.n + '</div></span>';
+  void el.offsetWidth; el.classList.add('show');
+  setTimeout(() => { el.classList.remove('show'); setTimeout(() => { bdgBusy = false; bdgNext(); }, 450); }, 2600);
+}
+function bossAll() { try { const s = bdS(), b = s.bosses || {}, g = bdgLoad(); return BOSS_IDS.every(i => b[i] || g[i]); } catch (e) { return false; } }
+function bdgAward(id) {
+  if (BOSS_IDS.indexOf(id) >= 0) { try { const s = bdS(); s.bosses = s.bosses || {}; if (!s.bosses[id]) { s.bosses[id] = 1; bdSave(s); } if (bossAll()) return bdgAward('collector'); } catch (e) {} return false; }
+  const got = bdgLoad();
+  if (got[id]) return false;
+  const b = BADGES.find(x => x.id === id);
+  if (!b) return false;
+  got[id] = localDate();
+  try { localStorage.setItem(LS_BADGES, JSON.stringify(got)); } catch (e) {}
+  bdgQueue.push(b); bdgNext();
+  if (!bdgAward.busy) { bdgAward.busy = true; try { bdgMeta(); } finally { bdgAward.busy = false; } }
+  try { bdgRenderHome(); } catch (e) {}
+  return true;
+}
+// consecutive days with at least BDG_DAILY XP, counting back from today (or yesterday if today is not there yet)
+const BDG_DAILY = 200;
+function bdgStreak(x) {
+  let n = 0, off = (x.days[localDate()] || 0) >= BDG_DAILY ? 0 : -1;
+  while ((x.days[localDate(off)] || 0) >= BDG_DAILY) { n++; off--; }
+  return n;
+}
+function bdgCards(m) {
+  if (typeof FD === 'undefined' || !FD || !FD.length) return [];
+  return FD.filter(c => (m.sec === undefined || c.section === m.sec) && (m.ds === undefined ? true : !!c.isDepthStudy === m.ds));
+}
+function bdgProg(m) {
+  const mast = bdS().mast || {}, cards = bdgCards(m);
+  return {n: cards.filter(c => mast[fdKey(c)]).length, total: cards.length};
+}
+function bdgUnits() {
+  BDG_MASTERS.forEach(m => { const p = bdgProg(m); if (p.total && p.n >= p.total) bdgAward(m.id); });
+}
+function bdgCheck(active) {
+  bdgUnits();
+  const x = xpLoad(), now = new Date(), h = now.getHours();
+  if (active) {
+    if (h >= 23 || h < 5) bdgAward('night');
+    if (h >= 5 && h < 7) bdgAward('early');
+    const dk = String(now.getDate()).padStart(2, '0') + '-' + String(now.getMonth() + 1).padStart(2, '0');
+    if (BDG_DATES[dk]) bdgAward(BDG_DATES[dk]);
+  }
+  if (typeof bnRun !== 'undefined') { if (bnRun >= 50) bdgAward('onfire'); if (bnRun >= 100) bdgAward('unstop'); }
+  const st = bdgStreak(x);
+  if (st >= 3) bdgAward('streak3');
+  if (st >= 7) bdgAward('streak7');
+  if (st >= 14) bdgAward('streak14');
+  const ok = Object.keys(x.acc).reduce((s, k) => s + (x.acc[k].ok || 0), 0);
+  if (ok >= 1) bdgAward('start');
+  if (ok >= 100) bdgAward('c100');
+  if (ok >= 300) bdgAward('c300');
+  if (ok >= 600) bdgAward('c600');
+  if (ok >= 1066) bdgAward('c1066');
+  if ((x.acc.date && x.acc.date.ok || 0) >= 100) bdgAward('chron');
+  if (x.acc.date && x.acc.date.n >= 50 && x.acc.date.ok / x.acc.date.n >= 0.9) bdgAward('titan');
+  try {
+    const w = bdS().wk || {}, cur = w[bdWeekKey(0)], prv = w[bdWeekKey(-7)];
+    if (cur && prv && cur.n >= 50 && prv.n >= 50 && cur.ok / cur.n - prv.ok / prv.n >= 0.1) bdgAward('rise');
+  } catch (e) {}
+  if ((x.days[localDate()] || 0) >= XP_RULE.cap) bdgAward('maxed');
+  if (st >= 30) bdgAward('month');
+  if (x.total >= 10000) bdgAward('tenk');
+  if (Object.keys(x.units || {}).some(k => x.units[k].n >= 150 && x.units[k].ok / x.units[k].n >= 0.9)) bdgAward('special');
+  if (active && now.getDay() === 0 && (x.days[localDate()] || 0) > 0 && (x.days[localDate(-1)] || 0) > 0) bdgAward('weekend');
+  const t = localDate(), prev = Object.keys(x.days).filter(d => d < t && x.days[d] > 0).sort().pop();
+  if (active && (x.days[t] || 0) > 0 && prev && (new Date(t) - new Date(prev)) / 864e5 >= 8) bdgAward('back');
+}
+function bdgMeta() {
+  const got = bdgLoad(), has = ids => ids.every(i => got[i]);
+  if (bossAll()) bdgAward('collector');
+  if (has(BDG_MASTERS.filter(m => m.grand).map(m => m.id))) bdgAward('grand');
+  if (has(BADGES.filter(b => b.secret && b.id !== 'agent').map(b => b.id))) bdgAward('agent');
+  if (has(BADGES.filter(b => b.id !== 'complete').map(b => b.id))) bdgAward('complete');
+}
+let bdgSel = '';
+function bdgDetail(id) {
+  bdgSel = id;
+  const b = BADGES.find(x => x.id === id), got = bdgLoad(), el = document.getElementById('bdg-detail');
+  document.querySelectorAll('.bdg').forEach(n => n.classList.toggle('sel', n.dataset.id === id));
+  if (!b || !el) return;
+  const m = BDG_MASTERS.find(z => z.id === id);
+  if (got[id]) { const d = new Date(got[id] + 'T12:00:00'); el.innerHTML = '<b>' + b.e + ' ' + b.n + '</b><br>' + b.h + '<br>Earned ' + d.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'}); }
+  else if (b.secret) el.innerHTML = '<b>❓ Secret badge</b><br>Keep exploring to find it.';
+  else if (m) { const pr = bdgProg(m); el.innerHTML = '<b>❓ Not earned yet</b><br>' + b.h + (pr.total ? '<br>' + pr.n + ' of ' + pr.total + ' cards mastered so far' : ''); }
+  else el.innerHTML = '<b>❓ Not earned yet</b><br>' + b.h;
+}
+function bdgRender() {
+  const el = document.getElementById('pg-badges'); if (!el) return;
+  const got = bdgLoad(), n = BADGES.filter(b => got[b.id]).length;
+  const c = document.getElementById('bdg-count'); if (c) c.textContent = n + ' / ' + BADGES.length;
+  el.innerHTML = BADGES.map(b => got[b.id]
+    ? '<button class="bdg got" data-id="' + b.id + '"><div class="bdg-c" style="background:' + b.c[0] + ';border-color:' + b.c[1] + '">' + b.e + '</div><div class="bdg-n">' + b.n + '</div></button>'
+    : '<button class="bdg lock" data-id="' + b.id + '"><div class="bdg-c">?</div><div class="bdg-n">???</div></button>').join('');
+  el.querySelectorAll('.bdg').forEach(btn => {
+    btn.addEventListener('click', () => bdgDetail(btn.dataset.id));
+    btn.addEventListener('mouseenter', () => { if (window.matchMedia && matchMedia('(hover:hover)').matches) bdgDetail(btn.dataset.id); });
+  });
+  if (bdgSel) bdgDetail(bdgSel);
+}
+function bdgRenderHome() {
+  const el = document.getElementById('home-badges'); if (!el) return;
+  const got = bdgLoad(), list = BADGES.filter(b => got[b.id]);
+  if (!list.length) { el.style.display = 'none'; el.innerHTML = ''; return; }
+  el.style.display = 'block';
+  el.innerHTML = '<div class="bdg-detail" id="hb-detail" style="display:none"></div><div class="hb-top"><div class="hb-h">Your badges · ' + list.length + '</div><button class="hb-all" onclick="bdgOpen()">See all →</button></div><div class="hb-row">' + list.map(b =>
+    '<button class="bdg got" data-id="' + b.id + '" aria-label="' + b.n + '" onclick="bdgHomeTap(\'' + b.id + '\')"><div class="bdg-c" style="background:' + b.c[0] + ';border-color:' + b.c[1] + '">' + b.e + '</div></button>').join('') + '</div>';
+}
+function bdgHomeTap(id) {
+  const b = BADGES.find(x => x.id === id), got = bdgLoad(), el = document.getElementById('hb-detail');
+  if (!b || !el) return;
+  const same = el.dataset.id === id && el.style.display !== 'none';
+  document.querySelectorAll('#home-badges .bdg').forEach(n => n.classList.toggle('sel', !same && n.dataset.id === id));
+  if (same) { el.style.display = 'none'; el.dataset.id = ''; return; }
+  const d = new Date(got[id] + 'T12:00:00');
+  el.dataset.id = id; el.style.display = 'block';
+  el.innerHTML = '<b>' + b.e + ' ' + b.n + '</b><br>' + b.h + '<br>Earned ' + d.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'});
+}
+function bdgOpen() { showScreen('s-progress'); setTimeout(() => { const g = document.getElementById('pg-badges'); if (g) g.scrollIntoView({block:'start'}); }, 60); }
+// ---- hooks ----
+var _bdgXa = xpAward;
+xpAward = function (mode, ok, key, label, unit) {
+  let wasMiss = false;
+  if (ok && key) { try { const m = xpLoad().miss[key]; wasMiss = !!(m && m.n > 0); } catch (e) {} }
+  const r = _bdgXa.apply(this, arguments);
+  try { bdWeek(ok); } catch (e) {}
+  try {
+    const s2 = bdS(), uk2 = unit || '', ub = xpLoad().units[uk2];
+    if (ub) { s2.low = s2.low || {}; const rt = ub.ok / ub.n; if (ub.n >= 20 && rt < 0.5) s2.low[uk2] = 1; if (s2.low[uk2] && ub.n >= 40 && rt >= 0.8) bdgAward('comeback'); }
+    bdSave(s2);
+  } catch (e) {}
+  try { if (wasMiss) { const s = bdS(); s.rev = (s.rev || 0) + 1; bdSave(s); if (s.rev >= 25) bdgAward('revisit'); if (s.rev >= 100) bdgAward('fixer'); } bdgCheck(true); } catch (e) {}
+  return r;
+};
+var _bdgMark = bossMark;
+bossMark = function (ok) {
+  const g = ARC.g;
+  if (g && !g.marking) {
+    if (!ok) g.slip = true;
+    else if (g.leftMs != null && g.leftMs > 0 && g.leftMs < 1000) bdgAward('buzzer');
+    g.leftMs = null;
+    if (g.typed && /rodker/i.test(g.typed)) bdgAward('teacher');
+  }
+  return _bdgMark.apply(this, arguments);
+};
+var _bdgDeath = bossDeath;
+bossDeath = function () {
+  const g = ARC.g;
+  if (g) {
+    bdgAward('first');
+    if (!g.slip) { if (g.lv >= 2) bdgAward('flawless'); g.clean = (g.clean || 0) + 1; if (g.clean >= BOSSES.length) bdgAward('untouch'); } else g.clean = 0;
+    if (g.lives === 1) bdgAward('nine');
+    const nm = (BOSSES[g.lv % BOSSES.length] || [])[0];
+    if (nm === 'Dreaded Date Dragon') bdgAward('dragon');
+    if (nm === 'Chief Examiner') bdgAward('wizard');
+    if (nm === 'Procrastination Gremlin') bdgAward('gremlin');
+    if (nm === 'Cramming Zombie') bdgAward('zombie');
+    if (nm === 'Highlighter Vampire') bdgAward('vampire');
+    if (nm === 'Mr Rodker' && g.lives === 1) bdgAward('ice');
+  }
+  return _bdgDeath.apply(this, arguments);
+};
+var _bdgNext = bossNext;
+bossNext = function () { if (ARC.g) ARC.g.slip = false; return _bdgNext.apply(this, arguments); };
+var _bdgStart = bossStart;
+bossStart = function () { const r = _bdgStart.apply(this, arguments); if (ARC.g) { ARC.g.slip = false; ARC.g.clean = 0; } return r; };
+var _bdgWin = bossWin;
+bossWin = function () {
+  const g = ARC.g;
+  if (g && g.lv >= BOSSES.length - 1) { bdgAward('slayer'); }
+  return _bdgWin.apply(this, arguments);
+};
+var _bdgSub = bossSubmit;
+bossSubmit = function () { const g = ARC.g; if (g && ARC.tm) g.leftMs = ARC.tm.end - Date.now(); return _bdgSub.apply(this, arguments); };
+var _bdgOver = bossOver;
+bossOver = function () {
+  const g = ARC.g;
+  if (g && g.lives <= 0) { const s = bdS(); s.losses = (s.losses || 0) + 1; bdSave(s); if (s.losses >= 5) bdgAward('bruised'); }
+  return _bdgOver.apply(this, arguments);
+};
+var _bdgHS = arcSetHS;
+arcSetHS = function (k) {
+  const s = bdS(); s.games = s.games || {}; s.games[k] = 1; bdSave(s);
+  if (['mt', 'wh', 'st', 'boss'].every(x => s.games[x])) bdgAward('arcade');
+  return _bdgHS.apply(this, arguments);
+};
+var _bdgLearn = bsLearn;
+bsLearn = function () { const s = bdS(); s.obj = (s.obj || 0) + 1; bdSave(s); if (s.obj >= 5) bdgAward('objection'); return _bdgLearn.apply(this, arguments); };
+var _bdgFdm = fdSetMastered;
+fdSetMastered = function (obj) {
+  const r = _bdgFdm.apply(this, arguments);
+  try { const s = bdS(); s.mast = s.mast || {}; Object.keys(obj || {}).forEach(k => { if (obj[k]) s.mast[k] = 1; }); bdSave(s); bdgUnits(); } catch (e) {}
+  return r;
+};
+var _bdgPin = fdSetOutstanding;
+fdSetOutstanding = function (arr) {
+  let prev = [];
+  try { prev = fdGetOutstanding(); } catch (e) {}
+  const r = _bdgPin.apply(this, arguments);
+  try {
+    const cur = new Set(arr || []), removed = prev.filter(k => !cur.has(k)).length;
+    if (removed) {
+      const s = bdS(); s.pins = (s.pins || 0) + removed; bdSave(s);
+      if (s.pins >= 10) bdgAward('pinpull');
+      if (s.pins >= 50) bdgAward('cushion');
+      if (prev.length >= 10 && !(arr || []).length) bdgAward('clean');
+    }
+  } catch (e) {}
+  return r;
+};
+var _bdgFf = ffFinish;
+ffFinish = function () { const r = _bdgFf.apply(this, arguments); try { if (ffRes.filter(x => x.ok).length === 3) bdgAward('gapfill'); } catch (e) {} return r; };
+function bdgSeen(k) {
+  const s = bdS(); s.seen = s.seen || {}; if (s.seen[k]) return; s.seen[k] = 1; bdSave(s);
+  if (["flash", "guide", "dates", "exam", "mixed", "arcade"].every(x => s.seen[x])) bdgAward('explorer');
+}
+var _bdgEm = enterMode;
+enterMode = function (m) { try { bdgSeen({flashcard: 'flash', knowledge: 'guide', dates: 'dates', exam: 'exam'}[m] || '_'); } catch (e) {} return _bdgEm.apply(this, arguments); };
+var _bdgShow = showScreen;
+showScreen = function (id) { const r = _bdgShow.apply(this, arguments); try { const k = {'s-rapid': 'mixed', 's-stat': 'stat', 's-arcade': 'arcade'}[id]; if (k) bdgSeen(k); } catch (e) {} if (id === 's-progress') bdgRender(); if (id === 's-pick') bdgRenderHome(); return r; };
+window.hbQuiz = function (n, st, days) {
+  bdgAward('qdebut');
+  if (n === 10) bdgAward('gloriana');
+  if (st >= 7) bdgAward('qweek');
+  if (days >= 10) bdgAward('qreg');
+};
+(function () {
+  const K = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a']; let k = 0;
+  document.addEventListener('keydown', e => {
+    const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+    k = key === K[k] ? k + 1 : (key === K[0] ? 1 : 0);
+    if (k === K.length) { k = 0; if (bdgAward('konami') && typeof fdFireConfetti === 'function') fdFireConfetti(); }
+  });
+  const h = document.querySelector('#s-pick h1'); let taps = 0, tt = null;
+  if (h) h.addEventListener('click', () => {
+    taps++; clearTimeout(tt); tt = setTimeout(() => taps = 0, 2500);
+    if (taps >= 7) { taps = 0; if (bdgAward('logo') && typeof fdFireConfetti === 'function') fdFireConfetti(); }
+  });
+})();
+setTimeout(() => { try { if (localStorage.getItem(BDG_PFX + 'loaded')) { localStorage.removeItem(BDG_PFX + 'loaded'); bdgAward('portable'); } bdgCheck(false); bdgRenderHome(); } catch (e) {} }, 1500);
+
 </script>
 </body>
 </html>
