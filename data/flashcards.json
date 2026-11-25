@@ -382,7 +382,7 @@
   "front": "What were the strengths of the Weimar Constitution?",
   "p1": "All men and women had equal voting rights.",
   "p2": "Power was divided between the President, Chancellor, and Reichstag to avoid one person having too much power.",
-  "p3": "Proportional Representation: every vote had equal weight; any party winning 60,000 votes gained a Reichstag seat.",
+  "p3": "Proportional Representation: every vote had equal weight, so parties won Reichstag seats in proportion to their votes.",
   "hints": [
    "Equal",
    "Power",
@@ -391,7 +391,7 @@
   "s": [
    "All men and women had equal voting rights.",
    "Power was divided between the President, Chancellor, and Reichstag to avoid one person having too much power.",
-   "Proportional Representation: every vote had equal weight; any party winning 60,000 votes gained a Reichstag seat."
+   "Proportional Representation: every vote had equal weight, so parties won Reichstag seats in proportion to their votes."
   ],
   "fill": [
    {
@@ -412,16 +412,6 @@
      "one party",
      "one region",
      "one class"
-    ]
-   },
-   {
-    "p": 3,
-    "gap": "60,000",
-    "alt": [],
-    "d": [
-     "6,000",
-     "600,000",
-     "160,000"
     ]
    },
    {
