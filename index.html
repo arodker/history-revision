@@ -119,9 +119,9 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
       </div>
     </section>
     <section class="subj" style="--sc:#3B7DD8">
-      <div class="sh"><div class="ic">🕊️</div><div><div class="sn">Religious Studies</div><div class="st">On the way</div></div><span class="chev" aria-hidden="true">▾</span></div>
+      <div class="sh"><div class="ic">🕊️</div><div><div class="sn">Religious Studies</div><div class="st">GCSE</div></div><span class="chev" aria-hidden="true">▾</span></div>
       <div class="tl">
-        <div class="t off">GCSE RS<small>Coming soon</small></div>
+        <a href="RS.html" class="t" data-xp="rs_xp" data-lv="0,250,600,1100,1800,2700,3900,5300,6900,8700,10700,13000,15600,18600,21800,25000" style="--tc:#173F7A;--tb:#E7F0FC;--tm:#3B7DD8">GCSE RS<small></small></a>
         <div class="t off">Philosophy and Ethics<small>Coming soon</small></div>
       </div>
     </section>
@@ -150,10 +150,10 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
 /* Level and XP on each tile come from that hub's own saved progress (each hub keeps its own, so nothing is shared). */
 var LV = [0, 250, 600, 1100, 1800, 2700, 3900, 5500, 7600, 10200, 13500, 17500, 22500, 28500, 36000, 50000];
 function xpOf(key) { try { var o = JSON.parse(localStorage.getItem(key) || 'null'); return o && o.total > 0 ? o.total : 0; } catch (e) { return 0; } }
-function lvOf(x) { var i = 0; LV.forEach(function (v, k) { if (x >= v) i = k; }); return i + 1; }
+function lvOf(x, arr) { var i = 0; (arr || LV).forEach(function (v, k) { if (x >= v) i = k; }); return i + 1; }
 document.querySelectorAll('a.t[data-xp]').forEach(function (a) {
   var x = xpOf(a.getAttribute('data-xp'));
-  if (x) a.querySelector('small').textContent = 'Level ' + lvOf(x) + ' · ' + x.toLocaleString() + ' XP';
+  if (x) a.querySelector('small').textContent = 'Level ' + lvOf(x, a.getAttribute('data-lv') ? a.getAttribute('data-lv').split(',').map(Number) : null) + ' · ' + x.toLocaleString() + ' XP';
   a.addEventListener('click', function () {
     try { localStorage.setItem('hub_last', JSON.stringify({href: a.getAttribute('href'), name: a.childNodes[0].textContent, xp: a.getAttribute('data-xp')})); } catch (e) {}
   });
@@ -163,7 +163,7 @@ try {
   if (last && last.href) {
     var c = document.getElementById('cont'); c.href = last.href;
     document.getElementById('cont-t').textContent = 'Continue: ' + last.name;
-    var x = xpOf(last.xp); document.getElementById('cont-s').textContent = x ? 'Level ' + lvOf(x) + ' · ' + x.toLocaleString() + ' XP' : 'Pick up where you left off';
+    var x = xpOf(last.xp); document.getElementById('cont-s').textContent = x ? 'Level ' + lvOf(x, a.getAttribute('data-lv') ? a.getAttribute('data-lv').split(',').map(Number) : null) + ' · ' + x.toLocaleString() + ' XP' : 'Pick up where you left off';
     c.classList.add('show');
   }
 } catch (e) {}

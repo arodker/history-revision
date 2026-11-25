@@ -3079,6 +3079,8 @@ Promise.all([
   KC = remap(kc);
   SOWA = remap(sw);
   KWS = remap(kw);
+  // key and command words also feed Mixed Retrieval, Boss battle and Whack-a-fact
+  RQ = RQ.concat(KWS.map(k => ({paper:k.paper, pn:k.pn, unit:k.unit, q:(k.cmd ? 'Command word: ' : 'Key word: ') + k.def, a:k.term, alt:k.alt || [], kw:1})));
   window._dataLoaded = true;
   markSoon();
   // Refresh any visible modes
@@ -5133,7 +5135,7 @@ const ARC_WHEN_RE = /^(when|in which year|in what year|what year)\b/i;
 function arcRqItem(q) { return Object.assign({}, q, {date: String(q.a).trim(), event: q.q, src: 'rq'}); }
 function arcRqYears() { return arcRqPool().filter(q => ARC_WHEN_RE.test(q.q) && ARC_DATE_RE.test(String(q.a).trim())).map(arcRqItem); }
 function arcKind(it) { const s = String(it.date); return it.src !== 'rq' ? 'y' : (ARC_WHEN_RE.test(it.q) && ARC_DATE_RE.test(s) ? 'y' : (/^[\d,.%]+$/.test(s) ? 'n' : 't')); }
-function arcWhPool() { return arcDatesOnly().map(d => Object.assign({}, d, {src: 'dt'})).concat(arcRqPool().filter(q => { const a = String(q.a).trim(); return a.length > 0 && a.length <= 30; }).map(arcRqItem).filter(it => arcKind(it) !== 't')); }
+function arcWhPool() { return arcDatesOnly().map(d => Object.assign({}, d, {src: 'dt'})).concat(arcRqPool().filter(q => { const a = String(q.a).trim(); return a.length > 0 && a.length <= 30; }).map(arcRqItem).filter(it => arcKind(it) !== 't' || it.kw)); }
 function arcMode(it) { return it.src === 'rq' ? 'rapid' : 'date'; }
 function arcMixOrder(pool) {
   const a = shuffle(pool.filter(x => x.src !== 'rq')), b = shuffle(pool.filter(x => x.src === 'rq'));
@@ -6198,7 +6200,7 @@ setTimeout(() => { try { bdgCheck(false); bdgRenderHome(); } catch (e) {} }, 150
   if (canHover) { el.addEventListener('mouseenter', () => { if (!el.dataset.pin) set(true); }); el.addEventListener('mouseleave', () => { if (!el.dataset.pin) set(false); }); }
 })();
 // ----- exam countdown (edit dates here: [label, 'YYYY-MM-DD'])
-const EXAMS = []; // RS exam dates not supplied yet
+const EXAMS = [['December mock', '2026-12-07'], ['Paper 1 mock', '2027-02-08'], ['Paper 2 mock', '2027-02-22'], ['Paper 1 (Islam)', '2027-05-13'], ['Paper 2 (Christianity)', '2027-05-21']];
 function examCountRender() {
   const t0 = new Date(); t0.setHours(0, 0, 0, 0);
   const all = EXAMS.map(e => { const p = e[1].split('-'); const d = new Date(+p[0], +p[1] - 1, +p[2]); return {n: e[0], d: d, days: Math.round((d - t0) / 864e5)}; }).filter(e => e.days >= 0);
@@ -6562,7 +6564,7 @@ function qzBlank(item) {
 function qzMake(kind, item) {
   let c;
   if (kind === 'sowa') { const b = qzBlank(item); c = {item, targets:[b.gap], options:[b.gap].concat(b.d), html:b.html, tag:item.type, ask:'Fill the gap in the quote.'}; }
-  else c = {item, targets:[item.term].concat(item.alt || []), options:[item.term].concat(item.d), html:escHtml(item.def), tag:'Key word', ask:'Which key word is this?'};
+  else c = {item, targets:[item.term].concat(item.alt || []), options:[item.term].concat(item.d), html:escHtml(item.def), tag:item.cmd ? 'Command word' : 'Key word', ask:item.cmd ? 'Which command word is this?' : 'Which key word is this?'};
   c.opts = shuffle(c.options.slice()); return c;
 }
 function qzPoolFor(kind) { return (kind === 'sowa' ? SOWA : KWS).filter(x => inScope(x)); }
@@ -6593,6 +6595,7 @@ function qzCountdown(missedOnly) {
 }
 function qzStart(missedOnly) {
   let pool = missedOnly && QZ.missed.length ? QZ.missed.slice() : qzPoolFor(QZ.kind);
+  const seenT = {}; pool = pool.filter(x => { const k = x.term; if (!k) return true; if (seenT[k]) return false; seenT[k] = 1; return true; });
   QZ.pool = shuffle(pool.slice()).slice(0, Math.min(pool.length, QZ.n));
   QZ.idx = 0; QZ.ok = 0; QZ.bad = 0; QZ.streak = 0; QZ.missed = []; QZ.hist = []; QZ.view = 0; QZ.locked = false;
   QZ.cur = qzMake(QZ.kind, QZ.pool[0]); qzDraw();
