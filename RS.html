@@ -1140,7 +1140,7 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
     <div class="step-lbl"><span class="step-n">1</span>Set your progress</div>
   <div class="up-card up-col" id="up-card">
     <div class="up-head" id="up-tog" role="button" tabindex="0" aria-expanded="false" style="cursor:pointer"><span class="up-title">Set how much you have studied</span><span class="up-pos" id="up-pos"></span><span class="xp-chev">▾</span></div><div id="up-body">
-    <div style="position:relative;margin-top:.9rem"><div id="up-mock" aria-hidden="true" style="position:absolute;top:-.85rem;bottom:0;width:0;border-left:1px dashed rgba(220,38,38,.55);pointer-events:none;z-index:1"><span style="position:absolute;top:0;right:4px;transform:translateY(-2px);font-size:.56rem;font-weight:500;color:rgba(220,38,38,.7);white-space:nowrap;line-height:1">Y11 mocks</span></div>
+    <div style="position:relative;margin-top:.9rem"><div id="up-mock" aria-hidden="true" style="position:absolute;top:-.85rem;bottom:0;width:0;border-left:1px dashed rgba(220,38,38,.55);pointer-events:none;z-index:1"><span style="position:absolute;top:0;right:4px;transform:translateY(-2px);font-size:.56rem;font-weight:500;color:rgba(220,38,38,.7);white-space:nowrap;line-height:1">Dec mocks</span></div><div id="up-mock2" aria-hidden="true" style="position:absolute;top:-.85rem;bottom:0;width:0;border-left:1px dashed rgba(220,38,38,.55);pointer-events:none;z-index:1"><span style="position:absolute;top:0;right:4px;transform:translateY(-2px);font-size:.56rem;font-weight:500;color:rgba(220,38,38,.7);white-space:nowrap;line-height:1">Feb mocks</span></div>
     <input type="range" id="up-range" min="1" max="15" step="1" value="15" oninput="uptoPreview(this.value)" onchange="uptoSave(this.value)" aria-label="Course position" style="position:relative"></div>
     <div class="up-ticks" id="up-ticks"></div>
     </div>
@@ -4442,15 +4442,16 @@ function uptoRender() {
   if (mk) {
     const wrap = mk.parentNode, sc = pvScopes();
     const place = (el, pos) => { el.style.left = 'calc(9px + (100% - 18px) * ' + ((pos - 1) / (COURSE_FLAT.length - 1)) + ')'; };
-    place(mk, sc[2].pos);
+    place(mk, sc[1].pos);
+    const mk2 = document.getElementById('up-mock2'); if (mk2) place(mk2, sc[2].pos);
   }
   uptoPaint(uptoPos());
   ['up-ticks', 'pv-ticks'].forEach(id => {
     const t = document.getElementById(id);
     if (t && !t.children.length) {
-      t.innerHTML = ['Y9','Y10','Y11'].map(y => {
+      t.innerHTML = ['Y9','Y10'].map(y => {
         const ks = COURSE_ORDER.filter(p => COURSE_YEAR[p] === y); const wt = ks.length - (y === 'Y9' ? 1 : 0);
-        const yc = {Y9:'#16A34A',Y10:'#F97316',Y11:'#2563EB'}[y];
+        const yc = {Y9:'#16A34A',Y10:'#F97316'}[y];
         return '<span style="flex:' + wt + ';border-color:' + yc + ';background:color-mix(in srgb,' + yc + ' 14%,transparent);color:' + yc + ';font-weight:700">' + y + '</span>';
       }).join('');
     }
@@ -4860,24 +4861,31 @@ function pvNextIsMock() {
   const up = EXAMS.map(e => { const p = e[1].split('-'); return {n: e[0], d: new Date(+p[0], +p[1] - 1, +p[2])}; }).filter(e => e.d >= t0).sort((x, y) => x.d - y.d);
   return !!up.length && /mock/i.test(up[0].n);
 }
+function pvRecIdx() {
+  const t0 = new Date(); t0.setHours(0, 0, 0, 0);
+  const up = EXAMS.map(e => { const p = e[1].split('-'); return {n: e[0], d: new Date(+p[0], +p[1] - 1, +p[2])}; }).filter(e => e.d >= t0).sort((x, y) => x.d - y.d);
+  if (!up.length) return 3;
+  if (/dec/i.test(up[0].n)) return 1;
+  if (/mock/i.test(up[0].n)) return 2;
+  return 3;
+}
 function pvEnsureScope() {
   const cur = uptoPos(), sc = pvScopes();
-  const d = sc[pvNextIsMock() ? 2 : 3].pos;
+  const d = sc[pvRecIdx()].pos;
   if (cur !== d) { localStorage.setItem(LS_UPTO, String(d)); uptoRender(); }
 }
 function pvScopes() {
   const L = COURSE_FLAT.length;
   const last = y => { let n = 0; COURSE_FLAT.forEach((u, i) => { if (COURSE_YEAR[u.paper] === y) n = i + 1; }); return n || L; };
   return [
-    {k:'eoy9', n:'Year 9 end-of-year exams', s:'Units 1 to ' + last('Y9') + ' (up to Resource Management)', pos:last('Y9')},
-    {k:'eoy', n:'Year 10 end-of-year exams', s:'Units 1 to ' + last('Y10') + ' (up to London)', pos:last('Y10')},
-    {k:'mock', n:'Year 11 mocks', s:'Units 1 to 12 (up to Weather Hazards)', pos:Math.min(L, 12)},
-    {k:'real', n:'Real GCSE exams', s:'All units built so far', pos:L}
-  ];
-}
+    {k:'eoy9', n:'Year 9 end-of-year exams', s:'Units 1 to ' + last('Y9') + ' (up to Living the Christian Life)', pos:last('Y9')},
+    {k:'mock1', n:'Year 10 December mocks', s:'Units 1 to 6 (up to Peace and Conflict)', pos:Math.min(L, 6)},
+    {k:'mock2', n:'Year 10 February mocks', s:'Units 1 to 7 (up to Living the Muslim Life)', pos:Math.min(L, 7)},
+    {k:'real', n:'Real GCSE exams', s:'All 8 units', pos:L}
+  ];}
 function parentSetScope(pos) { uptoSave(pos); parentShowSetup(); }
 function parentShowSetup() {
-  if (localStorage.getItem(LS_UPTO) === null) { try { localStorage.setItem(LS_UPTO, String(pvScopes()[pvNextIsMock() ? 2 : 3].pos)); uptoRender(); } catch (e) {} }
+  if (localStorage.getItem(LS_UPTO) === null) { try { localStorage.setItem(LS_UPTO, String(pvScopes()[pvRecIdx()].pos)); uptoRender(); } catch (e) {} }
   PV.midRound = false;
   document.getElementById('pr-hero').style.display = 'flex';
   document.getElementById('pv-setup').style.display = 'block';
@@ -4891,7 +4899,7 @@ function parentShowSetup() {
       '<span class="pr-ptick"></span><b>' + PV_LBL[p] + '</b>' + (lock ? '<small>Not covered yet</small>' : '') + '</button>';
   }).join('') + '</div><div class="pr-note">Only asks about units covered so far.</div></details>';
   const cur = uptoPos();
-  const recPos = pvScopes()[pvNextIsMock() ? 2 : 3].pos;
+  const recPos = pvScopes()[pvRecIdx()].pos;
   const cs = pvScopes().find(s => s.pos === cur);
   document.getElementById('pv-scope').innerHTML = '<select aria-label="Revising for" onchange="parentSetScope(+this.value)" style="width:100%;min-height:50px;padding:.5rem 2.4rem .5rem .9rem;border:2px solid var(--border2);border-radius:12px;background:var(--card) url(&quot;data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'14\' height=\'9\'%3E%3Cpath d=\'M1 1l6 6 6-6\' fill=\'none\' stroke=\'%23888\' stroke-width=\'2\'/%3E%3C/svg%3E&quot;) no-repeat right .9rem center;-webkit-appearance:none;appearance:none;color:var(--text);font-size:1rem;font-weight:700">' + pvScopes().map(s =>
     '<option value="' + s.pos + '"' + (cur === s.pos ? ' selected' : '') + '>' + s.n + (s.pos === recPos ? ' (recommended)' : '') + '</option>').join('') + '</select>' +
@@ -6151,7 +6159,7 @@ function examCountRender() {
   dot.innerHTML = '<span class="cal-pre">' + lbl + ': </span><b>' + (n.days === 0 ? 'today' : n.days + (n.days === 1 ? ' day' : ' days')) + '</b>';
   const lk = document.getElementById('exam-luck'), td = all.filter(e => e.days === 0);
   if (lk) { lk.style.display = td.length ? 'block' : 'none'; if (td.length) {
-      const M = [['\u{1F340}', 'Good luck Y11!', 'You have done the work. Trust it.'], ['\u{1F389}', 'Today is the day!', 'Read every question twice, then write.'], ['\u{1F4AA}', 'You have got this!', 'Deep breath. One question at a time.'], ['\u{1F31F}', 'Time to shine, Y11!', 'Every answer you remember started as a flashcard.'], ['\u{1F3C6}', 'Go and show them!', 'You have got this.'], ['\u{1F9E0}', 'Stay calm, stay sharp', 'Plan your time and keep writing.']];
+      const M = [['\u{1F340}', 'Good luck Y10!', 'You have done the work. Trust it.'], ['\u{1F389}', 'Today is the day!', 'Read every question twice, then write.'], ['\u{1F4AA}', 'You have got this!', 'Deep breath. One question at a time.'], ['\u{1F31F}', 'Time to shine, Y11!', 'Every answer you remember started as a flashcard.'], ['\u{1F3C6}', 'Go and show them!', 'You have got this.'], ['\u{1F9E0}', 'Stay calm, stay sharp', 'Plan your time and keep writing.']];
       if (window.__luckIdx === undefined) window.__luckIdx = Math.floor(Math.random() * M.length);
       const m = M[window.__luckIdx];
       lk.innerHTML = '<div style="font-size:1.35rem;font-weight:800;letter-spacing:.01em">' + m[0] + ' ' + m[1] + ' ' + m[0] + '</div><div style="font-size:.88rem;font-weight:600;margin-top:.15rem">' + td.map(e => e.n.replace('Paper ', 'P').replace(/ mock/i, ' Mock')).join(' and ') + ' today</div>';
