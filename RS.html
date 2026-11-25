@@ -5423,18 +5423,18 @@ function stOver() {
     '<button class="arc-btn" onclick="stStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
 }
 // ----- Boss battle -----
-const BOSSES = [['Erosion Troll','👹'], ['Glacier Mammoth','🐘'], ['Gridlock Ghoul','👻'], ['Jungle Anaconda','🐍'], ['Typhoon Kraken','🐙'], ['The Supervolcano','🌋']];
+const BOSSES = [['Procrastination Gremlin','👹'], ['Cramming Zombie','🧟'], ['Highlighter Vampire','🧛'], ['SoWA Serpent','🐍'], ['Mock Exam Kraken','🐙'], ['Chief Examiner','🧙']];
 const BOSS_HP = [6, 8, 10, 12, 15, 20], BOSS_SECS = 12, BOSS_HINTS = 3;
 const BOSS_TAUNTS = [
-  ['That answer just fell off the cliff.', 'Your revision is wearing away, one wave at a time.', 'Attrition, abrasion, and now your marks.', 'That answer has been eroded to nothing.', 'I have seen more solid headlands than your knowledge.', 'Hydraulic action? More like hydraulic wrong.'],
-  ['Your answer has gone cold.', 'Frozen solid. Not one fact moved.', 'You are in a rut, and it is U-shaped.', 'That answer has been scraped clean off.', 'Your revision has melted away.', 'Slow and heavy, just like your thinking.'],
-  ['You are stuck in traffic. So is your answer.', 'Rush hour in your brain and nothing is moving.', 'That answer did not survive the commute.', 'Too much congestion in that answer.', 'Urban sprawl? That answer sprawled everywhere.', 'Your revision has been bulldozed for a car park.'],
-  ['That answer is lost in the canopy.', 'You have been deforested of facts.', 'I am squeezing the marks right out of you.', 'It is a jungle in there. Mostly weeds.', 'No biodiversity in that answer. Just one wrong idea.', 'Your marks are slithering away.'],
-  ['A storm is coming for your grade.', 'You are out of your depth.', 'Low pressure. Low marks.', 'Your answer has been swept out to sea.', 'Flooded with mistakes again.', 'That answer did not survive the storm surge.'],
-  ['I am overdue, and so are your revision notes.', 'One eruption and your grade is ash.', 'Everything you know is about to be buried.', 'Every other boss warned you about this.', 'Have you even read the specification? Brave.', 'The whole sky goes dark when I blow.']
+  ['I will revise tomorrow. So will you.', 'Plenty of time left. Said every student ever.', 'Have you checked your phone recently? Go on.', 'Wrong! Perhaps one more scroll through your phone will help.', 'That was the easy one, you know.', 'Revision can wait. Your mistakes cannot.'],
+  ['Did you cram that at 2am? It shows.', 'Brains... you seem to be missing yours.', 'Last night\'s cramming has gone already.', 'Forgotten already? I am not surprised.', 'You should have spaced it out, little survivor.', 'Mmm, forgotten facts. Delicious.'],
+  ['You highlighted the whole page, did you not?', 'Highlighting is not revising.', 'All that yellow and nothing stuck.', 'I have drained the answer right out of you.', 'Pretty colours. Shame about the memory.', 'Rereading your notes again? Bold strategy.'],
+  ['Hissss. Not the word I was looking for.', 'A gap in the quote, a gap in your revision.', 'Was that the Bible, the Qur\'an, or just a guess?', 'Close is not good enough. I want the exact word.', 'I swallowed that source whole. Have you learned any?', 'You can only quote what you have learned.'],
+  ['Your mock paper has sunk without trace.', 'Did you read the question? All of it?', 'Marks left on the table. I have them now.', 'Panic is not a strategy.', 'You wrote a paragraph. The question wanted a judgement.', 'Mock results day is coming. Bring a life jacket.'],
+  ['No marks awarded.', 'The mark scheme disagrees with you.', 'That is a description. I asked you to evaluate.', 'That is Level 1. Generous, really.', 'That is not what the specification says.', 'I will be quoting that in my examiner\'s report.']
 ];
-const BOSS_LATE = ['Too slow! The lava is flowing.', 'Tick tock. The tide is coming in.', 'Did you drift off with the tectonic plates?', 'The clock wins again.'];
-const BOSS_FINAL = ['Your marks have washed up on my beach.', 'Frozen out. Come back when you have thawed.', 'Stuck in traffic with the rest of your revision.', 'Squeezed dry. There is not a mark left in you.', 'Down you go. The deep keeps your grade now.', 'I told you the sky would go dark.'];
+const BOSS_LATE = ['Too slow!', 'Tick tock. Time is up.', 'Did you fall asleep?', 'The clock wins again.'];
+const BOSS_FINAL = ['Revise tomorrow. I will wait.', 'Brains... yours are all mine now.', 'All that yellow and still nothing stuck.', 'Not one exact word left in your head.', 'Down to the depths with your mock paper.', 'Level 1. I will mention you in my report.'];
 const BOSS_LAST = ['That is your last heart. The ground is shaking.', 'One more mistake and you are swept away.'];
 function bossTaunt(g, late) {
   const pool = g.lives <= 1 ? BOSS_LAST : (late ? BOSS_LATE.concat(BOSS_TAUNTS[g.lv % BOSS_TAUNTS.length].slice(0, 2)) : BOSS_TAUNTS[g.lv % BOSS_TAUNTS.length]);
@@ -5837,19 +5837,19 @@ const BADGES = [
   {id:'nine', e:'🐈', n:'Nine lives', h:'Defeat a boss on your last heart', c:['#FAECE7','#D85A30']},
   {id:'untouch', e:'🛡️', n:'Untouchable', h:'Defeat every boss in one run without losing a heart', c:['#E6F1FB','#378ADD']},
   {id:'bruised', e:'🤕', n:'Bruised, not beaten', h:'Lose 5 boss fights and keep coming back', c:['#FBEAF0','#D4537E']},
-  {id:'arcade', e:'🕹️', n:'Arcade regular', h:'Finish a round of all four arcade games', c:['#EEEDFE','#7F77DD']},
+  {id:'arcade', e:'🕹️', n:'Arcade regular', h:'Finish a round of both arcade games', c:['#EEEDFE','#7F77DD']},
   {id:'streak3', e:'📅', n:'Hat-trick', h:'Earn 200 XP a day, 3 days in a row', c:['#EAF3DE','#639922']},
   {id:'streak7', e:'🗓️', n:'Week warrior', h:'Earn 200 XP a day, 7 days in a row', c:['#EAF3DE','#3B6D11']},
   {id:'streak14', e:'🌟', n:'Fortnight', h:'Earn 200 XP a day, 14 days in a row', c:['#FAEEDA','#EF9F27']},
   {id:'maxed', e:'💪', n:'Maxed out', h:'Reach the daily XP limit', c:['#FCEBEB','#E24B4A']},
   {id:'traveller', e:'🕰️', n:'Jet setter', h:'Get 15 flashcards right in four different units in one day', c:['#EEEDFE','#7F77DD']},
-  {id:'ice', e:'❄️', n:'Ice cold', h:'Defeat the Supervolcano on your last heart', c:['#E6F1FB','#378ADD']},
-  {id:'troll', e:'👹', n:'Troll banisher', h:'Defeat the Erosion Troll', c:['#F1EFE8','#8A6D3B']},
-  {id:'mammoth', e:'🐘', n:'Mammoth melter', h:'Defeat the Glacier Mammoth', c:['#E6F1FB','#378ADD']},
-  {id:'ghoul', e:'👻', n:'Ghoul buster', h:'Defeat the Gridlock Ghoul', c:['#F1EFE8','#5F5E5A']},
-  {id:'anaconda', e:'🐍', n:'Snake charmer', h:'Defeat the Jungle Anaconda', c:['#EAF3DE','#3B6D11']},
-  {id:'kraken', e:'🐙', n:'Kraken wrangler', h:'Defeat the Typhoon Kraken', c:['#E1F5EE','#0F6E56']},
-  {id:'volcano', e:'🌋', n:'Eruption stopper', h:'Defeat the Supervolcano', c:['#FAECE7','#D85A30']},
+  {id:'ice', e:'😰', n:'Last gasp', h:'Defeat the Chief Examiner on your last heart', c:['#E6F1FB','#378ADD']},
+  {id:'troll', e:'👹', n:'Gremlin zapper', h:'Defeat the Procrastination Gremlin', c:['#F1EFE8','#8A6D3B']},
+  {id:'mammoth', e:'🧟', n:'Zombie slayer', h:'Defeat the Cramming Zombie', c:['#E6F1FB','#378ADD']},
+  {id:'ghoul', e:'🧛', n:'Vampire hunter', h:'Defeat the Highlighter Vampire', c:['#F1EFE8','#5F5E5A']},
+  {id:'anaconda', e:'🐍', n:'Serpent charmer', h:'Defeat the SoWA Serpent', c:['#EAF3DE','#3B6D11']},
+  {id:'kraken', e:'🐙', n:'Kraken wrangler', h:'Defeat the Mock Exam Kraken', c:['#E1F5EE','#0F6E56']},
+  {id:'volcano', e:'🧙', n:'Top of the class', h:'Defeat the Chief Examiner', c:['#FAECE7','#D85A30']},
   {id:'collector', e:'🏴‍☠️', n:'Boss collector', h:'Defeat all six bosses', c:['#F1EFE8','#444441']},
   {id:'buzzer', e:'🔔', n:'Buzzer beater', h:'Get a boss answer right with under a second left', c:['#FAECE7','#D85A30']},
   {id:'special', e:'🔬', n:'Specialist', h:'Get 90% or more over at least 150 answers in one unit', c:['#E1F5EE','#0F6E56']},
@@ -6076,7 +6076,7 @@ bossMark = function (ok) {
     if (!ok) g.slip = true;
     else if (g.leftMs != null && g.leftMs > 0 && g.leftMs < 1000) bdgAward('buzzer');
     g.leftMs = null;
-    if (g.typed && /volcano/i.test(g.typed)) bdgAward('teacher');
+    if (g.typed && /examiner/i.test(g.typed)) bdgAward('teacher');
   }
   return _bdgMark.apply(this, arguments);
 };
@@ -6088,13 +6088,13 @@ bossDeath = function () {
     if (!g.slip) { if (g.lv >= 2) bdgAward('flawless'); g.clean = (g.clean || 0) + 1; if (g.clean >= BOSSES.length) bdgAward('untouch'); } else g.clean = 0;
     if (g.lives === 1) bdgAward('nine');
     const nm = (BOSSES[g.lv % BOSSES.length] || [])[0];
-    if (nm === 'Erosion Troll') bdgAward('troll');
-    if (nm === 'Glacier Mammoth') bdgAward('mammoth');
-    if (nm === 'Gridlock Ghoul') bdgAward('ghoul');
-    if (nm === 'Jungle Anaconda') bdgAward('anaconda');
-    if (nm === 'Typhoon Kraken') bdgAward('kraken');
-    if (nm === 'The Supervolcano') bdgAward('volcano');
-    if (nm === 'The Supervolcano' && g.lives === 1) bdgAward('ice');
+    if (nm === 'Procrastination Gremlin') bdgAward('troll');
+    if (nm === 'Cramming Zombie') bdgAward('mammoth');
+    if (nm === 'Highlighter Vampire') bdgAward('ghoul');
+    if (nm === 'SoWA Serpent') bdgAward('anaconda');
+    if (nm === 'Mock Exam Kraken') bdgAward('kraken');
+    if (nm === 'Chief Examiner') bdgAward('volcano');
+    if (nm === 'Chief Examiner' && g.lives === 1) bdgAward('ice');
   }
   return _bdgDeath.apply(this, arguments);
 };
@@ -6119,7 +6119,7 @@ bossOver = function () {
 var _bdgHS = arcSetHS;
 arcSetHS = function (k) {
   const s = bsLoad(); s.games = s.games || {}; s.games[k] = 1; bsSave(s);
-  if (['mt', 'wh', 'st', 'boss'].every(x => s.games[x])) bdgAward('arcade');
+  if (['wh', 'boss'].every(x => s.games[x])) bdgAward('arcade');
   return _bdgHS.apply(this, arguments);
 };
 var _bdgLearn = bsLearn;
@@ -6259,7 +6259,7 @@ function arcFx(ok) {
 // ----- game intro: rules + 3-2-1 -----
 var ARC_RULES = {
   eol: ['🧩', 'Match the dates', ['Tap an event, then the date it happened.', 'Clear the board in 30 seconds to go again with more pairs.', 'A wrong match costs a heart. You have three.']],
-  boss: ['🐉', 'Boss battle', ['Type the answer to hit the boss.', 'You get 12 seconds a question. Three hints for the whole fight, each shows the first letter.', 'A wrong answer costs a heart. Beat every second boss to win one back. Six bosses. The last one is the Supervolcano.']],
+  boss: ['🐉', 'Boss battle', ['Type the answer to hit the boss.', 'You get 12 seconds a question. Three hints for the whole fight, each shows the first letter.', 'A wrong answer costs a heart. Beat every second boss to win one back. Six bosses. The last one is the Chief Examiner.']],
   wh: ['🔨', 'Whack-a-fact', ['One question stays at the top.', 'Answers pop up. Whack the right one before it sinks.', 'A wrong tap, or letting the right one escape, costs a heart.']],
   st: ['🧱', 'Stack it', ['Tap the oldest event first, then the next oldest.', 'You get 5 seconds a block.', 'Every tower adds one more block. Three hearts.']]
 };
