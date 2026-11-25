@@ -963,7 +963,7 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 #s-pick h1{font-size:1.2rem!important}
 #s-pick .yr-pill{font-size:.68rem;padding:.15rem .5rem}
 #s-pick .up-card{margin:.4rem 0;padding:.4rem .7rem .45rem}
-#up-card.up-col #up-body{display:none}#up-card:not(.up-col) .xp-chev{transform:rotate(180deg)}#up-card .up-head{display:flex;align-items:baseline;gap:.5rem}#up-card .up-pos{flex:1;text-align:right;font-weight:700}
+#up-card.dec-on input[type=range]{opacity:.35}#up-dec.on{background:#7C5CD6;border-color:#7C5CD6;color:#fff}#up-card.up-col #up-body{display:none}#up-card:not(.up-col) .xp-chev{transform:rotate(180deg)}#up-card .up-head{display:flex;align-items:baseline;gap:.5rem}#up-card .up-pos{flex:1;text-align:right;font-weight:700}
 #s-pick .start-line{font-size:.85rem;margin:.1rem 0 .4rem}
 .step-lbl{display:flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:700;margin:.5rem 0 .2rem}
 .step-n{display:inline-flex;align-items:center;justify-content:center;width:1.2rem;height:1.2rem;border-radius:50%;background:var(--text);color:var(--bg);font-size:.7rem;font-weight:800;flex:none}
@@ -1140,9 +1140,9 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
     <div class="step-lbl"><span class="step-n">1</span>Set your progress</div>
   <div class="up-card up-col" id="up-card">
     <div class="up-head" id="up-tog" role="button" tabindex="0" aria-expanded="false" style="cursor:pointer"><span class="up-title">Set how much you have studied</span><span class="up-pos" id="up-pos"></span><span class="xp-chev">▾</span></div><div id="up-body">
-    <div style="position:relative;margin-top:.9rem"><div id="up-mock" aria-hidden="true" style="position:absolute;top:-.85rem;bottom:0;width:0;border-left:1px dashed rgba(220,38,38,.55);pointer-events:none;z-index:1"><span style="position:absolute;top:0;right:4px;transform:translateY(-2px);font-size:.56rem;font-weight:500;color:rgba(220,38,38,.7);white-space:nowrap;line-height:1">Dec mocks</span></div><div id="up-mock2" aria-hidden="true" style="position:absolute;top:-.85rem;bottom:0;width:0;border-left:1px dashed rgba(220,38,38,.55);pointer-events:none;z-index:1"><span style="position:absolute;top:0;right:4px;transform:translateY(-2px);font-size:.56rem;font-weight:500;color:rgba(220,38,38,.7);white-space:nowrap;line-height:1">Feb mocks</span></div>
-    <input type="range" id="up-range" min="1" max="15" step="1" value="15" oninput="uptoPreview(this.value)" onchange="uptoSave(this.value)" aria-label="Course position" style="position:relative"></div>
+    <div style="position:relative;margin-top:.9rem"><input type="range" id="up-range" min="1" max="8" step="1" value="8" oninput="uptoPreview(this.value)" onchange="uptoSave(this.value)" aria-label="Course position" style="position:relative"></div>
     <div class="up-ticks" id="up-ticks"></div>
+    <button class="hub-pill" id="up-dec" onclick="decToggle()" aria-pressed="false" style="margin-top:.5rem">📝 December mock</button><span class="up-decnote" style="font-size:.68rem;color:var(--muted);margin-left:.4rem">Opens only Muslim Beliefs, Marriage and the Family, Living the Christian Life and Peace and Conflict</span>
     </div>
   </div>
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
@@ -4275,6 +4275,9 @@ const PAPER_NAME = SLOT_SHORT;
 // ═══════════════════════════════════════════
 const COURSE_ORDER = SLOTS;
 const LS_UPTO = 'rs_course_pos';
+const LS_DEC = 'rs_dec';
+const DEC_SET = ['p3', 'u5', 'u6', 'u7']; // December mock: Muslim Beliefs, Marriage and the Family, Living the Christian Life, Peace and Conflict
+function decOn() { try { return localStorage.getItem(LS_DEC) === '1'; } catch (e) { return false; } }
 const COURSE_FLAT = [];
 COURSE_ORDER.forEach(p => P[p].units.forEach(u => COURSE_FLAT.push({paper:p, unit:u})));
 const UNIT_IDX = {};
@@ -4284,11 +4287,14 @@ function uptoPos() {
   const v = parseInt(localStorage.getItem(LS_UPTO), 10);
   return (v >= 1 && v <= COURSE_FLAT.length) ? v : COURSE_FLAT.length;
 }
+function flatOpen(i) { return decOn() ? DEC_SET.includes(COURSE_FLAT[i].paper) : i < uptoPos(); }
 function paperReached(p) {
+  if (decOn()) return DEC_SET.includes(p);
   return COURSE_FLAT.findIndex(c => c.paper === p) < uptoPos();
 }
 // Cards and topics have a unit; dates and quiz questions only have a paper.
 function inScope(it) {
+  if (decOn()) return DEC_SET.includes(it.paper);
   const pos = uptoPos();
   if (pos >= COURSE_FLAT.length) return true;
   const i = UNIT_IDX[it.paper + '|' + it.unit];
@@ -4296,6 +4302,7 @@ function inScope(it) {
   return paperReached(it.paper);
 }
 function uptoLabel(pos) {
+  if (decOn()) return 'December mock';
   pos = parseInt(pos, 10);
   if (pos >= COURSE_FLAT.length) return 'Whole course';
   const c = COURSE_FLAT[pos - 1];
@@ -4323,14 +4330,14 @@ function hubRender2(p) {
     .sort((a, b) => (a.flag === b.flag ? a.rank - b.rank : (a.flag === 'weak' ? -1 : 1)))[0];
   document.getElementById('hub-weak').innerHTML = w ? '<div class="wk-nudge" style="margin:0 0 .8rem;border-left-color:' + (w.flag === 'weak' ? '#D9534F' : '#C98A00') + '"><div style="min-width:0"><b>' + (w.flag === 'weak' ? 'Needs work: ' : 'Revisit: ') + escHtml(w.c.unit) + '</b><small>' + escHtml(w.text) + '</small></div><button onclick="practiseUnit(' + w.i + ')">Practise</button></div>' : '';
   if (hubSel.paper !== p) hubSel = {paper:p, all:true, set:[]};
-  const open = P[p].units.map((u, k) => (idx0 + k) < pos ? u : null);
+  const open = P[p].units.map((u, k) => flatOpen(idx0 + k) ? u : null);
   hubSel.set = hubSel.set.filter(u => open.includes(u));
   if (!hubSel.all && !hubSel.set.length) hubSel.all = true;
   const cardsOf = u => FD.filter(c => c.paper === p && c.unit === u && !/^Case Study/i.test(c.front));
   const allCards = open.filter(Boolean).reduce((a, u) => a.concat(cardsOf(u)), []);
   const rows = P[p].units.map((u, k) => {
     const cards = cardsOf(u), done = cards.filter(c => mast[fdKey(c)]).length;
-    const lock = (idx0 + k) >= pos;
+    const lock = !flatOpen(idx0 + k);
     const on = !lock && !hubSel.all && hubSel.set.includes(u);
     return '<button class="hub-row' + (lock ? ' lock' : '') + (on ? ' on' : '') + '" ' + (lock ? 'onclick="lockFlashUnit()"' : 'onclick="hubTog(' + k + ')" role="checkbox" aria-checked="' + on + '"') + '><span class="hub-dot' + (on ? ' on' : '') + '"></span><span class="hub-nm">' + escHtml(u) + '</span><span>' + (lock ? '🔒' : done + '/' + cards.length) + '</span></button>';
   }).join('');
@@ -4433,18 +4440,14 @@ function uptoRender() {
   const r = document.getElementById('up-range');
   if (!r) return;
   lockRender(); weakNudgeRender();
+  r.max = COURSE_FLAT.length;
   r.value = uptoPos();
+  const dc = document.getElementById('up-card'); if (dc) dc.classList.toggle('dec-on', decOn());
+  const db = document.getElementById('up-dec'); if (db) { db.classList.toggle('on', decOn()); db.setAttribute('aria-pressed', decOn() ? 'true' : 'false'); }
   document.getElementById('up-pos').textContent = uptoLabel(uptoPos());
   const pr = document.getElementById('pv-range'), pp = document.getElementById('pv-pos');
   if (pr) pr.value = uptoPos();
   if (pp) pp.textContent = uptoLabel(uptoPos());
-  const mk = document.getElementById('up-mock');
-  if (mk) {
-    const wrap = mk.parentNode, sc = pvScopes();
-    const place = (el, pos) => { el.style.left = 'calc(9px + (100% - 18px) * ' + ((pos - 1) / (COURSE_FLAT.length - 1)) + ')'; };
-    place(mk, sc[1].pos);
-    const mk2 = document.getElementById('up-mock2'); if (mk2) place(mk2, sc[2].pos);
-  }
   uptoPaint(uptoPos());
   ['up-ticks', 'pv-ticks'].forEach(id => {
     const t = document.getElementById(id);
@@ -4469,6 +4472,7 @@ function uptoPaint() {
   });
 }
 function uptoPreview(v) {
+  if (decOn()) { try { localStorage.setItem(LS_DEC, '0'); } catch (e) {} const dc = document.getElementById('up-card'); if (dc) dc.classList.remove('dec-on'); const db = document.getElementById('up-dec'); if (db) db.classList.remove('on'); }
   document.getElementById('up-pos').textContent = uptoLabel(v);
   const pr = document.getElementById('pv-range'), pp = document.getElementById('pv-pos'), hr = document.getElementById('up-range');
   if (pr && pr.value !== String(v)) pr.value = v;
@@ -4476,7 +4480,8 @@ function uptoPreview(v) {
   if (pp) pp.textContent = uptoLabel(v);
   uptoPaint(v);
 }
-function uptoSave(v) {
+function uptoSave(v, keepDec) {
+  if (!keepDec) { try { localStorage.setItem(LS_DEC, '0'); } catch (e) {} }
   localStorage.setItem(LS_UPTO, String(parseInt(v, 10)));
   uptoRender();
   if (typeof buildKPool === 'function' && currentPaper) buildKPool();
@@ -4690,7 +4695,7 @@ function xpDaysSince(ds) {
 function unitFlags(x) {
   const pos = uptoPos(), out = [];
   COURSE_FLAT.forEach((c, i) => {
-    if (i >= pos) return;
+    if (!flatOpen(i)) return;
     const rows = Object.keys(x.units).filter(k => k.split('|')[0] === c.paper && (k.split('|')[1] === c.unit)).map(k => x.units[k]);
     let n = 0, ok = 0, last = '';
     rows.forEach(r => { n += r.n; ok += r.ok; if (r.last > last) last = r.last; });
@@ -4864,28 +4869,34 @@ function pvNextIsMock() {
 function pvRecIdx() {
   const t0 = new Date(); t0.setHours(0, 0, 0, 0);
   const up = EXAMS.map(e => { const p = e[1].split('-'); return {n: e[0], d: new Date(+p[0], +p[1] - 1, +p[2])}; }).filter(e => e.d >= t0).sort((x, y) => x.d - y.d);
-  if (!up.length) return 3;
-  if (/dec/i.test(up[0].n)) return 1;
-  if (/mock/i.test(up[0].n)) return 2;
-  return 3;
+  if (up.length && /dec/i.test(up[0].n)) return 1;
+  return 2;
 }
 function pvEnsureScope() {
-  const cur = uptoPos(), sc = pvScopes();
-  const d = sc[pvRecIdx()].pos;
-  if (cur !== d) { localStorage.setItem(LS_UPTO, String(d)); uptoRender(); }
+  const sc = pvScopes(), t = sc[pvRecIdx()];
+  if (t.dec) { if (!decOn()) { try { localStorage.setItem(LS_DEC, '1'); } catch (e) {} uptoRender(); } }
+  else if (decOn() || uptoPos() !== t.pos) { try { localStorage.setItem(LS_DEC, '0'); localStorage.setItem(LS_UPTO, String(t.pos)); } catch (e) {} uptoRender(); }
 }
 function pvScopes() {
   const L = COURSE_FLAT.length;
   const last = y => { let n = 0; COURSE_FLAT.forEach((u, i) => { if (COURSE_YEAR[u.paper] === y) n = i + 1; }); return n || L; };
   return [
     {k:'eoy9', n:'Year 9 end-of-year exams', s:'Units 1 to ' + last('Y9') + ' (up to Living the Christian Life)', pos:last('Y9')},
-    {k:'mock1', n:'Year 10 December mocks', s:'Units 1 to 6 (up to Peace and Conflict)', pos:Math.min(L, 6)},
-    {k:'mock2', n:'Year 10 February mocks', s:'Units 1 to 7 (up to Living the Muslim Life)', pos:Math.min(L, 7)},
-    {k:'real', n:'Real GCSE exams', s:'All 8 units', pos:L}
-  ];}
-function parentSetScope(pos) { uptoSave(pos); parentShowSetup(); }
+    {k:'dec', n:'December mock', s:'Muslim Beliefs, Marriage and the Family, Living the Christian Life and Peace and Conflict only', dec:true, pos:L},
+    {k:'real', n:'February mocks and real GCSE exams', s:'All 8 units', pos:L}
+  ];
+}
+function decToggle() {
+  try { localStorage.setItem(LS_DEC, decOn() ? '0' : '1'); } catch (e) {}
+  uptoSave(uptoPos(), true);
+}
+function parentSetScope(v) {
+  if (v === 'dec') { try { localStorage.setItem(LS_DEC, '1'); } catch (e) {} uptoSave(uptoPos(), true); }
+  else uptoSave(+v);
+  parentShowSetup();
+}
 function parentShowSetup() {
-  if (localStorage.getItem(LS_UPTO) === null) { try { localStorage.setItem(LS_UPTO, String(pvScopes()[pvRecIdx()].pos)); uptoRender(); } catch (e) {} }
+  if (localStorage.getItem(LS_UPTO) === null) { try { pvEnsureScope(); localStorage.setItem(LS_UPTO, String(pvScopes()[pvRecIdx()].pos)); uptoRender(); } catch (e) {} }
   PV.midRound = false;
   document.getElementById('pr-hero').style.display = 'flex';
   document.getElementById('pv-setup').style.display = 'block';
@@ -4898,11 +4909,11 @@ function parentShowSetup() {
     return '<button class="pr-paper' + (on ? ' sel' : '') + '" style="--c:' + PAPER_COL[p] + (lock ? ';opacity:.45' : '') + '" onclick="parentTogglePaper(\'' + p + '\')">' +
       '<span class="pr-ptick"></span><b>' + PV_LBL[p] + '</b>' + (lock ? '<small>Not covered yet</small>' : '') + '</button>';
   }).join('') + '</div><div class="pr-note">Only asks about units covered so far.</div></details>';
-  const cur = uptoPos();
-  const recPos = pvScopes()[pvRecIdx()].pos;
-  const cs = pvScopes().find(s => s.pos === cur);
-  document.getElementById('pv-scope').innerHTML = '<select aria-label="Revising for" onchange="parentSetScope(+this.value)" style="width:100%;min-height:50px;padding:.5rem 2.4rem .5rem .9rem;border:2px solid var(--border2);border-radius:12px;background:var(--card) url(&quot;data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'14\' height=\'9\'%3E%3Cpath d=\'M1 1l6 6 6-6\' fill=\'none\' stroke=\'%23888\' stroke-width=\'2\'/%3E%3C/svg%3E&quot;) no-repeat right .9rem center;-webkit-appearance:none;appearance:none;color:var(--text);font-size:1rem;font-weight:700">' + pvScopes().map(s =>
-    '<option value="' + s.pos + '"' + (cur === s.pos ? ' selected' : '') + '>' + s.n + (s.pos === recPos ? ' (recommended)' : '') + '</option>').join('') + '</select>' +
+  const cur = uptoPos(), scs = pvScopes(), recI = pvRecIdx();
+  const curI = decOn() ? 1 : scs.findIndex(s => !s.dec && s.pos === cur);
+  const cs = scs[curI];
+  document.getElementById('pv-scope').innerHTML = '<select aria-label="Revising for" onchange="parentSetScope(this.value)" style="width:100%;min-height:50px;padding:.5rem 2.4rem .5rem .9rem;border:2px solid var(--border2);border-radius:12px;background:var(--card) url(&quot;data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'14\' height=\'9\'%3E%3Cpath d=\'M1 1l6 6 6-6\' fill=\'none\' stroke=\'%23888\' stroke-width=\'2\'/%3E%3C/svg%3E&quot;) no-repeat right .9rem center;-webkit-appearance:none;appearance:none;color:var(--text);font-size:1rem;font-weight:700">' + scs.map(s =>
+    '<option value="' + (s.dec ? 'dec' : s.pos) + '"' + (scs.indexOf(s) === curI ? ' selected' : '') + '>' + s.n + (scs.indexOf(s) === recI ? ' (recommended)' : '') + '</option>').join('') + '</select>' +
     '<div class="pr-note" style="margin-top:.4rem">' + (cs ? 'Covers ' + cs.s.charAt(0).toLowerCase() + cs.s.slice(1) + '.' : '') + '</div>';
   try { examCountRender(); } catch (e) {}
 }
