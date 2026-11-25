@@ -23,6 +23,10 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:stretch}
 @media (max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.grid{grid-template-columns:1fr}}
+.grid2{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:1rem}
+.grid2 .subj{flex:0 0 calc((100% - 2rem)/3)}
+@media (max-width:700px){.grid2 .subj{flex-basis:calc((100% - 1rem)/2)}}
+@media (max-width:480px){.grid2 .subj{flex-basis:100%}}
 .subj{background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:1rem 1rem .9rem;animation:up .3s ease backwards}
 .subj:nth-child(2){animation-delay:.05s}.subj:nth-child(3){animation-delay:.1s}
 .sh{display:flex;align-items:center;gap:.7rem;margin-bottom:.75rem}
@@ -63,7 +67,6 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
         <a href="civil-rights.html" class="t" data-xp="cr_xp" style="--tc:#5E2F02;--tb:#F5C48A;--tm:#C96A0A">Y13 Civil Rights<small></small></a>
         </div>
     </section>
-
     <section class="subj" style="--sc:#2E8B57">
       <div class="sh"><div class="ic">🌍</div><div><div class="sn">Geography</div></div></div>
       <div class="tl">
@@ -71,23 +74,6 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
         <div class="t off">A Level Geography<small>Coming soon</small></div>
       </div>
     </section>
-
-    <section class="subj" style="--sc:#B06AD0">
-      <div class="sh"><div class="ic">🧠</div><div><div class="sn">Psychology</div></div></div>
-      <div class="tl">
-        <a href="https://mrstwakefield.github.io/Mr-Wakefields-GCSE-Revision/" class="t" style="--tc:#7B3FA0;--tb:#F4EAFA;--tm:#A56CC9">GCSE Psychology<small>opens site ↗</small></a>
-        <a href="https://mrstwakefield.github.io/Mr-Wakefields-Fount-of-Wisdom-Knowledge/" class="t" style="--tc:#7B3FA0;--tb:#F4EAFA;--tm:#A56CC9">A Level Psychology<small>opens site ↗</small></a>
-      </div>
-    </section>
-
-    <section class="subj" style="--sc:#E3B220">
-      <div class="sh"><div class="ic">⚖️</div><div><div class="sn">Sociology</div></div></div>
-      <div class="tl">
-        <a href="https://mrstwakefield.github.io/Sociology-GCSE-Revision/" class="t" style="--tc:#6B5000;--tb:#FDF5DC;--tm:#E3B220">GCSE Sociology<small>opens site ↗</small></a>
-        <a href="https://mrstwakefield.github.io/A-Level-Sociology-Hub/" class="t" style="--tc:#6B5000;--tb:#FDF5DC;--tm:#E3B220">A Level Sociology<small>opens site ↗</small></a>
-      </div>
-    </section>
-
     <section class="subj" style="--sc:#3B7DD8">
       <div class="sh"><div class="ic">🕊️</div><div><div class="sn">Religious Studies</div></div></div>
       <div class="tl">
@@ -96,6 +82,24 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
       </div>
     </section>
   </div>
+
+  <div class="grid2">
+    <section class="subj" style="--sc:#B06AD0">
+      <div class="sh"><div class="ic">🧠</div><div><div class="sn">Psychology</div></div></div>
+      <div class="tl">
+        <a href="https://mrstwakefield.github.io/Mr-Wakefields-GCSE-Revision/" class="t" style="--tc:#7B3FA0;--tb:#F4EAFA;--tm:#A56CC9">GCSE Psychology<small>opens site ↗</small></a>
+        <a href="https://mrstwakefield.github.io/Mr-Wakefields-Fount-of-Wisdom-Knowledge/" class="t" style="--tc:#7B3FA0;--tb:#F4EAFA;--tm:#A56CC9">A Level Psychology<small>opens site ↗</small></a>
+      </div>
+    </section>
+    <section class="subj" style="--sc:#E3B220">
+      <div class="sh"><div class="ic">⚖️</div><div><div class="sn">Sociology</div></div></div>
+      <div class="tl">
+        <a href="https://mrstwakefield.github.io/Sociology-GCSE-Revision/" class="t" style="--tc:#6B5000;--tb:#FDF5DC;--tm:#E3B220">GCSE Sociology<small>opens site ↗</small></a>
+        <a href="https://mrstwakefield.github.io/A-Level-Sociology-Hub/" class="t" style="--tc:#6B5000;--tb:#FDF5DC;--tm:#E3B220">A Level Sociology<small>opens site ↗</small></a>
+      </div>
+    </section>
+  </div>
+</div>
 </div>
 <script>
 /* Level and XP on each tile come from that hub's own saved progress (each hub keeps its own, so nothing is shared). */
