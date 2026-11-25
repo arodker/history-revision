@@ -3061,13 +3061,13 @@ let FD = []; // loaded from data/rs/flashcards.json
 let SOWA = [], KWS = [];
 
 Promise.all([
-  fetch('data/rs/eq.json').then(r => r.ok ? r.json() : []).catch(() => []),
-  fetch('data/rs/rq.json').then(r => { if (!r.ok) throw new Error('rs/rq.json: ' + r.status); return r.json(); }),
-  fetch('data/rs/dates.json').then(r => r.ok ? r.json() : []).catch(() => []),
-  fetch('data/rs/flashcards.json').then(r => { if (!r.ok) throw new Error('rs/flashcards.json: ' + r.status); return r.json(); }),
-  fetch('data/rs/kc.json').then(r => r.ok ? r.json() : []).catch(() => []),
-  fetch('data/rs/sowa.json').then(r => r.ok ? r.json() : []).catch(() => []),
-  fetch('data/rs/keywords.json').then(r => r.ok ? r.json() : []).catch(() => []),
+  fetch('data/rs/eq.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
+  fetch('data/rs/rq.json?v=20261125b').then(r => { if (!r.ok) throw new Error('rs/rq.json: ' + r.status); return r.json(); }),
+  fetch('data/rs/dates.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
+  fetch('data/rs/flashcards.json?v=20261125b').then(r => { if (!r.ok) throw new Error('rs/flashcards.json: ' + r.status); return r.json(); }),
+  fetch('data/rs/kc.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
+  fetch('data/rs/sowa.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
+  fetch('data/rs/keywords.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
 ]).then(([eq, rq, dates, fd, kc, sw, kw]) => {
   const SLOT = SLOT_OF_UNIT;
   const remap = a => a.map(it => { it.pn = it.paper; if (SLOT[it.unit]) it.paper = SLOT[it.unit]; return it; });
