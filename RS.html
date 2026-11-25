@@ -1092,6 +1092,7 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 .qz-card .qz-mark{position:absolute;top:-2px;right:12px;font-family:Georgia,serif;font-size:3.2rem;line-height:1;color:#FAC775}
 .qz-tag{display:inline-block;font-size:.72rem;font-weight:800;background:#FAEEDA;color:#633806;border-radius:8px;padding:2px 8px;margin-bottom:.5rem}
 .qz-card.kw .qz-tag{background:#E1F5EE;color:#085041}
+.qz-src{font-size:1.2rem;font-weight:800;color:#7A5200;margin:.15rem 0 .25rem}
 .qz-q{font-size:1.02rem;line-height:1.55}
 .qz-gap{display:inline-block;min-width:4.5rem;border-bottom:3px solid #BA7517;text-align:center;font-weight:800;color:#BA7517}
 .qz-opt{display:block;width:100%;text-align:left;padding:.8rem 1rem;margin-bottom:.5rem;border-radius:12px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit;font-size:.95rem;cursor:pointer}
@@ -6621,7 +6622,7 @@ function qzDraw() {
     '<div class="quiz-prog"><div class="quiz-fill" style="width:' + pct + '%;background:' + qzCol().solid + '"></div></div>' +
     '<div class="quiz-hdr"><div style="display:flex;align-items:center;gap:8px">' + prev + '<span class="quiz-hdr-l">Question ' + (pos + 1) + ' of ' + total + (reviewing ? ' <span style="font-size:.7rem;color:var(--muted)">(reviewing)</span>' : '') + '</span>' + next + '</div>' +
     '<div class="sc-row">' + streak + '<span class="sc sc-c">✓ ' + QZ.ok + '</span><span class="sc sc-w">✗ ' + QZ.bad + '</span></div></div>' +
-    '<div class="qz-card' + (kw ? ' kw' : '') + '">' + (kw ? '' : '<span class="qz-mark">“</span>') + '<span class="qz-tag">' + escHtml(c.tag) + '</span><div class="qz-q">' + c.html + '</div>' +
+    '<div class="qz-card' + (kw ? ' kw' : '') + '">' + (kw ? '' : '<span class="qz-mark">“</span>') + '<span class="qz-tag">' + escHtml(c.item.unit) + '</span>' + (kw ? '' : '<div class="qz-src">' + escHtml(c.tag) + ':</div>') + '<div class="qz-q">' + c.html + '</div>' +
     '<div class="quiz-prompt" style="margin-top:.6rem">' + c.ask + '</div>' + ans + '</div>';
   const inp = document.getElementById('qz-in'); if (inp) setTimeout(() => inp.focus(), 50);
 }
