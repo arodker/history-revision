@@ -5163,12 +5163,8 @@ function arcMenu() {
     '<div class="arc-sub">Pick one paper or several. Questions come from every paper selected, up to the point you have studied.</div>' +
     '<div class="arc-pills">' + pills + '</div>' +
     '<button class="arc-tile t2" onclick="bossStart()"><span class="arc-ic">🐉</span><span class="arc-tx"><b>Boss battle</b><small>Type the answer. Right answers hurt the boss, misses cost a heart.</small></span><span class="arc-hi">HI ' + (hs.boss || 0) + '</span></button>' +
-    '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">🧩</span><span class="arc-tx"><b>Match the dates</b><small>Pair each event with its date. Three lives.</small></span><span class="arc-hi">HI ' + (hs.mt || 0) + '</span></button>' +
     '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>No time limit. Tap the right date or number.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
-    '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
-    '<button class="arc-tile t6" onclick="smStart()"><span class="arc-ic">“</span><span class="arc-tx"><b>SoWA Smash</b><small>Smash the missing word in each quote before time runs out.</small></span><span class="arc-hi">HI ' + (hs.sm || 0) + '</span></button>' +
-    '<button class="arc-tile t3" onclick="kwStart()"><span class="arc-ic">🔑</span><span class="arc-tx"><b>Key word match-up</b><small>Pair each key word with its meaning. Three lives.</small></span><span class="arc-hi">HI ' + (hs.kw || 0) + '</span></button>' +
-    '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 12 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
+    '<div class="arc-note">12 seconds to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
 }
 function arcShort(msg) { fdShowToast(msg); }
 function arcQuit() {
@@ -6542,9 +6538,9 @@ window.hsInstall=function(){
 })();
 
 // ═══════════════════════════════════════════
-// SOWA QUIZ, KEY WORD QUIZ, SOWA SMASH, KEY WORD MATCH-UP
+// SOWA QUIZ AND KEY WORD QUIZ (same format as the Key Dates Quiz)
 // ═══════════════════════════════════════════
-const QZ = {kind:'sowa', mode:'pick', pool:[], i:0, score:0, n:10, cur:null, locked:false};
+const QZ = {kind:'sowa', mode:'pick', pool:[], idx:0, ok:0, bad:0, streak:0, missed:[], hist:[], view:0, cur:null, locked:false, n:15};
 function qzNorm(t) { return String(t).toLowerCase().replace(/[’‘`]/g, "'").replace(/[^a-z0-9' ]+/g, ' ').replace(/\s+/g, ' ').trim(); }
 function qzLev(a, b) {
   const m = a.length, n = b.length; if (Math.abs(m - n) > 1) return 2;
@@ -6563,152 +6559,106 @@ function qzBlank(item) {
   return {gap:g.gap, d:g.d, html:html};
 }
 function qzMake(kind, item) {
-  if (kind === 'sowa') { const b = qzBlank(item); return {item, targets:[b.gap], options:[b.gap].concat(b.d), html:b.html, tag:item.type, ask:'Fill the gap in the quote.'}; }
-  return {item, targets:[item.term].concat(item.alt || []), options:[item.term].concat(item.d), html:escHtml(item.def), tag:'Key word', ask:'Which key word is this?'};
+  let c;
+  if (kind === 'sowa') { const b = qzBlank(item); c = {item, targets:[b.gap], options:[b.gap].concat(b.d), html:b.html, tag:item.type, ask:'Fill the gap in the quote.'}; }
+  else c = {item, targets:[item.term].concat(item.alt || []), options:[item.term].concat(item.d), html:escHtml(item.def), tag:'Key word', ask:'Which key word is this?'};
+  c.opts = shuffle(c.options.slice()); return c;
 }
-function qzPoolFor(kind, papers) {
-  const src = kind === 'sowa' ? SOWA : KWS;
-  return src.filter(x => inScope(x) && (!papers || papers.includes(x.paper)));
-}
-function qzOpen(kind) {
-  QZ.kind = kind; showScreen('s-qz'); qzSetup();
-}
+function qzPoolFor(kind) { return (kind === 'sowa' ? SOWA : KWS).filter(x => inScope(x)); }
+function qzCol() { return QZ.kind === 'sowa' ? {bg:'#FAEEDA', color:'#633806', border:'#BA7517', solid:'#BA7517', fill:''} : {bg:'#E1F5EE', color:'#085041', border:'#1D9E75', solid:'#1D9E75', fill:''}; }
+function qzOpen(kind) { QZ.kind = kind; showScreen('s-qz'); qzSetup(); }
 function qzSetup() {
-  const k = QZ.kind, n = qzPoolFor(k).length;
+  const k = QZ.kind, n = qzPoolFor(k).length, c = qzCol();
+  const tb = m => { const on = QZ.mode === m; return 'flex:1;border-radius:8px;padding:8px;' + (on ? 'background:' + c.bg + ';color:' + c.color + ';border-color:' + c.border : 'background:var(--surface);color:var(--muted);border-color:var(--border2)'); };
   document.getElementById('qz-body').innerHTML =
     '<div class="qz-h">' + (k === 'sowa' ? '“ SoWA Quiz' : '🔑 Key Word Quiz') + '</div>' +
-    '<div class="qz-tog"><button class="' + (QZ.mode === 'pick' ? 'on' : '') + '" onclick="QZ.mode=\'pick\';qzSetup()">Pick</button><button class="' + (QZ.mode === 'type' ? 'on' : '') + '" onclick="QZ.mode=\'type\';qzSetup()">Type</button></div>' +
-    (n ? '<button class="arc-btn" onclick="qzStart()">Start</button>' : '<div class="empty">Nothing to show for the units you have reached yet.</div>');
+    (n ? '<p style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Mode</p>' +
+    '<div style="display:flex;gap:8px;margin-bottom:.75rem"><button class="rq-star" style="' + tb('pick') + '" onclick="QZ.mode=\'pick\';qzSetup()">📋 Pick answer</button>' +
+    '<button class="rq-star" style="' + tb('type') + '" onclick="QZ.mode=\'type\';qzSetup()">⌨️ Type the answer</button></div>' +
+    '<button class="btn-go" style="background:' + c.solid + ';margin-bottom:0" onclick="qzCountdown()">▶ Start quiz</button>'
+    : '<div class="empty">Nothing here yet for the units you have reached.</div>');
 }
-function qzStart() {
-  QZ.pool = shuffle(qzPoolFor(QZ.kind).slice()).slice(0, QZ.n); QZ.i = 0; QZ.score = 0; qzNext();
+function qzCountdown(missedOnly) {
+  const c = qzCol(); let n = 3;
+  document.getElementById('qz-body').innerHTML = '<div style="text-align:center;padding:2rem 0"><div id="qz-cd" style="font-size:5rem;font-weight:800;font-family:\'DM Serif Display\',serif;line-height:1;color:' + c.solid + '">3</div><div style="font-size:.85rem;color:var(--muted);margin-top:.5rem">Get ready…</div></div>';
+  const el = () => document.getElementById('qz-cd');
+  (function tick() {
+    const e = el(); if (!e) return;
+    e.style.animation = 'none'; void e.offsetWidth; e.style.animation = 'cd-pop .35s ease forwards';
+    e.textContent = n === 0 ? 'Go!' : n;
+    if (n === 0) { setTimeout(() => { if (el()) qzStart(missedOnly); }, 500); return; }
+    n--; setTimeout(tick, 700);
+  })();
 }
-function qzNext() {
-  if (QZ.i >= QZ.pool.length) { qzEnd(); return; }
-  QZ.cur = qzMake(QZ.kind, QZ.pool[QZ.i]); QZ.cur.opts = shuffle(QZ.cur.options.slice()); QZ.locked = false; qzDraw();
+function qzStart(missedOnly) {
+  let pool = missedOnly && QZ.missed.length ? QZ.missed.slice() : qzPoolFor(QZ.kind);
+  QZ.pool = shuffle(pool.slice()).slice(0, Math.min(pool.length, QZ.n));
+  QZ.idx = 0; QZ.ok = 0; QZ.bad = 0; QZ.streak = 0; QZ.missed = []; QZ.hist = []; QZ.view = 0; QZ.locked = false;
+  QZ.cur = qzMake(QZ.kind, QZ.pool[0]); qzDraw();
 }
-function qzDraw(fb) {
-  const c = QZ.cur, kw = QZ.kind === 'kw';
-  let body = '<div class="qz-prog">' + (QZ.i + 1) + ' of ' + QZ.pool.length + '</div>' +
-    '<div class="qz-card' + (kw ? ' kw' : '') + '">' + (kw ? '' : '<span class="qz-mark">“</span>') + '<span class="qz-tag">' + escHtml(c.tag) + '</span><div class="qz-q">' + c.html + '</div></div>' +
-    '<div class="arc-sub" style="margin-bottom:.5rem">' + c.ask + '</div>';
-  if (QZ.mode === 'pick') {
-    body += c.opts.map((o, i) => '<button class="qz-opt' + (fb ? (qzMatch(o, c.targets) && o === c.targets[0] ? ' ok' : (fb.pick === i ? ' no' : '')) : '') + '" ' + (fb ? 'disabled ' : '') + 'onclick="qzPick(' + i + ')">' + escHtml(o) + '</button>').join('');
-  } else if (!fb) {
-    body += '<input class="qz-in" id="qz-in" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" onkeydown="if(event.key===\'Enter\')qzType()"><button class="arc-btn" onclick="qzType()">Check</button>';
+const QZ_NAV = 'padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit';
+function qzDraw() {
+  const reviewing = QZ.view < QZ.idx, total = QZ.pool.length, kw = QZ.kind === 'kw';
+  if (!reviewing && QZ.idx >= total) { qzEnd(); return; }
+  const h = reviewing ? QZ.hist[QZ.view] : null, c = reviewing ? h.cur : QZ.cur, pos = reviewing ? QZ.view : QZ.idx;
+  const pct = Math.round(pos / total * 100);
+  const streak = !reviewing && QZ.streak >= 3 ? '<span style="font-size:.8rem;color:#F0B429;font-weight:600">🔥 ' + QZ.streak + '</span>' : '';
+  const prev = pos > 0 ? '<button onclick="qzGo(-1)" style="' + QZ_NAV + '">← Prev</button>' : '<span></span>';
+  const next = reviewing ? '<button onclick="qzGo(1)" style="' + QZ_NAV + '">Next →</button>' : '';
+  let ans;
+  if (reviewing) {
+    ans = (QZ.mode === 'pick'
+      ? '<div class="opts">' + c.opts.map(o => '<button class="opt' + (o === c.targets[0] ? ' show-c' : '') + (!h.ok && o === h.chosen ? ' wrong' : '') + '" disabled>' + escHtml(o) + '</button>').join('') + '</div>'
+      : '') +
+      '<div class="quiz-fb ' + (h.ok ? 'fb-c' : 'fb-w') + '" style="display:block">' + (h.ok ? '✓ Correct: ' : '✗ The answer was ') + escHtml(c.targets[0]) + '</div>';
+  } else if (QZ.mode === 'type') {
+    ans = '<div style="margin-top:.75rem"><input id="qz-in" class="qz-in" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer…" onkeydown="if(event.key===\'Enter\')qzType()">' +
+      '<button class="btn-go" id="qz-check" style="background:' + qzCol().solid + ';margin-top:.6rem;margin-bottom:0;padding:11px" onclick="qzType()">Check answer</button><div class="quiz-fb" id="qfb"></div></div>';
+  } else {
+    ans = '<div class="opts">' + c.opts.map((o, i) => '<button class="opt" onclick="qzPick(' + i + ')">' + escHtml(o) + '</button>').join('') + '</div><div class="quiz-fb" id="qfb"></div>';
   }
-  if (fb) body += '<div class="qz-fb ' + (fb.ok ? 'ok' : 'no') + '">' + (fb.ok ? 'Correct' : 'It was: ' + escHtml(c.targets[0])) + '</div><button class="arc-btn" onclick="QZ.i++;qzNext()">' + (QZ.i + 1 >= QZ.pool.length ? 'Finish' : 'Next') + '</button>';
-  document.getElementById('qz-body').innerHTML = body;
-  const inp = document.getElementById('qz-in'); if (inp) inp.focus();
+  document.getElementById('qz-body').innerHTML =
+    '<div class="quiz-prog"><div class="quiz-fill" style="width:' + pct + '%;background:' + qzCol().solid + '"></div></div>' +
+    '<div class="quiz-hdr"><div style="display:flex;align-items:center;gap:8px">' + prev + '<span class="quiz-hdr-l">Question ' + (pos + 1) + ' of ' + total + (reviewing ? ' <span style="font-size:.7rem;color:var(--muted)">(reviewing)</span>' : '') + '</span>' + next + '</div>' +
+    '<div class="sc-row">' + streak + '<span class="sc sc-c">✓ ' + QZ.ok + '</span><span class="sc sc-w">✗ ' + QZ.bad + '</span></div></div>' +
+    '<div class="qz-card' + (kw ? ' kw' : '') + '">' + (kw ? '' : '<span class="qz-mark">“</span>') + '<span class="qz-tag">' + escHtml(c.tag) + '</span><div class="qz-q">' + c.html + '</div>' +
+    '<div class="quiz-prompt" style="margin-top:.6rem">' + c.ask + '</div>' + ans + '</div>';
+  const inp = document.getElementById('qz-in'); if (inp) setTimeout(() => inp.focus(), 50);
 }
-function qzResult(ok, pick) {
-  const it = QZ.cur.item;
-  xpAward(QZ.kind, ok, QZ.kind + '|' + (it.term || it.quote.slice(0, 40)) + '|' + QZ.cur.targets[0], it.term || it.type, it.paper, it.unit);
-  if (ok) QZ.score++; QZ.locked = true; qzDraw({ok, pick});
+function qzGo(d) { QZ.view = Math.max(0, Math.min(QZ.idx, QZ.view + d)); qzDraw(); }
+function qzResult(ok, chosen) {
+  if (QZ.locked) return; QZ.locked = true;
+  const c = QZ.cur, it = c.item;
+  xpAward(QZ.kind, ok, QZ.kind + '|' + (it.term || it.quote.slice(0, 40)) + '|' + c.targets[0], it.term || it.type, it.paper, it.unit);
+  if (ok) { QZ.ok++; QZ.streak++; } else { QZ.bad++; QZ.streak = 0; QZ.missed.push(it); }
+  QZ.hist.push({cur:c, ok, chosen});
+  const fb = document.getElementById('qfb');
+  if (QZ.mode === 'pick') {
+    document.querySelectorAll('.qz-card .opt').forEach((b, i) => { b.disabled = true; if (c.opts[i] === c.targets[0]) b.classList.add('show-c'); else if (!ok && c.opts[i] === chosen) b.classList.add('wrong'); });
+  } else { const i = document.getElementById('qz-in'); if (i) i.disabled = true; const b = document.getElementById('qz-check'); if (b) { b.disabled = true; b.style.opacity = '.45'; } }
+  if (fb) { fb.className = 'quiz-fb ' + (ok ? 'fb-c' : 'fb-w'); fb.style.display = 'block'; fb.textContent = ok ? '✓ Correct: ' + c.targets[0] : '✗ The answer was ' + c.targets[0]; }
+  setTimeout(() => {
+    if (!document.getElementById('qz-body') || QZ.hist.length !== QZ.idx + 1) return;
+    QZ.idx++; QZ.view = QZ.idx; QZ.locked = false;
+    if (QZ.idx < QZ.pool.length) QZ.cur = qzMake(QZ.kind, QZ.pool[QZ.idx]);
+    qzDraw();
+  }, ok ? 1200 : 2000);
 }
-function qzPick(i) { if (QZ.locked) return; const c = QZ.cur; qzResult(c.opts[i] === c.targets[0], i); }
+function qzPick(i) { if (QZ.locked) return; const c = QZ.cur; qzResult(c.opts[i] === c.targets[0], c.opts[i]); }
 function qzType() {
   if (QZ.locked) return; const v = document.getElementById('qz-in').value;
-  if (!v.trim()) { return; }
-  qzResult(qzMatch(v, QZ.cur.targets));
+  if (!v.trim()) return;
+  qzResult(qzMatch(v, QZ.cur.targets), v);
 }
 function qzEnd() {
-  document.getElementById('qz-body').innerHTML = '<div class="arc-end"><div class="arc-big">' + (QZ.kind === 'sowa' ? '“' : '🔑') + '</div><div class="arc-h">Done</div><div class="arc-score">' + QZ.score + ' / ' + QZ.pool.length + '</div>' +
-    '<button class="arc-btn" onclick="qzStart()">Go again</button><button class="arc-btn sec" onclick="showScreen(\'s-pick\')">Back to hub</button></div>';
+  const total = QZ.pool.length, pct = Math.round(QZ.ok / total * 100);
+  const [grade, cls] = pct === 100 ? ['Top marks! Every one nailed. 🎯', 'grade-a'] : pct >= 80 ? ['Excellent work, nearly there! 🏆', 'grade-a'] : pct >= 60 ? ['Good effort, keep drilling the tricky ones. ⭐', 'grade-b'] : pct >= 40 ? ['A solid start. Try the ones you missed. 📚', 'grade-c'] : ['Keep at it, it takes practice. 💪', 'grade-c'];
+  const missed = QZ.missed.length ? '<div style="margin:.75rem 0;text-align:left"><div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem">Review:</div>' +
+    QZ.missed.map(d => '<div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.5rem .75rem;margin-bottom:.4rem;font-size:.82rem;text-align:left">' + (d.term ? '<b>' + escHtml(d.term) + '</b>: ' + escHtml(d.def) : escHtml(d.quote)) + '</div>').join('') + '</div>' : '';
+  document.getElementById('qz-body').innerHTML = '<div class="quiz-end"><div class="end-score">' + QZ.ok + '/' + total + '</div><div class="end-sub">' + pct + '% correct</div><div class="end-grade ' + cls + '">' + grade + '</div>' + missed +
+    '<div style="display:flex;flex-direction:column;gap:6px;margin-top:.5rem"><button class="btn-sm" style="width:100%" onclick="qzSetup()">🔄 New quiz</button>' +
+    (QZ.missed.length ? '<button class="btn-sm" style="width:100%" onclick="qzCountdown(true)">🎯 Just the ones I missed (' + QZ.missed.length + ')</button>' : '') + '</div></div>';
   xpFlushLater();
-}
-// ----- SoWA Smash -----
-function smPool() { const ps = arcPapers(); return SOWA.filter(q => ps.includes(q.paper) && inScope(q)); }
-function smStart() {
-  const pool = smPool(); if (pool.length < 4) { arcShort('Not enough quotes for this choice yet.'); return; }
-  ARC.g = {type:'sm', pool:shuffle(pool.slice()), idx:0, lives:3, score:0, busy:false};
-  smNext();
-}
-function smNext() {
-  const g = ARC.g; if (g.idx >= g.pool.length) { g.pool = shuffle(g.pool.slice()); g.idx = 0; }
-  g.cur = qzMake('sowa', g.pool[g.idx++]); g.cur.opts = shuffle(g.cur.options.slice()); g.pick = -1; g.busy = false;
-  arcTimerStart(Math.max(6, 12 - Math.floor(g.score / 5)), smLate); smRender();
-}
-function smRender() {
-  const g = ARC.g, hs = arcHS(), c = g.cur;
-  const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Smashed <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.sm || 0, g.score) + '</b></span></div>';
-  const opts = c.opts.map((o, i) => '<button class="sm-o' + (g.busy ? (o === c.targets[0] ? ' ok' : (g.pick === i ? ' no' : '')) : '') + '" ' + (g.busy ? 'disabled ' : '') + 'onclick="smPick(' + i + ')">' + escHtml(o) + '</button>').join('');
-  arcFrame('<div class="sm-card"><span class="qz-tag">' + escHtml(c.tag) + '</span><div>' + c.html + '</div></div>' + opts, head);
-}
-function smPick(i) {
-  const g = ARC.g; if (!g || g.type !== 'sm' || g.busy) return;
-  const c = g.cur, ok = c.opts[i] === c.targets[0], it = c.item;
-  arcTimerStop(); g.busy = true; g.pick = i;
-  xpAward('sowa', ok, 'sw|' + it.quote.slice(0, 40) + '|' + c.targets[0], it.type, it.paper, it.unit);
-  if (ok) g.score++; else g.lives--;
-  smRender();
-  ARC.t = setTimeout(() => { if (ARC.g !== g) return; if (g.lives <= 0) smOver(); else smNext(); }, ok ? 500 : 1100);
-}
-function smLate() {
-  const g = ARC.g; if (!g || g.type !== 'sm' || g.busy) return;
-  g.busy = true; g.pick = -1; g.lives--; smRender();
-  ARC.t = setTimeout(() => { if (ARC.g !== g) return; if (g.lives <= 0) smOver(); else smNext(); }, 1100);
-}
-function smOver() {
-  const g = ARC.g, isBest = arcSetHS('sm', g.score);
-  arcFrame('<div class="arc-end"><div class="arc-big">“</div><div class="arc-h">Game over</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">quotes smashed' + (isBest ? ' · new best' : '') + '</div>' +
-    '<button class="arc-btn" onclick="smStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
-}
-// ----- Key word match-up -----
-function kwShort(d) {
-  const s = d.split(/(?<=[.!?])\s/)[0];
-  return s.length > 110 ? s.slice(0, 107).replace(/\s+\S*$/, '') + '…' : s;
-}
-function kwStart() {
-  const ps = arcPapers(), pool = KWS.filter(k => ps.includes(k.paper) && inScope(k) && k.def.length > 15);
-  if (pool.length < 5) { arcShort('Not enough key words for this choice yet.'); return; }
-  ARC.g = {type:'kw', pool, lives:3, score:0, n:3, max:6};
-  kwRound();
-}
-function kwRound(msg) {
-  const g = ARC.g, used = new Set(), items = [];
-  for (const it of shuffle(g.pool.slice())) { if (!used.has(it.term)) { used.add(it.term); items.push(it); } if (items.length === g.n) break; }
-  g.items = items; g.defs = shuffle(items.map((x, i) => i)); g.done = {}; g.selE = -1; g.selD = -1; g.bad = ''; g.msg = msg || ''; g.busy = false;
-  arcTimerStart(40, kwLate); kwRender();
-}
-function kwRender() {
-  const g = ARC.g, hs = arcHS();
-  const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Matched <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.kw || 0, g.score) + '</b></span></div>';
-  const cls = (done, sel, bad) => (done ? ' ok' : '') + (sel ? ' sel' : '') + (bad ? ' no' : '');
-  const evs = g.items.map((it, i) => '<button class="mt-b mt-ev' + cls(g.done[i], g.selE === i, g.bad === 'e' + i) + '" style="--c:' + (PAPER_COL[it.paper] || '#888') + '" ' + (g.done[i] || g.busy ? 'disabled ' : '') + 'onclick="kwPick(\'e\',' + i + ')">' + escHtml(it.term) + '</button>').join('');
-  const dts = g.defs.map(i => '<button class="mt-b mt-dt' + cls(g.done[i], g.selD === i, g.bad === 'd' + i) + '" style="font-size:.8rem" ' + (g.done[i] || g.busy ? 'disabled ' : '') + 'onclick="kwPick(\'d\',' + i + ')">' + escHtml(kwShort(g.items[i].def)) + '</button>').join('');
-  arcFrame('<div class="arc-sub" style="text-align:center">' + (g.msg || 'Tap a key word, then its meaning. Match them all.') + '</div><div class="kw-terms">' + evs + '</div><div class="kw-defs">' + dts + '</div>', head);
-}
-function kwPick(side, i) {
-  const g = ARC.g; if (!g || g.type !== 'kw' || g.busy || g.done[i]) return;
-  if (side === 'e') g.selE = g.selE === i ? -1 : i; else g.selD = g.selD === i ? -1 : i;
-  if (g.selE >= 0 && g.selD >= 0) {
-    const e = g.selE, d = g.selD, it = g.items[e], ok = e === d;
-    xpAward('kw', ok, 'kw|' + it.term, it.term, it.paper, it.unit);
-    g.selE = -1; g.selD = -1;
-    if (ok) {
-      g.done[e] = 1; g.score++; g.msg = '';
-      if (Object.keys(g.done).length >= g.items.length) {
-        g.busy = true; arcTimerStop(); g.n = Math.min(g.max, g.n + 1); g.msg = 'All matched!'; kwRender();
-        ARC.t = setTimeout(() => { if (ARC.g === g) kwRound(); }, 900); return;
-      }
-    } else {
-      g.lives--; g.bad = 'e' + e; g.msg = 'Not that one. Try again.';
-      if (g.lives <= 0) { kwOver(); return; }
-      kwRender(); ARC.t = setTimeout(() => { if (ARC.g === g) { g.bad = ''; kwRender(); } }, 700); return;
-    }
-  }
-  kwRender();
-}
-function kwLate() {
-  const g = ARC.g; if (!g || g.type !== 'kw') return;
-  g.lives--; if (g.lives <= 0) { kwOver(); return; }
-  kwRound('Time\'s up. New set');
-}
-function kwOver() {
-  const g = ARC.g, isBest = arcSetHS('kw', g.score);
-  arcFrame('<div class="arc-end"><div class="arc-big">🔑</div><div class="arc-h">Game over</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">pairs matched' + (isBest ? ' · new best' : '') + '</div>' +
-    '<button class="arc-btn" onclick="kwStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
 }
 </script>
 </body>
