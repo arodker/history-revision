@@ -14,9 +14,9 @@
 .foot{text-align:center;font-size:.8rem;color:var(--muted);margin-top:2rem}
 .bk{display:flex;align-items:center;gap:.6rem}
 .logo{flex:none;width:2.4rem;height:2.4rem;color:var(--text)}
-.top h1{white-space:nowrap;text-align:left;font-size:min(2.1rem,4vw);line-height:1.15;font-weight:800;margin:0}
-.gr{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-top:.6rem}
-.top .subtitle{text-align:left;font-size:1rem;font-weight:700;line-height:1.3;color:#B4325A;margin:.1rem 0 0}
+.top h1{white-space:nowrap;text-align:left;font-size:min(2.1rem,3.5vw);line-height:1.15;font-weight:800;margin:0}
+.bk .gear{flex:none;margin-left:auto;width:2.1rem;height:2.1rem;font-size:1rem}
+.top .subtitle{text-align:left;font-size:1rem;font-weight:700;line-height:1.3;color:#B4325A;margin:.6rem 0 0}
 :root.dark .top .subtitle{color:#F29BB7}
 .gear{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;border:1.5px solid var(--border);background:var(--card);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .gear:hover{border-color:var(--muted)}.gear:focus-visible{outline:3px solid var(--text);outline-offset:2px}
@@ -90,8 +90,8 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
 <body>
 <div class="app">
   <div class="top">
-    <div class="bk"><svg class="logo" viewBox="0 0 70 64" role="img" aria-label="Five coloured books on a shelf"><rect x="6" y="14" width="9" height="38" rx="2" fill="#E8821E"/><rect x="17" y="8" width="9" height="44" rx="2" fill="#2E8B57"/><rect x="28" y="16" width="9" height="36" rx="2" fill="#3B7DD8"/><rect x="39" y="10" width="9" height="42" rx="2" fill="#B06AD0"/><g transform="rotate(14 56 52)"><rect x="50" y="14" width="9" height="38" rx="2" fill="#E3B220"/></g><rect x="3" y="52" width="58" height="4" rx="2" fill="currentColor"/></svg><h1>Mossbourne Humanities Revision Hub</h1></div>
-    <div class="gr"><p class="subtitle"><span id="greet">Hello</span>! What are you revising today?</p><button class="gear" id="gear" aria-label="Settings" title="Settings">⚙️</button></div>
+    <div class="bk"><svg class="logo" viewBox="0 0 70 64" role="img" aria-label="Five coloured books on a shelf"><rect x="6" y="14" width="9" height="38" rx="2" fill="#E8821E"/><rect x="17" y="8" width="9" height="44" rx="2" fill="#2E8B57"/><rect x="28" y="16" width="9" height="36" rx="2" fill="#3B7DD8"/><rect x="39" y="10" width="9" height="42" rx="2" fill="#B06AD0"/><g transform="rotate(14 56 52)"><rect x="50" y="14" width="9" height="38" rx="2" fill="#E3B220"/></g><rect x="3" y="52" width="58" height="4" rx="2" fill="currentColor"/></svg><h1>Mossbourne Humanities Revision Hub</h1><button class="gear" id="gear" aria-label="Settings" title="Settings">⚙️</button></div>
+    <p class="subtitle"><span id="greet">Hello</span>! What are you revising today?</p>
   </div>
   <div class="sp" id="sp" role="dialog" aria-label="Settings"><div class="sp-in">
     <div class="sp-h"><b>Settings</b><button id="sp-x" aria-label="Close">✕</button></div>
