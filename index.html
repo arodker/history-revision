@@ -54,6 +54,16 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
 .ic::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--sc);opacity:.35}
 .sn{font-size:1.02rem;font-weight:700;line-height:1.15}
 .st{font-size:.7rem;color:var(--muted);margin-top:.15rem}
+.chev,.st{display:none}
+@media (max-width:480px){
+.subj .sh{cursor:pointer;margin-bottom:0;-webkit-tap-highlight-color:transparent}
+.subj.open .sh{margin-bottom:.75rem}
+.subj:not(.open) .tl{display:none}
+.subj:not(.open) .st{display:block}
+.chev{display:block;margin-left:auto;font-size:1.1rem;color:var(--muted);transition:transform .15s}
+.subj.open .chev{transform:rotate(180deg)}
+.subj .sh:focus-visible{outline:3px solid var(--text);outline-offset:4px;border-radius:8px}
+}
 .tl{display:flex;flex-direction:column;gap:.5rem}
 .t{height:3.5rem;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:.15rem;background:var(--tb);color:var(--tc);border:2px solid var(--tm);border-radius:10px;padding:.6rem .75rem;font-size:.8rem;font-weight:700;text-decoration:none;line-height:1.25;transition:transform .15s,box-shadow .15s}
 .t:hover{transform:translateY(-2px);box-shadow:0 5px 12px rgba(0,0,0,.1)}
@@ -88,7 +98,7 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
 
   <div class="grid">
     <section class="subj" style="--sc:#E8821E">
-      <div class="sh"><div class="ic">🏹</div><div><div class="sn">History</div></div></div>
+      <div class="sh"><div class="ic">🏹</div><div><div class="sn">History</div><div class="st">3 courses</div></div><span class="chev" aria-hidden="true">▾</span></div>
       <div class="tl">
         <a href="GCSE.html" class="t" data-xp="gcse_xp" style="--tc:#8A4A06;--tb:#FEF3E6;--tm:#F2A559">GCSE History<small></small></a>
         <a href="Y12.html" class="t" data-xp="alevel_xp" style="--tc:#7A3F04;--tb:#FBDDB8;--tm:#E8821E">Y12 Tudors and Cold War<small></small></a>
@@ -96,14 +106,14 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
         </div>
     </section>
     <section class="subj" style="--sc:#2E8B57">
-      <div class="sh"><div class="ic">🌍</div><div><div class="sn">Geography</div></div></div>
+      <div class="sh"><div class="ic">🌍</div><div><div class="sn">Geography</div><div class="st">GCSE</div></div><span class="chev" aria-hidden="true">▾</span></div>
       <div class="tl">
         <a href="GCSE_Geography.html" class="t" data-xp="geo_xp" style="--tc:#0C462C;--tb:#E6F4EC;--tm:#2E8B57">GCSE Geography<small></small></a>
         <div class="t off">A Level Geography<small>Coming soon</small></div>
       </div>
     </section>
     <section class="subj" style="--sc:#3B7DD8">
-      <div class="sh"><div class="ic">🕊️</div><div><div class="sn">Religious Studies</div></div></div>
+      <div class="sh"><div class="ic">🕊️</div><div><div class="sn">Religious Studies</div><div class="st">On the way</div></div><span class="chev" aria-hidden="true">▾</span></div>
       <div class="tl">
         <div class="t off">GCSE RS<small>Coming soon</small></div>
         <div class="t off">Philosophy and Ethics<small>Coming soon</small></div>
@@ -113,14 +123,14 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
 
   <div class="grid2">
     <section class="subj" style="--sc:#B06AD0">
-      <div class="sh"><div class="ic">🧠</div><div><div class="sn">Psychology</div></div></div>
+      <div class="sh"><div class="ic">🧠</div><div><div class="sn">Psychology</div><div class="st">GCSE, A Level</div></div><span class="chev" aria-hidden="true">▾</span></div>
       <div class="tl">
         <a href="https://mrstwakefield.github.io/Mr-Wakefields-GCSE-Revision/" class="t" style="--tc:#7B3FA0;--tb:#F4EAFA;--tm:#A56CC9">GCSE Psychology<small>opens site ↗</small></a>
         <a href="https://mrstwakefield.github.io/Mr-Wakefields-Fount-of-Wisdom-Knowledge/" class="t" style="--tc:#4B1F6B;--tb:#E2C8F1;--tm:#8A4FB5">A Level Psychology<small>opens site ↗</small></a>
       </div>
     </section>
     <section class="subj" style="--sc:#E3B220">
-      <div class="sh"><div class="ic">⚖️</div><div><div class="sn">Sociology</div></div></div>
+      <div class="sh"><div class="ic">⚖️</div><div><div class="sn">Sociology</div><div class="st">GCSE, A Level</div></div><span class="chev" aria-hidden="true">▾</span></div>
       <div class="tl">
         <a href="https://mrstwakefield.github.io/Sociology-GCSE-Revision/" class="t" style="--tc:#6B5000;--tb:#FDF5DC;--tm:#E3B220">GCSE Sociology<small>opens site ↗</small></a>
         <a href="https://mrstwakefield.github.io/A-Level-Sociology-Hub/" class="t" style="--tc:#4A3800;--tb:#F6DF96;--tm:#C99A0A">A Level Sociology<small>opens site ↗</small></a>
@@ -181,6 +191,26 @@ try {
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') sp.classList.remove('on'); });
   if (!get('hub_text_size')) { var f = TK.map(get).filter(Boolean)[0]; if (f) set('hub_text_size', f); }
   paint();
+})();
+
+(function () {
+  var subs = Array.prototype.slice.call(document.querySelectorAll('.subj'));
+  var open = null;
+  try { var l = JSON.parse(localStorage.getItem('hub_last') || 'null'); if (l && l.href) open = subs.filter(function (x) { return x.querySelector('a[href="' + l.href + '"]'); })[0] || null; } catch (e) {}
+  if (!open) open = subs[0];
+  subs.forEach(function (x) {
+    var h = x.querySelector('.sh');
+    h.setAttribute('role', 'button'); h.setAttribute('tabindex', '0');
+    function sync() { h.setAttribute('aria-expanded', x.classList.contains('open') ? 'true' : 'false'); }
+    function toggle() {
+      var was = x.classList.contains('open');
+      subs.forEach(function (y) { y.classList.remove('open'); y.querySelector('.sh').setAttribute('aria-expanded', 'false'); });
+      if (!was) x.classList.add('open'); sync();
+    }
+    h.addEventListener('click', toggle);
+    h.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    if (x === open) x.classList.add('open'); sync();
+  });
 })();
 </script>
 </body>
