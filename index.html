@@ -5,9 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <meta name="theme-color" content="#f8f7f4">
 <title>Mossbourne Humanities Revision Hub</title>
+<script>try{var _hk=['hub_dark','gcse_dark','alevel_dark','cr_dark','geo_dark'];if(_hk.some(function(k){return localStorage.getItem(k)==='1'}))document.documentElement.classList.add('dark')}catch(e){}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%A5%A3%3C/text%3E%3C/svg%3E">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}html{font-size:clamp(17px,.9vw + 8px,24px)}
+*{box-sizing:border-box;margin:0;padding:0}
+:root.dark{--bg:#141413;--card:#1f1f1d;--text:#efeee9;--muted:#a3a29b;--border:#38372f;--soon:#85847c;--cont-bg:#2a2850;--cont-tx:#dcd9ff}
+.top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.3rem}
+.top h1{text-align:left;font-size:1.6rem;margin:0}.top .subtitle{text-align:left;margin:.25rem 0 0}
+.gear{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;border:1.5px solid var(--border);background:var(--card);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.gear:hover{border-color:var(--muted)}.gear:focus-visible{outline:3px solid var(--text);outline-offset:2px}
+.sp{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:50;display:none;align-items:center;justify-content:center;padding:1rem}
+.sp.on{display:flex}
+.sp-in{background:var(--card);color:var(--text);border:1.5px solid var(--border);border-radius:16px;max-width:22rem;width:100%;padding:1.1rem 1.2rem}
+.sp-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem}
+.sp-h b{font-size:1.05rem}.sp-h button{background:none;border:0;color:var(--muted);font-size:1.2rem;cursor:pointer}
+.sp-r{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0;border-top:1px solid var(--border)}
+.sp-r small{display:block;font-size:.7rem;color:var(--muted);margin-top:.1rem}
+.sw{width:2.5rem;height:1.4rem;border-radius:1rem;border:0;background:var(--border);position:relative;cursor:pointer;flex:none}
+.sw::after{content:'';position:absolute;top:.15rem;left:.15rem;width:1.1rem;height:1.1rem;border-radius:50%;background:#fff;transition:transform .15s}
+.sw.on{background:#2D6BD6}.sw.on::after{transform:translateX(1.1rem)}
+.ts{display:flex;gap:.3rem}.ts button{border:1.5px solid var(--border);background:var(--card);color:var(--text);border-radius:8px;padding:.25rem .6rem;cursor:pointer;font-family:inherit;font-weight:700}
+.ts button.on{border-color:#2D6BD6;background:rgba(45,107,214,.14)}
+.sp-n{font-size:.7rem;color:var(--muted);border-top:1px solid var(--border);padding-top:.7rem;line-height:1.4}
+html{font-size:clamp(17px,.9vw + 8px,24px)}
 :root{
   --bg:#f8f7f4;--card:#fff;--text:#1a1a18;--muted:#6b6b68;--border:#e8e7e2;--soon:#9a9994;
   --cont-bg:#EEEDFE;--cont-tx:#3C3489;
@@ -53,8 +73,16 @@ h1{font-size:1.45rem;font-weight:700;margin-bottom:.2rem;text-align:center}
 </head>
 <body>
 <div class="app">
-  <h1>Mossbourne Humanities Revision Hub</h1>
-  <p class="subtitle">Pick your course</p>
+  <div class="top">
+    <div><h1 id="greet">Hello</h1><p class="subtitle">Mossbourne Humanities Revision Hub. Pick your course.</p></div>
+    <button class="gear" id="gear" aria-label="Settings" title="Settings">⚙️</button>
+  </div>
+  <div class="sp" id="sp" role="dialog" aria-label="Settings"><div class="sp-in">
+    <div class="sp-h"><b>Settings</b><button id="sp-x" aria-label="Close">✕</button></div>
+    <div class="sp-r"><div>Night mode<small>Applies to every hub</small></div><button class="sw" id="sw-dark" role="switch" aria-checked="false" aria-label="Night mode"></button></div>
+    <div class="sp-r"><div>Text size<small>Applies to every hub</small></div><div class="ts" id="ts"><button data-v="" aria-label="Normal">A</button><button data-v="l" aria-label="Large" style="font-size:1.1em">A</button><button data-v="xl" aria-label="Larger" style="font-size:1.25em">A</button></div></div>
+    <p class="sp-n">Psychology and Sociology are separate sites, so these settings do not reach them.</p>
+  </div></div>
 
   <a class="cont" id="cont" href="#"><span class="pl">▶️</span><div><b id="cont-t">Continue</b><span id="cont-s"></span></div></a>
 
@@ -122,6 +150,38 @@ try {
     c.classList.add('show');
   }
 } catch (e) {}
+
+(function () {
+  var h = new Date().getHours();
+  document.getElementById('greet').textContent = h < 5 ? 'Burning the midnight oil' : h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
+  var DK = ['hub_dark', 'gcse_dark', 'alevel_dark', 'cr_dark', 'geo_dark'], TK = ['gcse_text_size', 'alevel_text_size', 'cr_text_size', 'geo_text_size'];
+  var ST = {'': 1, l: 1.125, xl: 1.25}, BASE = 'clamp(17px,.9vw + 8px,24px)';
+  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  var sp = document.getElementById('sp'), sw = document.getElementById('sw-dark'), ts = document.getElementById('ts');
+  function paint() {
+    var d = document.documentElement.classList.contains('dark');
+    sw.classList.toggle('on', d); sw.setAttribute('aria-checked', d ? 'true' : 'false');
+    var v = get('hub_text_size') || '';
+    document.documentElement.style.fontSize = ST[v] === 1 || ST[v] === undefined ? '' : 'calc(' + BASE + ' * ' + ST[v] + ')';
+    ts.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-v') === v); });
+  }
+  sw.addEventListener('click', function () {
+    var d = !document.documentElement.classList.contains('dark');
+    document.documentElement.classList.toggle('dark', d);
+    DK.forEach(function (k) { set(k, d ? '1' : '0'); }); paint();
+  });
+  ts.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    var v = b.getAttribute('data-v'); set('hub_text_size', v); TK.forEach(function (k) { set(k, v); }); paint();
+  });
+  document.getElementById('gear').addEventListener('click', function () { sp.classList.add('on'); });
+  document.getElementById('sp-x').addEventListener('click', function () { sp.classList.remove('on'); });
+  sp.addEventListener('click', function (e) { if (e.target === sp) sp.classList.remove('on'); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') sp.classList.remove('on'); });
+  if (!get('hub_text_size')) { var f = TK.map(get).filter(Boolean)[0]; if (f) set('hub_text_size', f); }
+  paint();
+})();
 </script>
 </body>
 </html>
