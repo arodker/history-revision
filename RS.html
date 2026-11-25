@@ -3067,7 +3067,7 @@ Promise.all([
   fetch('data/rs/dates.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
   fetch('data/rs/flashcards.json?v=20261125b').then(r => { if (!r.ok) throw new Error('rs/flashcards.json: ' + r.status); return r.json(); }),
   fetch('data/rs/kc.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
-  fetch('data/rs/sowa.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
+  fetch('data/rs/sowa.json?v=20261125c').then(r => r.ok ? r.json() : []).catch(() => []),
   fetch('data/rs/keywords.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
 ]).then(([eq, rq, dates, fd, kc, sw, kw]) => {
   const SLOT = SLOT_OF_UNIT;
@@ -6561,9 +6561,31 @@ function qzBlank(item) {
   const html = k >= 0 ? q.slice(0, k) + '<span class="qz-gap">' + '&nbsp;'.repeat(6) + '</span>' + q.slice(k + gg.length) : q;
   return {gap:g.gap, d:g.d, html:html};
 }
-function qzMake(kind, item) {
+// Wrong options for SoWA "shows" questions: other SoWA quotes that do not fit. Never shares a topic tag with the correct quote.
+function qzSafe(item, field, n, short) {
+  const ok = x => x !== item && x.shows && x[field] !== item[field] && !x.tags.some(t => item.tags.includes(t)) && (!short || x.quote.length <= 170);
+  const pool = SOWA.filter(x => inScope(x) && ok(x));
+  const tiers = [pool.filter(x => x.unit === item.unit && x.type === item.type), pool.filter(x => x.unit === item.unit), pool.filter(x => x.pn === item.pn)];
+  const out = [], seen = {}; seen[item[field]] = 1;
+  tiers.forEach(t => shuffle(t.slice()).forEach(x => { if (out.length < n && !seen[x[field]]) { seen[x[field]] = 1; out.push(x); } }));
+  return out.length >= 2 ? out : null;
+}
+function qzVariant(item, j) {
+  if (QZ.kind !== 'sowa' || QZ.mode === 'type' || !item.shows || !item.tags) return 'gap';
+  const v = ['gap', 'shows', 'pick'][j % 3];
+  if (v === 'shows' && qzSafe(item, 'shows', 3)) return v;
+  if (v === 'pick' && item.quote.length <= 260 && qzSafe(item, 'quote', 3, true)) return v;
+  return 'gap';
+}
+function qzMake(kind, item, variant) {
   let c;
-  if (kind === 'sowa') { const b = qzBlank(item); c = {item, targets:[b.gap], options:[b.gap].concat(b.d), html:b.html, tag:item.type, ask:'Fill the gap in the quote.'}; }
+  if (kind === 'sowa' && variant === 'shows') {
+    const w = qzSafe(item, 'shows', 3).map(x => x.shows);
+    c = {item, targets:[item.shows], options:[item.shows].concat(w), html:escHtml(item.quote), tag:item.type, ask:'This quote shows that…'};
+  } else if (kind === 'sowa' && variant === 'pick') {
+    const w = qzSafe(item, 'quote', 3, true).map(x => x.quote);
+    c = {item, targets:[item.quote], options:[item.quote].concat(w), html:'<b>' + escHtml(item.shows) + '</b>', tag:'', ask:'Which quote could you use to show this?'};
+  } else if (kind === 'sowa') { const b = qzBlank(item); c = {item, targets:[b.gap], options:[b.gap].concat(b.d), html:b.html, tag:item.type, ask:'Fill the gap in the quote.'}; }
   else c = {item, targets:[item.term].concat(item.alt || []), options:[item.term].concat(item.d), html:escHtml(item.def), tag:item.cmd ? 'Command word' : 'Key word', ask:item.cmd ? 'Which command word is this?' : 'Which key word is this?'};
   c.opts = shuffle(c.options.slice()); return c;
 }
@@ -6598,7 +6620,7 @@ function qzStart(missedOnly) {
   const seenT = {}; pool = pool.filter(x => { const k = x.term; if (!k) return true; if (seenT[k]) return false; seenT[k] = 1; return true; });
   QZ.pool = shuffle(pool.slice()).slice(0, Math.min(pool.length, QZ.n));
   QZ.idx = 0; QZ.ok = 0; QZ.bad = 0; QZ.streak = 0; QZ.missed = []; QZ.hist = []; QZ.view = 0; QZ.locked = false;
-  QZ.cur = qzMake(QZ.kind, QZ.pool[0]); qzDraw();
+  QZ.var = QZ.pool.map((it, j) => qzVariant(it, j)); QZ.cur = qzMake(QZ.kind, QZ.pool[0], QZ.var[0]); qzDraw();
 }
 const QZ_NAV = 'padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit';
 function qzDraw() {
@@ -6625,7 +6647,7 @@ function qzDraw() {
     '<div class="quiz-prog"><div class="quiz-fill" style="width:' + pct + '%;background:' + qzCol().solid + '"></div></div>' +
     '<div class="quiz-hdr"><div style="display:flex;align-items:center;gap:8px">' + prev + '<span class="quiz-hdr-l">Question ' + (pos + 1) + ' of ' + total + (reviewing ? ' <span style="font-size:.7rem;color:var(--muted)">(reviewing)</span>' : '') + '</span>' + next + '</div>' +
     '<div class="sc-row">' + streak + '<span class="sc sc-c">✓ ' + QZ.ok + '</span><span class="sc sc-w">✗ ' + QZ.bad + '</span></div></div>' +
-    '<div class="qz-card' + (kw ? ' kw' : '') + '">' + (kw ? '' : '<span class="qz-mark">“</span>') + '<span class="qz-tag">' + escHtml(c.item.unit) + '</span>' + (kw ? '' : '<div class="qz-src">' + escHtml(c.tag) + ':</div>') + '<div class="qz-q">' + c.html + '</div>' +
+    '<div class="qz-card' + (kw ? ' kw' : '') + '">' + (kw ? '' : '<span class="qz-mark">“</span>') + '<span class="qz-tag">' + escHtml(c.item.unit) + '</span>' + (kw || !c.tag ? '' : '<div class="qz-src">' + escHtml(c.tag) + ':</div>') + '<div class="qz-q">' + c.html + '</div>' +
     '<div class="quiz-prompt" style="margin-top:.6rem">' + c.ask + '</div>' + ans + '</div>';
   const inp = document.getElementById('qz-in'); if (inp) setTimeout(() => inp.focus(), 50);
 }
@@ -6644,7 +6666,7 @@ function qzResult(ok, chosen) {
   setTimeout(() => {
     if (!document.getElementById('qz-body') || QZ.hist.length !== QZ.idx + 1) return;
     QZ.idx++; QZ.view = QZ.idx; QZ.locked = false;
-    if (QZ.idx < QZ.pool.length) QZ.cur = qzMake(QZ.kind, QZ.pool[QZ.idx]);
+    if (QZ.idx < QZ.pool.length) QZ.cur = qzMake(QZ.kind, QZ.pool[QZ.idx], QZ.var[QZ.idx]);
     qzDraw();
   }, ok ? 1200 : 2000);
 }
