@@ -1080,6 +1080,37 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 .pb-u16{background:#FEE8EC;color:#862334;border-color:#F43F5E}.bg-u16{background:#FEE8EC;color:#862334}.mode-btn.stripe-u16{border-left-color:#F43F5E}select.sel-u16{background:#FEE8EC;color:#862334;border-color:#F43F5E}.c-u16{background:#F43F5E}.s-u16{background:#F43F5E}.t-u16{background:#FEE8EC;color:#862334}.fill-u16{background:#F43F5E}.rq-pill.on-u16{background:#FEE8EC;color:#862334;border-color:#F43F5E}
 .pb-soon{opacity:.55;filter:grayscale(.55)}.pb-soon::after{content:'Coming soon';display:block;font-size:.66rem;font-weight:700;margin-top:.3rem}
 .paper-grid{grid-template-columns:1fr 1fr}
+.btn-sowa{background:#7A5200;color:#fff;border:2px solid #E0A93B}
+.btn-kwq{background:#0F5C4B;color:#fff;border:2px solid #3CB89A}
+.arc-tile.t6{background:linear-gradient(135deg,#4A3000,#BA7517)}
+.qz-h{font-size:1.25rem;font-weight:800;margin:.2rem 0 .6rem}
+.qz-tog{display:flex;gap:8px;margin:.4rem 0 1rem}
+.qz-tog button{flex:1;padding:.7rem;border-radius:12px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit;font-weight:700;cursor:pointer}
+.qz-tog button.on{background:#7A5200;border-color:#E0A93B;color:#fff}
+.qz-card{background:var(--surface);border:1px solid var(--border2);border-left:5px solid #BA7517;border-radius:0 14px 14px 0;padding:1rem 1.1rem;margin-bottom:.8rem;position:relative}
+.qz-card.kw{border-left-color:#1D9E75}
+.qz-card .qz-mark{position:absolute;top:-2px;right:12px;font-family:Georgia,serif;font-size:3.2rem;line-height:1;color:#FAC775}
+.qz-tag{display:inline-block;font-size:.72rem;font-weight:800;background:#FAEEDA;color:#633806;border-radius:8px;padding:2px 8px;margin-bottom:.5rem}
+.qz-card.kw .qz-tag{background:#E1F5EE;color:#085041}
+.qz-q{font-size:1.02rem;line-height:1.55}
+.qz-gap{display:inline-block;min-width:4.5rem;border-bottom:3px solid #BA7517;text-align:center;font-weight:800;color:#BA7517}
+.qz-opt{display:block;width:100%;text-align:left;padding:.8rem 1rem;margin-bottom:.5rem;border-radius:12px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit;font-size:.95rem;cursor:pointer}
+.qz-opt.ok{background:#E3F5EA;border-color:#2E9F5B;color:#0B5A2E}
+.qz-opt.no{background:#FBE5E5;border-color:#D14343;color:#7A1515}
+.qz-in{width:100%;box-sizing:border-box;padding:.8rem 1rem;border-radius:12px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit;font-size:1rem;margin-bottom:.5rem}
+.qz-fb{font-weight:700;margin:.4rem 0 .7rem}
+.qz-fb.ok{color:#1F7A44}.qz-fb.no{color:#B02A2A}
+.qz-prog{font-size:.8rem;color:var(--muted);margin-bottom:.5rem}
+.sm-o{display:block;width:100%;text-align:center;padding:1rem .8rem;margin-bottom:.55rem;border-radius:14px;border:none;background:#2B2350;color:#fff;font-family:inherit;font-size:1.05rem;font-weight:700;cursor:pointer}
+.sm-o.ok{background:#2E9F5B}.sm-o.no{background:#D14343}
+.sm-card{background:#FFF8E8;color:#3A2600;border-left:5px solid #BA7517;border-radius:0 14px 14px 0;padding:1rem 1.1rem;margin-bottom:.8rem;font-size:1.02rem;line-height:1.55}
+:root.dark .sm-card{background:#3A2F14;color:#FBE9C2}
+.fd-q-mark{font-family:Georgia,serif;color:#BA7517;font-weight:800}
+.qgold{border-left:5px solid #BA7517!important;position:relative}
+.qgold::after{content:'“';position:absolute;top:-4px;right:14px;font-family:Georgia,serif;font-size:3.4rem;line-height:1;color:#FAC775;pointer-events:none}
+.qgold .fd-tag::before{content:'SoWA ';font-weight:800;color:#7A5200}
+.kw-terms{display:flex;flex-wrap:wrap;gap:6px;margin:.4rem 0 .8rem}.kw-terms .mt-b{width:auto;flex:1 1 42%;min-height:0;padding:.6rem .5rem;font-family:inherit;font-weight:800;text-align:center}
+.kw-defs .mt-b{display:block;width:100%;text-align:left;margin:0 0 6px;padding:.65rem .8rem;font-family:inherit;font-weight:500;line-height:1.4;min-height:0;height:auto;writing-mode:horizontal-tb}
 </style>
 <link rel="manifest" href="manifest-geog.webmanifest">
 <meta name="theme-color" content="#2E8B57">
@@ -1147,6 +1178,7 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
   </div>
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
   <div class="home-row"><button class="btn-go btn-mix" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button><button class="btn-go btn-arc" onclick="arcOpen()">🕹️ Arcade Games</button></div>
+  <div class="home-row"><button class="btn-go btn-sowa" onclick="qzOpen('sowa')">“ SoWA Quiz</button><button class="btn-go btn-kwq" onclick="qzOpen('kw')">🔑 Key Word Quiz</button></div>
   <div class="or-line">or revise a unit</div>
   <style>@keyframes gapglow{0%,100%{box-shadow:0 0 0 0 rgba(83,74,183,0)}50%{box-shadow:0 0 0 5px rgba(83,74,183,.3)}}#gap-flag{animation:gapglow 2s ease-in-out infinite}@media (prefers-reduced-motion:reduce){#gap-flag{animation:none}}</style>
   <div class="paper-grid">
@@ -1510,6 +1542,11 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 </div>
 
 <!-- ═══ PROGRESS ═══ -->
+<div class="screen" id="s-qz">
+  <button class="back-btn" onclick="showScreen('s-pick')">← Back</button>
+  <div id="qz-body"></div>
+</div>
+
 <div class="screen" id="s-arcade">
   <button class="back-btn" onclick="showScreen('s-pick')">← Back</button>
   <div class="arc-title">🕹️ ARCADE</div>
@@ -3021,6 +3058,7 @@ let DATES = []; // loaded from data/rs/dates.json
 // LOAD EXTERNAL DATA
 // ═══════════════════════════════════════════
 let FD = []; // loaded from data/rs/flashcards.json
+let SOWA = [], KWS = [];
 
 Promise.all([
   fetch('data/rs/eq.json').then(r => r.ok ? r.json() : []).catch(() => []),
@@ -3028,7 +3066,9 @@ Promise.all([
   fetch('data/rs/dates.json').then(r => r.ok ? r.json() : []).catch(() => []),
   fetch('data/rs/flashcards.json').then(r => { if (!r.ok) throw new Error('rs/flashcards.json: ' + r.status); return r.json(); }),
   fetch('data/rs/kc.json').then(r => r.ok ? r.json() : []).catch(() => []),
-]).then(([eq, rq, dates, fd, kc]) => {
+  fetch('data/rs/sowa.json').then(r => r.ok ? r.json() : []).catch(() => []),
+  fetch('data/rs/keywords.json').then(r => r.ok ? r.json() : []).catch(() => []),
+]).then(([eq, rq, dates, fd, kc, sw, kw]) => {
   const SLOT = SLOT_OF_UNIT;
   const remap = a => a.map(it => { it.pn = it.paper; if (SLOT[it.unit]) it.paper = SLOT[it.unit]; return it; });
   EQ = remap(eq);
@@ -3036,6 +3076,8 @@ Promise.all([
   DATES = remap(dates);
   FD = remap(fd);
   KC = remap(kc);
+  SOWA = remap(sw);
+  KWS = remap(kw);
   window._dataLoaded = true;
   markSoon();
   // Refresh any visible modes
@@ -3161,7 +3203,8 @@ function ffRender() {
   tag.className = 'fd-tag ' + (tagClasses[cp] || '');
   tag.textContent = 'Paper ' + (fdCurrent.pn || '').replace('p','') + ' · ' + fdCurrent.unit;
   const isOut = fdGetOutstanding().includes(fdKey(fdCurrent));
-  document.getElementById('ff-q').textContent = (isOut ? '📌 ' : '') + (fdCurrent.k ? '🔑 ' : '') + fdCurrent.front;
+  document.getElementById('ff-q').textContent = (isOut ? '📌 ' : '') + (fdCurrent.k ? '🔑 ' : '') + (fdCurrent.q ? '“ ' : '') + fdCurrent.front;
+  document.getElementById('ff-card').classList.toggle('qgold', !!fdCurrent.q);
   document.getElementById('ff-card').style.borderLeftColor = stripeColours[cp] || '#888';
   ffSyncSwitch(); ffDraw();
 }
@@ -3577,7 +3620,8 @@ function fdNext() {
   const outstandingCheck = fdGetOutstanding();
   const isOutstandingCard = outstandingCheck.includes(fdKey(fdCurrent));
   document.getElementById('fd-question').textContent =
-    (isOutstandingCard ? '📌 ' : '') + (fdCurrent.k ? '🔑 ' : '') + fdCurrent.front;
+    (isOutstandingCard ? '📌 ' : '') + (fdCurrent.k ? '🔑 ' : '') + (fdCurrent.q ? '“ ' : '') + fdCurrent.front;
+  ['fd-front','fd-back'].forEach(id => { const e = document.getElementById(id); if (e) e.classList.toggle('qgold', !!fdCurrent.q); });
 
   const pts = document.getElementById('fd-points');
   const hints = fdCurrent.hints || [];
@@ -5122,6 +5166,8 @@ function arcMenu() {
     '<button class="arc-tile t1" onclick="eolStart()"><span class="arc-ic">🧩</span><span class="arc-tx"><b>Match the dates</b><small>Pair each event with its date. Three lives.</small></span><span class="arc-hi">HI ' + (hs.mt || 0) + '</span></button>' +
     '<button class="arc-tile t4" onclick="whStart()"><span class="arc-ic">🔨</span><span class="arc-tx"><b>Whack-a-fact</b><small>No time limit. Tap the right date or number.</small></span><span class="arc-hi">HI ' + (hs.wh || 0) + '</span></button>' +
     '<button class="arc-tile t5" onclick="stStart()"><span class="arc-ic">🧱</span><span class="arc-tx"><b>Stack it</b><small>Build a tower of events, oldest first.</small></span><span class="arc-hi">HI ' + (hs.st || 0) + '</span></button>' +
+    '<button class="arc-tile t6" onclick="smStart()"><span class="arc-ic">“</span><span class="arc-tx"><b>SoWA Smash</b><small>Smash the missing word in each quote before time runs out.</small></span><span class="arc-hi">HI ' + (hs.sm || 0) + '</span></button>' +
+    '<button class="arc-tile t3" onclick="kwStart()"><span class="arc-ic">🔑</span><span class="arc-tx"><b>Key word match-up</b><small>Pair each key word with its meaning. Three lives.</small></span><span class="arc-hi">HI ' + (hs.kw || 0) + '</span></button>' +
     '<div class="arc-note">Timed: 30 seconds a round in Match the dates, 5 a block in Stack it, 12 to type in Boss battle. Right answers earn 2 XP (1 for repeats), shown when the game ends.</div>';
 }
 function arcShort(msg) { fdShowToast(msg); }
@@ -6494,6 +6540,176 @@ window.hsInstall=function(){
  if(g)g.onclick=function(){var p=dp;dp=null;o.remove();p.prompt();p.userChoice.finally(function(){try{setMenuRender()}catch(_){}})};
 };
 })();
+
+// ═══════════════════════════════════════════
+// SOWA QUIZ, KEY WORD QUIZ, SOWA SMASH, KEY WORD MATCH-UP
+// ═══════════════════════════════════════════
+const QZ = {kind:'sowa', mode:'pick', pool:[], i:0, score:0, n:10, cur:null, locked:false};
+function qzNorm(t) { return String(t).toLowerCase().replace(/[’‘`]/g, "'").replace(/[^a-z0-9' ]+/g, ' ').replace(/\s+/g, ' ').trim(); }
+function qzLev(a, b) {
+  const m = a.length, n = b.length; if (Math.abs(m - n) > 1) return 2;
+  const d = []; for (let i = 0; i <= m; i++) { d[i] = [i]; } for (let j = 1; j <= n; j++) d[0][j] = j;
+  for (let i = 1; i <= m; i++) for (let j = 1; j <= n; j++) d[i][j] = Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1));
+  return d[m][n];
+}
+function qzMatch(ans, targets) {
+  const a = qzNorm(ans); if (!a) return false;
+  return targets.some(t => { const n = qzNorm(t); return a === n || (n.length >= 6 && qzLev(a, n) <= 1); });
+}
+function qzBlank(item) {
+  const g = item.gaps[Math.floor(Math.random() * item.gaps.length)];
+  const q = escHtml(item.quote), gg = escHtml(g.gap), k = q.indexOf(gg);
+  const html = k >= 0 ? q.slice(0, k) + '<span class="qz-gap">' + '&nbsp;'.repeat(6) + '</span>' + q.slice(k + gg.length) : q;
+  return {gap:g.gap, d:g.d, html:html};
+}
+function qzMake(kind, item) {
+  if (kind === 'sowa') { const b = qzBlank(item); return {item, targets:[b.gap], options:[b.gap].concat(b.d), html:b.html, tag:item.type, ask:'Fill the gap in the quote.'}; }
+  return {item, targets:[item.term].concat(item.alt || []), options:[item.term].concat(item.d), html:escHtml(item.def), tag:'Key word', ask:'Which key word is this?'};
+}
+function qzPoolFor(kind, papers) {
+  const src = kind === 'sowa' ? SOWA : KWS;
+  return src.filter(x => inScope(x) && (!papers || papers.includes(x.paper)));
+}
+function qzOpen(kind) {
+  QZ.kind = kind; showScreen('s-qz'); qzSetup();
+}
+function qzSetup() {
+  const k = QZ.kind, n = qzPoolFor(k).length;
+  document.getElementById('qz-body').innerHTML =
+    '<div class="qz-h">' + (k === 'sowa' ? '“ SoWA Quiz' : '🔑 Key Word Quiz') + '</div>' +
+    '<div class="qz-tog"><button class="' + (QZ.mode === 'pick' ? 'on' : '') + '" onclick="QZ.mode=\'pick\';qzSetup()">Pick</button><button class="' + (QZ.mode === 'type' ? 'on' : '') + '" onclick="QZ.mode=\'type\';qzSetup()">Type</button></div>' +
+    (n ? '<button class="arc-btn" onclick="qzStart()">Start</button>' : '<div class="empty">Nothing to show for the units you have reached yet.</div>');
+}
+function qzStart() {
+  QZ.pool = shuffle(qzPoolFor(QZ.kind).slice()).slice(0, QZ.n); QZ.i = 0; QZ.score = 0; qzNext();
+}
+function qzNext() {
+  if (QZ.i >= QZ.pool.length) { qzEnd(); return; }
+  QZ.cur = qzMake(QZ.kind, QZ.pool[QZ.i]); QZ.cur.opts = shuffle(QZ.cur.options.slice()); QZ.locked = false; qzDraw();
+}
+function qzDraw(fb) {
+  const c = QZ.cur, kw = QZ.kind === 'kw';
+  let body = '<div class="qz-prog">' + (QZ.i + 1) + ' of ' + QZ.pool.length + '</div>' +
+    '<div class="qz-card' + (kw ? ' kw' : '') + '">' + (kw ? '' : '<span class="qz-mark">“</span>') + '<span class="qz-tag">' + escHtml(c.tag) + '</span><div class="qz-q">' + c.html + '</div></div>' +
+    '<div class="arc-sub" style="margin-bottom:.5rem">' + c.ask + '</div>';
+  if (QZ.mode === 'pick') {
+    body += c.opts.map((o, i) => '<button class="qz-opt' + (fb ? (qzMatch(o, c.targets) && o === c.targets[0] ? ' ok' : (fb.pick === i ? ' no' : '')) : '') + '" ' + (fb ? 'disabled ' : '') + 'onclick="qzPick(' + i + ')">' + escHtml(o) + '</button>').join('');
+  } else if (!fb) {
+    body += '<input class="qz-in" id="qz-in" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" onkeydown="if(event.key===\'Enter\')qzType()"><button class="arc-btn" onclick="qzType()">Check</button>';
+  }
+  if (fb) body += '<div class="qz-fb ' + (fb.ok ? 'ok' : 'no') + '">' + (fb.ok ? 'Correct' : 'It was: ' + escHtml(c.targets[0])) + '</div><button class="arc-btn" onclick="QZ.i++;qzNext()">' + (QZ.i + 1 >= QZ.pool.length ? 'Finish' : 'Next') + '</button>';
+  document.getElementById('qz-body').innerHTML = body;
+  const inp = document.getElementById('qz-in'); if (inp) inp.focus();
+}
+function qzResult(ok, pick) {
+  const it = QZ.cur.item;
+  xpAward(QZ.kind, ok, QZ.kind + '|' + (it.term || it.quote.slice(0, 40)) + '|' + QZ.cur.targets[0], it.term || it.type, it.paper, it.unit);
+  if (ok) QZ.score++; QZ.locked = true; qzDraw({ok, pick});
+}
+function qzPick(i) { if (QZ.locked) return; const c = QZ.cur; qzResult(c.opts[i] === c.targets[0], i); }
+function qzType() {
+  if (QZ.locked) return; const v = document.getElementById('qz-in').value;
+  if (!v.trim()) { return; }
+  qzResult(qzMatch(v, QZ.cur.targets));
+}
+function qzEnd() {
+  document.getElementById('qz-body').innerHTML = '<div class="arc-end"><div class="arc-big">' + (QZ.kind === 'sowa' ? '“' : '🔑') + '</div><div class="arc-h">Done</div><div class="arc-score">' + QZ.score + ' / ' + QZ.pool.length + '</div>' +
+    '<button class="arc-btn" onclick="qzStart()">Go again</button><button class="arc-btn sec" onclick="showScreen(\'s-pick\')">Back to hub</button></div>';
+  xpFlushLater();
+}
+// ----- SoWA Smash -----
+function smPool() { const ps = arcPapers(); return SOWA.filter(q => ps.includes(q.paper) && inScope(q)); }
+function smStart() {
+  const pool = smPool(); if (pool.length < 4) { arcShort('Not enough quotes for this choice yet.'); return; }
+  ARC.g = {type:'sm', pool:shuffle(pool.slice()), idx:0, lives:3, score:0, busy:false};
+  smNext();
+}
+function smNext() {
+  const g = ARC.g; if (g.idx >= g.pool.length) { g.pool = shuffle(g.pool.slice()); g.idx = 0; }
+  g.cur = qzMake('sowa', g.pool[g.idx++]); g.cur.opts = shuffle(g.cur.options.slice()); g.pick = -1; g.busy = false;
+  arcTimerStart(Math.max(6, 12 - Math.floor(g.score / 5)), smLate); smRender();
+}
+function smRender() {
+  const g = ARC.g, hs = arcHS(), c = g.cur;
+  const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Smashed <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.sm || 0, g.score) + '</b></span></div>';
+  const opts = c.opts.map((o, i) => '<button class="sm-o' + (g.busy ? (o === c.targets[0] ? ' ok' : (g.pick === i ? ' no' : '')) : '') + '" ' + (g.busy ? 'disabled ' : '') + 'onclick="smPick(' + i + ')">' + escHtml(o) + '</button>').join('');
+  arcFrame('<div class="sm-card"><span class="qz-tag">' + escHtml(c.tag) + '</span><div>' + c.html + '</div></div>' + opts, head);
+}
+function smPick(i) {
+  const g = ARC.g; if (!g || g.type !== 'sm' || g.busy) return;
+  const c = g.cur, ok = c.opts[i] === c.targets[0], it = c.item;
+  arcTimerStop(); g.busy = true; g.pick = i;
+  xpAward('sowa', ok, 'sw|' + it.quote.slice(0, 40) + '|' + c.targets[0], it.type, it.paper, it.unit);
+  if (ok) g.score++; else g.lives--;
+  smRender();
+  ARC.t = setTimeout(() => { if (ARC.g !== g) return; if (g.lives <= 0) smOver(); else smNext(); }, ok ? 500 : 1100);
+}
+function smLate() {
+  const g = ARC.g; if (!g || g.type !== 'sm' || g.busy) return;
+  g.busy = true; g.pick = -1; g.lives--; smRender();
+  ARC.t = setTimeout(() => { if (ARC.g !== g) return; if (g.lives <= 0) smOver(); else smNext(); }, 1100);
+}
+function smOver() {
+  const g = ARC.g, isBest = arcSetHS('sm', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">“</div><div class="arc-h">Game over</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">quotes smashed' + (isBest ? ' · new best' : '') + '</div>' +
+    '<button class="arc-btn" onclick="smStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
+}
+// ----- Key word match-up -----
+function kwShort(d) {
+  const s = d.split(/(?<=[.!?])\s/)[0];
+  return s.length > 110 ? s.slice(0, 107).replace(/\s+\S*$/, '') + '…' : s;
+}
+function kwStart() {
+  const ps = arcPapers(), pool = KWS.filter(k => ps.includes(k.paper) && inScope(k) && k.def.length > 15);
+  if (pool.length < 5) { arcShort('Not enough key words for this choice yet.'); return; }
+  ARC.g = {type:'kw', pool, lives:3, score:0, n:3, max:6};
+  kwRound();
+}
+function kwRound(msg) {
+  const g = ARC.g, used = new Set(), items = [];
+  for (const it of shuffle(g.pool.slice())) { if (!used.has(it.term)) { used.add(it.term); items.push(it); } if (items.length === g.n) break; }
+  g.items = items; g.defs = shuffle(items.map((x, i) => i)); g.done = {}; g.selE = -1; g.selD = -1; g.bad = ''; g.msg = msg || ''; g.busy = false;
+  arcTimerStart(40, kwLate); kwRender();
+}
+function kwRender() {
+  const g = ARC.g, hs = arcHS();
+  const head = '<div class="arc-stats">' + arcHearts(g.lives) + '<span>Matched <b>' + g.score + '</b></span><span>Best <b>' + Math.max(hs.kw || 0, g.score) + '</b></span></div>';
+  const cls = (done, sel, bad) => (done ? ' ok' : '') + (sel ? ' sel' : '') + (bad ? ' no' : '');
+  const evs = g.items.map((it, i) => '<button class="mt-b mt-ev' + cls(g.done[i], g.selE === i, g.bad === 'e' + i) + '" style="--c:' + (PAPER_COL[it.paper] || '#888') + '" ' + (g.done[i] || g.busy ? 'disabled ' : '') + 'onclick="kwPick(\'e\',' + i + ')">' + escHtml(it.term) + '</button>').join('');
+  const dts = g.defs.map(i => '<button class="mt-b mt-dt' + cls(g.done[i], g.selD === i, g.bad === 'd' + i) + '" style="font-size:.8rem" ' + (g.done[i] || g.busy ? 'disabled ' : '') + 'onclick="kwPick(\'d\',' + i + ')">' + escHtml(kwShort(g.items[i].def)) + '</button>').join('');
+  arcFrame('<div class="arc-sub" style="text-align:center">' + (g.msg || 'Tap a key word, then its meaning. Match them all.') + '</div><div class="kw-terms">' + evs + '</div><div class="kw-defs">' + dts + '</div>', head);
+}
+function kwPick(side, i) {
+  const g = ARC.g; if (!g || g.type !== 'kw' || g.busy || g.done[i]) return;
+  if (side === 'e') g.selE = g.selE === i ? -1 : i; else g.selD = g.selD === i ? -1 : i;
+  if (g.selE >= 0 && g.selD >= 0) {
+    const e = g.selE, d = g.selD, it = g.items[e], ok = e === d;
+    xpAward('kw', ok, 'kw|' + it.term, it.term, it.paper, it.unit);
+    g.selE = -1; g.selD = -1;
+    if (ok) {
+      g.done[e] = 1; g.score++; g.msg = '';
+      if (Object.keys(g.done).length >= g.items.length) {
+        g.busy = true; arcTimerStop(); g.n = Math.min(g.max, g.n + 1); g.msg = 'All matched!'; kwRender();
+        ARC.t = setTimeout(() => { if (ARC.g === g) kwRound(); }, 900); return;
+      }
+    } else {
+      g.lives--; g.bad = 'e' + e; g.msg = 'Not that one. Try again.';
+      if (g.lives <= 0) { kwOver(); return; }
+      kwRender(); ARC.t = setTimeout(() => { if (ARC.g === g) { g.bad = ''; kwRender(); } }, 700); return;
+    }
+  }
+  kwRender();
+}
+function kwLate() {
+  const g = ARC.g; if (!g || g.type !== 'kw') return;
+  g.lives--; if (g.lives <= 0) { kwOver(); return; }
+  kwRound('Time\'s up. New set');
+}
+function kwOver() {
+  const g = ARC.g, isBest = arcSetHS('kw', g.score);
+  arcFrame('<div class="arc-end"><div class="arc-big">🔑</div><div class="arc-h">Game over</div><div class="arc-score">' + g.score + '</div><div class="arc-sub2">pairs matched' + (isBest ? ' · new best' : '') + '</div>' +
+    '<button class="arc-btn" onclick="kwStart()">Play again</button><button class="arc-btn sec" onclick="arcMenu()">Back to arcade</button></div>', '');
+}
 </script>
 </body>
 </html>
