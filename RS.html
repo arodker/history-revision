@@ -6720,9 +6720,10 @@ function qzVariant(item, j) {
 // Hide words of the term that the definition repeats, unless a wrong option shares them too
 const QZ_GEN = new Set(['muslim','muslims','christian','christians','allah','god','people','church','islam','life']);
 function qzMaskDef(item) {
-  const words = String(item.term).toLowerCase().split(/[^a-z']+/).filter(w => w.length >= 4 && !QZ_GEN.has(w) && !item.d.some(o => o.toLowerCase().includes(w)));
+  // stems: "Resurrection" also hides "resurrected", "Creationism" hides "created"
+  const stems = String(item.term).toLowerCase().split(/[^a-z']+/).filter(w => w.length >= 4 && !QZ_GEN.has(w)).map(w => w.length >= 9 ? w.slice(0, 5) : w).filter(w => !item.d.some(o => o.toLowerCase().includes(w)));
   let t = escHtml(item.def);
-  words.forEach(w => { t = t.replace(new RegExp("\\b" + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + "(?:s|es|ed|ing|ly)?\\b", 'gi'), '_____'); });
+  stems.forEach(w => { t = t.replace(new RegExp("\\b" + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + "[a-z']*", 'gi'), '_____'); });
   return t;
 }
 function qzMake(kind, item, variant) {
