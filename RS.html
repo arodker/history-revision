@@ -6612,16 +6612,20 @@ function qzPoolFor(kind) { return qzScope(kind).filter(x => !QZ_OFF.has(x.unit))
 function qzToggleUnit(u) { if (QZ_OFF.has(u)) QZ_OFF.delete(u); else QZ_OFF.add(u); qzSaveOff(); qzSetup(); }
 function qzToggleGroup(pn, on) { UNITS.filter(u => u.pn === pn).forEach(u => { if (on) QZ_OFF.delete(u.n); else QZ_OFF.add(u.n); }); qzSaveOff(); qzSetup(); }
 function qzUnitPicker() {
-  const sc = qzScope(QZ.kind), c = qzCol(), cnt = {}; sc.forEach(x => { cnt[x.unit] = (cnt[x.unit] || 0) + 1; });
+  const all = qzKindAll(), sc = qzScope(QZ.kind), c = qzCol(), cnt = {}, tot = {}; all.forEach(x => { tot[x.unit] = (tot[x.unit] || 0) + 1; }); sc.forEach(x => { cnt[x.unit] = (cnt[x.unit] || 0) + 1; });
   return [[1, 'Islam'], [2, 'Christianity']].map(([pn, nm]) => {
-    const us = UNITS.filter(u => u.pn === pn && cnt[u.n]); if (!us.length) return '';
-    const allOn = us.every(u => !QZ_OFF.has(u.n));
-    return '<div style="margin-bottom:.7rem"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem"><span style="font-size:.78rem;font-weight:800;color:var(--text)">' + nm + '</span>' +
-      '<button class="rq-star" style="font-size:.7rem;padding:3px 9px;border-radius:7px" onclick="qzToggleGroup(' + pn + ',' + (allOn ? 'false' : 'true') + ')">' + (allOn ? 'Untick all' : 'Tick all') + '</button></div>' +
-      '<div style="display:flex;flex-wrap:wrap;gap:6px">' + us.map(u => { const on = !QZ_OFF.has(u.n);
-        return '<button class="rq-star" style="border-radius:999px;padding:6px 11px;font-size:.78rem;' + (on ? 'background:' + c.bg + ';color:' + c.color + ';border-color:' + c.border : 'background:var(--surface);color:var(--muted);border-color:var(--border2);text-decoration:line-through') + '" onclick="qzToggleUnit(\'' + u.n.replace(/'/g, "\\'") + '\')">' + (on ? '☑ ' : '☐ ') + escHtml(u.n) + ' <span style="opacity:.65">' + cnt[u.n] + '</span></button>'; }).join('') + '</div></div>';
+    const us = UNITS.filter(u => u.pn === pn && tot[u.n]); if (!us.length) return '';
+    const open = us.filter(u => cnt[u.n]), allOn = open.every(u => !QZ_OFF.has(u.n));
+    return '<div style="margin-bottom:.8rem"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem"><span style="font-size:.8rem;font-weight:800;color:var(--text)">' + nm + '</span>' +
+      (open.length ? '<button class="rq-star" style="font-size:.7rem;padding:3px 9px;border-radius:7px" onclick="qzToggleGroup(' + pn + ',' + (allOn ? 'false' : 'true') + ')">' + (allOn ? 'Untick all' : 'Tick all') + '</button>' : '') + '</div>' +
+      us.map(u => { const lock = !cnt[u.n], on = !lock && !QZ_OFF.has(u.n);
+        const st = lock ? 'background:var(--surface);color:var(--muted);border-color:var(--border2);opacity:.55;cursor:default' : on ? 'background:' + c.bg + ';color:' + c.color + ';border-color:' + c.border : 'background:var(--surface);color:var(--muted);border-color:var(--border2)';
+        return '<button class="rq-star" ' + (lock ? 'disabled ' : '') + 'style="display:flex;align-items:center;gap:10px;width:100%;text-align:left;border-radius:10px;padding:9px 12px;margin-bottom:5px;font-size:.86rem;' + st + '" onclick="qzToggleUnit(\'' + u.n + '\')">' +
+          '<span style="font-size:1.15rem">' + (lock ? '🔒' : u.e) + '</span><span style="flex:1;font-weight:600' + (lock || on ? '' : ';text-decoration:line-through') + '">' + escHtml(u.n) + '</span>' +
+          '<span style="opacity:.7;font-size:.76rem">' + (lock ? 'Not taught yet' : cnt[u.n]) + '</span><span style="font-size:1.05rem">' + (lock ? '' : on ? '☑' : '☐') + '</span></button>'; }).join('') + '</div>';
   }).join('');
 }
+function qzKindAll() { return QZ.kind === 'sowa' ? SOWA : KWS; }
 function qzCol() { return QZ.kind === 'sowa' ? {bg:'#FAEEDA', color:'#633806', border:'#BA7517', solid:'#BA7517', fill:''} : {bg:'#E1F5EE', color:'#085041', border:'#1D9E75', solid:'#1D9E75', fill:''}; }
 function qzOpen(kind) { QZ.kind = kind; showScreen('s-qz'); qzSetup(); }
 function qzSetup() {
