@@ -6929,7 +6929,7 @@ function exToggleGroup(pn, on) { UNITS.filter(u => u.pn === pn).forEach(u => { i
 function exPills() {
   const cnt = {}; exStudied().forEach(r => { cnt[r.u] = (cnt[r.u] || 0) + 1; });
   const units = UNITS.filter(u => cnt[u.n]).map(u => ({n:u.n, e:u.e, pn:u.pn, cnt:cnt[u.n]}));
-  return '<div class="ex-units"><div class="up-t">Units studied so far</div>' + unitPills({units, off:EX.off, tog:'exToggleUnit', grp:'exToggleGroup', c:{bg:'#E3EAF7', color:'#1F3864', border:'#5B7FBF'}}) + '</div>';
+  return '<div class="ex-units"><div class="up-t">Practice questions from these units (studied so far)</div>' + unitPills({units, off:EX.off, tog:'exToggleUnit', grp:'exToggleGroup', c:{bg:'#E3EAF7', color:'#1F3864', border:'#5B7FBF'}}) + '</div>';
 }
 function exNew() {
   const pool = exPool(); if (!pool.length) { EX.q = null; return; }
@@ -6957,7 +6957,8 @@ function exRender() {
   if (!EX.mode) {
     body.innerHTML = '<div class="ex-h">📝 Exam practice</div><p class="ex-sub">Edexcel GCSE RS (Route B). Choose how you want to work.</p>' +
       '<button class="ex-mode" onclick="exMode(\'review\')"><b>📘 Review structure</b><span>Command words and how to answer parts (a) to (d), plus an evaluation toolkit.</span></button>' +
-      '<button class="ex-mode" onclick="exMode(\'practice\')"><b>✍️ Practice questions</b><span>Answer a question from your units, then tick the mark points you hit.</span></button>';
+      '<button class="ex-mode" onclick="exMode(\'practice\')"><b>✍️ Practice questions</b><span>Answer a question from your units, then tick the mark points you hit.</span></button>' +
+      (EX.bank ? exPills() : '');
     return;
   }
   const P = EX_PARTS[EX.part];
@@ -6980,11 +6981,11 @@ function exRender() {
     return;
   }
   if (!EX.q) exNew();
-  if (!EX.q) { body.innerHTML = top + '<div class="ex-h">✍️ Practice questions</div>' + (EX.bank ? exPills() + '<div class="empty">Tick at least one unit to get a question.</div>' : '<p class="ex-sub">Questions are loading. Try again in a moment.</p>'); return; }
+  if (!EX.q) { body.innerHTML = top + '<div class="ex-h">✍️ Practice questions</div>' + (EX.bank ? '<div class="empty">No units ticked. Go back to the menu and tick at least one unit.</div>' : '<p class="ex-sub">Questions are loading. Try again in a moment.</p>'); return; }
   const k = SLOT_OF_UNIT[EX.q.u], st = k && SLOT_STYLE[k] ? SLOT_STYLE[k] : {bg:'#E3EAF7', color:'#1F3864', border:'#5B7FBF'};
   let qt = EX.q.q[EX.part] || '';
   if (EX.part === 'd') qt += ' In your response you should: refer to ' + (/Christian|Church/.test(EX.q.u) ? 'Christian' : 'Muslim') + ' teachings' + (EX.q.nr ? ', refer to a non-religious viewpoint' : '') + ' and reach a justified conclusion.';
-  body.innerHTML = top + '<div class="ex-h">✍️ Practice questions</div><p class="ex-sub">Questions from your revision guides. Write your answer, then mark it yourself.</p>' + exPills() + exTabs() +
+  body.innerHTML = top + '<div class="ex-h">✍️ Practice questions</div><p class="ex-sub">Questions from your revision guides. Write your answer, then mark it yourself.</p>' + exTabs() +
     '<div class="ex-card"><h3>' + exCW(P.title) + '<span class="ex-marks">' + P.marks + '</span></h3><div class="ex-q"><span class="ex-pill" style="background:' + st.bg + ';color:' + st.color + ';border-color:' + st.border + '">' + escHtml(EX.q.u) + ': ' + escHtml(EX.q.t) + '</span><br>' + exCW(escHtml(qt)) + '</div>' +
     '<textarea class="ex-ta" id="ex-ta" placeholder="Write your answer here. Target: ' + P.nTxt + '."></textarea>' +
     '<div class="ex-row"><button class="ex-btn" onclick="exCheck()">Check my answer</button><button class="ex-btn sec" onclick="exNew();exRender()">New question</button></div>' +
