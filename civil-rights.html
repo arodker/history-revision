@@ -663,6 +663,16 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
 .hub-big .mode-btn{padding:1.3rem .5rem}.hub-big .mode-btn .icon{font-size:1.6rem}
 .arc-title{font-size:1.4rem;font-weight:800;margin:.4rem 0 .2rem}
 .ff-card{position:relative;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;margin-bottom:.75rem;box-sizing:border-box}
+.ff-intro-hint{display:none;font-size:.78rem;color:var(--muted);margin-top:1.2rem;text-align:center;width:100%}
+.ff-bar{height:4px;background:var(--subtle,#eee);border-radius:4px;overflow:hidden;margin-bottom:.5rem}
+.ff-bar i{display:block;height:100%;width:100%;background:#2563eb;transform-origin:left;animation:ffbar 3.5s linear forwards}
+@keyframes ffbar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes ffin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ff-card.ff-intro{min-height:58vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;cursor:pointer}
+.ff-card.ff-intro .fd-question,.ff-card.ff-intro .ff-q{font-size:1.45rem;line-height:1.35}
+.ff-card.ff-intro .ff-intro-hint{display:block}
+.ff-card.ff-intro #ff-sents,.ff-card.ff-intro #ff-input{display:none}
+.ff-card:not(.ff-intro) #ff-sents,.ff-card:not(.ff-intro) #ff-input{animation:ffin .4s}
 .ff-s{font-size:.92rem;line-height:1.75;margin:0 0 .7rem;color:var(--text)}
 .ff-blank{display:inline-block;min-width:4.5em;border:2px solid var(--muted);background:var(--subtle);border-radius:6px;color:transparent;user-select:none;vertical-align:middle;line-height:1.3;margin:0 .1em}
 .ff-blank.cur{border-color:#2563eb;background:rgba(37,99,235,.12);animation:ffp 1.2s ease-in-out infinite}
@@ -967,7 +977,7 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     <div id="fd-drill" style="display:none">
       <div class="fd-progress-wrap"><div class="fd-progress-text"><span id="fd-prog-text"></span><span id="fd-prog-count"></span></div><div class="fd-bar-bg"><div class="fd-bar-fill" id="fd-bar" style="width:0%"></div></div></div>
       <div class="fd-hints-toggle" id="fd-hints-drill-wrap" style="margin-bottom:.5rem;margin-top:-.25rem"><input type="checkbox" id="fd-hints-on-drill" onchange="fdSyncHints(this.checked)"><label for="fd-hints-on-drill">💡 Hints</label></div>
-      <div id="fd-fill" style="display:none"><div class="ff-card" id="ff-card"><div class="ff-no" id="ff-no"></div><div class="fd-tag" id="ff-tag"></div><div class="ff-q" id="ff-q"></div><div id="ff-sents"></div><div id="ff-input"></div><div id="ff-after"></div></div></div>
+      <div id="fd-fill" style="display:none"><div class="ff-card" id="ff-card" onclick="ffGo()"><div class="ff-no" id="ff-no"></div><div class="fd-tag" id="ff-tag"></div><div class="ff-q" id="ff-q"></div><div class="ff-intro-hint" id="ff-intro-hint"><div class="ff-bar"><i></i></div>Read the question. Tap to start</div><div id="ff-sents"></div><div id="ff-input"></div><div id="ff-after"></div></div></div>
       <div class="fd-scene" id="fd-scene" onclick="fdFlip()"><div class="fd-card-inner" id="fd-card-inner"><div class="fd-front" id="fd-front"><div class="fd-card-no" id="fd-card-no"></div><div class="fd-tag" id="fd-tag"></div><div class="fd-question" id="fd-question"></div><div class="fd-hint-chips" id="fd-hint-chips"></div><div class="fd-tap-hint">Tap to reveal answer</div></div><div class="fd-back" id="fd-back"><div class="fd-card-no" id="fd-card-no-back"></div><div class="fd-tag" id="fd-tag-back"></div><ul class="fd-points" id="fd-points"></ul></div></div><div class="fd-stamp" id="fd-stamp" aria-hidden="true"></div></div>
       <div class="fd-btn-row" id="fd-btn-row" style="display:none"><button class="fd-btn fd-miss" onclick="fdAnswer(false)">Missed</button><button class="fd-btn fd-got" onclick="fdAnswer(true)">Got it</button></div>
     </div>
@@ -1851,6 +1861,14 @@ function ffRender() {
   document.getElementById('ff-q').textContent = (isOut ? '📌 ' : '') + fdCurrent.front;
   document.getElementById('ff-card').style.borderLeftColor = (UNITS[fdCurrent.section] ? UNITS[fdCurrent.section].colour : '#888');
   ffDraw();
+  const card = document.getElementById('ff-card'); card.classList.add('ff-intro');
+  const bar = card.querySelector('.ff-bar i'); if (bar) { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; }
+  const t = ffTok; setTimeout(() => { if (t === ffTok) ffGo(); }, 3500);
+}
+function ffGo() {
+  const card = document.getElementById('ff-card');
+  if (!card || !card.classList.contains('ff-intro')) return;
+  card.classList.remove('ff-intro'); ffDraw();
 }
 function ffDraw() {
   document.getElementById('ff-sents').innerHTML = [0,1,2].slice(0, Math.min(ffI,2) + 1).map(i => '<p class="ff-s">' + ffSentHtml(i) + '</p>').join('');
