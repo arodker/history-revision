@@ -15065,16 +15065,16 @@
   "front": "Which quotes show Qur'anic teaching on women's rights?",
   "p1": "Qur'an: “who created you all from a single soul.” Men and women share one origin.",
   "p2": "Qur'an: “it is not lawful for you to inherit women against their will.” Women must not be treated as property.",
-  "p3": "Qur'an: “The Qur'an is not something he made up. It was revealed to him.” These rules come from Allah.",
+  "p3": "Qur'an: “women shall have a share in what their parents and closest relatives leave.” Women have a right to inherit.",
   "hints": [
    "single soul",
    "will",
-   "made up"
+   "inherit"
   ],
   "s": [
    "Qur'an: “who created you all from a single soul.” Men and women share one origin.",
    "Qur'an: “it is not lawful for you to inherit women against their will.” Women must not be treated as property.",
-   "Qur'an: “The Qur'an is not something he made up. It was revealed to him.” These rules come from Allah."
+   "Qur'an: “women shall have a share in what their parents and closest relatives leave.” Women have a right to inherit."
   ],
   "fill": [
    {
@@ -15110,12 +15110,22 @@
    },
    {
     "p": 3,
-    "gap": "Allah",
+    "gap": "a share",
     "alt": [],
     "d": [
-     "Jibril",
-     "Ali",
-     "Ibrahim"
+     "no share",
+     "half a share",
+     "a gift"
+    ],
+    "opts": [
+     {
+      "gap": "inherit",
+      "d": [
+       "refuse",
+       "sell",
+       "borrow"
+      ]
+     }
     ]
    }
   ],
