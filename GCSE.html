@@ -179,7 +179,6 @@ function loadNudge() {
   } catch (e) {}
 }
 setTimeout(loadNudge, 2500);
-document.addEventListener('DOMContentLoaded', function () { try { if (!localStorage.getItem('gcse_gap_tried')) document.getElementById('gap-flag').style.display = 'flex'; } catch (e) {} });
 function gapNewClose(go) {
   try { localStorage.setItem('gcse_gap_new', '1'); } catch (e) {}
   const n = document.getElementById('gap-new'); if (n) n.remove();
@@ -1160,8 +1159,6 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
   </div>
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
   <div class="paper-lbl">Revise a paper:</div>
-  <style>@keyframes gapglow{0%,100%{box-shadow:0 0 0 0 rgba(83,74,183,0)}50%{box-shadow:0 0 0 5px rgba(83,74,183,.3)}}#gap-flag{animation:gapglow 2s ease-in-out infinite}@media (prefers-reduced-motion:reduce){#gap-flag{animation:none}}</style>
-  <div id="gap-flag" style="display:none;background:#EEEDFE;border-radius:10px;padding:.6rem .75rem;margin:.2rem auto .6rem;width:fit-content;max-width:88%;color:#3C3489;font-size:.84rem;line-height:1.4;gap:.5rem;text-align:center;justify-content:center;align-items:center"><span>🆕</span><span><b>Try this:</b> Flashcards now have a gapfill mode!</span></div>
   <div class="paper-grid">
     <button class="paper-btn pb-p1" onclick="openPaper('p1')"><span class="fd-wheel-cell pbw" data-paper="p1"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p1" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p1" cx="30" cy="30" r="24" fill="none" stroke="#F0B429" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p1" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p1">0%</text></svg></span><span class="plabel">Paper 1</span>🚢 Migrants in Britain</button>
     <button class="paper-btn pb-p2a" onclick="openPaper('p2a')"><span class="fd-wheel-cell pbw" data-paper="p2a"><svg class="fd-wheel" viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/><circle class="fd-ring-miss-p2a" cx="30" cy="30" r="24" fill="none" stroke="#e5e5e5" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-got-p2a" cx="30" cy="30" r="24" fill="none" stroke="#D4537E" stroke-width="6" stroke-dasharray="0 150.8" stroke-linecap="round" transform="rotate(-90 30 30)"/><circle class="fd-ring-fill-p2a" cx="30" cy="30" r="0" fill="#FEF3C7" style="transition:r .3s"/><text x="30" y="34" text-anchor="middle" font-size="10" font-weight="700" fill="var(--text)" class="fd-pct-p2a">0%</text></svg></span><span class="plabel">Paper 2a</span>🚀 Cold War 1941&ndash;91</button>

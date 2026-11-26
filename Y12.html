@@ -962,7 +962,6 @@ select{padding:.47rem .59rem;font-size:.82rem;border:1px solid var(--border2);bo
     <div class="up-ticks" id="up-ticks-c"></div>
   </div></div></div></div>
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
-  <style>@keyframes gapglow{0%,100%{box-shadow:0 0 0 0 rgba(83,74,183,0)}50%{box-shadow:0 0 0 5px rgba(83,74,183,.3)}}#gap-flag{animation:gapglow 2s ease-in-out infinite}@media (prefers-reduced-motion:reduce){#gap-flag{animation:none}}</style>
   <div class="pick-grid">
     <button class="pick-btn pb-mtc" onclick="openSection('mtc')"><span class="fd-wheel-cell pbw" title="Flashcards done today"><svg class="fd-wheel" viewBox="0 0 60 60">
           <circle cx="30" cy="30" r="24" fill="none" stroke="var(--subtle)" stroke-width="6"/>
@@ -4044,7 +4043,6 @@ function hubStart(unitSet) {
   fdUnitSet = unitSet || null;
   fdStart();
 }
-document.addEventListener('DOMContentLoaded', function () { try { if (!localStorage.getItem('alevel_gap_tried')) document.getElementById('gap-flag').style.display = 'flex'; } catch (e) {} });
 function gapTried() { try { return !!localStorage.getItem('alevel_gap_tried'); } catch (e) { return false; } }
 function hubGo(mode) {
   if (mode === 'fill') { try { localStorage.setItem('alevel_gap_tried', '1'); } catch (e) {} }
