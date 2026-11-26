@@ -23,9 +23,9 @@
     "gap": "Abu Bakr",
     "alt": [],
     "d": [
-     "Ali",
-     "Umar",
-     "Uthman"
+     "Hasan",
+     "Husayn",
+     "Fatimah"
     ]
    },
    {
@@ -293,7 +293,7 @@
     "gap": "more than 100",
     "alt": [],
     "d": [
-     "exactly 99",
+     "only 20",
      "about 50",
      "over 1,000"
     ]
@@ -315,49 +315,37 @@
   "no": 6,
   "paper": "p1",
   "unit": "Muslim Beliefs",
-  "front": "What do transcendence, immanence, omnipotence and beneficence mean?",
-  "p1": "Transcendence: Allah is outside and beyond the universe he created → immanence: Allah acts in the universe; 'closer to him than his jugular vein'.",
-  "p2": "Omnipotence: Allah is all-powerful and can do anything, creating everything from nothing → 'power over all things'.",
-  "p3": "Beneficence: Allah is loving, kind and generous towards his creation → 'your Lord's bounty is not restricted'.",
+  "front": "What do transcendence and immanence mean?",
+  "p1": "Transcendence: Allah is outside and beyond the universe he created → 'all creation and command belong to Him' (Surah 7:54).",
+  "p2": "Immanence: Allah acts in the universe he created → 'closer to him than his jugular vein' (Surah 50:16).",
+  "p3": "",
   "hints": [
    "Transcendence",
-   "Omnipotence",
-   "Beneficence"
+   "Immanence"
   ],
   "s": [
-   "Transcendence: Allah is outside and beyond the universe he created → immanence: Allah acts in the universe; 'closer to him than his jugular vein'.",
-   "Omnipotence: Allah is all-powerful and can do anything, creating everything from nothing → 'power over all things'.",
-   "Beneficence: Allah is loving, kind and generous towards his creation → 'your Lord's bounty is not restricted'."
+   "Transcendence: Allah is outside and beyond the universe he created → 'all creation and command belong to Him' (Surah 7:54).",
+   "Immanence: Allah acts in the universe he created → 'closer to him than his jugular vein' (Surah 50:16)."
   ],
   "fill": [
    {
     "p": 1,
-    "gap": "jugular vein",
+    "gap": "beyond",
     "alt": [],
     "d": [
-     "own shadow",
-     "right hand",
-     "heartbeat"
+     "within",
+     "part of",
+     "inside"
     ]
    },
    {
     "p": 2,
-    "gap": "all-powerful",
+    "gap": "jugular vein",
     "alt": [],
     "d": [
-     "all-knowing",
-     "all-loving",
-     "all-seeing"
-    ]
-   },
-   {
-    "p": 3,
-    "gap": "generous",
-    "alt": [],
-    "d": [
-     "strict",
-     "distant",
-     "silent"
+     "own shadow",
+     "own reflection",
+     "own footsteps"
     ]
    }
   ],
@@ -709,9 +697,9 @@
     "gap": "Lord of the Worlds",
     "alt": [],
     "d": [
-     "Lord of Mercy",
-     "Master of the Day",
-     "Guardian of Mankind"
+     "King of Kings",
+     "Maker of Men",
+     "Judge of All"
     ]
    },
    {
@@ -917,7 +905,7 @@
     "gap": "power and knowledge",
     "alt": [],
     "d": [
-     "mercy and justice",
+     "colour and shape",
      "anger and revenge",
      "wealth and glory"
     ]
@@ -1271,7 +1259,7 @@
     "gap": "procreation",
     "alt": [],
     "d": [
-     "recreation",
+     "ritual",
      "worship",
      "inheritance"
     ]
@@ -1438,8 +1426,8 @@
     "alt": [],
     "d": [
      "Isa",
-     "Musa",
-     "Ibrahim"
+     "Jibril",
+     "Mika'il"
     ]
    },
    {
@@ -1541,7 +1529,7 @@
     "gap": "aqiqah",
     "alt": [],
     "d": [
-     "khitan",
+     "mahr",
      "nikah",
      "walimah"
     ]
@@ -2103,7 +2091,7 @@
     "gap": "equal respect",
     "alt": [],
     "d": [
-     "equal pay",
+     "equal strength",
      "equal wealth",
      "equal power"
     ]
@@ -2123,9 +2111,9 @@
     "gap": "Benazir Bhutto",
     "alt": [],
     "d": [
-     "Margaret Thatcher",
-     "Indira Gandhi",
-     "Golda Meir"
+     "Imran Khan",
+     "Saladin",
+     "Gamal Nasser"
     ]
    }
   ],
@@ -2516,7 +2504,7 @@
   "fill": [
    {
     "p": 1,
-    "gap": "wudu",
+    "gap": "Wudu",
     "alt": [],
     "d": [
      "ihram",
@@ -2871,9 +2859,9 @@
     "gap": "greedy",
     "alt": [],
     "d": [
-     "lazy",
-     "proud",
-     "angry"
+     "generous",
+     "poor",
+     "quiet"
     ]
    },
    {
@@ -2883,7 +2871,7 @@
     "d": [
      "doubles",
      "hides",
-     "protects"
+     "wastes"
     ]
    },
    {
@@ -3349,9 +3337,9 @@
     "gap": "role model",
     "alt": [],
     "d": [
-     "ruler",
-     "judge",
-     "warrior"
+     "outsider",
+     "tourist",
+     "spectator"
     ]
    },
    {
@@ -4493,9 +4481,9 @@
     "gap": "prayer",
     "alt": [],
     "d": [
-     "dreams",
-     "fasting",
-     "sleep"
+     "shopping",
+     "sport",
+     "school"
     ]
    },
    {
@@ -5067,7 +5055,7 @@
     "d": [
      "Quakers",
      "Methodists",
-     "Unitarians"
+     "Baptists"
     ]
    },
    {
@@ -5117,7 +5105,7 @@
     "gap": "sermons",
     "alt": [],
     "d": [
-     "weddings",
+     "collections",
      "hymns",
      "notices"
     ]
@@ -5231,9 +5219,9 @@
     "gap": "omniscient",
     "alt": [],
     "d": [
-     "omnipotent",
-     "benevolent",
-     "eternal"
+     "mortal",
+     "invisible",
+     "angry"
     ]
    }
   ],
@@ -5741,7 +5729,7 @@
     "gap": "power and care",
     "alt": [],
     "d": [
-     "wisdom and justice",
+     "silence and distance",
      "anger and wrath",
      "wealth and glory"
     ]
@@ -5793,9 +5781,9 @@
     "gap": "die for them",
     "alt": [],
     "d": [
-     "rule over them",
-     "judge them",
-     "teach them"
+     "abandon them",
+     "fear them",
+     "forget them"
     ]
    },
    {
@@ -6001,9 +5989,9 @@
     "gap": "deserve",
     "alt": [],
     "d": [
-     "ask for",
      "pay for",
-     "want"
+     "buy",
+     "sell"
     ]
    },
    {
@@ -6053,9 +6041,9 @@
     "gap": "Lord and Saviour",
     "alt": [],
     "d": [
-     "King and Judge",
-     "Priest and Teacher",
-     "Shepherd and Guide"
+     "Friend and Neighbour",
+     "Teacher and Healer",
+     "Servant and Slave"
     ]
    },
    {
@@ -6993,9 +6981,9 @@
     "gap": "merciful",
     "alt": [],
     "d": [
-     "peacemakers",
-     "meek",
-     "poor in spirit"
+     "strong",
+     "rich",
+     "clever"
     ]
    },
    {
@@ -7607,7 +7595,7 @@
     "gap": "Book of Common Prayer",
     "alt": [],
     "d": [
-     "Missal",
+     "Almanac",
      "Catechism",
      "Hymnbook"
     ]
@@ -7929,9 +7917,9 @@
     "gap": "St Paul",
     "alt": [],
     "d": [
-     "St Peter",
-     "St Francis",
-     "St Augustine"
+     "St Nicholas",
+     "St George",
+     "St Valentine"
     ]
    },
    {
@@ -8023,8 +8011,8 @@
     "gap": "Body of Christ",
     "alt": [],
     "d": [
-     "Bride of Christ",
-     "Flock of God",
+     "Mother of Christ",
+     "House of David",
      "Temple of Solomon"
     ]
    },
@@ -8335,9 +8323,9 @@
     "gap": "peacemakers",
     "alt": [],
     "d": [
-     "meek",
-     "merciful",
-     "poor in spirit"
+     "warriors",
+     "powerful",
+     "proud"
     ]
    },
    {
@@ -8501,9 +8489,9 @@
     "gap": "Hitler",
     "alt": [],
     "d": [
-     "Napoleon",
-     "Saddam Hussein",
-     "Genghis Khan"
+     "Winston Churchill",
+     "Martin Luther King",
+     "Nelson Mandela"
     ]
    },
    {
@@ -8668,8 +8656,8 @@
     "alt": [],
     "d": [
      "Malcolm X",
-     "Nelson Mandela",
-     "Desmond Tutu"
+     "Winston Churchill",
+     "Oliver Cromwell"
     ]
    }
   ],
@@ -9432,12 +9420,12 @@
   "fill": [
    {
     "p": 1,
-    "gap": "gender",
+    "gap": "faith and deeds",
     "alt": [],
     "d": [
-     "wealth",
-     "nationality",
-     "age"
+     "wealth and status",
+     "birth and tribe",
+     "age and strength"
     ]
    },
    {
@@ -9758,7 +9746,7 @@
     "d": [
      "late evening",
      "midday",
-     "midnight"
+     "afternoon"
     ]
    }
   ],
@@ -9883,9 +9871,9 @@
     "gap": "role model",
     "alt": [],
     "d": [
-     "ruler",
-     "judge",
-     "warrior"
+     "outsider",
+     "tourist",
+     "spectator"
     ]
    },
    {
@@ -10282,7 +10270,7 @@
     "alt": [],
     "d": [
      "proud",
-     "greedy",
+     "silent",
      "hasty"
     ]
    },
@@ -10512,9 +10500,9 @@
     "gap": "blameless",
     "alt": [],
     "d": [
-     "wealthy",
-     "famous",
-     "angry"
+     "careless",
+     "foolish",
+     "poor"
     ]
    },
    {
@@ -10532,9 +10520,9 @@
     "gap": "can do anything",
     "alt": [],
     "d": [
-     "can forgive anyone",
-     "can hear everyone",
-     "can see everything"
+     "can be defeated",
+     "needs our help",
+     "can be bribed"
     ]
    }
   ],
@@ -10575,7 +10563,7 @@
     "gap": "promise",
     "alt": [],
     "d": [
-     "law",
+     "silence",
      "power",
      "anger"
     ]
@@ -10763,9 +10751,9 @@
     "gap": "Son of Man",
     "alt": [],
     "d": [
-     "Son of David",
-     "King of Kings",
-     "Prince of Peace"
+     "Angel of Death",
+     "Prince of Darkness",
+     "Day of the Lord"
     ]
    },
    {
@@ -11484,9 +11472,9 @@
     "gap": "die by the sword",
     "alt": [],
     "d": [
-     "live by the sword",
-     "rule by the sword",
-     "fall by the spear"
+     "be forgiven",
+     "be spared",
+     "win the war"
     ]
    }
   ],
@@ -11762,5 +11750,85 @@
   ],
   "k": 0,
   "q": 1
+ },
+ {
+  "no": 233,
+  "paper": "p1",
+  "unit": "Muslim Beliefs",
+  "front": "What does omnipotence mean?",
+  "p1": "Omnipotence: Allah is all-powerful → he can do anything, and everything is possible for Allah.",
+  "p2": "This includes creating everything in existence from nothing → the Qur'an says Allah has 'power over all things'.",
+  "p3": "",
+  "hints": [
+   "all-powerful",
+   "from nothing"
+  ],
+  "s": [
+   "Omnipotence: Allah is all-powerful → he can do anything, and everything is possible for Allah.",
+   "This includes creating everything in existence from nothing → the Qur'an says Allah has 'power over all things'."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "anything",
+    "alt": [],
+    "d": [
+     "only some things",
+     "only good things",
+     "only easy things"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "all things",
+    "alt": [],
+    "d": [
+     "some things",
+     "few things",
+     "human lives only"
+    ]
+   }
+  ],
+  "k": 0
+ },
+ {
+  "no": 234,
+  "paper": "p1",
+  "unit": "Muslim Beliefs",
+  "front": "What does beneficence mean?",
+  "p1": "Beneficence: Allah is loving, kind and generous → Muslims believe he loves his creation, especially humans.",
+  "p2": "'Your Lord's bounty is not restricted' (Surah 17:20) → Muslims believe there is no limit to Allah's kindness and love towards them.",
+  "p3": "",
+  "hints": [
+   "loving, kind",
+   "bounty"
+  ],
+  "s": [
+   "Beneficence: Allah is loving, kind and generous → Muslims believe he loves his creation, especially humans.",
+   "'Your Lord's bounty is not restricted' (Surah 17:20) → Muslims believe there is no limit to Allah's kindness and love towards them."
+  ],
+  "fill": [
+   {
+    "p": 1,
+    "gap": "generous",
+    "alt": [],
+    "d": [
+     "strict",
+     "distant",
+     "silent"
+    ]
+   },
+   {
+    "p": 2,
+    "gap": "not restricted",
+    "alt": [],
+    "d": [
+     "held back",
+     "earned",
+     "rationed"
+    ]
+   }
+  ],
+  "k": 0
  }
 ]
