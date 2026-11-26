@@ -2809,7 +2809,7 @@ function renderQ() {
   const pct = Math.round((quizIdx / total) * 100);
   const streakHtml = quizStreak >= 3 ? `<span style="font-size:.8rem;color:#F0B429;font-weight:600">🔥 ${quizStreak}</span>` : '';
   const prevBtn = quizHistory.length > 0
-    ? `<button onclick="quizGoBack()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">← Prev</button>`
+    ? `<button onclick="quizGoBack()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">← Prev Q</button>`
     : `<span></span>`;
 
   let answerHtml;
@@ -2861,7 +2861,7 @@ function renderHistoricalQ() {
   const pct = Math.round((quizViewIdx / total) * 100);
 
   const prevBtn = quizViewIdx > 0
-    ? `<button onclick="quizGoBack()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">← Prev</button>`
+    ? `<button onclick="quizGoBack()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">← Prev Q</button>`
     : `<span></span>`;
   const nextBtn = `<button onclick="quizGoForward()" style="padding:5px 10px;font-size:.78rem;font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit">Next →</button>`;
 
@@ -6667,7 +6667,7 @@ function qzDraw() {
   const h = reviewing ? QZ.hist[QZ.view] : null, c = reviewing ? h.cur : QZ.cur, pos = reviewing ? QZ.view : QZ.idx;
   const pct = Math.round(pos / total * 100);
   const streak = !reviewing && QZ.streak >= 3 ? '<span style="font-size:.8rem;color:#F0B429;font-weight:600">🔥 ' + QZ.streak + '</span>' : '';
-  const prev = pos > 0 ? '<button onclick="qzGo(-1)" style="' + QZ_NAV + '">← Prev</button>' : '<span></span>';
+  const prev = pos > 0 ? '<button onclick="qzGo(-1)" style="' + QZ_NAV + '">← Prev Q</button>' : '<span></span>';
   const next = reviewing ? '<button onclick="qzGo(1)" style="' + QZ_NAV + '">Next →</button>' : '';
   let ans;
   if (reviewing) {
