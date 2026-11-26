@@ -28,7 +28,7 @@ async function pmParse(code) {
 }
 const SYNC_URL = 'https://script.google.com/macros/s/AKfycbxK8TeIKnstO8SC-PbPdasW5G-iw6mpsFoOfZhCqvftJ_iY_4m9TG9XNgoXtuIqts6S/exec';
 function syncPost(o, ka) {
-  o.hub = 'geog';
+  o.hub = 'rs';
   return fetch(SYNC_URL, {method: 'POST', headers: {'Content-Type': 'text/plain'}, body: JSON.stringify(o), keepalive: !!ka}).then(r => r.json());
 }
 function pmClose() { const e = document.getElementById('pm-ov'); if (e) e.remove(); }
