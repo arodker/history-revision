@@ -6722,7 +6722,7 @@ const QZ_GEN = new Set(['muslim','muslims','christian','christians','allah','god
 function qzMaskDef(item) {
   const words = String(item.term).toLowerCase().split(/[^a-z']+/).filter(w => w.length >= 4 && !QZ_GEN.has(w) && !item.d.some(o => o.toLowerCase().includes(w)));
   let t = escHtml(item.def);
-  words.forEach(w => { t = t.replace(new RegExp("\\b" + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + "[a-z']*", 'gi'), '_____'); });
+  words.forEach(w => { t = t.replace(new RegExp("\\b" + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + "(?:s|es|ed|ing|ly)?\\b", 'gi'), '_____'); });
   return t;
 }
 function qzMake(kind, item, variant) {
