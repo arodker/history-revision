@@ -6827,7 +6827,13 @@ function qzResult(ok, chosen) {
     document.querySelectorAll('.qz-card .opt').forEach((b, i) => { b.disabled = true; if (c.opts[i] === c.targets[0]) b.classList.add('show-c'); else if (!ok && c.opts[i] === chosen) b.classList.add('wrong'); });
   } else { const i = document.getElementById('qz-in'); if (i) i.disabled = true; const b = document.getElementById('qz-check'); if (b) { b.disabled = true; b.style.opacity = '.45'; } }
   if (fb) { fb.className = 'quiz-fb ' + (ok ? 'fb-c' : 'fb-w'); fb.style.display = 'block'; fb.textContent = ok ? '✓ Correct: ' + c.targets[0] : '✗ The answer was ' + c.targets[0]; }
-  setTimeout(() => {
+  QZ.lastOk = ok; QZ.at = Date.now(); clearTimeout(QZ.tm);
+  QZ.tm = setTimeout(qzAdvance, ok ? 1200 : 2000);
+  if (!ok && fb) fb.textContent += '  (press Enter to continue)';
+}
+// Moves on to the next question; called by the timer, or by Enter after a wrong answer
+function qzAdvance() {
+  clearTimeout(QZ.tm); QZ.lastOk = null;
     const body = document.getElementById('qz-body');
     if (!body || QZ.hist.length !== QZ.idx + 1) return;
     // Fade the answered card out, hold the height so the page does not jump, then fade the next card in at the top
@@ -6841,8 +6847,12 @@ function qzResult(ok, chosen) {
       const r = body.getBoundingClientRect();
       if (r.top < 0 || r.top > window.innerHeight * .45) window.scrollTo({top:Math.max(0, r.top + window.pageYOffset - 70), behavior:'smooth'});
     }, 170);
-  }, ok ? 1200 : 2000);
 }
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Enter' || e.repeat || typeof QZ === 'undefined' || !QZ.locked || QZ.lastOk !== false || Date.now() - QZ.at < 300) return;
+  const b = document.getElementById('qz-body'); if (!b || b.offsetParent === null) return;
+  e.preventDefault(); qzAdvance();
+});
 function qzPick(i) { if (QZ.locked) return; const c = QZ.cur; qzResult(c.opts[i] === c.targets[0], c.opts[i]); }
 function qzType() {
   if (QZ.locked) return; const v = document.getElementById('qz-in').value;
