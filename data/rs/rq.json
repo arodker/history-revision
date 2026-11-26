@@ -18,7 +18,11 @@
   "alt": [
    "Caliphs",
    "Khalifah",
-   "Caliph"
+   "Caliph",
+   "Khulafa",
+   "Khalifa",
+   "Khalifas",
+   "Caliphate"
   ]
  },
  {
@@ -59,7 +63,10 @@
   "q": "What is the word for angels in Islam?",
   "a": "Malaikah",
   "alt": [
-   "Malaika"
+   "Malaika",
+   "Mala'ikah",
+   "Mala'ika",
+   "Malaikat"
   ]
  },
  {
@@ -116,7 +123,9 @@
   "q": "What is the Muslim word for life after death?",
   "a": "Akhirah",
   "alt": [
-   "Akhira"
+   "Akhira",
+   "Hereafter",
+   "Al-Akhirah"
   ]
  },
  {
@@ -126,7 +135,11 @@
   "a": "Al-Qadr",
   "alt": [
    "Qadr",
-   "Al Qadr"
+   "Al Qadr",
+   "Qadar",
+   "Al-Qadar",
+   "Al Qadar",
+   "Predestination"
   ]
  },
  {
@@ -160,7 +173,11 @@
   "unit": "Muslim Beliefs",
   "q": "What is Allah's justice called in Shi'a Islam, one of the Five Roots?",
   "a": "Adl",
-  "alt": []
+  "alt": [
+   "Adalah",
+   "Al-Adl",
+   "Adl (justice)"
+  ]
  },
  {
   "paper": "p1",
@@ -168,7 +185,10 @@
   "q": "What is the Shi'a belief in the Day of Judgement and resurrection called?",
   "a": "Mi'ad",
   "alt": [
-   "Miad"
+   "Miad",
+   "Ma'ad",
+   "Maad",
+   "Ma'ad (resurrection)"
   ]
  },
  {
@@ -183,7 +203,13 @@
   "unit": "Marriage and the Family",
   "q": "What is the Muslim marriage contract called?",
   "a": "Nikah",
-  "alt": []
+  "alt": [
+   "Nikkah",
+   "Nika",
+   "Nikha",
+   "The nikah",
+   "Nikah contract"
+  ]
  },
  {
   "paper": "p1",
@@ -193,7 +219,14 @@
   "alt": [
    "The mahr",
    "Dowry",
-   "The agreed payment"
+   "The agreed payment",
+   "Mehr",
+   "Mahar",
+   "Dower",
+   "Bridal gift",
+   "A gift of money",
+   "A payment",
+   "Mahr (dowry)"
   ]
  },
  {
@@ -212,7 +245,10 @@
   "a": "Up to four",
   "alt": [
    "Four",
-   "4"
+   "4",
+   "Four wives",
+   "Up to 4",
+   "Four wives if he treats them equally"
   ]
  },
  {
@@ -221,7 +257,9 @@
   "q": "What is the worldwide Muslim community called?",
   "a": "The ummah",
   "alt": [
-   "Ummah"
+   "Ummah",
+   "Umma",
+   "Ummah (community)"
   ]
  },
  {
@@ -230,7 +268,14 @@
   "q": "What is said into a baby's ear at birth?",
   "a": "The adhan",
   "alt": [
-   "Adhan"
+   "Adhan",
+   "Athan",
+   "Azan",
+   "The call to prayer",
+   "The azan",
+   "Call to prayer",
+   "The athan",
+   "Adhaan"
   ]
  },
  {
@@ -239,7 +284,13 @@
   "q": "What is the ceremony around day seven after a birth called?",
   "a": "Aqiqah",
   "alt": [
-   "Aqiqa"
+   "Aqiqa",
+   "Aqeeqah",
+   "Aqeeqa",
+   "Aqeeqah ceremony",
+   "The aqiqah",
+   "Akika",
+   "Aqiqah ceremony"
   ]
  },
  {
@@ -248,7 +299,9 @@
   "q": "Which city do Muslims face when a body is buried?",
   "a": "Makkah",
   "alt": [
-   "Mecca"
+   "Mecca",
+   "Makka",
+   "Mecca (Makkah)"
   ]
  },
  {
@@ -320,7 +373,13 @@
   "unit": "Marriage and the Family",
   "q": "What is it called when a marriage is declared never valid?",
   "a": "Annulment",
-  "alt": []
+  "alt": [
+   "An annulment",
+   "Annulled",
+   "Annul",
+   "Marriage annulment",
+   "Void marriage"
+  ]
  },
  {
   "paper": "p1",
@@ -329,7 +388,9 @@
   "a": "A single soul",
   "alt": [
    "One soul",
-   "Single soul"
+   "Single soul",
+   "One person",
+   "A single person"
   ]
  },
  {
@@ -378,7 +439,12 @@
   "unit": "Living the Muslim Life",
   "q": "What is the physical and spiritual wash before prayer called?",
   "a": "Wudu",
-  "alt": []
+  "alt": [
+   "Wudhu",
+   "Wuzu",
+   "Wudu'",
+   "Wudoo"
+  ]
  },
  {
   "paper": "p1",
@@ -386,7 +452,11 @@
   "q": "What is the direction Muslims face in prayer called?",
   "a": "Qiblah",
   "alt": [
-   "Qibla"
+   "Qibla",
+   "Kibla",
+   "Kiblah",
+   "The qiblah",
+   "The qibla"
   ]
  },
  {
@@ -396,7 +466,13 @@
   "a": "Jummah",
   "alt": [
    "Jumu'ah",
-   "Jumuah"
+   "Jumuah",
+   "Jumma",
+   "Juma",
+   "Jumah",
+   "Friday prayer",
+   "The Friday prayer",
+   "Jumu'a"
   ]
  },
  {
@@ -404,7 +480,11 @@
   "unit": "Living the Muslim Life",
   "q": "What is fasting during Ramadan called?",
   "a": "Sawm",
-  "alt": []
+  "alt": [
+   "Saum",
+   "Siyam",
+   "Sawm (fasting)"
+  ]
  },
  {
   "paper": "p1",
@@ -412,7 +492,13 @@
   "q": "What is Laylat al-Qadr in English?",
   "a": "The Night of Power",
   "alt": [
-   "Night of Power"
+   "Night of Power",
+   "Night of Decree",
+   "The Night of Decree",
+   "Night of Destiny",
+   "The Night of Destiny",
+   "Laylat al-Qadr",
+   "The Night of Qadr"
   ]
  },
  {
@@ -422,7 +508,14 @@
   "a": "2.5%",
   "alt": [
    "2.5",
-   "2.5 percent"
+   "2.5 percent",
+   "2.5 per cent",
+   "Two and a half percent",
+   "2 and a half percent",
+   "One fortieth",
+   "1/40",
+   "2 1/2%",
+   "2.5% of savings"
   ]
  },
  {
@@ -442,7 +535,12 @@
   "unit": "Living the Muslim Life",
   "q": "What is voluntary charity beyond Zakah or Khums called?",
   "a": "Sadaqah",
-  "alt": []
+  "alt": [
+   "Sadaqa",
+   "Sadaqat",
+   "Sadakah",
+   "Sadaqah (charity)"
+  ]
  },
  {
   "paper": "p1",
@@ -458,7 +556,11 @@
   "unit": "Living the Muslim Life",
   "q": "What is circling the Ka'bah seven times called?",
   "a": "Tawaf",
-  "alt": []
+  "alt": [
+   "Tawaaf",
+   "Tawwaf",
+   "Tawaf (circling)"
+  ]
  },
  {
   "paper": "p1",
@@ -467,7 +569,10 @@
   "a": "Zamzam",
   "alt": [
    "The Zamzam well",
-   "Zamzam well"
+   "Zamzam well",
+   "Zam zam",
+   "Well of Zamzam",
+   "The well of Zamzam"
   ]
  },
  {
@@ -477,7 +582,13 @@
   "a": "Arafat",
   "alt": [
    "The Plain of Arafat",
-   "Plain of Arafat"
+   "Plain of Arafat",
+   "Mount Arafat",
+   "Mount of Mercy",
+   "Jabal Rahmah",
+   "Mount Arafah",
+   "Arafah",
+   "Plain of Arafah"
   ]
  },
  {
@@ -488,7 +599,16 @@
   "alt": [
    "Eid ul Fitr",
    "Eid al-Fitr",
-   "Id ul Fitr"
+   "Id ul Fitr",
+   "Eid-ul-Fitr",
+   "Eid al Fitr",
+   "Id al-Fitr",
+   "Id al Fitr",
+   "Eid ul-Fitr",
+   "Eid-al-Fitr",
+   "Id-ul Fitr",
+   "Festival of Breaking the Fast",
+   "Eid of Breaking the Fast"
   ]
  },
  {
@@ -499,7 +619,17 @@
   "alt": [
    "Eid ul Adha",
    "Eid al-Adha",
-   "Id ul Adha"
+   "Id ul Adha",
+   "Eid-ul-Adha",
+   "Eid al Adha",
+   "Id al-Adha",
+   "Id al Adha",
+   "Eid ul-Adha",
+   "Eid-al-Adha",
+   "Festival of Sacrifice",
+   "The Festival of Sacrifice",
+   "Feast of Sacrifice",
+   "Eid of sacrifice"
   ]
  },
  {
@@ -510,7 +640,18 @@
   "alt": [
    "Eid-e-Ghadir",
    "Ghadeer",
-   "Ghadir"
+   "Ghadir",
+   "Eid al-Ghadir",
+   "Eid-ul-Ghadir",
+   "Id-ul-Ghadir",
+   "Eid ul Ghadeer",
+   "Eid ul-Ghadir",
+   "Eid al Ghadeer",
+   "Id ul Ghadeer",
+   "Eid-e-Ghadeer",
+   "Ghadeer Khumm",
+   "Ghadir Khumm",
+   "Id-e-Ghadir"
   ]
  },
  {
@@ -521,7 +662,14 @@
   "alt": [
    "Hussain",
    "Husayn",
-   "Hussein"
+   "Hussein",
+   "Imam Husayn",
+   "Husain",
+   "Imam Hussein",
+   "Imam Husain",
+   "Al-Husayn",
+   "Hussain ibn Ali",
+   "Hossein"
   ]
  },
  {
@@ -532,18 +680,34 @@
   "alt": [
    "10th",
    "Tenth",
-   "10"
+   "10",
+   "10th of Muharram",
+   "Tenth day",
+   "The tenth",
+   "The tenth day",
+   "The 10th day",
+   "10th day"
   ]
  },
  {
   "paper": "p1",
   "unit": "Living the Muslim Life",
   "q": "What is Greater Jihad?",
-  "a": "The struggle against the evil within",
+  "a": "Inner struggle against evil",
   "alt": [
+   "The struggle against the evil within",
    "The struggle to resist the evil within",
    "Inner struggle",
-   "Struggle against evil within"
+   "Struggle against evil within",
+   "Struggle against evil within yourself",
+   "Fighting evil within yourself",
+   "Personal struggle",
+   "Struggle within yourself",
+   "Struggle to be a good Muslim",
+   "Struggling against sin",
+   "Resisting temptation",
+   "The struggle within",
+   "Inner struggle against sin"
   ]
  },
  {
@@ -571,7 +735,8 @@
   "q": "Which word can mean 'a long period' in the Qur'an's six days of creation?",
   "a": "Yawm",
   "alt": [
-   "Yaum"
+   "Yaum",
+   "Yom"
   ]
  },
  {
@@ -605,11 +770,17 @@
   "paper": "p1",
   "unit": "Matters of Life and Death",
   "q": "What does the sanctity of life mean?",
-  "a": "Life is holy and a gift from Allah",
+  "a": "Life is holy",
   "alt": [
+   "Life is holy and a gift from Allah",
    "Life is sacred",
-   "Life is holy",
-   "Life is a gift from Allah"
+   "Life is a gift from Allah",
+   "Life is precious",
+   "Life is sacred and belongs to Allah",
+   "Holy life",
+   "Sacred life",
+   "Life belongs to Allah",
+   "Life is a gift"
   ]
  },
  {
@@ -637,7 +808,11 @@
   "a": "Hospice care",
   "alt": [
    "Hospice",
-   "A hospice"
+   "A hospice",
+   "Palliative care",
+   "Hospices",
+   "Palliative",
+   "Palliative care at a hospice"
   ]
  },
  {
@@ -647,7 +822,11 @@
   "a": "Khalifahs",
   "alt": [
    "Khalifah",
-   "Khalifa"
+   "Khalifa",
+   "Khalifas",
+   "Khulafa",
+   "Caliph",
+   "Caliphs"
   ]
  },
  {
@@ -663,7 +842,17 @@
   "q": "Which meat do Muslims not eat?",
   "a": "Pork",
   "alt": [
-   "Pork and blood products"
+   "Pork and blood products",
+   "Pigs",
+   "Pig",
+   "Pork and pigs",
+   "Pig meat",
+   "Pork meat",
+   "Swine",
+   "Ham",
+   "Bacon",
+   "Pork products",
+   "Blood"
   ]
  },
  {
@@ -698,7 +887,14 @@
   "a": "Creationists",
   "alt": [
    "Creationist",
-   "Creationist Muslims"
+   "Creationist Muslims",
+   "Creationism",
+   "Literalists",
+   "Literal Muslims",
+   "Muslims who read it literally",
+   "Literalist Muslims",
+   "Traditional Muslims",
+   "Traditionalists"
   ]
  },
  {
@@ -709,7 +905,12 @@
   "alt": [
    "Catholics",
    "Roman Catholic",
-   "Catholic"
+   "Catholic",
+   "Catholic Church",
+   "Roman Catholic Church",
+   "The Catholic Church",
+   "Roman Catholicism",
+   "Catholicism"
   ]
  },
  {
@@ -717,7 +918,12 @@
   "unit": "Christian Beliefs",
   "q": "About how many Roman Catholics are there in the world?",
   "a": "1.2 billion",
-  "alt": []
+  "alt": [
+   "1.2 billion Catholics",
+   "1.2bn",
+   "1.2 bn",
+   "About 1.2 billion"
+  ]
  },
  {
   "paper": "p2",
@@ -725,7 +931,12 @@
   "q": "Which Christians believe the Bible is the only leader they need?",
   "a": "Protestants",
   "alt": [
-   "Protestant"
+   "Protestant",
+   "Protestant Christians",
+   "Protestant Church",
+   "Protestantism",
+   "The Protestants",
+   "Protestant churches"
   ]
  },
  {
@@ -734,7 +945,15 @@
   "q": "Which group says the Trinity are three separate beings?",
   "a": "Mormons",
   "alt": [
-   "Latter-day Saints"
+   "Latter-day Saints",
+   "Mormon",
+   "Latter Day Saints",
+   "LDS",
+   "Church of Jesus Christ of Latter-day Saints",
+   "The Mormons",
+   "Mormonism",
+   "The Latter Day Saints",
+   "Mormon Church"
   ]
  },
  {
@@ -743,7 +962,12 @@
   "q": "Which creed is spoken at Holy Communion services?",
   "a": "The Nicene Creed",
   "alt": [
-   "Nicene Creed"
+   "Nicene Creed",
+   "Nicene",
+   "Nicea Creed",
+   "Nicaean Creed",
+   "Creed of Nicaea",
+   "Nicean Creed"
   ]
  },
  {
@@ -762,21 +986,35 @@
   "paper": "p2",
   "unit": "Christian Beliefs",
   "q": "Which tree did Adam and Eve eat from?",
-  "a": "The Tree of Knowledge of Good and Evil",
+  "a": "Tree of Knowledge",
   "alt": [
-   "Tree of Knowledge",
-   "The Tree of Knowledge"
+   "The Tree of Knowledge of Good and Evil",
+   "The Tree of Knowledge",
+   "Tree of Knowledge of Good and Evil",
+   "Knowledge of good and evil",
+   "Tree of Good and Evil",
+   "The forbidden tree",
+   "Forbidden tree"
   ]
  },
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
   "q": "What does incarnation mean?",
-  "a": "God the Son became a human being",
+  "a": "God becoming human",
   "alt": [
+   "God the Son became a human being",
    "God became human",
-   "God becoming human",
-   "God in a body"
+   "God in a body",
+   "God became man",
+   "God in human form",
+   "God becoming a human being",
+   "God taking human form",
+   "God made flesh",
+   "God became flesh",
+   "God coming to earth as a human",
+   "Jesus being God in human form",
+   "God became a human"
   ]
  },
  {
@@ -805,28 +1043,48 @@
   "unit": "Christian Beliefs",
   "q": "What is healing the relationship between God and humans called?",
   "a": "Atonement",
-  "alt": []
+  "alt": [
+   "At-one-ment",
+   "Atone",
+   "Atonement (at-one-ment)"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
   "q": "What is the love of God, offered whether people deserve it or not?",
   "a": "Grace",
-  "alt": []
+  "alt": [
+   "God's grace",
+   "Grace of God",
+   "The grace of God",
+   "Unmerited love",
+   "Grace (undeserved love)"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
   "q": "What is suffering caused by human choices called?",
   "a": "Moral evil",
-  "alt": []
+  "alt": [
+   "Moral",
+   "Human evil",
+   "Moral evils",
+   "Evil caused by humans"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
   "q": "What is suffering caused by nature called?",
   "a": "Natural evil",
-  "alt": []
+  "alt": [
+   "Natural",
+   "Natural evils",
+   "Evil from nature",
+   "Natural disasters"
+  ]
  },
  {
   "paper": "p2",
@@ -835,16 +1093,30 @@
   "a": "St Irenaeus and John Hick",
   "alt": [
    "Irenaeus and Hick",
-   "Irenaeus and John Hick"
+   "Irenaeus and John Hick",
+   "St Irenaeus and Hick",
+   "Hick and Irenaeus",
+   "John Hick and Irenaeus",
+   "John Hick and St Irenaeus",
+   "Saint Irenaeus and John Hick",
+   "Irenaeus, Hick"
   ]
  },
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
   "q": "What does eschatology mean?",
-  "a": "Beliefs about death and life after death",
+  "a": "Beliefs about life after death",
   "alt": [
-   "Life after death"
+   "Beliefs about death and life after death",
+   "Life after death",
+   "Death and the afterlife",
+   "The afterlife",
+   "Study of the end times",
+   "The end times",
+   "Beliefs about the afterlife",
+   "Beliefs about the end of the world",
+   "Death and judgement"
   ]
  },
  {
@@ -854,7 +1126,11 @@
   "a": "The Sheep and the Goats",
   "alt": [
    "Sheep and Goats",
-   "The Sheep and Goats"
+   "The Sheep and Goats",
+   "The Parable of the Sheep and the Goats",
+   "Parable of the Sheep and the Goats",
+   "Sheep and the Goats",
+   "The Last Judgement"
   ]
  },
  {
@@ -874,7 +1150,10 @@
   "a": "Emmaus",
   "alt": [
    "The road to Emmaus",
-   "Road to Emmaus"
+   "Road to Emmaus",
+   "Emmaus Road",
+   "The Emmaus road",
+   "Emmaus village"
   ]
  },
  {
@@ -889,7 +1168,11 @@
   "unit": "Christian Beliefs",
   "q": "What did the Jewish Council try Jesus for?",
   "a": "Blasphemy",
-  "alt": []
+  "alt": [
+   "Blaspheming",
+   "Claiming to be the Son of God",
+   "Blasphemous claims"
+  ]
  },
  {
   "paper": "p2",
@@ -898,17 +1181,30 @@
   "a": "Father, Son and Holy Spirit",
   "alt": [
    "The Father, the Son and the Holy Spirit",
-   "Father Son Holy Spirit"
+   "Father Son Holy Spirit",
+   "God the Father, God the Son and God the Holy Spirit",
+   "Father, Son and Holy Ghost",
+   "Father, Son, Holy Spirit"
   ]
  },
  {
   "paper": "p2",
   "unit": "Crime and Punishment",
   "q": "What is crime?",
-  "a": "An act that breaks a law",
+  "a": "Breaking the law",
   "alt": [
-   "Breaking the law",
-   "Breaking a law"
+   "An act that breaks a law",
+   "Breaking a law",
+   "An act that breaks the law",
+   "Illegal act",
+   "An illegal act",
+   "Something against the law",
+   "Doing something illegal",
+   "Law breaking",
+   "An offence",
+   "An offense",
+   "Something illegal",
+   "Breaking laws"
   ]
  },
  {
@@ -916,7 +1212,12 @@
   "unit": "Crime and Punishment",
   "q": "Which prophet said 'Do what is right, love kindness, and walk humbly with God'?",
   "a": "Micah",
-  "alt": []
+  "alt": [
+   "The prophet Micah",
+   "Prophet Micah",
+   "Book of Micah",
+   "Micah 6:8"
+  ]
  },
  {
   "paper": "p2",
@@ -930,7 +1231,15 @@
   "unit": "Crime and Punishment",
   "q": "Which book says 'Let every person be subject to the governing authorities'?",
   "a": "Romans",
-  "alt": []
+  "alt": [
+   "Romans 13",
+   "Romans 13:1",
+   "Letter to the Romans",
+   "The Book of Romans",
+   "Book of Romans",
+   "Paul's letter to the Romans",
+   "Epistle to the Romans"
+  ]
  },
  {
   "paper": "p2",
@@ -944,7 +1253,11 @@
   "unit": "Crime and Punishment",
   "q": "Which group of Christian volunteers writes to prisoners?",
   "a": "Prison Fellowship",
-  "alt": []
+  "alt": [
+   "Prison Fellowship Trust",
+   "Prison Fellowship England and Wales",
+   "Prison Fellowship UK"
+  ]
  },
  {
   "paper": "p2",
@@ -986,7 +1299,13 @@
   "unit": "Crime and Punishment",
   "q": "What is it called when criminals meet their victims and hear about the hurt they caused?",
   "a": "Restorative justice",
-  "alt": []
+  "alt": [
+   "Restorative",
+   "Restorative practices",
+   "Restorative approach",
+   "Restorative conferencing",
+   "Restorative meetings"
+  ]
  },
  {
   "paper": "p2",
@@ -995,7 +1314,13 @@
   "a": "Capital punishment",
   "alt": [
    "The death penalty",
-   "Death penalty"
+   "Death penalty",
+   "Execution",
+   "Executions",
+   "State execution",
+   "The death sentence",
+   "Death sentence",
+   "Judicial execution"
   ]
  },
  {
@@ -1003,7 +1328,13 @@
   "unit": "Crime and Punishment",
   "q": "Which book says 'Whoever sheds human blood, by humans shall their blood be shed'?",
   "a": "Genesis",
-  "alt": []
+  "alt": [
+   "Book of Genesis",
+   "The Book of Genesis",
+   "Genesis 9:6",
+   "Genesis 9",
+   "Genesis chapter 9"
+  ]
  },
  {
   "paper": "p2",
@@ -1011,7 +1342,11 @@
   "q": "What is the only rule in situation ethics?",
   "a": "Love your neighbour",
   "alt": [
-   "Love"
+   "Love",
+   "Agape",
+   "Agape love",
+   "Love thy neighbour",
+   "Love your neighbour as yourself"
   ]
  },
  {
@@ -1020,7 +1355,14 @@
   "q": "Which UK punishment involves 40 to 300 hours of work?",
   "a": "Community order",
   "alt": [
-   "Community orders"
+   "Community orders",
+   "Community service",
+   "A community order",
+   "Community sentence",
+   "Community sentences",
+   "Unpaid work",
+   "Community payback",
+   "Unpaid community work"
   ]
  },
  {
@@ -1030,7 +1372,13 @@
   "a": "The Watchful Servant",
   "alt": [
    "Watchful Servant",
-   "The Parable of the Watchful Servant"
+   "The Parable of the Watchful Servant",
+   "Parable of the Watchful Servants",
+   "The Watchful Servants",
+   "The Faithful Servant",
+   "Parable of the Faithful Servant",
+   "The servant who knew his master's will",
+   "Parable of the servants"
   ]
  },
  {
@@ -1040,7 +1388,13 @@
   "a": "Matthew 5:38-39",
   "alt": [
    "Matthew 5",
-   "Matthew"
+   "Matthew",
+   "Matthew 5:39",
+   "Matthew 5:38",
+   "Matthew chapter 5",
+   "Sermon on the Mount",
+   "Matthew 5 38-39",
+   "Matthew 5:38-42"
   ]
  },
  {
@@ -1049,7 +1403,14 @@
   "q": "What is worship that follows a script of set words called?",
   "a": "Liturgical worship",
   "alt": [
-   "Liturgical"
+   "Liturgical",
+   "Liturgy",
+   "Worship with set words",
+   "Set worship",
+   "Formal worship",
+   "Traditional worship",
+   "Set prayers",
+   "Ritual worship"
   ]
  },
  {
@@ -1058,7 +1419,12 @@
   "q": "What is the oldest Church of England service book?",
   "a": "The Book of Common Prayer",
   "alt": [
-   "Book of Common Prayer"
+   "Book of Common Prayer",
+   "BCP",
+   "Common Prayer",
+   "Common Prayer Book",
+   "The 1549 Book of Common Prayer",
+   "Book of Common Prayer 1549"
   ]
  },
  {
@@ -1067,7 +1433,10 @@
   "q": "How many sacraments does the Church of England recognise?",
   "a": "Two",
   "alt": [
-   "2"
+   "2",
+   "Two sacraments",
+   "Baptism and Eucharist",
+   "Baptism and the Eucharist"
   ]
  },
  {
@@ -1076,7 +1445,9 @@
   "q": "How many sacraments do Roman Catholic and Orthodox Churches recognise?",
   "a": "Seven",
   "alt": [
-   "7"
+   "7",
+   "Seven sacraments",
+   "7 sacraments"
   ]
  },
  {
@@ -1085,7 +1456,9 @@
   "q": "Which of the 39 Articles states the Church of England's two sacraments?",
   "a": "Article 25",
   "alt": [
-   "25"
+   "25",
+   "Article XXV",
+   "Article twenty five"
   ]
  },
  {
@@ -1093,16 +1466,26 @@
   "unit": "Living the Christian Life",
   "q": "What do Roman Catholics call the bread and wine literally becoming the body and blood of Christ?",
   "a": "Transubstantiation",
-  "alt": []
+  "alt": [
+   "Transubstansiation",
+   "Trans-substantiation",
+   "Transubstantiate"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Living the Christian Life",
-  "q": "Which Christians do not baptise infants?",
+  "q": "Name one group of Christians who do not baptise infants.",
   "a": "Baptists",
   "alt": [
    "Baptist churches",
-   "Baptist"
+   "Baptist",
+   "Baptist Church",
+   "The Baptists",
+   "Baptist Christians",
+   "Pentecostals",
+   "Pentecostal",
+   "Pentecostal Christians"
   ]
  },
  {
@@ -1110,28 +1493,51 @@
   "unit": "Living the Christian Life",
   "q": "Which type of prayer thanks God?",
   "a": "Thanksgiving",
-  "alt": []
+  "alt": [
+   "Thanks",
+   "Thanksgiving prayer",
+   "Prayer of thanksgiving"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Living the Christian Life",
   "q": "Which type of prayer asks God to help others?",
   "a": "Intercession",
-  "alt": []
+  "alt": [
+   "Intercessory prayer",
+   "Intercessions",
+   "Prayer of intercession",
+   "Intercessory"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Living the Christian Life",
   "q": "Which type of prayer asks God for forgiveness?",
   "a": "Contrition",
-  "alt": []
+  "alt": [
+   "Confession",
+   "Penitence",
+   "Prayer of confession",
+   "Prayer of contrition",
+   "Prayers of confession",
+   "Repentance",
+   "Penitential prayer"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Living the Christian Life",
   "q": "Which type of prayer asks God for something?",
   "a": "Supplication",
-  "alt": []
+  "alt": [
+   "Petition",
+   "Petitions",
+   "Petitionary prayer",
+   "Supplications",
+   "Prayer of petition"
+  ]
  },
  {
   "paper": "p2",
@@ -1148,17 +1554,24 @@
   "q": "Who started the community on Iona in 563?",
   "a": "St Columba",
   "alt": [
-   "Columba"
+   "Columba",
+   "Saint Columba",
+   "Colm Cille",
+   "Columcille",
+   "St Columba of Iona"
   ]
  },
  {
   "paper": "p2",
   "unit": "Living the Christian Life",
   "q": "Which church in Jerusalem marks where Jesus died and was resurrected?",
-  "a": "The Church of the Holy Sepulchre",
+  "a": "Church of the Holy Sepulchre",
   "alt": [
-   "Church of the Holy Sepulchre",
-   "Holy Sepulchre"
+   "The Church of the Holy Sepulchre",
+   "Holy Sepulchre",
+   "Holy Sepulcher",
+   "Church of the Holy Sepulcher",
+   "Sepulchre"
   ]
  },
  {
@@ -1166,15 +1579,28 @@
   "unit": "Living the Christian Life",
   "q": "What is the start of the Christian year?",
   "a": "Advent",
-  "alt": []
+  "alt": [
+   "Advent Sunday",
+   "The start of Advent",
+   "The first Sunday of Advent"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Living the Christian Life",
   "q": "What does Palm Sunday remember?",
-  "a": "Jesus entering Jerusalem on a donkey",
+  "a": "Jesus entering Jerusalem",
   "alt": [
-   "Jesus entering Jerusalem"
+   "Jesus entering Jerusalem on a donkey",
+   "Jesus riding a donkey",
+   "Jesus riding into Jerusalem",
+   "Jesus arriving in Jerusalem",
+   "Jesus' entry into Jerusalem",
+   "The triumphal entry",
+   "Jesus coming into Jerusalem",
+   "Jesus entering the city",
+   "Jesus on a donkey",
+   "Jesus' arrival in Jerusalem"
   ]
  },
  {
@@ -1182,7 +1608,18 @@
   "unit": "Living the Christian Life",
   "q": "What is speaking about the gospel called?",
   "a": "Evangelism",
-  "alt": []
+  "alt": [
+   "Evangelising",
+   "Evangelizing",
+   "Evangelization",
+   "Evangelisation",
+   "Spreading the gospel",
+   "Mission",
+   "Preaching the gospel",
+   "Witnessing",
+   "Sharing the gospel",
+   "Evangelistic"
+  ]
  },
  {
   "paper": "p2",
@@ -1190,7 +1627,9 @@
   "q": "What does St Paul call the Church?",
   "a": "The Body of Christ",
   "alt": [
-   "Body of Christ"
+   "Body of Christ",
+   "Christ's body",
+   "The body of Jesus"
   ]
  },
  {
@@ -1205,14 +1644,25 @@
   "unit": "Living the Christian Life",
   "q": "What brings Christians of different denominations together?",
   "a": "Ecumenism",
-  "alt": []
+  "alt": [
+   "Ecumenical",
+   "Ecumenical movement",
+   "Ecumenicalism",
+   "The ecumenical movement",
+   "Ecumenical work"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Living the Christian Life",
   "q": "What is treating people badly for their religion called?",
   "a": "Persecution",
-  "alt": []
+  "alt": [
+   "Religious persecution",
+   "Persecuting",
+   "Persecuted",
+   "Religious discrimination"
+  ]
  },
  {
   "paper": "p2",
@@ -1231,7 +1681,19 @@
   "alt": [
    "You shall not kill",
    "You shall not murder",
-   "Do not murder"
+   "Do not murder",
+   "Thou shalt not kill",
+   "Thou shalt not murder",
+   "You must not kill",
+   "Never kill",
+   "No killing",
+   "Don't kill",
+   "Do not commit murder",
+   "Do not take life",
+   "Do not take human life",
+   "Murder is wrong",
+   "Killing is wrong",
+   "You must not murder"
   ]
  },
  {
@@ -1240,17 +1702,37 @@
   "q": "Which Christian group committed in 1660 never to fight?",
   "a": "Quakers",
   "alt": [
-   "The Quakers"
+   "The Quakers",
+   "Religious Society of Friends",
+   "Society of Friends",
+   "Quaker",
+   "Friends",
+   "The Friends",
+   "Quaker Christians",
+   "The Religious Society of Friends"
   ]
  },
  {
   "paper": "p2",
   "unit": "Peace and Conflict",
   "q": "What does pacifism say?",
-  "a": "War and violence are always wrong",
+  "a": "War is always wrong",
   "alt": [
-   "War is always wrong",
-   "Violence is always wrong"
+   "War and violence are always wrong",
+   "Violence is always wrong",
+   "War and violence are wrong",
+   "Fighting is wrong",
+   "Violence is never right",
+   "War is never right",
+   "War is never justified",
+   "All violence is wrong",
+   "Never fight",
+   "Violence is wrong",
+   "War is wrong",
+   "No violence",
+   "Non-violence",
+   "Nonviolence",
+   "Never use violence"
   ]
  },
  {
@@ -1258,7 +1740,23 @@
   "unit": "Peace and Conflict",
   "q": "What is working against something wrong without violence called?",
   "a": "Passive resistance",
-  "alt": []
+  "alt": [
+   "Non-violent protest",
+   "Nonviolence",
+   "Non-violence",
+   "Non-violent resistance",
+   "Nonviolent resistance",
+   "Peaceful protest",
+   "Civil disobedience",
+   "Passive protest",
+   "Nonviolent protest",
+   "Peaceful resistance",
+   "Non violent resistance",
+   "Passive-resistance",
+   "Non violence",
+   "Non-violent action",
+   "Peaceful action"
+  ]
  },
  {
   "paper": "p2",
@@ -1268,13 +1766,17 @@
   "alt": [
    "Martin Luther King",
    "MLK",
-   "Martin Luther King Jr"
+   "Martin Luther King Jr",
+   "Dr King",
+   "King",
+   "Martin Luther King Junior",
+   "Dr Martin Luther King"
   ]
  },
  {
   "paper": "p2",
   "unit": "Peace and Conflict",
-  "q": "Who first thought of Just War theory?",
+  "q": "Which saint first thought of Just War theory?",
   "a": "St Augustine",
   "alt": [
    "Augustine"
@@ -1283,12 +1785,14 @@
  {
   "paper": "p2",
   "unit": "Peace and Conflict",
-  "q": "Who developed Just War theory?",
-  "a": "St Aquinas",
+  "q": "Which later saint developed Just War theory?",
+  "a": "St Thomas Aquinas",
   "alt": [
+   "St Aquinas",
    "Aquinas",
    "Thomas Aquinas",
-   "St Thomas Aquinas"
+   "Saint Thomas Aquinas",
+   "Saint Aquinas"
   ]
  },
  {
@@ -1306,7 +1810,10 @@
   "q": "What is a war seen as supported by God called?",
   "a": "Holy war",
   "alt": [
-   "A holy war"
+   "A holy war",
+   "Holy wars",
+   "Crusade",
+   "A crusade"
   ]
  },
  {
@@ -1314,21 +1821,34 @@
   "unit": "Peace and Conflict",
   "q": "Who did God command to attack Jericho?",
   "a": "Joshua",
-  "alt": []
+  "alt": [
+   "Joshua son of Nun",
+   "Joshua and the Israelites"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Peace and Conflict",
   "q": "What do WMD stand for?",
   "a": "Weapons of mass destruction",
-  "alt": []
+  "alt": [
+   "Weapon of mass destruction",
+   "Mass destruction weapons",
+   "Weapons for mass destruction",
+   "Weapons of massive destruction"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Peace and Conflict",
   "q": "Which international Roman Catholic group is against all war?",
   "a": "Pax Christi",
-  "alt": []
+  "alt": [
+   "Pax Christi International",
+   "Peace of Christ",
+   "Pax Christi movement",
+   "The Pax Christi movement"
+  ]
  },
  {
   "paper": "p2",
@@ -1336,7 +1856,10 @@
   "q": "Which community in Northern Ireland brings healing between groups?",
   "a": "Corrymeela Community",
   "alt": [
-   "Corrymeela"
+   "Corrymeela",
+   "The Corrymeela Community",
+   "Corrymeela centre",
+   "Corrymeela Peace Centre"
   ]
  },
  {
@@ -1345,7 +1868,10 @@
   "q": "Which organisation brings together Christians from around the world and arranges peace talks?",
   "a": "World Council of Churches",
   "alt": [
-   "The World Council of Churches"
+   "The World Council of Churches",
+   "WCC",
+   "The WCC",
+   "World Council of Church"
   ]
  },
  {
@@ -1353,86 +1879,186 @@
   "unit": "Peace and Conflict",
   "q": "Which theory says to bring about the greatest good for the greatest number?",
   "a": "Utilitarianism",
-  "alt": []
+  "alt": [
+   "Utilitarian",
+   "Utilitarian ethics",
+   "Utilitarians",
+   "Jeremy Bentham's utilitarianism"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Peace and Conflict",
   "q": "What is terrorism?",
-  "a": "Violence against civilians for religious or political goals",
+  "a": "Violence against civilians",
   "alt": [
-   "Violence against civilians"
+   "Violence against civilians for religious or political goals",
+   "Attacking civilians",
+   "Violence for political aims",
+   "Violence for religious or political aims",
+   "Using violence to scare people",
+   "Using fear and violence for political goals",
+   "Violence for political or religious reasons",
+   "Violence against innocent people",
+   "Harming innocent people to make a point",
+   "Violence for a cause"
   ]
  },
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
-  "q": "How many marks is an Outline question usually worth, and how should you write it?",
-  "a": "3 marks. Write three separate sentences, one point in each.",
-  "alt": []
+  "q": "How many marks is an Outline question usually worth?",
+  "a": "3",
+  "alt": [
+   "3 marks. Write three separate sentences, one point in each.",
+   "3 marks",
+   "Three",
+   "Three marks"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
-  "q": "How is a 4-mark Explain two question marked?",
-  "a": "One mark for each of two reasons or teachings and one mark for developing each.",
-  "alt": []
+  "q": "In a 4-mark Explain two question, how many marks are there for each reason and its development?",
+  "a": "Two",
+  "alt": [
+   "One mark for each of two reasons or teachings and one mark for developing each.",
+   "2",
+   "2 marks",
+   "Two marks",
+   "1 for the reason and 1 for the development",
+   "One for the reason and one for the development"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
-  "q": "What do you add in the 5-mark Explain two question that you do not need in the 4-mark one?",
-  "a": "One relevant source of wisdom and authority that supports your reason.",
-  "alt": []
+  "q": "What extra do you need in the 5-mark Explain two question?",
+  "a": "A source of wisdom and authority",
+  "alt": [
+   "One relevant source of wisdom and authority that supports your reason.",
+   "A source",
+   "A quote",
+   "A relevant source",
+   "Source of authority",
+   "A quotation",
+   "A quote from a holy book",
+   "SOWA",
+   "One source",
+   "One relevant source of wisdom and authority",
+   "A Bible or Qur'an quote",
+   "A religious quote"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
   "q": "How is a 12-mark Evaluate question marked?",
-  "a": "In levels, for analysis of different points of view and a justified conclusion.",
-  "alt": []
+  "a": "In levels",
+  "alt": [
+   "In levels, for analysis of different points of view and a justified conclusion.",
+   "Levels",
+   "By levels",
+   "Level of response",
+   "Using levels",
+   "Levels of response"
+  ]
  },
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
   "q": "What does it mean to develop a reason?",
-  "a": "Add extra detail that explains or extends the reason. Repeating it earns nothing.",
-  "alt": []
+  "a": "Add more detail",
+  "alt": [
+   "Add extra detail that explains or extends the reason. Repeating it earns nothing.",
+   "Add extra detail",
+   "Explain it further",
+   "Extend it",
+   "Explain it more",
+   "Explain why it matters",
+   "Say why it matters",
+   "Go into more detail",
+   "Explain it",
+   "Add extra detail that explains or extends the reason"
+  ]
  },
  {
   "paper": "p1",
   "unit": "Muslim Beliefs",
-  "q": "How many marks is an Outline question usually worth, and how should you write it?",
-  "a": "3 marks. Write three separate sentences, one point in each.",
-  "alt": []
+  "q": "How many marks is an Outline question usually worth?",
+  "a": "3",
+  "alt": [
+   "3 marks. Write three separate sentences, one point in each.",
+   "3 marks",
+   "Three",
+   "Three marks"
+  ]
  },
  {
   "paper": "p1",
   "unit": "Muslim Beliefs",
-  "q": "How is a 4-mark Explain two question marked?",
-  "a": "One mark for each of two reasons or teachings and one mark for developing each.",
-  "alt": []
+  "q": "In a 4-mark Explain two question, how many marks are there for each reason and its development?",
+  "a": "Two",
+  "alt": [
+   "One mark for each of two reasons or teachings and one mark for developing each.",
+   "2",
+   "2 marks",
+   "Two marks",
+   "1 for the reason and 1 for the development",
+   "One for the reason and one for the development"
+  ]
  },
  {
   "paper": "p1",
   "unit": "Muslim Beliefs",
-  "q": "What do you add in the 5-mark Explain two question that you do not need in the 4-mark one?",
-  "a": "One relevant source of wisdom and authority that supports your reason.",
-  "alt": []
+  "q": "What extra do you need in the 5-mark Explain two question?",
+  "a": "A source of wisdom and authority",
+  "alt": [
+   "One relevant source of wisdom and authority that supports your reason.",
+   "A source",
+   "A quote",
+   "A relevant source",
+   "Source of authority",
+   "A quotation",
+   "A quote from a holy book",
+   "SOWA",
+   "One source",
+   "One relevant source of wisdom and authority",
+   "A Bible or Qur'an quote",
+   "A religious quote"
+  ]
  },
  {
   "paper": "p1",
   "unit": "Muslim Beliefs",
   "q": "How is a 12-mark Evaluate question marked?",
-  "a": "In levels, for analysis of different points of view and a justified conclusion.",
-  "alt": []
+  "a": "In levels",
+  "alt": [
+   "In levels, for analysis of different points of view and a justified conclusion.",
+   "Levels",
+   "By levels",
+   "Level of response",
+   "Using levels",
+   "Levels of response"
+  ]
  },
  {
   "paper": "p1",
   "unit": "Muslim Beliefs",
   "q": "What does it mean to develop a reason?",
-  "a": "Add extra detail that explains or extends the reason. Repeating it earns nothing.",
-  "alt": []
+  "a": "Add more detail",
+  "alt": [
+   "Add extra detail that explains or extends the reason. Repeating it earns nothing.",
+   "Add extra detail",
+   "Explain it further",
+   "Extend it",
+   "Explain it more",
+   "Explain why it matters",
+   "Say why it matters",
+   "Go into more detail",
+   "Explain it",
+   "Add extra detail that explains or extends the reason"
+  ]
  },
  {
   "paper": "p1",
@@ -1448,12 +2074,20 @@
   "paper": "p1",
   "unit": "Muslim Beliefs",
   "q": "What is Imamah, one of the Five Roots?",
-  "a": "Belief that Allah chose leaders (Imams) of the Muslim community, starting with Ali",
+  "a": "Leadership by the Imams",
   "alt": [
+   "Belief that Allah chose leaders (Imams) of the Muslim community, starting with Ali",
    "Imams",
    "Leaders chosen by Allah",
    "Leadership",
-   "Successors to Muhammad"
+   "Successors to Muhammad",
+   "Belief in the Imams",
+   "Allah's chosen leaders",
+   "Belief that Allah chose Imams",
+   "Leaders of the community",
+   "Divinely appointed leaders",
+   "Belief in Imams as leaders",
+   "Belief that Allah chose leaders"
   ]
  },
  {
@@ -1562,18 +2196,29 @@
   "paper": "p1",
   "unit": "Muslim Beliefs",
   "q": "Do angels have free will?",
-  "a": "No, they do exactly what Allah tells them",
+  "a": "No",
   "alt": [
-   "No"
+   "No, they do exactly what Allah tells them",
+   "They do exactly what Allah tells them",
+   "They obey Allah",
+   "Angels do not have free will",
+   "No free will",
+   "They have no free will",
+   "They always obey Allah",
+   "They only obey Allah",
+   "They only do what Allah tells them"
   ]
  },
  {
   "paper": "p1",
   "unit": "Muslim Beliefs",
   "q": "Can humans choose good or evil, according to Al-Qadr?",
-  "a": "Yes, apart from their genes and social situation",
+  "a": "Yes",
   "alt": [
-   "Yes"
+   "Yes, apart from their genes and social situation",
+   "Humans can choose good or evil",
+   "They can choose",
+   "Yes humans can choose"
   ]
  },
  {
@@ -1583,18 +2228,37 @@
   "a": "How they were born",
   "alt": [
    "Their genes and situation",
-   "The situation they were born into"
+   "The situation they were born into",
+   "Their genes",
+   "Their situation",
+   "Their circumstances",
+   "Things outside their control",
+   "Their background",
+   "Where they were born",
+   "The way they were born",
+   "Their upbringing"
   ]
  },
  {
   "paper": "p1",
   "unit": "Marriage and the Family",
   "q": "Why are Muslims against cohabitation?",
-  "a": "It keeps sex outside marriage; they support nikah instead",
+  "a": "Sex belongs in marriage",
   "alt": [
    "Sex should be within marriage",
    "They support nikah",
-   "Sex should only be in marriage"
+   "Sex should only be in marriage",
+   "Sex outside marriage is wrong",
+   "Premarital sex is a sin",
+   "Marriage is the right place for sex",
+   "Sex should be within nikah",
+   "They believe in marriage",
+   "It is sex outside marriage",
+   "It is a sin",
+   "Nikah is the right way",
+   "They support marriage",
+   "Because it is sex outside marriage",
+   "Sex should be inside marriage"
   ]
  },
  {
@@ -1611,20 +2275,40 @@
   "paper": "p1",
   "unit": "Marriage and the Family",
   "q": "What do Humanists and atheists say about sexual relationships?",
-  "a": "People should choose freely but responsibly",
+  "a": "Choose freely but responsibly",
   "alt": [
+   "People should choose freely but responsibly",
    "Choose freely and responsibly",
-   "Free but responsible choice"
+   "Free but responsible choice",
+   "It is a personal choice",
+   "It is up to the individual",
+   "People should be free to choose",
+   "Freedom with responsibility",
+   "Free choice",
+   "Consenting adults can choose",
+   "Choose freely",
+   "Responsible freedom",
+   "It is a matter of choice",
+   "People can choose"
   ]
  },
  {
   "paper": "p1",
   "unit": "Marriage and the Family",
   "q": "What does Islam teach about premarital sex?",
-  "a": "It is a serious sin against Allah",
+  "a": "A serious sin",
   "alt": [
-   "A serious sin",
-   "Sin"
+   "It is a serious sin against Allah",
+   "Sin",
+   "A sin",
+   "Haram",
+   "Forbidden",
+   "It is forbidden",
+   "It is wrong",
+   "Zina",
+   "It is haram",
+   "It is a sin",
+   "It is wrong and a sin"
   ]
  },
  {
@@ -1650,30 +2334,53 @@
   "paper": "p1",
   "unit": "Marriage and the Family",
   "q": "What does Surah 17:31 say about contraception and family size?",
-  "a": "Do not kill your children for fear of poverty",
+  "a": "Do not kill your children",
   "alt": [
-   "Do not kill your children",
-   "Allah will provide"
+   "Do not kill your children for fear of poverty",
+   "Allah will provide",
+   "Allah provides for them",
+   "Do not kill children out of fear of poverty",
+   "Do not kill your children out of fear of poverty",
+   "Allah will provide for them",
+   "Do not kill your children because you are poor",
+   "It forbids killing children for fear of poverty",
+   "Not to kill children because of poverty"
   ]
  },
  {
   "paper": "p1",
   "unit": "Marriage and the Family",
   "q": "What did Muhammad say about coitus interruptus?",
-  "a": "'It is better for you not to do it'",
+  "a": "It is better not to do it",
   "alt": [
-   "It is better not to do it",
-   "He did not forbid it"
+   "'It is better for you not to do it'",
+   "He did not forbid it",
+   "It is better for you not to do it",
+   "Better not to do it",
+   "He discouraged it",
+   "He did not ban it",
+   "He discouraged but did not forbid it",
+   "Better not to",
+   "It is better not to"
   ]
  },
  {
   "paper": "p1",
   "unit": "Marriage and the Family",
   "q": "Which forms of contraception are generally forbidden for Muslims?",
-  "a": "Permanent forms, such as sterilisation",
+  "a": "Sterilisation",
   "alt": [
-   "Sterilisation",
-   "Permanent contraception"
+   "Permanent forms, such as sterilisation",
+   "Permanent contraception",
+   "Permanent forms",
+   "Vasectomy",
+   "Permanent forms of contraception",
+   "Permanent methods",
+   "Sterilization",
+   "Permanent forms like sterilisation",
+   "Female sterilisation",
+   "Male sterilisation",
+   "Permanent"
   ]
  },
  {
@@ -1683,7 +2390,13 @@
   "a": "A two-year gap",
   "alt": [
    "Two years",
-   "2 years"
+   "2 years",
+   "A gap of two years",
+   "Two year gap",
+   "A two year gap",
+   "2 year gap",
+   "A 2 year gap",
+   "Two years between children"
   ]
  },
  {
@@ -1702,7 +2415,20 @@
   "q": "What did Muhammad do around the house that shows men share chores?",
   "a": "Mended his own clothes",
   "alt": [
-   "He mended his clothes"
+   "He mended his clothes",
+   "Mended clothes",
+   "Repaired his clothes",
+   "Fixed his clothes",
+   "Sewed his clothes",
+   "Mended his clothes",
+   "Helped with housework",
+   "He mended clothes",
+   "He fixed his own clothes",
+   "He repaired his own clothes",
+   "He sewed his own clothes",
+   "He did the housework",
+   "He helped at home",
+   "He helped around the house"
   ]
  },
  {
@@ -1711,7 +2437,10 @@
   "q": "For Muslims, is equality equal respect or equal roles?",
   "a": "Equal respect, not equal roles",
   "alt": [
-   "Equal respect"
+   "Equal respect",
+   "Respect",
+   "Respect not roles",
+   "Equal respect not roles"
   ]
  },
  {
@@ -1757,10 +2486,20 @@
   "paper": "p1",
   "unit": "Marriage and the Family",
   "q": "What is gender discrimination?",
-  "a": "Acting on the belief that one gender is less or more important",
+  "a": "Treating men and women unequally",
   "alt": [
-   "Treating men and women unequally",
-   "Acting on gender prejudice"
+   "Acting on the belief that one gender is less or more important",
+   "Acting on gender prejudice",
+   "Unfair treatment because of gender",
+   "Treating people differently because of their gender",
+   "Treating one gender worse than the other",
+   "Sexism",
+   "Treating people unfairly because of their gender",
+   "Prejudice against a gender",
+   "Unequal treatment of men and women",
+   "Treating men and women differently",
+   "Discriminating because of gender",
+   "Treating one gender as less important"
   ]
  },
  {
@@ -1776,11 +2515,21 @@
   "paper": "p1",
   "unit": "Living the Muslim Life",
   "q": "What is the Shahadah?",
-  "a": "The first pillar, a statement of the most important Muslim beliefs",
+  "a": "The declaration of faith",
   "alt": [
-   "The declaration of faith",
+   "The first pillar, a statement of the most important Muslim beliefs",
    "Declaration of faith",
-   "The first pillar"
+   "The first pillar",
+   "Statement of faith",
+   "Declaration of belief",
+   "The Muslim statement of faith",
+   "Profession of faith",
+   "Statement of belief",
+   "The Muslim creed",
+   "There is no god but Allah and Muhammad is his messenger",
+   "First pillar",
+   "Statement of Muslim beliefs",
+   "Statement of the most important Muslim beliefs"
   ]
  },
  {
@@ -1796,10 +2545,16 @@
   "paper": "p1",
   "unit": "Living the Muslim Life",
   "q": "What do Shi'a Muslims add to the Shahadah?",
-  "a": "'And I testify that Ali is the Friend of Allah'",
+  "a": "Ali is the Friend of Allah",
   "alt": [
-   "Ali is the Friend of Allah",
-   "Ali is the friend of Allah"
+   "'And I testify that Ali is the Friend of Allah'",
+   "Ali is Allah's friend",
+   "Ali is the Wali of Allah",
+   "Ali is the friend of God",
+   "Ali is the Wali Allah",
+   "Ali is a friend of Allah",
+   "Ali is the wali",
+   "And I testify that Ali is the Friend of Allah"
   ]
  },
  {
@@ -1816,22 +2571,45 @@
   "paper": "p1",
   "unit": "Living the Muslim Life",
   "q": "Who is excused from Sawm?",
-  "a": "Those who are sick, travelling or facing extreme difficulty",
+  "a": "The sick and travellers",
   "alt": [
+   "Those who are sick, travelling or facing extreme difficulty",
    "The sick",
    "Sick people and travellers",
-   "People who are ill or travelling"
+   "People who are ill or travelling",
+   "Sick",
+   "Ill",
+   "Travellers",
+   "Those who are sick or travelling",
+   "People who are ill",
+   "Sick people",
+   "Those who are ill or travelling",
+   "People facing extreme difficulty",
+   "Those facing extreme difficulty",
+   "The ill and travellers",
+   "People who are sick, travelling or in extreme difficulty"
   ]
  },
  {
   "paper": "p1",
   "unit": "Living the Muslim Life",
   "q": "What do people excused from Sawm do instead?",
-  "a": "Make up the days later or pay for food for poor families",
+  "a": "Make up the days later",
   "alt": [
+   "Make up the days later or pay for food for poor families",
    "Make up the days",
    "Fast later",
-   "Pay for food for the poor"
+   "Pay for food for the poor",
+   "Pay for food for poor families",
+   "Feed the poor",
+   "Fast on other days",
+   "Make up the fast later",
+   "Make up missed fasts",
+   "Feed a poor person",
+   "Feed the needy",
+   "Pay to feed the poor",
+   "Fast later or feed the poor",
+   "Pay for food"
   ]
  },
  {
@@ -1842,17 +2620,38 @@
   "alt": [
    "Struggle",
    "Striving",
-   "Struggling"
+   "Struggling",
+   "To struggle",
+   "To strive",
+   "Struggle or strive",
+   "To struggle or strive",
+   "Striving and struggling",
+   "Struggling and striving",
+   "Effort",
+   "Struggle in the way of Allah",
+   "Striving for Allah"
   ]
  },
  {
   "paper": "p1",
   "unit": "Living the Muslim Life",
   "q": "What is Lesser Jihad?",
-  "a": "Striving to stop evil in the world, which can include fighting in a war",
+  "a": "Striving to stop evil in the world",
   "alt": [
-   "Striving to stop evil in the world",
-   "Fighting to defend Islam"
+   "Striving to stop evil in the world, which can include fighting in a war",
+   "Fighting to defend Islam",
+   "Fighting in a war",
+   "Holy war",
+   "A war to defend Islam",
+   "Fighting for Islam",
+   "Defending Islam",
+   "Armed struggle",
+   "Struggle to stop evil in the world",
+   "Fighting in defence of Islam",
+   "Physical struggle",
+   "Fighting to defend the faith",
+   "The outer struggle",
+   "Fighting a war to defend Islam"
   ]
  },
  {
@@ -1862,17 +2661,41 @@
   "a": "A genuine Muslim leader",
   "alt": [
    "A Muslim leader",
-   "Muslim leader"
+   "Muslim leader",
+   "Legitimate Muslim leader",
+   "A true Muslim leader",
+   "A Muslim ruler",
+   "A leader",
+   "A proper Muslim leader",
+   "An Imam",
+   "A caliph",
+   "A real Muslim leader",
+   "A genuine leader",
+   "A legitimate Muslim leader"
   ]
  },
  {
   "paper": "p1",
   "unit": "Living the Muslim Life",
   "q": "When can Lesser Jihad be declared?",
-  "a": "When freedom to worship Allah is taken away or Islam is under attack",
+  "a": "When Islam is under attack",
   "alt": [
-   "When Islam is under attack",
-   "To defend Islam"
+   "When freedom to worship Allah is taken away or Islam is under attack",
+   "To defend Islam",
+   "When freedom to worship is taken away",
+   "When Muslims are attacked",
+   "When Muslims cannot worship freely",
+   "When Muslims are not free to worship",
+   "If Islam is attacked",
+   "When Islam is attacked",
+   "Self-defence",
+   "In self-defence",
+   "When freedom of worship is taken away",
+   "When they are attacked",
+   "When worship is stopped",
+   "When religious freedom is taken away",
+   "When Islam is in danger",
+   "When Muslims are under attack"
   ]
  },
  {
@@ -1882,7 +2705,16 @@
   "a": "Scientific-minded Muslims",
   "alt": [
    "Scientific Muslims",
-   "Non-Creationist Muslims"
+   "Non-Creationist Muslims",
+   "Muslims who accept science",
+   "Muslims who accept evolution",
+   "Evolutionists",
+   "Modernist Muslims",
+   "Scientific minded Muslims",
+   "Muslims who believe in science",
+   "Science-minded Muslims",
+   "Evolutionary Muslims",
+   "Scientific-minded"
   ]
  },
  {
@@ -1892,7 +2724,14 @@
   "a": "Clay or dust",
   "alt": [
    "Clay",
-   "Dust"
+   "Dust",
+   "Mud",
+   "Soil",
+   "Earth",
+   "Clay and dust",
+   "Dust and clay",
+   "Dust or clay",
+   "Soil or clay"
   ]
  },
  {
@@ -1908,40 +2747,89 @@
   "paper": "p1",
   "unit": "Matters of Life and Death",
   "q": "What do most Muslims agree about abortion when the mother's health is at risk?",
-  "a": "Her life is more important than the baby's",
+  "a": "The mother's life comes first",
   "alt": [
-   "The mother's life comes first",
-   "Mother's life is more important"
+   "Her life is more important than the baby's",
+   "Mother's life is more important",
+   "The mother's life is more important",
+   "The mother's life matters more",
+   "Save the mother",
+   "The mother's life is more important than the baby's",
+   "The mother's life takes priority",
+   "Mother's life",
+   "The mother",
+   "The mother's health comes first",
+   "Mother's health comes first"
   ]
  },
  {
   "paper": "p1",
   "unit": "Matters of Life and Death",
   "q": "What do pro-choice supporters say about abortion?",
-  "a": "A woman has a right over her own body",
+  "a": "A woman's right to choose",
   "alt": [
+   "A woman has a right over her own body",
    "Woman has the right to choose",
-   "The woman's right to choose"
+   "The woman's right to choose",
+   "A woman has the right to choose",
+   "Right to choose",
+   "My body my choice",
+   "Women should choose",
+   "It is the woman's decision",
+   "Women have rights over their own bodies",
+   "A woman's body, her choice",
+   "Bodily autonomy",
+   "Her body her choice",
+   "The mother has the right to choose",
+   "Her body, her choice",
+   "Women have the right to choose"
   ]
  },
  {
   "paper": "p1",
   "unit": "Matters of Life and Death",
   "q": "What do pro-life supporters say about every foetus?",
-  "a": "It has the potential for human life",
+  "a": "It has a right to life",
   "alt": [
+   "It has the potential for human life",
    "Potential for human life",
-   "It has a right to life"
+   "It is a human life",
+   "It is a life",
+   "It should be protected",
+   "It is a person",
+   "It is alive",
+   "Life begins at conception",
+   "It has the right to live",
+   "Every foetus has a right to life",
+   "It is a human being",
+   "It is a potential human being",
+   "It is sacred",
+   "It has potential for human life",
+   "It is a baby"
   ]
  },
  {
   "paper": "p1",
   "unit": "Matters of Life and Death",
   "q": "What do Muslims say about past lives?",
-  "a": "People have one life on Earth, then go to akhirah",
+  "a": "People have one life",
   "alt": [
+   "People have one life on Earth, then go to akhirah",
    "One life",
-   "They do not believe in past lives"
+   "They do not believe in past lives",
+   "One life on Earth",
+   "One life then akhirah",
+   "We only live once",
+   "No past lives",
+   "They do not believe in reincarnation",
+   "There are no past lives",
+   "No reincarnation",
+   "People live once",
+   "We have one life",
+   "There is no reincarnation",
+   "Only one life",
+   "One life on Earth, then akhirah",
+   "We live once"
   ]
  },
  {
@@ -1958,38 +2846,94 @@
   "paper": "p1",
   "unit": "Matters of Life and Death",
   "q": "Why are Muslims buried and not cremated?",
-  "a": "Some believe the resurrection will be physical",
+  "a": "Resurrection will be physical",
   "alt": [
+   "Some believe the resurrection will be physical",
    "Physical resurrection",
-   "Because of physical resurrection"
+   "Because of physical resurrection",
+   "The body will be resurrected",
+   "Body needed for resurrection",
+   "The resurrection is physical",
+   "They believe the body will be raised",
+   "Bodily resurrection",
+   "They will be resurrected in a physical body",
+   "The body is needed at the resurrection",
+   "They believe in physical resurrection",
+   "Respect for the body",
+   "The body is sacred",
+   "The resurrection will be of the body"
   ]
  },
  {
   "paper": "p1",
   "unit": "Matters of Life and Death",
   "q": "What is the 'social control' argument against life after death?",
-  "a": "Religion offers heaven and threatens hell to control what people do",
+  "a": "Religion controls people with heaven and hell",
   "alt": [
-   "Religion uses heaven and hell to control people"
+   "Religion offers heaven and threatens hell to control what people do",
+   "Religion uses heaven and hell to control people",
+   "To control people",
+   "Control",
+   "Used to control behaviour",
+   "Religion is used to control behaviour",
+   "Religion offers heaven and threatens hell",
+   "Heaven and hell control behaviour",
+   "It stops people doing bad things",
+   "Rewards and punishment to control people",
+   "Religion controls how people behave",
+   "Fear of hell controls people",
+   "People behave because of fear of hell",
+   "Heaven and hell keep people in line",
+   "Religion keeps people in line",
+   "Used to make people behave",
+   "Religion uses heaven and hell to control behaviour"
   ]
  },
  {
   "paper": "p1",
   "unit": "Matters of Life and Death",
   "q": "What is the 'wishful thinking' argument against life after death?",
-  "a": "Belief in an afterlife is comforting but has no evidence",
+  "a": "It is comforting but has no evidence",
   "alt": [
-   "Comforting but no evidence"
+   "Belief in an afterlife is comforting but has no evidence",
+   "Comforting but no evidence",
+   "No evidence",
+   "It is comforting",
+   "People want it to be true",
+   "It is just wishful thinking",
+   "People believe it because they want to",
+   "Comfort but no proof",
+   "It makes people feel better but is not proven",
+   "It is a comfort with no proof",
+   "Believing it because it is comforting",
+   "It gives comfort but has no proof",
+   "People want to believe it",
+   "There is no evidence",
+   "It is comforting but there is no proof"
   ]
  },
  {
   "paper": "p1",
   "unit": "Matters of Life and Death",
   "q": "When do many Muslims accept switching off life support?",
-  "a": "If the patient is unconscious and doctors say recovery is very unlikely",
+  "a": "When recovery is very unlikely",
   "alt": [
+   "If the patient is unconscious and doctors say recovery is very unlikely",
    "Patient unconscious with very little chance of recovery",
-   "If recovery is very unlikely"
+   "If recovery is very unlikely",
+   "If there is no chance of recovery",
+   "When the patient is unconscious and will not recover",
+   "If the patient is unconscious",
+   "When doctors say there is no hope of recovery",
+   "If there is little chance of recovery",
+   "When recovery is unlikely",
+   "If there is no hope",
+   "If doctors say they will not recover",
+   "When the patient will not get better",
+   "If the patient will not recover",
+   "If unconscious and unlikely to recover",
+   "When the patient is unconscious with little hope of recovery",
+   "If the patient is unconscious and will not recover"
   ]
  },
  {
@@ -2005,9 +2949,22 @@
   "paper": "p1",
   "unit": "Matters of Life and Death",
   "q": "Why might ill people feel pressured if euthanasia is allowed?",
-  "a": "They may feel they are a burden",
+  "a": "They may feel like a burden",
   "alt": [
-   "Feeling a burden"
+   "They may feel they are a burden",
+   "Feeling a burden",
+   "Burden",
+   "A burden on others",
+   "A burden on their family",
+   "They feel they are a burden",
+   "Feel like a burden",
+   "Burden on family",
+   "Feeling like a burden",
+   "They do not want to be a burden",
+   "They may feel they are costing money",
+   "They might feel guilty",
+   "Feel guilty",
+   "Feel they are a burden to others"
   ]
  },
  {
@@ -2025,7 +2982,13 @@
   "q": "In Genesis 2, what does God make Adam from?",
   "a": "Dust",
   "alt": [
-   "Dust of the ground"
+   "Dust of the ground",
+   "The dust of the ground",
+   "Dust from the ground",
+   "The ground",
+   "Soil",
+   "Earth",
+   "Ground"
   ]
  },
  {
@@ -2064,16 +3027,32 @@
   "a": "Fully human and fully God",
   "alt": [
    "Human and God",
-   "Fully God and fully human"
+   "Fully God and fully human",
+   "Fully man and fully God",
+   "Human and divine",
+   "Fully divine and fully human",
+   "God and man",
+   "God and human",
+   "Divine and human",
+   "Fully God and fully man",
+   "100% God and 100% human",
+   "Both God and human",
+   "Both human and divine",
+   "Fully divine, fully human"
   ]
  },
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
   "q": "Which Christian belief says Mary was a virgin when she had Jesus?",
-  "a": "The incarnation",
+  "a": "The virgin birth",
   "alt": [
-   "Virgin birth"
+   "The incarnation",
+   "Virgin birth",
+   "The virgin birth of Jesus",
+   "Mary's virginity",
+   "The Virgin Mary",
+   "Mary being a virgin"
   ]
  },
  {
@@ -2107,19 +3086,50 @@
   "paper": "p2",
   "unit": "Christian Beliefs",
   "q": "What is sin?",
-  "a": "An action that breaks God's laws",
+  "a": "Breaking God's laws",
   "alt": [
-   "Breaking God's laws"
+   "An action that breaks God's laws",
+   "Breaking God's law",
+   "An action that goes against God's will",
+   "Going against God",
+   "Disobeying God",
+   "Doing wrong",
+   "Wrongdoing",
+   "Going against God's will",
+   "Actions that go against God's laws",
+   "Disobedience to God",
+   "Going against God's laws",
+   "Something that breaks God's laws",
+   "Breaking God's commands",
+   "Moral wrongdoing",
+   "Doing something wrong against God"
   ]
  },
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
   "q": "What is repentance?",
-  "a": "Being sorry for bad things you have done and trying not to do them again",
+  "a": "Being sorry and trying to change",
   "alt": [
+   "Being sorry for bad things you have done and trying not to do them again",
    "Being sorry",
-   "Being sorry and trying not to do it again"
+   "Being sorry and trying not to do it again",
+   "Saying sorry",
+   "Feeling sorry",
+   "Being sorry for sins",
+   "Regret",
+   "Turning away from sin",
+   "Being sorry for sin",
+   "Saying sorry and changing",
+   "Being sorry and changing",
+   "Being sorry and not doing it again",
+   "Feeling sorry and trying to change",
+   "Trying not to do it again",
+   "Asking forgiveness and changing",
+   "Turning back to God",
+   "Being sorry and trying not to sin again",
+   "Sorrow for sin",
+   "Expressing regret and changing"
   ]
  },
  {
@@ -2129,7 +3139,14 @@
   "a": "Omnipotent, benevolent and omniscient",
   "alt": [
    "Omnipotence, benevolence and omniscience",
-   "All-powerful, all-loving, all-knowing"
+   "All-powerful, all-loving, all-knowing",
+   "Omnipotence benevolence omniscience",
+   "All powerful, all good, all knowing",
+   "All-powerful, all-good, all-knowing",
+   "Omnipotent, omnibenevolent, omniscient",
+   "Omnibenevolence",
+   "Omnipotence, omnibenevolence and omniscience",
+   "Omnipotent, omnibenevolent and omniscient"
   ]
  },
  {
@@ -2162,10 +3179,31 @@
   "paper": "p2",
   "unit": "Christian Beliefs",
   "q": "What did St Irenaeus and John Hick say suffering is needed for?",
-  "a": "To learn to be good and perfect our souls",
+  "a": "To perfect their souls",
   "alt": [
+   "To learn to be good and perfect our souls",
    "Soul-making",
-   "To perfect souls"
+   "To perfect souls",
+   "Soul making",
+   "To learn to be good",
+   "To become good",
+   "To grow",
+   "To develop their souls",
+   "To help souls grow",
+   "To make people better",
+   "To become perfect",
+   "Learning to be good",
+   "To learn and grow",
+   "To improve souls",
+   "Spiritual growth",
+   "To grow spiritually",
+   "To make souls perfect",
+   "To develop morally",
+   "So people can grow",
+   "To help us become better people",
+   "To become more like God",
+   "To help people become better",
+   "To perfect our souls"
   ]
  },
  {
@@ -2204,34 +3242,87 @@
   "a": "Because people commit sins",
   "alt": [
    "Sin",
-   "Human sin"
+   "Human sin",
+   "Sins",
+   "Because of sin",
+   "People sin",
+   "Because of human sin",
+   "Because of human choices",
+   "Because of the Fall",
+   "Original sin",
+   "Adam and Eve's sin",
+   "The Fall"
   ]
  },
  {
   "paper": "p2",
   "unit": "Crime and Punishment",
   "q": "What do Atheists and Humanists say about a higher power of justice and suffering?",
-  "a": "There is no higher power of justice, so suffering can be meaningless",
+  "a": "No higher power of justice",
   "alt": [
-   "There is no higher power"
+   "There is no higher power of justice, so suffering can be meaningless",
+   "There is no higher power",
+   "Suffering is meaningless",
+   "No God",
+   "There is no God to bring justice",
+   "Suffering has no meaning",
+   "There is no higher power of justice",
+   "Suffering is random",
+   "Suffering just happens",
+   "No higher power",
+   "There is no justice",
+   "Suffering has no purpose",
+   "No divine justice",
+   "There is no purpose to suffering",
+   "There is no God so suffering is meaningless",
+   "There is no higher power so suffering can be meaningless"
   ]
  },
  {
   "paper": "p2",
   "unit": "Crime and Punishment",
   "q": "What is torture?",
-  "a": "Harming someone to punish them or get information",
+  "a": "Hurting someone to get information",
   "alt": [
-   "Hurting someone to get information"
+   "Harming someone to punish them or get information",
+   "Hurting someone to punish them",
+   "Hurting someone",
+   "Harming someone",
+   "Causing severe pain",
+   "Causing pain to punish",
+   "Causing pain to get information",
+   "Harming someone to get information",
+   "Hurting someone to get information or punish",
+   "Causing someone great pain",
+   "Inflicting pain",
+   "Causing harm to get information",
+   "Causing suffering to get information",
+   "Hurting people to get information",
+   "Inflicting pain on someone to get information or punish them",
+   "Harming someone to punish them"
   ]
  },
  {
   "paper": "p2",
   "unit": "Crime and Punishment",
   "q": "Do most Christians support torture?",
-  "a": "No, it goes against human rights and teachings of love",
+  "a": "No",
   "alt": [
-   "No"
+   "No, it goes against human rights and teachings of love",
+   "It goes against human rights",
+   "It goes against love",
+   "Not supported",
+   "They do not",
+   "They do not support it",
+   "It goes against teachings of love",
+   "Against human rights",
+   "Against love",
+   "It is wrong",
+   "They are against torture",
+   "It breaks human rights",
+   "It is against love",
+   "It goes against human rights and love",
+   "They don't"
   ]
  },
  {
@@ -2278,7 +3369,16 @@
   "a": "Prison",
   "alt": [
    "Imprisonment",
-   "Prison sentences"
+   "Prison sentences",
+   "Prison sentence",
+   "A prison sentence",
+   "Jail",
+   "Custody",
+   "Custodial sentences",
+   "A custodial sentence",
+   "Prison time",
+   "Being sent to prison",
+   "Time in prison"
   ]
  },
  {
@@ -2305,10 +3405,23 @@
   "paper": "p2",
   "unit": "Living the Christian Life",
   "q": "What is pilgrimage?",
-  "a": "A special journey to a place important in a religion",
+  "a": "A journey to a holy place",
   "alt": [
-   "A journey to a holy place",
-   "A journey to a sacred place"
+   "A special journey to a place important in a religion",
+   "A journey to a sacred place",
+   "A religious journey",
+   "Journey to a holy place",
+   "Journey to a sacred place",
+   "A journey for religious reasons",
+   "A holy journey",
+   "A trip to a holy place",
+   "A special journey",
+   "A journey to a place of religious importance",
+   "Travelling to a holy place",
+   "A spiritual journey",
+   "A journey to a religious place",
+   "A journey to somewhere important to a religion",
+   "A religious trip"
   ]
  },
  {
@@ -2361,20 +3474,49 @@
   "paper": "p2",
   "unit": "Living the Christian Life",
   "q": "What does Maundy Thursday remember?",
-  "a": "The washing of feet and the Last Supper",
+  "a": "The Last Supper",
   "alt": [
+   "The washing of feet and the Last Supper",
    "Last Supper",
-   "Washing of feet"
+   "Washing of feet",
+   "The washing of the disciples' feet",
+   "Jesus washing the disciples' feet",
+   "Jesus washing feet",
+   "The last meal",
+   "Jesus' last meal",
+   "Jesus' last meal with his disciples",
+   "Last meal",
+   "Footwashing",
+   "Jesus' Last Supper with the disciples",
+   "Foot washing",
+   "Jesus washing his disciples' feet",
+   "The Last Supper and the washing of feet"
   ]
  },
  {
   "paper": "p2",
   "unit": "Living the Christian Life",
   "q": "What is the Great Commission?",
-  "a": "Jesus' command to preach to all creation",
+  "a": "Jesus' command to spread the gospel",
   "alt": [
+   "Jesus' command to preach to all creation",
    "Jesus telling followers to spread the gospel",
-   "Preach to all creation"
+   "Preach to all creation",
+   "Spread the gospel",
+   "Spreading the gospel",
+   "Jesus telling his disciples to spread his message",
+   "Jesus telling his disciples to preach",
+   "Go and preach to all creation",
+   "Jesus' instructions to spread the gospel",
+   "Go into the world",
+   "Jesus' command to preach",
+   "Telling everyone about Jesus",
+   "Jesus sending his followers out to preach",
+   "Go and make disciples",
+   "Jesus telling his followers to go and preach",
+   "Go and preach the gospel",
+   "Preaching the gospel to everyone",
+   "Jesus' command to go and spread the gospel to everyone"
   ]
  },
  {
@@ -2392,16 +3534,38 @@
   "q": "About how many followers does Christianity have worldwide?",
   "a": "About 2.5 billion",
   "alt": [
-   "2.5 billion"
+   "2.5 billion",
+   "2.5bn",
+   "About 2.5bn",
+   "2.5 bn",
+   "Two and a half billion",
+   "2500 million",
+   "2.5 billion followers"
   ]
  },
  {
   "paper": "p2",
   "unit": "Living the Christian Life",
   "q": "What is a parish?",
-  "a": "A local community of one denomination",
+  "a": "A local church community",
   "alt": [
-   "A local church community"
+   "A local community of one denomination",
+   "A local church",
+   "Local church community",
+   "A local community",
+   "A local area with a church",
+   "The area served by a church",
+   "The area covered by a church",
+   "A small area with its own church",
+   "An area covered by one church",
+   "A local group of Christians",
+   "A local congregation",
+   "A local church area",
+   "A church area",
+   "A community around a local church",
+   "A neighbourhood with a church",
+   "A local church and its community",
+   "A church and the area around it"
   ]
  },
  {
@@ -2410,16 +3574,43 @@
   "q": "What does 1 Peter tell church elders to be?",
   "a": "Shepherds",
   "alt": [
-   "Shepherds who care for the people"
+   "Shepherds who care for the people",
+   "Shepherd",
+   "Be shepherds",
+   "Good shepherds",
+   "Shepherds of the flock",
+   "Shepherds of God's flock",
+   "Like shepherds",
+   "Shepherds of the people"
   ]
  },
  {
   "paper": "p2",
   "unit": "Living the Christian Life",
   "q": "What is ecumenism?",
-  "a": "Christians of different denominations working together",
+  "a": "Christians working together",
   "alt": [
-   "Bringing denominations together"
+   "Christians of different denominations working together",
+   "Bringing denominations together",
+   "Different denominations working together",
+   "Christian unity",
+   "Uniting Christians",
+   "Bringing Christians together",
+   "Working together",
+   "Unity between churches",
+   "Christians from different churches working together",
+   "Unity of Christians",
+   "Churches working together",
+   "Christian denominations working together",
+   "Different Christians working together",
+   "Unity between denominations",
+   "Bringing different Christian churches together",
+   "Unity among Christians",
+   "Different churches working together",
+   "Bringing churches together",
+   "Christians uniting",
+   "Cooperation between denominations",
+   "Uniting denominations"
   ]
  },
  {
@@ -2437,7 +3628,14 @@
   "q": "What did Jesus say when a follower cut off the servant's ear at his arrest?",
   "a": "'No more of this!'",
   "alt": [
-   "No more of this"
+   "No more of this",
+   "No more",
+   "Enough of this",
+   "That's enough",
+   "Stop",
+   "Stop this",
+   "Enough",
+   "No more of this!"
   ]
  },
  {
@@ -2456,7 +3654,18 @@
   "q": "What did early Christians do about wars for many centuries?",
   "a": "Refused to fight",
   "alt": [
-   "They refused to fight in wars"
+   "They refused to fight in wars",
+   "They did not fight",
+   "Pacifism",
+   "They did not take part in war",
+   "Did not fight",
+   "Were pacifists",
+   "They were pacifists",
+   "They would not fight",
+   "They refused to take part in war",
+   "Did not join the army",
+   "Refused to join the army",
+   "Stayed out of wars"
   ]
  },
  {
@@ -2465,7 +3674,27 @@
   "q": "What is reconciliation?",
   "a": "Mending broken relationships",
   "alt": [
-   "Making up after a conflict"
+   "Making up after a conflict",
+   "Making peace",
+   "Making peace after conflict",
+   "Restoring relationships",
+   "Repairing relationships",
+   "Mending relationships",
+   "Bringing people back together",
+   "Making up",
+   "Healing broken relationships",
+   "Healing relationships",
+   "Fixing broken relationships",
+   "Bringing people together after conflict",
+   "Restoring friendship",
+   "Making up after a fight",
+   "Ending conflict between people",
+   "Fixing relationships",
+   "Mending a broken relationship",
+   "Making friends again",
+   "Becoming friends again",
+   "Repairing broken relationships",
+   "Putting relationships right"
   ]
  },
  {
@@ -2474,26 +3703,57 @@
   "q": "What does real peace need, according to Christians?",
   "a": "Justice",
   "alt": [
-   "Things being fair"
+   "Things being fair",
+   "Fairness",
+   "Fair treatment",
+   "Justice and fairness",
+   "Equality",
+   "Fair",
+   "Justice for all",
+   "Fairness for all"
   ]
  },
  {
   "paper": "p2",
   "unit": "Peace and Conflict",
   "q": "What is war?",
-  "a": "Armed conflict between countries or large groups",
+  "a": "Armed conflict",
   "alt": [
-   "Armed conflict"
+   "Armed conflict between countries or large groups",
+   "Armed conflict between countries",
+   "Fighting between countries",
+   "Fighting between groups",
+   "Fighting between large groups",
+   "A conflict between countries",
+   "A large-scale armed conflict",
+   "Fighting between nations",
+   "A fight between countries",
+   "Fighting with weapons",
+   "Armed fighting",
+   "A conflict between nations",
+   "A violent conflict between groups",
+   "Fighting between armies",
+   "Fighting with armies"
   ]
  },
  {
   "paper": "p2",
   "unit": "Peace and Conflict",
   "q": "What are the three Christian responses to war?",
-  "a": "Talk (pacifism), fight (Just War) or campaign against its causes",
+  "a": "Talk, fight or campaign",
   "alt": [
+   "Talk (pacifism), fight (Just War) or campaign against its causes",
    "Talk, fight and campaign",
-   "Pacifism, Just War, campaigning against causes"
+   "Pacifism, Just War, campaigning against causes",
+   "Pacifism, Just War and campaigning",
+   "Pacifism, Just War and campaign",
+   "Talk, fight, campaign",
+   "Pacifism, Just War, campaign",
+   "Pacifism, Just War, campaigning",
+   "Pacifism, just war and campaigning against the causes of war",
+   "Talk fight campaign",
+   "Pacifism, Just War and campaigning against causes",
+   "Pacifism, Just War and campaigning against the causes"
   ]
  },
  {
@@ -2502,7 +3762,14 @@
   "q": "Which Pope said the Crusades did not follow Jesus' teachings?",
   "a": "Pope John Paul II",
   "alt": [
-   "John Paul II"
+   "John Paul II",
+   "Pope John Paul 2",
+   "John Paul 2",
+   "JPII",
+   "John Paul the Second",
+   "St John Paul II",
+   "Pope John Paul the Second",
+   "John Paul"
   ]
  },
  {
@@ -2520,7 +3787,16 @@
   "q": "Who orders a Holy War?",
   "a": "A religious leader",
   "alt": [
-   "Religious leader"
+   "Religious leader",
+   "Religious leaders",
+   "A religious authority",
+   "A religion's leader",
+   "A leader of the religion",
+   "A priest",
+   "The Pope",
+   "A pope",
+   "A church leader",
+   "Religious authority"
   ]
  },
  {
@@ -2548,16 +3824,38 @@
   "a": "Pope Benedict XVI",
   "alt": [
    "Benedict XVI",
-   "Benedict"
+   "Benedict",
+   "Pope Benedict",
+   "Pope Benedict 16",
+   "Benedict 16",
+   "Pope Benedict the sixteenth",
+   "Benedict the sixteenth",
+   "Joseph Ratzinger",
+   "Ratzinger"
   ]
  },
  {
   "paper": "p2",
   "unit": "Peace and Conflict",
   "q": "What is the Church of England's view of nuclear weapons?",
-  "a": "Needed for defence, but using them would never be right",
+  "a": "Needed for defence, never right to use",
   "alt": [
-   "Needed to deter, never right to use"
+   "Needed for defence, but using them would never be right",
+   "Needed to deter, never right to use",
+   "Deterrent but never use",
+   "Only as a deterrent",
+   "Needed for defence but never right to use",
+   "Keep them to deter but never use them",
+   "They deter war but should never be used",
+   "Needed to deter",
+   "Should never be used",
+   "Never right to use",
+   "Needed for defence",
+   "They are needed to deter attack but using them would never be right",
+   "A deterrent only",
+   "Keep for deterrence but not use",
+   "As a deterrent but not to use",
+   "Needed as a deterrent but never to be used"
   ]
  },
  {
@@ -2566,7 +3864,9 @@
   "q": "Who asked for prayers for her husband's killers?",
   "a": "Maureen Greaves",
   "alt": [
-   "Greaves"
+   "Greaves",
+   "Mrs Greaves",
+   "Mrs Maureen Greaves"
   ]
  },
  {
@@ -2575,7 +3875,47 @@
   "q": "What did Jesus teach Christians to do about enemies?",
   "a": "Love them",
   "alt": [
-   "Love your enemies"
+   "Love your enemies",
+   "Love",
+   "Love their enemies",
+   "Love and pray for them",
+   "Love and pray for their enemies",
+   "To love them",
+   "Pray for them",
+   "Love them and pray for them",
+   "They should love them",
+   "Love enemies",
+   "Show love",
+   "Love them all",
+   "Forgive them",
+   "Be kind to them",
+   "Forgive"
+  ]
+ },
+ {
+  "paper": "p2",
+  "unit": "Christian Beliefs",
+  "q": "How many sentences should you write for an Outline question?",
+  "a": "Three",
+  "alt": [
+   "3",
+   "3 sentences",
+   "Three sentences",
+   "One for each point",
+   "One sentence for each point"
+  ]
+ },
+ {
+  "paper": "p1",
+  "unit": "Muslim Beliefs",
+  "q": "How many sentences should you write for an Outline question?",
+  "a": "Three",
+  "alt": [
+   "3",
+   "3 sentences",
+   "Three sentences",
+   "One for each point",
+   "One sentence for each point"
   ]
  }
 ]

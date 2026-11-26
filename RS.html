@@ -3164,7 +3164,7 @@ let SOWA = [], KWS = [];
 
 Promise.all([
   fetch('data/rs/eq.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
-  fetch('data/rs/rq.json?v=20261125d').then(r => { if (!r.ok) throw new Error('rs/rq.json: ' + r.status); return r.json(); }),
+  fetch('data/rs/rq.json?v=20261126f').then(r => { if (!r.ok) throw new Error('rs/rq.json: ' + r.status); return r.json(); }),
   fetch('data/rs/dates.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
   fetch('data/rs/flashcards.json?v=20261126d').then(r => { if (!r.ok) throw new Error('rs/flashcards.json: ' + r.status); return r.json(); }),
   fetch('data/rs/kc.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
@@ -3181,7 +3181,7 @@ Promise.all([
   SOWA = remap(sw);
   KWS = remap(kw);
   // key and command words also feed Mixed Retrieval, Boss battle and Whack-a-fact
-  RQ = RQ.concat(KWS.map(k => ({paper:k.paper, pn:k.pn, unit:k.unit, q:(k.cmd ? 'Command word: ' : 'Key word: ') + k.def, a:k.term, alt:k.alt || [], kw:1})));
+  RQ = RQ.concat(KWS.map(k => ({paper:k.paper, pn:k.pn, unit:k.unit, q:(k.cmd ? 'What command word means “' : 'What key term means “') + String(k.def).replace(/[.\s]+$/, '') + '”?', a:k.term, alt:k.alt || [], kw:1})));
   window._dataLoaded = true;
   markSoon();
   // Refresh any visible modes
@@ -5754,6 +5754,10 @@ function bsCheck(typed, answer, question) {
     const aj = bsNormN(alt).replace(/ /g, '');
     if (tj.length >= 5 && (aj.match(/\d+/g) || []).join() === (tj.match(/\d+/g) || []).join() && (aj === tj || bsLev(aj, tj) <= (aj.length >= 10 ? 2 : 1))) return true;
     if (tt.length && tt.every(w => /^frac\d+x\d+$/.test(w)) && tt.every(w => at.includes(w))) return true;
+    // a typed answer that only repeats words from the question, or names a number this answer does not have, is not a match
+    const qs0 = new Set(bsToks(asked));
+    if (!tt.some(w => !qs0.has(w))) continue;
+    if (tt.some(w => /\d/.test(w) && !at.includes(w))) continue;
     const nums = at.filter(w => /\d/.test(w));
     if (nums.some(w => !have.has(w))) continue;
     if (nums.length && at.filter(w => !/\d/.test(w)).every(w => BS_UNITS.has(w))) return true;
@@ -5761,11 +5765,16 @@ function bsCheck(typed, answer, question) {
     if (/\bname (one|any)\b/i.test(asked) && tt.length === 1 && tt[0].length >= 5 && !BS_GENERIC.has(tt[0]) && !new Set(bsToks(asked)).has(tt[0]) && at.length >= 3 && at.includes(tt[0])) return true;
     const qset = new Set(bsToks(asked)), inf = at.filter(w => !qset.has(w)), base = inf.length >= 2 ? inf : at;
     const hit = base.filter(w => bsTokenHit(w, have)).length;
-    if (at.length === 1 ? hit === 1 : at.length === 2 ? hit === 2 : hit >= Math.max(2, Math.ceil(base.length * (base.length >= 6 ? 0.33 : 0.4)))) return true;
+    // "non" or "not" in one answer but not the other means the opposite, and a long distinctive word (Fitr, Adha) has to match
+    const isNeg = w => w === 'non' || w === 'not' || w === 'no' || w === 'never', negBad = at.some(isNeg) !== tt.some(isNeg);
+    const dist = at.filter(w => w.length >= 4 && !qset.has(w) && !BS_GENERIC.has(w)), distOk = !dist.length || dist.some(w => bsTokenHit(w, have));
+    // short answers that repeat part of the question ("Life is holy" for "sanctity of life"): the new words are what count
+    const infOk = inf.length >= 1 && inf.length <= 2 && at.length <= 3 && inf.every(w => bsTokenHit(w, have));
+    if (!negBad && distOk && (infOk || (at.length === 1 ? hit === 1 : at.length === 2 ? hit === 2 : hit >= Math.max(2, Math.ceil(base.length * (base.length >= 6 ? 0.33 : 0.4)))))) return true;
     // part of a longer answer, as long as it is not just a generic word like "act" or "treaty"
     const core = at.filter(w => !BS_GENERIC.has(w));
     const tcore = tt.filter(w => !BS_GENERIC.has(w));
-    if (!(/\b(two|2|both)\b/i.test(asked) && /\band\b/i.test(alt)) && tcore.length && at.length >= 2 && tt.every(w => bsTokenHit(w, new Set(at))) && tcore.filter(w => bsTokenHit(w, new Set(core))).length >= Math.max(1, Math.ceil(core.length / 2))) return true;
+    if (!negBad && !(/\b(two|2|both)\b/i.test(asked) && /\band\b/i.test(alt)) && tcore.length && at.length >= 2 && tt.every(w => bsTokenHit(w, new Set(at))) && tcore.filter(w => bsTokenHit(w, new Set(core))).length >= Math.max(1, Math.ceil(core.length / 2))) return true;
     // initials, e.g. MAD or ICBM
     if (tt.length === 1 && t.indexOf(' ') < 0 && t.length >= 2 && at.length >= 2) {
       const ini = bsNorm(alt).split(' ').filter(w => w && !BS_STOP.has(w)).map(w => w[0]).join('');
