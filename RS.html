@@ -6583,7 +6583,7 @@ uptoRender();
 /* ---------- Anonymous usage timing: when the hub is used and which features, in active seconds ---------- */
 (function () {
   var KEY = 'rs_use', IDLE = 90000, TICK = 5, NEW_SESSION = 30 * 60000;
-  var NAMES = {home: 'Home and menus', guide: 'Revision guide', flash: 'Flashcards', dates: 'Key dates quiz', exam: 'Exam practice', rapid: 'Mixed retrieval quiz', stat: 'Stat Attack', arcade: 'Arcade games', progress: 'Progress page', parent: 'Parent page'};
+  var NAMES = {home: 'Home and menus', guide: 'Revision guide', flash: 'Flashcards', dates: 'Key dates quiz', exam: 'Exam practice', rapid: 'Mixed retrieval quiz', sowa: 'SoWA quiz', kw: 'Key word quiz', stat: 'Stat Attack', arcade: 'Arcade games', progress: 'Progress page', parent: 'Parent page'};
   var lastInput = Date.now(), cache = null;
   ['pointerdown', 'keydown', 'touchstart', 'scroll', 'wheel'].forEach(function (e) { window.addEventListener(e, function () { lastInput = Date.now(); }, {passive: true, capture: true}); });
   function dayKey(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
@@ -6599,7 +6599,8 @@ uptoRender();
       if (shown('mode-knowledge')) return 'guide';
       return 'home';
     }
-    return {'s-rapid': 'rapid', 's-stat': 'stat', 's-arcade': 'arcade', 's-progress': 'progress', 's-parent': 'parent'}[id] || 'home';
+    if (id === 's-qz') return (typeof QZ !== 'undefined' && QZ.kind === 'kw') ? 'kw' : 'sowa';
+    return {'s-exam': 'exam', 's-rapid': 'rapid', 's-stat': 'stat', 's-arcade': 'arcade', 's-progress': 'progress', 's-parent': 'parent'}[id] || 'home';
   }
   function tick() {
     if (document.visibilityState !== 'visible') return;
