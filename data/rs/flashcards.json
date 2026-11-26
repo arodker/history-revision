@@ -15069,7 +15069,7 @@
   "hints": [
    "single soul",
    "will",
-   "inherit"
+   "share"
   ],
   "s": [
    "Qur'an: “who created you all from a single soul.” Men and women share one origin.",
@@ -15119,11 +15119,11 @@
     ],
     "opts": [
      {
-      "gap": "inherit",
+      "gap": "closest relatives",
       "d": [
-       "refuse",
-       "sell",
-       "borrow"
+       "distant cousins",
+       "neighbours",
+       "friends"
       ]
      }
     ]
