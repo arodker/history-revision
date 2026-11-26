@@ -4650,7 +4650,7 @@ const XP_LEVELS = [
   {t:'Curious learner',e:'🌱',xp:0}, {t:'Note taker',e:'📝',xp:250}, {t:'Careful reader',e:'📖',xp:600}, {t:'Good questioner',e:'❓',xp:1100}, {t:'Source finder',e:'🔎',xp:1800}, {t:'Fair-minded thinker',e:'⚖️',xp:2700}, {t:'Clear explainer',e:'💬',xp:3900}, {t:'Quote spotter',e:'🧐',xp:5300}, {t:'Evidence weigher',e:'🧮',xp:6900}, {t:'Balanced writer',e:'✍️',xp:8700}, {t:'Sharp evaluator',e:'🎯',xp:10700}, {t:'Deep thinker',e:'💭',xp:13000}, {t:'Skilled debater',e:'🗣️',xp:15600}, {t:'Exam ready',e:'📚',xp:18600}, {t:'Top of the class',e:'🏅',xp:21800}, {t:'RS master',e:'🎓',xp:25000}
 ];
 // Change a number here to retune the game.
-const XP_RULE = {flash:10, date:5, rapid:5, wrong:0, repeat:2, runLen:5, runBonus:5, parent:20, cap:500};
+const XP_RULE = {flash:10, date:5, rapid:5, kw:5, sowa:5, wrong:0, repeat:2, runLen:5, runBonus:5, parent:20, cap:500};
 const LS_XP = 'rs_xp';
 let xpRun = 0, xpCapShown = false, xpPopTimer = null;
 
@@ -4686,6 +4686,7 @@ function xpLevelIdx(total) {
 }
 // Adds XP to x (not saved), respecting the daily cap.
 function xpAdd(x, n) {
+  n = Number(n) || 0;
   const t = localDate();
   const used = x.days[t] || 0;
   const g = Math.max(0, Math.min(n, XP_RULE.cap - used));
