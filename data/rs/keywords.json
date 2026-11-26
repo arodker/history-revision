@@ -472,7 +472,7 @@
   "unit": "Muslim Beliefs",
   "term": "Jannah",
   "alt": [],
-  "def": "The Arabic word for paradise. Muslims aim that when they die they will go to … (paradise) for ever.",
+  "def": "The paradise that Muslims hope to enter after death and stay in for ever.",
   "d": [
    "Jahannam",
    "Resurrection",
@@ -568,7 +568,7 @@
   "unit": "Marriage and the Family",
   "term": "Blended family",
   "alt": [],
-  "def": "When two people who already have children marry, bringing their children together into a new family.",
+  "def": "When two people who already have children marry and bring their children together into one new household.",
   "d": [
    "Procreation",
    "Surrogacy",
@@ -700,7 +700,7 @@
   "unit": "Marriage and the Family",
   "term": "Situation ethics",
   "alt": [],
-  "def": "An approach to deciding on right and wrong that says people should always aim to try and do the most loving thing in each situation.",
+  "def": "An approach to right and wrong that says people should always do the most loving thing in each circumstance.",
   "d": [
    "Utilitarianism",
    "Stewardship",
@@ -748,7 +748,7 @@
   "unit": "Marriage and the Family",
   "term": "Gender prejudice",
   "alt": [],
-  "def": "Believing that one gender (male or female) is less or more important than another",
+  "def": "Believing that one sex (male or female) is less or more important than the other.",
   "d": [
    "Gender discrimination",
    "Patriarchy",
@@ -760,7 +760,7 @@
   "unit": "Marriage and the Family",
   "term": "Gender discrimination",
   "alt": [],
-  "def": "Treating people better or worse just because of their gender (whether they are male or female).",
+  "def": "Treating people better or worse just because they are male or female.",
   "d": [
    "Gender prejudice",
    "Patriarchy",
@@ -832,7 +832,7 @@
   "unit": "Living the Muslim Life",
   "term": "Five pillars",
   "alt": [],
-  "def": "The five most important things that all Muslims try to do in their lives.",
+  "def": "The five most important duties that all Muslims try to carry out in their lives.",
   "d": [
    "Ten obligatory acts",
    "Usul ad-Din",
@@ -1324,7 +1324,7 @@
   "unit": "Matters of Life and Death",
   "term": "Hospice care",
   "alt": [],
-  "def": "Care that aims to give as much comfort and help to people who have an incurable illness and are dying.",
+  "def": "Care that gives comfort and support to people who have an incurable illness and are dying.",
   "d": [
    "Euthanasia",
    "Sanctity of Life",
@@ -1372,7 +1372,7 @@
   "unit": "Christian Beliefs",
   "term": "Jesus Christ",
   "alt": [],
-  "def": "The Son of God the Father - part of the Trinity. Christians believe Jesus came into the world as a human.",
+  "def": "The Son of God the Father, part of the Trinity, whom Christians believe came into the world as a human.",
   "d": [
    "Holy Spirit",
    "Incarnation",
@@ -1384,7 +1384,7 @@
   "unit": "Christian Beliefs",
   "term": "Holy Spirit",
   "alt": [],
-  "def": "The Spirit of God - part of the Trinity. Christians believe this is the part of the Trinity that gives God's special gifts to people, such as healing and speaking God's words.",
+  "def": "The part of the Trinity that Christians believe gives God's special gifts to people, such as healing and speaking God's words.",
   "d": [
    "Jesus Christ",
    "Incarnation",
@@ -1396,7 +1396,7 @@
   "unit": "Christian Beliefs",
   "term": "Creationism",
   "alt": [],
-  "def": "Some Christians believe that the world was created just as the Bible says - in six days in the order the Bible says. These are known as creationists.",
+  "def": "The belief that God made the world exactly as the Bible says, in six days and in the order the Bible gives.",
   "d": [
    "Agnostic",
    "Atheist",
@@ -1456,7 +1456,7 @@
   "unit": "Christian Beliefs",
   "term": "Resurrection",
   "alt": [],
-  "def": "When Jesus rose up from the dead - came back to life in his body. Christians believe all people will be resurrected after death.",
+  "def": "When Jesus rose up from the dead and came back to life in his body. Christians believe all people will be raised to life again after death.",
   "d": [
    "Purgatory",
    "Incarnation",
@@ -1576,7 +1576,7 @@
   "unit": "Christian Beliefs",
   "term": "Immortal soul",
   "alt": [],
-  "def": "Immortal means 'never die' or 'go on forever'. Many Christians believe people have souls that will live forever and go on to the afterlife after death.",
+  "def": "The part of a person that Christians believe will never die, but will live on in the afterlife.",
   "d": [
    "Hell",
    "Universalism",
@@ -1586,9 +1586,11 @@
  {
   "paper": "p2",
   "unit": "Christian Beliefs",
-  "term": "Benevolence",
-  "alt": [],
-  "def": "All-good. Christians think God is all-good, so would never do anything bad.",
+  "term": "Omnibenevolence",
+  "alt": [
+   "Benevolence"
+  ],
+  "def": "The belief that God is all-good and all-loving, so would never do anything bad.",
   "d": [
    "Omnipotence",
    "Moral evil",
@@ -1602,7 +1604,7 @@
   "alt": [],
   "def": "These are bad things involving suffering that are done by people. For example, war.",
   "d": [
-   "Benevolence",
+   "Omnibenevolence",
    "Omnipotence",
    "Free will"
   ]
@@ -1612,9 +1614,9 @@
   "unit": "Christian Beliefs",
   "term": "Natural evil",
   "alt": [],
-  "def": "These are bad things involving suffering that happen naturally (and are not done by people). For example, earthquakes.",
+  "def": "Suffering that is not caused by people, such as earthquakes and floods.",
   "d": [
-   "Benevolence",
+   "Omnibenevolence",
    "Omnipotence",
    "Free will"
   ]
@@ -1626,7 +1628,7 @@
   "alt": [],
   "def": "All-powerful. Christians think God is all-powerful - God can do anything at all.",
   "d": [
-   "Benevolence",
+   "Omnibenevolence",
    "Moral evil",
    "Free will"
   ]
@@ -1732,9 +1734,9 @@
   "unit": "Crime and Punishment",
   "term": "Free will",
   "alt": [],
-  "def": "The human ability to have a choice in what we do. We are free to choose.",
+  "def": "The human ability to make our own choices about what we do.",
   "d": [
-   "Benevolence",
+   "Omnibenevolence",
    "Omnipotence",
    "Moral evil"
   ]
@@ -1804,7 +1806,7 @@
   "unit": "Crime and Punishment",
   "term": "Human rights",
   "alt": [],
-  "def": "The basic rights and freedoms that everyone in the world should have.",
+  "def": "The basic freedoms and protections that everyone in the world should have.",
   "d": [
    "Justice",
    "Law",
@@ -1816,7 +1818,7 @@
   "unit": "Crime and Punishment",
   "term": "Situation ethics",
   "alt": [],
-  "def": "An approach to making choices about right and wrong that says people should always try to do the most loving thing in the situation.",
+  "def": "An approach to right and wrong that says people should always do the most loving thing in each circumstance.",
   "d": [
    "Utilitarianism",
    "Retribution",
@@ -1828,7 +1830,7 @@
   "unit": "Crime and Punishment",
   "term": "Fair trial",
   "alt": [],
-  "def": "Where someone who is accused of doing a crime is given a trial that is open to the public and where fair procedures to decide if they are guilty are used.",
+  "def": "Where someone accused of a crime is judged in public, using proper procedures to decide whether they are guilty.",
   "d": [
    "Justice",
    "Capital punishment",
@@ -1840,7 +1842,7 @@
   "unit": "Crime and Punishment",
   "term": "Trial by jury",
   "alt": [],
-  "def": "This is a trial where other ordinary citizens listen to the trial and decide whether the accused person is guilty of doing the crime or not (and so whether they will be punished).",
+  "def": "A court case where ordinary citizens listen to the evidence and decide whether the accused is guilty (and so whether they will be punished).",
   "d": [
    "Capital punishment",
    "Justice",
@@ -2044,7 +2046,7 @@
   "unit": "Living the Christian Life",
   "term": "Holy Week",
   "alt": [],
-  "def": "This is the week before Easter. It remembers Jesus' time in Jerusalem the week before his death.",
+  "def": "The days leading up to Easter Sunday, when Christians remember Jesus' arrival in Jerusalem, his last meal and his death.",
   "d": [
    "Advent",
    "Epiphany",
@@ -2104,7 +2106,7 @@
   "unit": "Living the Christian Life",
   "term": "Local church",
   "alt": [],
-  "def": "The local community of Christians, often centred on a holy building for meeting and worship.",
+  "def": "The community of Christians in a neighbourhood, often centred on a holy building for meeting and worship.",
   "d": [
    "Parish",
    "Denomination",
@@ -2212,7 +2214,7 @@
   "unit": "Peace and Conflict",
   "term": "Just War theory",
   "alt": [],
-  "def": "A Christian theory about when it would be just (to have justice/to be good/right) to fight a war and how that war would have to be fought. For example, it would have to be done for a good reason and would need to keep destruction to what was needed (and no more).",
+  "def": "A Christian set of rules about when it is right to go to war and how the war must be fought. For example, it must be for a good reason and keep destruction to what is needed (and no more).",
   "d": [
    "Pacifist",
    "Conscientious objector",
@@ -2238,7 +2240,7 @@
   "alt": [
    "WMD"
   ],
-  "def": "Weapons that can cause damage and death over a large area. For example, nuclear or chemical weapons.",
+  "def": "Nuclear or chemical arms that can cause damage and death over a large area.",
   "d": [
    "Just War theory",
    "Conscientious objector",
