@@ -4184,11 +4184,18 @@ function finish(s,r){
   var gain=0;
   if(r==='c')gain=award(s);
   var ans='<div class="dq-ans">Answer: <b>'+esc(q.a)+'</b>'+(gain?' \u00b7 +'+gain+' XP':'')+'</div>';
-  var btn='<button class="dq-go" onclick="dqNext()">'+(last?'See result':'Next')+'</button>';
+  var btn='<button class="dq-go" onclick="dqNext()">'+(last?'See result':'Next')+' <small style="opacity:.75;font-weight:500">(Enter)</small></button>';
   var bar='';for(var j=0;j<10;j++)bar+='<i class="'+(j<s.res.length?'d':'')+'"></i>';
   root.innerHTML='<div class="dq-panel'+(r==='w'?' dq-shake':'')+'"><div class="dq-bar">'+bar+'</div><div class="dq-fb"><span class="dq-ic '+cls+'">'+ic+'</span><div class="dq-fbt">'+msg+'</div>'+ans+btn+'</div></div>';
+  fbAt=Date.now();
   if(r==='c')advance=setTimeout(function(){dqNext();},2200);
 }
+var fbAt=0;
+/* Enter moves on from the answer screen (the 300ms guard stops the Enter that submitted the answer from skipping it) */
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Enter'||e.repeat||Date.now()-fbAt<300||!root||!root.querySelector('.dq-fb'))return;
+  e.preventDefault();dqNext();
+});
 window.dqNext=function(){
   clearTimeout(advance);advance=null;
   var s=getState();if(!s)return;
