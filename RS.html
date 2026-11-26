@@ -3168,7 +3168,7 @@ Promise.all([
   fetch('data/rs/dates.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
   fetch('data/rs/flashcards.json?v=20261126d').then(r => { if (!r.ok) throw new Error('rs/flashcards.json: ' + r.status); return r.json(); }),
   fetch('data/rs/kc.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
-  fetch('data/rs/sowa.json?v=20261126g').then(r => r.ok ? r.json() : []).catch(() => []),
+  fetch('data/rs/sowa.json?v=20261126h').then(r => r.ok ? r.json() : []).catch(() => []),
   fetch('data/rs/keywords.json?v=20261126e').then(r => r.ok ? r.json() : []).catch(() => []),
 ]).then(([eq, rq, dates, fd, kc, sw, kw]) => {
   const SLOT = SLOT_OF_UNIT;
@@ -6688,18 +6688,26 @@ function qzMatch(ans, targets) {
   return targets.some(t => { const n = qzNorm(t); return a === n || (n.length >= 6 && qzLev(a, n) <= 1); });
 }
 function qzBlank(item) {
-  const g = item.gaps[Math.floor(Math.random() * item.gaps.length)];
+  // prefer a gap whose right answer is not the longest option, so length does not give it away
+  const okG = item.gaps.filter(x => x.d.some(o => o.length >= x.gap.length)), g = (okG.length ? okG : item.gaps)[Math.floor(Math.random() * (okG.length ? okG : item.gaps).length)];
   const q = escHtml(item.quote), gg = escHtml(g.gap), k = q.indexOf(gg);
   const html = k >= 0 ? q.slice(0, k) + '<span class="qz-gap">' + '&nbsp;'.repeat(6) + '</span>' + q.slice(k + gg.length) : q;
   return {gap:g.gap, d:g.d, html:html};
 }
 // Wrong options for SoWA "shows" questions: other SoWA quotes that do not fit. Never shares a topic tag with the correct quote.
+const QZ_STOP = new Set('the a an of and or to in on at for by with was were is are as his her its their they them he she it be been that this who which should must can may will not all from into than then so if you your we our us people when what how why do does did have has had any one'.split(' '));
+function qzTk(t) { return String(t).toLowerCase().replace(/<[^>]+>/g, ' ').replace(/[^a-z' -]/g, ' ').split(/[\s-]+/).filter(w => w.length > 2 && !QZ_STOP.has(w)).map(w => w.replace(/(ing|ed|es|s|ly)$/, '')); }
+function qzOverlap(a, b) { const B = new Set(qzTk(b)); return qzTk(a).filter(w => B.has(w)).length; }
+// Wrong options are the ones that read most like the prompt (shared words, similar length), so the right one cannot be found by matching words
 function qzSafe(item, field, n, short) {
   const ok = x => x !== item && x.shows && x[field] !== item[field] && !x.tags.some(t => item.tags.includes(t)) && (!short || x.quote.length <= 170);
   const pool = SOWA.filter(x => inScope(x) && ok(x));
-  const tiers = [pool.filter(x => x.unit === item.unit && x.type === item.type), pool.filter(x => x.unit === item.unit), pool.filter(x => x.pn === item.pn)];
+  let cand = pool.filter(x => x.unit === item.unit);
+  if (cand.length < n * 3) cand = cand.concat(pool.filter(x => x.unit !== item.unit && x.pn === item.pn));
+  const prompt = field === 'shows' ? item.quote : item.shows, L = String(item[field]).length;
+  const score = x => qzOverlap(prompt, x[field]) * 3 + (1 - Math.min(1, Math.abs(String(x[field]).length - L) / L)) * 1.5 + (x.type === item.type ? 1 : 0) + Math.random() * 1.2;
   const out = [], seen = {}; seen[item[field]] = 1;
-  tiers.forEach(t => shuffle(t.slice()).forEach(x => { if (out.length < n && !seen[x[field]]) { seen[x[field]] = 1; out.push(x); } }));
+  cand.map(x => [score(x), x]).sort((a, b) => b[0] - a[0]).forEach(r => { const x = r[1]; if (out.length < n && !seen[x[field]]) { seen[x[field]] = 1; out.push(x); } });
   return out.length >= 2 ? out : null;
 }
 function qzVariant(item, j) {
@@ -6709,17 +6717,25 @@ function qzVariant(item, j) {
   if (v === 'pick' && item.quote.length <= 260 && qzSafe(item, 'quote', 3, true)) return v;
   return 'gap';
 }
+// Hide words of the term that the definition repeats, unless a wrong option shares them too
+const QZ_GEN = new Set(['muslim','muslims','christian','christians','allah','god','people','church','islam','life']);
+function qzMaskDef(item) {
+  const words = String(item.term).toLowerCase().split(/[^a-z']+/).filter(w => w.length >= 4 && !QZ_GEN.has(w) && !item.d.some(o => o.toLowerCase().includes(w)));
+  let t = escHtml(item.def);
+  words.forEach(w => { t = t.replace(new RegExp("\\b" + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + "[a-z']*", 'gi'), '_____'); });
+  return t;
+}
 function qzMake(kind, item, variant) {
   let c;
   if (kind === 'sowa' && variant === 'shows') {
     // brackets such as "(the Incarnation)" would mark out the right answer, so no option shows them
-    const nb = t => String(t).replace(/\s*\([^)]*\)/g, '').trim(), w = qzSafe(item, 'shows', 3).map(x => nb(x.shows));
+    const nb = t => String(t).replace(/\s*\([^)]*\)/g, '').trim(), w = (item.x && item.x.length >= 3 ? shuffle(item.x.slice()).slice(0, 3) : qzSafe(item, 'shows', 3).map(x => x.shows)).map(nb);
     c = {item, targets:[nb(item.shows)], options:[nb(item.shows)].concat(w), html:escHtml(item.quote), tag:item.type, ask:'This quote shows that…', v:'shows'};
   } else if (kind === 'sowa' && variant === 'pick') {
     const wi = qzSafe(item, 'quote', 3, true), w = wi.map(x => x.quote), lab = {}; [item].concat(wi).forEach(x => { lab[x.quote] = x.lab || x.type; });
     c = {item, targets:[item.quote], options:[item.quote].concat(w), html:'<b>' + escHtml(item.shows) + '</b>', tag:'', ask:'Which quote could you use to show this?', v:'pick', lab};
   } else if (kind === 'sowa') { const b = qzBlank(item); c = {item, targets:[b.gap], options:[b.gap].concat(b.d), html:b.html, tag:item.type, ask:'Fill the gap in the quote.', v:'gap'}; }
-  else c = {item, targets:[item.term].concat(item.alt || []), options:[item.term].concat(item.d), html:escHtml(item.def), tag:item.cmd ? 'Command word' : 'Key word', ask:item.cmd ? 'Which command word is this?' : 'Which key word is this?'};
+  else c = {item, targets:[item.term].concat(item.alt || []), options:[item.term].concat(item.d), html:qzMaskDef(item), tag:item.cmd ? 'Command word' : 'Key word', ask:item.cmd ? 'Which command word is this?' : 'Which key word is this?'};
   c.opts = shuffle(c.options.slice()); return c;
 }
 let QZ_OFF = new Set(); // not saved: every visit starts with all units studied so far
