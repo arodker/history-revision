@@ -1170,6 +1170,16 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 .ex-chk div{padding:.3rem .5rem;border-radius:8px;margin-bottom:.25rem;background:var(--subtle)}
 .ex-chk .ok{background:#d1fae5;color:#065f46}
 .ex-chk .no{background:#FEF3C7;color:#78350F}
+.ex-units{margin:.2rem 0 .7rem}.up-t{font-size:.68rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+.up-grp{margin-bottom:.45rem}.up-h{display:flex;justify-content:space-between;align-items:center;font-size:.76rem;font-weight:800;color:var(--text);margin-bottom:.25rem}
+.up-all{font-size:.66rem;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid var(--border2);background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit}
+.up-row{display:flex;flex-wrap:wrap;gap:6px}
+.up-pill{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600;padding:6px 11px;border-radius:999px;border:1.5px solid var(--border2);background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;line-height:1.1}
+.up-pill small{font-size:.66rem;opacity:.7;font-weight:700}
+.up-pill:not(.on){text-decoration:line-through;opacity:.75}
+.ex-gl{margin:.9rem 0 .4rem;border:1px solid var(--border);border-radius:10px;padding:.35rem .6rem;background:var(--card)}
+.ex-gl summary{font-size:.74rem;font-weight:700;color:var(--muted);cursor:pointer}
+.ex-gl .ex-tbl{font-size:.7rem;margin-top:.4rem}.ex-gl .ex-tbl td,.ex-gl .ex-tbl th{padding:.2rem .25rem}
 .ex-tbl{width:100%;border-collapse:collapse;font-size:.78rem}
 .ex-tbl td,.ex-tbl th{border-bottom:1px solid var(--border);padding:.35rem .3rem;text-align:left;vertical-align:top}
 .ex-tbl th{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
@@ -6638,6 +6648,18 @@ window.hsInstall=function(){
 };
 })();
 
+
+// Shared unit pill selector. cfg: {units:[{n,e,cnt}], off:Set, tog:'fn name', grp:'fn name', c:{bg,color,border}}
+function unitPills(cfg) {
+  const c = cfg.c;
+  return [[1, 'Islam'], [2, 'Christianity']].map(([pn, nm]) => {
+    const us = cfg.units.filter(u => u.pn === pn); if (!us.length) return '';
+    const allOn = us.every(u => !cfg.off.has(u.n));
+    return '<div class="up-grp"><div class="up-h"><span>' + nm + '</span><button class="up-all" onclick="' + cfg.grp + '(' + pn + ',' + (allOn ? 'false' : 'true') + ')">' + (allOn ? 'None' : 'All') + '</button></div><div class="up-row">' +
+      us.map(u => { const on = !cfg.off.has(u.n);
+        return '<button class="up-pill' + (on ? ' on' : '') + '" style="' + (on ? 'background:' + c.bg + ';color:' + c.color + ';border-color:' + c.border : '') + '" onclick="' + cfg.tog + '(\'' + u.n.replace(/'/g, "\\'") + '\')">' + u.e + ' ' + escHtml(u.n) + '<small>' + u.cnt + '</small></button>'; }).join('') + '</div></div>';
+  }).join('');
+}
 // ═══════════════════════════════════════════
 // SOWA QUIZ AND KEY WORD QUIZ (same format as the Key Dates Quiz)
 // ═══════════════════════════════════════════
@@ -6687,30 +6709,21 @@ function qzMake(kind, item, variant) {
   else c = {item, targets:[item.term].concat(item.alt || []), options:[item.term].concat(item.d), html:escHtml(item.def), tag:item.cmd ? 'Command word' : 'Key word', ask:item.cmd ? 'Which command word is this?' : 'Which key word is this?'};
   c.opts = shuffle(c.options.slice()); return c;
 }
-let QZ_OFF = new Set(); try { QZ_OFF = new Set(JSON.parse(localStorage.getItem('rs_qz_off') || '[]')); } catch (e) {}
-function qzSaveOff() { try { localStorage.setItem('rs_qz_off', JSON.stringify([...QZ_OFF])); } catch (e) {} }
+let QZ_OFF = new Set(); // not saved: every visit starts with all units studied so far
+function qzSaveOff() {}
 function qzScope(kind) { return (kind === 'sowa' ? SOWA : KWS).filter(x => inScope(x)); }
 function qzPoolFor(kind) { return qzScope(kind).filter(x => !QZ_OFF.has(x.unit)); }
 function qzToggleUnit(u) { if (QZ_OFF.has(u)) QZ_OFF.delete(u); else QZ_OFF.add(u); qzSaveOff(); qzSetup(); }
 function qzToggleGroup(pn, on) { UNITS.filter(u => u.pn === pn).forEach(u => { if (on) QZ_OFF.delete(u.n); else QZ_OFF.add(u.n); }); qzSaveOff(); qzSetup(); }
 function qzUnitPicker() {
-  const all = qzKindAll(), sc = qzScope(QZ.kind), c = qzCol(), cnt = {}, tot = {}; all.forEach(x => { tot[x.unit] = (tot[x.unit] || 0) + 1; }); sc.forEach(x => { cnt[x.unit] = (cnt[x.unit] || 0) + 1; });
-  return [[1, 'Islam'], [2, 'Christianity']].map(([pn, nm]) => {
-    const us = UNITS.filter(u => u.pn === pn && tot[u.n]); if (!us.length) return '';
-    const open = us.filter(u => cnt[u.n]), allOn = open.every(u => !QZ_OFF.has(u.n));
-    return '<div style="margin-bottom:.8rem"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem"><span style="font-size:.8rem;font-weight:800;color:var(--text)">' + nm + '</span>' +
-      (open.length ? '<button class="rq-star" style="font-size:.7rem;padding:3px 9px;border-radius:7px" onclick="qzToggleGroup(' + pn + ',' + (allOn ? 'false' : 'true') + ')">' + (allOn ? 'Untick all' : 'Tick all') + '</button>' : '') + '</div>' +
-      us.map(u => { const lock = !cnt[u.n], on = !lock && !QZ_OFF.has(u.n);
-        const st = lock ? 'background:var(--surface);color:var(--muted);border-color:var(--border2);opacity:.55;cursor:default' : on ? 'background:' + c.bg + ';color:' + c.color + ';border-color:' + c.border : 'background:var(--surface);color:var(--muted);border-color:var(--border2)';
-        return '<button class="rq-star" ' + (lock ? 'disabled ' : '') + 'style="display:flex;align-items:center;gap:10px;width:100%;text-align:left;border-radius:10px;padding:9px 12px;margin-bottom:5px;font-size:.86rem;' + st + '" onclick="qzToggleUnit(\'' + u.n + '\')">' +
-          '<span style="font-size:1.15rem">' + (lock ? '🔒' : u.e) + '</span><span style="flex:1;font-weight:600' + (lock || on ? '' : ';text-decoration:line-through') + '">' + escHtml(u.n) + '</span>' +
-          '<span style="opacity:.7;font-size:.76rem">' + (lock ? 'Not taught yet' : cnt[u.n]) + '</span><span style="font-size:1.05rem">' + (lock ? '' : on ? '☑' : '☐') + '</span></button>'; }).join('') + '</div>';
-  }).join('');
+  const sc = qzScope(QZ.kind), cnt = {}; sc.forEach(x => { cnt[x.unit] = (cnt[x.unit] || 0) + 1; });
+  const units = UNITS.filter(u => cnt[u.n]).map(u => ({n:u.n, e:u.e, pn:u.pn, cnt:cnt[u.n]}));
+  return unitPills({units, off:QZ_OFF, tog:'qzToggleUnit', grp:'qzToggleGroup', c:qzCol()});
 }
 function qzKindAll() { return QZ.kind === 'sowa' ? SOWA : KWS; }
 function qzUS(it) { const k = SLOT_OF_UNIT[it.unit]; return (k && SLOT_STYLE[k]) || qzCol(); }
 function qzCol() { return QZ.kind === 'sowa' ? {bg:'#FAEEDA', color:'#633806', border:'#BA7517', solid:'#BA7517', fill:''} : {bg:'#E1F5EE', color:'#085041', border:'#1D9E75', solid:'#1D9E75', fill:''}; }
-function qzOpen(kind) { QZ.kind = kind; showScreen('s-qz'); qzSetup(); }
+function qzOpen(kind) { QZ.kind = kind; QZ_OFF = new Set(); showScreen('s-qz'); qzSetup(); }
 function qzSetup() {
   const k = QZ.kind, n = qzPoolFor(k).length, tot = qzScope(k).length, c = qzCol();
   const tb = m => { const on = QZ.mode === m; return 'flex:1;border-radius:8px;padding:8px;' + (on ? 'background:' + c.bg + ';color:' + c.color + ';border-color:' + c.border : 'background:var(--surface);color:var(--muted);border-color:var(--border2)'); };
@@ -6719,8 +6732,8 @@ function qzSetup() {
     (n ? '<button class="btn-go" style="background:' + c.solid + ';margin-bottom:1rem" onclick="qzCountdown()">▶ Start quiz</button>' + '<p style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem">Mode</p>' +
     '<div style="display:flex;gap:8px;margin-bottom:.75rem"><button class="rq-star" style="' + tb('pick') + '" onclick="QZ.mode=\'pick\';qzSetup()">📋 Pick answer</button>' +
     '<button class="rq-star" style="' + tb('type') + '" onclick="QZ.mode=\'type\';qzSetup()">⌨️ Type the answer</button></div>' +
-    '<p style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:.25rem 0 .5rem">Units</p>' + qzUnitPicker()
-    : (tot ? '<p style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:.25rem 0 .5rem">Units</p>' + qzUnitPicker() + '<div class="empty">Tick at least one unit to start.</div>' : '<div class="empty">Nothing here yet for the units you have reached.</div>'));
+    '<p style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:.25rem 0 .5rem">Units studied so far</p>' + qzUnitPicker()
+    : (tot ? '<p style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:.25rem 0 .5rem">Units studied so far</p>' + qzUnitPicker() + '<div class="empty">Tick at least one unit to start.</div>' : '<div class="empty">Nothing here yet for the units you have reached.</div>'));
 }
 function qzCountdown(missedOnly) {
   const c = qzCol(); let n = 3;
@@ -6898,18 +6911,25 @@ const EX_TOOL = {
   plan:['Plan in one minute','Two or three arguments for. Two or three against. Mark the strongest one and the reason it is strongest. That is your conclusion.'],
   prec:['Precision and SPaG','Use specialist words accurately (for example Tawhid, Akhirah, sanctity of life, atonement). Write "some" or "many" rather than "all". Check spelling, punctuation and grammar where SPaG marks are given.']
 };
-const EX = {part:'a', q:null, mode:null, bank:null, t:''};
+const EX = {part:'a', q:null, mode:null, bank:null, t:'', off:new Set()};
 function exLoad(cb) {
   if (EX.bank) { cb(); return; }
   fetch('data/rs/exam.json?v=20261126a').then(r => r.json()).then(j => { EX.bank = j; cb(); }).catch(() => { EX.bank = []; cb(); });
 }
-function exOpen() { showScreen('s-exam'); EX.q = null; EX.mode = null; exLoad(exRender); }
+function exOpen() { showScreen('s-exam'); EX.q = null; EX.mode = null; EX.off = new Set(); exLoad(exRender); }
 function exMenu() { EX.mode = null; exRender(); }
 function exMode(m) { EX.mode = m; exRender(); }
+function exStudied() { return (EX.bank || []).filter(r => { const k = SLOT_OF_UNIT[r.u]; return k ? inScope({paper:k, unit:r.u}) : true; }); }
 function exPool() {
-  const all = EX.bank || [];
-  const sc = all.filter(r => { const k = SLOT_OF_UNIT[r.u]; return k ? inScope({paper:k, unit:r.u}) : true; });
-  return sc.length ? sc : all;
+  const sc = exStudied().filter(r => !EX.off.has(r.u));
+  return sc;
+}
+function exToggleUnit(u) { if (EX.off.has(u)) EX.off.delete(u); else EX.off.add(u); EX.q = null; exRender(); }
+function exToggleGroup(pn, on) { UNITS.filter(u => u.pn === pn).forEach(u => { if (on) EX.off.delete(u.n); else EX.off.add(u.n); }); EX.q = null; exRender(); }
+function exPills() {
+  const cnt = {}; exStudied().forEach(r => { cnt[r.u] = (cnt[r.u] || 0) + 1; });
+  const units = UNITS.filter(u => cnt[u.n]).map(u => ({n:u.n, e:u.e, pn:u.pn, cnt:cnt[u.n]}));
+  return '<div class="ex-units"><div class="up-t">Units studied so far</div>' + unitPills({units, off:EX.off, tog:'exToggleUnit', grp:'exToggleGroup', c:{bg:'#E3EAF7', color:'#1F3864', border:'#5B7FBF'}}) + '</div>';
 }
 function exNew() {
   const pool = exPool(); if (!pool.length) { EX.q = null; return; }
@@ -6943,8 +6963,9 @@ function exRender() {
   const P = EX_PARTS[EX.part];
   const top = '<button class="ex-back" onclick="exMenu()">← Exam practice menu</button><div id="ex-def" class="ex-def"></div>';
   const cmd = EX_CMD.map(r => '<tr><td><b>' + exCW(r[0]) + '</b></td><td>' + r[1] + '</td></tr>').join('');
-  const sg = '<details class="ex-card"><summary style="font-weight:800;font-size:.9rem;cursor:pointer">Words after "Explain two" (from the specification)</summary><table class="ex-tbl" style="margin-top:.5rem"><tr><th>Word</th><th>Means</th></tr>' + Object.keys(EX_SPEC).map(k => '<tr><td><b>' + k + '</b></td><td>' + EX_SPEC[k] + '</td></tr>').join('') + '</table></details>';
-  const tbl = sg + '<details class="ex-card"><summary style="font-weight:800;font-size:.9rem;cursor:pointer">Command words at a glance</summary><table class="ex-tbl" style="margin-top:.5rem"><tr><th>Word</th><th>What to do</th></tr>' + cmd + '</table></details>';
+  const sgr = Object.keys(EX_SPEC).map(k => '<tr><td><b>' + k + '</b></td><td>' + EX_SPEC[k] + '</td></tr>').join('');
+  const tbl = '<details class="ex-gl"><summary>Command words glossary</summary><table class="ex-tbl"><tr><th colspan="2">Command words</th></tr>' + cmd +
+    '<tr><th colspan="2">Words after "Explain two" (from the specification)</th></tr>' + sgr + '</table></details>';
   if (EX.mode === 'review') {
     const steps = P.steps.map((s, i) => '<div class="ex-stem"><i>' + (i + 1) + '</i><span><b>' + s[0] + '.</b> ' + exCW(s[1]) + '</span></div>').join('');
     const stems = P.stems.map((t, i) => '<div class="ex-stem m"><i>' + (i + 1) + '</i><span>' + escHtml(t) + '</span></div>').join('');
@@ -6959,11 +6980,11 @@ function exRender() {
     return;
   }
   if (!EX.q) exNew();
-  if (!EX.q) { body.innerHTML = top + '<p class="ex-sub">Questions are loading. Try again in a moment.</p>'; return; }
+  if (!EX.q) { body.innerHTML = top + '<div class="ex-h">✍️ Practice questions</div>' + (EX.bank ? exPills() + '<div class="empty">Tick at least one unit to get a question.</div>' : '<p class="ex-sub">Questions are loading. Try again in a moment.</p>'); return; }
   const k = SLOT_OF_UNIT[EX.q.u], st = k && SLOT_STYLE[k] ? SLOT_STYLE[k] : {bg:'#E3EAF7', color:'#1F3864', border:'#5B7FBF'};
   let qt = EX.q.q[EX.part] || '';
   if (EX.part === 'd') qt += ' In your response you should: refer to ' + (/Christian|Church/.test(EX.q.u) ? 'Christian' : 'Muslim') + ' teachings' + (EX.q.nr ? ', refer to a non-religious viewpoint' : '') + ' and reach a justified conclusion.';
-  body.innerHTML = top + '<div class="ex-h">✍️ Practice questions</div><p class="ex-sub">Questions from your revision guides. Write your answer, then mark it yourself.</p>' + exTabs() +
+  body.innerHTML = top + '<div class="ex-h">✍️ Practice questions</div><p class="ex-sub">Questions from your revision guides. Write your answer, then mark it yourself.</p>' + exPills() + exTabs() +
     '<div class="ex-card"><h3>' + exCW(P.title) + '<span class="ex-marks">' + P.marks + '</span></h3><div class="ex-q"><span class="ex-pill" style="background:' + st.bg + ';color:' + st.color + ';border-color:' + st.border + '">' + escHtml(EX.q.u) + ': ' + escHtml(EX.q.t) + '</span><br>' + exCW(escHtml(qt)) + '</div>' +
     '<textarea class="ex-ta" id="ex-ta" placeholder="Write your answer here. Target: ' + P.nTxt + '."></textarea>' +
     '<div class="ex-row"><button class="ex-btn" onclick="exCheck()">Check my answer</button><button class="ex-btn sec" onclick="exNew();exRender()">New question</button></div>' +
