@@ -6722,8 +6722,9 @@ const QZ_GEN = new Set(['muslim','muslims','christian','christians','allah','god
 function qzMaskDef(item) {
   // stems: "Resurrection" also hides "resurrected", "Creationism" hides "created"
   const stems = String(item.term).toLowerCase().split(/[^a-z']+/).filter(w => w.length >= 4 && !QZ_GEN.has(w)).map(w => w.length >= 9 ? w.slice(0, 5) : w).filter(w => !item.d.some(o => o.toLowerCase().includes(w)));
+  const stemmed = new Set(stems.filter(w => w.length === 5));
   let t = escHtml(item.def);
-  stems.forEach(w => { t = t.replace(new RegExp("\\b" + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + "[a-z']*", 'gi'), '_____'); });
+  stems.forEach(w => { t = t.replace(new RegExp("\\b" + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + (w.length >= 5 && w.length < 9 && stemmed.has(w) ? "[a-z']*" : "(?:s|es|ed|ing|ly)?\\b"), 'gi'), '_____'); });
   return t;
 }
 function qzMake(kind, item, variant) {
