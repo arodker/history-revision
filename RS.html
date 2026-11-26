@@ -1139,6 +1139,40 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 .qopts .opt{text-align:left;font-family:Georgia,serif;font-style:italic;border-left:4px solid #AFA9EC;font-size:.92rem}
 :root.dark .qz-card.qv-shows,:root.dark .qz-card.qv-pick{background:var(--surface)}
 :root.dark .qz-card.qv-pick .qz-q{color:#CECBF6}
+
+.btn-exam{background:#1F3864;color:#fff;border:2px solid #5B7FBF}
+:root.dark .btn-exam{background:#2C4A82}
+.ex-h{font-size:1.25rem;font-weight:800;margin:.3rem 0 .2rem}
+.ex-sub{font-size:.82rem;color:var(--muted);margin:0 0 .8rem;line-height:1.5}
+.ex-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:.8rem}
+.ex-tab{border:1.5px solid var(--border2);background:var(--surface);color:var(--muted);border-radius:10px;padding:.5rem .2rem;font-family:inherit;font-weight:800;font-size:1rem;cursor:pointer;line-height:1.15}
+.ex-tab small{display:block;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-top:2px}
+.ex-tab.on{background:#1F3864;color:#fff;border-color:#1F3864}
+.ex-card{background:var(--card);border:1px solid var(--border);border-left:5px solid #1F3864;border-radius:0 14px 14px 0;padding:.9rem 1rem;margin-bottom:.7rem}
+.ex-card h3{margin:0 0 .35rem;font-size:.95rem;font-weight:800}
+.ex-marks{display:inline-block;background:#E3EAF7;color:#1F3864;border-radius:8px;padding:2px 8px;font-size:.72rem;font-weight:800;margin-left:.4rem;vertical-align:middle}
+:root.dark .ex-marks{background:#2C3A5C;color:#CFE0FF}
+.ex-card ol,.ex-card ul{margin:.2rem 0 0;padding-left:1.15rem;font-size:.84rem;line-height:1.55}
+.ex-card li{margin-bottom:.25rem}
+.ex-stem{display:flex;gap:8px;align-items:flex-start;font-size:.84rem;margin:.3rem 0;line-height:1.45}
+.ex-stem i{flex:0 0 auto;min-width:1.5rem;height:1.5rem;border-radius:50%;background:#1F3864;color:#fff;font-style:normal;font-weight:800;font-size:.72rem;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.ex-stem.m i{background:#B45309}
+.ex-stem span em{font-style:normal;color:var(--muted);font-size:.74rem;display:block}
+.ex-avoid{border-left-color:#B91C1C}
+.ex-q{background:#F5F8FF;border:1.5px solid #C5D3EE;border-radius:12px;padding:.8rem .9rem;margin:.3rem 0 .6rem;font-size:.98rem;font-weight:700;line-height:1.45}
+:root.dark .ex-q{background:var(--surface);border-color:var(--border2)}
+.ex-q .ex-pill{display:inline-block;font-size:.66rem;font-weight:800;border:1px solid;border-radius:20px;padding:1px 8px;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.04em}
+.ex-ta{width:100%;box-sizing:border-box;min-height:9rem;border:1.5px solid var(--border2);border-radius:10px;padding:.7rem;font-family:inherit;font-size:.92rem;line-height:1.5;background:var(--input-bg,var(--surface));color:var(--text);resize:vertical}
+.ex-row{display:flex;gap:8px;margin-top:.5rem}
+.ex-btn{flex:1;border:none;border-radius:10px;padding:.7rem;font-family:inherit;font-weight:700;font-size:.88rem;cursor:pointer;background:#1F3864;color:#fff}
+.ex-btn.sec{background:var(--surface);color:var(--muted);border:1.5px solid var(--border2)}
+.ex-chk{margin-top:.6rem;font-size:.84rem;line-height:1.5}
+.ex-chk div{padding:.3rem .5rem;border-radius:8px;margin-bottom:.25rem;background:var(--subtle)}
+.ex-chk .ok{background:#d1fae5;color:#065f46}
+.ex-chk .no{background:#FEF3C7;color:#78350F}
+.ex-tbl{width:100%;border-collapse:collapse;font-size:.78rem}
+.ex-tbl td,.ex-tbl th{border-bottom:1px solid var(--border);padding:.35rem .3rem;text-align:left;vertical-align:top}
+.ex-tbl th{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
 </style>
 <link rel="manifest" href="manifest-geog.webmanifest">
 <meta name="theme-color" content="#2E8B57">
@@ -1207,6 +1241,7 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
   <div class="step-lbl"><span class="step-n">2</span>Choose how to revise</div>
   <div class="home-row"><button class="btn-go btn-mix" onclick="showRapidSetup()">🎯 Mixed Retrieval Quiz</button><button class="btn-go btn-arc" onclick="arcOpen()">🕹️ Arcade Games</button></div>
   <div class="home-row"><button class="btn-go btn-sowa" onclick="qzOpen('sowa')">“ SoWA Quiz</button><button class="btn-go btn-kwq" onclick="qzOpen('kw')">🔑 Key Word Quiz</button></div>
+  <div class="home-row"><button class="btn-go btn-exam" onclick="exOpen()">📝 Exam Practice</button></div>
   <div class="or-line">or revise a unit</div>
   <style>@keyframes gapglow{0%,100%{box-shadow:0 0 0 0 rgba(83,74,183,0)}50%{box-shadow:0 0 0 5px rgba(83,74,183,.3)}}#gap-flag{animation:gapglow 2s ease-in-out infinite}@media (prefers-reduced-motion:reduce){#gap-flag{animation:none}}</style>
   <div class="paper-grid">
@@ -1574,6 +1609,11 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 <div class="screen" id="s-qz">
   <button class="back-btn" aria-label="Home" onclick="showScreen('s-pick')">🏠</button>
   <div id="qz-body"></div>
+</div>
+
+<div class="screen" id="s-exam">
+  <button class="back-btn" aria-label="Home" onclick="showScreen('s-pick')">🏠</button>
+  <div id="ex-body"></div>
 </div>
 
 <div class="screen" id="s-arcade">
@@ -6743,6 +6783,129 @@ function qzEnd() {
     '<div style="display:flex;flex-direction:column;gap:6px;margin-top:.5rem"><button class="btn-sm" style="width:100%" onclick="qzSetup()">🔄 New quiz</button>' +
     (QZ.missed.length ? '<button class="btn-sm" style="width:100%" onclick="qzCountdown(true)">🎯 Just the ones I missed (' + QZ.missed.length + ')</button>' : '') + '</div></div>';
   xpFlushLater();
+}
+</script>
+<script>
+/* Exam practice: command words and a, b, c, d structure (Edexcel GCSE RS B, 1RB0) */
+const EX_PARTS = {
+  a: {tab:'(a)', cmd:'Outline', marks:'3 marks', title:'(a) Outline three',
+    want:'Three accurate points. One mark for each point, written as a sentence.',
+    steps:[
+      ['Three sentences','Write three separate sentences, one point in each.'],
+      ['Leave a gap','Leave a line between the points so the examiner can see three.'],
+      ['Keep it short','State each point. You do not need to explain or develop it.']],
+    stems:['One belief is that ...','Another belief is that ...','A third belief is that ...'],
+    avoid:['A list of words or phrases in one line can only reach one mark.','Repeating the same point in different words.','Spending time on development. It earns nothing in part (a).'],
+    n:3, nTxt:'3 sentences'},
+  b: {tab:'(b)', cmd:'Explain', marks:'4 marks', title:'(b) Explain two',
+    want:'Two reasons, each developed. One mark for the reason and one for the development, so 2 marks for each.',
+    steps:[
+      ['Two paragraphs','One paragraph for each reason. Each paragraph is two sentences.'],
+      ['Reason','First sentence: the reason or belief (1 mark).'],
+      ['Develop it','Second sentence: say why it matters or what follows from it (1 mark). It must link to both the reason and the question.']],
+    stems:['One reason is that ...','This matters because ...','Another reason is that ...','This means that ...'],
+    avoid:['Giving the same reason twice. A repeated reason or development earns nothing extra.','A development that does not link to the reason and the question.','Writing a third reason. Two developed reasons are what is asked for.'],
+    n:4, nTxt:'4 sentences in 2 paragraphs'},
+  c: {tab:'(c)', cmd:'Explain, with a source', marks:'5 marks', title:'(c) Explain two, with a source of wisdom and authority',
+    want:'Two developed reasons or beliefs (4 marks, as in part b) plus one relevant source of wisdom and authority (1 mark).',
+    steps:[
+      ['Two paragraphs','Reason and development for each, as in part (b).'],
+      ['Add one source','Use a teaching from a sacred text, a Creed or Church teaching that supports one of your reasons. You can paraphrase it.'],
+      ['Match it','The source must support the reason you gave. It gains one mark only, so it cannot also be your development.']],
+    stems:['One teaching is that ...','This means that ...','This is shown in [source], which teaches that ...','Another teaching is that ...','This is important because ...'],
+    avoid:['A source that does not match the reason it is attached to.','Naming the wrong source. If you name a source, make sure it is correct.','Quoting a source and forgetting to explain the reason.'],
+    n:5, nTxt:'5 sentences in 2 paragraphs'},
+  d: {tab:'(d)', cmd:'Evaluate', marks:'12 marks (+3 SPaG in some)', title:'(d) Evaluate this statement',
+    want:'A judgement on a statement. Arguments for and against, built into chains of reasoning, and a justified conclusion. It is marked in levels, not by points.',
+    steps:[
+      ['Plan first','Take one minute: two or three arguments on each side, then your conclusion.'],
+      ['Support','Paragraph 1: arguments that support the statement. Chain each one: point, because, so, which means.'],
+      ['Other view','Paragraph 2: a different point of view, built the same way. It can be another view within the religion, a non-religious view, or a philosophical or ethical argument.'],
+      ['Conclude','Paragraph 3: weigh the arguments, say which is more convincing and why, and give a justified conclusion.'],
+      ['Precision','Use specialist words accurately. Write "some" or "many" Christians or Muslims, not "all". Check spelling, punctuation and grammar.']],
+    stems:['Some Christians/Muslims would argue that ... because ... so ...','However, others would say ... because ...','Overall, the more convincing argument is ... because ...'],
+    avoid:['A list of points with no development. This stays in the lower levels.','Writing only one side.','A conclusion that repeats the question or is not justified.'],
+    n:3, nTxt:'3 paragraphs at least'}
+};
+const EX_Q = [
+ ['Muslim Beliefs','Outline three Muslim beliefs about Allah.','Explain two reasons why prophets are important to Muslims.','Explain two Muslim teachings about the Qur’an. In your answer you must refer to a source of wisdom and authority.','“Shi’a and Sunni Muslims have more in common than they have differences.” Evaluate this statement considering arguments for and against.'],
+ ['Marriage and the Family','Outline three Muslim teachings about marriage.','Explain two reasons why many Muslims are against living together before marriage.','Explain two Muslim attitudes to divorce. In your answer you must refer to a source of wisdom and authority.','“Contraception is wrong.” Evaluate this statement considering arguments for and against.'],
+ ['Living the Muslim Life','Outline three things Muslims do on Hajj.','Explain two reasons why Zakah is important for Muslims.','Explain two reasons why Salah is important for Muslims. In your answer you must refer to a source of wisdom and authority.','“Greater Jihad is more important than Lesser Jihad.” Evaluate this statement considering arguments for and against.'],
+ ['Matters of Life and Death','Outline three Muslim beliefs about life after death.','Explain two reasons why many Muslims are against euthanasia.','Explain two Muslim teachings about the sanctity of life. In your answer you must refer to a source of wisdom and authority.','“Abortion is always wrong.” Evaluate this statement considering arguments for and against.'],
+ ['Christian Beliefs','Outline three Christian beliefs about the Trinity.','Explain two reasons why the incarnation is important for Christians.','Explain two Christian beliefs about salvation. In your answer you must refer to a source of wisdom and authority.','“The problem of evil proves that God does not exist.” Evaluate this statement considering arguments for and against.'],
+ ['Crime and Punishment','Outline three aims of punishment.','Explain two reasons why Christians support forgiveness for criminals.','Explain two Christian attitudes to the death penalty. In your answer you must refer to a source of wisdom and authority.','“Restorative justice is better than prison.” Evaluate this statement considering arguments for and against.'],
+ ['Living the Christian Life','Outline three types of Christian prayer.','Explain two reasons why pilgrimage is important for some Christians.','Explain two reasons why the Eucharist is important for Christians. In your answer you must refer to a source of wisdom and authority.','“Missionary work is the most important work of the Church.” Evaluate this statement considering arguments for and against.'],
+ ['Peace and Conflict','Outline three Christian teachings about peace.','Explain two reasons why some Christians are pacifists.','Explain two Christian attitudes to Just War. In your answer you must refer to a source of wisdom and authority.','“Nuclear weapons can never be justified.” Evaluate this statement considering arguments for and against.']
+];
+const EX_CMD = [
+ ['State','Recall facts. One mark per point, up to 3. No development.'],
+ ['Outline','Recall facts, each written as a sentence. One mark per point, up to 3. A list scores one mark at most.'],
+ ['Describe','Describe a belief or practice and compare it with another religion where asked. Up to 4 marks.'],
+ ['Explain','Give a reason, then develop it. 1 mark for the reason and 1 for the development, up to 4.'],
+ ['Explain, with a source','As Explain, plus one relevant source of wisdom and authority. Up to 5.'],
+ ['Evaluate','Weigh arguments and points of view and reach a justified conclusion. Marked in levels.']
+];
+const EX = {part:'a', q:null};
+function exOpen() { showScreen('s-exam'); EX.q = null; exRender(); }
+function exPool() {
+  const all = EX_Q.map(r => ({unit:r[0], q:{a:r[1], b:r[2], c:r[3], d:r[4]}}));
+  const sc = all.filter(r => { const k = SLOT_OF_UNIT[r.unit]; return k ? inScope({paper:k, unit:r.unit}) : true; });
+  return sc.length ? sc : all;
+}
+function exNew() {
+  const pool = exPool(); let r = pool[Math.floor(Math.random() * pool.length)];
+  if (pool.length > 1 && EX.q) { let g = 0; while (r.unit === EX.q.unit && g++ < 8) r = pool[Math.floor(Math.random() * pool.length)]; }
+  EX.q = r;
+}
+function exSet(p) { EX.part = p; exRender(); }
+function exRender() {
+  if (!EX.q) exNew();
+  const P = EX_PARTS[EX.part], k = SLOT_OF_UNIT[EX.q.unit], st = k && SLOT_STYLE[k] ? SLOT_STYLE[k] : {bg:'#E3EAF7', color:'#1F3864', border:'#5B7FBF'};
+  const tabs = Object.keys(EX_PARTS).map(p => '<button class="ex-tab' + (p === EX.part ? ' on' : '') + '" onclick="exSet(\'' + p + '\')">' + EX_PARTS[p].tab + '<small>' + EX_PARTS[p].cmd.split(',')[0] + '</small></button>').join('');
+  const steps = P.steps.map((s, i) => '<div class="ex-stem"><i>' + (i + 1) + '</i><span><b>' + s[0] + '.</b> ' + s[1] + '</span></div>').join('');
+  const stems = P.stems.map((t, i) => '<div class="ex-stem m"><i>' + (i + 1) + '</i><span>' + escHtml(t) + '</span></div>').join('');
+  const avoid = P.avoid.map(t => '<li>' + t + '</li>').join('');
+  const cmd = EX_CMD.map(r => '<tr><td><b>' + r[0] + '</b></td><td>' + r[1] + '</td></tr>').join('');
+  document.getElementById('ex-body').innerHTML =
+    '<div class="ex-h">📝 Exam practice</div>' +
+    '<p class="ex-sub">Edexcel GCSE RS (Route B). Each question has parts (a) to (d). Pick a part to see what the command word asks for and how to structure the answer, then try one.</p>' +
+    '<div class="ex-tabs">' + tabs + '</div>' +
+    '<div class="ex-card"><h3>' + P.title + '<span class="ex-marks">' + P.marks + '</span></h3><div style="font-size:.86rem;line-height:1.5">' + P.want + '</div></div>' +
+    '<div class="ex-card"><h3>How to structure it</h3>' + steps + '</div>' +
+    '<div class="ex-card"><h3>Sentence starters</h3>' + stems + '</div>' +
+    '<div class="ex-card ex-avoid"><h3>Avoid</h3><ul>' + avoid + '</ul></div>' +
+    '<div class="ex-card"><h3>Try one</h3><div class="ex-q"><span class="ex-pill" style="background:' + st.bg + ';color:' + st.color + ';border-color:' + st.border + '">' + escHtml(EX.q.unit) + '</span><br>' + escHtml(EX.q.q[EX.part]) + '</div>' +
+    '<textarea class="ex-ta" id="ex-ta" placeholder="Write your answer here. Target: ' + P.nTxt + '."></textarea>' +
+    '<div class="ex-row"><button class="ex-btn" onclick="exCheck()">Check structure</button><button class="ex-btn sec" onclick="exNew();exRender()">New question</button></div>' +
+    '<div class="ex-chk" id="ex-chk"></div></div>' +
+    '<details class="ex-card"><summary style="font-weight:800;font-size:.9rem;cursor:pointer">Command words at a glance</summary><table class="ex-tbl" style="margin-top:.5rem"><tr><th>Word</th><th>What to do</th></tr>' + cmd + '</table></details>';
+}
+function exCheck() {
+  const t = document.getElementById('ex-ta').value.trim(), P = EX_PARTS[EX.part], out = [];
+  const paras = t.split(/\n\s*\n|\n/).map(x => x.trim()).filter(Boolean);
+  const sents = t.split(/(?<=[.!?])\s+/).map(x => x.trim()).filter(x => x.split(/\s+/).length > 2);
+  const words = t ? t.split(/\s+/).length : 0;
+  const row = (ok, msg) => out.push('<div class="' + (ok ? 'ok' : 'no') + '">' + (ok ? '✓ ' : '• ') + msg + '</div>');
+  if (!t) { document.getElementById('ex-chk').innerHTML = '<div class="no">Write an answer first.</div>'; return; }
+  const src = /(bible|qur.?an|hadith|surah|sura|gospel|creed|catechism|articles|genesis|exodus|leviticus|deuteronomy|psalm|micah|matthew|mark|luke|john|romans|corinthians|galatians|james|sahih|bukhari|abu dawud|church teach|teaches|teaching)/i;
+  if (EX.part === 'a') {
+    row(sents.length === 3, sents.length + ' sentence' + (sents.length === 1 ? '' : 's') + (sents.length === 3 ? '. Three separate points.' : '. You need three, one point in each.'));
+    row(paras.length >= 3 || sents.length === 3, 'Keep the three points visibly separate.');
+  } else if (EX.part === 'b') {
+    row(sents.length === 4, sents.length + ' sentences. Aim for four: reason, development, reason, development.');
+    row(paras.length === 2, paras.length + ' paragraph' + (paras.length === 1 ? '' : 's') + '. Use two, one for each reason.');
+  } else if (EX.part === 'c') {
+    row(sents.length === 5, sents.length + ' sentences. Aim for five, with one being the source.');
+    row(paras.length === 2, paras.length + ' paragraph' + (paras.length === 1 ? '' : 's') + '. Use two, one for each reason.');
+    row(src.test(t), src.test(t) ? 'A source of wisdom and authority is referred to. Check it matches the reason.' : 'No source found. Add a teaching from a sacred text, Creed or Church teaching.');
+  } else {
+    row(paras.length >= 3, paras.length + ' paragraph' + (paras.length === 1 ? '' : 's') + '. Aim for support, other view and conclusion.');
+    row(/(however|on the other hand|in contrast|others (would )?(argue|say|believe)|but )/i.test(t), /(however|on the other hand|in contrast|others (would )?(argue|say|believe)|but )/i.test(t) ? 'A different point of view is signposted.' : 'Signpost a different point of view, for example "However, others would say ...".');
+    row(/(overall|in conclusion|on balance|therefore|most convincing|more convincing|stronger)/i.test(t), /(overall|in conclusion|on balance|therefore|most convincing|more convincing|stronger)/i.test(t) ? 'There is a conclusion signpost. Make sure it is justified.' : 'Add a conclusion that weighs the arguments and says which is more convincing.');
+    row(words >= 150, words + ' words. A developed evaluation usually needs more than a few lines.');
+  }
+  out.push('<div style="font-size:.74rem;color:var(--muted);margin-top:.3rem">This checks structure only. It does not mark your content.</div>');
+  document.getElementById('ex-chk').innerHTML = out.join('');
 }
 </script>
 </body>
