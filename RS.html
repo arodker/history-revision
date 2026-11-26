@@ -510,6 +510,17 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 .ff-switch button{flex:1;padding:.5rem;border:none;background:var(--card);color:var(--muted);font-family:inherit;font-size:.82rem;font-weight:700;cursor:pointer}
 .ff-switch button.on{background:var(--text);color:var(--surface)}
 .ff-card{position:relative;background:var(--card);border:1.5px solid var(--border);border-left-width:4px;border-radius:14px;padding:1.25rem 1.25rem 1rem;margin-bottom:.75rem;box-sizing:border-box}
+.ff-card .fd-question{transition:font-size .35s}
+.ff-intro-hint{display:none;font-size:.78rem;color:var(--muted);margin-top:1.2rem;text-align:center;width:100%}
+.ff-bar{height:4px;background:var(--subtle);border-radius:4px;overflow:hidden;margin-bottom:.5rem}
+.ff-bar i{display:block;height:100%;width:100%;background:#2563eb;transform-origin:left;animation:ffbar 3.5s linear forwards}
+@keyframes ffbar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes ffin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ff-card.ff-intro{min-height:58vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;cursor:pointer}
+.ff-card.ff-intro .fd-question{font-size:1.45rem;line-height:1.35}
+.ff-card.ff-intro .ff-intro-hint{display:block}
+.ff-card.ff-intro #ff-sents,.ff-card.ff-intro #ff-input{display:none}
+.ff-card:not(.ff-intro) #ff-sents,.ff-card:not(.ff-intro) #ff-input{animation:ffin .4s}
 .ff-s{font-size:.92rem;line-height:1.75;margin:0 0 .7rem;color:var(--text)}
 .ff-blank{display:inline-block;min-width:4.5em;border:2px solid var(--muted);background:var(--subtle);border-radius:6px;color:transparent;user-select:none;vertical-align:middle;line-height:1.3;margin:0 .1em}
 .ff-blank.cur{border-color:#2563eb;background:rgba(37,99,235,.12);animation:ffp 1.2s ease-in-out infinite}
@@ -1375,9 +1386,10 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
         <label for="fd-hints-on-drill">💡 Hints</label>
       </div>
       <div id="fd-fill" style="display:none">
-        <div class="ff-card" id="ff-card">
+        <div class="ff-card" id="ff-card" onclick="ffGo()">
           <div class="fd-tag" id="ff-tag"></div>
           <div class="fd-question" id="ff-q"></div>
+          <div class="ff-intro-hint" id="ff-intro-hint"><div class="ff-bar"><i></i></div>Read the question. Tap to start</div>
           <div id="ff-sents"></div>
           <div id="ff-input"></div>
           <div id="ff-after"></div>
@@ -3226,6 +3238,14 @@ function ffRender() {
   document.getElementById('ff-card').classList.toggle('qgold', !!fdCurrent.q);
   document.getElementById('ff-card').style.borderLeftColor = stripeColours[cp] || '#888';
   ffSyncSwitch(); ffDraw();
+  const card = document.getElementById('ff-card'); card.classList.add('ff-intro');
+  const bar = card.querySelector('.ff-bar i'); if (bar) { bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; }
+  const t = ffTok; setTimeout(() => { if (t === ffTok) ffGo(); }, 3500);
+}
+function ffGo() {
+  const card = document.getElementById('ff-card');
+  if (!card || !card.classList.contains('ff-intro')) return;
+  card.classList.remove('ff-intro'); ffDraw();
 }
 function ffSyncSwitch() {
   document.querySelectorAll('#ff-switch button').forEach(b => b.classList.toggle('on', b.dataset.m === ffMode));
