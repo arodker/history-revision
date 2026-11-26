@@ -1175,6 +1175,8 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 .ex-tbl th{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
 .ex-cw{background:#FDE68A;color:#78350F;border-radius:4px;padding:0 3px;cursor:pointer;border-bottom:2px dotted #B45309;font-weight:800}
 :root.dark .ex-cw{background:#5B4A12;color:#FDE68A}
+.ex-cw.sw{background:#CFE8FF;color:#0B3A66;border-bottom-color:#2B6CB0}
+:root.dark .ex-cw.sw{background:#17385C;color:#CFE8FF}
 .ex-def{display:none;background:#FFF7DB;border:1.5px solid #E7C65A;color:#5B4106;border-radius:10px;padding:.6rem .8rem;margin:.4rem 0 .7rem;font-size:.84rem;line-height:1.5;position:sticky;top:.3rem;z-index:5}
 :root.dark .ex-def{background:#3A3010;color:#F5E6A8;border-color:#7A6420}
 .ex-def a{margin-left:.5rem;font-weight:700}
@@ -6907,10 +6909,22 @@ const EX_DEF = {
  source:['Source of wisdom and authority','A teaching from a sacred text (Bible, Qur’an, Hadith), a Creed, or Church teaching. You can paraphrase it. It must support your reason. It earns one mark, once.'],
  evaluate:['Evaluate','Weigh up arguments for and against, think about different points of view, and reach a justified judgement. Marked in levels.']
 };
-function exCW(t) {
-  return t.replace(/\b(Outline|State|Describe|Explain|Evaluate)\b|(source of wisdom and authority)/g, (m, a, b) => {
-    const k = b ? 'source' : a.toLowerCase();
-    return '<span class="ex-cw" tabindex="0" title="' + EX_DEF[k][1].replace(/"/g, '&quot;') + '" onclick="exDef(\'' + k + '\')">' + m + '</span>';
+const EX_SPEC = {
+ roles:'Responsibilities.', attitudes:'Feelings or views towards something.', beliefs:'Accepted as true.', ways:'Examples or instances.',
+ reasons:'Justification.', teachings:'A quote from a holy book, such as the Bible, Qur\u2019an or Hadith.', nature:'What makes it unique: its characteristics.',
+ features:'Distinct parts.', examples:'Specific instances or cases.', responses:'How a person or group would reply to something.', challenges:'Difficulties.',
+ benefits:'Advantages.', conditions:'Requirements for something to happen.', lessons:'Knowledge gained.', events:'Exact occurrences.', things:'General items or concepts.',
+ activities:'Actions or tasks.', solutions:'Answers to resolve problems.', types:'Different categories or forms.', divergent:'Different. Expect more than one Muslim or Christian view, not one view repeated.', different:'Not the same. Give views or answers that really differ.'
+};
+Object.keys(EX_SPEC).forEach(k => { EX_DEF['w_' + k] = [k.charAt(0).toUpperCase() + k.slice(1), EX_SPEC[k]]; });
+function exCW(t, q) {
+  const sp = Object.keys(EX_SPEC).join('|');
+  const re = new RegExp('\\b(Outline|State|Describe|Explain|Evaluate)\\b|(source of wisdom and authority)' + (q ? '|\\b(' + sp + ')\\b' : ''), q ? 'gi' : 'g');
+  return t.replace(re, (m, a, b, c) => {
+    if (typeof c !== 'string') c = '';
+    let k;
+    if (b) k = 'source'; else if (c) k = 'w_' + c.toLowerCase(); else if (a && /^[A-Z]/.test(m)) k = a.toLowerCase(); else return m;
+    return '<span class="ex-cw' + (c ? ' sw' : '') + '" tabindex="0" title="' + EX_DEF[k][1].replace(/"/g, '&quot;') + '" onclick="exDef(\'' + k + '\')">' + m + '</span>';
   });
 }
 function exDef(k) {
@@ -6966,7 +6980,8 @@ function exRender() {
   const P = EX_PARTS[EX.part];
   const top = '<button class="ex-back" onclick="exMenu()">← Exam practice menu</button><div id="ex-def" class="ex-def"></div>';
   const cmd = EX_CMD.map(r => '<tr><td><b>' + exCW(r[0]) + '</b></td><td>' + r[1] + '</td></tr>').join('');
-  const tbl = '<details class="ex-card"><summary style="font-weight:800;font-size:.9rem;cursor:pointer">Command words at a glance</summary><table class="ex-tbl" style="margin-top:.5rem"><tr><th>Word</th><th>What to do</th></tr>' + cmd + '</table></details>';
+  const sg = '<details class="ex-card"><summary style="font-weight:800;font-size:.9rem;cursor:pointer">Words after "Explain two" (from the specification)</summary><table class="ex-tbl" style="margin-top:.5rem"><tr><th>Word</th><th>Means</th></tr>' + Object.keys(EX_SPEC).map(k => '<tr><td><b>' + k + '</b></td><td>' + EX_SPEC[k] + '</td></tr>').join('') + '</table></details>';
+  const tbl = sg + '<details class="ex-card"><summary style="font-weight:800;font-size:.9rem;cursor:pointer">Command words at a glance</summary><table class="ex-tbl" style="margin-top:.5rem"><tr><th>Word</th><th>What to do</th></tr>' + cmd + '</table></details>';
   if (EX.mode === 'review') {
     const steps = P.steps.map((s, i) => '<div class="ex-stem"><i>' + (i + 1) + '</i><span><b>' + s[0] + '.</b> ' + exCW(s[1]) + '</span></div>').join('');
     const stems = P.stems.map((t, i) => '<div class="ex-stem m"><i>' + (i + 1) + '</i><span>' + escHtml(t) + '</span></div>').join('');
@@ -6984,7 +6999,7 @@ function exRender() {
   const k = SLOT_OF_UNIT[EX.q.u], st = k && SLOT_STYLE[k] ? SLOT_STYLE[k] : {bg:'#E3EAF7', color:'#1F3864', border:'#5B7FBF'};
   const Q = EX.q[EX.part];
   body.innerHTML = top + '<div class="ex-h">✍️ Practice questions</div>' + exTabs() +
-    '<div class="ex-card"><h3>' + exCW(P.title) + '<span class="ex-marks">' + P.marks + '</span></h3><div class="ex-q"><span class="ex-pill" style="background:' + st.bg + ';color:' + st.color + ';border-color:' + st.border + '">' + escHtml(EX.q.u) + '</span><br>' + exCW(escHtml(Q.q)) + '</div>' +
+    '<div class="ex-card"><h3>' + exCW(P.title) + '<span class="ex-marks">' + P.marks + '</span></h3><div class="ex-q"><span class="ex-pill" style="background:' + st.bg + ';color:' + st.color + ';border-color:' + st.border + '">' + escHtml(EX.q.u) + '</span><br>' + exCW(escHtml(Q.q), true) + '</div>' +
     '<textarea class="ex-ta" id="ex-ta" placeholder="Write your answer here. Target: ' + P.nTxt + '."></textarea>' +
     '<div class="ex-row"><button class="ex-btn" onclick="exCheck()">Mark my answer</button><button class="ex-btn sec" onclick="exNew();exRender()">New question</button></div>' +
     '<div class="ex-chk" id="ex-chk"></div><div id="ex-mk"></div></div>' + tbl;
