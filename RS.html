@@ -1176,7 +1176,8 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 .up-row{display:flex;flex-wrap:wrap;gap:6px}
 .up-pill{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600;padding:6px 11px;border-radius:999px;border:1.5px solid var(--border2);background:var(--surface);color:var(--muted);cursor:pointer;font-family:inherit;line-height:1.1}
 .up-pill small{font-size:.66rem;opacity:.7;font-weight:700}
-.up-pill:not(.on){text-decoration:line-through;opacity:.75}
+.up-pill.lock{opacity:.55;cursor:default;text-decoration:none}
+.up-pill:not(.on):not(.lock){text-decoration:line-through;opacity:.75}
 .ex-gl{margin:.9rem 0 .4rem;border:1px solid var(--border);border-radius:10px;padding:.35rem .6rem;background:var(--card)}
 .ex-gl summary{font-size:.74rem;font-weight:700;color:var(--muted);cursor:pointer}
 .ex-gl .ex-tbl{font-size:.7rem;margin-top:.4rem}.ex-gl .ex-tbl td,.ex-gl .ex-tbl th{padding:.2rem .25rem}
@@ -6654,9 +6655,9 @@ function unitPills(cfg) {
   const c = cfg.c;
   return [[1, 'Islam'], [2, 'Christianity']].map(([pn, nm]) => {
     const us = cfg.units.filter(u => u.pn === pn); if (!us.length) return '';
-    const allOn = us.every(u => !cfg.off.has(u.n));
-    return '<div class="up-grp"><div class="up-h"><span>' + nm + '</span><button class="up-all" onclick="' + cfg.grp + '(' + pn + ',' + (allOn ? 'false' : 'true') + ')">' + (allOn ? 'None' : 'All') + '</button></div><div class="up-row">' +
-      us.map(u => { const on = !cfg.off.has(u.n);
+    const open = us.filter(u => !u.lock), allOn = open.every(u => !cfg.off.has(u.n));
+    return '<div class="up-grp"><div class="up-h"><span>' + nm + '</span>' + (open.length ? '<button class="up-all" onclick="' + cfg.grp + '(' + pn + ',' + (allOn ? 'false' : 'true') + ')">' + (allOn ? 'None' : 'All') + '</button>' : '') + '</div><div class="up-row">' +
+      us.map(u => { if (u.lock) return '<button class="up-pill lock" disabled>🔒 ' + escHtml(u.n) + '<small>not taught yet</small></button>'; const on = !cfg.off.has(u.n);
         return '<button class="up-pill' + (on ? ' on' : '') + '" style="' + (on ? 'background:' + c.bg + ';color:' + c.color + ';border-color:' + c.border : '') + '" onclick="' + cfg.tog + '(\'' + u.n.replace(/'/g, "\\'") + '\')">' + u.e + ' ' + escHtml(u.n) + '<small>' + u.cnt + '</small></button>'; }).join('') + '</div></div>';
   }).join('');
 }
@@ -6716,8 +6717,8 @@ function qzPoolFor(kind) { return qzScope(kind).filter(x => !QZ_OFF.has(x.unit))
 function qzToggleUnit(u) { if (QZ_OFF.has(u)) QZ_OFF.delete(u); else QZ_OFF.add(u); qzSaveOff(); qzSetup(); }
 function qzToggleGroup(pn, on) { UNITS.filter(u => u.pn === pn).forEach(u => { if (on) QZ_OFF.delete(u.n); else QZ_OFF.add(u.n); }); qzSaveOff(); qzSetup(); }
 function qzUnitPicker() {
-  const sc = qzScope(QZ.kind), cnt = {}; sc.forEach(x => { cnt[x.unit] = (cnt[x.unit] || 0) + 1; });
-  const units = UNITS.filter(u => cnt[u.n]).map(u => ({n:u.n, e:u.e, pn:u.pn, cnt:cnt[u.n]}));
+  const sc = qzScope(QZ.kind), cnt = {}, tot = {}; sc.forEach(x => { cnt[x.unit] = (cnt[x.unit] || 0) + 1; }); qzKindAll().forEach(x => { tot[x.unit] = 1; });
+  const units = UNITS.filter(u => tot[u.n]).map(u => ({n:u.n, e:u.e, pn:u.pn, cnt:cnt[u.n] || 0, lock:!cnt[u.n]}));
   return unitPills({units, off:QZ_OFF, tog:'qzToggleUnit', grp:'qzToggleGroup', c:qzCol()});
 }
 function qzKindAll() { return QZ.kind === 'sowa' ? SOWA : KWS; }
@@ -6928,7 +6929,8 @@ function exToggleUnit(u) { if (EX.off.has(u)) EX.off.delete(u); else EX.off.add(
 function exToggleGroup(pn, on) { UNITS.filter(u => u.pn === pn).forEach(u => { if (on) EX.off.delete(u.n); else EX.off.add(u.n); }); EX.q = null; exRender(); }
 function exPills() {
   const cnt = {}; exStudied().forEach(r => { cnt[r.u] = (cnt[r.u] || 0) + 1; });
-  const units = UNITS.filter(u => cnt[u.n]).map(u => ({n:u.n, e:u.e, pn:u.pn, cnt:cnt[u.n]}));
+  const tot = {}; (EX.bank || []).forEach(r => { tot[r.u] = 1; });
+  const units = UNITS.filter(u => tot[u.n]).map(u => ({n:u.n, e:u.e, pn:u.pn, cnt:cnt[u.n] || 0, lock:!cnt[u.n]}));
   return '<div class="ex-units"><div class="up-t">Practice questions from these units (studied so far)</div>' + unitPills({units, off:EX.off, tog:'exToggleUnit', grp:'exToggleGroup', c:{bg:'#E3EAF7', color:'#1F3864', border:'#5B7FBF'}}) + '</div>';
 }
 function exNew() {
