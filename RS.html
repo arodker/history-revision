@@ -1105,6 +1105,7 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 .qz-card.kw .qz-tag{background:#E1F5EE;color:#085041}
 .qz-src{font-size:1.2rem;font-weight:800;color:#7A5200;margin:.15rem 0 .25rem}
 .qz-q{font-size:1.02rem;line-height:1.55}
+#qz-body{transition:opacity .17s ease,transform .17s ease}#qz-body.qz-out{opacity:0;transform:translateY(-8px)}#qz-body.qz-in{animation:up .32s ease both}@media (prefers-reduced-motion:reduce){#qz-body{transition:none}#qz-body.qz-in{animation:none}}
 .qz-gap{display:inline-block;min-width:4.5rem;border-bottom:3px solid #BA7517;text-align:center;font-weight:800;color:#BA7517}
 .qz-opt{display:block;width:100%;text-align:left;padding:.8rem 1rem;margin-bottom:.5rem;border-radius:12px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text);font-family:inherit;font-size:.95rem;cursor:pointer}
 .qz-opt.ok{background:#E3F5EA;border-color:#2E9F5B;color:#0B5A2E}
@@ -6798,10 +6799,19 @@ function qzResult(ok, chosen) {
   } else { const i = document.getElementById('qz-in'); if (i) i.disabled = true; const b = document.getElementById('qz-check'); if (b) { b.disabled = true; b.style.opacity = '.45'; } }
   if (fb) { fb.className = 'quiz-fb ' + (ok ? 'fb-c' : 'fb-w'); fb.style.display = 'block'; fb.textContent = ok ? '✓ Correct: ' + c.targets[0] : '✗ The answer was ' + c.targets[0]; }
   setTimeout(() => {
-    if (!document.getElementById('qz-body') || QZ.hist.length !== QZ.idx + 1) return;
-    QZ.idx++; QZ.view = QZ.idx; QZ.locked = false;
-    if (QZ.idx < QZ.pool.length) QZ.cur = qzMake(QZ.kind, QZ.pool[QZ.idx], QZ.var[QZ.idx]);
-    qzDraw();
+    const body = document.getElementById('qz-body');
+    if (!body || QZ.hist.length !== QZ.idx + 1) return;
+    // Fade the answered card out, hold the height so the page does not jump, then fade the next card in at the top
+    body.style.minHeight = body.offsetHeight + 'px'; body.classList.add('qz-out');
+    setTimeout(() => {
+      if (!document.getElementById('qz-body') || QZ.hist.length !== QZ.idx + 1) { body.classList.remove('qz-out'); body.style.minHeight = ''; return; }
+      QZ.idx++; QZ.view = QZ.idx; QZ.locked = false;
+      if (QZ.idx < QZ.pool.length) QZ.cur = qzMake(QZ.kind, QZ.pool[QZ.idx], QZ.var[QZ.idx]);
+      qzDraw();
+      body.classList.remove('qz-out', 'qz-in'); void body.offsetWidth; body.classList.add('qz-in'); body.style.minHeight = '';
+      const r = body.getBoundingClientRect();
+      if (r.top < 0 || r.top > window.innerHeight * .45) window.scrollTo({top:Math.max(0, r.top + window.pageYOffset - 70), behavior:'smooth'});
+    }, 170);
   }, ok ? 1200 : 2000);
 }
 function qzPick(i) { if (QZ.locked) return; const c = QZ.cur; qzResult(c.opts[i] === c.targets[0], c.opts[i]); }
