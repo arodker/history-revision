@@ -42,9 +42,9 @@
   "alt": [],
   "def": "A religious leader of the Muslim community (this is the Sunni Muslim word)",
   "d": [
-   "Sunni Muslims",
    "Shi'a Muslims",
-   "Ahl al-bayt"
+   "Ahl al-bayt",
+   "Ummah"
   ]
  },
  {
@@ -56,7 +56,7 @@
   "d": [
    "Hadith",
    "Injil",
-   "Kutubullah"
+   "Surah"
   ]
  },
  {
@@ -68,7 +68,7 @@
   "d": [
    "Khalifah",
    "Ummah",
-   "Imam"
+   "Ahl al-bayt"
   ]
  },
  {
@@ -78,9 +78,9 @@
   "alt": [],
   "def": "… believe Abu Bakr was the first of the four 'rightly guided' leaders of the Muslim community after Muhammad died.",
   "d": [
-   "Khalifah",
    "Ahl al-bayt",
-   "Imam"
+   "Imam",
+   "Shi'a Muslims"
   ]
  },
  {
@@ -152,7 +152,7 @@
   "d": [
    "Omnipotence",
    "Tawhid",
-   "Adl"
+   "Immanence"
   ]
  },
  {
@@ -176,7 +176,7 @@
   "d": [
    "Beneficence",
    "Tawhid",
-   "Adl"
+   "Transcendence"
   ]
  },
  {
@@ -330,9 +330,9 @@
   "alt": [],
   "def": "(Ishmael). Ibrahim's son, who was willing to be sacrificed to Allah. Helped his father to rebuilt the Ka'bah in Mecca.",
   "d": [
-   "Prophet",
    "Adam",
-   "Muhammad"
+   "Muhammad",
+   "Isa"
   ]
  },
  {
@@ -450,9 +450,9 @@
   "alt": [],
   "def": "The Muslim word for life after death. This starts with the Day of Judgement, when, at the end of the world, Allah will bring all the dead back to life ot be judged.",
   "d": [
-   "Resurrection",
-   "Adl",
-   "Risalah"
+   "Jannah",
+   "Jahannam",
+   "Al-Qadr"
   ]
  },
  {
@@ -462,7 +462,7 @@
   "alt": [],
   "def": "Muslims believe that Allah will raise people to life after death.",
   "d": [
-   "Akhirah",
+   "Jannah",
    "Jahannam",
    "Al-Qadr"
   ]
@@ -511,8 +511,8 @@
   "def": "The Arabic word for marriage. In Islam it is seen as a contract (legal agreement) between two people.",
   "d": [
    "Divorce",
-   "Premarital sex",
-   "Remarriage"
+   "Remarriage",
+   "Annulment"
   ]
  },
  {
@@ -560,7 +560,7 @@
   "d": [
    "Adultery",
    "Homosexuality",
-   "Divorce"
+   "Cohabitation"
   ]
  },
  {
@@ -572,7 +572,7 @@
   "d": [
    "Procreation",
    "Surrogacy",
-   "Ummah"
+   "Nuclear family"
   ]
  },
  {
@@ -584,7 +584,7 @@
   "d": [
    "Procreation",
    "Surrogacy",
-   "Ummah"
+   "Blended family"
   ]
  },
  {
@@ -607,8 +607,8 @@
   "def": "The community of all Muslims around the world.",
   "d": [
    "Shi'a Muslims",
-   "Procreation",
-   "Blended family"
+   "Sunni Muslims",
+   "Khalifah"
   ]
  },
  {
@@ -632,7 +632,7 @@
   "d": [
    "Adhan",
    "Khitan",
-   "Ummah"
+   "Nikah"
   ]
  },
  {
@@ -644,7 +644,7 @@
   "d": [
    "Adhan",
    "Aqiqah",
-   "Gender prejudice"
+   "Nikah"
   ]
  },
  {
@@ -668,7 +668,7 @@
   "d": [
    "Family planning",
    "Procreation",
-   "Khitan"
+   "Abortion"
   ]
  },
  {
@@ -678,9 +678,9 @@
   "alt": [],
   "def": "Something that aims to stop sex resulting in pregnancy.",
   "d": [
-   "Coitus interruptus",
    "Surrogacy",
-   "Family planning"
+   "Procreation",
+   "Abortion"
   ]
  },
  {
@@ -715,8 +715,8 @@
   "def": "When it is declared that a marriage was never valid (true) in the first place.",
   "d": [
    "Divorce",
-   "Premarital sex",
-   "Remarriage"
+   "Remarriage",
+   "Nikah"
   ]
  },
  {
@@ -726,7 +726,7 @@
   "alt": [],
   "def": "Legally ending a marriage",
   "d": [
-   "Premarital sex",
+   "Annulment",
    "Remarriage",
    "Nikah"
   ]
@@ -739,7 +739,7 @@
   "def": "Marrying again after being divorced from a previous marriage.",
   "d": [
    "Divorce",
-   "Premarital sex",
+   "Annulment",
    "Nikah"
   ]
  },
@@ -750,9 +750,9 @@
   "alt": [],
   "def": "Believing that one gender (male or female) is less or more important than another",
   "d": [
-   "Homosexuality",
-   "Surrogacy",
-   "Cohabitation"
+   "Gender discrimination",
+   "Patriarchy",
+   "Equality"
   ]
  },
  {
@@ -762,9 +762,9 @@
   "alt": [],
   "def": "Treating people better or worse just because of their gender (whether they are male or female).",
   "d": [
-   "Homosexuality",
-   "Surrogacy",
-   "Cohabitation"
+   "Gender prejudice",
+   "Patriarchy",
+   "Equality"
   ]
  },
  {
@@ -798,9 +798,9 @@
   "alt": [],
   "def": "The most important rules of life for Shi'a Muslims.",
   "d": [
-   "Khums",
-   "Jihad",
-   "I'tikaf"
+   "Five pillars",
+   "Usul ad-Din",
+   "Khums"
   ]
  },
  {
@@ -836,7 +836,7 @@
   "d": [
    "Ten obligatory acts",
    "Usul ad-Din",
-   "Sunni Muslims"
+   "Six Beliefs"
   ]
  },
  {
@@ -859,8 +859,8 @@
   "def": "The worst sin in Islam - treating something as equal to Allah or worshipping something other than Allah.",
   "d": [
    "Sin",
-   "Jahannam",
-   "Adl"
+   "Tawhid",
+   "Jahannam"
   ]
  },
  {
@@ -944,7 +944,7 @@
   "d": [
    "Sawm",
    "Laylat al-Qadr",
-   "Ten obligatory acts"
+   "Ramadan"
   ]
  },
  {
@@ -954,9 +954,9 @@
   "alt": [],
   "def": "The Night of Power - remembering when the malaikah Jibril (angel Gabriel) first began to reveal the Qur'an to Muhammad.",
   "d": [
-   "Id-ul-Ghadeer",
    "I'tikaf",
-   "Ramadan"
+   "Ramadan",
+   "Sawm"
   ]
  },
  {
@@ -967,8 +967,8 @@
   "def": "The month of fasting. One of the five pillars of Islam.",
   "d": [
    "Laylat al-Qadr",
-   "Salah",
-   "Shahadah"
+   "Sawm",
+   "I'tikaf"
   ]
  },
  {
@@ -992,7 +992,7 @@
   "d": [
    "Nisab",
    "Zakah",
-   "Ten obligatory acts"
+   "Sadaqah"
   ]
  },
  {
@@ -1004,7 +1004,7 @@
   "d": [
    "Khums",
    "Sadaqah",
-   "Hajj"
+   "Zakah"
   ]
  },
  {
@@ -1015,8 +1015,8 @@
   "def": "Extra voluntary charity donations that Muslims might make over and above Zakah (or Khums, for Shi'a Muslims).",
   "d": [
    "Nisab",
-   "Ten obligatory acts",
-   "Tawalla"
+   "Zakah",
+   "Khums"
   ]
  },
  {
@@ -1052,7 +1052,7 @@
   "d": [
    "Hajj",
    "Pilgrimage",
-   "Id-ul-Adha"
+   "Tawaf"
   ]
  },
  {
@@ -1074,9 +1074,9 @@
   "alt": [],
   "def": "Going around the Ka'bah in an anti-clockwise direction. Completed seven times during Hajj.",
   "d": [
-   "Pilgrimage",
-   "Salah",
-   "Id-ul-Adha"
+   "Ka'bah",
+   "Qiblah",
+   "Rak'ah"
   ]
  },
  {
@@ -1086,9 +1086,9 @@
   "alt": [],
   "def": "Trying hard to be the best person you can be - against temptations, for example.",
   "d": [
-   "Ten obligatory acts",
+   "Lesser Jihad",
    "Tawalla",
-   "Nahl anil munkar"
+   "Tabarra"
   ]
  },
  {
@@ -1098,9 +1098,9 @@
   "alt": [],
   "def": "The Arabic word for struggling, striving or trying hard.",
   "d": [
-   "Ten obligatory acts",
    "Tawalla",
-   "Nahl anil munkar"
+   "Tabarra",
+   "Khums"
   ]
  },
  {
@@ -1110,9 +1110,9 @@
   "alt": [],
   "def": "Trying hard to stop evil in the world.",
   "d": [
-   "Ten obligatory acts",
+   "Greater Jihad",
    "Tawalla",
-   "Nahl anil munkar"
+   "Amr bil ma'roof"
   ]
  },
  {
@@ -1158,9 +1158,9 @@
   "alt": [],
   "def": "Shi'a Muslim festival remembering when the Prophet Muhammad chose Ali as the leader of Muslims.",
   "d": [
-   "Laylat al-Qadr",
    "Id-ul-Fitr",
-   "Ashura"
+   "Ashura",
+   "Id-ul-Adha"
   ]
  },
  {
@@ -1290,9 +1290,9 @@
   "alt": [],
   "def": "People who believe that the unborn child has a right to life.",
   "d": [
+   "Pro-choice",
    "Abortion",
-   "Conception",
-   "Ensoulment"
+   "Euthanasia"
   ]
  },
  {
@@ -1363,7 +1363,7 @@
   "def": "The Christian belief that God is one single God in three persons (Father, Son/Jesus and Holy Spirit).",
   "d": [
    "Incarnation",
-   "Grace",
+   "Holy Spirit",
    "Omnipotence"
   ]
  },
@@ -1376,7 +1376,7 @@
   "d": [
    "Holy Spirit",
    "Incarnation",
-   "Resurrection"
+   "Trinity"
   ]
  },
  {
@@ -1388,7 +1388,7 @@
   "d": [
    "Jesus Christ",
    "Incarnation",
-   "Universalism"
+   "Trinity"
   ]
  },
  {
@@ -1424,7 +1424,7 @@
   "d": [
    "Incarnation",
    "Resurrection",
-   "Salvation"
+   "Ascension"
   ]
  },
  {
@@ -1435,8 +1435,8 @@
   "def": "Going against what God wants or has commanded. Christians believe … get in the way of people having a good relationship with God.",
   "d": [
    "Atonement",
-   "Benevolence",
-   "Omnipotence"
+   "Repentance",
+   "Grace"
   ]
  },
  {
@@ -1470,9 +1470,9 @@
   "alt": [],
   "def": "Mending a broken relationship - making people 'at one' again. Christians believe that Jesus' death allows for people to be in a good relationship with God again.",
   "d": [
-   "Salvation",
    "Sin",
-   "Resurrection"
+   "Grace",
+   "Repentance"
   ]
  },
  {
@@ -1506,9 +1506,9 @@
   "alt": [],
   "def": "Being saved. Christians believe that Jesus' death offers the chance of … from sin - to save people from a bad relationship with God and so Hell.",
   "d": [
-   "Atonement",
    "Grace",
-   "Resurrection"
+   "Sin",
+   "Forgiveness"
   ]
  },
  {
@@ -1591,8 +1591,8 @@
   "def": "All-good. Christians think God is all-good, so would never do anything bad.",
   "d": [
    "Omnipotence",
-   "Sin",
-   "Moral evil"
+   "Moral evil",
+   "Natural evil"
   ]
  },
  {
@@ -1604,7 +1604,7 @@
   "d": [
    "Benevolence",
    "Omnipotence",
-   "Sin"
+   "Free will"
   ]
  },
  {
@@ -1616,7 +1616,7 @@
   "d": [
    "Benevolence",
    "Omnipotence",
-   "Sin"
+   "Free will"
   ]
  },
  {
@@ -1627,8 +1627,8 @@
   "def": "All-powerful. Christians think God is all-powerful - God can do anything at all.",
   "d": [
    "Benevolence",
-   "Sin",
-   "Moral evil"
+   "Moral evil",
+   "Free will"
   ]
  },
  {
@@ -1663,7 +1663,7 @@
   "def": "Mending broken relationships, replacing conflict with peace and anger with friendship.",
   "d": [
    "Peacemaker",
-   "Atonement",
+   "Forgiveness",
    "Restorative justice"
   ]
  },
@@ -1688,7 +1688,7 @@
   "d": [
    "Agnostic",
    "Creationism",
-   "Pacifist"
+   "Monotheist"
   ]
  },
  {
@@ -1699,8 +1699,8 @@
   "def": "A type of atheist who looks to logic, science and the kind feelings in people to work out how to live.",
   "d": [
    "Agnostic",
-   "Creationism",
-   "Restorative justice"
+   "Atheist",
+   "Creationism"
   ]
  },
  {
@@ -1722,9 +1722,9 @@
   "alt": [],
   "def": "To try to help someone back to a life following laws and being a good member of the community.",
   "d": [
-   "Reformation",
    "Restorative justice",
-   "Deterrence"
+   "Deterrence",
+   "Protection"
   ]
  },
  {
@@ -1770,9 +1770,9 @@
   "alt": [],
   "def": "Trying to change someone so that they change from a criminal life to one following the laws and being a good member of the community. One of the aims of punishment.",
   "d": [
-   "Rehabilitate",
    "Retribution",
-   "Deterrence"
+   "Deterrence",
+   "Restorative justice"
   ]
  },
  {
@@ -1962,9 +1962,9 @@
   "alt": [],
   "def": "An important Christian ceremony, such as baptism. Roman Catholic Christians believe that God changes the spiritual world during a ….",
   "d": [
+   "Worship",
    "Anoint",
-   "Eucharist",
-   "Denomination"
+   "Pilgrimage"
   ]
  },
  {
@@ -1976,7 +1976,7 @@
   "d": [
    "Eucharist",
    "Anoint",
-   "Denomination"
+   "Confirmation"
   ]
  },
  {
@@ -2010,9 +2010,9 @@
   "alt": [],
   "def": "A journey done for a special religious reason - often to visit an important religious place.",
   "d": [
+   "Missionary",
    "Worship",
-   "Prayer",
-   "Sacrament"
+   "Holy Week"
   ]
  },
  {
@@ -2024,7 +2024,7 @@
   "d": [
    "Epiphany",
    "Holy Week",
-   "Resurrection"
+   "Ascension"
   ]
  },
  {
@@ -2048,7 +2048,7 @@
   "d": [
    "Advent",
    "Epiphany",
-   "Resurrection"
+   "Ascension"
   ]
  },
  {
@@ -2130,9 +2130,9 @@
   "alt": [],
   "def": "Mending broken relationships. Aiming to bring peace where there is conflict and friendship where there is anger. Ecumenism is the aim to mend the relationship between different denominations.",
   "d": [
-   "Atonement",
    "Peacemaker",
-   "Denomination"
+   "Forgiveness",
+   "Atonement"
   ]
  },
  {
@@ -2253,8 +2253,8 @@
   "def": "An approach to choosing what is right or wrong that says people should try to the action that bring about the greatest amount of happiness, considering all the people affected.",
   "d": [
    "Situation ethics",
-   "Peacemaker",
-   "Passive resistance"
+   "Just War theory",
+   "Pacifist"
   ]
  },
  {

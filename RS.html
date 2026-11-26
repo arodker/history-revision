@@ -3166,10 +3166,10 @@ Promise.all([
   fetch('data/rs/eq.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
   fetch('data/rs/rq.json?v=20261125d').then(r => { if (!r.ok) throw new Error('rs/rq.json: ' + r.status); return r.json(); }),
   fetch('data/rs/dates.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
-  fetch('data/rs/flashcards.json?v=20261126g').then(r => { if (!r.ok) throw new Error('rs/flashcards.json: ' + r.status); return r.json(); }),
+  fetch('data/rs/flashcards.json?v=20261126d').then(r => { if (!r.ok) throw new Error('rs/flashcards.json: ' + r.status); return r.json(); }),
   fetch('data/rs/kc.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
   fetch('data/rs/sowa.json?v=20261126a').then(r => r.ok ? r.json() : []).catch(() => []),
-  fetch('data/rs/keywords.json?v=20261126c').then(r => r.ok ? r.json() : []).catch(() => []),
+  fetch('data/rs/keywords.json?v=20261126d').then(r => r.ok ? r.json() : []).catch(() => []),
 ]).then(([eq, rq, dates, fd, kc, sw, kw]) => {
   const SLOT = SLOT_OF_UNIT;
   const remap = a => a.map(it => { it.pn = it.paper; if (SLOT[it.unit]) it.paper = SLOT[it.unit]; return it; });
@@ -6718,7 +6718,7 @@ function qzToggleUnit(u) { if (QZ_OFF.has(u)) QZ_OFF.delete(u); else QZ_OFF.add(
 function qzToggleGroup(pn, on) { UNITS.filter(u => u.pn === pn).forEach(u => { if (on) QZ_OFF.delete(u.n); else QZ_OFF.add(u.n); }); qzSaveOff(); qzSetup(); }
 function qzUnitPicker() {
   const sc = qzScope(QZ.kind), cnt = {}, tot = {}; sc.forEach(x => { cnt[x.unit] = (cnt[x.unit] || 0) + 1; }); qzKindAll().forEach(x => { tot[x.unit] = 1; });
-  const units = UNITS.filter(u => tot[u.n]).map(u => ({n:u.n, e:u.e, pn:u.pn, cnt:cnt[u.n] || 0, lock:!cnt[u.n]}));
+  const units = UNITS.map(u => ({n:u.n, e:u.e, pn:u.pn, cnt:cnt[u.n] || 0, lock:!cnt[u.n]}));
   return unitPills({units, off:QZ_OFF, tog:'qzToggleUnit', grp:'qzToggleGroup', c:qzCol()});
 }
 function qzKindAll() { return QZ.kind === 'sowa' ? SOWA : KWS; }
@@ -6734,7 +6734,7 @@ function qzSetup() {
     '<div style="display:flex;gap:8px;margin-bottom:.75rem"><button class="rq-star" style="' + tb('pick') + '" onclick="QZ.mode=\'pick\';qzSetup()">📋 Pick answer</button>' +
     '<button class="rq-star" style="' + tb('type') + '" onclick="QZ.mode=\'type\';qzSetup()">⌨️ Type the answer</button></div>' +
     '<p style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:.25rem 0 .5rem">Units studied so far</p>' + qzUnitPicker()
-    : (tot ? '<p style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:.25rem 0 .5rem">Units studied so far</p>' + qzUnitPicker() + '<div class="empty">Tick at least one unit to start.</div>' : '<div class="empty">Nothing here yet for the units you have reached.</div>'));
+    : ('<p style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:.25rem 0 .5rem">Units studied so far</p>' + qzUnitPicker() + '<div class="empty">' + (tot ? 'Tick at least one unit to start.' : 'Nothing here yet for the units you have reached.') + '</div>'));
 }
 function qzCountdown(missedOnly) {
   const c = qzCol(); let n = 3;
