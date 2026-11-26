@@ -18,8 +18,8 @@
     "gap": "equivalent",
     "d": [
      "servant",
-     "friend",
-     "enemy"
+     "helper",
+     "witness"
     ]
    }
   ],
@@ -260,8 +260,8 @@
     "gap": "take your soul",
     "d": [
      "give you life",
-     "guard your door",
-     "teach you"
+     "record your deeds",
+     "test your faith"
     ]
    },
    {
@@ -288,11 +288,11 @@
   "quote": "Whoever is an enemy to Jibril should know that he brought the Qur'an down to your heart by Allah's command.",
   "gaps": [
    {
-    "gap": "enemy",
+    "gap": "an enemy",
     "d": [
-     "friend",
-     "servant",
-     "teacher"
+     "a friend",
+     "a servant",
+     "a teacher"
     ]
    },
    {
@@ -338,8 +338,8 @@
     "gap": "His angels",
     "d": [
      "His soldiers",
-     "His servants",
-     "His scholars"
+     "His scholars",
+     "His neighbours"
     ]
    },
    {
@@ -351,11 +351,11 @@
     ]
    },
    {
-    "gap": "enemy to the disbelievers",
+    "gap": "an enemy to the disbelievers",
     "d": [
-     "friend to the disbelievers",
-     "judge of the disbelievers",
-     "father of the disbelievers"
+     "a friend to the disbelievers",
+     "a judge of the disbelievers",
+     "a father of the disbelievers"
     ]
    }
   ],
@@ -399,7 +399,8 @@
   ],
   "shows": "Everything is in Allah's plan (al-Qadr)",
   "tags": [
-   "qadr"
+   "qadr",
+   "control"
   ]
  },
  {
@@ -410,7 +411,7 @@
   "quote": "O people, be mindful of your Lord, who created you all from a single soul and made from it its mate.",
   "gaps": [
    {
-    "gap": "single soul",
+    "gap": "a single soul",
     "d": [
      "many souls",
      "two clans",
@@ -421,16 +422,16 @@
     "gap": "its mate",
     "d": [
      "its servant",
-     "its judge",
-     "its king"
+     "its guardian",
+     "its rival"
     ]
    },
    {
     "gap": "mindful of your Lord",
     "d": [
-     "afraid of your king",
-     "proud of your tribe",
-     "unaware of your God"
+     "forgetful of your Lord",
+     "afraid of your tribe",
+     "proud of your family"
     ]
    }
   ],
@@ -460,16 +461,16 @@
     "gap": "guard",
     "d": [
      "show",
-     "sell",
-     "share"
+     "reveal",
+     "flaunt"
     ]
    },
    {
     "gap": "purer",
     "d": [
      "easier",
-     "cheaper",
-     "faster"
+     "wiser",
+     "safer"
     ]
    }
   ],
@@ -499,15 +500,15 @@
     "d": [
      "invented",
      "hidden",
-     "sold"
+     "copied"
     ]
    },
    {
-    "gap": "mighty angel",
+    "gap": "a mighty angel",
     "d": [
-     "wise king",
-     "old prophet",
-     "young scholar"
+     "a wise king",
+     "an old prophet",
+     "a young scholar"
     ]
    }
   ],
@@ -567,8 +568,8 @@
     "gap": "protect",
     "d": [
      "show",
-     "sell",
-     "share"
+     "expose",
+     "reveal"
     ]
    },
    {
@@ -673,17 +674,17 @@
    {
     "gap": "united",
     "d": [
-     "divided",
-     "distant",
-     "silent"
+     "scattered",
+     "isolated",
+     "apart"
     ]
    },
    {
     "gap": "together",
     "d": [
      "alone",
-     "apart",
-     "in secret"
+     "in secret",
+     "one by one"
     ]
    }
   ],
@@ -779,7 +780,7 @@
     "d": [
      "tell a lie",
      "stay silent",
-     "hide defects"
+     "exaggerate"
     ]
    },
    {
@@ -840,8 +841,8 @@
     "gap": "other half",
     "d": [
      "first half",
-     "whole",
-     "last day"
+     "same half",
+     "next half"
     ]
    }
   ],
@@ -876,9 +877,9 @@
    {
     "gap": "Forgiving and Merciful",
     "d": [
-     "Strict and Silent",
-     "Distant and Hidden",
-     "Old and Wise"
+     "Angry and Harsh",
+     "Silent and Distant",
+     "Slow and Careless"
     ]
    }
   ],
@@ -924,7 +925,8 @@
   "tags": [
    "divorce",
    "women",
-   "rights"
+   "rights",
+   "equality"
   ]
  },
  {
@@ -945,7 +947,7 @@
    {
     "gap": "let her go",
     "d": [
-     "send her away",
+     "punish her",
      "hold her back",
      "hide her"
     ]
@@ -1077,9 +1079,9 @@
    {
     "gap": "Paradise",
     "d": [
-     "Sheol",
      "Hell",
-     "Earth"
+     "Barzakh",
+     "the Earth"
     ]
    }
   ],
@@ -1087,7 +1089,8 @@
   "tags": [
    "equality",
    "afterlife",
-   "reward"
+   "reward",
+   "women"
   ]
  },
  {
@@ -1109,8 +1112,8 @@
     "gap": "forgiveness",
     "d": [
      "punishment",
-     "taxes",
-     "silence"
+     "silence",
+     "distance"
     ]
    },
    {
@@ -1126,7 +1129,8 @@
   "tags": [
    "equality",
    "reward",
-   "forgiveness"
+   "forgiveness",
+   "women"
   ]
  },
  {
@@ -1325,9 +1329,9 @@
    {
     "gap": "revealed",
     "d": [
-     "burned",
      "hidden",
-     "sold"
+     "lost",
+     "forgotten"
     ]
    },
    {
@@ -1341,7 +1345,7 @@
    {
     "gap": "ease",
     "d": [
-     "hardship",
+     "pain",
      "danger",
      "delay"
     ]
@@ -1470,17 +1474,17 @@
    {
     "gap": "built the Kaaba",
     "d": [
-     "sold the Kaaba",
-     "left the Kaaba",
-     "hid the Kaaba"
+     "guarded the Kaaba",
+     "cleaned the Kaaba",
+     "visited the Kaaba"
     ]
    },
    {
-    "gap": "role model",
+    "gap": "a role model",
     "d": [
-     "idol",
-     "ruler",
-     "judge"
+     "an idol",
+     "a ruler",
+     "a judge"
     ]
    }
   ],
@@ -1518,7 +1522,7 @@
     "d": [
      "trade",
      "argument",
-     "feast of gold"
+     "feasting"
     ]
    },
    {
@@ -1592,16 +1596,16 @@
     "gap": "forgiving",
     "d": [
      "angry",
-     "silent",
-     "distant"
+     "stern",
+     "indifferent"
     ]
    },
    {
     "gap": "Merciful",
     "d": [
-     "Strict",
-     "Silent",
-     "Distant"
+     "Harsh",
+     "Indifferent",
+     "Unmoved"
     ]
    }
   ],
@@ -1648,7 +1652,7 @@
     "d": [
      "wish to forget",
      "need to wait",
-     "right to tax"
+     "duty to warn"
     ]
    }
   ],
@@ -1668,9 +1672,9 @@
    {
     "gap": "dream",
     "d": [
-     "map",
-     "letter",
-     "vote"
+     "sign",
+     "message",
+     "letter"
     ]
    },
    {
@@ -1716,7 +1720,7 @@
     "d": [
      "questioned",
      "ended",
-     "sold"
+     "changed"
     ]
    },
    {
@@ -1732,7 +1736,7 @@
     "d": [
      "anger",
      "debt",
-     "fine"
+     "warning"
     ]
    },
    {
@@ -1746,7 +1750,9 @@
   ],
   "shows": "Islam is Allah's chosen and completed way of life",
   "tags": [
-   "islam"
+   "islam",
+   "leadership",
+   "shia"
   ]
  },
  {
@@ -1767,25 +1773,25 @@
    {
     "gap": "Mawla",
     "d": [
-     "Imam alone",
      "Caliph",
-     "Sultan"
+     "Sultan",
+     "Governor"
     ]
    },
    {
     "gap": "support",
     "d": [
      "ignore",
-     "tax",
-     "replace"
+     "oppose",
+     "forget"
     ]
    },
    {
     "gap": "against",
     "d": [
-     "beside",
-     "behind",
-     "above"
+     "kind to",
+     "patient with",
+     "merciful to"
     ]
    }
   ],
@@ -1813,9 +1819,9 @@
    {
     "gap": "test",
     "d": [
-     "reward",
      "hide",
-     "sell"
+     "count",
+     "teach"
     ]
    },
    {
@@ -1838,7 +1844,9 @@
   "shows": "Allah created life and death and has complete power",
   "tags": [
    "creation",
-   "death"
+   "death",
+   "life",
+   "control"
   ]
  },
  {
@@ -1921,7 +1929,8 @@
   "shows": "Life is sacred, and killing one person is like killing all humanity",
   "tags": [
    "sanctity",
-   "killing"
+   "killing",
+   "life"
   ]
  },
  {
@@ -1936,7 +1945,7 @@
     "d": [
      "help",
      "teach",
-     "call"
+     "forgive"
     ]
    },
    {
@@ -1950,9 +1959,9 @@
    {
     "gap": "Merciful",
     "d": [
-     "Distant",
-     "Silent",
-     "Strict"
+     "Harsh",
+     "Angry",
+     "Unmoved"
     ]
    }
   ],
@@ -1960,7 +1969,8 @@
   "tags": [
    "suicide",
    "killing",
-   "death"
+   "death",
+   "life"
   ]
  },
  {
@@ -1989,9 +1999,9 @@
    {
     "gap": "breathed a soul",
     "d": [
-     "sold a gift",
-     "built a house",
-     "wrote a book"
+     "gave a name",
+     "drew a shape",
+     "made a promise"
     ]
    },
    {
@@ -2007,7 +2017,8 @@
   "tags": [
    "creation",
    "soul",
-   "sanctity"
+   "sanctity",
+   "life"
   ]
  },
  {
@@ -2029,7 +2040,7 @@
     "gap": "rose above His Throne",
     "d": [
      "left the Throne",
-     "built a Throne",
+     "feared the Throne",
      "hid the Throne"
     ]
    },
@@ -2038,13 +2049,14 @@
     "d": [
      "forgets",
      "fears",
-     "sells"
+     "ignores"
     ]
    }
   ],
   "shows": "Allah created the universe in six days and controls everything",
   "tags": [
-   "creation"
+   "creation",
+   "control"
   ]
  },
  {
@@ -2065,7 +2077,7 @@
    {
     "gap": "sun",
     "d": [
-     "star",
+     "rain",
      "cloud",
      "wind"
     ]
@@ -2118,24 +2130,25 @@
    {
     "gap": "clot",
     "d": [
-     "leaf",
-     "shell",
-     "grain"
+     "bone",
+     "seed",
+     "shell"
     ]
    },
    {
     "gap": "piece of flesh",
     "d": [
+     "piece of bone",
      "piece of clay",
-     "piece of cloth",
-     "piece of gold"
+     "piece of cloth"
     ]
    }
   ],
   "shows": "A baby develops in stages in the womb",
   "tags": [
    "soul",
-   "sanctity"
+   "sanctity",
+   "life"
   ]
  },
  {
@@ -2146,19 +2159,19 @@
   "quote": "After that, Allah sends an angel to record four things: your deeds, your lifespan, your provision (sustenance), and whether you will be blessed or wretched. Then, the soul is breathed into the body.",
   "gaps": [
    {
-    "gap": "angel",
+    "gap": "an angel",
     "d": [
-     "king",
-     "judge",
-     "guard"
+     "a king",
+     "a judge",
+     "a prophet"
     ]
    },
    {
     "gap": "lifespan",
     "d": [
-     "wealth",
      "rank",
-     "tribe"
+     "tribe",
+     "name"
     ]
    },
    {
@@ -2166,7 +2179,7 @@
     "d": [
      "punishment",
      "name",
-     "address"
+     "homeland"
     ]
    },
    {
@@ -2174,7 +2187,7 @@
     "d": [
      "sold",
      "buried",
-     "written"
+     "taught"
     ]
    }
   ],
@@ -2182,7 +2195,8 @@
   "tags": [
    "soul",
    "qadr",
-   "death"
+   "death",
+   "life"
   ]
  },
  {
@@ -2211,9 +2225,9 @@
    {
     "gap": "deceived",
     "d": [
-     "pleased",
      "paid",
-     "taught"
+     "taught",
+     "punished"
     ]
    },
    {
@@ -2221,7 +2235,7 @@
     "d": [
      "Marketplace",
      "Mosque",
-     "Journey"
+     "Palace"
     ]
    }
   ],
@@ -2250,22 +2264,22 @@
     "d": [
      "only believers",
      "only leaders",
-     "only rulers"
+     "only the rich"
     ]
    },
    {
     "gap": "judged",
     "d": [
      "ignored",
-     "paid",
-     "taxed"
+     "praised",
+     "forgotten"
     ]
    },
    {
     "gap": "wronged",
     "d": [
      "rewarded",
-     "hidden",
+     "forgiven",
      "counted"
     ]
    }
@@ -2294,9 +2308,9 @@
    {
     "gap": "hunger",
     "d": [
-     "wealth",
-     "fame",
-     "speed"
+     "thirst",
+     "disease",
+     "drought"
     ]
    },
    {
@@ -2545,11 +2559,11 @@
     ]
    },
    {
-    "gap": "living being",
+    "gap": "a living being",
     "d": [
-     "lifeless statue",
-     "angel",
-     "servant"
+     "a lifeless statue",
+     "an angel",
+     "a servant"
     ]
    }
   ],
@@ -2634,7 +2648,7 @@
     "d": [
      "eternal death",
      "a short life",
-     "a new job"
+     "a second chance"
     ]
    }
   ],
@@ -2668,11 +2682,11 @@
     ]
    },
    {
-    "gap": "eternal house",
+    "gap": "an eternal house",
     "d": [
-     "temporary shelter",
-     "stone castle",
-     "mud hut"
+     "a temporary shelter",
+     "a stone castle",
+     "a mud hut"
     ]
    },
    {
@@ -2697,11 +2711,11 @@
   "quote": "The idea of Purgatory is an invention that has no proof in the Bible",
   "gaps": [
    {
-    "gap": "invention",
+    "gap": "an invention",
     "d": [
-     "tradition",
-     "teaching",
-     "discovery"
+     "a tradition",
+     "a teaching",
+     "a discovery"
     ]
    },
    {
@@ -2854,9 +2868,9 @@
    {
     "gap": "blameless",
     "d": [
-     "wealthy",
-     "famous",
-     "proud"
+     "foolish",
+     "proud",
+     "careless"
     ]
    },
    {
@@ -2872,7 +2886,7 @@
     "d": [
      "doubted God",
      "ignored God",
-     "argued with God"
+     "feared kings"
     ]
    }
   ],
@@ -2947,7 +2961,9 @@
   ],
   "shows": "God is all-powerful",
   "tags": [
-   "power"
+   "power",
+   "suffering",
+   "evil"
   ]
  },
  {
@@ -2985,7 +3001,9 @@
   "shows": "The Bible guides Christians' lives",
   "tags": [
    "bible",
-   "guidance"
+   "guidance",
+   "suffering",
+   "comfort"
   ]
  },
  {
@@ -3053,7 +3071,8 @@
   "shows": "God is just and cares for the oppressed",
   "tags": [
    "justice",
-   "oppressed"
+   "oppressed",
+   "suffering"
   ]
  },
  {
@@ -3129,7 +3148,8 @@
   "shows": "Jesus taught forgiveness and not judging others",
   "tags": [
    "forgiveness",
-   "judging"
+   "judging",
+   "conscience"
   ]
  },
  {
@@ -3150,8 +3170,8 @@
    {
     "gap": "you did for Me",
     "d": [
-     "you did for God",
-     "you did for others",
+     "you did for them",
+     "you did for yourself",
      "you did for nothing"
     ]
    }
@@ -3160,7 +3180,8 @@
   "tags": [
    "charity",
    "needy",
-   "kindness"
+   "kindness",
+   "poor"
   ]
  },
  {
@@ -3312,7 +3333,8 @@
   "shows": "Christians should defend justice for the poor",
   "tags": [
    "justice",
-   "poor"
+   "poor",
+   "needy"
   ]
  },
  {
@@ -3355,9 +3377,9 @@
    {
     "gap": "Eye for eye",
     "d": [
-     "Life for life",
      "Word for word",
-     "Gift for gift"
+     "Gift for gift",
+     "Gold for gold"
     ]
    },
    {
@@ -3369,11 +3391,11 @@
     ]
    },
    {
-    "gap": "evil person",
+    "gap": "an evil person",
     "d": [
-     "wise person",
-     "poor person",
-     "old person"
+     "a wise person",
+     "a poor person",
+     "an old person"
     ]
    }
   ],
@@ -3531,14 +3553,14 @@
     "d": [
      "gave Me advice",
      "gave Me gold",
-     "gave Me a home"
+     "gave Me a job"
     ]
    },
    {
     "gap": "a drink",
     "d": [
-     "a coat",
-     "a bed",
+     "a loaf",
+     "a lamp",
      "a book"
     ]
    }
@@ -3547,7 +3569,8 @@
   "tags": [
    "charity",
    "needy",
-   "kindness"
+   "kindness",
+   "poor"
   ]
  },
  {
@@ -3568,9 +3591,9 @@
    {
     "gap": "Son of Man",
     "d": [
-     "Prince of Peace",
-     "King of Kings",
-     "Lamb of God"
+     "Lord of Hosts",
+     "Angel of the Lord",
+     "Master of the House"
     ]
    },
    {
@@ -3597,17 +3620,17 @@
    {
     "gap": "reaps",
     "d": [
-     "buys",
-     "hides",
-     "sells"
+     "wastes",
+     "loses",
+     "borrows"
     ]
    },
    {
     "gap": "sow",
     "d": [
-     "pray",
-     "wait",
-     "fear"
+     "spend",
+     "steal",
+     "share"
     ]
    }
   ],
@@ -3643,7 +3666,8 @@
   ],
   "shows": "Christians should examine their own actions",
   "tags": [
-   "conscience"
+   "conscience",
+   "judging"
   ]
  },
  {
@@ -3681,7 +3705,8 @@
   "shows": "Anger can lead to judgement",
   "tags": [
    "anger",
-   "judgement"
+   "judgement",
+   "consequences"
   ]
  },
  {
@@ -3703,8 +3728,8 @@
     "gap": "disputes",
     "d": [
      "prayers",
-     "debts",
-     "taxes"
+     "taxes",
+     "promises"
     ]
    },
    {
@@ -3757,7 +3782,8 @@
   "shows": "Christians should speak up for those who have no voice",
   "tags": [
    "justice",
-   "poor"
+   "poor",
+   "needy"
   ]
  },
  {
@@ -3800,17 +3826,17 @@
    {
     "gap": "Eye for eye",
     "d": [
-     "Life for life",
      "Word for word",
-     "Gift for gift"
+     "Gift for gift",
+     "Gold for gold"
     ]
    },
    {
     "gap": "tooth for tooth",
     "d": [
-     "hand for hand",
      "gift for gift",
-     "word for word"
+     "word for word",
+     "gold for gold"
     ]
    }
   ],
@@ -3924,7 +3950,8 @@
   ],
   "shows": "Worship should be sincere, in spirit and truth",
   "tags": [
-   "worship"
+   "worship",
+   "prayer"
   ]
  },
  {
@@ -4039,7 +4066,8 @@
   ],
   "shows": "Prayer should be sincere, not many words",
   "tags": [
-   "prayer"
+   "prayer",
+   "worship"
   ]
  },
  {
@@ -4202,8 +4230,8 @@
     "gap": "do not have love",
     "d": [
      "do not have time",
-     "do not have faith",
-     "do not have money"
+     "do not have money",
+     "do not have wisdom"
     ]
    },
    {
@@ -4354,15 +4382,16 @@
    {
     "gap": "to be seen",
     "d": [
-     "to be heard",
      "to be safe",
-     "to be fed"
+     "to be fed",
+     "to be paid"
     ]
    }
   ],
   "shows": "Prayer should not be done for show",
   "tags": [
-   "prayer"
+   "prayer",
+   "worship"
   ]
  },
  {
@@ -4559,7 +4588,7 @@
     "d": [
      "harsh",
      "cold",
-     "proud"
+     "careless"
     ]
    },
    {
@@ -4594,8 +4623,8 @@
    {
     "gap": "you did for Me",
     "d": [
-     "you did for God",
-     "you did for others",
+     "you did for them",
+     "you did for yourself",
      "you did for nothing"
     ]
    }
@@ -4604,7 +4633,8 @@
   "tags": [
    "charity",
    "needy",
-   "kindness"
+   "kindness",
+   "poor"
   ]
  },
  {
@@ -4759,9 +4789,9 @@
    {
     "gap": "draw the sword",
     "d": [
-     "tell a lie",
-     "break a law",
-     "pay a tax"
+     "sheathe the sword",
+     "sharpen the sword",
+     "sell the sword"
     ]
    },
    {
@@ -4872,7 +4902,8 @@
   ],
   "shows": "Christians should obey governing authorities",
   "tags": [
-   "authority"
+   "authority",
+   "obedience"
   ]
  },
  {
@@ -4971,7 +5002,7 @@
     "d": [
      "do harm",
      "do nothing",
-     "do justice"
+     "say little"
     ]
    },
    {
@@ -5140,7 +5171,8 @@
   ],
   "shows": "Christians should obey governing authorities",
   "tags": [
-   "authority"
+   "authority",
+   "obedience"
   ]
  },
  {
@@ -5183,7 +5215,7 @@
    {
     "gap": "Bless",
     "d": [
-     "Curse",
+     "Resist",
      "Ignore",
      "Report"
     ]
