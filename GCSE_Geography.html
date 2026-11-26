@@ -3045,12 +3045,21 @@ function showQuizEnd() {
     ? `<button class="btn-sm" onclick="startQuizCountdown(true)" style="width:100%;margin-top:.25rem">🎯 Hardest dates only (${hardCount})</button>`
     : '';
 
+  // Scoring 80%+ with the pick-an-answer format: nudge them up to typing it themselves
+  const challengeHtml = (quizTypeMode === 'pick' && total >= 8 && pct >= 80) ? `
+    <div style="background:var(--card);border:1.5px dashed var(--border2);border-radius:10px;padding:.7rem .8rem;margin:.75rem 0 .25rem;text-align:left">
+      <div style="font-size:.86rem;font-weight:700;margin-bottom:.2rem">Too easy? Challenge yourself</div>
+      <div style="font-size:.8rem;color:var(--muted);margin-bottom:.5rem">You got ${pct}% choosing from options. Typing the answer from memory is much harder and much closer to the exam.</div>
+      <button class="btn-go" style="width:100%;padding:.55rem" onclick="setDatesMode('type');startQuizCountdown(false)">⌨️ Type the year instead</button>
+    </div>` : '';
+
   document.getElementById('d-out').innerHTML = `
     <div class="quiz-end">
       <div class="end-score">${quizOK}/${total}</div>
       <div class="end-sub">${pct}% correct</div>
       <div class="end-grade ${cls}">${grade}</div>
       ${missedHtml}
+      ${challengeHtml}
       <div style="display:flex;flex-direction:column;gap:6px;margin-top:.5rem">
         <button class="btn-sm" style="width:100%" onclick="datesShowSetup()">🔄 New quiz</button>
         ${hardBtn}
