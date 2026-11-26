@@ -1124,6 +1124,7 @@ select.sel-p3{background:#EAE9FC;color:#2B267E;border-color:#4F46E5}
 .qz-card.qv-pick .qz-tag{background:#DEDBFB;color:#3C3489}
 .qz-card.qv-pick .quiz-prompt{color:#534AB7;font-weight:700;text-align:center}
 .qopts{grid-template-columns:1fr !important}
+.qz-ot{font-style:normal;font-family:system-ui,sans-serif;font-weight:700;font-size:.78rem;color:#534AB7;white-space:nowrap}
 .qopts .opt{text-align:left;font-family:Georgia,serif;font-style:italic;border-left:4px solid #AFA9EC;font-size:.92rem}
 :root.dark .qz-card.qv-shows,:root.dark .qz-card.qv-pick{background:var(--surface)}
 :root.dark .qz-card.qv-pick .qz-q{color:#CECBF6}
@@ -3082,7 +3083,7 @@ Promise.all([
   fetch('data/rs/dates.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
   fetch('data/rs/flashcards.json?v=20261125e').then(r => { if (!r.ok) throw new Error('rs/flashcards.json: ' + r.status); return r.json(); }),
   fetch('data/rs/kc.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
-  fetch('data/rs/sowa.json?v=20261125c').then(r => r.ok ? r.json() : []).catch(() => []),
+  fetch('data/rs/sowa.json?v=20261126a').then(r => r.ok ? r.json() : []).catch(() => []),
   fetch('data/rs/keywords.json?v=20261125b').then(r => r.ok ? r.json() : []).catch(() => []),
 ]).then(([eq, rq, dates, fd, kc, sw, kw]) => {
   const SLOT = SLOT_OF_UNIT;
@@ -6598,8 +6599,8 @@ function qzMake(kind, item, variant) {
     const w = qzSafe(item, 'shows', 3).map(x => x.shows);
     c = {item, targets:[item.shows], options:[item.shows].concat(w), html:escHtml(item.quote), tag:item.type, ask:'This quote shows that…', v:'shows'};
   } else if (kind === 'sowa' && variant === 'pick') {
-    const w = qzSafe(item, 'quote', 3, true).map(x => x.quote);
-    c = {item, targets:[item.quote], options:[item.quote].concat(w), html:'<b>' + escHtml(item.shows) + '</b>', tag:'', ask:'Which quote could you use to show this?', v:'pick'};
+    const wi = qzSafe(item, 'quote', 3, true), w = wi.map(x => x.quote), lab = {}; [item].concat(wi).forEach(x => { lab[x.quote] = x.lab || x.type; });
+    c = {item, targets:[item.quote], options:[item.quote].concat(w), html:'<b>' + escHtml(item.shows) + '</b>', tag:'', ask:'Which quote could you use to show this?', v:'pick', lab};
   } else if (kind === 'sowa') { const b = qzBlank(item); c = {item, targets:[b.gap], options:[b.gap].concat(b.d), html:b.html, tag:item.type, ask:'Fill the gap in the quote.', v:'gap'}; }
   else c = {item, targets:[item.term].concat(item.alt || []), options:[item.term].concat(item.d), html:escHtml(item.def), tag:item.cmd ? 'Command word' : 'Key word', ask:item.cmd ? 'Which command word is this?' : 'Which key word is this?'};
   c.opts = shuffle(c.options.slice()); return c;
@@ -6657,7 +6658,7 @@ function qzDraw() {
     ans = '<div style="margin-top:.75rem"><input id="qz-in" class="qz-in" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer…" onkeydown="if(event.key===\'Enter\')qzType()">' +
       '<button class="btn-go" id="qz-check" style="background:' + qzCol().solid + ';margin-top:.6rem;margin-bottom:0;padding:11px" onclick="qzType()">Check answer</button><div class="quiz-fb" id="qfb"></div></div>';
   } else {
-    ans = '<div class="opts' + (c.v === 'pick' ? ' qopts' : '') + '">' + c.opts.map((o, i) => '<button class="opt" onclick="qzPick(' + i + ')">' + escHtml(o) + '</button>').join('') + '</div><div class="quiz-fb" id="qfb"></div>';
+    ans = '<div class="opts' + (c.v === 'pick' ? ' qopts' : '') + '">' + c.opts.map((o, i) => '<button class="opt" onclick="qzPick(' + i + ')">' + escHtml(o) + (c.lab && c.lab[o] ? ' <span class="qz-ot">(' + escHtml(c.lab[o]) + ')</span>' : '') + '</button>').join('') + '</div><div class="quiz-fb" id="qfb"></div>';
   }
   document.getElementById('qz-body').innerHTML =
     '<div class="quiz-prog"><div class="quiz-fill" style="width:' + pct + '%;background:' + qzCol().solid + '"></div></div>' +
