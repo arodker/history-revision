@@ -2660,9 +2660,9 @@ const EX_SLIDES = {
     {k:'16mark', sec:'Migration', short:'Debate', pick:'You get a choice of two questions: answer one.'},
   ],
   p2a: [
-    {k:'4mark-consequence', short:'Consequence', pick:'You get TWO different questions: answer both.', n:'for each of two questions (8 marks in total)', two:1},
+    {k:'4mark-consequence', short:'Consequence', pick:'You get TWO different questions: answer both.', n:'for each of two questions (8 marks in total)', two:2},
     {k:'8mark-narrative', short:'Narrative'},
-    {k:'8mark-importance', short:'Importance', pick:'You get 3 options: choose 2 and answer both (8 + 8).', n:''}
+    {k:'8mark-importance', short:'Importance', pick:'You get THREE options: choose 2 and answer both (8 + 8).', n:'', qs:['Explain the importance of the Yalta Conference for the development of the Cold War. (8 marks)', 'Explain the importance of the Prague Spring for Soviet control of Eastern Europe. (8 marks)', 'Explain the importance of the Second Cold War for relations between East and West. (8 marks)']}
   ],
   p2b: [
     {short:'Describe', name:'Describe one feature x 2', m:'4 marks', t:'5 minutes', pick:'You get TWO different questions: answer both.', n:'4 marks in total',
@@ -2693,8 +2693,8 @@ const EX_SLIDES = {
 function exSlideData(d) {
   if (!d.k) return d;
   const q = EQ.find(x => x.paper === currentPaper && x.type === d.k), T = EX_TIME[d.k], heads = q ? (q.content || []).map(p => p.h) : [];
-  return {sec:d.sec, short:d.short, pick:d.pick, name:EX_TYPE_LBL[d.k].replace(/^\d+-mark /, '').replace(/^./, m => m.toUpperCase()), m:d.m || T.m, t:T.t, n:d.n === '' ? '' : (d.n || T.n), q:q ? (d.two ? [q.q, (EQ.filter(x => x.paper === currentPaper && x.type === d.k && x !== q)[3] || {}).q].filter(Boolean) : q.q) : '', steps:EX_CHK[d.k],
-    plan:heads.length > 1 || (heads[0] && heads[0] !== 'Points') ? heads : []};
+  return {sec:d.sec, short:d.short, pick:d.pick, name:EX_TYPE_LBL[d.k].replace(/^\d+-mark /, '').replace(/^./, m => m.toUpperCase()), m:d.m || T.m, t:T.t, n:d.n === '' ? '' : (d.n || T.n), q:d.qs ? d.qs : q ? (d.two ? [q.q].concat([0, 1, 2].slice(0, d.two - 1).map(j => (EQ.filter(x => x.paper === currentPaper && x.type === d.k && x !== q)[3 + j * 4] || {}).q)).filter(Boolean) : q.q) : '', steps:EX_CHK[d.k],
+    plan:(heads.length > 1 || (heads[0] && heads[0] !== 'Points')) && !heads.every(h => /^Para\s*\d/i.test(h)) ? heads : []};
 }
 function examStructuresRender() {
   const box = document.getElementById('e-struct'), btn = document.getElementById('e-struct-btn');
