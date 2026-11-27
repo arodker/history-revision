@@ -2600,6 +2600,21 @@ function stepExam(dir) {
   drawExamCard(pool[examPoolIdx]);
 }
 
+// Structure checklists, from the Revision Guide practice-question checklists
+const EX_CHK = {
+  '4mark': ['I have double checked if the question is asking about a difference or similarity.', 'I have stated a similarity/difference between the two groups.', 'I have added specific examples from each group to support my point.'],
+  '4mark-consequence': ['I have written about one clear consequence that came after the event.', 'I have included specific details for my consequence to support my point.', 'I have explained how my consequence was caused by the event in the question.'],
+  '8mark-narrative': ['I have planned out my story with a clear beginning, middle and end.', 'I have not written in the first person!', 'I have included lots of specific events and dates in my story.', 'I have included linking language so that it flows as a story. E.g. This event sparked\u2026', 'I have finished my story with a clear outcome. It doesn\u2019t just casually finish.'],
+  '8mark-importance': ['I have highlighted the event in the question and the focus for importance.', 'I have written two paragraphs for each option explaining why it was important.', 'I have included lots of specific detail to support my point.', 'I have analysed why the event is important specifically for the focus of the question.', 'I have ensured that my two paragraphs are different points. Consider writing one paragraph about why the event was important and another about why a consequence was important.'],
+  '12mark': ['I have written three paragraphs.', 'I have written about more than just the bullet points.', 'I have included specific and detailed evidence to support each point.', 'I have analysed my evidence to show why it answers the question.'],
+  '16mark': ['I have carefully planned reasons to agree and disagree with the statement.', 'I have either written two \u2018agree\u2019 and one \u2018disagree\u2019 paragraphs, or two \u2018disagree\u2019 and one \u2018agree\u2019 paragraph.', 'I have included specific and detailed evidence to support each point.', 'I have analysed my evidence to show why it agrees or disagrees with the question.', 'Grade 8/9: I have used relative importance at the end of each paragraph to show which argument I think is stronger.', 'I have written a clear conclusion that does not include new information but shows which side I am on and why.']
+};
+function examChecklistHtml(q) {
+  const items = EX_CHK[q.type];
+  if (!items) return '';
+  return '<div class="rhead">Structure checklist</div>' + items.map(t => `<label style="display:flex;gap:.5rem;align-items:flex-start;font-size:.84rem;line-height:1.5;margin:.35rem 0;cursor:pointer"><input type="checkbox" style="margin-top:.25rem;flex-shrink:0"><span>${t}</span></label>`).join('');
+}
+
 function drawExamCard(q) {
   currentExamQ = q;
   const typeLabel = {
@@ -2642,8 +2657,10 @@ function drawExamCard(q) {
         ${q.hints && q.hints.length ? `<div style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem"><span style="font-style:italic">You may use:</span><ul style="margin:.35rem 0 0 1rem;padding:0">${q.hints.map(h => `<li style="font-weight:400">${h}</li>`).join('')}</ul></div>` : ''}
        <div class="btn-row">
           <button class="btn-sm" onclick="tog('er');this.textContent=this.textContent==='🔍 Show indicative content'?'🔍 Hide indicative content':'🔍 Show indicative content'">🔍 Show indicative content</button>
+          ${EX_CHK[q.type] ? `<button class="btn-sm" onclick="tog('ec');this.textContent=this.textContent==='📋 Structure checklist'?'📋 Hide structure checklist':'📋 Structure checklist'">📋 Structure checklist</button>` : ''}
 
         </div>
+        <div class="reveal" id="ec">${examChecklistHtml(q)}</div>
         <div class="reveal" id="er">${contentHtml}</div>
       </div>
     </div>`;
