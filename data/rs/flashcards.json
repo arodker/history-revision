@@ -8708,7 +8708,7 @@
   "paper": "p2",
   "unit": "Peace and Conflict",
   "front": "What are the conditions of a Just War?",
-  "p1": "Just War theory: a war should be fought only for good reason and in the right way → a good reason such as self-defence or ending injustice.",
+  "p1": "Just War theory: first thought of by St Augustine and developed by St Aquinas → a war should be fought only for good reason and in the right way, such as self-defence or ending injustice.",
   "p2": "Started by the government, backed by the United Nations → the last resort, with a good chance of winning, fought to bring peace.",
   "p3": "Civilians must not be targeted → methods should be enough to win but no more, keeping suffering to a minimum.",
   "hints": [
@@ -8717,7 +8717,7 @@
    "Civilians"
   ],
   "s": [
-   "Just War theory: a war should be fought only for good reason and in the right way → a good reason such as self-defence or ending injustice.",
+   "Just War theory: first thought of by St Augustine and developed by St Aquinas → a war should be fought only for good reason and in the right way, such as self-defence or ending injustice.",
    "Started by the government, backed by the United Nations → the last resort, with a good chance of winning, fought to bring peace.",
    "Civilians must not be targeted → methods should be enough to win but no more, keeping suffering to a minimum."
   ],
@@ -9120,46 +9120,6 @@
   "k": 0
  },
  {
-    "no": 176,
-    "paper": "p2",
-    "unit": "Peace and Conflict",
-    "front": "Where does Just War theory come from?",
-    "p1": "Just War theory was first thought of by St Augustine.",
-    "p2": "It was developed by St Aquinas.",
-    "p3": "",
-    "hints": [
-      "Augustine",
-      "Aquinas"
-    ],
-    "s": [
-      "Just War theory was first thought of by St Augustine.",
-      "It was developed by St Aquinas."
-    ],
-    "fill": [
-      {
-        "p": 1,
-        "gap": "St Augustine",
-        "alt": [],
-        "d": [
-          "St Paul",
-          "St Francis",
-          "St Peter"
-        ]
-      },
-      {
-        "p": 2,
-        "gap": "St Aquinas",
-        "alt": [],
-        "d": [
-          "St Benedict",
-          "St Anselm",
-          "St Ignatius"
-        ]
-      }
-    ],
-    "k": 0
-  },
-  {
     "no": 236,
     "paper": "p2",
     "unit": "Peace and Conflict",
