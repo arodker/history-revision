@@ -2704,7 +2704,31 @@ function examStructuresRender() {
   box.innerHTML = '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.8rem">' + chips + '</div>' +
     '<div id="es-track" onscroll="examSlideSync()" style="display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch">' + slides.join('') + '</div>' +
     '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:.6rem">' + arrow(-1, '\u2190') + '<span id="es-count" style="font-size:.8rem;font-weight:700;color:var(--muted)"></span>' + arrow(1, '\u2192') + '</div>';
-  examSlideSync();
+  examSlideSync(); examSlideDrag();
+}
+function examSlideDrag() {
+  const t = document.getElementById('es-track'); if (!t || t._drag) return; t._drag = 1;
+  let down = false, x0 = 0, s0 = 0, moved = false;
+  t.style.cursor = 'grab';
+  t.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button !== 0) return; down = true; moved = false; x0 = e.clientX; s0 = t.scrollLeft; });
+  window.addEventListener('pointermove', e => {
+    if (!down) return;
+    const dx = e.clientX - x0;
+    if (!moved && Math.abs(dx) < 5) return;
+    if (!moved) { moved = true; t.style.scrollSnapType = 'none'; t.style.cursor = 'grabbing'; t.style.userSelect = 'none'; }
+    t.scrollLeft = s0 - dx;
+  });
+  window.addEventListener('pointerup', e => {
+    if (!down) return; down = false;
+    if (!moved) return;
+    const dx = e.clientX - x0, w = t.clientWidth, n = t.children.length;
+    let i = Math.round(s0 / w);
+    if (Math.abs(dx) > w * 0.18) i += dx < 0 ? 1 : -1;
+    i = Math.max(0, Math.min(n - 1, i));
+    t.style.cursor = 'grab'; t.style.userSelect = '';
+    t.scrollTo({left: i * w, behavior: 'smooth'});
+    setTimeout(() => { t.style.scrollSnapType = 'x mandatory'; }, 400);
+  });
 }
 function examSlideIdx() { const t = document.getElementById('es-track'); return t && t.clientWidth ? Math.round(t.scrollLeft / t.clientWidth) : 0; }
 function examSlideGo(n) { const t = document.getElementById('es-track'); if (t) t.scrollTo({left: n * t.clientWidth, behavior: 'smooth'}); }
