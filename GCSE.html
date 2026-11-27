@@ -2627,10 +2627,7 @@ const EX_COL = {p1:['#F0B429','#3B2A00','#FEF9E7','#9A6B00'], p2a:['#D4537E','#f
 // k = key into EX_CHK/EX_TIME/EQ for types in the question bank; otherwise own steps, time and sample question.
 const EX_SLIDES = {
   p1: [
-    {k:'4mark', sec:'Migration', short:'Similarity / difference'},
-    {k:'12mark', sec:'Migration', short:'Explain why'},
-    {k:'16mark', sec:'Migration', short:'Debate'},
-    {sec:'Notting Hill', short:'Describe', name:'Describe one feature x 2', m:'4 marks', t:'5 minutes', n:'for two features',
+    {sec:'Notting Hill', short:'Describe', name:'Describe one feature x 2', m:'4 marks', t:'5 minutes', pick:'Do this TWICE: describe two features.',
       q:'Describe two features of the Notting Hill riots of 1958. (4 marks)',
       steps:['State one feature relevant to the question.', 'Develop your feature with detailed knowledge.', 'Do the same for a second feature.']},
     {sec:'Notting Hill', short:'How useful', name:'How useful are the sources?', m:'8 marks', t:'15 minutes',
@@ -2638,25 +2635,28 @@ const EX_SLIDES = {
       steps:['Say what Source A tells you about the enquiry.', 'Support this with a quotation.', 'Include detailed knowledge to support the source.', 'Say why the provenance of the source makes it trustworthy or not.', 'Say overall how useful the source is.', 'Repeat this process for Source B.']},
     {sec:'Notting Hill', short:'Follow up', name:'How would you follow up a source?', m:'4 marks', t:'5 minutes',
       q:'How could you follow up Source B to find out more about black activism in the Notting Hill area? (4 marks)',
-      steps:['Pick a quotation or detail that you could ask a question about.', 'Make sure your question is relevant to the enquiry and is a historical question.', 'Think about what primary source could help you answer your question, for example the West Indian Gazette.']}
+      steps:['Pick a quotation or detail that you could ask a question about.', 'Make sure your question is relevant to the enquiry and is a historical question.', 'Think about what primary source could help you answer your question, for example the West Indian Gazette.']},
+    {k:'4mark', sec:'Migration', short:'Similarity / difference'},
+    {k:'12mark', sec:'Migration', short:'Explain why'},
+    {k:'16mark', sec:'Migration', short:'Debate', pick:'You get a choice of two questions: answer one.'},
   ],
   p2a: [
-    {k:'4mark-consequence', short:'Consequence'},
+    {k:'4mark-consequence', short:'Consequence', pick:'Do this TWICE: write about two consequences.'},
     {k:'8mark-narrative', short:'Narrative'},
-    {k:'8mark-importance', short:'Importance'}
+    {k:'8mark-importance', short:'Importance', pick:'You get 3 options: choose 2 and answer both (8 + 8).', n:''}
   ],
   p2b: [
-    {short:'Describe', name:'Describe one feature x 2', m:'4 marks', t:'5 minutes', n:'for two features',
+    {short:'Describe', name:'Describe one feature x 2', m:'4 marks', t:'5 minutes', pick:'Do this TWICE: describe two features.',
       q:'Describe two features of the Spanish Armada. (4 marks)',
       steps:['State one feature relevant to the question.', 'Develop your feature with detailed knowledge.', 'Do the same for a second feature.']},
     {k:'12mark', short:'Explain why'},
-    {k:'16mark', short:'Debate'}
+    {k:'16mark', short:'Debate', m:'16 marks', pick:'You get a choice of two questions: answer one. No SPaG marks on this question.'}
   ],
   p3: [
     {short:'Infer', name:'Give two things you can infer', m:'4 marks', t:'5 minutes',
       q:'Give two things you can infer from Source A about the early development of the Nazi Party in the 1920s. (4 marks)',
       steps:['Select a source detail that is linked to the question focus.', 'Use the source detail to learn about the focus. This is your inference.', 'Write your inference down without just rephrasing the source detail.', 'Do this twice.']},
-    {k:'12mark', short:'Explain why'},
+    {k:'12mark', short:'Explain why', pick:'You get a choice of question: answer one.'},
     {short:'How useful', name:'How useful are the sources?', m:'8 marks', t:'15 minutes',
       q:'How useful are Sources B and C for an enquiry into the standard of living of German workers in Nazi Germany? (8 marks)',
       steps:['Highlight the enquiry in the question.', 'Say what Source B tells you about the enquiry.', 'Support this with a quotation.', 'Include detailed knowledge to support the source.', 'Say why the provenance of the source makes it trustworthy or not.', 'Say overall how useful the source is.', 'Repeat this process for Source C.']},
@@ -2674,7 +2674,7 @@ const EX_SLIDES = {
 function exSlideData(d) {
   if (!d.k) return d;
   const q = EQ.find(x => x.paper === currentPaper && x.type === d.k), T = EX_TIME[d.k], heads = q ? (q.content || []).map(p => p.h) : [];
-  return {sec:d.sec, short:d.short, name:EX_TYPE_LBL[d.k].replace(/^\d+-mark /, '').replace(/^./, m => m.toUpperCase()), m:T.m, t:T.t, n:T.n, q:q ? q.q : '', steps:EX_CHK[d.k],
+  return {sec:d.sec, short:d.short, pick:d.pick, name:EX_TYPE_LBL[d.k].replace(/^\d+-mark /, '').replace(/^./, m => m.toUpperCase()), m:d.m || T.m, t:T.t, n:d.n === '' ? '' : T.n, q:q ? q.q : '', steps:EX_CHK[d.k],
     plan:heads.length > 1 || (heads[0] && heads[0] !== 'Points') ? heads : []};
 }
 function examStructuresRender() {
@@ -2692,6 +2692,7 @@ function examStructuresRender() {
         '<span style="background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:1.15rem;padding:.3rem .8rem;border-radius:999px">' + d.m + '</span>' +
         '<span style="background:' + c[2] + ';color:' + c[3] + ';border:2px solid ' + c[0] + ';font-weight:800;font-size:1.15rem;padding:.22rem .8rem;border-radius:999px">⏱ ' + d.t + '</span>' +
         (d.n ? '<span style="font-size:.78rem;color:var(--muted);font-weight:600">' + d.n + '</span>' : '') + '</div>' +
+      (d.pick ? '<div style="background:' + c[2] + ';color:' + c[3] + ';border-left:5px solid ' + c[0] + ';border-radius:6px;font-weight:800;font-size:.95rem;line-height:1.4;padding:.55rem .7rem;margin-bottom:.8rem">\u261D ' + d.pick + '</div>' : '') +
       '<div style="' + lab + '">Sample question</div>' +
       '<div class="card-q" style="font-weight:600;margin:.2rem 0 .7rem">' + d.q + '</div>' +
       (d.plan && d.plan.length ? '<div style="' + lab + '">How an answer is organised</div><ul style="padding-left:1.1rem;margin:.25rem 0 .7rem;font-size:.84rem;line-height:1.6">' + d.plan.map(h => '<li>' + h + '</li>').join('') + '</ul>' : '') +
