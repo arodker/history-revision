@@ -6889,7 +6889,7 @@ const EX_PARTS = {
     steps:[
       ['Three sentences','Write three separate sentences, one point in each.'],
       ['Leave a gap','Leave a line between the points so the examiner can see three.'],
-      ['Keep it short','State each point. You do not need to explain or develop it.']],
+      ['Keep it short','Give each point briefly. You do not need to explain or develop it.']],
     stems:['One belief is that ...','Another belief is that ...','A third belief is that ...'],
     avoid:['A list of words or phrases in one line can only reach one mark.','Repeating the same point in different words.','Spending time on development. It earns nothing in part (a).'],
     n:3, nTxt:'3 sentences'},
@@ -6975,7 +6975,7 @@ const EX_TOOL = {
 const EX = {part:'a', q:null, mode:null, bank:null, t:'', off:new Set()};
 function exLoad(cb) {
   if (EX.bank) { cb(); return; }
-  fetch('data/rs/exam.json?v=20261126a').then(r => r.json()).then(j => { EX.bank = j; cb(); }).catch(() => { EX.bank = []; cb(); });
+  fetch('data/rs/exam.json?v=20261127a').then(r => r.json()).then(j => { EX.bank = j; cb(); }).catch(() => { EX.bank = []; cb(); });
 }
 function exOpen() { showScreen('s-exam'); EX.q = null; EX.mode = null; EX.off = new Set(); exLoad(exRender); }
 function exMenu() { EX.mode = null; exRender(); }
