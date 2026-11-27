@@ -2626,17 +2626,16 @@ const EX_COL = {p1:['#F0B429','#3B2A00','#FEF9E7','#9A6B00'], p2a:['#D4537E','#f
 function examStructuresRender() {
   const box = document.getElementById('e-struct'), btn = document.getElementById('e-struct-btn');
   if (!box || !btn) return;
-  const info = P[currentPaper], c = EX_COL[currentPaper], types = info.qtypes.map(t => t[0]).filter(t => t !== 'all' && EX_CHK[t]);
+  const info = P[currentPaper], c = EX_COL[currentPaper], types = info.qtypes.map(t => t[0]).filter(t => t !== 'all' && EX_CHK[t] && EQ.some(x => x.paper === currentPaper && x.type === t));
   btn.textContent = '\u{1F4CB} Structures for ' + info.label.split(' \u2013 ')[0];
   const lab = 'font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em';
-  box.innerHTML = types.map(t => {
-    const q = EQ.find(x => x.paper === currentPaper && x.type === t);
-    if (!q) return '';
-    const T = EX_TIME[t];
+  const name = t => EX_TYPE_LBL[t].replace(/^\d+-mark /, '').replace(/^./, m => m.toUpperCase());
+  const slides = types.map(t => {
+    const q = EQ.find(x => x.paper === currentPaper && x.type === t), T = EX_TIME[t];
     const heads = (q.content || []).map(p => p.h), plan = heads.length > 1 || (heads[0] && heads[0] !== 'Points') ? heads.map(h => '<li>' + h + '</li>').join('') : '';
     const items = EX_CHK[t].map((x, n) => '<div style="display:flex;gap:.6rem;align-items:flex-start;margin:.5rem 0;font-size:.88rem;line-height:1.5"><span style="flex-shrink:0;width:1.45rem;height:1.45rem;border-radius:50%;background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:.05rem">' + (n + 1) + '</span><span>' + x + '</span></div>').join('');
-    return '<div style="' + (t === types[0] ? '' : 'border-top:1px solid var(--subtle);padding-top:1rem;margin-top:1rem') + '">' +
-      '<div style="font-size:1rem;font-weight:700;margin-bottom:.5rem">' + EX_TYPE_LBL[t].replace(/^\d+-mark /, '').replace(/^./, m => m.toUpperCase()) + '</div>' +
+    return '<div class="es-slide" style="flex:0 0 100%;box-sizing:border-box;scroll-snap-align:start;padding:.2rem .15rem .4rem">' +
+      '<div style="font-size:1.05rem;font-weight:700;margin-bottom:.5rem">' + name(t) + '</div>' +
       '<div style="display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;margin-bottom:.8rem">' +
         '<span style="background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:1.15rem;padding:.3rem .8rem;border-radius:999px">' + T.m + '</span>' +
         '<span style="background:' + c[2] + ';color:' + c[3] + ';border:2px solid ' + c[0] + ';font-weight:800;font-size:1.15rem;padding:.22rem .8rem;border-radius:999px">\u23F1 ' + T.t + '</span>' +
@@ -2645,14 +2644,30 @@ function examStructuresRender() {
       '<div class="card-q" style="font-weight:600;margin:.2rem 0 .7rem">' + q.q + '</div>' +
       (plan ? '<div style="' + lab + '">How an answer is organised</div><ul style="padding-left:1.1rem;margin:.25rem 0 .7rem;font-size:.84rem;line-height:1.6">' + plan + '</ul>' : '') +
       '<div style="' + lab + '">Follow these steps</div>' + items + '</div>';
-  }).join('');
+  });
+  if (!slides.length) { box.innerHTML = ''; return; }
+  const chips = types.map((t, n) => '<button type="button" class="es-chip" data-i="' + n + '" onclick="examSlideGo(' + n + ')" style="flex:1;min-width:0;padding:.4rem .3rem;font-size:.78rem;font-weight:700;border-radius:999px;border:2px solid ' + c[0] + ';cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + name(t) + '</button>').join('');
+  const arrow = (d, ch) => '<button type="button" class="btn-sm" aria-label="' + (d < 0 ? 'Previous' : 'Next') + ' slide" onclick="examSlideStep(' + d + ')" style="padding:.45rem .9rem;font-size:1rem;font-weight:700">' + ch + '</button>';
+  box.innerHTML = '<div style="display:flex;gap:.4rem;margin-bottom:.8rem">' + chips + '</div>' +
+    '<div id="es-track" onscroll="examSlideSync()" style="display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch">' + slides.join('') + '</div>' +
+    '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:.6rem">' + arrow(-1, '\u2190') + '<span id="es-count" style="font-size:.8rem;font-weight:700;color:var(--muted)"></span>' + arrow(1, '\u2192') + '</div>';
+  examSlideSync();
+}
+function examSlideIdx() { const t = document.getElementById('es-track'); return t && t.clientWidth ? Math.round(t.scrollLeft / t.clientWidth) : 0; }
+function examSlideGo(n) { const t = document.getElementById('es-track'); if (t) t.scrollTo({left: n * t.clientWidth, behavior: 'smooth'}); }
+function examSlideStep(d) { const t = document.getElementById('es-track'); if (!t) return; const n = t.children.length; examSlideGo(Math.max(0, Math.min(n - 1, examSlideIdx() + d))); }
+function examSlideSync() {
+  const t = document.getElementById('es-track'); if (!t) return;
+  const i = examSlideIdx(), c = EX_COL[currentPaper];
+  document.querySelectorAll('.es-chip').forEach((b, n) => { b.style.background = n === i ? c[0] : 'transparent'; b.style.color = n === i ? c[1] : 'var(--text)'; });
+  const k = document.getElementById('es-count'); if (k) k.textContent = (i + 1) + ' of ' + t.children.length;
 }
 function examStructuresToggle() {
   const box = document.getElementById('e-struct');
   if (!box) return;
   const open = box.style.display === 'none';
-  if (open) examStructuresRender();
   box.style.display = open ? 'block' : 'none';
+  if (open) { examStructuresRender(); examSlideSync(); }
   document.getElementById('e-struct-btn').setAttribute('aria-expanded', open ? 'true' : 'false');
 }
 function drawExamCard(q) {
