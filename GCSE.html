@@ -4519,7 +4519,7 @@ const XP_LEVELS = [
   {t:'Sixties rockstar',e:'🎸',xp:15600}, {t:'Modern Briton',e:'📱',xp:18600}, {t:'Space age pioneer',e:'🚀',xp:21800}, {t:'God of History',e:'🌌',xp:25000}
 ];
 // Change a number here to retune the game.
-const XP_RULE = {flash:10, date:5, rapid:5, wrong:0, repeat:2, runLen:5, runBonus:5, parent:20, cap:500};
+const XP_RULE = {flash:10, date:5, rapid:5, wrong:0, repeat:2, runLen:5, runBonus:5, parent:20, cap:500, bossBonus:[10, 20, 30, 40, 50, 75]};
 const LS_XP = 'gcse_xp';
 let xpRun = 0, xpCapShown = false, xpPopTimer = null;
 
@@ -5814,10 +5814,17 @@ function bossMark(ok) {
 function bossDeadHtml(B, g) {
   const ps = ['💥','✨','⭐','💫','💥','✨','⭐','💫'].map((p, i) => '<span class="boss-pt" style="--a:' + (i * 45) + 'deg;--d:' + (62 + (i % 3) * 20) + 'px">' + p + '</span>').join('');
   return '<div class="boss-box dead"><span class="boss-em boss-die">' + B[1] + '</span><div class="boss-r"><div class="boss-nm">' + B[0] + ' <small>Lv ' + (g.lv + 1) + '</small></div><div class="boss-bar"><i style="width:0%"></i></div><div class="boss-hp">0 of ' + g.max + ' HP</div></div>' + ps + '</div>' +
-    '<div class="boss-ko">K.O.</div><div class="boss-res ok" style="text-align:center">' + B[0] + ' is defeated</div>';
+    '<div class="boss-ko">K.O.</div><div class="boss-res ok" style="text-align:center">' + B[0] + ' is defeated' + (g.bonus ? ' <small>+' + g.bonus + ' XP bonus</small>' : '') + '</div>';
 }
 function bossDeath() {
   const g = ARC.g;
+  // Bonus for beating this boss, on top of the XP for each question. It grows with each boss.
+  if (g.bonusLv !== g.lv) {
+    g.bonusLv = g.lv; g.bonus = 0;
+    const want = XP_RULE.bossBonus[Math.min(g.lv, XP_RULE.bossBonus.length - 1)];
+    g.bonus = xpGrant(want, BOSSES[g.lv % BOSSES.length][0] + ' defeated');
+    g.xp = (g.xp || 0) + g.bonus;
+  }
   g.phase = 'dead'; g.dying = true; bossRender();
   const s = document.getElementById('s-arcade');
   const shake = () => { if (s) { s.classList.remove('arc-shake'); void s.offsetWidth; s.classList.add('arc-shake'); } };
