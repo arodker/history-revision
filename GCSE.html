@@ -2712,8 +2712,8 @@ function examStructuresRender() {
         '<span style="background:' + c[2] + ';color:' + c[3] + ';border:2px solid ' + c[0] + ';font-weight:800;font-size:1.15rem;padding:.22rem .8rem;border-radius:999px">⏱ ' + d.t + '</span>' +
         (d.n ? '<span style="font-size:.78rem;color:var(--muted);font-weight:600">' + d.n + '</span>' : '') + '</div>' +
       (d.pick ? '<div style="background:' + c[2] + ';color:' + c[3] + ';border-left:5px solid ' + c[0] + ';border-radius:6px;font-weight:800;font-size:.95rem;line-height:1.4;padding:.55rem .7rem;margin-bottom:.8rem">\u261D ' + d.pick + '</div>' : '') +
-      '<div style="' + lab + '">Sample question' + (Array.isArray(d.q) ? 's' : '') + '</div>' +
-      (Array.isArray(d.q) ? d.q.map((x, n) => '<div class="card-q" style="font-weight:600;margin:.2rem 0 ' + (n === d.q.length - 1 ? '.7rem' : '.35rem') + '"><span style="color:' + c[3] + '">' + (n + 1) + '.</span> ' + x + '</div>').join('') : '<div class="card-q" style="font-weight:600;margin:.2rem 0 .7rem">' + d.q + '</div>') +
+      '<div style="' + lab + '">Sample question</div>' +
+      '<div class="card-q" style="font-weight:600;margin:.2rem 0 .7rem">' + (Array.isArray(d.q) ? d.q[0] : d.q) + '</div>' +
       (d.plan && d.plan.length ? '<div style="' + lab + '">How an answer is organised</div><ul style="padding-left:1.1rem;margin:.25rem 0 .7rem;font-size:.84rem;line-height:1.6">' + d.plan.map(h => '<li>' + h + '</li>').join('') + '</ul>' : '') +
       '<div style="' + lab + '">Follow these steps</div>' + items + '</div>';
   });
