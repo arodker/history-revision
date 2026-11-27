@@ -2605,32 +2605,46 @@ function stepExam(dir) {
 
 // Structure checklists, from the Revision Guide practice-question checklists
 const EX_CHK = {
-  '4mark': ['I have double checked if the question is asking about a difference or similarity.', 'I have stated a similarity/difference between the two groups.', 'I have added specific examples from each group to support my point.'],
-  '4mark-consequence': ['I have written about one clear consequence that came after the event.', 'I have included specific details for my consequence to support my point.', 'I have explained how my consequence was caused by the event in the question.'],
-  '8mark-narrative': ['I have planned out my story with a clear beginning, middle and end.', 'I have not written in the first person!', 'I have included lots of specific events and dates in my story.', 'I have included linking language so that it flows as a story. E.g. This event sparked\u2026', 'I have finished my story with a clear outcome. It doesn\u2019t just casually finish.'],
-  '8mark-importance': ['I have highlighted the event in the question and the focus for importance.', 'I have written two paragraphs for each option explaining why it was important.', 'I have included lots of specific detail to support my point.', 'I have analysed why the event is important specifically for the focus of the question.', 'I have ensured that my two paragraphs are different points. Consider writing one paragraph about why the event was important and another about why a consequence was important.'],
-  '12mark': ['I have written three paragraphs.', 'I have written about more than just the bullet points.', 'I have included specific and detailed evidence to support each point.', 'I have analysed my evidence to show why it answers the question.'],
-  '16mark': ['I have carefully planned reasons to agree and disagree with the statement.', 'I have either written two \u2018agree\u2019 and one \u2018disagree\u2019 paragraphs, or two \u2018disagree\u2019 and one \u2018agree\u2019 paragraph.', 'I have included specific and detailed evidence to support each point.', 'I have analysed my evidence to show why it agrees or disagrees with the question.', 'Grade 8/9: I have used relative importance at the end of each paragraph to show which argument I think is stronger.', 'I have written a clear conclusion that does not include new information but shows which side I am on and why.']
+  '4mark': ['Check whether the question asks for a similarity or a difference.', 'State one similarity or difference between the two groups.', 'Back it up with a specific example from each group.'],
+  '4mark-consequence': ['Write about one clear consequence that came after the event.', 'Include specific details to support your consequence.', 'Explain how the event in the question caused your consequence.'],
+  '8mark-narrative': ['Plan a clear beginning, middle and end.', 'Do not write in the first person.', 'Include lots of specific events and dates.', 'Use linking language so the story flows, for example \u201CThis event sparked\u2026\u201D.', 'Finish with a clear outcome. Do not let it casually fizzle out.'],
+  '8mark-importance': ['Highlight the event in the question and the focus for importance.', 'Write two paragraphs for each option, explaining why it was important.', 'Include lots of specific detail to support each point.', 'Analyse why the event is important for the focus of the question.', 'Make your two paragraphs different points, for example one on why the event was important and one on why a consequence was important.'],
+  '12mark': ['Write three paragraphs.', 'Write about more than just the bullet points.', 'Include specific, detailed evidence to support each point.', 'Analyse your evidence to show why it answers the question.'],
+  '16mark': ['Plan reasons to agree and disagree with the statement.', 'Write two \u201Cagree\u201D and one \u201Cdisagree\u201D paragraph, or two \u201Cdisagree\u201D and one \u201Cagree\u201D paragraph.', 'Include specific, detailed evidence to support each point.', 'Analyse your evidence to show why it agrees or disagrees with the question.', 'Grade 8/9: end each paragraph with relative importance, to show which argument you think is stronger.', 'Write a clear conclusion with no new information, showing which side you are on and why.']
 };
 const EX_TYPE_LBL = {'4mark':'4-mark similarity/difference','4mark-consequence':'4-mark consequence','8mark-narrative':'8-mark narrative','8mark-importance':'8-mark importance','12mark':'12-mark explain why','16mark':'16-mark debate'};
-// Timings as given in the Revision Guide practice-question headings
-const EX_TIME = {'4mark':'5 minutes','4mark-consequence':'10 minutes for two consequences (8 marks)','8mark-narrative':'15 minutes','8mark-importance':'25 minutes for two options (8 + 8 marks)','12mark':'15 minutes','16mark':'25 minutes (16 + 4 marks)'};
-// Structures for the current paper: for each question type, a sample question, how it breaks down, and the guide checklist
+// Marks and timings as given in the Revision Guide practice-question headings
+const EX_TIME = {
+  '4mark': {m:'4 marks', t:'5 minutes'},
+  '4mark-consequence': {m:'4 marks', t:'10 minutes', n:'for two consequences (8 marks)'},
+  '8mark-narrative': {m:'8 marks', t:'15 minutes'},
+  '8mark-importance': {m:'8 marks', t:'25 minutes', n:'for two options (8 + 8 marks)'},
+  '12mark': {m:'12 marks', t:'15 minutes'},
+  '16mark': {m:'16 + 4 marks', t:'25 minutes'}
+};
+const EX_COL = {p1:['#F0B429','#3B2A00','#FEF9E7','#9A6B00'], p2a:['#D4537E','#fff','#FBEAF0','#993556'], p2b:['#1D9E75','#fff','#E1F5EE','#0F6E56'], p3:['#378ADD','#fff','#E6F1FB','#0C447C']};
 function examStructuresRender() {
   const box = document.getElementById('e-struct'), btn = document.getElementById('e-struct-btn');
   if (!box || !btn) return;
-  const info = P[currentPaper], types = info.qtypes.map(t => t[0]).filter(t => t !== 'all' && EX_CHK[t]);
+  const info = P[currentPaper], c = EX_COL[currentPaper], types = info.qtypes.map(t => t[0]).filter(t => t !== 'all' && EX_CHK[t]);
   btn.textContent = '\u{1F4CB} Structures for ' + info.label.split(' \u2013 ')[0];
+  const lab = 'font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em';
   box.innerHTML = types.map(t => {
     const q = EQ.find(x => x.paper === currentPaper && x.type === t);
     if (!q) return '';
+    const T = EX_TIME[t];
     const heads = (q.content || []).map(p => p.h), plan = heads.length > 1 || (heads[0] && heads[0] !== 'Points') ? heads.map(h => '<li>' + h + '</li>').join('') : '';
-    const items = EX_CHK[t].map(x => '<label style="display:flex;gap:.5rem;align-items:flex-start;font-size:.84rem;line-height:1.5;margin:.35rem 0;cursor:pointer"><input type="checkbox" style="margin-top:.25rem;flex-shrink:0"><span>' + x + '</span></label>').join('');
-    return '<div style="' + (t === types[0] ? '' : 'border-top:1px solid var(--subtle);padding-top:.8rem;margin-top:.8rem') + '"><div class="meta" style="margin-bottom:.4rem"><span class="tag t-grey">' + EX_TYPE_LBL[t] + '</span> <span style="font-size:.75rem;color:var(--muted)">\u23F1 ' + EX_TIME[t] + '</span></div>' +
-      '<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Sample question</div>' +
-      '<div class="card-q" style="font-weight:600;margin:.2rem 0 .5rem">' + q.q + '</div>' +
-      (plan ? '<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">How an answer is organised</div><ul style="padding-left:1.1rem;margin:.25rem 0 .6rem;font-size:.84rem;line-height:1.6">' + plan + '</ul>' : '') +
-      '<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Checklist</div>' + items + '</div>';
+    const items = EX_CHK[t].map((x, n) => '<div style="display:flex;gap:.6rem;align-items:flex-start;margin:.5rem 0;font-size:.88rem;line-height:1.5"><span style="flex-shrink:0;width:1.45rem;height:1.45rem;border-radius:50%;background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:.05rem">' + (n + 1) + '</span><span>' + x + '</span></div>').join('');
+    return '<div style="' + (t === types[0] ? '' : 'border-top:1px solid var(--subtle);padding-top:1rem;margin-top:1rem') + '">' +
+      '<div style="font-size:1rem;font-weight:700;margin-bottom:.5rem">' + EX_TYPE_LBL[t].replace(/^\d+-mark /, '').replace(/^./, m => m.toUpperCase()) + '</div>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;margin-bottom:.8rem">' +
+        '<span style="background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:1.15rem;padding:.3rem .8rem;border-radius:999px">' + T.m + '</span>' +
+        '<span style="background:' + c[2] + ';color:' + c[3] + ';border:2px solid ' + c[0] + ';font-weight:800;font-size:1.15rem;padding:.22rem .8rem;border-radius:999px">\u23F1 ' + T.t + '</span>' +
+        (T.n ? '<span style="font-size:.78rem;color:var(--muted);font-weight:600">' + T.n + '</span>' : '') + '</div>' +
+      '<div style="' + lab + '">Sample question</div>' +
+      '<div class="card-q" style="font-weight:600;margin:.2rem 0 .7rem">' + q.q + '</div>' +
+      (plan ? '<div style="' + lab + '">How an answer is organised</div><ul style="padding-left:1.1rem;margin:.25rem 0 .7rem;font-size:.84rem;line-height:1.6">' + plan + '</ul>' : '') +
+      '<div style="' + lab + '">Follow these steps</div>' + items + '</div>';
   }).join('');
 }
 function examStructuresToggle() {
