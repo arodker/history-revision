@@ -198,6 +198,25 @@ function gapNewShow() {
   } catch (e) {}
 }
 setTimeout(gapNewShow, 1200);
+function structNewClose() {
+  try { localStorage.setItem('gcse_struct_new', '1'); } catch (e) {}
+  const n = document.getElementById('struct-new'); if (n) n.remove();
+}
+function structNewShow() {
+  try {
+    if (localStorage.getItem('gcse_struct_new') || !localStorage.getItem('gcse_tour_done') || !document.getElementById('s-pick').classList.contains('active') || document.getElementById('struct-new') || document.getElementById('gap-new')) return;
+    const n = document.createElement('div'); n.id = 'struct-new';
+    n.style.cssText = 'position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:1rem';
+    n.innerHTML = '<div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;max-width:340px;width:100%;padding:1.3rem 1.2rem;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.35)">' +
+      '<div style="display:inline-block;background:#FEF9E7;color:#9A6B00;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.15rem .6rem;border-radius:99px;margin-bottom:.6rem">NEW</div>' +
+      '<div style="font-size:1.15rem;font-weight:800;margin-bottom:.4rem">Exam structures for every paper</div>' +
+      '<div style="font-size:.88rem;opacity:.8;line-height:1.45;margin-bottom:1rem">Pick a paper, open <b>Exam Practice</b> and tap <b>Structures</b>. Slide through each question type to see the marks, the timing, a sample question and the steps to follow. It also shows where you get a choice of question.</div>' +
+      '<button onclick="structNewClose()" style="font-weight:700;font-size:.95rem;padding:.6rem 1.4rem;border-radius:10px;border:none;background:#F0B429;color:#3B2A00;cursor:pointer;font-family:inherit">Got it</button></div>';
+    n.addEventListener('click', e => { if (e.target === n) structNewClose(); });
+    document.body.appendChild(n);
+  } catch (e) {}
+}
+setTimeout(structNewShow, 1600);
 
 setTimeout(() => { try { if (localStorage.getItem('gcse_loaded')) { localStorage.removeItem('gcse_loaded'); bdgAward('portable'); } } catch (e) {} }, 1800);
 function usageStats() {
