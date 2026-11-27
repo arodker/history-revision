@@ -2623,32 +2623,84 @@ const EX_TIME = {
   '16mark': {m:'16 + 4 marks', t:'25 minutes'}
 };
 const EX_COL = {p1:['#F0B429','#3B2A00','#FEF9E7','#9A6B00'], p2a:['#D4537E','#fff','#FBEAF0','#993556'], p2b:['#1D9E75','#fff','#E1F5EE','#0F6E56'], p3:['#378ADD','#fff','#E6F1FB','#0C447C']};
+// One slide per question type on each paper, as listed in the Revision Guide practice-question sections.
+// k = key into EX_CHK/EX_TIME/EQ for types in the question bank; otherwise own steps, time and sample question.
+const EX_SLIDES = {
+  p1: [
+    {k:'4mark', sec:'Migration', short:'Similarity / difference'},
+    {k:'12mark', sec:'Migration', short:'Explain why'},
+    {k:'16mark', sec:'Migration', short:'Debate'},
+    {sec:'Notting Hill', short:'Describe', name:'Describe one feature x 2', m:'4 marks', t:'5 minutes', n:'for two features',
+      q:'Describe two features of the Notting Hill riots of 1958. (4 marks)',
+      steps:['State one feature relevant to the question.', 'Develop your feature with detailed knowledge.', 'Do the same for a second feature.']},
+    {sec:'Notting Hill', short:'How useful', name:'How useful are the sources?', m:'8 marks', t:'15 minutes',
+      q:'How useful are Sources A and B for an enquiry into black activism in the Notting Hill area? Explain your answer, using Sources A and B and your knowledge of the historical context. (8 marks)',
+      steps:['Say what Source A tells you about the enquiry.', 'Support this with a quotation.', 'Include detailed knowledge to support the source.', 'Say why the provenance of the source makes it trustworthy or not.', 'Say overall how useful the source is.', 'Repeat this process for Source B.']},
+    {sec:'Notting Hill', short:'Follow up', name:'How would you follow up a source?', m:'4 marks', t:'5 minutes',
+      q:'How could you follow up Source B to find out more about black activism in the Notting Hill area? (4 marks)',
+      steps:['Pick a quotation or detail that you could ask a question about.', 'Make sure your question is relevant to the enquiry and is a historical question.', 'Think about what primary source could help you answer your question, for example the West Indian Gazette.']}
+  ],
+  p2a: [
+    {k:'4mark-consequence', short:'Consequence'},
+    {k:'8mark-narrative', short:'Narrative'},
+    {k:'8mark-importance', short:'Importance'}
+  ],
+  p2b: [
+    {short:'Describe', name:'Describe one feature x 2', m:'4 marks', t:'5 minutes', n:'for two features',
+      q:'Describe two features of the Spanish Armada. (4 marks)',
+      steps:['State one feature relevant to the question.', 'Develop your feature with detailed knowledge.', 'Do the same for a second feature.']},
+    {k:'12mark', short:'Explain why'},
+    {k:'16mark', short:'Debate'}
+  ],
+  p3: [
+    {short:'Infer', name:'Give two things you can infer', m:'4 marks', t:'5 minutes',
+      q:'Give two things you can infer from Source A about the early development of the Nazi Party in the 1920s. (4 marks)',
+      steps:['Select a source detail that is linked to the question focus.', 'Use the source detail to learn about the focus. This is your inference.', 'Write your inference down without just rephrasing the source detail.', 'Do this twice.']},
+    {k:'12mark', short:'Explain why'},
+    {short:'How useful', name:'How useful are the sources?', m:'8 marks', t:'15 minutes',
+      q:'How useful are Sources B and C for an enquiry into the standard of living of German workers in Nazi Germany? (8 marks)',
+      steps:['Highlight the enquiry in the question.', 'Say what Source B tells you about the enquiry.', 'Support this with a quotation.', 'Include detailed knowledge to support the source.', 'Say why the provenance of the source makes it trustworthy or not.', 'Say overall how useful the source is.', 'Repeat this process for Source C.']},
+    {short:'Difference', name:'Main difference between Interpretations', m:'4 marks', t:'5 minutes',
+      q:'Study Interpretations 1 and 2. They give different views about the standard of living of German workers under the Nazis. What is the main difference between these views? (4 marks)',
+      steps:['Read each Interpretation carefully.', 'State the main difference in their views.', 'Include a quotation from each Interpretation to show this difference.']},
+    {short:'Reason', name:'Reason for different views', m:'4 marks', t:'5 minutes',
+      q:'Suggest one reason why Interpretations 1 and 2 give different views about the standard of living of German workers under the Nazis. (4 marks)',
+      steps:['Use the golden sentence: “Interpretations 1 and 2 may differ because they may have focused on different sources.”', 'Match each Interpretation to either Source B or Source C.', 'Explain how each Interpretation may have focused on each Source.']},
+    {short:'How far agree', name:'How far do you agree with an Interpretation?', m:'16 + 4 marks', t:'25 minutes',
+      q:'How far do you agree with Interpretation 2 about the standard of living of German workers under the Nazis? Explain your answer using both interpretations and your knowledge of the historical context. (16 + 4 marks)',
+      steps:['In your first paragraph, state the view of the Interpretation in the question.', 'Select relevant quotations from the Interpretation that you can agree with.', 'Analyse what these quotations tell you about the enquiry.', 'Match specific knowledge to these quotations to explain why you agree.', 'Repeat this process for the other Interpretation.', 'Use 2–3 quotations for each Interpretation.', 'Write a conclusion explaining which Interpretation is more convincing.']}
+  ]
+};
+function exSlideData(d) {
+  if (!d.k) return d;
+  const q = EQ.find(x => x.paper === currentPaper && x.type === d.k), T = EX_TIME[d.k], heads = q ? (q.content || []).map(p => p.h) : [];
+  return {sec:d.sec, short:d.short, name:EX_TYPE_LBL[d.k].replace(/^\d+-mark /, '').replace(/^./, m => m.toUpperCase()), m:T.m, t:T.t, n:T.n, q:q ? q.q : '', steps:EX_CHK[d.k],
+    plan:heads.length > 1 || (heads[0] && heads[0] !== 'Points') ? heads : []};
+}
 function examStructuresRender() {
   const box = document.getElementById('e-struct'), btn = document.getElementById('e-struct-btn');
   if (!box || !btn) return;
-  const info = P[currentPaper], c = EX_COL[currentPaper], types = info.qtypes.map(t => t[0]).filter(t => t !== 'all' && EX_CHK[t] && EQ.some(x => x.paper === currentPaper && x.type === t));
-  btn.textContent = '\u{1F4CB} Structures for ' + info.label.split(' \u2013 ')[0];
+  const info = P[currentPaper], c = EX_COL[currentPaper], data = (EX_SLIDES[currentPaper] || []).map(exSlideData);
+  btn.textContent = '\u{1F4CB} Structures for ' + info.label.split(' – ')[0];
   const lab = 'font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em';
-  const name = t => EX_TYPE_LBL[t].replace(/^\d+-mark /, '').replace(/^./, m => m.toUpperCase());
-  const slides = types.map(t => {
-    const q = EQ.find(x => x.paper === currentPaper && x.type === t), T = EX_TIME[t];
-    const heads = (q.content || []).map(p => p.h), plan = heads.length > 1 || (heads[0] && heads[0] !== 'Points') ? heads.map(h => '<li>' + h + '</li>').join('') : '';
-    const items = EX_CHK[t].map((x, n) => '<div style="display:flex;gap:.6rem;align-items:flex-start;margin:.5rem 0;font-size:.88rem;line-height:1.5"><span style="flex-shrink:0;width:1.45rem;height:1.45rem;border-radius:50%;background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:.05rem">' + (n + 1) + '</span><span>' + x + '</span></div>').join('');
+  const slides = data.map(d => {
+    const items = d.steps.map((x, n) => '<div style="display:flex;gap:.6rem;align-items:flex-start;margin:.5rem 0;font-size:.88rem;line-height:1.5"><span style="flex-shrink:0;width:1.45rem;height:1.45rem;border-radius:50%;background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:.05rem">' + (n + 1) + '</span><span>' + x + '</span></div>').join('');
     return '<div class="es-slide" style="flex:0 0 100%;box-sizing:border-box;scroll-snap-align:start;padding:.2rem .15rem .4rem">' +
-      '<div style="font-size:1.05rem;font-weight:700;margin-bottom:.5rem">' + name(t) + '</div>' +
+      (d.sec ? '<div style="' + lab + ';color:' + c[3] + '">' + d.sec + '</div>' : '') +
+      '<div style="font-size:1.05rem;font-weight:700;margin-bottom:.5rem">' + d.name + '</div>' +
       '<div style="display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;margin-bottom:.8rem">' +
-        '<span style="background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:1.15rem;padding:.3rem .8rem;border-radius:999px">' + T.m + '</span>' +
-        '<span style="background:' + c[2] + ';color:' + c[3] + ';border:2px solid ' + c[0] + ';font-weight:800;font-size:1.15rem;padding:.22rem .8rem;border-radius:999px">\u23F1 ' + T.t + '</span>' +
-        (T.n ? '<span style="font-size:.78rem;color:var(--muted);font-weight:600">' + T.n + '</span>' : '') + '</div>' +
+        '<span style="background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:1.15rem;padding:.3rem .8rem;border-radius:999px">' + d.m + '</span>' +
+        '<span style="background:' + c[2] + ';color:' + c[3] + ';border:2px solid ' + c[0] + ';font-weight:800;font-size:1.15rem;padding:.22rem .8rem;border-radius:999px">⏱ ' + d.t + '</span>' +
+        (d.n ? '<span style="font-size:.78rem;color:var(--muted);font-weight:600">' + d.n + '</span>' : '') + '</div>' +
       '<div style="' + lab + '">Sample question</div>' +
-      '<div class="card-q" style="font-weight:600;margin:.2rem 0 .7rem">' + q.q + '</div>' +
-      (plan ? '<div style="' + lab + '">How an answer is organised</div><ul style="padding-left:1.1rem;margin:.25rem 0 .7rem;font-size:.84rem;line-height:1.6">' + plan + '</ul>' : '') +
+      '<div class="card-q" style="font-weight:600;margin:.2rem 0 .7rem">' + d.q + '</div>' +
+      (d.plan && d.plan.length ? '<div style="' + lab + '">How an answer is organised</div><ul style="padding-left:1.1rem;margin:.25rem 0 .7rem;font-size:.84rem;line-height:1.6">' + d.plan.map(h => '<li>' + h + '</li>').join('') + '</ul>' : '') +
       '<div style="' + lab + '">Follow these steps</div>' + items + '</div>';
   });
   if (!slides.length) { box.innerHTML = ''; return; }
-  const chips = types.map((t, n) => '<button type="button" class="es-chip" data-i="' + n + '" onclick="examSlideGo(' + n + ')" style="flex:1;min-width:0;padding:.4rem .3rem;font-size:.78rem;font-weight:700;border-radius:999px;border:2px solid ' + c[0] + ';cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + name(t) + '</button>').join('');
+  const chips = data.map((d, n) => '<button type="button" class="es-chip" data-i="' + n + '" onclick="examSlideGo(' + n + ')" style="padding:.35rem .7rem;font-size:.78rem;font-weight:700;border-radius:999px;border:2px solid ' + c[0] + ';cursor:pointer;white-space:nowrap">' + d.short + '</button>').join('');
   const arrow = (d, ch) => '<button type="button" class="btn-sm" aria-label="' + (d < 0 ? 'Previous' : 'Next') + ' slide" onclick="examSlideStep(' + d + ')" style="padding:.45rem .9rem;font-size:1rem;font-weight:700">' + ch + '</button>';
-  box.innerHTML = '<div style="display:flex;gap:.4rem;margin-bottom:.8rem">' + chips + '</div>' +
+  box.innerHTML = '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.8rem">' + chips + '</div>' +
     '<div id="es-track" onscroll="examSlideSync()" style="display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch">' + slides.join('') + '</div>' +
     '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:.6rem">' + arrow(-1, '\u2190') + '<span id="es-count" style="font-size:.8rem;font-weight:700;color:var(--muted)"></span>' + arrow(1, '\u2192') + '</div>';
   examSlideSync();
