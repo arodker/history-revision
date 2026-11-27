@@ -2662,7 +2662,7 @@ const EX_SLIDES = {
   p2a: [
     {k:'4mark-consequence', short:'Consequence', pick:'You get TWO different questions: answer both.', n:'for each of two questions (8 marks in total)', two:2},
     {k:'8mark-narrative', short:'Narrative'},
-    {k:'8mark-importance', short:'Importance', pick:'You get THREE options: choose 2 and answer both (8 + 8).', n:'', qs:['Explain the importance of the Yalta Conference for the development of the Cold War. (8 marks)', 'Explain the importance of the Prague Spring for Soviet control of Eastern Europe. (8 marks)', 'Explain the importance of the Second Cold War for relations between East and West. (8 marks)']}
+    {k:'8mark-importance', short:'Importance', m:'8 + 8 marks', pick:'You get THREE options: choose 2 and answer both (8 + 8).', n:'', qs:['Explain the importance of the Yalta Conference for the development of the Cold War. (8 marks)', 'Explain the importance of the Prague Spring for Soviet control of Eastern Europe. (8 marks)', 'Explain the importance of the Second Cold War for relations between East and West. (8 marks)']}
   ],
   p2b: [
     {short:'Describe', name:'Describe one feature x 2', m:'4 marks', t:'5 minutes', pick:'You get TWO different questions: answer both.', n:'4 marks in total',
@@ -2703,26 +2703,27 @@ function examStructuresRender() {
   btn.textContent = '\u{1F4CB} Structures for ' + info.label.split(' – ')[0];
   const lab = 'font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em';
   const slides = data.map(d => {
-    const items = d.steps.map((x, n) => '<div style="display:flex;gap:.6rem;align-items:flex-start;margin:.5rem 0;font-size:.88rem;line-height:1.5"><span style="flex-shrink:0;width:1.45rem;height:1.45rem;border-radius:50%;background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:.05rem">' + (n + 1) + '</span><span>' + x + '</span></div>').join('');
-    return '<div class="es-slide" style="flex:0 0 86%;box-sizing:border-box;scroll-snap-align:start;margin-right:.6rem;padding:.8rem .85rem;border:2px solid ' + c[0] + ';border-radius:14px;background:var(--surface)">' +
-      (d.sec ? '<div style="' + lab + ';color:' + c[3] + '">' + d.sec + '</div>' : '') +
-      '<div style="font-size:1.05rem;font-weight:700;margin-bottom:.5rem">' + d.name + '</div>' +
-      '<div style="display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;margin-bottom:.8rem">' +
-        '<span style="background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:1.15rem;padding:.3rem .8rem;border-radius:999px">' + d.m + '</span>' +
-        '<span style="background:' + c[2] + ';color:' + c[3] + ';border:2px solid ' + c[0] + ';font-weight:800;font-size:1.15rem;padding:.22rem .8rem;border-radius:999px">⏱ ' + d.t + '</span>' +
-        (d.n ? '<span style="font-size:.78rem;color:var(--muted);font-weight:600">' + d.n + '</span>' : '') + '</div>' +
-      (d.pick ? '<div style="background:' + c[2] + ';color:' + c[3] + ';border-left:5px solid ' + c[0] + ';border-radius:6px;font-weight:800;font-size:.95rem;line-height:1.4;padding:.55rem .7rem;margin-bottom:.8rem">\u261D ' + d.pick + '</div>' : '') +
-      '<div style="' + lab + '">Sample question</div>' +
-      '<div class="card-q" style="font-weight:600;margin:.2rem 0 .7rem">' + (Array.isArray(d.q) ? d.q[0] : d.q) + '</div>' +
-      (d.plan && d.plan.length ? '<div style="' + lab + '">How an answer is organised</div><ul style="padding-left:1.1rem;margin:.25rem 0 .7rem;font-size:.84rem;line-height:1.6">' + d.plan.map(h => '<li>' + h + '</li>').join('') + '</ul>' : '') +
-      '<div style="' + lab + '">Follow these steps</div>' + items + '</div>';
+    const items = d.steps.map((x, n) => '<div style="display:flex;gap:.5rem;align-items:flex-start;margin:.35rem 0;font-size:.84rem;line-height:1.4"><span style="flex-shrink:0;width:1.25rem;height:1.25rem;border-radius:50%;background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:.72rem;display:flex;align-items:center;justify-content:center;margin-top:.05rem">' + (n + 1) + '</span><span>' + x + '</span></div>').join('');
+    const q = Array.isArray(d.q) ? d.q[0] : d.q;
+    return '<div class="es-slide" style="flex:0 0 88%;box-sizing:border-box;scroll-snap-align:start;margin-right:.5rem;padding:.7rem .8rem;border:2px solid ' + c[0] + ';border-radius:14px;background:var(--surface)">' +
+      (d.sec ? '<div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:' + c[3] + '">' + d.sec + '</div>' : '') +
+      '<div style="display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin-bottom:.5rem">' +
+        '<span style="font-size:.98rem;font-weight:700;margin-right:auto">' + d.name + '</span>' +
+        '<span style="background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:.9rem;padding:.15rem .6rem;border-radius:999px;white-space:nowrap">' + d.m + '</span>' +
+        '<span style="background:' + c[2] + ';color:' + c[3] + ';border:1.5px solid ' + c[0] + ';font-weight:800;font-size:.9rem;padding:.1rem .6rem;border-radius:999px;white-space:nowrap">⏱ ' + d.t.replace(' minutes', ' min') + '</span></div>' +
+      (d.n ? '<div style="font-size:.72rem;color:var(--muted);font-weight:600;margin:-.25rem 0 .45rem">' + d.n + '</div>' : '') +
+      (d.pick ? '<div style="background:' + c[2] + ';color:' + c[3] + ';border-radius:8px;font-weight:800;font-size:.8rem;line-height:1.35;padding:.4rem .6rem;margin-bottom:.5rem">☝ ' + d.pick + '</div>' : '') +
+      items +
+      '<details ontoggle="examSlideSync()" style="border-top:1px solid var(--border);margin-top:.5rem;padding-top:.45rem"><summary style="cursor:pointer;font-size:.78rem;font-weight:700;color:var(--muted)">Sample question</summary>' +
+        '<div class="card-q" style="font-weight:600;font-size:.84rem;margin:.35rem 0 .1rem">' + q + '</div>' +
+        (d.plan && d.plan.length ? '<ul style="padding-left:1.1rem;margin:.3rem 0 0;font-size:.8rem;line-height:1.5">' + d.plan.map(h => '<li>' + h + '</li>').join('') + '</ul>' : '') + '</details></div>';
   });
   if (!slides.length) { box.innerHTML = ''; return; }
-  const chips = data.map((d, n) => '<button type="button" class="es-chip" data-i="' + n + '" onclick="examSlideGo(' + n + ')" style="padding:.35rem .7rem;font-size:.78rem;font-weight:700;border-radius:999px;border:2px solid ' + c[0] + ';cursor:pointer;white-space:nowrap">' + d.short + '</button>').join('');
-  const arrow = (d, ch) => '<button type="button" class="btn-sm" aria-label="' + (d < 0 ? 'Previous' : 'Next') + ' slide" onclick="examSlideStep(' + d + ')" style="padding:.45rem .9rem;font-size:1rem;font-weight:700">' + ch + '</button>';
-  box.innerHTML = '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.8rem">' + chips + '</div>' +
-    '<div id="es-track" onscroll="examSlideSync()" style="display:flex;align-items:flex-start;overflow-x:auto;overflow-y:hidden;transition:height .25s;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch">' + slides.join('') + '<div class="es-pad" style="flex:0 0 14%"></div></div>' +
-    '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:.6rem">' + arrow(-1, '\u2190') + '<span id="es-count" style="font-size:.8rem;font-weight:700;color:var(--muted)"></span>' + arrow(1, '\u2192') + '</div>';
+  const dots = data.map((d, n) => '<button type="button" class="es-dot" data-i="' + n + '" aria-label="' + d.short + '" onclick="examSlideGo(' + n + ')" style="height:.5rem;border-radius:99px;border:none;padding:0;cursor:pointer;background:' + c[0] + '"></button>').join('');
+  box.innerHTML = '<div style="display:flex;align-items:center;justify-content:space-between;margin:0 .1rem .5rem;font-size:.78rem;font-weight:700;color:var(--muted)"><span id="es-head"></span><span id="es-count"></span></div>' +
+    '<div id="es-track" onscroll="examSlideSync()" style="display:flex;align-items:flex-start;overflow-x:auto;overflow-y:hidden;transition:height .25s;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch">' + slides.join('') + '<div class="es-pad" style="flex:0 0 12%"></div></div>' +
+    '<div style="display:flex;justify-content:center;gap:.4rem;margin-top:.6rem">' + dots + '</div>';
+  box._names = data.map(d => d.short);
   examSlideSync(); examSlideDrag();
 }
 function examSlideDrag() {
@@ -2757,7 +2758,9 @@ function examSlideSync() {
   const t = document.getElementById('es-track'); if (!t) return;
   const i = examSlideIdx(), c = EX_COL[currentPaper];
   const cur = t.querySelectorAll('.es-slide')[i]; if (cur && cur.offsetHeight) t.style.height = (cur.offsetHeight + 4) + 'px';
-  document.querySelectorAll('.es-chip').forEach((b, n) => { b.style.background = n === i ? c[0] : 'transparent'; b.style.color = n === i ? c[1] : 'var(--text)'; });
+  document.querySelectorAll('.es-dot').forEach((b, n) => { b.style.width = n === i ? '1.1rem' : '.5rem'; b.style.opacity = n === i ? '1' : '.35'; });
+  const box = document.getElementById('e-struct'), h = document.getElementById('es-head');
+  if (h && box && box._names) h.textContent = P[currentPaper].label.split(' \u2013 ')[0] + ' \u00B7 ' + box._names[i];
   const k = document.getElementById('es-count'); if (k) k.textContent = (i + 1) + ' of ' + t.querySelectorAll('.es-slide').length;
 }
 function examStructuresToggle() {
