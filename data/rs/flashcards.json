@@ -5127,7 +5127,7 @@
   "no": 99,
   "paper": "p2",
   "unit": "Christian Beliefs",
-  "front": "What happens in the Genesis 1 creation story?",
+  "front": "What happens in the Biblical creation story?",
   "p1": "Day 1: heaven and earth, light and dark. Day 2: earth separated from sky. Day 3: dry land, plants and trees. Day 4: sun, moon and stars.",
   "p2": "Day 5: fish and birds. Day 6: land animals and humans → men and women are created at the same time.",
   "p3": "God creates by speaking: 'Let there be light' (Genesis 1:3) → humans made in the 'image of God'; the finished world is 'very good' (Genesis 1:31).",
@@ -5179,7 +5179,7 @@
   "no": 100,
   "paper": "p2",
   "unit": "Christian Beliefs",
-  "front": "What happens in Genesis 2 and 3, and how does it differ from Genesis 1?",
+  "front": "What happens in the story of Adam and Eve, and how does it differ from the creation story?",
   "p1": "God makes man from dust and breathes life into him → Adam lives in Eden; Eve is made from his rib.",
   "p2": "The serpent tempts them to eat fruit from the Tree of Knowledge of Good and Evil → they are sent from Eden; Eve is punished with pain in childbirth.",
   "p3": "Difference: animals are created after Adam → God seems not to know they will not be enough company, unlike an omniscient God.",
@@ -8456,57 +8456,97 @@
   "k": 0
  },
  {
-  "no": 164,
-  "paper": "p2",
-  "unit": "Peace and Conflict",
-  "front": "What does Matthew 26 say about conflict, and what is situation ethics?",
-  "p1": "Jesus tells a follower: 'He who lives by the sword will die by the sword' → read as against all violence, against that one act, or only against personal violence.",
-  "p2": "Situation ethics: do the most loving thing in each situation, not follow rules → violence could be most loving, such as war against Hitler.",
-  "p3": "Many Christians reject it → they prefer set rules from the Bible and Church, and say the most loving act cannot be worked out.",
-  "hints": [
-   "Jesus tells",
-   "Situation ethics",
-   "reject"
-  ],
-  "s": [
-   "Jesus tells a follower: 'He who lives by the sword will die by the sword' → read as against all violence, against that one act, or only against personal violence.",
-   "Situation ethics: do the most loving thing in each situation, not follow rules → violence could be most loving, such as war against Hitler.",
-   "Many Christians reject it → they prefer set rules from the Bible and Church, and say the most loving act cannot be worked out."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "sword",
-    "alt": [],
-    "d": [
-     "spear",
-     "bow",
-     "fire"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "Hitler",
-    "alt": [],
-    "d": [
-     "Winston Churchill",
-     "Martin Luther King",
-     "Nelson Mandela"
-    ]
-   },
-   {
-    "p": 3,
-    "gap": "set rules",
-    "alt": [],
-    "d": [
-     "personal feelings",
-     "majority votes",
-     "political advice"
-    ]
-   }
-  ],
-  "k": 0
- },
+    "no": 164,
+    "paper": "p2",
+    "unit": "Peace and Conflict",
+    "front": "What does Jesus say about violence when he is arrested?",
+    "p1": "Jesus tells a follower: 'He who lives by the sword will die by the sword'.",
+    "p2": "This is read as against all violence, against that one act, or only against personal violence.",
+    "p3": "",
+    "hints": [
+      "Jesus tells",
+      "read as"
+    ],
+    "s": [
+      "Jesus tells a follower: 'He who lives by the sword will die by the sword'.",
+      "This is read as against all violence, against that one act, or only against personal violence."
+    ],
+    "fill": [
+      {
+        "p": 1,
+        "gap": "sword",
+        "alt": [],
+        "d": [
+          "spear",
+          "bow",
+          "fire"
+        ]
+      },
+      {
+        "p": 2,
+        "gap": "personal violence",
+        "alt": [],
+        "d": [
+          "war between nations",
+          "self-defence",
+          "verbal abuse"
+        ]
+      }
+    ],
+    "k": 0
+  },
+  {
+    "no": 235,
+    "paper": "p2",
+    "unit": "Peace and Conflict",
+    "front": "What is situation ethics, and what do Christians think of it?",
+    "p1": "Situation ethics: do the most loving thing in each situation, not follow rules.",
+    "p2": "Violence could be most loving → such as war against Hitler.",
+    "p3": "Many Christians reject it → they prefer set rules from the Bible and Church, and say the most loving act cannot be worked out.",
+    "hints": [
+      "Situation ethics",
+      "Hitler",
+      "reject"
+    ],
+    "s": [
+      "Situation ethics: do the most loving thing in each situation, not follow rules.",
+      "Violence could be most loving → such as war against Hitler.",
+      "Many Christians reject it → they prefer set rules from the Bible and Church, and say the most loving act cannot be worked out."
+    ],
+    "fill": [
+      {
+        "p": 1,
+        "gap": "most loving",
+        "alt": [],
+        "d": [
+          "most popular",
+          "most traditional",
+          "most profitable"
+        ]
+      },
+      {
+        "p": 2,
+        "gap": "Hitler",
+        "alt": [],
+        "d": [
+          "Winston Churchill",
+          "Martin Luther King",
+          "Nelson Mandela"
+        ]
+      },
+      {
+        "p": 3,
+        "gap": "set rules",
+        "alt": [],
+        "d": [
+          "personal feelings",
+          "majority votes",
+          "political advice"
+        ]
+      }
+    ],
+    "k": 0
+  },
  {
   "no": 165,
   "paper": "p2",
@@ -9083,7 +9123,7 @@
   "no": 176,
   "paper": "p2",
   "unit": "Peace and Conflict",
-  "front": "Where does Just War theory come from, and what does Romans 13 say?",
+  "front": "Where does Just War theory come from, and what does the Bible say about obeying authority?",
   "p1": "Just War theory was first thought of by St Augustine → and developed by St Aquinas.",
   "p2": "Romans 13: 'there is no authority except that which God has established'; rulers 'do not bear the sword for no reason' → it is necessary to submit to authority 'as a matter of conscience'.",
   "p3": "Some Christians say this includes fighting in government wars → others say it is only about following laws.",
