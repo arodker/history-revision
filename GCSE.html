@@ -2685,7 +2685,7 @@ function examStructuresRender() {
   const lab = 'font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em';
   const slides = data.map(d => {
     const items = d.steps.map((x, n) => '<div style="display:flex;gap:.6rem;align-items:flex-start;margin:.5rem 0;font-size:.88rem;line-height:1.5"><span style="flex-shrink:0;width:1.45rem;height:1.45rem;border-radius:50%;background:' + c[0] + ';color:' + c[1] + ';font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:.05rem">' + (n + 1) + '</span><span>' + x + '</span></div>').join('');
-    return '<div class="es-slide" style="flex:0 0 100%;box-sizing:border-box;scroll-snap-align:start;padding:.2rem .15rem .4rem">' +
+    return '<div class="es-slide" style="flex:0 0 86%;box-sizing:border-box;scroll-snap-align:start;margin-right:.6rem;padding:.8rem .85rem;border:2px solid ' + c[0] + ';border-radius:14px;background:var(--surface)">' +
       (d.sec ? '<div style="' + lab + ';color:' + c[3] + '">' + d.sec + '</div>' : '') +
       '<div style="font-size:1.05rem;font-weight:700;margin-bottom:.5rem">' + d.name + '</div>' +
       '<div style="display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;margin-bottom:.8rem">' +
@@ -2702,7 +2702,7 @@ function examStructuresRender() {
   const chips = data.map((d, n) => '<button type="button" class="es-chip" data-i="' + n + '" onclick="examSlideGo(' + n + ')" style="padding:.35rem .7rem;font-size:.78rem;font-weight:700;border-radius:999px;border:2px solid ' + c[0] + ';cursor:pointer;white-space:nowrap">' + d.short + '</button>').join('');
   const arrow = (d, ch) => '<button type="button" class="btn-sm" aria-label="' + (d < 0 ? 'Previous' : 'Next') + ' slide" onclick="examSlideStep(' + d + ')" style="padding:.45rem .9rem;font-size:1rem;font-weight:700">' + ch + '</button>';
   box.innerHTML = '<div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.8rem">' + chips + '</div>' +
-    '<div id="es-track" onscroll="examSlideSync()" style="display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch">' + slides.join('') + '</div>' +
+    '<div id="es-track" onscroll="examSlideSync()" style="display:flex;align-items:flex-start;overflow-x:auto;overflow-y:hidden;transition:height .25s;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch">' + slides.join('') + '<div class="es-pad" style="flex:0 0 14%"></div></div>' +
     '<div style="display:flex;align-items:center;justify-content:space-between;margin-top:.6rem">' + arrow(-1, '\u2190') + '<span id="es-count" style="font-size:.8rem;font-weight:700;color:var(--muted)"></span>' + arrow(1, '\u2192') + '</div>';
   examSlideSync(); examSlideDrag();
 }
@@ -2721,7 +2721,7 @@ function examSlideDrag() {
   window.addEventListener('pointerup', e => {
     if (!down) return; down = false;
     if (!moved) return;
-    const dx = e.clientX - x0, w = t.clientWidth, n = t.children.length;
+    const dx = e.clientX - x0, w = examSlideStepPx(t), n = t.querySelectorAll('.es-slide').length;
     let i = Math.round(s0 / w);
     if (Math.abs(dx) > w * 0.18) i += dx < 0 ? 1 : -1;
     i = Math.max(0, Math.min(n - 1, i));
@@ -2730,14 +2730,16 @@ function examSlideDrag() {
     setTimeout(() => { t.style.scrollSnapType = 'x mandatory'; }, 400);
   });
 }
-function examSlideIdx() { const t = document.getElementById('es-track'); return t && t.clientWidth ? Math.round(t.scrollLeft / t.clientWidth) : 0; }
-function examSlideGo(n) { const t = document.getElementById('es-track'); if (t) t.scrollTo({left: n * t.clientWidth, behavior: 'smooth'}); }
-function examSlideStep(d) { const t = document.getElementById('es-track'); if (!t) return; const n = t.children.length; examSlideGo(Math.max(0, Math.min(n - 1, examSlideIdx() + d))); }
+function examSlideStepPx(t) { const k = t.querySelectorAll('.es-slide'); return k.length > 1 ? k[1].offsetLeft - k[0].offsetLeft : t.clientWidth; }
+function examSlideIdx() { const t = document.getElementById('es-track'); if (!t) return 0; const w = examSlideStepPx(t), n = t.querySelectorAll('.es-slide').length; return w ? Math.max(0, Math.min(n - 1, Math.round(t.scrollLeft / w))) : 0; }
+function examSlideGo(n) { const t = document.getElementById('es-track'); if (t) t.scrollTo({left: n * examSlideStepPx(t), behavior: 'smooth'}); }
+function examSlideStep(d) { const t = document.getElementById('es-track'); if (!t) return; const n = t.querySelectorAll('.es-slide').length; examSlideGo(Math.max(0, Math.min(n - 1, examSlideIdx() + d))); }
 function examSlideSync() {
   const t = document.getElementById('es-track'); if (!t) return;
   const i = examSlideIdx(), c = EX_COL[currentPaper];
+  const cur = t.querySelectorAll('.es-slide')[i]; if (cur && cur.offsetHeight) t.style.height = (cur.offsetHeight + 4) + 'px';
   document.querySelectorAll('.es-chip').forEach((b, n) => { b.style.background = n === i ? c[0] : 'transparent'; b.style.color = n === i ? c[1] : 'var(--text)'; });
-  const k = document.getElementById('es-count'); if (k) k.textContent = (i + 1) + ' of ' + t.children.length;
+  const k = document.getElementById('es-count'); if (k) k.textContent = (i + 1) + ' of ' + t.querySelectorAll('.es-slide').length;
 }
 function examStructuresToggle() {
   const box = document.getElementById('e-struct');
