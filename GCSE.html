@@ -1257,6 +1257,8 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 
   <!-- EXAM -->
   <div id="mode-exam" style="display:none">
+    <button class="btn-sm" id="e-struct-btn" onclick="examStructuresToggle()" aria-expanded="false" style="width:100%;padding:10px;font-size:.9rem;font-weight:600;margin-bottom:.6rem">📋 Structures for this paper</button>
+    <div id="e-struct" class="card" style="display:none;padding:1rem;margin-bottom:.75rem"></div>
     <div id="e-out" style="margin-bottom:.75rem"></div>
     <div style="margin-bottom:.75rem">
       <label style="font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Question type</label>
@@ -1620,6 +1622,7 @@ function pickPaper(p) {
   document.getElementById('k-out').innerHTML = '';
   updateNavUI();
   updateExamDirectory();
+  { const sb = document.getElementById('e-struct'); if (sb) sb.style.display = 'none'; examStructuresRender(); }
   // Update hub badge
   // Apply paper stripe to mode buttons
   document.querySelectorAll('.mode-btn').forEach(btn => {
@@ -2609,12 +2612,35 @@ const EX_CHK = {
   '12mark': ['I have written three paragraphs.', 'I have written about more than just the bullet points.', 'I have included specific and detailed evidence to support each point.', 'I have analysed my evidence to show why it answers the question.'],
   '16mark': ['I have carefully planned reasons to agree and disagree with the statement.', 'I have either written two \u2018agree\u2019 and one \u2018disagree\u2019 paragraphs, or two \u2018disagree\u2019 and one \u2018agree\u2019 paragraph.', 'I have included specific and detailed evidence to support each point.', 'I have analysed my evidence to show why it agrees or disagrees with the question.', 'Grade 8/9: I have used relative importance at the end of each paragraph to show which argument I think is stronger.', 'I have written a clear conclusion that does not include new information but shows which side I am on and why.']
 };
-function examChecklistHtml(q) {
-  const items = EX_CHK[q.type];
-  if (!items) return '';
-  return '<div class="rhead">Structure checklist</div>' + items.map(t => `<label style="display:flex;gap:.5rem;align-items:flex-start;font-size:.84rem;line-height:1.5;margin:.35rem 0;cursor:pointer"><input type="checkbox" style="margin-top:.25rem;flex-shrink:0"><span>${t}</span></label>`).join('');
+const EX_TYPE_LBL = {'4mark':'4-mark similarity/difference','4mark-consequence':'4-mark consequence','8mark-narrative':'8-mark narrative','8mark-importance':'8-mark importance','12mark':'12-mark explain why','16mark':'16-mark debate'};
+// Timings as given in the Revision Guide practice-question headings
+const EX_TIME = {'4mark':'5 minutes','4mark-consequence':'10 minutes for two consequences (8 marks)','8mark-narrative':'15 minutes','8mark-importance':'25 minutes for two options (8 + 8 marks)','12mark':'15 minutes','16mark':'25 minutes (16 + 4 marks)'};
+// Structures for the current paper: for each question type, a sample question, how it breaks down, and the guide checklist
+function examStructuresRender() {
+  const box = document.getElementById('e-struct'), btn = document.getElementById('e-struct-btn');
+  if (!box || !btn) return;
+  const info = P[currentPaper], types = info.qtypes.map(t => t[0]).filter(t => t !== 'all' && EX_CHK[t]);
+  btn.textContent = '\u{1F4CB} Structures for ' + info.label.split(' \u2013 ')[0];
+  box.innerHTML = types.map(t => {
+    const q = EQ.find(x => x.paper === currentPaper && x.type === t);
+    if (!q) return '';
+    const heads = (q.content || []).map(p => p.h), plan = heads.length > 1 || (heads[0] && heads[0] !== 'Points') ? heads.map(h => '<li>' + h + '</li>').join('') : '';
+    const items = EX_CHK[t].map(x => '<label style="display:flex;gap:.5rem;align-items:flex-start;font-size:.84rem;line-height:1.5;margin:.35rem 0;cursor:pointer"><input type="checkbox" style="margin-top:.25rem;flex-shrink:0"><span>' + x + '</span></label>').join('');
+    return '<div style="' + (t === types[0] ? '' : 'border-top:1px solid var(--subtle);padding-top:.8rem;margin-top:.8rem') + '"><div class="meta" style="margin-bottom:.4rem"><span class="tag t-grey">' + EX_TYPE_LBL[t] + '</span> <span style="font-size:.75rem;color:var(--muted)">\u23F1 ' + EX_TIME[t] + '</span></div>' +
+      '<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Sample question</div>' +
+      '<div class="card-q" style="font-weight:600;margin:.2rem 0 .5rem">' + q.q + '</div>' +
+      (plan ? '<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">How an answer is organised</div><ul style="padding-left:1.1rem;margin:.25rem 0 .6rem;font-size:.84rem;line-height:1.6">' + plan + '</ul>' : '') +
+      '<div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Checklist</div>' + items + '</div>';
+  }).join('');
 }
-
+function examStructuresToggle() {
+  const box = document.getElementById('e-struct');
+  if (!box) return;
+  const open = box.style.display === 'none';
+  if (open) examStructuresRender();
+  box.style.display = open ? 'block' : 'none';
+  document.getElementById('e-struct-btn').setAttribute('aria-expanded', open ? 'true' : 'false');
+}
 function drawExamCard(q) {
   currentExamQ = q;
   const typeLabel = {
@@ -2657,10 +2683,8 @@ function drawExamCard(q) {
         ${q.hints && q.hints.length ? `<div style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem"><span style="font-style:italic">You may use:</span><ul style="margin:.35rem 0 0 1rem;padding:0">${q.hints.map(h => `<li style="font-weight:400">${h}</li>`).join('')}</ul></div>` : ''}
        <div class="btn-row">
           <button class="btn-sm" onclick="tog('er');this.textContent=this.textContent==='🔍 Show indicative content'?'🔍 Hide indicative content':'🔍 Show indicative content'">🔍 Show indicative content</button>
-          ${EX_CHK[q.type] ? `<button class="btn-sm" onclick="tog('ec');this.textContent=this.textContent==='📋 Structure checklist'?'📋 Hide structure checklist':'📋 Structure checklist'">📋 Structure checklist</button>` : ''}
 
         </div>
-        <div class="reveal" id="ec">${examChecklistHtml(q)}</div>
         <div class="reveal" id="er">${contentHtml}</div>
       </div>
     </div>`;
