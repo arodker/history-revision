@@ -9120,57 +9120,97 @@
   "k": 0
  },
  {
-  "no": 176,
-  "paper": "p2",
-  "unit": "Peace and Conflict",
-  "front": "Where does Just War theory come from, and what does the Bible say about obeying authority?",
-  "p1": "Just War theory was first thought of by St Augustine → and developed by St Aquinas.",
-  "p2": "Romans 13: 'there is no authority except that which God has established'; rulers 'do not bear the sword for no reason' → it is necessary to submit to authority 'as a matter of conscience'.",
-  "p3": "Some Christians say this includes fighting in government wars → others say it is only about following laws.",
-  "hints": [
-   "Augustine",
-   "conscience",
-   "Christians say"
-  ],
-  "s": [
-   "Just War theory was first thought of by St Augustine → and developed by St Aquinas.",
-   "Romans 13: 'there is no authority except that which God has established'; rulers 'do not bear the sword for no reason' → it is necessary to submit to authority 'as a matter of conscience'.",
-   "Some Christians say this includes fighting in government wars → others say it is only about following laws."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "St Augustine",
-    "alt": [],
-    "d": [
-     "St Paul",
-     "St Francis",
-     "St Peter"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "conscience",
-    "alt": [],
-    "d": [
-     "tradition",
-     "courtesy",
-     "convenience"
-    ]
-   },
-   {
-    "p": 3,
-    "gap": "laws",
-    "alt": [],
-    "d": [
-     "wars",
-     "fashions",
-     "rituals"
-    ]
-   }
-  ],
-  "k": 0
- },
+    "no": 176,
+    "paper": "p2",
+    "unit": "Peace and Conflict",
+    "front": "Where does Just War theory come from?",
+    "p1": "Just War theory was first thought of by St Augustine.",
+    "p2": "It was developed by St Aquinas.",
+    "p3": "",
+    "hints": [
+      "Augustine",
+      "Aquinas"
+    ],
+    "s": [
+      "Just War theory was first thought of by St Augustine.",
+      "It was developed by St Aquinas."
+    ],
+    "fill": [
+      {
+        "p": 1,
+        "gap": "St Augustine",
+        "alt": [],
+        "d": [
+          "St Paul",
+          "St Francis",
+          "St Peter"
+        ]
+      },
+      {
+        "p": 2,
+        "gap": "St Aquinas",
+        "alt": [],
+        "d": [
+          "St Benedict",
+          "St Anselm",
+          "St Ignatius"
+        ]
+      }
+    ],
+    "k": 0
+  },
+  {
+    "no": 236,
+    "paper": "p2",
+    "unit": "Peace and Conflict",
+    "front": "What does the Bible say about obeying authority, and how do Christians read it?",
+    "p1": "Romans 13: 'there is no authority except that which God has established'; rulers 'do not bear the sword for no reason'.",
+    "p2": "It is necessary to submit to authority 'as a matter of conscience'.",
+    "p3": "Some Christians say this includes fighting in government wars → others say it is only about following laws.",
+    "hints": [
+      "no authority",
+      "conscience",
+      "Christians say"
+    ],
+    "s": [
+      "Romans 13: 'there is no authority except that which God has established'; rulers 'do not bear the sword for no reason'.",
+      "It is necessary to submit to authority 'as a matter of conscience'.",
+      "Some Christians say this includes fighting in government wars → others say it is only about following laws."
+    ],
+    "fill": [
+      {
+        "p": 1,
+        "gap": "established",
+        "alt": [],
+        "d": [
+          "invented",
+          "chosen",
+          "tolerated"
+        ]
+      },
+      {
+        "p": 2,
+        "gap": "conscience",
+        "alt": [],
+        "d": [
+          "tradition",
+          "courtesy",
+          "convenience"
+        ]
+      },
+      {
+        "p": 3,
+        "gap": "laws",
+        "alt": [],
+        "d": [
+          "wars",
+          "fashions",
+          "rituals"
+        ]
+      }
+    ],
+    "k": 0
+  },
  {
   "no": 177,
   "paper": "p1",
@@ -10570,58 +10610,58 @@
   "q": 1
  },
  {
-  "no": 207,
-  "paper": "p2",
-  "unit": "Christian Beliefs",
-  "front": "Which Psalm quotes give comfort in suffering?",
-  "p1": "Bible: “Your word is a lamp to my feet and a light on my path.” God's word guides believers.",
-  "p2": "Bible: “My comfort in my suffering is this: Your promise preserves my life.” God's promise brings hope.",
-  "p3": "Bible: “The Lord works righteousness and justice for all the oppressed.” God cares for the weak.",
-  "hints": [
-   "light",
-   "preserves",
-   "justice"
-  ],
-  "s": [
-   "Bible: “Your word is a lamp to my feet and a light on my path.” God's word guides believers.",
-   "Bible: “My comfort in my suffering is this: Your promise preserves my life.” God's promise brings hope.",
-   "Bible: “The Lord works righteousness and justice for all the oppressed.” God cares for the weak."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "lamp",
-    "alt": [],
-    "d": [
-     "shield",
-     "staff",
-     "rock"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "promise",
-    "alt": [],
-    "d": [
-     "silence",
-     "power",
-     "anger"
-    ]
-   },
-   {
-    "p": 3,
-    "gap": "oppressed",
-    "alt": [],
-    "d": [
-     "rich",
-     "proud",
-     "powerful"
-    ]
-   }
-  ],
-  "k": 0,
-  "q": 1
- },
+    "no": 207,
+    "paper": "p2",
+    "unit": "Christian Beliefs",
+    "front": "What does the Bible show about comfort in suffering?",
+    "p1": "Bible: “Your word is a lamp to my feet and a light on my path.” God's word guides believers.",
+    "p2": "Bible: “My comfort in my suffering is this: Your promise preserves my life.” God's promise brings hope.",
+    "p3": "Bible: “The Lord works righteousness and justice for all the oppressed.” God cares for the weak.",
+    "hints": [
+      "light",
+      "preserves",
+      "justice"
+    ],
+    "s": [
+      "Bible: “Your word is a lamp to my feet and a light on my path.” God's word guides believers.",
+      "Bible: “My comfort in my suffering is this: Your promise preserves my life.” God's promise brings hope.",
+      "Bible: “The Lord works righteousness and justice for all the oppressed.” God cares for the weak."
+    ],
+    "fill": [
+      {
+        "p": 1,
+        "gap": "lamp",
+        "alt": [],
+        "d": [
+          "shield",
+          "staff",
+          "rock"
+        ]
+      },
+      {
+        "p": 2,
+        "gap": "promise",
+        "alt": [],
+        "d": [
+          "silence",
+          "power",
+          "anger"
+        ]
+      },
+      {
+        "p": 3,
+        "gap": "oppressed",
+        "alt": [],
+        "d": [
+          "rich",
+          "proud",
+          "powerful"
+        ]
+      }
+    ],
+    "k": 0,
+    "q": 1
+  },
  {
   "no": 208,
   "paper": "p2",
@@ -11428,58 +11468,58 @@
   "q": 1
  },
  {
-  "no": 225,
-  "paper": "p2",
-  "unit": "Peace and Conflict",
-  "front": "What does Jesus teach about peace in the Sermon on the Mount?",
-  "p1": "Bible: “Blessed are the peacemakers, for they will be called children of God.” Peacemakers are blessed by God.",
-  "p2": "Bible: “Blessed are those who hunger and thirst for righteousness, for they will be filled.” Christians should long for what is right.",
-  "p3": "Bible: “Let your light shine before others, that they may see your good deeds.” Christians show peace through their actions.",
-  "hints": [
-   "called",
-   "thirst",
-   "light shine"
-  ],
-  "s": [
-   "Bible: “Blessed are the peacemakers, for they will be called children of God.” Peacemakers are blessed by God.",
-   "Bible: “Blessed are those who hunger and thirst for righteousness, for they will be filled.” Christians should long for what is right.",
-   "Bible: “Let your light shine before others, that they may see your good deeds.” Christians show peace through their actions."
-  ],
-  "fill": [
-   {
-    "p": 1,
-    "gap": "children of God",
-    "alt": [],
-    "d": [
-     "servants of God",
-     "friends of God",
-     "kings of Earth"
-    ]
-   },
-   {
-    "p": 2,
-    "gap": "righteousness",
-    "alt": [],
-    "d": [
-     "wealth",
-     "revenge",
-     "power"
-    ]
-   },
-   {
-    "p": 3,
-    "gap": "light",
-    "alt": [],
-    "d": [
-     "voice",
-     "banner",
-     "name"
-    ]
-   }
-  ],
-  "k": 0,
-  "q": 1
- },
+    "no": 225,
+    "paper": "p2",
+    "unit": "Peace and Conflict",
+    "front": "What does Jesus teach about peace?",
+    "p1": "Bible: “Blessed are the peacemakers, for they will be called children of God.” Peacemakers are blessed by God.",
+    "p2": "Bible: “Peace I leave with you; my peace I give you.” Peace is given as a gift.",
+    "p3": "Bible: “Let your light shine before others, that they may see your good deeds.” Christians show peace through their actions.",
+    "hints": [
+      "called",
+      "my peace",
+      "light shine"
+    ],
+    "s": [
+      "Bible: “Blessed are the peacemakers, for they will be called children of God.” Peacemakers are blessed by God.",
+      "Bible: “Peace I leave with you; my peace I give you.” Peace is given as a gift.",
+      "Bible: “Let your light shine before others, that they may see your good deeds.” Christians show peace through their actions."
+    ],
+    "fill": [
+      {
+        "p": 1,
+        "gap": "children of God",
+        "alt": [],
+        "d": [
+          "servants of God",
+          "friends of God",
+          "kings of Earth"
+        ]
+      },
+      {
+        "p": 2,
+        "gap": "gift",
+        "alt": [],
+        "d": [
+          "reward",
+          "wage",
+          "loan"
+        ]
+      },
+      {
+        "p": 3,
+        "gap": "light",
+        "alt": [],
+        "d": [
+          "voice",
+          "banner",
+          "name"
+        ]
+      }
+    ],
+    "k": 0,
+    "q": 1
+  },
  {
   "no": 226,
   "paper": "p2",
