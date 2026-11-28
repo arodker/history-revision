@@ -4822,7 +4822,7 @@ function bgLoad(cb) {
   if (BG.loading) return;
   BG.loading = true;
   const sc = document.createElement('script');
-  sc.src = 'data/scenes.js?v=20261128c';
+  sc.src = 'data/scenes.js?v=20261128d';
   sc.onload = () => { BG.data = {scenes: window.GCSE_SCENES}; const q = BG.q; BG.q = []; q.forEach(f => f()); };
   sc.onerror = () => { BG.loading = false; };
   document.head.appendChild(sc);
@@ -4838,7 +4838,7 @@ function bgPaint(cv, i, t, W, H) {
     ci: (cx, cy, rd, c) => { x.fillStyle = c; for (let dy = -rd; dy <= rd; dy++) for (let dx = -rd; dx <= rd; dx++) if (dx * dx + dy * dy <= rd * rd) x.fillRect(cx + dx + ox, cy + dy + oy, 1, 1); },
     st: (tt, lim, col) => { x.fillStyle = col; for (let k = 0; k < 16; k++) if ((tt + k) % 6 < 4) x.fillRect((k * 37 + 11) % W, (k * 53 + 7) % lim, 1, 1); }
   };
-  sc.d(g, t);
+  sc.d(g, t); if (sc.x) sc.x(g, t);
 }
 function bgTick() {
   const cv = document.querySelector('#bg-scene canvas');
