@@ -4810,7 +4810,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') xpCloseLevel
 // ANIMATED BACKGROUNDS (one scene per level, shown behind the main menu)
 // ═══════════════════════════════════════════
 const LS_BG = 'gcse_bg';
-const BG_NAMES = ['Cave fire','Roman wall','Scriptorium','Longship','Norman castle','Merchant harbour','Great hall','Battlefield','Industrial town','Paddle steamer','Trench','Searchlights','Rock stage','London fireworks','Rocket and moon','Galaxy clock'];
+const BG_NAMES = ['Cave fire','Roman wall','Scriptorium','Longship','Norman castle','Merchant harbour','Tudor hall','Battlefield','Industrial town','Explorer steamer','Trench','Searchlights','Rock stage','London fireworks','Rocket and moon','Galaxy clock'];
 var BG = {data: null, loading: false, q: [], shown: -2, t: 0, timer: null, pend: false, newIdx: -1};
 function bgChoice() { try { return localStorage.getItem(LS_BG); } catch (e) { return null; } }
 function bgTop() { return xpLevelIdx(xpLoad().total); }
@@ -4828,7 +4828,7 @@ function bgLoad(cb) {
   if (BG.loading) return;
   BG.loading = true;
   const sc = document.createElement('script');
-  sc.src = 'data/scenes.js?v=20261128e';
+  sc.src = 'data/scenes.js?v=20261128f';
   sc.onload = () => { BG.data = {scenes: window.GCSE_SCENES}; const q = BG.q; BG.q = []; q.forEach(f => f()); };
   sc.onerror = () => { BG.loading = false; };
   document.head.appendChild(sc);
@@ -4873,7 +4873,7 @@ function bgbLoad(cb) {
   BG.bq = (BG.bq || []); BG.bq.push(cb);
   if (BG.bloading) return; BG.bloading = true;
   const sc = document.createElement('script');
-  sc.src = 'data/borders.js?v=20261128g';
+  sc.src = 'data/borders.js?v=20261128i';
   sc.onload = () => { const q = BG.bq; BG.bq = []; q.forEach(f => f()); };
   sc.onerror = () => { BG.bloading = false; };
   document.head.appendChild(sc);
