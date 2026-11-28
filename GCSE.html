@@ -4782,7 +4782,7 @@ function xpFlushLater() {
 }
 function xpShowLevelUp() {
   if (xpPendingUp < 0 || PV.midRound || document.getElementById('xp-lu')) return;
-  const i = xpPendingUp; xpPendingUp = -1;
+  const i = xpPendingUp; xpPendingUp = -1; BG.newIdx = i;
   const x = xpLoad(), L = XP_LEVELS[i], prev = XP_LEVELS[i - 1], nx = XP_LEVELS[i + 1];
   const pct = nx ? Math.max(2, Math.round((x.total - L.xp) / (nx.xp - L.xp) * 100)) : 100;
   const el = document.createElement('div');
@@ -4803,7 +4803,7 @@ function xpShowLevelUp() {
 function xpCloseLevelUp() {
   const el = document.getElementById('xp-lu');
   if (el) el.remove();
-  try { bgApply(); } catch (e) {}
+  try { if (BG.newIdx >= 0 && bgIndex() === BG.newIdx) BG.pend = true; BG.newIdx = -1; bgApply(); } catch (e) {}
   xpFlushLater();
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') xpCloseLevelUp(); });
@@ -4812,7 +4812,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') xpCloseLevel
 // ═══════════════════════════════════════════
 const LS_BG = 'gcse_bg';
 const BG_NAMES = ['Cave fire','Roman wall','Scriptorium','Longship','Bayeux tapestry','Harbour','Great hall','Battlefield','Mill and train','Paddle steamer','Trench','Searchlights','Rock stage','London fireworks','Rocket and moon','Galaxy clock'];
-var BG = {data: null, loading: false, q: [], shown: -2, t: 0, timer: null};
+var BG = {data: null, loading: false, q: [], shown: -2, t: 0, timer: null, pend: false, newIdx: -1};
 function bgChoice() { try { return localStorage.getItem(LS_BG); } catch (e) { return null; } }
 function bgTop() { return xpLevelIdx(xpLoad().total); }
 function bgIndex() {
@@ -4871,9 +4871,14 @@ function bgRender() {
 function bgSync(id) {
   const on = (id === 's-pick' || id === 's-progress') && bgIndex() >= 0;
   document.body.classList.toggle('bg-on', on);
-  if (on) bgLoad(bgRender); else if (bgIndex() < 0) { BG.shown = -2; }
+  if (on) bgLoad(() => { bgRender(); if (BG.pend && id === 's-pick') { BG.pend = false; bgBeat(1800); } }); else if (bgIndex() < 0) { BG.shown = -2; }
 }
 function bgApply() { const a = document.querySelector('.screen.active'); bgSync(a ? a.id : 's-pick'); }
+function bgBeat(ms) {
+  if (rmOn()) return;
+  document.body.classList.add('bg-intro');
+  setTimeout(() => document.body.classList.remove('bg-intro'), ms);
+}
 function bgIntro() {
   if (BG.introDone) return; BG.introDone = true;
   if (bgIndex() < 0 || rmOn()) return;
