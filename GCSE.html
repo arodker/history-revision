@@ -4873,7 +4873,7 @@ function bgbLoad(cb) {
   BG.bq = (BG.bq || []); BG.bq.push(cb);
   if (BG.bloading) return; BG.bloading = true;
   const sc = document.createElement('script');
-  sc.src = 'data/borders.js?v=20261128c';
+  sc.src = 'data/borders.js?v=20261128d';
   sc.onload = () => { const q = BG.bq; BG.bq = []; q.forEach(f => f()); };
   sc.onerror = () => { BG.bloading = false; };
   document.head.appendChild(sc);
