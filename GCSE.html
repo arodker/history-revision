@@ -869,7 +869,8 @@ body.bg-on #s-pick #bg-gap{display:block;height:calc(100vh - 6rem)}
 #bg-gap span{display:inline-block;background:color-mix(in srgb,var(--bg) 82%,transparent);border-radius:10px;padding:.3rem .7rem;font-size:.78rem;font-weight:700;color:var(--muted)}
 #bg-scene canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated}
 #bg-scene .bg-veil{position:absolute;inset:0;background:var(--bg);opacity:.2}
-body.bg-on #s-pick>h1,body.bg-on #s-pick .step-lbl,body.bg-on #s-pick .paper-lbl,body.bg-on #s-pick .or-line,body.bg-on #s-pick .start-line{background:color-mix(in srgb,var(--bg) 82%,transparent);border-radius:10px;padding-left:.5rem;padding-right:.5rem}
+body.bg-on #s-pick>p,body.bg-on #s-pick h1,body.bg-on #s-pick .step-lbl,body.bg-on #s-pick .paper-lbl,body.bg-on #s-pick .or-line,body.bg-on #s-pick .start-line{background:color-mix(in srgb,var(--bg) 82%,transparent);border-radius:10px;padding-left:.5rem;padding-right:.5rem}
+body.bg-on #s-pick h1{padding-top:.15rem;padding-bottom:.15rem}
 .xp-lu-bg{font-size:.82rem;font-weight:700;margin:-.4rem 0 .9rem}
 .xp-lu-btn.alt{background:transparent;color:var(--text);border:1px solid var(--border2);margin-bottom:.45rem}
 .bgp-back{position:fixed;inset:0;z-index:9980;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:14px}
@@ -4803,7 +4804,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') xpCloseLevel
 // ANIMATED BACKGROUNDS (one scene per level, shown behind the main menu)
 // ═══════════════════════════════════════════
 const LS_BG = 'gcse_bg';
-const BG_NAMES = ['Cave fire','Roman wall','Scriptorium','Longship','Norman dawn','Harbour','Great hall','Battlefield','Mill and train','Paddle steamer','Trench','Searchlights','Rock stage','London fireworks','Rocket and moon','Galaxy clock'];
+const BG_NAMES = ['Cave fire','Roman wall','Scriptorium','Longship','Bayeux tapestry','Harbour','Great hall','Battlefield','Mill and train','Paddle steamer','Trench','Searchlights','Rock stage','London fireworks','Rocket and moon','Galaxy clock'];
 var BG = {data: null, loading: false, q: [], shown: -2, t: 0, timer: null};
 function bgChoice() { try { return localStorage.getItem(LS_BG); } catch (e) { return null; } }
 function bgTop() { return xpLevelIdx(xpLoad().total); }
@@ -4821,7 +4822,7 @@ function bgLoad(cb) {
   if (BG.loading) return;
   BG.loading = true;
   const sc = document.createElement('script');
-  sc.src = 'data/scenes.js?v=20261128b';
+  sc.src = 'data/scenes.js?v=20261128c';
   sc.onload = () => { BG.data = {scenes: window.GCSE_SCENES}; const q = BG.q; BG.q = []; q.forEach(f => f()); };
   sc.onerror = () => { BG.loading = false; };
   document.head.appendChild(sc);
