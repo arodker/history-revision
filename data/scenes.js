@@ -169,3 +169,39 @@ function(g,t){var r=g.r,ci=g.ci;
 var a=t*0.3;ci(32+Math.round(Math.cos(a)*24),18+Math.round(Math.sin(a)*9),1,'#6ac');ci(32+Math.round(Math.cos(-a*0.6+2)*28),18+Math.round(Math.sin(-a*0.6+2)*11),1,'#e87');
 var cx=((t*3)%90)-10;r(cx,2+(cx/6|0),3,1,'#fff');r(cx-3,1+(cx/6|0),3,1,'#9ab');r(cx-6,(cx/6|0),3,1,'#567')}
 ]);
+(function(){var S=window.GCSE_SCENES;
+function smoke(r,cx,cy,t,n){for(var k=0;k<n;k++){var p=(t+k*3)%(n*3);r(cx+(p>>1)+(k%2),cy-p,2+(p>>2),2,p<n*1.5?'#6a6a6a':'#9a9a9a')}}
+S[4]={n:'Norman castle',sky:'#9ac8e8',d:function(g,t){var r=g.r,f=g.f;
+f(0,18,'#8fc0e4');f(14,12,'#b4dbf0');r(6,6,10,2,'#fff');r(9,5,6,1,'#fff');r(46,10,12,2,'#fff');r(49,9,7,1,'#fff');
+f(26,6,'#5f8a3a');for(var y=17;y<30;y++){var hw=10+Math.floor((y-17)*1.5);r(32-hw,y,hw*2,1,y%3?'#6a9a3a':'#5f8a3a')}
+for(var x=18;x<48;x+=2)r(x,16,1,4,'#6b4a2a');
+r(24,5,16,13,'#b8b2a0');r(24,5,2,13,'#d0cab8');r(37,5,3,13,'#8f897a');for(var i=0;i<4;i++)r(24+i*5,3,3,2,'#b8b2a0');
+r(24,9,16,1,'#a09a88');r(24,13,16,1,'#a09a88');for(var y=5;y<17;y+=4)for(var x=(y%8?27:25);x<40;x+=6)r(x,y,1,4,'#a09a88');
+r(29,6,1,3,'#2a2018');r(34,6,1,3,'#2a2018');r(27,10,2,3,'#2a2018');r(35,10,2,3,'#2a2018');r(30,14,4,4,'#3a2a1a');r(31,13,2,1,'#3a2a1a');
+for(var x=6;x<58;x+=2)r(x,27,1,5,'#6b4a2a');r(28,27,8,5,'#3a2a1a');f(32,8,'#3a7fb5');for(var y=34;y<40;y+=3)for(var x=-30;x<100;x+=12)r(x+((t*2+y)%12),y,4,1,'#cfe9ff')},
+x:function(g,t){var r=g.r;r(32,-1,1,5,'#6b4a2a');for(var i=0;i<8;i++)r(33+i,-1+Math.round(Math.sin((i+t)/1.6)),1,4,'#b5532f');r(35,1,2,1,'#e8c030');
+for(var k=0;k<2;k++){var x=((t*2+k*40)%100)-20,y=8+((t+k)%2)*2;r(x,y,1,1,'#334');r(x-2,y-1+((t+k)%2),2,1,'#334');r(x+1,y-1+((t+k)%2),2,1,'#334')}
+r(31,15,1,1,(t%4<2)?'#ffd060':'#e8501a')}};
+S[5]={n:'Merchant harbour',sky:'#bfe0f0',d:function(g,t){var r=g.r,f=g.f;
+function house(x,w,top,c){r(x,top,w,27-top,c);r(x+1,top-1,w-2,1,c);r(x+2,top-2,w-4,1,c);r(x+3,top-3,w-6,1,c);r(x+(w>>1),top-5,1,2,'#e8c030');r(x,top,w,1,'#f0e6cc');
+for(var y=top+3;y<24;y+=4){r(x+1,y,2,2,'#2a2018');r(x+w-3,y,2,2,'#2a2018');if(w>8)r(x+(w>>1)-1,y,2,2,'#2a2018')}r(x+(w>>1)-1,24,2,3,'#3a2a1a')}
+f(0,27,'#bfe0f0');house(-2,10,10,'#b5502a');house(8,9,6,'#d8b868');house(17,9,13,'#6a8aa8');house(26,9,8,'#c98080');house(35,8,11,'#7a9a6a');
+r(48,12,12,15,'#9a4a3a');r(50,22,3,5,'#2a2018');r(56,22,3,5,'#2a2018');r(47,5,14,7,'#6b4a2a');r(46,3,16,2,'#5a2a1a');r(49,1,10,2,'#5a2a1a');r(52,7,3,3,'#2a2018');
+ci_(r,60,8,3,'#6b4a2a');r(60,7,8,1,'#6b4a2a');
+f(27,13,'#3a7fb5');for(var y=29;y<40;y+=4)for(var x=-40;x<110;x+=10)r(x+((t*2+y)%10),y,4,1,'#cfe9ff');
+r(0,27,64,1,'#6b4a2a');r(8,29,24,4,'#4a2a10');r(7,28,26,1,'#6b3d1a');r(14,14,1,15,'#4a2a10');r(26,17,1,12,'#4a2a10');r(11,19,7,1,'#eee');r(23,21,7,1,'#eee')},
+x:function(g,t){var r=g.r;var a=t*0.5;for(var k=0;k<4;k++){var an=a+k*Math.PI/2;r(60+Math.round(Math.cos(an)*3),8+Math.round(Math.sin(an)*3),1,1,'#3a2410')}
+var h=10+((t*2)%12);r(66,8,1,h,'#8a6a3a');r(64,8+h,5,3,'#a8703a');
+for(var k=0;k<2;k++){var x=((t*2+k*35)%90)-15,y=6+((t+k)%2)*2;r(x,y,1,1,'#fff');r(x-2,y-1+((t+k)%2),2,1,'#fff');r(x+1,y-1+((t+k)%2),2,1,'#fff')}
+[[9,17],[27,19],[20,22],[36,17]].forEach(function(w,i){if((t+i*3)%8<5)r(w[0],w[1],2,2,'#f5c542')})}};
+S[8]={n:'Industrial town',sky:'#b4c0c8',d:function(g,t){var r=g.r,f=g.f;
+f(0,12,'#98a4ae');f(10,14,'#b4c0c8');f(22,8,'#c8d0d6');
+r(4,16,36,14,'#9a4a3a');for(var i=0;i<5;i++){r(4+i*7,11,1,5,'#7a3a2a');r(5+i*7,12,5,2,'#8ab');r(4+i*7,14,7,2,'#7a3a2a')}
+for(var y=18;y<29;y+=5)for(var x=6;x<38;x+=5)r(x,y,3,3,((t+x+y)%9<6)?'#f5c542':'#6a5a30');
+r(7,2,5,28,'#8a3a2a');r(6,2,7,2,'#444');r(8,10,3,1,'#e8d8b8');r(30,6,4,24,'#8a3a2a');r(29,6,6,2,'#444');r(31,12,2,1,'#e8d8b8');
+r(42,22,22,8,'#a8704a');for(var x=44;x<62;x+=5){r(x,24,2,2,'#f5c542');r(x,27,2,2,'#2a2018')}r(44,20,2,2,'#6a3a2a');r(54,20,2,2,'#6a3a2a');
+f(30,10,'#4a4a3a');r(0,34,64,1,'#888');for(var x=0;x<64;x+=4)r(x,35,2,1,'#6b4a2a');
+var x=((t*3)%110)-30;r(x,28,12,6,'#222');r(x+8,25,2,3,'#222');r(x+1,24,4,4,'#a33');r(x-10,29,9,5,'#a33');r(x-20,29,9,5,'#36a');r(x+1,34,2,2,'#555');r(x+7,34,2,2,'#555');r(x+8-((t%3)*2),20-(t%3)*2,3,2,'#ddd')},
+x:function(g,t){var r=g.r;smoke(r,9,2,t,6);smoke(r,32,6,t+4,5);r(((t)%90)-20,5,12,2,'#aab');r(((t*2+40)%90)-20,8,8,2,'#aab')}};
+function ci_(r,x,y,rad,c){for(var j=-rad;j<=rad;j++)for(var i=-rad;i<=rad;i++){var d=i*i+j*j;if(d<=rad*rad&&d>=(rad-1)*(rad-1))r(x+i,y+j,1,1,c)}}
+})();
