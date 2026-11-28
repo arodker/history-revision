@@ -131,7 +131,7 @@ function rmOn() { var v = null; try { v = localStorage.getItem('gcse_rm'); } cat
 function setReduceMotion() {
   try { localStorage.setItem('gcse_rm', rmOn() ? '0' : '1'); } catch (e) {}
   document.documentElement.classList.toggle('rm', rmOn());
-  if (typeof BG !== 'undefined') { BG.shown = -2; bgApply(); }
+  if (typeof BG !== 'undefined') { BG.shown = -2; BG.bkey = ''; bgApply(); }
   setMenuRender();
 }
 function setHints() { fdSyncHints(!fdHintsOn); setMenuRender(); }
@@ -868,17 +868,16 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .xp-lu-t{font-size:1.45rem;font-weight:800;margin:.1rem 0 .4rem}
 .xp-lu-from{font-size:.75rem;color:var(--muted);margin-bottom:.9rem}
 .xp-lu-btn{display:block;width:100%;padding:.8rem;border:none;border-radius:12px;background:#378ADD;color:#fff;font-size:.95rem;font-weight:700;font-family:inherit;cursor:pointer}
-#bg-scene{position:fixed;inset:0;z-index:-1;pointer-events:none;display:none;overflow:hidden}
-body.bg-on #bg-scene{display:block}
+#bg-scene{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;opacity:0;transition:opacity .7s ease}
+body.bg-full #bg-scene{opacity:1}
+#bg-scene canvas,#bg-border{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated}
+#bg-border{position:fixed;z-index:-1;pointer-events:none;display:none;opacity:1;transition:opacity .7s ease}
+body.bg-on #bg-border{display:block}
+body.bg-full #bg-border{opacity:0}
+@media (max-width:899px){body.bg-on{box-sizing:border-box;padding:24px 14px 84px!important}}
+@media (min-width:900px){body.bg-on{box-sizing:border-box;padding-left:25vw!important;padding-right:25vw!important}}
 body.bg-intro .screen.active{opacity:0;pointer-events:none}
 .screen.active{transition:opacity .7s ease}
-#bg-gap{display:none;text-align:center;padding-top:1.2rem}
-body.bg-on #s-pick #bg-gap{display:block;height:calc(100vh - 6rem)}
-#bg-gap span{display:inline-block;background:color-mix(in srgb,var(--bg) 82%,transparent);border-radius:10px;padding:.3rem .7rem;font-size:.78rem;font-weight:700;color:var(--muted)}
-#bg-scene canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated}
-#bg-scene .bg-veil{position:absolute;inset:0;background:var(--bg);opacity:.2}
-body.bg-on #s-pick>p,body.bg-on #s-pick h1,body.bg-on #s-pick .step-lbl,body.bg-on #s-pick .paper-lbl,body.bg-on #s-pick .or-line,body.bg-on #s-pick .start-line{background:color-mix(in srgb,var(--bg) 82%,transparent);border-radius:10px;padding-left:.5rem;padding-right:.5rem}
-body.bg-on #s-pick h1{padding-top:.15rem;padding-bottom:.15rem}
 .xp-lu-bg{font-size:.82rem;font-weight:700;margin:-.4rem 0 .9rem}
 .xp-lu-btn.alt{background:transparent;color:var(--text);border:1px solid var(--border2);margin-bottom:.45rem}
 .bgp-back{position:fixed;inset:0;z-index:9980;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:14px}
@@ -1190,6 +1189,7 @@ body.bg-on #s-pick h1{padding-top:.15rem;padding-bottom:.15rem}
 </head>
 <body>
 <div id="bg-scene" aria-hidden="true"></div>
+<canvas id="bg-border" aria-hidden="true"></canvas>
 <div id="fd-toast"></div>
 <div id="xp-pop"></div>
 <canvas id="fd-confetti-canvas" style="display:none"></canvas>
@@ -1248,7 +1248,6 @@ body.bg-on #s-pick h1{padding-top:.15rem;padding-bottom:.15rem}
   </div>
   <div id="home-badges" style="display:none"></div>
   <p style="text-align:center;font-size:.82rem;opacity:.7;margin:1.4rem 0 .4rem">Spotted an error or have any feedback? Let Mr Rodker know.</p>
-  <div id="bg-gap" aria-hidden="true"><span>↓ Keep scrolling to see your background</span></div>
 </div>
 
 <!-- SCREEN 2: PAPER HUB (mode selector) -->
@@ -4863,32 +4862,72 @@ function bgRender() {
   if (i < 0 || !BG.data) { el.innerHTML = ''; BG.shown = -2; clearInterval(BG.timer); BG.timer = null; return; }
   if (BG.shown === i && el.firstChild) { bgFit(); return; }
   el.style.background = BG.data.scenes[i].sky;
-  el.innerHTML = '<canvas aria-hidden="true"></canvas><div class="bg-veil"></div>';
+  el.innerHTML = '<canvas aria-hidden="true"></canvas>';
   const cv = el.firstChild; cv.width = 0; BG.shown = i; BG.t = 2; bgFit();
   clearInterval(BG.timer); BG.timer = null;
   if (!rmOn()) BG.timer = setInterval(bgTick, 250);
 }
+var BG_SCREENS = ['s-pick', 's-hub', 's-progress'];
+function bgbLoad(cb) {
+  if (window.GCSE_BORDERS && GCSE_BORDERS.D[15]) { cb(); return; }
+  BG.bq = (BG.bq || []); BG.bq.push(cb);
+  if (BG.bloading) return; BG.bloading = true;
+  const sc = document.createElement('script');
+  sc.src = 'data/borders.js?v=20261128a';
+  sc.onload = () => { const q = BG.bq; BG.bq = []; q.forEach(f => f()); };
+  sc.onerror = () => { BG.bloading = false; };
+  document.head.appendChild(sc);
+}
+function bgbDims() {
+  if (innerWidth >= 900) return {m: 'D', W: 320, H: 180};
+  return {m: 'P', W: 100, H: Math.max(160, Math.min(260, Math.round(100 * innerHeight / innerWidth)))};
+}
+function bgbPaint() {
+  const cv = document.getElementById('bg-border'), i = bgIndex();
+  if (!cv || i < 0 || !window.GCSE_BORDERS) return;
+  const d = bgbDims(), x = cv.getContext('2d');
+  if (cv.width !== d.W || cv.height !== d.H) { cv.width = d.W; cv.height = d.H; }
+  x.clearRect(0, 0, d.W, d.H);
+  const r = (a, b, w, h, c) => { x.fillStyle = c; x.fillRect(a, b, w, h); };
+  try { GCSE_BORDERS[d.m][i](r, BG.bt, d.W, d.H); } catch (e) {}
+  if (d.m === 'D') x.clearRect(81, 13, 158, 151); else x.clearRect(8, 10, d.W - 16, d.H - 34);
+}
+function bgbTick() { if (document.hidden || !document.body.classList.contains('bg-on')) return; BG.bt++; bgbPaint(); }
+function bgbRender() {
+  clearInterval(BG.btimer); BG.btimer = null;
+  if (bgIndex() < 0) return;
+  BG.bt = 2; bgbPaint();
+  if (!rmOn()) BG.btimer = setInterval(bgbTick, 250);
+}
 function bgSync(id) {
-  const on = (id === 's-pick' || id === 's-progress') && bgIndex() >= 0;
+  const on = BG_SCREENS.indexOf(id) >= 0 && bgIndex() >= 0;
+  const was = document.body.classList.contains('bg-on');
   document.body.classList.toggle('bg-on', on);
-  if (on) bgLoad(() => { bgRender(); if (BG.pend && id === 's-pick') { BG.pend = false; bgBeat(1800); } }); else if (bgIndex() < 0) { BG.shown = -2; }
+  if (!on) { clearInterval(BG.btimer); BG.btimer = null; return; }
+  bgbLoad(() => { if (!was || !BG.btimer || BG.bkey !== bgIndex() + bgbDims().m) { BG.bkey = bgIndex() + bgbDims().m; bgbRender(); } });
+  if (BG.pend && id === 's-pick') { BG.pend = false; bgShowFull(1800); }
 }
 function bgApply() { const a = document.querySelector('.screen.active'); bgSync(a ? a.id : 's-pick'); }
-function bgBeat(ms) {
-  if (rmOn()) return;
-  document.body.classList.add('bg-intro');
-  setTimeout(() => document.body.classList.remove('bg-intro'), ms);
+function bgShowFull(ms) {
+  if (rmOn() || bgIndex() < 0) return;
+  const b = document.body;
+  b.classList.add('bg-intro'); b.classList.add('bg-full');
+  const end = () => {
+    if (!b.classList.contains('bg-intro')) return;
+    b.classList.remove('bg-intro'); b.classList.remove('bg-full');
+    setTimeout(() => { if (!b.classList.contains('bg-full')) { clearInterval(BG.timer); BG.timer = null; BG.shown = -2; const el = document.getElementById('bg-scene'); if (el) el.innerHTML = ''; } }, 900);
+  };
+  BG.endFn = end; setTimeout(end, 5000);
+  bgLoad(() => { bgRender(); setTimeout(end, ms); });
 }
+document.addEventListener('pointerdown', () => { if (document.body.classList.contains('bg-intro') && BG.endFn) BG.endFn(); });
 function bgIntro() {
   if (BG.introDone) return; BG.introDone = true;
   if (bgIndex() < 0 || rmOn()) return;
   const a = document.querySelector('.screen.active'); if (!a || a.id !== 's-pick') return;
-  document.body.classList.add('bg-intro');
-  const end = () => document.body.classList.remove('bg-intro');
-  BG.introEnd = end; setTimeout(end, 4000);
-  bgLoad(() => setTimeout(end, 1800));
+  bgShowFull(1800);
 }
-function bgSet(v) { try { localStorage.setItem(LS_BG, String(v)); } catch (e) {} BG.shown = -2; bgApply(); setMenuRender(); }
+function bgSet(v) { try { localStorage.setItem(LS_BG, String(v)); } catch (e) {} BG.shown = -2; BG.bkey = ''; bgApply(); setMenuRender(); }
 function bgTry(i) { bgSet(i); xpCloseLevelUp(); }
 function bgClose() { const o = document.getElementById('bg-pick'); if (o) o.remove(); }
 function bgPick(i) { bgSet(i); bgClose(); }
@@ -4911,7 +4950,7 @@ function bgPickerRender() {
   o.querySelectorAll('canvas').forEach(c => bgPaint(c, +c.dataset.i, 2, 72, 40));
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') bgClose(); });
-window.addEventListener('resize', bgFit);
+window.addEventListener('resize', () => { bgFit(); clearTimeout(BG.rz); BG.rz = setTimeout(() => { BG.bkey = ''; bgApply(); }, 200); });
 bgIntro(); setTimeout(bgApply, 0);
 // mode: 'flash' | 'date' | 'rapid'. key identifies the item for repeats and weak spots.
 function ucKey(mode, paper, label) {
