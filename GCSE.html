@@ -874,7 +874,7 @@ body.bg-full #bg-scene{opacity:1}
 #bg-border{position:fixed;z-index:-1;pointer-events:none;display:none;opacity:1;transition:opacity .7s ease}
 body.bg-on #bg-border{display:block}
 body.bg-full #bg-border{opacity:0}
-@media (max-width:899px){body.bg-on{box-sizing:border-box;padding:24px 14px 84px!important}}
+@media (max-width:899px){body.bg-on{box-sizing:border-box;padding-left:14px!important;padding-right:14px!important}}
 @media (min-width:900px){body.bg-on{box-sizing:border-box;padding-left:25vw!important;padding-right:25vw!important}}
 body.bg-intro .screen.active{opacity:0;pointer-events:none}
 .screen.active{transition:opacity .7s ease}
@@ -4873,7 +4873,7 @@ function bgbLoad(cb) {
   BG.bq = (BG.bq || []); BG.bq.push(cb);
   if (BG.bloading) return; BG.bloading = true;
   const sc = document.createElement('script');
-  sc.src = 'data/borders.js?v=20261128b';
+  sc.src = 'data/borders.js?v=20261128c';
   sc.onload = () => { const q = BG.bq; BG.bq = []; q.forEach(f => f()); };
   sc.onerror = () => { BG.bloading = false; };
   document.head.appendChild(sc);
@@ -4890,7 +4890,7 @@ function bgbPaint() {
   x.clearRect(0, 0, d.W, d.H);
   const r = (a, b, w, h, c) => { x.fillStyle = c; x.fillRect(a, b, w, h); };
   try { GCSE_BORDERS[d.m][i](r, BG.bt, d.W, d.H); } catch (e) {}
-  if (d.m === 'D') x.clearRect(81, 13, 158, 151); else x.clearRect(8, 10, d.W - 16, d.H - 34);
+  if (d.m === 'D') x.clearRect(81, 0, 158, d.H); else x.clearRect(8, 0, d.W - 16, d.H);
 }
 function bgbTick() { if (document.hidden || !document.body.classList.contains('bg-on')) return; BG.bt++; bgbPaint(); }
 function bgbRender() {
