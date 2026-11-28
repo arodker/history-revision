@@ -123,7 +123,7 @@ function setMenuRender() {
   const m = document.getElementById('set-menu'); if (!m) return;
   const dark = document.documentElement.classList.contains('dark');
   const row = (ic, label, act, sw) => '<button class="set-row" role="menuitem" onclick="' + act + '"><span>' + ic + ' ' + label + '</span>' + (sw === undefined ? '' : '<span class="set-sw' + (sw ? ' on' : '') + '"></span>') + '</button>';
-  m.innerHTML = row('🌙', 'Night mode', 'toggleDark()', dark) + row('💡', 'Hints', 'setHints()', fdHintsOn) + row('📌', pinLabel(), 'setClearPinned()') + row('🔠', tsLabel(), 'setTextSize()') + row('🗑️', rsLabel(), 'setResetProgress()') + '<div class="set-sep"></div>' +
+  m.innerHTML = row('🌙', 'Night mode', 'toggleDark()', dark) + row('💡', 'Hints', 'setHints()', fdHintsOn) + row('📌', pinLabel(), 'setClearPinned()') + row('🔠', tsLabel(), 'setTextSize()') + row('🎨', bgLabel(), 'bgOpen()') + row('🗑️', rsLabel(), 'setResetProgress()') + '<div class="set-sep"></div>' +
     row('💾', 'Save progress', "pmOpen('save')") + row('📥', 'Load progress', "pmOpen('load')") + '<div class="set-sep"></div>' +
     (hsInstalled() ? '' : row('📲', 'Install as an app', 'setMenuClose();hsInstall()')) + row('💡', 'Tips for this page', "setMenuClose();document.getElementById('tour-btn').click()") + row('🖨️', 'Print this page', 'setMenuClose();window.print()');
 }
@@ -217,6 +217,25 @@ function structNewShow() {
   } catch (e) {}
 }
 setTimeout(structNewShow, 1600);
+function bgNewClose() {
+  try { localStorage.setItem('gcse_bg_new', '1'); } catch (e) {}
+  const n = document.getElementById('bg-new'); if (n) n.remove();
+}
+function bgNewShow() {
+  try {
+    if (localStorage.getItem('gcse_bg_new') || !localStorage.getItem('gcse_tour_done') || !document.getElementById('s-pick').classList.contains('active') || document.getElementById('bg-new') || document.getElementById('gap-new') || document.getElementById('struct-new')) return;
+    const n = document.createElement('div'); n.id = 'bg-new';
+    n.style.cssText = 'position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:1rem';
+    n.innerHTML = '<div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;max-width:340px;width:100%;padding:1.3rem 1.2rem;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.35)">' +
+      '<div style="display:inline-block;background:#E6F1FB;color:#0C447C;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.15rem .6rem;border-radius:99px;margin-bottom:.6rem">NEW</div>' +
+      '<div style="font-size:1.15rem;font-weight:800;margin-bottom:.4rem">Animated backgrounds</div>' +
+      '<div style="font-size:.88rem;opacity:.8;line-height:1.45;margin-bottom:1rem">Every level you reach unlocks a new scene for the main menu, from a Stone Age cave to a galaxy. Choose yours in <b>Settings (⚙️) &gt; Background</b>.</div>' +
+      '<button onclick="bgNewClose()" style="font-weight:700;font-size:.95rem;padding:.6rem 1.4rem;border-radius:10px;border:none;background:#378ADD;color:#fff;cursor:pointer;font-family:inherit">Got it</button></div>';
+    n.addEventListener('click', e => { if (e.target === n) bgNewClose(); });
+    document.body.appendChild(n);
+  } catch (e) {}
+}
+setTimeout(bgNewShow, 2200);
 
 setTimeout(() => { try { if (localStorage.getItem('gcse_loaded')) { localStorage.removeItem('gcse_loaded'); bdgAward('portable'); } } catch (e) {} }, 1800);
 function usageStats() {
@@ -841,6 +860,27 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 .xp-lu-t{font-size:1.45rem;font-weight:800;margin:.1rem 0 .4rem}
 .xp-lu-from{font-size:.75rem;color:var(--muted);margin-bottom:.9rem}
 .xp-lu-btn{display:block;width:100%;padding:.8rem;border:none;border-radius:12px;background:#378ADD;color:#fff;font-size:.95rem;font-weight:700;font-family:inherit;cursor:pointer}
+#bg-scene{position:fixed;inset:0;z-index:-1;pointer-events:none;display:none;overflow:hidden}
+body.bg-on #bg-scene{display:block}
+#bg-scene canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated}
+#bg-scene .bg-veil{position:absolute;inset:0;background:var(--bg);opacity:.2}
+body.bg-on #s-pick>h1,body.bg-on #s-pick .step-lbl,body.bg-on #s-pick .paper-lbl,body.bg-on #s-pick .or-line,body.bg-on #s-pick .start-line{background:color-mix(in srgb,var(--bg) 82%,transparent);border-radius:10px;padding-left:.5rem;padding-right:.5rem}
+.xp-lu-bg{font-size:.82rem;font-weight:700;margin:-.4rem 0 .9rem}
+.xp-lu-btn.alt{background:transparent;color:var(--text);border:1px solid var(--border2);margin-bottom:.45rem}
+.bgp-back{position:fixed;inset:0;z-index:9980;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:14px}
+.bgp-card{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:16px;width:100%;max-width:420px;max-height:88vh;overflow:auto;padding:1rem}
+.bgp-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:.2rem}.bgp-h b{font-size:1.05rem}
+.bgp-h button{border:none;background:none;color:var(--text);font-size:1.2rem;cursor:pointer;padding:.2rem .4rem}
+.bgp-sub{font-size:.8rem;color:var(--muted);margin-bottom:.7rem}
+.bgp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
+.bgp-tile{position:relative;border:2px solid var(--border2);border-radius:12px;padding:0;overflow:hidden;height:104px;cursor:pointer;font-family:inherit;background:var(--surface)}
+.bgp-tile canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated}
+.bgp-tile.sel{border-color:#378ADD;box-shadow:0 0 0 2px #378ADD}
+.bgp-tile.lock canvas{opacity:.28;filter:grayscale(1)}
+.bgp-tile.lock{cursor:default;background:var(--subtle)!important}
+.bgp-tile.off{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;font-weight:700}
+.bgp-l{position:absolute;left:5px;right:5px;bottom:5px;background:rgba(255,255,255,.92);color:#26215C;border-radius:6px;font-size:.7rem;font-weight:700;padding:.15rem .3rem;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bgp-tile.lock .bgp-l{background:rgba(255,255,255,.85);color:#555}
 .hub-row{gap:.65rem}
 .hub-row .hub-nm{flex:1;text-align:left}
 .hub-dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--border2);background:var(--surface);position:relative;transition:border-color .15s}
@@ -1136,6 +1176,7 @@ select.sel-p3{background:#E6F1FB;color:#185FA5;border-color:#378ADD}
 <style id="ring-dark">:root.dark .pbw .fd-wheel text{fill:#26262b;font-weight:800}:root.dark .pbw .fd-wheel>circle[stroke="var(--subtle)"]{stroke:rgba(0,0,0,.16)}:root.dark .pbw .fd-wheel>circle[stroke="#e5e5e5"]{stroke:rgba(0,0,0,.3)}</style>
 </head>
 <body>
+<div id="bg-scene" aria-hidden="true"></div>
 <div id="fd-toast"></div>
 <div id="xp-pop"></div>
 <canvas id="fd-confetti-canvas" style="display:none"></canvas>
@@ -1690,6 +1731,7 @@ function showScreen(id) {
   if (id === 's-parent' && !PV.midRound) { try { pvEnsureScope(); } catch (e) {} parentShowSetup(); }
   if (id === 's-hub')  renderFdHubWheel();
   if (id === 's-main' && currentPaper) renderFdSetupWheel();
+  try { bgSync(id); } catch (e) {}
 }
 
 function enterMode(m) {
@@ -4736,8 +4778,10 @@ function xpShowLevelUp() {
     '<div class="xp-lu-k">Level up</div><div class="xp-lu-ic">' + L.e + '</div>' +
     '<div class="xp-lu-lv">Level ' + (i + 1) + '</div><div class="xp-lu-t">' + L.t + '</div>' +
     (prev ? '<div class="xp-lu-from">Up from ' + prev.e + ' ' + prev.t + '</div>' : '') +
+    '<div class="xp-lu-bg">🎨 Background unlocked: ' + BG_NAMES[i] + '</div>' +
     '<div class="xp-bar"><div class="xp-fill" style="width:' + pct + '%"></div></div>' +
     '<div class="xp-next" style="margin:.3rem 0 1rem"><span>' + (nx ? 'Next: ' + nx.t : 'Top level reached') + '</span><span>' + (nx ? nx.xp.toLocaleString() + ' XP' : '') + '</span></div>' +
+    (bgIndex() !== i ? '<button class="xp-lu-btn alt" onclick="bgTry(' + i + ')">Try it</button>' : '') +
     '<button class="xp-lu-btn" onclick="xpCloseLevelUp()">Keep going</button></div>';
   document.body.appendChild(el);
   if (typeof fdFireConfetti === 'function') fdFireConfetti();
@@ -4745,9 +4789,102 @@ function xpShowLevelUp() {
 function xpCloseLevelUp() {
   const el = document.getElementById('xp-lu');
   if (el) el.remove();
+  try { bgApply(); } catch (e) {}
   xpFlushLater();
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') xpCloseLevelUp(); });
+// ═══════════════════════════════════════════
+// ANIMATED BACKGROUNDS (one scene per level, shown behind the main menu)
+// ═══════════════════════════════════════════
+const LS_BG = 'gcse_bg';
+const BG_NAMES = ['Cave fire','Roman wall','Scriptorium','Longship','Norman dawn','Harbour','Great hall','Battlefield','Mill and train','Paddle steamer','Trench','Searchlights','Rock stage','London fireworks','Rocket and moon','Galaxy clock'];
+var BG = {data: null, loading: false, q: [], shown: -2, t: 0, timer: null};
+function bgChoice() { try { return localStorage.getItem(LS_BG); } catch (e) { return null; } }
+function bgTop() { return xpLevelIdx(xpLoad().total); }
+function bgIndex() {
+  const c = bgChoice(), top = bgTop();
+  if (c === 'off') return -1;
+  let n = c === null ? top : parseInt(c, 10);
+  if (isNaN(n) || n < 0 || n > top) n = top;
+  return n;
+}
+function bgLabel() { const i = bgIndex(); return 'Background: ' + (i < 0 ? 'Off' : BG_NAMES[i]); }
+function bgLoad(cb) {
+  if (BG.data) { if (cb) cb(); return; }
+  if (cb) BG.q.push(cb);
+  if (BG.loading) return;
+  BG.loading = true;
+  const sc = document.createElement('script');
+  sc.src = 'data/scenes.js?v=20261128b';
+  sc.onload = () => { BG.data = {scenes: window.GCSE_SCENES}; const q = BG.q; BG.q = []; q.forEach(f => f()); };
+  sc.onerror = () => { BG.loading = false; };
+  document.head.appendChild(sc);
+}
+function bgPaint(cv, i, t, W, H) {
+  const x = cv.getContext('2d'), sc = BG.data.scenes[i];
+  const ox = Math.floor((W - 64) / 2), oy = H - 40;
+  x.fillStyle = sc.sky; x.fillRect(0, 0, W, H);
+  const g = {W: W, H: H, oy: oy,
+    r: (a, b, w, h, c) => { x.fillStyle = c; x.fillRect(a + ox, b + oy, w, h); },
+    A: (a, b, w, h, c) => { x.fillStyle = c; x.fillRect(a, b, w, h); },
+    f: (b, h, c) => { x.fillStyle = c; x.fillRect(0, b + oy, W, h); },
+    ci: (cx, cy, rd, c) => { x.fillStyle = c; for (let dy = -rd; dy <= rd; dy++) for (let dx = -rd; dx <= rd; dx++) if (dx * dx + dy * dy <= rd * rd) x.fillRect(cx + dx + ox, cy + dy + oy, 1, 1); },
+    st: (tt, lim, col) => { x.fillStyle = col; for (let k = 0; k < 16; k++) if ((tt + k) % 6 < 4) x.fillRect((k * 37 + 11) % W, (k * 53 + 7) % lim, 1, 1); }
+  };
+  sc.d(g, t);
+}
+function bgTick() {
+  const cv = document.querySelector('#bg-scene canvas');
+  if (!cv || BG.shown < 0 || document.hidden) return;
+  BG.t++; bgPaint(cv, BG.shown, BG.t, cv.width, cv.height);
+}
+function bgFit() {
+  const cv = document.querySelector('#bg-scene canvas'); if (!cv || BG.shown < 0) return;
+  const H = 72, W = Math.max(64, Math.min(180, Math.round(H * innerWidth / innerHeight)));
+  if (cv.width !== W) { cv.width = W; cv.height = H; bgPaint(cv, BG.shown, BG.t, W, H); }
+}
+function bgRender() {
+  const el = document.getElementById('bg-scene'); if (!el) return;
+  const i = bgIndex();
+  if (i < 0 || !BG.data) { el.innerHTML = ''; BG.shown = -2; clearInterval(BG.timer); BG.timer = null; return; }
+  if (BG.shown === i && el.firstChild) { bgFit(); return; }
+  el.style.background = BG.data.scenes[i].sky;
+  el.innerHTML = '<canvas aria-hidden="true"></canvas><div class="bg-veil"></div>';
+  const cv = el.firstChild; cv.width = 0; BG.shown = i; BG.t = 2; bgFit();
+  clearInterval(BG.timer); BG.timer = null;
+  if (!(window.matchMedia && matchMedia('(prefers-reduced-motion:reduce)').matches)) BG.timer = setInterval(bgTick, 250);
+}
+function bgSync(id) {
+  const on = (id === 's-pick' || id === 's-progress') && bgIndex() >= 0;
+  document.body.classList.toggle('bg-on', on);
+  if (on) bgLoad(bgRender); else if (bgIndex() < 0) { BG.shown = -2; }
+}
+function bgApply() { const a = document.querySelector('.screen.active'); bgSync(a ? a.id : 's-pick'); }
+function bgSet(v) { try { localStorage.setItem(LS_BG, String(v)); } catch (e) {} BG.shown = -2; bgApply(); setMenuRender(); }
+function bgTry(i) { bgSet(i); xpCloseLevelUp(); }
+function bgClose() { const o = document.getElementById('bg-pick'); if (o) o.remove(); }
+function bgPick(i) { bgSet(i); bgClose(); }
+function bgOpen() { setMenuClose(); bgLoad(bgPickerRender); }
+function bgPickerRender() {
+  bgClose();
+  const top = bgTop(), cur = bgIndex();
+  const tiles = '<button class="bgp-tile off' + (cur < 0 ? ' sel' : '') + '" onclick="bgPick(\'off\')">No background</button>' +
+    BG.data.scenes.map((s, i) => {
+      const lock = i > top, L = XP_LEVELS[i];
+      return '<button class="bgp-tile' + (i === cur ? ' sel' : '') + (lock ? ' lock' : '') + '" ' + (lock ? 'disabled aria-label="Locked. Reach level ' + (i + 1) + ' to unlock"' : 'onclick="bgPick(' + i + ')" aria-label="' + s.n + '"') +
+        ' style="background:' + s.sky + '"><canvas width="72" height="40" data-i="' + i + '" aria-hidden="true"></canvas><span class="bgp-l">' + (lock ? '🔒 Level ' + (i + 1) + ' · ' + L.xp.toLocaleString() + ' XP' : (i + 1) + ' · ' + s.n) + '</span></button>';
+    }).join('');
+  const o = document.createElement('div');
+  o.id = 'bg-pick'; o.className = 'bgp-back';
+  o.onclick = e => { if (e.target === o) bgClose(); };
+  o.innerHTML = '<div class="bgp-card" role="dialog" aria-label="Background"><div class="bgp-h"><b>Background</b><button onclick="bgClose()" aria-label="Close">✕</button></div>' +
+    '<div class="bgp-sub">Every level unlocks a new scene for the main menu. You have ' + (top + 1) + ' of ' + BG_NAMES.length + '.</div><div class="bgp-grid">' + tiles + '</div></div>';
+  document.body.appendChild(o);
+  o.querySelectorAll('canvas').forEach(c => bgPaint(c, +c.dataset.i, 2, 72, 40));
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') bgClose(); });
+window.addEventListener('resize', bgFit);
+setTimeout(bgApply, 0);
 // mode: 'flash' | 'date' | 'rapid'. key identifies the item for repeats and weak spots.
 function ucKey(mode, paper, label) {
   var t = (mode === 'date' ? 'd|' : 'q|') + paper + '|' + String(label || ''), h = 5381;
